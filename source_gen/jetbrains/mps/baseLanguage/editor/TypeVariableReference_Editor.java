@@ -28,7 +28,7 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
   }
   public EditorCell createTypeVariableDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new TypeVariableReference_Editor.TypeVariableReference_Editor_typeVariableDeclaration_InlineComponent());
+    provider.setAuxiliaryCellProvider(new TypeVariableReference_Editor._Inline14());
     EditorCell editorCell = provider.createEditorCell(context);
     TypeVariableReference_Editor.setupBasic_TypeVariableDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -53,9 +53,9 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
-  public static class TypeVariableReference_Editor_typeVariableDeclaration_InlineComponent extends AbstractCellProvider {
+  public static class _Inline14 extends AbstractCellProvider {
 
-    public  TypeVariableReference_Editor_typeVariableDeclaration_InlineComponent() {
+    public  _Inline14() {
       super();
     }
 
@@ -76,9 +76,9 @@ public class TypeVariableReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      TypeVariableReference_Editor.TypeVariableReference_Editor_typeVariableDeclaration_InlineComponent.setupBasic_NameCell(editorCell, node, context);
+      TypeVariableReference_Editor._Inline14.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        TypeVariableReference_Editor.TypeVariableReference_Editor_typeVariableDeclaration_InlineComponent.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        TypeVariableReference_Editor._Inline14.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

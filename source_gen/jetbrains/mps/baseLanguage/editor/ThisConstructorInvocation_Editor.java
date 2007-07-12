@@ -104,7 +104,7 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
   }
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
     if(this.myActualArgumentListHandler_actualArgumentList_ == null) {
-      this.myActualArgumentListHandler_actualArgumentList_ = new ThisConstructorInvocation_Editor.ThisConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_(node, "actualArgument", context);
+      this.myActualArgumentListHandler_actualArgumentList_ = new ThisConstructorInvocation_Editor._RefNodeListHandler43(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
     ThisConstructorInvocation_Editor.setupBasic_ActualArgumentList(editorCell, node, context);
@@ -114,9 +114,9 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.ROLE, this.myActualArgumentListHandler_actualArgumentList_.getElementRole());
     return editorCell;
   }
-  public static class ThisConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler43 extends RefNodeListHandler {
 
-    public  ThisConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler43(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -172,8 +172,8 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      ThisConstructorInvocation_Editor.ThisConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_.setupBasic_ConstantCell2(editorCell, node, context);
-      ThisConstructorInvocation_Editor.ThisConstructorInvocation_Editor_ActualArgumentListHandler_actualArgumentList_.setupLabel_ConstantCell2(editorCell, node, context);
+      ThisConstructorInvocation_Editor._RefNodeListHandler43.setupBasic_ConstantCell2(editorCell, node, context);
+      ThisConstructorInvocation_Editor._RefNodeListHandler43.setupLabel_ConstantCell2(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

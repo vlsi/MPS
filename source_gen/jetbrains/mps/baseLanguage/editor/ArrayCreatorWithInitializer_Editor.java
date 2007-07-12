@@ -103,7 +103,7 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
   }
   public EditorCell createInitValueList(EditorContext context, SNode node) {
     if(this.myInitValueListHandler_initValueList_ == null) {
-      this.myInitValueListHandler_initValueList_ = new ArrayCreatorWithInitializer_Editor.ArrayCreatorWithInitializer_Editor_InitValueListHandler_initValueList_(node, "initValue", context);
+      this.myInitValueListHandler_initValueList_ = new ArrayCreatorWithInitializer_Editor._RefNodeListHandler33(node, "initValue", context);
     }
     EditorCell_Collection editorCell = this.myInitValueListHandler_initValueList_.createCells(context, new CellLayout_Horizontal(), false);
     ArrayCreatorWithInitializer_Editor.setupBasic_InitValueList(editorCell, node, context);
@@ -140,9 +140,9 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
-  public static class ArrayCreatorWithInitializer_Editor_InitValueListHandler_initValueList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler33 extends RefNodeListHandler {
 
-    public  ArrayCreatorWithInitializer_Editor_InitValueListHandler_initValueList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler33(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -198,8 +198,8 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      ArrayCreatorWithInitializer_Editor.ArrayCreatorWithInitializer_Editor_InitValueListHandler_initValueList_.setupBasic_ConstantCell2(editorCell, node, context);
-      ArrayCreatorWithInitializer_Editor.ArrayCreatorWithInitializer_Editor_InitValueListHandler_initValueList_.setupLabel_ConstantCell2(editorCell, node, context);
+      ArrayCreatorWithInitializer_Editor._RefNodeListHandler33.setupBasic_ConstantCell2(editorCell, node, context);
+      ArrayCreatorWithInitializer_Editor._RefNodeListHandler33.setupLabel_ConstantCell2(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

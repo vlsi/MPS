@@ -91,7 +91,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
   }
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
     if(this.myActualArgumentListHandler_actualArgumentList_ == null) {
-      this.myActualArgumentListHandler_actualArgumentList_ = new EnumConstantDeclaration_Editor.EnumConstantDeclaration_Editor_ActualArgumentListHandler_actualArgumentList_(node, "actualArgument", context);
+      this.myActualArgumentListHandler_actualArgumentList_ = new EnumConstantDeclaration_Editor._RefNodeListHandler26(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
     EnumConstantDeclaration_Editor.setupBasic_ActualArgumentList(editorCell, node, context);
@@ -128,9 +128,9 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
-  public static class EnumConstantDeclaration_Editor_ActualArgumentListHandler_actualArgumentList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler26 extends RefNodeListHandler {
 
-    public  EnumConstantDeclaration_Editor_ActualArgumentListHandler_actualArgumentList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler26(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -186,8 +186,8 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      EnumConstantDeclaration_Editor.EnumConstantDeclaration_Editor_ActualArgumentListHandler_actualArgumentList_.setupBasic_ConstantCell1(editorCell, node, context);
-      EnumConstantDeclaration_Editor.EnumConstantDeclaration_Editor_ActualArgumentListHandler_actualArgumentList_.setupLabel_ConstantCell1(editorCell, node, context);
+      EnumConstantDeclaration_Editor._RefNodeListHandler26.setupBasic_ConstantCell1(editorCell, node, context);
+      EnumConstantDeclaration_Editor._RefNodeListHandler26.setupLabel_ConstantCell1(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

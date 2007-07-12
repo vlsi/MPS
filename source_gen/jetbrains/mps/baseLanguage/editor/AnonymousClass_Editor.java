@@ -277,7 +277,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createParameterList(EditorContext context, SNode node) {
     if(this.myParameterListHandler_parameterList_ == null) {
-      this.myParameterListHandler_parameterList_ = new AnonymousClass_Editor.AnonymousClass_Editor_ParameterListHandler_parameterList_(node, "parameter", context);
+      this.myParameterListHandler_parameterList_ = new AnonymousClass_Editor._RefNodeListHandler36(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
     AnonymousClass_Editor.setupBasic_ParameterList(editorCell, node, context);
@@ -289,7 +289,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createFieldsList(EditorContext context, SNode node) {
     if(this.myFieldListHandler_fieldsList_ == null) {
-      this.myFieldListHandler_fieldsList_ = new AnonymousClass_Editor.AnonymousClass_Editor_FieldListHandler_fieldsList_(node, "field", context);
+      this.myFieldListHandler_fieldsList_ = new AnonymousClass_Editor._RefNodeListHandler37(node, "field", context);
     }
     EditorCell_Collection editorCell = this.myFieldListHandler_fieldsList_.createCells(context, new CellLayout_Vertical(), false);
     AnonymousClass_Editor.setupBasic_FieldsList(editorCell, node, context);
@@ -301,7 +301,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createMethodsList(EditorContext context, SNode node) {
     if(this.myMethodListHandler_methodsList_ == null) {
-      this.myMethodListHandler_methodsList_ = new AnonymousClass_Editor.AnonymousClass_Editor_MethodListHandler_methodsList_(node, "method", context);
+      this.myMethodListHandler_methodsList_ = new AnonymousClass_Editor._RefNodeListHandler38(node, "method", context);
     }
     EditorCell_Collection editorCell = this.myMethodListHandler_methodsList_.createCells(context, new CellLayout_Vertical(), false);
     AnonymousClass_Editor.setupBasic_MethodsList(editorCell, node, context);
@@ -313,7 +313,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createStaticMethodList(EditorContext context, SNode node) {
     if(this.myStaticMethodListHandler_staticMethodList_ == null) {
-      this.myStaticMethodListHandler_staticMethodList_ = new AnonymousClass_Editor.AnonymousClass_Editor_StaticMethodListHandler_staticMethodList_(node, "staticMethod", context);
+      this.myStaticMethodListHandler_staticMethodList_ = new AnonymousClass_Editor._RefNodeListHandler39(node, "staticMethod", context);
     }
     EditorCell_Collection editorCell = this.myStaticMethodListHandler_staticMethodList_.createCells(context, new CellLayout_Vertical(), false);
     AnonymousClass_Editor.setupBasic_StaticMethodList(editorCell, node, context);
@@ -325,7 +325,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   }
   public EditorCell createClassifierReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new AnonymousClass_Editor.AnonymousClass_Editor_classifier_InlineComponent());
+    provider.setAuxiliaryCellProvider(new AnonymousClass_Editor._Inline19());
     EditorCell editorCell = provider.createEditorCell(context);
     AnonymousClass_Editor.setupBasic_ClassifierReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -350,9 +350,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
-  public static class AnonymousClass_Editor_classifier_InlineComponent extends AbstractCellProvider {
+  public static class _Inline19 extends AbstractCellProvider {
 
-    public  AnonymousClass_Editor_classifier_InlineComponent() {
+    public  _Inline19() {
       super();
     }
 
@@ -373,9 +373,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      AnonymousClass_Editor.AnonymousClass_Editor_classifier_InlineComponent.setupBasic_NameCell(editorCell, node, context);
+      AnonymousClass_Editor._Inline19.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        AnonymousClass_Editor.AnonymousClass_Editor_classifier_InlineComponent.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        AnonymousClass_Editor._Inline19.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -397,9 +397,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       return cellWithRole;
     }
 }
-  public static class AnonymousClass_Editor_ParameterListHandler_parameterList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler36 extends RefNodeListHandler {
 
-    public  AnonymousClass_Editor_ParameterListHandler_parameterList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler36(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -442,9 +442,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
       }
     }
 }
-  public static class AnonymousClass_Editor_FieldListHandler_fieldsList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler37 extends RefNodeListHandler {
 
-    public  AnonymousClass_Editor_FieldListHandler_fieldsList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler37(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -492,15 +492,15 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      AnonymousClass_Editor.AnonymousClass_Editor_FieldListHandler_fieldsList_.setupBasic_ConstantCell3(editorCell, node, context);
-      AnonymousClass_Editor.AnonymousClass_Editor_FieldListHandler_fieldsList_.setupLabel_ConstantCell3(editorCell, node, context);
+      AnonymousClass_Editor._RefNodeListHandler37.setupBasic_ConstantCell3(editorCell, node, context);
+      AnonymousClass_Editor._RefNodeListHandler37.setupLabel_ConstantCell3(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
 }
-  public static class AnonymousClass_Editor_MethodListHandler_methodsList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler38 extends RefNodeListHandler {
 
-    public  AnonymousClass_Editor_MethodListHandler_methodsList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler38(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -548,15 +548,15 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      AnonymousClass_Editor.AnonymousClass_Editor_MethodListHandler_methodsList_.setupBasic_ConstantCell5(editorCell, node, context);
-      AnonymousClass_Editor.AnonymousClass_Editor_MethodListHandler_methodsList_.setupLabel_ConstantCell5(editorCell, node, context);
+      AnonymousClass_Editor._RefNodeListHandler38.setupBasic_ConstantCell5(editorCell, node, context);
+      AnonymousClass_Editor._RefNodeListHandler38.setupLabel_ConstantCell5(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
 }
-  public static class AnonymousClass_Editor_StaticMethodListHandler_staticMethodList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler39 extends RefNodeListHandler {
 
-    public  AnonymousClass_Editor_StaticMethodListHandler_staticMethodList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler39(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -604,8 +604,8 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      AnonymousClass_Editor.AnonymousClass_Editor_StaticMethodListHandler_staticMethodList_.setupBasic_ConstantCell7(editorCell, node, context);
-      AnonymousClass_Editor.AnonymousClass_Editor_StaticMethodListHandler_staticMethodList_.setupLabel_ConstantCell7(editorCell, node, context);
+      AnonymousClass_Editor._RefNodeListHandler39.setupBasic_ConstantCell7(editorCell, node, context);
+      AnonymousClass_Editor._RefNodeListHandler39.setupLabel_ConstantCell7(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

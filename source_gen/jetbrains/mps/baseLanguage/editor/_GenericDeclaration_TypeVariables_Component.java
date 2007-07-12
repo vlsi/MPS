@@ -86,7 +86,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
   }
   public EditorCell createTypeVariableDeclarationList(EditorContext context, SNode node) {
     if(this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_ == null) {
-      this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_ = new _GenericDeclaration_TypeVariables_Component._GenericDeclaration_TypeVariables_Component_TypeVariableDeclarationListHandler_typeVariableDeclarationList_(node, "typeVariableDeclaration", context);
+      this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_ = new _GenericDeclaration_TypeVariables_Component._RefNodeListHandler30(node, "typeVariableDeclaration", context);
     }
     EditorCell_Collection editorCell = this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_.createCells(context, new CellLayout_Horizontal(), false);
     _GenericDeclaration_TypeVariables_Component.setupBasic_TypeVariableDeclarationList(editorCell, node, context);
@@ -96,9 +96,9 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     editorCell.putUserObject(EditorCell.ROLE, this.myTypeVariableDeclarationListHandler_typeVariableDeclarationList_.getElementRole());
     return editorCell;
   }
-  public static class _GenericDeclaration_TypeVariables_Component_TypeVariableDeclarationListHandler_typeVariableDeclarationList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler30 extends RefNodeListHandler {
 
-    public  _GenericDeclaration_TypeVariables_Component_TypeVariableDeclarationListHandler_typeVariableDeclarationList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler30(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

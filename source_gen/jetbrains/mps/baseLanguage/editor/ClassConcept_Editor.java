@@ -5,15 +5,15 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
-import java.awt.Color;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.constraints.ClassConcept_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -43,6 +43,18 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myStaticMethodListHandler_staticMethodList_;
   /* package */AbstractCellListHandler myStaticInnerClassifiersListHandler_staticMethodList1_;
 
+  public static boolean _QueryFunction_NodeCondition_1178610229481(SNode node, EditorContext editorContext, IScope scope) {
+    return ClassConcept_Behavior.isAbstract_1178610171302(node);
+  }
+  public static boolean _QueryFunction_NodeCondition_1145916139208(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
+  }
+  public static boolean _QueryFunction_NodeCondition_1165625641774(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "extendedClass", false) != null;
+  }
+  public static boolean _QueryFunction_NodeCondition_1171628086722(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getTarget(node, "staticInitializer", true) != null;
+  }
   private static void setupBasic__Component_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178550101404");
   }
@@ -400,18 +412,6 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   private static void setupLabel_StaticInitializerCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
   private static void setupLabel_ConstantCell27(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-  public static boolean _QueryFunction_NodeCondition_1178610229481(SNode node, EditorContext editorContext, IScope scope) {
-    return ClassConcept_Behavior.isAbstract_1178610171302(node);
-  }
-  public static boolean _QueryFunction_NodeCondition_1145916139208(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
-  }
-  public static boolean _QueryFunction_NodeCondition_1165625641774(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "extendedClass", false) != null;
-  }
-  public static boolean _QueryFunction_NodeCondition_1171628086722(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getTarget(node, "staticInitializer", true) != null;
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -840,7 +840,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   public EditorCell createImplementedInterfaceList(EditorContext context, SNode node) {
     if(this.myImplementedInterfaceListHandler_implementedInterfaceList_ == null) {
-      this.myImplementedInterfaceListHandler_implementedInterfaceList_ = new ClassConcept_Editor.ClassConcept_Editor_ImplementedInterfaceListHandler_implementedInterfaceList_(node, "implementedInterface", context);
+      this.myImplementedInterfaceListHandler_implementedInterfaceList_ = new ClassConcept_Editor._RefNodeListHandler1(node, "implementedInterface", context);
     }
     EditorCell_Collection editorCell = this.myImplementedInterfaceListHandler_implementedInterfaceList_.createCells(context, new CellLayout_Vertical(), false);
     ClassConcept_Editor.setupBasic_ImplementedInterfaceList(editorCell, node, context);
@@ -852,7 +852,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   public EditorCell createStaticFieldList(EditorContext context, SNode node) {
     if(this.myStaticFieldListHandler_staticFieldList_ == null) {
-      this.myStaticFieldListHandler_staticFieldList_ = new ClassConcept_Editor.ClassConcept_Editor_StaticFieldListHandler_staticFieldList_(node, "staticField", context);
+      this.myStaticFieldListHandler_staticFieldList_ = new ClassConcept_Editor._RefNodeListHandler2(node, "staticField", context);
     }
     EditorCell_Collection editorCell = this.myStaticFieldListHandler_staticFieldList_.createCells(context, new CellLayout_Vertical(), false);
     ClassConcept_Editor.setupBasic_StaticFieldList(editorCell, node, context);
@@ -864,7 +864,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   public EditorCell createFieldsList(EditorContext context, SNode node) {
     if(this.myFieldListHandler_fieldsList_ == null) {
-      this.myFieldListHandler_fieldsList_ = new ClassConcept_Editor.ClassConcept_Editor_FieldListHandler_fieldsList_(node, "field", context);
+      this.myFieldListHandler_fieldsList_ = new ClassConcept_Editor._RefNodeListHandler3(node, "field", context);
     }
     EditorCell_Collection editorCell = this.myFieldListHandler_fieldsList_.createCells(context, new CellLayout_Vertical(), false);
     ClassConcept_Editor.setupBasic_FieldsList(editorCell, node, context);
@@ -876,7 +876,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   public EditorCell createConstructorsList(EditorContext context, SNode node) {
     if(this.myConstructorListHandler_constructorsList_ == null) {
-      this.myConstructorListHandler_constructorsList_ = new ClassConcept_Editor.ClassConcept_Editor_ConstructorListHandler_constructorsList_(node, "constructor", context);
+      this.myConstructorListHandler_constructorsList_ = new ClassConcept_Editor._RefNodeListHandler4(node, "constructor", context);
     }
     EditorCell_Collection editorCell = this.myConstructorListHandler_constructorsList_.createCells(context, new CellLayout_Vertical(), false);
     ClassConcept_Editor.setupBasic_ConstructorsList(editorCell, node, context);
@@ -888,7 +888,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   public EditorCell createMethodsList(EditorContext context, SNode node) {
     if(this.myMethodListHandler_methodsList_ == null) {
-      this.myMethodListHandler_methodsList_ = new ClassConcept_Editor.ClassConcept_Editor_MethodListHandler_methodsList_(node, "method", context);
+      this.myMethodListHandler_methodsList_ = new ClassConcept_Editor._RefNodeListHandler5(node, "method", context);
     }
     EditorCell_Collection editorCell = this.myMethodListHandler_methodsList_.createCells(context, new CellLayout_Vertical(), false);
     ClassConcept_Editor.setupBasic_MethodsList(editorCell, node, context);
@@ -900,7 +900,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   public EditorCell createStaticMethodList(EditorContext context, SNode node) {
     if(this.myStaticMethodListHandler_staticMethodList_ == null) {
-      this.myStaticMethodListHandler_staticMethodList_ = new ClassConcept_Editor.ClassConcept_Editor_StaticMethodListHandler_staticMethodList_(node, "staticMethod", context);
+      this.myStaticMethodListHandler_staticMethodList_ = new ClassConcept_Editor._RefNodeListHandler6(node, "staticMethod", context);
     }
     EditorCell_Collection editorCell = this.myStaticMethodListHandler_staticMethodList_.createCells(context, new CellLayout_Vertical(), false);
     ClassConcept_Editor.setupBasic_StaticMethodList(editorCell, node, context);
@@ -912,7 +912,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   public EditorCell createStaticMethodList1(EditorContext context, SNode node) {
     if(this.myStaticInnerClassifiersListHandler_staticMethodList1_ == null) {
-      this.myStaticInnerClassifiersListHandler_staticMethodList1_ = new ClassConcept_Editor.ClassConcept_Editor_StaticInnerClassifiersListHandler_staticMethodList1_(node, "staticInnerClassifiers", context);
+      this.myStaticInnerClassifiersListHandler_staticMethodList1_ = new ClassConcept_Editor._RefNodeListHandler7(node, "staticInnerClassifiers", context);
     }
     EditorCell_Collection editorCell = this.myStaticInnerClassifiersListHandler_staticMethodList1_.createCells(context, new CellLayout_Vertical(), false);
     ClassConcept_Editor.setupBasic_StaticMethodList1(editorCell, node, context);
@@ -951,7 +951,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
   }
   public EditorCell createExtendedClassReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ClassConcept_Editor.ClassConcept_Editor_extendedClass_InlineComponent());
+    provider.setAuxiliaryCellProvider(new ClassConcept_Editor._Inline());
     EditorCell editorCell = provider.createEditorCell(context);
     ClassConcept_Editor.setupBasic_ExtendedClassReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -1057,9 +1057,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
-  public static class ClassConcept_Editor_extendedClass_InlineComponent extends AbstractCellProvider {
+  public static class _Inline extends AbstractCellProvider {
 
-    public  ClassConcept_Editor_extendedClass_InlineComponent() {
+    public  _Inline() {
       super();
     }
 
@@ -1080,9 +1080,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      ClassConcept_Editor.ClassConcept_Editor_extendedClass_InlineComponent.setupBasic_NameCell(editorCell, node, context);
+      ClassConcept_Editor._Inline.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        ClassConcept_Editor.ClassConcept_Editor_extendedClass_InlineComponent.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        ClassConcept_Editor._Inline.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -1104,9 +1104,9 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       return cellWithRole;
     }
 }
-  public static class ClassConcept_Editor_ImplementedInterfaceListHandler_implementedInterfaceList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler1 extends RefNodeListHandler {
 
-    public  ClassConcept_Editor_ImplementedInterfaceListHandler_implementedInterfaceList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1154,15 +1154,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      ClassConcept_Editor.ClassConcept_Editor_ImplementedInterfaceListHandler_implementedInterfaceList_.setupBasic_ConstantCell5(editorCell, node, context);
-      ClassConcept_Editor.ClassConcept_Editor_ImplementedInterfaceListHandler_implementedInterfaceList_.setupLabel_ConstantCell5(editorCell, node, context);
+      ClassConcept_Editor._RefNodeListHandler1.setupBasic_ConstantCell5(editorCell, node, context);
+      ClassConcept_Editor._RefNodeListHandler1.setupLabel_ConstantCell5(editorCell, node, context);
       editorCell.setDefaultText("<none>");
       return editorCell;
     }
 }
-  public static class ClassConcept_Editor_StaticFieldListHandler_staticFieldList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler2 extends RefNodeListHandler {
 
-    public  ClassConcept_Editor_StaticFieldListHandler_staticFieldList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler2(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1210,15 +1210,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      ClassConcept_Editor.ClassConcept_Editor_StaticFieldListHandler_staticFieldList_.setupBasic_ConstantCell8(editorCell, node, context);
-      ClassConcept_Editor.ClassConcept_Editor_StaticFieldListHandler_staticFieldList_.setupLabel_ConstantCell8(editorCell, node, context);
+      ClassConcept_Editor._RefNodeListHandler2.setupBasic_ConstantCell8(editorCell, node, context);
+      ClassConcept_Editor._RefNodeListHandler2.setupLabel_ConstantCell8(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
 }
-  public static class ClassConcept_Editor_FieldListHandler_fieldsList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler3 extends RefNodeListHandler {
 
-    public  ClassConcept_Editor_FieldListHandler_fieldsList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1266,15 +1266,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell9(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      ClassConcept_Editor.ClassConcept_Editor_FieldListHandler_fieldsList_.setupBasic_ConstantCell9(editorCell, node, context);
-      ClassConcept_Editor.ClassConcept_Editor_FieldListHandler_fieldsList_.setupLabel_ConstantCell9(editorCell, node, context);
+      ClassConcept_Editor._RefNodeListHandler3.setupBasic_ConstantCell9(editorCell, node, context);
+      ClassConcept_Editor._RefNodeListHandler3.setupLabel_ConstantCell9(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
 }
-  public static class ClassConcept_Editor_ConstructorListHandler_constructorsList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler4 extends RefNodeListHandler {
 
-    public  ClassConcept_Editor_ConstructorListHandler_constructorsList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1322,15 +1322,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell11(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      ClassConcept_Editor.ClassConcept_Editor_ConstructorListHandler_constructorsList_.setupBasic_ConstantCell11(editorCell, node, context);
-      ClassConcept_Editor.ClassConcept_Editor_ConstructorListHandler_constructorsList_.setupLabel_ConstantCell11(editorCell, node, context);
+      ClassConcept_Editor._RefNodeListHandler4.setupBasic_ConstantCell11(editorCell, node, context);
+      ClassConcept_Editor._RefNodeListHandler4.setupLabel_ConstantCell11(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
 }
-  public static class ClassConcept_Editor_MethodListHandler_methodsList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler5 extends RefNodeListHandler {
 
-    public  ClassConcept_Editor_MethodListHandler_methodsList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler5(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1378,15 +1378,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell13(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      ClassConcept_Editor.ClassConcept_Editor_MethodListHandler_methodsList_.setupBasic_ConstantCell13(editorCell, node, context);
-      ClassConcept_Editor.ClassConcept_Editor_MethodListHandler_methodsList_.setupLabel_ConstantCell13(editorCell, node, context);
+      ClassConcept_Editor._RefNodeListHandler5.setupBasic_ConstantCell13(editorCell, node, context);
+      ClassConcept_Editor._RefNodeListHandler5.setupLabel_ConstantCell13(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
 }
-  public static class ClassConcept_Editor_StaticMethodListHandler_staticMethodList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler6 extends RefNodeListHandler {
 
-    public  ClassConcept_Editor_StaticMethodListHandler_staticMethodList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler6(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1434,15 +1434,15 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell15(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      ClassConcept_Editor.ClassConcept_Editor_StaticMethodListHandler_staticMethodList_.setupBasic_ConstantCell15(editorCell, node, context);
-      ClassConcept_Editor.ClassConcept_Editor_StaticMethodListHandler_staticMethodList_.setupLabel_ConstantCell15(editorCell, node, context);
+      ClassConcept_Editor._RefNodeListHandler6.setupBasic_ConstantCell15(editorCell, node, context);
+      ClassConcept_Editor._RefNodeListHandler6.setupLabel_ConstantCell15(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
 }
-  public static class ClassConcept_Editor_StaticInnerClassifiersListHandler_staticMethodList1_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler7 extends RefNodeListHandler {
 
-    public  ClassConcept_Editor_StaticInnerClassifiersListHandler_staticMethodList1_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler7(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -1497,8 +1497,8 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell17(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      ClassConcept_Editor.ClassConcept_Editor_StaticInnerClassifiersListHandler_staticMethodList1_.setupBasic_ConstantCell17(editorCell, node, context);
-      ClassConcept_Editor.ClassConcept_Editor_StaticInnerClassifiersListHandler_staticMethodList1_.setupLabel_ConstantCell17(editorCell, node, context);
+      ClassConcept_Editor._RefNodeListHandler7.setupBasic_ConstantCell17(editorCell, node, context);
+      ClassConcept_Editor._RefNodeListHandler7.setupLabel_ConstantCell17(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

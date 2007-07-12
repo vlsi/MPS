@@ -37,7 +37,7 @@ public class StatementList_Editor extends DefaultNodeEditor {
   }
   public EditorCell createStatementList(EditorContext context, SNode node) {
     if(this.myStatementListHandler_statementList_ == null) {
-      this.myStatementListHandler_statementList_ = new StatementList_Editor.StatementList_Editor_StatementListHandler_statementList_(node, "statement", context);
+      this.myStatementListHandler_statementList_ = new StatementList_Editor._RefNodeListHandler(node, "statement", context);
     }
     EditorCell_Collection editorCell = this.myStatementListHandler_statementList_.createCells(context, new CellLayout_Vertical(), false);
     StatementList_Editor.setupBasic_StatementList(editorCell, node, context);
@@ -47,9 +47,9 @@ public class StatementList_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.ROLE, this.myStatementListHandler_statementList_.getElementRole());
     return editorCell;
   }
-  public static class StatementList_Editor_StatementListHandler_statementList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler extends RefNodeListHandler {
 
-    public  StatementList_Editor_StatementListHandler_statementList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -100,8 +100,8 @@ public class StatementList_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      StatementList_Editor.StatementList_Editor_StatementListHandler_statementList_.setupBasic_ConstantCell(editorCell, node, context);
-      StatementList_Editor.StatementList_Editor_StatementListHandler_statementList_.setupLabel_ConstantCell(editorCell, node, context);
+      StatementList_Editor._RefNodeListHandler.setupBasic_ConstantCell(editorCell, node, context);
+      StatementList_Editor._RefNodeListHandler.setupLabel_ConstantCell(editorCell, node, context);
       editorCell.setDefaultText("<no statements>");
       return editorCell;
     }

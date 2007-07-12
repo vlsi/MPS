@@ -5,13 +5,13 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -34,6 +34,9 @@ public class Interface_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myStaticFieldListHandler_staticFieldList_;
   /* package */AbstractCellListHandler myMethodListHandler_methodsList_;
 
+  public static boolean _QueryFunction_NodeCondition_1145916182768(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
+  }
   private static void setupBasic__Component_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178550117011");
   }
@@ -142,9 +145,6 @@ public class Interface_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell8(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
   private static void setupLabel_ConstantCell9(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-  public static boolean _QueryFunction_NodeCondition_1145916182768(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -279,7 +279,7 @@ public class Interface_Editor extends DefaultNodeEditor {
   }
   public EditorCell createExtendedInterfaceList(EditorContext context, SNode node) {
     if(this.myExtendedInterfaceListHandler_extendedInterfaceList_ == null) {
-      this.myExtendedInterfaceListHandler_extendedInterfaceList_ = new Interface_Editor.Interface_Editor_ExtendedInterfaceListHandler_extendedInterfaceList_(node, "extendedInterface", context);
+      this.myExtendedInterfaceListHandler_extendedInterfaceList_ = new Interface_Editor._RefNodeListHandler27(node, "extendedInterface", context);
     }
     EditorCell_Collection editorCell = this.myExtendedInterfaceListHandler_extendedInterfaceList_.createCells(context, new CellLayout_Vertical(), false);
     Interface_Editor.setupBasic_ExtendedInterfaceList(editorCell, node, context);
@@ -291,7 +291,7 @@ public class Interface_Editor extends DefaultNodeEditor {
   }
   public EditorCell createStaticFieldList(EditorContext context, SNode node) {
     if(this.myStaticFieldListHandler_staticFieldList_ == null) {
-      this.myStaticFieldListHandler_staticFieldList_ = new Interface_Editor.Interface_Editor_StaticFieldListHandler_staticFieldList_(node, "staticField", context);
+      this.myStaticFieldListHandler_staticFieldList_ = new Interface_Editor._RefNodeListHandler28(node, "staticField", context);
     }
     EditorCell_Collection editorCell = this.myStaticFieldListHandler_staticFieldList_.createCells(context, new CellLayout_Vertical(), false);
     Interface_Editor.setupBasic_StaticFieldList(editorCell, node, context);
@@ -303,7 +303,7 @@ public class Interface_Editor extends DefaultNodeEditor {
   }
   public EditorCell createMethodsList(EditorContext context, SNode node) {
     if(this.myMethodListHandler_methodsList_ == null) {
-      this.myMethodListHandler_methodsList_ = new Interface_Editor.Interface_Editor_MethodListHandler_methodsList_(node, "method", context);
+      this.myMethodListHandler_methodsList_ = new Interface_Editor._RefNodeListHandler29(node, "method", context);
     }
     EditorCell_Collection editorCell = this.myMethodListHandler_methodsList_.createCells(context, new CellLayout_Vertical(), false);
     Interface_Editor.setupBasic_MethodsList(editorCell, node, context);
@@ -340,9 +340,9 @@ public class Interface_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
-  public static class Interface_Editor_ExtendedInterfaceListHandler_extendedInterfaceList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler27 extends RefNodeListHandler {
 
-    public  Interface_Editor_ExtendedInterfaceListHandler_extendedInterfaceList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler27(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -390,15 +390,15 @@ public class Interface_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      Interface_Editor.Interface_Editor_ExtendedInterfaceListHandler_extendedInterfaceList_.setupBasic_ConstantCell2(editorCell, node, context);
-      Interface_Editor.Interface_Editor_ExtendedInterfaceListHandler_extendedInterfaceList_.setupLabel_ConstantCell2(editorCell, node, context);
+      Interface_Editor._RefNodeListHandler27.setupBasic_ConstantCell2(editorCell, node, context);
+      Interface_Editor._RefNodeListHandler27.setupLabel_ConstantCell2(editorCell, node, context);
       editorCell.setDefaultText("<none>");
       return editorCell;
     }
 }
-  public static class Interface_Editor_StaticFieldListHandler_staticFieldList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler28 extends RefNodeListHandler {
 
-    public  Interface_Editor_StaticFieldListHandler_staticFieldList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler28(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -446,15 +446,15 @@ public class Interface_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      Interface_Editor.Interface_Editor_StaticFieldListHandler_staticFieldList_.setupBasic_ConstantCell5(editorCell, node, context);
-      Interface_Editor.Interface_Editor_StaticFieldListHandler_staticFieldList_.setupLabel_ConstantCell5(editorCell, node, context);
+      Interface_Editor._RefNodeListHandler28.setupBasic_ConstantCell5(editorCell, node, context);
+      Interface_Editor._RefNodeListHandler28.setupLabel_ConstantCell5(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
 }
-  public static class Interface_Editor_MethodListHandler_methodsList_ extends RefNodeListHandler {
+  public static class _RefNodeListHandler29 extends RefNodeListHandler {
 
-    public  Interface_Editor_MethodListHandler_methodsList_(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler29(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -502,8 +502,8 @@ public class Interface_Editor extends DefaultNodeEditor {
     }
     public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      Interface_Editor.Interface_Editor_MethodListHandler_methodsList_.setupBasic_ConstantCell7(editorCell, node, context);
-      Interface_Editor.Interface_Editor_MethodListHandler_methodsList_.setupLabel_ConstantCell7(editorCell, node, context);
+      Interface_Editor._RefNodeListHandler29.setupBasic_ConstantCell7(editorCell, node, context);
+      Interface_Editor._RefNodeListHandler29.setupLabel_ConstantCell7(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

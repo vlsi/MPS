@@ -15,15 +15,15 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.PrimaryReferentMenuCellMenuPart;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 
 public class EnumConstantReference_Editor extends DefaultNodeEditor {
 
@@ -73,7 +73,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   }
   public EditorCell createEnumClassReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor.EnumConstantReference_Editor_enumClass_InlineComponent());
+    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline11());
     EditorCell editorCell = provider.createEditorCell(context);
     EnumConstantReference_Editor.setupBasic_EnumClassReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -100,7 +100,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
   }
   public EditorCell createEnumConstantDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor.EnumConstantReference_Editor_enumConstantDeclaration_InlineComponent());
+    provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline12());
     EditorCell editorCell = provider.createEditorCell(context);
     EnumConstantReference_Editor.setupBasic_EnumConstantDeclarationReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -126,9 +126,32 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
-  public static class EnumConstantReference_Editor_enumClass_InlineComponent extends AbstractCellProvider {
+  public static class EnumConstantReference_customReplace_cellMenu extends AbstractCellMenuPart_ReplaceNode_Group {
 
-    public  EnumConstantReference_Editor_enumClass_InlineComponent() {
+    public  EnumConstantReference_customReplace_cellMenu() {
+    }
+
+    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      return QueriesUtil.replaceNodeMenu_EnumConstantReference_getParameterObjects(node);
+    }
+    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      return this.createReplacementNode_impl((SNode)parameterObject, node, model, scope, operationContext);
+    }
+    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      return QueriesUtil.replaceNodeMenu_EnumConstantReference_createReplacementNode(node, parameterObject);
+    }
+    public boolean isReferentPresentation() {
+      return true;
+    }
+}
+  public static class EnumConstantReference_enumConstantDeclaration_cellMenu extends PrimaryReferentMenuCellMenuPart {
+
+    public  EnumConstantReference_enumConstantDeclaration_cellMenu() {
+    }
+}
+  public static class _Inline11 extends AbstractCellProvider {
+
+    public  _Inline11() {
       super();
     }
 
@@ -149,9 +172,9 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      EnumConstantReference_Editor.EnumConstantReference_Editor_enumClass_InlineComponent.setupBasic_NameCell(editorCell, node, context);
+      EnumConstantReference_Editor._Inline11.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        EnumConstantReference_Editor.EnumConstantReference_Editor_enumClass_InlineComponent.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        EnumConstantReference_Editor._Inline11.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -173,9 +196,9 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       return cellWithRole;
     }
 }
-  public static class EnumConstantReference_Editor_enumConstantDeclaration_InlineComponent extends AbstractCellProvider {
+  public static class _Inline12 extends AbstractCellProvider {
 
-    public  EnumConstantReference_Editor_enumConstantDeclaration_InlineComponent() {
+    public  _Inline12() {
       super();
     }
 
@@ -198,9 +221,9 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      EnumConstantReference_Editor.EnumConstantReference_Editor_enumConstantDeclaration_InlineComponent.setupBasic_NameCell(editorCell, node, context);
+      EnumConstantReference_Editor._Inline12.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        EnumConstantReference_Editor.EnumConstantReference_Editor_enumConstantDeclaration_InlineComponent.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        EnumConstantReference_Editor._Inline12.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -220,29 +243,6 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-}
-  public static class EnumConstantReference_customReplace_cellMenu extends AbstractCellMenuPart_ReplaceNode_Group {
-
-    public  EnumConstantReference_customReplace_cellMenu() {
-    }
-
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return QueriesUtil.replaceNodeMenu_EnumConstantReference_getParameterObjects(node);
-    }
-    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return this.createReplacementNode_impl((SNode)parameterObject, node, model, scope, operationContext);
-    }
-    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return QueriesUtil.replaceNodeMenu_EnumConstantReference_createReplacementNode(node, parameterObject);
-    }
-    public boolean isReferentPresentation() {
-      return true;
-    }
-}
-  public static class EnumConstantReference_enumConstantDeclaration_cellMenu extends PrimaryReferentMenuCellMenuPart {
-
-    public  EnumConstantReference_enumConstantDeclaration_cellMenu() {
     }
 }
 

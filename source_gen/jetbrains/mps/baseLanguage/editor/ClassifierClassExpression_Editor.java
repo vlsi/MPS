@@ -59,7 +59,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
   }
   public EditorCell createClassifierReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new ClassifierClassExpression_Editor.ClassifierClassExpression_Editor_classifier_InlineComponent());
+    provider.setAuxiliaryCellProvider(new ClassifierClassExpression_Editor._Inline15());
     EditorCell editorCell = provider.createEditorCell(context);
     ClassifierClassExpression_Editor.setupBasic_ClassifierReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -84,9 +84,9 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
-  public static class ClassifierClassExpression_Editor_classifier_InlineComponent extends AbstractCellProvider {
+  public static class _Inline15 extends AbstractCellProvider {
 
-    public  ClassifierClassExpression_Editor_classifier_InlineComponent() {
+    public  _Inline15() {
       super();
     }
 
@@ -107,9 +107,9 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      ClassifierClassExpression_Editor.ClassifierClassExpression_Editor_classifier_InlineComponent.setupBasic_NameCell(editorCell, node, context);
+      ClassifierClassExpression_Editor._Inline15.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        ClassifierClassExpression_Editor.ClassifierClassExpression_Editor_classifier_InlineComponent.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        ClassifierClassExpression_Editor._Inline15.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
