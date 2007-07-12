@@ -2668,15 +2668,43 @@
     <link role="conceptDeclaration" targetNodeId="1.1114706874351" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1149866056564">
       <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1149866057537">
-        <property name="drawBorder" value="false" />
-        <property name="textBgColorSelected" value="cyan" />
-        <property name="text" value="$COPY_SRC$" />
-        <property name="fontStyle" value="BOLD_ITALIC" />
-        <property name="editable" value="true" />
-        <property name="textFgColor" value="DARK_BLUE" />
-        <link role="keyMap" targetNodeId="1149931179122" />
-        <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1184214793163">
+        <property name="vertical" value="true" />
+        <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1184214793165">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184214793166">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184214884502">
+              <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1184214884503">
+                <property name="value" value="true" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1184214890348">
+          <property name="drawBorder" value="false" />
+          <property name="textBgColorSelected" value="cyan" />
+          <property name="text" value="$COPY_SRC$" />
+          <property name="fontStyle" value="BOLD_ITALIC" />
+          <property name="editable" value="true" />
+          <property name="textFgColor" value="DARK_BLUE" />
+          <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
+          <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
+        </node>
+        <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1184214899933">
+          <property name="vertical" value="true" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1184214901037">
+            <property name="drawBorder" value="false" />
+            <property name="textBgColorSelected" value="cyan" />
+            <property name="text" value="$COPY_SRC$" />
+            <property name="fontStyle" value="BOLD_ITALIC" />
+            <property name="editable" value="true" />
+            <property name="textFgColor" value="DARK_BLUE" />
+            <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
+            <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1184215406198">
+            <link role="editorComponent" targetNodeId="1184214289430" resolveInfo="CopyScrNodeMacro_inspector" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1168024649604">
         <property name="drawBorder" value="false" />
