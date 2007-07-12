@@ -63,40 +63,55 @@ public final class BehaviorManager {
   public<T> T invoke(Class<T> returnType, SNode node, String methodName, List<Class> parametersTypes, Object... parameters) {
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
 
+    Method method = null;
+    List<Class> paramTypes = new ArrayList<Class>();
+    paramTypes.add(SNode.class);
+    paramTypes.addAll(parametersTypes);
+    Class[] parameterTypeArray = paramTypes.toArray(new Class[0]);
     while (concept != null) {
-      String fqName = NameUtil.nodeFQName(concept);
-      String behaviorClass = behaviorClassByConceptFqName(fqName);
+      method = getMethod(concept, methodName, parameterTypeArray);
+      if (method != null) {
+        break;
+      }
+      concept = ((ConceptDeclaration) concept).getExtends();
+    }
+    
+    if (method != null) {
+      List<Object> params = new ArrayList<Object>();
+      params.add(node);
+      params.addAll(Arrays.asList(parameters));
+
+      if (params.size() != paramTypes.size()) {
+        System.out.println("!!!!");
+      }
 
       try {
-        Class cls = Class.forName(behaviorClass, true, ClassLoaderManager.getInstance().getClassLoader());
-        List<Class> paramTypes = new ArrayList<Class>();
-        paramTypes.add(SNode.class);
-        paramTypes.addAll(parametersTypes);
-        Method method = cls.getMethod(methodName, paramTypes.toArray(new Class[0]));
-                        
-        List<Object> params = new ArrayList<Object>();
-        params.add(node);
-        params.addAll(Arrays.asList(parameters));
-
-        if (params.size() != paramTypes.size()) {
-          System.out.println("!!!!");
-        }
-
         return (T) method.invoke(null, params.toArray());
-      } catch (ClassNotFoundException e) {
-        //ignore
-      } catch (NoSuchMethodException e) {
-        //ignor too
       } catch (IllegalAccessException e) {
         throw new RuntimeException(e);
       } catch (InvocationTargetException e) {
         throw new RuntimeException(e);
       }
-
-      concept = ((ConceptDeclaration) concept).getExtends();
     }
 
     throw new RuntimeException("Can't invoke_old a method " + methodName + " on node " + node);
+  }
+
+  private Method getMethod(AbstractConceptDeclaration concept, String methodName, Class[] parameterTypes) {
+    Method method = null;
+    String fqName = NameUtil.nodeFQName(concept);
+    String behaviorClass = behaviorClassByConceptFqName(fqName);
+
+    try {
+      Class cls = Class.forName(behaviorClass, true, ClassLoaderManager.getInstance().getClassLoader());
+      method = cls.getMethod(methodName, parameterTypes);
+
+    } catch (ClassNotFoundException e) {
+      //ignore
+    } catch (NoSuchMethodException e) {
+      //ignor too
+    }
+    return method;
   }
 
 
