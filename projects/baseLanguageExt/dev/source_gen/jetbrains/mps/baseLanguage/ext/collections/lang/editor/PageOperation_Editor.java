@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class PageOperation_Editor extends DefaultNodeEditor {
 
@@ -75,7 +76,7 @@ public class PageOperation_Editor extends DefaultNodeEditor {
     PageOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
     PageOperation_Editor.setupLabel_ConstantCell(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new PageOperation_replaceWith_SequenceOperation_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new PageOperation_Editor.PageOperation_replaceWith_SequenceOperation_cellMenu()}));
     return editorCell;
   }
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
@@ -146,4 +147,14 @@ public class PageOperation_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+  public static class PageOperation_replaceWith_SequenceOperation_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+
+    public  PageOperation_replaceWith_SequenceOperation_cellMenu() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation";
+    }
+}
+
 }
