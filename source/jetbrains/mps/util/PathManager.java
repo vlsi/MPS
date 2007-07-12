@@ -58,7 +58,7 @@ public class PathManager {
   }
 
   public static void setHomePath(String newHomePath) {
-    ourHomePath = newHomePath;
+    ourHomePath = FileUtil.getCanonicalPath(newHomePath);
   }
 
   public static String getHomePath() {
@@ -165,7 +165,7 @@ public class PathManager {
     File file = new File(path);
     if (!file.exists()) return path;
     file = file.getAbsoluteFile();
-    return file.getAbsolutePath();
+    return FileUtil.getCanonicalPath(file.getAbsolutePath());
   }
 
   /**
