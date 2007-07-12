@@ -88,7 +88,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         myProjectFile = projectFile;
         SModel model = ProjectModels.createDescriptorFor(MPSProject.this).getSModel();
         model.setLoading(true);
-        myProjectDescriptor = DescriptorsPersistence.loadProjectDescriptor(projectFile, model);
+        myProjectDescriptor = DescriptorsPersistence.loadProjectDescriptor(new File(FileUtil.getCanonicalPath(projectFile)), model);
 
         MPSProjects projects = myContext.get(MPSProjects.class);
         projects.addProject(MPSProject.this);
