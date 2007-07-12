@@ -531,7 +531,7 @@ public class RuleUtil {
       }
       SNode templateReferentNode = reference.getTargetNode();
       if (templateReferentNode == null) {
-        myGenerator.showErrorMessage(null, templateNode, "'createOutputNodesForTemplateNode' referent node is null in template model");
+        myGenerator.showErrorMessage(null, templateNode, "'createOutputNodesForTemplateNode()' referent '" + reference.getRole() + "' is null in template model");
         continue;
       }
       if (templateReferentNode.getModel().equals(templateModel)) {
