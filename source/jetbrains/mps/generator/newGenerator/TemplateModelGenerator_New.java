@@ -29,8 +29,8 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private ArrayList<SNode> myRootsNotToCopy = new ArrayList<SNode>();
   private ArrayList<ReferenceInfo> myReferenceInfos = new ArrayList<ReferenceInfo>();
   private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
-  private HashMap<Pair<String, SNode>, INodeBuilder> myRuleNameAndInputNodeToBuilderMap = new HashMap<Pair<String, SNode>, INodeBuilder>();
-  private HashMap<Pair<String, SNode>, SNode> myRuleNameAndOutputNodeToInputNode = new HashMap<Pair<String, SNode>, SNode>();
+  private HashMap<Pair<String, SNode>, INodeBuilder> myMappingNameAndInputNodeToBuilderMap = new HashMap<Pair<String, SNode>, INodeBuilder>();
+  private HashMap<Pair<String, SNode>, SNode> myMappingNameAndOutputNodeToInputNode = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
   private HashMap<SNode, Pair<SNode, Boolean>> myTemplateNodeToOutputNodeMap = new HashMap<SNode, Pair<SNode, Boolean>>();
   private HashMap<SNode, List<SNode>> myInputeNodeToTopOutputNodesMap = new HashMap<SNode, List<SNode>>();
@@ -73,8 +73,8 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     myRootsNotToCopy.clear();
     myReferenceInfos.clear();
     myTemplateNodeAndInputNodeToOutputNodeMap.clear();
-    myRuleNameAndInputNodeToBuilderMap.clear();
-    myRuleNameAndOutputNodeToInputNode.clear();
+    myMappingNameAndInputNodeToBuilderMap.clear();
+    myMappingNameAndOutputNodeToInputNode.clear();
     myOutputNodeToTemplateNodeMap.clear();
     myTemplateNodeToOutputNodeMap.clear();
     myInputeNodeToTopOutputNodesMap.clear();
@@ -295,21 +295,21 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private INodeBuilder findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
     // todo: combination (mappingName, inputN) -> outputN is not unique (in some rare cases)
     // todo: generator should report error on attempt to access not unique outputN
-    return myRuleNameAndInputNodeToBuilderMap.get(new Pair(mappingName, inputNode));
+    return myMappingNameAndInputNodeToBuilderMap.get(new Pair(mappingName, inputNode));
   }
 
   /*package*/ SNode findInputNodeByMappingNameAndOutputNode(String mappingName, SNode outputNode) {
-    return myRuleNameAndOutputNodeToInputNode.get(new Pair(mappingName, outputNode));
+    return myMappingNameAndOutputNodeToInputNode.get(new Pair(mappingName, outputNode));
   }
 
   /*package*/ void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
     if (mappingName == null) return;
     Pair key = new Pair(mappingName, inputNode);
-    if (!myRuleNameAndInputNodeToBuilderMap.containsKey(key)) {
-      myRuleNameAndInputNodeToBuilderMap.put(key, new SimpleNodeBuilder(this, outputNode, inputNode));
+    if (!myMappingNameAndInputNodeToBuilderMap.containsKey(key)) {
+      myMappingNameAndInputNodeToBuilderMap.put(key, new SimpleNodeBuilder(this, outputNode, inputNode));
       Pair key2 = new Pair(mappingName, outputNode);
-      if (!myRuleNameAndOutputNodeToInputNode.containsKey(key2)) {
-        myRuleNameAndOutputNodeToInputNode.put(key2, inputNode);
+      if (!myMappingNameAndOutputNodeToInputNode.containsKey(key2)) {
+        myMappingNameAndOutputNodeToInputNode.put(key2, inputNode);
       }
     }
   }

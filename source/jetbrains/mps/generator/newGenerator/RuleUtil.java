@@ -364,7 +364,7 @@ public class RuleUtil {
       i++;
       if (i <= nodeMacrosToSkip) continue;
       NodeMacro nodeMacro = (NodeMacro) templateChildNode;
-      String mappingName_ = nodeMacro.getMappingId() != null ? nodeMacro.getMappingId() : mappingName; 
+      String mappingName_ = nodeMacro.getMappingId() != null ? nodeMacro.getMappingId() : mappingName;
       if (nodeMacro instanceof LoopMacro) {
         // $LOOP$
         List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
@@ -584,7 +584,7 @@ public class RuleUtil {
     // no reduction found - do node copying
     SNode outputNode = SModelUtil_new.instantiateConceptDeclaration(inputNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
     if (outputNode == null) {
-      myGenerator.showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode' cannot create output node");
+      myGenerator.showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode()' cannot create output node");
       return null;
     }
 
@@ -604,7 +604,7 @@ public class RuleUtil {
     for (SReference inputReference : inputNode.getReferences()) {
       SNode inputTargetNode = inputReference.getTargetNode();
       if (inputTargetNode == null) {
-        myGenerator.showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode' referent node is null in template model");
+        myGenerator.showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode()' referent '" + inputReference.getRole() + "' is null in template model");
         continue;
       }
       if (inputTargetNode.getModel().equals(inputModel)) {
