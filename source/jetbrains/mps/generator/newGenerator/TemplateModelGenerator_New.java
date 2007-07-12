@@ -29,7 +29,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private ArrayList<SNode> myRootsNotToCopy = new ArrayList<SNode>();
   private ArrayList<ReferenceInfo> myReferenceInfos = new ArrayList<ReferenceInfo>();
   private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
-  private HashMap<Pair<String, SNode>, INodeBuilder> myMappingNameAndInputNodeToBuilderMap = new HashMap<Pair<String, SNode>, INodeBuilder>();
+  private HashMap<Pair<String, SNode>, SNode> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<Pair<String, SNode>, SNode> myMappingNameAndOutputNodeToInputNode = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
   private HashMap<SNode, Pair<SNode, Boolean>> myTemplateNodeToOutputNodeMap = new HashMap<SNode, Pair<SNode, Boolean>>();
@@ -73,7 +73,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     myRootsNotToCopy.clear();
     myReferenceInfos.clear();
     myTemplateNodeAndInputNodeToOutputNodeMap.clear();
-    myMappingNameAndInputNodeToBuilderMap.clear();
+    myMappingNameAndInputNodeToOutputNodeMap.clear();
     myMappingNameAndOutputNodeToInputNode.clear();
     myOutputNodeToTemplateNodeMap.clear();
     myTemplateNodeToOutputNodeMap.clear();
@@ -285,17 +285,21 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public INodeBuilder findNodeBuilderForSource(SNode inputNode, String mappingName) {
-    return findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
+    SNode outputNode = findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
+    if(outputNode != null) {
+      return new SimpleNodeBuilder(this, outputNode, inputNode);
+    }
+    return null;
   }
 
   public INodeBuilder findNodeBuilderForSource(INodeAdapter ba, String mappingName) {
     return findNodeBuilderForSource(BaseAdapter.fromAdapter(ba), mappingName);
   }
 
-  private INodeBuilder findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
+  public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
     // todo: combination (mappingName, inputN) -> outputN is not unique (in some rare cases)
     // todo: generator should report error on attempt to access not unique outputN
-    return myMappingNameAndInputNodeToBuilderMap.get(new Pair(mappingName, inputNode));
+    return myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingName, inputNode));
   }
 
   /*package*/ SNode findInputNodeByMappingNameAndOutputNode(String mappingName, SNode outputNode) {
@@ -305,8 +309,8 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   /*package*/ void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
     if (mappingName == null) return;
     Pair key = new Pair(mappingName, inputNode);
-    if (!myMappingNameAndInputNodeToBuilderMap.containsKey(key)) {
-      myMappingNameAndInputNodeToBuilderMap.put(key, new SimpleNodeBuilder(this, outputNode, inputNode));
+    if (!myMappingNameAndInputNodeToOutputNodeMap.containsKey(key)) {
+      myMappingNameAndInputNodeToOutputNodeMap.put(key, outputNode);
       Pair key2 = new Pair(mappingName, outputNode);
       if (!myMappingNameAndOutputNodeToInputNode.containsKey(key2)) {
         myMappingNameAndOutputNodeToInputNode.put(key2, inputNode);
