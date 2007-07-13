@@ -910,16 +910,16 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/MForum/MForum.iml" filepath="$PROJECT_DIR$/app/MForum/MForum.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/platform/mps-lite/MPS-lite.iml" filepath="$PROJECT_DIR$/platform/mps-lite/MPS-lite.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/platform/mps-lite/MPS-lite.iml" filepath="$PROJECT_DIR$/platform/mps-lite/MPS-lite.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/Panacea/Panacea.iml" filepath="$PROJECT_DIR$/projects/Panacea/Panacea.iml" group="platform/YPath-Panacea" />
-      <module fileurl="file://$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/projects/ProjectHalo/ProjectHalo.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" filepath="$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" group="app/PubMedDB" />
       <module fileurl="file://$PROJECT_DIR$/app/PubMedDB/PubMedDB.iml" filepath="$PROJECT_DIR$/app/PubMedDB/PubMedDB.iml" group="app/PubMedDB" />
       <module fileurl="file://$PROJECT_DIR$/projects/YPath/YPath.iml" filepath="$PROJECT_DIR$/projects/YPath/YPath.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/projects/YPath/runtime/YPath-runtime.iml" filepath="$PROJECT_DIR$/projects/YPath/runtime/YPath-runtime.iml" group="platform/YPath-Panacea" />
-      <module fileurl="file://$PROJECT_DIR$/projects/agreement/agreement.iml" filepath="$PROJECT_DIR$/projects/agreement/agreement.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/app/agreement/agreement.iml" filepath="$PROJECT_DIR$/app/agreement/agreement.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" group="Projects/BaseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/languages/baseLanguageInternal/baseLanguageInternal.iml" filepath="$PROJECT_DIR$/baseLanguage/languages/baseLanguageInternal/baseLanguageInternal.iml" group="baseLanguage" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/strings/baseLanguage_strings.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/strings/baseLanguage_strings.iml" group="baseLanguage/ext" />
@@ -939,7 +939,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/dnq.iml" filepath="$PROJECT_DIR$/platform/dnq/dnq.iml" group="platform/dnq/language" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/dnq-runtime.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/dnq-runtime.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/entityBrowser/entityBrowser.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/entityBrowser/entityBrowser.iml" group="platform/webr/extensions" />
-      <module fileurl="file://$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/projects/fixedLengthReader/fixedLengthReader.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/regexp.iml" filepath="$PROJECT_DIR$/platform/regexp/regexp.iml" group="platform/regexp" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" filepath="$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" group="platform/regexp" />
@@ -951,7 +951,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/springframework/runtime/springframework-runtime.iml" filepath="$PROJECT_DIR$/projects/springframework/runtime/springframework-runtime.iml" group="Projects/springframework" />
       <module fileurl="file://$PROJECT_DIR$/projects/stateWorks/stateWorks.iml" filepath="$PROJECT_DIR$/projects/stateWorks/stateWorks.iml" group="Projects" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" group="platform/dnq/runtime" />
-      <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/web-query.iml" filepath="$PROJECT_DIR$/platform/web-query/web-query.iml" group="platform/web-query" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" filepath="$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" group="platform/web-query" />
