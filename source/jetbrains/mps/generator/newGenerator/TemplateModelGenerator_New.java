@@ -371,7 +371,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return result;
   }
 
-  public List<SNode> findTopOutputNodesForInputNode(SNode inputNode) {
+  public List<SNode> getTopOutputNodesForInputNode(SNode inputNode) {
     List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
     if (list != null) {
       return new ArrayList(list);

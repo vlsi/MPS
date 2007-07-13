@@ -25,7 +25,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
   public void executeIndependentResolve(TemplateModelGenerator_New generator) {
     {
-      // try to find target node if it was reduced from the copied node
+      // output target node might has been copied (reduced) from the input target node
       SNode outputTargetNode = generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
       if (outputTargetNode != null) {
         getOutputNode().addReferent(myInputReference.getRole(), outputTargetNode);
@@ -35,8 +35,8 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     }
 
     {
-      // todo: do we really need this?
-      List<SNode> topOutputNodes = generator.findTopOutputNodesForInputNode(myInputTargetNode);
+      // todo: hack
+      List<SNode> topOutputNodes = generator.getTopOutputNodesForInputNode(myInputTargetNode);
       if (!topOutputNodes.isEmpty()) {
         String wasConcept = myInputTargetNode.getConceptFqName();
         SNode outputTargetNode = null;

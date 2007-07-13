@@ -59,7 +59,7 @@ public interface ITemplateGenerator {
    * @deprecated
    */
   List<INodeBuilder> findTopBuildersForSource(SNode sourceNode);
-  List<SNode> findTopOutputNodesForInputNode(SNode inputNode);
+  List<SNode> getTopOutputNodesForInputNode(SNode inputNode);
 
   INodeBuilder getCurrentBuilder();
 
