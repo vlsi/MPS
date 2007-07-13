@@ -395,14 +395,14 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(behavior);
   }
   public static Object propertyMacro_GetPropertyValue_1179412208413(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return ConceptMethodDeclaration_Behavior.getGeneratedName_1177681178696(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false));
+    return ConceptMethodDeclaration_Behavior.call_getGeneratedName_1177681178696(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false));
   }
   public static Object propertyMacro_GetPropertyValue_1183618936195(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode behavior = SNodeOperations.getContainingRoot(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false));
     return NameUtil.nodeFQName(behavior);
   }
   public static Object propertyMacro_GetPropertyValue_1183618936210(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return ConceptMethodDeclaration_Behavior.getCallerMethodName_1181725268250(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false));
+    return ConceptMethodDeclaration_Behavior.call_getCallerMethodName_1181725268250(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false));
   }
   public static Object propertyMacro_GetPropertyValue_1180028472291(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference")) {
@@ -441,7 +441,7 @@ public class QueriesGenerated {
     SNode opExpression = SNodeOperations.getParent(node, null, false, false);
     SNode leftExpression = SLinkOperations.getTarget(opExpression, "leftExpression", true);
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
-    SNode adapterClassifierType = AbstractConceptDeclaration_Behavior.getAdapterType_1179511141975(SLinkOperations.getTarget(nodeType, "concept", false));
+    SNode adapterClassifierType = AbstractConceptDeclaration_Behavior.call_getAdapterType_1179511141975(SLinkOperations.getTarget(nodeType, "concept", false));
     return SLinkOperations.getTarget(adapterClassifierType, "classifier", false);
   }
   public static boolean ifMacro_Condition_1175594466810(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
