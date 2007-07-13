@@ -384,11 +384,6 @@ public class RuleUtil {
         List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           List<SNode> _outputNodes = copyNodeFromInputNode(mappingName_, templateNode, newInputNode);
-          if (_outputNodes.size() == 1) {
-            // todo: this is not needed - this is done inside copyNodeFromInputNode()
-            // todo: instead 'addTopOutputNodesByInputNode' (if input is changed)
-            myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, _outputNodes.get(0));
-          }
           outputNodes.addAll(_outputNodes);
         }
         return outputNodes;
@@ -572,7 +567,7 @@ public class RuleUtil {
         { // register copied node
           myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
           myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
-          // here the inputNode plays role of template node
+          // output N should be accessible via 'findCopiedNode'
           myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, inputNode, outputNode);
 // do we really need this?          myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
 // do we really need this?          myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);
@@ -591,7 +586,7 @@ public class RuleUtil {
     { // register copied node
       myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
       myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
-      // here the inputNode plays role of template node
+      // output N should be accessible via 'findCopiedNode'
       myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, inputNode, outputNode);
       myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
       myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);
