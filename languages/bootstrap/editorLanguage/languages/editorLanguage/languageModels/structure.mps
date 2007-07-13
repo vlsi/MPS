@@ -2332,5 +2332,18 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184319644772">
+    <property name="name" value="CellModel_NonEmptyProperty" />
+    <property name="package" value="CellModel" />
+    <link role="extends" targetNodeId="1073389658414" resolveInfo="CellModel_Property" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184319817911">
+      <property name="value" value="{+&lt;{propertyDeclaration}&gt;+}" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184319817912">
+      <property name="value" value="not empty property" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
+    </node>
+  </node>
 </model>
 

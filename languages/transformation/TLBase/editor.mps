@@ -1650,26 +1650,10 @@
         <property name="selectable" value="true" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1100694105555">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184320814183">
         <property name="textBgColor" value="orange" />
-        <property name="drawBorder" value="false" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="4.1169194664001" />
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1146604643746">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1146604643747">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1146604692957">
-              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184236322676">
-                <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]SNode).([InstanceMethodDeclaration]hasProperty((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-                <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1184236307424">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1184235671603" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184236323820">
-                  <property name="value" value="name" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149858834706">
         <property name="drawBorder" value="false" />
@@ -1935,26 +1919,10 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1152722539533">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184321604827">
         <property name="textBgColor" value="orange" />
-        <property name="drawBorder" value="false" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="1.1152722085357" />
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1152722539534">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1152722539535">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1184236607009">
-              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184236607010">
-                <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]SNode).([InstanceMethodDeclaration]hasProperty((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-                <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1184236607011">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1184236607012" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184236607013">
-                  <property name="value" value="mappingId" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149865975021">
         <property name="drawBorder" value="false" />
@@ -2448,26 +2416,10 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1152722546973">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184321443648">
         <property name="textBgColor" value="orange" />
-        <property name="drawBorder" value="false" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="1.1152722085357" />
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1152722546974">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1152722546975">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1184236452867">
-              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184236452868">
-                <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]SNode).([InstanceMethodDeclaration]hasProperty((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-                <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1184236452869">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1184236452870" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184236452871">
-                  <property name="value" value="mappingId" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149865998639">
         <property name="drawBorder" value="false" />
@@ -2637,26 +2589,10 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1152722532921">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184321480080">
         <property name="textBgColor" value="orange" />
-        <property name="drawBorder" value="false" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="1.1152722085357" />
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1152722532922">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1152722532923">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1184236481947">
-              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184236481948">
-                <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]SNode).([InstanceMethodDeclaration]hasProperty((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-                <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1184236481949">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1184236481950" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184236481951">
-                  <property name="value" value="mappingId" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149865951872">
         <property name="drawBorder" value="false" />
@@ -2731,26 +2667,10 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1152722581607">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184321531684">
         <property name="textBgColor" value="orange" />
-        <property name="drawBorder" value="false" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="1.1152722085357" />
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1152722581608">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1152722581609">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1184236496480">
-              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184236496481">
-                <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]SNode).([InstanceMethodDeclaration]hasProperty((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-                <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1184236496482">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1184236496483" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184236496484">
-                  <property name="value" value="mappingId" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149866060008">
         <property name="drawBorder" value="false" />
@@ -2976,26 +2896,10 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1152722569821">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184321549853">
         <property name="textBgColor" value="orange" />
-        <property name="drawBorder" value="false" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="1.1152722085357" />
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1152722569822">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1152722569823">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1184236533512">
-              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184236533513">
-                <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]SNode).([InstanceMethodDeclaration]hasProperty((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-                <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1184236533514">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1184236533515" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184236533516">
-                  <property name="value" value="mappingId" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149866045437">
         <property name="drawBorder" value="false" />
@@ -3327,26 +3231,10 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1152722564678">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184321590826">
         <property name="textBgColor" value="orange" />
-        <property name="drawBorder" value="false" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="1.1152722085357" />
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1152722564679">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1152722564680">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1184236585402">
-              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184236585403">
-                <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]SNode).([InstanceMethodDeclaration]hasProperty((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-                <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1184236585404">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1184236585405" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184236585406">
-                  <property name="value" value="mappingId" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149866026194">
         <property name="drawBorder" value="false" />
@@ -3675,26 +3563,10 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1152722575417">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184321575713">
         <property name="textBgColor" value="orange" />
-        <property name="drawBorder" value="false" />
         <property name="textBgColorSelected" value="cyan" />
         <link role="relationDeclaration" targetNodeId="1.1152722085357" />
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1152722575418">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1152722575419">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1184236553606">
-              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184236553607">
-                <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]SNode).([InstanceMethodDeclaration]hasProperty((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
-                <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1184236553608">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1184236553609" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184236553610">
-                  <property name="value" value="mappingId" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149865918317">
         <property name="drawBorder" value="false" />
