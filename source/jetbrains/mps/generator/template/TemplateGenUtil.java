@@ -22,6 +22,7 @@ import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ArrayList;
 
 public class TemplateGenUtil {
   private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
@@ -142,7 +143,7 @@ public class TemplateGenUtil {
   }
 
   private static List<SNode> getSourceNodesForMacroWithSourceNodeQuery(SNode sourceNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodeQuery query, boolean optionalQuery, ITemplateGenerator generator) {
-    List<SNode> sourceNodes = new LinkedList<SNode>();
+    List<SNode> sourceNodes = new ArrayList<SNode>(1);
 
     // optional query is not defined?
     String sourceQueryAspectMethodName;
@@ -300,7 +301,7 @@ public class TemplateGenUtil {
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
         return getSourceNodesForMacroWithSourceNodeQuery(parentSourceNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcNodeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
       } else if (nodeMacro instanceof IfMacro) {
-        List<SNode> sourceNodes = new LinkedList<SNode>();
+        List<SNode> sourceNodes = new ArrayList<SNode>(1);
         if (checkConditionForIfMacro(parentSourceNode, (IfMacro) nodeMacro, generator)) {
           sourceNodes.add(parentSourceNode);
         }
@@ -326,7 +327,7 @@ public class TemplateGenUtil {
       }
 
       // <default> : propagate  parent source node
-      List<SNode> list = new LinkedList<SNode>();
+      List<SNode> list = new ArrayList<SNode>(1);
       list.add(parentSourceNode);
       return list;
 
