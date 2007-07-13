@@ -8,18 +8,18 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import java.util.Iterator;
 import java.util.List;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class ConceptBehavior extends BaseConcept implements INamedConcept {
+  public static String NAME = "name";
+  public static String CONCEPT = "concept";
   public static String CONSTRUCTOR = "constructor";
   public static String DEFAULT_SCOPE = "defaultScope";
   public static String PROPERTIES = "properties";
   public static String REFERENCES = "references";
   public static String METHOD = "method";
-  public static String CONCEPT = "concept";
-  public static String NAME = "name";
 
   public  ConceptBehavior(SNode node) {
     super(node);
@@ -32,6 +32,18 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept {
     return ConceptBehavior.newInstance(sm, false);
   }
 
+  public String getName() {
+    return this.getProperty(ConceptBehavior.NAME);
+  }
+  public void setName(String value) {
+    this.setProperty(ConceptBehavior.NAME, value);
+  }
+  public AbstractConceptDeclaration getConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(ConceptBehavior.CONCEPT);
+  }
+  public void setConcept(AbstractConceptDeclaration node) {
+    super.setReferent(ConceptBehavior.CONCEPT, node);
+  }
   public ConceptConstructorDeclaration getConstructor() {
     return (ConceptConstructorDeclaration)this.getChild(ConceptBehavior.CONSTRUCTOR);
   }
@@ -88,17 +100,5 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept {
   }
   public void insertMethod(ConceptMethodDeclaration prev, ConceptMethodDeclaration node) {
     this.insertChild(prev, ConceptBehavior.METHOD, node);
-  }
-  public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(ConceptBehavior.CONCEPT);
-  }
-  public void setConcept(AbstractConceptDeclaration node) {
-    super.setReferent(ConceptBehavior.CONCEPT, node);
-  }
-  public String getName() {
-    return this.getProperty(ConceptBehavior.NAME);
-  }
-  public void setName(String value) {
-    this.setProperty(ConceptBehavior.NAME, value);
   }
 }

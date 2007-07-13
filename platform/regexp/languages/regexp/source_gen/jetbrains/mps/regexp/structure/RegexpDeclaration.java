@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class RegexpDeclaration extends BaseConcept implements INamedConcept {
-  public static String REGEXP = "regexp";
   public static String DESCRIPTION = "description";
   public static String NAME = "name";
+  public static String REGEXP = "regexp";
 
   public  RegexpDeclaration(SNode node) {
     super(node);
@@ -25,12 +25,6 @@ public class RegexpDeclaration extends BaseConcept implements INamedConcept {
     return RegexpDeclaration.newInstance(sm, false);
   }
 
-  public Regexp getRegexp() {
-    return (Regexp)this.getChild(RegexpDeclaration.REGEXP);
-  }
-  public void setRegexp(Regexp node) {
-    super.setChild(RegexpDeclaration.REGEXP, node);
-  }
   public String getDescription() {
     return this.getProperty(RegexpDeclaration.DESCRIPTION);
   }
@@ -42,5 +36,11 @@ public class RegexpDeclaration extends BaseConcept implements INamedConcept {
   }
   public void setName(String value) {
     this.setProperty(RegexpDeclaration.NAME, value);
+  }
+  public Regexp getRegexp() {
+    return (Regexp)this.getChild(RegexpDeclaration.REGEXP);
+  }
+  public void setRegexp(Regexp node) {
+    super.setChild(RegexpDeclaration.REGEXP, node);
   }
 }

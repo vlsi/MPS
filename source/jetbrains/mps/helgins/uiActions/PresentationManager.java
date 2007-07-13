@@ -45,7 +45,7 @@ public class PresentationManager {
       return toString(type);
     }
 
-    return BaseConcept_Behavior.callVirtual_getPresentation_1180102203531(type);
+    return BaseConcept_Behavior.call_getPresentation_1180102203531(type);
 
    /* String packageName = type.getLanguageNamespace();
     String presentationUtilName = packageName + ".PresentationUtil";

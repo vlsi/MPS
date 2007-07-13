@@ -23,7 +23,7 @@ public class QueriesGenerated {
     return ConceptMethodDeclaration_Behavior.getGeneratedName_1177681178696(node);
   }
   public static Object propertyMacro_GetPropertyValue_1181726948102(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return ConceptMethodDeclaration_Behavior.getVirtualCallerName_1181725268250(node);
+    return ConceptMethodDeclaration_Behavior.getCallerMethodName_1181725268250(node);
   }
   public static Object propertyMacro_GetPropertyValue_1181727149831(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return ConceptMethodDeclaration_Behavior.getGeneratedName_1177681178696(node);

@@ -117,24 +117,11 @@
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1177759404611">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177759438648">
-              <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1177759438649">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1177759438650">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1177759438651">
-                    <link role="baseMethodDeclaration" extResolveInfo="9.method ([Classifier]SNode).([InstanceMethodDeclaration]getId() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                    <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1180461211822">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1177759438652" />
-                    </node>
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1177759438653">
-                    <property name="value" value="_" />
-                  </node>
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1184320821017">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1184320821732">
+                  <link role="conceptMethodDeclaration" targetNodeId="1181725268250" resolveInfo="getCallerMethodName" />
                 </node>
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177759438654">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1177759438655" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1177759438656">
-                    <link role="property" targetNodeId="12.1083152972672" />
-                  </node>
-                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1184320819721" />
               </node>
             </node>
           </node>
@@ -172,7 +159,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1181725268250">
-      <property name="name" value="getVirtualCallerName" />
+      <property name="name" value="getCallerMethodName" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1181725292144">
         <link role="classifier" extResolveInfo="10.[Classifier]String" />
       </node>
@@ -199,7 +186,7 @@
               </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1181725315293">
-              <property name="value" value="callVirtual_" />
+              <property name="value" value="call_" />
             </node>
           </node>
         </node>

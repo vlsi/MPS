@@ -12,8 +12,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class PredefinedSymbolClasses extends BaseConcept implements INamedConcept {
-  public static String SYMBOL_CLASS = "symbolClass";
   public static String NAME = "name";
+  public static String SYMBOL_CLASS = "symbolClass";
 
   public  PredefinedSymbolClasses(SNode node) {
     super(node);
@@ -26,6 +26,12 @@ public class PredefinedSymbolClasses extends BaseConcept implements INamedConcep
     return PredefinedSymbolClasses.newInstance(sm, false);
   }
 
+  public String getName() {
+    return this.getProperty(PredefinedSymbolClasses.NAME);
+  }
+  public void setName(String value) {
+    this.setProperty(PredefinedSymbolClasses.NAME, value);
+  }
   public int getSymbolClassesCount() {
     return this.getChildCount(PredefinedSymbolClasses.SYMBOL_CLASS);
   }
@@ -40,11 +46,5 @@ public class PredefinedSymbolClasses extends BaseConcept implements INamedConcep
   }
   public void insertSymbolClass(PredefinedSymbolClassDeclaration prev, PredefinedSymbolClassDeclaration node) {
     this.insertChild(prev, PredefinedSymbolClasses.SYMBOL_CLASS, node);
-  }
-  public String getName() {
-    return this.getProperty(PredefinedSymbolClasses.NAME);
-  }
-  public void setName(String value) {
-    this.setProperty(PredefinedSymbolClasses.NAME, value);
   }
 }

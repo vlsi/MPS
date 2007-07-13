@@ -15,6 +15,7 @@ import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 
 public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
 
@@ -339,7 +340,17 @@ public class Node_GetAncestorOperation_Editor extends DefaultNodeEditor {
     Node_GetAncestorOperation_Editor.setupBasic_ConstantCell13(editorCell, node, context);
     Node_GetAncestorOperation_Editor.setupLabel_ConstantCell13(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new Node_GetAncestorOperation_replaceWith_SNodeOperation_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new Node_GetAncestorOperation_Editor.Node_GetAncestorOperation_replaceWith_SNodeOperation_cellMenu()}));
     return editorCell;
   }
+  public static class Node_GetAncestorOperation_replaceWith_SNodeOperation_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
+
+    public  Node_GetAncestorOperation_replaceWith_SNodeOperation_cellMenu() {
+    }
+
+    public String getReplacementConceptName() {
+      return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation";
+    }
+}
+
 }

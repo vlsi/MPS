@@ -15,7 +15,7 @@ public class GeneratorUtil {
     SNode ruc = SNodeOperations.getAncestor(parens, "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false);
     if(ruc != null) {
       return ruc;
-    } else 
+    } else
     {
       SNode dcl = SNodeOperations.getAncestor(parens, "jetbrains.mps.regexp.structure.RegexpDeclaration", false, false);
       for(SNode parentRuc : SNodeOperations.getAncestors(ref, "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false)) {
