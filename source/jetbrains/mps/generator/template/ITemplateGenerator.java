@@ -57,8 +57,6 @@ public interface ITemplateGenerator {
 
   List<INodeBuilder> findTopBuildersForSource(SNode sourceNode);
 
-  INodeBuilder findRootNodeBuilder(Condition<INodeBuilder> condition);
-
   INodeBuilder getCurrentBuilder();
 
   /**

@@ -25,7 +25,6 @@ import java.util.*;
 public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private SModel myInputModel;
   private SModel myOutputModel;
-  private ArrayList<SNode> myNewRootNodes = new ArrayList<SNode>();
   private ArrayList<SNode> myRootsNotToCopy = new ArrayList<SNode>();
   private ArrayList<ReferenceInfo> myReferenceInfos = new ArrayList<ReferenceInfo>();
   private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
@@ -69,7 +68,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public void reset() {
-    myNewRootNodes.clear();
     myRootsNotToCopy.clear();
     myReferenceInfos.clear();
     myTemplateNodeAndInputNodeToOutputNodeMap.clear();
@@ -93,17 +91,19 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     RuleManager ruleManager = new RuleManager(this);
     RuleUtil ruleUtil = new RuleUtil(ruleManager);
     ruleManager.getReductionRuleManager().setRuleUtil(ruleUtil);
+
+    // create all roots
     if (isPrimary) {
       for (CreateRootRule createRootRule : ruleManager.getCreateRootRules()) {
         ruleUtil.applyRootRule(createRootRule);
       }
     }
-    checkMonitorCanceled();
     for (MappingRule mappingRule : ruleManager.getMappingRules()) {
+      checkMonitorCanceled();
       ruleUtil.applyMappingRule(mappingRule);
     }
-    checkMonitorCanceled();
     for (Root_MappingRule rootMappingRule : ruleManager.getRoot_MappingRules()) {
+      checkMonitorCanceled();
       ruleUtil.applyRoot_MappingRule(rootMappingRule);
     }
 
@@ -115,29 +115,28 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       myOutputModel.addRoot(copiedOutputRoot);
     }
 
-    checkMonitorCanceled();
+    // weaving
     for (WeavingRule weavingRule : ruleManager.getWeavingRules()) {
+      checkMonitorCanceled();
       ruleUtil.applyWeavingRule(weavingRule);
     }
-    checkMonitorCanceled();
     for (Weaving_MappingRule weavingMappingRule : ruleManager.getWeaving_MappingRules()) {
+      checkMonitorCanceled();
       ruleUtil.applyWeavingMappingRule(weavingMappingRule);
     }
-    checkMonitorCanceled();
-    for (SNode outputRootNode : copiedOutputRoots) {
-      ruleManager.getReductionRuleManager().applyReductionRules(findInputNodeByOutputNodeWithSameId(outputRootNode));
-    }
 
-    for (SNode rootNode : myNewRootNodes) {
-      myOutputModel.addRoot(rootNode);
+    // reductions in copied roots (why here?)
+    for (SNode outputRootNode : copiedOutputRoots) {
+      checkMonitorCanceled();
+      ruleManager.getReductionRuleManager().applyReductionRules(findInputNodeByOutputNodeWithSameId(outputRootNode));
     }
 
     checkMonitorCanceled();
     myDelayedChanges.doAllChanges();
 
     // There could new unresolved references appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
-    checkMonitorCanceled();
     for (SNode copiedRoot : copiedOutputRoots) {
+      checkMonitorCanceled();
       invalidateReferencesInCopiedNode(copiedRoot);
     }
     updateAllReferences();
@@ -194,6 +193,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     ArrayList<ReferenceInfo> newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
 
     for (ReferenceInfo referenceInfo : referenceInfos) {
+      checkMonitorCanceled();
       referenceInfo.executeIndependentResolve(this);
       if (!referenceInfo.isSuccess()) {
         newReferenceInfos.add(referenceInfo);
@@ -203,6 +203,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     referenceInfos = newReferenceInfos;
     newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
     while (true) {
+      checkMonitorCanceled();
       for (ReferenceInfo referenceInfo : referenceInfos) {
         referenceInfo.executeDependentResolve(this);
         if (!referenceInfo.isSuccess()) {
@@ -217,6 +218,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     }
 
     for (ReferenceInfo unresolvedReferenceInfo : newReferenceInfos) {
+      checkMonitorCanceled();
       // hack
       unresolvedReferenceInfo.resolveAnyhow(this);
       if (!unresolvedReferenceInfo.isSuccess()) {
@@ -231,10 +233,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public SModel getTargetModel() {
     return myOutputModel;
-  }
-
-  public void addNewRootNode(SNode node) {
-    myNewRootNodes.add(node);
   }
 
   public void addRootNotToCopy(SNode inputNode) {
@@ -370,7 +368,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return result;
   }
 
-  public void addTopOutputNodeByInputNode(SNode inputNode, SNode outputNode) {
+  /*package*/ void addTopOutputNodeByInputNode(SNode inputNode, SNode outputNode) {
     List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
     if (list == null) {
       list = new ArrayList<SNode>();
@@ -379,7 +377,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     list.add(outputNode);
   }
 
-  public void addTopOutputNodesByInputNode(SNode inputNode, List<SNode> outputNodes) {
+  /*package*/ void addTopOutputNodesByInputNode(SNode inputNode, List<SNode> outputNodes) {
     List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
     if (list == null) {
       list = new ArrayList<SNode>();
@@ -388,14 +386,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     list.addAll(outputNodes);
   }
 
-
-  public INodeBuilder findRootNodeBuilder(Condition<INodeBuilder> condition) {
-    for (SNode rootNode : myNewRootNodes) {
-      SimpleNodeBuilder builder = new SimpleNodeBuilder(this, rootNode);
-      if (condition.met(builder)) return builder;
-    }
-    return null;
-  }
 
   //todo remove this after going to new generator
   private INodeBuilder myCurrentBuilder;

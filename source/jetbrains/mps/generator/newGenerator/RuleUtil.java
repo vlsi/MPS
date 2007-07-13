@@ -346,7 +346,7 @@ public class RuleUtil {
     List<SNode> outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
     if (outputNodes != null) {
       for (SNode outputNode : outputNodes) {
-        myGenerator.addNewRootNode(outputNode);
+        myGenerator.getTargetModel().addRoot(outputNode);
       }
     }
   }
