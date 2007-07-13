@@ -770,6 +770,10 @@
       <property name="name" value="showInPopup" />
       <link role="dataType" targetNodeId="3.1082983657063" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1184322083615">
+      <property name="name" value="menuAlwaysShown" />
+      <link role="dataType" targetNodeId="3.1082983657063" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1136916976737">
     <property name="name" value="CellKeyMapKeystroke" />

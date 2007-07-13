@@ -36,12 +36,13 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
 
     if (selectedCell != null) {
       List<Pair<EditorCellKeyMapAction, EditorCell>> actionsInfo = KeyMapUtil.getKeyMapActionsForEvent(selectedCell, keyEvent, editorContext);
-      if (actionsInfo.size() == 1) {
+      if (actionsInfo.size() == 1 && !(actionsInfo.get(0).o1.isMenuAlwaysShown())) {
         EditorCellKeyMapAction action = actionsInfo.get(0).o1;
         EditorCell contextCell = actionsInfo.get(0).o2;
         KeyMapUtil.executeKeyMapAction(action, keyEvent, contextCell, editorContext);
         return true;
-      } else if (actionsInfo.size() > 1) {
+      } else if (actionsInfo.size() > 1 ||
+              (actionsInfo.size() == 1 && actionsInfo.get(0).o1.isMenuAlwaysShown())) {
         // show menu
         EditorUtil.showActionsMenu(actionsInfo, keyEvent, editorContext, selectedCell);
         return true;

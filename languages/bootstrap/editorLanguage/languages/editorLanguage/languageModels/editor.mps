@@ -4384,6 +4384,19 @@
             <link role="relationDeclaration" targetNodeId="2.1163507208434" />
           </node>
         </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1184322213099">
+          <property name="vertical" value="false" />
+          <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1184322215648">
+            <property name="text" value="menu always shown" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1184322221931">
+            <property name="text" value=":" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1184322223387">
+            <link role="relationDeclaration" targetNodeId="2.1184322083615" />
+          </node>
+        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1136923130898">
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />

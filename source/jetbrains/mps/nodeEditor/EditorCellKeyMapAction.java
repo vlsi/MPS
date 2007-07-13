@@ -35,6 +35,10 @@ public abstract class EditorCellKeyMapAction {
     myCaretPolicy = policy;
   }
 
+  public boolean isMenuAlwaysShown() {
+    return false;
+  }
+
   public boolean isShownInPopupMenu() {
     return myShownInPopupMenu;
   }
