@@ -357,6 +357,9 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
 
+  /**
+   * @deprecated
+   */
   public List<INodeBuilder> findTopBuildersForSource(SNode inputNode) {
     List<INodeBuilder> result = new ArrayList<INodeBuilder>();
     List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
@@ -366,6 +369,14 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       }
     }
     return result;
+  }
+
+  public List<SNode> findTopOutputNodesForInputNode(SNode inputNode) {
+    List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
+    if (list != null) {
+      return new ArrayList(list);
+    }
+    return Collections.emptyList();
   }
 
   /*package*/ void addTopOutputNodeByInputNode(SNode inputNode, SNode outputNode) {

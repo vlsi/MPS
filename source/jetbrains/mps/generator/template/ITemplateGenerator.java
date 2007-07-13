@@ -55,7 +55,11 @@ public interface ITemplateGenerator {
   SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode);
 
 
+  /**
+   * @deprecated
+   */
   List<INodeBuilder> findTopBuildersForSource(SNode sourceNode);
+  List<SNode> findTopOutputNodesForInputNode(SNode inputNode);
 
   INodeBuilder getCurrentBuilder();
 

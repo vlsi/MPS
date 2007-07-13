@@ -1,6 +1,5 @@
 package jetbrains.mps.generator.newGenerator;
 
-import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.IReferenceResolver;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
@@ -36,12 +35,12 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     }
 
     {
-      List<INodeBuilder> builders = generator.findTopBuildersForSource(myInputTargetNode);
-      if (!builders.isEmpty()) {
+      // todo: do we really need this?
+      List<SNode> topOutputNodes = generator.findTopOutputNodesForInputNode(myInputTargetNode);
+      if (!topOutputNodes.isEmpty()) {
         String wasConcept = myInputTargetNode.getConceptFqName();
         SNode outputTargetNode = null;
-        for (INodeBuilder builder : builders) {
-          SNode _outputNode = builder.getTargetNode();
+        for (SNode _outputNode : topOutputNodes) {
           // same concept?
           if (_outputNode.getConceptFqName().equals(wasConcept)) {
             if (outputTargetNode != null) {
