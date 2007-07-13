@@ -116,7 +116,7 @@ public final class BehaviorManager {
       }
     }
 
-    throw new RuntimeException("Can't invoke_old a method " + methodName + " on node " + node);
+    throw new RuntimeException("Can't invoke_old a method " + methodName + " on node " + node + " " + node.getConceptFqName());
   }
 
 }
