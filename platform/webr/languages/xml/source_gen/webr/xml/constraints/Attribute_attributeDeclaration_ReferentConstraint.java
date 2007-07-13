@@ -36,7 +36,7 @@ public class Attribute_attributeDeclaration_ReferentConstraint implements IModel
       searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(model, scope);
     } else
     {
-      searchScope = new SimpleSearchScope(ElementDeclaration_Behavior.getAttributeDeclarations_1183587644932(SLinkOperations.getTarget(element, "elementDeclaration", false)));
+      searchScope = new SimpleSearchScope(ElementDeclaration_Behavior.call_getAttributeDeclarations_1183587644932(SLinkOperations.getTarget(element, "elementDeclaration", false)));
     }
     return searchScope;
   }
