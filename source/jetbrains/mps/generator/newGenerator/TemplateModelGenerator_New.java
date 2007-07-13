@@ -356,21 +356,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(templateNode, inputNode), outputNode);
   }
 
-
-  /**
-   * @deprecated
-   */
-  public List<INodeBuilder> findTopBuildersForSource(SNode inputNode) {
-    List<INodeBuilder> result = new ArrayList<INodeBuilder>();
-    List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
-    if (list != null) {
-      for (SNode outputNode : list) {
-        result.add(new SimpleNodeBuilder(this, outputNode));
-      }
-    }
-    return result;
-  }
-
   public List<SNode> getTopOutputNodesForInputNode(SNode inputNode) {
     List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
     if (list != null) {
