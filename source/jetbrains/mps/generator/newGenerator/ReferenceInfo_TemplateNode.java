@@ -87,6 +87,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
         if (outputTargetNode != null) {
           getOutputNode().addReferent(myTemplateReference.getRole(), outputTargetNode);
           setSuccess(true);
+          return;
         }
       }
     }

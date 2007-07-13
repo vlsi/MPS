@@ -583,8 +583,8 @@ public class RuleUtil {
       myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
       // output N should be accessible via 'findCopiedNode'
       myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, inputNode, outputNode);
-      myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
-      myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);
+// do we really need this?      myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
+// do we really need this?      myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);
     }
 
     myOutputModel.addLanguage(inputNode.getLanguage(myGenerator.getScope()));
