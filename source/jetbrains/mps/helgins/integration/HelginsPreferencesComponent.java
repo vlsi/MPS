@@ -2,7 +2,6 @@ package jetbrains.mps.helgins.integration;
 
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
-import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.project.ApplicationComponents;
@@ -27,6 +26,8 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
 
   private @Externalizable boolean myUsesIncrementalAlgorithm = false;
 
+  private @Externalizable boolean myUsesDebugHighlighting = false;
+
   public static HelginsPreferencesComponent getInstance() {
     return ApplicationComponents.getInstance().getComponent(HelginsPreferencesComponent.class);
   }
@@ -39,14 +40,21 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
     return myUsesIncrementalAlgorithm;
   }
 
+  public boolean isUsesDebugHighlighting() {
+    return myUsesDebugHighlighting;
+  }
+
   private class MyPreferencesPage implements IPreferencesPage {
-    private JCheckBox myCheckBox = new JCheckBox("Use incremental algorithm");
+    private JCheckBox myIncrementalCheckBox = new JCheckBox("Use incremental algorithm");
+    private JCheckBox myHighlightingCheckBox = new JCheckBox("Use debug highlighting");
     private JPanel myComponent = new JPanel(new BorderLayout());
 
     public MyPreferencesPage() {
-      JPanel panel = new JPanel(new GridLayout(1,1));
-      myCheckBox.setSelected(myUsesIncrementalAlgorithm);
-      panel.add(myCheckBox);
+      JPanel panel = new JPanel(new GridLayout(2,1));
+      myIncrementalCheckBox.setSelected(myUsesIncrementalAlgorithm);
+      myHighlightingCheckBox.setSelected(myUsesDebugHighlighting);
+      panel.add(myIncrementalCheckBox);
+      panel.add(myHighlightingCheckBox);
       myComponent.add(panel, BorderLayout.NORTH);
     }
 
@@ -63,10 +71,15 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
     }
 
     public void commit() {
-      boolean selected = myCheckBox.isSelected();
-      boolean changed = (myUsesIncrementalAlgorithm != selected);
-      if (changed) {
-        myUsesIncrementalAlgorithm = selected;
+      boolean selectedIncremental = myIncrementalCheckBox.isSelected();
+      boolean changedIncremental = (myUsesIncrementalAlgorithm != selectedIncremental);
+      boolean selectedHighlighting = myHighlightingCheckBox.isSelected();
+      boolean changedHighlighting = (myUsesDebugHighlighting != selectedHighlighting);
+      if (changedHighlighting) {
+        myUsesDebugHighlighting = selectedHighlighting;
+      }
+      if (changedIncremental) {
+        myUsesIncrementalAlgorithm = selectedIncremental;
         NodeTypesComponentsRepository.getInstance().clear();
         TypeChecker.getInstance().clearForReload();
       }

@@ -10,6 +10,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.helgins.structure.RuntimeErrorType;
+import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
 import jetbrains.mps.refactoring.CopyUtil;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
@@ -66,7 +67,7 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
   public NodeTypesComponent_new(SNode rootNode, TypeChecker typeChecker) {
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
-   // myProject = project;
+    // myProject = project;
     myEquationManagersStack.push(new EquationManager(myTypeChecker, this));
   }
 
@@ -190,15 +191,17 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
         addOurListener(nodeToDependOn.getModel().getModelDescriptor());
       }
       final Set<SNodeProxy> skippedNodes = new HashSet<SNodeProxy>(myNotSkippedNodes);
-      CommandProcessor.instance().invokeLater(new Runnable() {
-        public void run() {
-          AbstractEditorComponent component = getEditorComponent();
-          if (component == null) return;
-          for (SNodeProxy skippedNode : skippedNodes) {
-            component.getHighlightManager().mark(skippedNode.getNode(), new Color(255, 127, 0, 50),"", NodeTypesComponent_new.this);
+      if (HelginsPreferencesComponent.getInstance().isUsesDebugHighlighting()) {
+        CommandProcessor.instance().invokeLater(new Runnable() {
+          public void run() {
+            AbstractEditorComponent component = getEditorComponent();
+            if (component == null) return;
+            for (SNodeProxy skippedNode : skippedNodes) {
+              component.getHighlightManager().mark(skippedNode.getNode(), new Color(255, 127, 0, 50),"", NodeTypesComponent_new.this);
+            }
           }
-        }
-      });
+        });
+      }
     } finally{
       myTypeChecker.clearCurrentTypesComponent();
       myNotSkippedNodes.clear();
