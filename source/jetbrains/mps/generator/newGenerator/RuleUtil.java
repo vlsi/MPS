@@ -419,21 +419,16 @@ public class RuleUtil {
           if (mapperId != null || macro_mapperFunction != null) {
             SNode childToReplaceLater = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
             outputNodes.add(childToReplaceLater);
-            // todo: the 'childToReplaceLater' will be registered as TopOutputNodes for the inputNode,
-            // todo: but it will be replaced later with actual output-node.
-            // todo: the map entry should be updated when this node is replaced by the actual output-node.
             // execute the 'mapper' function later
-            // todo: the 'mapping name' is lost ?
             myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(nodeMacro, childToReplaceLater, newInputNode, myGenerator);
           } else {
             List<SNode> outputChildNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
             if (outputChildNodes != null) {
               outputNodes.addAll(outputChildNodes);
+              if (registerTopOutput && !inputChanged) {
+                myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
+              }
             }
-          }
-
-          if (registerTopOutput && !inputChanged) {
-            myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
           }
         }
         return outputNodes;
