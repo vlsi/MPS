@@ -27,6 +27,9 @@ public class CastExpression_KeyMap extends EditorCellKeyMap {
     public String getDescriptionText() {
       return "fills cast type of cast expression";
     }
+    public boolean isMenuAlwaysShown() {
+      return false;
+    }
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if((contextCell == null)) {

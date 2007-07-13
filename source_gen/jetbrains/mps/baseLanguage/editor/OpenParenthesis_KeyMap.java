@@ -28,6 +28,9 @@ public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
     public String getDescriptionText() {
       return "move opening parenthesis to the left";
     }
+    public boolean isMenuAlwaysShown() {
+      return false;
+    }
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if((contextCell == null)) {
@@ -58,6 +61,9 @@ public class OpenParenthesis_KeyMap extends EditorCellKeyMap {
 
     public String getDescriptionText() {
       return "move opening parenthesis to the right";
+    }
+    public boolean isMenuAlwaysShown() {
+      return false;
     }
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();

@@ -77,7 +77,7 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       List<String> result;
       SNode nodeType = SLinkOperations.getTarget(node, "type", true);
       if(nodeType != null) {
-        result = Type_Behavior.callVirtual_getVariableSuffixes_1182416669983(nodeType);
+        result = Type_Behavior.call_getVariableSuffixes_1182416669983(nodeType);
       } else
       {
         result = ListOperations.createList(new String[]{});

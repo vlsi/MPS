@@ -28,6 +28,9 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
     public String getDescriptionText() {
       return "try to coerce type";
     }
+    public boolean isMenuAlwaysShown() {
+      return false;
+    }
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if((contextCell == null)) {

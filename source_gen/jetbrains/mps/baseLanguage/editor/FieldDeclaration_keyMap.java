@@ -30,6 +30,9 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     public String getDescriptionText() {
       return "Generate getter";
     }
+    public boolean isMenuAlwaysShown() {
+      return false;
+    }
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if((contextCell == null)) {
@@ -50,12 +53,12 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     }
     public boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-      return (classConcept != null) && !(FieldDeclaration_Behavior.hasGetter_1184161255813(node, classConcept));
+      return (classConcept != null) && !(FieldDeclaration_Behavior.call_hasGetter_1184161255813(node, classConcept));
     }
     public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       SNode getterMethod = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      SPropertyOperations.set(getterMethod, "name", FieldDeclaration_Behavior.getGetterName_1184160785366(node));
+      SPropertyOperations.set(getterMethod, "name", FieldDeclaration_Behavior.call_getGetterName_1184160785366(node));
       SLinkOperations.setTarget(getterMethod, "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), true);
       SNode rs = SLinkOperations.addNewChild(SLinkOperations.getTarget(getterMethod, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");
       SNode fr = SLinkOperations.setNewChild(rs, "expression", "jetbrains.mps.baseLanguage.structure.FieldReference");
@@ -72,6 +75,9 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     public String getDescriptionText() {
       return "Generate setter";
     }
+    public boolean isMenuAlwaysShown() {
+      return false;
+    }
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if((contextCell == null)) {
@@ -92,12 +98,12 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     }
     public boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-      return (classConcept != null) && !(FieldDeclaration_Behavior.hasSetter_1184161485385(node, classConcept));
+      return (classConcept != null) && !(FieldDeclaration_Behavior.call_hasSetter_1184161485385(node, classConcept));
     }
     public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       SNode setterMethod = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      SPropertyOperations.set(setterMethod, "name", FieldDeclaration_Behavior.getSetterName_1184160800181(node));
+      SPropertyOperations.set(setterMethod, "name", FieldDeclaration_Behavior.call_getSetterName_1184160800181(node));
       SLinkOperations.setNewChild(setterMethod, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
       SNode parameter = SLinkOperations.addNewChild(setterMethod, "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
       SPropertyOperations.set(parameter, "name", SPropertyOperations.getString(node, "name"));
