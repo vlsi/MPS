@@ -202,7 +202,7 @@ public class TemplateGenUtil {
   }
 
   private static List<SNode> getSourceNodesForSwitchMacro(SNode sourceNode, SwitchMacro macro, ITemplateGenerator generator) {
-    List<SNode> sourceNodes = new LinkedList<SNode>();
+    List<SNode> sourceNodes = new ArrayList<SNode>(1);
 
     // in SWITCH query is optional?
     String sourceQueryAspectMethodName = macro.getSourceQueryAspectMethodName();
