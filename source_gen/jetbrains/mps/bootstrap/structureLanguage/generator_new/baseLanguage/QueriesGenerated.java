@@ -18,6 +18,8 @@ import jetbrains.mps.bootstrap.structureLanguage.generator_new.util.QueriesUtil;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
 public class QueriesGenerated {
 
@@ -349,5 +351,56 @@ public class QueriesGenerated {
       generator.showErrorMessage(enumDataType, "Can't generate value for type " + SPropertyOperations.getString(memberDataType, "name"));
     }
     return targetInternalValueExpression;
+  }
+  public static SNode templateFragment_ContextNodeQuery_1184375448947(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
+    List<SNode> methods = SLinkOperations.getTargets(mainContextNode, "method", true);
+    {
+      ICursor<SNode> _zCursor9 = CursorFactory.createCursor(methods);
+      try {
+        while(_zCursor9.moveToNext()) {
+          SNode method = _zCursor9.getCurrent();
+          if("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
+            return SLinkOperations.getTarget(method, "body", true);
+          }
+        }
+      } finally {
+        _zCursor9.release();
+      }
+    }
+    return null;
+  }
+  public static SNode templateFragment_ContextNodeQuery_1184375942612(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
+    List<SNode> methods = SLinkOperations.getTargets(mainContextNode, "method", true);
+    {
+      ICursor<SNode> _zCursor10 = CursorFactory.createCursor(methods);
+      try {
+        while(_zCursor10.moveToNext()) {
+          SNode method = _zCursor10.getCurrent();
+          if("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
+            return SLinkOperations.getTarget(method, "body", true);
+          }
+        }
+      } finally {
+        _zCursor10.release();
+      }
+    }
+    return null;
+  }
+  public static SNode templateFragment_ContextNodeQuery_1184375906184(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
+    List<SNode> methods = SLinkOperations.getTargets(mainContextNode, "method", true);
+    {
+      ICursor<SNode> _zCursor11 = CursorFactory.createCursor(methods);
+      try {
+        while(_zCursor11.moveToNext()) {
+          SNode method = _zCursor11.getCurrent();
+          if("getValueAsString".equals(SPropertyOperations.getString(method, "name"))) {
+            return SLinkOperations.getTarget(method, "body", true);
+          }
+        }
+      } finally {
+        _zCursor11.release();
+      }
+    }
+    return null;
   }
 }

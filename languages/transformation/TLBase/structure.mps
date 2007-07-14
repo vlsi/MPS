@@ -232,12 +232,21 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1095672379244">
     <property name="name" value="TemplateFragment" />
     <link role="extends" targetNodeId="2.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184374535435">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="contextNodeQuery" />
+      <link role="target" targetNodeId="1184373935793" resolveInfo="TemplateFragment_ContextNodeQuery" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175152860919">
       <link role="intfc" targetNodeId="2.1169194658468" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1095757900618">
       <property name="name" value="contextProviderAspectId" />
       <link role="dataType" targetNodeId="2.1082983041843" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184373534966">
+      <property name="value" value="'contextProviderAspectId' is deprecated" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1180129508254" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112730859144">
@@ -1122,6 +1131,45 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177093666168">
       <property name="value" value="in-line template" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184373935793">
+    <property name="name" value="TemplateFragment_ContextNodeQuery" />
+    <link role="extends" targetNodeId="6.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1184373935794">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1137545148427" />
+      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1184373935795" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184373935796">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1167169188348" resolveInfo="TemplateFunctionParameter_sourceNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184374199490">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1184374096829" resolveInfo="TemplateFunctionParameter_mainContextNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184373935798">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184373935801">
+      <property name="value" value="template fragment context node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184374096829">
+    <property name="name" value="TemplateFunctionParameter_mainContextNode" />
+    <link role="extends" targetNodeId="6.1107135704075" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184374096830">
+      <property name="value" value="mainContextNode" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1184374096831">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1184374690382">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1137545963098" />
+      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1184374694259" />
     </node>
   </node>
 </model>

@@ -44,6 +44,9 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1170727064429(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return TemplateFunctionMethodName.mapSrcMacro_MapperFunction(node);
   }
+  public static Object propertyMacro_GetPropertyValue_1184374857703(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return TemplateFunctionMethodName.templateFragment_ContextNodeQuery(node);
+  }
   public static SNode referenceMacro_GetReferent_1167774837569(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     String alias = SConceptPropertyOperations.getString(node, "alias");
     if(alias == null) {
@@ -97,6 +100,9 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1170727064418(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
   }
+  public static SNode sourceNodeQuery_1184374857693(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
+  }
   public static SNode mapSrcMacro_mapper_1178910515264(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
   }
@@ -113,6 +119,9 @@ public class QueriesGenerated {
     return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
   }
   public static SNode mapSrcMacro_mapper_1178913590671(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
+  }
+  public static SNode mapSrcMacro_mapper_1184374857711(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
   }
 }
