@@ -288,7 +288,7 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
   }
   public EditorCell createAffectedInstanceConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new MigrationScriptPart_Instance_Editor.MigrationScriptPart_Instance_Editor_affectedInstanceConcept_InlineComponent());
+    provider.setAuxiliaryCellProvider(new MigrationScriptPart_Instance_Editor._Inline1());
     EditorCell editorCell = provider.createEditorCell(context);
     MigrationScriptPart_Instance_Editor.setupBasic_AffectedInstanceConceptReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -367,9 +367,9 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
-  public static class MigrationScriptPart_Instance_Editor_affectedInstanceConcept_InlineComponent extends AbstractCellProvider {
+  public static class _Inline1 extends AbstractCellProvider {
 
-    public  MigrationScriptPart_Instance_Editor_affectedInstanceConcept_InlineComponent() {
+    public  _Inline1() {
       super();
     }
 
@@ -390,9 +390,9 @@ public class MigrationScriptPart_Instance_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      MigrationScriptPart_Instance_Editor.MigrationScriptPart_Instance_Editor_affectedInstanceConcept_InlineComponent.setupBasic_NameCell(editorCell, node, context);
+      MigrationScriptPart_Instance_Editor._Inline1.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        MigrationScriptPart_Instance_Editor.MigrationScriptPart_Instance_Editor_affectedInstanceConcept_InlineComponent.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        MigrationScriptPart_Instance_Editor._Inline1.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
