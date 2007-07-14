@@ -306,6 +306,9 @@ public class DOM2 extends TreePath<Node> {
     public String getName() {
       return "attributes";
     }
+    public Object getNodeType() {
+      return Node.class;
+    }
     public IFeatureDescriptor.Type getType() {
       return IFeatureDescriptor.Type.SEQUENCE;
     }
@@ -323,6 +326,9 @@ public class DOM2 extends TreePath<Node> {
     }
     public String getName() {
       return "nodes";
+    }
+    public Object getNodeType() {
+      return Node.class;
     }
     public IFeatureDescriptor.Type getType() {
       return IFeatureDescriptor.Type.LIST;
