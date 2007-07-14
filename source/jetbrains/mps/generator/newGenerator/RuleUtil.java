@@ -172,7 +172,7 @@ public class RuleUtil {
     boolean allFragmentsWhichUseDefaultContextHaveSameParent = true;
     SNode defaultContext = null;
     for (TemplateFragment templateFragment : templateFragments) {
-      if (templateFragment.getContextProviderAspectId() == null) { // uses <default context>
+      if (templateFragment.getContextProviderAspectId() == null && templateFragment.getContextNodeQuery() == null) { // uses <default context>
         SNode fragmentContextNode = BaseAdapter.fromAdapter(templateFragment.getParent().getParent());
         if (defaultContext == null) {
           defaultContext = fragmentContextNode;
@@ -184,7 +184,7 @@ public class RuleUtil {
     }
     if (!allFragmentsWhichUseDefaultContextHaveSameParent) {
       for (TemplateFragment templateFragment : templateFragments) {
-        if (templateFragment.getContextProviderAspectId() == null) { // uses <default context>
+        if (templateFragment.getContextProviderAspectId() == null && templateFragment.getContextNodeQuery() == null) { // uses <default context>
           myGenerator.showErrorMessage(null, templateFragment.getNode(), null, "template fragment uses <default context>: conflicts with other fragments which use <default context>");
         }
       }
@@ -196,7 +196,7 @@ public class RuleUtil {
       SNode templateFragmentNode = BaseAdapter.fromAdapter(templateFragment.getParent());
       SNode contextParentNode = null;
       try {
-        contextParentNode = getContextNodeForTemplateFragment(templateFragmentNode, outputContextNode);
+        contextParentNode = getContextNodeForTemplateFragment(inputNode, templateFragmentNode, outputContextNode);
       } catch (Exception e) {
         LOG.error(e);
       }
@@ -215,9 +215,11 @@ public class RuleUtil {
     }
   }
 
-  private SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode) {
+  private SNode getContextNodeForTemplateFragment(SNode inputNode, SNode templateFragmentNode, SNode mainContextNode) {
     TemplateFragment fragment = TemplateFragment_AnnotationLink.getTemplateFragment((BaseConcept) templateFragmentNode.getAdapter());
     // has custom context builder provider?
+
+    // old
     String aspectId = fragment.getContextProviderAspectId();
     if (aspectId != null) {
       String methodName = "templateFragment_Context_" + aspectId;
@@ -226,6 +228,24 @@ public class RuleUtil {
       if (nodeBuilder == null) return null;
       return nodeBuilder.getTargetNode();
     }
+
+    // new
+    TemplateFragment_ContextNodeQuery query = fragment.getContextNodeQuery();
+    if(query != null) {
+      String methodName = TemplateFunctionMethodName.templateFragment_ContextNodeQuery(query.getNode());
+      Object[] args = new Object[]{
+              inputNode,
+              mainContextNode,
+              myGenerator};
+      try {
+        return (SNode) QueryMethodGenerated.invoke(methodName, args, query.getModel());
+      } catch (Exception e) {
+        myGenerator.showErrorMessage(inputNode, null, templateFragmentNode, "couldn't evaluate template fragment context query");
+        LOG.error(e);
+        return null;
+      }
+    }
+
     // ok, main context node by default
     return mainContextNode;
   }
