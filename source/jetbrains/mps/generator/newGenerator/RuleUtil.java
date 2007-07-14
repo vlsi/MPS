@@ -139,6 +139,9 @@ public class RuleUtil {
   }
 
 
+  /**
+   * old
+   */
   public void applyWeavingRule(WeavingRule rule) {
     TemplateDeclaration templateDeclaration = rule.getTemplate();
     List<SNode> inputNodes = createInputNodeListForWeavingRule(rule);
@@ -149,11 +152,11 @@ public class RuleUtil {
         continue;
       }
       myGenerator.setChanged(true);
-      weaveTemplateDeclaration(inputNode, templateDeclaration, contextNodeBuilder, rule.getNode());
+      weaveTemplateDeclaration(inputNode, templateDeclaration, contextNodeBuilder.getTargetNode(), rule.getNode());
     }
   }
 
-  private void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template, INodeBuilder contextNodeBuilder, SNode ruleNode) {
+  private void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, SNode ruleNode) {
     if (template == null) {
       myGenerator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't evaluate weaving rule: no template");
       return;
@@ -193,7 +196,7 @@ public class RuleUtil {
       SNode templateFragmentNode = BaseAdapter.fromAdapter(templateFragment.getParent());
       SNode contextParentNode = null;
       try {
-        contextParentNode = getContextNodeForTemplateFragment(templateFragmentNode, contextNodeBuilder);
+        contextParentNode = getContextNodeForTemplateFragment(templateFragmentNode, outputContextNode);
       } catch (Exception e) {
         LOG.error(e);
       }
@@ -212,19 +215,19 @@ public class RuleUtil {
     }
   }
 
-  private SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, INodeBuilder contextNodeBuilder) {
+  private SNode getContextNodeForTemplateFragment(SNode templateFragmentNode, SNode mainContextNode) {
     TemplateFragment fragment = TemplateFragment_AnnotationLink.getTemplateFragment((BaseConcept) templateFragmentNode.getAdapter());
     // has custom context builder provider?
     String aspectId = fragment.getContextProviderAspectId();
     if (aspectId != null) {
       String methodName = "templateFragment_Context_" + aspectId;
-      Object[] args = new Object[]{templateFragmentNode, contextNodeBuilder, myGenerator};
+      Object[] args = new Object[]{templateFragmentNode, new SimpleNodeBuilder(myGenerator, mainContextNode), myGenerator};
       INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, fragment.getModel());
       if (nodeBuilder == null) return null;
       return nodeBuilder.getTargetNode();
     }
-    // ok, rule context builder by default
-    return contextNodeBuilder.getTargetNode();
+    // ok, main context node by default
+    return mainContextNode;
   }
 
 
@@ -282,22 +285,26 @@ public class RuleUtil {
     for (SNode applicableNode : nodes) {
       if (checkConditionForBaseMappingRule(applicableNode, rule)) {
         myGenerator.setChanged(true);
-        INodeBuilder contextNodeBuilder = getContextNodeForWeavingingRule(applicableNode, rule.getNode(), rule.getContextProviderAspectId());
-        if (contextNodeBuilder == null) {
-          myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
-          continue;
+        SNode outputContextNode = null;
+        {
+          INodeBuilder contextNodeBuilder = getContextNodeForWeavingingRule(applicableNode, rule.getNode(), rule.getContextProviderAspectId());
+          if (contextNodeBuilder == null) {
+            myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
+            continue;
+          }
+          outputContextNode = contextNodeBuilder.getTargetNode();
         }
 
         // old
         TemplateDeclaration template = rule.getTemplate();
         if (template != null) {
-          weaveTemplateDeclaration(applicableNode, template, contextNodeBuilder, rule.getNode());
+          weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule.getNode());
         } else {
           // new
           RuleConsequence ruleConsequence = rule.getRuleConsequence();
           if (ruleConsequence instanceof TemplateDeclarationReference) {
             template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
-            weaveTemplateDeclaration(applicableNode, template, contextNodeBuilder, rule.getNode());
+            weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule.getNode());
 
           } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
             WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
@@ -309,7 +316,7 @@ public class RuleUtil {
             template = weaveEach.getTemplate();
             List<SNode> queryNodes = evaluateSourceNodesQuery(applicableNode, nodesQuery, ruleConsequence.getNode());
             for (SNode queryNode : queryNodes) {
-              weaveTemplateDeclaration(queryNode, template, contextNodeBuilder, rule.getNode());
+              weaveTemplateDeclaration(queryNode, template, outputContextNode, rule.getNode());
             }
           } else {
             myGenerator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "unsapported rule consequence");
