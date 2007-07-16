@@ -16,6 +16,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperati
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
+import jetbrains.mps.bootstrap.constraintsLanguage.generator.baseLanguage.template.util.QueriesUtil;
 
 public class QueriesGenerated {
 
@@ -108,5 +109,29 @@ public class QueriesGenerated {
   }
   public static SNode sourceNodeQuery_1177762503932(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return node;
+  }
+  public static SNode templateFragment_ContextNodeQuery_1184605541559(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
+    return QueriesUtil.get_registerSelf_body(mainContextNode);
+  }
+  public static SNode templateFragment_ContextNodeQuery_1184607178268(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
+    return QueriesUtil.get_unRegisterSelf_body(mainContextNode);
+  }
+  public static SNode templateFragment_ContextNodeQuery_1184607261276(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
+    return QueriesUtil.get_registerSelf_body(mainContextNode);
+  }
+  public static SNode templateFragment_ContextNodeQuery_1184607289879(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
+    return QueriesUtil.get_unRegisterSelf_body(mainContextNode);
+  }
+  public static SNode templateFragment_ContextNodeQuery_1184606850811(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
+    return QueriesUtil.get_registerSelf_body(mainContextNode);
+  }
+  public static SNode templateFragment_ContextNodeQuery_1184606951866(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
+    return QueriesUtil.get_unRegisterSelf_body(mainContextNode);
+  }
+  public static SNode templateFragment_ContextNodeQuery_1184607373557(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
+    return QueriesUtil.get_registerSelf_body(mainContextNode);
+  }
+  public static SNode templateFragment_ContextNodeQuery_1184607409488(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
+    return QueriesUtil.get_unRegisterSelf_body(mainContextNode);
   }
 }
