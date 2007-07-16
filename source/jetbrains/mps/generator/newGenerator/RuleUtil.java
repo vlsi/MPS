@@ -146,13 +146,13 @@ public class RuleUtil {
     TemplateDeclaration templateDeclaration = rule.getTemplate();
     List<SNode> inputNodes = createInputNodeListForWeavingRule(rule);
     for (SNode inputNode : inputNodes) {
-      INodeBuilder contextNodeBuilder = getContextNodeForWeavingingRule(inputNode, rule.getNode(), rule.getContextProviderAspectId());
-      if (contextNodeBuilder == null) {
+      SNode outputContextNode = getContextNodeForWeavingingRule(inputNode, rule.getNode(), rule.getContextProviderAspectId(), null);
+      if (outputContextNode == null) {
         myGenerator.showErrorMessage(inputNode, rule.getNode(), "couldn't create context node");
         continue;
       }
       myGenerator.setChanged(true);
-      weaveTemplateDeclaration(inputNode, templateDeclaration, contextNodeBuilder.getTargetNode(), rule.getNode());
+      weaveTemplateDeclaration(inputNode, templateDeclaration, outputContextNode, rule.getNode());
     }
   }
 
@@ -231,7 +231,7 @@ public class RuleUtil {
 
     // new
     TemplateFragment_ContextNodeQuery query = fragment.getContextNodeQuery();
-    if(query != null) {
+    if (query != null) {
       String methodName = TemplateFunctionMethodName.templateFragment_ContextNodeQuery(query.getNode());
       Object[] args = new Object[]{
               inputNode,
@@ -263,20 +263,38 @@ public class RuleUtil {
     return templateFragments;
   }
 
-  private INodeBuilder getContextNodeForWeavingingRule(SNode inputNode, SNode ruleNode, String aspectId) {
-    try {
-      String methodName = "templateWeavingRule_Context_" + aspectId;
-      Object[] args = new Object[]{inputNode, myGenerator};
-      INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, ruleNode.getModel());
-      if (nodeBuilder == null) {
-        myGenerator.showErrorMessage(inputNode, null, ruleNode, "Query Method returned null");
-        return null;
+  private SNode getContextNodeForWeavingingRule(SNode inputNode, SNode ruleNode, String aspectId, Weaving_MappingRule_ContextNodeQuery query) {
+    // old
+    if (aspectId != null) {
+      try {
+        String methodName = "templateWeavingRule_Context_" + aspectId;
+        Object[] args = new Object[]{inputNode, myGenerator};
+        INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, ruleNode.getModel());
+        if (nodeBuilder == null) {
+          myGenerator.showErrorMessage(inputNode, null, ruleNode, "Query Method returned null");
+          return null;
+        }
+        return nodeBuilder.getTargetNode();
+      } catch (Throwable t) {
+        myGenerator.showErrorMessage(inputNode, null, ruleNode, t.getClass().getName());
+        throw new RuntimeException(t);
       }
-      return nodeBuilder;
-    } catch (Throwable t) {
-      myGenerator.showErrorMessage(inputNode, null, ruleNode, t.getClass().getName());
-      throw new RuntimeException(t);
     }
+
+    // new
+    if (query != null) {
+      String methodName = TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(query.getNode());
+      Object[] args = new Object[]{
+              inputNode,
+              myGenerator};
+      try {
+        return (SNode) QueryMethodGenerated.invoke(methodName, args, query.getModel());
+      } catch (Exception e) {
+        myGenerator.showErrorMessage(inputNode, null, ruleNode, "couldn't evaluate rule context query");
+        LOG.error(e);
+      }
+    }
+    return null;
   }
 
 
@@ -304,16 +322,12 @@ public class RuleUtil {
     List<SNode> nodes = myGenerator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
     for (SNode applicableNode : nodes) {
       if (checkConditionForBaseMappingRule(applicableNode, rule)) {
-        myGenerator.setChanged(true);
-        SNode outputContextNode = null;
-        {
-          INodeBuilder contextNodeBuilder = getContextNodeForWeavingingRule(applicableNode, rule.getNode(), rule.getContextProviderAspectId());
-          if (contextNodeBuilder == null) {
-            myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
-            continue;
-          }
-          outputContextNode = contextNodeBuilder.getTargetNode();
+        SNode outputContextNode = getContextNodeForWeavingingRule(applicableNode, rule.getNode(), rule.getContextProviderAspectId(), rule.getContextNodeQuery());
+        if (outputContextNode == null) {
+          myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
+          continue;
         }
+        myGenerator.setChanged(true);
 
         // old
         TemplateDeclaration template = rule.getTemplate();
