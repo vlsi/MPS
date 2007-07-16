@@ -1210,7 +1210,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                 String nodeClasName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
                 String s = "";
                 if (herror != null) {
-                  s += herror + "\n";
+                  s += "TYPE ERROR: " + herror + "\n";
                 }
                 if (status != null) {
                   s += status.getMessage();
@@ -1220,7 +1220,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             });
             return;
           }
-          TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
           selectedNode = selectedNode.getParent();
         }
       }

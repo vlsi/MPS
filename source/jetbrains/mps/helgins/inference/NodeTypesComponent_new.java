@@ -185,7 +185,7 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
 
       // setting expanded errors
       for (SNode node : new HashSet<SNode>(myNodesToErrorsMap.keySet())) {
-        String errorString = "HELGINS ERROR: " + myNodesToErrorsMap.get(node).reportError();
+        String errorString = myNodesToErrorsMap.get(node).reportError();
         myNodesToErrorsMap.put(node, new SimpleErrorReporter(errorString));
       }
 

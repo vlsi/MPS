@@ -2,8 +2,7 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.CollectionUtil;
@@ -761,7 +760,15 @@ public class EquationManager {
     private String myErrorString;
     private SNode myNodeWithError;
 
+    private String myRuleModel;
+    private String myRuleId;
+
     public ErrorInfo(SNode nodeWithError, String errorString) {
+      myErrorString = errorString;
+      myNodeWithError = nodeWithError;
+    }
+
+    public ErrorInfo(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
       myErrorString = errorString;
       myNodeWithError = nodeWithError;
     }
@@ -772,6 +779,12 @@ public class EquationManager {
 
     public SNode getNodeWithError() {
       return myNodeWithError;
+    }
+
+    public SNode findRuleNode() {
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(myRuleModel));
+      if (modelDescriptor == null) return null;
+      return modelDescriptor.getSModel().getNodeById(myRuleId);
     }
   }
 
