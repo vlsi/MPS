@@ -59,6 +59,8 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
   private MyModelListener myModelListener = new MyModelListener();
   private MyEventsReadListener myNodesReadListener = new MyEventsReadListener();
 
+  private Set<SNode> myCurrentNodesToInvalidate = new HashSet<SNode>();
+
   // for diagnostics
   private Set<SNodeProxy> myNotSkippedNodes = new HashSet<SNodeProxy>();
 
@@ -92,6 +94,7 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
   private void clearNodesTypes() {
     myNodesToTypesMap.clear();
     myNodesToErrorsMap.clear();
+    myCurrentNodesToInvalidate.clear();
     myVariableChar = A_CHAR;
     myVariableIndex = 0;
   }
@@ -150,6 +153,7 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
           component.getHighlightManager().clearForOwner(this);
         }
 
+        doInvalidate();
         myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
         myFullyCheckedNodes.clear();
         /* myNodesToErrorsMap.clear();
@@ -440,41 +444,10 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
     return result;
   }
 
-
-  private class MyModelListener implements SModelCommandListener {
-    public void modelChangedInCommand(List<SModelEvent> events) {
-      final Set<SNode> nodesToInvalidate = new HashSet<SNode>();
-      for (SModelEvent event : events) {
-        event.accept(new SModelEventVisitorAdapter() {
-
-          public void visitChildEvent(SModelChildEvent event) {
-            /* SNode eventNode;
-            if (event.isRemoved()) {
-              eventNode = event.getChild();
-            } else {
-              eventNode = event.getParent();
-            }*/
-            // markDependentNodesForInvalidation(eventNode, nodesToInvalidate);
-            markDependentNodesForInvalidation(event.getChild(), nodesToInvalidate);
-            markDependentNodesForInvalidation(event.getParent(), nodesToInvalidate);
-          }
-
-          public void visitReferenceEvent(SModelReferenceEvent event) {
-            /*  SNode eventNode;
-            if (event.isRemoved()) {
-              eventNode = event.getReference().getTargetNode();
-            } else {
-              eventNode = event.getReference().getSourceNode();
-            }*/
-            // markDependentNodesForInvalidation(eventNode, nodesToInvalidate);
-            markDependentNodesForInvalidation(event.getReference().getSourceNode(), nodesToInvalidate);
-            markDependentNodesForInvalidation(event.getReference().getTargetNode(), nodesToInvalidate);
-          }
-        });
-      }
+   private void doInvalidate() {
       Set<SNode> invalidatedNodes = new HashSet<SNode>();
       Set<SNode> newNodesToInvalidate = new HashSet<SNode>();
-      Set<SNode> currentNodesToInvalidate = nodesToInvalidate;
+      Set<SNode> currentNodesToInvalidate = myCurrentNodesToInvalidate;
       while (!currentNodesToInvalidate.isEmpty()) {
         for (SNode nodeToInvalidate : currentNodesToInvalidate) {
           if (invalidatedNodes.contains(nodeToInvalidate)) continue;
@@ -487,6 +460,25 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
         }
         currentNodesToInvalidate = newNodesToInvalidate;
         newNodesToInvalidate = new HashSet<SNode>();
+      }
+      myCurrentNodesToInvalidate.clear();
+    }
+
+
+  private class MyModelListener implements SModelCommandListener {
+    public void modelChangedInCommand(List<SModelEvent> events) {
+      for (SModelEvent event : events) {
+        event.accept(new SModelEventVisitorAdapter() {
+
+          public void visitChildEvent(SModelChildEvent event) {
+            markDependentNodesForInvalidation(event.getChild(), myCurrentNodesToInvalidate);
+            markDependentNodesForInvalidation(event.getParent(), myCurrentNodesToInvalidate);
+          }
+
+          public void visitReferenceEvent(SModelReferenceEvent event) {
+            markDependentNodesForInvalidation(event.getReference().getSourceNode(), myCurrentNodesToInvalidate);
+          }
+        });
       }
     }
 
