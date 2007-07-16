@@ -133,4 +133,34 @@ public class QueriesGenerated {
   public static SNode mapSrcMacro_mapper_1184617630772(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
   }
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619599466(SNode node, ITemplateGenerator generator) {
+    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+  }
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619796790(SNode node, ITemplateGenerator generator) {
+    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+  }
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619844945(SNode node, ITemplateGenerator generator) {
+    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+  }
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619847603(SNode node, ITemplateGenerator generator) {
+    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+  }
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619852561(SNode node, ITemplateGenerator generator) {
+    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+  }
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619865210(SNode node, ITemplateGenerator generator) {
+    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+  }
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619868267(SNode node, ITemplateGenerator generator) {
+    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+  }
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619877062(SNode node, ITemplateGenerator generator) {
+    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+  }
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619879860(SNode node, ITemplateGenerator generator) {
+    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+  }
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619882833(SNode node, ITemplateGenerator generator) {
+    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+  }
 }
