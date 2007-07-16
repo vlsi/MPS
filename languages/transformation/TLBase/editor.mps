@@ -4577,6 +4577,21 @@
                 </node>
               </node>
             </node>
+            <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1184621407443">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184621407444">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184621475207">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1184621485602">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1184621487283" />
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1184621478873">
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1184621482773">
+                        <link role="property" targetNodeId="1.1167240478741" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1184621475208" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1184616402093">
             <property name="drawBorder" value="false" />
