@@ -16,6 +16,9 @@ public class SNODE extends TreePath<SNode> {
   public  SNODE() {
   }
 
+  public static IFeatureDescriptor<SNode> child(String param) {
+    return new SNODE.Desc_Feature_child(param);
+  }
   public static IFeatureDescriptor<SNode> link(String param) {
     return new SNODE.Desc_Feature_link(param);
   }
@@ -47,12 +50,12 @@ public class SNODE extends TreePath<SNode> {
       this._closureContext = (Object)closureContext;
     }
 }
-  private static class Feature_link extends AbstractCollection<SNode> {
+  private static class Feature_child extends AbstractCollection<SNode> {
 
     private SNode thisNode;
     private String param;
 
-    public  Feature_link(SNode thisNode, String param) {
+    public  Feature_child(SNode thisNode, String param) {
       this.thisNode = thisNode;
       this.param = param;
     }
@@ -65,6 +68,50 @@ public class SNODE extends TreePath<SNode> {
     }
     public int size() {
       return SLinkOperations.getTargets(this.thisNode, this.param, true).size();
+    }
+}
+  private static class Feature_link extends AbstractCollection<SNode> {
+
+    private SNode thisNode;
+    private String param;
+
+    public  Feature_link(SNode thisNode, String param) {
+      this.thisNode = thisNode;
+      this.param = param;
+    }
+
+    public Iterable<SNode> sequence() {
+      return SLinkOperations.getTargets(this.thisNode, this.param, false);
+    }
+    public Iterator<SNode> iterator() {
+      return this.sequence().iterator();
+    }
+    public int size() {
+      return SLinkOperations.getTargets(this.thisNode, this.param, false).size();
+    }
+}
+  public static class Desc_Feature_child implements IFeatureDescriptor<SNode> {
+
+    private String param;
+
+    public  Desc_Feature_child(String param) {
+      this.param = param;
+    }
+
+    public Collection<SNode> getFeature(SNode node) {
+      return new SNODE.Feature_child(node, this.param);
+    }
+    public String getName() {
+      return "child";
+    }
+    public Object getNodeType() {
+      return SNode.class;
+    }
+    public IFeatureDescriptor.Type getType() {
+      return IFeatureDescriptor.Type.SEQUENCE;
+    }
+    public boolean isDefault() {
+      return false;
     }
 }
   public static class Desc_Feature_link implements IFeatureDescriptor<SNode> {
@@ -82,6 +129,7 @@ public class SNODE extends TreePath<SNode> {
       return "link";
     }
     public Object getNodeType() {
+      return SNode.class;
     }
     public IFeatureDescriptor.Type getType() {
       return IFeatureDescriptor.Type.SEQUENCE;
