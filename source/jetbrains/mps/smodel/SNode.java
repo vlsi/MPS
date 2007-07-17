@@ -75,6 +75,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void changeModel(SModel newModel) {
+    if (myModel == newModel) return;
     LOG.assertLog(myParent == null || myParent.myModel == newModel, "CHANGE MODEL: parent must be NULL or must have the same model as your destination model");
 
     if (myId != null) {
@@ -1019,7 +1020,12 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   /*package*/ void registerInModel(SModel model) {
-    if (myRegisteredInModelFlag) return;
+    if (myRegisteredInModelFlag) {
+      if (model != myModel) {
+        LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getUID() + "'");
+      }
+      return;
+    }
     myRegisteredInModelFlag = true;
     if (model != myModel) {
       changeModel(model);
