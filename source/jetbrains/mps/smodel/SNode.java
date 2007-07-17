@@ -84,7 +84,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 //    }
     myModel = newModel;
 //    if (myId != null) {
-//      myModel.setNodeId(myId, this);
+//      myModel.putNodeId(myId, this);
 //    }
 
     for (SNode child : _children()) {
@@ -1030,7 +1030,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
     myRegisteredInModelFlag = true;
     myModel = model;
-    myModel.setNodeId(getSNodeId(), this);
+    myModel.putNodeId(getSNodeId(), this);
     if (myChildren != null) {
       for (SNode child : myChildren) {
         child.registerInModel(model);
@@ -1483,7 +1483,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 //        myModel.removeNodeId(myId);
 //      }
 //    } else {
-//      myModel.setNodeId(id, this);
+//      myModel.putNodeId(id, this);
 //    }
     LOG.assertLog(!isRegistered(), "can't set id to registered node " + getDebugText());
     myId = id;

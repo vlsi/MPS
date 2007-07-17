@@ -744,7 +744,7 @@ public class SModel implements Iterable<SNode> {
   }
 
 
-  void setNodeId(@NotNull SNodeId id, @NotNull SNode node) {
+  void putNodeId(@NotNull SNodeId id, @NotNull SNode node) {
     if (myRegistrationsForbidden) {
       LOG.error("Registration in model " + getUID() + " is temporarely forbidden");
     }
@@ -758,7 +758,7 @@ public class SModel implements Iterable<SNode> {
     myIdToNodeMap.put(id, node);
   }
 
-  public void removeNodeId(@NotNull SNodeId id) {
+  void removeNodeId(@NotNull SNodeId id) {
     myIdToNodeMap.remove(id);
   }
 
