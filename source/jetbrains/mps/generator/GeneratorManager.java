@@ -4,6 +4,7 @@ import jetbrains.mps.component.Dependency;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.template.Statistics;
+import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;

@@ -1,4 +1,4 @@
-package jetbrains.mps.generator;
+package jetbrains.mps.generator.fileGenerator;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;

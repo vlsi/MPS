@@ -1,6 +1,6 @@
 package jetbrains.mps.generator.fileGenerator;
 
-import jetbrains.mps.generator.IFileGenerator;
+import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
