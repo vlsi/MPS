@@ -45,8 +45,16 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     myBuffer.append(s);
   }
 
+  protected void appendNewLine() {
+    append("\n");
+  }
+
   protected void appendWithIndent(String s) {
     myBuffer.appendWithIndent(s);
+  }
+
+  protected void appendWithIndent() {
+    appendWithIndent("");
   }
 
   protected void indentBuffer() {
