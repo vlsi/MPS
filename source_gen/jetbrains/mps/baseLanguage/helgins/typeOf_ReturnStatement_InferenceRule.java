@@ -14,7 +14,7 @@ public class typeOf_ReturnStatement_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true)), argument, null);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true)), argument, null, "jetbrains.mps.baseLanguage.helgins", "1176898213115");
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ReturnStatement";

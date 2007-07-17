@@ -21,7 +21,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
 
   public void applyRule(SNode argument) {
     for(SNode throwsItem : SLinkOperations.getTargets(argument, "throwsItem", true)) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_33().createNode(), argument, null);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_33().createNode(), argument, null, "jetbrains.mps.baseLanguage.helgins", "1176898076811");
     }
     // ==========
     if(SLinkOperations.getTarget(argument, "body", true) == null) {

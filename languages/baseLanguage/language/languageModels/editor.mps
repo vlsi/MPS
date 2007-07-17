@@ -6445,7 +6445,32 @@
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1170346092162">
               <property name="drawBorder" value="false" />
               <property name="readOnly" value="true" />
+              <property name="rightTransformAnchorTag" value="default_RTransform" />
               <link role="relationDeclaration" targetNodeId="18.1169194664001" />
+            </node>
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1184668626336">
+          <property name="drawBorder" value="false" />
+          <link role="editorComponent" targetNodeId="1109280020740" resolveInfo="_GenericDeclaration_TypeVariables_Component" />
+          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1184668626337">
+            <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184668626338">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1184668626339">
+                <node role="expression" type="jetbrains.mps.baseLanguage.GreaterThanExpression" id="1184668626340">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1184668626341">
+                    <property name="value" value="0" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1184668626342">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1184668626343">
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1184668626344" />
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1184668626345">
+                        <link role="link" targetNodeId="17.1109279881614" />
+                      </node>
+                    </node>
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.LinkList_GetCountOperation" id="1184668626346" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

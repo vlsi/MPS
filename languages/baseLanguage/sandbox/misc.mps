@@ -129,6 +129,32 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1182164226710">
     <property name="name" value="A" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1184668952117">
+      <property name="name" value="abcdef" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1184668952118" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1184668952119" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184668952120">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184668964883">
+          <node role="expression" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1184668964884">
+            <node role="creator" type="jetbrains.mps.baseLanguage.AnonymousClassCreator" id="1184668965917">
+              <node role="cls" type="jetbrains.mps.baseLanguage.AnonymousClass" id="1184668965918">
+                <link role="classifier" extResolveInfo="3.[Classifier]Iterator" />
+                <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1184668965919" />
+                <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1184669212145">
+                  <property name="name" value="A" />
+                </node>
+                <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1184669213177">
+                  <property name="name" value="B" />
+                </node>
+                <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.TypeVariableDeclaration" id="1184669213959">
+                  <property name="name" value="C" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1182407705882">
       <property name="name" value="entry" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1182407705883" />
