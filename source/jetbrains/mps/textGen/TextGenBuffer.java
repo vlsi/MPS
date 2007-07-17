@@ -8,7 +8,7 @@ import java.util.HashMap;
  * Date: Dec 22, 2003
  */
 /*package*/
-public class TextGenBuffer {
+public final class TextGenBuffer {
   public static final int TOP = 0;
   public static final int DEFAULT = 1;
   private StringBuilder[] myBuffers = new StringBuilder[]{
@@ -23,7 +23,9 @@ public class TextGenBuffer {
   private boolean myContainsErrors = false;
 
   public String getText() {
-    return myBuffers[TOP].toString() + "\n\n" + myBuffers[DEFAULT].toString();
+    String topBufferText = myBuffers[TOP].toString();
+    String defaultBufferText = myBuffers[DEFAULT].toString();
+    return topBufferText.length() <= 0 ? defaultBufferText : topBufferText + "\n\n" + defaultBufferText;
   }
 
   public boolean hasErrors() {
