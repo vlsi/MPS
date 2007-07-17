@@ -120,7 +120,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public boolean isRoot() {
-    return getModel().getRoots().contains(this);
+    return getModel().isRoot(this);
   }
 
   public

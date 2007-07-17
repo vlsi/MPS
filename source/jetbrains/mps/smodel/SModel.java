@@ -137,6 +137,10 @@ public class SModel implements Iterable<SNode> {
     return new ArrayList<SNode>(myRoots);
   }
 
+  public boolean isRoot(@Nullable SNode node) {
+    return myRoots.contains(node);
+  }
+
   @NotNull
   public List<SNode> getRoots(@NotNull Condition<SNode> condition) {
     List<SNode> list = new ArrayList<SNode>();
@@ -394,10 +398,6 @@ public class SModel implements Iterable<SNode> {
   @NotNull
   List<SModelCommandListener> getCommandListeners() {
     return new ArrayList<SModelCommandListener>(myCommandListeners);
-  }
-
-  public boolean isRoot(@Nullable SNode node) {
-    return myRoots.contains(node);
   }
 
   public boolean hasLanguage(@NotNull String languageNamespace) {
