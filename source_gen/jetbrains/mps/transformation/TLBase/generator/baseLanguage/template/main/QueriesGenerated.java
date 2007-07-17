@@ -49,7 +49,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1184617630764(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(node);
   }
-  public static SNode referenceMacro_GetReferent_1167774837569(SNode node, SNode templateNode, SNode outputNode, ITemplateGenerator generator) {
+  public static SNode referenceMacro_GetReferent_1167774837569(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     String alias = SConceptPropertyOperations.getString(node, "alias");
     if(alias == null) {
       generator.showErrorMessage(node, templateNode, "concept function parm has no <alias> - can't map it to method parameter");
@@ -72,7 +72,7 @@ public class QueriesGenerated {
     generator.showErrorMessage(node, templateNode, "couldn't find method parameter for concept function parm '" + alias + "'");
     return null;
   }
-  public static SNode referenceMacro_GetReferent_1167771845166(SNode node, SNode templateNode, SNode outputNode, ITemplateGenerator generator) {
+  public static SNode referenceMacro_GetReferent_1167771845166(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.transformation.TLBase.structure.BaseMappingRule", false, false), "applicableConcept", false);
   }
   public static SNode sourceNodeQuery_1168025917226(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

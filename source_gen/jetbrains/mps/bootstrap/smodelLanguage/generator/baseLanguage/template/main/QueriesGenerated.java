@@ -432,19 +432,19 @@ public class QueriesGenerated {
     SNode parmConcept = SLinkOperations.getTarget(node, "concept", false);
     return NameUtil.nodeFQName(parmConcept);
   }
-  public static SNode referenceMacro_GetReferent_1170457360268(SNode node, SNode templateNode, SNode outputNode, ITemplateGenerator generator) {
+  public static SNode referenceMacro_GetReferent_1170457360268(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.get_SPropertyAccess_simple_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(node)), generator.getScope());
   }
-  public static SNode referenceMacro_GetReferent_1170461142999(SNode node, SNode templateNode, SNode outputNode, ITemplateGenerator generator) {
+  public static SNode referenceMacro_GetReferent_1170461142999(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.get_SPropertyAccess_enum_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(node)), generator.getScope());
   }
-  public static SNode referenceMacro_GetReferent_1170462607714(SNode node, SNode templateNode, SNode outputNode, ITemplateGenerator generator) {
+  public static SNode referenceMacro_GetReferent_1170462607714(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.get_SPropertyAccess_enum_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(node)), generator.getScope());
   }
-  public static SNode referenceMacro_GetReferent_1168984233974(SNode node, SNode templateNode, SNode outputNode, ITemplateGenerator generator) {
+  public static SNode referenceMacro_GetReferent_1168984233974(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.get_SConceptPropertyAccess_GetMethod(((SConceptPropertyAccess)SNodeOperations.getAdapter(node)), generator.getScope());
   }
-  public static SNode referenceMacro_GetReferent_1170386916206(SNode node, SNode templateNode, SNode outputNode, ITemplateGenerator generator) {
+  public static SNode referenceMacro_GetReferent_1170386916206(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode opExpression = SNodeOperations.getParent(node, null, false, false);
     SNode leftExpression = SLinkOperations.getTarget(opExpression, "leftExpression", true);
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);

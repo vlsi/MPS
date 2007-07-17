@@ -62,6 +62,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
               getInputNode(),
               myTemplateReferenceNode,
               getOutputNode(),
+              generator.getSourceModel(),
               generator};
 
       try {

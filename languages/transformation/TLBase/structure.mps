@@ -839,6 +839,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1184690432998" resolveInfo="TemplateFunctionParameter_outputNode" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184693809049">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
+      <link role="target" targetNodeId="1166748937193" resolveInfo="TemplateFunctionParameter_sourceModel" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1167770111137">
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
