@@ -1457,7 +1457,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   public String getId() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     if (myId == null) {
-      setId(generateUniqueId());
+      myId = generateUniqueId();
     }
     return myId.toString();
   }
@@ -1465,7 +1465,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   public SNodeId getSNodeId() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
     if (myId == null) {
-      setId(generateUniqueId());
+      myId = generateUniqueId();
     }
     return myId;
   }
