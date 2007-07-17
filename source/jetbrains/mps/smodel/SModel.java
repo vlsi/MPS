@@ -192,16 +192,15 @@ public class SModel implements Iterable<SNode> {
 
     myRoots.add(node);
     node.registerInModel(this);
-    if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, null, false));
+    if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, false));
     fireRootAddedEvent(node);
   }
 
   public void removeRoot(@NotNull SNode node) {
     if (myRoots.contains(node)) {
-      SNodeId id = node.getSNodeId();
       myRoots.remove(node);
       node.unRegisterFromModel();
-      if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, id, true));
+      if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, true));
       fireRootRemovedEvent(node);
     }
   }
@@ -933,24 +932,21 @@ public class SModel implements Iterable<SNode> {
 
   private static class UndoRootAddOrDelete implements IUndoableAction {
     private SNode myRoot;
-    private SNodeId myId;
     private boolean myAdd;
 
-    UndoRootAddOrDelete(SNode root, SNodeId id, boolean isAdd) {
-      myId = id;
+    UndoRootAddOrDelete(SNode root, boolean isAdd) {
       myRoot = root;
       myAdd = isAdd;
     }
 
     public void undo() throws UnexpectedUndoException {
-      SModel semanticModel = myRoot.getModel();
+      SModel model = myRoot.getModel();
       if (myAdd) {
-        semanticModel.addRoot(myRoot);
-        myRoot.setId(myId);
+        model.addRoot(myRoot);
       } else {
-        semanticModel.removeRoot(myRoot);
+        model.removeRoot(myRoot);
       }
-      UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(myRoot, null, !myAdd));
+      UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(myRoot, !myAdd));
     }
 
     public String toString() {

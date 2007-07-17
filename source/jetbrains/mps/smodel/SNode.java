@@ -1495,12 +1495,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
     setId(id);
   }
 
-//  @NotNull
-//  public String getPath() {
-//    if (myParent == null) return getId();
-//    return myParent.getPath() + "/" + getId();
-//  }
-
   @NotNull
   public String getShortConceptName() {
     NodeReadAccessCaster.fireNodeReadAccessed(this);
@@ -1516,14 +1510,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
     }
     return getShortConceptName();
   }
-
-//  public boolean isDisposed() {
-//    // tmp : don't check nodes in $internal$ models
-//    if ("$internal$".equals(myModel.getStereotype())) {
-//      return false;
-//    }
-//    return myModel.isDisposed();
-//  }
 
   @NotNull
   public List<SNode> getSubnodes(Condition<SNode> condition) {
