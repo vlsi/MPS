@@ -339,6 +339,9 @@
           <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
         </inspection_tool>
         <inspection_tool class="UNUSED_IMPORT" level="WARNING" enabled="false" />
+        <inspection_tool class="SerializableHasSerialVersionUIDField" level="WARNING" enabled="true">
+          <option name="m_ignoreSerializableDueToInheritance" value="true" />
+        </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
