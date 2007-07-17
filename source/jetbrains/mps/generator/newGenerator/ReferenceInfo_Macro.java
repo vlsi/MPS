@@ -49,7 +49,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     if (function != null) {
       SNode templateValue = myTemplateReferentNode.getReferent(linkRole);
       String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function.getNode());
-      Object[] args = new Object[]{
+      Object[] args_old = new Object[]{
               getInputNode(),
               templateValue,
               myTemplateReferentNode,
@@ -57,8 +57,15 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
               generator,
               generator.getScope(),
               generator.getGeneratorSessionContext()};
+
+      Object[] args_new = new Object[]{
+              getInputNode(),
+              myTemplateReferentNode,
+              getOutputNode(),
+              generator};
+
       try {
-        referentNode = (SNode) QueryMethodGenerated.invoke(methodName, args, myReferenceMacro.getModel());
+        referentNode = (SNode) QueryMethodGenerated.invoke_GetReferent(methodName, args_old, args_new, myReferenceMacro.getModel());
       } catch (Exception e) {
         generator.showErrorMessage(getInputNode(), myReferenceMacro.getNode(), "couldn't evaluate reference macro");
         return;
