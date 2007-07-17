@@ -913,6 +913,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Client/JetCMS-Client.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Client/JetCMS-Client.iml" group="app/JetCMS" />
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Common/JetCMS-Common.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Common/JetCMS-Common.iml" group="app/JetCMS" />
+      <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Configuration/JetCMS-Configuration.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Configuration/JetCMS-Configuration.iml" group="app/JetCMS" />
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Server/JetCMS-Server.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Server/JetCMS-Server.iml" group="app/JetCMS" />
       <module fileurl="file://$PROJECT_DIR$/app/MForum/MForum.iml" filepath="$PROJECT_DIR$/app/MForum/MForum.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
@@ -1007,7 +1008,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <module name="" />
+      <module name="MPS" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="1478" />
         <option name="TRANSPORT" value="0" />
