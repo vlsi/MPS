@@ -18,8 +18,6 @@ import java.util.HashSet;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private IOperationContext myOperationContext;
-  private SModel mySourceModel;
-  private SModel myTargetModel;
   private IAdaptiveProgressMonitor myProgressMonitor;
   private IMessageHandler myHandler;
 
@@ -44,22 +42,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       return myOperationContext.getScope();
     }
     return null;
-  }
-
-  public SModel getSourceModel() {
-    return mySourceModel;
-  }
-
-  protected void setSourceModel(SModel sourceModel) {
-    mySourceModel = sourceModel;
-  }
-
-  public SModel getTargetModel() {
-    return myTargetModel;
-  }
-
-  protected void setTargetModel(SModel targetModel) {
-    myTargetModel = targetModel;
   }
 
   public IMessageHandler getMessageHandler() {
