@@ -76,15 +76,16 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   public void changeModel(SModel newModel) {
     if (myModel == newModel) return;
-    LOG.assertLog(myParent == null || myParent.myModel == newModel, "CHANGE MODEL: parent must be NULL or must have the same model as your destination model");
+//    LOG.assertLog(myParent == null || myParent.myModel == newModel, "CHANGE MODEL: parent must be NULL or must have the same model as your destination model");
+    LOG.assertLog(!isRegistered(), "couldn't change model of registered node " + getDebugText());
 
-    if (myId != null) {
-      myModel.removeNodeId(myId);
-    }
+//    if (myId != null) {
+//      myModel.removeNodeId(myId);
+//    }
     myModel = newModel;
-    if (myId != null) {
-      myModel.setNodeId(myId, this);
-    }
+//    if (myId != null) {
+//      myModel.setNodeId(myId, this);
+//    }
 
     for (SNode child : _children()) {
       child.changeModel(newModel);
@@ -124,12 +125,15 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   public
   @NotNull
-  SNode cloneProperties() {//doesn't copy children, references and back references
+  SNode cloneProperties() {//doesn't copy children and references
     SNode newNode;
     try {
       newNode = (SNode) super.clone();
+      newNode.myId = null;
+      newNode.myRegisteredInModelFlag = false;
       newNode.myAdapter = null;
       newNode.myParent = null;
+//needed later to add the cloned node to parent with correct role      newNode.myRoleInParent = null;
       newNode.myReferences = null;
       newNode.myChildren = null;
       if (myProperties != null) {
@@ -975,17 +979,14 @@ public class SNode implements Cloneable, Iterable<SNode> {
       throw new RuntimeException(child.getDebugText() + " is root node. Can't add it as a child");
     }
 
-    if (child.getModel() != getModel()) {
-      child.changeModel(getModel());
-    }
-
-
     _children().add(index, child);
     child.myRoleInParent = InternUtil.intern(role);
     child.myParent = this;
 
     if (isRegistered()) {
       child.registerInModel(getModel());
+    } else {
+      child.changeModel(getModel());
     }
 
     if (!getModel().isLoading()) {
@@ -1011,7 +1012,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
   /*package*/ void unRegisterFromModel() {
     if (!myRegisteredInModelFlag) return;
     myRegisteredInModelFlag = false;
-    myModel.removeNodeId(getSNodeId());
+    if (myId != null) {
+      myModel.removeNodeId(myId);
+    }
     if (myChildren != null) {
       for (SNode child : myChildren) {
         child.unRegisterFromModel();
@@ -1026,15 +1029,13 @@ public class SNode implements Cloneable, Iterable<SNode> {
       }
       return;
     }
+
     myRegisteredInModelFlag = true;
-    if (model != myModel) {
-      changeModel(model);
-    } else {
-      myModel.setNodeId(getSNodeId(), this);
-      if (myChildren != null) {
-        for (SNode child : myChildren) {
-          child.registerInModel(model);
-        }
+    myModel = model;
+    myModel.setNodeId(getSNodeId(), this);
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        child.registerInModel(model);
       }
     }
   }
