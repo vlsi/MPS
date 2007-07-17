@@ -15,6 +15,9 @@
   <constraints>
     <model modelUID="jetbrains.mps.transformation.TLBase.constraints" />
   </constraints>
+  <scripts>
+    <model modelUID="jetbrains.mps.transformation.TLBase.scripts" />
+  </scripts>
   <editor>
     <model modelUID="jetbrains.mps.transformation.TLBase.editor" />
   </editor>
