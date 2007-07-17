@@ -32,7 +32,7 @@ public abstract class DefaultFileGenerator implements IFileGenerator {
     }
 
     String packageName = JavaNameUtil.packageNameForModelUID(inputModel.getUID());
-    File file = new File(outputRootDir, packageName.replace('.', File.separatorChar) + File.separatorChar + outputRootNode.getName() + "." + getExtenstion());
+    File file = new File(outputRootDir, packageName.replace('.', File.separatorChar) + File.separatorChar + outputRootNode.getName() + "." + getExtenstion(BaseAdapter.fromNode(outputRootNode)));
 
     if (!file.getParentFile().exists()) {
       file.getParentFile().mkdirs();
@@ -65,6 +65,6 @@ public abstract class DefaultFileGenerator implements IFileGenerator {
     return fileCreated ? file : null;
   }
 
-  protected abstract String getExtenstion();
+  protected abstract String getExtenstion(INodeAdapter iNodeAdapter);
 
 }
