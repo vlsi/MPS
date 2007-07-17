@@ -28,10 +28,6 @@ import java.util.*;
  */
 public class SNode implements Cloneable, Iterable<SNode> {
 
-//  public static boolean unregisteredNodesDontTriggerEvents() {
-//    return false;
-//  }
-
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
   public static final Object STATUS = new Object();
@@ -629,7 +625,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public final boolean hasProperty(@NotNull String propertyName) {
-    NodeReadAccessCaster.firePropertyReadAccessed(this,  propertyName, true);
+    NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName, true);
     String property_internal = getProperty_internal(propertyName);
     return !SModelUtil_new.isEmptyPropertyValue(property_internal);
   }
@@ -712,7 +708,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
       });
     }
 
-    if (!isRegistered() /*&& unregisteredNodesDontTriggerEvents()*/) {
+    if (!isRegistered()) {
       // node 'doesn't exist' : don't fire events
       return;
     }
@@ -959,7 +955,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
       });
     }
 
-    if (!isRegistered() /*&& unregisteredNodesDontTriggerEvents()*/) {
+    if (!isRegistered()) {
       // node 'doesn't exist' : don't fire events
       return;
     }
@@ -989,10 +985,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
     if (isRegistered()) {
       child.registerInModel(getModel());
-    } /*else if (unregisteredNodesDontTriggerEvents()) {
-      // node 'doesn't exist' : don't register undo, don't fire events
-      return;
-    }*/
+    }
 
     if (!getModel().isLoading()) {
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
@@ -1006,7 +999,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
       });
     }
 
-    if (!isRegistered() /*&& unregisteredNodesDontTriggerEvents()*/) {
+    if (!isRegistered()) {
       // node 'doesn't exist': don't fire events
       return;
     }
@@ -1014,16 +1007,14 @@ public class SNode implements Cloneable, Iterable<SNode> {
     getModel().fireChildAddedEvent(this, role, child, index);
   }
 
-  void registerTheWholeRoot() {
-    getContainingRoot().registerInModel(getModel());
-  }
-
   /*package*/ void unRegisterFromModel() {
     if (!myRegisteredInModelFlag) return;
     myRegisteredInModelFlag = false;
     myModel.removeNodeId(getSNodeId());
-    for (SNode child : _children()) {
-      child.unRegisterFromModel();
+    if (myChildren != null) {
+      for (SNode child : myChildren) {
+        child.unRegisterFromModel();
+      }
     }
   }
 
@@ -1035,7 +1026,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     } else {
       myModel.setNodeId(getSNodeId(), this);
       if (myChildren != null) {
-        for (SNode child : _children()) {
+        for (SNode child : myChildren) {
           child.registerInModel(model);
         }
       }
@@ -1293,7 +1284,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
       });
     }
 
-    if (!isRegistered() /*&& unregisteredNodesDontTriggerEvents()*/) {
+    if (!isRegistered()) {
       // node 'doesn't exist': don't fire events
       return;
     }
@@ -1318,7 +1309,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
       });
     }
 
-    if (!isRegistered()/* && unregisteredNodesDontTriggerEvents()*/) {
+    if (!isRegistered()) {
       // node 'doesn't exist': don't fire events
       return;
     }
