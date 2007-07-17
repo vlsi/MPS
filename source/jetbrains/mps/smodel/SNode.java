@@ -937,7 +937,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   private void removeChildAt(final int index) {
     final SNode wasChild = _children().get(index);
-    final SNodeId wasId = _children().get(index).getSNodeId();
     final String wasRole = wasChild.getRole_();
 
     assert wasRole != null;
@@ -951,7 +950,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() {
           insertChildAt(index, wasRole, wasChild);
-          wasChild.setId(wasId);
         }
 
         public String toString() {
