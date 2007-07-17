@@ -53,10 +53,6 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     myBuffer.appendWithIndent(s);
   }
 
-  protected void appendWithIndent() {
-    appendWithIndent("");
-  }
-
   protected void indentBuffer() {
     myBuffer.indentBuffer();
   }
