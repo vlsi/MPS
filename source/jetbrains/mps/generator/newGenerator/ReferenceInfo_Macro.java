@@ -14,12 +14,12 @@ import jetbrains.mps.util.NameUtil;
  * Date: Jan 25, 2007
  */
 public class ReferenceInfo_Macro extends ReferenceInfo {
-  private SNode myTemplateReferentNode;
+  private SNode myTemplateReferenceNode;
   private ReferenceMacro myReferenceMacro;
 
-  public ReferenceInfo_Macro(ReferenceMacro refMacro, SNode inputNode, SNode templateReferentNode, SNode outputNode) {
+  public ReferenceInfo_Macro(ReferenceMacro refMacro, SNode inputNode, SNode templateReferenceNode, SNode outputNode) {
     super(outputNode, inputNode);
-    myTemplateReferentNode = templateReferentNode;
+    myTemplateReferenceNode = templateReferenceNode;
     myReferenceMacro = refMacro;
   }
 
@@ -47,12 +47,12 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     // try new query
     ReferenceMacro_GetReferent function = myReferenceMacro.getReferentFunction();
     if (function != null) {
-      SNode templateValue = myTemplateReferentNode.getReferent(linkRole);
+      SNode templateValue = myTemplateReferenceNode.getReferent(linkRole);
       String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function.getNode());
       Object[] args_old = new Object[]{
               getInputNode(),
               templateValue,
-              myTemplateReferentNode,
+              myTemplateReferenceNode,
               generator.getSourceModel(),
               generator,
               generator.getScope(),
@@ -60,7 +60,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
 
       Object[] args_new = new Object[]{
               getInputNode(),
-              myTemplateReferentNode,
+              myTemplateReferenceNode,
               getOutputNode(),
               generator};
 
@@ -75,7 +75,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       // try old query
       Object[] args = new Object[]{
               getInputNode(),
-              myTemplateReferentNode,
+              myTemplateReferenceNode,
               myReferenceMacro.getLink(),
               generator
       };
@@ -83,14 +83,14 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
         referentNode = (SNode) QueryMethod.invoke("referenceMacro_" + myReferenceMacro.getAspectMethodName(), args, myReferenceMacro.getModel());
       } catch (Throwable t) {
         String message = NameUtil.shortNameFromLongName(t.getClass().getName()) + " occured while expanding reference macro with query: \"referenceMacro_" + myReferenceMacro.getAspectMethodName();
-        generator.showErrorMessage(getInputNode(), myTemplateReferentNode, message);
+        generator.showErrorMessage(getInputNode(), myTemplateReferenceNode, message);
         return;
       }
     }
 
     if (referentNode == null) {
       if (getOutputNode().isReferentRequired(linkRole, generator.getScope())) {
-        generator.showErrorMessage(getInputNode(), myTemplateReferentNode, "unresolved reference for role \"" + linkRole + "\" in " + getOutputNode().getDebugText());
+        generator.showErrorMessage(getInputNode(), myTemplateReferenceNode, "unresolved reference for role \"" + linkRole + "\" in " + getOutputNode().getDebugText());
       }
       return;
     }

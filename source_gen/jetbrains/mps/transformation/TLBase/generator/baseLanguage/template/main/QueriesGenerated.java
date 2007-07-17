@@ -9,14 +9,13 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.generator.template.INodeBuilder;
-import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.QueriesUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.transformation.TLBase.helgins.Util_TLBase_types;
+import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil;
 
 public class QueriesGenerated {
 
@@ -50,33 +49,30 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1184617630764(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(node);
   }
-  public static SNode referenceMacro_GetReferent_1167774837569(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1167774837569(SNode node, SNode templateNode, SNode outputNode, ITemplateGenerator generator) {
     String alias = SConceptPropertyOperations.getString(node, "alias");
     if(alias == null) {
       generator.showErrorMessage(node, templateNode, "concept function parm has no <alias> - can't map it to method parameter");
       return null;
     }
-    INodeBuilder builder = QueriesUtil.findParent_BaseMethodDeclaration_Builder(generator.getCurrentBuilder());
-    if(builder != null) {
-      SNode methodDeclaration = builder.getTargetNode();
-      {
-        ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(methodDeclaration, "parameter", true));
-        try {
-          while(_zCursor.moveToNext()) {
-            SNode parm = _zCursor.getCurrent();
-            if(alias.equals(SPropertyOperations.getString(parm, "name"))) {
-              return parm;
-            }
+    SNode method = SNodeOperations.getAncestor(outputNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
+    {
+      ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(method, "parameter", true));
+      try {
+        while(_zCursor.moveToNext()) {
+          SNode parm = _zCursor.getCurrent();
+          if(alias.equals(SPropertyOperations.getString(parm, "name"))) {
+            return parm;
           }
-        } finally {
-          _zCursor.release();
         }
+      } finally {
+        _zCursor.release();
       }
     }
     generator.showErrorMessage(node, templateNode, "couldn't find method parameter for concept function parm '" + alias + "'");
     return null;
   }
-  public static SNode referenceMacro_GetReferent_1167771845166(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1167771845166(SNode node, SNode templateNode, SNode outputNode, ITemplateGenerator generator) {
     return SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.transformation.TLBase.structure.BaseMappingRule", false, false), "applicableConcept", false);
   }
   public static SNode sourceNodeQuery_1168025917226(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -134,33 +130,33 @@ public class QueriesGenerated {
     return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619599466(SNode node, ITemplateGenerator generator) {
-    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+    return QueriesUtil.getQueriesGeneratedClass(generator);
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619796790(SNode node, ITemplateGenerator generator) {
-    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+    return QueriesUtil.getQueriesGeneratedClass(generator);
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619844945(SNode node, ITemplateGenerator generator) {
-    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+    return QueriesUtil.getQueriesGeneratedClass(generator);
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619847603(SNode node, ITemplateGenerator generator) {
-    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+    return QueriesUtil.getQueriesGeneratedClass(generator);
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619852561(SNode node, ITemplateGenerator generator) {
-    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+    return QueriesUtil.getQueriesGeneratedClass(generator);
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619865210(SNode node, ITemplateGenerator generator) {
-    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+    return QueriesUtil.getQueriesGeneratedClass(generator);
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619868267(SNode node, ITemplateGenerator generator) {
-    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+    return QueriesUtil.getQueriesGeneratedClass(generator);
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619877062(SNode node, ITemplateGenerator generator) {
-    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+    return QueriesUtil.getQueriesGeneratedClass(generator);
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619879860(SNode node, ITemplateGenerator generator) {
-    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+    return QueriesUtil.getQueriesGeneratedClass(generator);
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619882833(SNode node, ITemplateGenerator generator) {
-    return jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil.getQueriesGeneratedClass(generator);
+    return QueriesUtil.getQueriesGeneratedClass(generator);
   }
 }
