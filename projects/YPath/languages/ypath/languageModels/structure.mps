@@ -359,12 +359,6 @@
       <property name="role" value="defaultFeature" />
       <link role="target" targetNodeId="1184066209434" resolveInfo="IFeature" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1179236289453">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="nodeType" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790189" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1179235945873">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="treePathType" />
@@ -572,6 +566,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1183978481785">
     <property name="name" value="ListFeature" />
+    <property name="package" value="treePath.features" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184066322941">
       <property name="value" value="list feature" />
@@ -619,6 +614,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1183978641483">
     <property name="name" value="FeatureGetFun" />
+    <property name="package" value="treePath.features" />
     <link role="extends" targetNodeId="2.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1183978913184">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
@@ -638,6 +634,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1183978693009">
     <property name="name" value="FeatureSizeFun" />
+    <property name="package" value="treePath.features" />
     <link role="extends" targetNodeId="2.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1183979498032">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
@@ -653,6 +650,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1183978714073">
     <property name="name" value="FeatureSetFun" />
+    <property name="package" value="treePath.features" />
     <link role="extends" targetNodeId="2.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1183979480026">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
@@ -676,6 +674,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1183978742089">
     <property name="name" value="FeatureInsertFun" />
+    <property name="package" value="treePath.features" />
     <link role="extends" targetNodeId="2.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1183979429081">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
@@ -699,6 +698,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1183978759062">
     <property name="name" value="FeatureDeleteFun" />
+    <property name="package" value="treePath.features" />
     <link role="extends" targetNodeId="2.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184065938866">
       <property name="value" value="delete" />
@@ -718,6 +718,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1183978789889">
     <property name="name" value="NodeFunctionParam" />
+    <property name="package" value="treePath.features" />
     <link role="extends" targetNodeId="2.1107135704075" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1183978813828">
       <property name="value" value="node" />
@@ -729,6 +730,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1183978827781">
     <property name="name" value="IndexFunctionParam" />
+    <property name="package" value="treePath.features" />
     <link role="extends" targetNodeId="2.1107135704075" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1183978845180">
       <property name="value" value="index" />
@@ -740,6 +742,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1183978852670">
     <property name="name" value="ValueFunctionParam" />
+    <property name="package" value="treePath.features" />
     <link role="extends" targetNodeId="2.1107135704075" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1183978870572">
       <property name="value" value="value" />
@@ -751,6 +754,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184063883507">
     <property name="name" value="FeatureAddFun" />
+    <property name="package" value="treePath.features" />
     <link role="extends" targetNodeId="2.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184068589401">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
@@ -770,6 +774,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184063974332">
     <property name="name" value="FeatureRemoveFun" />
+    <property name="package" value="treePath.features" />
     <link role="extends" targetNodeId="2.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184068612214">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
@@ -789,6 +794,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184064321014">
     <property name="name" value="FeatureSequenceFun" />
+    <property name="package" value="treePath.features" />
     <link role="extends" targetNodeId="2.1137021947720" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184064338121">
       <property name="value" value="sequence" />
@@ -804,6 +810,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1184066209434">
     <property name="name" value="IFeature" />
+    <property name="package" value="treePath.features" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1184066216986">
       <property name="name" value="writable" />
       <link role="dataType" targetNodeId="1.1082983657063" />
@@ -818,6 +825,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184066481897">
     <property name="name" value="SequenceFeature" />
+    <property name="package" value="treePath.features" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184066514754">
       <property name="metaClass" value="aggregation" />
@@ -855,6 +863,275 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1184066708100">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184501940146">
+    <property name="name" value="ParamFunctionParam" />
+    <property name="package" value="treePath.features" />
+    <link role="extends" targetNodeId="2.1107135704075" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184501958168">
+      <property name="value" value="param" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1184501963062">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1184658297564">
+      <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184593387281">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="ParameterQueryFunction" />
+    <link role="extends" targetNodeId="2.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184593638877">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
+      <link role="target" targetNodeId="1184593479323" resolveInfo="NodeTypeFunctionParam" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184593479323">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="NodeTypeFunctionParam" />
+    <link role="extends" targetNodeId="2.1107135704075" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184593610662">
+      <property name="value" value="nodeType" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1184593616427">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184603621091">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="TargetTypeFunction" />
+    <link role="extends" targetNodeId="2.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184603637341">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
+      <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184657191874">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="ParamFeatureAddFun" />
+    <link role="extends" targetNodeId="1184063883507" resolveInfo="FeatureAddFun" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184657215309">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
+      <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1184658259271">
+      <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184657361043">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="ParamListFeature" />
+    <link role="extends" targetNodeId="1183978481785" resolveInfo="ListFeature" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184657381450">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="paramGetFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1184657669811" resolveInfo="ParamFeatureGetFun" />
+      <link role="specializedLink" targetNodeId="1183979776626" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184658795224">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="paramSizeFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1184658208019" resolveInfo="ParamFeatureSizeFun" />
+      <link role="specializedLink" targetNodeId="1183979799057" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184658800469">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="paramSetFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1184658188079" resolveInfo="ParamFeatureSetFun" />
+      <link role="specializedLink" targetNodeId="1183979813837" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184658807708">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="paramInsertFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1184658098958" resolveInfo="ParamFeatureInsertFun" />
+      <link role="specializedLink" targetNodeId="1183979833129" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184658813022">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="paramDeleteFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1184658067755" resolveInfo="ParamFeatureDeleteFun" />
+      <link role="specializedLink" targetNodeId="1183979849670" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184658767940">
+      <property name="value" value="parameterized list feature" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1184659094704">
+      <link role="intfc" targetNodeId="1184659060758" resolveInfo="IParamFeature" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184657669811">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="ParamFeatureGetFun" />
+    <link role="extends" targetNodeId="1183978641483" resolveInfo="FeatureGetFun" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184657689943">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
+      <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1184658271228">
+      <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184658067755">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="ParamFeatureDeleteFun" />
+    <link role="extends" targetNodeId="1183978759062" resolveInfo="FeatureDeleteFun" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184658083485">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
+      <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1184658265796">
+      <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184658098958">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="ParamFeatureInsertFun" />
+    <link role="extends" targetNodeId="1183978742089" resolveInfo="FeatureInsertFun" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184658114687">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
+      <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1184658275937">
+      <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184658121111">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="ParamFeatureRemoveFun" />
+    <link role="extends" targetNodeId="1184063974332" resolveInfo="FeatureRemoveFun" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184658145205">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
+      <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1184658279758">
+      <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184658165849">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="ParamFeatureSequenceFun" />
+    <link role="extends" targetNodeId="1184064321014" resolveInfo="FeatureSequenceFun" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184658179285">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
+      <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1184658284116">
+      <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184658188079">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="ParamFeatureSetFun" />
+    <link role="extends" targetNodeId="1183978714073" resolveInfo="FeatureSetFun" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184658202706">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
+      <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1184658288511">
+      <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184658208019">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="ParamFeatureSizeFun" />
+    <link role="extends" targetNodeId="1183978693009" resolveInfo="FeatureSizeFun" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184658221746">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
+      <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1184658292880">
+      <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1184658241359">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="IParamFeatureFun" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184658874084">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="ParamSequenceFeature" />
+    <link role="extends" targetNodeId="1184066481897" resolveInfo="SequenceFeature" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184658913029">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="paramSequenceFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1184658165849" resolveInfo="ParamFeatureSequenceFun" />
+      <link role="specializedLink" targetNodeId="1184066514754" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184658929081">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="paramSizeFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1184658208019" resolveInfo="ParamFeatureSizeFun" />
+      <link role="specializedLink" targetNodeId="1184066532681" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184658934565">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="paramAddFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1184657191874" resolveInfo="ParamFeatureAddFun" />
+      <link role="specializedLink" targetNodeId="1184066542561" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184658938633">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="paramRemoveFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1184658121111" resolveInfo="ParamFeatureRemoveFun" />
+      <link role="specializedLink" targetNodeId="1184066550942" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184658902258">
+      <property name="value" value="parameterized sequence feature" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1184659104438">
+      <link role="intfc" targetNodeId="1184659060758" resolveInfo="IParamFeature" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1184659060758">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="IParamFeature" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184659264134">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="parameterType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790189" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184659272196">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="parameterQueryFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1184593387281" resolveInfo="ParameterQueryFunction" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184659278821">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="targetTypeFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1184603621091" resolveInfo="TargetTypeFunction" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184659752377">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="nameFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1184659771596" resolveInfo="NameFunction" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184659771596">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="NameFunction" />
+    <link role="extends" targetNodeId="2.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1184659810674">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
+      <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
     </node>
   </node>
 </model>
