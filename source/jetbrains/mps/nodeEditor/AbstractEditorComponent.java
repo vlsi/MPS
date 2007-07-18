@@ -4,6 +4,7 @@ import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -683,7 +684,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN && keyEvent.getModifiers() == 0) {
       return EditorCellAction.DOWN;
     }
-    if (keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.getModifiers() == 0) {
+    if (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT && keyEvent.getModifiers() == 0) {
+      return EditorCellAction.INSERT_BEFORE;
+    }
+    if (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_ENTER && keyEvent.getModifiers() == KeyEvent.SHIFT_MASK) {
       return EditorCellAction.INSERT_BEFORE;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_ENTER && !(keyEvent.isShiftDown() || keyEvent.isAltDown())) {

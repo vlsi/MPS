@@ -14,6 +14,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.modelchecker.ModelChecker;
 import jetbrains.mps.ide.modelchecker.ModelCheckResult;
+import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
@@ -222,7 +223,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
 
   public void keyPressed(KeyEvent keyEvent) {
-    if (keyEvent.isAltDown() && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) {
+    if (keyEvent.isAltDown() && (
+            (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
+            (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP))) {
       ActionContext context = getActionContext();
       JPopupMenu popupMenu = new JPopupMenu();
       ActionGroup group = new CreateRootNodeGroup();

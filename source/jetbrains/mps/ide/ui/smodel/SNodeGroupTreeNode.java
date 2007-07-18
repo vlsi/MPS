@@ -3,6 +3,7 @@ package jetbrains.mps.ide.ui.smodel;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.SystemInfo;
 
 import javax.swing.JPopupMenu;
 import java.awt.Rectangle;
@@ -31,7 +32,9 @@ public class SNodeGroupTreeNode extends TextTreeNode {
   }
 
   public void keyPressed(KeyEvent keyEvent) {
-    if (keyEvent.isAltDown() && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) {
+    if (keyEvent.isAltDown() && (
+            (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
+            (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP))) {
       JPopupMenu popupMenu = getPopupMenu();
       if (popupMenu == null) return;
       MPSTree mpsTree = getTree();
