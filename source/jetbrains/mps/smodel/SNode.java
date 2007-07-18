@@ -674,6 +674,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setProperty(@NotNull final String propertyName, String propertyValue, boolean usePropertySetter) {
+    ModelChange.assertLegalNodeChange(this);
     propertyValue = InternUtil.intern(propertyValue);
     if (usePropertySetter) {
       if ((myPropertySettersInProgress == null || !myPropertySettersInProgress.contains(propertyName)) && !myModel.isLoading()) {
@@ -700,8 +701,8 @@ public class SNode implements Cloneable, Iterable<SNode> {
       myProperties.put(propertyName, propertyValue);
     }
 
-    final String pv = propertyValue;
-    if (!getModel().isLoading()) {
+    if (ModelChange.needRegisterUndo(getModel())) {
+      final String pv = propertyValue;
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
           setProperty(propertyName, oldValue);
@@ -713,22 +714,19 @@ public class SNode implements Cloneable, Iterable<SNode> {
       });
     }
 
-    if (!isRegistered()) {
-      // node 'doesn't exist' : don't fire events
-      return;
+    if (ModelChange.needFireEvents(getModel(), this)) {
+      boolean addedOrRemoved = false;
+      boolean isRemoved = false;
+      if (SModelUtil_new.isEmptyPropertyValue(oldValue)) {
+        addedOrRemoved = true;
+        isRemoved = false;
+      }
+      if (SModelUtil_new.isEmptyPropertyValue(propertyValue)) {
+        addedOrRemoved = true;
+        isRemoved = true;
+      }
+      getModel().firePropertyChangedEvent(this, propertyName, oldValue, propertyValue, addedOrRemoved, isRemoved);
     }
-
-    boolean addedOrRemoved = false;
-    boolean isRemoved = false;
-    if (SModelUtil_new.isEmptyPropertyValue(oldValue)) {
-      addedOrRemoved = true;
-      isRemoved = false;
-    }
-    if (SModelUtil_new.isEmptyPropertyValue(propertyValue)) {
-      addedOrRemoved = true;
-      isRemoved = true;
-    }
-    getModel().firePropertyChangedEvent(this, propertyName, oldValue, propertyValue, addedOrRemoved, isRemoved);
   }
 
   // ---------------------------------
@@ -936,6 +934,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   private void removeChildAt(final int index) {
+    ModelChange.assertLegalNodeChange(this);
     final SNode wasChild = _children().get(index);
     final String wasRole = wasChild.getRole_();
 
@@ -946,7 +945,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
 
-    if (!getModel().isLoading()) {
+    if (ModelChange.needRegisterUndo(getModel())) {
       UndoManager.instance().undoableActionPerformed(new IUndoableAction() {
         public void undo() {
           insertChildAt(index, wasRole, wasChild);
@@ -958,12 +957,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
       });
     }
 
-    if (!isRegistered()) {
-      // node 'doesn't exist' : don't fire events
-      return;
+    if (ModelChange.needFireEvents(getModel(), this)) {
+      getModel().fireChildRemovedEvent(this, wasRole, wasChild, index);
     }
-
-    getModel().fireChildRemovedEvent(this, wasRole, wasChild, index);
   }
 
   private void insertChildAt(final int index, final @NotNull String role, final @NotNull SNode child) {
@@ -977,6 +973,8 @@ public class SNode implements Cloneable, Iterable<SNode> {
       throw new RuntimeException(child.getDebugText() + " is root node. Can't add it as a child");
     }
 
+    ModelChange.assertLegalNodeChange(this);
+
     _children().add(index, child);
     child.myRoleInParent = InternUtil.intern(role);
     child.myParent = this;
@@ -987,7 +985,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
       child.changeModel(getModel());
     }
 
-    if (!getModel().isLoading()) {
+    if (ModelChange.needRegisterUndo(getModel())) {
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
           removeChildAt(index);
@@ -999,12 +997,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
       });
     }
 
-    if (!isRegistered()) {
-      // node 'doesn't exist': don't fire events
-      return;
+    if (ModelChange.needFireEvents(getModel(), this)) {
+      getModel().fireChildAddedEvent(this, role, child, index);
     }
-
-    getModel().fireChildAddedEvent(this, role, child, index);
   }
 
   /*package*/ void unRegisterFromModel() {
@@ -1182,15 +1177,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public SReference addReferent(@NotNull String role, SNode target) {
-//    //test
-//    if(role.equals("concept")) {
-//      if(target != null && target.getConceptFqName().equals("jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference")) {
-//        if(this.getConceptFqName().equals("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
-//          System.out.println("aaaaaa!");
-//        }
-//      }
-//    }
-//    //test
     SReference reference = SReference.newInstance(role, this, target);
     insertReferenceAt(myReferences == null ? 0 : myReferences.size(), reference);
     return reference;
@@ -1274,10 +1260,11 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   private void insertReferenceAt(final int i, @NotNull final SReference reference) {
+    ModelChange.assertLegalNodeChange(this);
     if (myReferences == null) myReferences = new ArrayList<SReference>(1);
     myReferences.add(i, reference);
 
-    if (!getModel().isLoading()) {
+    if (ModelChange.needRegisterUndo(getModel())) {
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() throws UnexpectedUndoException {
           removeReferenceAt(i);
@@ -1289,20 +1276,18 @@ public class SNode implements Cloneable, Iterable<SNode> {
       });
     }
 
-    if (!isRegistered()) {
-      // node 'doesn't exist': don't fire events
-      return;
+    if (ModelChange.needFireEvents(getModel(), this)) {
+      getModel().fireReferenceAddedEvent(reference);
     }
-
-    getModel().fireReferenceAddedEvent(reference);
   }
 
   private void removeReferenceAt(final int i) {
+    ModelChange.assertLegalNodeChange(this);
     if (myReferences == null) return;
     final SReference reference = myReferences.get(i);
     myReferences.remove(reference);
 
-    if (!getModel().isLoading()) {
+    if (ModelChange.needRegisterUndo(getModel())) {
       UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
         public void undo() {
           insertReferenceAt(i, reference);
@@ -1314,12 +1299,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
       });
     }
 
-    if (!isRegistered()) {
-      // node 'doesn't exist': don't fire events
-      return;
+    if (ModelChange.needFireEvents(getModel(), this)) {
+      getModel().fireReferenceRemovedEvent(reference);
     }
-
-    getModel().fireReferenceRemovedEvent(reference);
   }
 
   //
@@ -1530,17 +1512,15 @@ public class SNode implements Cloneable, Iterable<SNode> {
   public void addRightTransformHint() {
     putUserObject(RIGHT_TRANSFORM_HINT, RIGHT_TRANSFORM_HINT);
     getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, null, "", true, false);
-    if (!getModel().isLoading()) {
-      UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
-        public void undo() throws UnexpectedUndoException {
-          removeRightTransformHint();
-        }
+    UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
+      public void undo() throws UnexpectedUndoException {
+        removeRightTransformHint();
+      }
 
-        public String toString() {
-          return "add RTHint";
-        }
-      });
-    }
+      public String toString() {
+        return "add RTHint";
+      }
+    });
   }
 
   public boolean hasRightTransformHint() {
@@ -1551,17 +1531,15 @@ public class SNode implements Cloneable, Iterable<SNode> {
   public void removeRightTransformHint() {
     removeUserObject(RIGHT_TRANSFORM_HINT);
     getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, "", null, true, true);
-    if (!getModel().isLoading()) {
-      UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
-        public void undo() throws UnexpectedUndoException {
-          addRightTransformHint();
-        }
+    UndoManager.instance().undoableActionPerformed(new NodeUndoableAction() {
+      public void undo() throws UnexpectedUndoException {
+        addRightTransformHint();
+      }
 
-        public String toString() {
-          return "removeRTHint";
-        }
-      });
-    }
+      public String toString() {
+        return "removeRTHint";
+      }
+    });
   }
 
   @Nullable

@@ -180,6 +180,7 @@ public class SModel implements Iterable<SNode> {
 
 
   public void addRoot(@NotNull SNode node) {
+    ModelChange.assertLegalNodeRegistration(this, node);
     if (myRoots.contains(node)) return;
     if (node.getModel() != this && node.getModel().isRoot(node)) {
       node.getModel().removeRoot(node);
@@ -192,15 +193,20 @@ public class SModel implements Iterable<SNode> {
 
     myRoots.add(node);
     node.registerInModel(this);
-    if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, false));
+    if (ModelChange.needRegisterUndo(this)) {
+      UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, false));
+    }
     fireRootAddedEvent(node);
   }
 
   public void removeRoot(@NotNull SNode node) {
+    ModelChange.assertLegalNodeUnRegistration(this, node);
     if (myRoots.contains(node)) {
       myRoots.remove(node);
       node.unRegisterFromModel();
-      if (!isLoading()) UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, true));
+      if (ModelChange.needRegisterUndo(this)) {
+        UndoManager.instance().undoableActionPerformed(new UndoRootAddOrDelete(node, true));
+      }
       fireRootRemovedEvent(node);
     }
   }
@@ -1118,7 +1124,7 @@ public class SModel implements Iterable<SNode> {
     }
     return BaseAdapter.toAdapters(snodeClass, nodes);
   }
-   
+
 
   public <SN extends INodeAdapter> List<SN> allAdaptersIncludingImported(IScope scope, final Class<SN> snodeClass) {
     return BaseAdapter.toAdapters(snodeClass, allNodesIncludingImported(scope, new Condition<SNode>() {
