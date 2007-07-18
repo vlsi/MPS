@@ -14,7 +14,7 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_26().createNode(this.myMatchingPattern.PatternVar);
+    return new QuotationClass_27().createNode(this.myMatchingPattern.PatternVar);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";

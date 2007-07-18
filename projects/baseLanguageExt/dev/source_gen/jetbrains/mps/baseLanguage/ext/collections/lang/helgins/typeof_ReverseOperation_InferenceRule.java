@@ -14,7 +14,7 @@ public class typeof_ReverseOperation_InferenceRule implements InferenceRule_Runt
 
   public void applyRule(SNode argument) {
     SNode inputElementType = RulesFunctions_Collections.get_inputListType_elementType(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_22().createNode(inputElementType), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_23().createNode(inputElementType), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ReverseOperation";

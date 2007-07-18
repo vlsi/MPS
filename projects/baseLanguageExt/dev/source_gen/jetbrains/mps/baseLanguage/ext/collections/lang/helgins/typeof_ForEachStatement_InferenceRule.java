@@ -14,16 +14,12 @@ public class typeof_ForEachStatement_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(SNode argument) {
-    SNode inputSequenceExpr = SLinkOperations.getTarget(argument, "inputSequence", true);
-    if((inputSequenceExpr == null)) {
-      return;
-    }
-    SNode sequenceType = TypeUtil_Collections.coerceTo_SequenceType(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(inputSequenceExpr));
-    if(!(sequenceType != null)) {
-      TypeChecker.getInstance().reportTypeError(inputSequenceExpr, "sequence is expected");
-    }
-    if(SLinkOperations.getTarget(argument, "variable", true) != null) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(sequenceType, "elementType", true), SLinkOperations.getTarget(argument, "variable", true));
+    SNode variable = SLinkOperations.getTarget(argument, "variable", true);
+    SNode inputSequence = SLinkOperations.getTarget(argument, "inputSequence", true);
+    if((inputSequence != null) && (variable != null)) {
+      SNode elementType_typevar_1184771826645 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+      TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(new QuotationClass_17().createNode(elementType_typevar_1184771826645), TypeChecker.getInstance().getRuntimeSupport().typeOf(inputSequence), inputSequence, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184772149777");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(variable), elementType_typevar_1184771826645, variable, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184772002733");
     }
   }
   public String getApplicableConceptFQName() {

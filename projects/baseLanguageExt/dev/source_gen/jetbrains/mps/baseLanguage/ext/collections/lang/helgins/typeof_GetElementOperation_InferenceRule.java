@@ -16,7 +16,7 @@ public class typeof_GetElementOperation_InferenceRule implements InferenceRule_R
   public void applyRule(SNode argument) {
     SNode elementType = RulesFunctions_Collections.get_inputListType_elementType(argument);
     SNode arg = SLinkOperations.getTarget(argument, "argument", true);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(arg), new QuotationClass_18().createNode()))) {
+    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(arg), new QuotationClass_19().createNode()))) {
       TypeChecker.getInstance().reportTypeError(arg, "integer is expected");
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(elementType, argument);

@@ -21,7 +21,7 @@ public class typeof_AddAllElementsOperation_InferenceRule implements InferenceRu
     // ==========
     SNode arg = SLinkOperations.getTarget(argument, "argument", true);
     if(arg != null && expectedElementType != null) {
-      SNode expectedArgumentType = new QuotationClass_17().createNode(expectedElementType);
+      SNode expectedArgumentType = new QuotationClass_18().createNode(expectedElementType);
       SNode actualArgumentType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(arg);
       if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(actualArgumentType, expectedArgumentType))) {
         TypeChecker.getInstance().reportTypeError(arg, "" + expectedArgumentType + " is expected");

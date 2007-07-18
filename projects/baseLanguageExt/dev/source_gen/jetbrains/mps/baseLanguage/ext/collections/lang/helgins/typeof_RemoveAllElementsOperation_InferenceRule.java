@@ -21,7 +21,7 @@ public class typeof_RemoveAllElementsOperation_InferenceRule implements Inferenc
     // ==========
     SNode arg = SLinkOperations.getTarget(argument, "argument", true);
     if(arg != null) {
-      SNode expectedArgumentType = new QuotationClass_21().createNode(expectedElementType);
+      SNode expectedArgumentType = new QuotationClass_22().createNode(expectedElementType);
       SNode actualArgumentType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(arg);
       if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(actualArgumentType, expectedArgumentType))) {
         TypeChecker.getInstance().reportTypeError(arg, "" + expectedArgumentType + " is expected");
