@@ -45,7 +45,7 @@ public class TypeChecker {
   private static final ModelOwner RUNTIME_TYPES_MODEL_OWNER = new ModelOwner() {};
 
   private Set<SNode> myCheckedRoots = new WeakSet<SNode>();
-  private Map<SNode, Set<SNode>> myNodesToDependentRoots = new WeakHashMap<SNode, Set<SNode>>();
+  private Map<SNode, WeakSet<SNode>> myNodesToDependentRoots = new WeakHashMap<SNode, WeakSet<SNode>>();
 
   private MySModelCommandListener myListener = new MySModelCommandListener();
 
@@ -75,6 +75,10 @@ public class TypeChecker {
   public static TypeChecker getInstance() {
     return ApplicationComponents.getInstance().getComponent(TypeChecker.class);
   }
+
+
+
+
 
   public Map<SNode, SNode> getMainContext() {
     return myCurrentTypesComponent.getMainContext();
@@ -147,9 +151,9 @@ public class TypeChecker {
       myCheckedRoots.add(node);
 
       for (SNode nodeToDependOn : listener.getNodesToDependOn()) {
-        Set<SNode> dependentRoots = myNodesToDependentRoots.get(nodeToDependOn);
+        WeakSet<SNode> dependentRoots = myNodesToDependentRoots.get(nodeToDependOn);
         if (dependentRoots == null) {
-          dependentRoots = new HashSet<SNode>();
+          dependentRoots = new WeakSet<SNode>();
           myNodesToDependentRoots.put(nodeToDependOn, dependentRoots);
         }
         dependentRoots.add(node);
