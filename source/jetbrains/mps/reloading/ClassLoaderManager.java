@@ -8,6 +8,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.ide.SystemInfo;
 import sun.misc.Launcher;
 
 import java.io.File;
@@ -221,27 +222,24 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public IClassPathItem getRTJar() {    
-    if (myRTJar != null) {
-      return myRTJar;
-    }
-
-    for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
-      try {
-        File file = new File(url.toURI());
-
-        if (!file.exists()) continue;
-
-        if (file.getPath().endsWith("rt.jar")) {
-          myRTJar = new JarFileClassPathItem(file);
-          return myRTJar;
+    if (myRTJar == null) {
+      if (! SystemInfo.isMac) {
+        myRTJar = findBootstrapJarByName("rt.jar");
+        if (myRTJar == null) {
+          LOG.error("Can't find rt.jar. Make sure you are using JDK 5.0");
         }
-      } catch (URISyntaxException e) {
-        LOG.error(e);
+      } else {
+        CompositeClassPathItem composite = new CompositeClassPathItem();
+        IClassPathItem item = findBootstrapJarByName("classes.jar");
+        if (item == null) {
+          LOG.error("Can't find classes.jar. Make sure you are using JDK 5.0");
+        } else {
+          composite.add(item);
+        }
+        myRTJar = composite;
       }
     }
-
-    LOG.error("Can't find rt.jar. Make sure you are using JDK 5.0");
-    return null;
+    return myRTJar;
   }
 
   public IClassPathItem getMPSPath() {
@@ -269,5 +267,21 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return null;
   }
 
+  private JarFileClassPathItem findBootstrapJarByName(String name) {
+    for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
+      try {
+        File file = new File(url.toURI());
+
+        if (!file.exists()) continue;
+
+        if (file.getPath().endsWith(name)) {
+          return new JarFileClassPathItem(file);
+        }
+      } catch (URISyntaxException e) {
+        LOG.error(e);
+      }
+    }
+    return null;
+  }
 
 }
