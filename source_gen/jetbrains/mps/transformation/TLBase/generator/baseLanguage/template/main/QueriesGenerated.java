@@ -105,28 +105,28 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1184617630754(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
   }
-  public static SNode mapSrcMacro_mapper_1178910515264(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode mapSrcMacro_mapper_1178910515264(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
   }
-  public static SNode mapSrcMacro_mapper_1178914145434(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode mapSrcMacro_mapper_1178914145434(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
   }
-  public static SNode mapSrcMacro_mapper_1178914006342(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode mapSrcMacro_mapper_1178914006342(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
   }
-  public static SNode mapSrcMacro_mapper_1178913463923(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode mapSrcMacro_mapper_1178913463923(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
   }
-  public static SNode mapSrcMacro_mapper_1178913788227(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode mapSrcMacro_mapper_1178913788227(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
   }
-  public static SNode mapSrcMacro_mapper_1178913590671(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode mapSrcMacro_mapper_1178913590671(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
   }
-  public static SNode mapSrcMacro_mapper_1184374857711(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode mapSrcMacro_mapper_1184374857711(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
   }
-  public static SNode mapSrcMacro_mapper_1184617630772(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode mapSrcMacro_mapper_1184617630772(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
   }
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619599466(SNode node, ITemplateGenerator generator) {
