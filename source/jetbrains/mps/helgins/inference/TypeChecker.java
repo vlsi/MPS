@@ -210,6 +210,7 @@ public class TypeChecker {
       modelDescriptor = new DefaultSModelDescriptor(IModelRootManager.NULL_MANAGER, null, uid) {
         {
           mySModel = new SModel(getModelUID());
+          mySModel.setLoading(true);
         }
 
         public void save() {
