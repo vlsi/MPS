@@ -99,7 +99,7 @@ public class MacroUtil {
   }
 
 
-  public static SNode executeMapSrcNodeMacro(SNode sourceNode, SNode myMapSrcNodeOrListMacro, ITemplateGenerator generator) {
+  public static SNode executeMapSrcNodeMacro(SNode sourceNode, SNode myMapSrcNodeOrListMacro, SNode parentOutputNode, ITemplateGenerator generator) {
     INodeAdapter adapter = myMapSrcNodeOrListMacro.getAdapter();
     // new
     MapSrcMacro_MapperFunction mapperFunction;
@@ -110,14 +110,18 @@ public class MacroUtil {
     }
     if (mapperFunction != null) {
       String methodName = TemplateFunctionMethodName.mapSrcMacro_MapperFunction(mapperFunction.getNode());
-      Object[] args = new Object[]{
+      Object[] args_old = new Object[]{
               sourceNode,
               generator.getSourceModel(),
               generator,
               generator.getScope(),
               generator.getGeneratorSessionContext()};
+      Object[] args_new = new Object[]{
+              sourceNode,
+              parentOutputNode,
+              generator};
       try {
-        SNode outputNode = (SNode) QueryMethodGenerated.invoke(methodName, args, myMapSrcNodeOrListMacro.getModel());
+        SNode outputNode = (SNode) QueryMethodGenerated.invoke_MapperFunction(methodName, args_old, args_new, myMapSrcNodeOrListMacro.getModel());
         return outputNode;
       } catch (Exception e) {
         generator.showErrorMessage(sourceNode, null, myMapSrcNodeOrListMacro, "couldn't evaluate macro query");
