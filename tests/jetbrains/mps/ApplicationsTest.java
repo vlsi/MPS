@@ -33,7 +33,7 @@ public class ApplicationsTest extends TestCase {
   }
 
   public void testProjectHalo() {
-    String res = TestMain.testProject(new File("projects/ProjectHalo/ProjectHalo.mpr"));
+    String res = TestMain.testProject(new File("app/ProjectHalo/ProjectHalo.mpr"));
     assertTrue(res, res == null);
   }
 
