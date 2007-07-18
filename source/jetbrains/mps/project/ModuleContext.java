@@ -79,17 +79,17 @@ public class ModuleContext extends StandaloneMPSContext {
       return null;
     }
 
-    IModule module;
-
-    Iterator<IModule> it = owningModules.iterator();
-
-    while (it.hasNext()) {
-      IModule m = it.next();
-      if (m instanceof Solution && "outputModels".equals(((Solution) m).getSolutionDescriptor().getName())) {
-        it.remove();
+    if (owningModules.size() > 1) {
+      Iterator<IModule> it = owningModules.iterator();
+      while (it.hasNext()) {
+        IModule m = it.next();
+        if (m instanceof Solution && "outputModels".equals(((Solution) m).getSolutionDescriptor().getName())) {
+          it.remove();
+        }
       }
     }
-    
+
+    IModule module;
     if (owningModules.size() == 1) {
       module = owningModules.iterator().next();
     } else {
