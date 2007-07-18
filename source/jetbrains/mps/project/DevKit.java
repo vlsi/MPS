@@ -68,7 +68,7 @@ public class DevKit extends AbstractModule {
     if (moduleDescriptor instanceof DevKitDescriptor) {
       setDevKitDescriptor((DevKitDescriptor) moduleDescriptor);
     } else {
-      LOG.error("not a solution descriptor", new Throwable());
+      LOG.error("not a devkit descriptor", new Throwable());
     }
   }
 

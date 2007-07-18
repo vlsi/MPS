@@ -133,6 +133,13 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     myDescriptorFile = descriptorFile;
     setLanguageDescriptor(myLanguageDescriptor);
     save();
+    /*if (projectHandler != null) {
+      try {
+        projectHandler.refreshFS();
+      } catch(RemoteException e) {
+        LOG.error(e);
+      }
+    }*/
   }
 
   /*package*/ File newDescriptorFileByNewName(String newNamespace) {
