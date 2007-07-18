@@ -9,6 +9,7 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.tools.ReloadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -574,6 +575,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       handler.handle(new Message(MessageKind.ERROR, text));
       progress.finishSomehow();
     } finally {
+      UndoManager.instance().clear();
+
       if (myCompileOnGeneration && ideaPresent && generationType.requiresCompilationInIDEAfterGeneration()) {
         //todo this is tmp anti memory leak hack:
         progress.addText("Invalidate caches");
