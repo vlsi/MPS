@@ -499,7 +499,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           break;
         }
       }
-      //-- generation
+      //-- generation           
 
       if (isSaveTransientModels()) {
         File solutionDescriptorFile = generationSession.saveTransientModels();
