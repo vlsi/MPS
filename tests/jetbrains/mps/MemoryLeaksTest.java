@@ -15,5 +15,9 @@ public class MemoryLeaksTest extends TestCase {
   public void testPubMedDBLeaks() {
     assertTrue(TestMain.testProjectForLeaks(new File("app/PubMedDB/pubMedDB.mpr"), 2));
   }
+
+  public void testCharismaLeaks() {
+    assertTrue(TestMain.testProjectForLeaks(new File("app/charisma/charisma-app/charisma-app.mpr"), 2));
+  }
 }
 
