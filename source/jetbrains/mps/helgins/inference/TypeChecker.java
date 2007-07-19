@@ -113,6 +113,7 @@ public class TypeChecker {
 
   public void clearForReload() {
     myNodesToDependentRoots.clear();
+
     myRulesManager.clear();
     mySubtypingManager.clearSupertypesCache();
     myCurrentTypesComponent = null;
