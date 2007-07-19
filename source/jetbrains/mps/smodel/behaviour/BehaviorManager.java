@@ -38,8 +38,6 @@ public final class BehaviorManager {
 
 
     if (myConstructors.containsKey(conceptFqName)) {
-      System.out.println("cached");
-
       methodsToCall = myConstructors.get(conceptFqName);
     } else {
       while (concept != null) {
