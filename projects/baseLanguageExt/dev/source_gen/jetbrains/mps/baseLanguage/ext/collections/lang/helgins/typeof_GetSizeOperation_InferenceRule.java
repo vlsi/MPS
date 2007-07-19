@@ -15,8 +15,8 @@ public class typeof_GetSizeOperation_InferenceRule implements InferenceRule_Runt
   public void applyRule(SNode argument) {
     SNode input = RulesFunctions_Collections.getInput(argument);
     SNode elementType_typevar_1184847379888 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input), new QuotationClass_24().createNode(elementType_typevar_1184847379888), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847420828");
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_25().createNode(), argument, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847367971");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input), new QuotationClass_26().createNode(elementType_typevar_1184847379888), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847420828");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_27().createNode(), argument, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847367971");
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation";

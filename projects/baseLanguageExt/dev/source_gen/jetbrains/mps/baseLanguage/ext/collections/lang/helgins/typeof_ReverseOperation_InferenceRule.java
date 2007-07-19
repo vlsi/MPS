@@ -13,8 +13,10 @@ public class typeof_ReverseOperation_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(SNode argument) {
-    SNode inputElementType = RulesFunctions_Collections.get_inputListType_elementType(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_28().createNode(inputElementType), argument);
+    SNode elementType_typevar_1184856571984 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    SNode input = RulesFunctions_Collections.getInput(argument);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input), new QuotationClass_33().createNode(elementType_typevar_1184856571984), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856612680");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_34().createNode(elementType_typevar_1184856571984), argument, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856636291");
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ReverseOperation";

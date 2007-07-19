@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_GetElementOperation_InferenceRule implements InferenceRule_Runtime {
@@ -14,12 +14,8 @@ public class typeof_GetElementOperation_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(SNode argument) {
-    SNode elementType = RulesFunctions_Collections.get_inputListType_elementType(argument);
-    SNode arg = SLinkOperations.getTarget(argument, "argument", true);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(arg), new QuotationClass_23().createNode()))) {
-      TypeChecker.getInstance().reportTypeError(arg, "integer is expected");
-    }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(elementType, argument);
+    RulesFunctions_Collections.setInputElementType(argument, argument);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "argument", true)), new QuotationClass_25().createNode(), SLinkOperations.getTarget(argument, "argument", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856469305");
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetElementOperation";

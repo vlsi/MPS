@@ -14,19 +14,13 @@ public class typeof_RemoveAllElementsOperation_InferenceRule implements Inferenc
   }
 
   public void applyRule(SNode argument) {
-    SNode expectedElementType = RulesFunctions_Collections.get_inputListType_elementType(argument);
-    if(!(expectedElementType != null)) {
-      TypeChecker.getInstance().reportTypeError(argument, "couldn't define input list element type");
-    }
-    // ==========
-    SNode arg = SLinkOperations.getTarget(argument, "argument", true);
-    if(arg != null) {
-      SNode expectedArgumentType = new QuotationClass_27().createNode(expectedElementType);
-      SNode actualArgumentType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(arg);
-      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(actualArgumentType, expectedArgumentType))) {
-        TypeChecker.getInstance().reportTypeError(arg, "" + expectedArgumentType + " is expected");
-      }
-    }
+    SNode input = RulesFunctions_Collections.getInput(argument);
+    SNode elementType_typevar_1184856319398 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    SNode expectedElementType_typevar_1184856319399 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input), new QuotationClass_30().createNode(elementType_typevar_1184856319398), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856319401");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "argument", true)), new QuotationClass_31().createNode(expectedElementType_typevar_1184856319399), SLinkOperations.getTarget(argument, "argument", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856319409");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(expectedElementType_typevar_1184856319399, elementType_typevar_1184856319398, argument, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856319417");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_32().createNode(), argument, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184851898840");
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.RemoveAllElementsOperation";

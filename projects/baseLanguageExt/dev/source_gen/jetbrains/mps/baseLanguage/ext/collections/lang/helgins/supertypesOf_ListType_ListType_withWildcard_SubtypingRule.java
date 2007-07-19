@@ -13,7 +13,7 @@ public class supertypesOf_ListType_ListType_withWildcard_SubtypingRule extends S
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_39().createNode();
+    return new QuotationClass_45().createNode();
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType";

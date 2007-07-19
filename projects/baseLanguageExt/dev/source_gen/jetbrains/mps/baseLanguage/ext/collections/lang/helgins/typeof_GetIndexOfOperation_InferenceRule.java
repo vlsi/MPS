@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_GetIndexOfOperation_InferenceRule implements InferenceRule_Runtime {
@@ -14,12 +14,11 @@ public class typeof_GetIndexOfOperation_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(SNode argument) {
-    SNode expectedElementType = RulesFunctions_Collections.get_inputListType_elementType(argument);
-    SNode arg = SLinkOperations.getTarget(argument, "argument", true);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(arg), expectedElementType))) {
-      TypeChecker.getInstance().reportTypeError(arg, "" + expectedElementType + " is expected");
-    }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_26().createNode(), argument);
+    SNode input = RulesFunctions_Collections.getInput(argument);
+    SNode elementType_typevar_1184856779488 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input), new QuotationClass_28().createNode(elementType_typevar_1184856779488), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856768419");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "argument", true)), elementType_typevar_1184856779488, SLinkOperations.getTarget(argument, "argument", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856809408");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_29().createNode(), argument, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856713865");
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetIndexOfOperation";
