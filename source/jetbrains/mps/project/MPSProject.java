@@ -37,8 +37,6 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.baseLanguage.plugin.BaseLanguagePlugin;
-import jetbrains.mps.xml.plugin.XmlPlugin;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
@@ -601,14 +599,14 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   }
 
   public static class TestResult {
-    public List<Message> generationErrors;
-    public List<Message> generationWarnings;
-    public List<String> compilationProblems;
+    public List<Message> myGenerationErrors;
+    public List<Message> myGenerationWarnings;
+    public List<String> myCompilationProblems;
 
     public TestResult(List<Message> generationErrors, List<Message> generationWarnings, List<String> compilationProblems) {
-      this.generationErrors = generationErrors;
-      this.generationWarnings = generationWarnings;
-      this.compilationProblems = compilationProblems;
+      this.myGenerationErrors = generationErrors;
+      this.myGenerationWarnings = generationWarnings;
+      this.myCompilationProblems = compilationProblems;
     }
 
     public boolean isOk() {
@@ -617,7 +615,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     public int warningsStartsWith(String warn) {
       int i = 0;
-      for (Message w : generationWarnings) {
+      for (Message w : myGenerationWarnings) {
         if (w.getText().startsWith(warn)) {
           i++;
         }
@@ -627,15 +625,15 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     }
 
     public boolean hasGenerationErrors() {
-      return generationErrors.size() != 0;
+      return myGenerationErrors.size() != 0;
     }
 
     public boolean hasGenerationWarnings() {
-      return generationWarnings.size() != 0;
+      return myGenerationWarnings.size() != 0;
     }
 
     public boolean hasCompilationProblems() {
-      return compilationProblems.size() != 0;
+      return myCompilationProblems.size() != 0;
     }
 
     public void dump(PrintStream out) {
@@ -643,7 +641,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
       if (hasGenerationErrors()) {
         out.println("Generation errors:");
-        for (Message e: generationErrors) {
+        for (Message e: myGenerationErrors) {
           out.println("  "  + e.getText());
         }
       } else {
@@ -653,7 +651,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
       if (hasGenerationWarnings()) {
         out.println("Generation warnings:");
-        for (Message w: generationWarnings) {
+        for (Message w: myGenerationWarnings) {
           out.println("  "  + w.getText());
         }
       } else {
@@ -663,7 +661,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
       if (hasCompilationProblems()) {
         out.println("Compilation problems:");
-        for (String c: compilationProblems) {
+        for (String c: myCompilationProblems) {
           out.println("  "  + c);
         }
       } else {
@@ -676,6 +674,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
   //todo find a better place for this method
   public TestResult testProject() {
+    getPluginManager().reloadPlugins();
+
     final List<Message> errors = new ArrayList<Message>();
     final List<Message> warnings = new ArrayList<Message>();
 
@@ -717,9 +717,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
-
-        addTextGenerators();
-
         for (BaseGeneratorConfiguration t : myProjectDescriptor.getRunConfigurations()) {
           if (!t.getTest()) continue;
 
@@ -753,15 +750,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     });
 
     return new TestResult(errors, warnings, createCompilationProblemsList(generationType.getCompilationResults()));
-  }
-
-  // TODO: rid off this method when plugins will be automatically installed during headless generation
-  private void addTextGenerators() {
-    // java
-    new BaseLanguagePlugin().init(this);
-
-    // xml
-    new XmlPlugin().init(this);
   }
 
   private List<String> createCompilationProblemsList(List<CompilationResult> compilationResults) {

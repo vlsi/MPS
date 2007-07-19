@@ -8,7 +8,7 @@ import java.io.File;
 
 public class MemoryLeaksTest extends TestCase {
   public void testEditorLanguageGenerationLeaks() {
-    assertTrue(TestMain.testProjectForLeaks(new File("languages/bootstrap/editorLanguage/editorLanguage.mpr"), 3));
+    assertTrue(TestMain.testProjectForLeaks(new File("languages/bootstrap/editorLanguage/editorLanguage.mpr"), 2));
   }
 
   public void testPubMedDBLeaks() {
