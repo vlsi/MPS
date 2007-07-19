@@ -58,6 +58,8 @@ public class QueryMethodGenerated {
       throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + queriesClassName + "'");
     }
 
+    method.setAccessible(true);
+    
     QueryMethodGenerated.ourMethods.put(pair, method);
     return method;
   }
