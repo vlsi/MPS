@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_GetLastOperation_InferenceRule implements InferenceRule_Runtime {
@@ -13,8 +12,7 @@ public class typeof_GetLastOperation_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(SNode argument) {
-    SNode inputElementType = RulesFunctions_Collections.get_inputSequenceType_elementType(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(inputElementType, argument);
+    RulesFunctions_Collections.setInputElementType(argument, argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetLastOperation";

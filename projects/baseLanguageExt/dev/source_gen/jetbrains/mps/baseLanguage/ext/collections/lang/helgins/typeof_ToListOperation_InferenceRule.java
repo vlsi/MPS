@@ -5,8 +5,6 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ToListOperation_InferenceRule implements InferenceRule_Runtime {
@@ -15,14 +13,10 @@ public class typeof_ToListOperation_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(SNode argument) {
-    SNode inputElementType = RulesFunctions_Collections.get_inputSequenceType_elementType(argument);
-    if(inputElementType == null) {
-      TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(SNodeOperations.getParent(argument, null, false, false), "leftExpression", true), "Can't compute input sequence element type");
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_11().createNode(), argument);
-    } else
-    {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_12().createNode(inputElementType), argument);
-    }
+    SNode input = RulesFunctions_Collections.getInput(argument);
+    SNode elementType_typevar_1184850887615 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input), new QuotationClass_12().createNode(elementType_typevar_1184850887615), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850943303");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_13().createNode(elementType_typevar_1184850887615), argument, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850973959");
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation";
