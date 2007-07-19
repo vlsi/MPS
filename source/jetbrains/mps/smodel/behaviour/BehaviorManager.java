@@ -10,18 +10,22 @@ import jetbrains.mps.util.NameUtil;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public final class BehaviorManager {
   private static final Logger LOG = Logger.getLogger(BehaviorManager.class);
 
   private static BehaviorManager ourInstance = new BehaviorManager();
 
+
   public static BehaviorManager getInstance() {
     return ourInstance;
+  }
+
+  private Map<MethodInfo, Method> myMethods = new HashMap<MethodInfo, Method>();
+
+  public void clear() {
+    myMethods.clear();
   }
 
   public void initNode(SNode node) {
@@ -68,17 +72,31 @@ public final class BehaviorManager {
   private Method getMethod(AbstractConceptDeclaration concept, String methodName, Class[] parameterTypes) {
     Method method = null;
     String fqName = NameUtil.nodeFQName(concept);
+
+    MethodInfo mi = new MethodInfo(fqName, methodName, parameterTypes);
+
+    if (myMethods.containsKey(mi)) {
+
+      System.out.println("cached!");
+      return myMethods.get(mi);
+    }
+
     String behaviorClass = behaviorClassByConceptFqName(fqName);
 
     try {
       Class cls = Class.forName(behaviorClass, true, ClassLoaderManager.getInstance().getClassLoader());
       method = cls.getMethod(methodName, parameterTypes);
-
     } catch (ClassNotFoundException e) {
       //ignore
     } catch (NoSuchMethodException e) {
       //ignor too
     }
+
+    if (method != null) {
+      method.setAccessible(true);
+      myMethods.put(mi, method);
+    }
+
     return method;
   }
 
@@ -103,10 +121,6 @@ public final class BehaviorManager {
       params.add(node);
       params.addAll(Arrays.asList(parameters));
 
-      if (params.size() != paramTypes.size()) {
-        System.out.println("!!!!");
-      }
-
       try {
         return (T) method.invoke(null, params.toArray());
       } catch (IllegalAccessException e) {
@@ -117,6 +131,44 @@ public final class BehaviorManager {
     }
 
     throw new RuntimeException("Can't invoke_old a method " + methodName + " on node " + node + " " + node.getConceptFqName());
+  }
+
+  private static class MethodInfo {
+    private String myConceptFqName;
+    private String myMethodName;
+    private Class[] myParameters;
+
+    public MethodInfo(String conceptFqName, String methodName, Class[] parameters) {
+      myConceptFqName = conceptFqName;
+      myMethodName = methodName;
+      myParameters = parameters;
+    }
+
+    public boolean equals(Object obj) {
+      if (!(obj instanceof MethodInfo)) {
+        return false;
+      }
+      MethodInfo mi = (MethodInfo) obj;
+
+      if (!myConceptFqName.equals(mi.myConceptFqName)) return false;
+      if (!myMethodName.equals(mi.myMethodName)) return false;
+
+      if (myParameters.length != mi.myParameters.length) return false;
+
+      for (int i = 0; i < myParameters.length; i++) {
+        if (myParameters[i] != mi.myParameters[i]) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+
+
+    public int hashCode() {
+      return myConceptFqName.hashCode() * 239 + myMethodName.hashCode() * 7 + myParameters.length;
+    }
   }
 
 }
