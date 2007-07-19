@@ -32,14 +32,15 @@ public final class BehaviorManager {
 
   public void initNode(SNode node) {
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
+    String conceptFqName = NameUtil.nodeFQName(concept);
 
     List<Method> methodsToCall = new ArrayList<Method>();
 
 
-    if (myConstructors.containsKey(NameUtil.nodeFQName(concept))) {
+    if (myConstructors.containsKey(conceptFqName)) {
       System.out.println("cached");
 
-      methodsToCall = myConstructors.get(NameUtil.nodeFQName(concept));
+      methodsToCall = myConstructors.get(conceptFqName);
     } else {
       while (concept != null) {
         String fqName = NameUtil.nodeFQName(concept);
@@ -61,7 +62,7 @@ public final class BehaviorManager {
         concept = ((ConceptDeclaration) concept).getExtends();
       }
 
-      myConstructors.put(NameUtil.nodeFQName(concept), methodsToCall);
+      myConstructors.put(conceptFqName, methodsToCall);
     }
 
     for (int i = methodsToCall.size() - 1; i >= 0; i--) {
