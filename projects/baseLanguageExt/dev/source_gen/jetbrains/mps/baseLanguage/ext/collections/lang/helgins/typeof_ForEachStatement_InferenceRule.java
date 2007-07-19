@@ -18,7 +18,7 @@ public class typeof_ForEachStatement_InferenceRule implements InferenceRule_Runt
     SNode inputSequence = SLinkOperations.getTarget(argument, "inputSequence", true);
     if((inputSequence != null) && (variable != null)) {
       SNode elementType_typevar_1184771826645 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-      TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(new QuotationClass_19().createNode(elementType_typevar_1184771826645), TypeChecker.getInstance().getRuntimeSupport().typeOf(inputSequence), inputSequence, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184772149777");
+      TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(new QuotationClass_20().createNode(elementType_typevar_1184771826645), TypeChecker.getInstance().getRuntimeSupport().typeOf(inputSequence), inputSequence, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184772149777");
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(variable), elementType_typevar_1184771826645, variable, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184772002733");
     }
   }

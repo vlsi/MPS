@@ -21,7 +21,7 @@ public class typeof_ContainsOperation_InferenceRule implements InferenceRule_Run
         boolean matches_1178725705171 = false;
         matches_1178725705171 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression");
         if(matches_1178725705171) {
-          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_13().createNode(), argument);
+          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_14().createNode(), argument);
           break;
         }
       }

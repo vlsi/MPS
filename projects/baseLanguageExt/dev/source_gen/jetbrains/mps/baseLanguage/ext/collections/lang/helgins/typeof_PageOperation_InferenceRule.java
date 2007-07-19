@@ -15,8 +15,8 @@ public class typeof_PageOperation_InferenceRule implements InferenceRule_Runtime
 
   public void applyRule(SNode argument) {
     RulesFunctions_Collections.setInputSequenceType(argument, argument);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "fromElement", true)), new QuotationClass_7().createNode(), SLinkOperations.getTarget(argument, "fromElement", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184784238570");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "toElement", true)), new QuotationClass_8().createNode(), SLinkOperations.getTarget(argument, "toElement", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184784267337");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "fromElement", true)), new QuotationClass_8().createNode(), SLinkOperations.getTarget(argument, "fromElement", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184784238570");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "toElement", true)), new QuotationClass_9().createNode(), SLinkOperations.getTarget(argument, "toElement", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184784267337");
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.PageOperation";

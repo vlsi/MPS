@@ -14,11 +14,8 @@ public class typeof_SkipOperation_InferenceRule implements InferenceRule_Runtime
   }
 
   public void applyRule(SNode argument) {
-    SNode inputSequenceType = RulesFunctions_Collections.get_inputSequenceType(argument);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "elementsToSkip", true)), new QuotationClass_5().createNode()))) {
-      TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "elementsToSkip", true), "integer argument expected");
-    }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(inputSequenceType, argument);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "elementsToSkip", true)), new QuotationClass_6().createNode(), SLinkOperations.getTarget(argument, "elementsToSkip", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847107857");
+    RulesFunctions_Collections.setInputSequenceType(argument, argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SkipOperation";

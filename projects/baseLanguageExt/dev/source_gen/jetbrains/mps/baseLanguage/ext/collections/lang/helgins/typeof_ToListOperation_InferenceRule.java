@@ -18,10 +18,10 @@ public class typeof_ToListOperation_InferenceRule implements InferenceRule_Runti
     SNode inputElementType = RulesFunctions_Collections.get_inputSequenceType_elementType(argument);
     if(inputElementType == null) {
       TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(SNodeOperations.getParent(argument, null, false, false), "leftExpression", true), "Can't compute input sequence element type");
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_10().createNode(), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_11().createNode(), argument);
     } else
     {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_11().createNode(inputElementType), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_12().createNode(inputElementType), argument);
     }
   }
   public String getApplicableConceptFQName() {
