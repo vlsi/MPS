@@ -36,7 +36,6 @@ public final class BehaviorManager {
       try {
         Class cls = Class.forName(behaviourClass, true, ClassLoaderManager.getInstance().getClassLoader());
         Method method = cls.getMethod("init", SNode.class);
-        method.setAccessible(true);
         methodsToCall.add(method);
       } catch (ClassNotFoundException e) {
         //ignore
@@ -74,7 +73,6 @@ public final class BehaviorManager {
     try {
       Class cls = Class.forName(behaviorClass, true, ClassLoaderManager.getInstance().getClassLoader());
       method = cls.getMethod(methodName, parameterTypes);
-      method.setAccessible(true);
 
     } catch (ClassNotFoundException e) {
       //ignore
