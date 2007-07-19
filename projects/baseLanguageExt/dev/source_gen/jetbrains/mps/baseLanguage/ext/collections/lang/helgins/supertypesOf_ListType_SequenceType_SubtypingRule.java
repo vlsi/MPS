@@ -14,7 +14,7 @@ public class supertypesOf_ListType_SequenceType_SubtypingRule extends SubtypingR
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_29().createNode(SLinkOperations.getTarget(type, "elementType", true));
+    return new QuotationClass_30().createNode(SLinkOperations.getTarget(type, "elementType", true));
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType";
