@@ -76,10 +76,6 @@ public class TypeChecker {
     return ApplicationComponents.getInstance().getComponent(TypeChecker.class);
   }
 
-
-
-
-
   public Map<SNode, SNode> getMainContext() {
     return myCurrentTypesComponent.getMainContext();
   }
@@ -113,6 +109,7 @@ public class TypeChecker {
   }
 
   public void clearForReload() {
+    myNodesToDependentRoots.clear();
     myRulesManager.clear();
     mySubtypingManager.clearSupertypesCache();
     myCurrentTypesComponent = null;

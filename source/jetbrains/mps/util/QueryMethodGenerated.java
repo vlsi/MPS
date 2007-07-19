@@ -39,21 +39,16 @@ public class QueryMethodGenerated {
     }
 
     Method method = null;
-//    outer:
-//    while (queriesClass != null) {
+
     Method[] declaredMethods = queriesClass.getDeclaredMethods();
     for (Method declaredMethod : declaredMethods) {
       if (declaredMethod.getName().equals(methodName)) {
         method = declaredMethod;
-//          break outer;
         break;
       }
     }
-//      queriesClass = queriesClass.getSuperclass();
-//    }
 
     if (method == null) {
-//      throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + queriesClassName + "' or in its supers");
       LOG.error("couldn't find method '" + methodName + "' in '" + queriesClassName + "' : TRY TO GENERATE model '" + sourceModel.getUID() + "'");
       throw new NoSuchMethodException("couldn't find method '" + methodName + "' in '" + queriesClassName + "'");
     }

@@ -29,6 +29,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import org.jdom.Element;
 
 import javax.swing.JOptionPane;
@@ -576,6 +577,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       progress.finishSomehow();
     } finally {
       UndoManager.instance().clear();
+      TypeChecker.getInstance().clearForReload();
 
       if (myCompileOnGeneration && ideaPresent && generationType.requiresCompilationInIDEAfterGeneration()) {
         //todo this is tmp anti memory leak hack:

@@ -5,6 +5,7 @@ import jetbrains.mps.ide.TestMain;
 import jetbrains.mps.project.MPSProject;
 
 import java.io.File;
+import java.lang.reflect.Method;
 
 public class MemoryLeaksTest extends TestCase {
   public void testEditorLanguageGenerationLeaks() {
@@ -15,3 +16,4 @@ public class MemoryLeaksTest extends TestCase {
     assertTrue(TestMain.testProjectForLeaks(new File("app/PubMedDB/pubMedDB.mpr"), 22));
   }
 }
+

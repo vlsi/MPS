@@ -747,7 +747,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           System.out.println("");
         }
       }
-    });
+    });        
 
     return new TestResult(errors, warnings, createCompilationProblemsList(generationType.getCompilationResults()));
   }
