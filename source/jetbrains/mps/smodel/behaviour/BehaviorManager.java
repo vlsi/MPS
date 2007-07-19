@@ -23,9 +23,11 @@ public final class BehaviorManager {
   }
 
   private Map<MethodInfo, Method> myMethods = new HashMap<MethodInfo, Method>();
+  private Map<String, List<Method>> myConstructors = new HashMap<String, List<Method>>();
 
   public void clear() {
     myMethods.clear();
+    myConstructors.clear();
   }
 
   public void initNode(SNode node) {
@@ -33,21 +35,33 @@ public final class BehaviorManager {
 
     List<Method> methodsToCall = new ArrayList<Method>();
 
-    while (concept != null) {
-      String fqName = NameUtil.nodeFQName(concept);
-      String behaviourClass = behaviorClassByConceptFqName(fqName);
 
-      try {
-        Class cls = Class.forName(behaviourClass, true, ClassLoaderManager.getInstance().getClassLoader());
-        Method method = cls.getMethod("init", SNode.class);
-        methodsToCall.add(method);
-      } catch (ClassNotFoundException e) {
-        //ignore
-      } catch (NoSuchMethodException e) {
-        //ignor too
+    if (myConstructors.containsKey(NameUtil.nodeFQName(concept))) {
+      System.out.println("cached");
+
+      methodsToCall = myConstructors.get(NameUtil.nodeFQName(concept));
+    } else {
+      while (concept != null) {
+        String fqName = NameUtil.nodeFQName(concept);
+        String behaviourClass = behaviorClassByConceptFqName(fqName);
+
+        try {
+          Class cls = Class.forName(behaviourClass, true, ClassLoaderManager.getInstance().getClassLoader());
+          Method method = cls.getMethod("init", SNode.class);
+
+          method.setAccessible(true);
+
+          methodsToCall.add(method);
+        } catch (ClassNotFoundException e) {
+          //ignore
+        } catch (NoSuchMethodException e) {
+          //ignor too
+        }
+
+        concept = ((ConceptDeclaration) concept).getExtends();
       }
 
-      concept = ((ConceptDeclaration) concept).getExtends();
+      myConstructors.put(NameUtil.nodeFQName(concept), methodsToCall);
     }
 
     for (int i = methodsToCall.size() - 1; i >= 0; i--) {
@@ -76,8 +90,6 @@ public final class BehaviorManager {
     MethodInfo mi = new MethodInfo(fqName, methodName, parameterTypes);
 
     if (myMethods.containsKey(mi)) {
-
-      System.out.println("cached!");
       return myMethods.get(mi);
     }
 
