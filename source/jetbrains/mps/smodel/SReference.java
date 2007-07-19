@@ -200,7 +200,7 @@ public final class SReference {
       return sReference;
     } else {
       SModelUID targetModelUID = targetModel.getUID();
-      sourceModel.addImportElement(targetModelUID);
+//      sourceModel.addImportElement(targetModelUID);
       String extResolveInfo = null;
       if (targetModel.isExternallyResolvable()) {
         extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(targetNode);
