@@ -654,6 +654,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
           propertyValue = getterValue == null ? null : String.valueOf(getterValue);
         } finally {
           myPropertyGettersInProgress.remove(propertyName);
+          if (myPropertyGettersInProgress.isEmpty()) {
+            myPropertyGettersInProgress = null;
+          }
         }
       } else {
         propertyValue = getRawProperty(propertyName);
@@ -687,6 +690,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
             return;
           } finally {
             myPropertySettersInProgress.remove(propertyName);
+            if (myPropertyGettersInProgress.isEmpty()) {
+              myPropertySettersInProgress = null;
+            }
           }
         }
       }
@@ -1122,6 +1128,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
             handler.processReferentSetEvent(this, oldReferent, newReferent, GlobalScope.getInstance());
           } finally {
             mySetReferentEventHandlersInProgress.remove(role);
+            if (mySetReferentEventHandlersInProgress.isEmpty()) {
+              mySetReferentEventHandlersInProgress = null;
+            }
           }
         }
       }
