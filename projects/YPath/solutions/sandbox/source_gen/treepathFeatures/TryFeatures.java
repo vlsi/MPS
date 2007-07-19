@@ -4,11 +4,11 @@ package treepathFeatures;
 
 import ypath.util.TreePath;
 import org.w3c.dom.Node;
-import ypath.util.IFeatureDescriptor;
 import java.util.AbstractList;
 import java.util.AbstractCollection;
 import jetbrains.mps.baseLanguage.ext.collections.internal.SequenceWithSupplier;
 import java.util.Iterator;
+import ypath.util.IFeatureDescriptor;
 import java.util.Collection;
 
 public class TryFeatures extends TreePath<Node> {
@@ -16,10 +16,6 @@ public class TryFeatures extends TreePath<Node> {
   public  TryFeatures() {
     this.registerFeature(new TryFeatures.Desc_Feature_nodes());
     this.registerFeature(new TryFeatures.Desc_Feature_attributes());
-  }
-
-  public static IFeatureDescriptor<Node> foo(String param) {
-    return new TryFeatures.Desc_Feature_foo(param);
   }
 
   public Node parent(Node node) {
@@ -119,29 +115,6 @@ public class TryFeatures extends TreePath<Node> {
       return __alreadyContains__;
     }
 }
-  private static class Feature_foo extends AbstractCollection<Node> {
-
-    private Node thisNode;
-    private String param;
-
-    public  Feature_foo(Node thisNode, String param) {
-      this.thisNode = thisNode;
-      this.param = param;
-    }
-
-    public Iterable<Node> sequence() {
-      final zClosureContext1 _zClosureContext1 = new zClosureContext1();
-      _zClosureContext1._node = this.thisNode;
-      Iterable<Node> retVal = new SequenceWithSupplier<Node>(new zValueSupplier1(null, _zClosureContext1));
-      return retVal;
-    }
-    public Iterator<Node> iterator() {
-      return this.sequence().iterator();
-    }
-    public int size() {
-      return 0;
-    }
-}
   public static class Desc_Feature_nodes implements IFeatureDescriptor<Node> {
 
     public  Desc_Feature_nodes() {
@@ -152,9 +125,6 @@ public class TryFeatures extends TreePath<Node> {
     }
     public String getName() {
       return "nodes";
-    }
-    public Object getNodeType() {
-      return Node.class;
     }
     public IFeatureDescriptor.Type getType() {
       return IFeatureDescriptor.Type.LIST;
@@ -173,33 +143,6 @@ public class TryFeatures extends TreePath<Node> {
     }
     public String getName() {
       return "attributes";
-    }
-    public Object getNodeType() {
-      return Node.class;
-    }
-    public IFeatureDescriptor.Type getType() {
-      return IFeatureDescriptor.Type.SEQUENCE;
-    }
-    public boolean isDefault() {
-      return false;
-    }
-}
-  public static class Desc_Feature_foo implements IFeatureDescriptor<Node> {
-
-    private String param;
-
-    public  Desc_Feature_foo(String param) {
-      this.param = param;
-    }
-
-    public Collection<Node> getFeature(Node node) {
-      return new TryFeatures.Feature_foo(node, this.param);
-    }
-    public String getName() {
-      return "foo";
-    }
-    public Object getNodeType() {
-      return Node.class;
     }
     public IFeatureDescriptor.Type getType() {
       return IFeatureDescriptor.Type.SEQUENCE;

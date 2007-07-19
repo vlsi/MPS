@@ -104,9 +104,6 @@ public class SNODE extends TreePath<SNode> {
     public String getName() {
       return "child";
     }
-    public Object getNodeType() {
-      return SNode.class;
-    }
     public IFeatureDescriptor.Type getType() {
       return IFeatureDescriptor.Type.SEQUENCE;
     }
@@ -127,9 +124,6 @@ public class SNODE extends TreePath<SNode> {
     }
     public String getName() {
       return "link";
-    }
-    public Object getNodeType() {
-      return SNode.class;
     }
     public IFeatureDescriptor.Type getType() {
       return IFeatureDescriptor.Type.SEQUENCE;
