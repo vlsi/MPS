@@ -32,6 +32,28 @@ public class RulesFunctions_Collections {
     }
     return null;
   }
+  public static SNode getInput(SNode op) {
+    SNode input = null;
+    SNode parent = SNodeOperations.getParent(op, null, false, false);
+    if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression")) {
+      input = SLinkOperations.getTarget(parent, "leftExpression", true);
+    } else
+    {
+      TypeChecker.getInstance().reportTypeError(op, "not expected here");
+    }
+    return input;
+  }
+  public static void setInputSequenceType(SNode op, SNode target) {
+    // 1. Take input expression
+    // 2. Assert that it is coerceable to sequence
+    // 3. Assign the sequecne type to the target
+    SNode input = RulesFunctions_Collections.getInput(op);
+    if((input != null)) {
+      SNode elementType_typevar_1184784638219 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+      TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(new QuotationClass_().createNode(elementType_typevar_1184784638219), TypeChecker.getInstance().getRuntimeSupport().typeOf(input), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184785198379");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(target), new QuotationClass_1().createNode(elementType_typevar_1184784638219), target, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184784743849");
+    }
+  }
   public static SNode get_inputListType_elementType(SNode op) {
     SNode listType = RulesFunctions_Collections.get_inputListType(op);
     return SLinkOperations.getTarget(listType, "elementType", true);
@@ -82,6 +104,6 @@ public class RulesFunctions_Collections {
       return classifierType;
     }
     TypeChecker.getInstance().reportTypeError(nodeToReportError, "couldn't coerse " + primitiveType + " to classifier");
-    return new QuotationClass_().createNode();
+    return new QuotationClass_2().createNode();
   }
 }

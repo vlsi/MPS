@@ -19,7 +19,7 @@ public class typeof_GetIndexOfOperation_InferenceRule implements InferenceRule_R
     if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(arg), expectedElementType))) {
       TypeChecker.getInstance().reportTypeError(arg, "" + expectedElementType + " is expected");
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_21().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_23().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetIndexOfOperation";

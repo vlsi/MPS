@@ -14,7 +14,7 @@ public class typeof_GetSizeOperation_InferenceRule implements InferenceRule_Runt
 
   public void applyRule(SNode argument) {
     RulesFunctions_Collections.get_inputSequenceType(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_20().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_22().createNode(), argument);
   }
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation";

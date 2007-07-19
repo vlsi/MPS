@@ -15,7 +15,7 @@ public class typeof_TakeOperation_InferenceRule implements InferenceRule_Runtime
 
   public void applyRule(SNode argument) {
     SNode inputSequenceType = RulesFunctions_Collections.get_inputSequenceType(argument);
-    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "elementsToTake", true)), new QuotationClass_4().createNode()))) {
+    if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "elementsToTake", true)), new QuotationClass_6().createNode()))) {
       TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "elementsToTake", true), "integer is expected");
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(inputSequenceType, argument);
