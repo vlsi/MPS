@@ -13,7 +13,7 @@ public class MemoryLeaksTest extends TestCase {
   }
 
   public void testPubMedDBLeaks() {
-    assertTrue(TestMain.testProjectForLeaks(new File("app/PubMedDB/pubMedDB.mpr"), 22));
+    assertTrue(TestMain.testProjectForLeaks(new File("app/PubMedDB/pubMedDB.mpr"), 2));
   }
 }
 
