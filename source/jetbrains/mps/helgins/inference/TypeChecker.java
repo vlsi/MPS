@@ -45,6 +45,9 @@ public class TypeChecker {
   private static final ModelOwner RUNTIME_TYPES_MODEL_OWNER = new ModelOwner() {};
 
   private Set<SNode> myCheckedRoots = new WeakSet<SNode>();
+
+  //todo Cyril, you don't clear this map during model removal. So it leaks memory. Do it somewhere
+  //todo I temporarily added clear invocation in GeneratorManager 
   private Map<SNode, WeakSet<SNode>> myNodesToDependentRoots = new WeakHashMap<SNode, WeakSet<SNode>>();
 
   private MySModelCommandListener myListener = new MySModelCommandListener();
