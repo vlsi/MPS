@@ -4101,5 +4101,31 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184160780380" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1184884307360">
+    <link role="concept" targetNodeId="1.1068431790191" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1184884309598">
+      <property name="name" value="eval" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184884390616">
+        <link role="classifier" extResolveInfo="13.[Classifier]Object" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184884309600">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ThrowStatement" id="1184884398890">
+          <node role="throwable" type="jetbrains.mps.baseLanguage.NewExpression" id="1184884460313">
+            <link role="baseMethodDeclaration" extResolveInfo="13.constructor [Classifier]UnsupportedOperationException[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184884530634">
+              <link role="baseMethodDeclaration" extResolveInfo="7.method ([Classifier]SNode).([InstanceMethodDeclaration]getDebugText() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1184884527380">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1184884514986" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1184884307361">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184884307362" />
+    </node>
+  </node>
 </model>
 
