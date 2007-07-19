@@ -5,7 +5,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="65" />
+  <maxImportIndex value="67" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" />
   <import index="4" modelUID="jetbrains.mps.core.structure" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
@@ -18,6 +18,8 @@
   <import index="63" modelUID="jetbrains.mps.plugin@java_stub" />
   <import index="64" modelUID="jetbrains.mps.generator.template@java_stub" />
   <import index="65" modelUID="java.lang@java_stub" />
+  <import index="66" modelUID="java.io@java_stub" />
+  <import index="67" modelUID="jetbrains.mps.transformation.TLBase.structure@java_stub" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1087903454703">
     <property name="name" value="PropertyMacro_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1087833241328" />
@@ -1977,14 +1979,8 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184321604827">
-        <property name="textBgColor" value="orange" />
-        <property name="textBgColorSelected" value="cyan" />
-        <link role="relationDeclaration" targetNodeId="1.1152722085357" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149865975021">
-        <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1184865715451">
+        <link role="editorComponent" targetNodeId="1184864447477" resolveInfo="NodeMacro_postfix" />
       </node>
     </node>
   </node>
@@ -2474,14 +2470,8 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184321443648">
-        <property name="textBgColor" value="orange" />
-        <property name="textBgColorSelected" value="cyan" />
-        <link role="relationDeclaration" targetNodeId="1.1152722085357" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149865998639">
-        <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1184865608223">
+        <link role="editorComponent" targetNodeId="1184864447477" resolveInfo="NodeMacro_postfix" />
       </node>
     </node>
   </node>
@@ -2647,14 +2637,8 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184321480080">
-        <property name="textBgColor" value="orange" />
-        <property name="textBgColorSelected" value="cyan" />
-        <link role="relationDeclaration" targetNodeId="1.1152722085357" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149865951872">
-        <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1184865655240">
+        <link role="editorComponent" targetNodeId="1184864447477" resolveInfo="NodeMacro_postfix" />
       </node>
     </node>
   </node>
@@ -2725,14 +2709,8 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184321531684">
-        <property name="textBgColor" value="orange" />
-        <property name="textBgColorSelected" value="cyan" />
-        <link role="relationDeclaration" targetNodeId="1.1152722085357" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149866060008">
-        <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1184865678180">
+        <link role="editorComponent" targetNodeId="1184864447477" resolveInfo="NodeMacro_postfix" />
       </node>
     </node>
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1184214434098">
@@ -2954,14 +2932,8 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184321549853">
-        <property name="textBgColor" value="orange" />
-        <property name="textBgColorSelected" value="cyan" />
-        <link role="relationDeclaration" targetNodeId="1.1152722085357" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149866045437">
-        <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1184865359555">
+        <link role="editorComponent" targetNodeId="1184864447477" resolveInfo="NodeMacro_postfix" />
       </node>
     </node>
   </node>
@@ -3289,14 +3261,8 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184321590826">
-        <property name="textBgColor" value="orange" />
-        <property name="textBgColorSelected" value="cyan" />
-        <link role="relationDeclaration" targetNodeId="1.1152722085357" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149866026194">
-        <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1184865705543">
+        <link role="editorComponent" targetNodeId="1184864447477" resolveInfo="NodeMacro_postfix" />
       </node>
     </node>
   </node>
@@ -3621,14 +3587,8 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184321575713">
-        <property name="textBgColor" value="orange" />
-        <property name="textBgColorSelected" value="cyan" />
-        <link role="relationDeclaration" targetNodeId="1.1152722085357" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1149865918317">
-        <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Component" id="1184865693854">
+        <link role="editorComponent" targetNodeId="1184864447477" resolveInfo="NodeMacro_postfix" />
       </node>
     </node>
   </node>
@@ -5932,6 +5892,104 @@
             <property name="fontStyle" value="PLAIN" />
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.EditorComponentDeclaration" id="1184864447477">
+    <property name="name" value="NodeMacro_postfix" />
+    <link role="conceptDeclaration" targetNodeId="1.1087833466690" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1184865301579">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1184865302330">
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1184865302331">
+          <property name="text" value="bad role:" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ModelAccess" id="1184865302332">
+          <property name="textFgColor" value="red" />
+          <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.ModelAccessor" id="1184865302333">
+            <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_ModelAccess_Getter" id="1184865302334">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184865302335">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184865302336">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184865302337">
+                    <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]SNode).([InstanceMethodDeclaration]getRole_() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                    <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1184865302338">
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1184865302339" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="setter" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_ModelAccess_Setter" id="1184865302340">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184865302341" />
+            </node>
+            <node role="validator" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_ModelAccess_Validator" id="1184865302342">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184865302343">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184865302344">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1184865302345">
+                    <property name="value" value="true" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_NodeCondition" id="1184865302346">
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184865302347">
+            <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1184865302348">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1184865302349">
+                <property name="name" value="actualRole" />
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184865302350">
+                  <link role="classifier" extResolveInfo="65.[Classifier]String" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184865302351">
+                  <link role="baseMethodDeclaration" extResolveInfo="10.method ([Classifier]SNode).([InstanceMethodDeclaration]getRole_() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                  <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1184865302352">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1184865302353" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1184865302354">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1184865302355">
+                <property name="name" value="expectedRole" />
+                <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184865302356">
+                  <link role="classifier" extResolveInfo="65.[Classifier]String" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1184865302357">
+                  <link role="baseMethodDeclaration" extResolveInfo="10.static method ([Classifier]AttributesRolesUtil).([StaticMethodDeclaration]childRoleFromAttributeRole((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                  <link role="classConcept" extResolveInfo="10.[Classifier]AttributesRolesUtil" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1184865302358">
+                    <link role="classifier" extResolveInfo="67.[Classifier]NodeMacro_AnnotationLink" />
+                    <link role="variableDeclaration" extResolveInfo="67.static field ([Classifier]NodeMacro_AnnotationLink).([StaticFieldDeclaration]NODE_MACRO : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184865302359">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NotExpression" id="1184865302360">
+                <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184865302361">
+                  <link role="baseMethodDeclaration" extResolveInfo="65.method ([Classifier]String).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184865302362">
+                    <link role="variableDeclaration" targetNodeId="1184865302349" resolveInfo="actualRole" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184865302363">
+                    <link role="variableDeclaration" targetNodeId="1184865302355" resolveInfo="expectedRole" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_NonEmptyProperty" id="1184865331990">
+        <property name="textBgColor" value="orange" />
+        <property name="textBgColorSelected" value="cyan" />
+        <link role="relationDeclaration" targetNodeId="1.1152722085357" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_AttributedNodeCell" id="1184865331991">
+        <property name="drawBorder" value="false" />
+        <property name="drawBrackets" value="true" />
       </node>
     </node>
   </node>
