@@ -209,7 +209,8 @@ public class EquationManager {
     }
     String strongString = isWeak ? "" : " strong";
     IErrorReporter errorReporter =
-            new EquationErrorReporter(this, "type ", subtypeRepresentator, " is not" + strongString + " subtype of ", supertypeRepresentator, "");
+            new EquationErrorReporter(this, "type ", subtypeRepresentator,
+                    " is not" + strongString + " a subtype of ", supertypeRepresentator, "", errorInfo.myRuleModel, errorInfo.myRuleId);
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
   }
 
@@ -279,7 +280,8 @@ public class EquationManager {
     }
     String strongString = isWeak ? "" : " strongly";
     IErrorReporter errorReporter =
-            new EquationErrorReporter(this, "type ", representator1," is not" + strongString + " comparable with ", representator2, "");
+            new EquationErrorReporter(this, "type ", representator1," is not" + strongString + " comparable with ",
+                    representator2, "", errorInfo.myRuleModel, errorInfo.myRuleId);
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
   }
 
@@ -292,10 +294,14 @@ public class EquationManager {
   }
 
   public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck, String errorString) {
-    addEquation(fromNode(lhs), fromNode(rhs), nodeToCheck, errorString);
+    addEquation(lhs, rhs, nodeToCheck, new ErrorInfo(nodeToCheck, errorString, null, null));
   }
 
-  public void addEquation(IWrapper lhs, IWrapper rhs, SNode nodeToCheck, String errorString) {
+  public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck, ErrorInfo errorInfo) {
+    addEquation(fromNode(lhs), fromNode(rhs), nodeToCheck, errorInfo);
+  }
+
+  public void addEquation(IWrapper lhs, IWrapper rhs, SNode nodeToCheck, ErrorInfo errorInfo) {
     IWrapper rhsRepresentator = getRepresentatorWrapper(lhs);
     IWrapper lhsRepresentator = getRepresentatorWrapper(rhs);
 
@@ -303,8 +309,8 @@ public class EquationManager {
     if (rhsRepresentator == lhsRepresentator) return;
 
     // add var to type's multieq
-    RuntimeTypeVariable varRhs = rhsRepresentator.getVariable();
-    RuntimeTypeVariable varLhs = lhsRepresentator.getVariable();
+    RuntimeTypeVariable varRhs = rhsRepresentator == null ? null : rhsRepresentator.getVariable();
+    RuntimeTypeVariable varLhs = lhsRepresentator == null ? null : lhsRepresentator.getVariable();
     if (varRhs != null) {
       processEquation(rhsRepresentator, lhsRepresentator, nodeToCheck);
       return;
@@ -318,18 +324,19 @@ public class EquationManager {
     // solve equation
     if (!compareWrappers(rhsRepresentator, lhsRepresentator)) {
       IErrorReporter errorReporter;
-      if (errorString != null) {
-        errorReporter = new SimpleErrorReporter(errorString);
+      if (errorInfo.myErrorString != null) {
+        errorReporter = new SimpleErrorReporter(errorInfo.myErrorString, errorInfo.myRuleModel, errorInfo.myRuleId);
       } else {
         errorReporter =
-                new EquationErrorReporter(this, "incompatible types: ", rhsRepresentator, " and ", lhsRepresentator, "");
+                new EquationErrorReporter(this, "incompatible types: ",
+                        rhsRepresentator, " and ", lhsRepresentator, "", errorInfo.myRuleModel, errorInfo.myRuleId);
       }
       processErrorEquation(lhsRepresentator, rhsRepresentator, errorReporter, nodeToCheck);
       return;
     }
     Set<Pair<SNode, SNode>> childEQs = createChildEquations(rhsRepresentator, lhsRepresentator);
     for (Pair<SNode, SNode> eq : childEQs) {
-      addEquation(fromNode(eq.o2), fromNode(eq.o1), nodeToCheck, errorString);
+      addEquation(fromNode(eq.o2), fromNode(eq.o1), nodeToCheck, errorInfo);
     }
   }
 

@@ -17,14 +17,19 @@ public class EquationErrorReporter implements IErrorReporter {
   private String myAfter;
   private IWrapper myWrapper1;
   private IWrapper myWrapper2;
+  private String myRuleId;
+  private String myRuleModel;
 
-  public EquationErrorReporter(EquationManager equationManager, String before, IWrapper wrapper1, String between, IWrapper wrapper2, String after) {
+  public EquationErrorReporter(EquationManager equationManager, String before,
+                               IWrapper wrapper1, String between, IWrapper wrapper2, String after, String ruleModel, String ruleId) {
     myEquationManager = equationManager;
     myBefore = before;
     myAfter = after;
     myBetween = between;
     myWrapper1 = wrapper1;
     myWrapper2 = wrapper2;
+    myRuleId = ruleId;
+    myRuleModel = ruleModel;
   }
 
 
@@ -39,5 +44,13 @@ public class EquationErrorReporter implements IErrorReporter {
     }
     return myBefore + PresentationManager.toString(representator1) +
             myBetween + PresentationManager.toString(representator2) + myAfter;
+  }
+
+  public String getRuleId() {
+    return myRuleId;
+  }
+
+  public String getRuleModel() {
+    return myRuleModel;
   }
 }

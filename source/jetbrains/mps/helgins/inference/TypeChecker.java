@@ -121,7 +121,11 @@ public class TypeChecker {
   }
 
   public void reportTypeError(SNode nodeWithError, String errorString) {
-    myCurrentTypesComponent.reportTypeError(nodeWithError, errorString);
+    myCurrentTypesComponent.reportTypeError(nodeWithError, errorString, null, null);
+  }
+
+  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
+    myCurrentTypesComponent.reportTypeError(nodeWithError, errorString, ruleModel, ruleId);
   }
 
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
@@ -237,7 +241,7 @@ public class TypeChecker {
     return myCurrentTypesComponent;
   }
 
-  public String getTypeErrorDontCheck(SNode node) {
+  public IErrorReporter getTypeErrorDontCheck(SNode node) {
     return NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node.getContainingRoot()).getError(node);
   }
 

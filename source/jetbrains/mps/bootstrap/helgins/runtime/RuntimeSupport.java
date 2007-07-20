@@ -132,7 +132,7 @@ public class RuntimeSupport {
   //--------------------
 
   public void createEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
-    myTypeChecker.getEquationManager().addEquation(node1, node2, nodeToCheck, errorString);
+    myTypeChecker.getEquationManager().addEquation(node1, node2, nodeToCheck, new ErrorInfo(nodeToCheck, errorString, ruleModel, ruleId));
   }
 
    public void createLessThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {

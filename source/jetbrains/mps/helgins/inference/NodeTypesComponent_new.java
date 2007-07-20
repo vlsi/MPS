@@ -106,9 +106,9 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
     myNodesToErrorsMap.remove(node);
   }
 
-  public void reportTypeError(SNode nodeWithError, String errorString) {
+  public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
     if (nodeWithError != null) {
-      myNodesToErrorsMap.put(nodeWithError, new SimpleErrorReporter(errorString));
+      myNodesToErrorsMap.put(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId));
     }
   }
 
@@ -178,15 +178,16 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
         if (term == null) continue;
         SNode type = expandType(contextEntry.getValue(), myTypeChecker.getRuntimeTypesModel());
         if (BaseAdapter.isInstance(type, RuntimeErrorType.class)) {
-          reportTypeError(term, ((RuntimeErrorType) BaseAdapter.fromNode(type)).getErrorText());
+          reportTypeError(term, ((RuntimeErrorType) BaseAdapter.fromNode(type)).getErrorText(), null, null);
         }
         myNodesToTypesMap.put(term, type);
       }
 
       // setting expanded errors
       for (SNode node : new HashSet<SNode>(myNodesToErrorsMap.keySet())) {
-        String errorString = myNodesToErrorsMap.get(node).reportError();
-        myNodesToErrorsMap.put(node, new SimpleErrorReporter(errorString));
+        IErrorReporter iErrorReporter = myNodesToErrorsMap.get(node);
+        String errorString = iErrorReporter.reportError();
+        myNodesToErrorsMap.put(node, new SimpleErrorReporter(errorString, iErrorReporter.getRuleModel(), iErrorReporter.getRuleId()));
       }
 
       //write access listeners
@@ -342,10 +343,9 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
     return getEquationManager().getRepresentator(myNodesToTypesMap.get(node));
   }
 
-  public String getError(SNode node) {
+  public IErrorReporter getError(SNode node) {
     IErrorReporter iErrorReporter = myNodesToErrorsMap.get(node);
-    if (iErrorReporter == null) return null;
-    return iErrorReporter.reportError();
+    return iErrorReporter;
   }
 
   /*package*/ void pushNodeBeingChecked(SNode node) {

@@ -9,12 +9,24 @@ package jetbrains.mps.helgins.inference;
  */
 public class SimpleErrorReporter implements IErrorReporter {
   private String myErrorString;
+  private String myRuleModel;
+  private String myRuleId;
 
-  public SimpleErrorReporter(String s) {
+  public SimpleErrorReporter(String s, String ruleModel, String ruleId) {
     myErrorString = s;
+    myRuleModel = ruleModel;
+    myRuleId = ruleId;
   }
 
   public String reportError() {
     return myErrorString;
+  }
+
+  public String getRuleId() {
+    return myRuleId;
+  }
+
+  public String getRuleModel() {
+    return myRuleModel;
   }
 }

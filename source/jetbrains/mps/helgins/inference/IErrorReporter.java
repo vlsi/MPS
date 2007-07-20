@@ -9,4 +9,6 @@ package jetbrains.mps.helgins.inference;
  */
 public interface IErrorReporter {
   public String reportError();
+  public String getRuleId();
+  public String getRuleModel();
 }

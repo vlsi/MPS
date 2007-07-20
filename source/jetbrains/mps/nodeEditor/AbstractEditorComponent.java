@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.helgins.inference.IErrorReporter;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.SystemInfo;
@@ -1211,7 +1212,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         SNode selectedNode = getSelectedCell().getSNode();
         while (selectedNode != null) {
           final IStatus status = (IStatus) selectedNode.getUserObject(SNode.ERROR_STATUS);
-          final String herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
+          final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
           if (status != null || herror != null) {
             final SNode selectedNode1 = selectedNode;
             SwingUtilities.invokeLater(new Runnable() {
@@ -1219,7 +1220,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                 String nodeClasName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
                 String s = "";
                 if (herror != null) {
-                  s += "TYPE ERROR: " + herror + "\n";
+                  s += "TYPE ERROR: " + herror.reportError() + "\n";
                 }
                 if (status != null) {
                   s += status.getMessage();
