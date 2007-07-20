@@ -42,7 +42,7 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
-            <all-local-mappings />
+            <mapping-node modelUID="jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.main@templates" nodeID="1167163238171" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <all-mappings />

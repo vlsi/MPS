@@ -122,10 +122,15 @@ public class GenerationPartitioner {
 
   private List<List<MappingConfiguration>> createMappingSets() {
     // reversed order
+    boolean topPriorityGroup = false;
     List<List<MappingConfiguration>> mappingSets = new ArrayList<List<MappingConfiguration>>();
     while (!myPriorityMap.isEmpty()) {
-      List<MappingConfiguration> mappingSet = createMappingSet();
+      List<MappingConfiguration> mappingSet = createMappingSet(topPriorityGroup);
       if (mappingSet.isEmpty()) {
+        if(!topPriorityGroup) {
+          topPriorityGroup = true;
+          continue;
+        }
         // error!!!
         break;
       }
@@ -135,10 +140,11 @@ public class GenerationPartitioner {
     return mappingSets;
   }
 
-  private List<MappingConfiguration> createMappingSet() {
+  private List<MappingConfiguration> createMappingSet(boolean topPriorityGroup) {
     // add all not-locking-mappinds to set
     List<MappingConfiguration> mappingSet = new ArrayList<MappingConfiguration>();
     for (MappingConfiguration mapping : myPriorityMap.keySet()) {
+      if(mapping.getTopPriorityGroup() != topPriorityGroup) continue;
       if (!PriorityMapUtil.isLockingMapping(mapping, myPriorityMap)) {
         mappingSet.add(mapping);
       }

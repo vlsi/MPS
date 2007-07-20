@@ -115,7 +115,7 @@
     <property name="name" value="MappingConfiguration" />
     <link role="extends" targetNodeId="2.1133920641626" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1184950341882">
-      <property name="name" value="topPriority" />
+      <property name="name" value="topPriorityGroup" />
       <link role="dataType" targetNodeId="2.1082983657063" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1175152822399">

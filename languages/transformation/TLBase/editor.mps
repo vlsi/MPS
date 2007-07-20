@@ -860,6 +860,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1184950420877">
         <property name="vertical" value="true" />
         <property name="selectable" value="false" />
+        <property name="gridLayout" value="true" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1184950420878">
           <property name="selectable" value="false" />
           <property name="vertical" value="false" />
@@ -880,7 +881,7 @@
           <property name="drawBorder" value="false" />
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1184950447850">
             <property name="drawBorder" value="false" />
-            <property name="text" value="top-priority" />
+            <property name="text" value="top-priority group" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1184950447851">
             <property name="drawBorder" value="false" />
