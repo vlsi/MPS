@@ -1328,24 +1328,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     if (mySelectedCell != null) {
       EditorCell cell = getDeepestSelectedCell();
-      Rectangle selectionRect;
-      int x;
-      int y = cell.getY();
-      if (cell instanceof EditorCell_Label) {
-        EditorCell_Label cellLabel = (EditorCell_Label) cell;
-        int caretX = cellLabel.getCaretX();
-        int charWidth = cellLabel.getCharWidth();
-        x = caretX;
-        selectionRect = new Rectangle(caretX - 2 * charWidth, cellLabel.getY(), 4 * charWidth, cellLabel.getHeight());
-      } else {
-        x = cell.getX() + cell.getWidth()/2;
-        selectionRect = new Rectangle(cell.getX(), cell.getY(), 30, cell.getHeight());
-      }
-      //Rectangle fakeRect = new Rectangle(0,cell.getY(), 30, cell.getHeight());
-      //scrollRectToVisible(fakeRect);
-       if (!getVisibleRect().contains(x, y) || !getVisibleRect().contains(x, y + cell.getHeight())) {
-         scrollRectToVisible(expandRectangleOneLine(selectionRect));
-       }
+      scrollToCell(cell);
     }
     repaint();
 
@@ -1356,9 +1339,62 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public void scrollToNode(SNode node) {
     EditorCell cell = findNodeCell(node);
     if (cell != null) {
-      scrollRectToVisible(expandRectangleOneLine(cell.getBounds()));
+      scrollToCell(cell);
     }
   }
+
+  public void scrollToCell(EditorCell cell) {
+    EditorCell largestBigCell = findLargestBigCellFittingOnTheScreen(cell);
+
+    int x0;
+    int width;
+    if (cell instanceof EditorCell_Label) {
+      EditorCell_Label cellLabel = (EditorCell_Label) cell;
+
+      int caretX = cellLabel.getCaretX();
+      int charWidth = cellLabel.getCharWidth();
+
+      x0 = caretX - 2 * charWidth;
+      width = 4 * charWidth;
+    } else {
+      x0 = cell.getX();
+      width = cell.getWidth();
+    }
+
+    scrollRectToVisible(
+            expandRectangleOneLine(
+                    new Rectangle(
+                      x0, largestBigCell.getY(),
+                      width, largestBigCell.getHeight()
+                    )));
+
+//    if (!getVisibleRect().contains(x, y) || !getVisibleRect().contains(x, y + cell.getHeight())) {
+//      scrollRectToVisible(expandRectangleOneLine(selectionRect));
+//    }
+  }
+
+  private EditorCell findLargestBigCellFittingOnTheScreen(EditorCell cell) {
+    int thresholdHeight = myScrollPane.getViewport().getHeight();
+
+    EditorCell result = cell;
+    EditorCell current = cell;
+
+    while (true) {
+      if (current.isBigCell()) {
+        result = current;
+      }
+
+      current = current.getParent();
+
+      if (current == null) {
+        return result;
+      }
+
+      if (current.getHeight() > thresholdHeight) {
+        return result;
+      }      
+    }
+ }
 
   private Rectangle expandRectangleOneLine(Rectangle r) {
     Font defaultFont = ApplicationComponents.getInstance().getComponentSafe(EditorSettings.class).getDefaultEditorFont();
