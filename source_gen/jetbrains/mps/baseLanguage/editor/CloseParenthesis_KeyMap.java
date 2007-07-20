@@ -52,6 +52,9 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
     public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       ParenthesisUtil.moveParenthesisToTheRight(((ParenthesizedExpression)SNodeOperations.getAdapter(node)), editorContext);
     }
+    public String getKeyStroke() {
+      return "ctrl shift RIGHT";
+    }
 }
   public static class CloseParenthesis_KeyMap_Action1 extends EditorCellKeyMapAction {
 
@@ -85,6 +88,9 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
     }
     public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       ParenthesisUtil.moveParenthesisToTheLeftInside(((ParenthesizedExpression)SNodeOperations.getAdapter(node)), editorContext);
+    }
+    public String getKeyStroke() {
+      return "ctrl shift LEFT";
     }
 }
 

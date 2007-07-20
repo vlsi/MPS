@@ -9193,5 +9193,20 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1184951028097">
+    <link role="conceptDeclaration" targetNodeId="17.1184950988562" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1184951038630">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1184951056679">
+        <link role="relationDeclaration" targetNodeId="17.1184951007469" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1184951077447">
+        <property name="text" value="[" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1184951079168">
+        <property name="text" value="]" />
+      </node>
+    </node>
+  </node>
 </model>
 

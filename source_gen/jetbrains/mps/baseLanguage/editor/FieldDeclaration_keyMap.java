@@ -65,6 +65,9 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       SLinkOperations.setNewChild(fr, "instance", "jetbrains.mps.baseLanguage.structure.ThisExpression");
       SLinkOperations.setTarget(fr, "variableDeclaration", node, false);
     }
+    public String getKeyStroke() {
+      return "alt INSERT";
+    }
 }
   public static class FieldDeclaration_keyMap_Action1 extends EditorCellKeyMapAction {
 
@@ -114,6 +117,9 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       SLinkOperations.setNewChild(fr, "instance", "jetbrains.mps.baseLanguage.structure.ThisExpression");
       SLinkOperations.setTarget(fr, "variableDeclaration", node, false);
       SLinkOperations.setTarget(SLinkOperations.setNewChild(assignment, "rValue", "jetbrains.mps.baseLanguage.structure.ParameterReference"), "variableDeclaration", parameter, false);
+    }
+    public String getKeyStroke() {
+      return "alt INSERT";
     }
 }
 

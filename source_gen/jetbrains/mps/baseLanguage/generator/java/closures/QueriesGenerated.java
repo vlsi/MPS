@@ -73,31 +73,31 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1170874110540(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(node, "name");
   }
-  public static SNode referenceMacro_GetReferent_1170294467354(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1170294467354(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass(node, generator);
   }
-  public static SNode referenceMacro_GetReferent_1170295650824(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1170295650824(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.resolve_MethodParm_CopyOfParm(node, templateNode, generator);
   }
-  public static SNode referenceMacro_GetReferent_1170295049904(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1170295049904(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass_constructor(node, generator);
   }
-  public static SNode referenceMacro_GetReferent_1170288297219(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1170288297219(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(node, generator);
   }
-  public static SNode referenceMacro_GetReferent_1170287949033(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1170287949033(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(node, generator);
   }
-  public static SNode referenceMacro_GetReferent_1170350646244(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1170350646244(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.resolve_VariableReference_Variable_ClosureContext_generatedField(node, generator);
   }
-  public static SNode referenceMacro_GetReferent_1170348563863(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1170348563863(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(node, generator);
   }
-  public static SNode referenceMacro_GetReferent_1170288676089(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1170288676089(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.find_Closure_generatedClosureAdapter_constructor(node, generator);
   }
-  public static SNode referenceMacro_GetReferent_1170293907670(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1170293907670(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.resolve_ClosureParameterReference(node, templateNode, generator);
   }
   public static List sourceNodesQuery_1170347787985(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -131,22 +131,22 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1170348623270(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "localVariableDeclaration", true), "initializer", true);
   }
-  public static SNode mapSrcMacro_mapper_1170873903267(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode mapSrcMacro_mapper_1170873903267(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return QueriesUtil.createClassType_forClosure_enclosingClass(node, generator);
   }
-  public static SNode mapSrcMacro_mapper_1170730778912(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode mapSrcMacro_mapper_1170730778912(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return QueriesUtil.createClassType_forClosure_enclosingClass(node, generator);
   }
-  public static SNode mapSrcMacro_mapper_1170898169592(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode mapSrcMacro_mapper_1170898169592(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return _QueriesUtil.create_closureContextObject(node, generator);
   }
-  public static SNode mapSrcMacro_mapper_1170899386077(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode mapSrcMacro_mapper_1170899386077(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return _QueriesUtil.create_closureContextObject(node, generator);
   }
-  public static SNode mapSrcMacro_mapper_1170900134167(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode mapSrcMacro_mapper_1170900134167(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return _QueriesUtil.create_enclosingClassObject(node, generator);
   }
-  public static SNode mapSrcMacro_mapper_1170899402679(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode mapSrcMacro_mapper_1170899402679(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return _QueriesUtil.create_closureContextObject(node, generator);
   }
 }

@@ -55,6 +55,9 @@ public class CastExpression_KeyMap extends EditorCellKeyMap {
       SNode type = CastExpression_FactoryUtil.computeCastType(node);
       SLinkOperations.setTarget(node, "type", type, true);
     }
+    public String getKeyStroke() {
+      return "ctrl shift SPACE";
+    }
 }
 
 }

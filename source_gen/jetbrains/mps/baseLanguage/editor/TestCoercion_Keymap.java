@@ -79,6 +79,9 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
       }
       JOptionPane.showMessageDialog(null, text, node.getDebugText(), JOptionPane.INFORMATION_MESSAGE);
     }
+    public String getKeyStroke() {
+      return "ctrl alt shift T";
+    }
 }
 
 }

@@ -5,12 +5,10 @@ package jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.IOperationContext;
 
 public class QueriesGenerated {
 
-  public static SNode referenceMacro_GetReferent_1170351924342(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1170351924342(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.resolve_ConceptFunctionParm_to_MethodParameterReference_by_Alias(node, templateNode, generator);
   }
 }
