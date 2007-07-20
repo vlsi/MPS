@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DimensionExpression extends BaseConcept {
+  public static String EXPRESSION = "expression";
 
   public  DimensionExpression(SNode node) {
     super(node);
@@ -19,5 +20,12 @@ public class DimensionExpression extends BaseConcept {
   }
   public static DimensionExpression newInstance(SModel sm) {
     return DimensionExpression.newInstance(sm, false);
+  }
+
+  public Expression getExpression() {
+    return (Expression)this.getChild(DimensionExpression.EXPRESSION);
+  }
+  public void setExpression(Expression node) {
+    super.setChild(DimensionExpression.EXPRESSION, node);
   }
 }
