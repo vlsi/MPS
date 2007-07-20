@@ -323,10 +323,10 @@ public class SubtypingManager {
 
   public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern, boolean isWeak) {
     if (pattern.match(subtype)) return subtype;
-    MyCoersionMatcher2 coersionMatcher2 = new MyCoersionMatcher2(pattern);
-    boolean success = searchInSupertypes(subtype, coersionMatcher2, isWeak);
+    MyCoersionMatcher coersionMatcher = new MyCoersionMatcher(pattern);
+    boolean success = searchInSupertypes(subtype, coersionMatcher, isWeak);
     if (!success) return null;
-    return coersionMatcher2.getResult();
+    return coersionMatcher.getResult();
   }
 
   public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern) {
@@ -350,6 +350,11 @@ public class SubtypingManager {
     boolean matches(SNode nodeToMatch);
   }
 
+  private static class MyConditionMatcher implements Matcher {
+    public boolean matches(SNode nodeToMatch) {
+      return false;  //todo
+    }
+  }
 
   private static class MySimpleMatcher implements Matcher {
     private SNode myPattern;
@@ -365,11 +370,11 @@ public class SubtypingManager {
     }
   }
 
-  private static class MyCoersionMatcher2 implements Matcher {
+  private static class MyCoersionMatcher implements Matcher {
     private final IMatchingPattern myPattern;
     private SNode myResult;
 
-    public MyCoersionMatcher2(IMatchingPattern pattern) {
+    public MyCoersionMatcher(IMatchingPattern pattern) {
       myPattern = pattern;
     }
 

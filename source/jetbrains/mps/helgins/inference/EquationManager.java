@@ -671,6 +671,7 @@ public class EquationManager {
     }
     Set<IWrapper> concreteSubtypes = new HashSet<IWrapper>();
     for (IWrapper subtypeNode : subtypes.keySet()) {
+      if (subtypeNode == null) continue;
       if (!subtypeNode.isVariable()) {
         concreteSubtypes.add(subtypeNode);
       }
@@ -716,6 +717,7 @@ public class EquationManager {
     }
     Set<IWrapper> concreteSupertypes = new HashSet<IWrapper>();
     for (IWrapper supertypeNode : supertypes.keySet()) {
+      if (supertypeNode == null) continue;
       if (!supertypeNode.isVariable()) {
         concreteSupertypes.add(supertypeNode);
       }
