@@ -3,9 +3,9 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
-public final class ClassUtil {
+public final class ReflectionUtil {
 
-  private ClassUtil() {
+  private ReflectionUtil() {
   }
 
   public static Class forName(String className) {
