@@ -598,7 +598,8 @@ public class EquationManager {
     while (hasConcreteTypes) {
       hasConcreteTypes = false;
       for (IWrapper type : types) {
-        if (BaseAdapter.isInstance(NodeWrapper.fromWrapper(type), RuntimeTypeVariable.class)) {
+        if (type == null) continue;
+        if (type.isVariable()) {
           varLessThanType(type, true);
           typeLessThanVar(type, true);
           varLessThanType(type, false);
@@ -612,6 +613,7 @@ public class EquationManager {
 
 
     for (IWrapper type : types) {
+      if (type == null) continue;
       assert type.isVariable();
 
       Map<IWrapper, ErrorInfo> supertypes = mySubtypesToSupertypesMap.get(type);
