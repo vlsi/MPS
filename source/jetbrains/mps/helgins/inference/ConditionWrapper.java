@@ -41,4 +41,8 @@ public class ConditionWrapper implements IWrapper {
     }
     return myCondition.met(type.getNode());
   }
+
+  public boolean met(SNode node) {
+    return myCondition.met(node);
+  }
 }

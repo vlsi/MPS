@@ -80,6 +80,17 @@ public class SubtypingManager {
     return isStrictSubtype(subRepresentator, superRepresentator, isWeak);
   }
 
+  public boolean isSubtype(SNode subtype, ConditionWrapper conditionWrapper, boolean isWeak) {
+    SNode subRepresentator = myTypeChecker.getEquationManager().getRepresentator(subtype);
+    if (conditionWrapper.met(subRepresentator)) return true;
+
+     //supertypes
+    Matcher m1 = new MyConditionMatcher(conditionWrapper);
+    if (searchInSupertypes(subRepresentator, m1, isWeak)) return true;
+
+    return false;
+  }
+
   public boolean isStrictSubtype(SNode subtype, SNode supertype) {
     return isStrictSubtype(subtype, supertype, true);
   }
@@ -351,8 +362,14 @@ public class SubtypingManager {
   }
 
   private static class MyConditionMatcher implements Matcher {
+    ConditionWrapper myConditionWrapper;
+
+    public MyConditionMatcher(ConditionWrapper conditionWrapper) {
+      myConditionWrapper = conditionWrapper;
+    }
+
     public boolean matches(SNode nodeToMatch) {
-      return false;  //todo
+      return myConditionWrapper.met(nodeToMatch);
     }
   }
 
