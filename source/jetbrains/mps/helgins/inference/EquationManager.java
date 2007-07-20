@@ -187,8 +187,8 @@ public class EquationManager {
     if (fromWrapper(subtypeRepresentator) == fromWrapper(supertypeRepresentator)) return;
 
     // if one of them is a var
-    RuntimeTypeVariable varSubtype = subtypeRepresentator.getVariable();
-    RuntimeTypeVariable varSupertype = supertypeRepresentator.getVariable();
+    RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
+    RuntimeTypeVariable varSupertype = supertypeRepresentator == null ? null : supertypeRepresentator.getVariable();
     if (varSubtype != null || varSupertype != null) {
       if (isWeak) {
         addSubtyping(subtypeRepresentator, supertypeRepresentator, errorInfo);
@@ -252,8 +252,8 @@ public class EquationManager {
     if (fromWrapper(representator1) == fromWrapper(representator2)) return;
 
     // if one of them is a var
-    RuntimeTypeVariable varSubtype = representator1.getVariable();
-    RuntimeTypeVariable varSupertype = representator2.getVariable();
+    RuntimeTypeVariable varSubtype = representator1 == null ? null : representator1.getVariable();
+    RuntimeTypeVariable varSupertype = representator2 == null ? null : representator2.getVariable();
     if (varSubtype != null || varSupertype != null) {
       if (isWeak) {
         addComparable(representator1, representator2, errorInfo);
