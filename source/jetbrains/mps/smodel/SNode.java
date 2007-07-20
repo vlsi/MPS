@@ -647,16 +647,15 @@ public class SNode implements Cloneable, Iterable<SNode> {
     if (myPropertyGettersInProgress == null || !myPropertyGettersInProgress.contains(propertyName)) {
       INodePropertyGetter getter = ModelConstraintsManager.getInstance().getNodePropertyGetter(this, propertyName);
       if (getter != null) {
-        if (myPropertyGettersInProgress == null) myPropertyGettersInProgress = new HashSet<String>(1);
+        if (myPropertyGettersInProgress == null) {
+          myPropertyGettersInProgress = new HashSet<String>(1);
+        }
         myPropertyGettersInProgress.add(propertyName);
         try {
           Object getterValue = getter.execPropertyGet(this, propertyName, GlobalScope.getInstance());
           propertyValue = getterValue == null ? null : String.valueOf(getterValue);
         } finally {
           myPropertyGettersInProgress.remove(propertyName);
-          if (myPropertyGettersInProgress.isEmpty()) {
-            myPropertyGettersInProgress = null;
-          }
         }
       } else {
         propertyValue = getRawProperty(propertyName);
@@ -690,9 +689,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
             return;
           } finally {
             myPropertySettersInProgress.remove(propertyName);
-            if (myPropertySettersInProgress.isEmpty()) {
-              myPropertySettersInProgress = null;
-            }
           }
         }
       }
