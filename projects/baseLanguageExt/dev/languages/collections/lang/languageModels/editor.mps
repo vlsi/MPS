@@ -900,5 +900,11 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1184963494332">
+    <link role="conceptDeclaration" targetNodeId="1.1184963466173" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1184963496459">
+      <property name="text" value="toArray" />
+    </node>
+  </node>
 </model>
 

@@ -138,6 +138,9 @@ public class QueriesGenerated {
   public static void removeActionsByCondition_1177414262137(Iterator<INodeSubstituteAction> actions, final SNode parentNode, final SNode currentChild, final SNode childConcept, final IOperationContext operationContext) {
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
+      if(!(current.getParameterObject() instanceof SNode)) {
+        continue;
+      }
       final SNode concept = (SNode)current.getParameterObject();
       Condition cond = new Condition() {
 

@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable;
 
 public class ForEachVariableReference extends Expression {
   public static String VARIABLE = "variable";
