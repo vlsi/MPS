@@ -8,7 +8,7 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.quotation" />
-  <maxImportIndex value="27" />
+  <maxImportIndex value="28" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" />
@@ -22,6 +22,7 @@
   <import index="23" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
   <import index="26" modelUID="jetbrains.mps.nodeEditor@java_stub" />
   <import index="27" modelUID="javax.swing@java_stub" />
+  <import index="28" modelUID="java.lang.reflect@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1156246260769">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1156246279317">
@@ -2512,6 +2513,18 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141301">
     <link role="concept" targetNodeId="1.1081236700937" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1184945458101">
+      <property name="name" value="eval" />
+      <link role="overridenMethod" targetNodeId="1184884309598" resolveInfo="eval" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184945458103">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184945594954">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1184945594955" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184945462745">
+        <link role="classifier" extResolveInfo="13.[Classifier]Object" />
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141302">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178192141303" />
     </node>
