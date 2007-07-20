@@ -1465,6 +1465,20 @@
         </node>
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184950182065">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1184957048474">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1184957048475">
+            <property name="name" value="parameterDeclarations" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1184957048476">
+              <link role="elementConcept" targetNodeId="1.1068498886292" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1184957036126">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccessAsList" id="1184957043848">
+                <link role="link" targetNodeId="1.1068580123134" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1184957034547" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1184950309881">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1184950309882">
             <property name="name" value="parameterTypes" />
@@ -1474,9 +1488,17 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1184950329403">
-              <node role="creator" type="jetbrains.mps.baseLanguage.ArrayCreatorWithInitializer" id="1184950336234">
-                <node role="componentType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184950339189">
+              <node role="creator" type="jetbrains.mps.baseLanguage.ArrayCreator" id="1184956933677">
+                <node role="componentType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184957019575">
                   <link role="classifier" extResolveInfo="13.[Classifier]Class" />
+                </node>
+                <node role="dimensionExpression" type="jetbrains.mps.baseLanguage.DimensionExpression" id="1184956933679">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1184957060634">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184957059680">
+                      <link role="variableDeclaration" targetNodeId="1184957048475" resolveInfo="parameterDeclarations" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetSizeOperation" id="1184957061401" />
+                  </node>
                 </node>
               </node>
             </node>
