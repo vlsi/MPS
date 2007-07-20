@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ArrayCreator extends AbstractCreator {
   public static String COMPONENT_TYPE = "componentType";
+  public static String DIMENSION_EXPRESSION = "dimensionExpression";
 
   public  ArrayCreator(SNode node) {
     super(node);
@@ -26,5 +27,11 @@ public class ArrayCreator extends AbstractCreator {
   }
   public void setComponentType(Type node) {
     super.setChild(ArrayCreator.COMPONENT_TYPE, node);
+  }
+  public DimensionExpression getDimensionExpression() {
+    return (DimensionExpression)this.getChild(ArrayCreator.DIMENSION_EXPRESSION);
+  }
+  public void setDimensionExpression(DimensionExpression node) {
+    super.setChild(ArrayCreator.DIMENSION_EXPRESSION, node);
   }
 }

@@ -8,7 +8,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -19,20 +18,15 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
   private static void setupBasic_ComponentTypeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184951056679");
   }
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184951077447");
-  }
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184951079168");
+  private static void setupBasic_DimensionExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184952981434");
   }
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184951038630");
   }
   private static void setupLabel_ComponentTypeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
-  private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_DimensionExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
@@ -45,22 +39,7 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createComponentTypeCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell(context, node, "["));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "]"));
-    return editorCell;
-  }
-  public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    ArrayCreator_Editor.setupBasic_ConstantCell(editorCell, node, context);
-    ArrayCreator_Editor.setupLabel_ConstantCell(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    ArrayCreator_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    ArrayCreator_Editor.setupLabel_ConstantCell1(editorCell, node, context);
-    editorCell.setDefaultText("");
+    editorCell.addEditorCell(this.createDimensionExpressionCell(context, node));
     return editorCell;
   }
   public EditorCell createComponentTypeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -81,6 +60,33 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createComponentTypeCellinternal(context, node, provider);
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if(attributeConcept != null) {
+      IOperationContext opContext = context.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
+    } else
+    return cellWithRole;
+  }
+  public EditorCell createDimensionExpressionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
+    CellProviderWithRole provider = aProvider;
+    provider.setAuxiliaryCellProvider(null);
+    EditorCell editorCell = provider.createEditorCell(context);
+    ArrayCreator_Editor.setupBasic_DimensionExpressionCell(editorCell, node, context);
+    if(editorCell instanceof EditorCell_Label) {
+      ArrayCreator_Editor.setupLabel_DimensionExpressionCell((EditorCell_Label)editorCell, node, context);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    return editorCell;
+  }
+  public EditorCell createDimensionExpressionCell(EditorContext context, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, context);
+    provider.setRole("dimensionExpression");
+    provider.setNoTargetText("");
+    provider.setReadOnly(false);
+    provider.setAllowsEmptyTarget(false);
+    EditorCell cellWithRole = this.createDimensionExpressionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if(attributeConcept != null) {
