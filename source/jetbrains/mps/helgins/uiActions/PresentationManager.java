@@ -2,6 +2,8 @@ package jetbrains.mps.helgins.uiActions;
 
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.helgins.structure.RuntimeErrorType;
+import jetbrains.mps.helgins.inference.NodeWrapper;
+import jetbrains.mps.helgins.inference.ConditionWrapper;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
@@ -18,6 +20,12 @@ public class PresentationManager {
   public static String toString(Object type) {
     if (type == null) return null;
     INodeAdapter typeAdapter = null;
+    if (type instanceof ConditionWrapper) {
+      return "<CONDITION>";
+    }
+    if (type instanceof NodeWrapper) {
+      typeAdapter = BaseAdapter.fromNode(((NodeWrapper)type).getNode());
+    }
     if (type instanceof INodeAdapter) {
       typeAdapter = (INodeAdapter) type;
     }
@@ -30,10 +38,8 @@ public class PresentationManager {
     if (type instanceof String) {
       return (String) type;
     }
-    if (type instanceof SNode) {
-      return toString_1((SNode) type);
-    }
-    return null;
+    if (typeAdapter == null) return null;
+    return toString_1(typeAdapter.getNode());
   }
 
   public static String toString_1(SNode type) {
@@ -44,17 +50,6 @@ public class PresentationManager {
     if (typeAdapter instanceof RuntimeTypeVariable) {
       return toString(type);
     }
-
     return BaseConcept_Behavior.call_getPresentation_1180102203531(type);
-
-   /* String packageName = type.getLanguageNamespace();
-    String presentationUtilName = packageName + ".PresentationUtil";
-    try {
-      Class presentationUtil = Class.forName(presentationUtilName, true, ClassLoaderManager.getInstance().getClassLoader());
-      Method presentationMethod = presentationUtil.getMethod("toString", SNode.class);
-      return (String) presentationMethod.invoke_old(null, type);
-    } catch(Throwable t) {
-      return type.toString();
-    }*/
   }
 }

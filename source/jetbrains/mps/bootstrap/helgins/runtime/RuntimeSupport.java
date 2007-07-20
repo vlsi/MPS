@@ -191,11 +191,4 @@ public class RuntimeSupport {
     return myTypeChecker.getSubtypingManager().coerceSubtyping(subtype, pattern, false);
   }
 
-  public static RuntimeTypeVariable getTypeVar(SNode type) {
-    INodeAdapter baseAdapter = BaseAdapter.fromNode(type);
-    if (baseAdapter instanceof RuntimeTypeVariable) {
-      return (RuntimeTypeVariable) baseAdapter;
-    }
-    return null;
-  }
 }

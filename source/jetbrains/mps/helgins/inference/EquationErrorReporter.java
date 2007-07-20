@@ -1,9 +1,7 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.helgins.uiActions.PresentationManager;
-import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
+import jetbrains.mps.helgins.inference.IWrapper;
 
 /**
  * Created by IntelliJ IDEA.
@@ -17,27 +15,27 @@ public class EquationErrorReporter implements IErrorReporter {
   private String myBefore;
   private String myBetween;
   private String myAfter;
-  private SNode myNode1;
-  private SNode myNode2;
+  private IWrapper myWrapper1;
+  private IWrapper myWrapper2;
 
-  public EquationErrorReporter(EquationManager equationManager, String before, SNode node1, String between, SNode node2, String after) {
+  public EquationErrorReporter(EquationManager equationManager, String before, IWrapper wrapper1, String between, IWrapper wrapper2, String after) {
     myEquationManager = equationManager;
     myBefore = before;
     myAfter = after;
     myBetween = between;
-    myNode1 = node1;
-    myNode2 = node2;
+    myWrapper1 = wrapper1;
+    myWrapper2 = wrapper2;
   }
 
 
   public String reportError() {
-    SNode representator1 = myNode1;
-    if (BaseAdapter.isInstance(representator1, RuntimeTypeVariable.class)) {
-      representator1 = myEquationManager.getRepresentator(myNode1);
+    IWrapper representator1 = myWrapper1;
+    if (representator1.isVariable()) {
+      representator1 = myEquationManager.getRepresentatorWrapper(myWrapper1);
     }
-    SNode representator2 = myNode2;
-    if (BaseAdapter.isInstance(representator2, RuntimeTypeVariable.class)) {
-      representator2 = myEquationManager.getRepresentator(myNode2);
+    IWrapper representator2 = myWrapper2;
+    if (representator2.isVariable()) {
+      representator2 = myEquationManager.getRepresentatorWrapper(myWrapper2);
     }
     return myBefore + PresentationManager.toString(representator1) +
             myBetween + PresentationManager.toString(representator2) + myAfter;
