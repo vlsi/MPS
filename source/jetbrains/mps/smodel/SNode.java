@@ -690,7 +690,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
             return;
           } finally {
             myPropertySettersInProgress.remove(propertyName);
-            if (myPropertyGettersInProgress.isEmpty()) {
+            if (myPropertySettersInProgress.isEmpty()) {
               myPropertySettersInProgress = null;
             }
           }
