@@ -2,6 +2,7 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.util.NameUtil;
 
+import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 
 /**
@@ -45,5 +46,9 @@ public abstract class EditorCellKeyMapAction {
 
   public void setShownInPopupMenu(boolean toShow) {
     myShownInPopupMenu = toShow;
+  }
+
+  public String getKeyStroke() {
+    return "";
   }
 }

@@ -545,6 +545,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         MPSAction mpsAction = new MPSAction("" + action.getDescriptionText()) {
           private EditorCellKeyMapAction myAction = action;
 
+          @NotNull
+          public String getKeyStroke() {
+            return action.getKeyStroke();
+          }
+
           public void execute(@NotNull ActionContext context) {
             myAction.execute(null, editorContext);
           }
