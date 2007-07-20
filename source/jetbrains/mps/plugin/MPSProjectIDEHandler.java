@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 
 import java.awt.Frame;
 import java.rmi.RemoteException;
+import java.rmi.NoSuchObjectException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
 
@@ -124,6 +125,12 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
       } catch (RemoteException e) {
         LOG.error(e);
       }
+    }
+
+    try {
+      unexportObject(this, true);
+    } catch (NoSuchObjectException e) {
+      throw new RuntimeException(e);
     }
   }
 }
