@@ -1456,6 +1456,39 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1184950182063">
+      <property name="isPrivate" value="true" />
+      <property name="name" value="getParameterTypes" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ArrayType" id="1184950281016">
+        <node role="componentType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184950279328">
+          <link role="classifier" extResolveInfo="13.[Classifier]Class" />
+        </node>
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184950182065">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1184950309881">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1184950309882">
+            <property name="name" value="parameterTypes" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ArrayType" id="1184950312524">
+              <node role="componentType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184950309883">
+                <link role="classifier" extResolveInfo="13.[Classifier]Class" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1184950329403">
+              <node role="creator" type="jetbrains.mps.baseLanguage.ArrayCreatorWithInitializer" id="1184950336234">
+                <node role="componentType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184950339189">
+                  <link role="classifier" extResolveInfo="13.[Classifier]Class" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184950524441">
+          <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184950524442">
+            <link role="variableDeclaration" targetNodeId="1184950309882" resolveInfo="parameterTypes" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178181704931">
     <link role="concept" targetNodeId="1.1107461130800" />
