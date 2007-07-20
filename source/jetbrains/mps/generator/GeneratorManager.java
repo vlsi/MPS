@@ -460,62 +460,66 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       //++ generation
       GenerationStatus status = null;
       IGenerationSession generationSession = new GenerationSession(invocationContext, isSaveTransientModels(), progress, handler);
-      for (SModelDescriptor sourceModelDescriptor : sourceModels) {
-        progress.addText("");
+      try {
+        for (SModelDescriptor sourceModelDescriptor : sourceModels) {
+          progress.addText("");
 
-        if (myCheckBeforeCompilation) {
-          progress.addText("Checking model \"" + sourceModelDescriptor.getModelUID() + "\"... ");
-          ModelCheckResult result = new ModelChecker(invocationContext).checkModel(sourceModelDescriptor);
-          if (result.hasErrors()) {
-            if (JOptionPane.showConfirmDialog(invocationContext.getMainFrame(), "Model " + sourceModelDescriptor.getModelUID() + " has errors. Are you sure that you want to generate it?") != JOptionPane.YES_OPTION) {
-              continue;
-            }
-          }
-        }
-
-        String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
-        progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
-
-        status = generationSession.generateModel(sourceModelDescriptor, targetLanguage, script);
-        if (isDumpStatistics()) {
-          Statistics.dumpAll();
-        }
-
-        checkMonitorCanceled(progress);
-        if (status.getOutputModel() != null) {
-          boolean generateText = true;
-          if (!status.isOk() && generationType instanceof GenerateFilesGenerationType) {
-            int result = JOptionPane.showConfirmDialog(invocationContext.getMainFrame(), "Generation finished with errors. Do you want to have text files generated?");
-            if (result != JOptionPane.YES_OPTION) {
-              generateText = false;
+          if (myCheckBeforeCompilation) {
+            progress.addText("Checking model \"" + sourceModelDescriptor.getModelUID() + "\"... ");
+            ModelCheckResult result = new ModelChecker(invocationContext).checkModel(sourceModelDescriptor);
+            if (result.hasErrors()) {
+              if (JOptionPane.showConfirmDialog(invocationContext.getMainFrame(), "Model " + sourceModelDescriptor.getModelUID() + " has errors. Are you sure that you want to generate it?") != JOptionPane.YES_OPTION) {
+                continue;
+              }
             }
           }
 
-          if (generateText) {
-            generationType.handleOutput(invocationContext, status, progress, outputFolder);
+          String taskName = ModelsProgressUtil.generationModelTaskName(sourceModelDescriptor);
+          progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
+
+          status = generationSession.generateModel(sourceModelDescriptor, targetLanguage, script);
+          if (isDumpStatistics()) {
+            Statistics.dumpAll();
+          }
+
+          checkMonitorCanceled(progress);
+          if (status.getOutputModel() != null) {
+            boolean generateText = true;
+            if (!status.isOk() && generationType instanceof GenerateFilesGenerationType) {
+              int result = JOptionPane.showConfirmDialog(invocationContext.getMainFrame(), "Generation finished with errors. Do you want to have text files generated?");
+              if (result != JOptionPane.YES_OPTION) {
+                generateText = false;
+              }
+            }
+
+            if (generateText) {
+              generationType.handleOutput(invocationContext, status, progress, outputFolder);
+            }
+          }
+          generationSession.discardTransients();
+          progress.finishTask(taskName);
+
+          if (!status.isOk()) {
+            break;
           }
         }
+        //-- generation
+
+        if (isSaveTransientModels()) {
+          File solutionDescriptorFile = generationSession.saveTransientModels();
+
+          progress.addText("update output models solution");
+
+          handler.handle(new Message(MessageKind.INFORMATION, "update output models solution"));
+          Solution outputModels = myProject.findSolution("outputModels");
+          if (outputModels != null) {
+            outputModels.reloadFromDisk();
+          } else {
+            myProject.addProjectSolution(solutionDescriptorFile);
+          }
+        }
+      } finally {
         generationSession.discardTransients();
-        progress.finishTask(taskName);
-
-        if (!status.isOk()) {
-          break;
-        }
-      }
-      //-- generation           
-
-      if (isSaveTransientModels()) {
-        File solutionDescriptorFile = generationSession.saveTransientModels();
-
-        progress.addText("update output models solution");
-
-        handler.handle(new Message(MessageKind.INFORMATION, "update output models solution"));
-        Solution outputModels = myProject.findSolution("outputModels");
-        if (outputModels != null) {
-          outputModels.reloadFromDisk();
-        } else {
-          myProject.addProjectSolution(solutionDescriptorFile);
-        }
       }
 
       //update generated sources timestamp
