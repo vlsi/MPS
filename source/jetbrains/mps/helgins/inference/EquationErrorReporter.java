@@ -35,11 +35,11 @@ public class EquationErrorReporter implements IErrorReporter {
 
   public String reportError() {
     IWrapper representator1 = myWrapper1;
-    if (representator1.isVariable()) {
+    if (representator1 != null && representator1.isVariable()) {
       representator1 = myEquationManager.getRepresentatorWrapper(myWrapper1);
     }
     IWrapper representator2 = myWrapper2;
-    if (representator2.isVariable()) {
+    if (representator2 != null && representator2.isVariable()) {
       representator2 = myEquationManager.getRepresentatorWrapper(myWrapper2);
     }
     return myBefore + PresentationManager.toString(representator1) +

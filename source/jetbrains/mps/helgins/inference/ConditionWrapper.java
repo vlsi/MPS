@@ -35,6 +35,7 @@ public class ConditionWrapper implements IWrapper {
   }
 
   public boolean matchesWith(IWrapper type) {
+    if (type == null) return false;
     if (type.isCondition() || type.isVariable()) {
       return false;
     }

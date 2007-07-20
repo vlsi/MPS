@@ -40,6 +40,7 @@ public class NodeWrapper implements IWrapper {
   }
 
   public boolean matchesWith(IWrapper wrapper) {
+    if (wrapper == null) return false;
     if (wrapper instanceof NodeWrapper) {
       return compareNodes(getNode(), wrapper.getNode());
     }
@@ -106,5 +107,15 @@ public class NodeWrapper implements IWrapper {
     }
 
     return true;
+  }
+
+  public static SNode fromWrapper(IWrapper lhs) {
+    if (lhs == null) return null;
+    return lhs.getNode();
+  }
+
+  public static NodeWrapper fromNode(SNode node) {
+    if (node == null) return null;
+    return new NodeWrapper(node);
   }
 }
