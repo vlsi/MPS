@@ -3,6 +3,7 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public final class ReflectionUtil {
@@ -27,6 +28,16 @@ public final class ReflectionUtil {
     try {
       return aClass.getMethod(methodName, parameterTypes);
     } catch (NoSuchMethodException e) {
+      throw new RuntimeException();
+    }
+  }
+
+  public static Object staticInvoke(Method method, Object[] args) {
+    try {
+      return method.invoke(null, args);
+    } catch (IllegalAccessException e) {
+      throw new RuntimeException();
+    } catch (InvocationTargetException e) {
       throw new RuntimeException();
     }
   }
