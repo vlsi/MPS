@@ -70,7 +70,7 @@ public class MessageView extends DefaultTool {
         super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 
         Message msg = (Message) value;
-        setText(msg.getText());
+        setText(msg.getCreationTimeString() + "\t: " + msg.getText());
 
         if (msg.getHintObject() != null) {
           setForeground(MPSColors.DARK_BLUE);
@@ -179,7 +179,6 @@ public class MessageView extends DefaultTool {
   public Icon getIcon() {
     return Icons.MESSAGE_VIEW_ICON;
   }
-
 
   public int getNumber() {
     return 0;
