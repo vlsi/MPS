@@ -14,10 +14,10 @@ public class SnodeDemo {
                     TreeTraversalFactory.Traverse(
                             new SNODE().startTraversal(foo), 
                             TreeTraversalFactory.Axis("CHILDREN"), 
-                            "child"), 
+                            SNODE.child("implements")), 
                     TreeTraversalFactory.Axis("CHILDREN"), 
-            "link"), 
+                    SNODE.link("intfc")), 
             TreeTraversalFactory.Axis("CHILDREN"), 
-            "child");
+            SNODE.child("extends"));
   }
 }
