@@ -3,6 +3,7 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
@@ -58,6 +59,21 @@ public final class ReflectionUtil {
       }
     }
     return result;
+  }
+
+  public static Object getConstant(SNode classNode, String constantName) {
+    Class aClass = forName(classNode);
+    Field field;
+    try {
+      field = aClass.getField(constantName);
+    } catch (NoSuchFieldException e) {
+      throw new RuntimeException();
+    }
+    try {
+      return field.get(null);
+    } catch (IllegalAccessException e) {
+      throw new RuntimeException();
+    }
   }
 
 }
