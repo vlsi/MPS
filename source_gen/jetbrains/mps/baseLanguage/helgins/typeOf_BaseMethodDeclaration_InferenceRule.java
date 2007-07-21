@@ -49,7 +49,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
           while(_zCursor1.moveToNext()) {
             SNode returnStatement = _zCursor1.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
-              TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected");
+              TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "jetbrains.mps.baseLanguage.helgins", "1178765152925");
             }
           }
         } finally {
@@ -65,12 +65,12 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
           while(_zCursor2.moveToNext()) {
             SNode returnStatement = _zCursor2.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
-              TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
+              TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "jetbrains.mps.baseLanguage.helgins", "1178765314800");
             } else
             {
               SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true));
               if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(returnType, expectedRetType))) {
-                TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(returnStatement, "expression", true), "" + expectedRetType + " is expected");
+                TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(returnStatement, "expression", true), "" + expectedRetType + " is expected", "jetbrains.mps.baseLanguage.helgins", "1178765435658");
               }
             }
           }
@@ -86,12 +86,12 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
       if(SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStatement, "expression", true));
         if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(returnType, expectedRetType))) {
-          TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(lastStatement, "expression", true), "" + expectedRetType + " is expected");
+          TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(lastStatement, "expression", true), "" + expectedRetType + " is expected", "jetbrains.mps.baseLanguage.helgins", "1178765601487");
         }
         somethingReturned = true;
       }
       if(!(somethingReturned)) {
-        TypeChecker.getInstance().reportTypeError(argument, "function should return " + expectedRetType);
+        TypeChecker.getInstance().reportTypeError(argument, "function should return " + expectedRetType, "jetbrains.mps.baseLanguage.helgins", "1178765536915");
       }
     }
   }

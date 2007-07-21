@@ -97,9 +97,8 @@ public class EquationManager {
     }
 
     for (IWrapper type : slave.myEquations.keySet()) {
-
       IWrapper parentType = slave.myEquations.get(type);
-      if (parentType != null) {
+      if (parentType != null && type != null) {
         processEquation(type, parentType, null);
       }
     }
@@ -194,8 +193,8 @@ public class EquationManager {
       return;
     }
 
-    // if strict subtyping
-    if (myTypeChecker.getSubtypingManager().isSubtype(NodeWrapper.fromWrapper(subtypeRepresentator), NodeWrapper.fromWrapper(supertypeRepresentator), true, isWeak)) {
+    // if subtyping
+    if (myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, errorInfo, isWeak)) {
       return;
     }
 
@@ -260,13 +259,13 @@ public class EquationManager {
     }
 
     // if subtype or supertype
-    if (myTypeChecker.getSubtypingManager().isComparableWRTRules(NodeWrapper.fromWrapper(representator1), NodeWrapper.fromWrapper(representator2))) {
+    if (myTypeChecker.getSubtypingManager().isComparableWRTRules(representator1, representator2, this, errorInfo, isWeak)) {
       return;
     }
-    if (myTypeChecker.getSubtypingManager().isSubtype(NodeWrapper.fromWrapper(representator1), NodeWrapper.fromWrapper(representator2), isWeak)) {
+    if (myTypeChecker.getSubtypingManager().isSubtype(representator1, representator2, this, errorInfo, isWeak)) {
       return;
     }
-    if (myTypeChecker.getSubtypingManager().isSubtype(NodeWrapper.fromWrapper(representator2), NodeWrapper.fromWrapper(representator1), isWeak)) {
+    if (myTypeChecker.getSubtypingManager().isSubtype(representator2, representator1, this, errorInfo, isWeak)) {
       return;
     }
 
@@ -282,20 +281,20 @@ public class EquationManager {
   }
 
   public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck) {
-    addEquation(NodeWrapper.fromNode(lhs), NodeWrapper.fromNode(rhs), nodeToCheck, null);
+    addEquation(NodeWrapper.fromNode(lhs), NodeWrapper.fromNode(rhs), new ErrorInfo(nodeToCheck, null));
   }
 
   public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck, String errorString) {
-    addEquation(lhs, rhs, nodeToCheck, new ErrorInfo(nodeToCheck, errorString, null, null));
+    addEquation(lhs, rhs, new ErrorInfo(nodeToCheck, errorString, null, null));
   }
 
-  public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck, ErrorInfo errorInfo) {
-    addEquation(NodeWrapper.fromNode(lhs), NodeWrapper.fromNode(rhs), nodeToCheck, errorInfo);
+  public void addEquation(SNode lhs, SNode rhs, ErrorInfo errorInfo) {
+    addEquation(NodeWrapper.fromNode(lhs), NodeWrapper.fromNode(rhs), errorInfo);
   }
 
-  public void addEquation(IWrapper lhs, IWrapper rhs, SNode nodeToCheck, ErrorInfo errorInfo) {
-    IWrapper rhsRepresentator = getRepresentatorWrapper(lhs);
-    IWrapper lhsRepresentator = getRepresentatorWrapper(rhs);
+  public void addEquation(IWrapper lhs, IWrapper rhs, ErrorInfo errorInfo) {
+    IWrapper lhsRepresentator = getRepresentatorWrapper(lhs);
+    IWrapper rhsRepresentator = getRepresentatorWrapper(rhs);
 
     // no equation needed
     if (rhsRepresentator == lhsRepresentator) return;
@@ -304,18 +303,19 @@ public class EquationManager {
     RuntimeTypeVariable varRhs = rhsRepresentator == null ? null : rhsRepresentator.getVariable();
     RuntimeTypeVariable varLhs = lhsRepresentator == null ? null : lhsRepresentator.getVariable();
     if (varRhs != null) {
-      processEquation(rhsRepresentator, lhsRepresentator, nodeToCheck);
+      processEquation(rhsRepresentator, lhsRepresentator, errorInfo);
       return;
     } else {
       if (varLhs != null) {
-        processEquation(lhsRepresentator, rhsRepresentator, nodeToCheck);
+        processEquation(lhsRepresentator, rhsRepresentator, errorInfo);
         return;
       }
     }
 
     // solve equation
-    if (!compareWrappers(rhsRepresentator, lhsRepresentator)) {
+    if (!compareWrappers(rhsRepresentator, lhsRepresentator, errorInfo)) {
       IErrorReporter errorReporter;
+      SNode nodeWithError = errorInfo == null ? null : errorInfo.getNodeWithError();
       if (errorInfo != null && errorInfo.myErrorString != null) {
         errorReporter = new SimpleErrorReporter(errorInfo.myErrorString, errorInfo.myRuleModel, errorInfo.myRuleId);
       } else {
@@ -325,21 +325,23 @@ public class EquationManager {
                 new EquationErrorReporter(this, "incompatible types: ",
                         rhsRepresentator, " and ", lhsRepresentator, "", ruleModel, ruleId);
       }
-      processErrorEquation(lhsRepresentator, rhsRepresentator, errorReporter, nodeToCheck);
+      processErrorEquation(lhsRepresentator, rhsRepresentator, errorReporter, nodeWithError);
       return;
-    }
-    Set<Pair<SNode, SNode>> childEQs = createChildEquations(rhsRepresentator, lhsRepresentator);
-    for (Pair<SNode, SNode> eq : childEQs) {
-      addEquation(NodeWrapper.fromNode(eq.o2), NodeWrapper.fromNode(eq.o1), nodeToCheck, errorInfo);
     }
   }
 
-  private void processEquation(IWrapper var, IWrapper type, SNode nodeToCheck) {
+  void addChildEquations(Set<Pair<SNode, SNode>> childEqs, ErrorInfo errorInfo) {
+    for (Pair<SNode, SNode> eq : childEqs) {
+      addEquation(NodeWrapper.fromNode(eq.o2), NodeWrapper.fromNode(eq.o1), errorInfo);
+    }
+  }
+
+  private void processEquation(IWrapper var, IWrapper type, ErrorInfo errorInfo) {
     setParent(var, type);
     keepInequation(var, type);
     RuntimeTypeVariable typeVar = var.getVariable();
     if (typeVar instanceof RuntimeErrorType) {
-      TypeChecker.getInstance().reportTypeError(nodeToCheck,((RuntimeErrorType)typeVar).getErrorText());
+      TypeChecker.getInstance().reportTypeError(errorInfo.getNodeWithError(), new SimpleErrorReporter(((RuntimeErrorType)typeVar).getErrorText(), errorInfo.myRuleModel, errorInfo.myRuleId));
     }
   }
 
@@ -440,7 +442,7 @@ public class EquationManager {
     myEquations.clear();
   }
 
-  private static boolean compareWrappers(IWrapper wrapper1, IWrapper wrapper2) {
+  private boolean compareWrappers(IWrapper wrapper1, IWrapper wrapper2, ErrorInfo errorInfo) {
     if (wrapper1 == wrapper2) return true;
     if (wrapper1 == null) {
       return false;
@@ -448,7 +450,7 @@ public class EquationManager {
     if (wrapper2 == null) {
       return false;
     }
-    return wrapper1.matchesWith(wrapper2);
+    return wrapper1.matchesWith(wrapper2, this, errorInfo);
   }
 
   public static Set<Pair<SNode, SNode>> createChildEquations(IWrapper wrapper1, IWrapper wrapper2) {
@@ -620,7 +622,7 @@ public class EquationManager {
         for (IWrapper supertype : supertypes.keySet()) {
           mySupertypesToSubtypesMap.get(supertype).remove(type);
           ErrorInfo errorInfo = supertypes.get(supertype);
-          addEquation(type, supertype, errorInfo.getNodeWithError(), errorInfo);
+          addEquation(type, supertype, errorInfo);
         }
       }
       Map<IWrapper, ErrorInfo> subtypes = mySupertypesToSubtypesMap.get(type);
@@ -629,7 +631,7 @@ public class EquationManager {
         for (IWrapper subtype : subtypes.keySet()) {
           mySubtypesToSupertypesMap.get(subtype).remove(type);
           ErrorInfo errorInfo = subtypes.get(subtype);
-          addEquation(type,  subtype, errorInfo.getNodeWithError(), errorInfo);
+          addEquation(type,  subtype, errorInfo);
         }
       }
       Map<IWrapper, ErrorInfo> supertypesStrong = mySubtypesToSupertypesMapStrong.get(type);
@@ -638,7 +640,7 @@ public class EquationManager {
         for (IWrapper supertype : supertypesStrong.keySet()) {
           mySupertypesToSubtypesMapStrong.get(supertype).remove(type);
           ErrorInfo errorInfo = supertypesStrong.get(supertype);
-          addEquation(type, supertype, errorInfo.getNodeWithError(), errorInfo);
+          addEquation(type, supertype, errorInfo);
         }
       }
       Map<IWrapper, ErrorInfo> subtypesStrong = mySupertypesToSubtypesMapStrong.get(type);
@@ -647,7 +649,7 @@ public class EquationManager {
         for (IWrapper subtype : subtypesStrong.keySet()) {
           mySubtypesToSupertypesMapStrong.get(subtype).remove(type);
           ErrorInfo errorInfo = subtypesStrong.get(subtype);
-          addEquation(type,  subtype, errorInfo.getNodeWithError(), errorInfo);
+          addEquation(type,  subtype, errorInfo);
         }
       }
     }
@@ -683,7 +685,6 @@ public class EquationManager {
     if (concreteSubtypes.isEmpty()) return;
 
     ErrorInfo errorInfo = subtypesToSupertypesMap.get(concreteSubtypes.iterator().next()).get(type);
-    SNode nodeToCheck = errorInfo.getNodeWithError();
 
     for (IWrapper subtypeNode : concreteSubtypes) {
       supertypesToSubtypesMap.get(type).remove(subtypeNode);
@@ -691,7 +692,7 @@ public class EquationManager {
     }
     //  T,S <: c => c = lcs(T,S)
     addEquation(type, NodeWrapper.fromNode(myTypeChecker.getSubtypingManager().leastCommonSupertype(toNodes(concreteSubtypes))),
-            nodeToCheck, errorInfo);
+             errorInfo);
   }
 
   private Set<SNode> toNodes(Set<IWrapper> wrappers) {
@@ -732,14 +733,13 @@ public class EquationManager {
 
     IWrapper supertype = concreteSupertypes.iterator().next();
     ErrorInfo errorInfo = supertypes.get(supertype);
-    SNode nodeToCheck = errorInfo.getNodeWithError();
 
     for (IWrapper supertypeNode : concreteSupertypes) {
       subtypesToSupertypesMap.get(type).remove(supertypeNode);
       supertypesToSubtypesMap.get(supertypeNode).remove(type);
     }
     // c :< T => c = T
-    addEquation(type, supertype, nodeToCheck, errorInfo);
+    addEquation(type, supertype, errorInfo);
   }
 
   public EquationManager getMaster() {

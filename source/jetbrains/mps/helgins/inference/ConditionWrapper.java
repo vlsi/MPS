@@ -3,6 +3,8 @@ package jetbrains.mps.helgins.inference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
+import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -34,7 +36,7 @@ public class ConditionWrapper implements IWrapper {
     return true;
   }
 
-  public boolean matchesWith(IWrapper type) {
+  public boolean matchesWith(IWrapper type, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo) {
     if (type == null) return false;
     if (type.isCondition() || type.isVariable()) {
       return false;

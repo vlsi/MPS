@@ -134,7 +134,7 @@ public class RuntimeSupport {
   //-------------------- equations
 
   public void createEquation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
-    myTypeChecker.getEquationManager().addEquation(node1, node2, nodeToCheck, new ErrorInfo(nodeToCheck, errorString, ruleModel, ruleId));
+    myTypeChecker.getEquationManager().addEquation(node1, node2, new ErrorInfo(nodeToCheck, errorString, ruleModel, ruleId));
   }
 
   public void createLessThanInequation(SNode node1, SNode node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
@@ -160,7 +160,7 @@ public class RuntimeSupport {
   //-------------------- conditional equations
 
   public void createEquation(IWrapper node1, IWrapper node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
-    myTypeChecker.getEquationManager().addEquation(node1, node2, nodeToCheck, new ErrorInfo(nodeToCheck, errorString, ruleModel, ruleId));
+    myTypeChecker.getEquationManager().addEquation(node1, node2, new ErrorInfo(nodeToCheck, errorString, ruleModel, ruleId));
   }
 
   public void createLessThanInequation(IWrapper node1, IWrapper node2, SNode nodeToCheck, String errorString, String ruleModel, String ruleId) {
@@ -185,6 +185,7 @@ public class RuntimeSupport {
 
   //--------------------
 
+  @Deprecated
   public void givetype(SNode type, SNode node) {
     Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
     SNode nodesType = typesContext.get(node);
@@ -192,6 +193,16 @@ public class RuntimeSupport {
       typesContext.put(node, myTypeChecker.getEquationManager().getRepresentator(type));
     } else { // create equation
       createEquation(nodesType, type, node);
+    }
+  }
+
+  public void givetype(SNode type, SNode node, String ruleModel, String ruleId) {
+    Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
+    SNode nodesType = typesContext.get(node);
+    if (nodesType == null) { // put to context
+      typesContext.put(node, myTypeChecker.getEquationManager().getRepresentator(type));
+    } else { // create equation
+      createEquation(nodesType, type, node , null, ruleModel, ruleId);
     }
   }
 

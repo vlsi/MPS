@@ -6,14 +6,16 @@ import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.helgins.structure.*;
 import jetbrains.mps.helgins.inference.util.StructuralNodeSet;
 import jetbrains.mps.helgins.inference.util.StructuralNodeMap;
+import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
-import jetbrains.mps.patterns.util.IMatchModifier;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
+
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,19 +29,6 @@ public class SubtypingManager {
 
   private TypeChecker myTypeChecker;
 
-  //private StructuralNodeMap<StructuralNodeSet<?>> mySupertypesCache = new StructuralNodeMap<StructuralNodeSet<?>>();
-
-  private IMatchModifier myMatchModifier = new IMatchModifier() {
-    public boolean accept(SNode node1, SNode node2) {
-      return BaseAdapter.isInstance(node1, RuntimeTypeVariable.class) ||
-              BaseAdapter.isInstance(node2, RuntimeTypeVariable.class);
-    }
-
-    public void performAction(SNode node1, SNode node2) {
-      myTypeChecker.getEquationManager().addEquation(node1, node2, null); // todo: really null?
-    }
-  };
-
   public SubtypingManager(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;
   }
@@ -48,96 +37,92 @@ public class SubtypingManager {
     return myTypeChecker;
   }
 
-  /*package*/ void clearSupertypesCache() {
- //   mySupertypesCache.clear();
-  }
-
   public boolean isSubtype(SNode subtype, SNode supertype) {
-    return isSubtype(subtype, supertype, false);
+    return isSubtype(subtype, supertype, true);
   }
 
-  public boolean isSubtype(SNode subtype, SNode supertype, boolean processVariables) {
-    return isSubtype(subtype, supertype, processVariables, true);
+  @Deprecated
+  public boolean isSubtype(SNode subtype, SNode superType, boolean processVariables, boolean isWeak) {
+    return isSubtype(subtype, superType, isWeak);
+  }
+
+  public boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak) {
+    return isSubtype(new NodeWrapper(subtype), new NodeWrapper(supertype), null, null, isWeak);
+  }
+
+  public boolean isSubtype(IWrapper subtype, IWrapper supertype, EquationManager equationManager, ErrorInfo errorInfo) {
+    return isSubtype(subtype, supertype, equationManager, errorInfo, true);
   }
 
   /**
    * may produce side effects, such as creating new type equations
    */
-  public boolean isSubtype(SNode subtype, SNode supertype, boolean processVariables, boolean isWeak) {
+  public boolean isSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo, boolean isWeak) {
 
-    SNode subRepresentator = myTypeChecker.getEquationManager().getRepresentator(subtype);
-    SNode superRepresentator = myTypeChecker.getEquationManager().getRepresentator(supertype);
+    IWrapper subRepresentator = subtype;
+    IWrapper superRepresentator = supertype;
+    if (equationManager != null) {
+      subRepresentator = equationManager.getRepresentatorWrapper(subtype);
+      superRepresentator = equationManager.getRepresentatorWrapper(supertype);
+    }
+
 
     //reflexivity:
-    IMatchModifier matchModifier = processVariables ? myMatchModifier : IMatchModifier.DEFAULT;
-    if (MatchingUtil.matchNodes(subRepresentator, superRepresentator, matchModifier)) return true;
-
-    if (subRepresentator == null || superRepresentator == null) {
-      return false;
+    if (subRepresentator == superRepresentator) return true;
+    if (subRepresentator == null || superRepresentator == null) return false;
+    if (superRepresentator.matchesWith(subRepresentator, equationManager, errorInfo)) {
+      return true;
     }
 
     // transitivity:
-    return isStrictSubtype(subRepresentator, superRepresentator, isWeak);
-  }
-
-  public boolean isSubtype(SNode subtype, ConditionWrapper conditionWrapper, boolean isWeak) {
-    SNode subRepresentator = myTypeChecker.getEquationManager().getRepresentator(subtype);
-    if (conditionWrapper.met(subRepresentator)) return true;
-
-     //supertypes
-    Matcher m1 = new MyConditionMatcher(conditionWrapper);
-    if (searchInSupertypes(subRepresentator, m1, isWeak)) return true;
-
-    return false;
-  }
-
-  public boolean isStrictSubtype(SNode subtype, SNode supertype) {
-    return isStrictSubtype(subtype, supertype, true);
+    return isStrictSubtype(subRepresentator, superRepresentator, equationManager, errorInfo, isWeak);
   }
 
   /**
    * may produce side effects, such as creating new type equations
    */
-  public boolean isStrictSubtype(SNode subtype, SNode supertype, boolean isWeak) {
-    SNode subRepresentator = myTypeChecker.getEquationManager().getRepresentator(subtype);
-    SNode superRepresentator = myTypeChecker.getEquationManager().getRepresentator(supertype);
+  public boolean isStrictSubtype(IWrapper subtype, IWrapper supertype, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo, boolean isWeak) {
+    IWrapper subRepresentator = subtype;
+    IWrapper superRepresentator = supertype;
+    if (equationManager != null) {
+      subRepresentator = equationManager.getRepresentatorWrapper(subtype);
+      superRepresentator = equationManager.getRepresentatorWrapper(supertype);
+    }
 
     //supertypes
-    Matcher m1 = new MySimpleMatcher(superRepresentator, myMatchModifier);
-    if (searchInSupertypes(subRepresentator, m1, isWeak)) return true;
+    if (subRepresentator instanceof NodeWrapper) {
+      if (searchInSupertypes((NodeWrapper) subRepresentator, superRepresentator, equationManager, errorInfo, isWeak)) return true;
+    }
 
     //subtypes
-    Matcher m2 = new MySimpleMatcher(subRepresentator, myMatchModifier);
-    if (searchInBottom(superRepresentator, m2, isWeak)) return true;
+    if (superRepresentator instanceof NodeWrapper) {
+      if (searchInBottom((NodeWrapper) superRepresentator, subRepresentator, equationManager, errorInfo, isWeak)) return true;
+    }
 
     return false;
   }
 
   // without any transitivity now
-  private boolean searchInBottom(SNode superRepresentator, Matcher m, boolean isWeak) {
-    StructuralNodeSet<?> descendants = collectBottoms(superRepresentator, isWeak);
+  private boolean searchInBottom(NodeWrapper superRepresentator, IMatcher subRepresentator, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo, boolean isWeak) {
+    StructuralNodeSet<?> descendants = collectBottoms(superRepresentator.getNode(), isWeak);
     if (descendants == null) return false;
-    descendants.removeStructurally(superRepresentator);
+    descendants.removeStructurally(superRepresentator.getNode());
     for (SNode descendant : descendants) {
-      if (m.matches(descendant)) {
+      if (subRepresentator.matchesWith(new NodeWrapper(descendant), equationManager, errorInfo)) {
         return true;
       }
     }
     return false;
   }
 
-  private boolean searchInSupertypes(SNode subRepresentator, Matcher m, boolean isWeak) {
+  private boolean searchInSupertypes(NodeWrapper subRepresentator, IMatcher superRepresentator, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo, boolean isWeak) {
     StructuralNodeSet<?> frontier = new StructuralNodeSet();
     StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
-    frontier.add(subRepresentator);
+    frontier.add(subRepresentator.getNode());
     while (!frontier.isEmpty()) {
       for (SNode node : frontier) {
-        StructuralNodeSet<?> ancestors =/* mySupertypesCache.get(node);
-        if (ancestors == null || ancestors.isEmpty()) {
-          ancestors = */ collectImmediateSupertypes(node, isWeak);
-     //     mySupertypesCache.put(node, new StructuralNodeSet<Object>(ancestors));
-     //   }
+        StructuralNodeSet<?> ancestors = collectImmediateSupertypes(node, isWeak);
         if (ancestors == null) continue;
         for (SNode passedNode : yetPassed) {
           ancestors.removeStructurally(passedNode);
@@ -150,7 +135,7 @@ public class SubtypingManager {
           }
         });
         for (SNode ancestor : ancestorsSorted) {
-          if (m.matches(ancestor)) {
+          if (superRepresentator.matchesWith(new NodeWrapper(ancestor), equationManager, errorInfo)) {
             return true;
           }
         }
@@ -334,8 +319,8 @@ public class SubtypingManager {
 
   public SNode coerceSubtyping(SNode subtype, final IMatchingPattern pattern, boolean isWeak) {
     if (pattern.match(subtype)) return subtype;
-    MyCoersionMatcher coersionMatcher = new MyCoersionMatcher(pattern);
-    boolean success = searchInSupertypes(subtype, coersionMatcher, isWeak);
+    CoersionMatcher coersionMatcher = new CoersionMatcher(pattern);
+    boolean success = searchInSupertypes(new NodeWrapper(subtype), coersionMatcher, null, null, isWeak);
     if (!success) return null;
     return coersionMatcher.getResult();
   }
@@ -344,7 +329,7 @@ public class SubtypingManager {
     return coerceSubtyping(subtype, pattern, true);
   }
 
-  public boolean isComparableWRTRules(SNode subtypeRepresentator, SNode supertypeRepresentator) {
+  public boolean isComparableWRTRules(IWrapper subtypeRepresentator, IWrapper supertypeRepresentator, EquationManager equationManager, ErrorInfo errorInfo, boolean isWeak) {
     return false; // todo
   }
 
@@ -357,45 +342,21 @@ public class SubtypingManager {
     return getTypeChecker().getRuntimeTypesModel();
   }
 
-  private static interface Matcher {
-    boolean matches(SNode nodeToMatch);
-  }
 
-  private static class MyConditionMatcher implements Matcher {
-    ConditionWrapper myConditionWrapper;
-
-    public MyConditionMatcher(ConditionWrapper conditionWrapper) {
-      myConditionWrapper = conditionWrapper;
-    }
-
-    public boolean matches(SNode nodeToMatch) {
-      return myConditionWrapper.met(nodeToMatch);
-    }
-  }
-
-  private static class MySimpleMatcher implements Matcher {
-    private SNode myPattern;
-    private IMatchModifier myMatchModifier;
-
-    public MySimpleMatcher(SNode pattern, IMatchModifier matchModifier) {
-      myPattern = pattern;
-      myMatchModifier = matchModifier;
-    }
-
-    public boolean matches(SNode nodeToMatch) {
-      return MatchingUtil.matchNodes(nodeToMatch, myPattern, myMatchModifier);
-    }
-  }
-
-  private static class MyCoersionMatcher implements Matcher {
+  private static class CoersionMatcher implements IMatcher {
     private final IMatchingPattern myPattern;
     private SNode myResult;
 
-    public MyCoersionMatcher(IMatchingPattern pattern) {
+    public CoersionMatcher(IMatchingPattern pattern) {
       myPattern = pattern;
     }
 
-    public boolean matches(SNode nodeToMatch) {
+    public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo)  {
+      if (!(wrapper instanceof NodeWrapper)) {
+        return false;
+      }
+      NodeWrapper nodeWrapper = (NodeWrapper) wrapper;
+      SNode nodeToMatch = nodeWrapper.getNode();
       boolean b = myPattern.match(nodeToMatch);
       if (b) {
         myResult = nodeToMatch;

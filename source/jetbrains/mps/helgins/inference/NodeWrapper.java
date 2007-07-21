@@ -3,10 +3,17 @@ package jetbrains.mps.helgins.inference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
+import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.patterns.util.MatchingUtil;
+import jetbrains.mps.patterns.util.IMatchModifier;
 
 import java.util.Set;
+import java.util.HashSet;
+
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -39,12 +46,27 @@ public class NodeWrapper implements IWrapper {
     return false;
   }
 
-  public boolean matchesWith(IWrapper wrapper) {
+  public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo) {
     if (wrapper == null) return false;
     if (wrapper instanceof NodeWrapper) {
-      return compareNodes(getNode(), wrapper.getNode());
+      final Set<Pair<SNode, SNode>> childEQs = new HashSet<Pair<SNode, SNode>>();
+      boolean b = MatchingUtil.matchNodes(getNode(), wrapper.getNode(), new IMatchModifier() {
+        public boolean accept(SNode node1, SNode node2) {
+          return BaseAdapter.isInstance(node1, RuntimeTypeVariable.class) || BaseAdapter.isInstance(node2, RuntimeTypeVariable.class);
+        }
+
+        public void performAction(SNode node1, SNode node2) {
+          childEQs.add(new Pair<SNode, SNode>(node1, node2));
+        }
+      });
+      if (b) {
+        if (equationManager != null) {
+          equationManager.addChildEquations(childEQs, errorInfo);
+        }
+      }
+      return b;
     }
-    return wrapper.matchesWith(this);
+    return wrapper.matchesWith(this, equationManager, errorInfo);
   }
 
   public RuntimeTypeVariable getVariable() {
@@ -76,37 +98,6 @@ public class NodeWrapper implements IWrapper {
     String wrapperName = wrapper.myNode.getName();
     if (name == null) return wrapperName == null;
     return name.equals(wrapperName);
-  }
-
-   private static boolean compareNodes(SNode node1, SNode node2) {
-    if (node1 == node2) return true;
-    if (node1 == null) {
-      return false;
-    }
-    if (node2 == null) {
-      return false;
-    }
-    if (node1.getClass() != node2.getClass()) return false;
-
-    Set<String> node1PropertyNames = node1.getPropertyNames();
-    Set<String> node2PropertyNames = node2.getPropertyNames();
-    if (node1PropertyNames.size() != node2PropertyNames.size()) return false;
-    for (String propertyName : node1PropertyNames) {
-      String propertyValue1 = node1.getProperty(propertyName);
-      String propertyValue2 = node2.getProperty(propertyName);
-      if (!EqualUtil.equals(propertyValue2, propertyValue1)) return false;
-    }
-
-    Set<String> node1ReferenceRoles = node1.getReferenceRoles();
-    Set<String> node2ReferenceRoles = node2.getReferenceRoles();
-    if (node1ReferenceRoles.size() != node2ReferenceRoles.size()) return false;
-    for (String role : node1ReferenceRoles) {
-      SNode referent1 = node1.getReferent(role);
-      SNode referent2 = node2.getReferent(role);
-      if (!EqualUtil.equals(referent1, referent2)) return false;
-    }
-
-    return true;
   }
 
   public static SNode fromWrapper(IWrapper lhs) {

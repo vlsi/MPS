@@ -41,7 +41,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
           while(_zCursor3.moveToNext()) {
             SNode returnStatement = _zCursor3.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) != null)) {
-              TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected");
+              TypeChecker.getInstance().reportTypeError(returnStatement, "no return value expected", "jetbrains.mps.baseLanguage.helgins", "1178645658195");
             }
           }
         } finally {
@@ -58,7 +58,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
           while(_zCursor4.moveToNext()) {
             SNode returnStatement = _zCursor4.getCurrent();
             if((SLinkOperations.getTarget(returnStatement, "expression", true) == null)) {
-              TypeChecker.getInstance().reportTypeError(returnStatement, "should return value");
+              TypeChecker.getInstance().reportTypeError(returnStatement, "should return value", "jetbrains.mps.baseLanguage.helgins", "1178645688864");
             } else
             {
               leastCommonSupertype = RulesFunctions_BaseLanguage.computeLeastCommonSupertype(SLinkOperations.getTarget(returnStatement, "expression", true), leastCommonSupertype, expectedRetType);
@@ -71,7 +71,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
     }
     // =============
     if(noReturnExpected) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(null, argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(null, argument, "jetbrains.mps.baseLanguage.helgins", "1179436909754");
     } else
     {
       // last expression statement can serve as return statement
@@ -86,13 +86,13 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
           "some value" :
           "" + expectedRetType
         );
-        TypeChecker.getInstance().reportTypeError(argument, "function should return " + whatExpected);
+        TypeChecker.getInstance().reportTypeError(argument, "function should return " + whatExpected, "jetbrains.mps.baseLanguage.helgins", "1179436928064");
       }
       if(leastCommonSupertype == null) {
-        TypeChecker.getInstance().getRuntimeSupport().givetype(expectedRetType, argument);
+        TypeChecker.getInstance().getRuntimeSupport().givetype(expectedRetType, argument, "jetbrains.mps.baseLanguage.helgins", "1179436928073");
       } else
       {
-        TypeChecker.getInstance().getRuntimeSupport().givetype(leastCommonSupertype, argument);
+        TypeChecker.getInstance().getRuntimeSupport().givetype(leastCommonSupertype, argument, "jetbrains.mps.baseLanguage.helgins", "1179436928081");
       }
     }
   }

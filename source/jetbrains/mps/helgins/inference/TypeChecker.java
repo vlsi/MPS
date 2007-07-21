@@ -113,9 +113,7 @@ public class TypeChecker {
 
   public void clearForReload() {
     myNodesToDependentRoots.clear();
-
     myRulesManager.clear();
-    mySubtypingManager.clearSupertypesCache();
     myCurrentTypesComponent = null;
     myCheckedRoots.clear();
   }
@@ -265,7 +263,6 @@ public class TypeChecker {
   private class MySModelCommandListener extends SModelAdapter implements SModelCommandListener {
     private SModelEventVisitor myVisitor = new SModelEventVisitor() {
       public void visitRootEvent(SModelRootEvent event) {
-        mySubtypingManager.clearSupertypesCache();
         Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getRoot());
         if (dependentRoots != null) {
           myCheckedRoots.removeAll(dependentRoots);
@@ -274,7 +271,6 @@ public class TypeChecker {
       }
 
       public void visitChildEvent(SModelChildEvent event) {
-        mySubtypingManager.clearSupertypesCache();
         Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getParent());
         if (dependentRoots != null) {
           myCheckedRoots.removeAll(dependentRoots);
@@ -291,7 +287,6 @@ public class TypeChecker {
       }
 
       public void visitReferenceEvent(SModelReferenceEvent event) {
-        mySubtypingManager.clearSupertypesCache();
         Set<SNode> dependentRoots = myNodesToDependentRoots.get(event.getReference().getSourceNode());
         if (dependentRoots != null) {
           myCheckedRoots.removeAll(dependentRoots);

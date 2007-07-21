@@ -16,10 +16,10 @@ public class typeOf_thisExpr_InferenceRule implements InferenceRule_Runtime {
 
   public void applyRule(SNode argument) {
     if((SLinkOperations.getTarget(argument, "classConcept", false) != null)) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_17().createNode(SLinkOperations.getTarget(argument, "classConcept", false)), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_17().createNode(SLinkOperations.getTarget(argument, "classConcept", false)), argument, "jetbrains.mps.baseLanguage.helgins", "1182985650714");
     } else
     {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_18().createNode(SNodeOperations.getAncestor(argument, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_18().createNode(SNodeOperations.getAncestor(argument, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)), argument, "jetbrains.mps.baseLanguage.helgins", "1182985714033");
     }
   }
   public String getApplicableConceptFQName() {

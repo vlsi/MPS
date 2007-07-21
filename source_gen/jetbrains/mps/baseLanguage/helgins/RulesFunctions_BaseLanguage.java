@@ -15,7 +15,7 @@ public class RulesFunctions_BaseLanguage {
   public static void comparisonOp(SNode binOp) {
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true)), SLinkOperations.getTarget(new QuotationClass_26().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176897142200");
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true)), SLinkOperations.getTarget(new QuotationClass_27().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176897185023");
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_28().createNode(), binOp);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_28().createNode(), binOp, "jetbrains.mps.baseLanguage.helgins", "1176897196207");
   }
   public static void numericOp(SNode binOp) {
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(binOp, "leftExpression", true));
@@ -24,7 +24,7 @@ public class RulesFunctions_BaseLanguage {
     SNode leftExpressionType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true));
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(rightExpressionType, SLinkOperations.getTarget(new QuotationClass_29().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176908856117");
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(leftExpressionType, SLinkOperations.getTarget(new QuotationClass_30().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176908902743");
-    TypeChecker.getInstance().getRuntimeSupport().givetype(Queries.getBinaryOperationType(leftExpressionType, rightExpressionType), binOp);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(Queries.getBinaryOperationType(leftExpressionType, rightExpressionType), binOp, "jetbrains.mps.baseLanguage.helgins", "1177060351454");
   }
   public static Iterable<SNode> collectReturnStatements(SNode node) {
     Iterable<SNode> returnStatements = SequenceOperations.map(SNodeOperations.getChildren(node), new zMapper(null, null));
@@ -33,11 +33,11 @@ public class RulesFunctions_BaseLanguage {
   public static SNode computeLeastCommonSupertype(SNode exprWithType, SNode currentLeastCommonSupertype, SNode defaultSupertype) {
     SNode exprType = TypeChecker.getInstance().getRuntimeSupport().typeOf(exprWithType);
     if(exprType == null) {
-      TypeChecker.getInstance().reportTypeError(exprWithType, "no type");
+      TypeChecker.getInstance().reportTypeError(exprWithType, "no type", "jetbrains.mps.baseLanguage.helgins", "1178643182321");
       return currentLeastCommonSupertype;
     }
     if((defaultSupertype != null) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(exprType, defaultSupertype))) {
-      TypeChecker.getInstance().reportTypeError(exprWithType, "" + defaultSupertype + " is expected");
+      TypeChecker.getInstance().reportTypeError(exprWithType, "" + defaultSupertype + " is expected", "jetbrains.mps.baseLanguage.helgins", "1178643261182");
       return currentLeastCommonSupertype;
     }
     if(currentLeastCommonSupertype == null) {
@@ -49,7 +49,7 @@ public class RulesFunctions_BaseLanguage {
     if(TypeChecker.getInstance().getSubtypingManager().isSubtype(exprType, currentLeastCommonSupertype)) {
       return currentLeastCommonSupertype;
     }
-    TypeChecker.getInstance().reportTypeError(exprWithType, "type " + exprType + " is not compatible with infered " + currentLeastCommonSupertype);
+    TypeChecker.getInstance().reportTypeError(exprWithType, "type " + exprType + " is not compatible with infered " + currentLeastCommonSupertype, "jetbrains.mps.baseLanguage.helgins", "1178643631508");
     return currentLeastCommonSupertype;
   }
   public static SNode concreteTypeFromGenericType(SNode type, SNode genericClassifier, SNode instanceType) {
