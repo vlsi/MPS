@@ -42,4 +42,18 @@ public final class ReflectionUtil {
     }
   }
 
+  public static Enum getEnum(SNode classNode, String enumConstantName) {
+    Enum result = null;
+    Class aClass = forName(classNode);
+    Enum[] enumConstants = (Enum[]) aClass.getEnumConstants();
+    for (Enum enumConstant : enumConstants) {
+      String name = enumConstant.name();
+      if (name.equals(enumConstantName)) {
+        result = enumConstant;
+        break;
+      }
+    }
+    return result;
+  }
+
 }
