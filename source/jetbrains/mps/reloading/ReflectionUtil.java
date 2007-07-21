@@ -33,8 +33,12 @@ public final class ReflectionUtil {
   }
 
   public static Object staticInvoke(Method method, Object[] args) {
+    return invoke(method, null, args);
+  }
+
+  public static Object invoke(Method method, Object object, Object[] args) {
     try {
-      return method.invoke(null, args);
+      return method.invoke(object, args);
     } catch (IllegalAccessException e) {
       throw new RuntimeException();
     } catch (InvocationTargetException e) {
