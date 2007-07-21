@@ -960,53 +960,36 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184773554769">
-          <node role="expression" type="ypath.TreePathOperationExpression" id="1185016655220">
-            <node role="expression" type="ypath.TreePathOperationExpression" id="1184774236060">
-              <node role="expression" type="ypath.TreePathAdapterExpression" id="1184774196558">
-                <link role="treepathAspect" targetNodeId="1184685688047" resolveInfo="SNODE" />
-                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184773554770">
-                  <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+          <node role="expression" type="ypath.TreePathOperationExpression" id="1185020611114">
+            <node role="expression" type="ypath.TreePathOperationExpression" id="1185016655220">
+              <node role="expression" type="ypath.TreePathOperationExpression" id="1184774236060">
+                <node role="expression" type="ypath.TreePathAdapterExpression" id="1184774196558">
+                  <link role="treepathAspect" targetNodeId="1184685688047" resolveInfo="SNODE" />
+                  <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184773554770">
+                    <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+                  </node>
+                </node>
+                <node role="operation" type="ypath.IterateOperation" id="1184774236065">
+                  <property name="axis" value="CHILDREN" />
+                  <link role="usedFeature" targetNodeId="1184685792724" resolveInfo="child" />
+                  <node role="paramName" type="ypath.ParameterName" id="1184845314260">
+                    <property name="name" value="implements" />
+                  </node>
                 </node>
               </node>
-              <node role="operation" type="ypath.IterateOperation" id="1184774236065">
-                <property name="axis" value="CHILDREN" />
-                <link role="usedFeature" targetNodeId="1184685792724" resolveInfo="child" />
-                <node role="paramName" type="ypath.ParameterName" id="1184845314260">
-                  <property name="name" value="implements" />
-                </node>
-              </node>
-            </node>
-            <node role="operation" type="ypath.IterateOperation" id="1185016655224">
-              <property name="axis" value="CHILDREN" />
-              <link role="usedFeature" targetNodeId="1184688224775" resolveInfo="link" />
-              <node role="paramName" type="ypath.ParameterName" id="1185017170864">
-                <property name="name" value="extends" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184774612009">
-          <node role="expression" type="ypath.TreePathOperationExpression" id="1185017122434">
-            <node role="expression" type="ypath.TreePathOperationExpression" id="1184775225472">
-              <node role="expression" type="ypath.TreePathAdapterExpression" id="1184775005257">
-                <link role="treepathAspect" targetNodeId="1184685688047" resolveInfo="SNODE" />
-                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184774612010">
-                  <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
-                </node>
-              </node>
-              <node role="operation" type="ypath.IterateOperation" id="1184775225476">
+              <node role="operation" type="ypath.IterateOperation" id="1185016655224">
                 <property name="axis" value="CHILDREN" />
                 <link role="usedFeature" targetNodeId="1184688224775" resolveInfo="link" />
-                <node role="paramName" type="ypath.ParameterName" id="1184845577435">
-                  <property name="name" value="extends" />
+                <node role="paramName" type="ypath.ParameterName" id="1185020600687">
+                  <property name="name" value="intfc" />
                 </node>
               </node>
             </node>
-            <node role="operation" type="ypath.IterateOperation" id="1185017122438">
+            <node role="operation" type="ypath.IterateOperation" id="1185020611125">
               <property name="axis" value="CHILDREN" />
               <link role="usedFeature" targetNodeId="1184685792724" resolveInfo="child" />
-              <node role="paramName" type="ypath.ParameterName" id="1185017204826">
-                <property name="name" value="implements" />
+              <node role="paramName" type="ypath.ParameterName" id="1185020620619">
+                <property name="name" value="extends" />
               </node>
             </node>
           </node>
