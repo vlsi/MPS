@@ -613,7 +613,7 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1184851401431">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1184851401432">
-              <property name="name" value="target" />
+              <property name="name" value="trg" />
               <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1184851401433">
                 <link role="concept" targetNodeId="6.1169125787135" />
               </node>
@@ -652,6 +652,27 @@
       </node>
       <node role="parameterType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184686008378">
         <link role="classifier" extResolveInfo="3.[Classifier]String" />
+      </node>
+      <node role="toStringFunction" type="ypath.NameFunction" id="1185011302719">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185011302720">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185011327979">
+            <node role="expression" type="ypath.ParamFunctionParam" id="1185011327980" />
+          </node>
+        </node>
+      </node>
+      <node role="froStringFunction" type="ypath.StringToParamFun" id="1185011305862">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185011305863">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185011337226">
+            <node role="expression" type="ypath.StringFunctionParam" id="1185011337227" />
+          </node>
+        </node>
+      </node>
+      <node role="fromStringFunction" type="ypath.StringToParamFun" id="1185011734125">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185011734126">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185011780995">
+            <node role="expression" type="ypath.StringFunctionParam" id="1185011780996" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="features" type="ypath.ParamSequenceFeature" id="1184688224775">
@@ -858,6 +879,27 @@
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184688224790">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184688593595">
             <node role="expression" type="ypath.ParamFunctionParam" id="1184688593596" />
+          </node>
+        </node>
+      </node>
+      <node role="toStringFunction" type="ypath.NameFunction" id="1185011310499">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185011310500">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185011344775">
+            <node role="expression" type="ypath.ParamFunctionParam" id="1185011344776" />
+          </node>
+        </node>
+      </node>
+      <node role="froStringFunction" type="ypath.StringToParamFun" id="1185011312358">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185011312359">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185011347504">
+            <node role="expression" type="ypath.StringFunctionParam" id="1185011347506" />
+          </node>
+        </node>
+      </node>
+      <node role="fromStringFunction" type="ypath.StringToParamFun" id="1185011786411">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185011786412">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185011787904">
+            <node role="expression" type="ypath.StringFunctionParam" id="1185011787905" />
           </node>
         </node>
       </node>

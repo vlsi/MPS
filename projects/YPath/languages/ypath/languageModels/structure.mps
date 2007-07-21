@@ -929,6 +929,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
       <link role="target" targetNodeId="1184593479323" resolveInfo="NodeTypeFunctionParam" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1185010429909">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
+      <link role="target" targetNodeId="1185010206820" resolveInfo="TargetFunctionParam" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1184771322558">
       <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
     </node>
@@ -1149,9 +1153,15 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184659752377">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="nameFunction" />
+      <property name="role" value="toStringFunction" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1184659771596" resolveInfo="NameFunction" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1185010300688">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fromStringFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1185010252334" resolveInfo="StringToParamFun" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184659771596">
@@ -1180,6 +1190,42 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1184771264860">
     <property name="package" value="treePath.features" />
     <property name="name" value="IDesignFunction" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1185010206820">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="TargetFunctionParam" />
+    <link role="extends" targetNodeId="2.1107135704075" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1185010218063">
+      <property name="value" value="target" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1185010220794">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1185010223715">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="StringFunctionParam" />
+    <link role="extends" targetNodeId="2.1107135704075" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1185010244785">
+      <property name="value" value="string" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1185010248482">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1185010252334">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="StringToParamFun" />
+    <link role="extends" targetNodeId="2.1137021947720" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1185010267564">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
+      <link role="target" targetNodeId="1185010223715" resolveInfo="StringFunctionParam" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1185012592905">
+      <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
+    </node>
   </node>
 </model>
 
