@@ -13,7 +13,7 @@ public class SNODE_Design {
     public Iterable<String> getParameters(SNode nodeType) {
       return SequenceOperations.select(SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate(null, null)), new zSelector(null, null));
     }
-    public SNode getTargetType(String param, SNode nodeType, SNode target) {
+    public SNode getTargetType(String param, SNode nodeType) {
       final zClosureContext1 _zClosureContext1 = new zClosureContext1();
       _zClosureContext1._param = param;
       SNode ld = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate1(null, _zClosureContext1)));
@@ -32,7 +32,7 @@ public class SNODE_Design {
     public Iterable<String> getParameters(SNode nodeType) {
       return SequenceOperations.select(SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate2(null, null)), new zSelector1(null, null));
     }
-    public SNode getTargetType(String param, SNode nodeType, SNode target) {
+    public SNode getTargetType(String param, SNode nodeType) {
       final zClosureContext2 _zClosureContext2 = new zClosureContext2();
       _zClosureContext2._param = param;
       SNode ld = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate3(null, _zClosureContext2)));

@@ -9,15 +9,6 @@ public class SnodeDemo {
 
   public static void main(String[] args) {
     SNode foo = null;
-    TreeTraversalFactory.Traverse(
-            TreeTraversalFactory.Traverse(
-                    TreeTraversalFactory.Traverse(
-                            new SNODE().startTraversal(foo), 
-                            TreeTraversalFactory.Axis("CHILDREN"), 
-                            SNODE.child("implements")), 
-                    TreeTraversalFactory.Axis("CHILDREN"), 
-                    SNODE.link("intfc")), 
-            TreeTraversalFactory.Axis("CHILDREN"), 
-            SNODE.child("extends"));
+    TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"), SNODE.child("implements")), TreeTraversalFactory.Axis("CHILDREN"), SNODE.link("intfc")), TreeTraversalFactory.Axis("CHILDREN"), SNODE.child("extends"));
   }
 }

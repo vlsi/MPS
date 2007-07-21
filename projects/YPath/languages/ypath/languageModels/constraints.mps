@@ -1580,10 +1580,6 @@
           <link role="classifier" extResolveInfo="3.[Classifier]Object" />
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1185011109909">
-        <property name="name" value="target" />
-        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1185011116292" />
-      </node>
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1184790063735">
         <link role="concept" targetNodeId="6.1068431790189" />
       </node>
@@ -1607,7 +1603,7 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1184840413758">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1184840421658">
               <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184840425607">
-                <link role="baseMethodDeclaration" extResolveInfo="14.method ([Classifier]IFeatureDesign).([InstanceMethodDeclaration]getTargetType((jetbrains.mps.baseLanguage.types.any/jetbrains.mps.baseLanguage.types.any), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+                <link role="baseMethodDeclaration" extResolveInfo="14.method ([Classifier]IFeatureDesign).([InstanceMethodDeclaration]getTargetType((jetbrains.mps.baseLanguage.types.any/jetbrains.mps.baseLanguage.types.any), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184840422867">
                   <link role="variableDeclaration" targetNodeId="1184840404986" resolveInfo="fd" />
                 </node>
@@ -1616,9 +1612,6 @@
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1184849782008">
                   <link role="variableDeclaration" targetNodeId="1184849767428" resolveInfo="nodeType" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1185011128487">
-                  <link role="variableDeclaration" targetNodeId="1185011109909" resolveInfo="target" />
                 </node>
               </node>
             </node>
