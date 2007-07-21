@@ -43,7 +43,7 @@ public final class ReflectionUtil {
     } catch (IllegalAccessException e) {
       throw new RuntimeException();
     } catch (InvocationTargetException e) {
-      throw new RuntimeException();
+      throw new RuntimeException(method + " " + object);
     }
   }
 
