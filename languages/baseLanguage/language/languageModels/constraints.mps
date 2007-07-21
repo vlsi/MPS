@@ -2440,6 +2440,25 @@
       <property name="name" value="eval" />
       <link role="overridenMethod" targetNodeId="1184884309598" resolveInfo="eval" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185034069549">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185034350516">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185034350517">
+            <property name="name" value="instance" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185034350518">
+              <link role="classifier" extResolveInfo="13.[Classifier]Object" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1185034343699">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1185034344593">
+                <link role="conceptMethodDeclaration" targetNodeId="1184884309598" resolveInfo="eval" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1185034340867">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1185034343042">
+                  <link role="link" targetNodeId="1.1068580123164" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1185034340272" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185034100428">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185034100429">
             <property name="name" value="method" />
