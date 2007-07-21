@@ -2943,6 +2943,18 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178192141345">
     <link role="concept" targetNodeId="1.1083260308424" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1185034479585">
+      <property name="name" value="eval" />
+      <link role="overridenMethod" targetNodeId="1184884309598" resolveInfo="eval" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185034479587">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185034486577">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1185034486578" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185034483260">
+        <link role="classifier" extResolveInfo="13.[Classifier]Object" />
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141346">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178192141347" />
     </node>
