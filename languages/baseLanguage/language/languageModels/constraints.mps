@@ -2737,8 +2737,17 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184945594954">
-          <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1184945594955" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185036528410">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1185036532084">
+            <link role="baseMethodDeclaration" extResolveInfo="30.static method ([Classifier]ReflectionUtil).([StaticMethodDeclaration]staticInvoke((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Method]), (jetbrains.mps.baseLanguage.types.array/jetbrains.mps.baseLanguage.types.array [-1, jetbrains.mps.baseLanguage.types.classifier [Object]])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object]))" />
+            <link role="classConcept" extResolveInfo="30.[Classifier]ReflectionUtil" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185036534350">
+              <link role="variableDeclaration" targetNodeId="1184946709415" resolveInfo="method" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185036536071">
+              <link role="variableDeclaration" targetNodeId="1184970547360" resolveInfo="actualArguments" />
+            </node>
+          </node>
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184945462745">
