@@ -6,7 +6,6 @@ import ypath.design.IFeatureDesign;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class SNODE_Design {
   public static class Design_Feature_child implements IFeatureDesign<String> {
@@ -19,7 +18,7 @@ public class SNODE_Design {
       _zClosureContext1._param = param;
       SNode ld = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate1(null, _zClosureContext1)));
       SNode trg = SLinkOperations.getTarget(ld, "target", false);
-      return new QuotationClass_().createNode(SNodeOperations.getConceptDeclaration(trg));
+      return new QuotationClass_().createNode(trg);
     }
     public String parameterToString(String param) {
       return param;
@@ -37,7 +36,8 @@ public class SNODE_Design {
       final zClosureContext2 _zClosureContext2 = new zClosureContext2();
       _zClosureContext2._param = param;
       SNode ld = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate3(null, _zClosureContext2)));
-      return SLinkOperations.getTarget(ld, "target", false);
+      SNode trg = SLinkOperations.getTarget(ld, "target", false);
+      return new QuotationClass_1().createNode(trg);
     }
     public String parameterToString(String param) {
       return param;

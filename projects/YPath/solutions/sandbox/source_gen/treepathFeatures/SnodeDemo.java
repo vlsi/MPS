@@ -9,7 +9,7 @@ public class SnodeDemo {
 
   public static void main(String[] args) {
     SNode foo = null;
-    TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"), "child");
-    TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"), "link");
+    TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"), "child"), TreeTraversalFactory.Axis("CHILDREN"), "link");
+    TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"), "link"), TreeTraversalFactory.Axis("CHILDREN"), "child");
   }
 }

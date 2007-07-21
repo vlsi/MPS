@@ -629,13 +629,10 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1184851368404">
             <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1184851372727">
-              <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1184851375618">
-                <node role="_attr_$attribute" type="jetbrains.mps.bootstrap.helgins.Antiquotation" id="1184851689070">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1184851692301">
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetConceptOperation" id="1184851695650" />
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184851690930">
-                      <link role="variableDeclaration" targetNodeId="1184851401432" resolveInfo="target" />
-                    </node>
+              <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1185016440395">
+                <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.bootstrap.helgins.ReferenceAntiquotation" id="1185016449850">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185016453403">
+                    <link role="variableDeclaration" targetNodeId="1184851401432" resolveInfo="trg" />
                   </node>
                 </node>
               </node>
@@ -863,13 +860,30 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1184688590556">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1184851765298">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1184851766719">
-                <link role="link" targetNodeId="6.1071599976176" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185016481799">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185016481800">
+              <property name="name" value="trg" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1185016481801">
+                <link role="concept" targetNodeId="6.1169125787135" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184851764896">
-                <link role="variableDeclaration" targetNodeId="1184851752334" resolveInfo="ld" />
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1185016481802">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1185016481803">
+                  <link role="link" targetNodeId="6.1071599976176" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185016481804">
+                  <link role="variableDeclaration" targetNodeId="1184851752334" resolveInfo="ld" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1184688590556">
+            <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1185016493926">
+              <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1185016496601">
+                <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.bootstrap.helgins.ReferenceAntiquotation" id="1185016497916">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185016500775">
+                    <link role="variableDeclaration" targetNodeId="1185016481800" resolveInfo="trg" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -946,35 +960,53 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184773554769">
-          <node role="expression" type="ypath.TreePathOperationExpression" id="1184774236060">
-            <node role="expression" type="ypath.TreePathAdapterExpression" id="1184774196558">
-              <link role="treepathAspect" targetNodeId="1184685688047" resolveInfo="SNODE" />
-              <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184773554770">
-                <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+          <node role="expression" type="ypath.TreePathOperationExpression" id="1185016655220">
+            <node role="expression" type="ypath.TreePathOperationExpression" id="1184774236060">
+              <node role="expression" type="ypath.TreePathAdapterExpression" id="1184774196558">
+                <link role="treepathAspect" targetNodeId="1184685688047" resolveInfo="SNODE" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184773554770">
+                  <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+                </node>
+              </node>
+              <node role="operation" type="ypath.IterateOperation" id="1184774236065">
+                <property name="axis" value="CHILDREN" />
+                <link role="usedFeature" targetNodeId="1184685792724" resolveInfo="child" />
+                <node role="paramName" type="ypath.ParameterName" id="1184845314260">
+                  <property name="name" value="implements" />
+                </node>
               </node>
             </node>
-            <node role="operation" type="ypath.IterateOperation" id="1184774236065">
+            <node role="operation" type="ypath.IterateOperation" id="1185016655224">
               <property name="axis" value="CHILDREN" />
-              <link role="usedFeature" targetNodeId="1184685792724" resolveInfo="child" />
-              <node role="paramName" type="ypath.ParameterName" id="1184845314260">
-                <property name="name" value="implements" />
+              <link role="usedFeature" targetNodeId="1184688224775" resolveInfo="link" />
+              <node role="paramName" type="ypath.ParameterName" id="1185017170864">
+                <property name="name" value="extends" />
               </node>
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184774612009">
-          <node role="expression" type="ypath.TreePathOperationExpression" id="1184775225472">
-            <node role="expression" type="ypath.TreePathAdapterExpression" id="1184775005257">
-              <link role="treepathAspect" targetNodeId="1184685688047" resolveInfo="SNODE" />
-              <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184774612010">
-                <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+          <node role="expression" type="ypath.TreePathOperationExpression" id="1185017122434">
+            <node role="expression" type="ypath.TreePathOperationExpression" id="1184775225472">
+              <node role="expression" type="ypath.TreePathAdapterExpression" id="1184775005257">
+                <link role="treepathAspect" targetNodeId="1184685688047" resolveInfo="SNODE" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184774612010">
+                  <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+                </node>
+              </node>
+              <node role="operation" type="ypath.IterateOperation" id="1184775225476">
+                <property name="axis" value="CHILDREN" />
+                <link role="usedFeature" targetNodeId="1184688224775" resolveInfo="link" />
+                <node role="paramName" type="ypath.ParameterName" id="1184845577435">
+                  <property name="name" value="extends" />
+                </node>
               </node>
             </node>
-            <node role="operation" type="ypath.IterateOperation" id="1184775225476">
+            <node role="operation" type="ypath.IterateOperation" id="1185017122438">
               <property name="axis" value="CHILDREN" />
-              <link role="usedFeature" targetNodeId="1184688224775" resolveInfo="link" />
-              <node role="paramName" type="ypath.ParameterName" id="1184845577435">
-                <property name="name" value="extends" />
+              <link role="usedFeature" targetNodeId="1184685792724" resolveInfo="child" />
+              <node role="paramName" type="ypath.ParameterName" id="1185017204826">
+                <property name="name" value="implements" />
               </node>
             </node>
           </node>
