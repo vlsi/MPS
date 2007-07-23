@@ -5,10 +5,10 @@
   </models>
   <module>
     <moduleRoot path="${mps_home}\baseLanguage\ext\unitTest\unitTest.mpl" />
-    <moduleRoot path="${mps_home}\projects\YPath\solutions\main\main.msd" />
+    <moduleRoot path="${mps_home}\platform\ypath\solutions\main\main.msd" />
   </module>
   <languages>
-    <moduleRoot path="${mps_home}\projects\YPath\languages\ypath\ypath.mpl" />
+    <moduleRoot path="${mps_home}\platform\ypath\languages\ypath\ypath.mpl" />
   </languages>
   <classPath>
     <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
