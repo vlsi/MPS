@@ -13,12 +13,12 @@ public class ApplicationsTest extends TestCase {
   }
 
   public void testYPath() {
-    String res = TestMain.testProject(new File("projects/YPath/YPath.mpr"));
+    String res = TestMain.testProject(new File("platform/ypath/YPath.mpr"));
     assertTrue(res, res == null);
   }
 
   public void testPanacea() {
-    String res = TestMain.testProject(new File("projects/Panacea/Panacea.mpr"));
+    String res = TestMain.testProject(new File("platform/panacea/Panacea.mpr"));
     assertTrue(res, res == null);
   }
 
