@@ -2688,6 +2688,11 @@
           <property name="textFgColor" value="DARK_BLUE" />
           <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
           <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
+          <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1185228138164">
+            <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1185228247259">
+              <link role="replacementConcept" targetNodeId="1.1087833466690" />
+            </node>
+          </node>
         </node>
         <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1184214899933">
           <property name="vertical" value="true" />
