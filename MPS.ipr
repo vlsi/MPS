@@ -1841,6 +1841,15 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="GWT">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/gwt/gwt-user.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/gwt/gwt-user.jar!/" />
+      </SOURCES>
+    </library>
   </component>
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
