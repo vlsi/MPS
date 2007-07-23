@@ -925,8 +925,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" filepath="$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" group="app/PubMedDB" />
       <module fileurl="file://$PROJECT_DIR$/app/PubMedDB/PubMedDB.iml" filepath="$PROJECT_DIR$/app/PubMedDB/PubMedDB.iml" group="app/PubMedDB" />
-      <module fileurl="file://$PROJECT_DIR$/projects/YPath/YPath.iml" filepath="$PROJECT_DIR$/projects/YPath/YPath.iml" group="platform/YPath-Panacea" />
-      <module fileurl="file://$PROJECT_DIR$/projects/YPath/runtime/YPath-runtime.iml" filepath="$PROJECT_DIR$/projects/YPath/runtime/YPath-runtime.iml" group="platform/YPath-Panacea" />
+      <module fileurl="file://$PROJECT_DIR$/platform/ypath/YPath.iml" filepath="$PROJECT_DIR$/platform/ypath/YPath.iml" group="platform/YPath-Panacea" />
+      <module fileurl="file://$PROJECT_DIR$/platform/ypath/runtime/YPath-runtime.iml" filepath="$PROJECT_DIR$/platform/ypath/runtime/YPath-runtime.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/app/agreement/agreement.iml" filepath="$PROJECT_DIR$/app/agreement/agreement.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" group="Projects/BaseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/languages/baseLanguageInternal/baseLanguageInternal.iml" filepath="$PROJECT_DIR$/baseLanguage/languages/baseLanguageInternal/baseLanguageInternal.iml" group="baseLanguage" />
