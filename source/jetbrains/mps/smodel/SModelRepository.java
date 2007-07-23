@@ -1,7 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.component.Dependency;
-import jetbrains.mps.ide.actions.tools.ReloadUtils;
+import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;

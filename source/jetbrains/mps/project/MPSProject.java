@@ -12,7 +12,7 @@ import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPathsDialog;
 import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.actions.tools.ReloadUtils;
+import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;

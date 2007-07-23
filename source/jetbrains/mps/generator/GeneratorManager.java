@@ -7,7 +7,7 @@ import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.actions.tools.ReloadUtils;
+import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.messages.IMessageHandler;

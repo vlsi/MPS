@@ -1,6 +1,6 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.ide.actions.tools.ReloadUtils;
+import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;

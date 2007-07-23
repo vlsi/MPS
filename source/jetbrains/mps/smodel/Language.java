@@ -6,7 +6,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptRefer
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.IStatus;
-import jetbrains.mps.ide.actions.tools.ReloadUtils;
+import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;

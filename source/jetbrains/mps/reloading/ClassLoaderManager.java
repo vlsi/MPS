@@ -29,6 +29,8 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private Map<String, IClassPathItem> myCachedItems = new HashMap<String, IClassPathItem>();
   private Set<String> myAlreadyAdded = new HashSet<String>();
 
+  private List<IReloadHandler> myReloadHandlers = new ArrayList<IReloadHandler>();
+
   public static ClassLoaderManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(ClassLoaderManager.class);
   }
@@ -284,4 +286,18 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return null;
   }
 
+
+  public void addReloadHandler(IReloadHandler handler) {
+    myReloadHandlers.add(handler);
+  }
+
+  public void removeReloadHandler(IReloadHandler handler) {
+    myReloadHandlers.remove(handler);
+  }
+
+  void callReloadHandlers() {
+    for (IReloadHandler h : myReloadHandlers) {
+      h.handleReload();
+    }
+  }
 }
