@@ -15,7 +15,6 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil;
-import jetbrains.mps.transformation.TLBase.helgins.Util_TLBase_types;
 
 public class QueriesGenerated {
 
@@ -99,16 +98,32 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "body", true);
   }
 
+  public static SNode sourceNodeQuery_1185220142523(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.getInputNodeTypeForTemplateFunction(node);
+  }
+
   public static SNode sourceNodeQuery_1168025938897(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1185220272684(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.getInputNodeTypeForTemplateFunction(node);
   }
 
   public static SNode sourceNodeQuery_1168025925887(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
   }
 
+  public static SNode sourceNodeQuery_1185220055445(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.getInputNodeTypeForTemplateFunction(node);
+  }
+
   public static SNode sourceNodeQuery_1168025947268(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1185220175985(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.getInputNodeTypeForTemplateFunction(node);
   }
 
   public static SNode sourceNodeQuery_1168025330833(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -123,40 +138,24 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "body", true);
   }
 
+  public static SNode sourceNodeQuery_1185220115342(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.getInputNodeTypeForTemplateFunction(node);
+  }
+
   public static SNode sourceNodeQuery_1184374857693(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1185220221463(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.getInputNodeTypeForTemplateFunction(node);
   }
 
   public static SNode sourceNodeQuery_1184617630754(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
   }
 
-  public static SNode mapSrcMacro_mapper_1178910515264(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
-  }
-
-  public static SNode mapSrcMacro_mapper_1178914145434(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
-  }
-
-  public static SNode mapSrcMacro_mapper_1178914006342(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
-  }
-
-  public static SNode mapSrcMacro_mapper_1178913463923(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
-  }
-
-  public static SNode mapSrcMacro_mapper_1178913590671(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
-  }
-
-  public static SNode mapSrcMacro_mapper_1184374857711(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
-  }
-
-  public static SNode mapSrcMacro_mapper_1184617630772(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return SNodeOperations.copyNode(Util_TLBase_types.get_templateFunction_inputNodeType(node));
+  public static SNode sourceNodeQuery_1185220245753(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.getInputNodeTypeForTemplateFunction(node);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619599466(SNode node, ITemplateGenerator generator) {
