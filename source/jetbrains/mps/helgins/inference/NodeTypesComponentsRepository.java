@@ -22,6 +22,7 @@ public class NodeTypesComponentsRepository {
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       for (INodeTypesComponent nodeTypesComponent : new HashSet<INodeTypesComponent>(myNodeTypesComponents)) {
         if (nodeTypesComponent.getNode().getModel().getUID().equals(modelDescriptor.getModelUID())) {
+          nodeTypesComponent.clearListeners();
           myNodeTypesComponents.remove(nodeTypesComponent);
         }
       }

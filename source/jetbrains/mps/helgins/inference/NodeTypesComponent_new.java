@@ -328,6 +328,10 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
     myModelDescriptorsWithListener.clear();
   }
 
+  public void clearListeners() {
+    removeOurListener();
+  }
+
   public SNode getType(SNode node) {
     if (myFullyCheckedNodes.contains(node)) {
       return getRawTypeFromContext(node);
