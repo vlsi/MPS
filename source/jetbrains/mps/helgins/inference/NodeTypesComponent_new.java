@@ -8,6 +8,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
@@ -135,7 +136,9 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
 
   @Nullable
   private AbstractEditorComponent getEditorComponent() {
-    EditorsPane editorsPane = myTypeChecker.getProject().getComponent(EditorsPane.class);
+    MPSProject project = myTypeChecker.getProject();
+    if (project == null) return null;
+    EditorsPane editorsPane = project.getComponent(EditorsPane.class);
     if (editorsPane == null) return null;
     IEditor iEditor = editorsPane.getEditorFor(myRootNode);
     if (iEditor == null) return null;
