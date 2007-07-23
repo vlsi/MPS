@@ -16,18 +16,21 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(newNode, "nodeToCheck", SLinkOperations.getTarget(sampleNode, "nodeToCheck", true), true);
     }
   }
+
   public static void nodeFactory_NodeSetup_IsSubtypeExpression_1177408248540(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression")) {
       SLinkOperations.setTarget(newNode, "subtypeExpression", SLinkOperations.getTarget(sampleNode, "subtypeExpression", true), true);
       SLinkOperations.setTarget(newNode, "supertypeExpression", SLinkOperations.getTarget(sampleNode, "supertypeExpression", true), true);
     }
   }
+
   public static void nodeFactory_NodeSetup_CoerceExpression_1178879020941(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.bootstrap.helgins.structure.CoerceExpression")) {
       SLinkOperations.setTarget(newNode, "nodeToCoerce", SLinkOperations.getTarget(sampleNode, "nodeToCoerce", true), true);
       SLinkOperations.setTarget(newNode, "pattern", SLinkOperations.getTarget(sampleNode, "pattern", true), true);
     }
   }
+
   public static void nodeFactory_NodeSetup_TypeOfExpression_1179476271704(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
       if(!(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression"))) {
@@ -38,4 +41,5 @@ public class QueriesGenerated {
       }
     }
   }
+
 }

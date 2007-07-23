@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.helgins.helgins.QuotationClass_13;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_CoerceExpression_InferenceRule implements InferenceRule_Runtime {
@@ -24,15 +23,19 @@ public class typeOf_CoerceExpression_InferenceRule implements InferenceRule_Runt
     {
       concept = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(pattern, "pattern", true), "patternNode", true));
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_13().createNode(concept), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_13().createNode(concept), argument, "jetbrains.mps.bootstrap.helgins.helgins", "1178872207658");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.helgins.structure.CoerceExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

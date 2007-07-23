@@ -14,16 +14,20 @@ public class ApplicableNodeCondition_Editor extends DefaultNodeEditor {
   private static void setupBasic_ErrorCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176905455508");
   }
+
   private static void setupLabel_ErrorCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createErrorCell(context, node);
   }
+
   public EditorCell createErrorCell(EditorContext context, SNode node) {
     EditorCell_Error editorCell = new EditorCell_Error(context, node, "<condition>");
     ApplicableNodeCondition_Editor.setupBasic_ErrorCell(editorCell, node, context);
     ApplicableNodeCondition_Editor.setupLabel_ErrorCell(editorCell, node, context);
     return editorCell;
   }
+
 }

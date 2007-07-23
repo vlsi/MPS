@@ -18,14 +18,18 @@ public class TypeVarReference extends Expression {
   public static TypeVarReference newInstance(SModel sm, boolean init) {
     return (TypeVarReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.TypeVarReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static TypeVarReference newInstance(SModel sm) {
     return TypeVarReference.newInstance(sm, false);
   }
 
+
   public TypeVarDeclaration getTypeVarDeclaration() {
     return (TypeVarDeclaration)this.getReferent(TypeVarReference.TYPE_VAR_DECLARATION);
   }
+
   public void setTypeVarDeclaration(TypeVarDeclaration node) {
     super.setReferent(TypeVarReference.TYPE_VAR_DECLARATION, node);
   }
+
 }

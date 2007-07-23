@@ -18,14 +18,18 @@ public class AssertStatement extends ReportErrorStatement {
   public static AssertStatement newInstance(SModel sm, boolean init) {
     return (AssertStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.AssertStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static AssertStatement newInstance(SModel sm) {
     return AssertStatement.newInstance(sm, false);
   }
 
+
   public Expression getCondition() {
     return (Expression)this.getChild(AssertStatement.CONDITION);
   }
+
   public void setCondition(Expression node) {
     super.setChild(AssertStatement.CONDITION, node);
   }
+
 }

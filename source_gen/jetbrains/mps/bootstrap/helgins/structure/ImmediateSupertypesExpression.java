@@ -18,14 +18,18 @@ public class ImmediateSupertypesExpression extends Expression {
   public static ImmediateSupertypesExpression newInstance(SModel sm, boolean init) {
     return (ImmediateSupertypesExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.ImmediateSupertypesExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ImmediateSupertypesExpression newInstance(SModel sm) {
     return ImmediateSupertypesExpression.newInstance(sm, false);
   }
 
+
   public Expression getSubtypeExpression() {
     return (Expression)this.getChild(ImmediateSupertypesExpression.SUBTYPE_EXPRESSION);
   }
+
   public void setSubtypeExpression(Expression node) {
     super.setChild(ImmediateSupertypesExpression.SUBTYPE_EXPRESSION, node);
   }
+
 }

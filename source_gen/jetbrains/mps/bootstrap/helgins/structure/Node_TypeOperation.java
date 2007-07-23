@@ -17,7 +17,9 @@ public class Node_TypeOperation extends SNodeOperation {
   public static Node_TypeOperation newInstance(SModel sm, boolean init) {
     return (Node_TypeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.Node_TypeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Node_TypeOperation newInstance(SModel sm) {
     return Node_TypeOperation.newInstance(sm, false);
   }
+
 }

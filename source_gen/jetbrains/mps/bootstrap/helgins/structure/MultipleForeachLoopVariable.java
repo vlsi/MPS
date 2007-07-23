@@ -21,20 +21,26 @@ public class MultipleForeachLoopVariable extends BaseConcept {
   public static MultipleForeachLoopVariable newInstance(SModel sm, boolean init) {
     return (MultipleForeachLoopVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.MultipleForeachLoopVariable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static MultipleForeachLoopVariable newInstance(SModel sm) {
     return MultipleForeachLoopVariable.newInstance(sm, false);
   }
 
+
   public LocalVariableDeclaration getVariable() {
     return (LocalVariableDeclaration)this.getChild(MultipleForeachLoopVariable.VARIABLE);
   }
+
   public void setVariable(LocalVariableDeclaration node) {
     super.setChild(MultipleForeachLoopVariable.VARIABLE, node);
   }
+
   public Expression getIterable() {
     return (Expression)this.getChild(MultipleForeachLoopVariable.ITERABLE);
   }
+
   public void setIterable(Expression node) {
     super.setChild(MultipleForeachLoopVariable.ITERABLE, node);
   }
+
 }

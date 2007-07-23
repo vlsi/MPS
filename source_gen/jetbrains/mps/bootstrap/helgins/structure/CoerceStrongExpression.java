@@ -16,7 +16,9 @@ public class CoerceStrongExpression extends CoerceExpression {
   public static CoerceStrongExpression newInstance(SModel sm, boolean init) {
     return (CoerceStrongExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.CoerceStrongExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static CoerceStrongExpression newInstance(SModel sm) {
     return CoerceStrongExpression.newInstance(sm, false);
   }
+
 }

@@ -19,23 +19,30 @@ public class _NotInRules_Component extends AbstractCellProvider {
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176544388226");
   }
+
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176544395384");
   }
+
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176544384333");
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context) {
     return this.createEditorCell(context, this.getSNode());
   }
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
   }
+
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     _NotInRules_Component.setupBasic_ColumnCell(editorCell, node, context);
@@ -46,6 +53,7 @@ public class _NotInRules_Component extends AbstractCellProvider {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "use in queries only"));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     _NotInRules_Component.setupBasic_ConstantCell(editorCell, node, context);
@@ -53,6 +61,7 @@ public class _NotInRules_Component extends AbstractCellProvider {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     _NotInRules_Component.setupBasic_ConstantCell1(editorCell, node, context);
@@ -60,4 +69,5 @@ public class _NotInRules_Component extends AbstractCellProvider {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
 }

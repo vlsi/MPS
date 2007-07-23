@@ -19,14 +19,18 @@ public class LinkPatternVariableReference extends Expression {
   public static LinkPatternVariableReference newInstance(SModel sm, boolean init) {
     return (LinkPatternVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.LinkPatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static LinkPatternVariableReference newInstance(SModel sm) {
     return LinkPatternVariableReference.newInstance(sm, false);
   }
 
+
   public LinkPatternVariableDeclaration getPatternVarDecl() {
     return (LinkPatternVariableDeclaration)this.getReferent(LinkPatternVariableReference.PATTERN_VAR_DECL);
   }
+
   public void setPatternVarDecl(LinkPatternVariableDeclaration node) {
     super.setReferent(LinkPatternVariableReference.PATTERN_VAR_DECL, node);
   }
+
 }

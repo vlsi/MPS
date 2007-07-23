@@ -5,7 +5,6 @@ package jetbrains.mps.bootstrap.helgins.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.helgins.helgins.QuotationClass_5;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ImmediateSupertypes_InferenceRule implements InferenceRule_Runtime {
@@ -14,15 +13,19 @@ public class typeOf_ImmediateSupertypes_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_5().createNode(), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_5().createNode(), argument, "jetbrains.mps.bootstrap.helgins.helgins", "1177069172275");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

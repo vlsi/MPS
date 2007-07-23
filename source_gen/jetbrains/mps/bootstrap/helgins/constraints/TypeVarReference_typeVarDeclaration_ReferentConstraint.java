@@ -19,16 +19,21 @@ public class TypeVarReference_typeVarDeclaration_ReferentConstraint implements I
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.helgins.structure.TypeVarReference", "typeVarDeclaration", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.helgins.structure.TypeVarReference", "typeVarDeclaration");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return true;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return new TypeVarScope(enclosingNode);
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "<no description>";
   }
+
 }

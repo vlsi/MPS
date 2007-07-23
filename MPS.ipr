@@ -913,6 +913,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Common/JetCMS-Common.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Common/JetCMS-Common.iml" group="app/JetCMS" />
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Configuration/JetCMS-Configuration.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Configuration/JetCMS-Configuration.iml" group="app/JetCMS" />
+      <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-GWTClient/JetCMS-GWTClient.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-GWTClient/JetCMS-GWTClient.iml" group="app/JetCMS" />
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Server/JetCMS-Server.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Server/JetCMS-Server.iml" group="app/JetCMS" />
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Client/JetCMS-SwingClient.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Client/JetCMS-SwingClient.iml" group="app/JetCMS" />
       <module fileurl="file://$PROJECT_DIR$/app/MForum/MForum.iml" filepath="$PROJECT_DIR$/app/MForum/MForum.iml" group="app" />

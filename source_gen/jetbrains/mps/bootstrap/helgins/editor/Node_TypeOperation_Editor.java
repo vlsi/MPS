@@ -18,18 +18,23 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176544322411");
   }
+
   private static void setupBasic__NotInRules_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176544407635");
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createConstantCell(context, node, "type");
   }
+
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
     return this.create_NotInRules_ComponentCell(context, node);
   }
+
   public EditorCell create_NotInRules_ComponentCell(EditorContext context, SNode node) {
     if(this.my_NotInRules_Component == null) {
       this.my_NotInRules_Component = new _NotInRules_Component(node);
@@ -40,6 +45,7 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
     Node_TypeOperation_Editor.setupBasic__NotInRules_ComponentCell(editorCell, node, context);
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     Node_TypeOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -47,4 +53,5 @@ public class Node_TypeOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
 }

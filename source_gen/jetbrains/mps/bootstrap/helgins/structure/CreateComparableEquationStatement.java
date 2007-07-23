@@ -16,7 +16,9 @@ public class CreateComparableEquationStatement extends AbstractEquationStatement
   public static CreateComparableEquationStatement newInstance(SModel sm, boolean init) {
     return (CreateComparableEquationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.CreateComparableEquationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static CreateComparableEquationStatement newInstance(SModel sm) {
     return CreateComparableEquationStatement.newInstance(sm, false);
   }
+
 }

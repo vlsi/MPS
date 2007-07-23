@@ -22,32 +22,42 @@ public class AbstractEquationStatement extends Statement {
   public static AbstractEquationStatement newInstance(SModel sm, boolean init) {
     return (AbstractEquationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.AbstractEquationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static AbstractEquationStatement newInstance(SModel sm) {
     return AbstractEquationStatement.newInstance(sm, false);
   }
 
+
   public Expression getLeftExpression() {
     return (Expression)this.getChild(AbstractEquationStatement.LEFT_EXPRESSION);
   }
+
   public void setLeftExpression(Expression node) {
     super.setChild(AbstractEquationStatement.LEFT_EXPRESSION, node);
   }
+
   public Expression getRightExpression() {
     return (Expression)this.getChild(AbstractEquationStatement.RIGHT_EXPRESSION);
   }
+
   public void setRightExpression(Expression node) {
     super.setChild(AbstractEquationStatement.RIGHT_EXPRESSION, node);
   }
+
   public Expression getNodeToCheck() {
     return (Expression)this.getChild(AbstractEquationStatement.NODE_TO_CHECK);
   }
+
   public void setNodeToCheck(Expression node) {
     super.setChild(AbstractEquationStatement.NODE_TO_CHECK, node);
   }
+
   public Expression getErrorString() {
     return (Expression)this.getChild(AbstractEquationStatement.ERROR_STRING);
   }
+
   public void setErrorString(Expression node) {
     super.setChild(AbstractEquationStatement.ERROR_STRING, node);
   }
+
 }

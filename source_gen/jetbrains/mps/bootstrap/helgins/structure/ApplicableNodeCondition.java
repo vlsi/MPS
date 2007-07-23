@@ -17,7 +17,9 @@ public class ApplicableNodeCondition extends NamedConcept {
   public static ApplicableNodeCondition newInstance(SModel sm, boolean init) {
     return (ApplicableNodeCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.ApplicableNodeCondition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ApplicableNodeCondition newInstance(SModel sm) {
     return ApplicableNodeCondition.newInstance(sm, false);
   }
+
 }

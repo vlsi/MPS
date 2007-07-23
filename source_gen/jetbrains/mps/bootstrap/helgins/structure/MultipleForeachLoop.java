@@ -20,23 +20,30 @@ public class MultipleForeachLoop extends AbstractLoopStatement {
   public static MultipleForeachLoop newInstance(SModel sm, boolean init) {
     return (MultipleForeachLoop)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.MultipleForeachLoop", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static MultipleForeachLoop newInstance(SModel sm) {
     return MultipleForeachLoop.newInstance(sm, false);
   }
 
+
   public int getLoopVariablesCount() {
     return this.getChildCount(MultipleForeachLoop.LOOP_VARIABLE);
   }
+
   public Iterator<MultipleForeachLoopVariable> loopVariables() {
     return this.children(MultipleForeachLoop.LOOP_VARIABLE);
   }
+
   public List<MultipleForeachLoopVariable> getLoopVariables() {
     return this.getChildren(MultipleForeachLoop.LOOP_VARIABLE);
   }
+
   public void addLoopVariable(MultipleForeachLoopVariable node) {
     this.addChild(MultipleForeachLoop.LOOP_VARIABLE, node);
   }
+
   public void insertLoopVariable(MultipleForeachLoopVariable prev, MultipleForeachLoopVariable node) {
     this.insertChild(prev, MultipleForeachLoop.LOOP_VARIABLE, node);
   }
+
 }

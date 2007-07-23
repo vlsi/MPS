@@ -18,14 +18,18 @@ public class AbstractRule extends NamedConcept {
   public static AbstractRule newInstance(SModel sm, boolean init) {
     return (AbstractRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.AbstractRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static AbstractRule newInstance(SModel sm) {
     return AbstractRule.newInstance(sm, false);
   }
 
+
   public ApplicableNodeCondition getApplicableNode() {
     return (ApplicableNodeCondition)this.getChild(AbstractRule.APPLICABLE_NODE);
   }
+
   public void setApplicableNode(ApplicableNodeCondition node) {
     super.setChild(AbstractRule.APPLICABLE_NODE, node);
   }
+
 }

@@ -20,23 +20,30 @@ public class JoinType extends BaseConcept {
   public static JoinType newInstance(SModel sm, boolean init) {
     return (JoinType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.JoinType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static JoinType newInstance(SModel sm) {
     return JoinType.newInstance(sm, false);
   }
 
+
   public int getArgumentsCount() {
     return this.getChildCount(JoinType.ARGUMENT);
   }
+
   public Iterator<BaseConcept> arguments() {
     return this.children(JoinType.ARGUMENT);
   }
+
   public List<BaseConcept> getArguments() {
     return this.getChildren(JoinType.ARGUMENT);
   }
+
   public void addArgument(BaseConcept node) {
     this.addChild(JoinType.ARGUMENT, node);
   }
+
   public void insertArgument(BaseConcept prev, BaseConcept node) {
     this.insertChild(prev, JoinType.ARGUMENT, node);
   }
+
 }

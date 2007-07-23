@@ -18,14 +18,18 @@ public class PatternCondition extends ApplicableNodeCondition {
   public static PatternCondition newInstance(SModel sm, boolean init) {
     return (PatternCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.PatternCondition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static PatternCondition newInstance(SModel sm) {
     return PatternCondition.newInstance(sm, false);
   }
 
+
   public PatternExpression getPattern() {
     return (PatternExpression)this.getChild(PatternCondition.PATTERN);
   }
+
   public void setPattern(PatternExpression node) {
     super.setChild(PatternCondition.PATTERN, node);
   }
+
 }

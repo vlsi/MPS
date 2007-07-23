@@ -19,20 +19,26 @@ public class IsSubtypeExpression extends Expression {
   public static IsSubtypeExpression newInstance(SModel sm, boolean init) {
     return (IsSubtypeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.IsSubtypeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static IsSubtypeExpression newInstance(SModel sm) {
     return IsSubtypeExpression.newInstance(sm, false);
   }
 
+
   public Expression getSubtypeExpression() {
     return (Expression)this.getChild(IsSubtypeExpression.SUBTYPE_EXPRESSION);
   }
+
   public void setSubtypeExpression(Expression node) {
     super.setChild(IsSubtypeExpression.SUBTYPE_EXPRESSION, node);
   }
+
   public Expression getSupertypeExpression() {
     return (Expression)this.getChild(IsSubtypeExpression.SUPERTYPE_EXPRESSION);
   }
+
   public void setSupertypeExpression(Expression node) {
     super.setChild(IsSubtypeExpression.SUPERTYPE_EXPRESSION, node);
   }
+
 }

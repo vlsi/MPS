@@ -23,35 +23,46 @@ public class MatchStatement extends Statement {
   public static MatchStatement newInstance(SModel sm, boolean init) {
     return (MatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.MatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static MatchStatement newInstance(SModel sm) {
     return MatchStatement.newInstance(sm, false);
   }
 
+
   public Expression getExpression() {
     return (Expression)this.getChild(MatchStatement.EXPRESSION);
   }
+
   public void setExpression(Expression node) {
     super.setChild(MatchStatement.EXPRESSION, node);
   }
+
   public Statement getIfFalseStatement() {
     return (Statement)this.getChild(MatchStatement.IF_FALSE_STATEMENT);
   }
+
   public void setIfFalseStatement(Statement node) {
     super.setChild(MatchStatement.IF_FALSE_STATEMENT, node);
   }
+
   public int getItemsCount() {
     return this.getChildCount(MatchStatement.ITEM);
   }
+
   public Iterator<MatchStatementItem> items() {
     return this.children(MatchStatement.ITEM);
   }
+
   public List<MatchStatementItem> getItems() {
     return this.getChildren(MatchStatement.ITEM);
   }
+
   public void addItem(MatchStatementItem node) {
     this.addChild(MatchStatement.ITEM, node);
   }
+
   public void insertItem(MatchStatementItem prev, MatchStatementItem node) {
     this.insertChild(prev, MatchStatement.ITEM, node);
   }
+
 }

@@ -24,12 +24,15 @@ public class PatternVariableReference_patternVarDecl_ReferentConstraint implemen
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.helgins.structure.PatternVariableReference", "patternVarDecl", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.helgins.structure.PatternVariableReference", "patternVarDecl");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return true;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     List<SNode> result = new ArrayList<SNode>();
     SNode rule = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
@@ -45,7 +48,9 @@ public class PatternVariableReference_patternVarDecl_ReferentConstraint implemen
     }
     return new SimpleSearchScope(result);
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "<no description>";
   }
+
 }

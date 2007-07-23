@@ -20,20 +20,26 @@ public class ReportErrorStatement extends Statement {
   public static ReportErrorStatement newInstance(SModel sm, boolean init) {
     return (ReportErrorStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.ReportErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ReportErrorStatement newInstance(SModel sm) {
     return ReportErrorStatement.newInstance(sm, false);
   }
 
+
   public Expression getErrorString() {
     return (Expression)this.getChild(ReportErrorStatement.ERROR_STRING);
   }
+
   public void setErrorString(Expression node) {
     super.setChild(ReportErrorStatement.ERROR_STRING, node);
   }
+
   public Expression getNodeToReport() {
     return (Expression)this.getChild(ReportErrorStatement.NODE_TO_REPORT);
   }
+
   public void setNodeToReport(Expression node) {
     super.setChild(ReportErrorStatement.NODE_TO_REPORT, node);
   }
+
 }

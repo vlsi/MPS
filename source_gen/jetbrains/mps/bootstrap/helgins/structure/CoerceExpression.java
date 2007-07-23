@@ -19,20 +19,26 @@ public class CoerceExpression extends Expression {
   public static CoerceExpression newInstance(SModel sm, boolean init) {
     return (CoerceExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.CoerceExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static CoerceExpression newInstance(SModel sm) {
     return CoerceExpression.newInstance(sm, false);
   }
 
+
   public ApplicableNodeCondition getPattern() {
     return (ApplicableNodeCondition)this.getChild(CoerceExpression.PATTERN);
   }
+
   public void setPattern(ApplicableNodeCondition node) {
     super.setChild(CoerceExpression.PATTERN, node);
   }
+
   public Expression getNodeToCoerce() {
     return (Expression)this.getChild(CoerceExpression.NODE_TO_COERCE);
   }
+
   public void setNodeToCoerce(Expression node) {
     super.setChild(CoerceExpression.NODE_TO_COERCE, node);
   }
+
 }

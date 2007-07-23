@@ -19,14 +19,18 @@ public class PropertyPatternVariableReference extends Expression {
   public static PropertyPatternVariableReference newInstance(SModel sm, boolean init) {
     return (PropertyPatternVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.PropertyPatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static PropertyPatternVariableReference newInstance(SModel sm) {
     return PropertyPatternVariableReference.newInstance(sm, false);
   }
 
+
   public PropertyPatternVariableDeclaration getPatternVarDecl() {
     return (PropertyPatternVariableDeclaration)this.getReferent(PropertyPatternVariableReference.PATTERN_VAR_DECL);
   }
+
   public void setPatternVarDecl(PropertyPatternVariableDeclaration node) {
     super.setReferent(PropertyPatternVariableReference.PATTERN_VAR_DECL, node);
   }
+
 }

@@ -18,14 +18,18 @@ public class TypeOfExpression extends Expression {
   public static TypeOfExpression newInstance(SModel sm, boolean init) {
     return (TypeOfExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.TypeOfExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static TypeOfExpression newInstance(SModel sm) {
     return TypeOfExpression.newInstance(sm, false);
   }
 
+
   public Expression getTerm() {
     return (Expression)this.getChild(TypeOfExpression.TERM);
   }
+
   public void setTerm(Expression node) {
     super.setChild(TypeOfExpression.TERM, node);
   }
+
 }

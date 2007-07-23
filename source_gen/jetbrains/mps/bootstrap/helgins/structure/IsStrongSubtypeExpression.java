@@ -16,7 +16,9 @@ public class IsStrongSubtypeExpression extends IsSubtypeExpression {
   public static IsStrongSubtypeExpression newInstance(SModel sm, boolean init) {
     return (IsStrongSubtypeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.IsStrongSubtypeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static IsStrongSubtypeExpression newInstance(SModel sm) {
     return IsStrongSubtypeExpression.newInstance(sm, false);
   }
+
 }

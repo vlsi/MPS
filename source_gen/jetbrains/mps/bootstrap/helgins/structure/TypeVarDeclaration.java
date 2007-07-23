@@ -20,20 +20,26 @@ public class TypeVarDeclaration extends Statement implements INamedConcept {
   public static TypeVarDeclaration newInstance(SModel sm, boolean init) {
     return (TypeVarDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.TypeVarDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static TypeVarDeclaration newInstance(SModel sm) {
     return TypeVarDeclaration.newInstance(sm, false);
   }
 
+
   public String getName() {
     return this.getProperty(TypeVarDeclaration.NAME);
   }
+
   public void setName(String value) {
     this.setProperty(TypeVarDeclaration.NAME, value);
   }
+
   public boolean getNullable() {
     return this.getBooleanProperty(TypeVarDeclaration.NULLABLE);
   }
+
   public void setNullable(boolean value) {
     this.setBooleanProperty(TypeVarDeclaration.NULLABLE, value);
   }
+
 }
