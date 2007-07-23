@@ -915,7 +915,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Configuration/JetCMS-Configuration.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Configuration/JetCMS-Configuration.iml" group="app/JetCMS" />
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-GWTClient/JetCMS-GWTClient.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-GWTClient/JetCMS-GWTClient.iml" group="app/JetCMS" />
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Server/JetCMS-Server.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Server/JetCMS-Server.iml" group="app/JetCMS" />
-      <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Client/JetCMS-SwingClient.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Client/JetCMS-SwingClient.iml" group="app/JetCMS" />
+      <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-SwingClient/JetCMS-SwingClient.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-SwingClient/JetCMS-SwingClient.iml" group="app/JetCMS" />
       <module fileurl="file://$PROJECT_DIR$/app/MForum/MForum.iml" filepath="$PROJECT_DIR$/app/MForum/MForum.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/MPS.iml" filepath="$PROJECT_DIR$/MPS.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform/mps-lite/MPS-lite.iml" filepath="$PROJECT_DIR$/platform/mps-lite/MPS-lite.iml" group="platform" />
@@ -1003,7 +1003,7 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xmx512m" />
+      <option name="VM_PARAMETERS" value="-Xmx1024m" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1020,6 +1020,7 @@
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Profile " />
       <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" value="true" />
