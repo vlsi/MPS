@@ -269,6 +269,11 @@
         <property name="editable" value="true" />
         <link role="keyMap" targetNodeId="1149931179122" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1185230015117">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1185230018853">
+            <link role="replacementConcept" targetNodeId="1.1087833466690" />
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1152722394825">
         <property name="textBgColor" value="orange" />
