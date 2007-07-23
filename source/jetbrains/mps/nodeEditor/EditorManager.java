@@ -122,20 +122,20 @@ public class EditorManager {
     EditorCell cellWithRolePopped = stack.pop();
     LOG.assertLog(cellWithRolePopped == cellWithRole);
     //setting substitute info
-    AnnotationLinkDeclaration linkDeclaration = (AnnotationLinkDeclaration) roleAttribute.findAnnotationLinkDeclaration(context.getOperationContext().getScope());
-    if (linkDeclaration != null) {
-      DefaultAttributeSubstituteInfo substituteInfo = new DefaultAttributeSubstituteInfo(cellWithRole.getSNode(), roleAttribute, linkDeclaration, context);
-      result.setSubstituteInfo(substituteInfo);
-      if (result instanceof EditorCell_Collection) {
-        if (((EditorCell_Collection) result).containsCell(cellWithRole)) {
-          for (EditorCell cell : ((EditorCell_Collection) result).contentCells()) {
-            if (cell != cellWithRole && cell.getSubstituteInfo() == null) {
-              cell.setSubstituteInfo(substituteInfo);
-            }
-          }
-        }
-      }
-    }
+//    AnnotationLinkDeclaration linkDeclaration = (AnnotationLinkDeclaration) roleAttribute.findAnnotationLinkDeclaration(context.getOperationContext().getScope());
+//    if (linkDeclaration != null) {
+//      DefaultAttributeSubstituteInfo substituteInfo = new DefaultAttributeSubstituteInfo(cellWithRole.getSNode(), roleAttribute, linkDeclaration, context);
+//      result.setSubstituteInfo(substituteInfo);
+//      if (result instanceof EditorCell_Collection) {
+//        if (((EditorCell_Collection) result).containsCell(cellWithRole)) {
+//          for (EditorCell cell : ((EditorCell_Collection) result).contentCells()) {
+//            if (cell != cellWithRole && cell.getSubstituteInfo() == null) {
+//              cell.setSubstituteInfo(substituteInfo);
+//            }
+//          }
+//        }
+//      }
+//    }
     return result;
   }
 

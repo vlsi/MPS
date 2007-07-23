@@ -52,6 +52,9 @@
       <property name="value" value="sourceQueryAspectMethodName is deprecated" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1185229020384">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473854053" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1090493180053">
       <property name="name" value="sourceQueryAspectMethodName" />
       <link role="dataType" targetNodeId="2.1082983041843" />
