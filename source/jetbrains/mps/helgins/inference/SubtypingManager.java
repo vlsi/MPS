@@ -47,6 +47,8 @@ public class SubtypingManager {
   }
 
   public boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak) {
+    if (subtype == supertype) return true;
+    if (subtype == null || supertype == null) return false;
     return isSubtype(new NodeWrapper(subtype), new NodeWrapper(supertype), null, null, isWeak);
   }
 
