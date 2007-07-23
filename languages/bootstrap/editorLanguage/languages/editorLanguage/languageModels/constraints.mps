@@ -1388,17 +1388,48 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185182541870">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185182541871">
+            <property name="name" value="modifiers" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185182541872">
+              <link role="classifier" extResolveInfo="17.[Classifier]String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1184928942412">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1184928944571">
+                <link role="property" targetNodeId="1.1136923970223" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184928941599">
+                <link role="variableDeclaration" targetNodeId="1184928697019" resolveInfo="first" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1185182578059">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1185182578060">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185182583271">
+              <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1185182583929">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.StringLiteral" id="1185182584792">
+                  <property name="value" value="" />
+                </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185182583272">
+                  <link role="variableDeclaration" targetNodeId="1185182541871" resolveInfo="modifiers" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1185182580048">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1185182581020" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185182579188">
+              <link role="variableDeclaration" targetNodeId="1185182541871" resolveInfo="modifiers" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184928937297">
           <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1184928937721">
             <node role="rValue" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184928954137">
               <link role="baseMethodDeclaration" extResolveInfo="17.method ([Classifier]String).([InstanceMethodDeclaration]replaceAll((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1184928942412">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1184928944571">
-                  <link role="property" targetNodeId="1.1136923970223" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184928941599">
-                  <link role="variableDeclaration" targetNodeId="1184928697019" resolveInfo="first" />
-                </node>
+              <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185182541873">
+                <link role="variableDeclaration" targetNodeId="1185182541871" resolveInfo="modifiers" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184928976389">
                 <property name="value" value="\\+" />
