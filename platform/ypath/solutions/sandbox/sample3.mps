@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="sample3">
-  <language namespace="ypath" />
   <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.ypath" />
   <maxImportIndex value="8" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="2" modelUID="org.w3c.dom@java_stub" />
@@ -69,19 +69,19 @@
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1175090694726">
-              <node role="iterable" type="ypath.TreePathOperationExpression" id="1175164319381">
-                <node role="expression" type="ypath.TreePathOperationExpression" id="1175090703444">
-                  <node role="expression" type="ypath.TreePathAdapterExpression" id="1175090703445">
+              <node role="iterable" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1175164319381">
+                <node role="expression" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1175090703444">
+                  <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1175090703445">
                     <link role="treepathAspect" targetNodeId="7.1175083364493" />
                     <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1175090701994">
                       <link role="variableDeclaration" targetNodeId="1169048628465" resolveInfo="doc" />
                     </node>
                   </node>
-                  <node role="operation" type="ypath.IterateOperation" id="1175090703446">
+                  <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1175090703446">
                     <property name="axis" value="DESCENDANTS" />
                   </node>
                 </node>
-                <node role="operation" type="ypath.MatchKindOperation" id="1175164319382">
+                <node role="operation" type="jetbrains.mps.ypath.MatchKindOperation" id="1175164319382">
                   <link role="nodeKind" targetNodeId="7.1175164209843" />
                 </node>
               </node>
@@ -107,40 +107,40 @@
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1175165765485">
-              <node role="iterable" type="ypath.TreePathOperationExpression" id="1175170426638">
-                <node role="expression" type="ypath.TreePathOperationExpression" id="1175252786877">
-                  <node role="expression" type="ypath.TreePathOperationExpression" id="1175252783348">
-                    <node role="expression" type="ypath.TreePathOperationExpression" id="1175165777254">
-                      <node role="expression" type="ypath.TreePathAdapterExpression" id="1175165777255">
+              <node role="iterable" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1175170426638">
+                <node role="expression" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1175252786877">
+                  <node role="expression" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1175252783348">
+                    <node role="expression" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1175165777254">
+                      <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1175165777255">
                         <link role="treepathAspect" targetNodeId="7.1175083364493" />
                         <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1175165776061">
                           <link role="variableDeclaration" targetNodeId="1169048628465" resolveInfo="doc" />
                         </node>
                       </node>
-                      <node role="operation" type="ypath.IterateOperation" id="1175165777256">
+                      <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1175165777256">
                         <property name="axis" value="DESCENDANTS" />
                       </node>
                     </node>
-                    <node role="operation" type="ypath.MatchPropertyOperation" id="1175252792856">
+                    <node role="operation" type="jetbrains.mps.ypath.MatchPropertyOperation" id="1175252792856">
                       <link role="property" targetNodeId="7.1175164263587" />
                       <node role="matchExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1175252802901">
                         <property name="value" value="a" />
                       </node>
-                      <node role="nodeKindOccurrence" type="ypath.TreeNodeKindOccurrence" id="1175252792858">
+                      <node role="nodeKindOccurrence" type="jetbrains.mps.ypath.TreeNodeKindOccurrence" id="1175252792858">
                         <link role="nodeKind" targetNodeId="7.1175164209843" />
                       </node>
                     </node>
                   </node>
-                  <node role="operation" type="ypath.IterateOperation" id="1175252786878">
+                  <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1175252786878">
                     <property name="axis" value="DESCENDANTS" />
                   </node>
                 </node>
-                <node role="operation" type="ypath.MatchPropertyOperation" id="1175170512113">
+                <node role="operation" type="jetbrains.mps.ypath.MatchPropertyOperation" id="1175170512113">
                   <link role="property" targetNodeId="7.1175164263587" />
                   <node role="matchExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1175170522726">
                     <property name="value" value="findme" />
                   </node>
-                  <node role="nodeKindOccurrence" type="ypath.TreeNodeKindOccurrence" id="1175170512115">
+                  <node role="nodeKindOccurrence" type="jetbrains.mps.ypath.TreeNodeKindOccurrence" id="1175170512115">
                     <link role="nodeKind" targetNodeId="7.1175164209843" />
                   </node>
                 </node>
@@ -172,33 +172,33 @@
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1175882263391">
-              <node role="iterable" type="ypath.TreePathOperationExpression" id="1175882291218">
-                <node role="expression" type="ypath.TreePathOperationExpression" id="1175882287338">
-                  <node role="expression" type="ypath.TreePathOperationExpression" id="1175882277198">
-                    <node role="expression" type="ypath.TreePathOperationExpression" id="1175882271113">
-                      <node role="expression" type="ypath.TreePathAdapterExpression" id="1175882271114">
+              <node role="iterable" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1175882291218">
+                <node role="expression" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1175882287338">
+                  <node role="expression" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1175882277198">
+                    <node role="expression" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1175882271113">
+                      <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1175882271114">
                         <link role="treepathAspect" targetNodeId="7.1175083364493" />
                         <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1175882269670">
                           <link role="variableDeclaration" targetNodeId="1169048628465" resolveInfo="doc" />
                         </node>
                       </node>
-                      <node role="operation" type="ypath.IterateOperation" id="1175882271115">
+                      <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1175882271115">
                         <property name="axis" value="DESCENDANTS" />
                         <property name="useDefault" value="false" />
                       </node>
                     </node>
-                    <node role="operation" type="ypath.MatchDefaultPropertyOperation" id="1175882277200">
+                    <node role="operation" type="jetbrains.mps.ypath.MatchDefaultPropertyOperation" id="1175882277200">
                       <node role="matchExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1175882283096">
                         <property name="value" value="a" />
                       </node>
                     </node>
                   </node>
-                  <node role="operation" type="ypath.IterateOperation" id="1175882287339">
+                  <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1175882287339">
                     <property name="axis" value="DESCENDANTS" />
                     <property name="useDefault" value="false" />
                   </node>
                 </node>
-                <node role="operation" type="ypath.MatchDefaultPropertyOperation" id="1175882291219">
+                <node role="operation" type="jetbrains.mps.ypath.MatchDefaultPropertyOperation" id="1175882291219">
                   <node role="matchExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1175882296765">
                     <property name="value" value="findme" />
                   </node>

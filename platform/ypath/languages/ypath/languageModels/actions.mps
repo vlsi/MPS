@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="ypath.actions">
+<model name="jetbrains.mps.ypath.actions">
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
@@ -7,18 +7,18 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="45" />
-  <import index="1" modelUID="ypath.structure" />
+  <import index="1" modelUID="jetbrains.mps.ypath.structure" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="6" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="21" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="25" modelUID="java.lang@java_stub" />
   <import index="30" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
-  <import index="31" modelUID="ypath.structure@java_stub" />
+  <import index="31" modelUID="jetbrains.mps.ypath.structure@java_stub" />
   <import index="38" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" />
-  <import index="39" modelUID="ypath.constraints" />
+  <import index="39" modelUID="jetbrains.mps.ypath.constraints" />
   <import index="40" modelUID="jetbrains.mps.core.structure" />
   <import index="41" modelUID="jetbrains.mps.generator@java_stub" />
-  <import index="44" modelUID="ypath.design@java_stub" />
+  <import index="44" modelUID="jetbrains.mps.ypath.design@java_stub" />
   <import index="45" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1168462842641">
     <property name="name" value="YPath_rhint" />

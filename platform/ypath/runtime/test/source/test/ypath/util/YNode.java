@@ -5,7 +5,8 @@ package test.ypath.util;
 
 import java.util.Arrays;
 
-import ypath.util.TreePath;
+import jetbrains.mps.ypath.runtime.TreePath;
+
 
 
 /**

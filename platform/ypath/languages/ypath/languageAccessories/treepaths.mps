@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="ypath.treepaths">
-  <language namespace="ypath" />
+<model name="jetbrains.mps.ypath.treepaths">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <language namespace="jetbrains.mps.ypath" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="2" modelUID="java.io@java_stub" />
   <import index="3" modelUID="jetbrains.mps.reloading@java_stub" />
-  <node type="ypath.TreePathAspect" id="1180688328445">
+  <node type="jetbrains.mps.ypath.TreePathAspect" id="1180688328445">
     <property name="name" value="FileTreePath" />
-    <node role="nodeKinds" type="ypath.TreeNodeKind" id="1180688366350">
+    <node role="nodeKinds" type="jetbrains.mps.ypath.TreeNodeKind" id="1180688366350">
       <property name="name" value="DIR" />
-      <node role="trigger" type="ypath.KindBlock" id="1180688366351">
-        <node role="parameter" type="ypath.LambdaMethodParameter" id="1180688366352">
+      <node role="trigger" type="jetbrains.mps.ypath.KindBlock" id="1180688366351">
+        <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1180688366352">
           <property name="name" value="node" />
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180688366353">
@@ -27,12 +27,12 @@
         </node>
       </node>
     </node>
-    <node role="nodeKinds" type="ypath.TreeNodeKind" id="1180688380125">
+    <node role="nodeKinds" type="jetbrains.mps.ypath.TreeNodeKind" id="1180688380125">
       <property name="name" value="FILE" />
-      <node role="properties" type="ypath.TreeNodeKindProperty" id="1180688395937">
+      <node role="properties" type="jetbrains.mps.ypath.TreeNodeKindProperty" id="1180688395937">
         <property name="name" value="relativeName" />
-        <node role="getter" type="ypath.PropertyGetter" id="1180688395938">
-          <node role="parameter" type="ypath.LambdaMethodParameter" id="1180688395939">
+        <node role="getter" type="jetbrains.mps.ypath.PropertyGetter" id="1180688395938">
+          <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1180688395939">
             <property name="name" value="node" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180688395940">
@@ -47,10 +47,10 @@
           </node>
         </node>
       </node>
-      <node role="properties" type="ypath.TreeNodeKindProperty" id="1180688453545">
+      <node role="properties" type="jetbrains.mps.ypath.TreeNodeKindProperty" id="1180688453545">
         <property name="name" value="extension" />
-        <node role="getter" type="ypath.PropertyGetter" id="1180688453546">
-          <node role="parameter" type="ypath.LambdaMethodParameter" id="1180688453547">
+        <node role="getter" type="jetbrains.mps.ypath.PropertyGetter" id="1180688453546">
+          <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1180688453547">
             <property name="name" value="node" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180688453548">
@@ -143,8 +143,8 @@
           </node>
         </node>
       </node>
-      <node role="trigger" type="ypath.KindBlock" id="1180688380126">
-        <node role="parameter" type="ypath.LambdaMethodParameter" id="1180688380127">
+      <node role="trigger" type="jetbrains.mps.ypath.KindBlock" id="1180688380126">
+        <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1180688380127">
           <property name="name" value="node" />
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180688380128">
@@ -160,13 +160,13 @@
       </node>
     </node>
     <node role="nodeType" type="jetbrains.mps.baseLanguage.Type" id="1180688328446" />
-    <node role="treePathType" type="ypath.TreePathType" id="1180688328447">
+    <node role="treePathType" type="jetbrains.mps.ypath.TreePathType" id="1180688328447">
       <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180688338904">
         <link role="classifier" extResolveInfo="2.[Classifier]File" />
       </node>
     </node>
-    <node role="parentBlock" type="ypath.ParentBlock" id="1180688328449">
-      <node role="parameter" type="ypath.LambdaMethodParameter" id="1180688328450">
+    <node role="parentBlock" type="jetbrains.mps.ypath.ParentBlock" id="1180688328449">
+      <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1180688328450">
         <property name="name" value="node" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180688328451">
@@ -180,8 +180,8 @@
         </node>
       </node>
     </node>
-    <node role="childrenBlock" type="ypath.ChildrenBlock" id="1180688328452">
-      <node role="parameter" type="ypath.LambdaMethodParameter" id="1180688328453">
+    <node role="childrenBlock" type="jetbrains.mps.ypath.ChildrenBlock" id="1180688328452">
+      <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1180688328453">
         <property name="name" value="node" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180688328454">
@@ -197,12 +197,12 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1180688331514" />
   </node>
-  <node type="ypath.TreePathAspect" id="1180689174637">
+  <node type="jetbrains.mps.ypath.TreePathAspect" id="1180689174637">
     <property name="name" value="ClassPathItemTreePath" />
-    <node role="nodeKinds" type="ypath.TreeNodeKind" id="1180689381285">
+    <node role="nodeKinds" type="jetbrains.mps.ypath.TreeNodeKind" id="1180689381285">
       <property name="name" value="COMPOSITE" />
-      <node role="trigger" type="ypath.KindBlock" id="1180689381286">
-        <node role="parameter" type="ypath.LambdaMethodParameter" id="1180689381287">
+      <node role="trigger" type="jetbrains.mps.ypath.KindBlock" id="1180689381286">
+        <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1180689381287">
           <property name="name" value="node" />
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180689381288">
@@ -219,10 +219,10 @@
         </node>
       </node>
     </node>
-    <node role="nodeKinds" type="ypath.TreeNodeKind" id="1180689378233">
+    <node role="nodeKinds" type="jetbrains.mps.ypath.TreeNodeKind" id="1180689378233">
       <property name="name" value="FILE" />
-      <node role="trigger" type="ypath.KindBlock" id="1180689378234">
-        <node role="parameter" type="ypath.LambdaMethodParameter" id="1180689378235">
+      <node role="trigger" type="jetbrains.mps.ypath.KindBlock" id="1180689378234">
+        <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1180689378235">
           <property name="name" value="node" />
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180689378236">
@@ -239,10 +239,10 @@
         </node>
       </node>
     </node>
-    <node role="nodeKinds" type="ypath.TreeNodeKind" id="1180689407659">
+    <node role="nodeKinds" type="jetbrains.mps.ypath.TreeNodeKind" id="1180689407659">
       <property name="name" value="JAR" />
-      <node role="trigger" type="ypath.KindBlock" id="1180689407660">
-        <node role="parameter" type="ypath.LambdaMethodParameter" id="1180689407661">
+      <node role="trigger" type="jetbrains.mps.ypath.KindBlock" id="1180689407660">
+        <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1180689407661">
           <property name="name" value="node" />
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180689407662">
@@ -260,13 +260,13 @@
       </node>
     </node>
     <node role="nodeType" type="jetbrains.mps.baseLanguage.Type" id="1180689174638" />
-    <node role="treePathType" type="ypath.TreePathType" id="1180689174639">
+    <node role="treePathType" type="jetbrains.mps.ypath.TreePathType" id="1180689174639">
       <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1180689210368">
         <link role="classifier" extResolveInfo="3.[Classifier]IClassPathItem" />
       </node>
     </node>
-    <node role="parentBlock" type="ypath.ParentBlock" id="1180689174641">
-      <node role="parameter" type="ypath.LambdaMethodParameter" id="1180689174642">
+    <node role="parentBlock" type="jetbrains.mps.ypath.ParentBlock" id="1180689174641">
+      <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1180689174642">
         <property name="name" value="node" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180689174643">
@@ -277,8 +277,8 @@
         </node>
       </node>
     </node>
-    <node role="childrenBlock" type="ypath.ChildrenBlock" id="1180689174644">
-      <node role="parameter" type="ypath.LambdaMethodParameter" id="1180689174645">
+    <node role="childrenBlock" type="jetbrains.mps.ypath.ChildrenBlock" id="1180689174644">
+      <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1180689174645">
         <property name="name" value="node" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180689174646">

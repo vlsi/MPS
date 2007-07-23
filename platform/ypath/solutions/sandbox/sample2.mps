@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="sample2">
-  <language namespace="ypath" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <language namespace="jetbrains.mps.ypath" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="java.io@java_stub" />
   <import index="2" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="java.util@java_stub" />
-  <node type="ypath.TreePathAspect" id="1168883727781">
+  <node type="jetbrains.mps.ypath.TreePathAspect" id="1168883727781">
     <property name="name" value="File_TreePath" />
-    <node role="nodeKinds" type="ypath.TreeNodeKind" id="1172248962391">
+    <node role="nodeKinds" type="jetbrains.mps.ypath.TreeNodeKind" id="1172248962391">
       <property name="name" value="FILE" />
-      <node role="properties" type="ypath.TreeNodeKindProperty" id="1175164134728">
+      <node role="properties" type="jetbrains.mps.ypath.TreeNodeKindProperty" id="1175164134728">
         <property name="name" value="name" />
-        <node role="getter" type="ypath.PropertyGetter" id="1175164134729">
-          <node role="parameter" type="ypath.LambdaMethodParameter" id="1175164134730">
+        <node role="getter" type="jetbrains.mps.ypath.PropertyGetter" id="1175164134729">
+          <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1175164134730">
             <property name="name" value="f" />
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1175164134731">
@@ -29,8 +29,8 @@
           </node>
         </node>
       </node>
-      <node role="trigger" type="ypath.KindBlock" id="1172248962392">
-        <node role="parameter" type="ypath.LambdaMethodParameter" id="1172248962393">
+      <node role="trigger" type="jetbrains.mps.ypath.KindBlock" id="1172248962392">
+        <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1172248962393">
           <property name="name" value="f" />
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172248962394">
@@ -45,10 +45,10 @@
         </node>
       </node>
     </node>
-    <node role="nodeKinds" type="ypath.TreeNodeKind" id="1172248995400">
+    <node role="nodeKinds" type="jetbrains.mps.ypath.TreeNodeKind" id="1172248995400">
       <property name="name" value="DIR" />
-      <node role="trigger" type="ypath.KindBlock" id="1172248995401">
-        <node role="parameter" type="ypath.LambdaMethodParameter" id="1172248995402">
+      <node role="trigger" type="jetbrains.mps.ypath.KindBlock" id="1172248995401">
+        <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1172248995402">
           <property name="name" value="f" />
         </node>
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172248995403">
@@ -66,8 +66,8 @@
     <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1168883994352">
       <link role="classifier" extResolveInfo="1.[Classifier]File" />
     </node>
-    <node role="parentBlock" type="ypath.ParentBlock" id="1168883727783">
-      <node role="parameter" type="ypath.LambdaMethodParameter" id="1168884000824">
+    <node role="parentBlock" type="jetbrains.mps.ypath.ParentBlock" id="1168883727783">
+      <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1168884000824">
         <property name="name" value="n" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168883727785">
@@ -78,8 +78,8 @@
         </node>
       </node>
     </node>
-    <node role="childrenBlock" type="ypath.ChildrenBlock" id="1168883727786">
-      <node role="parameter" type="ypath.LambdaMethodParameter" id="1168883727787">
+    <node role="childrenBlock" type="jetbrains.mps.ypath.ChildrenBlock" id="1168883727786">
+      <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1168883727787">
         <property name="name" value="n" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1168883727788">
@@ -93,7 +93,7 @@
         </node>
       </node>
     </node>
-    <node role="treePathType" type="ypath.TreePathType" id="1178882722898">
+    <node role="treePathType" type="jetbrains.mps.ypath.TreePathType" id="1178882722898">
       <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178882722900">
         <link role="classifier" extResolveInfo="1.[Classifier]File" />
       </node>
@@ -130,26 +130,26 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1168983954930">
-          <node role="iterable" type="ypath.TreePathOperationExpression" id="1172249135484">
-            <node role="expression" type="ypath.TreePathOperationExpression" id="1172249037934">
-              <node role="expression" type="ypath.TreePathOperationExpression" id="1169043577975">
-                <node role="expression" type="ypath.TreePathAdapterExpression" id="1169043577976">
+          <node role="iterable" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1172249135484">
+            <node role="expression" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1172249037934">
+              <node role="expression" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1169043577975">
+                <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1169043577976">
                   <link role="treepathAspect" targetNodeId="1168883727781" resolveInfo="foobar" />
                   <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1169043575403">
                     <link role="variableDeclaration" targetNodeId="1168894296987" resolveInfo="f" />
                   </node>
                 </node>
-                <node role="operation" type="ypath.IterateOperation" id="1169043577977" />
+                <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1169043577977" />
               </node>
-              <node role="operation" type="ypath.MatchKindOperation" id="1179325799905">
-                <node role="nodeKindOccurrence" type="ypath.TreeNodeKindOccurrence" id="1179325799906">
+              <node role="operation" type="jetbrains.mps.ypath.MatchKindOperation" id="1179325799905">
+                <node role="nodeKindOccurrence" type="jetbrains.mps.ypath.TreeNodeKindOccurrence" id="1179325799906">
                   <link role="nodeKind" targetNodeId="1172248995400" resolveInfo="DIR" />
                 </node>
               </node>
             </node>
-            <node role="operation" type="ypath.WhereOperation" id="1172249135486">
-              <node role="whereBlock" type="ypath.WhereBlock" id="1172249139028">
-                <node role="parameter" type="ypath.LambdaMethodParameter" id="1172249139029">
+            <node role="operation" type="jetbrains.mps.ypath.WhereOperation" id="1172249135486">
+              <node role="whereBlock" type="jetbrains.mps.ypath.WhereBlock" id="1172249139028">
+                <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1172249139029">
                   <property name="name" value="d" />
                 </node>
                 <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1172249139030">
@@ -193,15 +193,15 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1179163377132">
-          <node role="iterable" type="ypath.TreePathOperationExpression" id="1179163393906">
-            <node role="expression" type="ypath.TreePathAdapterExpression" id="1179163388888">
+          <node role="iterable" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1179163393906">
+            <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1179163388888">
               <link role="treepathAspect" targetNodeId="1168883727781" resolveInfo="File_TreePath" />
               <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179163385799">
                 <link role="variableDeclaration" targetNodeId="1168894296987" resolveInfo="f" />
               </node>
             </node>
-            <node role="operation" type="ypath.MatchKindOperation" id="1179163393910">
-              <node role="nodeKindOccurrence" type="ypath.TreeNodeKindOccurrence" id="1179163393911">
+            <node role="operation" type="jetbrains.mps.ypath.MatchKindOperation" id="1179163393910">
+              <node role="nodeKindOccurrence" type="jetbrains.mps.ypath.TreeNodeKindOccurrence" id="1179163393911">
                 <link role="nodeKind" targetNodeId="1172248995400" resolveInfo="DIR" />
               </node>
             </node>
@@ -285,28 +285,28 @@
               </node>
             </node>
           </node>
-          <node role="iterable" type="ypath.TreePathOperationExpression" id="1179159914951">
-            <node role="expression" type="ypath.TreePathAdapterExpression" id="1179159911406">
+          <node role="iterable" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1179159914951">
+            <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1179159911406">
               <link role="treepathAspect" targetNodeId="1168883727781" resolveInfo="File_TreePath" />
               <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179159909961">
                 <link role="variableDeclaration" targetNodeId="1179154059934" resolveInfo="listOfFiles" />
               </node>
             </node>
-            <node role="operation" type="ypath.IterateOperation" id="1179159914954">
+            <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1179159914954">
               <property name="axis" value="&gt;" />
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1179163307050">
-          <node role="iterable" type="ypath.TreePathOperationExpression" id="1179163323066">
-            <node role="expression" type="ypath.TreePathAdapterExpression" id="1179163318853">
+          <node role="iterable" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1179163323066">
+            <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1179163318853">
               <link role="treepathAspect" targetNodeId="1168883727781" resolveInfo="File_TreePath" />
               <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179163314905">
                 <link role="variableDeclaration" targetNodeId="1179154059934" resolveInfo="listOfFiles" />
               </node>
             </node>
-            <node role="operation" type="ypath.MatchKindOperation" id="1179163323071">
-              <node role="nodeKindOccurrence" type="ypath.TreeNodeKindOccurrence" id="1179163323072">
+            <node role="operation" type="jetbrains.mps.ypath.MatchKindOperation" id="1179163323071">
+              <node role="nodeKindOccurrence" type="jetbrains.mps.ypath.TreeNodeKindOccurrence" id="1179163323072">
                 <link role="nodeKind" targetNodeId="1172248995400" resolveInfo="DIR" />
               </node>
             </node>
@@ -356,15 +356,15 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1179164801876">
-          <node role="iterable" type="ypath.TreePathOperationExpression" id="1179164818110">
-            <node role="expression" type="ypath.TreePathAdapterExpression" id="1179164811722">
+          <node role="iterable" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1179164818110">
+            <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1179164811722">
               <link role="treepathAspect" targetNodeId="1168883727781" resolveInfo="File_TreePath" />
               <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179164809717">
                 <link role="variableDeclaration" targetNodeId="1179163652405" resolveInfo="foobar" />
               </node>
             </node>
-            <node role="operation" type="ypath.MatchKindOperation" id="1179164818114">
-              <node role="nodeKindOccurrence" type="ypath.TreeNodeKindOccurrence" id="1179164818115">
+            <node role="operation" type="jetbrains.mps.ypath.MatchKindOperation" id="1179164818114">
+              <node role="nodeKindOccurrence" type="jetbrains.mps.ypath.TreeNodeKindOccurrence" id="1179164818115">
                 <link role="nodeKind" targetNodeId="1172248995400" resolveInfo="DIR" />
               </node>
             </node>
@@ -393,20 +393,20 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1179215603350">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1179215603351">
             <property name="name" value="foo" />
-            <node role="type" type="ypath.TreePathType" id="1179215603352">
+            <node role="type" type="jetbrains.mps.ypath.TreePathType" id="1179215603352">
               <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179215605272">
                 <link role="classifier" extResolveInfo="1.[Classifier]File" />
               </node>
             </node>
-            <node role="initializer" type="ypath.TreePathOperationExpression" id="1179215627025">
-              <node role="expression" type="ypath.TreePathAdapterExpression" id="1179215618544">
+            <node role="initializer" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1179215627025">
+              <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1179215618544">
                 <link role="treepathAspect" targetNodeId="1168883727781" resolveInfo="File_TreePath" />
                 <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179215615741">
                   <link role="variableDeclaration" targetNodeId="1168894296987" resolveInfo="f" />
                 </node>
               </node>
-              <node role="operation" type="ypath.MatchKindOperation" id="1179215627029">
-                <node role="nodeKindOccurrence" type="ypath.TreeNodeKindOccurrence" id="1179215627030">
+              <node role="operation" type="jetbrains.mps.ypath.MatchKindOperation" id="1179215627029">
+                <node role="nodeKindOccurrence" type="jetbrains.mps.ypath.TreeNodeKindOccurrence" id="1179215627030">
                   <link role="nodeKind" targetNodeId="1172248995400" resolveInfo="DIR" />
                 </node>
               </node>

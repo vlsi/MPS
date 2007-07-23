@@ -2,9 +2,9 @@
 <model name="ypath.traversalTests">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.unitTest" />
-  <language namespace="ypath" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <language namespace="jetbrains.mps.ypath" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="org.w3c.dom@java_stub" />
   <import index="2" modelUID="java.lang@java_stub" />
@@ -195,19 +195,19 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1184246326685">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1184246326686">
               <property name="name" value="nodes" />
-              <node role="type" type="ypath.TreePathType" id="1184246326687">
+              <node role="type" type="jetbrains.mps.ypath.TreePathType" id="1184246326687">
                 <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184246326688">
                   <link role="classifier" extResolveInfo="1.[Classifier]Node" />
                 </node>
               </node>
-              <node role="initializer" type="ypath.TreePathOperationExpression" id="1184246310603">
-                <node role="expression" type="ypath.TreePathAdapterExpression" id="1184246304495">
+              <node role="initializer" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1184246310603">
+                <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1184246304495">
                   <link role="treepathAspect" targetNodeId="5.1184239525252" />
                   <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184246285269">
                     <link role="variableDeclaration" targetNodeId="1184246119654" resolveInfo="doc" />
                   </node>
                 </node>
-                <node role="operation" type="ypath.IterateOperation" id="1184246310607">
+                <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1184246310607">
                   <property name="axis" value="DESCENDANTS" />
                   <link role="usedFeature" targetNodeId="5.1184250348501" />
                 </node>
@@ -229,19 +229,19 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1184246634387">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1184246634388">
               <property name="name" value="attribs" />
-              <node role="type" type="ypath.TreePathType" id="1184246634389">
+              <node role="type" type="jetbrains.mps.ypath.TreePathType" id="1184246634389">
                 <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184246634390">
                   <link role="classifier" extResolveInfo="1.[Classifier]Node" />
                 </node>
               </node>
-              <node role="initializer" type="ypath.TreePathOperationExpression" id="1184246626484">
-                <node role="expression" type="ypath.TreePathAdapterExpression" id="1184246622826">
+              <node role="initializer" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1184246626484">
+                <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1184246622826">
                   <link role="treepathAspect" targetNodeId="5.1184239525252" />
                   <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184246621959">
                     <link role="variableDeclaration" targetNodeId="1184246119654" resolveInfo="doc" />
                   </node>
                 </node>
-                <node role="operation" type="ypath.IterateOperation" id="1184246626488">
+                <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1184246626488">
                   <property name="axis" value="DESCENDANTS" />
                   <link role="usedFeature" targetNodeId="5.1184239525310" />
                 </node>
@@ -262,25 +262,25 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1184249285952">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1184249285953">
               <property name="name" value="rootChildren" />
-              <node role="type" type="ypath.TreePathType" id="1184249285954">
+              <node role="type" type="jetbrains.mps.ypath.TreePathType" id="1184249285954">
                 <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184249285955">
                   <link role="classifier" extResolveInfo="1.[Classifier]Node" />
                 </node>
               </node>
-              <node role="initializer" type="ypath.TreePathOperationExpression" id="1184249276078">
-                <node role="expression" type="ypath.TreePathOperationExpression" id="1184249265130">
-                  <node role="expression" type="ypath.TreePathAdapterExpression" id="1184249259034">
+              <node role="initializer" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1184249276078">
+                <node role="expression" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1184249265130">
+                  <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1184249259034">
                     <link role="treepathAspect" targetNodeId="5.1184239525252" />
                     <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184249258940">
                       <link role="variableDeclaration" targetNodeId="1184246119654" resolveInfo="doc" />
                     </node>
                   </node>
-                  <node role="operation" type="ypath.IterateOperation" id="1184249265134">
+                  <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1184249265134">
                     <property name="axis" value="CHILDREN" />
                     <link role="usedFeature" targetNodeId="5.1184250348501" />
                   </node>
                 </node>
-                <node role="operation" type="ypath.IterateOperation" id="1184249276082">
+                <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1184249276082">
                   <property name="axis" value="CHILDREN" />
                 </node>
               </node>
@@ -301,19 +301,19 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1184246932222">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1184246932223">
               <property name="name" value="everything" />
-              <node role="type" type="ypath.TreePathType" id="1184246932224">
+              <node role="type" type="jetbrains.mps.ypath.TreePathType" id="1184246932224">
                 <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1184246932225">
                   <link role="classifier" extResolveInfo="1.[Classifier]Node" />
                 </node>
               </node>
-              <node role="initializer" type="ypath.TreePathOperationExpression" id="1184246923670">
-                <node role="expression" type="ypath.TreePathAdapterExpression" id="1184246920329">
+              <node role="initializer" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1184246923670">
+                <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1184246920329">
                   <link role="treepathAspect" targetNodeId="5.1184239525252" />
                   <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184246919628">
                     <link role="variableDeclaration" targetNodeId="1184246119654" resolveInfo="doc" />
                   </node>
                 </node>
-                <node role="operation" type="ypath.IterateOperation" id="1184246923674">
+                <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1184246923674">
                   <property name="axis" value="DESCENDANTS" />
                 </node>
               </node>
@@ -519,28 +519,28 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185180364512">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185180364513">
               <property name="name" value="foo" />
-              <node role="type" type="ypath.TreePathType" id="1185180364514">
+              <node role="type" type="jetbrains.mps.ypath.TreePathType" id="1185180364514">
                 <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185180364515">
                   <link role="classifier" extResolveInfo="1.[Classifier]Node" />
                 </node>
               </node>
-              <node role="initializer" type="ypath.TreePathOperationExpression" id="1185180211737">
-                <node role="expression" type="ypath.TreePathOperationExpression" id="1185180204745">
-                  <node role="expression" type="ypath.TreePathAdapterExpression" id="1185180198723">
+              <node role="initializer" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1185180211737">
+                <node role="expression" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1185180204745">
+                  <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1185180198723">
                     <link role="treepathAspect" targetNodeId="1185179283814" resolveInfo="DOMF" />
                     <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185180197375">
                       <link role="variableDeclaration" targetNodeId="1185180151098" resolveInfo="doc" />
                     </node>
                   </node>
-                  <node role="operation" type="ypath.IterateOperation" id="1185180204748">
+                  <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1185180204748">
                     <property name="axis" value="CHILDREN" />
                     <link role="usedFeature" targetNodeId="1185179643604" resolveInfo="elements" />
                   </node>
                 </node>
-                <node role="operation" type="ypath.IterateOperation" id="1185180211740">
+                <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1185180211740">
                   <property name="axis" value="DESCENDANTS" />
                   <link role="usedFeature" targetNodeId="1185179320728" resolveInfo="child" />
-                  <node role="paramName" type="ypath.ParameterName" id="1185180292658">
+                  <node role="paramName" type="jetbrains.mps.ypath.ParameterName" id="1185180292658">
                     <property name="name" value="foo" />
                   </node>
                 </node>
@@ -563,11 +563,11 @@
       </node>
     </node>
   </node>
-  <node type="ypath.TreePathAspect" id="1185179283814">
+  <node type="jetbrains.mps.ypath.TreePathAspect" id="1185179283814">
     <property name="name" value="DOMF" />
-    <node role="features" type="ypath.SequenceFeature" id="1185179643604">
+    <node role="features" type="jetbrains.mps.ypath.SequenceFeature" id="1185179643604">
       <property name="name" value="elements" />
-      <node role="sequenceFunction" type="ypath.FeatureSequenceFun" id="1185179643605">
+      <node role="sequenceFunction" type="jetbrains.mps.ypath.FeatureSequenceFun" id="1185179643605">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179643606">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185179700281">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185179700282">
@@ -577,7 +577,7 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1185179695262">
                 <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Node).([InstanceMethodDeclaration]getChildNodes() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NodeList]))" />
-                <node role="instance" type="ypath.NodeFunctionParam" id="1185179655581" />
+                <node role="instance" type="jetbrains.mps.ypath.NodeFunctionParam" id="1185179655581" />
               </node>
             </node>
           </node>
@@ -662,7 +662,7 @@
           </node>
         </node>
       </node>
-      <node role="sizeFunction" type="ypath.FeatureSizeFun" id="1185179643607">
+      <node role="sizeFunction" type="jetbrains.mps.ypath.FeatureSizeFun" id="1185179643607">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179643608">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185179983690">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185179983691">
@@ -672,7 +672,7 @@
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1185179983693">
                 <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Node).([InstanceMethodDeclaration]getChildNodes() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NodeList]))" />
-                <node role="instance" type="ypath.NodeFunctionParam" id="1185179983694" />
+                <node role="instance" type="jetbrains.mps.ypath.NodeFunctionParam" id="1185179983694" />
               </node>
             </node>
           </node>
@@ -773,16 +773,16 @@
           </node>
         </node>
       </node>
-      <node role="addFunction" type="ypath.FeatureAddFun" id="1185179643609">
+      <node role="addFunction" type="jetbrains.mps.ypath.FeatureAddFun" id="1185179643609">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179643610" />
       </node>
-      <node role="removeFunction" type="ypath.FeatureRemoveFun" id="1185179643611">
+      <node role="removeFunction" type="jetbrains.mps.ypath.FeatureRemoveFun" id="1185179643611">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179643612" />
       </node>
     </node>
-    <node role="features" type="ypath.ParamSequenceFeature" id="1185179320728">
+    <node role="features" type="jetbrains.mps.ypath.ParamSequenceFeature" id="1185179320728">
       <property name="name" value="child" />
-      <node role="sequenceFunction" type="ypath.ParamFeatureSequenceFun" id="1185179320729">
+      <node role="sequenceFunction" type="jetbrains.mps.ypath.ParamFeatureSequenceFun" id="1185179320729">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179320730">
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185179558925">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185179558926">
@@ -794,13 +794,13 @@
                 <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Element).([InstanceMethodDeclaration]getElementsByTagName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NodeList]))" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1185179503959">
                   <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1185179506692">
-                    <node role="expression" type="ypath.NodeFunctionParam" id="1185179512878" />
+                    <node role="expression" type="jetbrains.mps.ypath.NodeFunctionParam" id="1185179512878" />
                     <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185179508932">
                       <link role="classifier" extResolveInfo="1.[Classifier]Element" />
                     </node>
                   </node>
                 </node>
-                <node role="actualArgument" type="ypath.ParamFunctionParam" id="1185179523038" />
+                <node role="actualArgument" type="jetbrains.mps.ypath.ParamFunctionParam" id="1185179523038" />
               </node>
             </node>
           </node>
@@ -862,7 +862,7 @@
           </node>
         </node>
       </node>
-      <node role="sizeFunction" type="ypath.ParamFeatureSizeFun" id="1185179320731">
+      <node role="sizeFunction" type="jetbrains.mps.ypath.ParamFeatureSizeFun" id="1185179320731">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179320732">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185179625920">
             <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1185179633792">
@@ -871,28 +871,28 @@
                 <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Element).([InstanceMethodDeclaration]getElementsByTagName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NodeList]))" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1185179627136">
                   <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1185179627137">
-                    <node role="expression" type="ypath.NodeFunctionParam" id="1185179627138" />
+                    <node role="expression" type="jetbrains.mps.ypath.NodeFunctionParam" id="1185179627138" />
                     <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185179627139">
                       <link role="classifier" extResolveInfo="1.[Classifier]Element" />
                     </node>
                   </node>
                 </node>
-                <node role="actualArgument" type="ypath.ParamFunctionParam" id="1185179627140" />
+                <node role="actualArgument" type="jetbrains.mps.ypath.ParamFunctionParam" id="1185179627140" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node role="addFunction" type="ypath.ParamFeatureAddFun" id="1185179320733">
+      <node role="addFunction" type="jetbrains.mps.ypath.ParamFeatureAddFun" id="1185179320733">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179320734" />
       </node>
-      <node role="removeFunction" type="ypath.ParamFeatureRemoveFun" id="1185179320735">
+      <node role="removeFunction" type="jetbrains.mps.ypath.ParamFeatureRemoveFun" id="1185179320735">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179320736" />
       </node>
       <node role="parameterType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185179334361">
         <link role="classifier" extResolveInfo="2.[Classifier]String" />
       </node>
-      <node role="parameterQueryFunction" type="ypath.ParameterQueryFunction" id="1185179320738">
+      <node role="parameterQueryFunction" type="jetbrains.mps.ypath.ParameterQueryFunction" id="1185179320738">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179320739">
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1185179367998">
             <node role="expression" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1185179371204">
@@ -921,7 +921,7 @@
           </node>
         </node>
       </node>
-      <node role="targetTypeFunction" type="ypath.TargetTypeFunction" id="1185179320740">
+      <node role="targetTypeFunction" type="jetbrains.mps.ypath.TargetTypeFunction" id="1185179320740">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179320741">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185179415888">
             <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1185179415889">
@@ -932,28 +932,28 @@
           </node>
         </node>
       </node>
-      <node role="toStringFunction" type="ypath.NameFunction" id="1185179320742">
+      <node role="toStringFunction" type="jetbrains.mps.ypath.NameFunction" id="1185179320742">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179320743">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185179430277">
-            <node role="expression" type="ypath.ParamFunctionParam" id="1185179430278" />
+            <node role="expression" type="jetbrains.mps.ypath.ParamFunctionParam" id="1185179430278" />
           </node>
         </node>
       </node>
-      <node role="fromStringFunction" type="ypath.StringToParamFun" id="1185179320744">
+      <node role="fromStringFunction" type="jetbrains.mps.ypath.StringToParamFun" id="1185179320744">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179320745">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185179435911">
-            <node role="expression" type="ypath.StringFunctionParam" id="1185179435912" />
+            <node role="expression" type="jetbrains.mps.ypath.StringFunctionParam" id="1185179435912" />
           </node>
         </node>
       </node>
     </node>
-    <node role="treePathType" type="ypath.TreePathType" id="1185179283815">
+    <node role="treePathType" type="jetbrains.mps.ypath.TreePathType" id="1185179283815">
       <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185179300367">
         <link role="classifier" extResolveInfo="1.[Classifier]Node" />
       </node>
     </node>
-    <node role="parentBlock" type="ypath.ParentBlock" id="1185179283817">
-      <node role="parameter" type="ypath.LambdaMethodParameter" id="1185179283818">
+    <node role="parentBlock" type="jetbrains.mps.ypath.ParentBlock" id="1185179283817">
+      <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1185179283818">
         <property name="name" value="node" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179283819">
@@ -967,8 +967,8 @@
         </node>
       </node>
     </node>
-    <node role="childrenBlock" type="ypath.ChildrenBlock" id="1185179283820">
-      <node role="parameter" type="ypath.LambdaMethodParameter" id="1185179283821">
+    <node role="childrenBlock" type="jetbrains.mps.ypath.ChildrenBlock" id="1185179283820">
+      <node role="parameter" type="jetbrains.mps.ypath.LambdaMethodParameter" id="1185179283821">
         <property name="name" value="node" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179283822" />

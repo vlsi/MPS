@@ -4,9 +4,9 @@ package ypath.traversalTests;
 
 import junit.framework.TestCase;
 import org.w3c.dom.Document;
-import ypath.util.ITreeTraversal;
+import jetbrains.mps.ypath.runtime.ITreeTraversal;
 import org.w3c.dom.Node;
-import ypath.util.TreeTraversalFactory;
+import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
 import treepath_dom.DOM2;
 import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -30,11 +30,13 @@ public class TestFeatures_Test extends TestCase {
     ITreeTraversal<Node> everything = TreeTraversalFactory.Traverse(new DOM2().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"));
     Assert.assertEquals("root, r1, #text, a, a1, #text, b, b1, #text, b2, #text, c, c1, #text", this.toString(everything));
   }
+
   public Document parse(String xml) throws Exception {
     InputStream is = new ByteArrayInputStream(xml.getBytes());
     Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
     return doc;
   }
+
   public String toString(Iterable<Node> nodes) {
     StringBuilder sb = new StringBuilder();
     String sep = "";
@@ -52,4 +54,5 @@ public class TestFeatures_Test extends TestCase {
     }
     return sb.toString();
   }
+
 }

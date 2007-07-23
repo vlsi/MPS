@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.io.ByteArrayInputStream;
 import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilderFactory;
-import ypath.util.TreeTraversalFactory;
+import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
 
 public class FeaturesDemo {
 
@@ -19,4 +19,5 @@ public class FeaturesDemo {
     } catch (Exception ignored) {
     }
   }
+
 }

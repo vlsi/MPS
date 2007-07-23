@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model name="ypath.generator.baseLanguage.template.helper">
+<model name="jetbrains.mps.ypath.generator.baseLanguage.template.helper">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />

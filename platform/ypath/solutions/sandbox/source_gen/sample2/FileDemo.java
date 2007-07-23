@@ -4,11 +4,11 @@ package sample2;
 
 import java.io.File;
 import java.util.Arrays;
-import ypath.util.TreeTraversalFactory;
+import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.ext.collections.internal.SequenceWithSupplier;
-import ypath.util.ITreeTraversal;
+import jetbrains.mps.ypath.runtime.ITreeTraversal;
 
 public class FileDemo {
 
@@ -36,4 +36,5 @@ public class FileDemo {
     }
     ITreeTraversal<File> foo = TreeTraversalFactory.Filter(new File_TreePath().startTraversal(_zClosureContext.f), File_TreePath.DIR_NodeKindTrigger.getInstance());
   }
+
 }

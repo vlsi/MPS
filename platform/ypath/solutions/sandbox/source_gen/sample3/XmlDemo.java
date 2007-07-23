@@ -7,9 +7,9 @@ import java.io.ByteArrayInputStream;
 import org.w3c.dom.Document;
 import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Node;
-import ypath.util.TreeTraversalFactory;
+import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
 import treepath_dom.DOM;
-import ypath.util.CompositeFilter;
+import jetbrains.mps.ypath.runtime.CompositeFilter;
 
 public class XmlDemo {
 
@@ -30,4 +30,5 @@ public class XmlDemo {
     } catch (Exception ignored) {
     }
   }
+
 }

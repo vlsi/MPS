@@ -4,13 +4,13 @@ package ypath_test1;
 
 import junit.framework.TestCase;
 import org.w3c.dom.Document;
-import ypath.util.ITreeTraversal;
+import jetbrains.mps.ypath.runtime.ITreeTraversal;
 import org.w3c.dom.Node;
 import treepath_dom.DOM;
 import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import ypath.util.TreeTraversalFactory;
-import ypath.util.CompositeFilter;
+import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
+import jetbrains.mps.ypath.runtime.CompositeFilter;
 import java.io.InputStream;
 import java.io.ByteArrayInputStream;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -27,6 +27,7 @@ public class XMLTreeSimple_Test extends TestCase {
     Assert.assertSame(SequenceOperations.getSize(tp), 1);
     Assert.assertEquals(SequenceOperations.getFirst(tp), doc);
   }
+
   public void test_children() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
     ITreeTraversal<Node> nodes1 = TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN"));
@@ -36,18 +37,21 @@ public class XMLTreeSimple_Test extends TestCase {
     Assert.assertSame(SequenceOperations.getSize(nodes2), 2);
     Assert.assertEquals("a1, a2", this.toString(nodes2));
   }
+
   public void test_descendants() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
     ITreeTraversal<Node> nodes = TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"));
     Assert.assertSame(SequenceOperations.getSize(nodes), 7);
     Assert.assertEquals("root, a1, b1, b2, a2, b3, c1", this.toString(nodes));
   }
+
   public void test_defautProperty() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
     ITreeTraversal<Node> nodes = TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(DOM.ELEMENT_NodeKindTrigger.getInstance(), DOM.ELEMENT_tag_Property.getMatcher("b3")));
     Assert.assertSame(SequenceOperations.getSize(nodes), 1);
     Assert.assertEquals("b3", this.toString(nodes));
   }
+
   public void test_sibling_descendants() throws Exception {
     Document doc = this.parse(SIMPLE_TREE);
     Node a1 = SequenceOperations.getFirst(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN")), TreeTraversalFactory.Axis("CHILDREN")));
@@ -56,11 +60,13 @@ public class XMLTreeSimple_Test extends TestCase {
     Assert.assertSame(6, SequenceOperations.getSize(nodes));
     Assert.assertEquals("a1, b1, b2, a2, b3, c1", this.toString(nodes));
   }
+
   public Document parse(String xml) throws Exception {
     InputStream is = new ByteArrayInputStream(xml.getBytes());
     Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
     return doc;
   }
+
   public String toString(Iterable<Node> nodes) {
     StringBuilder sb = new StringBuilder();
     String sep = "";
@@ -78,4 +84,5 @@ public class XMLTreeSimple_Test extends TestCase {
     }
     return sb.toString();
   }
+
 }

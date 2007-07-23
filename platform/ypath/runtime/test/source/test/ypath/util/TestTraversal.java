@@ -3,11 +3,12 @@
  */
 package test.ypath.util;
 
+import jetbrains.mps.ypath.runtime.TraversalAxis;
+import jetbrains.mps.ypath.runtime.TreePath;
+
 import org.junit.Assert;
 import org.junit.Test;
 
-import ypath.util.TraversalAxis;
-import ypath.util.TreePath;
 
 
 /**

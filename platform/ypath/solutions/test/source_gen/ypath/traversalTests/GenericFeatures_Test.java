@@ -4,9 +4,9 @@ package ypath.traversalTests;
 
 import junit.framework.TestCase;
 import org.w3c.dom.Document;
-import ypath.util.ITreeTraversal;
+import jetbrains.mps.ypath.runtime.ITreeTraversal;
 import org.w3c.dom.Node;
-import ypath.util.TreeTraversalFactory;
+import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
 import junit.framework.Assert;
 import java.io.InputStream;
 import java.io.ByteArrayInputStream;
@@ -22,11 +22,13 @@ public class GenericFeatures_Test extends TestCase {
     ITreeTraversal<Node> foo = TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOMF().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN"), "elements"), TreeTraversalFactory.Axis("DESCENDANTS"), DOMF.child("foo"));
     Assert.assertEquals("foo, foo, foo", this.toString(foo));
   }
+
   public Document parse(String xml) throws Exception {
     InputStream is = new ByteArrayInputStream(xml.getBytes());
     Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
     return doc;
   }
+
   public String toString(Iterable<Node> nodes) {
     StringBuilder sb = new StringBuilder();
     String sep = "";
@@ -44,4 +46,5 @@ public class GenericFeatures_Test extends TestCase {
     }
     return sb.toString();
   }
+
 }
