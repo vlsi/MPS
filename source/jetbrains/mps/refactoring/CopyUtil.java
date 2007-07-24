@@ -14,26 +14,18 @@ public class CopyUtil {
     return copy(nodes, targetModel, new HashMap<SNode, SNode>());
   }
 
-  public static <BA extends BaseAdapter> BA copy(BA node, SModel targetModel) {
-    return (BA) copy(node.getNode(), targetModel, new HashMap<SNode, SNode>()).getAdapter();
-  }
-
-  public static SNode copy(SNode node, SModel targetModel) {
-    return copy(node, targetModel, true);
-  }
-
-  public static SNode copy(SNode node, SModel targetModel, boolean copyAttributes) {
-    return copy(node, targetModel, new HashMap<SNode, SNode>(), copyAttributes);
-  }
-
-  public static List<SNode> copy(List<SNode> nodes, SModel targetModel, Map<SNode, SNode> mapping) {
+  private static List<SNode> copy(List<SNode> nodes, SModel targetModel, Map<SNode, SNode> mapping) {
     List<SNode> result = clone(nodes, targetModel, mapping);
     addReferences(nodes, mapping, true);
     return result;
   }
 
-  public static SNode copy(SNode node, SModel targetModel, Map<SNode, SNode> mapping) {
-    return copy(node, targetModel, mapping, true);
+  public static <BA extends BaseAdapter> BA copy(BA node, SModel targetModel) {
+    return (BA) copy(node.getNode(), targetModel, new HashMap<SNode, SNode>(), true).getAdapter();
+  }
+
+  public static SNode copy(SNode node, SModel targetModel) {
+    return copy(node, targetModel, new HashMap<SNode, SNode>(), true);
   }
 
   public static SNode copy(SNode node, SModel targetModel, Map<SNode, SNode> mapping, boolean copyAttributes) {

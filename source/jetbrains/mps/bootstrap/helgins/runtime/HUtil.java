@@ -7,6 +7,8 @@ import jetbrains.mps.refactoring.CopyUtil;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.project.GlobalScope;
 
+import java.util.HashMap;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -18,7 +20,7 @@ public class HUtil {
 
   public static SNode copyIfNecessary ( SNode node, SModel model ) {
      if ( node != null && node . getParent (  ) != null ) {
-        return CopyUtil.copy (node, model, false) ;
+        return CopyUtil.copy (node, model, new HashMap<SNode, SNode>(), false) ;
      } else {
         return node ;
      }
