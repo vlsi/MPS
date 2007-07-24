@@ -1582,7 +1582,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
       CommandProcessor.instance().tryToExecuteCommand(new Runnable() {
         public void run() {
-          TypeChecker.getInstance().checkRoot(getRootCell().getSNode());
+          SNode sNode = getRootCell().getSNode();
+          if (sNode == null) {
+            return;
+          }
+          TypeChecker.getInstance().checkRoot(sNode.getContainingRoot());
         }
       }, "");
 

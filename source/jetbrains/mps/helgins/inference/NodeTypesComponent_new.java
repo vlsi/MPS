@@ -241,7 +241,9 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
           } finally{
             NodeReadEventsCaster.removeNodesReadListener();
           }
+          myNodesReadListener.setAccessReport(true);
           addDepedentNodes(sNode, myNodesReadListener.myAcessedNodes);
+          myNodesReadListener.setAccessReport(false);
           myNodesReadListener.clear();
           SNode poppedCheckedNode = popNodeBeingChecked();
           assert poppedCheckedNode == sNode;
@@ -265,12 +267,6 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
       }
       dependentNodes.add(sNode);
     }
-
-    // temporary solution
-    /*  SNode parent = sNode.getParent();
-    if (parent != null) {
-      addDepedentNodes(parent, nodesToDependOn);
-    }*/
   }
 
   public Map<SNode, SNode> getMainContext() {
@@ -500,26 +496,42 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
 
   private class MyEventsReadListener implements INodesReadListener {
     private Set<SNode> myAcessedNodes = new HashSet<SNode>();
+    private boolean myIsSetAccessReport = false;
+
+    public void setAccessReport(boolean accessReport) {
+      myIsSetAccessReport = accessReport;
+    }
+
+    private void reportAccess() {
+      if (myIsSetAccessReport) {
+        new Throwable().printStackTrace();
+      }
+    }
 
     public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
+      reportAccess();
       myAcessedNodes.add(node);
       myAcessedNodes.add(child);
     }
 
     public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
+      reportAccess();
       myAcessedNodes.add(node);
     }
 
     public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
+      reportAccess();
       myAcessedNodes.add(node);
       myAcessedNodes.add(referent);
     }
 
     public void nodeUnclassifiedReadAccess(SNode node) {
+      reportAccess();
       myAcessedNodes.add(node);
     }
 
     public void clear() {
+      reportAccess();
       myAcessedNodes.clear();
     }
   }
