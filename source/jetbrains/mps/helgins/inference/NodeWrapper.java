@@ -58,7 +58,7 @@ public class NodeWrapper implements IWrapper {
         public void performAction(SNode node1, SNode node2) {
           childEQs.add(new Pair<SNode, SNode>(node1, node2));
         }
-      });
+      }, false);
       if (b) {
         if (equationManager != null) {
           equationManager.addChildEquations(childEQs, errorInfo);

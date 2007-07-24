@@ -18,7 +18,7 @@ public class HUtil {
 
   public static SNode copyIfNecessary ( SNode node, SModel model ) {
      if ( node != null && node . getParent (  ) != null ) {
-        return CopyUtil. copy ( node , model ) ;
+        return CopyUtil.copy (node, model, false) ;
      } else {
         return node ;
      }

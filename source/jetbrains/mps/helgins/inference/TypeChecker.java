@@ -22,7 +22,6 @@ import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.generator.template.Statistics;
-import jetbrains.mpswiki.queryLanguage.evaluator.ConditionMatcher;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.objectweb.asm.commons.AnalyzerAdapter;
