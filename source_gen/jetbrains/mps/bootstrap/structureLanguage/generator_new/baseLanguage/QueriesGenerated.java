@@ -158,13 +158,13 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1169126625179(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(node, "name");
   }
-  public static SNode referenceMacro_GetReferent_1169130026119(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1169130026119(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.extendedInterfaceConcept_generatedInterface(node, templateNode, generator);
   }
-  public static SNode referenceMacro_GetReferent_1168020518409(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1168020518409(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.extendedConcept_generatedClass(node, templateNode, generator);
   }
-  public static SNode referenceMacro_GetReferent_1169128252878(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1169128252878(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.extendedInterfaceConcept_generatedInterface(node, templateNode, generator);
   }
   public static boolean ifMacro_Condition_1169758775014(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

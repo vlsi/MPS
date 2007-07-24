@@ -89,74 +89,74 @@ public class QueriesGenerated {
   public static String propertyMacro_GetPropertyValue_1174827615903(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "childVar_" + node.getId();
   }
-  public static SNode referenceMacro_GetReferent_1176737467861(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1176737467861(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findNodeBuilderForSource(node, "antiquotations").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1176737471291(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1176737471291(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findNodeBuilderForSource(node, "antiquotationParameters").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1174823842615(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1174823842615(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findNodeBuilderForSource(SNodeOperations.getParent(node, null, false, false), "matchMethodParameter").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1174824244245(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1174824244245(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findNodeBuilderForSource(node, "childVar").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1176737721511(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1176737721511(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     Antiquotation antiquotation = Antiquotation_AnnotationLink.getAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)));
     return generator.findNodeBuilderForSource(antiquotation.getNode(), "antiquotations").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1174812340844(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1174812340844(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return SModelUtil_new.getAdapterClassConceptForConceptDeclaration((ConceptDeclaration)BaseAdapter.fromNode(SNodeOperations.getConceptDeclaration(node)), GlobalScope.getInstance()).getNode();
   }
-  public static SNode referenceMacro_GetReferent_1174820532447(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1174820532447(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     String propertyName = node.getProperty("propertyName");
     SNode mainNode = node.getReferent("mainNode");
     SNode propertyPattern = mainNode.getPropertyAttribute(propertyName);
     return generator.findNodeBuilderForSource(propertyPattern, "patternVarField").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1176737751209(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1176737751209(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     String refRole = node.getProperty("referentRole");
     SNode mainNode = node.getReferent("mainNode");
     ReferenceAntiquotation refAntiq = ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(mainNode)), refRole);
     return generator.findNodeBuilderForSource(refAntiq.getExpression().getNode(), "antiquotations").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1174903629930(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1174903629930(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     String referentRole = node.getProperty("referentRole");
     SNode mainNode = node.getReferent("mainNode");
     SNode linkPattern = mainNode.getLinkAttribute(referentRole);
     return generator.findNodeBuilderForSource(linkPattern, "patternVarField").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1179741230558(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1179741230558(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode attribute = node.getAttribute();
     return generator.findNodeBuilderForSource(attribute, "patternVarField").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1174829805023(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1174829805023(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findNodeBuilderForSource(SNodeOperations.getParent(node, null, false, false), "nodeToMatch").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1174901525140(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1174901525140(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode attribute = node.getAttribute();
     return generator.findNodeBuilderForSource(attribute, "patternVarField").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1176822806433(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1176822806433(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findNodeBuilderForSource(node, "childVar").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1174909796960(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1174909796960(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(node))));
     return generator.findNodeBuilderForSource(attribute, "patternVarField").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1179741174631(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1179741174631(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode attribute = node.getAttribute();
     return generator.findNodeBuilderForSource(attribute, "patternVarField").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1174909927153(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1174909927153(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode attribute = node.getAttribute();
     return generator.findNodeBuilderForSource(attribute, "patternVarField").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1174909759055(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1174909759055(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(node))));
     return generator.findNodeBuilderForSource(attribute, "patternVarField").getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1174909655556(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1174909655556(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findNodeBuilderForSource(SNodeOperations.getParent(node, null, false, false), "nodeToMatch").getTargetNode();
   }
   public static boolean ifMacro_Condition_1176815681743(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

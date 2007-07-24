@@ -105,13 +105,13 @@ public class QueriesGenerated {
     RegexpProcessor.toString(((Regexp)SNodeOperations.getAdapter(SLinkOperations.getTarget(SLinkOperations.getTarget(c, "regexp", true), "regexp", true))), matchparens);
     return "" + (1 + matchparens.indexOf(((MatchParensRegexp)SNodeOperations.getAdapter(parens))));
   }
-  public static SNode referenceMacro_GetReferent_1174655509856(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1174655509856(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return GeneratorUtil.findBuilderForMatcher(generator, node).getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1175155997041(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1175155997041(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return GeneratorUtil.findBuilderForMatcher(generator, node).getTargetNode();
   }
-  public static SNode referenceMacro_GetReferent_1175170026388(SNode node, SNode templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode referenceMacro_GetReferent_1175170026388(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return GeneratorUtil.findBuilderForMatcher(generator, node).getTargetNode();
   }
   public static SNode sourceNodeQuery_1174512824855(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
