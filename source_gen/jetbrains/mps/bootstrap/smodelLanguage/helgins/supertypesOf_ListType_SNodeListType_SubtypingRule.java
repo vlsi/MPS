@@ -24,16 +24,21 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
     }
     return supertypes;
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean isSupertyping() {
     return false;
   }
+
   public boolean isWeak() {
     return false;
   }
+
 }

@@ -13,7 +13,7 @@ import java.util.Stack;
  * To change this template use File | Settings | File Templates.
  */
 public class NodeReadEventsCaster {
-  private static INodesReadListener ourNodesReadListener;
+  private static volatile INodesReadListener ourNodesReadListener;
   private static Stack<INodesReadListener> ourNodesReadListenersStack = new Stack<INodesReadListener>();
 
   public static void fireNodeChildReadAccess(SNode node, String childRole, SNode child){

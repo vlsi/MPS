@@ -20,19 +20,23 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
       SNode leftExpressionType = RulesUtil.typeOf_leftExpression(argument);
       SNode leftNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
       SNode leftNodeConcept = SLinkOperations.getTarget(leftNodeType, "concept", false);
-      TypeChecker.getInstance().getRuntimeSupport().givetype(AbstractConceptDeclaration_Behavior.call_getAdapterType_1179511141975(leftNodeConcept), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(AbstractConceptDeclaration_Behavior.call_getAdapterType_1179511141975(leftNodeConcept), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179511908876");
     } else
     {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_55().createNode(), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_55().createNode(), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492261");
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return true;
   }
+
 }

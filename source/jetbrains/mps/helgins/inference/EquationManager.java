@@ -20,7 +20,7 @@ public class EquationManager {
   private static Logger LOG = Logger.getLogger(EquationManager.class);
 
   private TypeChecker myTypeChecker;
-  private INodeTypesComponent myNodeTypesComponent;
+  private NodeTypesComponent_new myNodeTypesComponent;
 
   private Map<IWrapper, Map<IWrapper, ErrorInfo>> mySubtypesToSupertypesMap = new HashMap<IWrapper, Map<IWrapper, ErrorInfo>>();
   private Map<IWrapper, Map<IWrapper, ErrorInfo>> mySupertypesToSubtypesMap = new HashMap<IWrapper, Map<IWrapper, ErrorInfo>>();
@@ -32,7 +32,7 @@ public class EquationManager {
 
   private Map<IWrapper, IWrapper> myEquations = new HashMap<IWrapper, IWrapper>();
 
-  public EquationManager(TypeChecker typeChecker, INodeTypesComponent nodeTypesComponent) {
+  public EquationManager(TypeChecker typeChecker, NodeTypesComponent_new nodeTypesComponent) {
     myTypeChecker = typeChecker;
     myNodeTypesComponent = nodeTypesComponent;
   }

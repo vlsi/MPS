@@ -20,13 +20,17 @@ public class typeOf_ArrayCreatorWithInitializer_InferenceRule implements Inferen
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_9().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(argument, "componentType", true), TypeChecker.getInstance().getRuntimeTypesModel())), argument, "jetbrains.mps.baseLanguage.helgins", "1175600306141");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

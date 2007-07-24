@@ -15,16 +15,21 @@ public class int_boxing_SubtypingRule extends SubtypingRule_Runtime implements I
   public SNode getSubOrSuperType(SNode type) {
     return new QuotationClass_64().createNode();
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.IntegerType";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean isSupertyping() {
     return false;
   }
+
   public boolean isWeak() {
     return true;
   }
+
 }

@@ -22,13 +22,17 @@ public class typeOf_ConceptFunctionParameter_InferenceRule implements InferenceR
       TypeChecker.getInstance().getRuntimeSupport().givetype(ListOperations.getElement(conceptFunctionParameters, 0), argument, "jetbrains.mps.baseLanguage.helgins", "1177326121286");
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

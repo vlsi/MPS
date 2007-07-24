@@ -16,16 +16,21 @@ public class Boolean_extends_primitive_SubtypingRule extends SubtypingRule_Runti
   public SNode getSubOrSuperType(SNode type) {
     return SLinkOperations.getTarget(new QuotationClass_12().createNode(), "descriptor", false);
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.BooleanType";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean isSupertyping() {
     return false;
   }
+
   public boolean isWeak() {
     return false;
   }
+
 }

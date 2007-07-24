@@ -16,16 +16,21 @@ public class long_extends_integral_SubtypingRule extends SubtypingRule_Runtime i
   public SNode getSubOrSuperType(SNode type) {
     return SLinkOperations.getTarget(new QuotationClass_55().createNode(), "descriptor", false);
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.LongType";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean isSupertyping() {
     return false;
   }
+
   public boolean isWeak() {
     return false;
   }
+
 }

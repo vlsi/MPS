@@ -17,22 +17,26 @@ public class typeof_SNodeCreator_InferenceRule implements InferenceRule_Runtime 
     SNode createdType = SLinkOperations.getTarget(argument, "createdType", true);
     if(createdType != null) {
       if(SLinkOperations.getTarget(createdType, "concept", false) == null) {
-        TypeChecker.getInstance().reportTypeError(createdType, "concrete node type is expected");
+        TypeChecker.getInstance().reportTypeError(createdType, "concrete node type is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181944909006");
         return;
       }
       if(SLinkOperations.getTarget(argument, "prototypeNode", true) != null) {
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "prototypeNode", true)), new QuotationClass_67().createNode(), SLinkOperations.getTarget(argument, "prototypeNode", true), null);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "prototypeNode", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181945023294"), new QuotationClass_67().createNode(), SLinkOperations.getTarget(argument, "prototypeNode", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181945011354");
       }
-      TypeChecker.getInstance().getRuntimeSupport().givetype(createdType, argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(createdType, argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181945088726");
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

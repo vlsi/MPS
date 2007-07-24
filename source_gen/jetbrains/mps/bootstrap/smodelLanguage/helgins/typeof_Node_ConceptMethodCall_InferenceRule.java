@@ -16,12 +16,12 @@ public class typeof_Node_ConceptMethodCall_InferenceRule implements InferenceRul
 
   public void applyRule(SNode argument) {
     if(!((SLinkOperations.getTarget(argument, "conceptMethodDeclaration", false) != null))) {
-      TypeChecker.getInstance().reportTypeError(argument, "no method declaration");
+      TypeChecker.getInstance().reportTypeError(argument, "no method declaration", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410829052");
     }
     int actCount = SLinkOperations.getCount(argument, "actualArgument");
     int expCount = SLinkOperations.getCount(SLinkOperations.getTarget(argument, "conceptMethodDeclaration", false), "parameter");
     if(!(actCount == expCount)) {
-      TypeChecker.getInstance().reportTypeError(argument, "Wrong parameters number: expected " + expCount + ", actual " + actCount);
+      TypeChecker.getInstance().reportTypeError(argument, "Wrong parameters number: expected " + expCount + ", actual " + actCount, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410886099");
     }
     {
       SNode arg;
@@ -37,19 +37,23 @@ public class typeof_Node_ConceptMethodCall_InferenceRule implements InferenceRul
         }
         arg = arg_iterator.next();
         parameter = parameter_iterator.next();
-        TypeChecker.getInstance().getRuntimeSupport().check(parameter);
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg), TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), arg, null);
+        TypeChecker.getInstance().getRuntimeSupport().check(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179411061746");
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg), TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), arg, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179411081637");
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "conceptMethodDeclaration", false), "returnType", true), argument, null);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "conceptMethodDeclaration", false), "returnType", true), argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410535708");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

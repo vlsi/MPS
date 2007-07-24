@@ -19,13 +19,17 @@ public class typeOf_CastExpression_InferenceRule implements InferenceRule_Runtim
       TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true)), SLinkOperations.getTarget(argument, "type", true), argument, null, "jetbrains.mps.baseLanguage.helgins", "1178271928127");
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.CastExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

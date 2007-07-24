@@ -19,13 +19,17 @@ public class typeOf_ArrayAccess_InferenceRule implements InferenceRule_Runtime {
     TypeChecker.getInstance().getRuntimeSupport().givetype(T_typevar_1175601836165, argument, "jetbrains.mps.baseLanguage.helgins", "1175601928121");
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "index", true)), new QuotationClass_11().createNode(), SLinkOperations.getTarget(argument, "index", true), null, "jetbrains.mps.baseLanguage.helgins", "1175603546475");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayAccessExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

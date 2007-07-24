@@ -16,16 +16,21 @@ public class double_extends_floatingPoint_SubtypingRule extends SubtypingRule_Ru
   public SNode getSubOrSuperType(SNode type) {
     return SLinkOperations.getTarget(new QuotationClass_58().createNode(), "descriptor", false);
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.DoubleType";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean isSupertyping() {
     return false;
   }
+
   public boolean isWeak() {
     return false;
   }
+
 }

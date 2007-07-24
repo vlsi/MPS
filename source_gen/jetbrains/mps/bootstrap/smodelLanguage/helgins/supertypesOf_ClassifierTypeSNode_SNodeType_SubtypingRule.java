@@ -16,17 +16,22 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
   public SNode getSubOrSuperType(SNode type) {
     return new QuotationClass_58().createNode();
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
+
   public boolean isApplicable(SNode argument) {
     this.myMatchingPattern = new Pattern_();
     return this.myMatchingPattern.match(argument);
   }
+
   public boolean isSupertyping() {
     return false;
   }
+
   public boolean isWeak() {
     return true;
   }
+
 }

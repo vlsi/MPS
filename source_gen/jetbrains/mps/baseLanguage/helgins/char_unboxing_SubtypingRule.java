@@ -16,17 +16,22 @@ public class char_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   public SNode getSubOrSuperType(SNode type) {
     return new QuotationClass_68().createNode();
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
+
   public boolean isApplicable(SNode argument) {
     this.myMatchingPattern = new Pattern_2();
     return this.myMatchingPattern.match(argument);
   }
+
   public boolean isSupertyping() {
     return false;
   }
+
   public boolean isWeak() {
     return true;
   }
+
 }

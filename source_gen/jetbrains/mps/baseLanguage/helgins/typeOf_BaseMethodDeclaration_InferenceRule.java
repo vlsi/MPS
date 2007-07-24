@@ -31,7 +31,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
       return;
     }
     // generic check
-    TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "body", true));
+    TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "body", true), "jetbrains.mps.baseLanguage.helgins", "1178764811143");
     // =============
     SNode expectedRetType = SLinkOperations.getTarget(argument, "returnType", true);
     if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType")) {
@@ -95,13 +95,17 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
       }
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

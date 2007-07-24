@@ -230,6 +230,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(node, "result") + "";
   }
 
+  public static Object propertyMacro_GetPropertyValue_1185294843552(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.getModel(node).toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1185294870335(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return node.getId();
+  }
+
   public static Object propertyMacro_GetPropertyValue_1185024196506(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getModel(node).toString();
   }
@@ -277,6 +285,14 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1177670027441(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode conceptDeclaration = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "condition", true), "concept", false);
     return SNodeOperations.getModel(conceptDeclaration).getLongName() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1185294908263(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.getModel(node).toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1185294926654(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return node.getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1178874523174(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

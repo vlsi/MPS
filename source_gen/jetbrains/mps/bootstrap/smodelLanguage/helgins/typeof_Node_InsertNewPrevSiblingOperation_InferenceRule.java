@@ -15,15 +15,19 @@ public class typeof_Node_InsertNewPrevSiblingOperation_InferenceRule implements 
 
   public void applyRule(SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_14().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_14().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178318841596");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNewPrevSiblingOperation";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return true;
   }
+
 }

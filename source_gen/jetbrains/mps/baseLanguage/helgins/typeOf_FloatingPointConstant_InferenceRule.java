@@ -15,13 +15,17 @@ public class typeOf_FloatingPointConstant_InferenceRule implements InferenceRule
   public void applyRule(SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_50().createNode(), argument, "jetbrains.mps.baseLanguage.helgins", "1176907782194");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.FloatingPointConstant";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

@@ -26,15 +26,19 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule implements Infer
         RulesUtil.checkAssignableConcept(parameterConcept, expectedConcept, argument, "incompatible parameter concept");
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_47().createNode(resultConcept), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_47().createNode(resultConcept), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492000");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return true;
   }
+
 }

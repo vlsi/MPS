@@ -14,21 +14,25 @@ public class typeof_SNodeTypeCastExpression_InferenceRule implements InferenceRu
   }
 
   public void applyRule(SNode argument) {
-    SNode leftType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "leftExpression", true));
+    SNode leftType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "leftExpression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1180547359294");
     if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_1().createNode(), false, false)) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1180547567581");
     } else
     {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1180547603020");
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

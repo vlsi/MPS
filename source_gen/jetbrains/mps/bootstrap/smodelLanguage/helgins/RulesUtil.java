@@ -28,14 +28,16 @@ public class RulesUtil {
     }
     return null;
   }
+
   public static SNode typeOf_leftExpression(SNode op) {
     SNode leftExpression = RulesUtil.leftExpression(op);
     if((leftExpression != null)) {
-      TypeChecker.getInstance().getRuntimeSupport().check(leftExpression);
+      TypeChecker.getInstance().getRuntimeSupport().check(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287491500");
       return TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression);
     }
     return null;
   }
+
   public static boolean checkAppliedCorrectly_generic(SNode op) {
     List<String> applicables = new ArrayList<String>();
     // ===========
@@ -113,9 +115,10 @@ public class RulesUtil {
         applicableTo = applicableTo + ",";
       }
     }
-    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to " + applicableTo);
+    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to " + applicableTo, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178293195233");
     return false;
   }
+
   public static boolean checkAppliedTo_LinkListAccess_aggregation(SNode op) {
     SNode leftExpression = RulesUtil.leftExpression(op);
     if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
@@ -127,9 +130,10 @@ public class RulesUtil {
         }
       }
     }
-    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-list-access");
+    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-list-access", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287491613");
     return false;
   }
+
   public static boolean checkAppliedTo_LinkAccess_aggregation(SNode op) {
     SNode leftExpression = RulesUtil.leftExpression(op);
     if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression")) {
@@ -141,16 +145,18 @@ public class RulesUtil {
         }
       }
     }
-    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-access");
+    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to aggregation-link-access", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287491690");
     return false;
   }
+
   public static boolean checkAssignableConcept(SNode fromConcept, SNode toConcept, SNode nodeToReportError, String errorTextPrefix) {
     if(SConceptOperations.isSubConceptOf(fromConcept, NameUtil.nodeFQName(toConcept))) {
       return true;
     }
-    TypeChecker.getInstance().reportTypeError(nodeToReportError, "" + errorTextPrefix + "\nexpected: " + SPropertyOperations.getString(toConcept, "name") + "\nwas: " + SPropertyOperations.getString(fromConcept, "name"));
+    TypeChecker.getInstance().reportTypeError(nodeToReportError, "" + errorTextPrefix + "\nexpected: " + SPropertyOperations.getString(toConcept, "name") + "\nwas: " + SPropertyOperations.getString(fromConcept, "name"), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179506569646");
     return false;
   }
+
   public static boolean checkOpParameters_generic(SNode op) {
     boolean noProblem = true;
     List<SNode> applicableParmConcepts = SLinkOperations.getConceptLinkTargets(op, "applicableParameter");
@@ -160,7 +166,7 @@ public class RulesUtil {
         while(_zCursor3.moveToNext()) {
           SNode parm = _zCursor3.getCurrent();
           if(!(SequenceOperations.contains(applicableParmConcepts, SNodeOperations.getConceptDeclaration(parm)))) {
-            TypeChecker.getInstance().reportTypeError(parm, "not applicable here");
+            TypeChecker.getInstance().reportTypeError(parm, "not applicable here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178302007667");
             noProblem = false;
           }
         }
@@ -170,6 +176,7 @@ public class RulesUtil {
     }
     return noProblem;
   }
+
   public static SNode get_inputNodeConcept(SNode op) {
     SNode leftExpr = RulesUtil.leftExpression(op);
     // todo: just compute type of the expression
@@ -192,11 +199,13 @@ public class RulesUtil {
     }
     return null;
   }
+
   public static SNode get_inputNodeType(SNode op) {
     SNode inputNodeConcept = RulesUtil.get_inputNodeConcept(op);
     SNode inputNodeType = new QuotationClass_43().createNode(inputNodeConcept);
     return inputNodeType;
   }
+
   public static SNode get_SNodeType_fromOpParameter(SNode op) {
     SNode type = new QuotationClass_44().createNode();
     SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate(null, null)));
@@ -205,6 +214,7 @@ public class RulesUtil {
     }
     return type;
   }
+
   public static SNode get_SNodeListType_fromOpParameter(SNode op) {
     SNode type = new QuotationClass_45().createNode();
     SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate1(null, null)));
@@ -213,4 +223,5 @@ public class RulesUtil {
     }
     return type;
   }
+
 }

@@ -17,13 +17,17 @@ public class typeOf_NotExpression_InferenceRule implements InferenceRule_Runtime
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_39().createNode(), argument, "jetbrains.mps.baseLanguage.helgins", "1176900899744");
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true)), new QuotationClass_40().createNode(), SLinkOperations.getTarget(argument, "expression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176900889144");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.NotExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

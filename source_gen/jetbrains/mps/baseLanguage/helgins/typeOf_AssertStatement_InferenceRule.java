@@ -19,13 +19,17 @@ public class typeOf_AssertStatement_InferenceRule implements InferenceRule_Runti
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "message", true)), new QuotationClass_37().createNode(), SLinkOperations.getTarget(argument, "message", true), null, "jetbrains.mps.baseLanguage.helgins", "1176899115123");
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.AssertStatement";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

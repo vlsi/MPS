@@ -15,16 +15,21 @@ public class long_extends_float_SubtypingRule extends SubtypingRule_Runtime impl
   public SNode getSubOrSuperType(SNode type) {
     return new QuotationClass_56().createNode();
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.LongType";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean isSupertyping() {
     return false;
   }
+
   public boolean isWeak() {
     return false;
   }
+
 }

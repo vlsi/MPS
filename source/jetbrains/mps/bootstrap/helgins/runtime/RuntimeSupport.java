@@ -2,15 +2,11 @@ package jetbrains.mps.bootstrap.helgins.runtime;
 
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
-import jetbrains.mps.helgins.inference.INodeTypesComponent;
 import jetbrains.mps.helgins.inference.IWrapper;
+import jetbrains.mps.helgins.inference.NodeTypesComponent_new;
 import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.patterns.IMatchingPattern;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 
 import java.util.Map;
@@ -35,13 +31,13 @@ public class RuntimeSupport {
   public SNode typeOf(SNode node) {
     if (node == null) return null;
     SNode type;
-    INodeTypesComponent currentTypesComponent = myTypeChecker.getCurrentTypesComponent();   //first, in current component
+    NodeTypesComponent_new currentTypesComponent = myTypeChecker.getCurrentTypesComponent();   //first, in current component
     if (currentTypesComponent != null) {
       type = currentTypesComponent.getRawTypeFromContext(node);
       if (type != null) return type;
     }
 
-    INodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance()  // then, in appropriate component
+    NodeTypesComponent_new nodeTypesComponent = NodeTypesComponentsRepository.getInstance()  // then, in appropriate component
             .getNodeTypesComponent(node.getContainingRoot());
     if (nodeTypesComponent != null && nodeTypesComponent != currentTypesComponent) {
       type = nodeTypesComponent.getType(node);
@@ -207,14 +203,22 @@ public class RuntimeSupport {
   }
 
   public void check(SNode node) {
-    myTypeChecker.getCurrentTypesComponent().checkTypesForNodeAndSolveInequations(node);
+    check(node, null, null);
+  }
+
+  public void check(SNode node, String nodeModel, String nodeId) {
+    myTypeChecker.getCurrentTypesComponent().checkTypesForNodeAndSolveInequations(node, nodeModel, nodeId);
   }
 
   public SNode checkedTypeOf(SNode node) {
+    return checkedTypeOf(node, null, null);
+  }
+
+  public SNode checkedTypeOf(SNode node, String nodeModel, String nodeId) {
     if (myTypeChecker.getCurrentTypesComponent() == null) { //preved Igor!
       return myTypeChecker.getTypeOf(node);
     }
-    check(node);
+    check(node, nodeModel, nodeId);
     return typeOf(node);
   }
 

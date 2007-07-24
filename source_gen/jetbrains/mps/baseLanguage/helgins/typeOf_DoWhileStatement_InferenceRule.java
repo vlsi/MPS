@@ -16,13 +16,17 @@ public class typeOf_DoWhileStatement_InferenceRule implements InferenceRule_Runt
   public void applyRule(SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true)), new QuotationClass_75().createNode(), SLinkOperations.getTarget(argument, "condition", true), null, "jetbrains.mps.baseLanguage.helgins", "1177667395187");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.DoWhileStatement";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

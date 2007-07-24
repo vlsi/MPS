@@ -15,16 +15,20 @@ public class typeOf_Model_NodesIncludingImportedOperation_InferenceRule implemen
 
   public void applyRule(SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_73().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "scope", true)), new QuotationClass_74().createNode(), SLinkOperations.getTarget(argument, "scope", true), null);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_73().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182512146602");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "scope", true)), new QuotationClass_74().createNode(), SLinkOperations.getTarget(argument, "scope", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182512146610");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_NodesIncludingImportedOperation";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return true;
   }
+
 }

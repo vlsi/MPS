@@ -1,29 +1,17 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport;
-import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
-import jetbrains.mps.ide.IStatus;
-import jetbrains.mps.ide.Status;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.refactoring.CopyUtil;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.Mapper;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.generator.template.Statistics;
-import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.objectweb.asm.commons.AnalyzerAdapter;
 
 import java.util.*;
 
@@ -53,7 +41,7 @@ public class TypeChecker {
   private SubtypingManager mySubtypingManager;
   private RuntimeSupport myRuntimeSupport;
   private RulesManager myRulesManager;
-  private INodeTypesComponent myCurrentTypesComponent = null;
+  private NodeTypesComponent_new myCurrentTypesComponent = null;
 
   private MPSProject myProject;
 
@@ -100,7 +88,7 @@ public class TypeChecker {
   }
 
   @UseCarefully
-  public void setCurrentTypesComponent(INodeTypesComponent component) {
+  public void setCurrentTypesComponent(NodeTypesComponent_new component) {
     myCurrentTypesComponent = component;
   }
 
@@ -196,7 +184,7 @@ public class TypeChecker {
   @Nullable
   public SNode getTypeDontCheck(SNode node) {
     if (node == null) return null;
-    INodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
+    NodeTypesComponent_new nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
             getNodeTypesComponent(node.getContainingRoot());
     if (nodeTypesComponent == null) return null;
     return nodeTypesComponent.getType(node);
@@ -233,7 +221,7 @@ public class TypeChecker {
     myCheckedRoots.remove(containingRoot);
   }
 
-  public INodeTypesComponent getCurrentTypesComponent() {
+  public NodeTypesComponent_new getCurrentTypesComponent() {
     return myCurrentTypesComponent;
   }
 

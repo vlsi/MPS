@@ -15,16 +15,21 @@ public class supertypesOf_SNodeType_ClassifierTypeSNode_SubtypingRule extends Su
   public SNode getSubOrSuperType(SNode type) {
     return new QuotationClass_31().createNode();
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean isSupertyping() {
     return false;
   }
+
   public boolean isWeak() {
     return true;
   }
+
 }

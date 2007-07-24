@@ -15,15 +15,19 @@ public class typeOf_Node_GetAncestorOperation_InferenceRule implements Inference
   public void applyRule(SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
     RulesUtil.checkOpParameters_generic(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_SNodeType_fromOpParameter(argument), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_SNodeType_fromOpParameter(argument), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287490882");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return true;
   }
+
 }

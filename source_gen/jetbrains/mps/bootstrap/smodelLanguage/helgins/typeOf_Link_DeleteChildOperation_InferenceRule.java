@@ -14,13 +14,17 @@ public class typeOf_Link_DeleteChildOperation_InferenceRule implements Inference
   public void applyRule(SNode argument) {
     RulesUtil.checkAppliedTo_LinkAccess_aggregation(argument);
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return true;
   }
+
 }

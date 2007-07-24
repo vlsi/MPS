@@ -17,21 +17,25 @@ public class typeOf_Concept_FindInstances_InferenceRule implements InferenceRule
 
   public void applyRule(SNode argument) {
     if(SLinkOperations.getTarget(argument, "scope", true) != null) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "scope", true)), new QuotationClass_71().createNode(), SLinkOperations.getTarget(argument, "scope", true), null);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "scope", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182280014718"), new QuotationClass_71().createNode(), SLinkOperations.getTarget(argument, "scope", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182280010621");
     }
     SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.getParent(argument, null, false, false), "leftExpression", true);
-    SNode leftConceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false);
+    SNode leftConceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182280091690"), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false);
     if(leftConceptType != null) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_72().createNode(SLinkOperations.getTarget(leftConceptType, "conceptDeclaraton", false)), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_72().createNode(SLinkOperations.getTarget(leftConceptType, "conceptDeclaraton", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182280091694");
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_FindInstances";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

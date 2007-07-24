@@ -15,7 +15,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
-import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
@@ -35,13 +34,15 @@ import org.jetbrains.annotations.Nullable;
  * Time: 13:50:13
  * To change this template use File | Settings | File Templates.
  */
-public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessageOwner {
+public class NodeTypesComponent_new implements IGutterMessageOwner {
 
   private static final char A_CHAR = 'a';
   private static final char Z_CHAR = 'z';
 
   private int myVariableIndex = 0;
   private char myVariableChar = A_CHAR;
+
+  private final Object ACCESS_LOCK = new Object();
 
   private SNode myRootNode;
   private TypeChecker myTypeChecker;
@@ -56,7 +57,10 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
   private Stack<EquationManager> myEquationManagersStack = new Stack<EquationManager>();
 
   private Set<SModelDescriptor> myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
+
   private Stack<SNode> myNodesBeingChecked = new Stack<SNode>();
+  private Map<SNode, Pair<String, String>> myNodesToCheckStatementsIdMap = new HashMap<SNode, Pair<String, String>>();
+
   private MyModelListener myModelListener = new MyModelListener();
   private MyEventsReadListener myNodesReadListener = new MyEventsReadListener();
 
@@ -159,8 +163,7 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
         doInvalidate();
         myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
         myFullyCheckedNodes.clear();
-        /* myNodesToErrorsMap.clear();
-        myNodesToTypesMap.clear();*/
+        myNodesBeingChecked.clear();
       }
 
       myTypeChecker.setCurrentTypesComponent(this);
@@ -223,17 +226,12 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
     frontier.add(node);
     while (!(frontier.isEmpty())) {
       for (SNode sNode : frontier) {
-        if (isNodeBeingChecked(sNode)) {
-          LOG.error("your HELGINS rules for this node try to loop infinitely", sNode);
-          continue;
-        }
         if (myFullyCheckedNodes.contains(sNode)) {
           continue;
         }
         newFrontier.addAll(sNode.getChildren());
         if (!myPartlyCheckedNodes.contains(sNode)) {
           myNotSkippedNodes.add(new SNodeProxy(sNode));
-          pushNodeBeingChecked(sNode);
           myNodesReadListener.clear();
           NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
           try {
@@ -241,12 +239,12 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
           } finally{
             NodeReadEventsCaster.removeNodesReadListener();
           }
-          myNodesReadListener.setAccessReport(true);
-          addDepedentNodes(sNode, myNodesReadListener.myAcessedNodes);
-          myNodesReadListener.setAccessReport(false);
+          synchronized(ACCESS_LOCK) {
+            myNodesReadListener.setAccessReport(true);
+            addDepedentNodes(sNode, new HashSet<SNode>(myNodesReadListener.myAcessedNodes));
+            myNodesReadListener.setAccessReport(false);
+          }
           myNodesReadListener.clear();
-          SNode poppedCheckedNode = popNodeBeingChecked();
-          assert poppedCheckedNode == sNode;
           myPartlyCheckedNodes.add(sNode);
         }
         myFullyCheckedNodes.add(sNode);
@@ -277,41 +275,88 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
     Set<InferenceRule_Runtime> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
     if (newRules != null) {
       for (InferenceRule_Runtime rule : newRules) {
-        long t1 = System.currentTimeMillis();
+        // long t1 = System.currentTimeMillis();
+        Pair<InferenceRule_Runtime, SNode> item = new Pair<InferenceRule_Runtime, SNode>(rule, node);
         try {
           rule.applyRule(node);
+        } catch(Throwable t) {
+          LOG.error(t);
         } finally {
-          Statistics.getStatistic(Statistics.HELGINS).add(rule.getClass().getName(), System.currentTimeMillis() - t1, true);
+          //  Statistics.getStatistic(Statistics.HELGINS).add(rule.getClass().getName(), System.currentTimeMillis() - t1, true);
         }
       }
     }
   }
 
-
   public void checkTypesForNodeAndSolveInequations(SNode node) {
+    checkTypesForNodeAndSolveInequations(node, null, null);
+  }
+
+  public void checkTypesForNodeAndSolveInequations(SNode node, String nodeModel, String nodeId) {
     if (node == null) return;
-    if (myFullyCheckedNodes.contains(node)) {
-      // if in our component
+
+    if (isNodeBeingChecked(node)) {
+      LOG.error("your HELGINS rules for this node try to loop infinitely", node);
+      LOG.error("LOOP:");
+      boolean reachedOurNode = false;
+      for (SNode nodeBeingChecked : myNodesBeingChecked) {
+        if (nodeBeingChecked == node) {
+          reachedOurNode = true;
+        }
+        if (!reachedOurNode) {
+          continue;
+        }
+        Pair<String, String> checkStatementId = myNodesToCheckStatementsIdMap.get(nodeBeingChecked);
+        SNode checkStatement = null;
+        if (checkStatementId != null) {
+          String modelString = checkStatementId.o1;
+          String idString = checkStatementId.o2;
+          if (modelString != null && idString != null) {
+            SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(modelString));
+            if (modelDescriptor == null) {
+              LOG.error("can't find rule's model: " + modelString);
+              return;
+            }
+            checkStatement = modelDescriptor.getSModel().getNodeById(idString);
+            if (checkStatement == null) {
+              LOG.error("can't find a node with id " + idString + " in the model " + modelDescriptor);
+            }
+          }
+          LOG.error("click here", checkStatement);
+        }
+      }
       return;
     }
-    if ((NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node)).isInCheckedNodes(node)) {
-      //if in another component
-      return;
-    }
-    EquationManager oldSlave = new EquationManager(this.myTypeChecker, this);
-    myEquationManagersStack.push(oldSlave);
+
+    pushNodeBeingChecked(node, nodeModel, nodeId);
     try {
-      computeTypesForNode(node); //computing types in our component even if nodes are from another root
+      if (myFullyCheckedNodes.contains(node)) {
+        // if in our component
+        return;
+      }
+      if ((NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node)).isInCheckedNodes(node)) {
+        //if in another component
+        return;
+      }
+      EquationManager oldSlave = new EquationManager(this.myTypeChecker, this);
+      myEquationManagersStack.push(oldSlave);
+      try {
+        computeTypesForNode(node); //computing types in our component even if nodes are from another root
+      } catch(Throwable t) {
+        LOG.error(t);
+      }
+      EquationManager slave = myEquationManagersStack.pop();
+      if (slave != oldSlave) {
+        LOG.error("equation managers' stack violated");
+      }
+      slave.solveInequations();
+      myEquationManagersStack.peek().putAllEquations(slave);
+      myFullyCheckedNodes.add(node);
     } catch(Throwable t) {
       LOG.error(t);
+    } finally {
+      popNodeBeingChecked();
     }
-    EquationManager slave = myEquationManagersStack.pop();
-    if (slave != oldSlave) {
-      LOG.error("equation managers' stack violated");
-    }
-    slave.solveInequations();
-    myEquationManagersStack.peek().putAllEquations(slave);
-    myFullyCheckedNodes.add(node);
   }
 
   private void addOurListener(SModelDescriptor sm) {
@@ -351,12 +396,15 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
     return iErrorReporter;
   }
 
-  /*package*/ void pushNodeBeingChecked(SNode node) {
+  /*package*/ void pushNodeBeingChecked(SNode node, String nodeModel, String nodeId) {
     myNodesBeingChecked.push(node);
+    myNodesToCheckStatementsIdMap.put(node, new Pair<String, String>(nodeModel, nodeId));
   }
 
   /*package*/ SNode popNodeBeingChecked() {
-    return myNodesBeingChecked.pop();
+    SNode node = myNodesBeingChecked.pop();
+    myNodesToCheckStatementsIdMap.remove(node);
+    return node;
   }
 
   public boolean isNodeBeingChecked(SNode node) {
@@ -447,25 +495,25 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
     return result;
   }
 
-   private void doInvalidate() {
-      Set<SNode> invalidatedNodes = new HashSet<SNode>();
-      Set<SNode> newNodesToInvalidate = new HashSet<SNode>();
-      Set<SNode> currentNodesToInvalidate = myCurrentNodesToInvalidate;
-      while (!currentNodesToInvalidate.isEmpty()) {
-        for (SNode nodeToInvalidate : currentNodesToInvalidate) {
-          if (invalidatedNodes.contains(nodeToInvalidate)) continue;
-          invalidateNode(nodeToInvalidate);
-          invalidatedNodes.add(nodeToInvalidate);
-          WeakSet<SNode> nodes = myNodesToDependentNodes.get(nodeToInvalidate);
-          if (nodes != null) {
-            newNodesToInvalidate.addAll(nodes);
-          }
+  private void doInvalidate() {
+    Set<SNode> invalidatedNodes = new HashSet<SNode>();
+    Set<SNode> newNodesToInvalidate = new HashSet<SNode>();
+    Set<SNode> currentNodesToInvalidate = myCurrentNodesToInvalidate;
+    while (!currentNodesToInvalidate.isEmpty()) {
+      for (SNode nodeToInvalidate : currentNodesToInvalidate) {
+        if (invalidatedNodes.contains(nodeToInvalidate)) continue;
+        invalidateNode(nodeToInvalidate);
+        invalidatedNodes.add(nodeToInvalidate);
+        WeakSet<SNode> nodes = myNodesToDependentNodes.get(nodeToInvalidate);
+        if (nodes != null) {
+          newNodesToInvalidate.addAll(nodes);
         }
-        currentNodesToInvalidate = newNodesToInvalidate;
-        newNodesToInvalidate = new HashSet<SNode>();
       }
-      myCurrentNodesToInvalidate.clear();
+      currentNodesToInvalidate = newNodesToInvalidate;
+      newNodesToInvalidate = new HashSet<SNode>();
     }
+    myCurrentNodesToInvalidate.clear();
+  }
 
 
   private class MyModelListener implements SModelCommandListener {
@@ -509,30 +557,40 @@ public class NodeTypesComponent_new implements INodeTypesComponent, IGutterMessa
     }
 
     public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
-      reportAccess();
-      myAcessedNodes.add(node);
-      myAcessedNodes.add(child);
+      synchronized(ACCESS_LOCK) {
+        reportAccess();
+        myAcessedNodes.add(node);
+        myAcessedNodes.add(child);
+      }
     }
 
     public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
-      reportAccess();
-      myAcessedNodes.add(node);
+      synchronized(ACCESS_LOCK) {
+        reportAccess();
+        myAcessedNodes.add(node);
+      }
     }
 
     public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
-      reportAccess();
-      myAcessedNodes.add(node);
-      myAcessedNodes.add(referent);
+      synchronized(ACCESS_LOCK) {
+        reportAccess();
+        myAcessedNodes.add(node);
+        myAcessedNodes.add(referent);
+      }
     }
 
     public void nodeUnclassifiedReadAccess(SNode node) {
-      reportAccess();
-      myAcessedNodes.add(node);
+      synchronized(ACCESS_LOCK) {
+        reportAccess();
+        myAcessedNodes.add(node);
+      }
     }
 
     public void clear() {
-      reportAccess();
-      myAcessedNodes.clear();
+      synchronized(ACCESS_LOCK) {
+        reportAccess();
+        myAcessedNodes.clear();
+      }
     }
   }
 }

@@ -14,16 +14,20 @@ public class typeOf_ClosureParameterReference_InferenceRule implements Inference
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "closureParameter", false));
+    TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "closureParameter", false), "jetbrains.mps.baseLanguage.helgins", "1177075598782");
     TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "closureParameter", false)), argument, "jetbrains.mps.baseLanguage.helgins", "1177075609741");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClosureParameterReference";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

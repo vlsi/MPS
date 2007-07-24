@@ -17,16 +17,21 @@ public class supertypesOf_SNodeListType_ListType_SubtypingRule extends Subtyping
     SNode elementConcept = SLinkOperations.getTarget(type, "elementConcept", false);
     return new QuotationClass_60().createNode(elementConcept);
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean isSupertyping() {
     return false;
   }
+
   public boolean isWeak() {
     return false;
   }
+
 }

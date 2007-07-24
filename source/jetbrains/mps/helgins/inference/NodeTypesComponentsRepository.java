@@ -2,7 +2,6 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.component.Dependency;
 
 import java.util.Set;
@@ -16,11 +15,11 @@ import java.util.HashSet;
  * To change this template use File | Settings | File Templates.
  */
 public class NodeTypesComponentsRepository {
-  private Set<INodeTypesComponent> myNodeTypesComponents = new HashSet<INodeTypesComponent>();
+  private Set<NodeTypesComponent_new> myNodeTypesComponents = new HashSet<NodeTypesComponent_new>();
   private TypeChecker myTypeChecker;
   private SModelRepositoryListener myModelRepositoryListener = new SModelRepositoryListener() {
     public void modelRemoved(SModelDescriptor modelDescriptor) {
-      for (INodeTypesComponent nodeTypesComponent : new HashSet<INodeTypesComponent>(myNodeTypesComponents)) {
+      for (NodeTypesComponent_new nodeTypesComponent : new HashSet<NodeTypesComponent_new>(myNodeTypesComponents)) {
         if (nodeTypesComponent.getNode().getModel().getUID().equals(modelDescriptor.getModelUID())) {
           nodeTypesComponent.clearListeners();
           myNodeTypesComponents.remove(nodeTypesComponent);
@@ -41,10 +40,10 @@ public class NodeTypesComponentsRepository {
     return ApplicationComponents.getInstance().getComponent(NodeTypesComponentsRepository.class);
   }
 
-  public INodeTypesComponent getNodeTypesComponent(SNode node) {
+  public NodeTypesComponent_new getNodeTypesComponent(SNode node) {
     if (node == null) return null;
     SNode root = node.getContainingRoot();
-    for (INodeTypesComponent nodeTypesComponent : myNodeTypesComponents) {
+    for (NodeTypesComponent_new nodeTypesComponent : myNodeTypesComponents) {
       if (nodeTypesComponent.getNode() == root) {
         return nodeTypesComponent;
       }
@@ -52,10 +51,10 @@ public class NodeTypesComponentsRepository {
     return null;
   }
 
-  public INodeTypesComponent createNodeTypesComponent(SNode node) {
+  public NodeTypesComponent_new createNodeTypesComponent(SNode node) {
     if (node == null) return null;
     SNode root = node.getContainingRoot();
-    INodeTypesComponent nodeTypesComponent = getNodeTypesComponent(root);
+    NodeTypesComponent_new nodeTypesComponent = getNodeTypesComponent(root);
     if (nodeTypesComponent != null) {
       return nodeTypesComponent;
     }

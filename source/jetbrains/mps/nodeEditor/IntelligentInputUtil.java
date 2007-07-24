@@ -8,10 +8,9 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.inference.INodeTypesComponent;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
+import jetbrains.mps.helgins.inference.NodeTypesComponent_new;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -65,7 +64,7 @@ public class IntelligentInputUtil {
     //warning If you aren't Cyril
     // , DO NOT edit this code
     SNode nodeToCheck = cellForNewNode.getSNode();
-    INodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
+    NodeTypesComponent_new nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
             createNodeTypesComponent(nodeToCheck
                     .getContainingRoot());
     TypeChecker.getInstance().setCurrentTypesComponent(nodeTypesComponent);

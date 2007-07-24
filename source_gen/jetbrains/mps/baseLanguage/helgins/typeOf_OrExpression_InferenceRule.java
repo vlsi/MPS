@@ -18,13 +18,17 @@ public class typeOf_OrExpression_InferenceRule implements InferenceRule_Runtime 
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "rightExpression", true)), new QuotationClass_42().createNode(), SLinkOperations.getTarget(argument, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176901371532");
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_43().createNode(), argument, "jetbrains.mps.baseLanguage.helgins", "1176901392839");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.OrExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

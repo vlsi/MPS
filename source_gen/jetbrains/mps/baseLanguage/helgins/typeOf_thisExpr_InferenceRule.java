@@ -22,13 +22,17 @@ public class typeOf_thisExpr_InferenceRule implements InferenceRule_Runtime {
       TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_18().createNode(SNodeOperations.getAncestor(argument, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false)), argument, "jetbrains.mps.baseLanguage.helgins", "1182985714033");
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ThisExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

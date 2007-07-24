@@ -19,13 +19,17 @@ public class typeOf_andExpression_InferenceRule implements InferenceRule_Runtime
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ae, "rightExpression", true)), new QuotationClass_1().createNode(), SLinkOperations.getTarget(ae, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1175495418306");
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(), ae, "jetbrains.mps.baseLanguage.helgins", "1175496779853");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.AndExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

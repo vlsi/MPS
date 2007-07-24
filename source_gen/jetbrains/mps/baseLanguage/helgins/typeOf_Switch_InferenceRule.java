@@ -19,13 +19,17 @@ public class typeOf_Switch_InferenceRule implements InferenceRule_Runtime {
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(switchCase, "expression", true)), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(switchSt, "expression", true)), SLinkOperations.getTarget(switchCase, "expression", true), null, "jetbrains.mps.baseLanguage.helgins", "1175520590975");
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.SwitchStatement";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

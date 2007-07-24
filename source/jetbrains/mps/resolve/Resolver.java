@@ -3,10 +3,7 @@ package jetbrains.mps.resolve;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.IStatus;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -22,7 +19,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
-import jetbrains.mps.helgins.inference.INodeTypesComponent;
+import jetbrains.mps.helgins.inference.NodeTypesComponent_new;
 import jetbrains.mps.logging.Logger;
 
 import java.util.*;
@@ -102,7 +99,7 @@ public class Resolver {
 
     SNode sNode = referenceNode.getParent();
 
-    INodeTypesComponent nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
+    NodeTypesComponent_new nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
             createNodeTypesComponent(sNode.getContainingRoot());
     TypeChecker.getInstance().setCurrentTypesComponent(nodeTypesComponent);
     nodeTypesComponent.computeTypesForNode(sNode); //todo dirty hack

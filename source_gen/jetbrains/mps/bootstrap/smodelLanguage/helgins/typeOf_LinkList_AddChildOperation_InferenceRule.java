@@ -17,24 +17,28 @@ public class typeOf_LinkList_AddChildOperation_InferenceRule implements Inferenc
     if(RulesUtil.checkAppliedTo_LinkListAccess_aggregation(argument)) {
       SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
       if((parameter != null)) {
-        SNode parmType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(parameter);
+        SNode parmType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287491917");
         if(!((parmType != null))) {
-          TypeChecker.getInstance().reportTypeError(parameter, "no type");
+          TypeChecker.getInstance().reportTypeError(parameter, "no type", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287491919");
         }
         SNode expectedType = RulesUtil.get_inputNodeType(argument);
         if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parmType, expectedType))) {
-          TypeChecker.getInstance().reportTypeError(parameter, "incompatible type\nexpected: " + expectedType + "\nwas: " + parmType);
+          TypeChecker.getInstance().reportTypeError(parameter, "incompatible type\nexpected: " + expectedType + "\nwas: " + parmType, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287491930");
         }
       }
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddChildOperation";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return true;
   }
+
 }

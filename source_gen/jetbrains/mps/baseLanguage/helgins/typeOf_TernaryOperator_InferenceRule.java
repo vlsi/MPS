@@ -18,13 +18,17 @@ public class typeOf_TernaryOperator_InferenceRule implements InferenceRule_Runti
     TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "ifTrue", true)), argument, null, "jetbrains.mps.baseLanguage.helgins", "1175522910263");
     TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "ifFalse", true)), argument, null, "jetbrains.mps.baseLanguage.helgins", "1175522930326");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

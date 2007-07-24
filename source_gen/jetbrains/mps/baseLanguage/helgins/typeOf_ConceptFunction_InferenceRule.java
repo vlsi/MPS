@@ -21,7 +21,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
 
   public void applyRule(SNode argument) {
     // generic check
-    TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "body", true));
+    TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "body", true), "jetbrains.mps.baseLanguage.helgins", "1178655253666");
     // =============
     SNode expectedRetType = ConceptFunction_Behavior.call_getExpectedReturnType_1178571276073(argument);
     boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, new QuotationClass_76().createNode()));
@@ -96,13 +96,17 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
       }
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ConceptFunction";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

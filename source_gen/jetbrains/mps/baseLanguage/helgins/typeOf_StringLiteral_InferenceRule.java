@@ -15,13 +15,17 @@ public class typeOf_StringLiteral_InferenceRule implements InferenceRule_Runtime
   public void applyRule(SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_23().createNode(), argument, "jetbrains.mps.baseLanguage.helgins", "1176895947771");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.StringLiteral";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

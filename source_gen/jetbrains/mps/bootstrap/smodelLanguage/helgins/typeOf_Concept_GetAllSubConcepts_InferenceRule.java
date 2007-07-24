@@ -17,18 +17,22 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule implements Inference
 
   public void applyRule(SNode argument) {
     SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.getParent(argument, null, false, false), "leftExpression", true);
-    SNode leftConceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false);
+    SNode leftConceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181953099706"), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false);
     if(leftConceptType != null) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_70().createNode(leftConceptType), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_70().createNode(leftConceptType), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181953212909");
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_GetAllSubConcepts";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

@@ -17,13 +17,17 @@ public class typeOf_notEqualsExpression_InferenceRule implements InferenceRule_R
     TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true)), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "rightExpression", true)), argument, null, "jetbrains.mps.baseLanguage.helgins", "1175606237774");
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_14().createNode(), argument, "jetbrains.mps.baseLanguage.helgins", "1175606302946");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.NotEqualsExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

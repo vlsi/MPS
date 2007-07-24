@@ -16,13 +16,17 @@ public class typeOf_WhileStatement_InferenceRule implements InferenceRule_Runtim
   public void applyRule(SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true)), new QuotationClass_22().createNode(), SLinkOperations.getTarget(argument, "condition", true), null, "jetbrains.mps.baseLanguage.helgins", "1176895826326");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.WhileStatement";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

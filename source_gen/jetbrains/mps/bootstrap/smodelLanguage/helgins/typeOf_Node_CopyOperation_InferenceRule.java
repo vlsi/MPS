@@ -14,19 +14,23 @@ public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Ru
 
   public void applyRule(SNode argument) {
     if(RulesUtil.checkAppliedCorrectly_generic(argument)) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.typeOf_leftExpression(argument), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.typeOf_leftExpression(argument), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492218");
     } else
     {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_54().createNode(), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_54().createNode(), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492226");
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return true;
   }
+
 }

@@ -15,13 +15,17 @@ public class typeOf_BooleanConst_InferenceRule implements InferenceRule_Runtime 
   public void applyRule(SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_6().createNode(), argument, "jetbrains.mps.baseLanguage.helgins", "1175598801792");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.BooleanConstant";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

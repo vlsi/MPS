@@ -23,23 +23,27 @@ public class typeof_SLinkAccess_InferenceRule implements InferenceRule_Runtime {
     if(RulesUtil.checkAppliedCorrectly_generic(argument) && (SLinkOperations.getTarget(argument, "link", false) != null)) {
       SNode inputNodeConcept = RulesUtil.get_inputNodeConcept(argument);
       if(!((inputNodeConcept != null))) {
-        TypeChecker.getInstance().reportTypeError(argument, "couldn't define node concept from left expression");
+        TypeChecker.getInstance().reportTypeError(argument, "couldn't define node concept from left expression", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178557049269");
       }
       List<LinkDeclaration> declaredLinks = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
       SNode linkDecl = SLinkOperations.getTarget(argument, "link", false);
       if(!(declaredLinks.contains(((LinkDeclaration)SNodeOperations.getAdapter(linkDecl))))) {
-        TypeChecker.getInstance().reportTypeError(argument, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here");
+        TypeChecker.getInstance().reportTypeError(argument, "access to link '" + SPropertyOperations.getString(linkDecl, "role") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178557516060");
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_11().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "link", false), "target", false)), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_11().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "link", false), "target", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178557816268");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return true;
   }
+
 }
