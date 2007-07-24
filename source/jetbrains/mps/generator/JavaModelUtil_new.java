@@ -327,7 +327,7 @@ public class JavaModelUtil_new {
     }
     Iterator iterator = statementList.statements();
     while (iterator.hasNext()) {
-      Statement statement = (Statement) iterator.next();
+      Object statement = iterator.next();
       if (statement == beforeStatement) {
         break;
       }
