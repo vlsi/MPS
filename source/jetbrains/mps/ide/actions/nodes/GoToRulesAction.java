@@ -5,7 +5,6 @@ import jetbrains.mps.bootstrap.helgins.structure.AbstractRule;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.bootstrap.helgins.structure.PatternCondition;
 import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.helgins.structure.*;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.action.ActionContext;

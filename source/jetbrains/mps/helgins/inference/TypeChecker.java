@@ -3,7 +3,6 @@ package jetbrains.mps.helgins.inference;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.helgins.runtime.RuntimeSupport;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
-import jetbrains.mps.helgins.structure.*;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.Status;
 import jetbrains.mps.ide.command.CommandProcessor;
