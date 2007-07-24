@@ -22,56 +22,70 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082979388816");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_HeaderRow(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082979388814");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_Separator(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083066231719");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083066231721");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstraintCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083066231722");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083066231720");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082979388797");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
   }
+
   private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
   }
+
   private static void setupLabel_Separator(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstraintCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
     editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
   }
 
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createNodeBox(context, node);
   }
+
   public EditorCell createHeaderRow(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     ConstrainedDataTypeDeclaration_Editor.setupBasic_HeaderRow(editorCell, node, context);
@@ -82,6 +96,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createNameCell(context, node));
     return editorCell;
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     ConstrainedDataTypeDeclaration_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -92,6 +107,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstraintCell(context, node));
     return editorCell;
   }
+
   public EditorCell createNodeBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     ConstrainedDataTypeDeclaration_Editor.setupBasic_NodeBox(editorCell, node, context);
@@ -103,6 +119,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell(context, node));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstrainedDataTypeDeclaration_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -110,6 +127,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createSeparator(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstrainedDataTypeDeclaration_Editor.setupBasic_Separator(editorCell, node, context);
@@ -117,6 +135,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstrainedDataTypeDeclaration_Editor.setupBasic_ConstantCell1(editorCell, node, context);
@@ -124,6 +143,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -135,6 +155,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createNameCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
@@ -151,6 +172,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
   public EditorCell createConstraintCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -162,6 +184,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createConstraintCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("constraint");
@@ -178,4 +201,5 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

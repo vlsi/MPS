@@ -23,24 +23,30 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
+
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727076103");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105726994976");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
   }
+
   private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
   }
 
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createNodeBox(context, node);
   }
+
   public EditorCell createNodeBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     IntegerConceptPropertyDeclaration_Editor.setupBasic_NodeBox(editorCell, node, context);
@@ -51,6 +57,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createNameCell(context, node));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     IntegerConceptPropertyDeclaration_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -58,6 +65,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -69,6 +77,7 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createNameCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
@@ -85,4 +94,5 @@ public class IntegerConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     } else
     return cellWithRole;
   }
+
 }

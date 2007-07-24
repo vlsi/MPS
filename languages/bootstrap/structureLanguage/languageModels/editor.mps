@@ -4,6 +4,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="29" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
@@ -377,6 +378,118 @@
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1146605733068" />
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1146605736382">
                     <link role="link" targetNodeId="1.1071599698500" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1185271029574">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_PropertyValues" id="1185271033481">
+            <node role="valuesFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_PropertyValues_GetValues" id="1185271033482">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185271033483">
+                <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185271154474">
+                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185271154475">
+                    <property name="name" value="result" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1185271154476">
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185271156728">
+                        <link role="classifier" extResolveInfo="6.[Classifier]String" />
+                      </node>
+                    </node>
+                    <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1185271161745">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1185271163966">
+                        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185271166327">
+                          <link role="classifier" extResolveInfo="6.[Classifier]String" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1185271168704">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1185271168705">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1185271239813">
+                      <node role="iterable" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1185271257648">
+                        <link role="baseMethodDeclaration" extResolveInfo="29.static method ([Classifier]Cardinality).([StaticMethodDeclaration]getConstants() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [Cardinality]&gt;]))" />
+                        <link role="classConcept" extResolveInfo="29.[Classifier]Cardinality" />
+                      </node>
+                      <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185271239815">
+                        <property name="name" value="c" />
+                        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185271250208">
+                          <link role="classifier" extResolveInfo="29.[Classifier]Cardinality" />
+                        </node>
+                      </node>
+                      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185271239817">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185271259368">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1185271259792">
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185271259369">
+                              <link role="variableDeclaration" targetNodeId="1185271154475" resolveInfo="result" />
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1185271261121">
+                              <node role="argument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1185271265235">
+                                <link role="baseMethodDeclaration" extResolveInfo="29.method ([Classifier]Cardinality).([InstanceMethodDeclaration]getValueAsString() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                                <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185271263154">
+                                  <link role="variableDeclaration" targetNodeId="1185271239815" resolveInfo="c" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1185271180542">
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Enum" id="1185271181529">
+                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference" id="1185271181530">
+                        <link role="enumMember" targetNodeId="1.1084199179705" />
+                      </node>
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1185271172428">
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1185271178322">
+                        <link role="property" targetNodeId="1.1071599937831" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1185271172177" />
+                    </node>
+                  </node>
+                  <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.BlockStatement" id="1185271224138">
+                    <node role="statements" type="jetbrains.mps.baseLanguage.StatementList" id="1185271224139">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185271271424">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1185271271957">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185271271425">
+                            <link role="variableDeclaration" targetNodeId="1185271154475" resolveInfo="result" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1185271273286">
+                            <node role="argument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1185271281369">
+                              <link role="baseMethodDeclaration" extResolveInfo="29.method ([Classifier]Cardinality).([InstanceMethodDeclaration]getValueAsString() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                              <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1185271276726">
+                                <link role="classifier" extResolveInfo="29.[Classifier]Cardinality" />
+                                <link role="variableDeclaration" extResolveInfo="29.static field ([Classifier]Cardinality).([StaticFieldDeclaration]_0_1 : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Cardinality]))" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185271283324">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1185271283701">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185271283325">
+                            <link role="variableDeclaration" targetNodeId="1185271154475" resolveInfo="result" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1185271284843">
+                            <node role="argument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1185271293646">
+                              <link role="baseMethodDeclaration" extResolveInfo="29.method ([Classifier]Cardinality).([InstanceMethodDeclaration]getValueAsString() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                              <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1185271287876">
+                                <link role="classifier" extResolveInfo="29.[Classifier]Cardinality" />
+                                <link role="variableDeclaration" extResolveInfo="29.static field ([Classifier]Cardinality).([StaticFieldDeclaration]_1 : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Cardinality]))" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1185271295867">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185271297463">
+                    <link role="variableDeclaration" targetNodeId="1185271154475" resolveInfo="result" />
                   </node>
                 </node>
               </node>
