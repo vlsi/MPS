@@ -433,7 +433,7 @@ public class EquationManager {
     myTypeChecker.reportTypeError(nodeToCheck, errorReporter);
   }
 
-  public void clear() {
+  public void clear() {    
     mySubtypesToSupertypesMap.clear();
     mySupertypesToSubtypesMap.clear();
     mySubtypesToSupertypesMapStrong.clear();
