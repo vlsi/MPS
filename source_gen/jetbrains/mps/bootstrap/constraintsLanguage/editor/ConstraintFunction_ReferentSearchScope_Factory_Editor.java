@@ -25,158 +25,199 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.putUserObject(EditorCell.ATTRACTS_FOCUS_POLICY, EditorCell.ATTRACTS_FOCUS);
   }
+
   private static void setupBasic_BodyCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790978198");
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(true);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790978196");
     editorCell.setDrawBorder(false);
-    editorCell.setDrawBrackets(true);
   }
+
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989566");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989567");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989568");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
+
   private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989569");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989570");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
+
   private static void setupBasic_ConstantCell6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989573");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989574");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
+
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989572");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell8(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989576");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell9(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989577");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
+
   private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989575");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell10(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989579");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell11(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989581");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
+
   private static void setupBasic_ConstantCell12(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989582");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
+
   private static void setupBasic_ColumnCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989580");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_RowCell3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989578");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell13(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989584");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell14(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989585");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
+
   private static void setupBasic_RowCell4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989583");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ColumnCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989571");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1158790989565");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(Color.blue);
   }
+
   private static void setupLabel_BodyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(Color.blue);
     editorCell.getTextLine().setTextBackgroundColor(Color.lightGray);
   }
+
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell5(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell6(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell7(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell8(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell9(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell10(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell11(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell12(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell13(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell14(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createInspectedCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -187,6 +228,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.addEditorCell(this.createBodyCell(context, node));
     return editorCell;
   }
+
   public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_RowCell1(editorCell, node, context);
@@ -197,6 +239,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.addEditorCell(this.createConstantCell7(context, node, "context"));
     return editorCell;
   }
+
   public EditorCell createRowCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_RowCell2(editorCell, node, context);
@@ -207,6 +250,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.addEditorCell(this.createConstantCell9(context, node, "context"));
     return editorCell;
   }
+
   public EditorCell createColumnCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ColumnCell2(editorCell, node, context);
@@ -217,6 +261,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.addEditorCell(this.createConstantCell12(context, node, "(optional - may not exist yet)"));
     return editorCell;
   }
+
   public EditorCell createRowCell3(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_RowCell3(editorCell, node, context);
@@ -227,6 +272,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.addEditorCell(this.createColumnCell2(context, node));
     return editorCell;
   }
+
   public EditorCell createRowCell4(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_RowCell4(editorCell, node, context);
@@ -237,6 +283,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.addEditorCell(this.createConstantCell14(context, node, "context (jetbrains.mps.smodel.IScope)"));
     return editorCell;
   }
+
   public EditorCell createColumnCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ColumnCell1(editorCell, node, context);
@@ -249,6 +296,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.addEditorCell(this.createRowCell4(context, node));
     return editorCell;
   }
+
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ColumnCell(editorCell, node, context);
@@ -263,6 +311,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.addEditorCell(this.createColumnCell1(context, node));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -270,6 +319,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell1(editorCell, node, context);
@@ -277,6 +327,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell2(editorCell, node, context);
@@ -284,6 +335,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell3(editorCell, node, context);
@@ -291,6 +343,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell4(editorCell, node, context);
@@ -298,6 +351,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell5(editorCell, node, context);
@@ -305,6 +359,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell6(editorCell, node, context);
@@ -312,6 +367,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell7(editorCell, node, context);
@@ -319,6 +375,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell8(editorCell, node, context);
@@ -326,6 +383,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell9(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell9(editorCell, node, context);
@@ -333,6 +391,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell10(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell10(editorCell, node, context);
@@ -340,6 +399,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell11(editorCell, node, context);
@@ -347,6 +407,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell12(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell12(editorCell, node, context);
@@ -354,6 +415,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell13(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell13(editorCell, node, context);
@@ -361,6 +423,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell14(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ConstraintFunction_ReferentSearchScope_Factory_Editor.setupBasic_ConstantCell14(editorCell, node, context);
@@ -368,6 +431,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createBodyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -379,6 +443,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createBodyCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
@@ -395,4 +460,5 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Editor extends Defau
     } else
     return cellWithRole;
   }
+
 }

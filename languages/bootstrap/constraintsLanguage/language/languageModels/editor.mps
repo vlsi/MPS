@@ -546,7 +546,6 @@
     <link role="conceptDeclaration" targetNodeId="1.1148684180339" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158790978196">
       <property name="drawBorder" value="false" />
-      <property name="drawBrackets" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1158790978197">
         <property name="drawBorder" value="false" />
         <property name="text" value="&gt;" />
@@ -663,7 +662,6 @@
     <link role="conceptDeclaration" targetNodeId="1.1147467790433" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158953534815">
       <property name="drawBorder" value="false" />
-      <property name="drawBrackets" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1158953534816">
         <property name="drawBorder" value="false" />
         <property name="text" value="&gt;" />
@@ -735,7 +733,6 @@
     <link role="conceptDeclaration" targetNodeId="1.1152959968041" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158953732120">
       <property name="drawBorder" value="false" />
-      <property name="drawBrackets" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1158953732121">
         <property name="drawBorder" value="false" />
         <property name="text" value="&gt;" />
@@ -820,7 +817,6 @@
     <link role="conceptDeclaration" targetNodeId="1.1159205453623" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1159205614331">
       <property name="drawBorder" value="false" />
-      <property name="drawBrackets" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1159205614332">
         <property name="drawBorder" value="false" />
         <property name="text" value="&gt;" />
