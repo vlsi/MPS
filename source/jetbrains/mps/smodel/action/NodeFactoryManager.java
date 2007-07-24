@@ -8,18 +8,17 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDecla
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.project.AuxilaryRuntimeModel;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.project.AuxilaryRuntimeModel;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -71,7 +70,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     if (newNode == null) return null;
     BehaviorManager.getInstance().initNode(newNode);
     if (sampleNode != null) {
-      sampleNode = SNodeCopyUtil.cloneSNode(sampleNode, model, false);
+      sampleNode = CopyUtil.copy(sampleNode, model);
     }
     setupNode((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
     SModelUtil_new.createNodeStructure((ConceptDeclaration) nodeConcept, newNode, sampleNode, enclosingNode, model, scope, true);
