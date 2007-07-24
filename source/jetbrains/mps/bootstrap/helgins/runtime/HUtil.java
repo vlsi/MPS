@@ -2,8 +2,7 @@ package jetbrains.mps.bootstrap.helgins.runtime;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.refactoring.CopyUtil;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.project.GlobalScope;
 

@@ -1,4 +1,4 @@
-package jetbrains.mps.refactoring;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;

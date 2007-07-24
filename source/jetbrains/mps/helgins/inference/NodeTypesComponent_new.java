@@ -10,7 +10,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
-import jetbrains.mps.refactoring.CopyUtil;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;

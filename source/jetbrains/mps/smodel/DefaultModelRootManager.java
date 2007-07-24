@@ -7,14 +7,11 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vcs.Merger;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.refactoring.CopyUtil;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.SwingUtilities;
 import java.io.*;
 import java.util.HashSet;
 import java.util.Set;

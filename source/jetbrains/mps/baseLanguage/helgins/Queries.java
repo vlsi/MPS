@@ -6,11 +6,9 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.annotation.Hack;
-import jetbrains.mps.typesystem.TSStatus;
-import jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.refactoring.CopyUtil;
+import jetbrains.mps.smodel.CopyUtil;
 
 import java.util.Set;
 import java.util.List;
