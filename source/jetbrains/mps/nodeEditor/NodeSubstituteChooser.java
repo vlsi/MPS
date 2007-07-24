@@ -135,7 +135,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         }
       });
     } catch (Exception e) {
-      LOG.error(e);
+      LOG.error(e, e);
     }
     mySubstituteActions = matchingActions;
     if (mySubstituteActions.size() == 0) {
@@ -160,7 +160,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         textLength = Math.max(textLength, getTextLength(item, pattern));
         descriptionLength = Math.max(descriptionLength, getDescriptionLength(item, pattern));
       } catch(Throwable t) {
-        LOG.error(t);
+        LOG.error(t, t);
       }
     }
 
@@ -177,7 +177,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       text = action.getMatchingText(pattern);
       descriptionText = action.getDescriptionText(pattern);
     } catch(Throwable t) {
-      LOG.error(t);
+      LOG.error(t, t);
     }
 
     if (descriptionText == null) {
