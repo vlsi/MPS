@@ -523,26 +523,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1185240072557">
-              <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1185240072558">
-                <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185240087879">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1185240089756">
-                    <node role="rValue" type="jetbrains.mps.baseLanguage.StringLiteral" id="1185240091446">
-                      <property name="value" value="NULL" />
-                    </node>
-                    <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185240087880">
-                      <link role="variableDeclaration" targetNodeId="1181220452959" resolveInfo="typeName" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1185240078453">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1185240080362" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185240076764">
-                  <link role="variableDeclaration" targetNodeId="1181220452959" resolveInfo="typeName" />
-                </node>
-              </node>
-            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1181220485421">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1181220485422">
                 <property name="name" value="indexOfLT" />
@@ -1011,7 +991,9 @@
             </node>
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178180422267">
-            <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1178180422268" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1185240479888">
+              <property name="value" value="?no classifier?" />
+            </node>
           </node>
         </node>
       </node>
