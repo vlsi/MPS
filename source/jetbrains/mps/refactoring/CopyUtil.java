@@ -9,36 +9,36 @@ import java.util.List;
 import java.util.Map;
 
 
-public class CopyUtil  {
-  public static<SN extends SNode> List<SN> copy(List<SN> nodes, SModel targetModel) {
+public class CopyUtil {
+  public static List<SNode> copy(List<SNode> nodes, SModel targetModel) {
     return copy(nodes, targetModel, new HashMap<SNode, SNode>());
   }
 
-  public static<BA extends BaseAdapter> BA copy(BA node, SModel targetModel) {
+  public static <BA extends BaseAdapter> BA copy(BA node, SModel targetModel) {
     return (BA) copy(node.getNode(), targetModel, new HashMap<SNode, SNode>()).getAdapter();
   }
 
-  public static<SN extends SNode> SN copy(SN node, SModel targetModel) {
+  public static SNode copy(SNode node, SModel targetModel) {
     return copy(node, targetModel, true);
   }
 
-  public static<SN extends SNode> SN copy(SN node, SModel targetModel, boolean copyAttributes) {
+  public static SNode copy(SNode node, SModel targetModel, boolean copyAttributes) {
     return copy(node, targetModel, new HashMap<SNode, SNode>(), copyAttributes);
   }
 
-  public static <SN extends SNode> List<SN> copy(List<SN> nodes, SModel targetModel, Map<SNode, SNode> mapping) {
-    List<SN> result = (List<SN>) clone(nodes, targetModel, mapping);
+  public static List<SNode> copy(List<SNode> nodes, SModel targetModel, Map<SNode, SNode> mapping) {
+    List<SNode> result = clone(nodes, targetModel, mapping);
     addReferences(nodes, mapping, true);
     return result;
   }
 
-  public static <SN extends SNode> SN copy(SN node, SModel targetModel, Map<SNode, SNode> mapping) {
+  public static SNode copy(SNode node, SModel targetModel, Map<SNode, SNode> mapping) {
     return copy(node, targetModel, mapping, true);
   }
 
-  public static <SN extends SNode> SN copy(SN node, SModel targetModel, Map<SNode, SNode> mapping, boolean copyAttributes) {
-    SN result = (SN) clone(node, targetModel, mapping, copyAttributes);
-    List<SN> nodes = new ArrayList<SN>();
+  public static SNode copy(SNode node, SModel targetModel, Map<SNode, SNode> mapping, boolean copyAttributes) {
+    SNode result = clone(node, targetModel, mapping, copyAttributes);
+    List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(node);
     addReferences(nodes, mapping, copyAttributes);
     return result;
