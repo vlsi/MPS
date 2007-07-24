@@ -1243,7 +1243,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       newSelectedCell = myRootCell.findNearestCell(mouseEvent.getX(), mouseEvent.getY(), true);
     }
     if (newSelectedCell != null && newSelectedCell.isSelectable()) {
-      changeSelection(newSelectedCell);
+      changeSelection(newSelectedCell, true, false);
       mySelectedCell.processMousePressed(mouseEvent);
       revalidateAndRepaint(false);
     }
@@ -1289,6 +1289,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX) {
+    changeSelection(newSelectedCell, resetLastCaretX, true);
+  }
+
+  void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX, boolean scroll) {
     clearSelectionStack();
     Stack<EditorCell_Collection> foldedParents = new Stack<EditorCell_Collection>();
     if (newSelectedCell != null) {
@@ -1304,11 +1308,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
       if (toRelayout) relayout();
     }
-    setSelectionDontClearStack(newSelectedCell, resetLastCaretX);
+    setSelectionDontClearStack(newSelectedCell, resetLastCaretX, scroll);
   }
 
   @UseCarefully
   public void setSelectionDontClearStack(EditorCell newSelectedCell, boolean resetLastCaretX) {
+    setSelectionDontClearStack(newSelectedCell, resetLastCaretX, true);
+  }
+
+  @UseCarefully
+  public void setSelectionDontClearStack(EditorCell newSelectedCell, boolean resetLastCaretX, boolean scrollToCell) {
     if (resetLastCaretX) {
       resetLastCaretX();
     }
@@ -1329,7 +1338,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     if (mySelectedCell != null) {
       EditorCell cell = getDeepestSelectedCell();
-      scrollToCell(cell);
+      if (scrollToCell) {
+        scrollToCell(cell);
+      }
     }
     repaint();
 
