@@ -20,16 +20,21 @@ public class ThisExpression_classConcept_ReferentConstraint implements IModelCon
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.ThisExpression", "classConcept");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return true;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return new SimpleSearchScope(SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false));
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "<no description>";
   }
+
 }

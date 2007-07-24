@@ -23,13 +23,16 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint implemen
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.ParameterReference", "variableDeclaration", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.ParameterReference", "variableDeclaration");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode enclosingMethod = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true, false);
     return enclosingMethod != null;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     List<SNode> methods = SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true);
     List<SNode> params = ListOperations.createList(new SNode[]{});
@@ -38,7 +41,9 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint implemen
     }
     return new SimpleSearchScope(params);
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "parameters declared in enclosing method";
   }
+
 }

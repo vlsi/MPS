@@ -18,10 +18,13 @@ public class Classifier_shortDescription_PropertyConstraint implements IModelCon
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.structure.Classifier", "shortDescription", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.structure.Classifier", "shortDescription");
   }
+
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return NodePresentationUtil.getAliasOrConceptName(node) + " (" + SNodeOperations.getModel(node).getUID() + ")";
   }
+
 }

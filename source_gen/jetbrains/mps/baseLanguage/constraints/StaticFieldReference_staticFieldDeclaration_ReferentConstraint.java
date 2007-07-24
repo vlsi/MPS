@@ -19,16 +19,21 @@ public class StaticFieldReference_staticFieldDeclaration_ReferentConstraint impl
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "variableDeclaration", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "variableDeclaration");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return (SLinkOperations.getTarget(referenceNode, "classifier", false) != null);
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return ReferenceUtil.getFieldScope(SLinkOperations.getTarget(referenceNode, "classifier", false), enclosingNode);
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "static fields from hierarchy of specified class";
   }
+
 }

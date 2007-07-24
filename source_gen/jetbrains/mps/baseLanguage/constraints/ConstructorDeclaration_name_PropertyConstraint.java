@@ -18,9 +18,11 @@ public class ConstructorDeclaration_name_PropertyConstraint implements IModelCon
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "name", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", "name");
   }
+
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     SNode parent = SNodeOperations.getParent(node, null, false, false);
     if(parent != null) {
@@ -28,4 +30,5 @@ public class ConstructorDeclaration_name_PropertyConstraint implements IModelCon
     }
     return "?constructor?";
   }
+
 }

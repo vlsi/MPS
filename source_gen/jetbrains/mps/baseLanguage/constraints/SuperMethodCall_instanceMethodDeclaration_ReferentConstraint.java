@@ -25,19 +25,24 @@ public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint implem
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.SuperMethodCall", "baseMethodDeclaration", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.SuperMethodCall", "baseMethodDeclaration");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode enclosingClass = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
     ISearchScope hierarchyScope = BaseLanguageSearchUtil_new.createSuperClassesScope(((ClassConcept)SNodeOperations.getAdapter(enclosingClass)), IClassifiersSearchScope.INSTANCE_METHOD);
     List methods = BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getMethodsExcludingOverridden(hierarchyScope));
     return new SimpleSearchScope((List<SNode>)methods);
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "methods from hierarchy of super-class of enclosing class";
   }
+
 }

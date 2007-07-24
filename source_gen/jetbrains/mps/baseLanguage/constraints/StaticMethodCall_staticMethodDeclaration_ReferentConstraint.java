@@ -19,16 +19,21 @@ public class StaticMethodCall_staticMethodDeclaration_ReferentConstraint impleme
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "baseMethodDeclaration", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "baseMethodDeclaration");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return (SLinkOperations.getTarget(referenceNode, "classConcept", false) != null);
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return ReferenceUtil.getMethodScope(SLinkOperations.getTarget(referenceNode, "classConcept", false), enclosingNode);
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "static methods from hierarchy of specified class";
   }
+
 }

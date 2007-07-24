@@ -20,18 +20,23 @@ public class ClosureParameterReference_closureParameter_ReferentConstraint imple
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", "closureParameter", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", "closureParameter");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode enclosingClosure = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.Closure", true, false);
     return enclosingClosure != null;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode enclosingClosure = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.Closure", true, false);
     return new SimpleSearchScope(SNodeOperations.getChildren(enclosingClosure));
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "closure-parameters declaring in enclosing closure";
   }
+
 }

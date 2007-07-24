@@ -21,18 +21,23 @@ public class TypeVariableReference_typeVariableDeclaration_ReferentConstraint im
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.TypeVariableReference", "typeVariableDeclaration", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.TypeVariableReference", "typeVariableDeclaration");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode genericDeclaration = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", true, false);
     return genericDeclaration != null;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode genericDeclaration = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", true, false);
     return new SimpleSearchScope(SLinkOperations.getTargets(genericDeclaration, "typeVariableDeclaration", true));
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "type-variables declared in enclosing classifier";
   }
+
 }

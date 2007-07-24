@@ -18,10 +18,13 @@ public class AnonymousClass_name_PropertyConstraint implements IModelConstraints
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodePropertyGetter("jetbrains.mps.baseLanguage.structure.AnonymousClass", "name", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodePropertyGetter("jetbrains.mps.baseLanguage.structure.AnonymousClass", "name");
   }
+
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "classifier", false), "name") + "$anonymous";
   }
+
 }

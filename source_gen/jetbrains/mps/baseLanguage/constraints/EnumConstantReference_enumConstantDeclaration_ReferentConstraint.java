@@ -24,16 +24,21 @@ public class EnumConstantReference_enumConstantDeclaration_ReferentConstraint im
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.EnumConstantReference", "enumConstantDeclaration", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.EnumConstantReference", "enumConstantDeclaration");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return SLinkOperations.getTarget(referenceNode, "enumClass", false) != null;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return BaseLanguageSearchUtil_new.createClassifierHierarchyScope(((EnumClass)SNodeOperations.getAdapter(SLinkOperations.getTarget(referenceNode, "enumClass", false))), ((EnumConstantReference)SNodeOperations.getAdapter(referenceNode)), IClassifiersSearchScope.ENUM_CONSTANT);
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "constants declared in the specified class";
   }
+
 }
