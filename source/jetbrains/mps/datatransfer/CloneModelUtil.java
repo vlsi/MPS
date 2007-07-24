@@ -5,9 +5,6 @@ import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.refactoring.CopyUtil;
 import jetbrains.mps.smodel.*;
 
-import java.util.List;
-import java.util.ArrayList;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -26,7 +23,7 @@ public class CloneModelUtil {
   }
 
   public static SModel cloneModel(SModel model, SModel modelCopy, IScope scope) {
-    for (SNode root : CopyUtil.copy(model.getRoots(), modelCopy, scope)) {
+    for (SNode root : CopyUtil.copy(model.getRoots(), modelCopy)) {
       modelCopy.addRoot(root);
     }
     return modelCopy;
