@@ -13,25 +13,6 @@ import java.util.LinkedList;
 
 public class JavaModelUtil_new {
 
-  public static BooleanConstant createBooleanConstant(SModel semanticModel, boolean b) {
-    BooleanConstant booleanConstant = BooleanConstant.newInstance(semanticModel);
-    booleanConstant.setValue(b);
-    return booleanConstant;
-  }
-
-  public static IntegerConstant createIntConstant(SModel semanticModel, int i) {
-    IntegerConstant integerConstant = IntegerConstant.newInstance(semanticModel);
-    integerConstant.setValue(i);
-    return integerConstant;
-  }
-
-  public static StringLiteral createStringLiteral(SModel model, String text) {
-    StringLiteral stringLiteral = StringLiteral.newInstance(model);
-    stringLiteral.setValue(text);
-    return stringLiteral;
-  }
-  
-  
   public static InstanceMethodDeclaration findMethod(Classifier classifier, String methodName, String[] parmTypes) {
     Iterator<InstanceMethodDeclaration> methods = classifier.methods();
     while (methods.hasNext()) {
@@ -147,34 +128,6 @@ public class JavaModelUtil_new {
     return classifierType;
   }
 
-  public static boolean isOverriddenMethod(ClassConcept classConcept, InstanceMethodDeclaration methodDeclaration) {
-    String[] parmTypes = new String[methodDeclaration.getParametersCount()];
-    int count = 0;
-    Iterator<ParameterDeclaration> iterator = methodDeclaration.parameters();
-    while (iterator.hasNext()) {
-      ParameterDeclaration parm = iterator.next();
-      Type parmType = parm.getType();
-      if (parmType != null) {
-        parmTypes[count] = parmType.getName();
-      }
-      count++;
-    }
-
-    InstanceMethodDeclaration methodInHierarchy = JavaModelUtil_new.findMethod(classConcept, methodDeclaration.getName(), parmTypes);
-    return (methodInHierarchy != methodDeclaration);
-  }
-
-
-  public static Expression getActualArgument(BaseMethodCall method, int index) {
-    Expression arg = null;
-    Iterator<Expression> args = method.actualArguments();
-    for (int i = 0; i <= index; i++) {
-      arg = args.next();
-    }
-
-    return arg;
-  }
-
   @Nullable
   public static Classifier findClassifier(Class cls) {
     String name = cls.getName();
@@ -279,31 +232,6 @@ public class JavaModelUtil_new {
     return null;
   }
 
-  public static VariableReference createVariableReference(SModel model, VariableDeclaration variable) {
-    if (variable instanceof FieldDeclaration) {
-      FieldReference reference = FieldReference.newInstance(model);
-      reference.setFieldDeclaration((FieldDeclaration) variable);
-      reference.setInstance(ThisExpression.newInstance(model));
-      return reference;
-    }
-    if (variable instanceof StaticFieldDeclaration) {
-      StaticFieldReference reference = StaticFieldReference.newInstance(model);
-      reference.setStaticFieldDeclaration((StaticFieldDeclaration) variable);
-      return reference;
-    }
-    if (variable instanceof ParameterDeclaration) {
-      ParameterReference reference = ParameterReference.newInstance(model);
-      reference.setParameterDeclaration((ParameterDeclaration) variable);
-      return reference;
-    }
-    if (variable instanceof LocalVariableDeclaration) {
-      LocalVariableReference reference = LocalVariableReference.newInstance(model);
-      reference.setLocalVariableDeclaration((LocalVariableDeclaration) variable);
-      return reference;
-    }
-    throw new RuntimeException("Couldn't create reference on: " + variable);
-  }
-
   public static LocalVariableDeclaration findLocalVariable(Statement beforeStatement, String variableName) {
     List<LocalVariableDeclaration> localVariables = getLocalVariables(beforeStatement);
     for (LocalVariableDeclaration localVariableDeclaration : localVariables) {
@@ -314,7 +242,7 @@ public class JavaModelUtil_new {
     return null;
   }
 
-  public static List<LocalVariableDeclaration> getLocalVariables(Statement beforeStatement) {
+  private static List<LocalVariableDeclaration> getLocalVariables(Statement beforeStatement) {
     List<LocalVariableDeclaration> list = new LinkedList<LocalVariableDeclaration>();
     _collectLocalVariablesFromPrecedingStatements(beforeStatement, list);
     return list;
@@ -361,6 +289,4 @@ public class JavaModelUtil_new {
       _collectLocalVariablesFromPrecedingStatements(parentStatement, list);
     }
   }
-
-  
 }
