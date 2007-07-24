@@ -5,7 +5,9 @@
   </models>
   <module>
     <moduleRoot path="${mps_home}\languages\formulaLanguage" />
-    <moduleRoot path="${mps_home}\projects\agreement\agreementLanguage" />
+    <moduleRoot path="${mps_home}\app\agreement\agreementLanguage" />
   </module>
+  <languages />
+  <classPath />
 </solution>
 
