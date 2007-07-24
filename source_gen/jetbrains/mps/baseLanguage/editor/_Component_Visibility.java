@@ -21,15 +21,19 @@ public class _Component_Visibility extends AbstractCellProvider {
   private static void setupBasic_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178547765558");
   }
+
   private static void setupLabel_VisibilityCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context) {
     return this.createEditorCell(context, this.getSNode());
   }
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createVisibilityCell(context, node);
   }
+
   public EditorCell createVisibilityCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -41,6 +45,7 @@ public class _Component_Visibility extends AbstractCellProvider {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createVisibilityCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("visibility");
@@ -57,4 +62,5 @@ public class _Component_Visibility extends AbstractCellProvider {
     } else
     return cellWithRole;
   }
+
 }

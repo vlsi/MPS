@@ -30,9 +30,11 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     public String getDescriptionText() {
       return "Generate getter";
     }
+
     public boolean isMenuAlwaysShown() {
       return false;
     }
+
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if((contextCell == null)) {
@@ -47,14 +49,17 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       }
       return false;
     }
+
     public void execute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
     }
+
     public boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       return (classConcept != null) && !(FieldDeclaration_Behavior.call_hasGetter_1184161255813(node, classConcept));
     }
+
     public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       SNode getterMethod = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
@@ -65,9 +70,11 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       SLinkOperations.setNewChild(fr, "instance", "jetbrains.mps.baseLanguage.structure.ThisExpression");
       SLinkOperations.setTarget(fr, "variableDeclaration", node, false);
     }
+
     public String getKeyStroke() {
       return "alt INSERT";
     }
+
 }
   public static class FieldDeclaration_keyMap_Action1 extends EditorCellKeyMapAction {
 
@@ -78,9 +85,11 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     public String getDescriptionText() {
       return "Generate setter";
     }
+
     public boolean isMenuAlwaysShown() {
       return false;
     }
+
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if((contextCell == null)) {
@@ -95,14 +104,17 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       }
       return false;
     }
+
     public void execute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
     }
+
     public boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       return (classConcept != null) && !(FieldDeclaration_Behavior.call_hasSetter_1184161485385(node, classConcept));
     }
+
     public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       SNode setterMethod = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
@@ -118,9 +130,11 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       SLinkOperations.setTarget(fr, "variableDeclaration", node, false);
       SLinkOperations.setTarget(SLinkOperations.setNewChild(assignment, "rValue", "jetbrains.mps.baseLanguage.structure.ParameterReference"), "variableDeclaration", parameter, false);
     }
+
     public String getKeyStroke() {
       return "alt INSERT";
     }
+
 }
 
 }

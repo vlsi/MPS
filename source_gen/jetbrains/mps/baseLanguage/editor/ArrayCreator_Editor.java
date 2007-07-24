@@ -18,20 +18,26 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
   private static void setupBasic_ComponentTypeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184951056679");
   }
+
   private static void setupBasic_DimensionExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184952981434");
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184951038630");
   }
+
   private static void setupLabel_ComponentTypeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_DimensionExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     ArrayCreator_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -42,6 +48,7 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createDimensionExpressionCell(context, node));
     return editorCell;
   }
+
   public EditorCell createComponentTypeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -53,6 +60,7 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createComponentTypeCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("componentType");
@@ -69,6 +77,7 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
   public EditorCell createDimensionExpressionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -80,6 +89,7 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createDimensionExpressionCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("dimensionExpression");
@@ -96,4 +106,5 @@ public class ArrayCreator_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

@@ -13,6 +13,7 @@ public class _InstanceMethodDeclaration_RemoveAbstract {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction("DELETE", new _InstanceMethodDeclaration_RemoveAbstract._InstanceMethodDeclaration_RemoveAbstract_DELETE(node));
   }
+
   public static class _InstanceMethodDeclaration_RemoveAbstract_DELETE extends EditorCellAction {
 
     /* package */SNode myNode;
@@ -24,9 +25,11 @@ public class _InstanceMethodDeclaration_RemoveAbstract {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
+
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "isAbstract", "" + (false));
     }
+
 }
 
 }

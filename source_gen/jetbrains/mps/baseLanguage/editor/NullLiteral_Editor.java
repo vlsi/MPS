@@ -17,14 +17,17 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
 
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createConstantCell(context, node, "null");
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     NullLiteral_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -32,4 +35,5 @@ public class NullLiteral_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
 }

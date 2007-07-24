@@ -21,29 +21,37 @@ public class UpperBoundType_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171903933831");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171903933832");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_BoundCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171903933833");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1171903933830");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
+
   private static void setupLabel_BoundCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     UpperBoundType_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -55,6 +63,7 @@ public class UpperBoundType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createBoundCell(context, node));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     UpperBoundType_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -62,6 +71,7 @@ public class UpperBoundType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     UpperBoundType_Editor.setupBasic_ConstantCell1(editorCell, node, context);
@@ -69,6 +79,7 @@ public class UpperBoundType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createBoundCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -80,6 +91,7 @@ public class UpperBoundType_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createBoundCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("bound");
@@ -96,4 +108,5 @@ public class UpperBoundType_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

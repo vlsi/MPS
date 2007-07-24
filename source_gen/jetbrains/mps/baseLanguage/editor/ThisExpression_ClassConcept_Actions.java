@@ -13,6 +13,7 @@ public class ThisExpression_ClassConcept_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction("DELETE", new ThisExpression_ClassConcept_Actions.ThisExpression_ClassConcept_Actions_DELETE(node));
   }
+
   public static class ThisExpression_ClassConcept_Actions_DELETE extends EditorCellAction {
 
     /* package */SNode myNode;
@@ -24,9 +25,11 @@ public class ThisExpression_ClassConcept_Actions {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
+
     public void execute_internal(EditorContext editorContext, SNode node) {
       SLinkOperations.setTarget(node, "classConcept", null, false);
     }
+
 }
 
 }

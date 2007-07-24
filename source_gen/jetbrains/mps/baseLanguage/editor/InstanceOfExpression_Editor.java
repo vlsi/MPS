@@ -22,30 +22,38 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081257097747");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ClassTypeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081257097748");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ExpressionBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081257073129");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_LeftExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
+
   private static void setupLabel_ClassTypeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createExpressionBox(context, node);
   }
+
   public EditorCell createExpressionBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     InstanceOfExpression_Editor.setupBasic_ExpressionBox(editorCell, node, context);
@@ -57,6 +65,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createClassTypeCell(context, node));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     InstanceOfExpression_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -64,6 +73,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createLeftExpressionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -75,6 +85,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createLeftExpressionCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
@@ -91,6 +102,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
   public EditorCell createClassTypeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -102,6 +114,7 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createClassTypeCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("classType");
@@ -118,4 +131,5 @@ public class InstanceOfExpression_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

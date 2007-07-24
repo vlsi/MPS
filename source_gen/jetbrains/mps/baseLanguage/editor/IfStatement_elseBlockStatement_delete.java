@@ -17,6 +17,7 @@ public class IfStatement_elseBlockStatement_delete {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction("DELETE", new IfStatement_elseBlockStatement_delete.IfStatement_elseBlockStatement_delete_DELETE(node));
   }
+
   public static class IfStatement_elseBlockStatement_delete_DELETE extends EditorCellAction {
 
     /* package */SNode myNode;
@@ -28,6 +29,7 @@ public class IfStatement_elseBlockStatement_delete {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
+
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode statement;
       SNode ifFalseStatement = SLinkOperations.getTarget(node, "ifFalseStatement", true);
@@ -40,6 +42,7 @@ public class IfStatement_elseBlockStatement_delete {
       }
       SNodeOperations.replaceWithAnother(ifFalseStatement, statement);
     }
+
 }
 
 }

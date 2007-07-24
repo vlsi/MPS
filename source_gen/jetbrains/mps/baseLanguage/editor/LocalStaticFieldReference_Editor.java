@@ -22,12 +22,15 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172009002550");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_StaticFieldDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createStaticFieldDeclarationReferenceCell(context, node);
   }
+
   public EditorCell createStaticFieldDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new LocalStaticFieldReference_Editor._Inline20());
@@ -39,6 +42,7 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createStaticFieldDeclarationReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("staticFieldDeclaration");
@@ -55,6 +59,7 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
   public static class _Inline20 extends AbstractCellProvider {
 
     public  _Inline20() {
@@ -66,16 +71,20 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.BOLD_ITALIC);
     }
+
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
       editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     }
 
+
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
     }
+
     public EditorCell createEditorCell(EditorContext context, SNode node) {
       return this.createNameCell(context, node);
     }
+
     public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
@@ -87,6 +96,7 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
+
     public EditorCell createNameCell(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
@@ -103,6 +113,7 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
       } else
       return cellWithRole;
     }
+
 }
 
 }

@@ -13,6 +13,7 @@ public class ExpressionStatement_Expression_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction("DELETE", new ExpressionStatement_Expression_Actions.ExpressionStatement_Expression_Actions_DELETE(node));
   }
+
   public static class ExpressionStatement_Expression_Actions_DELETE extends EditorCellAction {
 
     /* package */SNode myNode;
@@ -24,12 +25,15 @@ public class ExpressionStatement_Expression_Actions {
     public String getDescriptionText() {
       return "delete whole statement";
     }
+
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
+
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.deleteNode(node);
     }
+
 }
 
 }

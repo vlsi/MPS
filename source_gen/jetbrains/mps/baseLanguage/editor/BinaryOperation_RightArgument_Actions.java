@@ -14,6 +14,7 @@ public class BinaryOperation_RightArgument_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction("DELETE", new BinaryOperation_RightArgument_Actions.BinaryOperation_RightArgument_Actions_DELETE(node));
   }
+
   public static class BinaryOperation_RightArgument_Actions_DELETE extends EditorCellAction {
 
     /* package */SNode myNode;
@@ -25,12 +26,15 @@ public class BinaryOperation_RightArgument_Actions {
     public String getDescriptionText() {
       return "replace binary operation with left operand";
     }
+
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
+
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "leftExpression", true));
     }
+
 }
 
 }

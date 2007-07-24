@@ -21,29 +21,37 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164991135285");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ThrowableCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164991147291");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164991154683");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164991133830");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
+
   private static void setupLabel_ThrowableCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     ThrowStatement_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -55,6 +63,7 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, ";"));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ThrowStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -62,6 +71,7 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     ThrowStatement_Editor.setupBasic_ConstantCell1(editorCell, node, context);
@@ -69,6 +79,7 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createThrowableCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -80,6 +91,7 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createThrowableCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("throwable");
@@ -96,4 +108,5 @@ public class ThrowStatement_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

@@ -18,15 +18,19 @@ public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
   private static void setupBasic_ClsCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182160175805");
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182160175804");
   }
+
   private static void setupLabel_ClsCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     AnonymousClassCreator_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -36,6 +40,7 @@ public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createClsCell(context, node));
     return editorCell;
   }
+
   public EditorCell createClsCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -47,6 +52,7 @@ public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createClsCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("cls");
@@ -63,4 +69,5 @@ public class AnonymousClassCreator_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

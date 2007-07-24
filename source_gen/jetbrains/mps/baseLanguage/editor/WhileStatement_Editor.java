@@ -21,69 +21,88 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081264296765");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1101210485457");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConditionCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081264296766");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081264296767");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081264241576");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1090928635163");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_BodyCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081264296785");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081264296784");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081264296787");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081264296786");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081264241575");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
+
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConditionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_BodyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     WhileStatement_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -96,6 +115,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell2(context, node, ") {"));
     return editorCell;
   }
+
   public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     WhileStatement_Editor.setupBasic_RowCell1(editorCell, node, context);
@@ -106,6 +126,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createBodyCell(context, node));
     return editorCell;
   }
+
   public EditorCell createRowCell2(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     WhileStatement_Editor.setupBasic_RowCell2(editorCell, node, context);
@@ -115,6 +136,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell4(context, node, "}"));
     return editorCell;
   }
+
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     WhileStatement_Editor.setupBasic_ColumnCell(editorCell, node, context);
@@ -126,6 +148,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell2(context, node));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     WhileStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -133,6 +156,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     WhileStatement_Editor.setupBasic_ConstantCell1(editorCell, node, context);
@@ -140,6 +164,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     WhileStatement_Editor.setupBasic_ConstantCell2(editorCell, node, context);
@@ -147,6 +172,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     WhileStatement_Editor.setupBasic_ConstantCell3(editorCell, node, context);
@@ -154,6 +180,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     WhileStatement_Editor.setupBasic_ConstantCell4(editorCell, node, context);
@@ -161,6 +188,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConditionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -172,6 +200,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createConditionCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("condition");
@@ -188,6 +217,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
   public EditorCell createBodyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -199,6 +229,7 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createBodyCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
@@ -215,4 +246,5 @@ public class WhileStatement_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

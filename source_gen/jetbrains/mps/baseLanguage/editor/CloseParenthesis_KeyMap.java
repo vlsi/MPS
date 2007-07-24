@@ -28,9 +28,11 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
     public String getDescriptionText() {
       return "move closing parenthesis to the right";
     }
+
     public boolean isMenuAlwaysShown() {
       return false;
     }
+
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if((contextCell == null)) {
@@ -45,16 +47,20 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
       }
       return false;
     }
+
     public void execute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
     }
+
     public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       ParenthesisUtil.moveParenthesisToTheRight(((ParenthesizedExpression)SNodeOperations.getAdapter(node)), editorContext);
     }
+
     public String getKeyStroke() {
       return "ctrl shift RIGHT";
     }
+
 }
   public static class CloseParenthesis_KeyMap_Action1 extends EditorCellKeyMapAction {
 
@@ -65,9 +71,11 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
     public String getDescriptionText() {
       return "move closing parenthesis to the left";
     }
+
     public boolean isMenuAlwaysShown() {
       return false;
     }
+
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if((contextCell == null)) {
@@ -82,16 +90,20 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
       }
       return false;
     }
+
     public void execute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
     }
+
     public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       ParenthesisUtil.moveParenthesisToTheLeftInside(((ParenthesizedExpression)SNodeOperations.getAdapter(node)), editorContext);
     }
+
     public String getKeyStroke() {
       return "ctrl shift LEFT";
     }
+
 }
 
 }

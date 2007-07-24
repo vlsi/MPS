@@ -18,12 +18,15 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1109281432641");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createNameCell(context, node);
   }
+
   public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -35,6 +38,7 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createNameCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
@@ -51,4 +55,5 @@ public class TypeVariableDeclaration_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

@@ -21,24 +21,30 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168623096233");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ValueCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168623099813");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168623087575");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(Color.gray);
   }
+
   private static void setupLabel_ValueCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(Color.gray);
   }
 
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     RemarkStatement_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -49,6 +55,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createValueCell(context, node));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     RemarkStatement_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -56,6 +63,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createValueCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -67,6 +75,7 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createValueCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
@@ -83,4 +92,5 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

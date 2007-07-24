@@ -39,6 +39,7 @@ public class QueriesUtil {
     ListOperations.addAllElements(result, SequenceOperations.where(allStaticMembers, new zPredicate(null, null)));
     return result;
   }
+
   public static SNode replaceNodeMenu_StaticFieldReference_createReplacementNode(SNode node, SNode parameterObject) {
     if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
@@ -54,6 +55,7 @@ public class QueriesUtil {
     }
     return node;
   }
+
   public static List<SNode> replaceNodeMenu_StaticMethodCall_getParameterObjects(SNode node) {
     List<SNode> result = new ArrayList<SNode>();
     SNode classifier = SLinkOperations.getTarget(node, "classConcept", false);
@@ -67,6 +69,7 @@ public class QueriesUtil {
     ListOperations.addAllElements(result, SequenceOperations.where(allStaticMembers, new zPredicate1(null, null)));
     return result;
   }
+
   public static SNode replaceNodeMenu_StaticMethodCall_createReplacementNode(SNode node, SNode parameterObject) {
     if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
@@ -82,6 +85,7 @@ public class QueriesUtil {
     }
     return node;
   }
+
   public static List<SNode> replaceNodeMenu_EnumConstantReference_getParameterObjects(SNode node) {
     List<SNode> result = new ArrayList<SNode>();
     SNode classifier = SLinkOperations.getTarget(node, "enumClass", false);
@@ -95,6 +99,7 @@ public class QueriesUtil {
     ListOperations.addAllElements(result, staticMethods);
     return result;
   }
+
   public static SNode replaceNodeMenu_EnumConstantReference_createReplacementNode(SNode node, SNode parameterObject) {
     if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
@@ -110,6 +115,7 @@ public class QueriesUtil {
     }
     return node;
   }
+
   public static List<SNode> replaceNodeMenu_FieldReference_getParameterObjects(SNode node) {
     SNode instance = SLinkOperations.getTarget(node, "instance", true);
     SNode instanceType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
@@ -119,6 +125,7 @@ public class QueriesUtil {
     ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(((ClassifierType)SNodeOperations.getAdapter(instanceType)), ((FieldReference)SNodeOperations.getAdapter(node)), IClassifiersSearchScope.INSTANCE_METHOD);
     return BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getMethodsExcludingOverridden(classHierarchy));
   }
+
   public static SNode replaceNodeMenu_FieldReference_createReplacementNode(SNode node, SNode parameterObject) {
     if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.InstanceMethodCall", null);
@@ -128,6 +135,7 @@ public class QueriesUtil {
     }
     return node;
   }
+
   public static List<SNode> replaceNodeMenu_InstanceMethodCall_getParameterObjects(SNode referenceNode) {
     SNode instance = SLinkOperations.getTarget(referenceNode, "instance", true);
     SNode instanceType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
@@ -137,6 +145,7 @@ public class QueriesUtil {
     ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(((ClassifierType)SNodeOperations.getAdapter(instanceType)), ((InstanceMethodCall)SNodeOperations.getAdapter(referenceNode)), IClassifiersSearchScope.INSTANCE_FIELD);
     return BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getFieldsExcludingOverridden(classHierarchy));
   }
+
   public static SNode replaceNodeMenu_InstanceMethodCall_createReplacementNode(SNode node, SNode parameterObject) {
     if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
       SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.FieldReference", null);
@@ -146,4 +155,5 @@ public class QueriesUtil {
     }
     return node;
   }
+
 }

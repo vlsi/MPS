@@ -27,9 +27,11 @@ public class CastExpression_KeyMap extends EditorCellKeyMap {
     public String getDescriptionText() {
       return "fills cast type of cast expression";
     }
+
     public boolean isMenuAlwaysShown() {
       return false;
     }
+
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if((contextCell == null)) {
@@ -44,20 +46,25 @@ public class CastExpression_KeyMap extends EditorCellKeyMap {
       }
       return false;
     }
+
     public void execute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
     }
+
     public boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       return CastExpression_FactoryUtil.canComputeCastType(node);
     }
+
     public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       SNode type = CastExpression_FactoryUtil.computeCastType(node);
       SLinkOperations.setTarget(node, "type", type, true);
     }
+
     public String getKeyStroke() {
       return "ctrl shift SPACE";
     }
+
 }
 
 }

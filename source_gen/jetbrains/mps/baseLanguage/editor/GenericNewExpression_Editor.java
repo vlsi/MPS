@@ -24,23 +24,29 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
+
   private static void setupBasic_CreatorCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145553197247");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ExpressionBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145553172764");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
+
   private static void setupLabel_CreatorCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createExpressionBox(context, node);
   }
+
   public EditorCell createExpressionBox(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     GenericNewExpression_Editor.setupBasic_ExpressionBox(editorCell, node, context);
@@ -51,6 +57,7 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCreatorCell(context, node));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     GenericNewExpression_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -58,6 +65,7 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createCreatorCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -69,6 +77,7 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createCreatorCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("creator");
@@ -85,4 +94,5 @@ public class GenericNewExpression_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

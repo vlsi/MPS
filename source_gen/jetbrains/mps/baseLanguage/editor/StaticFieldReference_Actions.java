@@ -14,6 +14,7 @@ public class StaticFieldReference_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction("DELETE", new StaticFieldReference_Actions.StaticFieldReference_Actions_DELETE(node));
   }
+
   public static class StaticFieldReference_Actions_DELETE extends EditorCellAction {
 
     /* package */SNode myNode;
@@ -25,6 +26,7 @@ public class StaticFieldReference_Actions {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
+
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode classifier1 = SLinkOperations.getTarget(node, "classifier", false);
       SNode classifier2 = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
@@ -33,6 +35,7 @@ public class StaticFieldReference_Actions {
         SLinkOperations.setTarget(localStaticFieldReference, "variableDeclaration", SLinkOperations.getTarget(node, "variableDeclaration", false), false);
       }
     }
+
 }
 
 }

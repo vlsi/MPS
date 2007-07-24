@@ -21,64 +21,82 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407621");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407622");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407623");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ThrowableCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407624");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407625");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407620");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407627");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_CatchBodyCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407628");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903407626");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164903406669");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
+
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ThrowableCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_CatchBodyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createColumnCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     CatchClause_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -92,6 +110,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell3(context, node, ") {"));
     return editorCell;
   }
+
   public EditorCell createRowCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     CatchClause_Editor.setupBasic_RowCell1(editorCell, node, context);
@@ -102,6 +121,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCatchBodyCell(context, node));
     return editorCell;
   }
+
   public EditorCell createColumnCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     CatchClause_Editor.setupBasic_ColumnCell(editorCell, node, context);
@@ -112,6 +132,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell1(context, node));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     CatchClause_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -119,6 +140,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     CatchClause_Editor.setupBasic_ConstantCell1(editorCell, node, context);
@@ -126,6 +148,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     CatchClause_Editor.setupBasic_ConstantCell2(editorCell, node, context);
@@ -133,6 +156,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     CatchClause_Editor.setupBasic_ConstantCell3(editorCell, node, context);
@@ -140,6 +164,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     CatchClause_Editor.setupBasic_ConstantCell4(editorCell, node, context);
@@ -147,6 +172,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createThrowableCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -158,6 +184,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createThrowableCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("throwable");
@@ -174,6 +201,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
   public EditorCell createCatchBodyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -185,6 +213,7 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createCatchBodyCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("catchBody");
@@ -201,4 +230,5 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

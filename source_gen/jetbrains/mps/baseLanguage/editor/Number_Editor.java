@@ -16,13 +16,16 @@ public class Number_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1157103836672");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
 
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createConstantCell(context, node, "number");
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     Number_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -30,4 +33,5 @@ public class Number_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
 }

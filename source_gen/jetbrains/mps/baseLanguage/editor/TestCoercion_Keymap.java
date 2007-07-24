@@ -28,9 +28,11 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
     public String getDescriptionText() {
       return "try to coerce type";
     }
+
     public boolean isMenuAlwaysShown() {
       return false;
     }
+
     public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       if((contextCell == null)) {
@@ -42,10 +44,12 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
       }
       return true;
     }
+
     public void execute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
       this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
     }
+
     public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
       SNode type = TypeChecker.getInstance().getTypeOf(node);
       String text = "type: " + type;
@@ -79,9 +83,11 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
       }
       JOptionPane.showMessageDialog(null, text, node.getDebugText(), JOptionPane.INFORMATION_MESSAGE);
     }
+
     public String getKeyStroke() {
       return "ctrl alt shift T";
     }
+
 }
 
 }

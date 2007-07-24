@@ -20,12 +20,15 @@ public class VariableReference_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1134569731483");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_VariableDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createVariableDeclarationReferenceCell(context, node);
   }
+
   public EditorCell createVariableDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new VariableReference_Editor._Inline13());
@@ -37,6 +40,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createVariableDeclarationReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("variableDeclaration");
@@ -53,6 +57,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
   public static class _Inline13 extends AbstractCellProvider {
 
     public  _Inline13() {
@@ -63,15 +68,19 @@ public class VariableReference_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1134569731485");
       editorCell.setDrawBorder(false);
     }
+
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
+
 
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
     }
+
     public EditorCell createEditorCell(EditorContext context, SNode node) {
       return this.createNameCell(context, node);
     }
+
     public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
@@ -83,6 +92,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
+
     public EditorCell createNameCell(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
@@ -99,6 +109,7 @@ public class VariableReference_Editor extends DefaultNodeEditor {
       } else
       return cellWithRole;
     }
+
 }
 
 }

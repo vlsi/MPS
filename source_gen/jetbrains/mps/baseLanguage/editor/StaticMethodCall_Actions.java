@@ -16,6 +16,7 @@ public class StaticMethodCall_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction("DELETE", new StaticMethodCall_Actions.StaticMethodCall_Actions_DELETE(node));
   }
+
   public static class StaticMethodCall_Actions_DELETE extends EditorCellAction {
 
     /* package */SNode myNode;
@@ -27,6 +28,7 @@ public class StaticMethodCall_Actions {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
+
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode classConcept1 = SLinkOperations.getTarget(node, "classConcept", false);
       SNode classConcept2 = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
@@ -46,6 +48,7 @@ public class StaticMethodCall_Actions {
         }
       }
     }
+
 }
 
 }

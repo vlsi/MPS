@@ -19,13 +19,16 @@ public class FloatingPointConstant_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1113006710627");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ValueCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(Color.blue);
   }
 
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createValueCell(context, node);
   }
+
   public EditorCell createValueCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -37,6 +40,7 @@ public class FloatingPointConstant_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createValueCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
@@ -53,4 +57,5 @@ public class FloatingPointConstant_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

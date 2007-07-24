@@ -14,6 +14,7 @@ public class ParameterDeclaration_Name_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction("RIGHT_TRANSFORM", new ParameterDeclaration_Name_Actions.ParameterDeclaration_Name_Actions_RIGHT_TRANSFORM(node));
   }
+
   public static class ParameterDeclaration_Name_Actions_RIGHT_TRANSFORM extends EditorCellAction {
 
     /* package */SNode myNode;
@@ -25,14 +26,17 @@ public class ParameterDeclaration_Name_Actions {
     public String getDescriptionText() {
       return "add next parameter";
     }
+
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
+
     public void execute_internal(EditorContext editorContext, SNode node) {
       if(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
         SLinkOperations.addNewChild(SNodeOperations.getParent(node, null, false, false), "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
       }
     }
+
 }
 
 }

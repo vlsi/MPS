@@ -20,16 +20,14 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
-public class VariableDeclaration_NameCellComponent extends AbstractCellProvider {
+public class BaseMethodDeclaration_NameCellComponent extends AbstractCellProvider {
 
-  public  VariableDeclaration_NameCellComponent(SNode node) {
+  public  BaseMethodDeclaration_NameCellComponent(SNode node) {
     super(node);
   }
 
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1181823199382");
-    editorCell.setDrawBorder(false);
-    editorCell.setRightTransformAnchorTag("default_RTransform");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1185275036523");
   }
 
   private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -48,19 +46,19 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
-    VariableDeclaration_NameCellComponent.setupBasic_NameCell(editorCell, node, context);
+    BaseMethodDeclaration_NameCellComponent.setupBasic_NameCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
-      VariableDeclaration_NameCellComponent.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      BaseMethodDeclaration_NameCellComponent.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new VariableDeclaration_NameCellComponent.VariableDeclaration_name_postfixCellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new BaseMethodDeclaration_NameCellComponent.BaseMethodDeclaration_name_postfixCellMenu()}));
     return editorCell;
   }
 
   public EditorCell createNameCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
-    provider.setNoTargetText("<no name>");
+    provider.setNoTargetText("");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
@@ -74,14 +72,14 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     return cellWithRole;
   }
 
-  public static class VariableDeclaration_name_postfixCellMenu extends AbstractCellMenuPart_PropertyPostfixHints {
+  public static class BaseMethodDeclaration_name_postfixCellMenu extends AbstractCellMenuPart_PropertyPostfixHints {
 
-    public  VariableDeclaration_name_postfixCellMenu() {
+    public  BaseMethodDeclaration_name_postfixCellMenu() {
     }
 
     public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
       List<String> result;
-      SNode nodeType = SLinkOperations.getTarget(node, "type", true);
+      SNode nodeType = SLinkOperations.getTarget(node, "returnType", true);
       if(nodeType != null) {
         result = Type_Behavior.call_getVariableSuffixes_1182416669983(nodeType);
       } else

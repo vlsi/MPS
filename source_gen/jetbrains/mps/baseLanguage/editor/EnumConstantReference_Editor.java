@@ -31,28 +31,36 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144432986234");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1090928601378");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_EnumConstantDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1090928601379");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1090928601376");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_EnumClassReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_EnumConstantDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     EnumConstantReference_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -64,6 +72,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createEnumConstantDeclarationReferenceCell(context, node));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumConstantReference_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -71,6 +80,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createEnumClassReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline11());
@@ -82,6 +92,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createEnumClassReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("enumClass");
@@ -98,6 +109,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
   public EditorCell createEnumConstantDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new EnumConstantReference_Editor._Inline12());
@@ -110,6 +122,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new EnumConstantReference_Editor.EnumConstantReference_enumConstantDeclaration_cellMenu(),new EnumConstantReference_Editor.EnumConstantReference_customReplace_cellMenu()}));
     return editorCell;
   }
+
   public EditorCell createEnumConstantDeclarationReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("enumConstantDeclaration");
@@ -126,6 +139,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
   public static class EnumConstantReference_customReplace_cellMenu extends AbstractCellMenuPart_ReplaceNode_Group {
 
     public  EnumConstantReference_customReplace_cellMenu() {
@@ -134,15 +148,19 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       return QueriesUtil.replaceNodeMenu_EnumConstantReference_getParameterObjects(node);
     }
+
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       return this.createReplacementNode_impl((SNode)parameterObject, node, model, scope, operationContext);
     }
+
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       return QueriesUtil.replaceNodeMenu_EnumConstantReference_createReplacementNode(node, parameterObject);
     }
+
     public boolean isReferentPresentation() {
       return true;
     }
+
 }
   public static class EnumConstantReference_enumConstantDeclaration_cellMenu extends PrimaryReferentMenuCellMenuPart {
 
@@ -159,15 +177,19 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144432992143");
       editorCell.setDrawBorder(false);
     }
+
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
+
 
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
     }
+
     public EditorCell createEditorCell(EditorContext context, SNode node) {
       return this.createNameCell(context, node);
     }
+
     public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
@@ -179,6 +201,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
+
     public EditorCell createNameCell(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
@@ -195,6 +218,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       } else
       return cellWithRole;
     }
+
 }
   public static class _Inline12 extends AbstractCellProvider {
 
@@ -207,16 +231,20 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.BOLD);
     }
+
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
       editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     }
 
+
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
     }
+
     public EditorCell createEditorCell(EditorContext context, SNode node) {
       return this.createNameCell(context, node);
     }
+
     public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
@@ -228,6 +256,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
+
     public EditorCell createNameCell(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
@@ -244,6 +273,7 @@ public class EnumConstantReference_Editor extends DefaultNodeEditor {
       } else
       return cellWithRole;
     }
+
 }
 
 }

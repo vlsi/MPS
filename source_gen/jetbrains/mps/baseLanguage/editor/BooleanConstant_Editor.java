@@ -21,13 +21,16 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
+
   private static void setupLabel_ValueCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
 
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createValueCell(context, node);
   }
+
   public EditorCell createValueCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -39,6 +42,7 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createValueCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
@@ -55,4 +59,5 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

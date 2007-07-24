@@ -32,29 +32,37 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     StaticFieldReference_Actions.setCellActions(editorCell, node, context);
   }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082740154394");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_StaticFieldDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1088427644683");
     editorCell.setDrawBorder(false);
     editorCell.setRightTransformAnchorTag("default_RTransform");
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1082740154392");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ClassifierReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_StaticFieldDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     StaticFieldReference_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -66,6 +74,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createStaticFieldDeclarationReferenceCell(context, node));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     StaticFieldReference_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -73,6 +82,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createClassifierReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new StaticFieldReference_Editor._Inline9());
@@ -84,6 +94,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createClassifierReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("classifier");
@@ -100,6 +111,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
   public EditorCell createStaticFieldDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new StaticFieldReference_Editor._Inline10());
@@ -112,6 +124,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu(),new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu()}));
     return editorCell;
   }
+
   public EditorCell createStaticFieldDeclarationReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("staticFieldDeclaration");
@@ -128,6 +141,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
   public static class StaticFieldReference_customReplace_cellMenu extends AbstractCellMenuPart_ReplaceNode_Group {
 
     public  StaticFieldReference_customReplace_cellMenu() {
@@ -136,15 +150,19 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       return QueriesUtil.replaceNodeMenu_StaticFieldReference_getParameterObjects(node);
     }
+
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       return this.createReplacementNode_impl((SNode)parameterObject, node, model, scope, operationContext);
     }
+
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       return QueriesUtil.replaceNodeMenu_StaticFieldReference_createReplacementNode(node, parameterObject);
     }
+
     public boolean isReferentPresentation() {
       return true;
     }
+
 }
   public static class StaticFieldReference_staticFieldDeclaration_cellMenu extends PrimaryReferentMenuCellMenuPart {
 
@@ -161,15 +179,19 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1144433124324");
       editorCell.setDrawBorder(false);
     }
+
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
+
 
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
     }
+
     public EditorCell createEditorCell(EditorContext context, SNode node) {
       return this.createNameCell(context, node);
     }
+
     public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
@@ -181,6 +203,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
+
     public EditorCell createNameCell(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
@@ -197,6 +220,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       } else
       return cellWithRole;
     }
+
 }
   public static class _Inline10 extends AbstractCellProvider {
 
@@ -209,16 +233,20 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.BOLD_ITALIC);
     }
+
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
       editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     }
 
+
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
     }
+
     public EditorCell createEditorCell(EditorContext context, SNode node) {
       return this.createNameCell(context, node);
     }
+
     public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
@@ -230,6 +258,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
+
     public EditorCell createNameCell(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
@@ -246,6 +275,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       } else
       return cellWithRole;
     }
+
 }
 
 }

@@ -15,6 +15,7 @@ public class ReturnStatement_Actions {
     editorCell.setAction("RIGHT_TRANSFORM", new ReturnStatement_Actions.ReturnStatement_Actions_RIGHT_TRANSFORM(node));
     editorCell.setAction("DELETE", new ReturnStatement_Actions.ReturnStatement_Actions_DELETE(node));
   }
+
   public static class ReturnStatement_Actions_RIGHT_TRANSFORM extends EditorCellAction {
 
     /* package */SNode myNode;
@@ -26,14 +27,17 @@ public class ReturnStatement_Actions {
     public String getDescriptionText() {
       return "add return expression";
     }
+
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
+
     public void execute_internal(EditorContext editorContext, SNode node) {
       if(SLinkOperations.getTarget(node, "expression", true) == null) {
         SLinkOperations.setNewChild(node, "expression", "jetbrains.mps.baseLanguage.structure.Expression");
       }
     }
+
 }
   public static class ReturnStatement_Actions_DELETE extends EditorCellAction {
 
@@ -46,10 +50,12 @@ public class ReturnStatement_Actions {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
+
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode expressionStatement = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
       SLinkOperations.setTarget(expressionStatement, "expression", SLinkOperations.getTarget(node, "expression", true), true);
     }
+
 }
 
 }

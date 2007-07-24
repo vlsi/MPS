@@ -13,6 +13,7 @@ public class _TryCatchStatement_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction("RIGHT_TRANSFORM", new _TryCatchStatement_Actions._TryCatchStatement_Actions_RIGHT_TRANSFORM(node));
   }
+
   public static class _TryCatchStatement_Actions_RIGHT_TRANSFORM extends EditorCellAction {
 
     /* package */SNode myNode;
@@ -24,12 +25,15 @@ public class _TryCatchStatement_Actions {
     public String getDescriptionText() {
       return "catch";
     }
+
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
+
     public void execute_internal(EditorContext editorContext, SNode node) {
       SLinkOperations.addNewChild(node, "catchClause", "jetbrains.mps.baseLanguage.structure.CatchClause");
     }
+
 }
 
 }

@@ -14,6 +14,7 @@ public class DeleteParenthesis_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction("DELETE", new DeleteParenthesis_Actions.DeleteParenthesis_Actions_DELETE(node));
   }
+
   public static class DeleteParenthesis_Actions_DELETE extends EditorCellAction {
 
     /* package */SNode myNode;
@@ -25,9 +26,11 @@ public class DeleteParenthesis_Actions {
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
+
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
     }
+
 }
 
 }

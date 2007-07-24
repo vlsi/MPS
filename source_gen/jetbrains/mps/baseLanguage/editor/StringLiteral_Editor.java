@@ -23,6 +23,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
   }
+
   private static void setupBasic_ValueCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1079623722230");
     editorCell.setSelectable(true);
@@ -30,6 +31,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.setLayoutConstraint("punctuation");
   }
+
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1079623722231");
     editorCell.setSelectable(true);
@@ -37,24 +39,30 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.setLayoutConstraint("punctuation");
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1079623722228");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
   }
+
   private static void setupLabel_ValueCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
   }
+
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
   }
 
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     StringLiteral_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -66,6 +74,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, "\""));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     StringLiteral_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -73,6 +82,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     StringLiteral_Editor.setupBasic_ConstantCell1(editorCell, node, context);
@@ -80,6 +90,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createValueCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -91,6 +102,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createValueCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("value");
@@ -107,4 +119,5 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }
