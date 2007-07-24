@@ -5,13 +5,13 @@ import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.INodeTypesComponent;
 import jetbrains.mps.helgins.inference.IWrapper;
 import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
-import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 
 import java.util.Map;
 

@@ -1,10 +1,10 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.helgins.structure.RuntimeErrorType;
-import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
+import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 
 import java.util.*;
 

@@ -683,5 +683,24 @@
     <link role="source" targetNodeId="1.1133920641626" />
     <link role="target" targetNodeId="1182937366968" resolveInfo="HelginsJudgement" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1185281562361">
+    <property name="name" value="RuntimeErrorType" />
+    <link role="extends" targetNodeId="1185281562363" resolveInfo="RuntimeTypeVariable" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1185281562362">
+      <property name="name" value="errorText" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1185281562363">
+    <property name="name" value="RuntimeTypeVariable" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1185281562364">
+      <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1185281562365">
+      <property name="name" value="nullable" />
+      <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
+  </node>
 </model>
 

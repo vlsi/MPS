@@ -2,13 +2,13 @@ package jetbrains.mps.baseLanguage.helgins;
 
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.formulaLanguage.evaluator.Omega;
-import jetbrains.mps.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.typesystem.TSStatus;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess;
+import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.refactoring.CopyUtil;
 

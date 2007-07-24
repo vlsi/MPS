@@ -2,13 +2,13 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.patterns.util.IMatchModifier;
+import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -39,7 +39,7 @@ public class NodeWrapper implements IWrapper {
   }
 
   public boolean isVariable() {
-    return "jetbrains.mps.helgins.structure.RuntimeTypeVariable".equals(myNode.getConceptFqName());
+    return "jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable".equals(myNode.getConceptFqName());
   }
 
   public boolean isCondition() {

@@ -3,7 +3,7 @@ package jetbrains.mps.helgins.inference;
 import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.SupertypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.helgins.structure.*;
+import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.helgins.inference.util.StructuralNodeSet;
 import jetbrains.mps.helgins.inference.util.StructuralNodeMap;
 import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
