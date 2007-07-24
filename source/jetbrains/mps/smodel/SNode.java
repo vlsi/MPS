@@ -1465,13 +1465,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setId(SNodeId id) {
-//    if (id == null) {
-//      if (myId != null) {
-//        myModel.removeNodeId(myId);
-//      }
-//    } else {
-//      myModel.putNodeId(id, this);
-//    }
     LOG.assertLog(!isRegistered(), "can't set id to registered node " + getDebugText());
     myId = id;
   }
