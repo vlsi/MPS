@@ -33,9 +33,9 @@ public interface INodeAdapter {
 
   <BA extends INodeAdapter> BA findParent(Class<BA> cls);
 
-  <BA extends INodeAdapter> BA getParent(Class<BA> cls, boolean checkThis);
-
   <BA extends INodeAdapter> BA getParent(Class<BA> cls);
+
+  <BA extends INodeAdapter> BA getParent(Class<BA> cls, boolean checkThis);
 
   INodeAdapter findParent(Condition<INodeAdapter> ba);
 

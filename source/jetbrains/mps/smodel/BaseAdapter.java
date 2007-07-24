@@ -56,6 +56,10 @@ public abstract class BaseAdapter implements INodeAdapter {
     return getParent(cls, false);
   }
 
+  public <BA extends INodeAdapter> BA getParent(Class<BA> cls) {
+    return getParent(cls, true);
+  }
+
   public <BA extends INodeAdapter> BA getParent(Class<BA> cls, boolean checkThis) {
     if (checkThis) {
       if (cls.isInstance(this)) return (BA) this;
@@ -64,10 +68,6 @@ public abstract class BaseAdapter implements INodeAdapter {
       return null;
     }
     return getParent().getParent(cls);
-  }
-
-  public <BA extends INodeAdapter> BA getParent(Class<BA> cls) {
-    return getParent(cls, true);
   }
 
   public INodeAdapter findParent(final Condition<INodeAdapter> ba) {
