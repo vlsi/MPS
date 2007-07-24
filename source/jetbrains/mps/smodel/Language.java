@@ -126,6 +126,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getConstraintsModel(), languageModelRoot, operationContext);
     renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getHelginsTypesystemModel(), languageModelRoot, operationContext);
     renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getTypeSystem(), languageModelRoot, operationContext);
+    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getScriptsModel(), languageModelRoot, operationContext);
 
     SModelRepository.getInstance().saveAll();
 
