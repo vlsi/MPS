@@ -1170,44 +1170,45 @@ public class SModel implements Iterable<SNode> {
       public void run() {
         List<SNode> roots = sourceModel.getRoots();
         for (SNode node : roots) {
-          SNode nodeClone = SNodeCopyUtil.cloneSNode(node, targetModel, false);
+          SNode nodeClone = CopyUtil.copyAndPreserveId(node, targetModel);
           targetModel.addRoot(nodeClone);
         }
 
-        List<SNode> targetRoots = targetModel.getRoots();
-        for (SNode targetNode : targetRoots) {
-          updateReferences(targetNode);
-        }
+        // references should be ok
+//        List<SNode> targetRoots = targetModel.getRoots();
+//        for (SNode targetNode : targetRoots) {
+//          updateReferences(targetNode);
+//        }
       }
     });
   }
 
-  private void updateReferences(SNode node) {
-    SModel targetModel = node.getModel();
-    Map<SReference, SNode> replacementMap = new HashMap<SReference, SNode>();
-    // do process references
-    for (SReference reference : node.getReferences()) {
-      if (reference.isExternal()) {
-        SNode oldReferentNode = reference.getTargetNode();
-        SNode newReferentNode = targetModel.getNodeById(oldReferentNode.getSNodeId());
-        if (newReferentNode != null) {
-          // replace reference
-          replacementMap.put(reference, newReferentNode);
-        }
-      }
-    }
-
-    // do precess children references
-    List<SNode> children = node.getChildren();
-    for (SNode childNode : children) {
-      updateReferences(childNode);
-    }
-
-    for (SReference reference : replacementMap.keySet()) {
-      node.removeReferent(reference.getRole(), reference.getTargetNode());
-      node.addReferent(reference.getRole(), replacementMap.get(reference));
-    }
-  }
+//  private void updateReferences(SNode node) {
+//    SModel targetModel = node.getModel();
+//    Map<SReference, SNode> replacementMap = new HashMap<SReference, SNode>();
+//    // do process references
+//    for (SReference reference : node.getReferences()) {
+//      if (reference.isExternal()) {
+//        SNode oldReferentNode = reference.getTargetNode();
+//        SNode newReferentNode = targetModel.getNodeById(oldReferentNode.getSNodeId());
+//        if (newReferentNode != null) {
+//          // replace reference
+//          replacementMap.put(reference, newReferentNode);
+//        }
+//      }
+//    }
+//
+//    // do precess children references
+//    List<SNode> children = node.getChildren();
+//    for (SNode childNode : children) {
+//      updateReferences(childNode);
+//    }
+//
+//    for (SReference reference : replacementMap.keySet()) {
+//      node.removeReferent(reference.getRole(), reference.getTargetNode());
+//      node.addReferent(reference.getRole(), replacementMap.get(reference));
+//    }
+//  }
 
   public List<AbstractConceptDeclaration> conceptAdaptersFromModelLanguages(final Condition<AbstractConceptDeclaration> condition, IScope scope) {
     List<AbstractConceptDeclaration> list = new ArrayList<AbstractConceptDeclaration>();
