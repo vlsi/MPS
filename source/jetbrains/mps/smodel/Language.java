@@ -1,34 +1,34 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.IStatus;
-import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
-import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.refactoring.languages.RenameModelRefactoring;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.refactoring.logging.Marshallable;
+import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.smodel.Language.LanguageAspectStatus.AspectKind;
+import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.plugin.IProjectHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
-import java.util.*;
 import java.rmi.RemoteException;
+import java.util.*;
 
 
 /**
@@ -202,7 +202,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     SModel model = ProjectModels.createDescriptorFor(language).getSModel();
     model.setLoading(true);
     language.myDescriptorFile = null;
-    language.myLanguageDescriptor = (LanguageDescriptor) SNodeCopyUtil.cloneSNode(languageDescriptor.getNode(), model, false).getAdapter();
+    language.myLanguageDescriptor = (LanguageDescriptor) CopyUtil.copyAndPreserveId(languageDescriptor.getNode(), model).getAdapter();
     MPSModuleRepository.getInstance().addModule(language, owner);
     language.updateDependenciesAndGenerators();
     return language;
