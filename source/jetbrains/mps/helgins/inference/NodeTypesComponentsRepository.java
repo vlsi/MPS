@@ -66,6 +66,9 @@ public class NodeTypesComponentsRepository {
   }
 
   public void clear() {
+    for (NodeTypesComponent_new nodeTypesComponent : myNodeTypesComponents) {
+      nodeTypesComponent.clearListeners();
+    }
     myNodeTypesComponents.clear();
   }
 }
