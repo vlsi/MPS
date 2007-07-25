@@ -155,7 +155,9 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
 
   public void computeTypes() {
     try {
-      {
+      if (!isIncrementalMode()) {
+        clear();
+      } else {
         myNotSkippedNodes.clear();
         AbstractEditorComponent component = getEditorComponent();
         if (component != null) {
@@ -221,6 +223,10 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     }
   }
 
+  private boolean isIncrementalMode() {
+    return myTypeChecker.isIncrementalMode();
+  }
+
   public void computeTypesForNode(SNode node) {
     if (node == null) return;
     Set<SNode> frontier = new LinkedHashSet<SNode>();
@@ -235,20 +241,27 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
         if (!myPartlyCheckedNodes.contains(sNode)) {
           myNotSkippedNodes.add(new SNodeProxy(sNode));
           myCurrentFrontier = newFrontier;
-          myNodesReadListener.clear();
-          NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
+
+          if (isIncrementalMode()) {
+            myNodesReadListener.clear();
+            NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
+          }
           try {
             applyRulesToNode(sNode);
           } finally{
-            NodeReadEventsCaster.removeNodesReadListener();
+            if (isIncrementalMode()) {
+              NodeReadEventsCaster.removeNodesReadListener();
+            }
             myCurrentFrontier = null;
           }
-          synchronized(ACCESS_LOCK) {
-            myNodesReadListener.setAccessReport(true);
-            addDepedentNodes(sNode, new HashSet<SNode>(myNodesReadListener.myAcessedNodes));
-            myNodesReadListener.setAccessReport(false);
+          if (isIncrementalMode()) {
+            synchronized(ACCESS_LOCK) {
+              myNodesReadListener.setAccessReport(true);
+              addDepedentNodes(sNode, new HashSet<SNode>(myNodesReadListener.myAcessedNodes));
+              myNodesReadListener.setAccessReport(false);
+            }
+            myNodesReadListener.clear();
           }
-          myNodesReadListener.clear();
           myPartlyCheckedNodes.add(sNode);
         }
         myFullyCheckedNodes.add(sNode);

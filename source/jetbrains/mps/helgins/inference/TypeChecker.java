@@ -44,6 +44,7 @@ public class TypeChecker {
   private NodeTypesComponent_new myCurrentTypesComponent = null;
 
   private MPSProject myProject;
+  private boolean myIsIncrementalMode = true;
 
   public TypeChecker() {
     mySubtypingManager = new SubtypingManager(this);
@@ -102,6 +103,10 @@ public class TypeChecker {
     myRulesManager.clear();
     myCurrentTypesComponent = null;
     myCheckedRoots.clear();
+  }
+
+  public void setIncrementalMode(boolean isIncrementalMode) {
+    myIsIncrementalMode = isIncrementalMode; 
   }
 
   public void reportTypeError(SNode nodeWithError, String errorString) {
@@ -228,6 +233,10 @@ public class TypeChecker {
 
   public IErrorReporter getTypeErrorDontCheck(SNode node) {
     return NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node.getContainingRoot()).getError(node);
+  }
+
+  public boolean isIncrementalMode() {
+    return myIsIncrementalMode;
   }
 
   private static class MyReadAccessListener implements INodeReadAccessListener {
