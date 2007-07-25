@@ -71,6 +71,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
 
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent_new.class);
   private Set<SNode> myCurrentFrontier;
+  private SNode myCurrentCheckedNode;
 
   public NodeTypesComponent_new(SNode rootNode, TypeChecker typeChecker) {
     myRootNode = rootNode;
@@ -270,6 +271,12 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     }
   }
 
+  public void addDependcyOnCurrent(SNode node) {
+    HashSet<SNode> hashSet = new HashSet<SNode>();
+    hashSet.add(myCurrentCheckedNode);
+    addDepedentNodes(node, hashSet);
+  }
+
   public Map<SNode, SNode> getMainContext() {
     return myNodesToTypesMap;
   }
@@ -277,6 +284,8 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
   /*package*/ void applyRulesToNode(SNode node) {
     Set<InferenceRule_Runtime> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
     if (newRules != null) {
+      SNode oldCheckedNode = myCurrentCheckedNode;
+      myCurrentCheckedNode = node;
       for (InferenceRule_Runtime rule : newRules) {
         // long t1 = System.currentTimeMillis();
         Pair<InferenceRule_Runtime, SNode> item = new Pair<InferenceRule_Runtime, SNode>(rule, node);
@@ -288,6 +297,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
           //  Statistics.getStatistic(Statistics.HELGINS).add(rule.getClass().getName(), System.currentTimeMillis() - t1, true);
         }
       }
+      myCurrentCheckedNode = oldCheckedNode;
     }
   }
 
@@ -410,12 +420,12 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     myNodesToCheckStatementsIdMap.put(node, new Pair<String, String>(nodeModel, nodeId));
   }
 
+
   /*package*/ SNode popNodeBeingChecked() {
     SNode node = myNodesBeingChecked.pop();
     myNodesToCheckStatementsIdMap.remove(node);
     return node;
   }
-
 
   public boolean isNodeBeingChecked(SNode node) {
     return myNodesBeingChecked.contains(node);

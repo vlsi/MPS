@@ -45,13 +45,9 @@ public class RuntimeSupport {
       if (type != null) return type;
     }
 
-    // Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
-    // type = typesContext.get(node);
-    //  if (type == null) {
     SNode var = createNewRuntimeTypesVariable(false);
     type = TypeChecker.asType(var);
     myTypeChecker.getMainContext().put(node, type);
-    //  }
     return myTypeChecker.getEquationManager().getRepresentator(type);
   }
 
@@ -184,17 +180,15 @@ public class RuntimeSupport {
 
   @Deprecated
   public void givetype(SNode type, SNode node) {
-    Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
-    SNode nodesType = typesContext.get(node);
-    if (nodesType == null) { // put to context
-      typesContext.put(node, myTypeChecker.getEquationManager().getRepresentator(type));
-    } else { // create equation
-      createEquation(nodesType, type, node);
-    }
+    givetype(type, node, null, null);
   }
 
   public void givetype(SNode type, SNode node, String ruleModel, String ruleId) {
     Map<SNode, SNode> typesContext = myTypeChecker.getMainContext();
+    NodeTypesComponent_new component = myTypeChecker.getCurrentTypesComponent();
+    if (component != null) {
+      component.addDependcyOnCurrent(node);
+    }
     SNode nodesType = typesContext.get(node);
     if (nodesType == null) { // put to context
       typesContext.put(node, myTypeChecker.getEquationManager().getRepresentator(type));

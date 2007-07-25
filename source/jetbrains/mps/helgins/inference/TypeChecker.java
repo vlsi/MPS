@@ -105,15 +105,16 @@ public class TypeChecker {
   }
 
   public void reportTypeError(SNode nodeWithError, String errorString) {
-    myCurrentTypesComponent.reportTypeError(nodeWithError, errorString, null, null);
+    reportTypeError(nodeWithError, errorString, null, null);
   }
 
   public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
-    myCurrentTypesComponent.reportTypeError(nodeWithError, errorString, ruleModel, ruleId);
+    reportTypeError(nodeWithError, new SimpleErrorReporter(errorString, ruleModel, ruleId));
   }
 
   public void reportTypeError(SNode nodeWithError, IErrorReporter errorReporter) {
     myCurrentTypesComponent.reportTypeError(nodeWithError, errorReporter);
+    myCurrentTypesComponent.addDependcyOnCurrent(nodeWithError);
   }
 
   public static SNode asType(Object o) {

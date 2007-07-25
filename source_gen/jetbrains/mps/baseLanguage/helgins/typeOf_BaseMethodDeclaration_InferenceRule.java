@@ -30,8 +30,6 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
     if(SConceptPropertyOperations.getBoolean(argument, "abstract")) {
       return;
     }
-    // generic check
-    TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "body", true), "jetbrains.mps.baseLanguage.helgins", "1178764811143");
     // =============
     SNode expectedRetType = SLinkOperations.getTarget(argument, "returnType", true);
     if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType")) {
@@ -69,9 +67,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
             } else
             {
               SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(returnStatement, "expression", true));
-              if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(returnType, expectedRetType))) {
-                TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(returnStatement, "expression", true), "" + expectedRetType + " is expected", "jetbrains.mps.baseLanguage.helgins", "1178765435658");
-              }
+              TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, SLinkOperations.getTarget(returnStatement, "expression", true), "" + expectedRetType + " is expected", "jetbrains.mps.baseLanguage.helgins", "1185363921400");
             }
           }
         } finally {
@@ -85,9 +81,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
       SNode lastStatement = SequenceOperations.getLast(SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "body", true), "statement", true));
       if(SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStatement, "expression", true));
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(returnType, expectedRetType))) {
-          TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(lastStatement, "expression", true), "" + expectedRetType + " is expected", "jetbrains.mps.baseLanguage.helgins", "1178765601487");
-        }
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, SLinkOperations.getTarget(lastStatement, "expression", true), expectedRetType + " is expected", "jetbrains.mps.baseLanguage.helgins", "1185363855090");
         somethingReturned = true;
       }
       if(!(somethingReturned)) {

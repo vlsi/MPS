@@ -133,7 +133,20 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1185360731742">
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1185360731743" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1185360731744" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185360731745" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185360731745">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185365383359">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1185365383360">
+            <link role="classifier" extResolveInfo="2.[Classifier]System" />
+            <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185365408540">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1185365408541">
+            <link role="classifier" extResolveInfo="2.[Classifier]System" />
+            <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1185360671325">
       <property name="name" value="myW" />
@@ -160,6 +173,27 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1185360719519" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1185362000191">
+    <property name="name" value="V" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1185362004584">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1185362033382" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1185362004586" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185362004587">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185362044190">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1185362044191">
+            <property name="value" value="" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185362038249">
+          <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1185362038250">
+            <property name="value" value="3" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1185362000192" />
   </node>
 </model>
 
