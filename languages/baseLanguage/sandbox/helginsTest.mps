@@ -130,22 +130,36 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1183122071960">
     <property name="name" value="U" />
-    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1183122078415">
-      <property name="name" value="m" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1183122078416" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183122078417" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1183122078418">
-        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1183122105557">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1183122105558">
-            <property name="name" value="s" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1183122105559">
-              <link role="classifier" extResolveInfo="2.[Classifier]String" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1185360731742">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1185360731743" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1185360731744" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185360731745" />
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1185360671325">
+      <property name="name" value="myW" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1185360675015" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1185360699173" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183122071961" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1185360719518">
+    <property name="name" value="W" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1185360727395">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1185360727396" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1185360727397" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185360727398">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185360738035">
+          <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1185360744874">
+            <link role="variableDeclaration" targetNodeId="1185360671325" resolveInfo="myW" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.NewExpression" id="1185360738036">
+              <link role="baseMethodDeclaration" targetNodeId="1185360731742" resolveInfo="U" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183122071961" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1185360719519" />
   </node>
 </model>
 
