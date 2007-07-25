@@ -301,7 +301,6 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
       myCurrentCheckedNode = node;
       for (InferenceRule_Runtime rule : newRules) {
         // long t1 = System.currentTimeMillis();
-        Pair<InferenceRule_Runtime, SNode> item = new Pair<InferenceRule_Runtime, SNode>(rule, node);
         try {
           rule.applyRule(node);
         } catch(Throwable t) {
