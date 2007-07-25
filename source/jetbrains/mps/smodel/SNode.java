@@ -764,7 +764,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
       String errorMessage = "ERROR: " + count + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getId() + "] " + getModel().getUID() + "\n";
       errorMessage += "they are : " + getChildren(role);
       LOG.error(errorMessage, this);
-
     }
     NodeReadEventsCaster.fireNodeChildReadAccess(this, role, foundChild);
     return foundChild;
