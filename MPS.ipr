@@ -922,7 +922,7 @@
   <component name="ProjectFileVersion" converted="false" />
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/app/GWTEditor/GWTEditor.iml" filepath="$PROJECT_DIR$/app/GWTEditor/GWTEditor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/GWTEditor/GWTEditor.iml" filepath="$PROJECT_DIR$/app/GWTEditor/GWTEditor.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Common/JetCMS-Common.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Common/JetCMS-Common.iml" group="app/JetCMS" />
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Configuration/JetCMS-Configuration.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Configuration/JetCMS-Configuration.iml" group="app/JetCMS" />
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-GWTClient/JetCMS-GWTClient.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-GWTClient/JetCMS-GWTClient.iml" group="app/JetCMS" />
