@@ -70,6 +70,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
   private Set<SNodeProxy> myNotSkippedNodes = new HashSet<SNodeProxy>();
 
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent_new.class);
+  private Set<SNode> myCurrentFrontier;
 
   public NodeTypesComponent_new(SNode rootNode, TypeChecker typeChecker) {
     myRootNode = rootNode;
@@ -221,23 +222,25 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
 
   public void computeTypesForNode(SNode node) {
     if (node == null) return;
-    List<SNode> frontier = new ArrayList<SNode>();
-    List<SNode> newFrontier = new ArrayList<SNode>();
+    Set<SNode> frontier = new LinkedHashSet<SNode>();
+    Set<SNode> newFrontier = new LinkedHashSet<SNode>();
     frontier.add(node);
     while (!(frontier.isEmpty())) {
       for (SNode sNode : frontier) {
         if (myFullyCheckedNodes.contains(sNode)) {
           continue;
         }
-        newFrontier.addAll(sNode.getChildren());
+        newFrontier.addAll(sNode.getChildren()); //todo perform a check if it's necessary to check children
         if (!myPartlyCheckedNodes.contains(sNode)) {
           myNotSkippedNodes.add(new SNodeProxy(sNode));
+          myCurrentFrontier = newFrontier;
           myNodesReadListener.clear();
           NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
           try {
             applyRulesToNode(sNode);
           } finally{
             NodeReadEventsCaster.removeNodesReadListener();
+            myCurrentFrontier = null;
           }
           synchronized(ACCESS_LOCK) {
             myNodesReadListener.setAccessReport(true);
@@ -250,7 +253,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
         myFullyCheckedNodes.add(sNode);
       }
       frontier = newFrontier;
-      newFrontier = new ArrayList<SNode>();
+      newFrontier = new LinkedHashSet<SNode>();
     }
   }
 
@@ -285,6 +288,12 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
           //  Statistics.getStatistic(Statistics.HELGINS).add(rule.getClass().getName(), System.currentTimeMillis() - t1, true);
         }
       }
+    }
+  }
+
+  public void addNodeToFrontier(SNode node) {
+    if (myCurrentFrontier != null) {
+      myCurrentFrontier.add(node);
     }
   }
 
@@ -407,10 +416,10 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     return node;
   }
 
+
   public boolean isNodeBeingChecked(SNode node) {
     return myNodesBeingChecked.contains(node);
   }
-
 
   private SNode expandType(SNode node, SModel typesModel) {
     SNode representator = myEquationManagersStack.peek().getRepresentator(node);
