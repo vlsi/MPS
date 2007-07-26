@@ -16,7 +16,6 @@
   <import index="20" modelUID="java.lang@java_stub" />
   <import index="21" modelUID="jetbrains.mps.generator@java_stub" />
   <import index="22" modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" />
-  <import index="24" modelUID="java.util@java_stub" />
   <import index="26" modelUID="jetbrains.mps.smodel.search@java_stub" />
   <import index="27" modelUID="jetbrains.mps.baseLanguage@java_stub" />
   <import index="28" modelUID="jetbrains.mps.baseLanguage.search@java_stub" />
@@ -930,17 +929,10 @@
                     <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1183629501094">
                       <node role="rValue" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1183629731470">
                         <link role="concept" targetNodeId="1.1068431790189" />
-                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1183629821856">
-                          <link role="baseMethodDeclaration" extResolveInfo="19.static method ([Classifier]SNodeCopyUtil).([StaticMethodDeclaration]copySNode((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-                          <link role="classConcept" extResolveInfo="19.[Classifier]SNodeCopyUtil" />
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1183629884002">
+                        <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1185415111450">
+                          <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_CopyOperation" id="1185415113485" />
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185415107949">
                             <link role="variableDeclaration" targetNodeId="1183629884000" resolveInfo="type" />
-                          </node>
-                          <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1183629869481">
-                            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetModelOperation" id="1183629870397" />
-                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1183629863472">
-                              <link role="variableDeclaration" targetNodeId="1158872840778" resolveInfo="contextNode" />
-                            </node>
                           </node>
                         </node>
                       </node>
