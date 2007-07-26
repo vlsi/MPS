@@ -3,9 +3,10 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.core" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="java.util@java_stub" />
   <import index="2" modelUID="java.lang@java_stub" />
+  <import index="3" modelUID="java.io@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1182952452380">
     <property name="name" value="TestHelgins" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1182952459350">
@@ -135,15 +136,27 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1185360731744" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185360731745">
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185365383359">
-          <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1185365383360">
-            <link role="classifier" extResolveInfo="2.[Classifier]System" />
-            <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1185442616460">
+            <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]PrintStream).([InstanceMethodDeclaration]print((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1185365383360">
+              <link role="classifier" extResolveInfo="2.[Classifier]System" />
+              <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1185442641191">
+              <property name="value" value="" />
+            </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185365408540">
-          <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1185365408541">
-            <link role="classifier" extResolveInfo="2.[Classifier]System" />
-            <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185442656146">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1185442660884">
+            <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]PrintStream).([InstanceMethodDeclaration]print((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1185442656147">
+              <link role="classifier" extResolveInfo="2.[Classifier]System" />
+              <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1185442664276">
+              <property name="value" value="" />
+            </node>
           </node>
         </node>
       </node>
