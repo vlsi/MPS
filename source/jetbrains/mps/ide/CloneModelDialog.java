@@ -2,12 +2,12 @@ package jetbrains.mps.ide;
 
 import jetbrains.mps.datatransfer.CloneModelUtil;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.command.CommandRunnable;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.CommandRunnable;
 
 import java.util.HashSet;
 import java.util.Iterator;

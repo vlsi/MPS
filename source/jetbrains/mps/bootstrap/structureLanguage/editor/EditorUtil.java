@@ -8,7 +8,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.CommandRunnable;
+import jetbrains.mps.ide.command.CommandRunnable;
 import jetbrains.mps.ide.ui.SmartFileChooser;
 
 import javax.swing.*;
