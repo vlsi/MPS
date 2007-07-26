@@ -81,11 +81,15 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
   }
 
   public void clear() {
-    myEquationManagersStack.clear();
-    myEquationManagersStack.push(new EquationManager(myTypeChecker, this));
+    clearEquationManager();
     myNodesBeingChecked.clear();
     clearNodesTypes();
     clearCaches();
+  }
+
+  private void clearEquationManager() {
+    myEquationManagersStack.clear();
+    myEquationManagersStack.push(new EquationManager(myTypeChecker, this));
   }
 
   public SNode getNode() {
@@ -174,8 +178,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
       if (!loadTypesystemRules(myRootNode)) {
         return;
       }
-      myEquationManagersStack.clear();
-      myEquationManagersStack.push(new EquationManager(myTypeChecker, this));
+      clearEquationManager();
 
       computeTypesForNode(myRootNode);
 
@@ -220,6 +223,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     } finally{
       myTypeChecker.clearCurrentTypesComponent();
       myNotSkippedNodes.clear();
+      clearEquationManager();
     }
   }
 
