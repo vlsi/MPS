@@ -1,8 +1,8 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.helgins.inference.IErrorReporter;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.SystemInfo;
@@ -23,16 +23,15 @@ import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldCell;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldAll;
 import jetbrains.mps.nodeEditor.folding.CellAction_UnfoldCell;
+import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.typesystem.TypeCheckerAccess;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.project.ApplicationComponents;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -1582,15 +1581,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
 
-    // hardcoded "updateTypesystem" action
+    // hardcoded "update" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5 && keyEvent.getModifiers() == 0) {
-      try {
-        TypeCheckerAccess.getTypeChecker().checkNodeType(getRootCell().getSNode(), true);
-      } catch (Throwable t) {
-        //typesystem throws a lot of errors and I don't want them to make me restart MPS
-        LOG.error(t);
-      }
-
       CommandProcessor.instance().tryToExecuteCommand(new Runnable() {
         public void run() {
           SNode sNode = getRootCell().getSNode();
@@ -1599,7 +1591,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           }
           TypeChecker.getInstance().checkRoot(sNode.getContainingRoot());
         }
-      }, "");
+      }, "helgins check root");
 
       rebuildEditorContent();
       keyEvent.consume();
