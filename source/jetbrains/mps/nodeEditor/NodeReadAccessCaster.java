@@ -76,7 +76,8 @@ public class NodeReadAccessCaster {
     }
   }
 
-  public static void fireNodeReadAccessed(SNode node) {
+  public static void fireNodeReadAccessed(SNode node) {    
+    if (node.getModel().isLoading()) return;
     if(!node.isRegistered()) return;
     if (ourReadAccessListener != null) ourReadAccessListener.readAccess(node);
     if (ourAbstractReadAccessListener != null) ourAbstractReadAccessListener.readAccess(node);
