@@ -101,7 +101,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
         myContext.init();
       }
-    }, "MPS Project init");
+    });
 
 
     myEventTranslator = new ProjectEventTranslator();
@@ -533,7 +533,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           ReloadUtils.reloadAll(true);
         }
       }
-    }, "disposing project");
+    });
   }
 
 

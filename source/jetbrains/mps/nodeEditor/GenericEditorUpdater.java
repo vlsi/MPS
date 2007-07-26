@@ -98,7 +98,7 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
               }
             }
           }
-        }, "editor update");
+        });
       }
     });
   }

@@ -148,7 +148,7 @@ public class NewGeneratorDialog extends BaseDialog {
       public void run() {
         createNewGenerator(mySourceLanguage, targetLanguage, dir);
       }
-    }, "create new generator");
+    });
   }
 
   @Button(position = 1, name = "Cancel")

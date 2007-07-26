@@ -1591,7 +1591,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           }
           TypeChecker.getInstance().checkRoot(sNode.getContainingRoot());
         }
-      }, "helgins check root");
+      });
 
       rebuildEditorContent();
       keyEvent.consume();
