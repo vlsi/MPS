@@ -86,6 +86,30 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185486081131">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185486081132">
+            <property name="name" value="aaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185486081133">
+              <link role="classifier" targetNodeId="1170455697846" resolveInfo="AAA" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185486320618">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185486320619">
+            <property name="name" value="aaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185486320620">
+              <link role="classifier" targetNodeId="1170455697846" resolveInfo="AAA" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185486521434">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185486521435">
+            <property name="name" value="aaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185486521436">
+              <link role="classifier" targetNodeId="1170455697846" resolveInfo="AAA" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1179351074639">
         <property name="name" value="node" />

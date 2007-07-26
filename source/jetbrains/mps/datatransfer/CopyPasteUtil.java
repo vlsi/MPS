@@ -30,7 +30,8 @@ public class CopyPasteUtil {
 
   private static final Logger LOG = Logger.getLogger(CopyPasteUtil.class);
 
-  private static final ModelOwner ourModelOwner = new ModelOwner() {};
+  private static final ModelOwner ourModelOwner = new ModelOwner() {
+  };
 
 
   static ModelOwner getCopyPasteOwner() {
@@ -115,7 +116,7 @@ public class CopyPasteUtil {
     return new PasteNodeData(result, referencesRequireResolve, modelProperties, necessaryLanguages, necessaryImports, necessaryDevKits);
   }
 
-  private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode,SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
+  private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     SNode targetNode = sourceNode.cloneProperties();
 //    targetNode.setId(SNode.generateUniqueId());
 
@@ -127,7 +128,7 @@ public class CopyPasteUtil {
     }
 
     List<SNode> children = sourceNode.getChildren();
-    for(SNode sourceChild : children) {
+    for (SNode sourceChild : children) {
       if (nodesAndAttributes != null) {
         if (AttributesRolesUtil.isAttributeRole(sourceChild.getRole_())) {
           Set<SNode> nodes = nodesAndAttributes.get(sourceNode);
@@ -145,7 +146,7 @@ public class CopyPasteUtil {
     return targetNode;
   }
 
-  private static void processReferencesIn (Map<SNode,SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
+  private static void processReferencesIn(Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     for (SReference sourceReference : allReferences) {
       SNode oldSourceNode = sourceReference.getSourceNode();
       SNode newSourceNode = sourceNodesToNewNodes.get(oldSourceNode);
@@ -160,7 +161,7 @@ public class CopyPasteUtil {
         if (!sourceReference.isExternal()) {
           newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNode);
           SReference.setResolveInfoByOldReference(sourceReference, newReference);
-        }  else  {
+        } else {
           newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference);
         }
         newSourceNode.addSReference(newReference);
@@ -169,7 +170,7 @@ public class CopyPasteUtil {
   }
 
 
-  private static void processReferencesOut(Map<SNode,SNode> sourceNodesToNewNodes, Set<SReference> allReferences, Set<SReference> referencesRequireResolve) {
+  private static void processReferencesOut(Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences, Set<SReference> referencesRequireResolve) {
     for (SReference sourceReference : allReferences) {
       SNode oldSourceNode = sourceReference.getSourceNode();
       SNode newSourceNode = sourceNodesToNewNodes.get(oldSourceNode);
@@ -184,8 +185,9 @@ public class CopyPasteUtil {
 
         if (newReference.getResolveInfo() != null) {
           referencesRequireResolve.add(newReference);
+        } else {
+          newSourceNode.addSReference(newReference);
         }
-        newSourceNode.addSReference(newReference);
       }
 
     }
@@ -234,7 +236,6 @@ public class CopyPasteUtil {
   public static List<SNode> getNodesFromClipboard(SModel model) {
     return getPasteNodeDataFromClipboard(model).getNodes();
   }
-
 
 
   public static PasteNodeData getPasteNodeDataFromClipboard(SModel model) {
@@ -286,7 +287,8 @@ public class CopyPasteUtil {
 
 
     for (SModelUID modelUID : importsFromPattern) {
-      if (!(targetModel.hasImportedModel(modelUID)) && !(targetModel.getUID().equals(modelUID))) additionalModels.add(modelUID);
+      if (!(targetModel.hasImportedModel(modelUID)) && !(targetModel.getUID().equals(modelUID)))
+        additionalModels.add(modelUID);
     }
     for (String devKit : devKitsFromPattern) {
       if (!(targetModel.hasDevKit(devKit))) additionalDevKits.add(devKit);
@@ -302,7 +304,7 @@ public class CopyPasteUtil {
       if (devKit != null) necessaryLanguages.removeAll(devKit.getLanguageNamespaces());
     }
 
-    if ((!additionalModels.isEmpty())||(!additionalLanguages.isEmpty())) {
+    if ((!additionalModels.isEmpty()) || (!additionalLanguages.isEmpty())) {
       AddRequiredModelImportsDialog dialog = new AddRequiredModelImportsDialog(context.getMainFrame(), targetModel,
               additionalModels,
               additionalLanguages,
@@ -337,7 +339,7 @@ public class CopyPasteUtil {
       return true;
     } else if (content.isDataFlavorSupported(SModelDataFlavor.stringFlavor) && canReceiveText(modelToPaste)) {
       String s = TextPasteUtil.getStringFromTransferable(content);
-      return (s != null && s.length() > 0 && s.indexOf(' ') > -1 );
+      return (s != null && s.length() > 0 && s.indexOf(' ') > -1);
     }
     return false;
   }
