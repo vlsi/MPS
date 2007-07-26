@@ -974,7 +974,6 @@
     <link role="conceptDeclaration" targetNodeId="1.1158701162220" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158948743621">
       <property name="drawBorder" value="false" />
-      <property name="drawBrackets" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1158948743622">
         <property name="drawBorder" value="false" />
         <property name="text" value="&gt;" />
