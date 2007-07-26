@@ -1583,7 +1583,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     // hardcoded "update" action
     if (keyEvent.getKeyCode() == KeyEvent.VK_F5 && keyEvent.getModifiers() == 0) {
-      CommandProcessor.instance().tryToExecuteCommand(new Runnable() {
+      CommandProcessor.instance().tryToExecuteLightweightCommand(new Runnable() {
         public void run() {
           SNode sNode = getRootCell().getSNode();
           if (sNode == null) {

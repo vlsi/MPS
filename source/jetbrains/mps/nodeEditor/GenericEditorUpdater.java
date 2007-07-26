@@ -63,7 +63,7 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         CommandProcessor commandProcessor = CommandProcessor.instance();
-        commandProcessor.tryToExecuteCommand(new Runnable() {
+        commandProcessor.tryToExecuteLightweightCommand(new Runnable() {
           public void run() {
             if (myProjects == null) return;
             MPSProjects projects = myProjects;
