@@ -199,6 +199,14 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     constraintsModel.addLanguage(BootstrapLanguages.getInstance().getSModelLanguage());
     constraintsModelDescriptor.save();
 
+
+    LanguageDescriptor languageDescriptor = language.getLanguageDescriptor();
+    Model model = Model.newInstance(languageDescriptor.getModel());
+    model.setName(constraintsModel.getUID().toString());
+    languageDescriptor.setConstraintsModel(model);
+    language.setLanguageDescriptor(languageDescriptor);
+    language.save();
+
     return constraintsModelDescriptor;
   }
 }
