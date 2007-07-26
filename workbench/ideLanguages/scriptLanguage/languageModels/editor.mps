@@ -272,5 +272,13 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1185457575668">
+    <link role="conceptDeclaration" targetNodeId="1.1185457538181" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1185457580815">
+      <property name="fontStyle" value="BOLD" />
+      <property name="textFgColor" value="DARK_BLUE" />
+      <link role="relationDeclaration" targetNodeId="2.1137473891462" />
+    </node>
+  </node>
 </model>
 
