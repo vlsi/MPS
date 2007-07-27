@@ -62,7 +62,7 @@ public class SModel implements Iterable<SNode> {
 
   public SModel(@NotNull SModelUID modelUID) {
     addSModelListener(myEventTranslator);
-    CommandProcessor.instance().addCommandListener(myEventTranslator);
+    CommandProcessor.instance().addWeakCommandListener(myEventTranslator);
     myUID = modelUID;
   }
 

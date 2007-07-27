@@ -33,7 +33,7 @@ public class LanguagesKeymapManager {
   
   @Dependency
   public void addMyListener(MPSModuleRepository repository) {
-    CommandProcessor.instance().addCommandListener(myListener);
+    CommandProcessor.instance().addWeakCommandListener(myListener);
     repository.addModuleRepositoryListener(myListener);
   }
 
