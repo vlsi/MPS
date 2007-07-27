@@ -280,7 +280,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                              final IGenerationScript script,
                              final IAdaptiveProgressMonitor progress,
                              final IMessageHandler messages) {
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         generateModels_internal(inputModels, targetLanguage, invocationContext, generationType, script, progress, messages);
       }

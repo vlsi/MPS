@@ -1076,15 +1076,6 @@ public class SModel implements Iterable<SNode> {
     return resultNodes;
   }
 
-//  public void runRegistrationFreeAction(Runnable runnable) {
-//    myRegistrationsForbidden = true;
-//    try {
-//      runnable.run();
-//    } finally {
-//      myRegistrationsForbidden = false;
-//    }
-//  }
-
   public void setRegistrationsForbidden(boolean registrationsForbidden) {
     myRegistrationsForbidden = registrationsForbidden;
   }

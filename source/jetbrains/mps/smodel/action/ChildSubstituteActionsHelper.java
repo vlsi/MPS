@@ -7,6 +7,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
@@ -45,15 +46,31 @@ public class ChildSubstituteActionsHelper {
     return false;
   }
 
-  public static List<INodeSubstituteAction> createActions(SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
-    SModel model = parentNode.getModel();
+  public static List<INodeSubstituteAction> createActions(final SNode parentNode,
+                                                          final SNode currentChild,
+                                                          final AbstractConceptDeclaration childConcept,
+                                                          final IChildNodeSetter childSetter,
+                                                          final IOperationContext context) {
+    final List<INodeSubstituteAction>[] result = new List[1];
+    // enable R/O access
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        result[0] = createActions_internal(parentNode, currentChild, childConcept, childSetter, context);
+      }
+    });
 
-    boolean wasLoading = model.isLoading();
-    model.setLoading(true);
-    model.setRegistrationsForbidden(true);
+    return result[0];
+  }
 
-    try {
-      List<INodeSubstituteAction> resultActions = new ArrayList<INodeSubstituteAction>();
+  private static List<INodeSubstituteAction> createActions_internal(SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
+//    SModel model = parentNode.getModel();
+
+//    boolean wasLoading = model.isLoading();
+//    model.setLoading(true);
+//    model.setRegistrationsForbidden(true);
+
+//    try {
+    List<INodeSubstituteAction> resultActions = new ArrayList<INodeSubstituteAction>();
       if (childConcept == null) {
         return resultActions;
       }
@@ -103,10 +120,10 @@ public class ChildSubstituteActionsHelper {
       }
 
       return resultActions;
-    } finally {
-      model.setLoading(wasLoading);
-      model.setRegistrationsForbidden(false);
-    }
+//    } finally {
+//      model.setLoading(wasLoading);
+//      model.setRegistrationsForbidden(false);
+//    }
   }
 
   private static boolean containsLegacyQueries(List<NodeSubstituteActionsBuilder> list) {

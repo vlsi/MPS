@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.ide.command.CommandProcessor;
 
 import java.util.*;
 
@@ -26,14 +27,28 @@ import java.util.*;
     return getActionBuilders(sourceNode, transformTag, context).size() > 0;
   }
 
-  public static List<INodeSubstituteAction> createActions(SNode sourceNode, String transformTag, IOperationContext context) {
-    SModel model = sourceNode.getModel();
+  public static List<INodeSubstituteAction> createActions(final SNode sourceNode,
+                                                          final String transformTag,
+                                                          final IOperationContext context) {
+    final List<INodeSubstituteAction>[] result = new List[1];
+    // enable R/O access
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        result[0] = createActions_internal(sourceNode, transformTag, context);
+      }
+    });
 
-    boolean wasLoading = model.isLoading();
-    model.setLoading(true);
-    model.setRegistrationsForbidden(true);
+    return result[0];
+  }
 
-    try {
+  public static List<INodeSubstituteAction> createActions_internal(SNode sourceNode, String transformTag, IOperationContext context) {
+//    SModel model = sourceNode.getModel();
+//
+//    boolean wasLoading = model.isLoading();
+//    model.setLoading(true);
+//    model.setRegistrationsForbidden(true);
+//
+//    try {
       List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
       List<RTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders(sourceNode, transformTag, context);
 
@@ -44,10 +59,10 @@ import java.util.*;
         resultActions.addAll(addActions);
       }
       return resultActions;
-    } finally {
-      model.setLoading(wasLoading);
-      model.setRegistrationsForbidden(false);
-    }
+//    } finally {
+//      model.setLoading(wasLoading);
+//      model.setRegistrationsForbidden(false);
+//    }
   }
 
   private static List<RTransformHintSubstituteActionsBuilder> getActionBuilders(final SNode sourceNode, String transformTag, final IOperationContext context) {
