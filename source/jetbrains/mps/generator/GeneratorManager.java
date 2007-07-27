@@ -258,16 +258,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                                                       final IGenerationType generationType,
                                                       final IGenerationScript script,
                                                       boolean closeOnExit) {
-    AdaptiveProgressMonitor adaptiveProgressMonitor = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), closeOnExit);
-    return generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, adaptiveProgressMonitor);
-  }
-
-  public Thread generateModelsWithProgressWindowAsync(final List<SModel> sourceModels,
-                                                      final Language targetLanguage,
-                                                      final IOperationContext invocationContext,
-                                                      final IGenerationType generationType,
-                                                      final IGenerationScript script) {
-    return generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, null);
+    AdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), closeOnExit);
+    return generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, progress);
   }
 
   private Thread generateModelsWithProgressWindow(final List<SModel> sourceModels,
@@ -275,8 +267,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                                                  final IOperationContext invocationContext,
                                                  final IGenerationType generationType,
                                                  final IGenerationScript script,
-                                                 IAdaptiveProgressMonitor monitor) {
-    final IAdaptiveProgressMonitor progress = monitor != null ? monitor : new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), false);
+                                                 final IAdaptiveProgressMonitor progress) {
     Thread generationThread = new Thread("Generation") {
       public void run() {
         CommandProcessor.instance().executeCommand(new Runnable() {
