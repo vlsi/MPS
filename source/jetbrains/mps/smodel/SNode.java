@@ -67,7 +67,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   /**
    * @param model
-   * @param typeName type without word structure
+   * @param typeName type without word 'structure'
    */
   public SNode(@NotNull SModel model, String typeName) {
     this(model);
@@ -77,7 +77,6 @@ public class SNode implements Cloneable, Iterable<SNode> {
   public void changeModel(SModel newModel) {
     if (myModel == newModel) return;
     LOG.assertLog(!isRegistered(), "couldn't change model of registered node " + getDebugText());
-    SModel wasModel = myModel;
     myModel = newModel;
     for (SNode child : _children()) {
       child.changeModel(newModel);
@@ -1452,17 +1451,16 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   @NotNull
   public String getId() {
-    fireNodeReadAccess();
-    if (myId == null) {
-      myId = generateUniqueId();
-    }
-    return myId.toString();
+    return getSNodeId().toString();
   }
 
   public SNodeId getSNodeId() {
     fireNodeReadAccess();
     if (myId == null) {
       myId = generateUniqueId();
+      if (!isRegistered()) {
+        UnregisteredNodes.instance().nodeIdChanged(this, null);
+      }
     }
     return myId;
   }

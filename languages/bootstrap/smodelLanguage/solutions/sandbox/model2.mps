@@ -94,6 +94,12 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185502680867">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185502680868">
+            <property name="name" value="aaa" />
+            <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1185502684573" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185486320618">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185486320619">
             <property name="name" value="aaa" />
