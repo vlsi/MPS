@@ -54,7 +54,7 @@ public final class SReference {
   }
 
   public boolean equalsTargetInfo(SReference reference) {
-    if(!EqualUtil.equals(reference.myTargetNodeId, myTargetNodeId)) return false;
+    if (!EqualUtil.equals(reference.myTargetNodeId, myTargetNodeId)) return false;
     if (!EqualUtil.equals(reference.myExtResolveInfo, myExtResolveInfo)) return false;
     return (EqualUtil.equals(reference.myResolveInfo, myResolveInfo));
   }
@@ -99,7 +99,7 @@ public final class SReference {
         model = modelDescriptor.getSModel();
       }
     }
-    
+
     SModel sourceModel = mySourceNode.getModel();
     if (model == null) {
       logGetTargetNodeErrors(GetTargetNodeErrorState.NO_MODEL);
@@ -112,9 +112,9 @@ public final class SReference {
       }
       SNode nodeById = model.getNodeById(myTargetNodeId);
       if (nodeById == null) {
-        logGetTargetNodeErrors(GetTargetNodeErrorState.CANT_RESOLVE_BY_ID);
-        if (model.isExternallyResolvable() && model != sourceModel) {
-           LOG.warning("reference is resolved by ID, while should be resolved by ERI");
+        nodeById = UnregisteredNodes.instance().get(model.getUID(), myTargetNodeId);
+        if (nodeById == null) {
+          logGetTargetNodeErrors(GetTargetNodeErrorState.CANT_RESOLVE_BY_ID);
         }
       } else {
         if (model.isExternallyResolvable() && model != sourceModel) {
@@ -147,8 +147,10 @@ public final class SReference {
   public boolean isTargetNode(SNode node) {
     SModelUID modelUID = node.getModel().getUID();
     if (modelUID.equals(myTargetModelUID)) {
-      if (ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo) && myTargetNodeId != null && myTargetNodeId.equals(node.getId())) return true;
-      if (!(ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo)) && ExternalResolver.doesNodeMatchERI(myExtResolveInfo, node)) return true;
+      if (ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo) && myTargetNodeId != null && myTargetNodeId.equals(node.getId()))
+        return true;
+      if (!(ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo)) && ExternalResolver.doesNodeMatchERI(myExtResolveInfo, node))
+        return true;
     }
     return false;
   }
@@ -189,6 +191,7 @@ public final class SReference {
   //
 
   //reference created by target node
+
   public static SReference newInstance(String role, SNode sourceNode, SNode targetNode) {
     String resolveInfo = targetNode == null ? null : targetNode.getName();
     SModel sourceModel = sourceNode.getModel();
@@ -226,7 +229,6 @@ public final class SReference {
             resolveInfo
     );
   }
-
 
 
   //reference created by specifying all info

@@ -76,17 +76,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   public void changeModel(SModel newModel) {
     if (myModel == newModel) return;
-//    LOG.assertLog(myParent == null || myParent.myModel == newModel, "CHANGE MODEL: parent must be NULL or must have the same model as your destination model");
     LOG.assertLog(!isRegistered(), "couldn't change model of registered node " + getDebugText());
-
-//    if (myId != null) {
-//      myModel.removeNodeId(myId);
-//    }
+    SModel wasModel = myModel;
     myModel = newModel;
-//    if (myId != null) {
-//      myModel.putNodeId(myId, this);
-//    }
-
     for (SNode child : _children()) {
       child.changeModel(newModel);
     }
@@ -1015,6 +1007,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   /*package*/ void unRegisterFromModel() {
     if (!myRegisteredInModelFlag) return;
+    UnregisteredNodes.instance().put(this);
     myRegisteredInModelFlag = false;
     if (myId != null) {
       myModel.removeNodeId(myId);
@@ -1034,6 +1027,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
       return;
     }
 
+    UnregisteredNodes.instance().remove(this);
     myRegisteredInModelFlag = true;
     myModel = model;
     myModel.putNodeId(getSNodeId(), this);
@@ -1381,6 +1375,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
     } else if (getModel().isRoot(this)) {
       getModel().removeRoot(this);
     }
+
+    // really delete
+    UnregisteredNodes.instance().remove(this);
   }
 
 
@@ -1449,6 +1446,10 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return roleText + " " + NameUtil.shortNameFromLongName(getShortConceptName()) + " " + nameText + " in " + myModel.getUID();
   }
 
+  public boolean hasId() {
+    return myId != null;
+  }
+
   @NotNull
   public String getId() {
     fireNodeReadAccess();
@@ -1475,7 +1476,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   public void setId(SNodeId id) {
     LOG.assertLog(!isRegistered(), "can't set id to registered node " + getDebugText());
+    SNodeId wasId = myId;
     myId = id;
+    UnregisteredNodes.instance().nodeIdChanged(this, wasId);
   }
 
   public void setStringId(String idString) {
