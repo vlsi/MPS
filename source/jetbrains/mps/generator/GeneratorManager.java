@@ -6,7 +6,6 @@ import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -260,10 +259,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                                                       final IGenerationScript script,
                                                       boolean closeOnExit) {
     AdaptiveProgressMonitor adaptiveProgressMonitor = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), closeOnExit);
-    return generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, new Runnable() {
-      public void run() {
-      }
-    }, true, adaptiveProgressMonitor);
+    return generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, adaptiveProgressMonitor);
   }
 
   public Thread generateModelsWithProgressWindowAsync(final List<SModel> sourceModels,
@@ -271,44 +267,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                                                       final IOperationContext invocationContext,
                                                       final IGenerationType generationType,
                                                       final IGenerationScript script) {
-    return generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, new Runnable() {
-      public void run() {
-      }
-    }, true, null);
+    return generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, null);
   }
 
-  public void generateModelsWithProgressWindow(final List<SModel> sourceModels,
-                                               final Language targetLanguage,
-                                               final IOperationContext invocationContext,
-                                               final IGenerationType generationType,
-                                               final IGenerationScript script,
-                                               boolean finishAnyway,
-                                               IAdaptiveProgressMonitor monitor) {
-    final Object lock = new Object();
-    generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, new Runnable() {
-      public void run() {
-        synchronized (lock) {
-          lock.notifyAll();
-        }
-      }
-    }, finishAnyway, monitor);
-
-    synchronized (lock) {
-      try {
-        lock.wait();
-      } catch (InterruptedException e) {
-        LOG.error(e);
-      }
-    }
-  }
-
-  public Thread generateModelsWithProgressWindow(final List<SModel> sourceModels,
+  private Thread generateModelsWithProgressWindow(final List<SModel> sourceModels,
                                                  final Language targetLanguage,
                                                  final IOperationContext invocationContext,
                                                  final IGenerationType generationType,
                                                  final IGenerationScript script,
-                                                 final Runnable continuation,
-                                                 final boolean finishAnyway,
                                                  IAdaptiveProgressMonitor monitor) {
     final IAdaptiveProgressMonitor progress = monitor != null ? monitor : new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), false);
     Thread generationThread = new Thread("Generation") {
@@ -316,10 +282,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
             generateModels(sourceModels, targetLanguage, invocationContext, generationType, script, progress);
-            if (finishAnyway) {
-              progress.finishAnyway();
-            }
-            ThreadUtils.runInUIThreadNoWait(continuation);
+            progress.finishAnyway();
           }
         });
       }
@@ -584,7 +547,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       progress.finishSomehow();
     } finally {
       UndoManager.instance().clear();
-      
+
       TypeChecker.getInstance().clearForReload();
       NodeTypesComponentsRepository.getInstance().clear();
 
