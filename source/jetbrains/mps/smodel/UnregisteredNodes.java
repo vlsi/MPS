@@ -16,6 +16,9 @@ import java.util.HashMap;
   private static UnregisteredNodes myInstance;
   private Map<String, SNode> myMap = new HashMap();
 
+  // don't convert it into a local variable cause it's added to a WeakSet
+  public CommandAdapter myListener;
+
   public static UnregisteredNodes instance() {
     if (myInstance == null) {
       myInstance = new UnregisteredNodes();
@@ -24,11 +27,12 @@ import java.util.HashMap;
   }
 
   private UnregisteredNodes() {
-    CommandProcessor.instance().addCommandListener(new CommandAdapter() {
+    myListener = new CommandAdapter() {
       public void commandFinished(@NotNull CommandEvent event) {
         myMap.clear();
       }
-    });
+    };
+    CommandProcessor.instance().addCommandListener(myListener);
   }
 
   /*package*/ void put(SNode node) {
