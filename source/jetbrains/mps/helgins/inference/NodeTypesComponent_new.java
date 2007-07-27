@@ -229,6 +229,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
 
   private boolean isIncrementalMode() {
     return myTypeChecker.isIncrementalMode();
+    //return true;
   }
 
   public void computeTypesForNode(SNode node) {
@@ -318,6 +319,9 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
   }
 
   public void addNodeToFrontier(SNode node) {
+    if (myPartlyCheckedNodes.contains(node)) {
+      return;
+    }
     if (myCurrentFrontier != null) {
       myCurrentFrontier.add(node);
     }
