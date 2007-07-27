@@ -24,6 +24,7 @@ public class NodeReadAccessCaster {
   private static PropertyAccessor ourPropertyAccessor;
 
   private static boolean ourCanFirePropertyReadAccessedEvent = true;
+  private static boolean myEventsBlocked = false;
 
   public static void setCellBuildNodeReadAccessListener(CellBuildNodeAccessListener listener) {
     if (ourReadAccessListener != null) {
@@ -77,6 +78,7 @@ public class NodeReadAccessCaster {
   }
 
   public static void fireNodeReadAccessed(SNode node) {    
+    if (myEventsBlocked) return;
     if(!node.isRegistered()) return;
     if (ourReadAccessListener != null) ourReadAccessListener.readAccess(node);
     if (ourAbstractReadAccessListener != null) ourAbstractReadAccessListener.readAccess(node);
@@ -93,6 +95,7 @@ public class NodeReadAccessCaster {
   }
 
   public static void firePropertyReadAccessed(SNode node, String propertyName, boolean propertyExistenceCheck) {
+    if (myEventsBlocked) return;
     if(!node.isRegistered()) return;
     if (!ourCanFirePropertyReadAccessedEvent) return;
     if (ourPropertyAccessor != null) {
@@ -118,9 +121,17 @@ public class NodeReadAccessCaster {
 
 
   public static void fireReferenceTargetReadAccessed(SReference reference) {
+    if (myEventsBlocked) return;
     if(!reference.getSourceNode().isRegistered()) return;
     if (ourReadAccessListener != null) ourReadAccessListener.readAccess(reference);
   }
 
 
+  public static void blockEvents() {
+    myEventsBlocked = true;
+  }
+
+  public static void unblockEvents() {
+    myEventsBlocked = false;
+  }
 }

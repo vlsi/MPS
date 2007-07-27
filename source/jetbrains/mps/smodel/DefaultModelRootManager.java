@@ -10,6 +10,7 @@ import jetbrains.mps.vcs.Merger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
@@ -40,7 +41,13 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       FileUtil.copyFile(mineFile, file);
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
+          NodeReadAccessCaster.blockEvents();
+         try {
           Merger.merge(file);
+         }
+          finally {
+          NodeReadAccessCaster.unblockEvents();
+        }
           modelDescriptor.reloadFromDisk();
         }
       });
