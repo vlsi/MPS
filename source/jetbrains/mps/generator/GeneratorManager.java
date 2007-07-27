@@ -9,10 +9,7 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
-import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.messages.MessageKind;
-import jetbrains.mps.ide.messages.MessageView;
+import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.ide.modelchecker.ModelCheckResult;
 import jetbrains.mps.ide.modelchecker.ModelChecker;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
@@ -273,7 +270,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       public void run() {
         CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
-            generateModels(sourceModels, targetLanguage, invocationContext, generationType, script, progress);
+            generateModels(sourceModels, targetLanguage, invocationContext, generationType, script, progress, new DefaultMessageHandler(invocationContext.getProject()));
             progress.finishAnyway();
           }
         });
@@ -289,29 +286,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   private void checkMonitorCanceled(IAdaptiveProgressMonitor progressMonitor) {
     if (progressMonitor.isCanceled()) throw new GenerationCanceledException();
-  }
-
-  public void generateModels(List<SModel> _sourceModels,
-                             Language targetLanguage,
-                             final IOperationContext invocationContext,
-                             IGenerationType generationType,
-                             IGenerationScript script,
-                             IAdaptiveProgressMonitor progress) {
-
-    generateModels(_sourceModels,
-            targetLanguage,
-            invocationContext,
-            generationType,
-            script,
-            progress,
-            new IMessageHandler() {
-              public void handle(Message msg) {
-                MessageView messageView = invocationContext.getProject().getComponent(MessageView.class);
-                assert messageView != null;
-                messageView.add(msg);
-              }
-            }
-    );
   }
 
   public void generateModels(List<SModel> _sourceModels,
