@@ -250,32 +250,20 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     return super.clone();
   }
 
-  public Thread generateModelsWithProgressWindow(List<SModel> sourceModels,
-                                                 Language targetLanguage,
-                                                 IOperationContext invocationContext,
-                                                 IGenerationType generationType,
-                                                 IGenerationScript script,
-                                                 boolean closeOnExit) {
-    AdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), closeOnExit);
-    DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
-    return generateModelsWithProgressWindow(sourceModels, targetLanguage, invocationContext, generationType, script, progress, messages);
-  }
+  public void generateModelsWithProgressWindow(final List<SModel> sourceModels,
+                                               final Language targetLanguage,
+                                               final IOperationContext invocationContext,
+                                               final IGenerationType generationType,
+                                               final IGenerationScript script,
+                                               boolean closeOnExit) {
 
-  private Thread generateModelsWithProgressWindow(final List<SModel> sourceModels,
-                                                  final Language targetLanguage,
-                                                  final IOperationContext invocationContext,
-                                                  final IGenerationType generationType,
-                                                  final IGenerationScript script,
-                                                  final IAdaptiveProgressMonitor progress,
-                                                  final IMessageHandler messages) {
+    final AdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), closeOnExit);
+    final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
+
     Thread generationThread = new Thread("Generation") {
       public void run() {
-        CommandProcessor.instance().executeCommand(new Runnable() {
-          public void run() {
-            generateModels(sourceModels, targetLanguage, invocationContext, generationType, script, progress, messages);
-            progress.finishAnyway();
-          }
-        });
+        generateModels(sourceModels, targetLanguage, invocationContext, generationType, script, progress, messages);
+        progress.finishAnyway();
       }
     };
 
@@ -283,20 +271,29 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     //do not change priority! With other priority it's impossible to listen to music
     generationThread.setPriority(Thread.MIN_PRIORITY);
     generationThread.start();
-    return generationThread;
   }
 
-  private void checkMonitorCanceled(IAdaptiveProgressMonitor progressMonitor) {
-    if (progressMonitor.isCanceled()) throw new GenerationCanceledException();
+  public void generateModels(final List<SModel> inputModels,
+                             final Language targetLanguage,
+                             final IOperationContext invocationContext,
+                             final IGenerationType generationType,
+                             final IGenerationScript script,
+                             final IAdaptiveProgressMonitor progress,
+                             final IMessageHandler messages) {
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        generateModels_internal(inputModels, targetLanguage, invocationContext, generationType, script, progress, messages);
+      }
+    });
   }
 
-  public void generateModels(List<SModel> _sourceModels,
-                             Language targetLanguage,
-                             IOperationContext invocationContext,
-                             IGenerationType generationType,
-                             IGenerationScript script,
-                             IAdaptiveProgressMonitor progress,
-                             IMessageHandler messages) {
+  private void generateModels_internal(List<SModel> _sourceModels,
+                                       Language targetLanguage,
+                                       IOperationContext invocationContext,
+                                       IGenerationType generationType,
+                                       IGenerationScript script,
+                                       IAdaptiveProgressMonitor progress,
+                                       IMessageHandler messages) {
 
     MPSModuleRepository.getInstance().removeTransientModules();
     MPSProject project = invocationContext.getProject();
@@ -531,6 +528,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         System.gc();
       }
     }
+  }
+
+  private void checkMonitorCanceled(IAdaptiveProgressMonitor progressMonitor) {
+    if (progressMonitor.isCanceled()) throw new GenerationCanceledException();
   }
 
   public boolean willCompile(boolean ideaPresent, IGenerationType generationType) {
