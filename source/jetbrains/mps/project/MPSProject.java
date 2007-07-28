@@ -699,6 +699,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
         }
       }
+
+      public boolean isNavigatable() {
+        return false; 
+      }
     };
 
     final GenerateFilesAndClassesGenerationType generationType = new GenerateFilesAndClassesGenerationType(false) {

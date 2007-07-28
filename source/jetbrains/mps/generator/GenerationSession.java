@@ -8,6 +8,7 @@ import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
+import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
@@ -37,8 +38,9 @@ public class GenerationSession implements IGenerationSession {
 
   private IOperationContext myInvocationContext;
   private boolean myDiscardTransients;
+  private Set<SModelDescriptor> myTransientModelsToKeep = new HashSet<SModelDescriptor>();
   private IAdaptiveProgressMonitor myProgressMonitor;
-  private IMessageHandler myHandler;
+  private IMessageHandler myMessagesHandler;
 
   private String mySessionId;
   private GenerationSessionContext myCurrentContext;
@@ -48,12 +50,32 @@ public class GenerationSession implements IGenerationSession {
   private int myTransientModelsCount = 0;
 
 
-  public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor, IMessageHandler handler) {
+  public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, IAdaptiveProgressMonitor progressMonitor, final IMessageHandler messagesHandler) {
     myInvocationContext = invocationContext;
     myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
-    myHandler = handler;
     mySessionId = "" + System.currentTimeMillis();
+    if (!messagesHandler.isNavigatable()) {
+      myMessagesHandler = messagesHandler;
+    } else {
+      myMessagesHandler = new IMessageHandler() {
+        public void handle(Message msg) {
+          messagesHandler.handle(msg);
+          Object o = msg.getHintObject();
+          if (o instanceof NodeWithContext) {
+            SNode node = ((NodeWithContext) o).getNode();
+            SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+            if (modelDescriptor.isTransient()) {
+              myTransientModelsToKeep.add(modelDescriptor);
+            }
+          }
+        }
+
+        public boolean isNavigatable() {
+          return true;
+        }
+      };
+    }
   }
 
   public String getSessionId() {
@@ -62,7 +84,7 @@ public class GenerationSession implements IGenerationSession {
 
   public void discardTransients() {
     setGenerationSessionContext(null);
-    if (myDiscardTransients) {
+    if (myDiscardTransients && myTransientModelsToKeep.isEmpty()) {
       for (GenerationSessionContext savedContext : mySavedContexts) {
         IModule module = savedContext.getModule();
         module.dispose(); // unregister transient models and module
@@ -81,11 +103,8 @@ public class GenerationSession implements IGenerationSession {
   public GenerationStatus generateModel(final SModelDescriptor inputModel,
                                         final Language targetLanguage,
                                         final IGenerationScript script) throws Exception {
-    GenerationStatus status;
-
     Statistics.clearAll();
-
-    status = script.doGenerate(new IGenerationScriptContext() {
+    GenerationStatus status = script.doGenerate(new IGenerationScriptContext() {
       public GenerationStatus doGenerate(@NotNull SModelDescriptor inputModel,
                                          Language targetLanguage,
                                          Set<MappingConfiguration> confs) throws Exception {
@@ -141,14 +160,14 @@ public class GenerationSession implements IGenerationSession {
       }
 
       public IMessageHandler getHandler() {
-        return myHandler;
+        return myMessagesHandler;
       }
-    }); // IGenerationScriptContext
+    }); // script.doGenerate()
 
-    if (status.isError() || status.hasWarnings()) {
-      // if ERROR - keep transient models: we need them to navigate to from error messages
-      myDiscardTransients = false;
-    }
+//    if (status.isError() || status.hasWarnings()) {
+//      // if ERROR - keep transient models: we need them to navigate to from error messages
+//      myDiscardTransients = false;
+//    }
 
     return status;
   }
@@ -194,7 +213,7 @@ public class GenerationSession implements IGenerationSession {
     setGenerationSessionContext(context);
 
     // -- replace generator
-    ITemplateGenerator generator = new TemplateModelGenerator_New(context, myProgressMonitor, myHandler);
+    ITemplateGenerator generator = new TemplateModelGenerator_New(context, myProgressMonitor, myMessagesHandler);
     GenerationStatus status;
     try {
       SModel outputModel = generateModel(sourceModel, generator);
@@ -265,6 +284,12 @@ public class GenerationSession implements IGenerationSession {
       addMessage(MessageKind.INFORMATION, "generating model \"" + currentOutputModel.getModelUID() + "\"");
       generationContext.replaceInputModel(currentOutputModel);
       SModelDescriptor transientModel = createTransientModel(currentInputModel.getSModel(), module);
+// currently it can't work because transient models sometimes contains references on prev transient models        
+//      // probably we can forget about former input model here
+//      if (myDiscardTransients && currentInputModel.isTransient() && !myTransientModelsToKeep.contains(currentInputModel)) {
+//        addMessage(MessageKind.INFORMATION, "discard model \"" + currentInputModel.getModelUID() + "\"");
+//        SModelRepository.getInstance().removeModelDescriptor(currentInputModel);
+//      }
       currentInputModel = currentOutputModel;
       if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel())) {
         SModelRepository.getInstance().removeModelDescriptor(transientModel);
@@ -291,7 +316,7 @@ public class GenerationSession implements IGenerationSession {
   }
 
   private void addMessage(final Message message) {
-    myHandler.handle(message);
+    myMessagesHandler.handle(message);
   }
 
   private void addMessage(final MessageKind kind, final String text) {
