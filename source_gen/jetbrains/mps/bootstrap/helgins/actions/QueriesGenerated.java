@@ -6,6 +6,18 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.action.IChildNodeSetter;
+import jetbrains.mps.smodel.IOperationContext;
+import java.util.ArrayList;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.action.ModelActions;
 
 public class QueriesGenerated {
 
@@ -40,6 +52,29 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(newNode, "term", SLinkOperations.getTarget(sampleNode, "term", true), true);
       }
     }
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TypeClause_1185801400389(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause", operationContext.getScope());
+      ConceptDeclaration wrappedConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
+      IChildNodeSetter setter = new AbstractChildNodeSetter() {
+
+        public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          SNode normalTypeClause = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause", null);
+          SLinkOperations.setTarget(normalTypeClause, "normalType", nodeToWrap, true);
+          return normalTypeClause;
+        }
+
+        public void doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
+          childSetter.execute(parentNode, currentTargetNode, this.wrapNode(nc, nc.getModel()), operationContext.getScope());
+        }
+
+      };
+      result.addAll(ModelActions.createChildSubstituteActions(parentNode, currentTargetNode, wrappedConcept, setter, operationContext));
+    }
+    return result;
   }
 
 }

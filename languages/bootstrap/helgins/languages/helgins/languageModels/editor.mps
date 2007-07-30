@@ -2726,16 +2726,14 @@
     <link role="conceptDeclaration" targetNodeId="1.1185788614172" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1185788725255">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1185788729585">
-        <property name="text" value="(" />
         <property name="textFgColor" value="DARK_GREEN" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1185788737962">
         <link role="relationDeclaration" targetNodeId="1.1185788644032" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1185788740652">
-        <property name="text" value=")" />
-        <property name="textFgColor" value="DARK_GREEN" />
-      </node>
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1185802004578">
+      <property name="text" value="NORMAL TYPE CLAUSE" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1185788799217">
