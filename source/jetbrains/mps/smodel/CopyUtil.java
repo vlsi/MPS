@@ -46,8 +46,6 @@ public class CopyUtil {
   }
 
   private static SNode clone(SNode node, SModel targetModel, Map<SNode, SNode> mapping, boolean copyAttributes) {
-    // todo: try to don't use the 'targetModel'
-    // todo: if everything is OK - remove the 'targetModel' parameter
     SNode result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), null/*targetModel*/, GlobalScope.getInstance(), false);
     assert result != null;
     mapping.put(node, result);
@@ -62,7 +60,7 @@ public class CopyUtil {
 
     for (String role : node.getChildRoles(copyAttributes)) {
       for (SNode child : node.getChildren(role)) {
-        result.addChild(role, clone(child, null/*targetModel*/, mapping, copyAttributes));
+        result.addChild(role, clone(child, targetModel, mapping, copyAttributes));
       }
     }
 
