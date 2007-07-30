@@ -22,4 +22,3 @@ public class MemoryLeaksTest extends TestCase {
     assertTrue(TestMain.testProjectReloadForLeaks(new File("platform/webr/webr.mpr")));
   }
 }
-
