@@ -28,19 +28,19 @@ public class AbstractEquationStatement extends Statement {
   }
 
 
-  public Expression getLeftExpression() {
-    return (Expression)this.getChild(AbstractEquationStatement.LEFT_EXPRESSION);
+  public TypeClause getLeftExpression() {
+    return (TypeClause)this.getChild(AbstractEquationStatement.LEFT_EXPRESSION);
   }
 
-  public void setLeftExpression(Expression node) {
+  public void setLeftExpression(TypeClause node) {
     super.setChild(AbstractEquationStatement.LEFT_EXPRESSION, node);
   }
 
-  public Expression getRightExpression() {
-    return (Expression)this.getChild(AbstractEquationStatement.RIGHT_EXPRESSION);
+  public TypeClause getRightExpression() {
+    return (TypeClause)this.getChild(AbstractEquationStatement.RIGHT_EXPRESSION);
   }
 
-  public void setRightExpression(Expression node) {
+  public void setRightExpression(TypeClause node) {
     super.setChild(AbstractEquationStatement.RIGHT_EXPRESSION, node);
   }
 

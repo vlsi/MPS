@@ -2722,5 +2722,33 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1185788720441">
+    <link role="conceptDeclaration" targetNodeId="1.1185788614172" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1185788725255">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1185788729585">
+        <property name="text" value="(" />
+        <property name="textFgColor" value="DARK_GREEN" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1185788737962">
+        <link role="relationDeclaration" targetNodeId="1.1185788644032" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1185788740652">
+        <property name="text" value=")" />
+        <property name="textFgColor" value="DARK_GREEN" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1185788799217">
+    <link role="conceptDeclaration" targetNodeId="1.1185788772981" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1185788803828">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1185788805111">
+        <property name="text" value="COND" />
+        <property name="textFgColor" value="DARK_GREEN" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1185788808988">
+        <property name="text" value="&lt;not implemented&gt;" />
+      </node>
+    </node>
+  </node>
 </model>
 

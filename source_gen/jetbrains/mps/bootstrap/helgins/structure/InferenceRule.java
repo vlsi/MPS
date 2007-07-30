@@ -9,8 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class InferenceRule extends AbstractRule {
-  public static String OVERRIDES = "overrides";
   public static String BODY = "body";
+  public static String OVERRIDES = "overrides";
 
   public  InferenceRule(SNode node) {
     super(node);
@@ -25,20 +25,20 @@ public class InferenceRule extends AbstractRule {
   }
 
 
-  public boolean getOverrides() {
-    return this.getBooleanProperty(InferenceRule.OVERRIDES);
-  }
-
-  public void setOverrides(boolean value) {
-    this.setBooleanProperty(InferenceRule.OVERRIDES, value);
-  }
-
   public StatementList getBody() {
     return (StatementList)this.getChild(InferenceRule.BODY);
   }
 
   public void setBody(StatementList node) {
     super.setChild(InferenceRule.BODY, node);
+  }
+
+  public boolean getOverrides() {
+    return this.getBooleanProperty(InferenceRule.OVERRIDES);
+  }
+
+  public void setOverrides(boolean value) {
+    this.setBooleanProperty(InferenceRule.OVERRIDES, value);
   }
 
 }

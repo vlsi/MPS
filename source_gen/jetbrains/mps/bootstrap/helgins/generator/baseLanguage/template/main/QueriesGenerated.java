@@ -84,11 +84,13 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1174661049584(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "leftExpression", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
+    SNode leftExpression = SLinkOperations.getTarget(node, "leftExpression", true);
+    return SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(leftExpression, "normalType", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
   }
 
   public static boolean baseMappingRule_Condition_1174661198791(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "rightExpression", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
+    SNode rightExpression = SLinkOperations.getTarget(node, "rightExpression", true);
+    return SNodeOperations.isInstanceOf(rightExpression, "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rightExpression, "normalType", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
   }
 
   public static boolean baseMappingRule_Condition_1177059616673(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -942,12 +944,12 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1174661816168(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode toe = SLinkOperations.getTarget(node, "leftExpression", true);
+    SNode toe = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "leftExpression", true), "normalType", true);
     return SLinkOperations.getTarget(toe, "term", true);
   }
 
   public static SNode sourceNodeQuery_1174661930271(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode toe = SLinkOperations.getTarget(node, "rightExpression", true);
+    SNode toe = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "rightExpression", true), "normalType", true);
     return SLinkOperations.getTarget(toe, "term", true);
   }
 
@@ -1153,6 +1155,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1180520269401(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "errorString", true);
+  }
+
+  public static SNode sourceNodeQuery_1185789430642(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "normalType", true);
   }
 
 }

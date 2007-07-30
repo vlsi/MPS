@@ -166,13 +166,13 @@
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="leftExpression" />
-      <link role="target" targetNodeId="2.1068431790191" />
+      <link role="target" targetNodeId="1185788561607" resolveInfo="TypeClause" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174660783414">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
       <property name="role" value="rightExpression" />
-      <link role="target" targetNodeId="2.1068431790191" />
+      <link role="target" targetNodeId="1185788561607" resolveInfo="TypeClause" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174662598553">
       <property name="metaClass" value="aggregation" />
@@ -700,6 +700,35 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1185281562365">
       <property name="name" value="nullable" />
       <link role="dataType" targetNodeId="1.1082983657063" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1185788561607">
+    <property name="name" value="TypeClause" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1185788608765">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1185788614172">
+    <property name="name" value="NormalTypeClause" />
+    <link role="extends" targetNodeId="1185788561607" resolveInfo="TypeClause" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1185788684393">
+      <property name="value" value="( expr )" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1185788644032">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="normalType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1185788772981">
+    <property name="name" value="ConditionTypeClause" />
+    <link role="extends" targetNodeId="1185788561607" resolveInfo="TypeClause" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1185788791731">
+      <property name="value" value="COND" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
 </model>

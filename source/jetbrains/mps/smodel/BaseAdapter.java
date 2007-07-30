@@ -204,7 +204,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
   }
 
-  protected INodeAdapter getChild(@NotNull String role) {
+  public INodeAdapter getChild(@NotNull String role) {
     SNode result = myNode.getChild(role);
     if (result == null) {
       return null;
