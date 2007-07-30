@@ -19,7 +19,7 @@ public class MemoryLeaksTest extends TestCase {
   }
 
   public void testWebrProjectReloadingLeaks() {
-    assertTrue(TestMain.testProjectReloadForLeaks(new File("platform/webr/webr.mpr"), 100));
+    assertTrue(TestMain.testProjectReloadForLeaks(new File("platform/webr/webr.mpr")));
   }
 }
 
