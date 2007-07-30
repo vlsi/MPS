@@ -8,17 +8,17 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class typeOf_AssertStatement_InferenceRule implements InferenceRule_Runtime {
+public class typeOf_WhenConcreteStatement_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_AssertStatement_InferenceRule() {
+  public  typeOf_WhenConcreteStatement_InferenceRule() {
   }
 
   public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true)), new QuotationClass_9().createNode(), SLinkOperations.getTarget(argument, "condition", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1178271610359");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "argument", true)), new QuotationClass_14().createNode(), SLinkOperations.getTarget(argument, "argument", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805532321");
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.helgins.structure.AssertStatement";
+    return "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement";
   }
 
   public boolean isApplicable(SNode argument) {

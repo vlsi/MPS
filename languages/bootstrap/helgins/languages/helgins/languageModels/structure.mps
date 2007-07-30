@@ -731,5 +731,21 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1185805035213">
+    <property name="name" value="WhenConcreteStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1185805047793">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="body" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068580123136" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1185805056450">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="argument" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+  </node>
 </model>
 

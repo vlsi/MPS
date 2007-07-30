@@ -1161,4 +1161,12 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "normalType", true);
   }
 
+  public static SNode sourceNodeQuery_1185806024187(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "argument", true);
+  }
+
+  public static SNode sourceNodeQuery_1185806058873(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
+  }
+
 }

@@ -1,13 +1,11 @@
 package jetbrains.mps.bootstrap.helgins.runtime;
 
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
-import jetbrains.mps.helgins.inference.IWrapper;
-import jetbrains.mps.helgins.inference.NodeTypesComponent_new;
+import jetbrains.mps.helgins.inference.*;
 import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
+import jetbrains.mps.util.Condition;
 
 import java.util.Map;
 
@@ -218,6 +216,16 @@ public class RuntimeSupport {
     }
     check(node, nodeModel, nodeId);
     return typeOf(node);
+  }
+
+  public void whenConcrete(SNode argument, final Runnable r) {
+    myTypeChecker.getEquationManager().addEquation(new NodeWrapper(argument),
+            new ConditionWrapper(new Condition<SNode>() {
+              public boolean met(SNode object) {
+                r.run();
+                return true;
+              }
+            }), null);
   }
 
   public SNode coerce(SNode subtype, IMatchingPattern pattern, boolean isWeak) {
