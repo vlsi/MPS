@@ -3,9 +3,11 @@ package jetbrains.mps.helgins.uiActions;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement;
 import jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause;
 import jetbrains.mps.baseLanguage.structure.Expression;
+import jetbrains.mps.ide.IDEProjectFrame;
 
 /**
  * Created by IntelliJ IDEA.
