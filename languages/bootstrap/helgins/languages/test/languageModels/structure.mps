@@ -4,12 +4,15 @@
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.core.structure" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174583763352">
-    <property name="name" value="SuperVar" />
-    <link role="extends" targetNodeId="2.1068581242863" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174583817498">
-      <property name="value" value="super var" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1185806650601">
+    <property name="name" value="AConcept" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1185806674055">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="expression" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1081773326031" />
     </node>
   </node>
 </model>
