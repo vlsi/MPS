@@ -12,8 +12,6 @@ import java.io.File;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.*;
-import java.util.concurrent.locks.ReadWriteLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
 
 /**
  * User: Sergey Dmitriev
@@ -22,21 +20,9 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 public class MPSModuleRepository {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
 
-  private Throwable myThrowable;
-
   private Map<String, IModule> myFileToModuleMap = new HashMap<String, IModule>();
   private Map<String, List<IModule>> myUIDToModulesMap = new HashMap<String, List<IModule>>();
-  private Map<IModule, Set<MPSModuleOwner>> myModuleToOwnersMap = new HashMap<IModule, Set<MPSModuleOwner>>() {
-    public Set<MPSModuleOwner> put(IModule key, Set<MPSModuleOwner> value) {
-      myThrowable = new Throwable();
-      return super.put(key, value);
-    }
-
-    public Set<MPSModuleOwner> remove(Object key) {
-      myThrowable = new Throwable();
-      return super.remove(key);
-    }
-  };
+  private Map<IModule, Set<MPSModuleOwner>> myModuleToOwnersMap = new HashMap<IModule, Set<MPSModuleOwner>>();
 
   private List<ModuleRepositoryListener> myModuleListeners = new ArrayList<ModuleRepositoryListener>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
@@ -479,15 +465,11 @@ public class MPSModuleRepository {
 
   public <MT extends IModule> List<MT> getModules(MPSModuleOwner moduleOwner, Class<MT> cls) {
     List<MT> list = new LinkedList<MT>();
-    try {
-      for (Map.Entry<IModule, Set<MPSModuleOwner>> entry : myModuleToOwnersMap.entrySet()) {
-        Set<MPSModuleOwner> moduleOwners = entry.getValue();
-        if (moduleOwners.contains(moduleOwner) && cls.isInstance(entry.getKey())) {
-          list.add((MT) entry.getKey());
-        }
+    for (Map.Entry<IModule, Set<MPSModuleOwner>> entry : myModuleToOwnersMap.entrySet()) {
+      Set<MPSModuleOwner> moduleOwners = entry.getValue();
+      if (moduleOwners.contains(moduleOwner) && cls.isInstance(entry.getKey())) {
+        list.add((MT) entry.getKey());
       }
-    } catch (ConcurrentModificationException e) {
-      e.printStackTrace();
     }
     return list;
   }
