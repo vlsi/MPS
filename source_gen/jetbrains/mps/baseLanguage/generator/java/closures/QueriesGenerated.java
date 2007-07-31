@@ -168,19 +168,19 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "localVariableDeclaration", true), "initializer", true);
   }
 
+  public static SNode sourceNodeQuery_1185919795085(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.create_enclosingClassObject(node, generator);
+  }
+
+  public static SNode sourceNodeQuery_1185920331764(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.create_closureContextObject(node, generator);
+  }
+
   public static SNode mapSrcMacro_mapper_1170898169592(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return _QueriesUtil.create_closureContextObject(node, generator);
   }
 
   public static SNode mapSrcMacro_mapper_1170899386077(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return _QueriesUtil.create_closureContextObject(node, generator);
-  }
-
-  public static SNode mapSrcMacro_mapper_1170900134167(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return _QueriesUtil.create_enclosingClassObject(node, generator);
-  }
-
-  public static SNode mapSrcMacro_mapper_1170899402679(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return _QueriesUtil.create_closureContextObject(node, generator);
   }
 
