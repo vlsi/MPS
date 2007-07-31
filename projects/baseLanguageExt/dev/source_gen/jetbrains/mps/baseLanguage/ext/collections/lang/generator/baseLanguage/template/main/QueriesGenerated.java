@@ -152,6 +152,12 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(creator, "supplier", true);
   }
 
+  public static SNode sourceNodeQuery_1185925113418(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode creator = SLinkOperations.getTarget(node, "creator", true);
+    SNode supplier = SLinkOperations.getTarget(creator, "supplier", true);
+    return QueriesUtil.create_Closure_returnedType(supplier, generator);
+  }
+
   public static SNode sourceNodeQuery_1170959067752(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
   }
@@ -399,12 +405,6 @@ public class QueriesGenerated {
 
   public static SNode mapSrcMacro_mapper_1170957401571(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return QueriesUtil.create_Closure_returnedType(node, generator);
-  }
-
-  public static SNode mapSrcMacro_mapper_1170980972538(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    SNode creator = SLinkOperations.getTarget(node, "creator", true);
-    SNode supplier = SLinkOperations.getTarget(creator, "supplier", true);
-    return QueriesUtil.create_Closure_returnedType(supplier, generator);
   }
 
   public static SNode mapSrcMacro_mapper_1170976176384(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
