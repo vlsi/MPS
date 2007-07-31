@@ -54,26 +54,22 @@ public class GenerationSession implements IGenerationSession {
     myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
     mySessionId = "" + System.currentTimeMillis();
-    if (!messagesHandler.isNavigatable()) {
-      myMessagesHandler = messagesHandler;
-    } else {
-      myMessagesHandler = new IMessageHandler() {
-        public void handle(Message msg) {
-          messagesHandler.handle(msg);
-          Object o = msg.getHintObject();
-          if (o instanceof NodeWithContext) {
-            SNode node = ((NodeWithContext) o).getNode();
-            myCurrentContext.addTransientModelToKeep(node.getModel());
-            //uncomment to disable 'smart' transient removal
+    myMessagesHandler = new IMessageHandler() {
+      public void handle(Message msg) {
+        messagesHandler.handle(msg);
+        Object o = msg.getHintObject();
+        if (o instanceof NodeWithContext) {
+          SNode node = ((NodeWithContext) o).getNode();
+          myCurrentContext.addTransientModelToKeep(node.getModel());
+          //uncomment to disable 'smart' transient removal
 //            myDiscardTransients = false;
-          }
         }
+      }
 
-        public boolean isNavigatable() {
-          return true;
-        }
-      };
-    }
+      public boolean isNavigatable() {
+        return true;
+      }
+    };
   }
 
   public String getSessionId() {
