@@ -17,8 +17,4 @@ public class DefaultMessageHandler implements IMessageHandler {
     MessageView messageView = myProject.getComponentSafe(MessageView.class);
     messageView.add(msg);
   }
-
-  public boolean isNavigatable() {
-    return true;
-  }
 }

@@ -65,10 +65,6 @@ public class GenerationSession implements IGenerationSession {
 //            myDiscardTransients = false;
         }
       }
-
-      public boolean isNavigatable() {
-        return true;
-      }
     };
   }
 
