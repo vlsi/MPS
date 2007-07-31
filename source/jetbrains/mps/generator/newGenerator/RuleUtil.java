@@ -631,7 +631,6 @@ public class RuleUtil {
     myOutputModel.addLanguage(inputNode.getLanguage(myGenerator.getScope()));
     CloneUtil.copyProperties(inputNode, outputNode);
 
-//    SModel inputModel = inputNode.getModel();
     SModel inputModel = myGenerator.getSourceModel();
     for (SReference inputReference : inputNode.getReferences()) {
       SNode inputTargetNode = inputReference.getTargetNode();
