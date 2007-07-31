@@ -366,6 +366,21 @@
       <property name="role" value="cellForegroundFunction" />
       <link role="target" targetNodeId="1176809959526" resolveInfo="QueryFunction_Color" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1185888338931">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="textForegroundEmptyFunction" />
+      <link role="target" targetNodeId="1176809959526" resolveInfo="QueryFunction_Color" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1185888173839">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="textBackgroundFunction" />
+      <link role="target" targetNodeId="1176809959526" resolveInfo="QueryFunction_Color" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1185888320335">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="textBgColorSelectedFunction" />
+      <link role="target" targetNodeId="1176809959526" resolveInfo="QueryFunction_Color" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1119646130993">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
     </node>
@@ -377,6 +392,10 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1101205477408">
       <property name="name" value="textFgColor" />
       <link role="dataType" targetNodeId="1083952545109" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1185888375088">
+      <property name="name" value="textFgColorEmpty" />
+      <link role="dataType" targetNodeId="1083952545109" resolveInfo="_Colors_Enum" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1079354087578">
       <property name="name" value="textBgColor" />
