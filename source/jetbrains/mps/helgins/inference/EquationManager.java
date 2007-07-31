@@ -312,6 +312,12 @@ public class EquationManager {
       }
     }
 
+    if (rhsRepresentator != null && rhsRepresentator.isCondition()) {
+      processEquation(rhsRepresentator, lhsRepresentator, errorInfo);
+    } else if (lhsRepresentator != null && lhsRepresentator.isCondition()) {
+      processEquation(lhsRepresentator, rhsRepresentator, errorInfo);
+    }
+
     // solve equation
     if (!compareWrappers(rhsRepresentator, lhsRepresentator, errorInfo)) {
       IErrorReporter errorReporter;
