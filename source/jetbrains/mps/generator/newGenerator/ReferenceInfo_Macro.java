@@ -1,6 +1,8 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
@@ -104,6 +106,14 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       getOutputNode().setReferent(linkRole, referentNode);
     }
 */
+    // check child because it's manual and thus error prone mapping
+    if (referentNode.getModel() == generator.getSourceModel()) {
+      generator.showWarningMessage(getOutputNode(), "output node contains reference '" + linkRole + "' back to input model");
+      generator.showInformationMessage(getOutputNode(), " -- output node: " + getOutputNode().getDebugText());
+      generator.showInformationMessage(referentNode, " -- referent node: " + referentNode.getDebugText());
+      generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node (click here)");
+      generator.getGeneratorSessionContext().addTransientModelToKeep(generator.getSourceModel());
+    }
   }
 
   public void showErrorMessage(TemplateModelGenerator_New generator) {

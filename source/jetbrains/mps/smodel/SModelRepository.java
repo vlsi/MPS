@@ -69,7 +69,7 @@ public class SModelRepository extends SModelAdapter {
 
   public void registerLanguageModelListener(String language, SModelCommandListener listener, ILanguageModelListenerOwner owner) {
     if (myCommandListeners.get(language) == null) {
-      myCommandListeners.put(language,  new ArrayList<SModelCommandListener>());
+      myCommandListeners.put(language, new ArrayList<SModelCommandListener>());
     }
 
     myCommandListeners.get(language).add(listener);
@@ -186,6 +186,11 @@ public class SModelRepository extends SModelAdapter {
     fireRepositoryChanged();
   }
 
+  public boolean isRegisteredModelDescriptor(@NotNull SModelDescriptor modelDescriptor, @NotNull ModelOwner owner) {
+    HashSet<ModelOwner> owners = myModelToOwnerMap.get(modelDescriptor);
+    return owners != null && owners.contains(owner);
+  }
+
   public void registerModelDescriptor(@NotNull SModelDescriptor modelDescriptor, @NotNull ModelOwner owner) {
     SModelUID modelUID = modelDescriptor.getModelUID();
     SModelDescriptor registeredModel = myUIDToModelDescriptorMap.get(modelUID);
@@ -278,7 +283,7 @@ public class SModelRepository extends SModelAdapter {
 
   @Nullable
   public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
-    return myUIDToModelDescriptorMap.get(modelUID);    
+    return myUIDToModelDescriptorMap.get(modelUID);
   }
 
   @Nullable
@@ -346,7 +351,7 @@ public class SModelRepository extends SModelAdapter {
     myModelsWithNoOwners.remove(modelDescriptor);
 
     if (modelDescriptor instanceof DefaultSModelDescriptor) {
-      ((DefaultSModelDescriptor)modelDescriptor).changeSModelUID(newModelUID);
+      ((DefaultSModelDescriptor) modelDescriptor).changeSModelUID(newModelUID);
     }
 
     if (contains0) {
@@ -469,7 +474,7 @@ public class SModelRepository extends SModelAdapter {
     }
   }
 
-  @NotNull                                                      
+  @NotNull
   public List<SModelDescriptor> readModelDescriptors(
           @NotNull Iterable<ModelRoot> modelRoots,
           @NotNull ModelOwner owner) {
@@ -500,11 +505,16 @@ public class SModelRepository extends SModelAdapter {
     String fqName = modelRoot.getHandlerClass();
     try {
       Class cls = Class.forName(fqName, true, myClassLoaderManager.getClassLoader());
-      return (IModelRootManager) cls.newInstance();                                       
+      return (IModelRootManager) cls.newInstance();
     } catch (Exception e) {
       LOG.error(e);
       return IModelRootManager.NULL_MANAGER;
     }
+  }
+
+  public boolean hasOwners(@NotNull SModelDescriptor modelDescriptor) {
+    HashSet<ModelOwner> set = myModelToOwnerMap.get(modelDescriptor);
+    return !(set == null || set.isEmpty());
   }
 
   @NotNull

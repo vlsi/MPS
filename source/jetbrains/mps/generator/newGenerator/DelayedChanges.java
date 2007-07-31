@@ -2,6 +2,9 @@ package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.transformation.TLBase.structure.NodeMacro;
 
 import java.util.ArrayList;
@@ -42,6 +45,19 @@ public class DelayedChanges {
       SNode child = MacroUtil.executeMapSrcNodeMacro(myInputNode, myMapSrcMacro.getNode(), myChildToReplace.getParent(), myGenerator);
       if (child != null) {
         myChildToReplace.getParent().replaceChild(myChildToReplace, child);
+
+        // check child because it's manual and thus error prone mapping
+        SModelUID inputModelUID = myGenerator.getSourceModel().getUID();
+        for (SReference reference : child.getReferences()) {
+          if (inputModelUID.equals(reference.getTargetModelUID())) {
+            myGenerator.showWarningMessage(child, "output node contains reference '" + reference.getRole() + "' back to input model");
+            myGenerator.showInformationMessage(child, " -- output node: " + child.getDebugText());
+            SNode targetNode = reference.getTargetNode();
+            myGenerator.showInformationMessage(targetNode, " -- referent node: " + targetNode.getDebugText());
+            myGenerator.showInformationMessage(myMapSrcMacro.getNode(), " -- template node (click here)");
+            myGenerator.getGeneratorSessionContext().addTransientModelToKeep(myGenerator.getSourceModel());
+          }
+        }
       }
     }
   }

@@ -38,6 +38,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   // these objects survive through all steps of generation
   private TraceMap myTraceMap = new TraceMap();
   private Set<String> myUsedNames = new HashSet<String>();
+  private Set<SModel> myTransientModelsToKeep = new HashSet<SModel>();
+  private Set<IModule> myTransientModulesToKeep = new HashSet<IModule>();
 
 
   public GenerationSessionContext(Language targetLanguage,
@@ -67,10 +69,13 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       initTemplateModels();
     }
 
-    myTransientModule = new TransientModule(invocationContext.getModule(), myGeneratorModules);
+    myTransientModule = new TransientModule("TransientModule:[" + inputModel.getUID() + "]", invocationContext.getModule(), myGeneratorModules);
     if (prevContext != null) {
       myTransientModule.addDependency(prevContext.getModule());
       myUsedNames = prevContext.myUsedNames;
+      myTransientModelsToKeep = prevContext.myTransientModelsToKeep;
+      myTransientModulesToKeep = prevContext.myTransientModulesToKeep;
+
     }
   }
 
@@ -148,10 +153,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   public IOperationContext getInvocationContext() {
     return myInvocationContext;
   }
-
-//  public Language getTargetLanguage() {
-//    return myTargetLanguage;
-//  }
 
   public TraceMap getTraceMap() {
     return myTraceMap;
@@ -267,16 +268,40 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return set.contains(inputNode);
   }
 
+  public void addTransientModelToKeep(SModel transientModel) {
+    if (transientModel.getModelDescriptor().isTransient()) {
+      myTransientModelsToKeep.add(transientModel);
+      if (!SModelRepository.getInstance().isRegisteredModelDescriptor(transientModel.getModelDescriptor(), myTransientModule)) {
+        SModelRepository.getInstance().registerModelDescriptor(transientModel.getModelDescriptor(), myTransientModule);
+      }
+      myTransientModulesToKeep.add(myTransientModule);
+    }
+  }
+
+  public boolean isTransientModelToKeep(SModel transientModel) {
+    if (transientModel.getModelDescriptor().isTransient()) {
+      return myTransientModelsToKeep.contains(transientModel);
+    }
+    return false;
+  }
+
+  public boolean isTransientModuleToKeep(IModule transientModule) {
+    return myTransientModulesToKeep.contains(transientModule);
+  }
+
+
   public class TransientModule extends AbstractModule {
     private List<IModule> myDependOnModules = new ArrayList<IModule>();
     private IModule myInvocationModule;
     private SModelDescriptor myProjectModelDescriptor = ProjectModels.createDescriptorFor(this);
     private ModuleDescriptor myModuleDescriptor = ModuleDescriptor.newInstance(myProjectModelDescriptor.getSModel());
+    private String myText;
 
     private MPSModuleOwner myOwnOnwer = new MPSModuleOwner() {
     };
 
-    TransientModule(IModule invocationModule, List<Generator> generatorModules) {
+    TransientModule(String text, IModule invocationModule, List<Generator> generatorModules) {
+      myText = text;
       myInvocationModule = invocationModule;
       myDependOnModules.addAll(generatorModules);
       myDependOnModules.add(invocationModule);
@@ -316,7 +341,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       List<SModelDescriptor> ownModelDescriptors = getOwnModelDescriptors();
       for (SModelDescriptor descriptor : ownModelDescriptors) {
         SModelRepository.getInstance().unRegisterModelDescriptor(descriptor, this);
-        if (descriptor.isTransient()) {
+        if (descriptor.isTransient() && !SModelRepository.getInstance().hasOwners(descriptor)) {
           SModelRepository.getInstance().removeModelDescriptor(descriptor);
         }
       }
@@ -327,13 +352,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
 
     public String toString() {
-      String generatorsString = "/";
-      for (Generator generator : GenerationSessionContext.this.getGeneratorModules()) {
-        generatorsString += generator.getModuleUID();
-        generatorsString += "/";
-      }
-
-      return "TransientModule:[" + myInvocationModule + "]->[" + generatorsString + "] ";
+//      String generatorsString = "/";
+//      for (Generator generator : GenerationSessionContext.this.getGeneratorModules()) {
+//        generatorsString += generator.getModuleUID();
+//        generatorsString += "/";
+//      }
+//
+//      return "TransientModule:[" + myInvocationModule + "]->[" + generatorsString + "] ";
+      return myText;
     }
 
 

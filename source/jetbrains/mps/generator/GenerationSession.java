@@ -38,7 +38,6 @@ public class GenerationSession implements IGenerationSession {
 
   private IOperationContext myInvocationContext;
   private boolean myDiscardTransients;
-  private Set<SModelDescriptor> myTransientModelsToKeep = new HashSet<SModelDescriptor>();
   private IAdaptiveProgressMonitor myProgressMonitor;
   private IMessageHandler myMessagesHandler;
 
@@ -64,10 +63,9 @@ public class GenerationSession implements IGenerationSession {
           Object o = msg.getHintObject();
           if (o instanceof NodeWithContext) {
             SNode node = ((NodeWithContext) o).getNode();
-            SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
-            if (modelDescriptor.isTransient()) {
-              myTransientModelsToKeep.add(modelDescriptor);
-            }
+            myCurrentContext.addTransientModelToKeep(node.getModel());
+            //uncomment to disable 'smart' transient removal
+//            myDiscardTransients = false;
           }
         }
 
@@ -83,11 +81,14 @@ public class GenerationSession implements IGenerationSession {
   }
 
   public void discardTransients() {
+    GenerationSessionContext lastContext = myCurrentContext;
     setGenerationSessionContext(null);
-    if (myDiscardTransients && myTransientModelsToKeep.isEmpty()) {
+    if (myDiscardTransients) {
       for (GenerationSessionContext savedContext : mySavedContexts) {
         IModule module = savedContext.getModule();
-        module.dispose(); // unregister transient models and module
+        if (!lastContext.isTransientModuleToKeep(module)) {
+          module.dispose(); // unregister transient models and module
+        }
       }
       mySavedContexts.clear();
     }
@@ -284,14 +285,14 @@ public class GenerationSession implements IGenerationSession {
       addMessage(MessageKind.INFORMATION, "generating model \"" + currentOutputModel.getModelUID() + "\"");
       generationContext.replaceInputModel(currentOutputModel);
       SModelDescriptor transientModel = createTransientModel(currentInputModel.getSModel(), module);
-// currently it can't work because transient models sometimes contains references on prev transient models        
-//      // probably we can forget about former input model here
-//      if (myDiscardTransients && currentInputModel.isTransient() && !myTransientModelsToKeep.contains(currentInputModel)) {
-//        addMessage(MessageKind.INFORMATION, "discard model \"" + currentInputModel.getModelUID() + "\"");
-//        SModelRepository.getInstance().removeModelDescriptor(currentInputModel);
-//      }
+      // probably we can forget about former input model here
+      if (myDiscardTransients && currentInputModel.isTransient() && !myCurrentContext.isTransientModelToKeep(currentInputModel.getSModel())) {
+        addMessage(MessageKind.INFORMATION, "remove model (1) \"" + currentInputModel.getModelUID() + "\"");
+        SModelRepository.getInstance().removeModelDescriptor(currentInputModel);
+      }
       currentInputModel = currentOutputModel;
       if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel())) {
+        addMessage(MessageKind.INFORMATION, "remove model (2) \"" + transientModel.getModelUID() + "\"");
         SModelRepository.getInstance().removeModelDescriptor(transientModel);
         myTransientModelsCount--;
         break;
