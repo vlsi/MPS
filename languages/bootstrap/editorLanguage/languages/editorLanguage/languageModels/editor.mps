@@ -5173,6 +5173,74 @@
           <property name="noTargetText" value="&lt;no name&gt;" />
           <property name="drawBorder" value="false" />
           <link role="relationDeclaration" targetNodeId="3.1169194664001" />
+          <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1185873713277">
+            <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_PropertyValues" id="1185873717405">
+              <node role="valuesFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_PropertyValues_GetValues" id="1185873717406">
+                <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185873717407">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185873764232">
+                    <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185873764233">
+                      <property name="name" value="names" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1185873764234">
+                        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185873768282">
+                          <link role="classifier" extResolveInfo="14.[Classifier]String" />
+                        </node>
+                      </node>
+                      <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1185873781352">
+                        <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1185873782679">
+                          <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185873785073">
+                            <link role="classifier" extResolveInfo="14.[Classifier]String" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1185873787458">
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1185873787459">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185873798360">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1185873799081">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185873798361">
+                            <link role="variableDeclaration" targetNodeId="1185873764233" resolveInfo="names" />
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1185873800606">
+                            <node role="argument" type="jetbrains.mps.baseLanguage.PlusExpression" id="1185873812058">
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1185873813172">
+                                <property name="value" value="_Actions" />
+                              </node>
+                              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1185873808126">
+                                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1185873810326">
+                                  <link role="property" targetNodeId="3.1169194664001" />
+                                </node>
+                                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1185873805718">
+                                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1185873807456">
+                                    <link role="link" targetNodeId="2.1139535219968" />
+                                  </node>
+                                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1185873804901" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1185873793889">
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNotNullOperation" id="1185873795389" />
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1185873790280">
+                        <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1185873793227">
+                          <link role="link" targetNodeId="2.1139535219968" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1185873789476" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185873825227">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185873825228">
+                      <link role="variableDeclaration" targetNodeId="1185873764233" resolveInfo="names" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1139532930469">

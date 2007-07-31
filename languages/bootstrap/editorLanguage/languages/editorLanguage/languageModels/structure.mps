@@ -941,6 +941,9 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1139535439104" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1185875612566">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473994950" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.EnumerationDataTypeDeclaration" id="1139535328871">
     <property name="name" value="CellActionId" />
