@@ -13,16 +13,20 @@ public class typeof_ForEachVariableReference_InferenceRule implements InferenceR
   public  typeof_ForEachVariableReference_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "variable", false)), argument);
+  public void applyRule(final SNode argument) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "variable", false)), argument, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705453");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

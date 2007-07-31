@@ -12,19 +12,23 @@ public class typeof_ToArrayOperation_InferenceRule implements InferenceRule_Runt
   public  typeof_ToArrayOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     SNode input = RulesFunctions_Collections.getInput(argument);
-    SNode elementType_typevar_1184970400760 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input), new QuotationClass_46().createNode(elementType_typevar_1184970400760), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184970400761");
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_47().createNode(elementType_typevar_1184970400760), argument);
+    final SNode elementType_typevar_1184970400760 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input), new QuotationClass_46().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184970400760)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184970400761");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_47().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184970400760)), argument, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184970528687");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToArrayOperation";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

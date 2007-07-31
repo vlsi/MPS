@@ -16,16 +16,21 @@ public class supertypesOf_ListType_SequenceType_SubtypingRule extends SubtypingR
   public SNode getSubOrSuperType(SNode type) {
     return new QuotationClass_37().createNode(SLinkOperations.getTarget(type, "elementType", true));
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean isSupertyping() {
     return false;
   }
+
   public boolean isWeak() {
     return false;
   }
+
 }

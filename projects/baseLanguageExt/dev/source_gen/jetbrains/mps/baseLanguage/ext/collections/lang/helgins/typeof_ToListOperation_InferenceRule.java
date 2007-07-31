@@ -12,19 +12,23 @@ public class typeof_ToListOperation_InferenceRule implements InferenceRule_Runti
   public  typeof_ToListOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     SNode input = RulesFunctions_Collections.getInput(argument);
-    SNode elementType_typevar_1184850887615 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input), new QuotationClass_12().createNode(elementType_typevar_1184850887615), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850943303");
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_13().createNode(elementType_typevar_1184850887615), argument, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850973959");
+    final SNode elementType_typevar_1184850887615 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input), new QuotationClass_12().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184850887615)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850943303");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_13().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184850887615)), argument, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850973959");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToListOperation";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

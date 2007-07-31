@@ -13,17 +13,21 @@ public class typeof_SkipOperation_InferenceRule implements InferenceRule_Runtime
   public  typeof_SkipOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "elementsToSkip", true)), new QuotationClass_7().createNode(), SLinkOperations.getTarget(argument, "elementsToSkip", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847107857");
     RulesFunctions_Collections.setInputSequenceType(argument, argument);
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SkipOperation";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

@@ -13,7 +13,7 @@ public class typeof_ContainsOperation_InferenceRule implements InferenceRule_Run
   public  typeof_ContainsOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     SNode parent = SNodeOperations.getParent(argument, null, false, false);
     do {
       SNode matchedNode_1178725705169 = parent;
@@ -21,20 +21,24 @@ public class typeof_ContainsOperation_InferenceRule implements InferenceRule_Run
         boolean matches_1178725705171 = false;
         matches_1178725705171 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression");
         if(matches_1178725705171) {
-          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_15().createNode(), argument);
+          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_15().createNode(), argument, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705174");
           break;
         }
       }
-      TypeChecker.getInstance().reportTypeError(argument, "not expected here");
+      TypeChecker.getInstance().reportTypeError(argument, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705180");
     } while(false);
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ContainsOperation";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

@@ -16,16 +16,21 @@ public class supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule exte
   public SNode getSubOrSuperType(SNode type) {
     return new QuotationClass_44().createNode(SLinkOperations.getTarget(type, "elementType", true));
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean isSupertyping() {
     return false;
   }
+
   public boolean isWeak() {
     return true;
   }
+
 }

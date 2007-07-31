@@ -12,16 +12,20 @@ public class typeof_RemoveElementOperation_InferenceRule implements InferenceRul
   public  typeof_RemoveElementOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     RulesFunctions_Collections.isInputElementType(argument, SLinkOperations.getTarget(argument, "argument", true));
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.RemoveElementOperation";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

@@ -13,27 +13,31 @@ public class typeof_IsNotEmptyOperation_InferenceRule implements InferenceRule_R
   public  typeof_IsNotEmptyOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     do {
       SNode matchedNode_1178725705667 = SNodeOperations.getParent(argument, null, false, false);
       {
         boolean matches_1178725705671 = false;
         matches_1178725705671 = SModelUtil_new.isAssignableConcept(SNodeOperations.getParent(argument, null, false, false).getConceptFqName(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression");
         if(matches_1178725705671) {
-          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_35().createNode(), argument);
+          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_35().createNode(), argument, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705674");
           break;
         }
       }
-      TypeChecker.getInstance().reportTypeError(argument, "not expected here");
+      TypeChecker.getInstance().reportTypeError(argument, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705680");
     } while(false);
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }
