@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.logging.Logger;
 
 /**
  * Created by IntelliJ IDEA.
@@ -22,6 +23,8 @@ import jetbrains.mps.smodel.search.SModelSearchUtil_new;
  * To change this template use File | Settings | File Templates.
  */
 public class ModelConstraintsUtil {
+  private static final Logger LOG = Logger.getLogger(ModelConstraintsUtil.class);
+
   public static IStatus getReferentSearchScope(SNode enclosingNode, SNode referenceNode, ConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IScope scope) {
     SModel model = null;
     if (enclosingNode != null) model = enclosingNode.getModel();
@@ -34,9 +37,13 @@ public class ModelConstraintsUtil {
     String genuineReferenceRole = SModelUtil_new.getGenuineLinkRole(referenceLinkDeclaration);
     INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, genuineReferenceRole);
     if (scopeProvider != null) {
-      if (scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope)) {
-        ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
-        return newOK(searchScope);
+      try {
+        if (scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope)) {
+          ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
+          return newOK(searchScope);
+        }
+      } catch (Throwable t) {
+        LOG.error(t);
       }
       return new Status.ERROR("can't create referent search scope: " + scopeProvider.getNodeReferentSearchScopeDescription());
     }
