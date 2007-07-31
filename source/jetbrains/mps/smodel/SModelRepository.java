@@ -111,7 +111,7 @@ public class SModelRepository extends SModelAdapter {
 
   public void refreshModels(Set<SModelDescriptor> skip) {
     LOG.debug("Model refresh");
-    for (SModelDescriptor m : new LinkedList<SModelDescriptor>(myUIDToModelDescriptorMap.values())) {
+    for (SModelDescriptor m : new ArrayList<SModelDescriptor>(myUIDToModelDescriptorMap.values())) {
       if (!skip.contains(m)) {
         m.refresh();
       }
@@ -259,7 +259,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void removeUnusedDescriptors() {
-    List<SModelDescriptor> descriptorsToRemove = new LinkedList<SModelDescriptor>();
+    List<SModelDescriptor> descriptorsToRemove = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor descriptor : new ArrayList<SModelDescriptor>(myModelsWithNoOwners)) {
       HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
       if (modelOwners == null || modelOwners.isEmpty()) {
@@ -301,7 +301,7 @@ public class SModelRepository extends SModelAdapter {
 
   @NotNull
   public List<SModelDescriptor> getModelDescriptors(@NotNull String modelName, @NotNull ModelOwner owner) {
-    List<SModelDescriptor> result = new LinkedList<SModelDescriptor>();
+    List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor descriptor : getModelDescriptors(owner)) {
       if (modelName.equals(descriptor.getLongName())) {
         result.add(descriptor);
@@ -312,7 +312,7 @@ public class SModelRepository extends SModelAdapter {
 
   @NotNull
   public List<SModelDescriptor> getModelDescriptors(@NotNull ModelOwner modelOwner) {
-    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
+    List<SModelDescriptor> list = new ArrayList<SModelDescriptor>();
     for (Map.Entry<SModelUID, SModelDescriptor> entry : myUIDToModelDescriptorMap.entrySet()) {
       SModelDescriptor descriptor = entry.getValue();
       HashSet<ModelOwner> modelOwners = myModelToOwnerMap.get(descriptor);
@@ -457,7 +457,7 @@ public class SModelRepository extends SModelAdapter {
   }
 
   public void saveAll() {
-    List<SModelDescriptor> descriptors = new LinkedList(myChangedModels.keySet());
+    List<SModelDescriptor> descriptors = new ArrayList(myChangedModels.keySet());
     for (SModelDescriptor modelDescriptor : descriptors) {
       try {
         modelDescriptor.save();
@@ -485,7 +485,7 @@ public class SModelRepository extends SModelAdapter {
   public List<SModelDescriptor> readModelDescriptors(
           @NotNull Iterator<ModelRoot> modelRoots,
           @NotNull ModelOwner owner) {
-    List<SModelDescriptor> list = new LinkedList<SModelDescriptor>();
+    List<SModelDescriptor> list = new ArrayList<SModelDescriptor>();
     while (modelRoots.hasNext()) {
       ModelRoot modelRoot = modelRoots.next();
       try {
