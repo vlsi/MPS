@@ -50,7 +50,7 @@ public class DelayedChanges {
         SModelUID inputModelUID = myGenerator.getSourceModel().getUID();
         for (SReference reference : child.getReferences()) {
           if (inputModelUID.equals(reference.getTargetModelUID())) {
-            myGenerator.showWarningMessage(child, "output node contains reference '" + reference.getRole() + "' back to input model");
+            myGenerator.showWarningMessage(child, "output node refers to input model " + inputModelUID);
             myGenerator.showInformationMessage(child, " -- output node: " + child.getDebugText());
             SNode targetNode = reference.getTargetNode();
             myGenerator.showInformationMessage(targetNode, " -- referent node: " + targetNode.getDebugText());

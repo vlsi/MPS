@@ -143,6 +143,10 @@ public class QueriesGenerated {
     return QueriesUtil.create_Closure_returnedType(node, generator);
   }
 
+  public static SNode sourceNodeQuery_1185926181285(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.create_Closure_returnedType(node, generator);
+  }
+
   public static SNode sourceNodeQuery_1170985696959(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "value", true);
   }
@@ -401,10 +405,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1184964109836(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
-  }
-
-  public static SNode mapSrcMacro_mapper_1170957401571(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_Closure_returnedType(node, generator);
   }
 
   public static SNode mapSrcMacro_mapper_1170976176384(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {

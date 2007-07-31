@@ -108,7 +108,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
 */
     // check child because it's manual and thus error prone mapping
     if (referentNode.getModel() == generator.getSourceModel()) {
-      generator.showWarningMessage(getOutputNode(), "output node contains reference '" + linkRole + "' back to input model");
+      generator.showWarningMessage(getOutputNode(), "output node refers to input model " + referentNode.getModel().getUID());
       generator.showInformationMessage(getOutputNode(), " -- output node: " + getOutputNode().getDebugText());
       generator.showInformationMessage(referentNode, " -- referent node: " + referentNode.getDebugText());
       generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node (click here)");
