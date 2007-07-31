@@ -13,7 +13,7 @@ public class typeOf_AssertStatement_InferenceRule implements InferenceRule_Runti
   public  typeOf_AssertStatement_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true)), new QuotationClass_9().createNode(), SLinkOperations.getTarget(argument, "condition", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1178271610359");
   }
 

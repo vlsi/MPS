@@ -12,7 +12,7 @@ public class typeOf_ImmediateSupertypes_InferenceRule implements InferenceRule_R
   public  typeOf_ImmediateSupertypes_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_5().createNode(), argument, "jetbrains.mps.bootstrap.helgins.helgins", "1177069172275");
   }
 

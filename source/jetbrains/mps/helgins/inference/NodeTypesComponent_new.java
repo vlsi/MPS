@@ -156,10 +156,14 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     return component;
   }
 
-
   public void computeTypes() {
+    computeTypes(false);
+  }
+
+
+  public void computeTypes(boolean refreshTypes) {
     try {
-      if (!isIncrementalMode()) {
+      if (!isIncrementalMode() || refreshTypes) {
         clear();
       } else {
         myNotSkippedNodes.clear();

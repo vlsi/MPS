@@ -7,17 +7,17 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class typeOf_IsSubtypeExpression_InferenceRule implements InferenceRule_Runtime {
+public class typeOf_TypeVarDeclaration_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeOf_IsSubtypeExpression_InferenceRule() {
+  public  typeOf_TypeVarDeclaration_InferenceRule() {
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_10().createNode(), argument, "jetbrains.mps.bootstrap.helgins.helgins", "1178819919789");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_15().createNode(), argument, null, "jetbrains.mps.bootstrap.helgins.helgins", "1185878029189");
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression";
+    return "jetbrains.mps.bootstrap.helgins.structure.TypeVarDeclaration";
   }
 
   public boolean isApplicable(SNode argument) {

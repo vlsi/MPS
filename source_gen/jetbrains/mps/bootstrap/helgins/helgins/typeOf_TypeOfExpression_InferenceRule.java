@@ -13,7 +13,7 @@ public class typeOf_TypeOfExpression_InferenceRule implements InferenceRule_Runt
   public  typeOf_TypeOfExpression_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "term", true)), new QuotationClass_3().createNode(), SLinkOperations.getTarget(argument, "term", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1178192184638");
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_4().createNode(), argument, "jetbrains.mps.bootstrap.helgins.helgins", "1176909555189");
   }

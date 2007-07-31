@@ -454,8 +454,8 @@ public class QueriesGenerated {
     return method_.getParameters().get(0).getNode();
   }
 
-  public static SNode referenceMacro_GetReferent_1174666452984(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode statement = generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "typeVarDeclaration", false), "typeVarDeclaration").getTargetNode();
+  public static SNode referenceMacro_GetReferent_1185876297648(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    SNode statement = (SNode)generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "typeVarDeclaration", false), "typeVarDeclaration").getTargetNode();
     return SLinkOperations.getTarget(statement, "localVariableDeclaration", true);
   }
 

@@ -137,12 +137,16 @@ public class TypeChecker {
   }
 
   public void checkRoot(SNode node) {
+    checkRoot(node, false);
+  }
+
+  public void checkRoot(SNode node, boolean refreshTypes) {
     assert node.isRoot();
 
     try {
       MyReadAccessListener listener = new MyReadAccessListener();
       NodeReadAccessCaster.setNodeAccessListener(listener);
-      NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node).computeTypes();
+      NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node).computeTypes(refreshTypes);
       myCheckedRoots.add(node);
 
       for (SNode nodeToDependOn : listener.getNodesToDependOn()) {

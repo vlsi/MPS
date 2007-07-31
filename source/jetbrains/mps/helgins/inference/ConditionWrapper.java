@@ -15,6 +15,7 @@ import org.jetbrains.annotations.Nullable;
 */
 public class ConditionWrapper implements IWrapper {
   private Condition<SNode> myCondition;
+  private NodeWrapper myVariableWrapper;
 
   public ConditionWrapper(Condition<SNode> condition) {
     myCondition = condition;
