@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandAdapter;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Map;
@@ -13,6 +14,7 @@ import java.util.HashMap;
  * Jul 26, 2007
  */
 /*package*/ class UnregisteredNodes {
+  private static final Logger LOG = Logger.getLogger(UnregisteredNodes.class);
   private static UnregisteredNodes myInstance;
   private Map<String, SNode> myMap = new HashMap();
 
@@ -34,6 +36,7 @@ import java.util.HashMap;
   /*package*/ void put(SNode node) {
     if (!node.hasId()) return;
     String key = node.getModel().getUID() + "#" + node.getId();
+    LOG.assertLog(!myMap.containsKey(key), "attempt to put another node with same key: " + key);
     myMap.put(key, node);
   }
 
@@ -55,6 +58,7 @@ import java.util.HashMap;
     }
     if (node.hasId()) {
       String key = node.getModel().getUID() + "#" + node.getId();
+      LOG.assertLog(!myMap.containsKey(key), "attempt to put another node with same key: " + key);
       myMap.put(key, node);
     }
   }
@@ -64,6 +68,7 @@ import java.util.HashMap;
     String key1 = oldModel.getUID() + "#" + node.getId();
     myMap.remove(key1);
     String key2 = node.getModel().getUID() + "#" + node.getId();
+    LOG.assertLog(!myMap.containsKey(key2), "attempt to put another node with same key: " + key2);
     myMap.put(key2, node);
   }
 }

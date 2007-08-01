@@ -73,7 +73,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
   public void changeModel(SModel newModel) {
     if (myModel == newModel) return;
     LOG.assertLog(!isRegistered(), "couldn't change model of registered node " + getDebugText());
+    SModel wasModel = myModel;
     myModel = newModel;
+    UnregisteredNodes.instance().nodeModelChanged(this, wasModel);
     for (SNode child : _children()) {
       child.changeModel(newModel);
     }
@@ -1472,6 +1474,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public void setId(SNodeId id) {
+    if (id.equals(myId)) return;
     LOG.assertLog(!isRegistered(), "can't set id to registered node " + getDebugText());
     SNodeId wasId = myId;
     myId = id;
