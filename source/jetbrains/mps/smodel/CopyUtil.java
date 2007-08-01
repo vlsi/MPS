@@ -14,6 +14,16 @@ public class CopyUtil {
     return copy(nodes, targetModel, new HashMap<SNode, SNode>());
   }
 
+  public static List<SNode> copyAndPreserveId(List<SNode> nodes, SModel targetModel) {
+    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    List<SNode> result = clone(nodes, targetModel, mapping);
+    for (SNode sourceNode : mapping.keySet()) {
+      mapping.get(sourceNode).setId(sourceNode.getSNodeId());
+    }
+    addReferences(result, mapping, true);
+    return result;
+  }
+
   private static List<SNode> copy(List<SNode> nodes, SModel targetModel, Map<SNode, SNode> mapping) {
     List<SNode> result = clone(nodes, targetModel, mapping);
     addReferences(nodes, mapping, true);
@@ -30,10 +40,13 @@ public class CopyUtil {
 
   public static SNode copyAndPreserveId(SNode node, SModel targetModel) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    SNode result = copy(node, targetModel, mapping, true);
+    SNode result = clone(node, targetModel, mapping, true);
     for (SNode sourceNode : mapping.keySet()) {
       mapping.get(sourceNode).setId(sourceNode.getSNodeId());
     }
+    List<SNode> nodes = new ArrayList<SNode>();
+    nodes.add(node);
+    addReferences(nodes, mapping, true);
     return result;
   }
 
@@ -49,10 +62,6 @@ public class CopyUtil {
     SNode result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), null/*targetModel*/, GlobalScope.getInstance(), false);
     assert result != null;
     mapping.put(node, result);
-
-    // don't need to add language now because result node is 'in air'.
-    // if this is necessary, this should be done when a node is registered in model  
-//    targetModel.addLanguage(node.getLanguage(GlobalScope.getInstance()));
 
     for (String property : node.getProperties().keySet()) {
       result.setProperty(property, node.getProperty(property), false);
