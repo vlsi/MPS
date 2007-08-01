@@ -24,5 +24,11 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1185959968556">
+    <link role="conceptDeclaration" targetNodeId="1.1185959958415" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1185959974511">
+      <property name="text" value="BCONCEPT" />
+    </node>
+  </node>
 </model>
 

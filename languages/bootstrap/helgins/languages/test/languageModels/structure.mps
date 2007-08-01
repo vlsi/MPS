@@ -12,7 +12,15 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="expression" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1081773326031" />
+      <link role="target" targetNodeId="2.1068431790191" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1185959958415">
+    <property name="name" value="BConcept" />
+    <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1185960011498">
+      <property name="value" value="BCONCEPT" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
 </model>

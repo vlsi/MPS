@@ -14,13 +14,9 @@
   <import index="5" modelUID="java.io@java_stub" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.helgins.structure" />
   <node type="jetbrains.mps.bootstrap.helgins.test.AConcept" id="1185808274165">
-    <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1185808317494">
-      <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1185808371298">
-        <property name="value" value="" />
-      </node>
-      <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1185808320481">
-        <property name="value" value="5" />
-      </node>
+    <node role="expression" type="jetbrains.mps.baseLanguage.MulExpression" id="1185960497479">
+      <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.test.BConcept" id="1185960499685" />
+      <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.test.BConcept" id="1185960495072" />
     </node>
   </node>
 </model>

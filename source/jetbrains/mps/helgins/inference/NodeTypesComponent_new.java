@@ -456,33 +456,40 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
   }
 
   private SNode expandType(SNode node, SModel typesModel) {
-    SNode representator = myEquationManagersStack.peek().getRepresentator(node);
-    return expandNode(representator, representator, 0, new HashSet<RuntimeTypeVariable>(), typesModel);
+    if (node == null) return null;
+    IWrapper representator = myEquationManagersStack.peek().getRepresentatorWrapper(new NodeWrapper(node));
+    return expandNode(representator, representator, 0, new HashSet<IWrapper>(), typesModel).getNode();
   }
 
-  private SNode expandNode(SNode node, SNode representator, int depth, Set<RuntimeTypeVariable> variablesMet, SModel typesModel) {
-    if (node == null) return null;
-    if (BaseAdapter.isInstance(node, RuntimeTypeVariable.class)) {
-      RuntimeTypeVariable var = (RuntimeTypeVariable) BaseAdapter.fromNode(node);
-      SNode type = myEquationManagersStack.peek().getRepresentator(node);
+  private NodeWrapper expandNode(IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel) {
+    if (wrapper == null) return null;
+
+    if (wrapper.isVariable()) {
+      IWrapper type = myEquationManagersStack.peek().getRepresentatorWrapper(wrapper);
+      NodeWrapper wrapper1 = (NodeWrapper) wrapper;
       if (type != representator || depth > 0) {
 
-        if (variablesMet.contains(var)) {
+        if (variablesMet.contains(wrapper)) {
           //recursion!!
           RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
           error.setErrorText("recursion types not allowed");
-          return BaseAdapter.fromAdapter(error);
+          return new NodeWrapper(error.getNode());
         }
-        variablesMet.add(var);
-        node = expandNode(type, type, 0, variablesMet, typesModel);
-        variablesMet.remove(var);
+        variablesMet.add(wrapper);
+        wrapper1 = expandNode(type, type, 0, variablesMet, typesModel);
+        variablesMet.remove(wrapper);
       }
-      return node;
+      return wrapper1;
+    }
+    if (wrapper.isCondition()) {
+      RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
+      error.setErrorText("argument of WHEN CONCRETE block is never concrete");
+      return new NodeWrapper(error.getNode());
     }
     Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
-    List<SNode> children = new ArrayList<SNode>(node.getChildren());
+    List<SNode> children = new ArrayList<SNode>(wrapper.getNode().getChildren());
     for (SNode child : children) {
-      SNode newChild = expandNode(child, representator, depth+1, variablesMet, typesModel);
+      SNode newChild = expandNode(new NodeWrapper(child), representator, depth+1, variablesMet, typesModel).getNode();
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }
@@ -492,7 +499,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
       if (child.getParent() == null) {
         RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
         error.setErrorText("recursion types not allowed");
-        return BaseAdapter.fromAdapter(error);
+        return new NodeWrapper(error.getNode());
       }
       SNode parent = child.getParent();
       assert parent != null;
@@ -503,7 +510,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
       childReplacement = CopyUtil.copy(childReplacement, parent.getModel());
       parent.addChild(roleInParent, childReplacement);
     }
-    return node;
+    return (NodeWrapper) wrapper;
   }
 
   public EquationManager getEquationManager() {

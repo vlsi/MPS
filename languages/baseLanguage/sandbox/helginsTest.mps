@@ -204,6 +204,26 @@
             <property name="value" value="3" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185959725429">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1185959725430">
+            <property name="value" value="" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185959709371">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1185959709670">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1185959711080">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1185959712865">
+                <property name="value" value="34" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1185959711001">
+                <property name="value" value="3" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1185959709372">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1185362000192" />
