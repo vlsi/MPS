@@ -24,17 +24,13 @@ public final class SReference {
   private static boolean ourLoggingOff = false;
 
   private SReference(String role, SNode sourceNode, String targetNodeId, String resolveInfo, String extResolveInfo, SModelUID targetModelUID) {
-    this(role, sourceNode, targetModelUID, extResolveInfo);
-    myTargetNodeId = InternUtil.intern(targetNodeId);
-    myResolveInfo = InternUtil.intern(resolveInfo);
-    LOG.assertLog(targetModelUID != null, "targetModelUID is NULL");
-  }
-
-  private SReference(String role, SNode sourceNode, SModelUID targetModelUID, String extResolveInfo) {
     myRole = InternUtil.intern(role);
     mySourceNode = sourceNode;
+    myTargetNodeId = InternUtil.intern(targetNodeId);
+    myResolveInfo = InternUtil.intern(resolveInfo);
     myExtResolveInfo = InternUtil.intern(extResolveInfo);
     myTargetModelUID = targetModelUID;
+    LOG.assertLog(targetModelUID != null, "targetModelUID is NULL");
   }
 
   public String getResolveInfo() {
