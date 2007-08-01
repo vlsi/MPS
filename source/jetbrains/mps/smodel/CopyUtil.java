@@ -11,22 +11,21 @@ import java.util.Map;
 
 public class CopyUtil {
   public static List<SNode> copy(List<SNode> nodes, SModel targetModel) {
-    return copy(nodes, targetModel, new HashMap<SNode, SNode>());
+    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    List<SNode> result = clone(nodes, targetModel, mapping);
+    for (SNode node : nodes) {
+      addReferences(node, mapping, true);
+    }
+    return result;
   }
 
   public static List<SNode> copyAndPreserveId(List<SNode> nodes, SModel targetModel) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> result = clone(nodes, targetModel, mapping);
-    for (SNode sourceNode : mapping.keySet()) {
-      mapping.get(sourceNode).setId(sourceNode.getSNodeId());
+    makeSameId(mapping);
+    for (SNode node : nodes) {
+      addReferences(node, mapping, true);
     }
-    addReferences(nodes, mapping, true);
-    return result;
-  }
-
-  private static List<SNode> copy(List<SNode> nodes, SModel targetModel, Map<SNode, SNode> mapping) {
-    List<SNode> result = clone(nodes, targetModel, mapping);
-    addReferences(nodes, mapping, true);
     return result;
   }
 
@@ -41,20 +40,14 @@ public class CopyUtil {
   public static SNode copyAndPreserveId(SNode node, SModel targetModel) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SNode result = clone(node, targetModel, mapping, true);
-    for (SNode sourceNode : mapping.keySet()) {
-      mapping.get(sourceNode).setId(sourceNode.getSNodeId());
-    }
-    List<SNode> nodes = new ArrayList<SNode>();
-    nodes.add(node);
-    addReferences(nodes, mapping, true);
+    makeSameId(mapping);
+    addReferences(node, mapping, true);
     return result;
   }
 
   public static SNode copy(SNode node, SModel targetModel, Map<SNode, SNode> mapping, boolean copyAttributes) {
     SNode result = clone(node, targetModel, mapping, copyAttributes);
-    List<SNode> nodes = new ArrayList<SNode>();
-    nodes.add(node);
-    addReferences(nodes, mapping, copyAttributes);
+    addReferences(node, mapping, copyAttributes);
     return result;
   }
 
@@ -84,28 +77,6 @@ public class CopyUtil {
     return results;
   }
 
-  private static void addReferences(List<? extends SNode> sourceNodes, Map<SNode, SNode> mapping, boolean copyAttributes) {
-    for (SNode node : sourceNodes) {
-      SNode target = mapping.get(node);
-
-      for (SReference ref : node.getReferences()) {
-        if (mapping.containsKey(ref.getTargetNode())) {
-          target.addReferent(ref.getRole(), mapping.get(ref.getTargetNode()));
-        } else {
-          target.addReferent(ref.getRole(), ref.getTargetNode());
-        }
-      }
-
-      List<SNode> childList = new ArrayList<SNode>();
-      for (String role : node.getChildRoles(copyAttributes)) {
-        for (SNode child : node.getChildren(role)) {
-          childList.add(child);
-        }
-      }
-      addReferences(childList, mapping, copyAttributes);
-    }
-  }
-
   private static void addReferences(SNode sourceNode, Map<SNode, SNode> mapping, boolean copyAttributes) {
     SNode clonedNode = mapping.get(sourceNode);
 
@@ -123,4 +94,11 @@ public class CopyUtil {
       }
     }
   }
+
+  private static void makeSameId(HashMap<SNode, SNode> mapping) {
+    for (SNode sourceNode : mapping.keySet()) {
+      mapping.get(sourceNode).setId(sourceNode.getSNodeId());
+    }
+  }
+
 }
