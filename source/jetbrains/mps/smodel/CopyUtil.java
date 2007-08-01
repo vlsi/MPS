@@ -11,21 +11,12 @@ import java.util.Map;
 
 public class CopyUtil {
   public static List<SNode> copy(List<SNode> nodes, SModel targetModel) {
-    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    List<SNode> result = clone(nodes, targetModel, mapping);
-    for (SNode node : nodes) {
-      addReferences(node, mapping, true);
-    }
-    return result;
+    return copy(nodes, targetModel, new HashMap<SNode, SNode>());
   }
 
-  public static List<SNode> copyAndPreserveId(List<SNode> nodes, SModel targetModel) {
-    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+  private static List<SNode> copy(List<SNode> nodes, SModel targetModel, Map<SNode, SNode> mapping) {
     List<SNode> result = clone(nodes, targetModel, mapping);
-    makeSameId(mapping);
-    for (SNode node : nodes) {
-      addReferences(node, mapping, true);
-    }
+    addReferences(nodes, mapping, true);
     return result;
   }
 
@@ -39,15 +30,18 @@ public class CopyUtil {
 
   public static SNode copyAndPreserveId(SNode node, SModel targetModel) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    SNode result = clone(node, targetModel, mapping, true);
-    makeSameId(mapping);
-    addReferences(node, mapping, true);
+    SNode result = copy(node, targetModel, mapping, true);
+    for (SNode sourceNode : mapping.keySet()) {
+      mapping.get(sourceNode).setId(sourceNode.getSNodeId());
+    }
     return result;
   }
 
   public static SNode copy(SNode node, SModel targetModel, Map<SNode, SNode> mapping, boolean copyAttributes) {
     SNode result = clone(node, targetModel, mapping, copyAttributes);
-    addReferences(node, mapping, copyAttributes);
+    List<SNode> nodes = new ArrayList<SNode>();
+    nodes.add(node);
+    addReferences(nodes, mapping, copyAttributes);
     return result;
   }
 
@@ -55,6 +49,10 @@ public class CopyUtil {
     SNode result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), null/*targetModel*/, GlobalScope.getInstance(), false);
     assert result != null;
     mapping.put(node, result);
+
+    // don't need to add language now because result node is 'in air'.
+    // if this is necessary, this should be done when a node is registered in model
+//    targetModel.addLanguage(node.getLanguage(GlobalScope.getInstance()));
 
     for (String property : node.getProperties().keySet()) {
       result.setProperty(property, node.getProperty(property), false);
@@ -77,28 +75,25 @@ public class CopyUtil {
     return results;
   }
 
-  private static void addReferences(SNode sourceNode, Map<SNode, SNode> mapping, boolean copyAttributes) {
-    SNode clonedNode = mapping.get(sourceNode);
+  private static void addReferences(List<? extends SNode> sourceNodes, Map<SNode, SNode> mapping, boolean copyAttributes) {
+    for (SNode node : sourceNodes) {
+      SNode target = mapping.get(node);
 
-    for (SReference ref : sourceNode.getReferences()) {
-      if (mapping.containsKey(ref.getTargetNode())) {
-        clonedNode.addReferent(ref.getRole(), mapping.get(ref.getTargetNode()));
-      } else {
-        clonedNode.addReferent(ref.getRole(), ref.getTargetNode());
+      for (SReference ref : node.getReferences()) {
+        if (mapping.containsKey(ref.getTargetNode())) {
+          target.addReferent(ref.getRole(), mapping.get(ref.getTargetNode()));
+        } else {
+          target.addReferent(ref.getRole(), ref.getTargetNode());
+        }
       }
-    }
 
-    for (String role : sourceNode.getChildRoles(copyAttributes)) {
-      for (SNode child : sourceNode.getChildren(role)) {
-        addReferences(child, mapping, copyAttributes);
+      List<SNode> childList = new ArrayList<SNode>();
+      for (String role : node.getChildRoles(copyAttributes)) {
+        for (SNode child : node.getChildren(role)) {
+          childList.add(child);
+        }
       }
+      addReferences(childList, mapping, copyAttributes);
     }
   }
-
-  private static void makeSameId(HashMap<SNode, SNode> mapping) {
-    for (SNode sourceNode : mapping.keySet()) {
-      mapping.get(sourceNode).setId(sourceNode.getSNodeId());
-    }
-  }
-
 }
