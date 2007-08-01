@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -19,7 +20,7 @@ public class check_VarRef_in_WhenConcreteStatement_InferenceRule implements Infe
     SNode ancestor = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", false, false);
     if(ancestor != null) {
       SNode variableDeclaration = SLinkOperations.getTarget(argument, "variableDeclaration", false);
-      if(variableDeclaration != null) {
+      if(variableDeclaration != null && !(SequenceOperations.contains(SNodeOperations.getAncestors(variableDeclaration, "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", false), ancestor))) {
         if(!(SPropertyOperations.getBoolean(variableDeclaration, "isFinal"))) {
           TypeChecker.getInstance().reportTypeError(argument, "variable is used inside WHEN CONCRETE block. should be declared final", "jetbrains.mps.bootstrap.helgins.helgins", "1185875417873");
         }
