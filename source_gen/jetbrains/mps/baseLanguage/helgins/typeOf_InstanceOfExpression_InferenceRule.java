@@ -13,7 +13,7 @@ public class typeOf_InstanceOfExpression_InferenceRule implements InferenceRule_
   public  typeOf_InstanceOfExpression_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true)), SLinkOperations.getTarget(argument, "classType", true), argument, null, "jetbrains.mps.baseLanguage.helgins", "1176907635591");
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_48().createNode(), argument, null, "jetbrains.mps.baseLanguage.helgins", "1179744208448");
   }

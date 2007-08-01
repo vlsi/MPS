@@ -13,7 +13,7 @@ public class typeOf_ParenthesizedExpression_InferenceRule implements InferenceRu
   public  typeOf_ParenthesizedExpression_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true)), argument, "jetbrains.mps.baseLanguage.helgins", "1176901170144");
   }
 

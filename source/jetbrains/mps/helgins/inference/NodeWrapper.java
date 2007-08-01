@@ -29,7 +29,7 @@ public class NodeWrapper implements IWrapper {
 
   public NodeWrapper(SNode node) {
     if (node == null) {
-      LOG.error("a node in wrapper is null");
+      LOG.errorWithTrace("a node in wrapper is null");
     }
     myNode = node;
   }

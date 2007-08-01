@@ -18,14 +18,26 @@ public class RulesFunctions_BaseLanguage {
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_28().createNode(), binOp, "jetbrains.mps.baseLanguage.helgins", "1176897196207");
   }
 
-  public static void numericOp(SNode binOp) {
-    TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(binOp, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176908824285");
-    TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(binOp, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins", "1176908835463");
-    SNode rightExpressionType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true));
-    SNode leftExpressionType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true));
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(rightExpressionType, SLinkOperations.getTarget(new QuotationClass_29().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176908856117");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(leftExpressionType, SLinkOperations.getTarget(new QuotationClass_30().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176908902743");
-    TypeChecker.getInstance().getRuntimeSupport().givetype(Queries.getBinaryOperationType(leftExpressionType, rightExpressionType), binOp, "jetbrains.mps.baseLanguage.helgins", "1177060351454");
+  public static void numericOp(final SNode binOp) {
+    final SNode rightExpressionType_typevar_1185962758265 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    final SNode leftExpressionType_typevar_1185962769627 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "rightExpression", true)), SLinkOperations.getTarget(binOp, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1185962983223");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(binOp, "leftExpression", true)), SLinkOperations.getTarget(binOp, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1185963003424");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), SLinkOperations.getTarget(new QuotationClass_29().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176908856117");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), SLinkOperations.getTarget(new QuotationClass_30().createNode(), "descriptor", false), SLinkOperations.getTarget(binOp, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1176908902743");
+    TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), new Runnable() {
+
+      public void run() {
+        TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265), new Runnable() {
+
+          public void run() {
+            TypeChecker.getInstance().getRuntimeSupport().givetype(Queries.getBinaryOperationType(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265)), binOp, "jetbrains.mps.baseLanguage.helgins", "1185963109700");
+          }
+
+        });
+      }
+
+    });
   }
 
   public static Iterable<SNode> collectReturnStatements(SNode node) {

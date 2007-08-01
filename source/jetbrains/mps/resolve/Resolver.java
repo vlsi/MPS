@@ -159,25 +159,6 @@ public class Resolver {
     return false;
   }
 
-  private static void processAction(INodeSubstituteAction action, String pattern, SReference reference) {
-    if (action instanceof DefaultChildNodeSubstituteAction) {
-      SNode sourceNode = reference.getSourceNode();
-      SModel model = sourceNode.getModel();
-      DefaultChildNodeSubstituteAction childAction = (DefaultChildNodeSubstituteAction) action;
-      try {
-        SNode childNode = childAction.createChildNode(childAction.getParameterObject(), model, pattern);
-        String role = reference.getRole();
-        SNode referent = childNode.getReferent(role);
-        sourceNode.setReferent(role, referent);
-      } catch (Throwable t) {
-        action.doSubstitute(pattern);
-      }
-    }
-    if (action instanceof DefaultReferentNodeSubstituteAction) {
-      action.doSubstitute(pattern);
-    }
-  }
-
   public static List<INodeSubstituteAction> createResolveActions(SReference reference, IOperationContext operationContext, EditorContext editorContext) {
     String resolveInfo = reference.getResolveInfo();
     String role = reference.getRole();

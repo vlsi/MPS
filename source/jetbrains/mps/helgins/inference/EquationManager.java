@@ -193,6 +193,16 @@ public class EquationManager {
       return;
     }
 
+    if (supertypeRepresentator != null && supertypeRepresentator.isCondition() ||
+            subtypeRepresentator != null && subtypeRepresentator.isCondition()) {
+      if (isWeak) {
+        addSubtyping(subtypeRepresentator, supertypeRepresentator, errorInfo);
+      } else {
+        addStrongSubtyping(subtypeRepresentator, supertypeRepresentator, errorInfo);
+      }
+      return;
+    }
+
     // if subtyping
     if (myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, errorInfo, isWeak)) {
       return;
@@ -439,7 +449,7 @@ public class EquationManager {
     myTypeChecker.reportTypeError(nodeToCheck, errorReporter);
   }
 
-  public void clear() {    
+  public void clear() {
     mySubtypesToSupertypesMap.clear();
     mySupertypesToSubtypesMap.clear();
     mySubtypesToSupertypesMapStrong.clear();
@@ -698,7 +708,7 @@ public class EquationManager {
     }
     //  T,S <: c => c = lcs(T,S)
     addEquation(type, NodeWrapper.fromNode(myTypeChecker.getSubtypingManager().leastCommonSupertype(toNodes(concreteSubtypes))),
-             errorInfo);
+            errorInfo);
   }
 
   private Set<SNode> toNodes(Set<IWrapper> wrappers) {

@@ -12,7 +12,7 @@ public class typeOf_FloatingPointConstant_InferenceRule implements InferenceRule
   public  typeOf_FloatingPointConstant_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_50().createNode(), argument, "jetbrains.mps.baseLanguage.helgins", "1176907782194");
   }
 

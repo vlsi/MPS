@@ -746,6 +746,10 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1185963081006">
+      <property name="value" value="WHEN CONCRETE" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
   </node>
 </model>
 

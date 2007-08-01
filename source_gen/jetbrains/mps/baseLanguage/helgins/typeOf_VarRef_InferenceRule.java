@@ -13,7 +13,7 @@ public class typeOf_VarRef_InferenceRule implements InferenceRule_Runtime {
   public  typeOf_VarRef_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "variableDeclaration", false)), argument, "jetbrains.mps.baseLanguage.helgins", "1176719315612");
   }
 

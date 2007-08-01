@@ -12,7 +12,7 @@ public class typeOf_BooleanConst_InferenceRule implements InferenceRule_Runtime 
   public  typeOf_BooleanConst_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_6().createNode(), argument, "jetbrains.mps.baseLanguage.helgins", "1175598801792");
   }
 

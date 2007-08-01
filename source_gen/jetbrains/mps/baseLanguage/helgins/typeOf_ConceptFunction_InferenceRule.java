@@ -19,7 +19,7 @@ public class typeOf_ConceptFunction_InferenceRule implements InferenceRule_Runti
   public  typeOf_ConceptFunction_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     // generic check
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "body", true), "jetbrains.mps.baseLanguage.helgins", "1178655253666");
     // =============

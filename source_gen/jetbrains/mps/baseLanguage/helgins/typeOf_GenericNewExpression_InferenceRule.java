@@ -13,7 +13,7 @@ public class typeOf_GenericNewExpression_InferenceRule implements InferenceRule_
   public  typeOf_GenericNewExpression_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "creator", true)), argument, "jetbrains.mps.baseLanguage.helgins", "1176896990006");
   }
 

@@ -13,7 +13,7 @@ public class typeOf_EnumConstantReference_InferenceRule implements InferenceRule
   public  typeOf_EnumConstantReference_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     if(!((SLinkOperations.getTarget(argument, "enumConstantDeclaration", false) != null))) {
       TypeChecker.getInstance().reportTypeError(argument, "no constant declaration", "jetbrains.mps.baseLanguage.helgins", "1176905227742");
     }
