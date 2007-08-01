@@ -194,6 +194,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185981078590">
+          <node role="expression" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1185981078591">
+            <property name="value" value="true" />
+            <node role="helginsJudgement$attribute" type="jetbrains.mps.bootstrap.helgins.HelginsJudgement" id="1185981081045">
+              <node role="type" type="jetbrains.mps.baseLanguage.BooleanType" id="1185981152870" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1183121979332">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1183121979333">
             <property name="name" value="n" />
