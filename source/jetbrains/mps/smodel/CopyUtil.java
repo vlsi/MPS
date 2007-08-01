@@ -30,10 +30,13 @@ public class CopyUtil {
 
   public static SNode copyAndPreserveId(SNode node, SModel targetModel) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    SNode result = copy(node, targetModel, mapping, true);
+    SNode result = clone(node, targetModel, mapping, true);
     for (SNode sourceNode : mapping.keySet()) {
       mapping.get(sourceNode).setId(sourceNode.getSNodeId());
     }
+    List<SNode> nodes = new ArrayList<SNode>();
+    nodes.add(node);
+    addReferences(nodes, mapping, true);
     return result;
   }
 
