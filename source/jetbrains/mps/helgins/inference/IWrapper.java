@@ -14,6 +14,7 @@ import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 public interface IWrapper extends IMatcher {
   public SNode getNode();
   public boolean isVariable();
+  public boolean isConcrete();
   public RuntimeTypeVariable getVariable();
   public boolean isCondition();
 }

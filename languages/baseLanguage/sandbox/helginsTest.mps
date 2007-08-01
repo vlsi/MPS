@@ -3,10 +3,12 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.core" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="java.util@java_stub" />
   <import index="2" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="java.io@java_stub" />
+  <import index="4" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
+  <import index="5" modelUID="jetbrains.mps.smodel@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1182952452380">
     <property name="name" value="TestHelgins" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1182952459350">
@@ -99,6 +101,38 @@
             <node role="helginsJudgement$attribute" type="jetbrains.mps.bootstrap.helgins.HelginsJudgement" id="1182959200570">
               <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182959204321">
                 <link role="classifier" extResolveInfo="2.[Classifier]String" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185976309337">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185976309338">
+            <property name="name" value="node1" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185976309339">
+              <link role="classifier" extResolveInfo="5.[Classifier]SNode" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185976224121">
+          <node role="expression" type="jetbrains.mps.baseLanguage.TernaryOperatorExpression" id="1185976225185">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.NewExpression" id="1185976231611">
+              <link role="baseMethodDeclaration" extResolveInfo="4.constructor [Classifier]ClassConcept[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185976314778">
+                <link role="variableDeclaration" targetNodeId="1185976309338" resolveInfo="node1" />
+              </node>
+            </node>
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.NewExpression" id="1185976317810">
+              <link role="baseMethodDeclaration" extResolveInfo="4.constructor [Classifier]Interface[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185976323878">
+                <link role="variableDeclaration" targetNodeId="1185976309338" resolveInfo="node1" />
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1185976224122">
+              <property name="value" value="true" />
+            </node>
+            <node role="helginsJudgement$attribute" type="jetbrains.mps.bootstrap.helgins.HelginsJudgement" id="1185976332629">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185976341334">
+                <link role="classifier" extResolveInfo="4.[Classifier]Classifier" />
               </node>
             </node>
           </node>

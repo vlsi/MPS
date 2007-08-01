@@ -615,7 +615,7 @@ public class EquationManager {
       hasConcreteTypes = false;
       for (IWrapper type : types) {
         if (type == null) continue;
-        if (type.isVariable()) {
+        if (!type.isConcrete()) {
           varLessThanType(type, true);
           typeLessThanVar(type, true);
           varLessThanType(type, false);
@@ -630,7 +630,7 @@ public class EquationManager {
 
     for (IWrapper type : types) {
       if (type == null) continue;
-      assert type.isVariable();
+      assert !type.isConcrete();
 
       Map<IWrapper, ErrorInfo> supertypes = mySubtypesToSupertypesMap.get(type);
       if (supertypes != null) {
@@ -694,7 +694,7 @@ public class EquationManager {
     Set<IWrapper> concreteSubtypes = new HashSet<IWrapper>();
     for (IWrapper subtypeNode : subtypes.keySet()) {
       if (subtypeNode == null) continue;
-      if (!subtypeNode.isVariable()) {
+      if (subtypeNode.isConcrete()) {
         concreteSubtypes.add(subtypeNode);
       }
     }
@@ -741,7 +741,7 @@ public class EquationManager {
     Set<IWrapper> concreteSupertypes = new HashSet<IWrapper>();
     for (IWrapper supertypeNode : supertypes.keySet()) {
       if (supertypeNode == null) continue;
-      if (!supertypeNode.isVariable()) {
+      if (supertypeNode.isConcrete()) {
         concreteSupertypes.add(supertypeNode);
       }
     }

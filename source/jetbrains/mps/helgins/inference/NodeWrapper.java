@@ -46,6 +46,10 @@ public class NodeWrapper implements IWrapper {
     return false;
   }
 
+  public boolean isConcrete() {
+    return !isVariable();
+  }
+
   public boolean matchesWith(IWrapper wrapper, @Nullable EquationManager equationManager, @Nullable ErrorInfo errorInfo) {
     if (wrapper == null) return false;
     if (wrapper instanceof NodeWrapper) {

@@ -28,6 +28,10 @@ public class ConditionWrapper implements IWrapper {
     return false;
   }
 
+  public boolean isConcrete() {
+    return false;
+  }
+
   public RuntimeTypeVariable getVariable() {
     return null;
   }
