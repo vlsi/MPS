@@ -20,7 +20,7 @@ public class CopyUtil {
     for (SNode sourceNode : mapping.keySet()) {
       mapping.get(sourceNode).setId(sourceNode.getSNodeId());
     }
-    addReferences(result, mapping, true);
+    addReferences(nodes, mapping, true);
     return result;
   }
 
@@ -103,6 +103,24 @@ public class CopyUtil {
         }
       }
       addReferences(childList, mapping, copyAttributes);
+    }
+  }
+
+  private static void addReferences(SNode sourceNode, Map<SNode, SNode> mapping, boolean copyAttributes) {
+    SNode clonedNode = mapping.get(sourceNode);
+
+    for (SReference ref : sourceNode.getReferences()) {
+      if (mapping.containsKey(ref.getTargetNode())) {
+        clonedNode.addReferent(ref.getRole(), mapping.get(ref.getTargetNode()));
+      } else {
+        clonedNode.addReferent(ref.getRole(), ref.getTargetNode());
+      }
+    }
+
+    for (String role : sourceNode.getChildRoles(copyAttributes)) {
+      for (SNode child : sourceNode.getChildren(role)) {
+        addReferences(child, mapping, copyAttributes);
+      }
     }
   }
 }
