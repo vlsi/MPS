@@ -552,7 +552,7 @@ public class RuleUtil {
     myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
     myGenerator.addTemplateNodeByOutputNode(outputNode, templateNode);
     myGenerator.addOutputNodeByTemplateNode(templateNode, outputNode);
-    myOutputModel.addLanguage(templateNode.getLanguage(myGenerator.getScope()));
+//    myOutputModel.addLanguage(templateNode.getLanguage(myGenerator.getScope()));
     CloneUtil.copyProperties(templateNode, outputNode);
 
     SModel templateModel = templateNode.getModel();
@@ -628,7 +628,7 @@ public class RuleUtil {
 // do we really need this?      myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);
     }
 
-    myOutputModel.addLanguage(inputNode.getLanguage(myGenerator.getScope()));
+//    myOutputModel.addLanguage(inputNode.getLanguage(myGenerator.getScope()));
     CloneUtil.copyProperties(inputNode, outputNode);
 
     SModel inputModel = myGenerator.getSourceModel();

@@ -61,16 +61,12 @@ public class SNode implements Cloneable, Iterable<SNode> {
 
   private BaseAdapter myAdapter;
 
-  protected SNode(@NotNull SModel model) {
-    myModel = model;
-  }
-
   /**
    * @param model
    * @param typeName type without word 'structure'
    */
   public SNode(@NotNull SModel model, String typeName) {
-    this(model);
+    myModel = model;
     myConceptFqName = InternUtil.intern(NameUtil.conceptFQNameByClassName(typeName));
   }
 
@@ -1035,6 +1031,9 @@ public class SNode implements Cloneable, Iterable<SNode> {
         child.registerInModel(model);
       }
     }
+
+    // add language because helgins needs it to invalidate/revalidate its caches
+    myModel.addLanguage(getLanguageNamespace());
   }
 
   public boolean isDetached() {
@@ -1835,8 +1834,7 @@ public class SNode implements Cloneable, Iterable<SNode> {
   }
 
   public String getLanguageNamespace() {
-    String conceptFQName = NameUtil.nodeConceptFQName(this);
-    return NameUtil.namespaceFromConceptFQName(conceptFQName);
+    return NameUtil.namespaceFromConceptFQName(getConceptFqName());
   }
 
   public boolean isReferentRequired(String role, IScope scope) {
