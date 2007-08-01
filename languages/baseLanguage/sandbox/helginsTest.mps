@@ -149,6 +149,49 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1185980230104">
             <link role="enumConstantDeclaration" targetNodeId="1185980183785" resolveInfo="e1" />
             <link role="enumClass" targetNodeId="1185980179658" resolveInfo="E" />
+            <node role="helginsJudgement$attribute" type="jetbrains.mps.bootstrap.helgins.HelginsJudgement" id="1185980305329">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185980349504">
+                <link role="classifier" targetNodeId="1185980179658" resolveInfo="E" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185980364443">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1185980364477">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1185980365793">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1185980367187">
+                <property name="value" value="4" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1185980365730">
+                <property name="value" value="3" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1185980364444">
+              <property name="value" value="2" />
+            </node>
+            <node role="helginsJudgement$attribute" type="jetbrains.mps.bootstrap.helgins.HelginsJudgement" id="1185980374469">
+              <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1185980377236" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185980393379">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1185980393397">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1185980395119">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1185980396419">
+                <property name="value" value="" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1185980395056">
+                <property name="value" value="3" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1185980393380">
+              <property name="value" value="2" />
+            </node>
+            <node role="helginsJudgement$attribute" type="jetbrains.mps.bootstrap.helgins.HelginsJudgement" id="1185980405701">
+              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185980408750">
+                <link role="classifier" extResolveInfo="2.[Classifier]String" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1183121979332">
