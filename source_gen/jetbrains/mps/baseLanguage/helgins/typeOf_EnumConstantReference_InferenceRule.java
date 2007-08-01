@@ -17,7 +17,6 @@ public class typeOf_EnumConstantReference_InferenceRule implements InferenceRule
     if(!((SLinkOperations.getTarget(argument, "enumConstantDeclaration", false) != null))) {
       TypeChecker.getInstance().reportTypeError(argument, "no constant declaration", "jetbrains.mps.baseLanguage.helgins", "1176905227742");
     }
-    TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "enumConstantDeclaration", false), "jetbrains.mps.baseLanguage.helgins", "1176905276254");
     TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "enumConstantDeclaration", false)), argument, "jetbrains.mps.baseLanguage.helgins", "1176905295744");
   }
 

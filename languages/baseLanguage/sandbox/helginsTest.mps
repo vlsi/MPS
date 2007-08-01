@@ -145,6 +145,12 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185980227759">
+          <node role="expression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1185980230104">
+            <link role="enumConstantDeclaration" targetNodeId="1185980183785" resolveInfo="e1" />
+            <link role="enumClass" targetNodeId="1185980179658" resolveInfo="E" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1183121979332">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1183121979333">
             <property name="name" value="n" />
@@ -261,6 +267,19 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1185362000192" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.EnumClass" id="1185980179658">
+    <property name="name" value="E" />
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.EnumConstantDeclaration" id="1185980183785">
+      <property name="name" value="e1" />
+    </node>
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.EnumConstantDeclaration" id="1185980186583">
+      <property name="name" value="e2" />
+    </node>
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.EnumConstantDeclaration" id="1185980188678">
+      <property name="name" value="e3" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1185980179659" />
   </node>
 </model>
 
