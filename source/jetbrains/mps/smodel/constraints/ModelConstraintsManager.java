@@ -255,7 +255,7 @@ public class ModelConstraintsManager {
     }
   }
 
-  public INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(AbstractConceptDeclaration referentConcept) {
+  /*package*/ INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(AbstractConceptDeclaration referentConcept) {
     while (referentConcept != null) {
       String conceptFqName = NameUtil.nodeFQName(referentConcept);
       INodeReferentSearchScopeProvider provider = myNodeDefaultSearchScopeProvidersMap.get(conceptFqName);
@@ -266,7 +266,10 @@ public class ModelConstraintsManager {
     return null;
   }
 
-  public INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(AbstractConceptDeclaration nodeConcept, String referentRole) {
+  /**
+   * use the ModelConstraintsUtil.getSearchScope()
+   */
+  /*package*/ INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(AbstractConceptDeclaration nodeConcept, String referentRole) {
     if (nodeConcept instanceof ConceptDeclaration) {
       while (nodeConcept != null) {
         String conceptFqName = NameUtil.nodeFQName(nodeConcept);
