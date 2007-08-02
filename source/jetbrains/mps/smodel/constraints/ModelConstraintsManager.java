@@ -340,12 +340,4 @@ public class ModelConstraintsManager {
       }
     }
   }
-
-  public static void main(String[] args) {
-    Map<String, String> m = new HashMap<String, String>();
-    m.put("a", "b");
-    m.clear();
-
-    System.out.println(m.containsKey("a"));
-  }
 }
