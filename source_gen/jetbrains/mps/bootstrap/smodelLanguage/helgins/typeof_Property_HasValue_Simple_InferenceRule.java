@@ -16,7 +16,7 @@ public class typeof_Property_HasValue_Simple_InferenceRule implements InferenceR
   public  typeof_Property_HasValue_Simple_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     if(RulesUtil.checkAppliedCorrectly_generic(argument)) {
       SNode propertyAccessOp = SLinkOperations.getTarget(RulesUtil.leftExpression(argument), "nodeOperation", true);
       SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(propertyAccessOp, "property", false), "dataType", false);

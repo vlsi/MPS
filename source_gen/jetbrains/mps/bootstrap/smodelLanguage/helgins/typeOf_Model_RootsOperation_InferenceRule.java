@@ -13,7 +13,7 @@ public class typeOf_Model_RootsOperation_InferenceRule implements InferenceRule_
   public  typeOf_Model_RootsOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_53().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492206");
   }

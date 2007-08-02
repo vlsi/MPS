@@ -12,7 +12,7 @@ public class typeof_Node_GetDescendantsOperation_InferenceRule implements Infere
   public  typeof_Node_GetDescendantsOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
     RulesUtil.checkOpParameters_generic(argument);
     TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_SNodeListType_fromOpParameter(argument), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178318142624");

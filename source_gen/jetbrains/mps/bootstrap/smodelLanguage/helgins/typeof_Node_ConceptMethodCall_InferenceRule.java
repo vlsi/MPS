@@ -14,7 +14,7 @@ public class typeof_Node_ConceptMethodCall_InferenceRule implements InferenceRul
   public  typeof_Node_ConceptMethodCall_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     if(!((SLinkOperations.getTarget(argument, "conceptMethodDeclaration", false) != null))) {
       TypeChecker.getInstance().reportTypeError(argument, "no method declaration", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410829052");
     }

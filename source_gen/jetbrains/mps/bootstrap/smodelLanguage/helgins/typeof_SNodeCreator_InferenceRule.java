@@ -13,7 +13,7 @@ public class typeof_SNodeCreator_InferenceRule implements InferenceRule_Runtime 
   public  typeof_SNodeCreator_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     SNode createdType = SLinkOperations.getTarget(argument, "createdType", true);
     if(createdType != null) {
       if(SLinkOperations.getTarget(createdType, "concept", false) == null) {

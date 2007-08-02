@@ -15,7 +15,7 @@ public class typeOf_Concept_NewInstance_InferenceRule implements InferenceRule_R
   public  typeOf_Concept_NewInstance_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     if(SLinkOperations.getTarget(argument, "prototypeNode", true) != null) {
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "prototypeNode", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181950215213"), new QuotationClass_68().createNode(), SLinkOperations.getTarget(argument, "prototypeNode", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181950211367");
     }

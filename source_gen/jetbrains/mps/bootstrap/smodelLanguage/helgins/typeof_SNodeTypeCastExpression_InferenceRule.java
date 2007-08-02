@@ -13,7 +13,7 @@ public class typeof_SNodeTypeCastExpression_InferenceRule implements InferenceRu
   public  typeof_SNodeTypeCastExpression_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     SNode leftType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "leftExpression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1180547359294");
     if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_1().createNode(), false, false)) {
       TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1180547567581");

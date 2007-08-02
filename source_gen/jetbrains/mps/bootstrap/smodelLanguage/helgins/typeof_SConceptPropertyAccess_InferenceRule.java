@@ -16,7 +16,7 @@ public class typeof_SConceptPropertyAccess_InferenceRule implements InferenceRul
   public  typeof_SConceptPropertyAccess_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     if(RulesUtil.checkAppliedCorrectly_generic(argument)) {
       SNode leftConcept = null;
       SNode leftType = RulesUtil.typeOf_leftExpression(argument);

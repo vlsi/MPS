@@ -14,7 +14,7 @@ public class typeof_SemanticDowncastExpression_InferenceRule implements Inferenc
   public  typeof_SemanticDowncastExpression_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().check(SLinkOperations.getTarget(argument, "leftExpression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178564935255");
     if((SLinkOperations.getTarget(argument, "leftExpression", true) != null)) {
       SNode leftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true));

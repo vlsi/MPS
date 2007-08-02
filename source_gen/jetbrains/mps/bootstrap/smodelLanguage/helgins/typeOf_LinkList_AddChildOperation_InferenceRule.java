@@ -13,7 +13,7 @@ public class typeOf_LinkList_AddChildOperation_InferenceRule implements Inferenc
   public  typeOf_LinkList_AddChildOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     if(RulesUtil.checkAppliedTo_LinkListAccess_aggregation(argument)) {
       SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
       if((parameter != null)) {

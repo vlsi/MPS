@@ -12,7 +12,7 @@ public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Ru
   public  typeOf_Node_CopyOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     if(RulesUtil.checkAppliedCorrectly_generic(argument)) {
       TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.typeOf_leftExpression(argument), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492218");
     } else

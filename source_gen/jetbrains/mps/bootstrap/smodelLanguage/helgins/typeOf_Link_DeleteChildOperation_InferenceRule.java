@@ -11,7 +11,7 @@ public class typeOf_Link_DeleteChildOperation_InferenceRule implements Inference
   public  typeOf_Link_DeleteChildOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     RulesUtil.checkAppliedTo_LinkAccess_aggregation(argument);
   }
 

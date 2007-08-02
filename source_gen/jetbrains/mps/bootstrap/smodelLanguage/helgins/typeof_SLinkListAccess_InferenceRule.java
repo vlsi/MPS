@@ -19,7 +19,7 @@ public class typeof_SLinkListAccess_InferenceRule implements InferenceRule_Runti
   public  typeof_SLinkListAccess_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     if(RulesUtil.checkAppliedCorrectly_generic(argument) && (SLinkOperations.getTarget(argument, "link", false) != null)) {
       SNode inputNodeConcept = RulesUtil.get_inputNodeConcept(argument);
       if(!((inputNodeConcept != null))) {

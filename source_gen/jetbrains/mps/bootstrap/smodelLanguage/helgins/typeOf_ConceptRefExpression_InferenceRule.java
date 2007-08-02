@@ -13,7 +13,7 @@ public class typeOf_ConceptRefExpression_InferenceRule implements InferenceRule_
   public  typeOf_ConceptRefExpression_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_37().createNode(SLinkOperations.getTarget(argument, "conceptDeclaration", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1180482284001");
   }
 

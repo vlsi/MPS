@@ -13,7 +13,7 @@ public class typeof_Node_InsertNewNextSiblingOperation_InferenceRule implements 
   public  typeof_Node_InsertNewNextSiblingOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_13().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178318704490");
   }

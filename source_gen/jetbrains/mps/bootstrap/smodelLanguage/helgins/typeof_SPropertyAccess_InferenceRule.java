@@ -20,7 +20,7 @@ public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runti
   public  typeof_SPropertyAccess_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     if(RulesUtil.checkAppliedCorrectly_generic(argument) && (SLinkOperations.getTarget(argument, "property", false) != null)) {
       SNode inputNodeConcept = RulesUtil.get_inputNodeConcept(argument);
       if(!((inputNodeConcept != null))) {

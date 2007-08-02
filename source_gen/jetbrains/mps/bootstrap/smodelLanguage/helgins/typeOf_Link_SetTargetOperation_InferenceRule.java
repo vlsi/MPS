@@ -13,7 +13,7 @@ public class typeOf_Link_SetTargetOperation_InferenceRule implements InferenceRu
   public  typeOf_Link_SetTargetOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     if(RulesUtil.checkAppliedCorrectly_generic(argument)) {
       SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
       if((parameter != null)) {

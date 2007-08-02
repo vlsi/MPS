@@ -13,7 +13,7 @@ public class typeof_Node_ReplaceWithAnotherOperation_InferenceRule implements In
   public  typeof_Node_ReplaceWithAnotherOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
     SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
     if(!((parameter == null))) {

@@ -15,7 +15,7 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule implements Inference
   public  typeOf_Concept_GetAllSubConcepts_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.getParent(argument, null, false, false), "leftExpression", true);
     SNode leftConceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181953099706"), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false);
     if(leftConceptType != null) {

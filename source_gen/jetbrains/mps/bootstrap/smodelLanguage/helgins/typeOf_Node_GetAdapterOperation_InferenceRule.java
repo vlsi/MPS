@@ -15,7 +15,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
   public  typeOf_Node_GetAdapterOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     if(RulesUtil.checkAppliedCorrectly_generic(argument)) {
       SNode leftExpressionType = RulesUtil.typeOf_leftExpression(argument);
       SNode leftNodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(leftExpressionType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);

@@ -15,7 +15,7 @@ public class typeOf_Concept_FindInstances_InferenceRule implements InferenceRule
   public  typeOf_Concept_FindInstances_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     if(SLinkOperations.getTarget(argument, "scope", true) != null) {
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "scope", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182280014718"), new QuotationClass_71().createNode(), SLinkOperations.getTarget(argument, "scope", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182280010621");
     }

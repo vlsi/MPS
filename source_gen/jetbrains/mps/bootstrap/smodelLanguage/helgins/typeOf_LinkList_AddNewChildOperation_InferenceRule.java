@@ -13,7 +13,7 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule implements Infer
   public  typeOf_LinkList_AddNewChildOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     SNode resultConcept = null;
     if(RulesUtil.checkAppliedTo_LinkListAccess_aggregation(argument)) {
       SNode expectedConcept = RulesUtil.get_inputNodeConcept(argument);

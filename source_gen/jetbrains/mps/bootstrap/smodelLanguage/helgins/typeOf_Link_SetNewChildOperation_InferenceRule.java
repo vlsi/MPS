@@ -13,7 +13,7 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule implements Inference
   public  typeOf_Link_SetNewChildOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     SNode resultConcept = null;
     if(RulesUtil.checkAppliedTo_LinkAccess_aggregation(argument)) {
       SNode expectedConcept = RulesUtil.get_inputNodeConcept(argument);
