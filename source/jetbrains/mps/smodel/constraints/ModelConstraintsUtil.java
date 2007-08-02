@@ -5,6 +5,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.Status;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.Status.OK;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
@@ -25,15 +26,22 @@ import jetbrains.mps.logging.Logger;
 public class ModelConstraintsUtil {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsUtil.class);
 
-  public static IStatus getReferentSearchScope(SNode enclosingNode, SNode referenceNode, ConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IScope scope) {
+  public static IStatus getReferentSearchScope(final SNode enclosingNode, final SNode referenceNode, final ConceptDeclaration referenceNodeConcept, final LinkDeclaration referenceLinkDeclaration, final IScope scope) {
     SModel model = null;
     if (enclosingNode != null) model = enclosingNode.getModel();
     else if (referenceNode != null) model = referenceNode.getModel();
 
-    return getReferentSearchScope(model, enclosingNode, referenceNode, referenceNodeConcept, referenceLinkDeclaration, scope);
+    final IStatus[] status = new IStatus[1];
+    final SModel model1 = model;
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        status[0] = getReferentSearchScope(model1, enclosingNode, referenceNode, referenceNodeConcept, referenceLinkDeclaration, scope);
+      }
+    });
+    return status[0];
   }
 
-  public static IStatus getReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, ConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IScope scope) {
+  private static IStatus getReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, ConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IScope scope) {
     String genuineReferenceRole = SModelUtil_new.getGenuineLinkRole(referenceLinkDeclaration);
     INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, genuineReferenceRole);
     if (scopeProvider != null) {
