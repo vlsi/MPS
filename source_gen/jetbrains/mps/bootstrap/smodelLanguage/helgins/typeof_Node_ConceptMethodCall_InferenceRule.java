@@ -37,7 +37,6 @@ public class typeof_Node_ConceptMethodCall_InferenceRule implements InferenceRul
         }
         arg = arg_iterator.next();
         parameter = parameter_iterator.next();
-        TypeChecker.getInstance().getRuntimeSupport().check(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179411061746");
         TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg), TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), arg, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179411081637");
       }
     }

@@ -14,18 +14,12 @@ public class typeOf_Link_SetTargetOperation_InferenceRule implements InferenceRu
   }
 
   public void applyRule(final SNode argument) {
-    if(RulesUtil.checkAppliedCorrectly_generic(argument)) {
-      SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
-      if((parameter != null)) {
-        SNode parmType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492128");
-        if(!((parmType != null))) {
-          TypeChecker.getInstance().reportTypeError(parameter, "no type", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492130");
-        }
-        SNode expectedType = RulesUtil.get_inputNodeType(argument);
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parmType, expectedType))) {
-          TypeChecker.getInstance().reportTypeError(parameter, "incompatible type\nexpected: " + expectedType + "\nwas: " + parmType, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492141");
-        }
-      }
+    RulesUtil.checkAppliedCorrectly_generic(argument);
+    SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
+    if((parameter != null)) {
+      SNode expectedType = RulesUtil.get_inputNodeType(argument);
+      SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter);
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, expectedType, argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060404653");
     }
   }
 

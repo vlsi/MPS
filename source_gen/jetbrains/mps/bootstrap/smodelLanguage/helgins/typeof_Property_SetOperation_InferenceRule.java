@@ -17,33 +17,30 @@ public class typeof_Property_SetOperation_InferenceRule implements InferenceRule
   }
 
   public void applyRule(final SNode argument) {
-    if(RulesUtil.checkAppliedCorrectly_generic(argument)) {
-      SNode propertyAccessOp = SLinkOperations.getTarget(RulesUtil.leftExpression(argument), "nodeOperation", true);
-      SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(propertyAccessOp, "property", false), "dataType", false);
-      if(!((dataType != null))) {
-        TypeChecker.getInstance().reportTypeError(argument, "couldn't define accessed property datatype", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178321876782");
-      }
-      SNode value = SLinkOperations.getTarget(argument, "value", true);
-      if((value != null)) {
-        if(DataTypeUtil.isSimpleString(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_3().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178321876798");
-        } else
-        if(DataTypeUtil.isSimpleInteger(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_4().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178321876809");
-        } else
-        if(DataTypeUtil.isSimpleBoolean(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_5().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178321876820");
-        } else
-        if(DataTypeUtil.isEnum(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
-          if(!(SNodeOperations.isInstanceOf(value, "jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference"))) {
-            if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "value", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1180123017218"), new QuotationClass_6().createNode()))) {
-              TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "value", true), "<enum member> or String is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178322267464");
-            }
-          }
-        } else
-        {
-          TypeChecker.getInstance().reportTypeError(argument, "unknown property datatype: " + dataType, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178322114460");
+    RulesUtil.checkAppliedCorrectly_generic(argument);
+    SNode propertyAccessOp = SLinkOperations.getTarget(RulesUtil.leftExpression(argument), "nodeOperation", true);
+    SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(propertyAccessOp, "property", false), "dataType", false);
+    if(!((dataType != null))) {
+      TypeChecker.getInstance().reportTypeError(argument, "couldn't define accessed property datatype", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295963");
+    }
+    SNode value = SLinkOperations.getTarget(argument, "value", true);
+    if((value != null)) {
+      if(DataTypeUtil.isSimpleString(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_3().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295979");
+      } else
+      if(DataTypeUtil.isSimpleInteger(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_4().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059295992");
+      } else
+      if(DataTypeUtil.isSimpleBoolean(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value), new QuotationClass_5().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059296005");
+      } else
+      if(DataTypeUtil.isEnum(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
+        if(!(SNodeOperations.isInstanceOf(value, "jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference"))) {
+          TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true)), new QuotationClass_6().createNode(), SLinkOperations.getTarget(argument, "value", true), "<enum member> or String is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059478770");
         }
+      } else
+      {
+        TypeChecker.getInstance().reportTypeError(argument, "unknown property datatype: " + dataType, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059296043");
       }
     }
   }

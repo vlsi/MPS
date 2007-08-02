@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_Concept_GetAllSubConcepts_InferenceRule implements InferenceRule_Runtime {
@@ -17,10 +16,9 @@ public class typeOf_Concept_GetAllSubConcepts_InferenceRule implements Inference
 
   public void applyRule(final SNode argument) {
     SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.getParent(argument, null, false, false), "leftExpression", true);
-    SNode leftConceptType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181953099706"), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType"), false);
-    if(leftConceptType != null) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_70().createNode(leftConceptType), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181953212909");
-    }
+    final SNode C_typevar_1186061759037 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression), new QuotationClass_71().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186061759037)), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061769012");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_72().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186061759037)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061823788");
   }
 
   public String getApplicableConceptFQName() {

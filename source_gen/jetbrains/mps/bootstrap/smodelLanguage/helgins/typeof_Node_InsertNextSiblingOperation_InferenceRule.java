@@ -17,13 +17,7 @@ public class typeof_Node_InsertNextSiblingOperation_InferenceRule implements Inf
     RulesUtil.checkAppliedCorrectly_generic(argument);
     SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
     if(!((parameter == null))) {
-      TypeChecker.getInstance().getRuntimeSupport().check(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178319067791");
-      if(!(!((TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter) == null)))) {
-        TypeChecker.getInstance().reportTypeError(parameter, "no type", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178319067793");
-      }
-      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), new QuotationClass_15().createNode()))) {
-        TypeChecker.getInstance().reportTypeError(parameter, "incompatible type: snode expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178319067801");
-      }
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), new QuotationClass_15().createNode(), parameter, "incompatible type: snode expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057239246");
     }
   }
 

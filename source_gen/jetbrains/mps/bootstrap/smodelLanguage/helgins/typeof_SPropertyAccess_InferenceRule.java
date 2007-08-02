@@ -21,16 +21,22 @@ public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(final SNode argument) {
-    if(RulesUtil.checkAppliedCorrectly_generic(argument) && (SLinkOperations.getTarget(argument, "property", false) != null)) {
-      SNode inputNodeConcept = RulesUtil.get_inputNodeConcept(argument);
-      if(!((inputNodeConcept != null))) {
-        TypeChecker.getInstance().reportTypeError(argument, "couldn't define node concept from left expression", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178560745786");
-      }
-      List<PropertyDeclaration> declaredProperties = SModelSearchUtil_new.getPropertyDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
-      SNode property = SLinkOperations.getTarget(argument, "property", false);
-      if(!(declaredProperties.contains(((PropertyDeclaration)SNodeOperations.getAdapter(property))))) {
-        TypeChecker.getInstance().reportTypeError(argument, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178560745806");
-      }
+    RulesUtil.checkAppliedCorrectly_generic(argument);
+    if((SLinkOperations.getTarget(argument, "property", false) != null)) {
+      final SNode C_typevar_1186062582563 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062582563), RulesUtil.get_inputNodeConcept(argument), argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062585190");
+      TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062582563), new Runnable() {
+
+        public void run() {
+          SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062582563);
+          List<PropertyDeclaration> declaredProperties = SModelSearchUtil_new.getPropertyDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
+          SNode property = SLinkOperations.getTarget(argument, "property", false);
+          if(!(declaredProperties.contains(((PropertyDeclaration)SNodeOperations.getAdapter(property))))) {
+            TypeChecker.getInstance().reportTypeError(argument, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062616321");
+          }
+        }
+
+      }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062603529");
     }
     SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "property", false), "dataType", false);
     if(dataType != null) {

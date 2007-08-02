@@ -17,13 +17,7 @@ public class typeof_Node_ReplaceWithAnotherOperation_InferenceRule implements In
     RulesUtil.checkAppliedCorrectly_generic(argument);
     SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
     if(!((parameter == null))) {
-      TypeChecker.getInstance().getRuntimeSupport().check(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287491224");
-      if(!(!((TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter) == null)))) {
-        TypeChecker.getInstance().reportTypeError(parameter, "no type", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287491228");
-      }
-      if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), new QuotationClass_18().createNode()))) {
-        TypeChecker.getInstance().reportTypeError(parameter, "incompatible type: snode expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287491240");
-      }
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter), new QuotationClass_18().createNode(), parameter, "incompatible type: snode expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057036823");
     }
   }
 

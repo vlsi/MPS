@@ -67,4 +67,8 @@ public class ConditionWrapper implements IWrapper {
   public String getNodeId() {
     return myNodeId;
   }
+
+  public Condition<SNode> getCondition() {
+    return myCondition;
+  }
 }

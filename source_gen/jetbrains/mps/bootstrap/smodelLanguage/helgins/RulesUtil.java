@@ -6,15 +6,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import java.util.List;
-import java.util.ArrayList;
+import java.util.Set;
+import java.util.HashSet;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
-import java.util.Iterator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
+import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -29,94 +29,75 @@ public class RulesUtil {
     return null;
   }
 
-  public static SNode typeOf_leftExpression(SNode op) {
-    SNode leftExpression = RulesUtil.leftExpression(op);
-    if((leftExpression != null)) {
-      TypeChecker.getInstance().getRuntimeSupport().check(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287491500");
-      return TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression);
-    }
-    return null;
-  }
+  public static void checkAppliedCorrectly_generic(final SNode op) {
+    final SNode leftExpression = RulesUtil.leftExpression(op);
+    final SNode LeftType_typevar_1186058295229 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186058309840");
+    TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), new Runnable() {
 
-  public static boolean checkAppliedCorrectly_generic(SNode op) {
-    List<String> applicables = new ArrayList<String>();
-    // ===========
-    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
-      SNode leftType = RulesUtil.typeOf_leftExpression(op);
-      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_40().createNode(), false, false)) {
-        return true;
-      }
-      applicables.add("model");
-    }
-    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_concept")) {
-      SNode leftType = RulesUtil.typeOf_leftExpression(op);
-      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_41().createNode(), false, false)) {
-        return true;
-      }
-      applicables.add("concept");
-    }
-    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_node")) {
-      // todo: get type of left expression and try to 'adapt' to snode
-      SNode leftType = RulesUtil.typeOf_leftExpression(op);
-      if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_42().createNode(), false, false)) {
-        return true;
-      }
-      applicables.add("node");
-    }
-    // ===========
-    SNode leftExpression = RulesUtil.leftExpression(op);
-    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_link")) {
-      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
-      if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
-        return true;
-      }
-      applicables.add("link-access");
-    }
-    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_linkList")) {
-      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
-      if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
-        return true;
-      }
-      applicables.add("link-list-access");
-    }
-    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_simple_property")) {
-      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
-      if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
-        SNode propertyDecl = SLinkOperations.getTarget(leftOp, "property", false);
-        if(DataTypeUtil.isSimple(((DataTypeDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(propertyDecl, "dataType", false))))) {
-          return true;
+      public void run() {
+        String applicableErrorString = "operation is not applicable to expression";
+        boolean isGood = false;
+        Set<String> applicables = new HashSet<String>();
+        if(SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
+          applicables.add("smodel");
+          if(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), new QuotationClass_40().createNode(), false, false)) {
+            isGood = true;
+          }
+        }
+        if(SConceptPropertyOperations.getBoolean(op, "applicable_to_concept")) {
+          if(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), new QuotationClass_41().createNode(), false, false)) {
+            isGood = true;
+          }
+        }
+        if(SConceptPropertyOperations.getBoolean(op, "applicable_to_node")) {
+          if(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), new QuotationClass_42().createNode(), false, false)) {
+            isGood = true;
+          }
+        }
+        // ===========
+        if(SConceptPropertyOperations.getBoolean(op, "applicable_to_link")) {
+          SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+          if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
+            isGood = true;
+          }
+        }
+        if(SConceptPropertyOperations.getBoolean(op, "applicable_to_linkList")) {
+          SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+          if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess")) {
+            isGood = true;
+          }
+        }
+        if(SConceptPropertyOperations.getBoolean(op, "applicable_to_simple_property")) {
+          SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+          if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
+            SNode propertyDecl = SLinkOperations.getTarget(leftOp, "property", false);
+            if(DataTypeUtil.isSimple(((DataTypeDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(propertyDecl, "dataType", false))))) {
+              isGood = true;
+            }
+          }
+        }
+        if(SConceptPropertyOperations.getBoolean(op, "applicable_to_enum_property")) {
+          SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+          if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
+            SNode propertyDecl = SLinkOperations.getTarget(leftOp, "property", false);
+            if(DataTypeUtil.isEnum(((DataTypeDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(propertyDecl, "dataType", false))))) {
+              isGood = true;
+            }
+          }
+        }
+        if(SConceptPropertyOperations.getBoolean(op, "applicable_to_concept_property")) {
+          SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
+          if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess")) {
+            isGood = true;
+          }
+        }
+        if(!(isGood)) {
+          TypeChecker.getInstance().reportTypeError(leftExpression, applicableErrorString, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186067417054");
         }
       }
-      applicables.add("simple-property-access");
-    }
-    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_enum_property")) {
-      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
-      if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess")) {
-        SNode propertyDecl = SLinkOperations.getTarget(leftOp, "property", false);
-        if(DataTypeUtil.isEnum(((DataTypeDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(propertyDecl, "dataType", false))))) {
-          return true;
-        }
-      }
-      applicables.add("enum-property-access");
-    }
-    if(SConceptPropertyOperations.getBoolean(op, "applicable_to_concept_property")) {
-      SNode leftOp = SLinkOperations.getTarget(leftExpression, "nodeOperation", true);
-      if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOp), "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess")) {
-        return true;
-      }
-      applicables.add("concept-property-access");
-    }
-    // ===========
-    String applicableTo = "";
-    Iterator<String> iter = applicables.iterator();
-    while(iter.hasNext()) {
-      applicableTo = applicableTo + iter.next();
-      if(iter.hasNext()) {
-        applicableTo = applicableTo + ",";
-      }
-    }
-    TypeChecker.getInstance().reportTypeError(op, "operation is only applicable to " + applicableTo, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178293195233");
-    return false;
+
+    }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186065634833");
   }
 
   public static boolean checkAppliedTo_LinkListAccess_aggregation(SNode op) {
@@ -190,14 +171,22 @@ public class RulesUtil {
         return SLinkOperations.getTarget(SLinkOperations.getTarget(leftOp, "link", false), "target", false);
       }
     }
-    SNode leftType = TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpr);
-    if(SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
-      return SLinkOperations.getTarget(leftType, "concept", false);
-    }
-    if(SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType")) {
-      return SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
-    }
-    return null;
+    final SNode Result_typevar_1186062019004 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    final SNode LeftType_typevar_1186062031569 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpr), TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), leftExpr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062045965");
+    TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), new Runnable() {
+
+      public void run() {
+        if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(Result_typevar_1186062019004), SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), "concept", false), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062259216");
+        } else
+        if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType")) {
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(Result_typevar_1186062019004), SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration"), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062259230");
+        }
+      }
+
+    }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062066737");
+    return TypeChecker.getInstance().getEquationManager().getRepresentator(Result_typevar_1186062019004);
   }
 
   public static SNode get_inputNodeType(SNode op) {

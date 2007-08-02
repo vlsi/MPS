@@ -14,13 +14,20 @@ public class typeof_SNodeTypeCastExpression_InferenceRule implements InferenceRu
   }
 
   public void applyRule(final SNode argument) {
-    SNode leftType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "leftExpression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1180547359294");
-    if(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new QuotationClass_1().createNode(), false, false)) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1180547567581");
-    } else
-    {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1180547603020");
-    }
+    final SNode LeftType_typevar_1186061665928 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186061665928), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true)), SLinkOperations.getTarget(argument, "leftExpression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061673586");
+    TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186061665928), new Runnable() {
+
+      public void run() {
+        if(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186061665928), new QuotationClass_1().createNode(), false, false)) {
+          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061696726");
+        } else
+        {
+          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061696740");
+        }
+      }
+
+    }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061660362");
   }
 
   public String getApplicableConceptFQName() {

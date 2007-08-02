@@ -18,14 +18,9 @@ public class typeOf_LinkList_InsertChildFirstOperation_InferenceRule implements 
     if(RulesUtil.checkAppliedTo_LinkListAccess_aggregation(argument)) {
       SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
       if((parameter != null)) {
-        SNode parmType = TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492034");
-        if(!((parmType != null))) {
-          TypeChecker.getInstance().reportTypeError(parameter, "no type", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492036");
-        }
         SNode expectedType = RulesUtil.get_inputNodeType(argument);
-        if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parmType, expectedType))) {
-          TypeChecker.getInstance().reportTypeError(parameter, "incompatible type\nexpected: " + expectedType + "\nwas: " + parmType, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492047");
-        }
+        SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter);
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, expectedType, argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061883539");
       }
     }
   }

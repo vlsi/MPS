@@ -23,7 +23,7 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule implements Infer
       } else
       {
         resultConcept = parameterConcept;
-        RulesUtil.checkAssignableConcept(parameterConcept, expectedConcept, argument, "incompatible parameter concept");
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parameterConcept, expectedConcept, argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062768795");
       }
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_47().createNode(resultConcept), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492000");

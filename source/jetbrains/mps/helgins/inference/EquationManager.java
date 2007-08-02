@@ -322,6 +322,18 @@ public class EquationManager {
       }
     }
 
+    if (rhsRepresentator != null && rhsRepresentator.isCondition() && lhsRepresentator != null && lhsRepresentator.isCondition()) {
+      ConditionWrapper leftConditionWrapper = (ConditionWrapper) lhsRepresentator;
+      ConditionWrapper rightConditionWrapper = (ConditionWrapper) rhsRepresentator;
+      ConditionWrapper andWrapper = new ConditionWrapper(
+              new AndCondition<SNode>(leftConditionWrapper.getCondition(), rightConditionWrapper.getCondition(), true),
+              leftConditionWrapper.getNodeModel(),
+              leftConditionWrapper.getNodeId());
+      processEquation(rightConditionWrapper, leftConditionWrapper, errorInfo);
+      processEquation(leftConditionWrapper, andWrapper, errorInfo);
+      return;
+    }
+
     if (rhsRepresentator != null && rhsRepresentator.isCondition()) {
       processEquation(rhsRepresentator, lhsRepresentator, errorInfo);
     } else if (lhsRepresentator != null && lhsRepresentator.isCondition()) {
