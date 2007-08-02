@@ -139,7 +139,9 @@ public class EquationManager {
 
   public SNode getRepresentator(SNode type_) {
     if (type_ == null) return null;
-    return NodeWrapper.fromWrapper(getRepresentatorWrapper(NodeWrapper.fromNode(type_)));
+    SNode representator = NodeWrapper.fromWrapper(getRepresentatorWrapper(NodeWrapper.fromNode(type_)));
+    if (representator == null) return type_;
+    return representator;
   }
 
 
