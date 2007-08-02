@@ -22,17 +22,22 @@ public class ForEachVariableReference_variable_ReferentConstraint implements IMo
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference", "variable", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference", "variable");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", true, false) != null;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     List<SNode> forEachStatements = SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", false);
     return new SubnodesSearchScope(SequenceOperations.getLast(forEachStatements));
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "cycle-variable of enclosing 'foreach' cycle";
   }
+
 }
