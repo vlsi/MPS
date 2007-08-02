@@ -82,7 +82,7 @@ public class Resolver {
           final IScope scope) {
 
     // try to create referent-search-scope
-    SearchScopeStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
+    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
     if (status.isError()) return new ArrayList<SNode>();
 
     ISearchScope searchScope = status.getSearchScope();
@@ -107,7 +107,7 @@ public class Resolver {
     nodeTypesComponent.computeTypesForNode(sNode); //todo dirty hack
     TypeChecker.getInstance().clearCurrentTypesComponent();
 
-    SearchScopeStatus status = ModelConstraintsUtil.getReferentSearchScope(referenceNode.getParent(),
+    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
             referenceNode, referenceNodeConcept, linkDeclaration, operationContext.getScope());
     if (status.isError()) {
       LOG.error("Couldn't create referent search scope : " + status.getMessage());
