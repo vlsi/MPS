@@ -7,6 +7,7 @@ import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.util.Condition;
 
@@ -29,13 +30,13 @@ import java.util.List;
     }
 
     // search scope
-    IStatus status = ModelConstraintsUtil.getReferentSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, linkDeclaration, context.getScope());
+    SearchScopeStatus status = ModelConstraintsUtil.getReferentSearchScope(referenceNode.getParent(), referenceNode, referenceNodeConcept, linkDeclaration, context.getScope());
     if (status.isError()) {
       LOG.error("Couldn't create referent search scope : " + status.getMessage());
       return new LinkedList<INodeSubstituteAction>();
     }
 
-    ISearchScope searchScope = (ISearchScope) status.getUserObject();
+    ISearchScope searchScope = status.getSearchScope();
     return createActions(referenceNode, currentReferent, linkDeclaration, searchScope, scope);
   }
 

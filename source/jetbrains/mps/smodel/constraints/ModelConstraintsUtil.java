@@ -6,11 +6,11 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.Status;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.Status.OK;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.constraints.SearchScopeStatus.OK;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
@@ -23,17 +23,17 @@ import jetbrains.mps.logging.Logger;
 public class ModelConstraintsUtil {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsUtil.class);
 
-  public static IStatus getReferentSearchScope(SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IScope scope) {
+  public static SearchScopeStatus getReferentSearchScope(SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IScope scope) {
     String linkRole = SModelUtil_new.getGenuineLinkRole(referenceLinkDeclaration);
     AbstractConceptDeclaration linkTarget = referenceLinkDeclaration.getTarget();
     return getReferentSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, linkTarget, scope);
   }
 
-  public static IStatus getReferentSearchScope(SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, String linkRole, IScope scope) {
+  public static SearchScopeStatus getReferentSearchScope(SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, String linkRole, IScope scope) {
     return getReferentSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, null, scope);
   }
 
-  private static IStatus getReferentSearchScope(SNode enclosingNode, final SNode referenceNode, final AbstractConceptDeclaration referenceNodeConcept, final String linkRole, final AbstractConceptDeclaration linkTarget, final IScope scope) {
+  private static SearchScopeStatus getReferentSearchScope(SNode enclosingNode, final SNode referenceNode, final AbstractConceptDeclaration referenceNodeConcept, final String linkRole, final AbstractConceptDeclaration linkTarget, final IScope scope) {
     final SModel model;
     if (enclosingNode != null) {
       model = enclosingNode.getModel();
@@ -45,7 +45,7 @@ public class ModelConstraintsUtil {
     }
 
     final SNode enclosingNode_ = enclosingNode;
-    final IStatus[] status = new IStatus[1];
+    final SearchScopeStatus[] status = new SearchScopeStatus[1];
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         status[0] = getReferentSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, scope);
@@ -54,7 +54,7 @@ public class ModelConstraintsUtil {
     return status[0];
   }
 
-  private static IStatus getReferentSearchScope_intern(SModel model, SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, String linkRole, AbstractConceptDeclaration linkTarget, IScope scope) {
+  private static SearchScopeStatus getReferentSearchScope_intern(SModel model, SNode enclosingNode, SNode referenceNode, AbstractConceptDeclaration referenceNodeConcept, String linkRole, AbstractConceptDeclaration linkTarget, IScope scope) {
     INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
     if (scopeProvider != null) {
       try {
@@ -65,7 +65,7 @@ public class ModelConstraintsUtil {
       } catch (Throwable t) {
         LOG.error(t);
       }
-      return new Status.ERROR("can't create referent search scope: " + scopeProvider.getNodeReferentSearchScopeDescription());
+      return new SearchScopeStatus.ERROR("can't create referent search scope: " + scopeProvider.getNodeReferentSearchScopeDescription());
     }
 
     // default search scope
@@ -76,7 +76,7 @@ public class ModelConstraintsUtil {
       } else {
         String mess = "couldn't find '" + linkRole + "' link declaration in concept " + referenceNodeConcept.getDebugText();
         LOG.errorWithTrace(mess);
-        return new Status.ERROR("can't create default search scope: " + mess);
+        return new SearchScopeStatus.ERROR("can't create default search scope: " + mess);
       }
     }
     scopeProvider = ModelConstraintsManager.getInstance().getNodeDefaultSearchScopeProvider(linkTarget);
@@ -85,7 +85,7 @@ public class ModelConstraintsUtil {
         ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
         return newOK(searchScope);
       }
-      return new Status.ERROR("can't create default search scope: " + scopeProvider.getNodeReferentSearchScopeDescription());
+      return new SearchScopeStatus.ERROR("can't create default search scope: " + scopeProvider.getNodeReferentSearchScopeDescription());
     }
 
     // global search scope

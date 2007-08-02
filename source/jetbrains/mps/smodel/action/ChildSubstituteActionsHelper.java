@@ -11,6 +11,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
@@ -202,13 +203,13 @@ public class ChildSubstituteActionsHelper {
           final IScope scope) {
 
     // try to create referent-search-scope
-    IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
+    SearchScopeStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
     if (status.isError()) return null;
 
     // create smart actions
     List<INodeSubstituteAction> actions = new ArrayList<INodeSubstituteAction>();
     final LinkDeclaration referenceLink_final = smartReference;
-    ISearchScope searchScope = (ISearchScope) status.getUserObject();
+    ISearchScope searchScope = status.getSearchScope();
     final AbstractConceptDeclaration targetConcept = smartReference.getTarget();
 
     List<SNode> referentNodes = searchScope.getNodes(new IsInstanceCondition(targetConcept));

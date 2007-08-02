@@ -1,26 +1,28 @@
 package jetbrains.mps.resolve;
 
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.helgins.inference.NodeTypesComponent_new;
+import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.smodel.action.DefaultReferentNodeSubstituteAction;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
+import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.smodel.action.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
-import jetbrains.mps.helgins.inference.NodeTypesComponent_new;
-import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
@@ -80,10 +82,10 @@ public class Resolver {
           final IScope scope) {
 
     // try to create referent-search-scope
-    IStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
+    SearchScopeStatus status = ModelConstraintsUtil.getReferentSearchScope(parentNode, null, referenceNodeConcept, smartReference, scope);
     if (status.isError()) return new ArrayList<SNode>();
 
-    ISearchScope searchScope = (ISearchScope) status.getUserObject();
+    ISearchScope searchScope = status.getSearchScope();
     final AbstractConceptDeclaration targetConcept = smartReference.getTarget();
 
     List<SNode> referentNodes = searchScope.getNodes(new IsInstanceCondition(targetConcept));
@@ -105,13 +107,13 @@ public class Resolver {
     nodeTypesComponent.computeTypesForNode(sNode); //todo dirty hack
     TypeChecker.getInstance().clearCurrentTypesComponent();
 
-    IStatus status = ModelConstraintsUtil.getReferentSearchScope(referenceNode.getParent(),
+    SearchScopeStatus status = ModelConstraintsUtil.getReferentSearchScope(referenceNode.getParent(),
             referenceNode, referenceNodeConcept, linkDeclaration, operationContext.getScope());
     if (status.isError()) {
       LOG.error("Couldn't create referent search scope : " + status.getMessage());
       return false;
     }
-    ISearchScope searchScope = (ISearchScope) status.getUserObject();
+    ISearchScope searchScope = status.getSearchScope();
     List<SNode> nodes = searchScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode node) {
         return node.isInstanceOfConcept(referentConcept);
