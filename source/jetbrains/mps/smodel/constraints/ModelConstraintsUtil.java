@@ -57,7 +57,7 @@ public class ModelConstraintsUtil {
       try {
         if (scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope)) {
           ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
-          return newOK(searchScope);
+          return newOK(searchScope, false);
         }
       } catch (Throwable t) {
         LOG.error(t);
@@ -80,21 +80,21 @@ public class ModelConstraintsUtil {
     if (scopeProvider != null) {
       if (scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope)) {
         ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
-        return newOK(searchScope);
+        return newOK(searchScope, false);
       }
       return new SearchScopeStatus.ERROR("can't create default search scope: " + scopeProvider.getNodeReferentSearchScopeDescription());
     }
 
     // global search scope
     ISearchScope searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(model, false, scope);
-    return newOK(searchScope);
+    return newOK(searchScope, true);
   }
 
-  private static OK newOK(ISearchScope searchScope) {
+  private static OK newOK(ISearchScope searchScope, boolean isDefault) {
     if (searchScope == null) {
       searchScope = new EmptySearchScope();
     }
-    return new OK(searchScope);
+    return new OK(searchScope, isDefault);
   }
 
 }

@@ -1,7 +1,6 @@
 package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.ide.Status;
-import jetbrains.mps.ide.Status.ERROR;
 import jetbrains.mps.smodel.search.ISearchScope;
 
 /**
@@ -9,6 +8,8 @@ import jetbrains.mps.smodel.search.ISearchScope;
  * Aug 2, 2007
  */
 public class SearchScopeStatus extends Status {
+  protected boolean myDefault;
+
   /*package*/ SearchScopeStatus(Code code, String message) {
     super(code, message);
   }
@@ -17,10 +18,15 @@ public class SearchScopeStatus extends Status {
     return (ISearchScope) getUserObject();
   }
 
+  public boolean isDefault() {
+    return myDefault;
+  }
+
   /*package*/ static class OK extends SearchScopeStatus {
-    public OK(ISearchScope ss) {
+    public OK(ISearchScope ss, boolean isDefault) {
       super(Code.OK, "");
       setUserObject(ss);
+      myDefault = isDefault;
     }
   }
 
