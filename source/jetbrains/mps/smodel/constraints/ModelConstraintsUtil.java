@@ -17,11 +17,8 @@ import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.logging.Logger;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: May 30, 2006
- * Time: 4:35:16 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * May 30, 2006
  */
 public class ModelConstraintsUtil {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsUtil.class);
@@ -36,16 +33,22 @@ public class ModelConstraintsUtil {
     return getReferentSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, null, scope);
   }
 
-  private static IStatus getReferentSearchScope(final SNode enclosingNode, final SNode referenceNode, final ConceptDeclaration referenceNodeConcept, final String linkRole, final AbstractConceptDeclaration linkTarget, final IScope scope) {
+  private static IStatus getReferentSearchScope(SNode enclosingNode, final SNode referenceNode, final ConceptDeclaration referenceNodeConcept, final String linkRole, final AbstractConceptDeclaration linkTarget, final IScope scope) {
     final SModel model;
-    if (enclosingNode != null) model = enclosingNode.getModel();
-    else if (referenceNode != null) model = referenceNode.getModel();
-    else model = null;
+    if (enclosingNode != null) {
+      model = enclosingNode.getModel();
+    } else if (referenceNode != null) {
+      model = referenceNode.getModel();
+      enclosingNode = referenceNode.getParent();
+    } else {
+      model = null;
+    }
 
+    final SNode enclosingNode_ = enclosingNode;
     final IStatus[] status = new IStatus[1];
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        status[0] = getReferentSearchScope_intern(model, enclosingNode, referenceNode, referenceNodeConcept, linkRole, linkTarget, scope);
+        status[0] = getReferentSearchScope_intern(model, enclosingNode_, referenceNode, referenceNodeConcept, linkRole, linkTarget, scope);
       }
     });
     return status[0];
@@ -66,9 +69,9 @@ public class ModelConstraintsUtil {
     }
 
     // default search scope
-    if(linkTarget == null) {
+    if (linkTarget == null) {
       LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(referenceNodeConcept, linkRole);
-      if(linkDeclaration != null) {
+      if (linkDeclaration != null) {
         linkTarget = linkDeclaration.getTarget();
       } else {
         String mess = "couldn't find '" + linkRole + "' link declaration in concept " + referenceNodeConcept.getDebugText();
