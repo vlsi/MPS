@@ -3,6 +3,8 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.core" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <maxImportIndex value="5" />
   <import index="1" modelUID="java.util@java_stub" />
   <import index="2" modelUID="java.lang@java_stub" />
@@ -331,6 +333,54 @@
       <property name="name" value="e3" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1185980179659" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1186051408113">
+    <property name="name" value="CollectionsHelginsTest" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1186051417381">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1186051417382" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1186051417383" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1186051417384">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1186051436244">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1186051436245">
+            <property name="name" value="modelDescriptors" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1186051436246">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1186051436247">
+                <link role="classifier" extResolveInfo="5.[Classifier]SModelDescriptor" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1186051491169">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1186051436251">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1186051436252">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1186051436253">
+                <link role="variableDeclaration" targetNodeId="1186051436245" resolveInfo="modelDescriptors" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.SelectOperation" id="1186051436254">
+                <node role="selector" type="jetbrains.mps.baseLanguage.ext.collections.lang.SelectorBlock" id="1186051436255">
+                  <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.DefaultInputElement" id="1186051436256">
+                    <property name="name" value="it" />
+                  </node>
+                  <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1186051436257">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1186051436258">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1186051436259">
+                        <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]SModelDescriptor).([InstanceMethodDeclaration]getSModel() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]))" />
+                        <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1186051436260">
+                          <link role="closureParameter" targetNodeId="1186051436256" resolveInfo="it" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.ToListOperation" id="1186051436261" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1186051408114" />
   </node>
 </model>
 

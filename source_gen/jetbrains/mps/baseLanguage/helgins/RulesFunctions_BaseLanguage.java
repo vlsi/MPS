@@ -45,29 +45,6 @@ public class RulesFunctions_BaseLanguage {
     return returnStatements;
   }
 
-  public static SNode computeLeastCommonSupertype(SNode exprWithType, SNode currentLeastCommonSupertype, SNode defaultSupertype) {
-    SNode exprType = TypeChecker.getInstance().getRuntimeSupport().typeOf(exprWithType);
-    if(exprType == null) {
-      TypeChecker.getInstance().reportTypeError(exprWithType, "no type", "jetbrains.mps.baseLanguage.helgins", "1178643182321");
-      return currentLeastCommonSupertype;
-    }
-    if((defaultSupertype != null) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(exprType, defaultSupertype))) {
-      TypeChecker.getInstance().reportTypeError(exprWithType, "" + defaultSupertype + " is expected", "jetbrains.mps.baseLanguage.helgins", "1178643261182");
-      return currentLeastCommonSupertype;
-    }
-    if(currentLeastCommonSupertype == null) {
-      return exprType;
-    }
-    if(TypeChecker.getInstance().getSubtypingManager().isSubtype(currentLeastCommonSupertype, exprType)) {
-      return exprType;
-    }
-    if(TypeChecker.getInstance().getSubtypingManager().isSubtype(exprType, currentLeastCommonSupertype)) {
-      return currentLeastCommonSupertype;
-    }
-    TypeChecker.getInstance().reportTypeError(exprWithType, "type " + exprType + " is not compatible with infered " + currentLeastCommonSupertype, "jetbrains.mps.baseLanguage.helgins", "1178643631508");
-    return currentLeastCommonSupertype;
-  }
-
   public static SNode concreteTypeFromGenericType(SNode type, SNode genericClassifier, SNode instanceType) {
     SNode returnType = SNodeOperations.copyNode(type);
     {

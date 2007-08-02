@@ -36,7 +36,7 @@ public class RuntimeSupport {
       currentTypesComponent.addDependcyOnCurrent(node);
       //----
       type = currentTypesComponent.getRawTypeFromContext(node);
-      if (type != null) return type;
+      if (type != null) return getRepresentatorIfNecessary(type, currentTypesComponent);
     }
 
     NodeTypesComponent_new nodeTypesComponent = NodeTypesComponentsRepository.getInstance()  // then, in appropriate component
@@ -49,9 +49,15 @@ public class RuntimeSupport {
     SNode var = createNewRuntimeTypesVariable(false);
     type = TypeChecker.asType(var);
     myTypeChecker.getMainContext().put(node, type);
-    return myTypeChecker.getEquationManager().getRepresentator(type);
+    return getRepresentatorIfNecessary(type, currentTypesComponent);
   }
 
+  private SNode getRepresentatorIfNecessary(SNode type, NodeTypesComponent_new nodeTypesComponent) {
+    if (type == null) return null;
+    SNode representator = nodeTypesComponent.getEquationManager().getRepresentator(type);
+    if (representator != null) return representator;
+    return type;
+  }
 
 
   public SNode createNewRuntimeTypesVariable(boolean isNullable) {

@@ -432,7 +432,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
   }
 
   public SNode getRawTypeFromContext(SNode node) {
-    return getEquationManager().getRepresentator(myNodesToTypesMap.get(node));
+    return myNodesToTypesMap.get(node);
   }
 
   public IErrorReporter getError(SNode node) {
