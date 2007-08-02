@@ -29,15 +29,16 @@ public class CopyUtil {
   }
 
   public static SNode copyAndPreserveId(SNode node, SModel targetModel) {
-    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-    SNode result = clone(node, targetModel, mapping, true);
-    for (SNode sourceNode : mapping.keySet()) {
-      mapping.get(sourceNode).setId(sourceNode.getSNodeId());
-    }
-    List<SNode> nodes = new ArrayList<SNode>();
-    nodes.add(node);
-    addReferences(nodes, mapping, true);
-    return result;
+    throw new RuntimeException("I believe this method is never invoked in tests");
+//    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+//    SNode result = clone(node, targetModel, mapping, true);
+//    for (SNode sourceNode : mapping.keySet()) {
+//      mapping.get(sourceNode).setId(sourceNode.getSNodeId());
+//    }
+//    List<SNode> nodes = new ArrayList<SNode>();
+//    nodes.add(node);
+//    addReferences(nodes, mapping, true);
+//    return result;
   }
 
   public static SNode copy(SNode node, SModel targetModel, Map<SNode, SNode> mapping, boolean copyAttributes) {
