@@ -186,9 +186,13 @@ public final class SReference {
   // --- new instance
   //
 
-  //reference created by target node
 
+  /**
+   * reference created by target node
+   * todo: annotate targetNode as NotNull. If targetNode=null there is neither ID nor resolve infos    
+   */
   public static SReference newInstance(String role, SNode sourceNode, SNode targetNode) {
+
     String resolveInfo = targetNode == null ? null : targetNode.getName();
     SModel sourceModel = sourceNode.getModel();
     SModel targetModel = targetNode == null ? null : targetNode.getModel();
@@ -198,8 +202,6 @@ public final class SReference {
       sReference.setResolveInfo(resolveInfo);
       return sReference;
     } else {
-      SModelUID targetModelUID = targetModel.getUID();
-//      sourceModel.addImportElement(targetModelUID);
       String extResolveInfo = null;
       if (targetModel.isExternallyResolvable()) {
         extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(targetNode);
@@ -210,7 +212,9 @@ public final class SReference {
     }
   }
 
-  //reference created by template reference
+  /**
+   * reference created by template reference
+   */
   public static SReference newInstance(String role, SNode sourceNode, SReference templateRef) {
     return newInstance(role, sourceNode, templateRef, false);
   }

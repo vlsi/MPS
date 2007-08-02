@@ -11,11 +11,18 @@ import java.util.Map;
 
 public class CopyUtil {
   public static List<SNode> copy(List<SNode> nodes, SModel targetModel) {
-    return copy(nodes, targetModel, new HashMap<SNode, SNode>());
+    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    List<SNode> result = clone(nodes, targetModel, mapping);
+    addReferences(nodes, mapping, true);
+    return result;
   }
 
-  private static List<SNode> copy(List<SNode> nodes, SModel targetModel, Map<SNode, SNode> mapping) {
+  public static List<SNode> copyAndPreserveId(List<SNode> nodes, SModel targetModel) {
+    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> result = clone(nodes, targetModel, mapping);
+    for (SNode sourceNode : mapping.keySet()) {
+      mapping.get(sourceNode).setId(sourceNode.getSNodeId());
+    }
     addReferences(nodes, mapping, true);
     return result;
   }
@@ -29,16 +36,15 @@ public class CopyUtil {
   }
 
   public static SNode copyAndPreserveId(SNode node, SModel targetModel) {
-    throw new RuntimeException("I believe this method is never invoked in tests");
-//    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
-//    SNode result = clone(node, targetModel, mapping, true);
-//    for (SNode sourceNode : mapping.keySet()) {
-//      mapping.get(sourceNode).setId(sourceNode.getSNodeId());
-//    }
-//    List<SNode> nodes = new ArrayList<SNode>();
-//    nodes.add(node);
-//    addReferences(nodes, mapping, true);
-//    return result;
+    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    SNode result = clone(node, targetModel, mapping, true);
+    for (SNode sourceNode : mapping.keySet()) {
+      mapping.get(sourceNode).setId(sourceNode.getSNodeId());
+    }
+    List<SNode> nodes = new ArrayList<SNode>();
+    nodes.add(node);
+    addReferences(nodes, mapping, true);
+    return result;
   }
 
   public static SNode copy(SNode node, SModel targetModel, Map<SNode, SNode> mapping, boolean copyAttributes) {
