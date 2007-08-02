@@ -26,24 +26,33 @@ import jetbrains.mps.logging.Logger;
 public class ModelConstraintsUtil {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsUtil.class);
 
-  public static IStatus getReferentSearchScope(final SNode enclosingNode, final SNode referenceNode, final ConceptDeclaration referenceNodeConcept, final LinkDeclaration referenceLinkDeclaration, final IScope scope) {
-    SModel model = null;
+  public static IStatus getReferentSearchScope(SNode enclosingNode, SNode referenceNode, ConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IScope scope) {
+    String linkRole = SModelUtil_new.getGenuineLinkRole(referenceLinkDeclaration);
+    AbstractConceptDeclaration linkTarget = referenceLinkDeclaration.getTarget();
+    return getReferentSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, linkTarget, scope);
+  }
+
+  public static IStatus getReferentSearchScope(SNode enclosingNode, SNode referenceNode, ConceptDeclaration referenceNodeConcept, String linkRole, IScope scope) {
+    return getReferentSearchScope(enclosingNode, referenceNode, referenceNodeConcept, linkRole, null, scope);
+  }
+
+  private static IStatus getReferentSearchScope(final SNode enclosingNode, final SNode referenceNode, final ConceptDeclaration referenceNodeConcept, final String linkRole, final AbstractConceptDeclaration linkTarget, final IScope scope) {
+    final SModel model;
     if (enclosingNode != null) model = enclosingNode.getModel();
     else if (referenceNode != null) model = referenceNode.getModel();
+    else model = null;
 
     final IStatus[] status = new IStatus[1];
-    final SModel model1 = model;
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        status[0] = getReferentSearchScope(model1, enclosingNode, referenceNode, referenceNodeConcept, referenceLinkDeclaration, scope);
+        status[0] = getReferentSearchScope_intern(model, enclosingNode, referenceNode, referenceNodeConcept, linkRole, linkTarget, scope);
       }
     });
     return status[0];
   }
 
-  private static IStatus getReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, ConceptDeclaration referenceNodeConcept, LinkDeclaration referenceLinkDeclaration, IScope scope) {
-    String genuineReferenceRole = SModelUtil_new.getGenuineLinkRole(referenceLinkDeclaration);
-    INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, genuineReferenceRole);
+  private static IStatus getReferentSearchScope_intern(SModel model, SNode enclosingNode, SNode referenceNode, ConceptDeclaration referenceNodeConcept, String linkRole, AbstractConceptDeclaration linkTarget, IScope scope) {
+    INodeReferentSearchScopeProvider scopeProvider = ModelConstraintsManager.getInstance().getNodeReferentSearchScopeProvider(referenceNodeConcept, linkRole);
     if (scopeProvider != null) {
       try {
         if (scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope)) {
@@ -57,8 +66,17 @@ public class ModelConstraintsUtil {
     }
 
     // default search scope
-    AbstractConceptDeclaration referentConcept = referenceLinkDeclaration.getTarget();
-    scopeProvider = ModelConstraintsManager.getInstance().getNodeDefaultSearchScopeProvider(referentConcept);
+    if(linkTarget == null) {
+      LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(referenceNodeConcept, linkRole);
+      if(linkDeclaration != null) {
+        linkTarget = linkDeclaration.getTarget();
+      } else {
+        String mess = "couldn't find '" + linkRole + "' link declaration in concept " + referenceNodeConcept.getDebugText();
+        LOG.errorWithTrace(mess);
+        return new Status.ERROR("can't create default search scope: " + mess);
+      }
+    }
+    scopeProvider = ModelConstraintsManager.getInstance().getNodeDefaultSearchScopeProvider(linkTarget);
     if (scopeProvider != null) {
       if (scopeProvider.canCreateNodeReferentSearchScope(model, enclosingNode, referenceNode, scope)) {
         ISearchScope searchScope = scopeProvider.createNodeReferentSearchScope(model, enclosingNode, referenceNode, scope);
