@@ -158,11 +158,12 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
         }
       }
     }
-    List<SNode> copiedRoots = new ArrayList<SNode>();
-    for (SNode root : CloneUtil.copy(rootsToCopy, myOutputModel, getScope())) {
-      copiedRoots.add(root);
-    }
-    return copiedRoots;
+//    List<SNode> copiedRoots = new ArrayList<SNode>();
+//    for (SNode root : CloneUtil.copy(rootsToCopy, myOutputModel, getScope())) {
+//      copiedRoots.add(root);
+//    }
+//    return copiedRoots;
+    return CopyUtil.copyAndPreserveId(rootsToCopy, null);
   }
 
   private void invalidateReferencesInCopiedNode(SNode node) {

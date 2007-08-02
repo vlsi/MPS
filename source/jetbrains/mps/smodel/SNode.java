@@ -1072,20 +1072,20 @@ public class SNode implements Cloneable, Iterable<SNode> {
     return refs;
   }
 
-  @NotNull
-  public List<SReference> getBackReferences(@NotNull SModel sourceModel) {
-    List<SReference> list = new ArrayList<SReference>();
-    List<SNode> nodes = sourceModel.allNodes();
-    for (SNode node : nodes) {
-      List<SReference> references = node.getReferences();
-      for (SReference reference : references) {
-        if (reference.isTargetNode(this)) {
-          list.add(reference);
-        }
-      }
-    }
-    return list;
-  }
+//  @NotNull
+//  public List<SReference> getBackReferences(@NotNull SModel sourceModel) {
+//    List<SReference> list = new ArrayList<SReference>();
+//    List<SNode> nodes = sourceModel.allNodes();
+//    for (SNode node : nodes) {
+//      List<SReference> references = node.getReferences();
+//      for (SReference reference : references) {
+//        if (reference.isTargetNode(this)) {
+//          list.add(reference);
+//        }
+//      }
+//    }
+//    return list;
+//  }
 
   @Nullable
   public SReference setReferent(@NotNull String role, SNode newReferent) {

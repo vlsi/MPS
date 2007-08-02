@@ -6,6 +6,7 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.resolve.Resolver;
+import org.jetbrains.annotations.NotNull;
 
 /**
  * User: Sergey Dmitriev
@@ -19,18 +20,23 @@ public final class SReference {
   private String myTargetNodeId;
   private String myExtResolveInfo = "";
   private SModelUID myTargetModelUID;
+  private boolean myIsLocal;
   private String myResolveInfo;
   private boolean myLoggingOff = false;
   private static boolean ourLoggingOff = false;
 
-  private SReference(String role, SNode sourceNode, String targetNodeId, String resolveInfo, String extResolveInfo, SModelUID targetModelUID) {
+  private SReference(String role, SNode sourceNode, String targetNodeId, String resolveInfo, String extResolveInfo, @NotNull SModelUID targetModelUID) {
     myRole = InternUtil.intern(role);
     mySourceNode = sourceNode;
     myTargetNodeId = InternUtil.intern(targetNodeId);
     myResolveInfo = InternUtil.intern(resolveInfo);
     myExtResolveInfo = InternUtil.intern(extResolveInfo);
-    myTargetModelUID = targetModelUID;
-    LOG.assertLog(targetModelUID != null, "targetModelUID is NULL");
+//    LOG.assertLog(targetModelUID != null, "targetModelUID is NULL");
+    if (targetModelUID.equals(sourceNode.getModel().getUID())) {
+      myIsLocal = true;
+    } else {
+      myTargetModelUID = targetModelUID;
+    }
   }
 
   public String getResolveInfo() {
@@ -42,11 +48,17 @@ public final class SReference {
   }
 
   public SModelUID getTargetModelUID() {
-    return myTargetModelUID;
+    return myIsLocal ? mySourceNode.getModel().getUID() : myTargetModelUID;
   }
 
-  /*package*/ void setTargetModelUID(SModelUID modelUID) {
-    myTargetModelUID = modelUID;
+  /*package*/ void setTargetModelUID(@NotNull SModelUID modelUID) {
+    if (mySourceNode.getModel().getUID().equals(modelUID)) {
+      myIsLocal = true;
+      myTargetModelUID = null;
+    } else {
+      myIsLocal = false;
+      myTargetModelUID = modelUID;
+    }
   }
 
   public boolean equalsTargetInfo(SReference reference) {
@@ -75,11 +87,10 @@ public final class SReference {
     return getTargetNode_impl();
   }
 
-  protected SNode getTargetNode_impl() {
+  private SModel getTargetModel() {
     SModel model;
-
-
-    if (mySourceNode.getModel().getUID().equals(myTargetModelUID)) {
+//    if (mySourceNode.getModel().getUID().equals(myTargetModelUID)) {
+    if (myIsLocal) {
       // DO NOT REMOVE THIS CODE
       // it needed in merge view. In this view we create models in air
       // and it's possible that a couple of models with the same uid
@@ -95,9 +106,13 @@ public final class SReference {
         model = modelDescriptor.getSModel();
       }
     }
+    return model;
+  }
 
+  private SNode getTargetNode_impl() {
+    SModel targetModel = getTargetModel();
     SModel sourceModel = mySourceNode.getModel();
-    if (model == null) {
+    if (targetModel == null) {
       logGetTargetNodeErrors(GetTargetNodeErrorState.NO_MODEL);
       return null;
     }
@@ -106,19 +121,19 @@ public final class SReference {
         logGetTargetNodeErrors(GetTargetNodeErrorState.CANT_RESOLVE_BY_ID);
         return null;
       }
-      SNode nodeById = model.getNodeById(myTargetNodeId);
+      SNode nodeById = targetModel.getNodeById(myTargetNodeId);
       if (nodeById == null) {
-        nodeById = UnregisteredNodes.instance().get(model.getUID(), myTargetNodeId);
+        nodeById = UnregisteredNodes.instance().get(targetModel.getUID(), myTargetNodeId);
         if (nodeById == null) {
           logGetTargetNodeErrors(GetTargetNodeErrorState.CANT_RESOLVE_BY_ID);
         }
       } else {
-        if (model.isExternallyResolvable() && model != sourceModel) {
+        if (targetModel.isExternallyResolvable() && targetModel != sourceModel) {
           String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(nodeById);
           if (extResolveInfo != null) {//then resolve this reference by ext resolve info
             LOG.warning("reference is resolved by ID, while should be resolved by ERI");
             LOG.info("re-resolving reference");
-            model.setNodeExtResolveInfo(nodeById, extResolveInfo);
+            targetModel.setNodeExtResolveInfo(nodeById, extResolveInfo);
             myExtResolveInfo = extResolveInfo;
             myTargetNodeId = null;
             markChanged();
@@ -128,7 +143,7 @@ public final class SReference {
       return nodeById;
 
     } else {//else external resolve info isn't empty
-      SNode nodeByExtResolveInfo = model.getNodeByExtResolveInfo(myExtResolveInfo);
+      SNode nodeByExtResolveInfo = targetModel.getNodeByExtResolveInfo(myExtResolveInfo);
       if (nodeByExtResolveInfo == null) {
         logGetTargetNodeErrors(GetTargetNodeErrorState.CANT_RESOLVE_BY_ERI);
       }
@@ -140,19 +155,20 @@ public final class SReference {
     SModelRepository.getInstance().markChanged(getSourceNode().getModel(), true);
   }
 
-  public boolean isTargetNode(SNode node) {
-    SModelUID modelUID = node.getModel().getUID();
-    if (modelUID.equals(myTargetModelUID)) {
-      if (ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo) && myTargetNodeId != null && myTargetNodeId.equals(node.getId()))
-        return true;
-      if (!(ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo)) && ExternalResolver.doesNodeMatchERI(myExtResolveInfo, node))
-        return true;
-    }
-    return false;
-  }
+//  public boolean isTargetNode(SNode node) {
+//    SModelUID modelUID = node.getModel().getUID();
+//    if (modelUID.equals(myTargetModelUID)) {
+//      if (ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo) && myTargetNodeId != null && myTargetNodeId.equals(node.getId()))
+//        return true;
+//      if (!(ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo)) && ExternalResolver.doesNodeMatchERI(myExtResolveInfo, node))
+//        return true;
+//    }
+//    return false;
+//  }
 
   public boolean isExternal() {
-    return !mySourceNode.getModel().getUID().equals(myTargetModelUID);
+//    return !mySourceNode.getModel().getUID().equals(myTargetModelUID);
+    return !myIsLocal;
   }
 
   public String getTargetNodeId() {
@@ -189,7 +205,7 @@ public final class SReference {
 
   /**
    * reference created by target node
-   * todo: annotate targetNode as NotNull. If targetNode=null there is neither ID nor resolve infos    
+   * todo: annotate targetNode as NotNull. If targetNode=null there is neither ID nor resolve infos
    */
   public static SReference newInstance(String role, SNode sourceNode, SNode targetNode) {
 
@@ -231,7 +247,9 @@ public final class SReference {
   }
 
 
-  //reference created by specifying all info
+  /**
+   * reference created by specifying all info
+   */
   public static SReference newInstance(String role, SNode sourceNode, String targetNodeId, String extResolveInfo,
                                        SModelUID targetModelUID, String resolveInfo) {
     return new SReference(role, sourceNode, targetNodeId, resolveInfo, extResolveInfo, targetModelUID);
@@ -268,16 +286,16 @@ public final class SReference {
     if (SNodeProxy.getOurSourceNode() == mySourceNode) return;
     if (errorState == GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR) {
       LOG.error("\nCouldn't resolve reference '" + myRole + "' from " + getSourceNode().getDebugText(), getSourceNode());
-      LOG.error("Path to the target model " + myTargetModelUID + " is not specified");
+      LOG.error("Path to the target model " + getTargetModelUID() + " is not specified");
     } else if (errorState == GetTargetNodeErrorState.NO_MODEL) {
       LOG.error("\nCouldn't resolve reference '" + myRole + "' from " + getSourceNode().getDebugText(), getSourceNode());
       LOG.error("The modelDescriptor.getSModel() failed to load model");
     } else if (errorState == GetTargetNodeErrorState.CANT_RESOLVE_BY_ID) {
       LOG.error("\nCouldn't resolve reference '" + myRole + "' from " + getSourceNode().getDebugText(), getSourceNode());
-      LOG.error("The target model " + myTargetModelUID + " doesn't contain node with id=" + myTargetNodeId);
+      LOG.error("The target model " + getTargetModelUID() + " doesn't contain node with id=" + myTargetNodeId);
     } else if (errorState == GetTargetNodeErrorState.CANT_RESOLVE_BY_ERI) {
       LOG.error("\nCouldn't resolve reference '" + myRole + "' from " + getSourceNode().getDebugText(), getSourceNode());
-      LOG.error("The target model " + myTargetModelUID + " doesn't contain node with ERI=" + myExtResolveInfo);
+      LOG.error("The target model " + getTargetModelUID() + " doesn't contain node with ERI=" + myExtResolveInfo);
     }
   }
 
