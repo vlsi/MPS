@@ -195,7 +195,8 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
         if (term == null) continue;
         SNode type = expandType(contextEntry.getValue(), myTypeChecker.getRuntimeTypesModel());
         if (BaseAdapter.isInstance(type, RuntimeErrorType.class)) {
-          reportTypeError(term, ((RuntimeErrorType) BaseAdapter.fromNode(type)).getErrorText(), null, null);
+          RuntimeErrorType errorType = (RuntimeErrorType) BaseAdapter.fromNode(type);
+          reportTypeError(term, errorType.getErrorText(), errorType.getNodeModel(), errorType.getNodeId());
         }
         myNodesToTypesMap.put(term, type);
       }
@@ -484,6 +485,9 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     if (wrapper.isCondition()) {
       RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
       error.setErrorText("argument of WHEN CONCRETE block is never concrete");
+      ConditionWrapper conditionWrapper = (ConditionWrapper) wrapper;
+      error.setNodeModel(conditionWrapper.getNodeModel());
+      error.setNodeId(conditionWrapper.getNodeId());
       return new NodeWrapper(error.getNode());
     }
     Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();

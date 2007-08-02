@@ -218,7 +218,11 @@ public class RuntimeSupport {
     return typeOf(node);
   }
 
-  public void whenConcrete(SNode argument, final Runnable r) {
+  public void whenConcrete(SNode argument, Runnable r) {
+    whenConcrete(argument, r, null, null);
+  }
+
+  public void whenConcrete(SNode argument, final Runnable r, String nodeModel, String nodeId) {
     if (argument == null) return;
     myTypeChecker.getEquationManager().addEquation(new NodeWrapper(argument),
             new ConditionWrapper(new Condition<SNode>() {
@@ -226,7 +230,7 @@ public class RuntimeSupport {
                 r.run();
                 return true;
               }
-            }), null);
+            }, nodeModel, nodeId), null);
   }
 
   public SNode coerce(SNode subtype, IMatchingPattern pattern, boolean isWeak) {

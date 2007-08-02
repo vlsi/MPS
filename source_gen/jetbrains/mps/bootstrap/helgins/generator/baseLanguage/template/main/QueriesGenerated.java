@@ -339,6 +339,14 @@ public class QueriesGenerated {
     return node.getId();
   }
 
+  public static Object propertyMacro_GetPropertyValue_1186048441543(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.getModel(node).toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1186048449233(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return node.getId();
+  }
+
   public static SNode referenceMacro_GetReferent_1174599415255(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode quotation = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.Quotation", false, false);
     SNode antiquotation = node;

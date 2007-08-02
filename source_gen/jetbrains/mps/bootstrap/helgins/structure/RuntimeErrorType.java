@@ -9,6 +9,8 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RuntimeErrorType extends RuntimeTypeVariable {
   public static String ERROR_TEXT = "errorText";
+  public static String NODE_ID = "nodeId";
+  public static String NODE_MODEL = "nodeModel";
 
   public  RuntimeErrorType(SNode node) {
     super(node);
@@ -29,6 +31,22 @@ public class RuntimeErrorType extends RuntimeTypeVariable {
 
   public void setErrorText(String value) {
     this.setProperty(RuntimeErrorType.ERROR_TEXT, value);
+  }
+
+  public String getNodeId() {
+    return this.getProperty(RuntimeErrorType.NODE_ID);
+  }
+
+  public void setNodeId(String value) {
+    this.setProperty(RuntimeErrorType.NODE_ID, value);
+  }
+
+  public String getNodeModel() {
+    return this.getProperty(RuntimeErrorType.NODE_MODEL);
+  }
+
+  public void setNodeModel(String value) {
+    this.setProperty(RuntimeErrorType.NODE_MODEL, value);
   }
 
 }

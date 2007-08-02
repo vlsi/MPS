@@ -15,9 +15,17 @@ import org.jetbrains.annotations.Nullable;
 */
 public class ConditionWrapper implements IWrapper {
   private Condition<SNode> myCondition;
+  private String myNodeModel;
+  private String myNodeId;
 
   public ConditionWrapper(Condition<SNode> condition) {
     myCondition = condition;
+  }
+
+  public ConditionWrapper(Condition<SNode> condition, String nodeModel, String nodeId) {
+    myCondition = condition;
+    myNodeModel = nodeModel;
+    myNodeId = nodeId;
   }
 
   public SNode getNode() {
@@ -50,5 +58,13 @@ public class ConditionWrapper implements IWrapper {
 
   public boolean met(SNode node) {
     return myCondition.met(node);
+  }
+
+  public String getNodeModel() {
+    return myNodeModel;
+  }
+
+  public String getNodeId() {
+    return myNodeId;
   }
 }

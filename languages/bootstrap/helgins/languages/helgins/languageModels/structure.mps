@@ -690,6 +690,14 @@
       <property name="name" value="errorText" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1186047920810">
+      <property name="name" value="nodeId" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1186047931404">
+      <property name="name" value="nodeModel" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1185281562363">
     <property name="name" value="RuntimeTypeVariable" />

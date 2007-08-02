@@ -34,10 +34,10 @@ public class RulesFunctions_BaseLanguage {
             TypeChecker.getInstance().getRuntimeSupport().givetype(Queries.getBinaryOperationType(TypeChecker.getInstance().getEquationManager().getRepresentator(leftExpressionType_typevar_1185962769627), TypeChecker.getInstance().getEquationManager().getRepresentator(rightExpressionType_typevar_1185962758265)), binOp, "jetbrains.mps.baseLanguage.helgins", "1185963109700");
           }
 
-        });
+        }, "jetbrains.mps.baseLanguage.helgins", "1185963100352");
       }
 
-    });
+    }, "jetbrains.mps.baseLanguage.helgins", "1185963072800");
   }
 
   public static Iterable<SNode> collectReturnStatements(SNode node) {
