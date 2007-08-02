@@ -198,7 +198,7 @@ public class RuntimeSupport {
     }
     SNode nodesType = typesContext.get(node);
     if (nodesType == null) { // put to context
-      typesContext.put(node, myTypeChecker.getEquationManager().getRepresentator(type));
+      typesContext.put(node, getRepresentatorIfNecessary(type, component));
     } else { // create equation
       createEquation(nodesType, type, node , null, ruleModel, ruleId);
     }
