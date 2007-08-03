@@ -303,7 +303,7 @@ public class EquationManager {
     IWrapper rhsRepresentator = getRepresentatorWrapper(rhs);
 
     // no equation needed
-    if (rhsRepresentator == lhsRepresentator) return;
+    if (EqualUtil.equals(rhsRepresentator, lhsRepresentator)) return;
 
     // add var to type's multieq
     RuntimeTypeVariable varRhs = rhsRepresentator == null ? null : rhsRepresentator.getVariable();
