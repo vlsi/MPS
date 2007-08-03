@@ -20,7 +20,7 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
     List<SNode> supertypes = ListOperations.createList(new SNode[]{});
     SNode elementType = SLinkOperations.getTarget(type, "elementType", true);
     if(SNodeOperations.isInstanceOf(elementType, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
-      ListOperations.addElement(supertypes, new QuotationClass_57().createNode(SLinkOperations.getTarget(elementType, "concept", false)));
+      ListOperations.addElement(supertypes, new QuotationClass_58().createNode(SLinkOperations.getTarget(elementType, "concept", false)));
     }
     return supertypes;
   }

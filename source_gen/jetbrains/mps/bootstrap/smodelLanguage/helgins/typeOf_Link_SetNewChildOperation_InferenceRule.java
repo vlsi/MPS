@@ -26,7 +26,7 @@ public class typeOf_Link_SetNewChildOperation_InferenceRule implements Inference
         TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parameterConcept, expectedConcept, argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062808459");
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_48().createNode(resultConcept), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492106");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_49().createNode(resultConcept), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492106");
   }
 
   public String getApplicableConceptFQName() {

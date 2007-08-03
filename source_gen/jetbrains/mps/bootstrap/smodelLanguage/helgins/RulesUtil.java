@@ -178,7 +178,11 @@ public class RulesUtil {
 
       public void run() {
         if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(Result_typevar_1186062019004), SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), "concept", false), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062259216");
+          SNode conceptDeclaration = SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), "concept", false);
+          if(conceptDeclaration == null) {
+            conceptDeclaration = SLinkOperations.getTarget(new QuotationClass_43().createNode(), "concept", false);
+          }
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(Result_typevar_1186062019004), conceptDeclaration, null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062259216");
         } else
         if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType")) {
           TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(Result_typevar_1186062019004), SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration"), null, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062259230");
@@ -191,12 +195,12 @@ public class RulesUtil {
 
   public static SNode get_inputNodeType(SNode op) {
     SNode inputNodeConcept = RulesUtil.get_inputNodeConcept(op);
-    SNode inputNodeType = new QuotationClass_43().createNode(inputNodeConcept);
+    SNode inputNodeType = new QuotationClass_44().createNode(inputNodeConcept);
     return inputNodeType;
   }
 
   public static SNode get_SNodeType_fromOpParameter(SNode op) {
-    SNode type = new QuotationClass_44().createNode();
+    SNode type = new QuotationClass_45().createNode();
     SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate(null, null)));
     if(parm != null) {
       SLinkOperations.setTarget(type, "concept", SLinkOperations.getTarget(parm, "concept", false), false);
@@ -205,7 +209,7 @@ public class RulesUtil {
   }
 
   public static SNode get_SNodeListType_fromOpParameter(SNode op) {
-    SNode type = new QuotationClass_45().createNode();
+    SNode type = new QuotationClass_46().createNode();
     SNode parm = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(op, "parameter", true), new zPredicate1(null, null)));
     if(parm != null) {
       SLinkOperations.setTarget(type, "elementConcept", SLinkOperations.getTarget(parm, "concept", false), false);

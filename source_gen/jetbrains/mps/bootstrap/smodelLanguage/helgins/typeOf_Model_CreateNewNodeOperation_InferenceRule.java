@@ -15,7 +15,7 @@ public class typeOf_Model_CreateNewNodeOperation_InferenceRule implements Infere
 
   public void applyRule(final SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_49().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492160");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_50().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492160");
   }
 
   public String getApplicableConceptFQName() {

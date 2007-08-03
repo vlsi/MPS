@@ -28,7 +28,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
       }
 
     }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057669142");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_55().createNode(), argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057690603");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_56().createNode(), argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057690603");
   }
 
   public String getApplicableConceptFQName() {

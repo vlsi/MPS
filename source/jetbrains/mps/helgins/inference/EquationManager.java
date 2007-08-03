@@ -475,10 +475,7 @@ public class EquationManager {
   private boolean compareWrappers(IWrapper wrapper1, IWrapper wrapper2, ErrorInfo errorInfo) {
     if (wrapper1 == wrapper2) return true;
     if (wrapper1 == null) {
-      return false;
-    }
-    if (wrapper2 == null) {
-      return false;
+      return wrapper2.matchesWith(wrapper1, this, errorInfo);
     }
     return wrapper1.matchesWith(wrapper2, this, errorInfo);
   }
