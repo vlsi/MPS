@@ -61,43 +61,7 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
   }
 
   public boolean hasExactlyNActions(String pattern, boolean strictMatching, final int n) {
-    Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, strictMatching);
-    List<INodeSubstituteAction> result = pair.o2;
-    String smallPattern = pair.o1;
-    int count1 = 0;
-    int count2 = result.size();
-    if (strictMatching) {
-      Iterator<INodeSubstituteAction> iterator1 = result.iterator();
-      while (iterator1.hasNext()) {
-        INodeSubstituteAction substituteItem = iterator1.next();
-        if (substituteItem.canSubstituteStrictly(pattern)) {
-          count1++;
-          if (count1 > n) return false;
-        } else {
-          iterator1.remove();
-          count2--;
-          if (count2 < n) return false;
-        }
-      }
-      myStrictPatternsToActionListsCache.put(smallPattern, new ArrayList<INodeSubstituteAction>(result));
-      if (count1 == n) return true;
-    } else {
-      Iterator<INodeSubstituteAction> items = result.iterator();
-      while (items.hasNext()) {
-        INodeSubstituteAction item = items.next();
-        if (!item.canSubstitute(pattern)) {
-          items.remove();
-          count2--;
-          if (count2 < n) return false;
-        } else {
-          count1++;
-          if (count1 > n && !strictMatching) return false;
-        }
-      }
-      myPatternsToActionListsCache.put(smallPattern, new ArrayList<INodeSubstituteAction>(result));
-      if (count1 == n) return true;
-    }
-    return false;
+    return getMatchingActions(pattern, strictMatching).size() == n;
   }
 
   private Pair<String, List<INodeSubstituteAction>> getPatternAndActions(String pattern, boolean strictMatching) {
@@ -134,19 +98,6 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
     Pair<String, List<INodeSubstituteAction>> pair = getPatternAndActions(pattern, strictMatching);
     String smallPattern = pair.o1;
     List<INodeSubstituteAction> result = pair.o2;
-    /*   if (pattern.length() == 0) {
-      return list;
-    }*/
-
-    Iterator<INodeSubstituteAction> items = result.iterator();
-    while (items.hasNext()) {
-      INodeSubstituteAction item = items.next();
-      if (!item.canSubstitute(pattern)) {
-        items.remove();
-      }
-    }
-
-    myPatternsToActionListsCache.put(smallPattern, new ArrayList<INodeSubstituteAction>(result));
 
     if (strictMatching) {
       Iterator<INodeSubstituteAction> iterator1 = result.iterator();
@@ -155,9 +106,20 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
         if (substituteItem.canSubstituteStrictly(pattern)) continue;
         iterator1.remove();
       }
-    }
 
-    myStrictPatternsToActionListsCache.put(smallPattern, new ArrayList<INodeSubstituteAction>(result));
+      myStrictPatternsToActionListsCache.put(smallPattern, new ArrayList<INodeSubstituteAction>(result));
+    } else {
+      Iterator<INodeSubstituteAction> items = result.iterator();
+      while (items.hasNext()) {
+        INodeSubstituteAction item = items.next();
+        if (!item.canSubstitute(pattern)) {
+          items.remove();
+        }
+      }
+
+
+      myPatternsToActionListsCache.put(smallPattern, new ArrayList<INodeSubstituteAction>(result));
+    }
 
     return (List)result;
   }
