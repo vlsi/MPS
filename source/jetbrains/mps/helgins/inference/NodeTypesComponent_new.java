@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
-import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
@@ -54,12 +53,10 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
 
   private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodes = new WeakHashMap<SNode, WeakSet<SNode>>();
 
-  private Stack<EquationManager> myEquationManagersStack = new Stack<EquationManager>();
+  private EquationManager myEquationManager;
 
   private Set<SModelDescriptor> myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
 
-  private Stack<SNode> myNodesBeingChecked = new Stack<SNode>();
-  private Map<SNode, Pair<String, String>> myNodesToCheckStatementsIdMap = new HashMap<SNode, Pair<String, String>>();
 
   private MyModelListener myModelListener = new MyModelListener();
   private MyEventsReadListener myNodesReadListener = new MyEventsReadListener();
@@ -77,19 +74,17 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
     // myProject = project;
-    myEquationManagersStack.push(new EquationManager(myTypeChecker, this));
+    myEquationManager = new EquationManager(myTypeChecker, this);
   }
 
   public void clear() {
     clearEquationManager();
-    myNodesBeingChecked.clear();
     clearNodesTypes();
     clearCaches();
   }
 
   private void clearEquationManager() {
-    myEquationManagersStack.clear();
-    myEquationManagersStack.push(new EquationManager(myTypeChecker, this));
+    myEquationManager = new EquationManager(myTypeChecker, this);
   }
 
   public SNode getNode() {
@@ -175,7 +170,6 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
         doInvalidate();
         myPartlyCheckedNodes.addAll(myFullyCheckedNodes);
         myFullyCheckedNodes.clear();
-        myNodesBeingChecked.clear();
       }
 
       myTypeChecker.setCurrentTypesComponent(this);
@@ -187,7 +181,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
       computeTypesForNode(myRootNode);
 
       // solve residual inequations
-      myEquationManagersStack.peek().solveInequations();
+      myEquationManager.solveInequations();
 
       // setting expanded types to nodes
       for (Map.Entry<SNode, SNode> contextEntry : new HashSet<Entry<SNode, SNode>>(myNodesToTypesMap.entrySet())) {
@@ -332,77 +326,6 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     }
   }
 
-  public void checkTypesForNodeAndSolveInequations(SNode node) {
-    checkTypesForNodeAndSolveInequations(node, null, null);
-  }
-
-  public void checkTypesForNodeAndSolveInequations(SNode node, String nodeModel, String nodeId) {
-    if (node == null) return;
-
-    if (isNodeBeingChecked(node)) {
-      LOG.error("your HELGINS rules for this node try to loop infinitely", node);
-      LOG.error("LOOP:");
-      boolean reachedOurNode = false;
-      for (SNode nodeBeingChecked : myNodesBeingChecked) {
-        if (nodeBeingChecked == node) {
-          reachedOurNode = true;
-        }
-        if (!reachedOurNode) {
-          continue;
-        }
-        Pair<String, String> checkStatementId = myNodesToCheckStatementsIdMap.get(nodeBeingChecked);
-        SNode checkStatement = null;
-        if (checkStatementId != null) {
-          String modelString = checkStatementId.o1;
-          String idString = checkStatementId.o2;
-          if (modelString != null && idString != null) {
-            SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(modelString));
-            if (modelDescriptor == null) {
-              LOG.error("can't find rule's model: " + modelString);
-              return;
-            }
-            checkStatement = modelDescriptor.getSModel().getNodeById(idString);
-            if (checkStatement == null) {
-              LOG.error("can't find a node with id " + idString + " in the model " + modelDescriptor);
-            }
-          }
-          LOG.error("click here", checkStatement);
-        }
-      }
-      return;
-    }
-
-    pushNodeBeingChecked(node, nodeModel, nodeId);
-    try {
-      if (myFullyCheckedNodes.contains(node)) {
-        // if in our component
-        return;
-      }
-      if ((NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node)).isInCheckedNodes(node)) {
-        //if in another component
-        return;
-      }
-      EquationManager oldSlave = new EquationManager(this.myTypeChecker, this);
-      myEquationManagersStack.push(oldSlave);
-      try {
-        computeTypesForNode(node); //computing types in our component even if nodes are from another root
-      } catch(Throwable t) {
-        LOG.error(t);
-      }
-      EquationManager slave = myEquationManagersStack.pop();
-      if (slave != oldSlave) {
-        LOG.error("equation managers' stack violated");
-      }
-      slave.solveInequations();
-      myEquationManagersStack.peek().putAllEquations(slave);
-      myFullyCheckedNodes.add(node);
-    } catch(Throwable t) {
-      LOG.error(t);
-    } finally {
-      popNodeBeingChecked();
-    }
-  }
-
   private void addOurListener(SModelDescriptor sm) {
     if (sm.hasSModelCommandListener(myModelListener)) return;
     sm.addSModelCommandListener(myModelListener);
@@ -440,25 +363,9 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     return iErrorReporter;
   }
 
-  /*package*/ void pushNodeBeingChecked(SNode node, String nodeModel, String nodeId) {
-    myNodesBeingChecked.push(node);
-    myNodesToCheckStatementsIdMap.put(node, new Pair<String, String>(nodeModel, nodeId));
-  }
-
-
-  /*package*/ SNode popNodeBeingChecked() {
-    SNode node = myNodesBeingChecked.pop();
-    myNodesToCheckStatementsIdMap.remove(node);
-    return node;
-  }
-
-  public boolean isNodeBeingChecked(SNode node) {
-    return myNodesBeingChecked.contains(node);
-  }
-
   private SNode expandType(SNode node, SModel typesModel) {
     if (node == null) return null;
-    IWrapper representator = myEquationManagersStack.peek().getRepresentatorWrapper(new NodeWrapper(node));
+    IWrapper representator = myEquationManager.getRepresentatorWrapper(new NodeWrapper(node));
     return expandNode(representator, representator, 0, new HashSet<IWrapper>(), typesModel).getNode();
   }
 
@@ -466,7 +373,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     if (wrapper == null) return null;
 
     if (wrapper.isVariable()) {
-      IWrapper type = myEquationManagersStack.peek().getRepresentatorWrapper(wrapper);
+      IWrapper type = myEquationManager.getRepresentatorWrapper(wrapper);
       NodeWrapper wrapper1 = (NodeWrapper) wrapper;
       if (type != representator || depth > 0) {
 
@@ -518,16 +425,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
   }
 
   public EquationManager getEquationManager() {
-    return myEquationManagersStack.peek();
-  }
-
-  public EquationManager getMaster(EquationManager equationManager) {
-    int i = myEquationManagersStack.indexOf(equationManager);
-    if (i > 0) {
-      return myEquationManagersStack.get(i-1);
-    } else {
-      return null;
-    }
+    return myEquationManager;
   }
 
   public Set<Pair<SNode, String>> getNodesWithErrorStrings() {

@@ -106,12 +106,6 @@ public class EquationManager {
 
   public IWrapper getParent(IWrapper type) {
     IWrapper parent = myEquations.get(type);
-    if (parent == null) {
-      EquationManager equationManager = getMaster();
-      if (equationManager != null) {
-        parent = equationManager.getParent(type);
-      }
-    }
     return parent;
   }
 
@@ -767,11 +761,6 @@ public class EquationManager {
     }
     // c :< T => c = T
     addEquation(type, supertype, errorInfo);
-  }
-
-  public EquationManager getMaster() {
-    if (myNodeTypesComponent == null) return null;
-    return myNodeTypesComponent.getMaster(this);
   }
 
   public static class ErrorInfo {
