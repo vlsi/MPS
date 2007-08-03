@@ -627,9 +627,9 @@ public class EquationManager {
       for (IWrapper type : types) {
         if (type == null) continue;
         if (!type.isConcrete()) {
-          varLessThanType(type, true);
           typeLessThanVar(type, true);
-          varLessThanType(type, false);
+          typeLessThanVar(type, false);
+          varLessThanType(type, true);
           varLessThanType(type, false);
         } else {
           hasConcreteTypes = true;
