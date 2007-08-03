@@ -204,26 +204,6 @@ public class RuntimeSupport {
     }
   }
 
-  public void check(SNode node) {
-    check(node, null, null);
-  }
-
-  public void check(SNode node, String nodeModel, String nodeId) {
-    myTypeChecker.getCurrentTypesComponent().checkTypesForNodeAndSolveInequations(node, nodeModel, nodeId);
-  }
-
-  public SNode checkedTypeOf(SNode node) {
-    return checkedTypeOf(node, null, null);
-  }
-
-  public SNode checkedTypeOf(SNode node, String nodeModel, String nodeId) {
-    if (myTypeChecker.getCurrentTypesComponent() == null) { //preved Igor!
-      return myTypeChecker.getTypeOf(node);
-    }
-    check(node, nodeModel, nodeId);
-    return typeOf(node);
-  }
-
   public void whenConcrete(SNode argument, Runnable r) {
     whenConcrete(argument, r, null, null);
   }

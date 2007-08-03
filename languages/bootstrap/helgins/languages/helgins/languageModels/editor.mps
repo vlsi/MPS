@@ -1911,29 +1911,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1175153862807">
-    <link role="conceptDeclaration" targetNodeId="1.1175153783149" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1175153865574">
-      <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175153869904">
-        <property name="textFgColor" value="DARK_GREEN" />
-        <property name="text" value="CHECK" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175153874219">
-        <property name="text" value="(" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1175153877377">
-        <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="1.1175153845993" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175153889832">
-        <property name="text" value=");" />
-        <property name="drawBorder" value="false" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1175162695183">
     <link role="conceptDeclaration" targetNodeId="1.1175162660418" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1175162696883">
@@ -2488,28 +2465,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1177515050918">
         <property name="text" value="}" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1178115011164">
-    <link role="conceptDeclaration" targetNodeId="1.1178114971860" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1178115012556">
-      <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1179152463762">
-        <property name="textFgColor" value="DARK_GREEN" />
-        <link role="relationDeclaration" targetNodeId="2.1137473891462" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1178115012558">
-        <property name="text" value="(" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1178115012559">
-        <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="1.1174657509053" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1178115012560">
-        <property name="text" value=")" />
-        <property name="drawBorder" value="false" />
       </node>
     </node>
   </node>
