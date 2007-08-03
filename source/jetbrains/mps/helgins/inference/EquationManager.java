@@ -336,9 +336,9 @@ public class EquationManager {
       return;
     }
 
-    if (rhsRepresentator != null && rhsRepresentator.isCondition()) {
+    if (rhsRepresentator != null && rhsRepresentator.isCondition() && lhsRepresentator != null) {
       processEquation(rhsRepresentator, lhsRepresentator, errorInfo);
-    } else if (lhsRepresentator != null && lhsRepresentator.isCondition()) {
+    } else if (lhsRepresentator != null && lhsRepresentator.isCondition() && rhsRepresentator != null) {
       processEquation(lhsRepresentator, rhsRepresentator, errorInfo);
     }
 
