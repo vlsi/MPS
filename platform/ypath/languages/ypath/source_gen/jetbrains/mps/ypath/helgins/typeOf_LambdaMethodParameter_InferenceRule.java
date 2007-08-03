@@ -13,10 +13,10 @@ public class typeOf_LambdaMethodParameter_InferenceRule implements InferenceRule
   public  typeOf_LambdaMethodParameter_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
-    SNode T_typevar_1178551166899 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(new QuotationClass_2().createNode(T_typevar_1178551166899), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(SNodeOperations.getParent(argument, null, false, false), null, false, false)), SNodeOperations.getParent(SNodeOperations.getParent(argument, null, false, false), null, false, false), null, "jetbrains.mps.ypath.helgins", "1179327739073");
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), T_typevar_1178551166899, argument, null, "jetbrains.mps.ypath.helgins", "1179326842470");
+  public void applyRule(final SNode argument) {
+    final SNode T_typevar_1178551166899 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(new QuotationClass_2().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1178551166899)), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(SNodeOperations.getParent(argument, null, false, false), null, false, false)), SNodeOperations.getParent(SNodeOperations.getParent(argument, null, false, false), null, false, false), null, "jetbrains.mps.ypath.helgins", "1179327739073");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1178551166899), argument, null, "jetbrains.mps.ypath.helgins", "1179326842470");
   }
 
   public String getApplicableConceptFQName() {

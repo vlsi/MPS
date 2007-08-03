@@ -13,7 +13,7 @@ public class typeof_TreePathOperation_InferenceRule implements InferenceRule_Run
   public  typeof_TreePathOperation_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     SNode parent = SNodeOperations.getParent(argument, null, false, false);
     do {
       SNode matchedNode_1178551167097 = parent;

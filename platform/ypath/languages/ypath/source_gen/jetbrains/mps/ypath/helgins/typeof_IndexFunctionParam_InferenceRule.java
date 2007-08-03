@@ -12,7 +12,7 @@ public class typeof_IndexFunctionParam_InferenceRule implements InferenceRule_Ru
   public  typeof_IndexFunctionParam_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_8().createNode(), argument, "jetbrains.mps.ypath.helgins", "1183982109148");
   }
 

@@ -13,8 +13,8 @@ public class typeof_TreePathAdapterExpression_InferenceRule implements Inference
   public  typeof_TreePathAdapterExpression_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(TypeChecker.getInstance().getRuntimeSupport().checkedTypeOf(SLinkOperations.getTarget(argument, "expression", true))), argument, "jetbrains.mps.ypath.helgins", "1185018447615");
+  public void applyRule(final SNode argument) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true))), argument, "jetbrains.mps.ypath.helgins", "1185018447615");
   }
 
   public String getApplicableConceptFQName() {

@@ -14,7 +14,7 @@ public class typeof_ValueFunctionParam_InferenceRule implements InferenceRule_Ru
   public  typeof_ValueFunctionParam_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true), argument, "jetbrains.mps.ypath.helgins", "1183982168880");
   }
 

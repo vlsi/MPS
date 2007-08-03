@@ -17,7 +17,7 @@ public class check_VisitChildrenExpression_InferenceRule implements InferenceRul
   public  check_VisitChildrenExpression_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     int actualCount = SLinkOperations.getCount(argument, "actualArgument");
     SNode visitBlock = VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1180014794484(argument);
     if(!((visitBlock != null))) {

@@ -13,9 +13,9 @@ public class typeof_VisitNodesStatement_InferenceRule implements InferenceRule_R
   public  typeof_VisitNodesStatement_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
-    SNode T_typevar_1180009898513 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "visitBlock", true), "expression", true)), new QuotationClass_7().createNode(T_typevar_1180009898513), SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "visitBlock", true), "expression", true), null, "jetbrains.mps.ypath.helgins", "1180009374907");
+  public void applyRule(final SNode argument) {
+    final SNode T_typevar_1180009898513 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "visitBlock", true), "expression", true)), new QuotationClass_7().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1180009898513)), SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "visitBlock", true), "expression", true), null, "jetbrains.mps.ypath.helgins", "1180009374907");
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "visitBlock", true), "expression", true)), argument, null, "jetbrains.mps.ypath.helgins", "1180009862290");
   }
 

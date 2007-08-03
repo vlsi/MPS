@@ -13,7 +13,7 @@ public class typeof_TreeNodeKind_InferenceRule implements InferenceRule_Runtime 
   public  typeof_TreeNodeKind_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(argument, null, false, false)), argument, null, "jetbrains.mps.ypath.helgins", "1184316270386");
   }
 

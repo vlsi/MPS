@@ -14,7 +14,7 @@ public class typeof_NodeFunctionParam_InferenceRule implements InferenceRule_Run
   public  typeof_NodeFunctionParam_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true), argument, "jetbrains.mps.ypath.helgins", "1183981988255");
   }
 

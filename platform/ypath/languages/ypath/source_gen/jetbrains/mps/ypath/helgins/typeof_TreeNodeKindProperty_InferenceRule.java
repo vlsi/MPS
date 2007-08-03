@@ -13,7 +13,7 @@ public class typeof_TreeNodeKindProperty_InferenceRule implements InferenceRule_
   public  typeof_TreeNodeKindProperty_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(argument, null, false, false)), argument, "jetbrains.mps.ypath.helgins", "1178552996942");
   }
 
