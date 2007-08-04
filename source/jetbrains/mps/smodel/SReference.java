@@ -43,7 +43,7 @@ public final class SReference {
     return myResolveInfo;
   }
 
-  public void setResolveInfo(String info) {
+  private void setResolveInfo(String info) {
     myResolveInfo = info;
   }
 
@@ -61,11 +61,11 @@ public final class SReference {
     }
   }
 
-  public boolean equalsTargetInfo(SReference reference) {
-    if (!EqualUtil.equals(reference.myTargetNodeId, myTargetNodeId)) return false;
-    if (!EqualUtil.equals(reference.myExtResolveInfo, myExtResolveInfo)) return false;
-    return (EqualUtil.equals(reference.myResolveInfo, myResolveInfo));
-  }
+//  public boolean equalsTargetInfo(SReference reference) {
+//    if (!EqualUtil.equals(reference.myTargetNodeId, myTargetNodeId)) return false;
+//    if (!EqualUtil.equals(reference.myExtResolveInfo, myExtResolveInfo)) return false;
+//    return (EqualUtil.equals(reference.myResolveInfo, myResolveInfo));
+//  }
 
   public String getRole() {
     return myRole;
@@ -194,9 +194,9 @@ public final class SReference {
     return myExtResolveInfo;
   }
 
-  public void setExtResolveInfo(String extResolveInfo) {
-    this.myExtResolveInfo = extResolveInfo;
-  }
+//  public void setExtResolveInfo(String extResolveInfo) {
+//    this.myExtResolveInfo = extResolveInfo;
+//  }
 
   //
   // --- new instance
@@ -206,25 +206,23 @@ public final class SReference {
   /**
    * reference created by target node
    * todo: annotate targetNode as NotNull. If targetNode=null there is neither ID nor resolve infos
+   * update: targetNode=null can happen. See CopuPasteUtil.processReferencesIn() - when copied reference is unresolved (i.e. oldTargetNode==null)
+   * todo: another 'newInstance' should be used there in this case.  
    */
   public static SReference newInstance(String role, SNode sourceNode, SNode targetNode) {
 
     String resolveInfo = targetNode == null ? null : targetNode.getName();
     SModel sourceModel = sourceNode.getModel();
     SModel targetModel = targetNode == null ? null : targetNode.getModel();
+    String id = targetNode == null ? null : targetNode.getId();
     if (sourceModel == targetModel || targetModel == null) {
-      String id = targetNode == null ? null : targetNode.getId();
-      SReference sReference = new SReference(role, sourceNode, id, null, null, sourceModel.getUID());
-      sReference.setResolveInfo(resolveInfo);
-      return sReference;
+      return new SReference(role, sourceNode, id, resolveInfo, null, sourceModel.getUID());
     } else {
       String extResolveInfo = null;
       if (targetModel.isExternallyResolvable()) {
         extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(targetNode);
       }
-      SReference sReference = new SReference(role, sourceNode, targetNode.getId(), null, extResolveInfo, targetModel.getUID());
-      sReference.setResolveInfo(resolveInfo);
-      return sReference;
+      return new SReference(role, sourceNode, id, resolveInfo, extResolveInfo, targetModel.getUID());
     }
   }
 
@@ -300,10 +298,12 @@ public final class SReference {
   }
 
   public static void setResolveInfoByOldReference(SReference sourceReference, SReference newReference) {
-    if (sourceReference.getTargetNode() == null) {//if we copy a reference which is not resolved yet
+    SNode targetNode = sourceReference.getTargetNode();
+    if (targetNode == null) {//if we copy a reference which is not resolved yet
       newReference.setResolveInfo(sourceReference.getResolveInfo());
     } else {//we copy resolved reference
-      Resolver.setResolveInfo(newReference);
+      String name = targetNode.getName();
+      newReference.setResolveInfo(name);
     }
   }
 

@@ -54,9 +54,9 @@ public class ExternalResolver {
   }
 
 
-  public static void setExternalResolveInfo(SReference reference) {
-    reference.setExtResolveInfo(createExternalResolveInfo(reference));
-  }
+//  public static void setExternalResolveInfo(SReference reference) {
+//    reference.setExtResolveInfo(createExternalResolveInfo(reference));
+//  }
 
 
 

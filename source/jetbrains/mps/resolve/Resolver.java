@@ -67,12 +67,12 @@ public class Resolver {
     return referencesToSort;
   }
 
-  public static void setResolveInfo(SReference reference) {
-    SNode targetNode = reference.getTargetNode();
-    if (targetNode == null) return;
-    String name = targetNode.getName();
-    reference.setResolveInfo(name);
-  }
+//  public static void setResolveInfo(SReference reference) {
+//    SNode targetNode = reference.getTargetNode();
+//    if (targetNode == null) return;
+//    String name = targetNode.getName();
+//    reference.setResolveInfo(name);
+//  }
 
 
   private static List<SNode> getSmartReferenceTargets(
