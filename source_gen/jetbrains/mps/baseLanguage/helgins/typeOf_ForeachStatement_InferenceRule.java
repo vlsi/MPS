@@ -15,8 +15,8 @@ public class typeOf_ForeachStatement_InferenceRule implements InferenceRule_Runt
 
   public void applyRule(final SNode argument) {
     final SNode T_typevar_1176561507041 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "iterable", true)), new QuotationClass_21().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041)), SLinkOperations.getTarget(argument, "iterable", true), null, "jetbrains.mps.baseLanguage.helgins", "1183457285919");
-    TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "variable", true)), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041), SLinkOperations.getTarget(argument, "variable", true), null, "jetbrains.mps.baseLanguage.helgins", "1183457358399");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "iterable", true), "jetbrains.mps.baseLanguage.helgins", "1183457272430"), new QuotationClass_21().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041)), SLinkOperations.getTarget(argument, "iterable", true), null, "jetbrains.mps.baseLanguage.helgins", "1183457285919");
+    TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "variable", true), "jetbrains.mps.baseLanguage.helgins", "1183457358397"), TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1176561507041), SLinkOperations.getTarget(argument, "variable", true), null, "jetbrains.mps.baseLanguage.helgins", "1183457358399");
   }
 
   public String getApplicableConceptFQName() {

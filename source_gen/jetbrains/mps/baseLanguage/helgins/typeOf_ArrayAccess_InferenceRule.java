@@ -15,9 +15,9 @@ public class typeOf_ArrayAccess_InferenceRule implements InferenceRule_Runtime {
 
   public void applyRule(final SNode argument) {
     final SNode T_typevar_1175601836165 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "array", true)), new QuotationClass_10().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1175601836165)), SLinkOperations.getTarget(argument, "array", true), null, "jetbrains.mps.baseLanguage.helgins", "1175601848462");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "array", true), "jetbrains.mps.baseLanguage.helgins", "1175601850481"), new QuotationClass_10().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1175601836165)), SLinkOperations.getTarget(argument, "array", true), null, "jetbrains.mps.baseLanguage.helgins", "1175601848462");
     TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getEquationManager().getRepresentator(T_typevar_1175601836165), argument, "jetbrains.mps.baseLanguage.helgins", "1175601928121");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "index", true)), new QuotationClass_11().createNode(), SLinkOperations.getTarget(argument, "index", true), null, "jetbrains.mps.baseLanguage.helgins", "1175603546475");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "index", true), "jetbrains.mps.baseLanguage.helgins", "1175603547412"), new QuotationClass_11().createNode(), SLinkOperations.getTarget(argument, "index", true), null, "jetbrains.mps.baseLanguage.helgins", "1175603546475");
   }
 
   public String getApplicableConceptFQName() {

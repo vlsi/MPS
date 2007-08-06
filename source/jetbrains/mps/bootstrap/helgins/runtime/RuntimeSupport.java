@@ -27,6 +27,10 @@ public class RuntimeSupport {
   }
 
   public SNode typeOf(SNode node) {
+    return typeOf(node, null, null);
+  }
+
+  public SNode typeOf(SNode node, String ruleModel, String ruleId) {
     if (node == null) return null;
     SNode type;
     NodeTypesComponent_new currentTypesComponent = myTypeChecker.getCurrentTypesComponent();   //first, in current component
@@ -34,6 +38,10 @@ public class RuntimeSupport {
       //--- for incremental algorithm:
       currentTypesComponent.addNodeToFrontier(node);
       currentTypesComponent.addDependcyOnCurrent(node);
+      //--- for diagnostics:
+      if (ruleModel != null && ruleId != null) {
+        currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);
+      }
       //----
       type = currentTypesComponent.getRawTypeFromContext(node);
       if (type != null) return getRepresentatorIfNecessary(type, currentTypesComponent);
@@ -195,6 +203,8 @@ public class RuntimeSupport {
     NodeTypesComponent_new component = myTypeChecker.getCurrentTypesComponent();
     if (component != null) {
       component.addDependcyOnCurrent(node);
+      //----
+      component.markNodeAsAffectedByRule(node, ruleModel, ruleId);
     }
     SNode nodesType = typesContext.get(node);
     if (nodesType == null) { // put to context

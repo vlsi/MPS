@@ -188,6 +188,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(node, "name") + "_" + ruleConcept;
   }
 
+  public static Object propertyMacro_GetPropertyValue_1186391633357(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.getModel(node).toString();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1186391637493(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return node.getId();
+  }
+
   public static Object propertyMacro_GetPropertyValue_1184597094776(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return node.getModel().toString();
   }

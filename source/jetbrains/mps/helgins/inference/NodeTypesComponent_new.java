@@ -69,6 +69,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent_new.class);
   private Set<SNode> myCurrentFrontier;
   private SNode myCurrentCheckedNode;
+  private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
 
   public NodeTypesComponent_new(SNode rootNode, TypeChecker typeChecker) {
     myRootNode = rootNode;
@@ -95,6 +96,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     myFullyCheckedNodes.clear();
     myPartlyCheckedNodes.clear();
     myNodesToDependentNodes.clear();
+    myNodesToRules.clear();
   }
 
   private void clearNodesTypes() {
@@ -110,6 +112,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     myPartlyCheckedNodes.remove(node);
     myNodesToTypesMap.remove(node);
     myNodesToErrorsMap.remove(node);
+    myNodesToRules.remove(node);
   }
 
   public void reportTypeError(SNode nodeWithError, String errorString, String ruleModel, String ruleId) {
@@ -465,6 +468,21 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
       newNodesToInvalidate = new HashSet<SNode>();
     }
     myCurrentNodesToInvalidate.clear();
+  }
+
+  public void markNodeAsAffectedByRule(SNode node, String ruleModel, String ruleId) {
+    Set<Pair<String, String>> rulesWhichAffectNodesType = myNodesToRules.get(node);
+    if (rulesWhichAffectNodesType == null) {
+      rulesWhichAffectNodesType = new HashSet<Pair<String, String>>();
+      myNodesToRules.put(node, rulesWhichAffectNodesType);
+    }
+    rulesWhichAffectNodesType.add(new Pair<String, String>(ruleModel, ruleId));
+  }
+
+  public Set<Pair<String, String>> getRulesWhichAffectNodeType(SNode node) {
+    Set<Pair<String, String>> set = myNodesToRules.get(node);
+    if (set == null) return null;
+    return new HashSet<Pair<String, String>>(set);
   }
 
 

@@ -14,7 +14,7 @@ public class typeOf_GenericNewExpression_InferenceRule implements InferenceRule_
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "creator", true)), argument, "jetbrains.mps.baseLanguage.helgins", "1176896990006");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "creator", true), "jetbrains.mps.baseLanguage.helgins", "1176896993400"), argument, "jetbrains.mps.baseLanguage.helgins", "1176896990006");
   }
 
   public String getApplicableConceptFQName() {
