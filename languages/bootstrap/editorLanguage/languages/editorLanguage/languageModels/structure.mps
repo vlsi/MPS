@@ -2517,5 +2517,18 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186415722038">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="FontSizeStyleSheetItem" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1186415796023">
+      <property name="value" value="font-size" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1186415735165">
+      <property name="name" value="size" />
+      <link role="dataType" targetNodeId="3.1082983657062" />
+    </node>
+  </node>
 </model>
 
