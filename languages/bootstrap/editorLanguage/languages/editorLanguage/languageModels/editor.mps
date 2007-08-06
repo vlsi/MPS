@@ -8719,17 +8719,19 @@
         <property name="style" value="ITALIC" />
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.ForegroundColorStyleSheetItem" id="1186406127802">
-        <property name="color" value="query" />
-        <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.QueryFunction_Color" id="1186413171755">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1186413171756">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1186413207895">
-              <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1186413207896">
-                <link role="classifier" extResolveInfo="20.[Classifier]Color" />
-                <link role="variableDeclaration" extResolveInfo="20.static field ([Classifier]Color).([StaticFieldDeclaration]DARK_GRAY : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Color]))" />
-              </node>
-            </node>
-          </node>
-        </node>
+        <property name="color" value="DARK_GREEN" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.SelectableStyleSheetItem" id="1186415413931">
+        <property name="flag" value="true" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.DrawBracketsStyleSheetItem" id="1186415420230">
+        <property name="flag" value="true" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.DrawBorderStyleSheetItem" id="1186415426248">
+        <property name="flag" value="true" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.UnderlinedStyleSheetItem" id="1186415433547">
+        <property name="flag" value="true" />
       </node>
     </node>
   </node>
@@ -8813,6 +8815,23 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1186403896216">
         <link role="relationDeclaration" targetNodeId="2.1186403771423" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1186414561564">
+    <property name="package" value="Stylesheet" />
+    <link role="conceptDeclaration" targetNodeId="2.1186414536763" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1186414564066">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1186414565427">
+        <link role="relationDeclaration" targetNodeId="3.1137473891462" />
+        <link role="styleClass" targetNodeId="1186403684084" resolveInfo="item" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1186414568289">
+        <property name="text" value=":" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1186414570275">
+        <link role="relationDeclaration" targetNodeId="2.1186414551515" />
       </node>
     </node>
   </node>

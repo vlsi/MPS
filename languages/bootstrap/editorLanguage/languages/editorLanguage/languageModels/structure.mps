@@ -2460,5 +2460,62 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186413799158">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="BracketColorStyleSheetItem" />
+    <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1186413814629">
+      <property name="value" value="bracket-color" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186414536763">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="BooleanStyleSheetItem" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1186414551515">
+      <property name="name" value="flag" />
+      <link role="dataType" targetNodeId="3.1082983657063" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1186414559000">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186414928363">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="SelectableStyleSheetItem" />
+    <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1186414942927">
+      <property name="value" value="selectable" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186414949600">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="DrawBracketsStyleSheetItem" />
+    <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1186414964929">
+      <property name="value" value="draw-brackets" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186414976055">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="DrawBorderStyleSheetItem" />
+    <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1186414988603">
+      <property name="value" value="draw-border" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186414999511">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="UnderlinedStyleSheetItem" />
+    <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1186415029919">
+      <property name="value" value="underlined" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
 </model>
 
