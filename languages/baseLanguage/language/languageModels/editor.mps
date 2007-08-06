@@ -9291,5 +9291,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.StyleSheet" id="1186415538255">
+    <property name="name" value="Common" />
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.StyleSheetClass" id="1186415544875">
+      <property name="name" value="keyword" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.ForegroundColorStyleSheetItem" id="1186415551923">
+        <property name="color" value="DARK_BLUE" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.FontStyleStyleSheetItem" id="1186415560222">
+        <property name="style" value="BOLD" />
+      </node>
+    </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.StyleSheetClass" id="1186415563770">
+      <property name="name" value="string" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.ForegroundColorStyleSheetItem" id="1186415567224">
+        <property name="color" value="DARK_GREEN" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.FontStyleStyleSheetItem" id="1186415573617">
+        <property name="style" value="BOLD" />
+      </node>
+    </node>
+  </node>
 </model>
 
