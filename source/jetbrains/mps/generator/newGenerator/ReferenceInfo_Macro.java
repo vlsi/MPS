@@ -45,6 +45,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
 
   public void expandReferenceMacro(ITemplateGenerator generator) {
     SNode referentNode;
+
     String linkRole = myReferenceMacro.getLink().getRole();
     // try new query
     ReferenceMacro_GetReferent function = myReferenceMacro.getReferentFunction();
