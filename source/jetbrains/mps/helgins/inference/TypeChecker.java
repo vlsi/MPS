@@ -71,7 +71,7 @@ public class TypeChecker {
   }
 
   public EquationManager getEquationManager() {
-    if (myCurrentTypesComponent == null) return new EquationManager(this, null);
+    if (myCurrentTypesComponent == null) return new EquationManager(this);
     return myCurrentTypesComponent.getEquationManager();
   }
 

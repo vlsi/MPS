@@ -8,6 +8,8 @@ import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.util.Condition;
 
 import java.util.Map;
+import java.util.Set;
+import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -227,6 +229,25 @@ public class RuntimeSupport {
                 return true;
               }
             }, nodeModel, nodeId), null);
+  }
+
+  public Set getEffects(SNode type) {
+    NodeTypesComponent_new component = myTypeChecker.getCurrentTypesComponent();
+    if (component == null) return new HashSet();
+    return component.getEffects(type);
+  }
+
+  public boolean hasEffect(SNode type, Object effect) {
+    NodeTypesComponent_new component = myTypeChecker.getCurrentTypesComponent();
+    if (component == null) return false;
+    Set set = component.getEffects(type);
+    return set != null && set.contains(effect);
+  }
+
+  public void addEffect(SNode type, Object effect) {
+    NodeTypesComponent_new component = myTypeChecker.getCurrentTypesComponent();
+    if (component == null) return ;
+    component.addEffect(type, effect);
   }
 
   public SNode coerce(SNode subtype, IMatchingPattern pattern, boolean isWeak) {

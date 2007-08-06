@@ -75,7 +75,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
     // myProject = project;
-    myEquationManager = new EquationManager(myTypeChecker, this);
+    myEquationManager = new EquationManager(myTypeChecker);
   }
 
   public void clear() {
@@ -85,7 +85,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
   }
 
   private void clearEquationManager() {
-    myEquationManager = new EquationManager(myTypeChecker, this);
+    myEquationManager = new EquationManager(myTypeChecker);
   }
 
   public SNode getNode() {
@@ -340,6 +340,19 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
       sm.removeSModelCommandListener(myModelListener);
     }
     myModelDescriptorsWithListener.clear();
+  }
+
+  public Set getEffects(SNode type) {
+    return myEquationManager.getEffects(type);
+  }
+
+  public boolean hasEffect(SNode type, Object effect) {
+    Set set = getEffects(type);
+    return set != null && set.contains(effect);
+  }
+
+  public void addEffect(SNode type, Object effect) {
+    myEquationManager.addEffect(new NodeWrapper(type), effect);
   }
 
   public void clearListeners() {

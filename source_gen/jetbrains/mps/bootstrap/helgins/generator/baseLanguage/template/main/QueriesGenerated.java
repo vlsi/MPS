@@ -1161,4 +1161,20 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "body", true);
   }
 
+  public static SNode sourceNodeQuery_1186406397807(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "leftExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1186406401873(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "rightExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1186407024987(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "leftExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1186407027177(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "rightExpression", true);
+  }
+
 }

@@ -737,5 +737,21 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186405587830">
+    <property name="name" value="AddEffectExpression" />
+    <link role="extends" targetNodeId="2.1081773326031" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1186405683362">
+      <property name="value" value="+E" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186406507839">
+    <property name="name" value="HasEffectExpression" />
+    <link role="extends" targetNodeId="2.1081773326031" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1186406531434">
+      <property name="value" value="?E" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
 </model>
 
