@@ -2530,5 +2530,14 @@
       <link role="dataType" targetNodeId="3.1082983657062" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186414860679">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="EditableStyleSheetItem" />
+    <link role="extends" targetNodeId="1186414536763" resolveInfo="BooleanStyleSheetItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1186414958479">
+      <property name="value" value="editable" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
 </model>
 
