@@ -85,8 +85,6 @@ public class IconManager {
         return Icons.STRUCTURE_MODEL_ICON;
       } else if (languageAspectStatus.isActions()) {
         return Icons.ACTIONS_MODEL_ICON;
-      } else if (languageAspectStatus.isTypesystem()) {
-        return Icons.TYPESYSTEM_MODEL_ICON;
       } else if (languageAspectStatus.isHelginsTypesystem()) {
         return Icons.TYPESYSTEM_MODEL_ICON;
       } else if (languageAspectStatus.isConstraintsModel()) {

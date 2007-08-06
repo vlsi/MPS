@@ -125,7 +125,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getActionsModel(), languageModelRoot, operationContext);
     renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getConstraintsModel(), languageModelRoot, operationContext);
     renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getHelginsTypesystemModel(), languageModelRoot, operationContext);
-    renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getTypeSystem(), languageModelRoot, operationContext);
     renameLanguageModel(oldNamespace, newNamespace, myLanguageDescriptor.getScriptsModel(), languageModelRoot, operationContext);
 
     for (Model m : myLanguageDescriptor.getAccessoryModels()) {
@@ -467,7 +466,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       result = Math.max(result, repository.getLastChangeTime(constraintsModel));
     }
 
-    SModelDescriptor typesystemModel = getTypesystemModelDescriptor();
+    SModelDescriptor typesystemModel = getHelginsTypesystemModelDescriptor();
     if (typesystemModel != null) {
       result = Math.max(result, repository.getLastChangeTime(typesystemModel));
     }
@@ -497,19 +496,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
     assert structureModelDescriptor != null;
     return structureModelDescriptor;
-  }
-
-  @Nullable
-  public SModelDescriptor getTypesystemModelDescriptor() {
-    if (getLanguageDescriptor().getTypeSystem() != null) {
-      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getTypeSystem().getName());
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
-      if (modelDescriptor == null) {
-        LOG.error("Couldn't get typesystem model \"" + modelUID + "\"");
-      }
-      return modelDescriptor;
-    }
-    return null;
   }
 
   @Nullable
@@ -585,9 +571,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       case STRUCTURE:
         modelDescriptor = getStructureModelDescriptor();
         break;
-      case TYPESYSTEM:
-        modelDescriptor = getTypesystemModelDescriptor();
-        break;
     }
     return modelDescriptor;
   }
@@ -634,8 +617,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     SModelDescriptor structureModelDescriptor = getStructureModelDescriptor();
     result.add(structureModelDescriptor);
     result.addAll(getEditorDescriptors());
-    SModelDescriptor typesystemModelDescriptor = getTypesystemModelDescriptor();
-    if (typesystemModelDescriptor != null) result.add(typesystemModelDescriptor);
     SModelDescriptor actionsModelDescriptor = getActionsModelDescriptor();
     if (actionsModelDescriptor != null) result.add(actionsModelDescriptor);
     SModelDescriptor constraintsModelDescriptor = getConstraintsModelDescriptor();
@@ -848,9 +829,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     if (modelDescriptor == language.getStructureModelDescriptor()) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.STRUCTURE);
     }
-    if (modelDescriptor == language.getTypesystemModelDescriptor()) {
-      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.TYPESYSTEM);
-    }
     if (modelDescriptor == language.getHelginsTypesystemModelDescriptor()) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.HELGINS_TYPESYSTEM);
     }
@@ -877,7 +855,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   public static class LanguageAspectStatus implements IStatus {
     public static enum AspectKind {
-      STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, TYPESYSTEM, HELGINS_TYPESYSTEM, ACCESSORY, SCRIPTS, NONE
+      STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, HELGINS_TYPESYSTEM, ACCESSORY, SCRIPTS, NONE
     }
 
     private Language myLanguage;
@@ -932,10 +910,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       return myAspectKind == LanguageAspectStatus.AspectKind.EDITOR;
     }
 
-    public boolean isTypesystem() {
-      return myAspectKind == LanguageAspectStatus.AspectKind.TYPESYSTEM;
-    }
-
     public boolean isHelginsTypesystem() {
       return myAspectKind == LanguageAspectStatus.AspectKind.HELGINS_TYPESYSTEM;
     }
@@ -975,8 +949,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
               break;
             }
           }
-        } else if (status.isTypesystem()) {
-          languageDescriptor.removeChild(languageDescriptor.getTypeSystem());
         } else if (status.isHelginsTypesystem()) {
           languageDescriptor.removeChild(languageDescriptor.getHelginsTypesystemModel());
         } else if (status.isActions()) {

@@ -79,11 +79,6 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
       this.add(new SModelTreeNode(editorModelDescriptor, "editor", operationContext));
     }
 
-    SModelDescriptor typesystemModelDescriptor = myLanguage.getTypesystemModelDescriptor();
-    if (typesystemModelDescriptor != null) {
-      this.add(new SModelTreeNode(typesystemModelDescriptor, "typesystem", operationContext));
-    }
-
     SModelDescriptor helginsModelDescriptor = myLanguage.getHelginsTypesystemModelDescriptor();
     if (helginsModelDescriptor != null) {
       this.add(new SModelTreeNode(helginsModelDescriptor, "helgins typesystem", operationContext));
