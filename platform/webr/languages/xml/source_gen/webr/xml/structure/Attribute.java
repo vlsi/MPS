@@ -19,20 +19,26 @@ public class Attribute extends BaseAttribute {
   public static Attribute newInstance(SModel sm, boolean init) {
     return (Attribute)SModelUtil_new.instantiateConceptDeclaration("webr.xml.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Attribute newInstance(SModel sm) {
     return Attribute.newInstance(sm, false);
   }
 
+
   public BaseText getValue() {
     return (BaseText)this.getChild(Attribute.VALUE);
   }
+
   public void setValue(BaseText node) {
     super.setChild(Attribute.VALUE, node);
   }
+
   public AttributeDeclaration getAttributeDeclaration() {
     return (AttributeDeclaration)this.getReferent(Attribute.ATTRIBUTE_DECLARATION);
   }
+
   public void setAttributeDeclaration(AttributeDeclaration node) {
     super.setReferent(Attribute.ATTRIBUTE_DECLARATION, node);
   }
+
 }

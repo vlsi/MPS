@@ -23,12 +23,15 @@ public class Attribute_attributeDeclaration_ReferentConstraint implements IModel
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("webr.xml.structure.Attribute", "attributeDeclaration", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("webr.xml.structure.Attribute", "attributeDeclaration");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return true;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     ISearchScope searchScope;
     SNode element = SNodeOperations.getAncestor(enclosingNode, "webr.xml.structure.Element", false, false);
@@ -40,7 +43,9 @@ public class Attribute_attributeDeclaration_ReferentConstraint implements IModel
     }
     return searchScope;
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "<no description>";
   }
+
 }

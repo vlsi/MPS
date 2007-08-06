@@ -22,35 +22,46 @@ public class Element extends BaseElement {
   public static Element newInstance(SModel sm, boolean init) {
     return (Element)SModelUtil_new.instantiateConceptDeclaration("webr.xml.Element", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Element newInstance(SModel sm) {
     return Element.newInstance(sm, false);
   }
 
+
   public int getAttributesCount() {
     return this.getChildCount(Element.ATTRIBUTE);
   }
+
   public Iterator<BaseAttribute> attributes() {
     return this.children(Element.ATTRIBUTE);
   }
+
   public List<BaseAttribute> getAttributes() {
     return this.getChildren(Element.ATTRIBUTE);
   }
+
   public void addAttribute(BaseAttribute node) {
     this.addChild(Element.ATTRIBUTE, node);
   }
+
   public void insertAttribute(BaseAttribute prev, BaseAttribute node) {
     this.insertChild(prev, Element.ATTRIBUTE, node);
   }
+
   public ElementDeclaration getElementDeclaration() {
     return (ElementDeclaration)this.getReferent(Element.ELEMENT_DECLARATION);
   }
+
   public void setElementDeclaration(ElementDeclaration node) {
     super.setReferent(Element.ELEMENT_DECLARATION, node);
   }
+
   public boolean getIsEmpty() {
     return this.getBooleanProperty(Element.IS_EMPTY);
   }
+
   public void setIsEmpty(boolean value) {
     this.setBooleanProperty(Element.IS_EMPTY, value);
   }
+
 }

@@ -17,14 +17,18 @@ public class BaseElement extends Content {
   public static BaseElement newInstance(SModel sm, boolean init) {
     return (BaseElement)SModelUtil_new.instantiateConceptDeclaration("webr.xml.BaseElement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static BaseElement newInstance(SModel sm) {
     return BaseElement.newInstance(sm, false);
   }
 
+
   public ContentList getContentList() {
     return (ContentList)this.getChild(BaseElement.CONTENT_LIST);
   }
+
   public void setContentList(ContentList node) {
     super.setChild(BaseElement.CONTENT_LIST, node);
   }
+
 }

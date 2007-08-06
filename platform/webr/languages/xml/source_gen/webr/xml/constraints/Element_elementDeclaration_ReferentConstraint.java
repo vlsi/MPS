@@ -25,16 +25,19 @@ public class Element_elementDeclaration_ReferentConstraint implements IModelCons
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("webr.xml.structure.Element", "elementDeclaration", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("webr.xml.structure.Element", "elementDeclaration");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return true;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     ISearchScope searchScope;
     SNode element = SNodeOperations.getAncestor(enclosingNode, "webr.xml.structure.Element", false, false);
-    List<SNode> elementDeclarations = ElementUtil.getElementDeclarations(SLinkOperations.getTarget(element, "elementDeclaration", false), enclosingNode);
+    List<SNode> elementDeclarations = ElementUtil.getElementDeclarations(SLinkOperations.getTarget(element, "elementDeclaration", false), enclosingNode, scope);
     if(SequenceOperations.isEmpty(elementDeclarations)) {
       searchScope = SModelSearchUtil_new.createModelAndImportedModelsScope(model, scope);
     } else
@@ -43,7 +46,9 @@ public class Element_elementDeclaration_ReferentConstraint implements IModelCons
     }
     return searchScope;
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "<no description>";
   }
+
 }

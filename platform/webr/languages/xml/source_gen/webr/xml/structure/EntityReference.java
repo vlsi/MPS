@@ -18,14 +18,18 @@ public class EntityReference extends BaseText {
   public static EntityReference newInstance(SModel sm, boolean init) {
     return (EntityReference)SModelUtil_new.instantiateConceptDeclaration("webr.xml.EntityReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static EntityReference newInstance(SModel sm) {
     return EntityReference.newInstance(sm, false);
   }
 
+
   public EntityDeclaration getEntityDeclaration() {
     return (EntityDeclaration)this.getReferent(EntityReference.ENTITY_DECLARATION);
   }
+
   public void setEntityDeclaration(EntityDeclaration node) {
     super.setReferent(EntityReference.ENTITY_DECLARATION, node);
   }
+
 }

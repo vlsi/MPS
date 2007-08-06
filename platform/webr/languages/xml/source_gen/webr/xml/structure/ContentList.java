@@ -20,29 +20,38 @@ public class ContentList extends Content {
   public static ContentList newInstance(SModel sm, boolean init) {
     return (ContentList)SModelUtil_new.instantiateConceptDeclaration("webr.xml.ContentList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ContentList newInstance(SModel sm) {
     return ContentList.newInstance(sm, false);
   }
 
+
   public int getContentsCount() {
     return this.getChildCount(ContentList.CONTENT);
   }
+
   public Iterator<Content> contents() {
     return this.children(ContentList.CONTENT);
   }
+
   public List<Content> getContents() {
     return this.getChildren(ContentList.CONTENT);
   }
+
   public void addContent(Content node) {
     this.addChild(ContentList.CONTENT, node);
   }
+
   public void insertContent(Content prev, Content node) {
     this.insertChild(prev, ContentList.CONTENT, node);
   }
+
   public boolean getIsHorizontal() {
     return this.getBooleanProperty(ContentList.IS_HORIZONTAL);
   }
+
   public void setIsHorizontal(boolean value) {
     this.setBooleanProperty(ContentList.IS_HORIZONTAL, value);
   }
+
 }
