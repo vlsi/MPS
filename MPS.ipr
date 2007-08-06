@@ -963,6 +963,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/dnq-runtime.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/dnq-runtime.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/entityBrowser/entityBrowser.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/entityBrowser/entityBrowser.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/projects/mf/mf.iml" filepath="$PROJECT_DIR$/projects/mf/mf.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/language/parserGenerator_language.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/language/parserGenerator_language.iml" group="app/ParserGenerator" />
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" group="app/ParserGenerator" />
