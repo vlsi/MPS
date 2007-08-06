@@ -25,9 +25,11 @@ public class EnumMemberReference_enumMember_ReferentConstraint implements IModel
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference", "enumMember", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference", "enumMember");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     if(SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation") || SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum")) {
       DataTypeDeclaration datatype = SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(((SNodeOperation)SNodeOperations.getAdapter(enclosingNode)));
@@ -37,12 +39,15 @@ public class EnumMemberReference_enumMember_ReferentConstraint implements IModel
     }
     return false;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     DataTypeDeclaration datatype = SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(((SNodeOperation)SNodeOperations.getAdapter(enclosingNode)));
     SNode datatypeNode = datatype.getNode();
     return new SimpleSearchScope(SLinkOperations.getTargets(datatypeNode, "member", true));
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "<no description>";
   }
+
 }

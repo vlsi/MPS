@@ -26,18 +26,23 @@ public class Node_IsRoleOperation_linkInParent_ReferentConstraint implements IMo
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsRoleOperation", "linkInParent", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsRoleOperation", "linkInParent");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return (SLinkOperations.getTarget(referenceNode, "conceptOfParent", false) != null);
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode conceptOfParent = SLinkOperations.getTarget(referenceNode, "conceptOfParent", false);
     List links = SModelSearchUtil_new.getAggregationLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(conceptOfParent)));
     return new SimpleSearchScope(BaseAdapter.toNodes((List<? extends INodeAdapter>)links));
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "<no description>";
   }
+
 }
