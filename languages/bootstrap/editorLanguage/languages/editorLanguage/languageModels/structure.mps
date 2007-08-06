@@ -64,6 +64,10 @@
       <property name="role" value="keyMap" />
       <link role="target" targetNodeId="1081293058843" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1186406756722">
+      <property name="role" value="styleClass" />
+      <link role="target" targetNodeId="1186402373407" resolveInfo="StyleSheetClass" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1164826688380">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="menuDescriptor" />
@@ -2369,6 +2373,91 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184319817912">
       <property name="value" value="not empty property" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186402211651">
+    <property name="name" value="StyleSheet" />
+    <property name="rootable" value="true" />
+    <property name="package" value="Stylesheet" />
+    <link role="extends" targetNodeId="3.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1186402402630">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="styleClass" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1186402373407" resolveInfo="StyleClass" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1186402303894">
+      <link role="intfc" targetNodeId="3.1169194658468" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186402373407">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="StyleSheetClass" />
+    <link role="extends" targetNodeId="3.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1186402487855">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="item" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1186402391299">
+      <link role="intfc" targetNodeId="3.1169194658468" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186402475462">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="StyleClassItem" />
+    <link role="extends" targetNodeId="3.1133920641626" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1186402481854">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186403694788">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="ColorStyleClassItem" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1186403803051">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="query" />
+      <link role="target" targetNodeId="1176809959526" resolveInfo="QueryFunction_Color" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1186403713874">
+      <property name="name" value="color" />
+      <link role="dataType" targetNodeId="1083952545109" resolveInfo="_Colors_Enum" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1186403787518">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186403751766">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="FontStyleStyleSheetItem" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1186403918499">
+      <property name="value" value="font-style" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1186403771423">
+      <property name="name" value="style" />
+      <link role="dataType" targetNodeId="1101211480448" resolveInfo="_FontStyle_Enum" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186404549998">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="ForegroundColorStyleSheetItem" />
+    <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1186404568646">
+      <property name="value" value="foreground-color" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1186404574412">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="BackgroundColorStyleSheetItem" />
+    <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1186404589776">
+      <property name="value" value="background-color" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
 </model>
