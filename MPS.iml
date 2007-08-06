@@ -37,6 +37,7 @@
     <orderEntry type="module" module-name="scriptLanguage_runtime" exported="" />
     <orderEntry type="module" module-name="scriptLanguageInternal" />
     <orderEntry type="library" name="commons-logging" level="project" />
+    <orderEntry type="module" module-name="webrDevkitPlugin" />
     <orderEntryProperties />
   </component>
   <component name="WebModuleBuildComponent">
