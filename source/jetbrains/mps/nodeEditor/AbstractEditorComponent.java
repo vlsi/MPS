@@ -17,6 +17,7 @@ import jetbrains.mps.ide.navigation.FocusPolicy;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
+import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
@@ -111,6 +112,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 //  private CellSpeedSearch myCellSpeedSearch;
 
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
+  private CellSpeedSearch myCellSpeedSearch;
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -264,7 +266,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     });
 
-//    myCellSpeedSearch = new CellSpeedSearch(this);
+    myCellSpeedSearch = new CellSpeedSearch(this);
     addKeyListener(new KeyAdapter() {
       public void keyPressed(final KeyEvent e) {
         processKeyPressed(e);
