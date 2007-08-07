@@ -268,6 +268,14 @@ public class SubtypingManager {
       result.add(a);
       return result;
     }
+    if (collectBottoms(a, true).contains(b)) {
+      result.add(a);
+      return result;
+    }
+    if (collectBottoms(b, true).contains(a)) {
+      result.add(b);
+      return result;
+    }
 
     StructuralNodeSet<?> superTypesA = subTypesToSuperTypes.get(a) != null ?
             new StructuralNodeSet(subTypesToSuperTypes.get(a)) :
