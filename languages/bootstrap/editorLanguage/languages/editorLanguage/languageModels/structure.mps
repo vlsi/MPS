@@ -2379,6 +2379,7 @@
     <property name="name" value="StyleSheet" />
     <property name="rootable" value="true" />
     <property name="package" value="Stylesheet" />
+    <property name="iconPath" value="${language_descriptor}\icons\editorStylesheet.png" />
     <link role="extends" targetNodeId="3.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1186402402630">
       <property name="metaClass" value="aggregation" />
