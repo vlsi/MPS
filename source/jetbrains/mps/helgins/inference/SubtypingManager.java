@@ -185,8 +185,8 @@ public class SubtypingManager {
     return result;
   }
 
-  public SNode leastCommonSupertype(Set<? extends SNode> types) {
-    Set<SNode> lcss = leastCommonSupertypes(types);
+  public SNode leastCommonSupertype(Set<? extends SNode> types, boolean isWeak) {
+    Set<SNode> lcss = leastCommonSupertypes(types, isWeak);
     if (lcss.size() != 1) {
       RuntimeErrorType type = RuntimeErrorType.newInstance(myTypeChecker.getRuntimeTypesModel());
       type.setErrorText("uncomparable types");
@@ -197,7 +197,7 @@ public class SubtypingManager {
 
 
 
-  public Set<SNode> leastCommonSupertypes(Set<? extends SNode> types) {
+  public Set<SNode> leastCommonSupertypes(Set<? extends SNode> types, boolean isWeak) {
     if (types.size() == 1) return new HashSet<SNode>(types);
     StructuralNodeSet<?> allTypes = new StructuralNodeSet();
     StructuralNodeSet<?> result = new StructuralNodeSet(types);
@@ -215,7 +215,7 @@ public class SubtypingManager {
         if (subTypesToSupertypesKeySet.containsStructurally(type)) {
           continue;
         }
-        StructuralNodeSet superTypes = collectImmediateSupertypes(type);
+        StructuralNodeSet superTypes = collectImmediateSupertypes(type, isWeak);
         superTypes.setAllTags(1);
         subTypesToSupertypes.put(type, superTypes);
         subTypesToSupertypesKeySet.addStructurally(type);
@@ -255,24 +255,24 @@ public class SubtypingManager {
       SNode b = iterator.next();
       result.remove(a);
       result.remove(b);
-      result.addAllStructurally(leastCommonSupertypes(a, b, subTypesToSupertypes));
+      result.addAllStructurally(leastCommonSupertypes(a, b, subTypesToSupertypes, isWeak));
     }
 
     return result;
   }
 
-  private StructuralNodeSet leastCommonSupertypes(final SNode a, final SNode b, final StructuralNodeMap<StructuralNodeSet<Integer>> subTypesToSuperTypes) {
+  private StructuralNodeSet leastCommonSupertypes(final SNode a, final SNode b, final StructuralNodeMap<StructuralNodeSet<Integer>> subTypesToSuperTypes, boolean isWeak) {
     // System.err.println("lcs inner, types are: " + PresentationManager.toString(a) + " , " + PresentationManager.toString(b));
     StructuralNodeSet result = new StructuralNodeSet();
     if (MatchingUtil.matchNodes(a,b)) {
       result.add(a);
       return result;
     }
-    if (collectBottoms(a, true).contains(b)) {
+    if (collectBottoms(a, isWeak).contains(b)) {
       result.add(a);
       return result;
     }
-    if (collectBottoms(b, true).contains(a)) {
+    if (collectBottoms(b, isWeak).contains(a)) {
       result.add(b);
       return result;
     }

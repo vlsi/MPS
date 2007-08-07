@@ -659,7 +659,7 @@ public class EquationManager {
       subtypesToSupertypesMap.get(subtypeNode).remove(type);
     }
     //  T,S <: c => c = lcs(T,S)
-    addEquation(type, NodeWrapper.fromNode(myTypeChecker.getSubtypingManager().leastCommonSupertype(toNodes(concreteSubtypes))),
+    addEquation(type, NodeWrapper.fromNode(myTypeChecker.getSubtypingManager().leastCommonSupertype(toNodes(concreteSubtypes), isWeak)),
             errorInfo);
   }
 
