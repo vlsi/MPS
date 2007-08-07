@@ -63,7 +63,7 @@ public class IntelligentInputUtil {
 
     //warning If you aren't Cyril
     // , DO NOT edit this code
-    SNode nodeToCheck = cellForNewNode.getSNode();
+   /* SNode nodeToCheck = cellForNewNode.getSNode();
     NodeTypesComponent_new nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
             createNodeTypesComponent(nodeToCheck
                     .getContainingRoot());
@@ -71,7 +71,7 @@ public class IntelligentInputUtil {
     SNode sNode = nodeToCheck.getParent() == null ? nodeToCheck : nodeToCheck.getParent();
     nodeTypesComponent.markUnchecked(sNode);
     nodeTypesComponent.computeTypesForNode(sNode); //todo dirty hack
-    TypeChecker.getInstance().clearCurrentTypesComponent();
+    TypeChecker.getInstance().clearCurrentTypesComponent();*/
 
     EditorCellAction rtAction = EditorUtil.getCellAction(EditorUtil.findLastSelectableCell(cellForNewNode), EditorCellAction.RIGHT_TRANSFORM, editorContext);
     if (rtAction == null) {
