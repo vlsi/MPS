@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 
 /**
@@ -18,6 +19,8 @@ import java.util.Arrays;
  * Date: Dec 27, 2003
  */
 public class NameUtil {
+  private static final Pattern VALID_IDENTIFIER_PATTERN = Pattern.compile("[a-zA-Z[_]][a-zA-Z0-9[_]]*");
+
   public static String capitalize(String s) {
     if (s == null || s.length() == 0 || s.charAt(0) == Character.toUpperCase(s.charAt(0))) {
       return s;
@@ -201,7 +204,9 @@ public class NameUtil {
   }
 
   public static String toValidIdentifier(String s) {
-    if (s.matches("[a-zA-Z[_]][a-zA-Z0-9[_]]*")) return s;
+    if (VALID_IDENTIFIER_PATTERN.matcher(s).matches()) {
+      return s;
+    }
     StringBuffer sb = new StringBuffer();
     for (int i = 0; i < s.length(); i++) {
       char c = s.charAt(i);
@@ -218,7 +223,7 @@ public class NameUtil {
   }
 
   public static String toValidCamelIdentifier(String s) {
-    if (s.matches("[a-zA-Z[_]][a-zA-Z0-9[_]]*")) {
+    if (VALID_IDENTIFIER_PATTERN.matcher(s).matches()) {
       return s;
     }
     StringBuilder sb = new StringBuilder();
