@@ -39,8 +39,9 @@ public interface IProjectHandler extends Remote {
   void renameFieldAndInitializer(String classFQName, String oldFieldName, String newFieldName, String initializer) throws RemoteException;
   
   List<String> getModuleClassPath(final String path) throws RemoteException;
+  String getWebModuleExplodedFolder(final String path) throws RemoteException;
 
-  public void createNewModule(final String moduleName, final String path) throws RemoteException;
+  void createNewModule(final String moduleName, final String path) throws RemoteException;
 
   void addIdeHandler(IMPSIDEHandler handler) throws RemoteException;
 

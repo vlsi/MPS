@@ -31,6 +31,7 @@ import com.intellij.refactoring.MoveDestination;
 import com.intellij.refactoring.RefactoringFactory;
 import com.intellij.refactoring.RenameRefactoring;
 import com.intellij.util.IncorrectOperationException;
+import com.intellij.javaee.JavaeeModuleProperties;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JFrame;
@@ -39,6 +40,7 @@ import java.awt.Frame;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.*;
@@ -549,6 +551,45 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
     }
 
     return bestModule;
+  }
+
+  public String getWebModuleExplodedFolder(final String path) {
+    final String[] res = new String[1];
+    executeWriteAction(new Runnable() {
+      public void run() {
+        Module m = findModule(path);
+
+        if (m == null) return;
+
+        // IDEA 6835
+        try {
+          // reflection version of the following code:
+          // res[0] = JavaeeModuleProperties.getInstance(m).getFacet().getBuildConfiguration().getBuildProperties().getExplodedPath();
+
+          Class javaeeModuleProperties = Class.forName("com.intellij.javaee.JavaeeModuleProperties");
+          Method getInstance = javaeeModuleProperties.getMethod("getInstance", Module.class);
+          Object javaeeModulePropertiesInstance = getInstance.invoke(null, m);
+
+          Method getFacet = javaeeModuleProperties.getMethod("getFacet");
+          Object facet = getFacet.invoke(javaeeModulePropertiesInstance); // returns com.intellij.javaee.facet.JavaeeFacet
+
+          Method getBuildConfiguration = facet.getClass().getMethod("getBuildConfiguration");
+          Object javaeeBuildConfiguration = getBuildConfiguration.invoke(facet); // returns com.intellij.javaee.facet.JavaeeBuildConfiguration
+
+          Method getBuildProperties = javaeeBuildConfiguration.getClass().getMethod("getBuildProperties");
+          Object buildConfiguration = getBuildProperties.invoke(javaeeBuildConfiguration); // returns com.intellij.openapi.compiler.make.BuildConfiguration
+
+          Method getExplodedPath = buildConfiguration.getClass().getMethod("getExplodedPath");
+          res[0] = (String) getExplodedPath.invoke(buildConfiguration);
+
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+
+      }
+    });
+
+    return res[0];
   }
 
   public List<String> getModuleClassPath(final String path) {
