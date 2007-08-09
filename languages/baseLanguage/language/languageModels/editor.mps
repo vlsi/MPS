@@ -8289,6 +8289,7 @@
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1182519480079">
       <property name="description" value="Remove static modificator" />
       <property name="showInPopup" value="true" />
+      <property name="menuAlwaysShown" value="true" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1182519480080">
         <property name="keycode" value="VK_ENTER" />
         <property name="modifiers" value="alt" />
