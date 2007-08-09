@@ -5,11 +5,9 @@ package jetbrains.mps.bootstrap.smodelLanguage.helgins;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import java.util.Set;
-import java.util.HashSet;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
@@ -30,17 +28,19 @@ public class RulesUtil {
   }
 
   public static void checkAppliedCorrectly_generic(final SNode op) {
+    if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(op), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation")) {
+      // don't check - it is red anyway
+      return;
+    }
     final SNode leftExpression = RulesUtil.leftExpression(op);
     final SNode LeftType_typevar_1186058295229 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186058309840");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186058318393"), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186058309840");
     TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), new Runnable() {
 
       public void run() {
         String applicableErrorString = "operation is not applicable to expression";
         boolean isGood = false;
-        Set<String> applicables = new HashSet<String>();
         if(SConceptPropertyOperations.getBoolean(op, "applicable_to_model")) {
-          applicables.add("smodel");
           if(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), new QuotationClass_40().createNode(), false, false)) {
             isGood = true;
           }
@@ -173,7 +173,7 @@ public class RulesUtil {
     }
     final SNode Result_typevar_1186062019004 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     final SNode LeftType_typevar_1186062031569 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpr), TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), leftExpr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062045965");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062039118"), TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), leftExpr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062045965");
     TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), new Runnable() {
 
       public void run() {

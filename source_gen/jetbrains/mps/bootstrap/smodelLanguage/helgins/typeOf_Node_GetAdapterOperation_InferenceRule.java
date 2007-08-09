@@ -18,7 +18,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
   public void applyRule(final SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
     final SNode LeftExprType_typevar_1186057669134 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(RulesUtil.leftExpression(argument)), TypeChecker.getInstance().getEquationManager().getRepresentator(LeftExprType_typevar_1186057669134), RulesUtil.leftExpression(argument), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057669135");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(RulesUtil.leftExpression(argument), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057669139"), TypeChecker.getInstance().getEquationManager().getRepresentator(LeftExprType_typevar_1186057669134), RulesUtil.leftExpression(argument), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057669135");
     TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftExprType_typevar_1186057669134), new Runnable() {
 
       public void run() {
@@ -28,7 +28,7 @@ public class typeOf_Node_GetAdapterOperation_InferenceRule implements InferenceR
       }
 
     }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057669142");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_56().createNode(), argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057690603");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057680866"), new QuotationClass_56().createNode(), argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057690603");
   }
 
   public String getApplicableConceptFQName() {

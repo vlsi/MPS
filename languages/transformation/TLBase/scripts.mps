@@ -4,11 +4,12 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.ide.scriptLanguage" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" />
   <import index="2" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="java.io@java_stub" />
   <import index="4" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" />
+  <import index="5" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.ide.scriptLanguage.Script" id="1184634633743">
     <property name="scriptName" value="CollectStatisticFor_refMacro_GetReferent" />
     <node role="statementList" type="jetbrains.mps.baseLanguage.StatementList" id="1184634633744">
@@ -584,6 +585,34 @@
           </node>
           <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.ToListOperation" id="1184789690200" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.MigrationScript" id="1186693800934">
+    <property name="name" value="Replace_generator_findNodeBuilderForSource" />
+    <property name="title" value="Migration from b.415 (findNodeBuilderForSource(..) -&gt; findOutputNodeByInputNodeAndMappingName(..))" />
+    <node role="part" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_Instance" id="1186693890732">
+      <property name="description" value="findNodeBuilderForSource(..)" />
+      <link role="affectedInstanceConcept" targetNodeId="5.1068580123163" />
+      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_Instance_Predicate" id="1186693890733">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1186693890734">
+          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1186694008718">
+            <node role="condition" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1186694059533">
+              <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.StringLiteral" id="1186694027987">
+                <property name="value" value="findNodeBuilderForSource" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1186694112414">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation" id="1186694112416" />
+                <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_node" id="1186694081362" />
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1186694008720" />
+          </node>
+        </node>
+      </node>
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_Instance_Updater" id="1186693890735">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1186693890736" />
       </node>
     </node>
   </node>
