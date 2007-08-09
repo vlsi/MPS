@@ -61,13 +61,9 @@ public class SNode implements Iterable<SNode> {
 
   private BaseAdapter myAdapter;
 
-  /**
-   * @param model
-   * @param typeName type without word 'structure'
-   */
-  public SNode(@NotNull SModel model, String typeName) {
+  public SNode(SModel model, String conceptFqName) {
     myModel = model;
-    myConceptFqName = InternUtil.intern(NameUtil.conceptFQNameByClassName(typeName));
+    myConceptFqName = conceptFqName;
   }
 
   public void changeModel(SModel newModel) {
@@ -134,8 +130,7 @@ public class SNode implements Iterable<SNode> {
 //      throw new RuntimeException(e);
 //    }
 
-    SNode newNode = new SNode(myModel, "bla.bla.bla");
-    newNode.myConceptFqName = myConceptFqName;
+    SNode newNode = new SNode(myModel, myConceptFqName);
     newNode.myRoleInParent = myRoleInParent; //we need it later to add the cloned node to parent with correct role
       if (myProperties != null) {
         newNode.myProperties = new LinkedHashMap<String, String>(myProperties);

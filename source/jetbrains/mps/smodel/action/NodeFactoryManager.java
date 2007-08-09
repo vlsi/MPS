@@ -61,10 +61,9 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     if (model == null) {
       model = AuxilaryRuntimeModel.getDescriptor().getSModel();
     }
-    assert model != null;
 
     if (nodeConcept instanceof InterfaceConceptDeclaration) {
-      return new SNode(model, NameUtil.removeStructureFromFqName(NameUtil.nodeFQName(nodeConcept)));
+      return new SNode(model, NameUtil.nodeFQName(nodeConcept));
     }
     SNode newNode = BaseAdapter.fromAdapter(SModelUtil_new.instantiateConceptDeclaration((ConceptDeclaration) nodeConcept, model, false));
     if (newNode == null) return null;

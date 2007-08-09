@@ -305,13 +305,9 @@ public class ModelPersistence {
           @NotNull List<ReferencePersister> referenceDescriptors,
           boolean useUIDs
   ) {
-    String type = nodeElement.getAttributeValue(TYPE);
-    SNode node = createNodeInstance(type, model);
-    if (node == null) {
-      String error = "Error reading model " + model.getUID() + ": couldn't create instance of node id=" + nodeElement.getAttributeValue(ID);
-      LOG.errorWithTrace(error);
-      return null;
-    }
+    // todo: save 'conceptFqName' (i.e. <namespace>.structure.<name>)
+    String oldStructureClassName = nodeElement.getAttributeValue(TYPE);
+    SNode node = new SNode(model, NameUtil.conceptFQNameByClassName(oldStructureClassName));
 
     String myOldId = nodeElement.getAttributeValue(ID);
     node.setStringId(myOldId);
@@ -351,13 +347,6 @@ public class ModelPersistence {
     }
 
     return node;
-  }
-
-
-  @Nullable
-  private static SNode createNodeInstance(@NotNull String type,
-                                          @NotNull SModel model) {
-    return new SNode(model, type);
   }
 
   public static void saveModel(@NotNull SModel model, @NotNull File file) {

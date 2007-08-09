@@ -675,7 +675,7 @@
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1186697336389">
                       <link role="concept" targetNodeId="5.1068580123163" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1186697336390">
-                        <link role="variableDeclaration" targetNodeId="6.1186695507309" />
+                        <link role="variableDeclaration" targetNodeId="1186695507309" />
                       </node>
                     </node>
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1186697336391">
