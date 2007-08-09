@@ -26,7 +26,7 @@ import java.util.*;
  * User: Sergey Dmitriev
  * Date: Aug 2, 2003
  */
-public class SNode implements Cloneable, Iterable<SNode> {
+public class SNode implements Iterable<SNode> {
 
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
