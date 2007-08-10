@@ -184,4 +184,8 @@ public class QueriesGenerated {
     return _QueriesUtil.create_closureContextObject(node, generator);
   }
 
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186782271334(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
+  }
+
 }
