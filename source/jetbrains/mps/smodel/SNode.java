@@ -1564,8 +1564,7 @@ public class SNode implements Iterable<SNode> {
    * todo: remove the 'scope' parm
    */
   public boolean isInstanceOfConcept(String conceptFqName, IScope scope) {
-    String thisConceptFqName = NameUtil.nodeConceptFQName(this);
-    return SModelUtil_new.isAssignableConcept(thisConceptFqName, conceptFqName);
+    return SModelUtil_new.isAssignableConcept(this.getConceptFqName(), conceptFqName);
   }
 
   public AbstractConceptDeclaration getConceptDeclarationAdapter() {
