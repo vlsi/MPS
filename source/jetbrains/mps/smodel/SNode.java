@@ -108,33 +108,16 @@ public class SNode implements Iterable<SNode> {
     return getModel().isRoot(this);
   }
 
-  public
-  @NotNull
-  SNode cloneProperties() {//doesn't copy children and references
-//    SNode newNode;
-//    try {
-//      newNode = (SNode) super.clone();
-//      newNode.myId = null;
-//      newNode.myRegisteredInModelFlag = false;
-//      newNode.myAdapter = null;
-//      newNode.myParent = null;
-////needed later to add the cloned node to parent with correct role      newNode.myRoleInParent = null;
-//      newNode.myReferences = null;
-//      newNode.myChildren = null;
-//      if (myProperties != null) {
-//        newNode.myProperties = new LinkedHashMap<String, String>();
-//        newNode.myProperties.putAll(this.myProperties);
-//      }
-//      newNode.myUserObjects = null;
-//    } catch (CloneNotSupportedException e) {
-//      throw new RuntimeException(e);
-//    }
-
+  /**
+   * doesn't copy children and references
+   */
+  public SNode cloneProperties() {
     SNode newNode = new SNode(myModel, myConceptFqName);
-    newNode.myRoleInParent = myRoleInParent; //we need it later to add the cloned node to parent with correct role
-      if (myProperties != null) {
-        newNode.myProperties = new LinkedHashMap<String, String>(myProperties);
-      }
+    // try to not copy the 'myRoleInParent'. It is used in copy/paste but it make very little sense (IMHO)
+//    newNode.myRoleInParent = myRoleInParent; //we need it later to add the cloned node to parent with correct role
+    if (myProperties != null) {
+      newNode.myProperties = new LinkedHashMap<String, String>(myProperties);
+    }
     return newNode;
   }
 

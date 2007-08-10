@@ -9,7 +9,10 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.Iterator;
@@ -205,7 +208,8 @@ public class PasteNodeUtil {
     Iterator<LinkDeclaration> metalinks = sourceMetatype.linkDeclarations();
     while (metalinks.hasNext()) {
       LinkDeclaration metalink = metalinks.next();
-      if (SModelUtil_new.isAssignableConcept(targetMetatype, metalink.getTarget()) && metalink.getRole().equals(role)) {
+      if (SModelUtil_new.isAssignableConcept(targetMetatype, metalink.getTarget()) && 
+              (role == null || metalink.getRole().equals(role))) {
         return metalink;
       }
     }
@@ -222,7 +226,7 @@ public class PasteNodeUtil {
     String role = (String) targetCell.getUserObject(EditorCell.ROLE);
     if (role != null) return role;
 
-    LOG.warning("PASTE: tagret cell's user object 'ROLE' is null. Trying to get cell's role in the old manner");
+//    LOG.warning("PASTE: tagret cell's user object 'ROLE' is null. Trying to get cell's role in the old manner");
      /*If target cell represents some empty collection, target cell's node is not a member of that collection,
       but its future members' parent. Hence, if we consider that node as an anchor
       and hence its role as role-in-parent for the node we want to paste - we'll not be able

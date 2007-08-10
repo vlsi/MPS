@@ -118,8 +118,6 @@ public class CopyPasteUtil {
 
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     SNode targetNode = sourceNode.cloneProperties();
-//    targetNode.setId(SNode.generateUniqueId());
-
     sourceNodesToNewNodes.put(sourceNode, targetNode);
 
     List<SReference> references = sourceNode.getReferences();
