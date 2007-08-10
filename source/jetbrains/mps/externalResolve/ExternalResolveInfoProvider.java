@@ -229,7 +229,17 @@ public class ExternalResolveInfoProvider {
     Classifier classifier = (Classifier) instanceMethodDeclaration.getParent();
     String classifierExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(classifier);
     String myExtResolveInfo = getExtResolveInfoForTargetClassBaseMethodDeclaration(instanceMethodDeclaration);
-    return ExternalResolver.METHOD + "(" + classifierExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
+    String result = ExternalResolver.METHOD + "(" + classifierExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
+
+    if (instanceMethodDeclaration.getName().equals("getClass")) {
+      if ("method ([Classifier]Object).([InstanceMethodDeclaration]getClass() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Class, <?>]))".equals(result)) {
+        classifierExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(classifier);
+        myExtResolveInfo = getExtResolveInfoForTargetClassBaseMethodDeclaration(instanceMethodDeclaration);
+        result = ExternalResolver.METHOD + "(" + classifierExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
+      }
+    }
+
+    return result;
   }
 
   public static String getExtResolveInfoForTargetClassStaticMethodDeclaration(StaticMethodDeclaration staticMethodDeclaration) {

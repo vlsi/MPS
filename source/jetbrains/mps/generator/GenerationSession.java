@@ -130,7 +130,6 @@ public class GenerationSession implements IGenerationSession {
             break;
           }
           if (status.getOutputModel() == null) {
-            System.err.println("Oy vey");
             break;
           }
           inputModel = status.getOutputModel().getModelDescriptor();

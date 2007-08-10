@@ -43,13 +43,27 @@ public class ExternalResolver {
 
   public static String getExternalResolveInfoFromTarget(SNode targetNode) {
     String memberType = ExternalResolveInfoParser.getMemberType(targetNode);
-    if (memberType.equals(CLASSIFIER)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassGenericDeclaration((GenericDeclaration) BaseAdapter.fromNode(targetNode));
-    if (memberType.equals(CONSTRUCTOR)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassConstructorDeclaration((ConstructorDeclaration) BaseAdapter.fromNode(targetNode));
-    if (memberType.equals(ENUM_CONST)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassEnumConstantDeclaration((EnumConstantDeclaration) BaseAdapter.fromNode(targetNode));
-    if (memberType.equals(METHOD)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassInstanceMethodDeclaration((InstanceMethodDeclaration) BaseAdapter.fromNode(targetNode));
-    if (memberType.equals(STATIC_METHOD)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassStaticMethodDeclaration((StaticMethodDeclaration) BaseAdapter.fromNode(targetNode));
-    if (memberType.equals(FIELD)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassFieldDeclaration((FieldDeclaration) BaseAdapter.fromNode(targetNode));
-    if (memberType.equals(STATIC_FIELD)) return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassStaticFieldDeclaration((StaticFieldDeclaration) BaseAdapter.fromNode(targetNode));
+    if (memberType.equals(CLASSIFIER)) {
+      return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassGenericDeclaration((GenericDeclaration) BaseAdapter.fromNode(targetNode));
+    }
+    if (memberType.equals(CONSTRUCTOR)) {
+      return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassConstructorDeclaration((ConstructorDeclaration) BaseAdapter.fromNode(targetNode));
+    }
+    if (memberType.equals(ENUM_CONST)) {
+      return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassEnumConstantDeclaration((EnumConstantDeclaration) BaseAdapter.fromNode(targetNode));
+    }
+    if (memberType.equals(METHOD)) {
+      return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassInstanceMethodDeclaration((InstanceMethodDeclaration) BaseAdapter.fromNode(targetNode));
+    }
+    if (memberType.equals(STATIC_METHOD)) {
+      return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassStaticMethodDeclaration((StaticMethodDeclaration) BaseAdapter.fromNode(targetNode));
+    }
+    if (memberType.equals(FIELD)) {
+      return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassFieldDeclaration((FieldDeclaration) BaseAdapter.fromNode(targetNode));
+    }
+    if (memberType.equals(STATIC_FIELD)) {
+      return ExternalResolveInfoProvider.getExtResolveInfoForTargetClassStaticFieldDeclaration((StaticFieldDeclaration) BaseAdapter.fromNode(targetNode));
+    }
     return null;
   }
 
