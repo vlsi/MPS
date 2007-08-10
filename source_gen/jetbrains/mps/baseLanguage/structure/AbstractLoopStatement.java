@@ -15,16 +15,20 @@ public class AbstractLoopStatement extends Statement {
   }
 
   public static AbstractLoopStatement newInstance(SModel sm, boolean init) {
-    return (AbstractLoopStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.AbstractLoopStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractLoopStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static AbstractLoopStatement newInstance(SModel sm) {
     return AbstractLoopStatement.newInstance(sm, false);
   }
 
+
   public StatementList getBody() {
     return (StatementList)this.getChild(AbstractLoopStatement.BODY);
   }
+
   public void setBody(StatementList node) {
     super.setChild(AbstractLoopStatement.BODY, node);
   }
+
 }

@@ -15,16 +15,20 @@ public class ConstructorDeclaration extends BaseMethodDeclaration implements Cla
   }
 
   public static ConstructorDeclaration newInstance(SModel sm, boolean init) {
-    return (ConstructorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ConstructorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstructorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ConstructorDeclaration newInstance(SModel sm) {
     return ConstructorDeclaration.newInstance(sm, false);
   }
 
+
   public Visibility getVisibility() {
     return (Visibility)this.getChild(ConstructorDeclaration.VISIBILITY);
   }
+
   public void setVisibility(Visibility node) {
     super.setChild(ConstructorDeclaration.VISIBILITY, node);
   }
+
 }

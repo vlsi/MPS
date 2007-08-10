@@ -16,22 +16,28 @@ public class EnumConstantReference extends Expression {
   }
 
   public static EnumConstantReference newInstance(SModel sm, boolean init) {
-    return (EnumConstantReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.EnumConstantReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EnumConstantReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static EnumConstantReference newInstance(SModel sm) {
     return EnumConstantReference.newInstance(sm, false);
   }
 
+
   public EnumClass getEnumClass() {
     return (EnumClass)this.getReferent(EnumConstantReference.ENUM_CLASS);
   }
+
   public void setEnumClass(EnumClass node) {
     super.setReferent(EnumConstantReference.ENUM_CLASS, node);
   }
+
   public EnumConstantDeclaration getEnumConstantDeclaration() {
     return (EnumConstantDeclaration)this.getReferent(EnumConstantReference.ENUM_CONSTANT_DECLARATION);
   }
+
   public void setEnumConstantDeclaration(EnumConstantDeclaration node) {
     super.setReferent(EnumConstantReference.ENUM_CONSTANT_DECLARATION, node);
   }
+
 }

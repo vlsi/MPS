@@ -14,9 +14,11 @@ public class LongType extends PrimitiveType {
   }
 
   public static LongType newInstance(SModel sm, boolean init) {
-    return (LongType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.LongType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LongType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static LongType newInstance(SModel sm) {
     return LongType.newInstance(sm, false);
   }
+
 }

@@ -14,9 +14,11 @@ public class BreakStatement extends Statement {
   }
 
   public static BreakStatement newInstance(SModel sm, boolean init) {
-    return (BreakStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.BreakStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BreakStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static BreakStatement newInstance(SModel sm) {
     return BreakStatement.newInstance(sm, false);
   }
+
 }

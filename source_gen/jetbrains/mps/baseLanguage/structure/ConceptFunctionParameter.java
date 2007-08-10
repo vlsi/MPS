@@ -15,9 +15,11 @@ public class ConceptFunctionParameter extends Expression {
   }
 
   public static ConceptFunctionParameter newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ConceptFunctionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ConceptFunctionParameter newInstance(SModel sm) {
     return ConceptFunctionParameter.newInstance(sm, false);
   }
+
 }

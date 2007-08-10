@@ -18,25 +18,32 @@ public class StatementList extends BaseConcept {
   }
 
   public static StatementList newInstance(SModel sm, boolean init) {
-    return (StatementList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.StatementList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StatementList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static StatementList newInstance(SModel sm) {
     return StatementList.newInstance(sm, false);
   }
 
+
   public int getStatementsCount() {
     return this.getChildCount(StatementList.STATEMENT);
   }
+
   public Iterator<Statement> statements() {
     return this.children(StatementList.STATEMENT);
   }
+
   public List<Statement> getStatements() {
     return this.getChildren(StatementList.STATEMENT);
   }
+
   public void addStatement(Statement node) {
     this.addChild(StatementList.STATEMENT, node);
   }
+
   public void insertStatement(Statement prev, Statement node) {
     this.insertChild(prev, StatementList.STATEMENT, node);
   }
+
 }

@@ -14,9 +14,11 @@ public class NotEqualsExpression extends BinaryOperation {
   }
 
   public static NotEqualsExpression newInstance(SModel sm, boolean init) {
-    return (NotEqualsExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.NotEqualsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NotEqualsExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static NotEqualsExpression newInstance(SModel sm) {
     return NotEqualsExpression.newInstance(sm, false);
   }
+
 }

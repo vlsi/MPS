@@ -10,39 +10,48 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Interface extends Classifier {
-  public static String NAME = "name";
   public static String EXTENDED_INTERFACE = "extendedInterface";
+  public static String NAME = "name";
 
   public  Interface(SNode node) {
     super(node);
   }
 
   public static Interface newInstance(SModel sm, boolean init) {
-    return (Interface)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.Interface", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Interface)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Interface", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Interface newInstance(SModel sm) {
     return Interface.newInstance(sm, false);
+  }
+
+
+  public int getExtendedInterfacesCount() {
+    return this.getChildCount(Interface.EXTENDED_INTERFACE);
+  }
+
+  public Iterator<ClassifierType> extendedInterfaces() {
+    return this.children(Interface.EXTENDED_INTERFACE);
+  }
+
+  public List<ClassifierType> getExtendedInterfaces() {
+    return this.getChildren(Interface.EXTENDED_INTERFACE);
+  }
+
+  public void addExtendedInterface(ClassifierType node) {
+    this.addChild(Interface.EXTENDED_INTERFACE, node);
+  }
+
+  public void insertExtendedInterface(ClassifierType prev, ClassifierType node) {
+    this.insertChild(prev, Interface.EXTENDED_INTERFACE, node);
   }
 
   public String getName() {
     return this.getProperty(Interface.NAME);
   }
+
   public void setName(String value) {
     this.setProperty(Interface.NAME, value);
   }
-  public int getExtendedInterfacesCount() {
-    return this.getChildCount(Interface.EXTENDED_INTERFACE);
-  }
-  public Iterator<ClassifierType> extendedInterfaces() {
-    return this.children(Interface.EXTENDED_INTERFACE);
-  }
-  public List<ClassifierType> getExtendedInterfaces() {
-    return this.getChildren(Interface.EXTENDED_INTERFACE);
-  }
-  public void addExtendedInterface(ClassifierType node) {
-    this.addChild(Interface.EXTENDED_INTERFACE, node);
-  }
-  public void insertExtendedInterface(ClassifierType prev, ClassifierType node) {
-    this.insertChild(prev, Interface.EXTENDED_INTERFACE, node);
-  }
+
 }

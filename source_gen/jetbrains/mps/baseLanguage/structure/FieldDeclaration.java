@@ -15,16 +15,20 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
   }
 
   public static FieldDeclaration newInstance(SModel sm, boolean init) {
-    return (FieldDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.FieldDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FieldDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static FieldDeclaration newInstance(SModel sm) {
     return FieldDeclaration.newInstance(sm, false);
   }
 
+
   public Visibility getVisibility() {
     return (Visibility)this.getChild(FieldDeclaration.VISIBILITY);
   }
+
   public void setVisibility(Visibility node) {
     super.setChild(FieldDeclaration.VISIBILITY, node);
   }
+
 }

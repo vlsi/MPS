@@ -17,22 +17,28 @@ public class BinaryOperation extends Expression {
   }
 
   public static BinaryOperation newInstance(SModel sm, boolean init) {
-    return (BinaryOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.BinaryOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BinaryOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static BinaryOperation newInstance(SModel sm) {
     return BinaryOperation.newInstance(sm, false);
   }
 
+
   public Expression getRightExpression() {
     return (Expression)this.getChild(BinaryOperation.RIGHT_EXPRESSION);
   }
+
   public void setRightExpression(Expression node) {
     super.setChild(BinaryOperation.RIGHT_EXPRESSION, node);
   }
+
   public Expression getLeftExpression() {
     return (Expression)this.getChild(BinaryOperation.LEFT_EXPRESSION);
   }
+
   public void setLeftExpression(Expression node) {
     super.setChild(BinaryOperation.LEFT_EXPRESSION, node);
   }
+
 }

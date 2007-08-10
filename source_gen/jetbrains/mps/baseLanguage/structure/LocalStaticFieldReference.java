@@ -14,16 +14,20 @@ public class LocalStaticFieldReference extends VariableReference {
   }
 
   public static LocalStaticFieldReference newInstance(SModel sm, boolean init) {
-    return (LocalStaticFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.LocalStaticFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LocalStaticFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static LocalStaticFieldReference newInstance(SModel sm) {
     return LocalStaticFieldReference.newInstance(sm, false);
   }
 
+
   public StaticFieldDeclaration getStaticFieldDeclaration() {
     return (StaticFieldDeclaration)this.getVariableDeclaration();
   }
+
   public void setStaticFieldDeclaration(StaticFieldDeclaration node) {
     this.setVariableDeclaration(node);
   }
+
 }

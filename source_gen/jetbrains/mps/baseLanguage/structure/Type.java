@@ -15,9 +15,11 @@ public class Type extends NamedConcept {
   }
 
   public static Type newInstance(SModel sm, boolean init) {
-    return (Type)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.Type", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Type)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Type newInstance(SModel sm) {
     return Type.newInstance(sm, false);
   }
+
 }

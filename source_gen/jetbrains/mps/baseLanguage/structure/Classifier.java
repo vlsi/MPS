@@ -19,46 +19,60 @@ public class Classifier extends GenericDeclaration {
   }
 
   public static Classifier newInstance(SModel sm, boolean init) {
-    return (Classifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.Classifier", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Classifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Classifier newInstance(SModel sm) {
     return Classifier.newInstance(sm, false);
   }
 
+
   public Visibility getVisibility() {
     return (Visibility)this.getChild(Classifier.VISIBILITY);
   }
+
   public void setVisibility(Visibility node) {
     super.setChild(Classifier.VISIBILITY, node);
   }
+
   public int getStaticFieldsCount() {
     return this.getChildCount(Classifier.STATIC_FIELD);
   }
+
   public Iterator<StaticFieldDeclaration> staticFields() {
     return this.children(Classifier.STATIC_FIELD);
   }
+
   public List<StaticFieldDeclaration> getStaticFields() {
     return this.getChildren(Classifier.STATIC_FIELD);
   }
+
   public void addStaticField(StaticFieldDeclaration node) {
     this.addChild(Classifier.STATIC_FIELD, node);
   }
+
   public void insertStaticField(StaticFieldDeclaration prev, StaticFieldDeclaration node) {
     this.insertChild(prev, Classifier.STATIC_FIELD, node);
   }
+
   public int getMethodsCount() {
     return this.getChildCount(Classifier.METHOD);
   }
+
   public Iterator<InstanceMethodDeclaration> methods() {
     return this.children(Classifier.METHOD);
   }
+
   public List<InstanceMethodDeclaration> getMethods() {
     return this.getChildren(Classifier.METHOD);
   }
+
   public void addMethod(InstanceMethodDeclaration node) {
     this.addChild(Classifier.METHOD, node);
   }
+
   public void insertMethod(InstanceMethodDeclaration prev, InstanceMethodDeclaration node) {
     this.insertChild(prev, Classifier.METHOD, node);
   }
+
 }

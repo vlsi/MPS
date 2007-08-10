@@ -17,28 +17,36 @@ public class TernaryOperatorExpression extends Expression {
   }
 
   public static TernaryOperatorExpression newInstance(SModel sm, boolean init) {
-    return (TernaryOperatorExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.TernaryOperatorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TernaryOperatorExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static TernaryOperatorExpression newInstance(SModel sm) {
     return TernaryOperatorExpression.newInstance(sm, false);
   }
 
+
   public Expression getCondition() {
     return (Expression)this.getChild(TernaryOperatorExpression.CONDITION);
   }
+
   public void setCondition(Expression node) {
     super.setChild(TernaryOperatorExpression.CONDITION, node);
   }
+
   public Expression getIfTrue() {
     return (Expression)this.getChild(TernaryOperatorExpression.IF_TRUE);
   }
+
   public void setIfTrue(Expression node) {
     super.setChild(TernaryOperatorExpression.IF_TRUE, node);
   }
+
   public Expression getIfFalse() {
     return (Expression)this.getChild(TernaryOperatorExpression.IF_FALSE);
   }
+
   public void setIfFalse(Expression node) {
     super.setChild(TernaryOperatorExpression.IF_FALSE, node);
   }
+
 }

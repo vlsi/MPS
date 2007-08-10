@@ -16,4 +16,5 @@ public class _FPNumber_String_PropertySupport extends PropertySupport {
     }
     return testValue.matches("-?[0-9]+\\.[0-9]*");
   }
+
 }

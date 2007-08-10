@@ -15,16 +15,20 @@ public class UpperBoundType extends Type {
   }
 
   public static UpperBoundType newInstance(SModel sm, boolean init) {
-    return (UpperBoundType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.UpperBoundType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UpperBoundType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static UpperBoundType newInstance(SModel sm) {
     return UpperBoundType.newInstance(sm, false);
   }
 
+
   public Type getBound() {
     return (Type)this.getChild(UpperBoundType.BOUND);
   }
+
   public void setBound(Type node) {
     super.setChild(UpperBoundType.BOUND, node);
   }
+
 }

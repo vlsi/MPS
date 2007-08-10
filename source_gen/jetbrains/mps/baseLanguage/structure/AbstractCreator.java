@@ -15,9 +15,11 @@ public class AbstractCreator extends BaseConcept {
   }
 
   public static AbstractCreator newInstance(SModel sm, boolean init) {
-    return (AbstractCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.AbstractCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static AbstractCreator newInstance(SModel sm) {
     return AbstractCreator.newInstance(sm, false);
   }
+
 }

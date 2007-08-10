@@ -16,16 +16,20 @@ public class TypeVariableDeclaration extends NamedConcept {
   }
 
   public static TypeVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (TypeVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.TypeVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypeVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static TypeVariableDeclaration newInstance(SModel sm) {
     return TypeVariableDeclaration.newInstance(sm, false);
   }
 
+
   public String getName() {
     return this.getProperty(TypeVariableDeclaration.NAME);
   }
+
   public void setName(String value) {
     this.setProperty(TypeVariableDeclaration.NAME, value);
   }
+
 }

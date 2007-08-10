@@ -14,9 +14,11 @@ public class NullLiteral extends Expression {
   }
 
   public static NullLiteral newInstance(SModel sm, boolean init) {
-    return (NullLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.NullLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NullLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static NullLiteral newInstance(SModel sm) {
     return NullLiteral.newInstance(sm, false);
   }
+
 }

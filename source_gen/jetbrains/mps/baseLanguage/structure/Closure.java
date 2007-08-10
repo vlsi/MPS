@@ -14,9 +14,11 @@ public class Closure extends ConceptFunction {
   }
 
   public static Closure newInstance(SModel sm, boolean init) {
-    return (Closure)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.Closure", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Closure)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Closure", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Closure newInstance(SModel sm) {
     return Closure.newInstance(sm, false);
   }
+
 }

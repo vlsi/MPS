@@ -19,16 +19,20 @@ public class ConceptFunction extends BaseConcept {
   }
 
   public static ConceptFunction newInstance(SModel sm, boolean init) {
-    return (ConceptFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ConceptFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConceptFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ConceptFunction newInstance(SModel sm) {
     return ConceptFunction.newInstance(sm, false);
   }
 
+
   public StatementList getBody() {
     return (StatementList)this.getChild(ConceptFunction.BODY);
   }
+
   public void setBody(StatementList node) {
     super.setChild(ConceptFunction.BODY, node);
   }
+
 }

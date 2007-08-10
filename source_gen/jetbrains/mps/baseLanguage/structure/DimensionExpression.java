@@ -16,16 +16,20 @@ public class DimensionExpression extends BaseConcept {
   }
 
   public static DimensionExpression newInstance(SModel sm, boolean init) {
-    return (DimensionExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.DimensionExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DimensionExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DimensionExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static DimensionExpression newInstance(SModel sm) {
     return DimensionExpression.newInstance(sm, false);
   }
 
+
   public Expression getExpression() {
     return (Expression)this.getChild(DimensionExpression.EXPRESSION);
   }
+
   public void setExpression(Expression node) {
     super.setChild(DimensionExpression.EXPRESSION, node);
   }
+
 }

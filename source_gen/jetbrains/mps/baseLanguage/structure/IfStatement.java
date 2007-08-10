@@ -17,28 +17,36 @@ public class IfStatement extends Statement {
   }
 
   public static IfStatement newInstance(SModel sm, boolean init) {
-    return (IfStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.IfStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IfStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static IfStatement newInstance(SModel sm) {
     return IfStatement.newInstance(sm, false);
   }
 
+
   public Expression getCondition() {
     return (Expression)this.getChild(IfStatement.CONDITION);
   }
+
   public void setCondition(Expression node) {
     super.setChild(IfStatement.CONDITION, node);
   }
+
   public Statement getIfFalseStatement() {
     return (Statement)this.getChild(IfStatement.IF_FALSE_STATEMENT);
   }
+
   public void setIfFalseStatement(Statement node) {
     super.setChild(IfStatement.IF_FALSE_STATEMENT, node);
   }
+
   public StatementList getIfTrue() {
     return (StatementList)this.getChild(IfStatement.IF_TRUE);
   }
+
   public void setIfTrue(StatementList node) {
     super.setChild(IfStatement.IF_TRUE, node);
   }
+
 }

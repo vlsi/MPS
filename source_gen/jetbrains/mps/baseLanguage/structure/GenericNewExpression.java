@@ -15,16 +15,20 @@ public class GenericNewExpression extends Expression {
   }
 
   public static GenericNewExpression newInstance(SModel sm, boolean init) {
-    return (GenericNewExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.GenericNewExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenericNewExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static GenericNewExpression newInstance(SModel sm) {
     return GenericNewExpression.newInstance(sm, false);
   }
 
+
   public AbstractCreator getCreator() {
     return (AbstractCreator)this.getChild(GenericNewExpression.CREATOR);
   }
+
   public void setCreator(AbstractCreator node) {
     super.setChild(GenericNewExpression.CREATOR, node);
   }
+
 }

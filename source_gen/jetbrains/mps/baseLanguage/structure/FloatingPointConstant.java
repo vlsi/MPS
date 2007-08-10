@@ -15,16 +15,20 @@ public class FloatingPointConstant extends Expression {
   }
 
   public static FloatingPointConstant newInstance(SModel sm, boolean init) {
-    return (FloatingPointConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.FloatingPointConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FloatingPointConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static FloatingPointConstant newInstance(SModel sm) {
     return FloatingPointConstant.newInstance(sm, false);
   }
 
+
   public String getValue() {
     return this.getProperty(FloatingPointConstant.VALUE);
   }
+
   public void setValue(String value) {
     this.setProperty(FloatingPointConstant.VALUE, value);
   }
+
 }

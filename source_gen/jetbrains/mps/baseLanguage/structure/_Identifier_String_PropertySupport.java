@@ -16,4 +16,5 @@ public class _Identifier_String_PropertySupport extends PropertySupport {
     }
     return testValue.matches("[a-zA-Z[_]][a-zA-Z0-9[_]]*");
   }
+
 }

@@ -15,16 +15,20 @@ public class ReturnStatement extends Statement {
   }
 
   public static ReturnStatement newInstance(SModel sm, boolean init) {
-    return (ReturnStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ReturnStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReturnStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ReturnStatement newInstance(SModel sm) {
     return ReturnStatement.newInstance(sm, false);
   }
 
+
   public Expression getExpression() {
     return (Expression)this.getChild(ReturnStatement.EXPRESSION);
   }
+
   public void setExpression(Expression node) {
     super.setChild(ReturnStatement.EXPRESSION, node);
   }
+
 }

@@ -15,16 +15,20 @@ public class TypeVariableReference extends Type {
   }
 
   public static TypeVariableReference newInstance(SModel sm, boolean init) {
-    return (TypeVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.TypeVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypeVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static TypeVariableReference newInstance(SModel sm) {
     return TypeVariableReference.newInstance(sm, false);
   }
 
+
   public TypeVariableDeclaration getTypeVariableDeclaration() {
     return (TypeVariableDeclaration)this.getReferent(TypeVariableReference.TYPE_VARIABLE_DECLARATION);
   }
+
   public void setTypeVariableDeclaration(TypeVariableDeclaration node) {
     super.setReferent(TypeVariableReference.TYPE_VARIABLE_DECLARATION, node);
   }
+
 }

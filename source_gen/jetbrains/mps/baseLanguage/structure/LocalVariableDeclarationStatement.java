@@ -15,16 +15,20 @@ public class LocalVariableDeclarationStatement extends Statement {
   }
 
   public static LocalVariableDeclarationStatement newInstance(SModel sm, boolean init) {
-    return (LocalVariableDeclarationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LocalVariableDeclarationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static LocalVariableDeclarationStatement newInstance(SModel sm) {
     return LocalVariableDeclarationStatement.newInstance(sm, false);
   }
 
+
   public LocalVariableDeclaration getLocalVariableDeclaration() {
     return (LocalVariableDeclaration)this.getChild(LocalVariableDeclarationStatement.LOCAL_VARIABLE_DECLARATION);
   }
+
   public void setLocalVariableDeclaration(LocalVariableDeclaration node) {
     super.setChild(LocalVariableDeclarationStatement.LOCAL_VARIABLE_DECLARATION, node);
   }
+
 }

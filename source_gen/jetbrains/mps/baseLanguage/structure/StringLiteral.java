@@ -15,16 +15,20 @@ public class StringLiteral extends Expression {
   }
 
   public static StringLiteral newInstance(SModel sm, boolean init) {
-    return (StringLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.StringLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StringLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static StringLiteral newInstance(SModel sm) {
     return StringLiteral.newInstance(sm, false);
   }
 
+
   public String getValue() {
     return this.getProperty(StringLiteral.VALUE);
   }
+
   public void setValue(String value) {
     this.setProperty(StringLiteral.VALUE, value);
   }
+
 }

@@ -14,9 +14,11 @@ public class GreaterThanOrEqualsExpression extends BinaryOperation {
   }
 
   public static GreaterThanOrEqualsExpression newInstance(SModel sm, boolean init) {
-    return (GreaterThanOrEqualsExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.GreaterThanOrEqualsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GreaterThanOrEqualsExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static GreaterThanOrEqualsExpression newInstance(SModel sm) {
     return GreaterThanOrEqualsExpression.newInstance(sm, false);
   }
+
 }

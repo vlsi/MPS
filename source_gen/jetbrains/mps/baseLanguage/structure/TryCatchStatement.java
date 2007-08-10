@@ -18,31 +18,40 @@ public class TryCatchStatement extends Statement {
   }
 
   public static TryCatchStatement newInstance(SModel sm, boolean init) {
-    return (TryCatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.TryCatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TryCatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryCatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static TryCatchStatement newInstance(SModel sm) {
     return TryCatchStatement.newInstance(sm, false);
   }
 
+
   public StatementList getBody() {
     return (StatementList)this.getChild(TryCatchStatement.BODY);
   }
+
   public void setBody(StatementList node) {
     super.setChild(TryCatchStatement.BODY, node);
   }
+
   public int getCatchClausesCount() {
     return this.getChildCount(TryCatchStatement.CATCH_CLAUSE);
   }
+
   public Iterator<CatchClause> catchClauses() {
     return this.children(TryCatchStatement.CATCH_CLAUSE);
   }
+
   public List<CatchClause> getCatchClauses() {
     return this.getChildren(TryCatchStatement.CATCH_CLAUSE);
   }
+
   public void addCatchClause(CatchClause node) {
     this.addChild(TryCatchStatement.CATCH_CLAUSE, node);
   }
+
   public void insertCatchClause(CatchClause prev, CatchClause node) {
     this.insertChild(prev, TryCatchStatement.CATCH_CLAUSE, node);
   }
+
 }

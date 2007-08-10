@@ -15,16 +15,20 @@ public class ClosureParameterReference extends Expression {
   }
 
   public static ClosureParameterReference newInstance(SModel sm, boolean init) {
-    return (ClosureParameterReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ClosureParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClosureParameterReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ClosureParameterReference newInstance(SModel sm) {
     return ClosureParameterReference.newInstance(sm, false);
   }
 
+
   public ClosureParameter getClosureParameter() {
     return (ClosureParameter)this.getReferent(ClosureParameterReference.CLOSURE_PARAMETER);
   }
+
   public void setClosureParameter(ClosureParameter node) {
     super.setReferent(ClosureParameterReference.CLOSURE_PARAMETER, node);
   }
+
 }

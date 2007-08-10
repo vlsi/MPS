@@ -14,9 +14,11 @@ public class LessThanExpression extends BinaryOperation {
   }
 
   public static LessThanExpression newInstance(SModel sm, boolean init) {
-    return (LessThanExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.LessThanExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LessThanExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LessThanExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static LessThanExpression newInstance(SModel sm) {
     return LessThanExpression.newInstance(sm, false);
   }
+
 }

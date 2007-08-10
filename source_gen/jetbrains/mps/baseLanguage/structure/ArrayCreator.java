@@ -16,22 +16,28 @@ public class ArrayCreator extends AbstractCreator {
   }
 
   public static ArrayCreator newInstance(SModel sm, boolean init) {
-    return (ArrayCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ArrayCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ArrayCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ArrayCreator newInstance(SModel sm) {
     return ArrayCreator.newInstance(sm, false);
   }
 
+
   public Type getComponentType() {
     return (Type)this.getChild(ArrayCreator.COMPONENT_TYPE);
   }
+
   public void setComponentType(Type node) {
     super.setChild(ArrayCreator.COMPONENT_TYPE, node);
   }
+
   public DimensionExpression getDimensionExpression() {
     return (DimensionExpression)this.getChild(ArrayCreator.DIMENSION_EXPRESSION);
   }
+
   public void setDimensionExpression(DimensionExpression node) {
     super.setChild(ArrayCreator.DIMENSION_EXPRESSION, node);
   }
+
 }

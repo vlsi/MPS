@@ -14,16 +14,20 @@ public class LocalVariableReference extends VariableReference {
   }
 
   public static LocalVariableReference newInstance(SModel sm, boolean init) {
-    return (LocalVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.LocalVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LocalVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static LocalVariableReference newInstance(SModel sm) {
     return LocalVariableReference.newInstance(sm, false);
   }
 
+
   public LocalVariableDeclaration getLocalVariableDeclaration() {
     return (LocalVariableDeclaration)this.getVariableDeclaration();
   }
+
   public void setLocalVariableDeclaration(LocalVariableDeclaration node) {
     this.setVariableDeclaration(node);
   }
+
 }

@@ -15,16 +15,20 @@ public class AnonymousClassCreator extends AbstractCreator {
   }
 
   public static AnonymousClassCreator newInstance(SModel sm, boolean init) {
-    return (AnonymousClassCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.AnonymousClassCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AnonymousClassCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static AnonymousClassCreator newInstance(SModel sm) {
     return AnonymousClassCreator.newInstance(sm, false);
   }
 
+
   public AnonymousClass getCls() {
     return (AnonymousClass)this.getChild(AnonymousClassCreator.CLS);
   }
+
   public void setCls(AnonymousClass node) {
     super.setChild(AnonymousClassCreator.CLS, node);
   }
+
 }

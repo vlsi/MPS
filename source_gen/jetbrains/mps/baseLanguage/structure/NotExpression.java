@@ -15,16 +15,20 @@ public class NotExpression extends Expression {
   }
 
   public static NotExpression newInstance(SModel sm, boolean init) {
-    return (NotExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.NotExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NotExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static NotExpression newInstance(SModel sm) {
     return NotExpression.newInstance(sm, false);
   }
 
+
   public Expression getExpression() {
     return (Expression)this.getChild(NotExpression.EXPRESSION);
   }
+
   public void setExpression(Expression node) {
     super.setChild(NotExpression.EXPRESSION, node);
   }
+
 }

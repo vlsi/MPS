@@ -15,16 +15,20 @@ public class ThisExpression extends Expression {
   }
 
   public static ThisExpression newInstance(SModel sm, boolean init) {
-    return (ThisExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ThisExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ThisExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ThisExpression newInstance(SModel sm) {
     return ThisExpression.newInstance(sm, false);
   }
 
+
   public ClassConcept getClassConcept() {
     return (ClassConcept)this.getReferent(ThisExpression.CLASS_CONCEPT);
   }
+
   public void setClassConcept(ClassConcept node) {
     super.setReferent(ThisExpression.CLASS_CONCEPT, node);
   }
+
 }

@@ -17,25 +17,32 @@ public class CommentedStatementsBlock extends Statement {
   }
 
   public static CommentedStatementsBlock newInstance(SModel sm, boolean init) {
-    return (CommentedStatementsBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.CommentedStatementsBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CommentedStatementsBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static CommentedStatementsBlock newInstance(SModel sm) {
     return CommentedStatementsBlock.newInstance(sm, false);
   }
 
+
   public int getStatementsCount() {
     return this.getChildCount(CommentedStatementsBlock.STATEMENT);
   }
+
   public Iterator<Statement> statements() {
     return this.children(CommentedStatementsBlock.STATEMENT);
   }
+
   public List<Statement> getStatements() {
     return this.getChildren(CommentedStatementsBlock.STATEMENT);
   }
+
   public void addStatement(Statement node) {
     this.addChild(CommentedStatementsBlock.STATEMENT, node);
   }
+
   public void insertStatement(Statement prev, Statement node) {
     this.insertChild(prev, CommentedStatementsBlock.STATEMENT, node);
   }
+
 }

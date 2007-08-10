@@ -14,9 +14,11 @@ public class ContinueStatement extends Statement {
   }
 
   public static ContinueStatement newInstance(SModel sm, boolean init) {
-    return (ContinueStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ContinueStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ContinueStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ContinueStatement newInstance(SModel sm) {
     return ContinueStatement.newInstance(sm, false);
   }
+
 }

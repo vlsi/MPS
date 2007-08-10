@@ -17,22 +17,28 @@ public class CatchClause extends BaseConcept {
   }
 
   public static CatchClause newInstance(SModel sm, boolean init) {
-    return (CatchClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.CatchClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CatchClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CatchClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static CatchClause newInstance(SModel sm) {
     return CatchClause.newInstance(sm, false);
   }
 
+
   public LocalVariableDeclaration getThrowable() {
     return (LocalVariableDeclaration)this.getChild(CatchClause.THROWABLE);
   }
+
   public void setThrowable(LocalVariableDeclaration node) {
     super.setChild(CatchClause.THROWABLE, node);
   }
+
   public StatementList getCatchBody() {
     return (StatementList)this.getChild(CatchClause.CATCH_BODY);
   }
+
   public void setCatchBody(StatementList node) {
     super.setChild(CatchClause.CATCH_BODY, node);
   }
+
 }

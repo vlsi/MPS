@@ -15,16 +15,20 @@ public class IntegerConstant extends IntegerLiteral {
   }
 
   public static IntegerConstant newInstance(SModel sm, boolean init) {
-    return (IntegerConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.IntegerConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntegerConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static IntegerConstant newInstance(SModel sm) {
     return IntegerConstant.newInstance(sm, false);
   }
 
+
   public int getValue() {
     return this.getIntegerProperty(IntegerConstant.VALUE);
   }
+
   public void setValue(int value) {
     this.setIntegerProperty(IntegerConstant.VALUE, value);
   }
+
 }

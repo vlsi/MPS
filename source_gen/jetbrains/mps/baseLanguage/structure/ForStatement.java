@@ -16,22 +16,28 @@ public class ForStatement extends AbstractForStatement {
   }
 
   public static ForStatement newInstance(SModel sm, boolean init) {
-    return (ForStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ForStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ForStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ForStatement newInstance(SModel sm) {
     return ForStatement.newInstance(sm, false);
   }
 
+
   public Expression getCondition() {
     return (Expression)this.getChild(ForStatement.CONDITION);
   }
+
   public void setCondition(Expression node) {
     super.setChild(ForStatement.CONDITION, node);
   }
+
   public Expression getIteration() {
     return (Expression)this.getChild(ForStatement.ITERATION);
   }
+
   public void setIteration(Expression node) {
     super.setChild(ForStatement.ITERATION, node);
   }
+
 }

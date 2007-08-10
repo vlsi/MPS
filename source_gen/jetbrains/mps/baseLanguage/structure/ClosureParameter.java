@@ -15,9 +15,11 @@ public class ClosureParameter extends NamedConcept {
   }
 
   public static ClosureParameter newInstance(SModel sm, boolean init) {
-    return (ClosureParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ClosureParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClosureParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClosureParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ClosureParameter newInstance(SModel sm) {
     return ClosureParameter.newInstance(sm, false);
   }
+
 }

@@ -14,9 +14,11 @@ public class IntegerLiteral extends Expression {
   }
 
   public static IntegerLiteral newInstance(SModel sm, boolean init) {
-    return (IntegerLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.IntegerLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntegerLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static IntegerLiteral newInstance(SModel sm) {
     return IntegerLiteral.newInstance(sm, false);
   }
+
 }

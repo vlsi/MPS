@@ -15,16 +15,20 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
   }
 
   public static StaticFieldDeclaration newInstance(SModel sm, boolean init) {
-    return (StaticFieldDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.StaticFieldDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StaticFieldDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static StaticFieldDeclaration newInstance(SModel sm) {
     return StaticFieldDeclaration.newInstance(sm, false);
   }
 
+
   public Visibility getVisibility() {
     return (Visibility)this.getChild(StaticFieldDeclaration.VISIBILITY);
   }
+
   public void setVisibility(Visibility node) {
     super.setChild(StaticFieldDeclaration.VISIBILITY, node);
   }
+
 }

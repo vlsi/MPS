@@ -18,25 +18,32 @@ public class GenericDeclaration extends NamedConcept {
   }
 
   public static GenericDeclaration newInstance(SModel sm, boolean init) {
-    return (GenericDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.GenericDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenericDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static GenericDeclaration newInstance(SModel sm) {
     return GenericDeclaration.newInstance(sm, false);
   }
 
+
   public int getTypeVariableDeclarationsCount() {
     return this.getChildCount(GenericDeclaration.TYPE_VARIABLE_DECLARATION);
   }
+
   public Iterator<TypeVariableDeclaration> typeVariableDeclarations() {
     return this.children(GenericDeclaration.TYPE_VARIABLE_DECLARATION);
   }
+
   public List<TypeVariableDeclaration> getTypeVariableDeclarations() {
     return this.getChildren(GenericDeclaration.TYPE_VARIABLE_DECLARATION);
   }
+
   public void addTypeVariableDeclaration(TypeVariableDeclaration node) {
     this.addChild(GenericDeclaration.TYPE_VARIABLE_DECLARATION, node);
   }
+
   public void insertTypeVariableDeclaration(TypeVariableDeclaration prev, TypeVariableDeclaration node) {
     this.insertChild(prev, GenericDeclaration.TYPE_VARIABLE_DECLARATION, node);
   }
+
 }

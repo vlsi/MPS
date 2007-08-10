@@ -16,22 +16,28 @@ public class ArrayAccessExpression extends Expression {
   }
 
   public static ArrayAccessExpression newInstance(SModel sm, boolean init) {
-    return (ArrayAccessExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ArrayAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ArrayAccessExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ArrayAccessExpression newInstance(SModel sm) {
     return ArrayAccessExpression.newInstance(sm, false);
   }
 
+
   public Expression getArray() {
     return (Expression)this.getChild(ArrayAccessExpression.ARRAY);
   }
+
   public void setArray(Expression node) {
     super.setChild(ArrayAccessExpression.ARRAY, node);
   }
+
   public Expression getIndex() {
     return (Expression)this.getChild(ArrayAccessExpression.INDEX);
   }
+
   public void setIndex(Expression node) {
     super.setChild(ArrayAccessExpression.INDEX, node);
   }
+
 }

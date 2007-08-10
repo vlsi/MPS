@@ -15,9 +15,11 @@ public class Statement extends BaseConcept {
   }
 
   public static Statement newInstance(SModel sm, boolean init) {
-    return (Statement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.Statement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Statement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Statement newInstance(SModel sm) {
     return Statement.newInstance(sm, false);
   }
+
 }

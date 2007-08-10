@@ -14,9 +14,11 @@ public class ParameterDeclaration extends VariableDeclaration {
   }
 
   public static ParameterDeclaration newInstance(SModel sm, boolean init) {
-    return (ParameterDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParameterDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ParameterDeclaration newInstance(SModel sm) {
     return ParameterDeclaration.newInstance(sm, false);
   }
+
 }

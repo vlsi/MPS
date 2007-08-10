@@ -15,16 +15,20 @@ public class ForeachStatement extends AbstractForStatement {
   }
 
   public static ForeachStatement newInstance(SModel sm, boolean init) {
-    return (ForeachStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ForeachStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ForeachStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForeachStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ForeachStatement newInstance(SModel sm) {
     return ForeachStatement.newInstance(sm, false);
   }
 
+
   public Expression getIterable() {
     return (Expression)this.getChild(ForeachStatement.ITERABLE);
   }
+
   public void setIterable(Expression node) {
     super.setChild(ForeachStatement.ITERABLE, node);
   }
+
 }

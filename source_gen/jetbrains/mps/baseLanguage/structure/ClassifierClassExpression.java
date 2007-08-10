@@ -15,16 +15,20 @@ public class ClassifierClassExpression extends Expression {
   }
 
   public static ClassifierClassExpression newInstance(SModel sm, boolean init) {
-    return (ClassifierClassExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ClassifierClassExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClassifierClassExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ClassifierClassExpression newInstance(SModel sm) {
     return ClassifierClassExpression.newInstance(sm, false);
   }
 
+
   public Classifier getClassifier() {
     return (Classifier)this.getReferent(ClassifierClassExpression.CLASSIFIER);
   }
+
   public void setClassifier(Classifier node) {
     super.setReferent(ClassifierClassExpression.CLASSIFIER, node);
   }
+
 }

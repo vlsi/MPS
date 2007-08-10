@@ -15,16 +15,20 @@ public class DoWhileStatement extends AbstractLoopStatement {
   }
 
   public static DoWhileStatement newInstance(SModel sm, boolean init) {
-    return (DoWhileStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.DoWhileStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DoWhileStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoWhileStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static DoWhileStatement newInstance(SModel sm) {
     return DoWhileStatement.newInstance(sm, false);
   }
 
+
   public Expression getCondition() {
     return (Expression)this.getChild(DoWhileStatement.CONDITION);
   }
+
   public void setCondition(Expression node) {
     super.setChild(DoWhileStatement.CONDITION, node);
   }
+
 }

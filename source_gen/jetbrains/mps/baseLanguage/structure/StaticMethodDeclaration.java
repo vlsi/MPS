@@ -15,16 +15,20 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
   }
 
   public static StaticMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (StaticMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.StaticMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StaticMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static StaticMethodDeclaration newInstance(SModel sm) {
     return StaticMethodDeclaration.newInstance(sm, false);
   }
 
+
   public Visibility getVisibility() {
     return (Visibility)this.getChild(StaticMethodDeclaration.VISIBILITY);
   }
+
   public void setVisibility(Visibility node) {
     super.setChild(StaticMethodDeclaration.VISIBILITY, node);
   }
+
 }

@@ -14,9 +14,11 @@ public class GreaterThanExpression extends BinaryOperation {
   }
 
   public static GreaterThanExpression newInstance(SModel sm, boolean init) {
-    return (GreaterThanExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.GreaterThanExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GreaterThanExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GreaterThanExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static GreaterThanExpression newInstance(SModel sm) {
     return GreaterThanExpression.newInstance(sm, false);
   }
+
 }

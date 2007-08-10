@@ -19,37 +19,48 @@ public class SwitchStatement extends Statement {
   }
 
   public static SwitchStatement newInstance(SModel sm, boolean init) {
-    return (SwitchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.SwitchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SwitchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SwitchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SwitchStatement newInstance(SModel sm) {
     return SwitchStatement.newInstance(sm, false);
   }
 
+
   public Expression getExpression() {
     return (Expression)this.getChild(SwitchStatement.EXPRESSION);
   }
+
   public void setExpression(Expression node) {
     super.setChild(SwitchStatement.EXPRESSION, node);
   }
+
   public StatementList getDefaultBlock() {
     return (StatementList)this.getChild(SwitchStatement.DEFAULT_BLOCK);
   }
+
   public void setDefaultBlock(StatementList node) {
     super.setChild(SwitchStatement.DEFAULT_BLOCK, node);
   }
+
   public int getCasesCount() {
     return this.getChildCount(SwitchStatement.CASE);
   }
+
   public Iterator<SwitchCase> cases() {
     return this.children(SwitchStatement.CASE);
   }
+
   public List<SwitchCase> getCases() {
     return this.getChildren(SwitchStatement.CASE);
   }
+
   public void addCase(SwitchCase node) {
     this.addChild(SwitchStatement.CASE, node);
   }
+
   public void insertCase(SwitchCase prev, SwitchCase node) {
     this.insertChild(prev, SwitchStatement.CASE, node);
   }
+
 }
