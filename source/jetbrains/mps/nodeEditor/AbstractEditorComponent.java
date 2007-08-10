@@ -2058,6 +2058,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return (T) get(SNode.class).getModel().getModelDescriptor();
     if (cls == IOperationContext.class) return (T) getOperationContext();
     if (cls == AbstractEditorComponent.class) return (T) this;
+    if (cls == EditorContext.class) return (T) getEditorContext();
     return null;
   }
 
