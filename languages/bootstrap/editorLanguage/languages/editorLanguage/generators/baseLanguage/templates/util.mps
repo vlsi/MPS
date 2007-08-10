@@ -30,13 +30,13 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1186771845384">
             <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]ITemplateGenerator).([InstanceMethodDeclaration]findOutputNodeByInputNodeAndMappingName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1186771845385">
-              <link role="variableDeclaration" targetNodeId="2.1186771602771" />
+              <link role="variableDeclaration" targetNodeId="1186771602771" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1186771845386">
               <property name="value" value="generatedClass" />
             </node>
             <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1186771845387">
-              <link role="variableDeclaration" targetNodeId="2.1186771613135" />
+              <link role="variableDeclaration" targetNodeId="1186771613135" />
             </node>
           </node>
         </node>
@@ -93,7 +93,7 @@
                       </node>
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1186773976124">
-                      <property name="value" value="generatedClass" />
+                      <property name="value" value="nodeListHandler" />
                     </node>
                     <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1186773976125">
                       <link role="variableDeclaration" targetNodeId="1186773787502" resolveInfo="generator" />
