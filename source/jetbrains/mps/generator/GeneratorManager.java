@@ -513,7 +513,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       messages.handle(new Message(MessageKind.ERROR, text));
       progress.finishSomehow();
     } finally {
-      UndoManager.instance().clear();
 
       TypeChecker.getInstance().clearForReload();
       NodeTypesComponentsRepository.getInstance().clear();
