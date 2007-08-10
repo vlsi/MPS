@@ -345,11 +345,11 @@ public class QueriesGenerated {
     if(antiquotation == null) {
       return null;
     }
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
   }
 
   public static SNode referenceMacro_GetReferent_1174596315030(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode parentTargetNode = generator.findNodeBuilderForSource(SNodeOperations.getParent(node, null, false, false), "quotationClass").getTargetNode();
+    SNode parentTargetNode = generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "quotationClass");
     ClassConcept quotationClass = (ClassConcept)BaseAdapter.fromNode(parentTargetNode);
     InstanceMethodDeclaration methodDecl = quotationClass.getMethods().get(0);
     StatementList statementList = methodDecl.getBody();
@@ -358,7 +358,7 @@ public class QueriesGenerated {
   }
 
   public static SNode referenceMacro_GetReferent_1174596303285(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode parentTargetNode = generator.findNodeBuilderForSource(SNodeOperations.getParent(node, null, false, false), "nodeCreatorForQuotedNode").getTargetNode();
+    SNode parentTargetNode = generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "nodeCreatorForQuotedNode");
     StatementList statementList = (StatementList)BaseAdapter.fromNode(parentTargetNode);
     LocalVariableDeclarationStatement lvs = (LocalVariableDeclarationStatement)statementList.getStatements().get(0);
     return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
@@ -376,18 +376,18 @@ public class QueriesGenerated {
     if(antiquotation == null) {
       return null;
     }
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
   }
 
   public static SNode referenceMacro_GetReferent_1174596368572(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode parentTargetNode = generator.findNodeBuilderForSource(SNodeOperations.getParent(node, null, false, false), "nodeCreatorForQuotedNode").getTargetNode();
+    SNode parentTargetNode = generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "nodeCreatorForQuotedNode");
     StatementList statementList = (StatementList)BaseAdapter.fromNode(parentTargetNode);
     LocalVariableDeclarationStatement lvs = (LocalVariableDeclarationStatement)statementList.getStatements().get(0);
     return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
   }
 
   public static SNode referenceMacro_GetReferent_1174596384506(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode parentTargetNode = generator.findNodeBuilderForSource(SNodeOperations.getParent(node, null, false, false), "quotationClass").getTargetNode();
+    SNode parentTargetNode = generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "quotationClass");
     ClassConcept quotationClass = (ClassConcept)BaseAdapter.fromNode(parentTargetNode);
     InstanceMethodDeclaration methodDecl = quotationClass.getMethods().get(0);
     StatementList statementList = methodDecl.getBody();
@@ -407,22 +407,22 @@ public class QueriesGenerated {
     if(antiquotation == null) {
       return null;
     }
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
   }
 
   public static SNode referenceMacro_GetReferent_1174596122781(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode parentTargetNode = generator.findNodeBuilderForSource(SNodeOperations.getParent(node, null, false, false), "nodeCreatorForQuotedNode").getTargetNode();
+    SNode parentTargetNode = generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "nodeCreatorForQuotedNode");
     StatementList statementList = (StatementList)BaseAdapter.fromNode(parentTargetNode);
     LocalVariableDeclarationStatement lvs = (LocalVariableDeclarationStatement)statementList.getStatements().get(0);
     return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
   }
 
   public static SNode referenceMacro_GetReferent_1175002013260(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "applicableNode", true), "pattern", true), "patternClass").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "applicableNode", true), "pattern", true), "patternClass");
   }
 
   public static SNode referenceMacro_GetReferent_1174998489630(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "applicableNode", true), "pattern", true), "patternClass").getTargetNode().getChild("constructor");
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "applicableNode", true), "pattern", true), "patternClass").getChild("constructor");
   }
 
   public static SNode referenceMacro_GetReferent_1175002064909(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
@@ -449,68 +449,68 @@ public class QueriesGenerated {
 
   public static SNode referenceMacro_GetReferent_1174655195413(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
-    SNode method = generator.findNodeBuilderForSource(rule, "mainMethodForRule").getTargetNode();
+    SNode method = generator.findOutputNodeByInputNodeAndMappingName(rule, "mainMethodForRule");
     InstanceMethodDeclaration method_ = (InstanceMethodDeclaration)BaseAdapter.fromNode(method);
     return method_.getParameters().get(0).getNode();
   }
 
   public static SNode referenceMacro_GetReferent_1185876297648(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode statement = (SNode)generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "typeVarDeclaration", false), "typeVarDeclaration").getTargetNode();
+    SNode statement = (SNode)generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "typeVarDeclaration", false), "typeVarDeclaration");
     return SLinkOperations.getTarget(statement, "localVariableDeclaration", true);
   }
 
   public static SNode referenceMacro_GetReferent_1174916691301(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "pattern", true), "patternClass").getTargetNode().getChild("constructor");
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "pattern", true), "patternClass").getChild("constructor");
   }
 
   public static SNode referenceMacro_GetReferent_1174999318513(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode rule = SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
     if(rule != null) {
-      return generator.findNodeBuilderForSource(rule, "applicableNodePatternField").getTargetNode();
+      return generator.findOutputNodeByInputNodeAndMappingName(rule, "applicableNodePatternField");
     }
     return null;
   }
 
   public static SNode referenceMacro_GetReferent_1174997611702(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "patternVarDecl", false), "patternVarField").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "patternVarDecl", false), "patternVarField");
   }
 
   public static SNode referenceMacro_GetReferent_1174999849168(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
-    return generator.findNodeBuilderForSource(rule, "applicableNodePatternField").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(rule, "applicableNodePatternField");
   }
 
   public static SNode referenceMacro_GetReferent_1174999849185(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "patternVarDecl", false), "patternVarField").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "patternVarDecl", false), "patternVarField");
   }
 
   public static SNode referenceMacro_GetReferent_1174999907201(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
-    return generator.findNodeBuilderForSource(rule, "applicableNodePatternField").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(rule, "applicableNodePatternField");
   }
 
   public static SNode referenceMacro_GetReferent_1174999907218(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "patternVarDecl", false), "patternVarField").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "patternVarDecl", false), "patternVarField");
   }
 
   public static SNode referenceMacro_GetReferent_1175005366860(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "modelToCreate", true), "parametersFromExpressions").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "modelToCreate", true), "parametersFromExpressions");
   }
 
   public static SNode referenceMacro_GetReferent_1175249167916(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(node, "classForRule").getTargetNode().getChild("constructor");
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "classForRule").getChild("constructor");
   }
 
   public static SNode referenceMacro_GetReferent_1175440294358(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(node, "classForRule").getTargetNode().getChild("constructor");
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "classForRule").getChild("constructor");
   }
 
   public static SNode referenceMacro_GetReferent_1175440299480(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(node, "classForRule").getTargetNode().getChild("constructor");
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "classForRule").getChild("constructor");
   }
 
   public static SNode referenceMacro_GetReferent_1176559690823(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(node, "multipleLoopIterDecl").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "multipleLoopIterDecl");
   }
 
   public static SNode referenceMacro_GetReferent_1176556027151(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
@@ -519,45 +519,45 @@ public class QueriesGenerated {
   }
 
   public static SNode referenceMacro_GetReferent_1176549220787(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(node, "multipleLoopIterDecl").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "multipleLoopIterDecl");
   }
 
   public static SNode referenceMacro_GetReferent_1177335329571(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "pattern", true), "pattern", true), "patternClass").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "pattern", true), "pattern", true), "patternClass");
   }
 
   public static SNode referenceMacro_GetReferent_1176815596912(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "pattern", true), "pattern", true), "patternConstructor").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "pattern", true), "pattern", true), "patternConstructor");
   }
 
   public static SNode referenceMacro_GetReferent_1176817939040(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(node, "applicableNode", false), null, false, false);
-    return generator.findNodeBuilderForSource(parent, "coercedNode").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(parent, "coercedNode");
   }
 
   public static SNode referenceMacro_GetReferent_1177333800976(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode coerceStatement = SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", false, false);
     if(coerceStatement != null) {
-      return generator.findNodeBuilderForSource(coerceStatement, "coercedPattern").getTargetNode();
+      return generator.findOutputNodeByInputNodeAndMappingName(coerceStatement, "coercedPattern");
     }
     return null;
   }
 
   public static SNode referenceMacro_GetReferent_1177334072396(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "patternVarDecl", false), "patternVarField").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "patternVarDecl", false), "patternVarField");
   }
 
   public static SNode referenceMacro_GetReferent_1177669798493(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "condition", true), "pattern", true), "patternClass").getTargetNode().getChild("constructor");
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "condition", true), "pattern", true), "patternClass").getChild("constructor");
   }
 
   public static SNode referenceMacro_GetReferent_1177674871968(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode parent = SNodeOperations.getParent(SNodeOperations.getParent(SLinkOperations.getTarget(node, "applicableNode", false), null, false, false), null, false, false);
-    return generator.findNodeBuilderForSource(parent, "matchedNode").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(parent, "matchedNode");
   }
 
   public static SNode referenceMacro_GetReferent_1178876429086(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "pattern", true), "pattern", true), "patternConstructor").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "pattern", true), "pattern", true), "patternConstructor");
   }
 
   public static boolean ifMacro_Condition_1174589744219(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
