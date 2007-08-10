@@ -278,15 +278,15 @@ public class QueriesGenerated {
   }
 
   public static SNode referenceMacro_GetReferent_1179324381847(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "parentBlock", true), "closure_adapterClass").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "parentBlock", true), "closure_adapterClass");
   }
 
   public static SNode referenceMacro_GetReferent_1179324381879(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "childrenBlock", true), "closure_adapterClass").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "childrenBlock", true), "closure_adapterClass");
   }
 
   public static SNode referenceMacro_GetReferent_1179324381920(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "childrenBlock", true), "closure_adapterClass").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "childrenBlock", true), "closure_adapterClass");
   }
 
   public static SNode referenceMacro_GetReferent_1184680030750(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
@@ -308,39 +308,39 @@ public class QueriesGenerated {
   }
 
   public static SNode referenceMacro_GetReferent_1179316632549(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "parentBlock", true), "closure_adapterClass").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "parentBlock", true), "closure_adapterClass");
   }
 
   public static SNode referenceMacro_GetReferent_1172647377697(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "childrenBlock", true), "closure_adapterClass").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "childrenBlock", true), "closure_adapterClass");
   }
 
   public static SNode referenceMacro_GetReferent_1172647667138(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "childrenBlock", true), "closure_adapterClass").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "childrenBlock", true), "closure_adapterClass");
   }
 
   public static SNode referenceMacro_GetReferent_1179399834672(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "getter", true), "closure_adapterClass").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "getter", true), "closure_adapterClass");
   }
 
   public static SNode referenceMacro_GetReferent_1179399838693(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SLinkOperations.getTarget(node, "getter", true), "closure_adapterClass").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "getter", true), "closure_adapterClass");
   }
 
   public static SNode referenceMacro_GetReferent_1180087675936(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SNodeOperations.getParent(node, null, false, false), "mn_foundCaseVariable").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "mn_foundCaseVariable");
   }
 
   public static SNode referenceMacro_GetReferent_1180087636529(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SNodeOperations.getParent(node, null, false, false), "mn_foundCaseVariable").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "mn_foundCaseVariable");
   }
 
   public static SNode referenceMacro_GetReferent_1180088156283(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SNodeOperations.getParent(node, null, false, false), "mn_foundCaseVariable").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "mn_foundCaseVariable");
   }
 
   public static SNode referenceMacro_GetReferent_1180088156337(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findNodeBuilderForSource(SNodeOperations.getParent(node, null, false, false), "mn_foundCaseVariable").getTargetNode();
+    return generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "mn_foundCaseVariable");
   }
 
   public static boolean ifMacro_Condition_1179324381907(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
