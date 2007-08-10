@@ -916,5 +916,67 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.Script" id="1186770313081">
+    <property name="scriptName" value="FindDeprecatedUsagesOf_contextProviderIn_Weaving_MappingRule" />
+    <node role="statementList" type="jetbrains.mps.baseLanguage.StatementList" id="1186770313082">
+      <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1186770463535">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1186770463536">
+          <property name="name" value="rules" />
+          <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1186770463537">
+            <link role="elementConcept" targetNodeId="1.1167171569011" />
+          </node>
+          <node role="initializer" type="jetbrains.mps.ide.scriptLanguage.FindConceptInstances" id="1186770444174">
+            <link role="conceptDeclaration" targetNodeId="1.1167171569011" />
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1186770558618">
+        <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1186770558619">
+          <property name="name" value="deprecated" />
+          <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1186770558620">
+            <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1186770558621">
+              <link role="concept" targetNodeId="1.1167171569011" />
+            </node>
+          </node>
+          <node role="initializer" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1186770525587">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1186770524071">
+              <link role="variableDeclaration" targetNodeId="1186770463536" resolveInfo="rules" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.WhereOperation" id="1186770528604">
+              <node role="whereClosure" type="jetbrains.mps.baseLanguage.ext.collections.lang.WhereBlock" id="1186770528605">
+                <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.DefaultInputElement" id="1186770528606">
+                  <property name="name" value="it" />
+                </node>
+                <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1186770528607">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1186770532811">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1186770541630">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1186770543601" />
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1186770534188">
+                        <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1186770538722">
+                          <link role="property" targetNodeId="1.1167240478741" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1186770532812">
+                          <link role="closureParameter" targetNodeId="1186770528606" resolveInfo="it" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.ide.scriptLanguage.ShowNodes" id="1186770600514">
+        <property name="caption" value="context provider method id is used" />
+        <node role="nodeList" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1186770606407">
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1186770604188">
+            <link role="variableDeclaration" targetNodeId="1186770558619" resolveInfo="deprecated" />
+          </node>
+          <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.ToListOperation" id="1186770608502" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
