@@ -23,23 +23,29 @@ public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_MenuPart_1177495846676(SNode parentNode, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", false, false) != null;
   }
+
   public static boolean nodeSubstituteActionsBuilder_Precondition_MenuPart_1177496214780(SNode parentNode, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder", false, false) != null;
   }
+
   public static boolean nodeSubstituteActionsBuilder_Precondition_MenuBuilderPart_1180112146090(SNode parentNode, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", true, false) != null;
   }
+
   public static boolean nodeSubstituteActionsBuilder_Precondition_MenuBuilderPart_1180112503623(SNode parentNode, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder", true, false) != null;
   }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MenuPart_1177495821852(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     return result;
   }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MenuPart_1177496206972(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     return result;
   }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MenuBuilderPart_1180112146087(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
@@ -54,6 +60,7 @@ public class QueriesGenerated {
     }
     return result;
   }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MenuBuilderPart_1180112212391(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
@@ -68,6 +75,7 @@ public class QueriesGenerated {
     }
     return result;
   }
+
   public static void removeActionsByCondition_1177495897822(Iterator<INodeSubstituteAction> actions, final SNode parentNode, final SNode currentChild, final SNode childConcept, final IOperationContext operationContext) {
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
@@ -80,12 +88,14 @@ public class QueriesGenerated {
         public boolean met(Object object) {
           return !(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteMenuPart"));
         }
+
       };
       if(cond.met(null)) {
         actions.remove();
       }
     }
   }
+
   public static void removeActionsByCondition_1177496231840(Iterator<INodeSubstituteAction> actions, final SNode parentNode, final SNode currentChild, final SNode childConcept, final IOperationContext operationContext) {
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
@@ -98,10 +108,12 @@ public class QueriesGenerated {
         public boolean met(Object object) {
           return !(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransformMenuPart"));
         }
+
       };
       if(cond.met(null)) {
         actions.remove();
       }
     }
   }
+
 }
