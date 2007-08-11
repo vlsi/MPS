@@ -3,7 +3,6 @@ package jetbrains.mps.baseLanguage.generator.java.closures;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.JavaModelUtil_new;
-import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
@@ -30,11 +29,7 @@ public class _QueriesUtil {
   }
 
   public static SNode find_ContextOwner_ClosureContext_generatedClass(SNode inputNode, ITemplateGenerator generator) {
-    INodeBuilder builder = generator.findNodeBuilderForSource(inputNode, ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__CLASS);
-    if (builder != null) {
-      return builder.getTargetNode();
-    }
-    return null;
+    return generator.findOutputNodeByInputNodeAndMappingName(inputNode, ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__CLASS);
   }
 
   public static SNode find_ContextOwner_ClosureContext_generatedClass_constructor(SNode inputNode, ITemplateGenerator generator) {
@@ -46,8 +41,7 @@ public class _QueriesUtil {
   }
 
   public static SNode find_Closure_generatedClosureAdapter_constructor(SNode closure, ITemplateGenerator generator) {
-    INodeBuilder builder = generator.findNodeBuilderForSource(closure, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
-    SNode closureAdapterClass = builder.getTargetNode();
+    SNode closureAdapterClass = generator.findOutputNodeByInputNodeAndMappingName(closure, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
     return ((ClassConcept) closureAdapterClass.getAdapter()).constructors().next().getNode();
   }
 
@@ -93,8 +87,7 @@ public class _QueriesUtil {
   public static SNode resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(SNode localVarDeclStmt, ITemplateGenerator generator) {
     VariableDeclaration variableAdapter = ((LocalVariableDeclarationStatement) localVarDeclStmt.getAdapter()).getLocalVariableDeclaration();
     if (variableAdapter != null) {
-      INodeBuilder builder = generator.findNodeBuilderForSource(variableAdapter.getNode(), ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD);
-      return builder.getTargetNode();
+      return generator.findOutputNodeByInputNodeAndMappingName(variableAdapter.getNode(), ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD);
     }
     return null;
   }
@@ -102,8 +95,7 @@ public class _QueriesUtil {
   public static SNode resolve_VariableReference_Variable_ClosureContext_generatedField(SNode varRef, ITemplateGenerator generator) {
     VariableDeclaration variableAdapter = ((VariableReference) varRef.getAdapter()).getVariableDeclaration();
     if (variableAdapter != null) {
-      INodeBuilder builder = generator.findNodeBuilderForSource(variableAdapter.getNode(), ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD);
-      return builder.getTargetNode();
+      return generator.findOutputNodeByInputNodeAndMappingName(variableAdapter.getNode(), ClosuresMappingId.VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD);
     }
     return null;
   }
