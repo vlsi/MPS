@@ -1124,17 +1124,14 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1183464417675">
             <property name="name" value="targetNode" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1183464427830" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1183464387512">
-              <link role="baseMethodDeclaration" extResolveInfo="8.method ([Classifier]INodeBuilder).([InstanceMethodDeclaration]getTargetNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1183464380817">
-                <link role="baseMethodDeclaration" extResolveInfo="8.method ([Classifier]ITemplateGenerator).([InstanceMethodDeclaration]findNodeBuilderForSource((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [INodeBuilder]))" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1183464376858">
-                  <link role="variableDeclaration" targetNodeId="1183464368060" resolveInfo="gen" />
-                </node>
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1183464382208" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1183464383465">
-                  <property name="value" value="concept" />
-                </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1183464380817">
+              <link role="baseMethodDeclaration" extResolveInfo="8.method ([Classifier]ITemplateGenerator).([InstanceMethodDeclaration]findOutputNodeByInputNodeAndMappingName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1183464376858">
+                <link role="variableDeclaration" targetNodeId="1183464368060" resolveInfo="gen" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1183464382208" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1183464383465">
+                <property name="value" value="concept" />
               </node>
             </node>
           </node>
