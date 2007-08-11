@@ -17,6 +17,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
+import jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.util.QueriesUtil;
 
 public class QueriesGenerated {
 
@@ -368,6 +369,30 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1182820930324(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "handler", true), "body", true);
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186794781128(SNode node, ITemplateGenerator generator) {
+    return QueriesUtil.get_QueriesGenerated_class(generator);
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186795057567(SNode node, ITemplateGenerator generator) {
+    return QueriesUtil.get_QueriesGenerated_class(generator);
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186795061791(SNode node, ITemplateGenerator generator) {
+    return QueriesUtil.get_QueriesGenerated_class(generator);
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186795065171(SNode node, ITemplateGenerator generator) {
+    return QueriesUtil.get_QueriesGenerated_class(generator);
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186795068567(SNode node, ITemplateGenerator generator) {
+    return QueriesUtil.get_QueriesGenerated_class(generator);
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186795071822(SNode node, ITemplateGenerator generator) {
+    return QueriesUtil.get_QueriesGenerated_class(generator);
   }
 
 }
