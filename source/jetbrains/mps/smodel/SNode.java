@@ -1554,13 +1554,17 @@ public class SNode implements Iterable<SNode> {
   }
 
   public boolean isInstanceOfConcept(AbstractConceptDeclaration concept) {
-    return isInstanceOfConcept(NameUtil.nodeFQName(concept), GlobalScope.getInstance());
+    return isInstanceOfConcept(NameUtil.nodeFQName(concept));
   }
 
   /**
-   * todo: remove the 'scope' parm
+   * @deprecated 
    */
   public boolean isInstanceOfConcept(String conceptFqName, IScope scope) {
+    return isInstanceOfConcept(conceptFqName);
+  }
+
+  public boolean isInstanceOfConcept(String conceptFqName) {
     return SModelUtil_new.isAssignableConcept(this.getConceptFqName(), conceptFqName);
   }
 
