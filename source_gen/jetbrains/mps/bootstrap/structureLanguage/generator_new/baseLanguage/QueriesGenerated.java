@@ -489,4 +489,92 @@ public class QueriesGenerated {
     return null;
   }
 
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187043830800(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187043918082(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187043927698(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187043930924(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044131962(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044385569(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044389779(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044393880(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044465996(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044470566(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044512073(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044515517(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044519883(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044578844(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044581538(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044583904(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044587286(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044589887(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044592910(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044596292(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044599018(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187044602478(SNode node, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "javaClass");
+  }
+
 }
