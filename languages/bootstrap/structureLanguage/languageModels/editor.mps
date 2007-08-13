@@ -365,6 +365,88 @@
         <property name="drawBorder" value="true" />
         <property name="noTargetText" value="&lt;no role&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1071599776563" />
+        <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1186997087930">
+          <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_PropertyPostfixHints" id="1186997093971">
+            <node role="postfixesFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_PropertyPostfixHints_GetPostfixes" id="1186997093972">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1186997093973">
+                <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1186997157547">
+                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1186997157548">
+                    <property name="name" value="postfixes" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1186997157549">
+                      <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1186997159888">
+                        <link role="classifier" extResolveInfo="6.[Classifier]String" />
+                      </node>
+                    </node>
+                    <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1186997170881">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit" id="1186997172064">
+                        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1186997174528">
+                          <link role="classifier" extResolveInfo="6.[Classifier]String" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1186997182375">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1186997182376">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1186997464771">
+                      <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1186997464772">
+                        <property name="name" value="name" />
+                        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1186997464773">
+                          <link role="classifier" extResolveInfo="6.[Classifier]String" />
+                        </node>
+                        <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1186997476272">
+                          <link role="baseMethodDeclaration" extResolveInfo="14.static method ([Classifier]NameUtil).([StaticMethodDeclaration]decapitalize((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                          <link role="classConcept" extResolveInfo="14.[Classifier]NameUtil" />
+                          <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1186997477469">
+                            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1186997477470">
+                              <link role="property" targetNodeId="2.1169194664001" />
+                            </node>
+                            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1186997477471">
+                              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1186997477472">
+                                <link role="link" targetNodeId="1.1071599976176" />
+                              </node>
+                              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1186997477473" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1186997249027">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1186997249531">
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1186997249028">
+                          <link role="variableDeclaration" targetNodeId="1186997157548" resolveInfo="postfixes" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddAllElementsOperation" id="1186997251568">
+                          <node role="argument" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1186997255466">
+                            <link role="classConcept" extResolveInfo="14.[Classifier]NameUtil" />
+                            <link role="baseMethodDeclaration" extResolveInfo="14.static method ([Classifier]NameUtil).([StaticMethodDeclaration]splitByCamels((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [String]&gt;]))" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1186997464774">
+                              <link role="variableDeclaration" targetNodeId="1186997464772" resolveInfo="name" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1186997195010">
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsNotNullOperation" id="1186997197227" />
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1186997184500">
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1186997194351">
+                        <link role="link" targetNodeId="1.1071599976176" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_Abstract_editedNode" id="1186997183851" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1186997179415">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1186997179417">
+                    <link role="variableDeclaration" targetNodeId="1186997157548" resolveInfo="postfixes" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1084205682782">
         <property name="drawBorder" value="true" />
