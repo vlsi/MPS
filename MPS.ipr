@@ -959,6 +959,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/charisma-jira-plugin.iml" filepath="$PROJECT_DIR$/app/charisma/charisma-jira-plugin/charisma-jira-plugin.iml" group="charisma" />
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" group="Projects/BaseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" group="platform/dnq/runtime" />
+      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/csharp/csharp.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/csharp/csharp.iml" group="baseLanguage/ext" />
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/dates-runtime/dates-runtime.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/dates-runtime/dates-runtime.iml" group="Projects/BaseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/dnq.iml" filepath="$PROJECT_DIR$/platform/dnq/dnq.iml" group="platform/dnq/language" />
