@@ -58,7 +58,7 @@ public class IconManager {
   }
 
   public static Icon getIconForConceptFQName(String conceptFQName) {
-    ConceptDeclaration cd = SModelUtil_new.findConceptDeclaration(NameUtil.conceptFQNameByClassName(conceptFQName), GlobalScope.getInstance());
+    ConceptDeclaration cd = SModelUtil_new.findConceptDeclaration(conceptFQName, GlobalScope.getInstance());
     return getIconFor(cd);
   }
 
