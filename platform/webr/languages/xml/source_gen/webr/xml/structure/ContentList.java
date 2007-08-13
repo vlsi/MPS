@@ -18,7 +18,7 @@ public class ContentList extends Content {
   }
 
   public static ContentList newInstance(SModel sm, boolean init) {
-    return (ContentList)SModelUtil_new.instantiateConceptDeclaration("webr.xml.ContentList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ContentList)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.ContentList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ContentList newInstance(SModel sm) {

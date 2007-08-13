@@ -15,7 +15,7 @@ public class BaseElement extends Content {
   }
 
   public static BaseElement newInstance(SModel sm, boolean init) {
-    return (BaseElement)SModelUtil_new.instantiateConceptDeclaration("webr.xml.BaseElement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseElement)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.BaseElement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseElement newInstance(SModel sm) {

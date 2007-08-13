@@ -17,7 +17,7 @@ public class Attribute extends BaseAttribute {
   }
 
   public static Attribute newInstance(SModel sm, boolean init) {
-    return (Attribute)SModelUtil_new.instantiateConceptDeclaration("webr.xml.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Attribute)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Attribute newInstance(SModel sm) {

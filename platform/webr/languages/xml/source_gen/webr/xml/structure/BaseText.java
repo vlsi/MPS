@@ -14,7 +14,7 @@ public class BaseText extends Content {
   }
 
   public static BaseText newInstance(SModel sm, boolean init) {
-    return (BaseText)SModelUtil_new.instantiateConceptDeclaration("webr.xml.BaseText", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseText)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.BaseText", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseText newInstance(SModel sm) {

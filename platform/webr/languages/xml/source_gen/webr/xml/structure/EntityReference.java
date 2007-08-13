@@ -16,7 +16,7 @@ public class EntityReference extends BaseText {
   }
 
   public static EntityReference newInstance(SModel sm, boolean init) {
-    return (EntityReference)SModelUtil_new.instantiateConceptDeclaration("webr.xml.EntityReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EntityReference)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.EntityReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EntityReference newInstance(SModel sm) {

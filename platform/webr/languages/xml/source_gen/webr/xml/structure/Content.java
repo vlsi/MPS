@@ -18,7 +18,7 @@ public class Content extends BaseConcept {
   }
 
   public static Content newInstance(SModel sm, boolean init) {
-    return (Content)SModelUtil_new.instantiateConceptDeclaration("webr.xml.Content", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Content)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.Content", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Content newInstance(SModel sm) {

@@ -20,7 +20,7 @@ public class Element extends BaseElement {
   }
 
   public static Element newInstance(SModel sm, boolean init) {
-    return (Element)SModelUtil_new.instantiateConceptDeclaration("webr.xml.Element", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Element)SModelUtil_new.instantiateConceptDeclaration("webr.xml.structure.Element", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Element newInstance(SModel sm) {
