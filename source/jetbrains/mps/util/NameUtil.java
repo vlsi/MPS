@@ -169,10 +169,6 @@ public class NameUtil {
     return className;
   }
 
-  public static String nodeLanguageNamespace(SNode node) {
-    return node.getLanguageNamespace();
-  }
-
   public static String convertToMetaString(String s) {
     if (s == null) return null;
     return s.replace("\\", "\\\\").replace("\"", "\\\"");
