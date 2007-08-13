@@ -82,8 +82,7 @@ public class CreateRootNodeGroup extends ActionGroup {
   private MPSAction newRootNodeAction(final SNodeProxy nodeConcept, final SModelDescriptor modelDescriptor, final IDEProjectFrame ide) {
     return new MPSAction(NodePresentationUtil.matchingText(nodeConcept.getNode())) {
       public Icon getIcon() {
-        ConceptDeclaration cd = (ConceptDeclaration) BaseAdapter.fromNode(nodeConcept.getNode());
-        return IconManager.getIconForConceptFQName(NameUtil.conceptFqName(cd));
+        return IconManager.getIconForConceptFQName(NameUtil.removeStructureFromFqName(NameUtil.nodeFQName(nodeConcept.getNode())));
       }
 
       public boolean executeInsideCommand() {

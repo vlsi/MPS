@@ -125,11 +125,6 @@ public class NameUtil {
     }
   }
 
-  public static String conceptFqName(AbstractConceptDeclaration cd) {
-    if (cd == null) return null;
-    return namespaceFromConcept(cd) + "." + cd.getName();
-  }
-
   public static String namespaceFromConcept(AbstractConceptDeclaration concept) {
     return namespaceFromConceptFQName(nodeFQName(concept));
   }
