@@ -201,14 +201,14 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       public void run() {
         IModule module = context.getModule();
         if (module == null) {
-          scrollFromSoure(node);
+          selectNode(node);
           return;
         }
 
         MPSTreeNode moduleTreeNode = findModuleTreeNode(module);
         if (moduleTreeNode == null) {
           LOG.error("Couldn't find tree node for module: " + module);
-          scrollFromSoure(node);
+          selectNode(node);
           return;
         }
 
@@ -217,7 +217,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
         SModelTreeNode modelTreeNode = findSModelTreeNode(moduleTreeNode, modelDescriptor);
         if (modelTreeNode == null) {
           // no such model in the module sub-tree
-          scrollFromSoure(node);
+          selectNode(node);
           return;
         }
 
