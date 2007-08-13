@@ -169,12 +169,6 @@ public class NameUtil {
     return className;
   }
 
-  public static String conceptFQNameByClassName(String className) {
-    String conceptName = NameUtil.shortNameFromLongName(className);
-    String languageNamespace = NameUtil.namespaceFromLongName(className);
-    return languageNamespace + ".structure." + conceptName;
-  }
-
   public static String nodeLanguageNamespace(SNode node) {
     return node.getLanguageNamespace();
   }

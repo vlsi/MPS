@@ -307,7 +307,10 @@ public class ModelPersistence {
   ) {
     // todo: save 'conceptFqName' (i.e. <namespace>.structure.<name>)
     String oldStructureClassName = nodeElement.getAttributeValue(TYPE);
-    SNode node = new SNode(model, NameUtil.conceptFQNameByClassName(oldStructureClassName));
+    String conceptName = NameUtil.shortNameFromLongName(oldStructureClassName);
+    String languageNamespace = NameUtil.namespaceFromLongName(oldStructureClassName);
+    String conceptFqName = languageNamespace + ".structure." + conceptName;
+    SNode node = new SNode(model, conceptFqName);
 
     String myOldId = nodeElement.getAttributeValue(ID);
     node.setStringId(myOldId);
