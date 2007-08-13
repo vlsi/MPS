@@ -44,7 +44,7 @@ public class CopyPasteUtil {
     necessaryLanguages.clear();
     SModel sourceModel = sourceNodes.iterator().next().getModel();
     for (SNode node : sourceNodes) {
-      String languageNamespace = NameUtil.namespaceFromConceptFQName(NameUtil.nodeConceptFQName(node));
+      String languageNamespace = NameUtil.namespaceFromConceptFQName(node.getConceptFqName());
       necessaryLanguages.add(languageNamespace);
     }
     for (SReference ref : allReferences) {

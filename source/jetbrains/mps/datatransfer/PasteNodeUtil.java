@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.NameUtil;
 
 import java.util.Iterator;
 
@@ -56,7 +55,7 @@ public class PasteNodeUtil {
   }
 
   public static boolean canPasteAsRoot(SNode pasteNode, IOperationContext operationContext) {
-    final ConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(NameUtil.nodeConceptFQName(pasteNode), operationContext.getScope());
+    final ConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(pasteNode.getConceptFqName(), operationContext.getScope());
     return conceptDeclaration.getRootable();
   }
 
@@ -113,7 +112,7 @@ public class PasteNodeUtil {
 
   private static boolean canPasteToRoot(SNode pasteTarget, SNode pasteNode, IOperationContext operationContext) {
     if (pasteNode == null) return false;
-    final ConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(NameUtil.nodeConceptFQName(pasteNode), operationContext.getScope());
+    final ConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(pasteNode.getConceptFqName(), operationContext.getScope());
     return (pasteTarget.getParent() == null && conceptDeclaration.getRootable());
   }
 

@@ -26,7 +26,7 @@ public class EditorsFinderManager {
   }
 
   public static IGeneralizingEntityEditorFinder getGEFinder(SNode node) {
-    String languageNamespace = NameUtil.namespaceFromConceptFQName(NameUtil.nodeConceptFQName(node));
+    String languageNamespace = NameUtil.namespaceFromConceptFQName(node.getConceptFqName());
     return ourLanguageNamespacesToGEEditorFinders.get(languageNamespace);
   }
 

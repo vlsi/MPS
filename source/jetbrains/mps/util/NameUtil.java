@@ -164,11 +164,6 @@ public class NameUtil {
     return nodeFQName(BaseAdapter.fromAdapter(node));
   }
 
-
-  public static String nodeConceptFQName(SNode node) {
-    return node.getConceptFqName();
-  }
-
   public static String conceptFQNameByClass(Class<? extends SNode> cls) {
     String className = cls.getName();
     return conceptFQNameByClassName(className);
