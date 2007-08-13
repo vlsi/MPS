@@ -6073,7 +6073,6 @@
     <link role="conceptDeclaration" targetNodeId="2.1136917249679" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158958871965">
       <property name="drawBorder" value="false" />
-      <property name="drawBrackets" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1158958871966">
         <property name="textFgColor" value="blue" />
         <property name="text" value="&gt;" />
@@ -6168,7 +6167,6 @@
     <link role="conceptDeclaration" targetNodeId="2.1136917288805" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158959228973">
       <property name="drawBorder" value="false" />
-      <property name="drawBrackets" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1158959228974">
         <property name="textFgColor" value="blue" />
         <property name="text" value="&gt;" />
