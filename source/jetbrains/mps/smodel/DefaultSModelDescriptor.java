@@ -249,7 +249,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     if (myDiskTimestamp == -1) {
       return false;    
     }
-    return fileTimestamp() > myDiskTimestamp;
+    return fileTimestamp() != myDiskTimestamp;
   }
 
   public boolean isInitialized() {
