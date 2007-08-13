@@ -243,7 +243,7 @@ public class CellExplorerView extends DefaultTool {
         final SNode node = myCell.getSNode();
         String name = node.getName();
         name = name != null ? name : "<no name>";
-        add(new TextTreeNode("<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(node.getShortConceptName()) + ") [" + node.getId() + "]") {
+        add(new TextTreeNode("<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(node.getConceptShortName()) + ") [" + node.getId() + "]") {
           public Icon getIcon(boolean expanded) {
             return IconManager.getIconFor(node);
           }

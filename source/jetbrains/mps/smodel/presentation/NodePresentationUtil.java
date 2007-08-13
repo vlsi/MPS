@@ -111,7 +111,7 @@ public class NodePresentationUtil {
       return alias;
     }
     
-    return node.getShortConceptName();
+    return node.getConceptShortName();
   }
 
   public static String getRoleInParentOrConceptName(SNode node) {

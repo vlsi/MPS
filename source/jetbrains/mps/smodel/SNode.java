@@ -1427,7 +1427,7 @@ public class SNode implements Iterable<SNode> {
       //e.printStackTrace();
       nameText = "<??name??>";
     }
-    return roleText + " " + NameUtil.shortNameFromLongName(getShortConceptName()) + " " + nameText + " in " + myModel.getUID();
+    return roleText + " " + NameUtil.shortNameFromLongName(getConceptShortName()) + " " + nameText + " in " + myModel.getUID();
   }
 
   public boolean hasId() {
@@ -1471,19 +1471,13 @@ public class SNode implements Iterable<SNode> {
   }
 
   @NotNull
-  public String getShortConceptName() {
-    fireNodeReadAccess();
-    return NameUtil.shortNameFromLongName(myConceptFqName);
-  }
-
-  @NotNull
   public String toString() {
     fireNodeReadAccess();
     String name = getName();
     if (name != null && !name.equals("")) {
       return name;
     }
-    return getShortConceptName();
+    return getConceptShortName();
   }
 
   @NotNull
@@ -1553,12 +1547,23 @@ public class SNode implements Iterable<SNode> {
     return myConceptFqName;
   }
 
+  @NotNull
+  public String getConceptShortName() {
+    fireNodeReadAccess();
+    return NameUtil.shortNameFromLongName(myConceptFqName);
+  }
+
+  public String getLanguageNamespace() {
+    fireNodeReadAccess();
+    return NameUtil.namespaceFromConceptFQName(myConceptFqName);
+  }
+
   public boolean isInstanceOfConcept(AbstractConceptDeclaration concept) {
     return isInstanceOfConcept(NameUtil.nodeFQName(concept));
   }
 
   /**
-   * @deprecated 
+   * @deprecated
    */
   public boolean isInstanceOfConcept(String conceptFqName, IScope scope) {
     return isInstanceOfConcept(conceptFqName);
@@ -1818,10 +1823,6 @@ public class SNode implements Iterable<SNode> {
     if (getParent() != null) {
       getParent().dumpNodePath(++currLevel, stream);
     }
-  }
-
-  public String getLanguageNamespace() {
-    return NameUtil.namespaceFromConceptFQName(getConceptFqName());
   }
 
   public boolean isReferentRequired(String role, IScope scope) {

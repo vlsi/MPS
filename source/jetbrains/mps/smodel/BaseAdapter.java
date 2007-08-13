@@ -30,7 +30,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public String getShortConceptName() {
-    return myNode.getShortConceptName();
+    return myNode.getConceptShortName();
   }
 
   public SModel getModel() {

@@ -13,12 +13,8 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.patterns.structure.PatternExpression;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
-import jetbrains.mpswiki.queryLanguage.structure.ConceptReference;
-import jetbrains.mpswiki.queryLanguage.structure.QueryPattern;
-import jetbrains.mpswiki.queryLanguage.structure.VariableCondition;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.AbstractAction;
@@ -132,7 +128,7 @@ public class GoToRulesAction extends MPSAction {
       for (final SNode node : list) {
         if(node == null) continue;
         String nodeName = node.getName();
-        if (nodeName == null || nodeName.equals("")) nodeName = node.getShortConceptName();
+        if (nodeName == null || nodeName.equals("")) nodeName = node.getConceptShortName();
         add(new AbstractAction(nodeName + " (" + node.getModel() + ")") {
           {
             putValue(Action.SMALL_ICON, IconManager.getIconFor(node));
