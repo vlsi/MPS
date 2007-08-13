@@ -1473,7 +1473,7 @@ public class SNode implements Iterable<SNode> {
   @NotNull
   public String getShortConceptName() {
     fireNodeReadAccess();
-    return getTypeFqName().substring(getTypeFqName().lastIndexOf('.') + 1);
+    return NameUtil.shortNameFromLongName(myConceptFqName);
   }
 
   @NotNull
@@ -1549,11 +1549,8 @@ public class SNode implements Iterable<SNode> {
 
 
   public String getConceptFqName() {
+    fireNodeReadAccess();
     return myConceptFqName;
-  }
-
-  /*package*/ String getTypeFqName() {
-    return NameUtil.removeStructureFromFqName(getConceptFqName());
   }
 
   public boolean isInstanceOfConcept(AbstractConceptDeclaration concept) {

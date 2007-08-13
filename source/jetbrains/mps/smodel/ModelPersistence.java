@@ -490,8 +490,9 @@ public class ModelPersistence {
   public static void saveNode(@NotNull Element parentElement, @NotNull SNode node, boolean useUIDs, VisibleModelElements visibleModelElements) {
     Element element = new Element(NODE);
     setNotNullAttribute(element, ROLE, node.getRole_());
-    String type = node.getTypeFqName();
-    element.setAttribute(TYPE, type);
+    // todo: save node's concept fQName
+    String oldStructureClassName = NameUtil.removeStructureFromFqName(node.getConceptFqName());
+    element.setAttribute(TYPE, oldStructureClassName);
     element.setAttribute(ID, node.getId());
 
     if (node.getModel().isExternallyResolvable()) {
