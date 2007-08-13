@@ -58,9 +58,8 @@ public class TextGenManager {
   private SNodeTextGen loadNodeTextGen(SNode node) {
     ConceptDeclaration cd = (ConceptDeclaration) node.getConceptDeclarationAdapter();
     while (cd != SModelUtil_new.getBaseConcept()) {
-      String className = NameUtil.removeStructureFromFqName(NameUtil.nodeFQName(cd));
-      String packageName = NameUtil.namespaceFromLongName(className);
-      className = className.substring(className.lastIndexOf('.') + 1);
+      String packageName = NameUtil.namespaceFromConcept(cd);
+      String className = cd.getName();
       String textgenClassname = packageName + ".textGen." + className + "_TextGen";
       try {
         Class textgenClass = Class.forName(textgenClassname, true, ClassLoaderManager.getInstance().getClassLoader());
