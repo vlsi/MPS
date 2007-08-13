@@ -201,14 +201,14 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       public void run() {
         IModule module = context.getModule();
         if (module == null) {
-          selectNode(node);
+          scrollFromSoure(node);
           return;
         }
 
         MPSTreeNode moduleTreeNode = findModuleTreeNode(module);
         if (moduleTreeNode == null) {
           LOG.error("Couldn't find tree node for module: " + module);
-          selectNode(node);
+          scrollFromSoure(node);
           return;
         }
 
@@ -217,7 +217,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
         SModelTreeNode modelTreeNode = findSModelTreeNode(moduleTreeNode, modelDescriptor);
         if (modelTreeNode == null) {
           // no such model in the module sub-tree
-          selectNode(node);
+          scrollFromSoure(node);
           return;
         }
 
@@ -256,6 +256,12 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       }
     }
     return null;
+  }
+
+  public void scrollFromSoure(SNode node) {
+    if (isAutoscrollFromSource()) {
+      selectNode(node);
+    }
   }
 
   public void selectNode(SNode node) {
@@ -313,44 +319,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   public void selectNextTreeModel(SModelDescriptor modelDescriptor) {
     MPSTreeNode mpsTreeNode = findNextTreeNode(modelDescriptor);
     myTree.selectNode(mpsTreeNode);
-  }
-
-  private MPSTreeNodeEx findTreeNode(MPSTreeNode parent, SNode node) {
-    if (!(parent.isInitialized() || parent.hasInfiniteSubtree())) parent.init();
-    if (parent instanceof SNodeTreeNode) {
-      SNodeTreeNode parentSNodeTreeNode = (SNodeTreeNode) parent;
-      if (node == parentSNodeTreeNode.getSNode()) {
-        return parentSNodeTreeNode;
-      }
-    }
-    for (MPSTreeNode childNode : parent) {
-      MPSTreeNodeEx foundNode = findTreeNode(childNode, node);
-      if (foundNode != null) {
-        return foundNode;
-      }
-    }
-    return null;
-  }
-
-  private SModelTreeNode findSModelTreeNode(MPSTreeNode parent, SModelDescriptor modelDescriptor) {
-    if (!(parent instanceof SModelTreeNode) && !parent.isInitialized() && !parent.hasInfiniteSubtree()) {
-      parent.init();
-    }
-
-    if (parent instanceof SModelTreeNode) {
-      SModelTreeNode parentSModelNode = (SModelTreeNode) parent;
-      SModelDescriptor parentModelDescriptor = parentSModelNode.getSModelDescriptor();
-      if (parentModelDescriptor == modelDescriptor) {
-        return parentSModelNode;
-      }
-    }
-    for (MPSTreeNode node : parent) {
-      SModelTreeNode foundNode = findSModelTreeNode(node, modelDescriptor);
-      if (foundNode != null) {
-        return foundNode;
-      }
-    }
-    return null;
   }
 
   public void selectModel(SModelDescriptor modelDescriptor) {
