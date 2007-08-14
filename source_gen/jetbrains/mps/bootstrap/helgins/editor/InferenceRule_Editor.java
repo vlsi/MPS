@@ -55,6 +55,7 @@ public class InferenceRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ApplicableNodeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174643226854");
     editorCell.setDrawBorder(false);
+    editorCell.putUserObject(EditorCell.ATTRACTS_FOCUS_POLICY, EditorCell.FIRST_EDITABLE_CELL);
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
