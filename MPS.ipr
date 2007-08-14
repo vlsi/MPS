@@ -925,7 +925,6 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/FlexProjects/FlexEditor/FlexEditor.iml" filepath="$PROJECT_DIR$/app/FlexProjects/FlexEditor/FlexEditor.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/GWTEditor/GWTEditor.iml" filepath="$PROJECT_DIR$/app/GWTEditor/GWTEditor.iml" group="app" />
-      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/InlineMethods/InlineMethods.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/InlineMethods/InlineMethods.iml" group="baseLanguage/ext" />
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Common/JetCMS-Common.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Common/JetCMS-Common.iml" group="app/JetCMS" />
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-Configuration/JetCMS-Configuration.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-Configuration/JetCMS-Configuration.iml" group="app/JetCMS" />
       <module fileurl="file://$PROJECT_DIR$/app/JetCMS/JetCMS-GWTClient/JetCMS-GWTClient.iml" filepath="$PROJECT_DIR$/app/JetCMS/JetCMS-GWTClient/JetCMS-GWTClient.iml" group="app/JetCMS" />
@@ -984,6 +983,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" group="platform/dnq/runtime" />
+      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/util/util.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/util/util.iml" group="baseLanguage/ext" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/web-query.iml" filepath="$PROJECT_DIR$/platform/web-query/web-query.iml" group="platform/web-query" />
       <module fileurl="file://$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" filepath="$PROJECT_DIR$/platform/web-query/runtime/web-query-runtime.iml" group="platform/web-query" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/webr.iml" filepath="$PROJECT_DIR$/platform/webr/webr.iml" group="platform/webr" />
@@ -1026,10 +1026,10 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xms1000m -Xmx2500m -ea -XX:MaxPermSize=200m" />
+      <option name="VM_PARAMETERS" value="-Xms500m -Xmx1000m -ea -XX:MaxPermSize=200m" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="/home/vadim/dev/jdk1.6.0_02-32" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <module name="MPS" />
@@ -1049,7 +1049,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
