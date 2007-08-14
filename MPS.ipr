@@ -940,7 +940,6 @@
       <module fileurl="file://$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" filepath="$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" group="app/PubMedDB" />
       <module fileurl="file://$PROJECT_DIR$/app/PubMedDB/PubMedDB.iml" filepath="$PROJECT_DIR$/app/PubMedDB/PubMedDB.iml" group="app/PubMedDB" />
-      <module fileurl="file://$PROJECT_DIR$/app/UsingLang/UsingLang.iml" filepath="$PROJECT_DIR$/app/UsingLang/UsingLang.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/YPath.iml" filepath="$PROJECT_DIR$/platform/ypath/YPath.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/runtime/YPath-runtime.iml" filepath="$PROJECT_DIR$/platform/ypath/runtime/YPath-runtime.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/app/accounting/web-app/accounting-webapp.iml" filepath="$PROJECT_DIR$/app/accounting/web-app/accounting-webapp.iml" group="app" />
