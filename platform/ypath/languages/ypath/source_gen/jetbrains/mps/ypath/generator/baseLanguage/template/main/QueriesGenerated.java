@@ -295,8 +295,7 @@ public class QueriesGenerated {
   }
 
   public static SNode referenceMacro_GetReferent_1184236913540(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    INodeBuilder nb = generator.findNodeBuilderForSource(node, "feature_class");
-    SNode featureClass = nb.getTargetNode();
+    SNode featureClass = generator.findOutputNodeByInputNodeAndMappingName(node, "feature_class");
     return SequenceOperations.getFirst(SLinkOperations.getTargets(featureClass, "constructor", true));
   }
 
