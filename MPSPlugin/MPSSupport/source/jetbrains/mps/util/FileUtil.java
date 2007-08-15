@@ -178,6 +178,9 @@ public class FileUtil {
   }
 
   public static String getCanonicalPath(File file) {
+    if (file == null) {
+      return null;
+    }
     try {
       return file.getCanonicalPath();
     } catch (IOException e) {
