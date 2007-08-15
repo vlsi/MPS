@@ -3,9 +3,10 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.transformation.TLBase" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.regexp.structure" />
   <import index="2" modelUID="jetbrains.mps.generator.template@java_stub" />
+  <import index="3" modelUID="jetbrains.mps.regexp.generator.baseLanguage.template.util" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1174922445389">
     <property name="name" value="GeneratorUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1174923515098">
@@ -159,43 +160,41 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096763" />
     </node>
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1174922475299">
-      <property name="name" value="findBuilderForMatcher" />
-      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1174922499759">
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1187209089331">
+      <property name="name" value="findOutputMatcher" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1187209136585">
         <property name="name" value="generator" />
-        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174922501526">
+        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1187209136586">
           <link role="classifier" extResolveInfo="2.[Classifier]ITemplateGenerator" />
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1174922496241">
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1187209136603">
         <property name="name" value="ref" />
-        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1174922504277">
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1187209136604">
           <link role="concept" targetNodeId="1.1174565027678" />
         </node>
       </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1174922475301">
-        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1174923563046">
-          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1174923569968">
-            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]ITemplateGenerator).([InstanceMethodDeclaration]findNodeBuilderForSource((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [INodeBuilder]))" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1174923565110">
-              <link role="variableDeclaration" targetNodeId="1174922499759" resolveInfo="generator" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1187209203802" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1187209089333" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1187209089334">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1187209144582">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1187209195157">
+            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]ITemplateGenerator).([InstanceMethodDeclaration]findOutputNodeByInputNodeAndMappingName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1187209195158">
+              <link role="variableDeclaration" targetNodeId="3.1187209136585" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalStaticMethodCall" id="1174923576375">
-              <link role="baseMethodDeclaration" targetNodeId="1174923515098" resolveInfo="findRegexpUsingConstructionFor" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1174923583720">
-                <link role="variableDeclaration" targetNodeId="1174922496241" resolveInfo="ref" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalStaticMethodCall" id="1187209195159">
+              <link role="baseMethodDeclaration" targetNodeId="3.1174923515098" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1187209195160">
+                <link role="variableDeclaration" targetNodeId="3.1187209136603" />
               </node>
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1174923595412">
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1187209195161">
               <property name="value" value="matcher" />
             </node>
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1174922491646">
-        <link role="classifier" extResolveInfo="2.[Classifier]INodeBuilder" />
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178546096739" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1178550081257" />
   </node>

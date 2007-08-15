@@ -5,7 +5,6 @@ package jetbrains.mps.regexp.generator.baseLanguage.template.util;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 
 public class GeneratorUtil {
@@ -28,7 +27,9 @@ public class GeneratorUtil {
       return null;
     }
   }
-  public static INodeBuilder findBuilderForMatcher(ITemplateGenerator generator, SNode ref) {
-    return generator.findNodeBuilderForSource(GeneratorUtil.findRegexpUsingConstructionFor(ref), "matcher");
+
+  public static SNode findOutputMatcher(ITemplateGenerator generator, SNode ref) {
+    return generator.findOutputNodeByInputNodeAndMappingName(GeneratorUtil.findRegexpUsingConstructionFor(ref), "matcher");
   }
+
 }
