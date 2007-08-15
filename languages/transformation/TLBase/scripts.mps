@@ -910,6 +910,22 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.RemarkStatement" id="1187129177468">
             <property name="value" value="only proceed if there is only one usage of the var" />
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1187132391521">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1187132391522">
+              <property name="name" value="parent" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1187132391523" />
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187131178231">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAncestorOperation" id="1187132399113">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.OperationParm_Concept" id="1187132402348">
+                    <link role="concept" targetNodeId="5.1068580123136" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1187131176589">
+                  <link role="variableDeclaration" targetNodeId="1187127570165" resolveInfo="var" />
+                </node>
+              </node>
+            </node>
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1187131261818">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1187131261819">
               <property name="name" value="usages" />
@@ -925,11 +941,8 @@
                       <link role="concept" targetNodeId="5.1068581242866" />
                     </node>
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187131178231">
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1187131179843" />
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1187131176589">
-                      <link role="variableDeclaration" targetNodeId="1187127570165" resolveInfo="var" />
-                    </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1187132391524">
+                    <link role="variableDeclaration" targetNodeId="1187132391522" resolveInfo="parent" />
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.WhereOperation" id="1187131214523">
@@ -1185,11 +1198,17 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.RemarkStatement" id="1187142769029">
+            <property name="value" value="delete var decl statement" />
+          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1187130197252">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187130198816">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_DeleteOperation" id="1187130200475" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1187130197253">
-                <link role="variableDeclaration" targetNodeId="1187129794100" resolveInfo="var" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187142782967">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetParentOperation" id="1187142784595" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1187130197253">
+                  <link role="variableDeclaration" targetNodeId="1187129794100" resolveInfo="var" />
+                </node>
               </node>
             </node>
           </node>
@@ -1275,7 +1294,7 @@
           <node role="condition" type="jetbrains.mps.baseLanguage.NotExpression" id="1187127992712">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187127992713">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1187127992714">
-                <link role="variableDeclaration" targetNodeId="11.1187127970528" />
+                <link role="variableDeclaration" targetNodeId="1187127970528" />
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1187127992715">
                 <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1187127992716">
