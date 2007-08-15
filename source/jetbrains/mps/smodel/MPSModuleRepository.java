@@ -5,6 +5,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.Root;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -142,7 +143,7 @@ public class MPSModuleRepository {
   }
 
   public IModule getModuleByFile(File file) {
-    return myFileToModuleMap.get(file.getAbsolutePath());
+    return myFileToModuleMap.get(FileUtil.getCanonicalPath(file));
   }
 
   public IModule getModuleByUID(String moduleUID) {
@@ -213,20 +214,17 @@ public class MPSModuleRepository {
     if (existsModule(module, owner)) {
       throw new RuntimeException("Couldn't add module \"" + module.getModuleUID() + "\" : this module is already registered with this very owner: " + owner);
     }
-    try {
-      File descriptorFile = module.getDescriptorFile();
-      if (descriptorFile != null && !myFileToModuleMap.containsKey(descriptorFile.getCanonicalPath())) {
-        myFileToModuleMap.put(descriptorFile.getCanonicalPath(), module);
-      }
-      putModuleWithUID(module.getModuleUID(), module);
-      Set<MPSModuleOwner> owners = myModuleToOwnersMap.get(module);
-      if (owners == null) owners = new HashSet<MPSModuleOwner>();
-      owners.add(owner);
-      myModuleToOwnersMap.put(module, owners);
-      fireModuleAdded(module);
-    } catch (IOException e) {
-      throw new RuntimeException("Failed to add module \"" + module.getModuleUID() + "\"", e);
+    File descriptorFile = module.getDescriptorFile();
+    String canonicalDescriptorPath = FileUtil.getCanonicalPath(descriptorFile);
+    if (canonicalDescriptorPath != null && !myFileToModuleMap.containsKey(canonicalDescriptorPath)) {
+      myFileToModuleMap.put(canonicalDescriptorPath, module);
     }
+    putModuleWithUID(module.getModuleUID(), module);
+    Set<MPSModuleOwner> owners = myModuleToOwnersMap.get(module);
+    if (owners == null) owners = new HashSet<MPSModuleOwner>();
+    owners.add(owner);
+    myModuleToOwnersMap.put(module, owners);
+    fireModuleAdded(module);
   }
 
   public void unRegisterModules(@NotNull MPSModuleOwner owner) {
@@ -299,12 +297,8 @@ public class MPSModuleRepository {
     myModuleToOwnersMap.remove(module);
     removeModuleFromUIDMap(module);
     if (descriptorFile != null) {
-      try {
-        myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
-        fireModuleRemoved(module);
-      } catch (IOException e) {
-        LOG.error(e);
-      }
+      myFileToModuleMap.remove(FileUtil.getCanonicalPath(descriptorFile));
+      fireModuleRemoved(module);
     }
   }
 
@@ -392,11 +386,7 @@ public class MPSModuleRepository {
   /*package*/ void renameUID(Language l, String newUID) {
     File descriptorFile = l.getDescriptorFile();
     if (descriptorFile != null) {
-      try {
-        myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
-      } catch(IOException e) {
-        LOG.error(e);
-      }
+      myFileToModuleMap.remove(FileUtil.getCanonicalPath(descriptorFile));
     }
     myUIDToModulesMap.get(l.getNamespace()).remove(l);
 
@@ -406,11 +396,7 @@ public class MPSModuleRepository {
       myUIDToModulesMap.put(newUID, modules);
     }
     modules.add(l);
-    try {
-      myFileToModuleMap.put(l.newDescriptorFileByNewName(newUID).getCanonicalPath(), l);
-    } catch(IOException e) {
-      LOG.error(e);
-    }
+    myFileToModuleMap.put(FileUtil.getCanonicalPath(l.newDescriptorFileByNewName(newUID)), l);
   }
 
   @Nullable
