@@ -2540,5 +2540,14 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1187258617779">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="ForegroundNullColorStyleSheetItem" />
+    <link role="extends" targetNodeId="1186403694788" resolveInfo="ColorStyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1187258725566">
+      <property name="value" value="foreground-null-color" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
 </model>
 
