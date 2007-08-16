@@ -515,7 +515,7 @@ public class QueriesGenerated {
 
   public static SNode referenceMacro_GetReferent_1176556027151(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode sourceNode = SLinkOperations.getTarget(node, "variable", true);
-    return generator.findCopyingNodeBuilderForSource(sourceNode).getTargetNode();
+    return generator.findCopiedOutputNodeForInputNode(sourceNode);
   }
 
   public static SNode referenceMacro_GetReferent_1176549220787(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
