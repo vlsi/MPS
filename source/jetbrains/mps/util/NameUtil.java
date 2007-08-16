@@ -220,4 +220,23 @@ public class NameUtil {
   public static String pathFromNamespace(String namespace) {
     return namespace.replace('.', '/');
   }
+
+  /**
+   * Strips optional quotes from the beggining and ending of the quotedString.
+   * @param quotedString string to strip quotes.
+   * @param optionalOpenQuote optional open quote. If quotedString starts with it then it will be stripped.
+   * @param optionalCloseQuote optional close quote. If quotedString ends with it then it will be stripped.
+   * @return quotedString with stripped quotes.
+   */
+  public static String stripQuotes(String quotedString, String optionalOpenQuote, String optionalCloseQuote) {
+    if (quotedString != null) {
+      if (quotedString.length() >= optionalOpenQuote.length() && quotedString.startsWith(optionalOpenQuote)) {
+        quotedString = quotedString.substring(optionalOpenQuote.length());
+      }
+      if (quotedString.length() >= optionalCloseQuote.length() && quotedString.endsWith(optionalCloseQuote)) {
+        quotedString = quotedString.substring(0, quotedString.length() - optionalCloseQuote.length());
+      }
+    }
+    return quotedString;
+  }
 }
