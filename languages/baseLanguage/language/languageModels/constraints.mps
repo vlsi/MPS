@@ -4651,5 +4651,23 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185037508249" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1187398810002">
+    <link role="concept" targetNodeId="1.1070534058343" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1187398812615">
+      <property name="name" value="eval" />
+      <link role="overridenMethod" targetNodeId="1184884309598" resolveInfo="eval" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1187398812617">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1187398909713">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1187398909714" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1187398817477">
+        <link role="classifier" extResolveInfo="13.[Classifier]Object" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1187398810003">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1187398810004" />
+    </node>
+  </node>
 </model>
 
