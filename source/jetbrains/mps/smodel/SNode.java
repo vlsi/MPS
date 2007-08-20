@@ -1910,7 +1910,7 @@ public class SNode implements Iterable<SNode> {
       LOG.error(e);
     }
 
-    LOG.error("Can't find an adapter for " + getClass().getName() + ". Try generating adapters.", this);
+    LOG.error("couldn't find adapter for " + this.getDebugText(), this);
 
     return new BaseAdapter(this) {
     };

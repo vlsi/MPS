@@ -112,6 +112,10 @@ public class FastRuleFinder {
 
   public SNode findReductionRule(SNode node, ITemplateGenerator generator) {
     ConceptDeclaration concept = (ConceptDeclaration) node.getConceptDeclarationAdapter();
+    if (concept == null) {
+      generator.showWarningMessage(node, "skip reduction: couldn't find concept declaration adapter for " + node.getDebugText());
+      return null;
+    }
 
     List<Reduction_MappingRule> allRules = myRules_all.get(concept);
     if (allRules == null) {
