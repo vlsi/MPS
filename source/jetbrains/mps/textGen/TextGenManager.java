@@ -52,7 +52,11 @@ public class TextGenManager {
     assert nodeTextGen != null;
 
     nodeTextGen.setBuffer(buffer);
-    nodeTextGen.doGenerateText(node.getAdapter());
+    try {
+      nodeTextGen.doGenerateText(node.getAdapter());
+    } catch (Exception e) {
+      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+    }
   }
 
   private SNodeTextGen loadNodeTextGen(SNode node) {

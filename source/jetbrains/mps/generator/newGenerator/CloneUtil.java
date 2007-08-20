@@ -27,7 +27,6 @@ public class CloneUtil {
     SNode result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), targetModel, scope, false);
     assert result != null;
     result.setId(node.getSNodeId());
-//    targetModel.addLanguage(node.getLanguage(scope));
     copyProperties(node, result);
     for (SReference reference : node.getReferences()) {
       SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : targetModel.getUID();
