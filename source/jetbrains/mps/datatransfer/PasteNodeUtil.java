@@ -1,9 +1,6 @@
 package jetbrains.mps.datatransfer;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
+import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
@@ -13,6 +10,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.ConceptHierarchyScope;
 
 import java.util.Iterator;
 
@@ -125,8 +124,8 @@ public class PasteNodeUtil {
   }
 
   private static boolean pasteToTarget_internal(final SNode pasteTarget, final SNode pasteNode, final SNode anchorNode, String role, final boolean pasteBefore, boolean reallyPaste, final IOperationContext operationContext) {
-    ConceptDeclaration pasteTargetType = (ConceptDeclaration) pasteTarget.getConceptDeclarationAdapter();
-    ConceptDeclaration pasteNodeType = (ConceptDeclaration) pasteNode.getConceptDeclarationAdapter();
+    AbstractConceptDeclaration pasteTargetType = pasteTarget.getConceptDeclarationAdapter();
+    AbstractConceptDeclaration pasteNodeType = pasteNode.getConceptDeclarationAdapter();
     final LinkDeclaration linkDeclaration = findMetalink(pasteTargetType, pasteNodeType, role);
     if (linkDeclaration == null) {
       return false;
@@ -203,18 +202,12 @@ public class PasteNodeUtil {
     return null;
   }
 
-  private static LinkDeclaration findMetalink(ConceptDeclaration sourceMetatype, ConceptDeclaration targetMetatype, String role) {
-    Iterator<LinkDeclaration> metalinks = sourceMetatype.linkDeclarations();
-    while (metalinks.hasNext()) {
-      LinkDeclaration metalink = metalinks.next();
-      if (SModelUtil_new.isAssignableConcept(targetMetatype, metalink.getTarget()) && 
+  private static LinkDeclaration findMetalink(AbstractConceptDeclaration sourceMetatype, AbstractConceptDeclaration targetMetatype, String role) {
+    for (LinkDeclaration metalink: new ConceptHierarchyScope(sourceMetatype).getAdapters(LinkDeclaration.class)) {
+      if (SModelUtil_new.isAssignableConcept(targetMetatype, metalink.getTarget()) &&
               (role == null || metalink.getRole().equals(role))) {
         return metalink;
       }
-    }
-    ConceptDeclaration anExtends = sourceMetatype.getExtends();
-    if (anExtends != null) {
-      return findMetalink(anExtends, targetMetatype, role);
     }
     return null;
   }
