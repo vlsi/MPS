@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.generator.java.closures;
  * author: Igor Alshannikov
  * Jul 12, 2006
  */
-public interface ClosuresMappingId {
+public interface ClosuresMappingId {      
   static String CLOSURE__ADAPTER_CLASS = "closure_adapterClass";
   static String CONTEXT_OWNER__CLOSURE_CONTEXT__CLASS = "contextOwner_closureContext_class";
   static String CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT = "contextOwner_closureContext_variable";
