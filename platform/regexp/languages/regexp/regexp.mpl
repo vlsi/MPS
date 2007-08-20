@@ -43,7 +43,7 @@
           <lesser-priority-mapping>
             <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
             <external-mapping>
-              <all-local-mappings />
+              <mapping-node modelUID="jetbrains.mps.baseLanguage.generator.java.closures@templates" nodeID="*" />
             </external-mapping>
           </lesser-priority-mapping>
         </mapping-priority-rule>
