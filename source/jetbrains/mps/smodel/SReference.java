@@ -61,12 +61,6 @@ public final class SReference {
     }
   }
 
-//  public boolean equalsTargetInfo(SReference reference) {
-//    if (!EqualUtil.equals(reference.myTargetNodeId, myTargetNodeId)) return false;
-//    if (!EqualUtil.equals(reference.myExtResolveInfo, myExtResolveInfo)) return false;
-//    return (EqualUtil.equals(reference.myResolveInfo, myResolveInfo));
-//  }
-
   public String getRole() {
     return myRole;
   }
@@ -74,7 +68,6 @@ public final class SReference {
   public SNode getSourceNode() {
     return mySourceNode;
   }
-
 
   public static SReference getUnresolvedExternalReference(String role, SNode sourceNode, SModelDescriptor modelDescriptor, String extResolveInfo) {
     LOG.assertLog(sourceNode.getModel().getModelDescriptor() != modelDescriptor);
@@ -89,7 +82,6 @@ public final class SReference {
 
   private SModel getTargetModel() {
     SModel model;
-//    if (mySourceNode.getModel().getUID().equals(myTargetModelUID)) {
     if (myIsLocal) {
       // DO NOT REMOVE THIS CODE
       // it needed in merge view. In this view we create models in air
@@ -155,19 +147,7 @@ public final class SReference {
     SModelRepository.getInstance().markChanged(getSourceNode().getModel(), true);
   }
 
-//  public boolean isTargetNode(SNode node) {
-//    SModelUID modelUID = node.getModel().getUID();
-//    if (modelUID.equals(myTargetModelUID)) {
-//      if (ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo) && myTargetNodeId != null && myTargetNodeId.equals(node.getId()))
-//        return true;
-//      if (!(ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo)) && ExternalResolver.doesNodeMatchERI(myExtResolveInfo, node))
-//        return true;
-//    }
-//    return false;
-//  }
-
   public boolean isExternal() {
-//    return !mySourceNode.getModel().getUID().equals(myTargetModelUID);
     return !myIsLocal;
   }
 
@@ -194,10 +174,6 @@ public final class SReference {
     return myExtResolveInfo;
   }
 
-//  public void setExtResolveInfo(String extResolveInfo) {
-//    this.myExtResolveInfo = extResolveInfo;
-//  }
-
   //
   // --- new instance
   //
@@ -207,7 +183,7 @@ public final class SReference {
    * reference created by target node
    * todo: annotate targetNode as NotNull. If targetNode=null there is neither ID nor resolve infos
    * update: targetNode=null can happen. See CopuPasteUtil.processReferencesIn() - when copied reference is unresolved (i.e. oldTargetNode==null)
-   * todo: another 'newInstance' should be used there in this case.  
+   * todo: another 'newInstance' should be used there in this case.
    */
   public static SReference newInstance(String role, SNode sourceNode, SNode targetNode) {
 
@@ -240,21 +216,27 @@ public final class SReference {
             willNotPassTargetId ? null : templateRef.getTargetNodeId(),
             templateRef.getExtResolveInfo(),
             templateRef.getTargetModelUID(),
-            resolveInfo
-    );
+            resolveInfo);
   }
 
 
   /**
    * reference created by specifying all info
    */
-  public static SReference newInstance(String role, SNode sourceNode, String targetNodeId, String extResolveInfo,
-                                       SModelUID targetModelUID, String resolveInfo) {
+  public static SReference newInstance(String role,
+                                       SNode sourceNode,
+                                       String targetNodeId,
+                                       String extResolveInfo,
+                                       SModelUID targetModelUID,
+                                       String resolveInfo) {
     return new SReference(role, sourceNode, targetNodeId, resolveInfo, extResolveInfo, targetModelUID);
-
   }
 
-  public static SReference newInstance(String role, SNode sourceNode, String targetModelUID, String targetInfo, boolean isExtResolveInfo) {
+  public static SReference newInstance(String role,
+                                       SNode sourceNode,
+                                       String targetModelUID,
+                                       String targetInfo,
+                                       boolean isExtResolveInfo) {
     if (isExtResolveInfo) {
       return new SReference(role, sourceNode, null, null, targetInfo, SModelUID.fromString(targetModelUID));
     } else {
