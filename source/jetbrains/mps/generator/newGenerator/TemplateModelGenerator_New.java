@@ -158,13 +158,12 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
         }
       }
     }
-    
+
     List<SNode> copiedRoots = new ArrayList<SNode>();
-    for (SNode root : CloneUtil.copy(rootsToCopy, myOutputModel, getScope())) {
-      copiedRoots.add(root);
+    for (SNode rootToCopy : rootsToCopy) {
+      copiedRoots.add(CloneUtil.clone(rootToCopy, myOutputModel, getScope()));
     }
     return copiedRoots;
-//    return CopyUtil.copyAndPreserveId(rootsToCopy, null);
   }
 
   private void invalidateReferencesInCopiedNode(SNode node) {
@@ -289,7 +288,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
    */
   public INodeBuilder findNodeBuilderForSource(SNode inputNode, String mappingName) {
     SNode outputNode = findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
-    if(outputNode != null) {
+    if (outputNode != null) {
       return new SimpleNodeBuilder(this, outputNode, inputNode);
     }
     return null;

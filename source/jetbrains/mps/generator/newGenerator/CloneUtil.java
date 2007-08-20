@@ -15,26 +15,26 @@ public class CloneUtil {
    * it allows to resolve internal references much faster
    */
 
-  public static List<SNode> copy(List<SNode> nodes, SModel targetModel, IScope scope) {
-    List<SNode> results = new ArrayList<SNode>();
-    for (SNode node : nodes) {
-      results.add(clone(node, targetModel, scope));
-    }
-    return results;
-  }
+//  public static List<SNode> copy(List<SNode> nodes, SModel targetModel, IScope scope) {
+//    List<SNode> results = new ArrayList<SNode>();
+//    for (SNode node : nodes) {
+//      results.add(clone(node, targetModel, scope));
+//    }
+//    return results;
+//  }
 
-  private static SNode clone(SNode node, SModel targetModel, IScope scope) {
-    SNode result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), targetModel, scope, false);
+  static SNode clone(SNode node, SModel outputModel, IScope scope) {
+    SNode result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), outputModel, scope, false);
     assert result != null;
     result.setId(node.getSNodeId());
     copyProperties(node, result);
     for (SReference reference : node.getReferences()) {
-      SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : targetModel.getUID();
+      SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : outputModel.getUID();
       SReference sReference = SReference.newInstance(reference.getRole(), result, reference.getTargetNodeId(), reference.getExtResolveInfo(), targetModelUID, reference.getResolveInfo());
       result.addSReference(sReference);
     }
     for (SNode child : node.getChildren()) {
-      result.addChild(node.getRoleOf(child), clone(child, targetModel, scope));
+      result.addChild(node.getRoleOf(child), clone(child, outputModel, scope));
     }
     return result;
   }
