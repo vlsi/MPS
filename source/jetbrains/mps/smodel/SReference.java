@@ -69,12 +69,6 @@ public final class SReference {
     return mySourceNode;
   }
 
-  public static SReference getUnresolvedExternalReference(String role, SNode sourceNode, SModelDescriptor modelDescriptor, String extResolveInfo) {
-    LOG.assertLog(sourceNode.getModel().getModelDescriptor() != modelDescriptor);
-    return new SReference(role, sourceNode, null, null, extResolveInfo, modelDescriptor.getModelUID());
-  }
-
-
   public final SNode getTargetNode() {
     NodeReadAccessCaster.fireReferenceTargetReadAccessed(this);
     return getTargetNode_impl();
