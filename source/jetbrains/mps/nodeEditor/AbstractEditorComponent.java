@@ -16,8 +16,8 @@ import jetbrains.mps.ide.modelchecker.ModelCheckerMessage;
 import jetbrains.mps.ide.navigation.FocusPolicy;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
-import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
+import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
@@ -1103,13 +1103,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     updateMPSActionsWithKeyStrokes();
     rebuildEditorContent(null);
     LOG.debug("Rebuild of " + getEditedNode() + "'s editor took " + (System.currentTimeMillis() - start) + " ms");
-  }
-
-  public SNode getRootNode() {
-    if (myNodeProxy == null) {
-      return null;
-    }
-    return myNodeProxy.getNode();
   }
 
   void updateModelCheckerMessages() {
