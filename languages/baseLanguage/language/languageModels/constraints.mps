@@ -4671,6 +4671,49 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1187625988101">
     <link role="concept" targetNodeId="1.1070534760951" />
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.NodePropertyConstraint" id="1187796565071">
+      <link role="applicableProperty" targetNodeId="2.1169194664001" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_PropertyGetter" id="1187796568401">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1187796568402">
+          <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1187796653304">
+            <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1187796658890">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1187796659846" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187796656511">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1187796658045">
+                  <link role="link" targetNodeId="1.1070534760952" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1187796655822" />
+              </node>
+            </node>
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1187796653306">
+              <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1187796661331">
+                <node role="expression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1187796663349">
+                  <property name="value" value="???[]" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1187796666585">
+            <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1187796674721">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1187796675474">
+                <property name="value" value="[]" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187796672311">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1187796673220">
+                  <link role="property" targetNodeId="2.1169194664001" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187796670135">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1187796671763">
+                    <link role="link" targetNodeId="1.1070534760952" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.PropertyGetter_FunctionParm_node" id="1187796669712" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1187625989902">
       <property name="name" value="getVariableSuffixes" />
       <link role="overridenMethod" targetNodeId="1182416669983" resolveInfo="getVariableSuffixes" />
