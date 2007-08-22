@@ -979,7 +979,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/search-watch/search-watch.iml" filepath="$PROJECT_DIR$/app/search-watch/search-watch.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/projects/springframework/springframework.iml" filepath="$PROJECT_DIR$/projects/springframework/springframework.iml" group="Projects/springframework" />
       <module fileurl="file://$PROJECT_DIR$/projects/springframework/runtime/springframework-runtime.iml" filepath="$PROJECT_DIR$/projects/springframework/runtime/springframework-runtime.iml" group="Projects/springframework" />
-      <module fileurl="file://$PROJECT_DIR$/projects/stateWorks/stateWorks.iml" filepath="$PROJECT_DIR$/projects/stateWorks/stateWorks.iml" group="Projects" />
+      <module fileurl="file://$PROJECT_DIR$/platform/stateMachine/stateMachine.iml" filepath="$PROJECT_DIR$/platform/stateMachine/stateMachine.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" group="platform/dnq/runtime" />
@@ -1026,7 +1026,7 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xms500m -Xmx1000m -ea -XX:MaxPermSize=200m" />
+      <option name="VM_PARAMETERS" value="-Xms1000m -Xmx2500m -ea -XX:MaxPermSize=200m" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1049,14 +1049,14 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
       <option name="LOCAL" value="true" />
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
-      <option name="COMMON_VM_ARGUMENTS" value="-Xms128m -Xmx256m" />
+      <option name="COMMON_VM_ARGUMENTS" value="-Xms128m -Xmx512m" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="accounting-webapp" />
@@ -1083,7 +1083,7 @@
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/charisma" />
+        <option name="CONTEXT_PATH" value="" />
         <option name="MODULE_NAME" value="charisma-app" />
         <option name="DEPLOY" value="true" />
       </J2EE_MODULE>
@@ -1106,7 +1106,7 @@
         <option name="LOCAL" value="true" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Profile ">
-        <option name="myExternalizedOptions" value="&#13;&#10;force-jvmti=true&#13;&#10;snapshots-dir=&#13;&#10;startup=0&#13;&#10;" />
+        <option name="myExternalizedOptions" value="&#10;force-jvmti=true&#10;snapshots-dir=&#10;startup=0&#10;" />
       </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
@@ -1155,7 +1155,7 @@
         </SHUTDOWN>
         <EnvironmentVariables>
           <option name="NAME" value="JAVA_HOME" />
-          <option name="VALUE" value="/home/vadim/dev/jdk1.6.0_02-32" />
+          <option name="VALUE" value="/home/vadim/dev/jdk1.6.0_02" />
           <option name="IS_PREDEFINED" value="false" />
         </EnvironmentVariables>
       </ConfigurationWrapper>
