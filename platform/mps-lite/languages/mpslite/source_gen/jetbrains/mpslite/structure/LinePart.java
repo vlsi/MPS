@@ -15,9 +15,11 @@ public class LinePart extends BaseConcept {
   }
 
   public static LinePart newInstance(SModel sm, boolean init) {
-    return (LinePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.LinePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.LinePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static LinePart newInstance(SModel sm) {
     return LinePart.newInstance(sm, false);
   }
+
 }

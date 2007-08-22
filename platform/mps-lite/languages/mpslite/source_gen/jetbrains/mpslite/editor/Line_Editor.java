@@ -10,6 +10,12 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.nodeEditor.EditorCellAction;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
+import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class Line_Editor extends DefaultNodeEditor {
 
@@ -20,16 +26,20 @@ public class Line_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.addKeyMap(new _Line_Actions());
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511256407");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_LinePartList(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     Line_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -39,9 +49,10 @@ public class Line_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createLinePartList(context, node));
     return editorCell;
   }
+
   public EditorCell createLinePartList(EditorContext context, SNode node) {
     if(this.myLinePartListHandler_linePartList_ == null) {
-      this.myLinePartListHandler_linePartList_ = new Line_Editor_LinePartListHandler_linePartList_(node, "linePart", context);
+      this.myLinePartListHandler_linePartList_ = new Line_Editor._RefNodeListHandler1(node, "linePart", context);
     }
     EditorCell_Collection editorCell = this.myLinePartListHandler_linePartList_.createCells(context, new CellLayout_Horizontal(), false);
     Line_Editor.setupBasic_LinePartList(editorCell, node, context);
@@ -51,4 +62,49 @@ public class Line_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.ROLE, this.myLinePartListHandler_linePartList_.getElementRole());
     return editorCell;
   }
+
+  public static class _RefNodeListHandler1 extends RefNodeListHandler {
+
+    public  _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
+      super(ownerNode, childRole, context, false);
+    }
+
+    public SNode createNodeToInsert(EditorContext context) {
+      SNode listOwner = super.getOwner();
+      return NodeFactoryManager.createNode(listOwner, context, super.getElementRole());
+    }
+
+    public EditorCell createNodeCell(EditorContext context, SNode elementNode) {
+      EditorCell elementCell = super.createNodeCell(context, elementNode);
+      this.installElementCellActions(this.getOwner(), elementNode, elementCell, context);
+      return elementCell;
+    }
+
+    public EditorCell createEmptyCell(EditorContext context) {
+      EditorCell emptyCell = null;
+      emptyCell = super.createEmptyCell(context);
+      this.installElementCellActions(super.getOwner(), null, emptyCell, context);
+      return emptyCell;
+    }
+
+    public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
+      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+        elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
+        SNode substituteInfoNode = listOwner;
+        if(elementNode != null) {
+          substituteInfoNode = elementNode;
+          elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
+        }
+        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
+        }
+      }
+    }
+
+    public EditorCell createSeparatorCell(EditorContext context) {
+      return super.createSeparatorCell(context);
+    }
+
+}
+
 }

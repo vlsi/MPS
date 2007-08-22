@@ -18,25 +18,32 @@ public class Line extends BaseConcept {
   }
 
   public static Line newInstance(SModel sm, boolean init) {
-    return (Line)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.Line", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Line)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.Line", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Line newInstance(SModel sm) {
     return Line.newInstance(sm, false);
   }
 
+
   public int getLinePartsCount() {
     return this.getChildCount(Line.LINE_PART);
   }
+
   public Iterator<LinePart> lineParts() {
     return this.children(Line.LINE_PART);
   }
+
   public List<LinePart> getLineParts() {
     return this.getChildren(Line.LINE_PART);
   }
+
   public void addLinePart(LinePart node) {
     this.addChild(Line.LINE_PART, node);
   }
+
   public void insertLinePart(LinePart prev, LinePart node) {
     this.insertChild(prev, Line.LINE_PART, node);
   }
+
 }

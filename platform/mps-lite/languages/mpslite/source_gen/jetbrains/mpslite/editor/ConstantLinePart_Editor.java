@@ -20,16 +20,20 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     _LinePart_RT.setCellActions(editorCell, node, context);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511294275");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_TextCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     ConstantLinePart_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -39,6 +43,7 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createTextCell(context, node));
     return editorCell;
   }
+
   public EditorCell createTextCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -50,6 +55,7 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createTextCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("text");
@@ -66,4 +72,5 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

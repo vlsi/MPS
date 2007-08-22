@@ -29,20 +29,26 @@ public class QueriesGenerated {
           SPropertyOperations.set(part, "text", pattern.substring(1));
           return part;
         }
+
         public boolean hasSubstitute() {
           return true;
         }
+
         public boolean canSubstitute_internal(String pattern) {
           return pattern.startsWith("/");
         }
+
         public String getDescriptionText(String pattern) {
           return "";
         }
+
         public String getMatchingText(String pattern) {
           return "/constant text";
         }
+
       });
     }
     return result;
   }
+
 }

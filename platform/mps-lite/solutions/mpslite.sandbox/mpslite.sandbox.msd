@@ -7,7 +7,7 @@
     <moduleRoot path="${mps_home}\projects\mps-lite\languages\nanoj\nanoj.mpl" />
   </module>
   <languages>
-    <moduleRoot path="${mps_home}\projects\mps-lite\languages\mpslite\mpslite.mpl" />
+    <moduleRoot path="${mps_home}\platform\mps-lite\languages\mpslite\mpslite.mpl" />
   </languages>
   <classPath />
 </solution>

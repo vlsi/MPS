@@ -60,6 +60,8 @@
       </mapping-priorities>
     </generator>
   </generators>
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}\platform\mps-lite\classes" />
+  </classPath>
 </language>
 
