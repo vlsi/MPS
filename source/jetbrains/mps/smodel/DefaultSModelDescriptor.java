@@ -316,7 +316,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       }
     }
 
-    if (!myModelRootManager.containsSomeString(this, strings)) return new HashSet<SReference>();
+//    if (!myModelRootManager.containsSomeString(this, strings)) return new HashSet<SReference>();
     getSModel();
     Set<SReference> result = new HashSet<SReference>();
     if (mySModel != null) {
