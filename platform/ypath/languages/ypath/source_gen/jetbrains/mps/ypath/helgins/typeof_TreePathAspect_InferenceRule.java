@@ -14,7 +14,7 @@ public class typeof_TreePathAspect_InferenceRule implements InferenceRule_Runtim
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), SLinkOperations.getTarget(argument, "treePathType", true), argument, null, "jetbrains.mps.ypath.helgins", "1184578634206");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.ypath.helgins", "1184578634207"), SLinkOperations.getTarget(argument, "treePathType", true), argument, null, "jetbrains.mps.ypath.helgins", "1184578634206");
   }
 
   public String getApplicableConceptFQName() {

@@ -10,15 +10,15 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TreePathType extends Type implements INamedConcept {
-  public static String NAME = "name";
   public static String NODE_TYPE = "nodeType";
+  public static String NAME = "name";
 
   public  TreePathType(SNode node) {
     super(node);
   }
 
   public static TreePathType newInstance(SModel sm, boolean init) {
-    return (TreePathType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.TreePathType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreePathType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreePathType newInstance(SModel sm) {
@@ -26,20 +26,20 @@ public class TreePathType extends Type implements INamedConcept {
   }
 
 
-  public String getName() {
-    return this.getProperty(TreePathType.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(TreePathType.NAME, value);
-  }
-
   public Type getNodeType() {
     return (Type)this.getChild(TreePathType.NODE_TYPE);
   }
 
   public void setNodeType(Type node) {
     super.setChild(TreePathType.NODE_TYPE, node);
+  }
+
+  public String getName() {
+    return this.getProperty(TreePathType.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(TreePathType.NAME, value);
   }
 
 }

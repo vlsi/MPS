@@ -41,7 +41,7 @@ public class keymap_TreeNodeKindProperty extends EditorCellKeyMap {
       if(contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.ypath.structure.TreeNodeKindProperty", editorContext.getOperationContext().getScope())) {
+      if(contextNode.isInstanceOfConcept("jetbrains.mps.ypath.structure.TreeNodeKindProperty")) {
         return true;
       }
       return false;

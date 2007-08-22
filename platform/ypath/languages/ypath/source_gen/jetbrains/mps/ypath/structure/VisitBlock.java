@@ -17,7 +17,7 @@ public class VisitBlock extends LambdaMethod {
   }
 
   public static VisitBlock newInstance(SModel sm, boolean init) {
-    return (VisitBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.VisitBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VisitBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VisitBlock newInstance(SModel sm) {

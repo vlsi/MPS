@@ -17,7 +17,7 @@ public class NodeKindCase extends BaseConcept {
   }
 
   public static NodeKindCase newInstance(SModel sm, boolean init) {
-    return (NodeKindCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.NodeKindCase", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeKindCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeKindCase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeKindCase newInstance(SModel sm) {

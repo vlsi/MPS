@@ -22,7 +22,7 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
   }
 
   public static TreePathCreator newInstance(SModel sm, boolean init) {
-    return (TreePathCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.TreePathCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreePathCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreePathCreator newInstance(SModel sm) {

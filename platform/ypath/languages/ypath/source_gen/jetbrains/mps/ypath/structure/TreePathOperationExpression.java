@@ -17,7 +17,7 @@ public class TreePathOperationExpression extends Expression {
   }
 
   public static TreePathOperationExpression newInstance(SModel sm, boolean init) {
-    return (TreePathOperationExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.TreePathOperationExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreePathOperationExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreePathOperationExpression newInstance(SModel sm) {

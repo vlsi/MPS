@@ -3,10 +3,11 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.ypath" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="org.w3c.dom@java_stub" />
   <import index="2" modelUID="jetbrains.mps.ypath.runtime.dom@java_stub" />
   <import index="4" modelUID="java.lang@java_stub" />
+  <import index="5" modelUID="treepath_dom" />
   <node type="jetbrains.mps.ypath.TreePathAspect" id="1175083364493">
     <property name="name" value="DOM" />
     <node role="nodeKinds" type="jetbrains.mps.ypath.TreeNodeKind" id="1175164209843">
@@ -170,19 +171,26 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1180970606891">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1180970606892">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1180970620212">
-              <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1180970622172">
-                <link role="baseMethodDeclaration" extResolveInfo="2.constructor [Classifier]ChainedIterable[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.array/jetbrains.mps.baseLanguage.types.array [-1, jetbrains.mps.baseLanguage.types.classifier [Iterable, &lt;any_&gt;]]))" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.NewExpression" id="1180970687747">
-                  <link role="baseMethodDeclaration" extResolveInfo="2.constructor [Classifier]NamedNodeMapIterableAdapter[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NamedNodeMap]))" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180970699258">
-                    <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Node).([InstanceMethodDeclaration]getAttributes() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NamedNodeMap]))" />
-                    <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1180970695421">
-                      <link role="closureParameter" targetNodeId="1175083364499" resolveInfo="node" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1187792810192">
+                <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1187792810193">
+                  <link role="baseMethodDeclaration" extResolveInfo="2.constructor [Classifier]ChainedIterable[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.array/jetbrains.mps.baseLanguage.types.array [-1, jetbrains.mps.baseLanguage.types.classifier [Iterable, &lt;any_&gt;]]))" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.NewExpression" id="1187792810194">
+                    <link role="baseMethodDeclaration" extResolveInfo="2.constructor [Classifier]NamedNodeMapIterableAdapter[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NamedNodeMap]))" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1187792810195">
+                      <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Node).([InstanceMethodDeclaration]getAttributes() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NamedNodeMap]))" />
+                      <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1187792810196">
+                        <link role="closureParameter" targetNodeId="5.1175083364499" />
+                      </node>
                     </node>
                   </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1187792810197">
+                    <link role="variableDeclaration" targetNodeId="5.1180968449702" />
+                  </node>
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1180970708940">
-                  <link role="variableDeclaration" targetNodeId="1180968449702" resolveInfo="foo" />
+                <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1187792814127">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1187792819057">
+                    <link role="classifier" extResolveInfo="1.[Classifier]Node" />
+                  </node>
                 </node>
               </node>
             </node>
@@ -197,8 +205,15 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1175083557712">
-          <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1180968449704">
-            <link role="variableDeclaration" targetNodeId="1180968449702" resolveInfo="foo" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1187792625642">
+            <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1187792625643">
+              <link role="variableDeclaration" targetNodeId="1180968449702" />
+            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1187792631437">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1187792635582">
+                <link role="classifier" extResolveInfo="1.[Classifier]Node" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

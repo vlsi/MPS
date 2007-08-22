@@ -42,7 +42,7 @@ public class keymap_SequenceFeature extends EditorCellKeyMap {
       if(contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.ypath.structure.SequenceFeature", editorContext.getOperationContext().getScope())) {
+      if(contextNode.isInstanceOfConcept("jetbrains.mps.ypath.structure.SequenceFeature")) {
         return true;
       }
       return false;

@@ -20,8 +20,6 @@ import jetbrains.mps.ypath.constraints.TreeNodeKind_Behavior;
 import jetbrains.mps.ypath.constraints.MatchKindOperation_Behavior;
 import jetbrains.mps.ypath.constraints.TreeNodeKindProperty_Behavior;
 import jetbrains.mps.ypath.constraints.MatchDefaultPropertyOperation_Behavior;
-import jetbrains.mps.generator.template.INodeBuilder;
-import jetbrains.mps.ypath.generator.baseLanguage.template.helper.NodeBuilderUtil;
 import jetbrains.mps.ypath.constraints.ChildrenBlock_Behavior;
 import java.util.List;
 import java.util.ArrayList;
@@ -268,8 +266,8 @@ public class QueriesGenerated {
 
   public static SNode referenceMacro_GetReferent_1172658935860(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode tpCreator = SLinkOperations.getTarget(node, "creator", true);
-    INodeBuilder nb = generator.findNodeBuilderForSource(tpCreator, "treePathCreator_class");
-    return NodeBuilderUtil.findConstructorChild(tpCreator, nb);
+    SNode klass = generator.findOutputNodeByInputNodeAndMappingName(tpCreator, "treePathCreator_class");
+    return SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(klass, null, false), new zPredicate8(null, null)));
   }
 
   public static SNode referenceMacro_GetReferent_1179324381847(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
@@ -436,11 +434,11 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1184679753545(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate8(null, null)));
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate9(null, null)));
   }
 
   public static List sourceNodesQuery_1184237003214(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate9(null, null)));
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate10(null, null)));
   }
 
   public static List sourceNodesQuery_1179331802560(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -502,7 +500,7 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1184762104927(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate10(null, null)));
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate11(null, null)));
   }
 
   public static SNode sourceNodeQuery_1172656490871(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -643,13 +641,13 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1184849691168(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate11(null, null)));
+    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate12(null, null)));
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1172650748986(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate12(null, null)));
+    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate13(null, null)));
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
   }
 
@@ -682,7 +680,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1179334580327(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate13(null, null)));
+    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate14(null, null)));
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
   }
 

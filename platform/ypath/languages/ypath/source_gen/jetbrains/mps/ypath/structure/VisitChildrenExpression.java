@@ -18,7 +18,7 @@ public class VisitChildrenExpression extends Expression {
   }
 
   public static VisitChildrenExpression newInstance(SModel sm, boolean init) {
-    return (VisitChildrenExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.VisitChildrenExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VisitChildrenExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitChildrenExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VisitChildrenExpression newInstance(SModel sm) {

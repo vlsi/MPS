@@ -17,7 +17,7 @@ public class TreeNodeKindReference extends Expression {
   }
 
   public static TreeNodeKindReference newInstance(SModel sm, boolean init) {
-    return (TreeNodeKindReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.TreeNodeKindReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreeNodeKindReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKindReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreeNodeKindReference newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class FromOperation extends TreePathOperation {
   }
 
   public static FromOperation newInstance(SModel sm, boolean init) {
-    return (FromOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.FromOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FromOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.FromOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FromOperation newInstance(SModel sm) {

@@ -20,7 +20,7 @@ public class ParamSequenceFeature extends SequenceFeature implements IParamFeatu
   }
 
   public static ParamSequenceFeature newInstance(SModel sm, boolean init) {
-    return (ParamSequenceFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.ParamSequenceFeature", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParamSequenceFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamSequenceFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParamSequenceFeature newInstance(SModel sm) {

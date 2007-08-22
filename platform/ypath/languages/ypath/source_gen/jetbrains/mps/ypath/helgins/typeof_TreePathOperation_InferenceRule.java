@@ -21,7 +21,7 @@ public class typeof_TreePathOperation_InferenceRule implements InferenceRule_Run
         boolean matches_1178551167099 = false;
         matches_1178551167099 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
         if(matches_1178551167099) {
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), TypeChecker.getInstance().getRuntimeSupport().typeOf(matchedNode_1178551167097), argument, null, "jetbrains.mps.ypath.helgins", "1178551167101");
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.ypath.helgins", "1178551167102"), TypeChecker.getInstance().getRuntimeSupport().typeOf(matchedNode_1178551167097, "jetbrains.mps.ypath.helgins", "1178551167104"), argument, null, "jetbrains.mps.ypath.helgins", "1178551167101");
           break;
         }
       }

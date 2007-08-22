@@ -16,7 +16,7 @@ public class TreeNodeKindOccurrence extends BaseConcept {
   }
 
   public static TreeNodeKindOccurrence newInstance(SModel sm, boolean init) {
-    return (TreeNodeKindOccurrence)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.TreeNodeKindOccurrence", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreeNodeKindOccurrence)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKindOccurrence", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreeNodeKindOccurrence newInstance(SModel sm) {

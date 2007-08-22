@@ -16,7 +16,7 @@ public class MatchDefaultPropertyOperation extends TreePathOperation {
   }
 
   public static MatchDefaultPropertyOperation newInstance(SModel sm, boolean init) {
-    return (MatchDefaultPropertyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.MatchDefaultPropertyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchDefaultPropertyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchDefaultPropertyOperation newInstance(SModel sm) {

@@ -42,7 +42,7 @@ public class keymap_ListFeature extends EditorCellKeyMap {
       if(contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.ypath.structure.ListFeature", editorContext.getOperationContext().getScope())) {
+      if(contextNode.isInstanceOfConcept("jetbrains.mps.ypath.structure.ListFeature")) {
         return true;
       }
       return false;

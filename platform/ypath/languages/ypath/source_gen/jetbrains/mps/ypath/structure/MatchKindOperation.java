@@ -16,7 +16,7 @@ public class MatchKindOperation extends TreePathOperation {
   }
 
   public static MatchKindOperation newInstance(SModel sm, boolean init) {
-    return (MatchKindOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.MatchKindOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchKindOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.MatchKindOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchKindOperation newInstance(SModel sm) {

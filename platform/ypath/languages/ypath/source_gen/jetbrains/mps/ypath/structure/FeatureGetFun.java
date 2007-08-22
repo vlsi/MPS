@@ -15,7 +15,7 @@ public class FeatureGetFun extends ConceptFunction {
   }
 
   public static FeatureGetFun newInstance(SModel sm, boolean init) {
-    return (FeatureGetFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.FeatureGetFun", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FeatureGetFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.FeatureGetFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FeatureGetFun newInstance(SModel sm) {

@@ -813,7 +813,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), " ");
         editorCell.setSelectable(false);
-        editorCell.setDrawBorder(false);
         editorCell.setLayoutConstraint("");
         return editorCell;
       }
@@ -884,7 +883,6 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), " ");
         editorCell.setSelectable(false);
-        editorCell.setDrawBorder(false);
         editorCell.setLayoutConstraint("");
         return editorCell;
       }

@@ -16,7 +16,7 @@ public class VisitNodesStatement extends Statement {
   }
 
   public static VisitNodesStatement newInstance(SModel sm, boolean init) {
-    return (VisitNodesStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.VisitNodesStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VisitNodesStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitNodesStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VisitNodesStatement newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class LambdaMethod extends Closure {
   }
 
   public static LambdaMethod newInstance(SModel sm, boolean init) {
-    return (LambdaMethod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.LambdaMethod", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LambdaMethod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.LambdaMethod", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LambdaMethod newInstance(SModel sm) {

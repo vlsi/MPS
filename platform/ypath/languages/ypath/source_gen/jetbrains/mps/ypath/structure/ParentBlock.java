@@ -14,7 +14,7 @@ public class ParentBlock extends LambdaMethod {
   }
 
   public static ParentBlock newInstance(SModel sm, boolean init) {
-    return (ParentBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.ParentBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParentBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParentBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParentBlock newInstance(SModel sm) {

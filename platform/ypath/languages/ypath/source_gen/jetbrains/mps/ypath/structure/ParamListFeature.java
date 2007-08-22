@@ -20,7 +20,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public static ParamListFeature newInstance(SModel sm, boolean init) {
-    return (ParamListFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.ParamListFeature", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParamListFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamListFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParamListFeature newInstance(SModel sm) {

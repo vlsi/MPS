@@ -19,7 +19,7 @@ public class SwitchNodeKindStatement extends Statement {
   }
 
   public static SwitchNodeKindStatement newInstance(SModel sm, boolean init) {
-    return (SwitchNodeKindStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.SwitchNodeKindStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SwitchNodeKindStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.SwitchNodeKindStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SwitchNodeKindStatement newInstance(SModel sm) {

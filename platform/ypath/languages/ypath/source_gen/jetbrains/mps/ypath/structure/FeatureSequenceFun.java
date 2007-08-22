@@ -15,7 +15,7 @@ public class FeatureSequenceFun extends ConceptFunction {
   }
 
   public static FeatureSequenceFun newInstance(SModel sm, boolean init) {
-    return (FeatureSequenceFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.FeatureSequenceFun", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FeatureSequenceFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.FeatureSequenceFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FeatureSequenceFun newInstance(SModel sm) {
