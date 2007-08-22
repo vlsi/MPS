@@ -287,11 +287,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
    * @deprecated
    */
   public INodeBuilder findNodeBuilderForSource(SNode inputNode, String mappingName) {
-    SNode outputNode = findOutputNodeByInputNodeAndMappingName(inputNode, mappingName);
-    if (outputNode != null) {
-      return new SimpleNodeBuilder(this, outputNode, inputNode);
-    }
-    return null;
+    throw new RuntimeException("method is not supported. Use method 'findOutputNodeByInputNodeAndMappingName'");
   }
 
   public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
