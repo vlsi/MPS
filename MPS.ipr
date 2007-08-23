@@ -980,6 +980,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/springframework/springframework.iml" filepath="$PROJECT_DIR$/projects/springframework/springframework.iml" group="Projects/springframework" />
       <module fileurl="file://$PROJECT_DIR$/projects/springframework/runtime/springframework-runtime.iml" filepath="$PROJECT_DIR$/projects/springframework/runtime/springframework-runtime.iml" group="Projects/springframework" />
       <module fileurl="file://$PROJECT_DIR$/platform/stateMachine/stateMachine.iml" filepath="$PROJECT_DIR$/platform/stateMachine/stateMachine.iml" group="platform" />
+      <module fileurl="file://$PROJECT_DIR$/app/stwiki/server/stwiki-server.iml" filepath="$PROJECT_DIR$/app/stwiki/server/stwiki-server.iml" group="app/stwiki" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" group="platform/dnq/runtime" />
@@ -1026,7 +1027,7 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xms1000m -Xmx2500m -ea -XX:MaxPermSize=200m" />
+      <option name="VM_PARAMETERS" value="-Xms128m -Xmx1024m  -ea " />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1057,14 +1058,14 @@
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
       <option name="COMMON_VM_ARGUMENTS" value="-Xms128m -Xmx512m" />
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="accounting-webapp" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE>
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1080,6 +1081,11 @@
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="search-watch" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="stwiki-server" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1173,12 +1179,12 @@
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
+        <option name="MODULE_NAME" value="accounting-webapp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting-webapp" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1194,6 +1200,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="search-watch" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="stwiki-server" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1282,12 +1293,12 @@
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
+        <option name="MODULE_NAME" value="accounting-webapp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting-webapp" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1303,6 +1314,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="search-watch" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="stwiki-server" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1373,12 +1389,12 @@
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
+        <option name="MODULE_NAME" value="accounting-webapp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting-webapp" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1394,6 +1410,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="search-watch" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="stwiki-server" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1482,12 +1503,12 @@
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
+        <option name="MODULE_NAME" value="accounting-webapp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting-webapp" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1503,6 +1524,11 @@
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="search-watch" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="stwiki-server" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
