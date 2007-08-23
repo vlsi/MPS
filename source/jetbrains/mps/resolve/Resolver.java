@@ -100,6 +100,7 @@ public class Resolver {
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
 
     SNode sNode = referenceNode.getParent();
+    if (sNode == null) sNode = referenceNode;
 
     NodeTypesComponent_new nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
             createNodeTypesComponent(sNode.getContainingRoot());
