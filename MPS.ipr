@@ -980,6 +980,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/springframework/springframework.iml" filepath="$PROJECT_DIR$/projects/springframework/springframework.iml" group="Projects/springframework" />
       <module fileurl="file://$PROJECT_DIR$/projects/springframework/runtime/springframework-runtime.iml" filepath="$PROJECT_DIR$/projects/springframework/runtime/springframework-runtime.iml" group="Projects/springframework" />
       <module fileurl="file://$PROJECT_DIR$/platform/stateMachine/stateMachine.iml" filepath="$PROJECT_DIR$/platform/stateMachine/stateMachine.iml" group="platform" />
+      <module fileurl="file://$PROJECT_DIR$/app/stwiki/client/stwiki-client.iml" filepath="$PROJECT_DIR$/app/stwiki/client/stwiki-client.iml" group="app/stwiki" />
       <module fileurl="file://$PROJECT_DIR$/app/stwiki/server/stwiki-server.iml" filepath="$PROJECT_DIR$/app/stwiki/server/stwiki-server.iml" group="app/stwiki" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />
