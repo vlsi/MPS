@@ -312,8 +312,8 @@ public class ModelPersistence {
     String conceptFqName = languageNamespace + ".structure." + conceptName;
     SNode node = new SNode(model, conceptFqName);
 
-    String myOldId = nodeElement.getAttributeValue(ID);
-    node.setStringId(myOldId);
+    String idValue = nodeElement.getAttributeValue(ID);
+    node.setId(SNodeId.createId(idValue));
 
 
     String cachedExtResolveInfo = nodeElement.getAttributeValue(EXT_RESOLVE_INFO);

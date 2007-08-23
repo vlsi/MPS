@@ -1450,11 +1450,6 @@ public class SNode implements Iterable<SNode> {
     UnregisteredNodes.instance().nodeIdChanged(this, wasId);
   }
 
-  public void setStringId(String idString) {
-    SNodeId id = SNodeId.createId(idString);
-    setId(id);
-  }
-
   @NotNull
   public String toString() {
     fireNodeReadAccess();
