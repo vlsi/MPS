@@ -139,6 +139,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1170345922049");
+    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
@@ -223,7 +224,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createFieldsIndentCell(context, node, "    "));
+    editorCell.addEditorCell(this.createFieldsIndentCell(context, node, "  "));
     editorCell.addEditorCell(this.createFieldsList(context, node));
     return editorCell;
   }
@@ -234,7 +235,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createMethodsIndentCell(context, node, "    "));
+    editorCell.addEditorCell(this.createMethodsIndentCell(context, node, "  "));
     editorCell.addEditorCell(this.createMethodsList(context, node));
     return editorCell;
   }
@@ -245,7 +246,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createMethodsIndentCell1(context, node, "    "));
+    editorCell.addEditorCell(this.createMethodsIndentCell1(context, node, "  "));
     editorCell.addEditorCell(this.createStaticMethodList(context, node));
     return editorCell;
   }
@@ -541,6 +542,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1170345922037");
+      Common_StyleSheet.EMPTY_CELL.apply(editorCell);
       editorCell.setSelectable(true);
       editorCell.setDrawBorder(false);
     }
@@ -606,6 +608,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1170345922047");
+      Common_StyleSheet.EMPTY_CELL.apply(editorCell);
       editorCell.setSelectable(true);
       editorCell.setDrawBorder(false);
     }
@@ -671,6 +674,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell7(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1170345922052");
+      Common_StyleSheet.EMPTY_CELL.apply(editorCell);
       editorCell.setSelectable(true);
       editorCell.setDrawBorder(false);
     }
