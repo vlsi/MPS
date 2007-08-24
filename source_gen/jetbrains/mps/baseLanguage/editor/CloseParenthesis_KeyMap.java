@@ -42,7 +42,7 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
       if(contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", editorContext.getOperationContext().getScope())) {
+      if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
         return true;
       }
       return false;
@@ -85,7 +85,7 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
       if(contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", editorContext.getOperationContext().getScope())) {
+      if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
         return true;
       }
       return false;

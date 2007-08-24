@@ -8,7 +8,7 @@ import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.actions.CastExpression_FactoryUtil;
+import jetbrains.mps.baseLanguage.actions.ExpectedType_FactoryUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class CastExpression_KeyMap extends EditorCellKeyMap {
@@ -41,7 +41,7 @@ public class CastExpression_KeyMap extends EditorCellKeyMap {
       if(contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.CastExpression", editorContext.getOperationContext().getScope())) {
+      if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.CastExpression")) {
         return this.canExecute_internal(keyEvent, editorContext, contextNode);
       }
       return false;
@@ -53,11 +53,11 @@ public class CastExpression_KeyMap extends EditorCellKeyMap {
     }
 
     public boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
-      return CastExpression_FactoryUtil.canComputeCastType(node);
+      return ExpectedType_FactoryUtil.canComputeCastType(node);
     }
 
     public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
-      SNode type = CastExpression_FactoryUtil.computeCastType(node);
+      SNode type = ExpectedType_FactoryUtil.createExpectedType(node);
       SLinkOperations.setTarget(node, "type", type, true);
     }
 

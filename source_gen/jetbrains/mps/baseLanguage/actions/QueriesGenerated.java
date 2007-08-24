@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.ArrayType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
@@ -150,13 +151,30 @@ public class QueriesGenerated {
 
   public static void nodeFactory_NodeSetup_CastExpression_1158871408598(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-      // Looking for the original node is required as sampleNode is just a copy
-      SNode originalExpression = CastExpression_FactoryUtil.getOriginalExpression(enclosingNode, sampleNode);
+      // Looking for the original node is required because sampleNode is just a copy
+      SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(enclosingNode, sampleNode);
       if((originalExpression != null)) {
-        SNode castType = CastExpression_FactoryUtil.computeCastType(originalExpression);
+        SNode castType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
         SLinkOperations.setTarget(newNode, "type", castType, true);
       }
       SLinkOperations.setTarget(newNode, "expression", sampleNode, true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_GenericNewExpression_1187945171250(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
+      // Looking for the original node is required because sampleNode is just a copy
+      SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(enclosingNode, sampleNode);
+      if((originalExpression != null)) {
+        SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
+        SNode abstractCreator = null;
+        if((expectedType != null)) {
+          abstractCreator = Type_Behavior.call_getAbstractCreator_1187945523562(expectedType);
+          if((abstractCreator != null)) {
+            SLinkOperations.setTarget(newNode, "creator", abstractCreator, true);
+          }
+        }
+      }
     }
   }
 
@@ -1028,6 +1046,43 @@ public class QueriesGenerated {
         }
 
       });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_ArrayCreator_1187946508194(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode newNode = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer");
+          SLinkOperations.setTarget(newNode, "componentType", SLinkOperations.getTarget(sourceNode, "componentType", true), true);
+          return newNode;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "{";
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_DimensionExpression_1187946681659(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return SNodeOperations.getParent(sourceNode, null, false, false);
+        }
+
+      };
+      SNode node = (SNode)calc.calculate();
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, transformationTag, operationContext));
     }
     return result;
   }

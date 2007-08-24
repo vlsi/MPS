@@ -217,7 +217,6 @@ public class ArrayCreatorWithInitializer_Editor extends DefaultNodeEditor {
       {
         EditorCell_Constant editorCell = new EditorCell_Constant(context, this.getOwner(), ",");
         editorCell.setSelectable(false);
-        editorCell.setDrawBorder(false);
         editorCell.setLayoutConstraint("");
         return editorCell;
       }

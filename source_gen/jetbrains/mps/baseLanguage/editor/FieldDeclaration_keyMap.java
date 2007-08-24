@@ -44,7 +44,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       if(contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration", editorContext.getOperationContext().getScope())) {
+      if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
         return this.canExecute_internal(keyEvent, editorContext, contextNode);
       }
       return false;
@@ -99,7 +99,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       if(contextNode == null) {
         return false;
       }
-      if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration", editorContext.getOperationContext().getScope())) {
+      if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
         return this.canExecute_internal(keyEvent, editorContext, contextNode);
       }
       return false;
