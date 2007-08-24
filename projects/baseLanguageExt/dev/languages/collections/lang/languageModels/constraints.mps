@@ -173,6 +173,58 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1187947134659">
+      <property name="name" value="getAbstractCreator" />
+      <link role="overridenMethod" targetNodeId="8.1187945523562" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1187947134661">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1187947158876">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1187947158877">
+            <property name="name" value="creator" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1187947158878">
+              <link role="concept" targetNodeId="1.1160600644654" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1187947183516">
+              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeCreator" id="1187947188481">
+                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1187947188482">
+                  <link role="concept" targetNodeId="1.1160600644654" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1187947213541">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187947216008">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation" id="1187947218534">
+              <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187947222945">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_CopyOperation" id="1187947224478" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187947220657">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1187947222401">
+                    <link role="link" targetNodeId="1.1151688676805" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1187947220183" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187947214083">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1187947215441">
+                <link role="link" targetNodeId="1.1160602447121" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1187947213542">
+                <link role="variableDeclaration" targetNodeId="1187947158877" resolveInfo="creator" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1187947195325">
+          <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1187947195326">
+            <link role="variableDeclaration" targetNodeId="1187947158877" resolveInfo="creator" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1187947140361">
+        <link role="concept" targetNodeId="4.1145552809883" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178181705025">
     <link role="concept" targetNodeId="1.1151689724996" />
@@ -289,6 +341,35 @@
         <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1186061137533">
           <link role="classifier" extResolveInfo="5.[Classifier]String" />
         </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1187947295437">
+      <property name="name" value="getAbstractCreator" />
+      <link role="overridenMethod" targetNodeId="8.1187945523562" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1187947295439">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1187947310000">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1187947310001">
+            <property name="name" value="creator" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1187947310002">
+              <link role="concept" targetNodeId="1.1152141311721" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1187947321712">
+              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeCreator" id="1187947323521">
+                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1187947323522">
+                  <link role="concept" targetNodeId="1.1152141311721" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1187947330646">
+          <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1187947330647">
+            <link role="variableDeclaration" targetNodeId="1187947310001" resolveInfo="creator" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1187947301208">
+        <link role="concept" targetNodeId="4.1145552809883" />
       </node>
     </node>
   </node>
