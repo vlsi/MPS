@@ -30,6 +30,7 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.setLayoutConstraint("punctuation");
+    editorCell.addKeyMap(new StringLiteral_KeyMap());
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
