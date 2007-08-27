@@ -6,9 +6,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Iterator;
+import java.util.List;
 
-public class FieldDeclaration extends VariableDeclaration implements ClassifierMember {
+public class FieldDeclaration extends VariableDeclaration implements ClassifierMember, Annotable {
   public static String VISIBILITY = "visibility";
+  public static String ANNOTATION = "annotation";
 
   public  FieldDeclaration(SNode node) {
     super(node);
@@ -29,6 +32,26 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
 
   public void setVisibility(Visibility node) {
     super.setChild(FieldDeclaration.VISIBILITY, node);
+  }
+
+  public int getAnnotationsCount() {
+    return this.getChildCount(FieldDeclaration.ANNOTATION);
+  }
+
+  public Iterator<AnnotationInstance> annotations() {
+    return this.children(FieldDeclaration.ANNOTATION);
+  }
+
+  public List<AnnotationInstance> getAnnotations() {
+    return this.getChildren(FieldDeclaration.ANNOTATION);
+  }
+
+  public void addAnnotation(AnnotationInstance node) {
+    this.addChild(FieldDeclaration.ANNOTATION, node);
+  }
+
+  public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
+    this.insertChild(prev, FieldDeclaration.ANNOTATION, node);
   }
 
 }

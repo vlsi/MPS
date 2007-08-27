@@ -64,6 +64,9 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1178285346338">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1188210568561">
+      <link role="intfc" targetNodeId="1188208481402" resolveInfo="Annotable" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068390468198">
     <property name="name" value="ClassConcept" />
@@ -254,6 +257,9 @@
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="throwsItem" />
       <link role="target" targetNodeId="1107535904670" resolveInfo="ClassifierType" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1188210442792">
+      <link role="intfc" targetNodeId="1188208481402" resolveInfo="Annotable" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1068580123136">
@@ -633,6 +639,9 @@
     <link role="extends" targetNodeId="1068431474542" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1178291753349">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1188210601665">
+      <link role="intfc" targetNodeId="1188208481402" resolveInfo="Annotable" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1107223377482">
       <property name="value" value="static field declaration" />

@@ -83,6 +83,9 @@
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1182407705882">
       <property name="name" value="entry" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188210976391">
+        <link role="annotation" extResolveInfo="1.[Classifier]Deprecated" />
+      </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1182407705883" />
       <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1182407743371">
         <link role="classifier" extResolveInfo="3.[Classifier]Map$Entry" />

@@ -104,7 +104,7 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
     if(this.myActualArgumentListHandler_actualArgumentList_ == null) {
-      this.myActualArgumentListHandler_actualArgumentList_ = new EnumConstantDeclaration_Editor._RefNodeListHandler28(node, "actualArgument", context);
+      this.myActualArgumentListHandler_actualArgumentList_ = new EnumConstantDeclaration_Editor._RefNodeListHandler38(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
     EnumConstantDeclaration_Editor.setupBasic_ActualArgumentList(editorCell, node, context);
@@ -144,9 +144,9 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler28 extends RefNodeListHandler {
+  public static class _RefNodeListHandler38 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler28(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler38(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -209,8 +209,8 @@ public class EnumConstantDeclaration_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      EnumConstantDeclaration_Editor._RefNodeListHandler28.setupBasic_ConstantCell1(editorCell, node, context);
-      EnumConstantDeclaration_Editor._RefNodeListHandler28.setupLabel_ConstantCell1(editorCell, node, context);
+      EnumConstantDeclaration_Editor._RefNodeListHandler38.setupBasic_ConstantCell1(editorCell, node, context);
+      EnumConstantDeclaration_Editor._RefNodeListHandler38.setupLabel_ConstantCell1(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

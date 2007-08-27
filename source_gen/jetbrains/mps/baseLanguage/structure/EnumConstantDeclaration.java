@@ -11,8 +11,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class EnumConstantDeclaration extends NamedConcept {
-  public static String NAME = "name";
   public static String ACTUAL_ARGUMENT = "actualArgument";
+  public static String NAME = "name";
 
   public  EnumConstantDeclaration(SNode node) {
     super(node);
@@ -26,14 +26,6 @@ public class EnumConstantDeclaration extends NamedConcept {
     return EnumConstantDeclaration.newInstance(sm, false);
   }
 
-
-  public String getName() {
-    return this.getProperty(EnumConstantDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(EnumConstantDeclaration.NAME, value);
-  }
 
   public int getActualArgumentsCount() {
     return this.getChildCount(EnumConstantDeclaration.ACTUAL_ARGUMENT);
@@ -53,6 +45,14 @@ public class EnumConstantDeclaration extends NamedConcept {
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, EnumConstantDeclaration.ACTUAL_ARGUMENT, node);
+  }
+
+  public String getName() {
+    return this.getProperty(EnumConstantDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(EnumConstantDeclaration.NAME, value);
   }
 
 }

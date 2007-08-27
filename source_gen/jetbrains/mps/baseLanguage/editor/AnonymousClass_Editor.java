@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
@@ -35,6 +35,10 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myFieldListHandler_fieldsList_;
   /* package */AbstractCellListHandler myMethodListHandler_methodsList_;
   /* package */AbstractCellListHandler myStaticMethodListHandler_staticMethodList_;
+
+  public static boolean _QueryFunction_NodeCondition_1184668626337(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
+  }
 
   private static void setupBasic_ClassifierReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1170346086721");
@@ -190,10 +194,6 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell8(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1184668626337(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
   }
 
 
@@ -352,7 +352,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   public EditorCell createParameterList(EditorContext context, SNode node) {
     if(this.myParameterListHandler_parameterList_ == null) {
-      this.myParameterListHandler_parameterList_ = new AnonymousClass_Editor._RefNodeListHandler40(node, "parameter", context);
+      this.myParameterListHandler_parameterList_ = new AnonymousClass_Editor._RefNodeListHandler50(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
     AnonymousClass_Editor.setupBasic_ParameterList(editorCell, node, context);
@@ -365,7 +365,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   public EditorCell createFieldsList(EditorContext context, SNode node) {
     if(this.myFieldListHandler_fieldsList_ == null) {
-      this.myFieldListHandler_fieldsList_ = new AnonymousClass_Editor._RefNodeListHandler41(node, "field", context);
+      this.myFieldListHandler_fieldsList_ = new AnonymousClass_Editor._RefNodeListHandler51(node, "field", context);
     }
     EditorCell_Collection editorCell = this.myFieldListHandler_fieldsList_.createCells(context, new CellLayout_Vertical(), false);
     AnonymousClass_Editor.setupBasic_FieldsList(editorCell, node, context);
@@ -378,7 +378,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   public EditorCell createMethodsList(EditorContext context, SNode node) {
     if(this.myMethodListHandler_methodsList_ == null) {
-      this.myMethodListHandler_methodsList_ = new AnonymousClass_Editor._RefNodeListHandler42(node, "method", context);
+      this.myMethodListHandler_methodsList_ = new AnonymousClass_Editor._RefNodeListHandler52(node, "method", context);
     }
     EditorCell_Collection editorCell = this.myMethodListHandler_methodsList_.createCells(context, new CellLayout_Vertical(), false);
     AnonymousClass_Editor.setupBasic_MethodsList(editorCell, node, context);
@@ -391,7 +391,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
   public EditorCell createStaticMethodList(EditorContext context, SNode node) {
     if(this.myStaticMethodListHandler_staticMethodList_ == null) {
-      this.myStaticMethodListHandler_staticMethodList_ = new AnonymousClass_Editor._RefNodeListHandler43(node, "staticMethod", context);
+      this.myStaticMethodListHandler_staticMethodList_ = new AnonymousClass_Editor._RefNodeListHandler53(node, "staticMethod", context);
     }
     EditorCell_Collection editorCell = this.myStaticMethodListHandler_staticMethodList_.createCells(context, new CellLayout_Vertical(), false);
     AnonymousClass_Editor.setupBasic_StaticMethodList(editorCell, node, context);
@@ -485,9 +485,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler40 extends RefNodeListHandler {
+  public static class _RefNodeListHandler50 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler40(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler50(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -534,9 +534,9 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
     }
 
 }
-  public static class _RefNodeListHandler41 extends RefNodeListHandler {
+  public static class _RefNodeListHandler51 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler41(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler51(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -593,16 +593,16 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell3(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      AnonymousClass_Editor._RefNodeListHandler41.setupBasic_ConstantCell3(editorCell, node, context);
-      AnonymousClass_Editor._RefNodeListHandler41.setupLabel_ConstantCell3(editorCell, node, context);
+      AnonymousClass_Editor._RefNodeListHandler51.setupBasic_ConstantCell3(editorCell, node, context);
+      AnonymousClass_Editor._RefNodeListHandler51.setupLabel_ConstantCell3(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
 
 }
-  public static class _RefNodeListHandler42 extends RefNodeListHandler {
+  public static class _RefNodeListHandler52 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler42(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler52(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -659,16 +659,16 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      AnonymousClass_Editor._RefNodeListHandler42.setupBasic_ConstantCell5(editorCell, node, context);
-      AnonymousClass_Editor._RefNodeListHandler42.setupLabel_ConstantCell5(editorCell, node, context);
+      AnonymousClass_Editor._RefNodeListHandler52.setupBasic_ConstantCell5(editorCell, node, context);
+      AnonymousClass_Editor._RefNodeListHandler52.setupLabel_ConstantCell5(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
 
 }
-  public static class _RefNodeListHandler43 extends RefNodeListHandler {
+  public static class _RefNodeListHandler53 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler43(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler53(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -725,8 +725,8 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      AnonymousClass_Editor._RefNodeListHandler43.setupBasic_ConstantCell7(editorCell, node, context);
-      AnonymousClass_Editor._RefNodeListHandler43.setupLabel_ConstantCell7(editorCell, node, context);
+      AnonymousClass_Editor._RefNodeListHandler53.setupBasic_ConstantCell7(editorCell, node, context);
+      AnonymousClass_Editor._RefNodeListHandler53.setupLabel_ConstantCell7(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
