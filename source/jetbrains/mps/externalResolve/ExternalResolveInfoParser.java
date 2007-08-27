@@ -42,7 +42,13 @@ public class ExternalResolveInfoParser {
   }
 
   public static String getMembersOwnResolveInfo(String resolveInfo) {
-    return resolveInfo.substring(resolveInfo.indexOf('.')+1);
+    String s = resolveInfo.substring(resolveInfo.indexOf('.') + 1);
+    int i = s.indexOf(" : ");
+    if (i > -1) {
+      s = s.substring(0,i);
+      s = s+")";
+    }
+    return s;
   }
 
   public static String getMembersClassifierResolveInfo(String resolveInfo, String memberType) {

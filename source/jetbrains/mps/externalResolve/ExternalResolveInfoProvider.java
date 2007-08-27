@@ -178,20 +178,10 @@ public class ExternalResolveInfoProvider {
     final String name = baseMethodDeclaration.getName();
     final String conceptName = baseMethodDeclaration.getShortConceptName();
 
-    Pair<String, String> typeObject = adaptNode(baseMethodDeclaration.getReturnType());
-    if (typeObject == null) return ExternalResolver.NO_MEMBER_TYPE;
-    final String methodTypeName = typeObject.o1;
-    final String methodTypeSignature = typeObject.o2;
+    Pair<String, String> typeObject;
 
     final StringBuilder builder = StringBuilderSpinAllocator.alloc();
     try {
-
-      builder.append('(');
-      builder.append(methodTypeName);
-      builder.append('/');
-      builder.append(methodTypeSignature);
-      builder.append(')');
-      final String methodType = builder.toString();
 
       builder.setLength(0);
       builder.append('[');
@@ -216,8 +206,7 @@ public class ExternalResolveInfoProvider {
         }
       }
 
-      builder.append(") : ");
-      builder.append(methodType);
+      builder.append(")");
       return builder.toString();
     }
     finally {
