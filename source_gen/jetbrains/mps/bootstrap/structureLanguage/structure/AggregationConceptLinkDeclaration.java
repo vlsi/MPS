@@ -14,9 +14,11 @@ public class AggregationConceptLinkDeclaration extends ConceptLinkDeclaration {
   }
 
   public static AggregationConceptLinkDeclaration newInstance(SModel sm, boolean init) {
-    return (AggregationConceptLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AggregationConceptLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static AggregationConceptLinkDeclaration newInstance(SModel sm) {
     return AggregationConceptLinkDeclaration.newInstance(sm, false);
   }
+
 }

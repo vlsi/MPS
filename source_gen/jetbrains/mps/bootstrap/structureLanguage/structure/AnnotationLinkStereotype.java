@@ -25,9 +25,11 @@ public enum AnnotationLinkStereotype {
     list.add(AnnotationLinkStereotype.property);
     return list;
   }
+
   public static AnnotationLinkStereotype getDefault() {
     return AnnotationLinkStereotype.node;
   }
+
   public static AnnotationLinkStereotype parseValue(String value) {
     if(value == null) {
       return AnnotationLinkStereotype.getDefault();
@@ -44,13 +46,17 @@ public enum AnnotationLinkStereotype {
     return AnnotationLinkStereotype.getDefault();
   }
 
+
   public String getName() {
     return this.myName;
   }
+
   public String getValueAsString() {
     return this.myValue;
   }
+
   public String getValue() {
     return this.myValue;
   }
+
 }

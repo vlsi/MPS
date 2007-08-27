@@ -18,22 +18,28 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public static PropertyDeclaration newInstance(SModel sm, boolean init) {
-    return (PropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static PropertyDeclaration newInstance(SModel sm) {
     return PropertyDeclaration.newInstance(sm, false);
   }
 
+
   public DataTypeDeclaration getDataType() {
     return (DataTypeDeclaration)this.getReferent(PropertyDeclaration.DATA_TYPE);
   }
+
   public void setDataType(DataTypeDeclaration node) {
     super.setReferent(PropertyDeclaration.DATA_TYPE, node);
   }
+
   public String getName() {
     return this.getProperty(PropertyDeclaration.NAME);
   }
+
   public void setName(String value) {
     this.setProperty(PropertyDeclaration.NAME, value);
   }
+
 }

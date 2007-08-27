@@ -15,22 +15,28 @@ public class StringConceptProperty extends ConceptProperty {
   }
 
   public static StringConceptProperty newInstance(SModel sm, boolean init) {
-    return (StringConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StringConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static StringConceptProperty newInstance(SModel sm) {
     return StringConceptProperty.newInstance(sm, false);
   }
 
+
   public StringConceptPropertyDeclaration getStringConceptPropertyDeclaration() {
     return (StringConceptPropertyDeclaration)this.getConceptPropertyDeclaration();
   }
+
   public void setStringConceptPropertyDeclaration(StringConceptPropertyDeclaration node) {
     this.setConceptPropertyDeclaration(node);
   }
+
   public String getValue() {
     return this.getProperty(StringConceptProperty.VALUE);
   }
+
   public void setValue(String value) {
     this.setProperty(StringConceptProperty.VALUE, value);
   }
+
 }

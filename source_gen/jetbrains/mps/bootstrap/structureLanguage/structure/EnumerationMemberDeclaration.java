@@ -19,28 +19,36 @@ public class EnumerationMemberDeclaration extends BaseConcept implements INamedC
   }
 
   public static EnumerationMemberDeclaration newInstance(SModel sm, boolean init) {
-    return (EnumerationMemberDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.EnumerationMemberDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EnumerationMemberDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static EnumerationMemberDeclaration newInstance(SModel sm) {
     return EnumerationMemberDeclaration.newInstance(sm, false);
   }
 
+
   public String getInternalValue() {
     return this.getProperty(EnumerationMemberDeclaration.INTERNAL_VALUE);
   }
+
   public void setInternalValue(String value) {
     this.setProperty(EnumerationMemberDeclaration.INTERNAL_VALUE, value);
   }
+
   public String getExternalValue() {
     return this.getProperty(EnumerationMemberDeclaration.EXTERNAL_VALUE);
   }
+
   public void setExternalValue(String value) {
     this.setProperty(EnumerationMemberDeclaration.EXTERNAL_VALUE, value);
   }
+
   public String getName() {
     return this.getProperty(EnumerationMemberDeclaration.NAME);
   }
+
   public void setName(String value) {
     this.setProperty(EnumerationMemberDeclaration.NAME, value);
   }
+
 }

@@ -16,16 +16,20 @@ public class ConceptLink extends BaseConcept {
   }
 
   public static ConceptLink newInstance(SModel sm, boolean init) {
-    return (ConceptLink)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptLink)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ConceptLink newInstance(SModel sm) {
     return ConceptLink.newInstance(sm, false);
   }
 
+
   public ConceptLinkDeclaration getConceptLinkDeclaration() {
     return (ConceptLinkDeclaration)this.getReferent(ConceptLink.CONCEPT_LINK_DECLARATION);
   }
+
   public void setConceptLinkDeclaration(ConceptLinkDeclaration node) {
     super.setReferent(ConceptLink.CONCEPT_LINK_DECLARATION, node);
   }
+
 }

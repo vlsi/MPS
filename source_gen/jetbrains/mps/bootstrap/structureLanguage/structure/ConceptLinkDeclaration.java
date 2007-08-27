@@ -18,22 +18,28 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
   }
 
   public static ConceptLinkDeclaration newInstance(SModel sm, boolean init) {
-    return (ConceptLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ConceptLinkDeclaration newInstance(SModel sm) {
     return ConceptLinkDeclaration.newInstance(sm, false);
   }
 
+
   public ConceptDeclaration getTargetType() {
     return (ConceptDeclaration)this.getReferent(ConceptLinkDeclaration.TARGET_TYPE);
   }
+
   public void setTargetType(ConceptDeclaration node) {
     super.setReferent(ConceptLinkDeclaration.TARGET_TYPE, node);
   }
+
   public String getName() {
     return this.getProperty(ConceptLinkDeclaration.NAME);
   }
+
   public void setName(String value) {
     this.setProperty(ConceptLinkDeclaration.NAME, value);
   }
+
 }

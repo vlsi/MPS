@@ -21,49 +21,63 @@ public class LinkDeclaration extends BaseConcept {
   }
 
   public static LinkDeclaration newInstance(SModel sm, boolean init) {
-    return (LinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static LinkDeclaration newInstance(SModel sm) {
     return LinkDeclaration.newInstance(sm, false);
   }
 
+
   public LinkDeclaration getSpecializedLink() {
     return (LinkDeclaration)this.getReferent(LinkDeclaration.SPECIALIZED_LINK);
   }
+
   public void setSpecializedLink(LinkDeclaration node) {
     super.setReferent(LinkDeclaration.SPECIALIZED_LINK, node);
   }
+
   public AbstractConceptDeclaration getTarget() {
     return (AbstractConceptDeclaration)this.getReferent(LinkDeclaration.TARGET);
   }
+
   public void setTarget(AbstractConceptDeclaration node) {
     super.setReferent(LinkDeclaration.TARGET, node);
   }
+
   public String getRole() {
     return this.getProperty(LinkDeclaration.ROLE);
   }
+
   public void setRole(String value) {
     this.setProperty(LinkDeclaration.ROLE, value);
   }
+
   public LinkMetaclass getMetaClass() {
     String value = super.getProperty(LinkDeclaration.META_CLASS);
     return LinkMetaclass.parseValue(value);
   }
+
   public void setMetaClass(LinkMetaclass value) {
     super.setProperty(LinkDeclaration.META_CLASS, value.getValueAsString());
   }
+
   public Cardinality getSourceCardinality() {
     String value = super.getProperty(LinkDeclaration.SOURCE_CARDINALITY);
     return Cardinality.parseValue(value);
   }
+
   public void setSourceCardinality(Cardinality value) {
     super.setProperty(LinkDeclaration.SOURCE_CARDINALITY, value.getValueAsString());
   }
+
   public Cardinality getTargetCardinality() {
     String value = super.getProperty(LinkDeclaration.TARGET_CARDINALITY);
     return Cardinality.parseValue(value);
   }
+
   public void setTargetCardinality(Cardinality value) {
     super.setProperty(LinkDeclaration.TARGET_CARDINALITY, value.getValueAsString());
   }
+
 }

@@ -7693,9 +7693,9 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1176888881564">
         <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1176888947599">
           <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1176889007858">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1176889023378">
-              <link role="classifier" extResolveInfo="22.[Classifier]_YesNoDefault_Enum" />
-              <link role="variableDeclaration" extResolveInfo="22.static field ([Classifier]_YesNoDefault_Enum).([StaticFieldDeclaration]no : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [_YesNoDefault_Enum]))" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188229952091">
+              <link role="enumConstantDeclaration" extResolveInfo="22.enum const ([Classifier]_YesNoDefault_Enum).([EnumConstantDeclaration]no)" />
+              <link role="enumClass" extResolveInfo="22.[Classifier]_YesNoDefault_Enum" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1176889000874">
               <link role="baseMethodDeclaration" extResolveInfo="22.method ([Classifier]EditorCellModel).([InstanceMethodDeclaration]getSelectable() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [_YesNoDefault_Enum]))" />

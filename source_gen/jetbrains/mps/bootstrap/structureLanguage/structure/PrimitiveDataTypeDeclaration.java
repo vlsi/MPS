@@ -14,9 +14,11 @@ public class PrimitiveDataTypeDeclaration extends DataTypeDeclaration {
   }
 
   public static PrimitiveDataTypeDeclaration newInstance(SModel sm, boolean init) {
-    return (PrimitiveDataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PrimitiveDataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static PrimitiveDataTypeDeclaration newInstance(SModel sm) {
     return PrimitiveDataTypeDeclaration.newInstance(sm, false);
   }
+
 }

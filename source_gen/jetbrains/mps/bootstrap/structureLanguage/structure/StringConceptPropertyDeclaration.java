@@ -14,9 +14,11 @@ public class StringConceptPropertyDeclaration extends ConceptPropertyDeclaration
   }
 
   public static StringConceptPropertyDeclaration newInstance(SModel sm, boolean init) {
-    return (StringConceptPropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.StringConceptPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StringConceptPropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static StringConceptPropertyDeclaration newInstance(SModel sm) {
     return StringConceptPropertyDeclaration.newInstance(sm, false);
   }
+
 }

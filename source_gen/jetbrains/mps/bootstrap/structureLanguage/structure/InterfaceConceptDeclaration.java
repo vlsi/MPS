@@ -17,25 +17,32 @@ public class InterfaceConceptDeclaration extends AbstractConceptDeclaration {
   }
 
   public static InterfaceConceptDeclaration newInstance(SModel sm, boolean init) {
-    return (InterfaceConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InterfaceConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static InterfaceConceptDeclaration newInstance(SModel sm) {
     return InterfaceConceptDeclaration.newInstance(sm, false);
   }
 
+
   public int getExtendsesCount() {
     return this.getChildCount(InterfaceConceptDeclaration.EXTENDS);
   }
+
   public Iterator<InterfaceConceptReference> extendses() {
     return this.children(InterfaceConceptDeclaration.EXTENDS);
   }
+
   public List<InterfaceConceptReference> getExtendses() {
     return this.getChildren(InterfaceConceptDeclaration.EXTENDS);
   }
+
   public void addExtends(InterfaceConceptReference node) {
     this.addChild(InterfaceConceptDeclaration.EXTENDS, node);
   }
+
   public void insertExtends(InterfaceConceptReference prev, InterfaceConceptReference node) {
     this.insertChild(prev, InterfaceConceptDeclaration.EXTENDS, node);
   }
+
 }

@@ -16,22 +16,28 @@ public class AggregationConceptLink extends ConceptLink {
   }
 
   public static AggregationConceptLink newInstance(SModel sm, boolean init) {
-    return (AggregationConceptLink)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AggregationConceptLink)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static AggregationConceptLink newInstance(SModel sm) {
     return AggregationConceptLink.newInstance(sm, false);
   }
 
+
   public AggregationConceptLinkDeclaration getAggregationConceptLinkDeclaration() {
     return (AggregationConceptLinkDeclaration)this.getConceptLinkDeclaration();
   }
+
   public void setAggregationConceptLinkDeclaration(AggregationConceptLinkDeclaration node) {
     this.setConceptLinkDeclaration(node);
   }
+
   public BaseConcept getTarget() {
     return (BaseConcept)this.getChild(AggregationConceptLink.TARGET);
   }
+
   public void setTarget(BaseConcept node) {
     super.setChild(AggregationConceptLink.TARGET, node);
   }
+
 }

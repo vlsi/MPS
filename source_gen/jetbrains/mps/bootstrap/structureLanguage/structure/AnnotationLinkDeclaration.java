@@ -18,29 +18,37 @@ public class AnnotationLinkDeclaration extends LinkDeclaration implements INamed
   }
 
   public static AnnotationLinkDeclaration newInstance(SModel sm, boolean init) {
-    return (AnnotationLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AnnotationLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static AnnotationLinkDeclaration newInstance(SModel sm) {
     return AnnotationLinkDeclaration.newInstance(sm, false);
   }
 
+
   public ConceptDeclaration getSource() {
     return (ConceptDeclaration)this.getReferent(AnnotationLinkDeclaration.SOURCE);
   }
+
   public void setSource(ConceptDeclaration node) {
     super.setReferent(AnnotationLinkDeclaration.SOURCE, node);
   }
+
   public String getName() {
     return this.getProperty(AnnotationLinkDeclaration.NAME);
   }
+
   public void setName(String value) {
     this.setProperty(AnnotationLinkDeclaration.NAME, value);
   }
+
   public AnnotationLinkStereotype getStereotype() {
     String value = super.getProperty(AnnotationLinkDeclaration.STEREOTYPE);
     return AnnotationLinkStereotype.parseValue(value);
   }
+
   public void setStereotype(AnnotationLinkStereotype value) {
     super.setProperty(AnnotationLinkDeclaration.STEREOTYPE, value.getValueAsString());
   }
+
 }

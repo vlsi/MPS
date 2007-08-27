@@ -23,9 +23,11 @@ public enum LinkMetaclass {
     list.add(LinkMetaclass.aggregation);
     return list;
   }
+
   public static LinkMetaclass getDefault() {
     return LinkMetaclass.reference;
   }
+
   public static LinkMetaclass parseValue(String value) {
     if(value == null) {
       return LinkMetaclass.getDefault();
@@ -39,13 +41,17 @@ public enum LinkMetaclass {
     return LinkMetaclass.getDefault();
   }
 
+
   public String getName() {
     return this.myName;
   }
+
   public String getValueAsString() {
     return this.myValue;
   }
+
   public String getValue() {
     return this.myValue;
   }
+
 }

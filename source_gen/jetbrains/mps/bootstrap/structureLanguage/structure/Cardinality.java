@@ -27,9 +27,11 @@ public enum Cardinality {
     list.add(Cardinality._1_n);
     return list;
   }
+
   public static Cardinality getDefault() {
     return Cardinality._0_1;
   }
+
   public static Cardinality parseValue(String value) {
     if(value == null) {
       return Cardinality.getDefault();
@@ -49,13 +51,17 @@ public enum Cardinality {
     return Cardinality.getDefault();
   }
 
+
   public String getName() {
     return this.myName;
   }
+
   public String getValueAsString() {
     return this.myValue;
   }
+
   public String getValue() {
     return this.myValue;
   }
+
 }

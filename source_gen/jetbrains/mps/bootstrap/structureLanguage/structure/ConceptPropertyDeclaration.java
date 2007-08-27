@@ -17,16 +17,20 @@ public class ConceptPropertyDeclaration extends BaseConcept implements INamedCon
   }
 
   public static ConceptPropertyDeclaration newInstance(SModel sm, boolean init) {
-    return (ConceptPropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.ConceptPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptPropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ConceptPropertyDeclaration newInstance(SModel sm) {
     return ConceptPropertyDeclaration.newInstance(sm, false);
   }
 
+
   public String getName() {
     return this.getProperty(ConceptPropertyDeclaration.NAME);
   }
+
   public void setName(String value) {
     this.setProperty(ConceptPropertyDeclaration.NAME, value);
   }
+
 }
