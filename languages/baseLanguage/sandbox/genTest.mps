@@ -10,10 +10,16 @@
   <node type="jetbrains.mps.baseLanguage.Annotation" id="1188216745729">
     <property name="name" value="SomeAnnotation" />
     <node role="method" type="jetbrains.mps.baseLanguage.AnnotationMethodDeclaration" id="1188216750434">
-      <property name="name" value="parameter" />
+      <property name="name" value="parameter1" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1188216784832" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188216750436" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1188216750437" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.AnnotationMethodDeclaration" id="1188219007502">
+      <property name="name" value="parameter2" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1188219009303" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188219007504" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1188219007505" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188216745730" />
   </node>
@@ -31,6 +37,18 @@
       <property name="name" value="field" />
       <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188218058661">
         <link role="annotation" targetNodeId="1188216745729" resolveInfo="SomeAnnotation" />
+        <node role="value" type="jetbrains.mps.baseLanguage.AnnotationInstanceValue" id="1188218690426">
+          <link role="key" targetNodeId="1188216750434" resolveInfo="parameter" />
+          <node role="value" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1188218725092">
+            <property name="value" value="239" />
+          </node>
+        </node>
+        <node role="value" type="jetbrains.mps.baseLanguage.AnnotationInstanceValue" id="1188219014539">
+          <link role="key" targetNodeId="1188219007502" resolveInfo="parameter2" />
+          <node role="value" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1188219016650">
+            <property name="value" value="23" />
+          </node>
+        </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1188218054157" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1188218056238" />
