@@ -119,5 +119,15 @@
   <node type="jetbrains.mps.baseLanguage._A" id="1183718930765">
     <node role="c" type="jetbrains.mps.baseLanguage._C" id="1183718930766" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.Annotation" id="1188206970148">
+    <property name="name" value="SimpleAnnotation" />
+    <node role="method" type="jetbrains.mps.baseLanguage.AnnotationMethodDeclaration" id="1188206983932">
+      <property name="name" value="simpleProperty" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1188206995663" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188206983934" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1188206983935" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188206970149" />
+  </node>
 </model>
 

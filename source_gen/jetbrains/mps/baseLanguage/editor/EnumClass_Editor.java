@@ -68,6 +68,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483277589");
+    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
@@ -89,6 +90,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483273079");
+    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
@@ -110,6 +112,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell10(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483457771");
+    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
@@ -131,6 +134,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell13(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483457775");
+    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
@@ -152,6 +156,7 @@ public class EnumClass_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell16(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1085483457779");
+    editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 

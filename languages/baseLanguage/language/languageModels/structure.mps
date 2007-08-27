@@ -2159,5 +2159,25 @@
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1188206331916">
+    <property name="name" value="Annotation" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="1107796713796" resolveInfo="Interface" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1188206594042">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="annotationMethods" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="specializedLink" targetNodeId="1107880067339" />
+      <link role="target" targetNodeId="1188206574119" resolveInfo="AnnotationMethodDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1188206360653">
+      <property name="value" value="annotation declaration" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1188206574119">
+    <property name="name" value="AnnotationMethodDeclaration" />
+    <link role="extends" targetNodeId="1068580123165" resolveInfo="InstanceMethodDeclaration" />
+  </node>
 </model>
 
