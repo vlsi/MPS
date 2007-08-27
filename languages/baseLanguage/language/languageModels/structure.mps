@@ -2174,7 +2174,7 @@
     <link role="extends" targetNodeId="1107796713796" resolveInfo="Interface" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1188206594042">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="annotationMethods" />
+      <property name="role" value="annotationMethod" />
       <property name="sourceCardinality" value="0..n" />
       <link role="specializedLink" targetNodeId="1107880067339" />
       <link role="target" targetNodeId="1188206574119" resolveInfo="AnnotationMethodDeclaration" />
@@ -2191,6 +2191,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1188207840427">
     <property name="name" value="AnnotationInstance" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1188214630783">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="value" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1188207840427" resolveInfo="AnnotationInstance" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1188208074048">
       <property name="role" value="annotation" />
       <property name="sourceCardinality" value="1" />
@@ -2204,6 +2210,38 @@
       <property name="role" value="annotation" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1188207840427" resolveInfo="AnnotationInstance" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1188214482800">
+    <property name="name" value="AnnotationInstanceExpression" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1188214506790">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="annotationInstance" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1188207840427" resolveInfo="AnnotationInstance" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1188214501208">
+      <property name="value" value="annotation instance" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1188214504398">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1188214545140">
+    <property name="name" value="AnnotationInstanceValue" />
+    <link role="extends" targetNodeId="4.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1188214607812">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="value" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1188214555875">
+      <property name="role" value="key" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1188206574119" resolveInfo="AnnotationMethodDeclaration" />
     </node>
   </node>
 </model>

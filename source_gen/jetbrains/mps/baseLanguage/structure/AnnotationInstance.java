@@ -6,8 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Iterator;
+import java.util.List;
 
 public class AnnotationInstance extends Expression {
+  public static String VALUE = "value";
   public static String ANNOTATION = "annotation";
 
   public  AnnotationInstance(SNode node) {
@@ -22,6 +25,26 @@ public class AnnotationInstance extends Expression {
     return AnnotationInstance.newInstance(sm, false);
   }
 
+
+  public int getValuesCount() {
+    return this.getChildCount(AnnotationInstance.VALUE);
+  }
+
+  public Iterator<AnnotationInstance> values() {
+    return this.children(AnnotationInstance.VALUE);
+  }
+
+  public List<AnnotationInstance> getValues() {
+    return this.getChildren(AnnotationInstance.VALUE);
+  }
+
+  public void addValue(AnnotationInstance node) {
+    this.addChild(AnnotationInstance.VALUE, node);
+  }
+
+  public void insertValue(AnnotationInstance prev, AnnotationInstance node) {
+    this.insertChild(prev, AnnotationInstance.VALUE, node);
+  }
 
   public Annotation getAnnotation() {
     return (Annotation)this.getReferent(AnnotationInstance.ANNOTATION);

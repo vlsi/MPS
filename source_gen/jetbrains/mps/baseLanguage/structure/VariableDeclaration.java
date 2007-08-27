@@ -11,11 +11,11 @@ import java.util.Iterator;
 import java.util.List;
 
 public class VariableDeclaration extends NamedConcept implements Annotable {
+  public static String NAME = "name";
+  public static String IS_FINAL = "isFinal";
   public static String TYPE = "type";
   public static String INITIALIZER = "initializer";
   public static String ANNOTATION = "annotation";
-  public static String NAME = "name";
-  public static String IS_FINAL = "isFinal";
 
   public  VariableDeclaration(SNode node) {
     super(node);
@@ -29,6 +29,22 @@ public class VariableDeclaration extends NamedConcept implements Annotable {
     return VariableDeclaration.newInstance(sm, false);
   }
 
+
+  public String getName() {
+    return this.getProperty(VariableDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(VariableDeclaration.NAME, value);
+  }
+
+  public boolean getIsFinal() {
+    return this.getBooleanProperty(VariableDeclaration.IS_FINAL);
+  }
+
+  public void setIsFinal(boolean value) {
+    this.setBooleanProperty(VariableDeclaration.IS_FINAL, value);
+  }
 
   public Type getType() {
     return (Type)this.getChild(VariableDeclaration.TYPE);
@@ -64,22 +80,6 @@ public class VariableDeclaration extends NamedConcept implements Annotable {
 
   public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
     this.insertChild(prev, VariableDeclaration.ANNOTATION, node);
-  }
-
-  public String getName() {
-    return this.getProperty(VariableDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(VariableDeclaration.NAME, value);
-  }
-
-  public boolean getIsFinal() {
-    return this.getBooleanProperty(VariableDeclaration.IS_FINAL);
-  }
-
-  public void setIsFinal(boolean value) {
-    this.setBooleanProperty(VariableDeclaration.IS_FINAL, value);
   }
 
 }

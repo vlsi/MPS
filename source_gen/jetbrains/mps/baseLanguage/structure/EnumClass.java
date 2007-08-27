@@ -10,8 +10,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class EnumClass extends ClassConcept {
-  public static String ENUM_CONSTANT = "enumConstant";
   public static String NAME = "name";
+  public static String ENUM_CONSTANT = "enumConstant";
 
   public  EnumClass(SNode node) {
     super(node);
@@ -25,6 +25,14 @@ public class EnumClass extends ClassConcept {
     return EnumClass.newInstance(sm, false);
   }
 
+
+  public String getName() {
+    return this.getProperty(EnumClass.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(EnumClass.NAME, value);
+  }
 
   public int getEnumConstantsCount() {
     return this.getChildCount(EnumClass.ENUM_CONSTANT);
@@ -44,14 +52,6 @@ public class EnumClass extends ClassConcept {
 
   public void insertEnumConstant(EnumConstantDeclaration prev, EnumConstantDeclaration node) {
     this.insertChild(prev, EnumClass.ENUM_CONSTANT, node);
-  }
-
-  public String getName() {
-    return this.getProperty(EnumClass.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(EnumClass.NAME, value);
   }
 
 }
