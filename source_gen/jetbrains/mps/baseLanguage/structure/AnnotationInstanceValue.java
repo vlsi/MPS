@@ -9,8 +9,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AnnotationInstanceValue extends BaseConcept {
-  public static String KEY = "key";
   public static String VALUE = "value";
+  public static String KEY = "key";
 
   public  AnnotationInstanceValue(SNode node) {
     super(node);
@@ -25,20 +25,20 @@ public class AnnotationInstanceValue extends BaseConcept {
   }
 
 
-  public AnnotationMethodDeclaration getKey() {
-    return (AnnotationMethodDeclaration)this.getReferent(AnnotationInstanceValue.KEY);
-  }
-
-  public void setKey(AnnotationMethodDeclaration node) {
-    super.setReferent(AnnotationInstanceValue.KEY, node);
-  }
-
   public Expression getValue() {
     return (Expression)this.getChild(AnnotationInstanceValue.VALUE);
   }
 
   public void setValue(Expression node) {
     super.setChild(AnnotationInstanceValue.VALUE, node);
+  }
+
+  public AnnotationMethodDeclaration getKey() {
+    return (AnnotationMethodDeclaration)this.getReferent(AnnotationInstanceValue.KEY);
+  }
+
+  public void setKey(AnnotationMethodDeclaration node) {
+    super.setReferent(AnnotationInstanceValue.KEY, node);
   }
 
 }

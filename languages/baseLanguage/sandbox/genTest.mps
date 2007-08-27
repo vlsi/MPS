@@ -107,6 +107,30 @@
               <link role="annotation" targetNodeId="1188216745729" resolveInfo="SomeAnnotation" />
             </node>
             <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1188218047264" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.ArrayLiteral" id="1188221207533">
+              <node role="item" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1188221208409">
+                <property name="value" value="2" />
+              </node>
+              <node role="item" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1188221212364">
+                <property name="value" value="3" />
+              </node>
+              <node role="item" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1188221213319">
+                <property name="value" value="4" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1188221363359">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ArrayLiteral" id="1188221364736">
+            <node role="item" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1188221364737">
+              <property name="value" value="2" />
+            </node>
+            <node role="item" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1188221364738">
+              <property name="value" value="3" />
+            </node>
+            <node role="item" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1188221364739">
+              <property name="value" value="40" />
+            </node>
           </node>
         </node>
       </node>

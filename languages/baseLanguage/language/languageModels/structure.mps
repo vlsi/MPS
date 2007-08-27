@@ -2244,5 +2244,23 @@
       <link role="target" targetNodeId="1188206574119" resolveInfo="AnnotationMethodDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1188220165133">
+    <property name="name" value="ArrayLiteral" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1188220181652">
+      <property name="value" value="{" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1188220184514">
+      <property name="value" value="array literal" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1188220173759">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="item" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
 </model>
 
