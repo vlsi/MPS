@@ -7,10 +7,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Iterator;
+import java.util.List;
 
-public class VariableDeclaration extends NamedConcept {
+public class VariableDeclaration extends NamedConcept implements Annotable {
   public static String TYPE = "type";
   public static String INITIALIZER = "initializer";
+  public static String ANNOTATION = "annotation";
   public static String NAME = "name";
   public static String IS_FINAL = "isFinal";
 
@@ -41,6 +44,26 @@ public class VariableDeclaration extends NamedConcept {
 
   public void setInitializer(Expression node) {
     super.setChild(VariableDeclaration.INITIALIZER, node);
+  }
+
+  public int getAnnotationsCount() {
+    return this.getChildCount(VariableDeclaration.ANNOTATION);
+  }
+
+  public Iterator<AnnotationInstance> annotations() {
+    return this.children(VariableDeclaration.ANNOTATION);
+  }
+
+  public List<AnnotationInstance> getAnnotations() {
+    return this.getChildren(VariableDeclaration.ANNOTATION);
+  }
+
+  public void addAnnotation(AnnotationInstance node) {
+    this.addChild(VariableDeclaration.ANNOTATION, node);
+  }
+
+  public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
+    this.insertChild(prev, VariableDeclaration.ANNOTATION, node);
   }
 
   public String getName() {

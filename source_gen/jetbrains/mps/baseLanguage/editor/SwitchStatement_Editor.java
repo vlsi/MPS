@@ -345,7 +345,7 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createCaseList(EditorContext context, SNode node) {
     if(this.myCaseListHandler_caseList_ == null) {
-      this.myCaseListHandler_caseList_ = new SwitchStatement_Editor._RefNodeListHandler48(node, "case", context);
+      this.myCaseListHandler_caseList_ = new SwitchStatement_Editor._RefNodeListHandler52(node, "case", context);
     }
     EditorCell_Collection editorCell = this.myCaseListHandler_caseList_.createCells(context, new CellLayout_Vertical(), false);
     SwitchStatement_Editor.setupBasic_CaseList(editorCell, node, context);
@@ -414,9 +414,9 @@ public class SwitchStatement_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler48 extends RefNodeListHandler {
+  public static class _RefNodeListHandler52 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler48(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler52(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

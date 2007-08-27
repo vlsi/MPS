@@ -146,11 +146,6 @@
       <property name="name" value="myStaticMethod" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1137989388935" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1137989368574">
-        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1183988405068">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1183988405069">
-            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1183988405070" />
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1140562454496">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1140562454495">
             <property name="name" value="i" />
