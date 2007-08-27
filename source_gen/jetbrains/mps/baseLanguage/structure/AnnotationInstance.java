@@ -30,19 +30,19 @@ public class AnnotationInstance extends Expression {
     return this.getChildCount(AnnotationInstance.VALUE);
   }
 
-  public Iterator<AnnotationInstance> values() {
+  public Iterator<AnnotationInstanceValue> values() {
     return this.children(AnnotationInstance.VALUE);
   }
 
-  public List<AnnotationInstance> getValues() {
+  public List<AnnotationInstanceValue> getValues() {
     return this.getChildren(AnnotationInstance.VALUE);
   }
 
-  public void addValue(AnnotationInstance node) {
+  public void addValue(AnnotationInstanceValue node) {
     this.addChild(AnnotationInstance.VALUE, node);
   }
 
-  public void insertValue(AnnotationInstance prev, AnnotationInstance node) {
+  public void insertValue(AnnotationInstanceValue prev, AnnotationInstanceValue node) {
     this.insertChild(prev, AnnotationInstance.VALUE, node);
   }
 

@@ -17,6 +17,15 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1121172586148">
       <property name="name" value="method" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188215932921">
+        <link role="annotation" targetNodeId="1188215919565" resolveInfo="MyFirstAnnotation" />
+        <node role="value" type="jetbrains.mps.baseLanguage.AnnotationInstanceValue" id="1188216002744">
+          <link role="key" targetNodeId="1188215925771" resolveInfo="abcdef" />
+          <node role="value" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1188216006277">
+            <property name="value" value="239" />
+          </node>
+        </node>
+      </node>
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1121172586150">
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1136557137601">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1136557137600">
@@ -1132,6 +1141,16 @@
     <node role="implementedInterface" type="jetbrains.mps.baseLanguage.ClassifierType" id="1181402612992">
       <link role="classifier" extResolveInfo="234.[Classifier]Serializable" />
     </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.Annotation" id="1188215919565">
+    <property name="name" value="MyFirstAnnotation" />
+    <node role="method" type="jetbrains.mps.baseLanguage.AnnotationMethodDeclaration" id="1188215925771">
+      <property name="name" value="abcdef" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1188215927701" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188215925773" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1188215925774" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188215919566" />
   </node>
 </model>
 

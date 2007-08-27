@@ -2195,7 +2195,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="value" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1188207840427" resolveInfo="AnnotationInstance" />
+      <link role="target" targetNodeId="1188214545140" resolveInfo="AnnotationInstanceValue" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1188208074048">
       <property name="role" value="annotation" />
