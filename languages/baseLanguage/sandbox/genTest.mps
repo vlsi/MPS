@@ -17,5 +17,12 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188216745730" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1188217315627">
+    <property name="name" value="SampleClass" />
+    <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188217320316">
+      <link role="annotation" targetNodeId="1188216745729" resolveInfo="SomeAnnotation" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188217315628" />
+  </node>
 </model>
 
