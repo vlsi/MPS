@@ -14,13 +14,13 @@ import java.util.Iterator;
 import java.util.List;
 
 public class TreePathAspect extends BaseConcept implements INamedConcept, Visible, TreePath {
-  public static String DEFAULT_FEATURE = "defaultFeature";
   public static String VISIBILITY = "visibility";
   public static String TREE_PATH_TYPE = "treePathType";
   public static String PARENT_BLOCK = "parentBlock";
   public static String CHILDREN_BLOCK = "childrenBlock";
   public static String NODE_KINDS = "nodeKinds";
   public static String FEATURES = "features";
+  public static String DEFAULT_FEATURE = "defaultFeature";
   public static String NAME = "name";
 
   public  TreePathAspect(SNode node) {
@@ -35,14 +35,6 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, Visibl
     return TreePathAspect.newInstance(sm, false);
   }
 
-
-  public IFeature getDefaultFeature() {
-    return (IFeature)this.getReferent(TreePathAspect.DEFAULT_FEATURE);
-  }
-
-  public void setDefaultFeature(IFeature node) {
-    super.setReferent(TreePathAspect.DEFAULT_FEATURE, node);
-  }
 
   public Visibility getVisibility() {
     return (Visibility)this.getChild(TreePathAspect.VISIBILITY);
@@ -114,6 +106,14 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, Visibl
 
   public void insertFeatures(IFeature prev, IFeature node) {
     this.insertChild(prev, TreePathAspect.FEATURES, node);
+  }
+
+  public IFeature getDefaultFeature() {
+    return (IFeature)this.getReferent(TreePathAspect.DEFAULT_FEATURE);
+  }
+
+  public void setDefaultFeature(IFeature node) {
+    super.setReferent(TreePathAspect.DEFAULT_FEATURE, node);
   }
 
   public String getName() {

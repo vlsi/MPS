@@ -8,8 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IterateOperation extends TreePathOperation {
-  public static String USED_FEATURE = "usedFeature";
   public static String PARAM_NAME = "paramName";
+  public static String USED_FEATURE = "usedFeature";
   public static String USE_DEFAULT = "useDefault";
   public static String AXIS = "axis";
 
@@ -26,20 +26,20 @@ public class IterateOperation extends TreePathOperation {
   }
 
 
-  public IFeature getUsedFeature() {
-    return (IFeature)this.getReferent(IterateOperation.USED_FEATURE);
-  }
-
-  public void setUsedFeature(IFeature node) {
-    super.setReferent(IterateOperation.USED_FEATURE, node);
-  }
-
   public ParameterName getParamName() {
     return (ParameterName)this.getChild(IterateOperation.PARAM_NAME);
   }
 
   public void setParamName(ParameterName node) {
     super.setChild(IterateOperation.PARAM_NAME, node);
+  }
+
+  public IFeature getUsedFeature() {
+    return (IFeature)this.getReferent(IterateOperation.USED_FEATURE);
+  }
+
+  public void setUsedFeature(IFeature node) {
+    super.setReferent(IterateOperation.USED_FEATURE, node);
   }
 
   public boolean getUseDefault() {
