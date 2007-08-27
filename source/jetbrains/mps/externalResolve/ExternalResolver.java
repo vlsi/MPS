@@ -11,6 +11,7 @@ import jetbrains.mps.util.CollectionUtil;
 
 import java.util.Collection;
 import java.util.Set;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -118,6 +119,11 @@ public class ExternalResolver {
 
   public static String getExtResolveFromEnumConstant(String enumCls, String constName) {
     return ExternalResolveInfoProvider.getEnumConstExtResInfo(getExtResolveInfoFromJavaClass(enumCls), constName);
+  }
+
+  public static String getMethodExternalResolveInfo(String clsName, String name, String conceptName, List<String> list) {
+    String methodPart = ExternalResolveInfoProvider.getMethodExternalResolveInfo(name, conceptName, list);
+    return ExternalResolveInfoProvider.getFullMethodResolveInfo(getExtResolveInfoFromJavaClass(clsName), methodPart);
   }
 
 

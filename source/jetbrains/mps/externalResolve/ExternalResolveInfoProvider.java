@@ -4,11 +4,13 @@ import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -178,8 +180,28 @@ public class ExternalResolveInfoProvider {
     final String name = baseMethodDeclaration.getName();
     final String conceptName = baseMethodDeclaration.getShortConceptName();
 
-    Pair<String, String> typeObject;
+    List<String> list = CollectionUtil.map(baseMethodDeclaration.getParameters(), new Mapper<ParameterDeclaration, String>() {
+      public String map(ParameterDeclaration parameterDeclaration) {
+        Pair<String, String> pair = adaptNode(parameterDeclaration.getType());
+        if (pair == null) return ExternalResolver.NO_MEMBER_TYPE;
+        StringBuilder stringBuilder = StringBuilderSpinAllocator.alloc();
+        try {
+          stringBuilder.append('(');
+          stringBuilder.append(pair.o1);
+          stringBuilder.append('/');
+          stringBuilder.append(pair.o2);
+          stringBuilder.append(')');
+          return stringBuilder.toString();
+        } finally{
+          StringBuilderSpinAllocator.dispose(stringBuilder);
+        }
+      }
+    });
 
+    return getMethodExternalResolveInfo(name, conceptName, list);
+  }
+
+  public static String getMethodExternalResolveInfo(String name, String conceptName, List<String> list) {
     final StringBuilder builder = StringBuilderSpinAllocator.alloc();
     try {
 
@@ -190,18 +212,12 @@ public class ExternalResolveInfoProvider {
       builder.append(name);
       builder.append('(');
 
-      Iterator<ParameterDeclaration> pIterator = baseMethodDeclaration.parameters();
 
-      while (pIterator.hasNext()) {
-        ParameterDeclaration parameterDeclaration = pIterator.next();
-        typeObject = adaptNode(parameterDeclaration.getType());
-        if (typeObject == null) return ExternalResolver.NO_MEMBER_TYPE;
-        builder.append('(');
-        builder.append(typeObject.o1);
-        builder.append('/');
-        builder.append(typeObject.o2);
-        builder.append(')');
-        if (pIterator.hasNext())  {
+      Iterator<String> iterator = list.iterator();
+      while (iterator.hasNext()) {
+        String parameterDeclaration = iterator.next();
+        builder.append(parameterDeclaration);
+        if (iterator.hasNext())  {
           builder.append(", ");
         }
       }
@@ -216,8 +232,12 @@ public class ExternalResolveInfoProvider {
 
   public static String getExtResolveInfoForTargetClassInstanceMethodDeclaration(InstanceMethodDeclaration instanceMethodDeclaration) {
     Classifier classifier = (Classifier) instanceMethodDeclaration.getParent();
-    String classifierExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(classifier);
     String myExtResolveInfo = getExtResolveInfoForTargetClassBaseMethodDeclaration(instanceMethodDeclaration);
+    String classifierExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(classifier);
+    return getFullMethodResolveInfo(classifierExtResolveInfo, myExtResolveInfo);
+  }
+
+  static String getFullMethodResolveInfo(String classifierExtResolveInfo, String myExtResolveInfo) {
     String result = ExternalResolver.METHOD + "(" + classifierExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
     return result;
   }
