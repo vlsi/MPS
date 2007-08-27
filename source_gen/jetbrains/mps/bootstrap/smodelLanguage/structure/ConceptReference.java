@@ -17,16 +17,20 @@ public class ConceptReference extends BaseConcept {
   }
 
   public static ConceptReference newInstance(SModel sm, boolean init) {
-    return (ConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.ConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ConceptReference newInstance(SModel sm) {
     return ConceptReference.newInstance(sm, false);
   }
 
+
   public AbstractConceptDeclaration getConcept() {
     return (AbstractConceptDeclaration)this.getReferent(ConceptReference.CONCEPT);
   }
+
   public void setConcept(AbstractConceptDeclaration node) {
     super.setReferent(ConceptReference.CONCEPT, node);
   }
+
 }

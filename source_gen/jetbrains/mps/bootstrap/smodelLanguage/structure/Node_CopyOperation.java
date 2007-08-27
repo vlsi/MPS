@@ -16,16 +16,20 @@ public class Node_CopyOperation extends SNodeOperation {
   }
 
   public static Node_CopyOperation newInstance(SModel sm, boolean init) {
-    return (Node_CopyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_CopyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_CopyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Node_CopyOperation newInstance(SModel sm) {
     return Node_CopyOperation.newInstance(sm, false);
   }
 
+
   public Expression getModelToCopy() {
     return (Expression)this.getChild(Node_CopyOperation.MODEL_TO_COPY);
   }
+
   public void setModelToCopy(Expression node) {
     super.setChild(Node_CopyOperation.MODEL_TO_COPY, node);
   }
+
 }

@@ -16,16 +16,20 @@ public class Concept_NewInstance extends SNodeOperation {
   }
 
   public static Concept_NewInstance newInstance(SModel sm, boolean init) {
-    return (Concept_NewInstance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Concept_NewInstance", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Concept_NewInstance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_NewInstance", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Concept_NewInstance newInstance(SModel sm) {
     return Concept_NewInstance.newInstance(sm, false);
   }
 
+
   public Expression getPrototypeNode() {
     return (Expression)this.getChild(Concept_NewInstance.PROTOTYPE_NODE);
   }
+
   public void setPrototypeNode(Expression node) {
     super.setChild(Concept_NewInstance.PROTOTYPE_NODE, node);
   }
+
 }

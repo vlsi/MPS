@@ -10,30 +10,36 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class SNodeTypeCastExpression extends Expression {
-  public static String CONCEPT = "concept";
   public static String LEFT_EXPRESSION = "leftExpression";
+  public static String CONCEPT = "concept";
 
   public  SNodeTypeCastExpression(SNode node) {
     super(node);
   }
 
   public static SNodeTypeCastExpression newInstance(SModel sm, boolean init) {
-    return (SNodeTypeCastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SNodeTypeCastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SNodeTypeCastExpression newInstance(SModel sm) {
     return SNodeTypeCastExpression.newInstance(sm, false);
+  }
+
+
+  public Expression getLeftExpression() {
+    return (Expression)this.getChild(SNodeTypeCastExpression.LEFT_EXPRESSION);
+  }
+
+  public void setLeftExpression(Expression node) {
+    super.setChild(SNodeTypeCastExpression.LEFT_EXPRESSION, node);
   }
 
   public AbstractConceptDeclaration getConcept() {
     return (AbstractConceptDeclaration)this.getReferent(SNodeTypeCastExpression.CONCEPT);
   }
+
   public void setConcept(AbstractConceptDeclaration node) {
     super.setReferent(SNodeTypeCastExpression.CONCEPT, node);
   }
-  public Expression getLeftExpression() {
-    return (Expression)this.getChild(SNodeTypeCastExpression.LEFT_EXPRESSION);
-  }
-  public void setLeftExpression(Expression node) {
-    super.setChild(SNodeTypeCastExpression.LEFT_EXPRESSION, node);
-  }
+
 }

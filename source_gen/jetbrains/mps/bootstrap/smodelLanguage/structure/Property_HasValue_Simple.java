@@ -16,16 +16,20 @@ public class Property_HasValue_Simple extends SNodeOperation {
   }
 
   public static Property_HasValue_Simple newInstance(SModel sm, boolean init) {
-    return (Property_HasValue_Simple)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Property_HasValue_Simple", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Property_HasValue_Simple)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Simple", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Property_HasValue_Simple newInstance(SModel sm) {
     return Property_HasValue_Simple.newInstance(sm, false);
   }
 
+
   public Expression getValue() {
     return (Expression)this.getChild(Property_HasValue_Simple.VALUE);
   }
+
   public void setValue(Expression node) {
     super.setChild(Property_HasValue_Simple.VALUE, node);
   }
+
 }

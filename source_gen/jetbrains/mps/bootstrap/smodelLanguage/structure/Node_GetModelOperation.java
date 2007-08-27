@@ -14,9 +14,11 @@ public class Node_GetModelOperation extends SNodeOperation {
   }
 
   public static Node_GetModelOperation newInstance(SModel sm, boolean init) {
-    return (Node_GetModelOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_GetModelOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_GetModelOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Node_GetModelOperation newInstance(SModel sm) {
     return Node_GetModelOperation.newInstance(sm, false);
   }
+
 }

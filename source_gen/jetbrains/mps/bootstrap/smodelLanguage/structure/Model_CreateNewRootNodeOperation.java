@@ -14,9 +14,11 @@ public class Model_CreateNewRootNodeOperation extends Model_CreateNewNodeOperati
   }
 
   public static Model_CreateNewRootNodeOperation newInstance(SModel sm, boolean init) {
-    return (Model_CreateNewRootNodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Model_CreateNewRootNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Model_CreateNewRootNodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewRootNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Model_CreateNewRootNodeOperation newInstance(SModel sm) {
     return Model_CreateNewRootNodeOperation.newInstance(sm, false);
   }
+
 }

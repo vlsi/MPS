@@ -16,16 +16,20 @@ public class LinkList_AddAllOperation extends SNodeOperation {
   }
 
   public static LinkList_AddAllOperation newInstance(SModel sm, boolean init) {
-    return (LinkList_AddAllOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.LinkList_AddAllOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkList_AddAllOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddAllOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static LinkList_AddAllOperation newInstance(SModel sm) {
     return LinkList_AddAllOperation.newInstance(sm, false);
   }
 
+
   public Expression getParameter() {
     return (Expression)this.getChild(LinkList_AddAllOperation.PARAMETER);
   }
+
   public void setParameter(Expression node) {
     super.setChild(LinkList_AddAllOperation.PARAMETER, node);
   }
+
 }

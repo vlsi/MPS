@@ -1655,18 +1655,18 @@
                               <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179531430829">
                                 <link role="variableDeclaration" targetNodeId="1179531430820" resolveInfo="cardinality" />
                               </node>
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179531430830">
-                                <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]Cardinality).([StaticFieldDeclaration]_1 : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Cardinality]))" />
-                                <link role="classifier" extResolveInfo="16.[Classifier]Cardinality" />
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230482190">
+                                <link role="enumConstantDeclaration" extResolveInfo="16.enum const ([Classifier]Cardinality).([EnumConstantDeclaration]_1)" />
+                                <link role="enumClass" extResolveInfo="16.[Classifier]Cardinality" />
                               </node>
                             </node>
                             <node role="rightExpression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179531430831">
                               <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179531430832">
                                 <link role="variableDeclaration" targetNodeId="1179531430820" resolveInfo="cardinality" />
                               </node>
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179531430833">
-                                <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]Cardinality).([StaticFieldDeclaration]_0_1 : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Cardinality]))" />
-                                <link role="classifier" extResolveInfo="16.[Classifier]Cardinality" />
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230491863">
+                                <link role="enumConstantDeclaration" extResolveInfo="16.enum const ([Classifier]Cardinality).([EnumConstantDeclaration]_0_1)" />
+                                <link role="enumClass" extResolveInfo="16.[Classifier]Cardinality" />
                               </node>
                             </node>
                           </node>
@@ -1724,18 +1724,18 @@
                               <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179531467664">
                                 <link role="variableDeclaration" targetNodeId="1179531467655" resolveInfo="cardinality" />
                               </node>
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179531467665">
-                                <link role="classifier" extResolveInfo="16.[Classifier]Cardinality" />
-                                <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]Cardinality).([StaticFieldDeclaration]_0_n : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Cardinality]))" />
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230488488">
+                                <link role="enumConstantDeclaration" extResolveInfo="16.enum const ([Classifier]Cardinality).([EnumConstantDeclaration]_0_n)" />
+                                <link role="enumClass" extResolveInfo="16.[Classifier]Cardinality" />
                               </node>
                             </node>
                             <node role="rightExpression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179531467666">
                               <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1179531467667">
                                 <link role="variableDeclaration" targetNodeId="1179531467655" resolveInfo="cardinality" />
                               </node>
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1179531467668">
-                                <link role="classifier" extResolveInfo="16.[Classifier]Cardinality" />
-                                <link role="variableDeclaration" extResolveInfo="16.static field ([Classifier]Cardinality).([StaticFieldDeclaration]_1_n : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Cardinality]))" />
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230485581">
+                                <link role="enumConstantDeclaration" extResolveInfo="16.enum const ([Classifier]Cardinality).([EnumConstantDeclaration]_1_n)" />
+                                <link role="enumClass" extResolveInfo="16.[Classifier]Cardinality" />
                               </node>
                             </node>
                           </node>

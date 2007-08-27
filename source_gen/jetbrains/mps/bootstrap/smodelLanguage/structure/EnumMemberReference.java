@@ -17,16 +17,20 @@ public class EnumMemberReference extends Expression {
   }
 
   public static EnumMemberReference newInstance(SModel sm, boolean init) {
-    return (EnumMemberReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.EnumMemberReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EnumMemberReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static EnumMemberReference newInstance(SModel sm) {
     return EnumMemberReference.newInstance(sm, false);
   }
 
+
   public EnumerationMemberDeclaration getEnumMember() {
     return (EnumerationMemberDeclaration)this.getReferent(EnumMemberReference.ENUM_MEMBER);
   }
+
   public void setEnumMember(EnumerationMemberDeclaration node) {
     super.setReferent(EnumMemberReference.ENUM_MEMBER, node);
   }
+
 }

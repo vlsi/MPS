@@ -23,41 +23,55 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
   private static void setupBasic_CellModel_ConceptProperty(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511088711");
   }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511093572");
   }
+
   private static void setupBasic_ScopeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511100904");
   }
+
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511105406");
   }
+
   private static void setupBasic_ConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511109971");
   }
+
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511096027");
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511083881");
   }
+
   private static void setupLabel_CellModel_ConceptProperty(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ScopeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConceptReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     Model_NodesIncludingImportedOperation_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -72,6 +86,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     editorCell.addEditorCell(this.createConstantCell2(context, node, ")"));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     Model_NodesIncludingImportedOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -79,6 +94,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     Model_NodesIncludingImportedOperation_Editor.setupBasic_ConstantCell1(editorCell, node, context);
@@ -86,6 +102,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     Model_NodesIncludingImportedOperation_Editor.setupBasic_ConstantCell2(editorCell, node, context);
@@ -93,6 +110,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createCellModel_ConceptPropertyinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -104,6 +122,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createCellModel_ConceptProperty(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
@@ -120,6 +139,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     } else
     return cellWithRole;
   }
+
   public EditorCell createScopeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -131,6 +151,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createScopeCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("scope");
@@ -147,6 +168,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     } else
     return cellWithRole;
   }
+
   public EditorCell createConceptReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(new Model_NodesIncludingImportedOperation_Editor._Inline31());
@@ -158,6 +180,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createConceptReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("concept");
@@ -174,6 +197,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     } else
     return cellWithRole;
   }
+
   public static class _Inline31 extends AbstractCellProvider {
 
     public  _Inline31() {
@@ -183,15 +207,19 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511125130");
     }
+
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
+
 
     public EditorCell createEditorCell(EditorContext context) {
       return this.createEditorCell(context, this.getSNode());
     }
+
     public EditorCell createEditorCell(EditorContext context, SNode node) {
       return this.createNameCell(context, node);
     }
+
     public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
@@ -203,6 +231,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
     }
+
     public EditorCell createNameCell(EditorContext context, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
@@ -219,6 +248,7 @@ public class Model_NodesIncludingImportedOperation_Editor extends DefaultNodeEdi
       } else
       return cellWithRole;
     }
+
 }
 
 }

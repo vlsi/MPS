@@ -28,25 +28,32 @@ public class SNodeOperation extends BaseConcept {
   }
 
   public static SNodeOperation newInstance(SModel sm, boolean init) {
-    return (SNodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SNodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SNodeOperation newInstance(SModel sm) {
     return SNodeOperation.newInstance(sm, false);
   }
 
+
   public int getParametersCount() {
     return this.getChildCount(SNodeOperation.PARAMETER);
   }
+
   public Iterator<AbstractOperationParameter> parameters() {
     return this.children(SNodeOperation.PARAMETER);
   }
+
   public List<AbstractOperationParameter> getParameters() {
     return this.getChildren(SNodeOperation.PARAMETER);
   }
+
   public void addParameter(AbstractOperationParameter node) {
     this.addChild(SNodeOperation.PARAMETER, node);
   }
+
   public void insertParameter(AbstractOperationParameter prev, AbstractOperationParameter node) {
     this.insertChild(prev, SNodeOperation.PARAMETER, node);
   }
+
 }

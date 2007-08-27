@@ -14,9 +14,11 @@ public class Node_GetChildrenOperation extends SNodeOperation {
   }
 
   public static Node_GetChildrenOperation newInstance(SModel sm, boolean init) {
-    return (Node_GetChildrenOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Node_GetChildrenOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_GetChildrenOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetChildrenOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Node_GetChildrenOperation newInstance(SModel sm) {
     return Node_GetChildrenOperation.newInstance(sm, false);
   }
+
 }

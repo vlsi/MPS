@@ -16,16 +16,20 @@ public class SLinkListAccess extends SNodeOperation {
   }
 
   public static SLinkListAccess newInstance(SModel sm, boolean init) {
-    return (SLinkListAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SLinkListAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SLinkListAccess newInstance(SModel sm) {
     return SLinkListAccess.newInstance(sm, false);
   }
 
+
   public LinkDeclaration getLink() {
     return (LinkDeclaration)this.getReferent(SLinkListAccess.LINK);
   }
+
   public void setLink(LinkDeclaration node) {
     super.setReferent(SLinkListAccess.LINK, node);
   }
+
 }

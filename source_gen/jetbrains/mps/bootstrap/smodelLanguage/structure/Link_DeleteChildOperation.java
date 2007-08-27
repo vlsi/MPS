@@ -14,9 +14,11 @@ public class Link_DeleteChildOperation extends SNodeOperation {
   }
 
   public static Link_DeleteChildOperation newInstance(SModel sm, boolean init) {
-    return (Link_DeleteChildOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Link_DeleteChildOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Link_DeleteChildOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Link_DeleteChildOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Link_DeleteChildOperation newInstance(SModel sm) {
     return Link_DeleteChildOperation.newInstance(sm, false);
   }
+
 }

@@ -17,22 +17,28 @@ public class Concept_GetAllSubConcepts extends SNodeOperation {
   }
 
   public static Concept_GetAllSubConcepts newInstance(SModel sm, boolean init) {
-    return (Concept_GetAllSubConcepts)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Concept_GetAllSubConcepts", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Concept_GetAllSubConcepts)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_GetAllSubConcepts", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Concept_GetAllSubConcepts newInstance(SModel sm) {
     return Concept_GetAllSubConcepts.newInstance(sm, false);
   }
 
+
   public Expression getSmodel() {
     return (Expression)this.getChild(Concept_GetAllSubConcepts.SMODEL);
   }
+
   public void setSmodel(Expression node) {
     super.setChild(Concept_GetAllSubConcepts.SMODEL, node);
   }
+
   public Expression getScope() {
     return (Expression)this.getChild(Concept_GetAllSubConcepts.SCOPE);
   }
+
   public void setScope(Expression node) {
     super.setChild(Concept_GetAllSubConcepts.SCOPE, node);
   }
+
 }

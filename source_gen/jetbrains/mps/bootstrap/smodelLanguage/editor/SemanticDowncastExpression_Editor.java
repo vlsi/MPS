@@ -21,25 +21,31 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145404664304");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145404664305");
     editorCell.setDrawBorder(false);
     SemanticDowncastExpression_Symbol_Actions.setCellActions(editorCell, node, context);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145404664303");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_LeftExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(false);
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
   }
 
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     SemanticDowncastExpression_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -50,6 +56,7 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "/"));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     SemanticDowncastExpression_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -57,6 +64,7 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createLeftExpressionCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -68,6 +76,7 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createLeftExpressionCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("leftExpression");
@@ -84,4 +93,5 @@ public class SemanticDowncastExpression_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

@@ -17,16 +17,20 @@ public class SNodeType extends Type {
   }
 
   public static SNodeType newInstance(SModel sm, boolean init) {
-    return (SNodeType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SNodeType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SNodeType newInstance(SModel sm) {
     return SNodeType.newInstance(sm, false);
   }
 
+
   public AbstractConceptDeclaration getConcept() {
     return (AbstractConceptDeclaration)this.getReferent(SNodeType.CONCEPT);
   }
+
   public void setConcept(AbstractConceptDeclaration node) {
     super.setReferent(SNodeType.CONCEPT, node);
   }
+
 }

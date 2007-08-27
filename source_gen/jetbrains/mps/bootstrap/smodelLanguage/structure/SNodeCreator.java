@@ -18,22 +18,28 @@ public class SNodeCreator extends AbstractCreator {
   }
 
   public static SNodeCreator newInstance(SModel sm, boolean init) {
-    return (SNodeCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SNodeCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SNodeCreator newInstance(SModel sm) {
     return SNodeCreator.newInstance(sm, false);
   }
 
+
   public SNodeType getCreatedType() {
     return (SNodeType)this.getChild(SNodeCreator.CREATED_TYPE);
   }
+
   public void setCreatedType(SNodeType node) {
     super.setChild(SNodeCreator.CREATED_TYPE, node);
   }
+
   public Expression getPrototypeNode() {
     return (Expression)this.getChild(SNodeCreator.PROTOTYPE_NODE);
   }
+
   public void setPrototypeNode(Expression node) {
     super.setChild(SNodeCreator.PROTOTYPE_NODE, node);
   }
+
 }

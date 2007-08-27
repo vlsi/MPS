@@ -16,16 +16,20 @@ public class SConceptPropertyAccess extends SNodeOperation {
   }
 
   public static SConceptPropertyAccess newInstance(SModel sm, boolean init) {
-    return (SConceptPropertyAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SConceptPropertyAccess", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SConceptPropertyAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SConceptPropertyAccess newInstance(SModel sm) {
     return SConceptPropertyAccess.newInstance(sm, false);
   }
 
+
   public ConceptPropertyDeclaration getConceptProperty() {
     return (ConceptPropertyDeclaration)this.getReferent(SConceptPropertyAccess.CONCEPT_PROPERTY);
   }
+
   public void setConceptProperty(ConceptPropertyDeclaration node) {
     super.setReferent(SConceptPropertyAccess.CONCEPT_PROPERTY, node);
   }
+
 }

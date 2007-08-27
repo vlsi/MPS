@@ -19,13 +19,16 @@ public class AbstractOperationParameter_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146258034223");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_CellModel_ConceptProperty(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
   }
 
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCellModel_ConceptProperty(context, node);
   }
+
   public EditorCell createCellModel_ConceptPropertyinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -37,6 +40,7 @@ public class AbstractOperationParameter_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createCellModel_ConceptProperty(EditorContext context, SNode node) {
     CellProviderWithRole provider = new ConceptPropertyCellProvider(node, context);
     provider.setRole("alias");
@@ -53,4 +57,5 @@ public class AbstractOperationParameter_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

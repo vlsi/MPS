@@ -14,6 +14,7 @@ public class SNodeTypeCastExpression_Concept_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction("DELETE", new SNodeTypeCastExpression_Concept_Actions.SNodeTypeCastExpression_Concept_Actions_DELETE(node));
   }
+
   public static class SNodeTypeCastExpression_Concept_Actions_DELETE extends EditorCellAction {
 
     /* package */SNode myNode;
@@ -25,12 +26,15 @@ public class SNodeTypeCastExpression_Concept_Actions {
     public String getDescriptionText() {
       return "replace type case with left expression";
     }
+
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
+
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "leftExpression", true));
     }
+
 }
 
 }

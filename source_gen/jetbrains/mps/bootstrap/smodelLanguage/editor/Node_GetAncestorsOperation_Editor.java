@@ -19,21 +19,26 @@ public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851697");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_OperationParameters_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851698");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1173122851696");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
   }
 
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     Node_GetAncestorsOperation_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -44,6 +49,7 @@ public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createOperationParameters_ComponentCell(context, node));
     return editorCell;
   }
+
   public EditorCell createOperationParameters_ComponentCell(EditorContext context, SNode node) {
     if(this.myOperationParameters_Component6 == null) {
       this.myOperationParameters_Component6 = new OperationParameters_Component(node);
@@ -54,6 +60,7 @@ public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
     Node_GetAncestorsOperation_Editor.setupBasic_OperationParameters_ComponentCell(editorCell, node, context);
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     Node_GetAncestorsOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -61,4 +68,5 @@ public class Node_GetAncestorsOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
 }

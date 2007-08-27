@@ -16,16 +16,20 @@ public class Concept_FindInstances extends SNodeOperation {
   }
 
   public static Concept_FindInstances newInstance(SModel sm, boolean init) {
-    return (Concept_FindInstances)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.Concept_FindInstances", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Concept_FindInstances)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_FindInstances", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Concept_FindInstances newInstance(SModel sm) {
     return Concept_FindInstances.newInstance(sm, false);
   }
 
+
   public Expression getScope() {
     return (Expression)this.getChild(Concept_FindInstances.SCOPE);
   }
+
   public void setScope(Expression node) {
     super.setChild(Concept_FindInstances.SCOPE, node);
   }
+
 }

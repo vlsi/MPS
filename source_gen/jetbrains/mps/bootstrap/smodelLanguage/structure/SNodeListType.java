@@ -17,16 +17,20 @@ public class SNodeListType extends Type {
   }
 
   public static SNodeListType newInstance(SModel sm, boolean init) {
-    return (SNodeListType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SNodeListType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SNodeListType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SNodeListType newInstance(SModel sm) {
     return SNodeListType.newInstance(sm, false);
   }
 
+
   public AbstractConceptDeclaration getElementConcept() {
     return (AbstractConceptDeclaration)this.getReferent(SNodeListType.ELEMENT_CONCEPT);
   }
+
   public void setElementConcept(AbstractConceptDeclaration node) {
     super.setReferent(SNodeListType.ELEMENT_CONCEPT, node);
   }
+
 }

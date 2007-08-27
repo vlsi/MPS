@@ -16,16 +16,20 @@ public class LinkList_AddNewChildOperation extends SNodeOperation {
   }
 
   public static LinkList_AddNewChildOperation newInstance(SModel sm, boolean init) {
-    return (LinkList_AddNewChildOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.LinkList_AddNewChildOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkList_AddNewChildOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_AddNewChildOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static LinkList_AddNewChildOperation newInstance(SModel sm) {
     return LinkList_AddNewChildOperation.newInstance(sm, false);
   }
 
+
   public ConceptDeclaration getConcept() {
     return (ConceptDeclaration)this.getReferent(LinkList_AddNewChildOperation.CONCEPT);
   }
+
   public void setConcept(ConceptDeclaration node) {
     super.setReferent(LinkList_AddNewChildOperation.CONCEPT, node);
   }
+
 }

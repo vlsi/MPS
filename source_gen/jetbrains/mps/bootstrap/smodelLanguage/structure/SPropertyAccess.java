@@ -16,16 +16,20 @@ public class SPropertyAccess extends SNodeOperation {
   }
 
   public static SPropertyAccess newInstance(SModel sm, boolean init) {
-    return (SPropertyAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SPropertyAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SPropertyAccess newInstance(SModel sm) {
     return SPropertyAccess.newInstance(sm, false);
   }
 
+
   public PropertyDeclaration getProperty() {
     return (PropertyDeclaration)this.getReferent(SPropertyAccess.PROPERTY);
   }
+
   public void setProperty(PropertyDeclaration node) {
     super.setReferent(SPropertyAccess.PROPERTY, node);
   }
+
 }

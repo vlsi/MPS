@@ -17,16 +17,20 @@ public class ConceptRefExpression extends Expression {
   }
 
   public static ConceptRefExpression newInstance(SModel sm, boolean init) {
-    return (ConceptRefExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.ConceptRefExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptRefExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ConceptRefExpression newInstance(SModel sm) {
     return ConceptRefExpression.newInstance(sm, false);
   }
 
+
   public AbstractConceptDeclaration getConceptDeclaration() {
     return (AbstractConceptDeclaration)this.getReferent(ConceptRefExpression.CONCEPT_DECLARATION);
   }
+
   public void setConceptDeclaration(AbstractConceptDeclaration node) {
     super.setReferent(ConceptRefExpression.CONCEPT_DECLARATION, node);
   }
+
 }

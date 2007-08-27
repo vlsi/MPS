@@ -21,38 +21,48 @@ public class Concept_IsSubConceptOfOperation_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180031838388");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180031838389");
     editorCell.setSelectable(false);
     editorCell.setFontType(MPSFonts.PLAIN);
     editorCell.setLayoutConstraint("punctuation");
   }
+
   private static void setupBasic_ConceptArgumentCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180031838390");
   }
+
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180031838391");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180031838387");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
   }
+
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConceptArgumentCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
   }
 
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     Concept_IsSubConceptOfOperation_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -65,6 +75,7 @@ public class Concept_IsSubConceptOfOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell2(context, node, ")"));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     Concept_IsSubConceptOfOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -72,6 +83,7 @@ public class Concept_IsSubConceptOfOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     Concept_IsSubConceptOfOperation_Editor.setupBasic_ConstantCell1(editorCell, node, context);
@@ -79,6 +91,7 @@ public class Concept_IsSubConceptOfOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     Concept_IsSubConceptOfOperation_Editor.setupBasic_ConstantCell2(editorCell, node, context);
@@ -86,6 +99,7 @@ public class Concept_IsSubConceptOfOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createConceptArgumentCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -97,6 +111,7 @@ public class Concept_IsSubConceptOfOperation_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createConceptArgumentCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("conceptArgument");
@@ -113,4 +128,5 @@ public class Concept_IsSubConceptOfOperation_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

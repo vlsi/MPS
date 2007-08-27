@@ -17,16 +17,20 @@ public class SConceptType extends Type {
   }
 
   public static SConceptType newInstance(SModel sm, boolean init) {
-    return (SConceptType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.SConceptType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SConceptType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SConceptType newInstance(SModel sm) {
     return SConceptType.newInstance(sm, false);
   }
 
+
   public AbstractConceptDeclaration getConceptDeclaraton() {
     return (AbstractConceptDeclaration)this.getReferent(SConceptType.CONCEPT_DECLARATON);
   }
+
   public void setConceptDeclaraton(AbstractConceptDeclaration node) {
     super.setReferent(SConceptType.CONCEPT_DECLARATON, node);
   }
+
 }

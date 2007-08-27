@@ -18,12 +18,15 @@ public class SNodeListCreator_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145567624652");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_CreatedTypeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createCreatedTypeCell(context, node);
   }
+
   public EditorCell createCreatedTypeCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -35,6 +38,7 @@ public class SNodeListCreator_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createCreatedTypeCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("createdType");
@@ -51,4 +55,5 @@ public class SNodeListCreator_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }
