@@ -19,6 +19,22 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1188217315627">
     <property name="name" value="SampleClass" />
+    <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1188218061224">
+      <property name="name" value="anotherField" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188218067072">
+        <link role="annotation" targetNodeId="1188216745729" resolveInfo="SomeAnnotation" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1188218061225" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1188218063368" />
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.StaticFieldDeclaration" id="1188218054156">
+      <property name="name" value="field" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188218058661">
+        <link role="annotation" targetNodeId="1188216745729" resolveInfo="SomeAnnotation" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1188218054157" />
+      <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1188218056238" />
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1188217848948">
       <property name="name" value="staticvoidmethod" />
       <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188217853514">
@@ -44,6 +60,28 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1188217800634" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188217800635" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1188217800636" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1188217999479">
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1188218001343">
+        <property name="name" value="parameter" />
+        <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188218040880">
+          <link role="annotation" targetNodeId="1188216745729" resolveInfo="SomeAnnotation" />
+        </node>
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1188218033817" />
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1188217999480" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188217999481" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1188217999482">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1188218047262">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1188218047263">
+            <property name="name" value="iiii" />
+            <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188218050593">
+              <link role="annotation" targetNodeId="1188216745729" resolveInfo="SomeAnnotation" />
+            </node>
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1188218047264" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188217320316">
       <link role="annotation" targetNodeId="1188216745729" resolveInfo="SomeAnnotation" />
