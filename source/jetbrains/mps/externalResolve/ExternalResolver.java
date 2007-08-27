@@ -116,6 +116,10 @@ public class ExternalResolver {
     return ExternalResolveInfoProvider.getExtResolveInfoFromJavaClass(clsName);
   }
 
+  public static String getExtResolveFromEnumConstant(String enumCls, String constName) {
+    return ExternalResolveInfoProvider.getEnumConstExtResInfo(getExtResolveInfoFromJavaClass(enumCls), constName);
+  }
+
 
   public static boolean doesNodeMatchERI(String externalResolveInfo, SNode node) {
     if (isEmptyExtResolveInfo(externalResolveInfo)) return false;

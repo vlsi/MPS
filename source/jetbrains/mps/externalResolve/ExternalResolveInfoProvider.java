@@ -268,9 +268,12 @@ public class ExternalResolveInfoProvider {
     String classExtResolveInfo = getExtResolveInfoForTargetClassGenericDeclaration(enumClass);
 
     String name = enumConstantDeclaration.getName();
-    String conceptName = enumConstantDeclaration.getShortConceptName();
 
-    String myExtResolveInfo = "[" + conceptName + "]" + name;
+    return getEnumConstExtResInfo(classExtResolveInfo, name);
+  }
+
+  public static String getEnumConstExtResInfo(String classExtResolveInfo, String name) {
+    String myExtResolveInfo = "[EnumConstantDeclaration]" + name;
     return ExternalResolver.ENUM_CONST + "(" + classExtResolveInfo + ")." + "(" + myExtResolveInfo + ")";
   }
 
