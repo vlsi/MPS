@@ -1228,6 +1228,9 @@
       <property name="role" value="visibility" />
       <link role="target" targetNodeId="1146644584814" resolveInfo="Visibility" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1188208561367">
+      <link role="intfc" targetNodeId="1188208481402" resolveInfo="Annotable" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1107535904670">
     <property name="name" value="ClassifierType" />
@@ -2178,6 +2181,24 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1188206574119">
     <property name="name" value="AnnotationMethodDeclaration" />
     <link role="extends" targetNodeId="1068580123165" resolveInfo="InstanceMethodDeclaration" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1188207840427">
+    <property name="name" value="AnnotationInstance" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1188208074048">
+      <property name="role" value="annotation" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1188206331916" resolveInfo="Annotation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1188208481402">
+    <property name="name" value="Annotable" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1188208488637">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="annotation" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1188207840427" resolveInfo="AnnotationInstance" />
+    </node>
   </node>
 </model>
 

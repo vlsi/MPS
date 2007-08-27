@@ -118,7 +118,7 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
 
   public EditorCell createStatementList(EditorContext context, SNode node) {
     if(this.myStatementListHandler_statementList_ == null) {
-      this.myStatementListHandler_statementList_ = new CommentedStatementsBlock_Editor._RefNodeListHandler42(node, "statement", context);
+      this.myStatementListHandler_statementList_ = new CommentedStatementsBlock_Editor._RefNodeListHandler46(node, "statement", context);
     }
     EditorCell_Collection editorCell = this.myStatementListHandler_statementList_.createCells(context, new CellLayout_Vertical(), false);
     CommentedStatementsBlock_Editor.setupBasic_StatementList(editorCell, node, context);
@@ -129,9 +129,9 @@ public class CommentedStatementsBlock_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _RefNodeListHandler42 extends RefNodeListHandler {
+  public static class _RefNodeListHandler46 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler42(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler46(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

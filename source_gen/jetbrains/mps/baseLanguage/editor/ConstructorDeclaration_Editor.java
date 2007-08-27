@@ -5,13 +5,13 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
@@ -33,10 +33,6 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellProvider my_Component_Visibility1;
   /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
   /* package */AbstractCellListHandler myThrowsItemListHandler_throwsItemList_;
-
-  public static boolean _QueryFunction_NodeCondition_1165410808113(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "throwsItem") > 0;
-  }
 
   private static void setupBasic__Component_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178547839561");
@@ -173,6 +169,10 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell7(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1165410808113(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "throwsItem") > 0;
   }
 
 
@@ -322,7 +322,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createParameterList(EditorContext context, SNode node) {
     if(this.myParameterListHandler_parameterList_ == null) {
-      this.myParameterListHandler_parameterList_ = new ConstructorDeclaration_Editor._RefNodeListHandler8(node, "parameter", context);
+      this.myParameterListHandler_parameterList_ = new ConstructorDeclaration_Editor._RefNodeListHandler10(node, "parameter", context);
     }
     EditorCell_Collection editorCell = this.myParameterListHandler_parameterList_.createCells(context, new CellLayout_Horizontal(), false);
     ConstructorDeclaration_Editor.setupBasic_ParameterList(editorCell, node, context);
@@ -335,7 +335,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
   public EditorCell createThrowsItemList(EditorContext context, SNode node) {
     if(this.myThrowsItemListHandler_throwsItemList_ == null) {
-      this.myThrowsItemListHandler_throwsItemList_ = new ConstructorDeclaration_Editor._RefNodeListHandler9(node, "throwsItem", context);
+      this.myThrowsItemListHandler_throwsItemList_ = new ConstructorDeclaration_Editor._RefNodeListHandler11(node, "throwsItem", context);
     }
     EditorCell_Collection editorCell = this.myThrowsItemListHandler_throwsItemList_.createCells(context, new CellLayout_Horizontal(), false);
     ConstructorDeclaration_Editor.setupBasic_ThrowsItemList(editorCell, node, context);
@@ -404,9 +404,9 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler8 extends RefNodeListHandler {
+  public static class _RefNodeListHandler10 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler8(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler10(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -469,16 +469,16 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      ConstructorDeclaration_Editor._RefNodeListHandler8.setupBasic_ConstantCell1(editorCell, node, context);
-      ConstructorDeclaration_Editor._RefNodeListHandler8.setupLabel_ConstantCell1(editorCell, node, context);
+      ConstructorDeclaration_Editor._RefNodeListHandler10.setupBasic_ConstantCell1(editorCell, node, context);
+      ConstructorDeclaration_Editor._RefNodeListHandler10.setupLabel_ConstantCell1(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
 
 }
-  public static class _RefNodeListHandler9 extends RefNodeListHandler {
+  public static class _RefNodeListHandler11 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler9(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler11(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

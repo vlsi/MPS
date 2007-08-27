@@ -9,10 +9,11 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
 
-public class Classifier extends GenericDeclaration {
+public class Classifier extends GenericDeclaration implements Annotable {
   public static String VISIBILITY = "visibility";
   public static String STATIC_FIELD = "staticField";
   public static String METHOD = "method";
+  public static String ANNOTATION = "annotation";
 
   public  Classifier(SNode node) {
     super(node);
@@ -73,6 +74,26 @@ public class Classifier extends GenericDeclaration {
 
   public void insertMethod(InstanceMethodDeclaration prev, InstanceMethodDeclaration node) {
     this.insertChild(prev, Classifier.METHOD, node);
+  }
+
+  public int getAnnotationsCount() {
+    return this.getChildCount(Classifier.ANNOTATION);
+  }
+
+  public Iterator<AnnotationInstance> annotations() {
+    return this.children(Classifier.ANNOTATION);
+  }
+
+  public List<AnnotationInstance> getAnnotations() {
+    return this.getChildren(Classifier.ANNOTATION);
+  }
+
+  public void addAnnotation(AnnotationInstance node) {
+    this.addChild(Classifier.ANNOTATION, node);
+  }
+
+  public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
+    this.insertChild(prev, Classifier.ANNOTATION, node);
   }
 
 }

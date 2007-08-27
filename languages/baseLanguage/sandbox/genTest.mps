@@ -9,6 +9,9 @@
   <import index="4" modelUID="java.util@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1171627004550">
     <property name="name" value="A" />
+    <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188209049097">
+      <link role="annotation" extResolveInfo="1.[Classifier]SuppressWarnings" />
+    </node>
     <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.ClassConcept" id="1178617481415">
       <property name="name" value="ABCDEF" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1178617702936" />

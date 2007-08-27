@@ -186,7 +186,7 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createCatchClauseList(EditorContext context, SNode node) {
     if(this.myCatchClauseListHandler_catchClauseList_ == null) {
-      this.myCatchClauseListHandler_catchClauseList_ = new TryCatchStatement_Editor._RefNodeListHandler35(node, "catchClause", context);
+      this.myCatchClauseListHandler_catchClauseList_ = new TryCatchStatement_Editor._RefNodeListHandler39(node, "catchClause", context);
     }
     EditorCell_Collection editorCell = this.myCatchClauseListHandler_catchClauseList_.createCells(context, new CellLayout_Vertical(), false);
     TryCatchStatement_Editor.setupBasic_CatchClauseList(editorCell, node, context);
@@ -226,9 +226,9 @@ public class TryCatchStatement_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler35 extends RefNodeListHandler {
+  public static class _RefNodeListHandler39 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler35(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler39(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

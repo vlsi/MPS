@@ -121,7 +121,7 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
 
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
     if(this.myActualArgumentListHandler_actualArgumentList_ == null) {
-      this.myActualArgumentListHandler_actualArgumentList_ = new SuperConstructorInvocation_Editor._RefNodeListHandler18(node, "actualArgument", context);
+      this.myActualArgumentListHandler_actualArgumentList_ = new SuperConstructorInvocation_Editor._RefNodeListHandler20(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
     SuperConstructorInvocation_Editor.setupBasic_ActualArgumentList(editorCell, node, context);
@@ -132,9 +132,9 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _RefNodeListHandler18 extends RefNodeListHandler {
+  public static class _RefNodeListHandler20 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler18(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler20(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -197,8 +197,8 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
 
     public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      SuperConstructorInvocation_Editor._RefNodeListHandler18.setupBasic_ConstantCell2(editorCell, node, context);
-      SuperConstructorInvocation_Editor._RefNodeListHandler18.setupLabel_ConstantCell2(editorCell, node, context);
+      SuperConstructorInvocation_Editor._RefNodeListHandler20.setupBasic_ConstantCell2(editorCell, node, context);
+      SuperConstructorInvocation_Editor._RefNodeListHandler20.setupLabel_ConstantCell2(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
