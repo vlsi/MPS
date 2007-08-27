@@ -19,16 +19,21 @@ public class ReferenceConceptLink_target_ReferentConstraint implements IModelCon
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink", "target", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink", "target");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(referenceNode, "conceptLinkDeclaration", false), "targetType", false) != null;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return new ReferenceConceptLinkTargetSearchScope(referenceNode, scope);
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "only nodes assignable to target type specified in concept link declaration";
   }
+
 }

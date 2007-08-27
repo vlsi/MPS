@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PropertyDeclaration extends BaseConcept implements INamedConcept {
-  public static String DATA_TYPE = "dataType";
   public static String NAME = "name";
+  public static String DATA_TYPE = "dataType";
 
   public  PropertyDeclaration(SNode node) {
     super(node);
@@ -26,20 +26,20 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept {
   }
 
 
-  public DataTypeDeclaration getDataType() {
-    return (DataTypeDeclaration)this.getReferent(PropertyDeclaration.DATA_TYPE);
-  }
-
-  public void setDataType(DataTypeDeclaration node) {
-    super.setReferent(PropertyDeclaration.DATA_TYPE, node);
-  }
-
   public String getName() {
     return this.getProperty(PropertyDeclaration.NAME);
   }
 
   public void setName(String value) {
     this.setProperty(PropertyDeclaration.NAME, value);
+  }
+
+  public DataTypeDeclaration getDataType() {
+    return (DataTypeDeclaration)this.getReferent(PropertyDeclaration.DATA_TYPE);
+  }
+
+  public void setDataType(DataTypeDeclaration node) {
+    super.setReferent(PropertyDeclaration.DATA_TYPE, node);
   }
 
 }

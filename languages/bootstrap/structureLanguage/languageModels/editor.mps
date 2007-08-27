@@ -542,9 +542,9 @@
                           <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1185271273286">
                             <node role="argument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1185271281369">
                               <link role="baseMethodDeclaration" extResolveInfo="29.method ([Classifier]Cardinality).([InstanceMethodDeclaration]getValueAsString() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                              <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1185271276726">
-                                <link role="classifier" extResolveInfo="29.[Classifier]Cardinality" />
-                                <link role="variableDeclaration" extResolveInfo="29.static field ([Classifier]Cardinality).([StaticFieldDeclaration]_0_1 : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Cardinality]))" />
+                              <node role="instance" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230297816">
+                                <link role="enumConstantDeclaration" extResolveInfo="29.enum const ([Classifier]Cardinality).([EnumConstantDeclaration]_0_1)" />
+                                <link role="enumClass" extResolveInfo="29.[Classifier]Cardinality" />
                               </node>
                             </node>
                           </node>
@@ -558,9 +558,9 @@
                           <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1185271284843">
                             <node role="argument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1185271293646">
                               <link role="baseMethodDeclaration" extResolveInfo="29.method ([Classifier]Cardinality).([InstanceMethodDeclaration]getValueAsString() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
-                              <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1185271287876">
-                                <link role="classifier" extResolveInfo="29.[Classifier]Cardinality" />
-                                <link role="variableDeclaration" extResolveInfo="29.static field ([Classifier]Cardinality).([StaticFieldDeclaration]_1 : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Cardinality]))" />
+                              <node role="instance" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230300583">
+                                <link role="enumConstantDeclaration" extResolveInfo="29.enum const ([Classifier]Cardinality).([EnumConstantDeclaration]_1)" />
+                                <link role="enumClass" extResolveInfo="29.[Classifier]Cardinality" />
                               </node>
                             </node>
                           </node>
@@ -814,9 +814,9 @@
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182234081147">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1182234103709">
                   <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1182234160829">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1182234165742">
-                      <link role="classifier" extResolveInfo="29.[Classifier]LinkMetaclass" />
-                      <link role="variableDeclaration" extResolveInfo="29.static field ([Classifier]LinkMetaclass).([StaticFieldDeclaration]aggregation : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LinkMetaclass]))" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230327315">
+                      <link role="enumConstantDeclaration" extResolveInfo="29.enum const ([Classifier]LinkMetaclass).([EnumConstantDeclaration]aggregation)" />
+                      <link role="enumClass" extResolveInfo="29.[Classifier]LinkMetaclass" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1182234156906">
                       <link role="baseMethodDeclaration" extResolveInfo="29.method ([Classifier]LinkDeclaration).([InstanceMethodDeclaration]getMetaClass() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LinkMetaclass]))" />
@@ -860,9 +860,9 @@
                         <link role="variableDeclaration" targetNodeId="1182234409420" resolveInfo="result" />
                       </node>
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1182234451602">
-                      <link role="classifier" extResolveInfo="29.[Classifier]LinkMetaclass" />
-                      <link role="variableDeclaration" extResolveInfo="29.static field ([Classifier]LinkMetaclass).([StaticFieldDeclaration]aggregation : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LinkMetaclass]))" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230308973">
+                      <link role="enumConstantDeclaration" extResolveInfo="29.enum const ([Classifier]LinkMetaclass).([EnumConstantDeclaration]aggregation)" />
+                      <link role="enumClass" extResolveInfo="29.[Classifier]LinkMetaclass" />
                     </node>
                   </node>
                 </node>
@@ -890,9 +890,9 @@
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182234553572">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1182234553573">
                   <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1182234553574">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1182234553575">
-                      <link role="classifier" extResolveInfo="29.[Classifier]LinkMetaclass" />
-                      <link role="variableDeclaration" extResolveInfo="29.static field ([Classifier]LinkMetaclass).([StaticFieldDeclaration]reference : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LinkMetaclass]))" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230033390">
+                      <link role="enumConstantDeclaration" extResolveInfo="29.enum const ([Classifier]LinkMetaclass).([EnumConstantDeclaration]reference)" />
+                      <link role="enumClass" extResolveInfo="29.[Classifier]LinkMetaclass" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1182234553576">
                       <link role="baseMethodDeclaration" extResolveInfo="29.method ([Classifier]LinkDeclaration).([InstanceMethodDeclaration]getMetaClass() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LinkMetaclass]))" />
@@ -936,9 +936,9 @@
                         <link role="variableDeclaration" targetNodeId="1182234553584" resolveInfo="result" />
                       </node>
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1182234595787">
-                      <link role="classifier" extResolveInfo="29.[Classifier]LinkMetaclass" />
-                      <link role="variableDeclaration" extResolveInfo="29.static field ([Classifier]LinkMetaclass).([StaticFieldDeclaration]reference : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LinkMetaclass]))" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230455032">
+                      <link role="enumConstantDeclaration" extResolveInfo="29.enum const ([Classifier]LinkMetaclass).([EnumConstantDeclaration]reference)" />
+                      <link role="enumClass" extResolveInfo="29.[Classifier]LinkMetaclass" />
                     </node>
                   </node>
                 </node>
@@ -1718,9 +1718,9 @@
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182235045135">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1182235045136">
                   <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1182235045137">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1182235045138">
-                      <link role="classifier" extResolveInfo="29.[Classifier]LinkMetaclass" />
-                      <link role="variableDeclaration" extResolveInfo="29.static field ([Classifier]LinkMetaclass).([StaticFieldDeclaration]aggregation : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LinkMetaclass]))" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230157273">
+                      <link role="enumConstantDeclaration" extResolveInfo="29.enum const ([Classifier]LinkMetaclass).([EnumConstantDeclaration]aggregation)" />
+                      <link role="enumClass" extResolveInfo="29.[Classifier]LinkMetaclass" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1182235045139">
                       <link role="baseMethodDeclaration" extResolveInfo="29.method ([Classifier]LinkDeclaration).([InstanceMethodDeclaration]getMetaClass() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LinkMetaclass]))" />
@@ -1764,9 +1764,9 @@
                         <link role="variableDeclaration" targetNodeId="1182235045147" resolveInfo="result" />
                       </node>
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1182235045159">
-                      <link role="variableDeclaration" extResolveInfo="29.static field ([Classifier]LinkMetaclass).([StaticFieldDeclaration]aggregation : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LinkMetaclass]))" />
-                      <link role="classifier" extResolveInfo="29.[Classifier]LinkMetaclass" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230469297">
+                      <link role="enumConstantDeclaration" extResolveInfo="29.enum const ([Classifier]LinkMetaclass).([EnumConstantDeclaration]aggregation)" />
+                      <link role="enumClass" extResolveInfo="29.[Classifier]LinkMetaclass" />
                     </node>
                   </node>
                 </node>
@@ -1794,9 +1794,9 @@
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1182235060329">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1182235060330">
                   <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1182235060331">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1182235060332">
-                      <link role="classifier" extResolveInfo="29.[Classifier]LinkMetaclass" />
-                      <link role="variableDeclaration" extResolveInfo="29.static field ([Classifier]LinkMetaclass).([StaticFieldDeclaration]reference : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LinkMetaclass]))" />
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230160226">
+                      <link role="enumConstantDeclaration" extResolveInfo="29.enum const ([Classifier]LinkMetaclass).([EnumConstantDeclaration]reference)" />
+                      <link role="enumClass" extResolveInfo="29.[Classifier]LinkMetaclass" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1182235060333">
                       <link role="baseMethodDeclaration" extResolveInfo="29.method ([Classifier]LinkDeclaration).([InstanceMethodDeclaration]getMetaClass() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LinkMetaclass]))" />
@@ -1840,9 +1840,9 @@
                         <link role="variableDeclaration" targetNodeId="1182235060341" resolveInfo="result" />
                       </node>
                     </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1182235060353">
-                      <link role="variableDeclaration" extResolveInfo="29.static field ([Classifier]LinkMetaclass).([StaticFieldDeclaration]reference : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LinkMetaclass]))" />
-                      <link role="classifier" extResolveInfo="29.[Classifier]LinkMetaclass" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230473407">
+                      <link role="enumConstantDeclaration" extResolveInfo="29.enum const ([Classifier]LinkMetaclass).([EnumConstantDeclaration]reference)" />
+                      <link role="enumClass" extResolveInfo="29.[Classifier]LinkMetaclass" />
                     </node>
                   </node>
                 </node>

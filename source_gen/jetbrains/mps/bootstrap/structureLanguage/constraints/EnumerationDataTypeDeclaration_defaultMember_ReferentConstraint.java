@@ -19,16 +19,21 @@ public class EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint imp
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration", "defaultMember", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration", "defaultMember");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return referenceNode != null;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return new SubnodesSearchScope(referenceNode);
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "members declared here";
   }
+
 }

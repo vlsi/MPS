@@ -18,16 +18,21 @@ public class ConceptDeclaration_extends_ReferentConstraint implements IModelCons
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", "extends", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", "extends");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return referenceNode != null;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return new ConceptDeclarationExtendedConceptSearchScope(referenceNode, scope);
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "don't allow cycling";
   }
+
 }

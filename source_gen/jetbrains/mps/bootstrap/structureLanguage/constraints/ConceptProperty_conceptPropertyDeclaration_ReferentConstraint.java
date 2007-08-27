@@ -21,17 +21,22 @@ public class ConceptProperty_conceptPropertyDeclaration_ReferentConstraint imple
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty", "conceptPropertyDeclaration", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty", "conceptPropertyDeclaration");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return true;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode enclosingConcept = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", true, false);
     return new ConceptHierarchyScope(((ConceptDeclaration)SNodeOperations.getAdapter(enclosingConcept)));
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "concept properties declared in hierarchy of enclosing concept";
   }
+
 }

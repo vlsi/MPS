@@ -12,4 +12,5 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_ConceptDeclaration_1163111194509(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     SLinkOperations.setTarget(newNode, "extends", SModelUtil_new.getBaseConcept().getNode(), false);
   }
+
 }

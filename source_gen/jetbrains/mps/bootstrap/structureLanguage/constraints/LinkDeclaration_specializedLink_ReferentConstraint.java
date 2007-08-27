@@ -25,12 +25,15 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
   public void registerSelf(ModelConstraintsManager manager) {
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration", "specializedLink", this);
   }
+
   public void unRegisterSelf(ModelConstraintsManager manager) {
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration", "specializedLink");
   }
+
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     return true;
   }
+
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode enclosingConcept = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", true, false);
     SNode extendedConcept = SLinkOperations.getTarget(enclosingConcept, "extends", false);
@@ -40,7 +43,9 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
     List links = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((ConceptDeclaration)SNodeOperations.getAdapter(extendedConcept)));
     return new SimpleSearchScope(links);
   }
+
   public String getNodeReferentSearchScopeDescription() {
     return "links declared in hierarchy of enclosing concept.";
   }
+
 }

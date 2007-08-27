@@ -23,20 +23,20 @@ public class StringConceptProperty extends ConceptProperty {
   }
 
 
-  public StringConceptPropertyDeclaration getStringConceptPropertyDeclaration() {
-    return (StringConceptPropertyDeclaration)this.getConceptPropertyDeclaration();
-  }
-
-  public void setStringConceptPropertyDeclaration(StringConceptPropertyDeclaration node) {
-    this.setConceptPropertyDeclaration(node);
-  }
-
   public String getValue() {
     return this.getProperty(StringConceptProperty.VALUE);
   }
 
   public void setValue(String value) {
     this.setProperty(StringConceptProperty.VALUE, value);
+  }
+
+  public StringConceptPropertyDeclaration getStringConceptPropertyDeclaration() {
+    return (StringConceptPropertyDeclaration)this.getConceptPropertyDeclaration();
+  }
+
+  public void setStringConceptPropertyDeclaration(StringConceptPropertyDeclaration node) {
+    this.setConceptPropertyDeclaration(node);
   }
 
 }
