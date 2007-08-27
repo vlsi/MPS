@@ -2,7 +2,8 @@
 <model name="jetbrains.mps.baseLanguage.sandbox.genTest">
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguageInternal" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="5" />
+  <import index="5" modelUID="jetbrains.mps.ide.command@java_stub" />
   <node type="jetbrains.mps.baseLanguage.Annotation" id="1188216745729">
     <property name="name" value="SomeAnnotation" />
     <node role="method" type="jetbrains.mps.baseLanguage.AnnotationMethodDeclaration" id="1188216750434">
@@ -70,7 +71,14 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1188217848949" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188217848950" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1188217848951" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1188217848951">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1188223347705">
+          <node role="expression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188223348832">
+            <link role="enumClass" extResolveInfo="5.[Classifier]CommandKind" />
+            <link role="enumConstantDeclaration" extResolveInfo="5.enum const ([Classifier]CommandKind).([EnumConstantDeclaration]GENERATION)" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1188217840286">
       <property name="name" value="voidmethod" />

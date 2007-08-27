@@ -96,6 +96,7 @@ public class ExternalResolveInfoParser {
     if (node instanceof FieldDeclaration) return ExternalResolver.FIELD;
     if (node instanceof StaticFieldDeclaration) return ExternalResolver.STATIC_FIELD;
     if (node instanceof ConstructorDeclaration) return ExternalResolver.CONSTRUCTOR;
+    if (node instanceof EnumConstantDeclaration) return ExternalResolver.ENUM_CONST;
     return ExternalResolver.NO_MEMBER_TYPE;
   }
 
