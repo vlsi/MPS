@@ -2171,6 +2171,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1188206331916">
     <property name="name" value="Annotation" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${mps_home}\languages\baseLanguage\icons\annotation.png" />
     <link role="extends" targetNodeId="1107796713796" resolveInfo="Interface" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1188206594042">
       <property name="metaClass" value="aggregation" />
