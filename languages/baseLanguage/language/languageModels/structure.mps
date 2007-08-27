@@ -2190,7 +2190,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1188207840427">
     <property name="name" value="AnnotationInstance" />
-    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <link role="extends" targetNodeId="4.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1188214630783">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="value" />

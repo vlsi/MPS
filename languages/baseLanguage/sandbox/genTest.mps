@@ -3,10 +3,6 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguageInternal" />
   <maxImportIndex value="4" />
-  <import index="1" modelUID="java.lang@java_stub" />
-  <import index="2" modelUID="java.io@java_stub" />
-  <import index="3" modelUID="java.lang.reflect@java_stub" />
-  <import index="4" modelUID="java.util@java_stub" />
   <node type="jetbrains.mps.baseLanguage.Annotation" id="1188216745729">
     <property name="name" value="SomeAnnotation" />
     <node role="method" type="jetbrains.mps.baseLanguage.AnnotationMethodDeclaration" id="1188216750434">
@@ -29,6 +25,20 @@
       <property name="name" value="anotherField" />
       <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188218067072">
         <link role="annotation" targetNodeId="1188216745729" resolveInfo="SomeAnnotation" />
+        <node role="value" type="jetbrains.mps.baseLanguage.AnnotationInstanceValue" id="1188219710708">
+          <link role="key" targetNodeId="1188216750434" resolveInfo="parameter1" />
+          <node role="value" type="jetbrains.mps.baseLanguage.AnnotationInstanceExpression" id="1188219992042">
+            <node role="annotationInstance" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188219992043">
+              <link role="annotation" targetNodeId="1188216745729" resolveInfo="SomeAnnotation" />
+              <node role="value" type="jetbrains.mps.baseLanguage.AnnotationInstanceValue" id="1188219993544">
+                <link role="key" targetNodeId="1188216750434" resolveInfo="parameter1" />
+                <node role="value" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1188219996452">
+                  <property name="value" value="23" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PrivateVisibility" id="1188218061225" />
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1188218063368" />

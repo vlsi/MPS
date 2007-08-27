@@ -10,8 +10,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class SuperConstructorInvocation extends Statement {
-  public static String ACTUAL_ARGUMENT = "actualArgument";
   public static String CONSTRUCTOR_DECLARATION = "constructorDeclaration";
+  public static String ACTUAL_ARGUMENT = "actualArgument";
 
   public  SuperConstructorInvocation(SNode node) {
     super(node);
@@ -25,6 +25,14 @@ public class SuperConstructorInvocation extends Statement {
     return SuperConstructorInvocation.newInstance(sm, false);
   }
 
+
+  public ConstructorDeclaration getConstructorDeclaration() {
+    return (ConstructorDeclaration)this.getReferent(SuperConstructorInvocation.CONSTRUCTOR_DECLARATION);
+  }
+
+  public void setConstructorDeclaration(ConstructorDeclaration node) {
+    super.setReferent(SuperConstructorInvocation.CONSTRUCTOR_DECLARATION, node);
+  }
 
   public int getActualArgumentsCount() {
     return this.getChildCount(SuperConstructorInvocation.ACTUAL_ARGUMENT);
@@ -44,14 +52,6 @@ public class SuperConstructorInvocation extends Statement {
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, SuperConstructorInvocation.ACTUAL_ARGUMENT, node);
-  }
-
-  public ConstructorDeclaration getConstructorDeclaration() {
-    return (ConstructorDeclaration)this.getReferent(SuperConstructorInvocation.CONSTRUCTOR_DECLARATION);
-  }
-
-  public void setConstructorDeclaration(ConstructorDeclaration node) {
-    super.setReferent(SuperConstructorInvocation.CONSTRUCTOR_DECLARATION, node);
   }
 
 }

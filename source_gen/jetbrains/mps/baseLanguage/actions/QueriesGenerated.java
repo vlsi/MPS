@@ -70,6 +70,10 @@ public class QueriesGenerated {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", true, false) != null;
   }
 
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1188219568912(SNode parentNode, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.AnnotationInstance", true, false) != null;
+  }
+
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177499026996(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     SNode ct = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(sourceNode), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     return ct != null;
@@ -685,6 +689,29 @@ public class QueriesGenerated {
 
         });
       }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1188219521578(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression", operationContext.getScope());
+      ConceptDeclaration wrappedConcept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", operationContext.getScope());
+      IChildNodeSetter setter = new AbstractChildNodeSetter() {
+
+        public SNode wrapNode(SNode nodeToWrap, SModel model) {
+          SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression", null);
+          SLinkOperations.setTarget(result, "annotationInstance", nodeToWrap, true);
+          return result;
+        }
+
+        public void doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
+          childSetter.execute(parentNode, currentTargetNode, this.wrapNode(nc, nc.getModel()), operationContext.getScope());
+        }
+
+      };
+      result.addAll(ModelActions.createChildSubstituteActions(parentNode, currentTargetNode, wrappedConcept, setter, operationContext));
     }
     return result;
   }
