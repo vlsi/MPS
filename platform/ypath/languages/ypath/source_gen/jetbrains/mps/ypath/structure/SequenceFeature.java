@@ -10,13 +10,13 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SequenceFeature extends BaseConcept implements INamedConcept, IFeature {
+  public static String NAME = "name";
+  public static String WRITABLE = "writable";
+  public static String DEFAULT = "default";
   public static String SEQUENCE_FUNCTION = "sequenceFunction";
   public static String SIZE_FUNCTION = "sizeFunction";
   public static String ADD_FUNCTION = "addFunction";
   public static String REMOVE_FUNCTION = "removeFunction";
-  public static String NAME = "name";
-  public static String WRITABLE = "writable";
-  public static String DEFAULT = "default";
 
   public  SequenceFeature(SNode node) {
     super(node);
@@ -30,6 +30,30 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
     return SequenceFeature.newInstance(sm, false);
   }
 
+
+  public String getName() {
+    return this.getProperty(SequenceFeature.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(SequenceFeature.NAME, value);
+  }
+
+  public boolean getWritable() {
+    return this.getBooleanProperty(SequenceFeature.WRITABLE);
+  }
+
+  public void setWritable(boolean value) {
+    this.setBooleanProperty(SequenceFeature.WRITABLE, value);
+  }
+
+  public boolean getDefault() {
+    return this.getBooleanProperty(SequenceFeature.DEFAULT);
+  }
+
+  public void setDefault(boolean value) {
+    this.setBooleanProperty(SequenceFeature.DEFAULT, value);
+  }
 
   public FeatureSequenceFun getSequenceFunction() {
     return (FeatureSequenceFun)this.getChild(SequenceFeature.SEQUENCE_FUNCTION);
@@ -61,30 +85,6 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
 
   public void setRemoveFunction(FeatureRemoveFun node) {
     super.setChild(SequenceFeature.REMOVE_FUNCTION, node);
-  }
-
-  public String getName() {
-    return this.getProperty(SequenceFeature.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(SequenceFeature.NAME, value);
-  }
-
-  public boolean getWritable() {
-    return this.getBooleanProperty(SequenceFeature.WRITABLE);
-  }
-
-  public void setWritable(boolean value) {
-    this.setBooleanProperty(SequenceFeature.WRITABLE, value);
-  }
-
-  public boolean getDefault() {
-    return this.getBooleanProperty(SequenceFeature.DEFAULT);
-  }
-
-  public void setDefault(boolean value) {
-    this.setBooleanProperty(SequenceFeature.DEFAULT, value);
   }
 
 }

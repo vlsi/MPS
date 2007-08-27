@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TreeNodeKindProperty extends BaseConcept implements INamedConcept {
-  public static String GETTER = "getter";
   public static String NAME = "name";
   public static String DEFAULT = "default";
+  public static String GETTER = "getter";
 
   public  TreeNodeKindProperty(SNode node) {
     super(node);
@@ -26,14 +26,6 @@ public class TreeNodeKindProperty extends BaseConcept implements INamedConcept {
     return TreeNodeKindProperty.newInstance(sm, false);
   }
 
-
-  public PropertyGetter getGetter() {
-    return (PropertyGetter)this.getChild(TreeNodeKindProperty.GETTER);
-  }
-
-  public void setGetter(PropertyGetter node) {
-    super.setChild(TreeNodeKindProperty.GETTER, node);
-  }
 
   public String getName() {
     return this.getProperty(TreeNodeKindProperty.NAME);
@@ -49,6 +41,14 @@ public class TreeNodeKindProperty extends BaseConcept implements INamedConcept {
 
   public void setDefault(boolean value) {
     this.setBooleanProperty(TreeNodeKindProperty.DEFAULT, value);
+  }
+
+  public PropertyGetter getGetter() {
+    return (PropertyGetter)this.getChild(TreeNodeKindProperty.GETTER);
+  }
+
+  public void setGetter(PropertyGetter node) {
+    super.setChild(TreeNodeKindProperty.GETTER, node);
   }
 
 }
