@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.helgins.inference.util.StructuralNodeSet;
 import jetbrains.mps.helgins.inference.util.StructuralNodeMap;
+import jetbrains.mps.helgins.inference.util.LatticeUtil;
 import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.patterns.util.MatchingUtil;
@@ -89,6 +90,24 @@ public class SubtypingManager {
     if (equationManager != null) {
       subRepresentator = equationManager.getRepresentatorWrapper(subtype);
       superRepresentator = equationManager.getRepresentatorWrapper(supertype);
+    }
+
+    //meet-wrappers
+    if (subRepresentator instanceof MeetWrapper) {
+      for (IWrapper subWrapper : ((MeetWrapper)subRepresentator).getArguments()) {
+        if (isSubtype(subWrapper, supertype, equationManager, errorInfo, isWeak)) {
+          return true;
+        }
+      }
+    }
+
+    //join-wrappers
+    if (superRepresentator instanceof JoinWrapper) {
+      for (IWrapper superWrapper :((JoinWrapper)superRepresentator).getArguments()) {
+        if (isSubtype(subRepresentator, superWrapper, equationManager, errorInfo, isWeak)) {
+          return true;
+        }
+      }
     }
 
     //supertypes
@@ -323,6 +342,9 @@ public class SubtypingManager {
         }
       }
     }
+
+//    StructuralNodeSet result_ = new StructuralNodeSet();
+//    result_.add(LatticeUtil.join( commonSupertypes));
 
     return commonSupertypes;
   }
