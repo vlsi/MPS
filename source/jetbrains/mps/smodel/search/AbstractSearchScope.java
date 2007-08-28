@@ -12,14 +12,10 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
- * Created by IntelliJ IDEA.
- * User: Igoor
- * Date: Jan 20, 2006
- * Time: 3:52:38 PM
- * To change this template use File | Settings | File Templates.
+ * Igor Alshannikov
+ * Jan 20, 2006
  */
 public abstract class AbstractSearchScope implements ISearchScope {
-  private List<ISearchScope> myAppendedScopes;
   protected static Condition<SNode> TRUE_CONDITION = new Condition<SNode>() {
     public boolean met(SNode object) {
       return true;
@@ -33,9 +29,7 @@ public abstract class AbstractSearchScope implements ISearchScope {
 
   @NotNull
   public final List<SNode> getNodes(Condition<SNode> condition) {
-    List<SNode> list = getOwnNodes(condition);
-    list.addAll(getNodesFromAppendedScopes(condition));
-    return list;
+    return getOwnNodes(condition);
   }
 
   @NotNull
@@ -61,8 +55,6 @@ public abstract class AbstractSearchScope implements ISearchScope {
   public final SNode findNode(Condition<SNode> condition) {
     List<SNode> list = getOwnNodes(condition);
     if (list.size() > 0) return list.get(0);
-    List<SNode> nodesFromAppendedScopes = getNodesFromAppendedScopes(condition);
-    if (nodesFromAppendedScopes.size() > 0) return nodesFromAppendedScopes.get(0);
     return null;
   }
 
@@ -76,15 +68,4 @@ public abstract class AbstractSearchScope implements ISearchScope {
   }
 
   public abstract List<SNode> getOwnNodes(Condition<SNode> condition);
-
-  private List<SNode> getNodesFromAppendedScopes(Condition<SNode> condition) {
-    if (myAppendedScopes == null) {
-      return EMPTY_LIST;
-    }
-    List<SNode> result = new LinkedList<SNode>();
-    for (ISearchScope searchScope : myAppendedScopes) {
-      result.addAll(searchScope.getNodes(condition));
-    }
-    return result;
-  }
 }
