@@ -11,6 +11,8 @@ import jetbrains.mps.bootstrap.helgins.structure.TypeVarDeclaration;
 import java.util.List;
 import java.util.ArrayList;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -25,7 +27,8 @@ public class TypeVarScope extends SearchScopeWithNode {
   }
 
 
-  public List<SNode> getOwnNodes(Condition<SNode> condition) {
+  @NotNull
+  public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> result = new ArrayList<SNode>();
     Statement statement = BaseAdapter.fromNode(getEnclosingNode()).getParent(Statement.class);
     while(statement != null) {

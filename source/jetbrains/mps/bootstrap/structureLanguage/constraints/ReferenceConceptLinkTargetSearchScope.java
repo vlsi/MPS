@@ -14,6 +14,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import java.util.List;
 import java.util.Collections;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Igor Alshannikov
  * Date: Nov 9, 2006
@@ -28,7 +30,8 @@ public class ReferenceConceptLinkTargetSearchScope extends AbstractSearchScope {
     myReferenceConceptLink = (ReferenceConceptLink) referenceConceptLink.getAdapter();
   }
 
-  public List<SNode> getOwnNodes(Condition<SNode> condition) {
+  @NotNull
+  public List<SNode> getNodes(Condition<SNode> condition) {
     if (myOwnNodes == null) {
       myOwnNodes = createOwnNodesList();
     }

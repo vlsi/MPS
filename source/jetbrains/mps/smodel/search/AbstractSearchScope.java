@@ -7,8 +7,6 @@ import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import static java.util.Collections.EMPTY_LIST;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -25,11 +23,6 @@ public abstract class AbstractSearchScope implements ISearchScope {
   @NotNull
   public final List<SNode> getNodes() {
     return getNodes(TRUE_CONDITION);
-  }
-
-  @NotNull
-  public final List<SNode> getNodes(Condition<SNode> condition) {
-    return getOwnNodes(condition);
   }
 
   @NotNull
@@ -52,8 +45,8 @@ public abstract class AbstractSearchScope implements ISearchScope {
   }
 
   @Nullable
-  public final SNode findNode(Condition<SNode> condition) {
-    List<SNode> list = getOwnNodes(condition);
+  public SNode findNode(Condition<SNode> condition) {
+    List<SNode> list = getNodes(condition);
     if (list.size() > 0) return list.get(0);
     return null;
   }
@@ -66,6 +59,4 @@ public abstract class AbstractSearchScope implements ISearchScope {
       }
     }));
   }
-
-  public abstract List<SNode> getOwnNodes(Condition<SNode> condition);
 }

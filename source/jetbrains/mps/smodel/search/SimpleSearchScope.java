@@ -6,6 +6,8 @@ import jetbrains.mps.util.Condition;
 
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Igor Alshannikov
  * Mar 1, 2006
@@ -24,7 +26,8 @@ public class SimpleSearchScope extends AbstractSearchScope {
     }
   }
 
-  public List<SNode> getOwnNodes(Condition<SNode> condition) {
+  @NotNull
+  public List<SNode> getNodes(Condition<SNode> condition) {
     List<SNode> result = null;
 
     for (Object myNode : myNodes) {

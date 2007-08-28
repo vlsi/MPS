@@ -5,6 +5,8 @@ import jetbrains.mps.util.Condition;
 
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Igoor
@@ -19,7 +21,8 @@ public class SubnodesSearchScope extends AbstractSearchScope {
     myEnclosingNode = enclosingNode;
   }
 
-  public List<SNode> getOwnNodes(Condition<SNode> condition) {
+  @NotNull
+  public List<SNode> getNodes(Condition<SNode> condition) {
     if (myEnclosingNode == null) return new ArrayList<SNode>();
     return myEnclosingNode.getSubnodes(condition);
   }

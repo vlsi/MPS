@@ -6,6 +6,8 @@ import jetbrains.mps.util.Condition;
 
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * author: Igor Alshannikov
  * Sep 20, 2006
@@ -17,7 +19,8 @@ public class ModelNodesSearchScope extends AbstractSearchScope {
     myModel = model;
   }
 
-  public List<SNode> getOwnNodes(Condition<SNode> condition) {
+  @NotNull
+  public List<SNode> getNodes(Condition<SNode> condition) {
     return myModel.allNodes(condition);
   }
 }

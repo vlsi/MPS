@@ -5,6 +5,8 @@ import jetbrains.mps.util.Condition;
 
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Igoor
@@ -13,7 +15,8 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class EmptySearchScope extends AbstractSearchScope {
-  public List<SNode> getOwnNodes(Condition<SNode> condition) {
+  @NotNull
+  public List<SNode> getNodes(Condition<SNode> condition) {
     return new ArrayList<SNode>(); // do not use Collections.emptyList(),
     //  otherwise you can't successfully attach another scopes to this one
   }

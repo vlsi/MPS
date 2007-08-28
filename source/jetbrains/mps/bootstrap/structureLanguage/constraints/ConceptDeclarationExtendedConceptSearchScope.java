@@ -10,6 +10,8 @@ import jetbrains.mps.util.Condition;
 
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Igor Alshannikov
  * Date: Nov 9, 2006
@@ -24,7 +26,8 @@ public class ConceptDeclarationExtendedConceptSearchScope extends AbstractSearch
     myConceptDeclaration = (ConceptDeclaration) BaseAdapter.fromNode(conceptDeclaration);
   }
 
-  public List<SNode> getOwnNodes(Condition<SNode> condition) {
+  @NotNull
+  public List<SNode> getNodes(Condition<SNode> condition) {
     if (myOwnNodes == null) {
       myOwnNodes = createOwnNodesList();
     }

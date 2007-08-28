@@ -8,6 +8,8 @@ import jetbrains.mps.util.Condition;
 
 import java.util.*;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Igor Alshannikov
  * Jan 19, 2006
@@ -60,7 +62,8 @@ public class SModelSearchUtil_new {
       myScope = scope;
     }
 
-    public List<SNode> getOwnNodes(Condition<SNode> condition) {
+    @NotNull
+    public List<SNode> getNodes(Condition<SNode> condition) {
       if (myConcepts == null) {
         myConcepts = new ArrayList<ConceptDeclaration>();
         List<Language> languages = myModel.getLanguages(myScope);
@@ -98,7 +101,8 @@ public class SModelSearchUtil_new {
       myScope = scope;
     }
 
-    public List<SNode> getOwnNodes(Condition<SNode> condition) {
+    @NotNull
+    public List<SNode> getNodes(Condition<SNode> condition) {
       if (myModels == null) {
         if (myModel == null) {
           myModels = Collections.EMPTY_LIST;
