@@ -77,13 +77,6 @@ public abstract class AbstractSearchScope implements ISearchScope {
 
   public abstract List<SNode> getOwnNodes(Condition<SNode> condition);
 
-  public void append(@NotNull ISearchScope scope) {
-    if (myAppendedScopes == null) {
-      myAppendedScopes = new LinkedList<ISearchScope>();
-    }
-    myAppendedScopes.add(scope);
-  }
-
   private List<SNode> getNodesFromAppendedScopes(Condition<SNode> condition) {
     if (myAppendedScopes == null) {
       return EMPTY_LIST;

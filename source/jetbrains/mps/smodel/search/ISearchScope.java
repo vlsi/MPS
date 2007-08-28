@@ -30,6 +30,4 @@ public interface ISearchScope {
 
   @NotNull
   List<SNode> getNodes();
-
-  void append(@NotNull ISearchScope scope);
 }
