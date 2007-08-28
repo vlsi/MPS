@@ -996,6 +996,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/cssSchema/webr_cssSchema.iml" filepath="$PROJECT_DIR$/platform/webr/languages/cssSchema/webr_cssSchema.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/dxml/webr_dxml.iml" filepath="$PROJECT_DIR$/platform/webr/languages/dxml/webr_dxml.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/dxmlInternal/webr_dxmlInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/dxmlInternal/webr_dxmlInternal.iml" group="platform/webr/languages" />
+      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/ftl/webr_ftl.iml" filepath="$PROJECT_DIR$/platform/webr/languages/ftl/webr_ftl.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/gtext/webr_gtext.iml" filepath="$PROJECT_DIR$/platform/webr/languages/gtext/webr_gtext.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/javascript/webr_javascript.iml" filepath="$PROJECT_DIR$/platform/webr/languages/javascript/webr_javascript.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/javascriptInternal/webr_javascriptInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/javascriptInternal/webr_javascriptInternal.iml" group="platform/webr/languages" />
@@ -1029,7 +1030,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <module name="MPS" />
+      <module name="regexp" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="1478" />
         <option name="TRANSPORT" value="0" />
@@ -1046,7 +1047,7 @@
         <option name="Make" value="true" />
       </method>
     </configuration>
-    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local">
+    <configuration default="false" name="Charisma" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 5">
       <option name="WORKING_DIRECTORY" />
       <option name="HOST" value="localhost" />
       <option name="PORT" value="8080" />
