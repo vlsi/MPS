@@ -21,6 +21,32 @@
     <option name="BUILD_JARS_ON_MAKE" value="false" />
   </component>
   <component name="ClearCase" />
+  <component name="CodeSearch/QueryHistory">
+    <query searchTerm="" processedSearchTerm="">
+      <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
+        <data extraArguments="-f=\.(java)$" />
+      </queryExtra>
+      <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
+        <data fileTypes="\.(java)$" packages="" caseSensitive="false" />
+      </queryExtra>
+    </query>
+    <query searchTerm="" processedSearchTerm="">
+      <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
+        <data extraArguments="-f=\.(java)|(xml)$" />
+      </queryExtra>
+      <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
+        <data fileTypes="\.(java)|(xml)$" packages="(uwaterloo\.ca)|(mit\.edu)" caseSensitive="false" />
+      </queryExtra>
+    </query>
+    <query searchTerm="" processedSearchTerm="">
+      <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
+        <data extraArguments="-f=\.(java)|(xml)|(txt)$" />
+      </queryExtra>
+      <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
+        <data fileTypes="\.(java)|(xml)|(txt)$" packages="sourceforge\.net" caseSensitive="false" />
+      </queryExtra>
+    </query>
+  </component>
   <component name="CodeStyleProjectProfileManger">
     <option name="PROJECT_PROFILE" />
     <option name="USE_PROJECT_LEVEL_SETTINGS" value="false" />
@@ -1055,14 +1081,14 @@
       <option name="OPEN_IN_BROWSER" value="true" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/charisma" />
       <option name="COMMON_VM_ARGUMENTS" value="-Xms256m -Xmx1024m" />
-      <J2EE_MODULE>
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="accounting-webapp" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE>
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1166,12 +1192,12 @@
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
+        <option name="MODULE_NAME" value="accounting-webapp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting-webapp" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1275,12 +1301,12 @@
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
+        <option name="MODULE_NAME" value="accounting-webapp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting-webapp" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1366,12 +1392,12 @@
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
+        <option name="MODULE_NAME" value="accounting-webapp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting-webapp" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1475,12 +1501,12 @@
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
+        <option name="MODULE_NAME" value="accounting-webapp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting-webapp" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1969,6 +1995,21 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/cxf/cxf-src.zip!/" />
+      </SOURCES>
+    </library>
+    <library name="Restlets">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/restlets/com.noelios.restlet.ext.jetty_6.1.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/restlets/com.noelios.restlet.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/restlets/org.mortbay.jetty.ajp.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/restlets/org.mortbay.jetty.https.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/restlets/org.mortbay.jetty.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/restlets/org.mortbay.jetty.util.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/restlets/org.restlet.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/restlets/restlet-api-src.zip!/" />
       </SOURCES>
     </library>
   </component>
