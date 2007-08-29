@@ -1,5 +1,7 @@
 package jetbrains.mps.smodel.event;
 
+import jetbrains.mps.smodel.SModelDescriptor;
+
 /**
  * Author: Sergey Dmitriev
  * Created Sep 16, 2003
@@ -25,4 +27,6 @@ public interface SModelListener {
 
   void referenceAdded(SModelReferenceEvent event);
   void referenceRemoved(SModelReferenceEvent event);
+
+  void loadingStateChanged(SModelDescriptor model, boolean isLoading);
 }

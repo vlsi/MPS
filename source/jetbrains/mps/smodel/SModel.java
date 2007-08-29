@@ -231,6 +231,9 @@ public class SModel implements Iterable<SNode> {
   public boolean setLoading(boolean loading) {
     boolean wasLoading = myLoading;
     myLoading = loading;
+    if (wasLoading != loading) {
+      fireLoadingStateChanged();
+    }
     return wasLoading;
   }
 
@@ -357,6 +360,12 @@ public class SModel implements Iterable<SNode> {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.referenceRemoved(new SModelReferenceEvent(this, reference, false));
+    }
+  }
+
+  void fireLoadingStateChanged() {
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.loadingStateChanged(getModelDescriptor(), isLoading());
     }
   }
 
@@ -1021,6 +1030,9 @@ public class SModel implements Iterable<SNode> {
 
     public void devkitRemoved(SModelDevKitEvent event) {
       myEvents.add(event);
+    }
+
+    public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
     }
 
     public void beforeCommandFinished(@NotNull CommandEvent event) {

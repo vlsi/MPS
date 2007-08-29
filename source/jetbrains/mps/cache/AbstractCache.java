@@ -1,6 +1,7 @@
 package jetbrains.mps.cache;
 
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.util.List;
 
@@ -9,6 +10,19 @@ import java.util.List;
  * Aug 28, 2007
  */
 public abstract class AbstractCache implements SModelListener, SModelCommandListener {
+  private Object myKey;
+
+  protected AbstractCache(Object key) {
+    myKey = key;
+  }
+
+  public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
+    if(!isLoading) {
+      // model went out of loading state - drop cache because we don't know what has happened while in loading state
+      CachesManager.getInstance().removeCache(myKey);
+    }
+  }
+
   public void languageAdded(SModelLanguageEvent event) {
   }
 
