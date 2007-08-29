@@ -6,9 +6,7 @@
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
-  <language namespace="jetbrains.mps.quotation" />
-  <maxImportIndex value="31" />
+  <maxImportIndex value="32" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" />
@@ -23,9 +21,8 @@
   <import index="26" modelUID="jetbrains.mps.nodeEditor@java_stub" />
   <import index="27" modelUID="javax.swing@java_stub" />
   <import index="28" modelUID="java.lang.reflect@java_stub" />
-  <import index="29" modelUID="java.io@java_stub" />
   <import index="30" modelUID="jetbrains.mps.reloading@java_stub" />
-  <import index="31" modelUID="jetbrains.mps.baseLanguage.constraints" />
+  <import index="32" modelUID="jetbrains.mps.baseLanguage.constraints@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1156246260769">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1156246279317">
@@ -3275,19 +3272,11 @@
       <link role="applicableLink" targetNodeId="1.1135374435992" />
       <node role="searchScopeFactory" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory" id="1149122067640">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149122067641">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1149122137455">
-            <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1149122164895">
-              <link role="classConcept" extResolveInfo="4.[Classifier]BaseLanguageSearchUtil_new" />
-              <link role="baseMethodDeclaration" extResolveInfo="4.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]createVisibleClassifiersScope((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]), (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int), (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope]))" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1149122166834" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1149122185929">
-                <link role="classifier" extResolveInfo="10.[Classifier]IClassifiersSearchScope" />
-                <link role="variableDeclaration" extResolveInfo="10.static field ([Classifier]IClassifiersSearchScope).([StaticFieldDeclaration]CONSTRUCTOR : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1178611018373">
-                <property name="value" value="true" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1149122197431" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1188411626000">
+            <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1188411626001">
+              <link role="baseMethodDeclaration" extResolveInfo="32.constructor [Classifier]NewExpression_ClassConstructorScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope]))" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1188411709999" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1188411718501" />
             </node>
           </node>
         </node>
