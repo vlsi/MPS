@@ -21,7 +21,7 @@ public class CachesManager implements IComponentLifecycle {
   public static CachesManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(CachesManager.class);
   }
-  
+
   public void initComponent() {
     SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryListener() {
       public void modelRemoved(SModelDescriptor modelDescriptor) {
@@ -41,6 +41,12 @@ public class CachesManager implements IComponentLifecycle {
         }
       }
     });
+  }
+
+  public void putCache(Object key, AbstractCache cache, SModelDescriptor dependsOnModel) {
+    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+    models.add(dependsOnModel);
+    putCache(key, cache, models);
   }
 
   public void putCache(Object key, AbstractCache cache, List<SModelDescriptor> dependsOnModels) {
@@ -74,6 +80,13 @@ public class CachesManager implements IComponentLifecycle {
 
     myCaches.remove(key);
     myDependsOnModels.remove(key);
+  }
+
+  public void removeAllCaches() {
+    List keys = new ArrayList(myCaches.keySet());
+    for (Object key : keys) {
+      removeCache(key);
+    }
   }
 }
 

@@ -3,7 +3,6 @@ package jetbrains.mps.smodel.search;
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.AndCondition;
 import jetbrains.mps.util.Condition;
 
 import java.util.*;
@@ -22,7 +21,7 @@ public class SModelSearchUtil_new {
   }
 
   public static ISearchScope createModelAndImportedModelsScope(SModel model, boolean rootsOnly, IScope scope) {
-    return new SModelSearchUtil_new._ModelAndImportedModelsScope(model, rootsOnly, scope);
+    return new ModelAndImportedModelsScope(model, rootsOnly, scope);
   }
 
   public static ISearchScope createConceptsFromModelLanguagesScope(SModel model, IScope scope) {
@@ -88,55 +87,4 @@ public class SModelSearchUtil_new {
     }
   }
 
-  private static class _ModelAndImportedModelsScope extends AbstractSearchScope {
-    private SModel myModel;
-    private boolean myRootsOnly;
-    private IScope myScope;
-
-    private List<SModelDescriptor> myModels;
-
-    public _ModelAndImportedModelsScope(SModel model, boolean rootsOnly, IScope scope) {
-      myModel = model;
-      myRootsOnly = rootsOnly;
-      myScope = scope;
-    }
-
-    @NotNull
-    public List<SNode> getNodes(Condition<SNode> condition) {
-      if (myModels == null) {
-        if (myModel == null) {
-          myModels = Collections.EMPTY_LIST;
-        } else {
-          myModels = myModel.allImportedModels(myScope);
-          myModels.add(0, myModel.getModelDescriptor());
-        }
-      }
-
-      List<SNode> result = new ArrayList<SNode>();
-      if (myRootsOnly) {
-        for (SModelDescriptor model : myModels) {
-          result.addAll(model.getSModel().getRoots(condition));
-        }
-      } else {
-        for (SModelDescriptor model : myModels) {
-          try {
-            if (condition instanceof IsInstanceCondition
-                    /* TODO following line was added because cache of FastNodeFinder currently doesn't
-                     * support InterfaceConceptDeclaration and as a result
-                     * fastNodeFinder.getNodes(abstractConceptDeclaration, true)
-                     * always returns empty list for InstanceConceptDeclaration */
-                    && ((IsInstanceCondition) condition).getConceptDeclaration() instanceof ConceptDeclaration) {
-              IsInstanceCondition isInstance = (IsInstanceCondition) condition;
-              result.addAll(model.getFastNodeFinder().getNodes(isInstance.getConceptDeclaration(), true));
-            } else {
-              result.addAll(model.getSModel().allNodes(condition));
-            }
-          } catch (Throwable t) {
-            LOG.error("error collecting nodes form model " + model, t);
-          }
-        }
-      }
-      return result;
-    }
-  } // private static class _ModelAndImportedModelsScope
 }

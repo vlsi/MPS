@@ -4,10 +4,12 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Igor Alshannikov
@@ -19,6 +21,14 @@ public abstract class AbstractSearchScope implements ISearchScope {
       return true;
     }
   };
+
+  /**
+   * test only - no need to implement
+   */
+  public List<SNode> findNodesByRefInfo(String searchName, AbstractConceptDeclaration concept) {
+    return null;
+  }
+
 
   @NotNull
   public final List<SNode> getNodes() {
