@@ -49,6 +49,10 @@ public class CachesManager implements IComponentLifecycle {
     putCache(key, cache, models);
   }
 
+  public void putCache(Object key, AbstractCache cache, Set<SModelDescriptor> dependsOnModels) {
+    putCache(key, cache, new ArrayList<SModelDescriptor>(dependsOnModels));
+  }
+
   public void putCache(Object key, AbstractCache cache, List<SModelDescriptor> dependsOnModels) {
     if (myCaches.containsKey(key)) {
       throw new RuntimeException("can't put another cache by key " + key);

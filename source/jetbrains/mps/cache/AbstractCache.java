@@ -16,6 +16,10 @@ public abstract class AbstractCache implements SModelListener, SModelCommandList
     myKey = key;
   }
 
+  public Object getKey() {
+    return myKey;
+  }
+
   public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
     if(!isLoading) {
       // model went out of loading state - drop cache because we don't know what has happened while in loading state
@@ -42,31 +46,43 @@ public abstract class AbstractCache implements SModelListener, SModelCommandList
   }
 
   public void rootAdded(SModelRootEvent event) {
+    nodeChanged();
   }
 
   public void rootRemoved(SModelRootEvent event) {
+    nodeChanged();
   }
 
   public void beforeRootRemoved(SModelRootEvent event) {
   }
 
   public void propertyChanged(SModelPropertyEvent event) {
+    nodeChanged();
   }
 
   public void childAdded(SModelChildEvent event) {
+    nodeChanged();
   }
 
   public void childRemoved(SModelChildEvent event) {
+    nodeChanged();
   }
 
   public void beforeChildRemoved(SModelChildEvent event) {
   }
 
   public void referenceAdded(SModelReferenceEvent event) {
+    nodeChanged();
   }
 
   public void referenceRemoved(SModelReferenceEvent event) {
+    nodeChanged();
   }
+
+  protected void nodeChanged()  {
+  }
+
+  // command listener
 
   public void modelChangedInCommand(List<SModelEvent> events) {
   }
