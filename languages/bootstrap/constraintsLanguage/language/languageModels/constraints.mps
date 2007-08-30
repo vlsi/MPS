@@ -800,6 +800,35 @@
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1178193833041">
       <property name="name" value="getReferentConcept" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178193833043">
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1188501661965">
+          <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1188501661966">
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1188501661967">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1188501661968" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetContainingRootOperation" id="1188501661969" />
+            </node>
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1188501661970">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1188501661971">
+                <link role="conceptDeclaration" targetNodeId="1.1177670533743" />
+              </node>
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1188501661972">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1188501661973">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1188501661974">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1188501661975">
+                  <link role="concept" targetNodeId="1.1177670533743" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1188501661976">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1188501661977" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetContainingRootOperation" id="1188501661978" />
+                  </node>
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1188501661979">
+                  <link role="link" targetNodeId="1.1177670543683" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178193880598">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178193882939">
             <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1178193881194" />
@@ -810,7 +839,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1178193860760">
-        <link role="concept" targetNodeId="5.1071489090640" />
+        <link role="concept" targetNodeId="5.1169125787135" />
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1178192141313">
