@@ -363,6 +363,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1149608206811">
     <property name="name" value="AnnotationLinkDeclaration" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}\icons\annotationLink.png" />
     <link role="extends" targetNodeId="1071489288298" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1174387216526">
       <link role="intfc" targetNodeId="1.1169194658468" />
