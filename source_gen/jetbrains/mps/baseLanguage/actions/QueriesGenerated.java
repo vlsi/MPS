@@ -31,8 +31,8 @@ import java.util.regex.Matcher;
 import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
@@ -392,13 +392,9 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          ISearchScope searchScope = BaseLanguageSearchUtil_new.createVisibleClassifiersScope(SNodeOperations.getModel(parentNode), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope());
-          List<SNode> classifiers = new ArrayList<SNode>();
-          for(SNode node : searchScope.getNodes()) {
-            if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-              continue;
-            }
-            SNode cls = node;
+          IClassifiersSearchScope searchScope = new VisibleClassifiersScope(SNodeOperations.getModel(parentNode), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope());
+          List<SNode> classifiers = (List<SNode>)searchScope.getClassifierNodes();
+          for(SNode cls : classifiers) {
             if(SequenceOperations.getSize(SLinkOperations.getTargets(cls, "staticField", true)) > 0) {
               ListOperations.addElement(classifiers, cls);
               continue;
