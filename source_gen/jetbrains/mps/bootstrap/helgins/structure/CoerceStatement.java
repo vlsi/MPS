@@ -20,7 +20,7 @@ public class CoerceStatement extends Statement {
   }
 
   public static CoerceStatement newInstance(SModel sm, boolean init) {
-    return (CoerceStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.CoerceStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CoerceStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CoerceStatement newInstance(SModel sm) {

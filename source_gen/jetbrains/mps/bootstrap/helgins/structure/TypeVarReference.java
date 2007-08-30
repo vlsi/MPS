@@ -16,7 +16,7 @@ public class TypeVarReference extends Expression {
   }
 
   public static TypeVarReference newInstance(SModel sm, boolean init) {
-    return (TypeVarReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.TypeVarReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypeVarReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.TypeVarReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypeVarReference newInstance(SModel sm) {

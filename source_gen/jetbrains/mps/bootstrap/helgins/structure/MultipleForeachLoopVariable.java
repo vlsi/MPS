@@ -19,7 +19,7 @@ public class MultipleForeachLoopVariable extends BaseConcept {
   }
 
   public static MultipleForeachLoopVariable newInstance(SModel sm, boolean init) {
-    return (MultipleForeachLoopVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.MultipleForeachLoopVariable", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MultipleForeachLoopVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MultipleForeachLoopVariable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MultipleForeachLoopVariable newInstance(SModel sm) {

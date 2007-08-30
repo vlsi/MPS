@@ -659,16 +659,8 @@ public class EquationManager {
       subtypesToSupertypesMap.get(subtypeNode).remove(type);
     }
     //  T,S <: c => c = lcs(T,S)
-    addEquation(type, NodeWrapper.fromNode(myTypeChecker.getSubtypingManager().leastCommonSupertype(toNodes(concreteSubtypes), isWeak)),
+    addEquation(type, myTypeChecker.getSubtypingManager().leastCommonSupertype(concreteSubtypes, isWeak),
             errorInfo);
-  }
-
-  private Set<SNode> toNodes(Set<IWrapper> wrappers) {
-    return CollectionUtil.map(wrappers, new Mapper<IWrapper, SNode>() {
-      public SNode map(IWrapper nodeWrapper) {
-        return NodeWrapper.fromWrapper(nodeWrapper);
-      }
-    });
   }
 
   private void varLessThanType(IWrapper type, boolean isWeak) {

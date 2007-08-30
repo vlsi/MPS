@@ -18,7 +18,7 @@ public class ReportErrorStatement extends Statement {
   }
 
   public static ReportErrorStatement newInstance(SModel sm, boolean init) {
-    return (ReportErrorStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.ReportErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReportErrorStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ReportErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReportErrorStatement newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class PatternCondition extends ApplicableNodeCondition {
   }
 
   public static PatternCondition newInstance(SModel sm, boolean init) {
-    return (PatternCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.PatternCondition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PatternCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.PatternCondition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PatternCondition newInstance(SModel sm) {

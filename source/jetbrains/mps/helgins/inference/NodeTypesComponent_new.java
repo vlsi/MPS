@@ -14,11 +14,14 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
+import jetbrains.mps.bootstrap.helgins.structure.MeetType;
+import jetbrains.mps.bootstrap.helgins.structure.JoinType;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.IGutterMessageOwner;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.core.structure.BaseConcept;
 
 import java.util.*;
 import java.util.Map.Entry;
@@ -382,7 +385,27 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
   private SNode expandType(SNode node, SModel typesModel) {
     if (node == null) return null;
     IWrapper representator = myEquationManager.getRepresentatorWrapper(new NodeWrapper(node));
-    return expandNode(representator, representator, 0, new HashSet<IWrapper>(), typesModel).getNode();
+    return expandWrapper(representator, typesModel).getNode();
+  }
+
+  private IWrapper expandWrapper(IWrapper representator, SModel typesModel) {
+    if (representator instanceof MeetWrapper) {
+      MeetWrapper meetWrapper = (MeetWrapper) representator;
+      MeetType meetType = MeetType.newInstance(typesModel);
+      for (IWrapper wrapper : meetWrapper.getArguments()) {
+        meetType.addArgument((BaseConcept) expandWrapper(wrapper, typesModel).getNode().getAdapter());
+      }
+      return new NodeWrapper(meetType.getNode());
+    }
+    if (representator instanceof JoinWrapper) {
+      JoinWrapper joinWrapper = (JoinWrapper) representator;
+      JoinType joinType = JoinType.newInstance(typesModel);
+      for (IWrapper wrapper : joinWrapper.getArguments()) {
+        joinType.addArgument((BaseConcept) expandWrapper(wrapper, typesModel).getNode().getAdapter());
+      }
+      return new NodeWrapper(joinType.getNode());
+    }
+    return expandNode(representator, representator, 0, new HashSet<IWrapper>(), typesModel);
   }
 
   private NodeWrapper expandNode(IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel) {

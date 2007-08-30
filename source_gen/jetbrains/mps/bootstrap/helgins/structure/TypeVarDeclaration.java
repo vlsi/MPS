@@ -18,7 +18,7 @@ public class TypeVarDeclaration extends Statement implements INamedConcept {
   }
 
   public static TypeVarDeclaration newInstance(SModel sm, boolean init) {
-    return (TypeVarDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.TypeVarDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypeVarDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.TypeVarDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypeVarDeclaration newInstance(SModel sm) {

@@ -18,7 +18,7 @@ public class MatchStatementItem extends BaseConcept {
   }
 
   public static MatchStatementItem newInstance(SModel sm, boolean init) {
-    return (MatchStatementItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.MatchStatementItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchStatementItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchStatementItem newInstance(SModel sm) {

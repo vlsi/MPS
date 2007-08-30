@@ -17,7 +17,7 @@ public class LinkPatternVariableReference extends Expression {
   }
 
   public static LinkPatternVariableReference newInstance(SModel sm, boolean init) {
-    return (LinkPatternVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.LinkPatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkPatternVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.LinkPatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkPatternVariableReference newInstance(SModel sm) {

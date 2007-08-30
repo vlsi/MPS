@@ -16,7 +16,7 @@ public class ImmediateSupertypesExpression extends Expression {
   }
 
   public static ImmediateSupertypesExpression newInstance(SModel sm, boolean init) {
-    return (ImmediateSupertypesExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.ImmediateSupertypesExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ImmediateSupertypesExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ImmediateSupertypesExpression newInstance(SModel sm) {

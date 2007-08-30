@@ -16,7 +16,7 @@ public class ConceptReference extends ApplicableNodeCondition {
   }
 
   public static ConceptReference newInstance(SModel sm, boolean init) {
-    return (ConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.ConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptReference newInstance(SModel sm) {

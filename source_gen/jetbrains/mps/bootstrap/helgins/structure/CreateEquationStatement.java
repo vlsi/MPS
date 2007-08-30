@@ -14,7 +14,7 @@ public class CreateEquationStatement extends AbstractEquationStatement {
   }
 
   public static CreateEquationStatement newInstance(SModel sm, boolean init) {
-    return (CreateEquationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.CreateEquationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateEquationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateEquationStatement newInstance(SModel sm) {

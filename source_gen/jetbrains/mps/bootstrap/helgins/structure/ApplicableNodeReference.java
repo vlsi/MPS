@@ -16,7 +16,7 @@ public class ApplicableNodeReference extends Expression {
   }
 
   public static ApplicableNodeReference newInstance(SModel sm, boolean init) {
-    return (ApplicableNodeReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.ApplicableNodeReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ApplicableNodeReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ApplicableNodeReference newInstance(SModel sm) {

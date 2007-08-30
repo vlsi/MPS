@@ -2739,5 +2739,18 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1188473558532">
+    <link role="conceptDeclaration" targetNodeId="1.1188473524530" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1188473560034">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1188473560035">
+        <property name="text" value="MEET (" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNodeList" id="1188473560036">
+        <property name="vertical" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1188473537547" />
+      </node>
+    </node>
+  </node>
 </model>
 

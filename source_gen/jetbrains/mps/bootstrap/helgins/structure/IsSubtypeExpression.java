@@ -17,7 +17,7 @@ public class IsSubtypeExpression extends Expression {
   }
 
   public static IsSubtypeExpression newInstance(SModel sm, boolean init) {
-    return (IsSubtypeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.IsSubtypeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IsSubtypeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IsSubtypeExpression newInstance(SModel sm) {

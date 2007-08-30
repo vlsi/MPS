@@ -17,7 +17,7 @@ public class PatternVariableReference extends Expression {
   }
 
   public static PatternVariableReference newInstance(SModel sm, boolean init) {
-    return (PatternVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.PatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PatternVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.PatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PatternVariableReference newInstance(SModel sm) {

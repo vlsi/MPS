@@ -20,7 +20,7 @@ public class AbstractEquationStatement extends Statement {
   }
 
   public static AbstractEquationStatement newInstance(SModel sm, boolean init) {
-    return (AbstractEquationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.AbstractEquationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractEquationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractEquationStatement newInstance(SModel sm) {

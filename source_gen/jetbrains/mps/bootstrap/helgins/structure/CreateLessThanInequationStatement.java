@@ -14,7 +14,7 @@ public class CreateLessThanInequationStatement extends AbstractEquationStatement
   }
 
   public static CreateLessThanInequationStatement newInstance(SModel sm, boolean init) {
-    return (CreateLessThanInequationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.CreateLessThanInequationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateLessThanInequationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.CreateLessThanInequationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateLessThanInequationStatement newInstance(SModel sm) {

@@ -21,7 +21,7 @@ public class MatchStatement extends Statement {
   }
 
   public static MatchStatement newInstance(SModel sm, boolean init) {
-    return (MatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.MatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchStatement newInstance(SModel sm) {

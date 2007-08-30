@@ -10,40 +10,40 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
 
-public class JoinType extends BaseConcept {
+public class MeetType extends BaseConcept {
   public static String ARGUMENT = "argument";
 
-  public  JoinType(SNode node) {
+  public  MeetType(SNode node) {
     super(node);
   }
 
-  public static JoinType newInstance(SModel sm, boolean init) {
-    return (JoinType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.JoinType", sm, GlobalScope.getInstance(), init).getAdapter();
+  public static MeetType newInstance(SModel sm, boolean init) {
+    return (MeetType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MeetType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
-  public static JoinType newInstance(SModel sm) {
-    return JoinType.newInstance(sm, false);
+  public static MeetType newInstance(SModel sm) {
+    return MeetType.newInstance(sm, false);
   }
 
 
   public int getArgumentsCount() {
-    return this.getChildCount(JoinType.ARGUMENT);
+    return this.getChildCount(MeetType.ARGUMENT);
   }
 
   public Iterator<BaseConcept> arguments() {
-    return this.children(JoinType.ARGUMENT);
+    return this.children(MeetType.ARGUMENT);
   }
 
   public List<BaseConcept> getArguments() {
-    return this.getChildren(JoinType.ARGUMENT);
+    return this.getChildren(MeetType.ARGUMENT);
   }
 
   public void addArgument(BaseConcept node) {
-    this.addChild(JoinType.ARGUMENT, node);
+    this.addChild(MeetType.ARGUMENT, node);
   }
 
   public void insertArgument(BaseConcept prev, BaseConcept node) {
-    this.insertChild(prev, JoinType.ARGUMENT, node);
+    this.insertChild(prev, MeetType.ARGUMENT, node);
   }
 
 }

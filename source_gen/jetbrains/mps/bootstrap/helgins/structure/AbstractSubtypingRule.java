@@ -17,7 +17,7 @@ public class AbstractSubtypingRule extends AbstractRule {
   }
 
   public static AbstractSubtypingRule newInstance(SModel sm, boolean init) {
-    return (AbstractSubtypingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.AbstractSubtypingRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractSubtypingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractSubtypingRule newInstance(SModel sm) {

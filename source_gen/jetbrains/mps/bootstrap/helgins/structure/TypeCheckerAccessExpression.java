@@ -15,7 +15,7 @@ public class TypeCheckerAccessExpression extends Expression {
   }
 
   public static TypeCheckerAccessExpression newInstance(SModel sm, boolean init) {
-    return (TypeCheckerAccessExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.TypeCheckerAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypeCheckerAccessExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.TypeCheckerAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypeCheckerAccessExpression newInstance(SModel sm) {

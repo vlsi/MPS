@@ -18,7 +18,7 @@ public class MultipleForeachLoop extends AbstractLoopStatement {
   }
 
   public static MultipleForeachLoop newInstance(SModel sm, boolean init) {
-    return (MultipleForeachLoop)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.MultipleForeachLoop", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MultipleForeachLoop)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.MultipleForeachLoop", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MultipleForeachLoop newInstance(SModel sm) {

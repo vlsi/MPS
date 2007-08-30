@@ -18,7 +18,7 @@ public class GivetypeStatement extends Statement {
   }
 
   public static GivetypeStatement newInstance(SModel sm, boolean init) {
-    return (GivetypeStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.GivetypeStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GivetypeStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.GivetypeStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GivetypeStatement newInstance(SModel sm) {

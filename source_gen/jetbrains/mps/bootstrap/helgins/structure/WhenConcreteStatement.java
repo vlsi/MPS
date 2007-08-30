@@ -19,7 +19,7 @@ public class WhenConcreteStatement extends Statement {
   }
 
   public static WhenConcreteStatement newInstance(SModel sm, boolean init) {
-    return (WhenConcreteStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.WhenConcreteStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WhenConcreteStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WhenConcreteStatement newInstance(SModel sm) {
