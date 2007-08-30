@@ -12,8 +12,10 @@
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1167228680833">
       <property name="showInPopup" value="true" />
       <property name="description" value="Show exception section" />
+      <property name="menuAlwaysShown" value="true" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1167228680834">
         <property name="keycode" value="VK_ENTER" />
+        <property name="modifiers" value="alt" />
       </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1167228680835">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1167228680836">
@@ -52,8 +54,10 @@
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1167228963974">
       <property name="showInPopup" value="true" />
       <property name="description" value="Hide exception section" />
+      <property name="menuAlwaysShown" value="true" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1167228963975">
         <property name="keycode" value="VK_ENTER" />
+        <property name="modifiers" value="alt" />
       </node>
       <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1167228963976">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1167228963977">
