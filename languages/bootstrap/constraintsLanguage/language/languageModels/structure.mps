@@ -39,6 +39,10 @@
       <property name="value" value="property getter/setter" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1188501940580">
+      <property name="value" value="link 'applicableConcept' is not used with Behaviors" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1147467351491">
     <property name="rootable" value="false" />
@@ -183,6 +187,10 @@
       <property name="value" value="referent search scope" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1188502091893">
+      <property name="value" value="link 'applicableConcept' is not used with Behaviors" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1148934493876">
     <property name="package" value="Functions" />
@@ -313,6 +321,10 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1159286042853">
       <property name="value" value="default search scope" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1188501891391">
+      <property name="value" value="link 'referentConcept' is not used with Behaviors" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1180129508254" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1163200368514">
