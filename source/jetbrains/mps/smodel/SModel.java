@@ -349,6 +349,16 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  public void fireBeforeChildRemovedEvent(@NotNull SNode parent,
+                             @NotNull String role,
+                             @NotNull SNode child,
+                             int childIndex) {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      sModelListener.beforeChildRemoved(new SModelChildEvent(this, false, parent, role, childIndex, child));
+    }
+  }
+
   void fireReferenceAddedEvent(@NotNull SReference reference) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
@@ -1001,7 +1011,8 @@ public class SModel implements Iterable<SNode> {
     }
 
     public void beforeRootRemoved(SModelRootEvent event) {
-      myEvents.add(event);
+//      myEvents.add(event);
+      // ignore because by the time the event arrives, the root is long been removed
     }
 
     public void propertyChanged(SModelPropertyEvent event) {
@@ -1014,6 +1025,10 @@ public class SModel implements Iterable<SNode> {
 
     public void childRemoved(SModelChildEvent event) {
       myEvents.add(event);
+    }
+
+    public void beforeChildRemoved(SModelChildEvent event) {
+      // ignore
     }
 
     public void referenceAdded(SModelReferenceEvent event) {

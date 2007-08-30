@@ -924,6 +924,10 @@ public class SNode implements Iterable<SNode> {
 
     assert wasRole != null;
 
+    if (ModelChange.needFireEvents(getModel(), this)) {
+      getModel().fireBeforeChildRemovedEvent(this, wasRole, wasChild, index);
+    }
+
     _children().remove(wasChild);
     wasChild.myParent = null;
     wasChild.myRoleInParent = null;

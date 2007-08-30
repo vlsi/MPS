@@ -24,6 +24,7 @@ public interface SModelListener {
 
   void childAdded(SModelChildEvent event);
   void childRemoved(SModelChildEvent event);
+  void beforeChildRemoved(SModelChildEvent event);
 
   void referenceAdded(SModelReferenceEvent event);
   void referenceRemoved(SModelReferenceEvent event);

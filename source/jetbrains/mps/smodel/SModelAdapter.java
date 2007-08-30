@@ -65,6 +65,9 @@ public class SModelAdapter implements SModelListener {
     modelChangedDramatically(event.getModel());
   }
 
+  public void beforeChildRemoved(SModelChildEvent event) {
+  }
+
   public void referenceAdded(SModelReferenceEvent event) {
     eventFired(event);
     modelChangedDramatically(event.getModel());

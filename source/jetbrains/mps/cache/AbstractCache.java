@@ -59,6 +59,9 @@ public abstract class AbstractCache implements SModelListener, SModelCommandList
   public void childRemoved(SModelChildEvent event) {
   }
 
+  public void beforeChildRemoved(SModelChildEvent event) {
+  }
+
   public void referenceAdded(SModelReferenceEvent event) {
   }
 
