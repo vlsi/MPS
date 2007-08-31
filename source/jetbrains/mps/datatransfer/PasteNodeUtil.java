@@ -10,10 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
-import jetbrains.mps.smodel.search.ConceptHierarchyScope;
-
-import java.util.Iterator;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 
 /**
  * Author: Sergey Dmitriev.
@@ -202,11 +199,11 @@ public class PasteNodeUtil {
     return null;
   }
 
-  private static LinkDeclaration findMetalink(AbstractConceptDeclaration sourceMetatype, AbstractConceptDeclaration targetMetatype, String role) {
-    for (LinkDeclaration metalink: new ConceptHierarchyScope(sourceMetatype).getAdapters(LinkDeclaration.class)) {
-      if (SModelUtil_new.isAssignableConcept(targetMetatype, metalink.getTarget()) &&
-              (role == null || metalink.getRole().equals(role))) {
-        return metalink;
+  private static LinkDeclaration findMetalink(AbstractConceptDeclaration sourceConcept, AbstractConceptDeclaration targetConcept, String role) {
+    for (LinkDeclaration link: new ConceptAndSuperConceptsScope(sourceConcept).getAdapters(LinkDeclaration.class)) {
+      if (SModelUtil_new.isAssignableConcept(targetConcept, link.getTarget()) &&
+              (role == null || link.getRole().equals(role))) {
+        return link;
       }
     }
     return null;
