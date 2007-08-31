@@ -300,8 +300,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         add(group);
       }
       SModel model = getSModel();
-      if (!model.hasSModelCommandListener(myModelListener)) {
-        model.addSModelCommandListener(myModelListener);
+      if (!model.hasModelCommandListener(myModelListener)) {
+        model.addModelCommandListener(myModelListener);
       }
       List<SNode> filteredRoots = CollectionUtil.filter(model.getRoots(), new Condition<SNode>() {
         public boolean met(SNode object) {
@@ -333,7 +333,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
 
   protected void dispose() {
-    getSModel().removeSModelCommandListener(myModelListener);
+    getSModel().removeModelCommandListener(myModelListener);
   }
 
 

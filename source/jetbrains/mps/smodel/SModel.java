@@ -217,20 +217,20 @@ public class SModel implements Iterable<SNode> {
     myWeakListeners.add(listener);
   }
 
-  public void addSModelListener(@NotNull SModelListener listener) {
+  public void addModelListener(@NotNull SModelListener listener) {
     LOG.assertLog(!myListeners.contains(listener), "Duplicated listener");
     myListeners.add(listener);
   }
 
-  public boolean hasSModelListener(@NotNull SModelListener listener) {
+  public boolean hasModelListener(@NotNull SModelListener listener) {
     return myWeakListeners.contains(listener) || myListeners.contains(listener);
   }
 
-  public boolean hasSModelCommandListener(@NotNull SModelCommandListener listener) {
+  public boolean hasModelCommandListener(@NotNull SModelCommandListener listener) {
     return myCommandListeners.contains(listener);
   }
 
-  public void removeSModelListener(@NotNull SModelListener listener) {
+  public void removeModelListener(@NotNull SModelListener listener) {
     myWeakListeners.remove(listener);
     myListeners.remove(listener);
   }
@@ -410,12 +410,12 @@ public class SModel implements Iterable<SNode> {
     return new ArrayList<SModelCommandListener>(myCommandListeners);
   }
 
-  public void addSModelCommandListener(@NotNull SModelCommandListener listener) {
+  public void addModelCommandListener(@NotNull SModelCommandListener listener) {
     LOG.assertLog(!myCommandListeners.contains(listener), "Duplicated listener");
     myCommandListeners.add(listener);
   }
 
-  public void removeSModelCommandListener(@NotNull SModelCommandListener listener) {
+  public void removeModelCommandListener(@NotNull SModelCommandListener listener) {
     myCommandListeners.remove(listener);
   }
 

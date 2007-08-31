@@ -165,22 +165,22 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     if (mySModel == null) return;
 
     for (SModelListener listener : myWeakModelListeners) {
-      if (!mySModel.hasSModelListener(listener)) {
+      if (!mySModel.hasModelListener(listener)) {
         mySModel.addWeakSModelListener(listener);
       }
     }
     myWeakModelListeners.clear();
 
     for (SModelListener listener : myModelListeners) {
-      if (!mySModel.hasSModelListener(listener)) {
-        mySModel.addSModelListener(listener);
+      if (!mySModel.hasModelListener(listener)) {
+        mySModel.addModelListener(listener);
       }
     }
     myModelListeners.clear();
 
     for (SModelCommandListener listener : myModelCommandListeners) {
-      if (!mySModel.hasSModelCommandListener(listener)) {
-        mySModel.addSModelCommandListener(listener);
+      if (!mySModel.hasModelCommandListener(listener)) {
+        mySModel.addModelCommandListener(listener);
       }
     }
     myModelCommandListeners.clear();
@@ -205,7 +205,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public void addWeakModelListener(SModelListener listener) {
     if (mySModel != null) {
-      if (!mySModel.hasSModelListener(listener)) {
+      if (!mySModel.hasModelListener(listener)) {
         mySModel.addWeakSModelListener(listener);
       }
     } else {
@@ -215,8 +215,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public void addModelListener(SModelListener listener) {
     if (mySModel != null) {
-      if (!mySModel.hasSModelListener(listener)) {
-        mySModel.addSModelListener(listener);
+      if (!mySModel.hasModelListener(listener)) {
+        mySModel.addModelListener(listener);
       }
     } else {
       myModelListeners.add(listener);
@@ -225,7 +225,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public void removeModelListener(SModelListener listener) {
     if (mySModel != null) {
-      mySModel.removeSModelListener(listener);
+      mySModel.removeModelListener(listener);
     } else {
       myModelListeners.remove(listener);
       myWeakModelListeners.remove(listener);
@@ -234,7 +234,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public boolean hasSModelCommandListener(SModelCommandListener listener) {
     if (mySModel != null) {
-      return mySModel.hasSModelCommandListener(listener);
+      return mySModel.hasModelCommandListener(listener);
     } else {
       return myModelCommandListeners.contains(listener);
     }
@@ -242,8 +242,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public void addModelCommandListener(SModelCommandListener listener) {
     if (mySModel != null) {
-      if (!mySModel.hasSModelCommandListener(listener)) {
-        mySModel.addSModelCommandListener(listener);
+      if (!mySModel.hasModelCommandListener(listener)) {
+        mySModel.addModelCommandListener(listener);
       }
     } else {
       myModelCommandListeners.add(listener);
@@ -252,7 +252,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public void removeModelCommandListener(SModelCommandListener listener) {
     if (mySModel != null) {
-      mySModel.removeSModelCommandListener(listener);
+      mySModel.removeModelCommandListener(listener);
     } else {
       myModelCommandListeners.remove(listener);
     }
