@@ -12,7 +12,6 @@ import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.search.ConceptHierarchyScope;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 
 import javax.swing.Icon;
