@@ -85,7 +85,7 @@ public class FastRuleFinder {
       }
 
       // add all rules applicable to implemented interfaces
-      Set<AbstractConceptDeclaration> implInterfaces = SModelUtil_new.getDirectlyImplementedInterfaces(hrrConcept);
+      List<AbstractConceptDeclaration> implInterfaces = SModelUtil_new.getDirectSuperInterfacesAndTheySupers(hrrConcept);
       for (AbstractConceptDeclaration implInterface : implInterfaces) {
         List<Reduction_MappingRule> rulesApplicableToInterface = myRules_applicableExactly.get(implInterface);
         if (rulesApplicableToInterface != null) {
