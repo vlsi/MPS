@@ -1,9 +1,6 @@
 package jetbrains.mps.smodel.search;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
@@ -43,11 +40,25 @@ public class SModelSearchUtil_new {
   }
 
   public static List<LinkDeclaration> getAggregationLinkDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
-    return new ConceptHierarchyScope(concept).getAggregationLinkDeclarationsExcludingOverridden();
+    List<LinkDeclaration> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
+    List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
+    for (LinkDeclaration link : list) {
+      if(link.getMetaClass() == LinkMetaclass.aggregation) {
+        result.add(link);
+      }
+    }
+    return result;
   }
 
   public static List<LinkDeclaration> getReferenceLinkDeclarationsExcludingOverridden(ConceptDeclaration concept) {
-    return new ConceptHierarchyScope(concept).getReferenceLinkDeclarationsExcludingOverridden();
+    List<LinkDeclaration> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
+    List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
+    for (LinkDeclaration link : list) {
+      if(link.getMetaClass() == LinkMetaclass.reference) {
+        result.add(link);
+      }
+    }
+    return result;
   }
 
   public static List<PropertyDeclaration> getPropertyDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
