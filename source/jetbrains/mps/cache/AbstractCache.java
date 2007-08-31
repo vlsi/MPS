@@ -20,6 +20,9 @@ public abstract class AbstractCache implements SModelListener, SModelCommandList
     return myKey;
   }
 
+  public void cacheAdded() {
+  }
+
   public void cacheRemoved() {
   }
 
