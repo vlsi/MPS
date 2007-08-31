@@ -1,13 +1,19 @@
 package jetbrains.mps.smodel.search;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.*;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
-
-import java.util.*;
-
 import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Igor Alshannikov
@@ -33,7 +39,7 @@ public class SModelSearchUtil_new {
   }
 
   public static List<LinkDeclaration> getLinkDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
-    return new ConceptHierarchyScope(concept).getLinkDeclarationsExcludingOverridden();
+    return new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
   }
 
   public static List<LinkDeclaration> getAggregationLinkDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {

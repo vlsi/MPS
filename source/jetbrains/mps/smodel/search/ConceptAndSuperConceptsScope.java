@@ -4,6 +4,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
@@ -29,11 +30,6 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
     return myCache.getConcepts(myTopConcept);
   }
 
-  public LinkDeclaration getLinkDeclarationByRole(String role) {
-    if (myTopConcept == null) return null;
-    return myCache.getLinkDeclarationByRole(myTopConcept, role);
-  }
-
   /**
    * @return directly extended/implemented concept and interfaces
    */
@@ -49,6 +45,17 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
     if (myTopConcept == null) return new ArrayList<AbstractConceptDeclaration>(1);
     return myCache.getDirectSuperInterfacesAndTheySupers(myTopConcept);
   }
+
+  public LinkDeclaration getLinkDeclarationByRole(String role) {
+    if (myTopConcept == null) return null;
+    return myCache.getLinkDeclarationByRole(myTopConcept, role);
+  }
+
+  public List<LinkDeclaration> getLinkDeclarationsExcludingOverridden() {
+    if (myTopConcept == null) return new ArrayList<LinkDeclaration>(1);
+    return myCache.getLinkDeclarationsExcludingOverridden(myTopConcept);
+  }
+
 
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {

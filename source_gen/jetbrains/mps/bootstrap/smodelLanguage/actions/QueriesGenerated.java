@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration;
@@ -203,7 +204,6 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1179530205323(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     final SNode leftNodeConcept;
-    final ConceptHierarchyScope hierarhyScope;
     final List<SNode> links;
     final List<SNode> singularLinks;
     final List<SNode> pluralLinks;
@@ -226,17 +226,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return new ConceptHierarchyScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(leftNodeConcept)));
-        }
-
-      };
-      hierarhyScope = (ConceptHierarchyScope)calc.calculate();
-    }
-    {
-      Calculable calc = new Calculable() {
-
-        public Object calculate() {
-          List<LinkDeclaration> adapters = hierarhyScope.getLinkDeclarationsExcludingOverridden();
+          List<LinkDeclaration> adapters = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(leftNodeConcept)));
           return (List<SNode>)BaseAdapter.toNodes(adapters);
         }
 
