@@ -32,7 +32,8 @@ public class SModel implements Iterable<SNode> {
 
   private static final Logger LOG = Logger.getLogger(SModel.class);
 
-  private Set<SModelListener> myListeners = new WeakSet<SModelListener>();
+  private Set<SModelListener> myWeakListeners = new WeakSet<SModelListener>();
+  private List<SModelListener> myListeners = new ArrayList<SModelListener>();
   private List<SModelCommandListener> myCommandListeners = new ArrayList<SModelCommandListener>();
 
   private List<SNode> myRoots = new ArrayList<SNode>();
@@ -61,7 +62,7 @@ public class SModel implements Iterable<SNode> {
   private boolean myRegistrationsForbidden = false;
 
   public SModel(@NotNull SModelUID modelUID) {
-    addSModelListener(myEventTranslator);
+    addWeakSModelListener(myEventTranslator);
     CommandProcessor.instance().addWeakCommandListener(myEventTranslator);
     myUID = modelUID;
   }
@@ -211,13 +212,18 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  public void addWeakSModelListener(@NotNull SModelListener listener) {
+    LOG.assertLog(!myWeakListeners.contains(listener), "Duplicated weak listener");
+    myWeakListeners.add(listener);
+  }
+
   public void addSModelListener(@NotNull SModelListener listener) {
     LOG.assertLog(!myListeners.contains(listener), "Duplicated listener");
     myListeners.add(listener);
   }
 
   public boolean hasSModelListener(@NotNull SModelListener listener) {
-    return myListeners.contains(listener);
+    return myWeakListeners.contains(listener) || myListeners.contains(listener);
   }
 
   public boolean hasSModelCommandListener(@NotNull SModelCommandListener listener) {
@@ -225,6 +231,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void removeSModelListener(@NotNull SModelListener listener) {
+    myWeakListeners.remove(listener);
     myListeners.remove(listener);
   }
 
@@ -391,8 +398,8 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   private List<SModelListener> copyListeners() {
-    List<SModelListener> result = new ArrayList<SModelListener>();
-    for (SModelListener l : myListeners) {
+    List<SModelListener> result = new ArrayList<SModelListener>(myListeners);
+    for (SModelListener l : myWeakListeners) {
       result.add(l);
     }
     return result;
@@ -413,8 +420,14 @@ public class SModel implements Iterable<SNode> {
   }
 
   @NotNull
-  List<SModelListener> getListeners() {
-    ArrayList<SModelListener> result = new ArrayList<SModelListener>(CollectionUtil.iteratorAsList(myListeners.iterator()));
+  List<SModelListener> getModelListeners() {
+    List<SModelListener> result = new ArrayList<SModelListener>(myListeners);
+    return result;
+  }
+
+  @NotNull
+  List<SModelListener> getWeakModelListeners() {
+    List<SModelListener> result = new ArrayList<SModelListener>(myWeakListeners);
     result.remove(myEventTranslator);
     return result;
   }
@@ -816,6 +829,7 @@ public class SModel implements Iterable<SNode> {
     myDisposed = true;
     myCommandListeners.clear();
     myListeners.clear();
+    myWeakListeners.clear();
   }
 
   public boolean isDisposed() {

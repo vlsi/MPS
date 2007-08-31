@@ -208,7 +208,7 @@ public class SModelRepository extends SModelAdapter {
     }
     myModelsWithNoOwners.remove(modelDescriptor);
     owners.add(owner);
-    modelDescriptor.addSModelListener(this);
+    modelDescriptor.addWeakModelListener(this);
     modelDescriptor.addSModelCommandListener(myListener);
     fireRepositoryChanged();
   }

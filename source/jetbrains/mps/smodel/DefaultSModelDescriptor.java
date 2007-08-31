@@ -28,8 +28,9 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   protected SModel mySModel = null;
   private SModelUID myModelUID = new SModelUID("", "");
-  private List<SModelListener> myModelListeners = new LinkedList<SModelListener>();
-  private List<SModelCommandListener> myModelCommandListeners = new LinkedList<SModelCommandListener>();
+  private List<SModelListener> myWeakModelListeners = new ArrayList<SModelListener>();
+  private List<SModelListener> myModelListeners = new ArrayList<SModelListener>();
+  private List<SModelCommandListener> myModelCommandListeners = new ArrayList<SModelCommandListener>();
   private Map<String, Object> myUserObjects = new HashMap<String, Object>();
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange = System.currentTimeMillis();
@@ -81,7 +82,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public void reloadFromDisk() {
     if (isInitialized()) {
-      myModelListeners.addAll(mySModel.getListeners());
+      myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
+      myModelListeners.addAll(mySModel.getModelListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
 
       SModel oldModel = mySModel;
@@ -162,6 +164,13 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private void addListenersToNewModel() {
     if (mySModel == null) return;
 
+    for (SModelListener listener : myWeakModelListeners) {
+      if (!mySModel.hasSModelListener(listener)) {
+        mySModel.addWeakSModelListener(listener);
+      }
+    }
+    myWeakModelListeners.clear();
+
     for (SModelListener listener : myModelListeners) {
       if (!mySModel.hasSModelListener(listener)) {
         mySModel.addSModelListener(listener);
@@ -194,7 +203,17 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return ourState;
   }
 
-  public void addSModelListener(SModelListener listener) {
+  public void addWeakModelListener(SModelListener listener) {
+    if (mySModel != null) {
+      if (!mySModel.hasSModelListener(listener)) {
+        mySModel.addWeakSModelListener(listener);
+      }
+    } else {
+      myWeakModelListeners.add(listener);
+    }
+  }
+
+  public void addModelListener(SModelListener listener) {
     if (mySModel != null) {
       if (!mySModel.hasSModelListener(listener)) {
         mySModel.addSModelListener(listener);
@@ -209,6 +228,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       mySModel.removeSModelListener(listener);
     } else {
       myModelListeners.remove(listener);
+      myWeakModelListeners.remove(listener);
     }
   }
 
@@ -260,7 +280,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     if (isInitialized()) {
       long start = System.currentTimeMillis();
       myFastNodeFinder = null;
-      myModelListeners.addAll(mySModel.getListeners());
+      myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
+      myModelListeners.addAll(mySModel.getModelListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
 
       SModel oldModel = mySModel;
@@ -281,7 +302,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     if (newModel == mySModel) return;
     if (isInitialized()) {
       myFastNodeFinder = null;
-      myModelListeners.addAll(mySModel.getListeners());
+      myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
+      myModelListeners.addAll(mySModel.getModelListeners());
       myModelCommandListeners.addAll(mySModel.getCommandListeners());
       mySModel.dispose();
     }
@@ -294,6 +316,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public void dispose() {
     myModelCommandListeners.clear();
+    myWeakModelListeners.clear();
     myModelListeners.clear();
     if (mySModel != null) {
       mySModel.dispose();

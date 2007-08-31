@@ -1,6 +1,5 @@
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
@@ -154,7 +153,7 @@ public class FindUsagesManager {
   }
 
   public static void registerStructureModel(SModelDescriptor descriptor) {
-    descriptor.addSModelListener(new SModelAdapter() {
+    descriptor.addWeakModelListener(new SModelAdapter() {
       public void modelChanged(SModel model) {
         invalidateCaches();
       }

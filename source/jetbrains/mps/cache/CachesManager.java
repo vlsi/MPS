@@ -61,7 +61,7 @@ public class CachesManager implements IComponentLifecycle {
     myDependsOnModels.put(key, new ArrayList<SModelDescriptor>(dependsOnModels));
 
     for (SModelDescriptor dependsOnModel : dependsOnModels) {
-      dependsOnModel.addSModelListener(cache);
+      dependsOnModel.addModelListener(cache);
       dependsOnModel.addSModelCommandListener(cache);
     }
   }

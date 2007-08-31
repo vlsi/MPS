@@ -162,7 +162,7 @@ public class TypeChecker {
       model.removeSModelCommandListener(myListener);
       model.removeSModelListener(myListener);
       model.addSModelCommandListener(myListener);
-      model.addSModelListener(myListener);
+      model.addWeakSModelListener(myListener);
     } finally {
       NodeReadAccessCaster.removeNodeAccessListener();
     }
