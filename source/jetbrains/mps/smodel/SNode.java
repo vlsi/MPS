@@ -11,8 +11,8 @@ import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.search.ConceptHierarchyScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -1569,7 +1569,7 @@ public class SNode implements Iterable<SNode> {
   public PropertyDeclaration getPropertyDeclaration(String propertyName, IScope scope) {
     SNode sourceNode = this;
     AbstractConceptDeclaration typeDeclaration = sourceNode.getConceptDeclarationAdapter();
-    return SModelUtil_new.findPropertyDeclaration(typeDeclaration, propertyName);
+    return SModelSearchUtil_new.findPropertyDeclaration(typeDeclaration, propertyName);
   }
 
   public LinkDeclaration getLinkDeclaration(String role, IScope scope) {
@@ -1721,7 +1721,7 @@ public class SNode implements Iterable<SNode> {
     }
 
     if (lookupHierarchy) {
-      return (List) new ConceptHierarchyScope(conceptDeclaration).
+      return (List) new ConceptAndSuperConceptsScope(conceptDeclaration).
               getAdapters(new Condition<INodeAdapter>() {
                 public boolean met(INodeAdapter n) {
                   if (n instanceof ConceptLink) {

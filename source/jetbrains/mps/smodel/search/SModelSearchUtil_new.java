@@ -2,10 +2,7 @@ package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
 
@@ -77,6 +74,15 @@ public class SModelSearchUtil_new {
       }
     }
     return result;
+  }
+
+  public static PropertyDeclaration findPropertyDeclaration(AbstractConceptDeclaration conceptDeclaration, final String propertyName) {
+    if(propertyName == null) return null;
+    List<PropertyDeclaration> list = getPropertyDeclarationsExcludingOverridden(conceptDeclaration);
+    for (PropertyDeclaration property : list) {
+       if(propertyName.equals(property.getName())) return property;
+    }
+    return null;
   }
 
 
