@@ -11,6 +11,8 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
 
 /**
  * Igor Alshannikov
@@ -43,7 +45,7 @@ public class SModelSearchUtil_new {
     List<LinkDeclaration> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
     List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
     for (LinkDeclaration link : list) {
-      if(link.getMetaClass() == LinkMetaclass.aggregation) {
+      if (link.getMetaClass() == LinkMetaclass.aggregation) {
         result.add(link);
       }
     }
@@ -54,7 +56,7 @@ public class SModelSearchUtil_new {
     List<LinkDeclaration> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
     List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
     for (LinkDeclaration link : list) {
-      if(link.getMetaClass() == LinkMetaclass.reference) {
+      if (link.getMetaClass() == LinkMetaclass.reference) {
         result.add(link);
       }
     }
@@ -62,7 +64,19 @@ public class SModelSearchUtil_new {
   }
 
   public static List<PropertyDeclaration> getPropertyDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
-    return new ConceptHierarchyScope(concept).getPropertyDeclarationsExcludingOverridden();
+    List<AbstractConceptDeclaration> concepts = new ConceptAndSuperConceptsScope(concept).getConcepts();
+    Set<String> names = new HashSet<String>();
+    List<PropertyDeclaration> result = new ArrayList<PropertyDeclaration>();
+    for (AbstractConceptDeclaration c : concepts) {
+      for (PropertyDeclaration property : c.getPropertyDeclarations()) {
+        String name = property.getName();
+        if (name == null) continue;
+        if (names.contains(name)) continue;
+        names.add(name);
+        result.add(property);
+      }
+    }
+    return result;
   }
 
 

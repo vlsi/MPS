@@ -1006,10 +1006,14 @@
                       <link role="classifier" extResolveInfo="16.[Classifier]PropertyDeclaration" />
                     </node>
                   </node>
-                  <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179529852430">
-                    <link role="baseMethodDeclaration" extResolveInfo="13.method ([Classifier]ConceptHierarchyScope).([InstanceMethodDeclaration]getPropertyDeclarationsExcludingOverridden() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [PropertyDeclaration]&gt;]))" />
-                    <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableReference" id="1179529852431">
-                      <link role="variableDeclaration" targetNodeId="1179529852520" resolveInfo="hierarhyScope" />
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1188590645040">
+                    <link role="baseMethodDeclaration" extResolveInfo="13.static method ([Classifier]SModelSearchUtil_new).([StaticMethodDeclaration]getPropertyDeclarationsExcludingOverridden((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [AbstractConceptDeclaration])))" />
+                    <link role="classConcept" extResolveInfo="13.[Classifier]SModelSearchUtil_new" />
+                    <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1188590908069">
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1188590913384" />
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableReference" id="1188590665416">
+                        <link role="variableDeclaration" targetNodeId="1179529852488" resolveInfo="leftNodeConcept" />
+                      </node>
                     </node>
                   </node>
                 </node>
@@ -1144,27 +1148,6 @@
           </node>
         </node>
         <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SConceptType" id="1179529852519" />
-      </node>
-      <node role="variable" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableDeclaration" id="1179529852520">
-        <property name="name" value="hierarhyScope" />
-        <node role="initializerBlock" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_SubstituteVariableInitializer" id="1179529852521">
-          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179529852522">
-            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179529852523">
-              <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1179529852524">
-                <link role="baseMethodDeclaration" extResolveInfo="13.constructor [Classifier]ConceptHierarchyScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [AbstractConceptDeclaration]))" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179529852525">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1179529852526" />
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableReference" id="1179529852527">
-                    <link role="variableDeclaration" targetNodeId="1179529852488" resolveInfo="leftNodeConcept" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179529852528">
-          <link role="classifier" extResolveInfo="13.[Classifier]ConceptHierarchyScope" />
-        </node>
       </node>
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction" id="1179529852529">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179529852530">
