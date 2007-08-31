@@ -51,7 +51,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   {
-    this.addSModelCommandListener(new SModelCommandListener() {
+    this.addModelCommandListener(new SModelCommandListener() {
       public void modelChangedInCommand(List<SModelEvent> events) {
         if (EventUtil.isDramaticalChange(events)) {
           myLastStructuralChange = System.currentTimeMillis();
@@ -223,7 +223,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public void removeSModelListener(SModelListener listener) {
+  public void removeModelListener(SModelListener listener) {
     if (mySModel != null) {
       mySModel.removeSModelListener(listener);
     } else {
@@ -240,7 +240,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public void addSModelCommandListener(SModelCommandListener listener) {
+  public void addModelCommandListener(SModelCommandListener listener) {
     if (mySModel != null) {
       if (!mySModel.hasSModelCommandListener(listener)) {
         mySModel.addSModelCommandListener(listener);
@@ -250,7 +250,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     }
   }
 
-  public void removeSModelCommandListener(SModelCommandListener listener) {
+  public void removeModelCommandListener(SModelCommandListener listener) {
     if (mySModel != null) {
       mySModel.removeSModelCommandListener(listener);
     } else {

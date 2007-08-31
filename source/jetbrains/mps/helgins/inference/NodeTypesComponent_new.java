@@ -334,13 +334,13 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
 
   private void addOurListener(SModelDescriptor sm) {
     if (sm.hasSModelCommandListener(myModelListener)) return;
-    sm.addSModelCommandListener(myModelListener);
+    sm.addModelCommandListener(myModelListener);
     myModelDescriptorsWithListener.add(sm);
   }
 
   private void removeOurListener() {
     for (SModelDescriptor sm : myModelDescriptorsWithListener) {
-      sm.removeSModelCommandListener(myModelListener);
+      sm.removeModelCommandListener(myModelListener);
     }
     myModelDescriptorsWithListener.clear();
   }

@@ -62,7 +62,7 @@ public class CachesManager implements IComponentLifecycle {
 
     for (SModelDescriptor dependsOnModel : dependsOnModels) {
       dependsOnModel.addModelListener(cache);
-      dependsOnModel.addSModelCommandListener(cache);
+      dependsOnModel.addModelCommandListener(cache);
     }
   }
 
@@ -78,8 +78,8 @@ public class CachesManager implements IComponentLifecycle {
 
     List<SModelDescriptor> dependsOnModels = myDependsOnModels.get(key);
     for (SModelDescriptor dependsOnModel : dependsOnModels) {
-      dependsOnModel.removeSModelListener(cache);
-      dependsOnModel.removeSModelCommandListener(cache);
+      dependsOnModel.removeModelListener(cache);
+      dependsOnModel.removeModelCommandListener(cache);
     }
 
     myCaches.remove(key);

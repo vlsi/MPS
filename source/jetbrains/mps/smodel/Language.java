@@ -319,14 +319,14 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   private void registerAspectListener() {
     for (SModelDescriptor aspectModel : getAspectModelDescriptors()) {
-      if (aspectModel != null) aspectModel.addSModelCommandListener(myAspectModelsListener);
+      if (aspectModel != null) aspectModel.addModelCommandListener(myAspectModelsListener);
     }
   }
 
   private void unRegisterAspectListener() {
     for (SModelDescriptor aspectModel : getAspectModelDescriptors()) {
       if (aspectModel != null) {
-        aspectModel.removeSModelCommandListener(myAspectModelsListener);
+        aspectModel.removeModelCommandListener(myAspectModelsListener);
       }
     }
   }

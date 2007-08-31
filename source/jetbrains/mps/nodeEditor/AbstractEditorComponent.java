@@ -614,13 +614,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void addOurListener(SModelDescriptor sm) {
     if (sm.hasSModelCommandListener(myModelListener)) return;
-    sm.addSModelCommandListener(myModelListener);
+    sm.addModelCommandListener(myModelListener);
     myModelDescriptorsWithListener.add(sm);
   }
 
   private void removeOurListener() {
     for (SModelDescriptor sm : myModelDescriptorsWithListener) {
-      sm.removeSModelCommandListener(myModelListener);
+      sm.removeModelCommandListener(myModelListener);
     }
     myModelDescriptorsWithListener.clear();
   }

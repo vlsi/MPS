@@ -28,12 +28,13 @@ public interface SModelDescriptor {
   String getStereotype();
   boolean isInitialized();
   boolean isExternallyResolvable();
+
   void addWeakModelListener(SModelListener listener);
   void addModelListener(SModelListener listener);
-  void removeSModelListener(SModelListener listener);
+  void removeModelListener(SModelListener listener);
 
-  void addSModelCommandListener(SModelCommandListener listener);
-  void removeSModelCommandListener(SModelCommandListener listener);
+  void addModelCommandListener(SModelCommandListener listener);
+  void removeModelCommandListener(SModelCommandListener listener);
 
   void save();
   boolean needsReloading();

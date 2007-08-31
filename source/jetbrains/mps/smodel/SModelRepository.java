@@ -209,7 +209,7 @@ public class SModelRepository extends SModelAdapter {
     myModelsWithNoOwners.remove(modelDescriptor);
     owners.add(owner);
     modelDescriptor.addWeakModelListener(this);
-    modelDescriptor.addSModelCommandListener(myListener);
+    modelDescriptor.addModelCommandListener(myListener);
     fireRepositoryChanged();
   }
 
@@ -253,7 +253,7 @@ public class SModelRepository extends SModelAdapter {
     myModelToOwnerMap.remove(modelDescriptor);
     myModelsWithNoOwners.remove(modelDescriptor);
     fireModelRemoved(modelDescriptor);
-//    modelDescriptor.removeSModelListener(this);
+//    modelDescriptor.removeModelListener(this);
     modelDescriptor.dispose();
 
   }
