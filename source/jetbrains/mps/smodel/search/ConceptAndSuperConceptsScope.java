@@ -15,12 +15,12 @@ import java.util.ArrayList;
  * Igor Alshannikov
  * Aug 30, 2007
  */
-public class ConceptAndSubconceptsScope extends AbstractSearchScope {
-  private ConceptAndSubconceptsCacheHandler myCache = new ConceptAndSubconceptsCacheHandler();
+public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
+  private ConceptAndSuperConceptsCacheHandler myCache = new ConceptAndSuperConceptsCacheHandler();
   @Nullable
   private AbstractConceptDeclaration myTopConcept;
 
-  public ConceptAndSubconceptsScope(@Nullable AbstractConceptDeclaration topConcept) {
+  public ConceptAndSuperConceptsScope(@Nullable AbstractConceptDeclaration topConcept) {
     myTopConcept = topConcept;
   }
 
@@ -34,6 +34,21 @@ public class ConceptAndSubconceptsScope extends AbstractSearchScope {
     return myCache.getLinkDeclarationByRole(myTopConcept, role);
   }
 
+  /**
+   * @return directly extended/implemented concept and interfaces
+   */
+  public List<AbstractConceptDeclaration> getDirectSuperConcepts() {
+    if (myTopConcept == null) return new ArrayList<AbstractConceptDeclaration>(1);
+    return myCache.getDirectSuperConcepts(myTopConcept);
+  }
+
+  /**
+   * @return direct super interfaces and they supers
+   */
+  public List<AbstractConceptDeclaration> getDirectSuperInterfacesAndTheySupers() {
+    if (myTopConcept == null) return new ArrayList<AbstractConceptDeclaration>(1);
+    return myCache.getDirectSuperInterfacesAndTheySupers(myTopConcept);
+  }
 
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {

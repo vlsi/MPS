@@ -20,6 +20,9 @@ public abstract class AbstractCache implements SModelListener, SModelCommandList
     return myKey;
   }
 
+  public void cacheRemoved() {
+  }
+
   public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
     if(!isLoading) {
       // model went out of loading state - drop cache because we don't know what has happened while in loading state

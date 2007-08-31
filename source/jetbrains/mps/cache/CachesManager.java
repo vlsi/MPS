@@ -84,6 +84,7 @@ public class CachesManager implements IComponentLifecycle {
 
     myCaches.remove(key);
     myDependsOnModels.remove(key);
+    cache.cacheRemoved();
   }
 
   public void removeAllCaches() {
