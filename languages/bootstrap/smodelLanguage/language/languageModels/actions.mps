@@ -2388,7 +2388,7 @@
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180538786421">
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180538822445">
               <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1180538822446">
-                <link role="baseMethodDeclaration" extResolveInfo="13.constructor [Classifier]ConceptHierarchyScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [AbstractConceptDeclaration]))" />
+                <link role="baseMethodDeclaration" extResolveInfo="13.constructor [Classifier]ConceptAndSuperConceptsScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [AbstractConceptDeclaration]))" />
                 <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1180538850366">
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1180538865394" />
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.SubstituteNodeBuilderVariableReference" id="1180538847618">

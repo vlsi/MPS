@@ -30,7 +30,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.ConceptHierarchyScope;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -378,7 +378,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return new ConceptHierarchyScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(leftConcept)));
+          return new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(leftConcept)));
         }
 
       };
