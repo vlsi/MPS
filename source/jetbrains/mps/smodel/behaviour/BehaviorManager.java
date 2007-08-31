@@ -120,7 +120,7 @@ public final class BehaviorManager {
     paramTypes.addAll(parametersTypes);
     Class[] parameterTypeArray = paramTypes.toArray(new Class[0]);
 
-    for (AbstractConceptDeclaration conceptDeclaration : SModelUtil_new.getConceptHierarchy(concept)) {
+    for (AbstractConceptDeclaration conceptDeclaration : SModelUtil_new.getConceptAndSuperConcepts(concept)) {
       method = getMethod(conceptDeclaration, methodName, parameterTypeArray);
       if (method != null) {
         break;

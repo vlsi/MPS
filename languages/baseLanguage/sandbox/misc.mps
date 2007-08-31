@@ -16,6 +16,22 @@
   <import index="120" modelUID="jetbrains.mps.baseLanguage.sandbox.misc" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1182164226710">
     <property name="name" value="A" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1188520661794">
+      <property name="name" value="asds" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1188520661795" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188520661796" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1188520661797">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1188520681430">
+          <node role="expression" type="jetbrains.mps.baseLanguage.Expression" id="1188520922993" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1188520677350">
+        <property name="name" value="asa" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1188520677351">
+          <link role="classifier" extResolveInfo="1.[Classifier]String" />
+        </node>
+      </node>
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1184668952117">
       <property name="name" value="abcdef" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1184668952118" />

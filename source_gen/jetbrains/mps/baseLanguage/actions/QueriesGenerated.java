@@ -33,7 +33,6 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -47,6 +46,7 @@ import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 
 public class QueriesGenerated {
 
@@ -393,17 +393,18 @@ public class QueriesGenerated {
 
         public Object calculate() {
           IClassifiersSearchScope searchScope = new VisibleClassifiersScope(SNodeOperations.getModel(parentNode), IClassifiersSearchScope.CLASSIFFIER, operationContext.getScope());
-          List<SNode> classifiers = (List<SNode>)searchScope.getClassifierNodes();
-          for(SNode cls : classifiers) {
-            if(SequenceOperations.getSize(SLinkOperations.getTargets(cls, "staticField", true)) > 0) {
+          List<SNode> visibleClassifiers = (List<SNode>)searchScope.getClassifierNodes();
+          List<SNode> classifiers = new ArrayList<SNode>();
+          for(SNode cls : visibleClassifiers) {
+            if(SLinkOperations.getCount(cls, "staticField") > 0) {
               ListOperations.addElement(classifiers, cls);
               continue;
             }
-            if(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SequenceOperations.getSize(SLinkOperations.getTargets(cls, "staticMethod", true)) > 0) {
+            if(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept") && SLinkOperations.getCount(cls, "staticMethod") > 0) {
               ListOperations.addElement(classifiers, cls);
               continue;
             }
-            if(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.EnumClass") && SequenceOperations.getSize(SLinkOperations.getTargets(cls, "enumConstant", true)) > 0) {
+            if(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.EnumClass") && SLinkOperations.getCount(cls, "enumConstant") > 0) {
               ListOperations.addElement(classifiers, cls);
               continue;
             }

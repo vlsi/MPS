@@ -129,7 +129,7 @@ public class ModelConstraintsManager {
     }
 
     // find set-event-handler and put to cache
-    Set<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptHierarchy(node.getConceptDeclarationAdapter());
+    List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
     for (AbstractConceptDeclaration concept : hierarchy) {
       String conceptFqName = NameUtil.nodeFQName(concept);
       INodeReferentSetEventHandler result = myNodeReferentSetEventHandlersMap.get(conceptFqName + "#" + referentRole);
@@ -220,7 +220,7 @@ public class ModelConstraintsManager {
       }
 
       // find getter/setter and put to cache
-      Set<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptHierarchy(node.getConceptDeclarationAdapter());
+      List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
       for (final AbstractConceptDeclaration concept : hierarchy) {
         final String conceptFqName = NameUtil.nodeFQName(concept);
         final IModelConstraints result;
