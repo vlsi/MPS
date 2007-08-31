@@ -80,6 +80,7 @@ public class StructuralWrapperMap<T> implements Map<IWrapper, T> {
   }
 
   public T put(IWrapper keyWrapper, T value) {
+    if (keyWrapper == null) return null;
     IWrapper representator = getKeyRepresentator(keyWrapper);
     if (keyWrapper.isConcrete()) {
       if (representator == null) {

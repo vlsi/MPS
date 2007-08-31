@@ -208,6 +208,7 @@ public class RuntimeSupport {
       //----
       component.markNodeAsAffectedByRule(node, ruleModel, ruleId);
     }
+    if (type == null) return;
     SNode nodesType = typesContext.get(node);
     if (nodesType == null) { // put to context
       typesContext.put(node, getRepresentatorIfNecessary(type, component));

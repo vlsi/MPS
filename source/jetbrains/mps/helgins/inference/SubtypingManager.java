@@ -142,30 +142,31 @@ public class SubtypingManager {
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();
     frontier.add(subRepresentator.getNode());
     while (!frontier.isEmpty()) {
+      StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
-        StructuralNodeSet<?> ancestors = collectImmediateSupertypes(node, isWeak);
-        if (ancestors == null) continue;
+        ancestors.addAllStructurally(collectImmediateSupertypes(node, isWeak));
         for (SNode passedNode : yetPassed) {
           ancestors.removeStructurally(passedNode);
         }
         ancestors.removeStructurally(node);
-        ArrayList<SNode> ancestorsSorted = new ArrayList<SNode>(ancestors);
-        Collections.sort(ancestorsSorted, new Comparator<SNode>() {
-          public int compare(SNode o1, SNode o2) {
-            return o2.depth() - o1.depth();
-          }
-        });
-        for (SNode ancestor : ancestorsSorted) {
-          if (superRepresentator.matchesWith(new NodeWrapper(ancestor), equationManager, errorInfo)) {
-            return true;
-          }
-        }
-        newFrontier.addAllStructurally(ancestors);
-        yetPassed.addAllStructurally(ancestors);
       }
+      ArrayList<SNode> ancestorsSorted = new ArrayList<SNode>(ancestors);
+      Collections.sort(ancestorsSorted, new Comparator<SNode>() {
+        public int compare(SNode o1, SNode o2) {
+          return o2.depth() - o1.depth();
+        }
+      });
+      for (SNode ancestor : ancestorsSorted) {
+        if (superRepresentator.matchesWith(new NodeWrapper(ancestor), equationManager, errorInfo)) {
+          return true;
+        }
+      }
+      newFrontier.addAllStructurally(ancestors);
+      yetPassed.addAllStructurally(ancestors);
       frontier = newFrontier;
       newFrontier = new StructuralNodeSet();
     }
+
     return false;
   }
 
@@ -379,9 +380,9 @@ public class SubtypingManager {
       for (IWrapper superTypeB : superTypesB) {
         if ((superTypeA.isConcrete() && superTypeB.isConcrete() &&     // todo what if not concrete?
                 MatchingUtil.matchNodes(superTypeA.getNode(), superTypeB.getNode())) || superTypeA.equals(superTypeB)) {
-            matches = true;
-            break;
-          }
+          matches = true;
+          break;
+        }
       }
       if (!matches) {
         superTypesA.remove(superTypeA);
