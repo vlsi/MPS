@@ -276,6 +276,7 @@ public class SubtypingManager {
   public static Set<SNode> toNodes(Set<IWrapper> wrappers) {
     return CollectionUtil.map(wrappers, new Mapper<IWrapper, SNode>() {
       public SNode map(IWrapper wrapper) {
+        if (wrapper == null) return null;
         return wrapper.getNode();
       }
     });
