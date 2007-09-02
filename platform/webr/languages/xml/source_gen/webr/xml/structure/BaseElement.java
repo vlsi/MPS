@@ -6,9 +6,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import java.util.Iterator;
+import java.util.List;
 
 public class BaseElement extends Content {
   public static String CONTENT_LIST = "contentList";
+  public static String ATTRIBUTE = "attribute";
 
   public  BaseElement(SNode node) {
     super(node);
@@ -29,6 +32,26 @@ public class BaseElement extends Content {
 
   public void setContentList(ContentList node) {
     super.setChild(BaseElement.CONTENT_LIST, node);
+  }
+
+  public int getAttributesCount() {
+    return this.getChildCount(BaseElement.ATTRIBUTE);
+  }
+
+  public Iterator<BaseAttribute> attributes() {
+    return this.children(BaseElement.ATTRIBUTE);
+  }
+
+  public List<BaseAttribute> getAttributes() {
+    return this.getChildren(BaseElement.ATTRIBUTE);
+  }
+
+  public void addAttribute(BaseAttribute node) {
+    this.addChild(BaseElement.ATTRIBUTE, node);
+  }
+
+  public void insertAttribute(BaseAttribute prev, BaseAttribute node) {
+    this.insertChild(prev, BaseElement.ATTRIBUTE, node);
   }
 
 }

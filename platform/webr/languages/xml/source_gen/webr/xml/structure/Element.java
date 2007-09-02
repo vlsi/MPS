@@ -6,12 +6,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import java.util.Iterator;
-import java.util.List;
 import webr.xmlSchema.structure.ElementDeclaration;
 
 public class Element extends BaseElement {
-  public static String ATTRIBUTE = "attribute";
   public static String ELEMENT_DECLARATION = "elementDeclaration";
   public static String IS_EMPTY = "isEmpty";
 
@@ -27,26 +24,6 @@ public class Element extends BaseElement {
     return Element.newInstance(sm, false);
   }
 
-
-  public int getAttributesCount() {
-    return this.getChildCount(Element.ATTRIBUTE);
-  }
-
-  public Iterator<BaseAttribute> attributes() {
-    return this.children(Element.ATTRIBUTE);
-  }
-
-  public List<BaseAttribute> getAttributes() {
-    return this.getChildren(Element.ATTRIBUTE);
-  }
-
-  public void addAttribute(BaseAttribute node) {
-    this.addChild(Element.ATTRIBUTE, node);
-  }
-
-  public void insertAttribute(BaseAttribute prev, BaseAttribute node) {
-    this.insertChild(prev, Element.ATTRIBUTE, node);
-  }
 
   public ElementDeclaration getElementDeclaration() {
     return (ElementDeclaration)this.getReferent(Element.ELEMENT_DECLARATION);
