@@ -1081,14 +1081,14 @@
       <option name="OPEN_IN_BROWSER" value="true" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/charisma" />
       <option name="COMMON_VM_ARGUMENTS" value="-Xms256m -Xmx1024m" />
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting-webapp" />
-        <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
       <J2EE_MODULE>
         <option name="CONTEXT_PATH" value="/" />
         <option name="MODULE_NAME" value="webrSamples_hello" />
+        <option name="DEPLOY" value="false" />
+      </J2EE_MODULE>
+      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="MODULE_NAME" value="accounting-webapp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1192,12 +1192,12 @@
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting-webapp" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
+        <option name="MODULE_NAME" value="accounting-webapp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1301,12 +1301,12 @@
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting-webapp" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
+        <option name="MODULE_NAME" value="accounting-webapp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1392,12 +1392,12 @@
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting-webapp" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
+        <option name="MODULE_NAME" value="accounting-webapp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -1501,12 +1501,12 @@
       <option name="COMMON_VM_ARGUMENTS" value="" />
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting-webapp" />
+        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
+        <option name="MODULE_NAME" value="accounting-webapp" />
         <option name="DEPLOY" value="false" />
       </J2EE_MODULE>
       <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
@@ -2010,6 +2010,16 @@
       <JAVADOC />
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/restlets/restlet-api-src.zip!/" />
+      </SOURCES>
+    </library>
+    <library name="Guice">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/guice/aopalliance.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/guice/guice-1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/guice/guice-src.zip!/" />
       </SOURCES>
     </library>
   </component>
