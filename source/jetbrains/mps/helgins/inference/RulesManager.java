@@ -25,6 +25,7 @@ public class RulesManager {
   private RuleSet<InferenceRule_Runtime> myInferenceRules = new InferenceRuleSet();
   private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<SubtypingRule_Runtime>();
   private RuleSet<SupertypingRule_Runtime> mySupertypingRules = new RuleSet<SupertypingRule_Runtime>();
+  private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
 
   private static Logger LOG = Logger.getLogger(RulesManager.class);
 
@@ -89,6 +90,17 @@ public class RulesManager {
         return (isWeak || !object.isWeak()) && object.isApplicable(node);
       }
     });
+  }
+
+  public Set<ComparisonRule_Runtime> getComparisonRules(final SNode node1, final SNode node2, final boolean isWeak) {
+    Set<ComparisonRule_Runtime> result = new HashSet<ComparisonRule_Runtime>();
+    result.addAll(
+     CollectionUtil.filter(myComparisonRules.getRules(node1, node2), new Condition<ComparisonRule_Runtime>() {
+      public boolean met(ComparisonRule_Runtime object) {
+        return (isWeak || !object.isWeak()) && object.isApplicable(node1, node2);
+      }
+    }));
+    return result;
   }
 
   public TypeChecker getTypeChecker() {
