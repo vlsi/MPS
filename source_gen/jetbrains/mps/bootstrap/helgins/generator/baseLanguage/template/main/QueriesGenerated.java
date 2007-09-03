@@ -26,6 +26,7 @@ import jetbrains.mps.bootstrap.helgins.structure.ReferenceAntiquotation_Annotati
 import jetbrains.mps.bootstrap.helgins.structure.InferenceRule;
 import jetbrains.mps.bootstrap.helgins.structure.SubtypingRule;
 import jetbrains.mps.bootstrap.helgins.structure.SupertypingRule;
+import jetbrains.mps.bootstrap.helgins.structure.ComparisonRule;
 
 public class QueriesGenerated {
 
@@ -169,10 +170,6 @@ public class QueriesGenerated {
     SNode patternExpr = SLinkOperations.getTarget(applicableNode, "pattern", true);
     SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
     return SNodeOperations.getModel(conceptDecl).toString() + "." + SPropertyOperations.getString(conceptDecl, "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1175162990835(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.SupertypingRule") + "";
   }
 
   public static Object propertyMacro_GetPropertyValue_1175607860006(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -444,7 +441,10 @@ public class QueriesGenerated {
     if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.SupertypingRule")) {
       return SLinkOperations.getTarget(new QuotationClass_6().createNode(), "classifier", false);
     }
-    return SLinkOperations.getTarget(new QuotationClass_7().createNode(), "classifier", false);
+    if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
+      return SLinkOperations.getTarget(new QuotationClass_7().createNode(), "classifier", false);
+    }
+    return SLinkOperations.getTarget(new QuotationClass_8().createNode(), "classifier", false);
   }
 
   public static SNode referenceMacro_GetReferent_1174655195413(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
@@ -506,6 +506,10 @@ public class QueriesGenerated {
   }
 
   public static SNode referenceMacro_GetReferent_1175440299480(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "classForRule").getChild("constructor");
+  }
+
+  public static SNode referenceMacro_GetReferent_1188816571764(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(node, "classForRule").getChild("constructor");
   }
 
@@ -636,10 +640,6 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1174648541218(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
-  }
-
-  public static boolean ifMacro_Condition_1175162630666(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule");
   }
 
   public static boolean ifMacro_Condition_1175607840890(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -851,6 +851,10 @@ public class QueriesGenerated {
 
   public static List sourceNodesQuery_1175440299519(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return BaseAdapter.toNodes(sourceModel.getRootsAdapters(SupertypingRule.class));
+  }
+
+  public static List sourceNodesQuery_1188816571779(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return BaseAdapter.toNodes(sourceModel.getRootsAdapters(ComparisonRule.class));
   }
 
   public static List sourceNodesQuery_1176548514510(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

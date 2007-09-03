@@ -1,6 +1,7 @@
 package jetbrains.mps.bootstrap.helgins.runtime;
 
 import java.util.Set;
+import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -13,4 +14,5 @@ public interface IHelginsDescriptor {
   public Set<InferenceRule_Runtime> getInferenceRules();
   public Set<SubtypingRule_Runtime> getSubtypingRules();
   public Set<SupertypingRule_Runtime> getSupertypingRules();
+  public Set<ComparisonRule_Runtime> getComparisonRules();
 }

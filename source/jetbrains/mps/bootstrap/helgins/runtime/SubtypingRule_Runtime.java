@@ -11,7 +11,4 @@ import jetbrains.mps.smodel.SNode;
  */
 public abstract class SubtypingRule_Runtime extends AbstractSubtypingRule_Runtime {
 
-  public boolean isSupertyping() {
-    return false;
-  }
 }

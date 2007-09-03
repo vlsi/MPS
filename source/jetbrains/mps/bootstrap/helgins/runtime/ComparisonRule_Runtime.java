@@ -2,16 +2,13 @@ package jetbrains.mps.bootstrap.helgins.runtime;
 
 import jetbrains.mps.smodel.SNode;
 
-import java.util.List;
-
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
- * Date: 29.03.2007
- * Time: 9:55:59
+ * Date: 03.09.2007
+ * Time: 14:34:04
  * To change this template use File | Settings | File Templates.
  */
-public interface ISubtypingRule_Runtime extends Rule_Runtime {
-  List<SNode> getSubOrSuperTypes(SNode type);
-  boolean isWeak();
+public abstract class ComparisonRule_Runtime extends AbstractSubtypingRule_Runtime {
+  public abstract boolean areComparable(SNode type1, SNode type2);
 }
