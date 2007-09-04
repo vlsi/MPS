@@ -26,10 +26,6 @@ public class double_unboxing_SubtypingRule extends SubtypingRule_Runtime impleme
     return this.myMatchingPattern.match(argument);
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return true;
   }

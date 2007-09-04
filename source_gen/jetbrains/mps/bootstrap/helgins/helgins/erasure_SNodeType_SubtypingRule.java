@@ -24,10 +24,6 @@ public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime imple
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return false;
   }

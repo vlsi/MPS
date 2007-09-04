@@ -204,6 +204,24 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1188914216787">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1188914216788">
+            <property name="name" value="c" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1188914216789">
+              <link role="classifier" extResolveInfo="2.[Classifier]Comparable" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1188914209922">
+          <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1188914209923">
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1188914243494">
+              <link role="classifier" extResolveInfo="2.[Classifier]Iterable" />
+            </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1188914225102">
+              <link role="variableDeclaration" targetNodeId="1188914216788" resolveInfo="c" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1183121979332">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1183121979333">
             <property name="name" value="n" />

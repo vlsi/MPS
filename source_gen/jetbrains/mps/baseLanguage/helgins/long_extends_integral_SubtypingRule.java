@@ -25,10 +25,6 @@ public class long_extends_integral_SubtypingRule extends SubtypingRule_Runtime i
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return false;
   }

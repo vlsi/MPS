@@ -26,10 +26,6 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
     return this.myMatchingPattern.match(argument);
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return true;
   }

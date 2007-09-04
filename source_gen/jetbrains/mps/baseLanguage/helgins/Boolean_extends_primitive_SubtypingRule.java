@@ -25,10 +25,6 @@ public class Boolean_extends_primitive_SubtypingRule extends SubtypingRule_Runti
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return false;
   }

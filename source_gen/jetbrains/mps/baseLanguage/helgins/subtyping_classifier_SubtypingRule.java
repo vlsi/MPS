@@ -77,10 +77,6 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return false;
   }

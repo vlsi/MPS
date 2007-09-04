@@ -25,10 +25,6 @@ public class double_extends_floatingPoint_SubtypingRule extends SubtypingRule_Ru
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return false;
   }

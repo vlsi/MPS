@@ -3,6 +3,7 @@ package jetbrains.mps.helgins.inference;
 import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.SupertypingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import jetbrains.mps.bootstrap.helgins.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.helgins.inference.util.*;
 import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
@@ -436,8 +437,21 @@ public class SubtypingManager {
     return coerceSubtyping(subtype, pattern, true);
   }
 
-  public boolean isComparableWRTRules(IWrapper subtypeRepresentator, IWrapper supertypeRepresentator, EquationManager equationManager, ErrorInfo errorInfo, boolean isWeak) {
-    return false; // todo
+  public boolean isComparableWRTRules(IWrapper wrapper1, IWrapper wrapper2, EquationManager equationManager, ErrorInfo errorInfo, boolean isWeak) {
+    SNode term1 = wrapper1.getNode();
+    SNode term2 = wrapper2.getNode();
+    if (term1 == null || term2 == null) {
+      return false;
+    }
+
+    Set<ComparisonRule_Runtime> comparisonRule_runtimes = myTypeChecker.getRulesManager().getComparisonRules(term1, term2, isWeak);
+    if (comparisonRule_runtimes != null) {
+      for (ComparisonRule_Runtime comparisonRule_runtime : comparisonRule_runtimes) {
+        if (comparisonRule_runtime.areComparable(term1, term2)) return true;
+      }
+    }
+
+    return false;
   }
 
   public <T extends BaseAdapter> T getCoercedSupertypeByAdapterClass(SNode subtype, Class<T> aClass) {

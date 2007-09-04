@@ -24,10 +24,6 @@ public class double_boxing_SubtypingRule extends SubtypingRule_Runtime implement
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return true;
   }

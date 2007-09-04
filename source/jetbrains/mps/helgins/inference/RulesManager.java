@@ -56,9 +56,11 @@ public class RulesManager {
       myInferenceRules.addRuleSetItem(helginsDescriptor.getInferenceRules());
       mySubtypingRules.addRuleSetItem(helginsDescriptor.getSubtypingRules());
       mySupertypingRules.addRuleSetItem(helginsDescriptor.getSupertypingRules());
+      myComparisonRules.addRuleSetItem(helginsDescriptor.getComparisonRules());
       myInferenceRules.makeConsistent();
       mySubtypingRules.makeConsistent();
       mySupertypingRules.makeConsistent();
+      myComparisonRules.makeConsistent();
       myLoadedLanguages.add(l.getNamespace());
       return true;
     } catch(Throwable t) {

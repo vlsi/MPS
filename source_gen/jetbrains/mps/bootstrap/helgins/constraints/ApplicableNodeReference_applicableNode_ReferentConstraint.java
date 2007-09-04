@@ -39,6 +39,10 @@ public class ApplicableNodeReference_applicableNode_ReferentConstraint implement
     if(rule != null) {
       SNode appNode = SLinkOperations.getTarget(rule, "applicableNode", true);
       ListOperations.addElement(result, appNode);
+      if(SNodeOperations.isInstanceOf(rule, "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
+        SNode appNode2 = SLinkOperations.getTarget(rule, "anotherNode", true);
+        ListOperations.addElement(result, appNode2);
+      }
     }
     SNode coerceStatement = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement", false, false);
     while(coerceStatement != null) {
