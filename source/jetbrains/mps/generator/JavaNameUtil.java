@@ -1,6 +1,5 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
@@ -10,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
  * User: Dmitriev.
  * Date: Jan 13, 2004
  */
-public class JavaNameUtil {
+public final class JavaNameUtil {
   public static String fqClassName(SModel model, String shortClassName) {
     String packageName = packageNameForModelUID(model.getUID());
     if (packageName == null || packageName.length() == 0) {
@@ -24,9 +23,11 @@ public class JavaNameUtil {
   }
 
   public static String packageNameForModelUID(SModelUID modelUID) {
-    String modelFqName = modelUID.getLongName();
-    String packageName = modelFqName;
-    return packageName;
+    return modelUID.getLongName();
+  }
+
+  public static String packageName(SModel model) {
+    return packageNameForModelUID(model.getUID());
   }
 
   public static String withoutStructure(String ns) {
