@@ -7,10 +7,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JComponent;
@@ -68,13 +65,17 @@ public class ModuleContext extends StandaloneMPSContext {
   }
 
   public static ModuleContext create(SNode node, AbstractProjectFrame frame) {
+    return create(node.getModel(), frame, true);
+  }
+
+  public static ModuleContext create(SModel model, AbstractProjectFrame frame, boolean askIfMany) {
     MPSProject project = frame.getProject();
 
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(node.getModel());
-    assert modelDescriptor != null : "couldn't find model descriptor for node: " + node.getDebugText();
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model);
+    assert modelDescriptor != null;
     Set<IModule> owningModules = SModelRepository.getInstance().getOwners(modelDescriptor, IModule.class);
     if (owningModules.isEmpty()) {
-      LOG.errorWithTrace("Couldn't create module context for node: " + node.getDebugText() +
+      LOG.errorWithTrace("Couldn't create module context for node:" +
               "\nCouldn't find owner module for model \"" + modelDescriptor.getModelUID() + "\"");
       return null;
     }
@@ -90,7 +91,7 @@ public class ModuleContext extends StandaloneMPSContext {
     }
 
     IModule module;
-    if (owningModules.size() == 1) {
+    if (owningModules.size() == 1 || !askIfMany) {
       module = owningModules.iterator().next();
     } else {
       ChooseModuleDialog md = new ChooseModuleDialog(frame.getMainFrame(), owningModules);
