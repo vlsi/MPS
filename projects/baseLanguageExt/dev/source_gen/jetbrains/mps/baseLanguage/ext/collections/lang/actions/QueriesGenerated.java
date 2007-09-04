@@ -30,24 +30,29 @@ import jetbrains.mps.util.Condition;
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1160672994889(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1160672994889(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     SNode block = SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortBlock"}, false, false);
     return block != null;
   }
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1178286539824(SNode parentNode, IScope scope, IOperationContext operationContext) {
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1178286539824(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation");
   }
+
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1161719130431(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     SNode type = TypeChecker.getInstance().getTypeOf(sourceNode);
     SNode sequenceType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), false);
     return (sequenceType != null);
   }
+
   public static void nodeFactory_NodeSetup_DefaultInputElement_1174261447073(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     SPropertyOperations.set(newNode, "name", "it");
   }
+
   public static void nodeFactory_NodeSetup_SortOperation_1178286959323(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     SPropertyOperations.set(SLinkOperations.setNewChild(newNode, "order", "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection"), "value", "" + (true));
   }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1152144005896(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
@@ -84,6 +89,7 @@ public class QueriesGenerated {
           }
           return concepts;
         }
+
       };
       Iterable queryResult = (Iterable)calc.calculate();
       for(Object item : queryResult) {
@@ -93,6 +99,7 @@ public class QueriesGenerated {
     }
     return result;
   }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1178286508713(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
@@ -104,12 +111,15 @@ public class QueriesGenerated {
           SPropertyOperations.set(direction, "value", "" + (true));
           return direction;
         }
+
         public String getDescriptionText(String pattern) {
           return "Sort in ascending order";
         }
+
         public String getMatchingText(String pattern) {
           return "asc";
         }
+
       });
     }
     {
@@ -121,20 +131,25 @@ public class QueriesGenerated {
           SPropertyOperations.set(direction, "value", "" + (false));
           return direction;
         }
+
         public String getDescriptionText(String pattern) {
           return "Sort in descending order";
         }
+
         public String getMatchingText(String pattern) {
           return "desc";
         }
+
       });
     }
     return result;
   }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SequenceOperation_1160663024951(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     return result;
   }
+
   public static void removeActionsByCondition_1177414262137(Iterator<INodeSubstituteAction> actions, final SNode parentNode, final SNode currentChild, final SNode childConcept, final IOperationContext operationContext) {
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
@@ -165,10 +180,12 @@ public class QueriesGenerated {
           }
           return SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.AbstractListOperation");
         }
+
       };
       if(cond.met(null)) {
         actions.remove();
       }
     }
   }
+
 }

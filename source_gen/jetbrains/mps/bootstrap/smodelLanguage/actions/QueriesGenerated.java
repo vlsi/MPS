@@ -41,18 +41,18 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPr
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1161715685433(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1161715685433(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
     return ActionUtil_smodel.isExpression_appropriateFor_ourOperations(leftExpression);
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1179529852529(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1179529852529(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
     return nodeType != null;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1179530205324(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1179530205324(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
     return nodeType != null;

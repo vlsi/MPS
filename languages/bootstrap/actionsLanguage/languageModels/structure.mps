@@ -218,6 +218,10 @@
       <link role="target" targetNodeId="5.1161622753914" />
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1188901630202">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
+      <link role="target" targetNodeId="1177768753302" resolveInfo="ConceptFunctionParameter_childConcept" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1154537040310">
       <property name="value" value="precondition" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />

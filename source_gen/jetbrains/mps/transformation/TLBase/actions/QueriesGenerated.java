@@ -21,9 +21,10 @@ import jetbrains.mps.smodel.BaseAdapter;
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_RuleConsequence_1169582381136(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_RuleConsequence_1169582381136(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.transformation.TLBase.structure.Weaving_MappingRule");
   }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_RuleConsequence_1169570930693(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
@@ -33,6 +34,7 @@ public class QueriesGenerated {
         public Object calculate() {
           return ListOperations.createList(new SNode[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.transformation.TLBase.structure.WeaveEach_RuleConsequence")});
         }
+
       };
       Iterable queryResult = (Iterable)calc.calculate();
       for(Object item : queryResult) {
@@ -42,4 +44,5 @@ public class QueriesGenerated {
     }
     return result;
   }
+
 }

@@ -63,13 +63,6 @@ public class ChildSubstituteActionsHelper {
   }
 
   private static List<INodeSubstituteAction> createActions_internal(SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
-//    SModel model = parentNode.getModel();
-
-//    boolean wasLoading = model.isLoading();
-//    model.setLoading(true);
-//    model.setRegistrationsForbidden(true);
-
-//    try {
     List<INodeSubstituteAction> resultActions = new ArrayList<INodeSubstituteAction>();
       if (childConcept == null) {
         return resultActions;
@@ -120,10 +113,6 @@ public class ChildSubstituteActionsHelper {
       }
 
       return resultActions;
-//    } finally {
-//      model.setLoading(wasLoading);
-//      model.setRegistrationsForbidden(false);
-//    }
   }
 
   private static boolean containsLegacyQueries(List<NodeSubstituteActionsBuilder> list) {
@@ -296,7 +285,7 @@ public class ChildSubstituteActionsHelper {
             // the aggregation link target (child concept) should be sub-concept of the 'applicable concept'
             AbstractConceptDeclaration applicableChildConcept = actionsBuilder.getApplicableConcept();
             if (SModelUtil_new.isAssignableConcept(childConcept, applicableChildConcept) &&
-                    satisfiesPrecondition(actionsBuilder, parentNode, context)) {
+                    satisfiesPrecondition(actionsBuilder, parentNode, childConcept, context)) {
               actionsBuilders.add(actionsBuilder);
             }
           }
@@ -310,13 +299,13 @@ public class ChildSubstituteActionsHelper {
   // Query methods invocation...
   // --------------------------------
 
-  private static boolean satisfiesPrecondition(NodeSubstituteActionsBuilder actionsBuilder, SNode parentNode, IOperationContext context) {
+  private static boolean satisfiesPrecondition(NodeSubstituteActionsBuilder actionsBuilder, SNode parentNode, AbstractConceptDeclaration concept, IOperationContext context) {
     // try generatred query method
     NodeSubstitutePreconditionFunction precondition = actionsBuilder.getPrecondition();
     // precondition is optional
     if (precondition != null) {
       String methodName = ActionQueryMethodName.nodeSubstituteActionsBuilder_Precondition(actionsBuilder);
-      Object[] args = new Object[]{parentNode, context.getScope(), context};
+      Object[] args = new Object[]{parentNode, concept.getNode(), context.getScope(), context};
       SModel model = actionsBuilder.getModel();
       try {
         return (Boolean) QueryMethodGenerated.invoke(methodName, args, model);

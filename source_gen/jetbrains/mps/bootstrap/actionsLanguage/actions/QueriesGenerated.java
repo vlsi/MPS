@@ -20,19 +20,19 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOp
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_MenuPart_1177495846676(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_MenuPart_1177495846676(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", false, false) != null;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_MenuPart_1177496214780(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_MenuPart_1177496214780(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder", false, false) != null;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_MenuBuilderPart_1180112146090(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_MenuBuilderPart_1180112146090(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", true, false) != null;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_MenuBuilderPart_1180112503623(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_MenuBuilderPart_1180112503623(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder", true, false) != null;
   }
 

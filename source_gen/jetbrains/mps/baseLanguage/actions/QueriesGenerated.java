@@ -50,7 +50,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperati
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1177400765736(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1177400765736(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     SNode parent = SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.Closure"}, false, false);
     if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement")) {
       return true;
@@ -62,15 +62,15 @@ public class QueriesGenerated {
     return false;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Visibility_1178549461018(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Visibility_1178549461018(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.Classifier") && SNodeOperations.getParent(parentNode, null, false, false) == null;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1178893978039(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1178893978039(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", true, false) != null;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1188219568912(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1188219568912(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.AnnotationInstance", true, false) != null;
   }
 

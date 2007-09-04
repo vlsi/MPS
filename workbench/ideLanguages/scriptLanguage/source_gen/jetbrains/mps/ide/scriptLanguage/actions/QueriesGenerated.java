@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1185457769594(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1185457769594(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.ide.scriptLanguage.structure.Script", true, false) != null);
   }
 
