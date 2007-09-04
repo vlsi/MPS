@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SNode;
  */
 public final class JavaNameUtil {
   public static String fqClassName(SModel model, String shortClassName) {
-    String packageName = packageNameForModelUID(model.getUID());
+    String packageName = packageName(model);
     if (packageName == null || packageName.length() == 0) {
       return shortClassName;
     }
