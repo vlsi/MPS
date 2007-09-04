@@ -14,9 +14,11 @@ public class SubstituteMenuPart extends MenuPart {
   }
 
   public static SubstituteMenuPart newInstance(SModel sm, boolean init) {
-    return (SubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.SubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SubstituteMenuPart newInstance(SModel sm) {
     return SubstituteMenuPart.newInstance(sm, false);
   }
+
 }

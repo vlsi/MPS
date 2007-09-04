@@ -15,9 +15,11 @@ public class ConceptFunctionParameter_parentNode extends ConceptFunctionParamete
   }
 
   public static ConceptFunctionParameter_parentNode newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_parentNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_parentNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ConceptFunctionParameter_parentNode newInstance(SModel sm) {
     return ConceptFunctionParameter_parentNode.newInstance(sm, false);
   }
+
 }

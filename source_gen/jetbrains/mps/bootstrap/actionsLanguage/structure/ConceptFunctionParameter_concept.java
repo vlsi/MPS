@@ -15,9 +15,11 @@ public class ConceptFunctionParameter_concept extends ConceptFunctionParameter {
   }
 
   public static ConceptFunctionParameter_concept newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_concept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_concept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_concept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_concept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ConceptFunctionParameter_concept newInstance(SModel sm) {
     return ConceptFunctionParameter_concept.newInstance(sm, false);
   }
+
 }

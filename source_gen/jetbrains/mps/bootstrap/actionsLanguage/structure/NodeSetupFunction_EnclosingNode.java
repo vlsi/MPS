@@ -15,9 +15,11 @@ public class NodeSetupFunction_EnclosingNode extends ConceptFunctionParameter {
   }
 
   public static NodeSetupFunction_EnclosingNode newInstance(SModel sm, boolean init) {
-    return (NodeSetupFunction_EnclosingNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSetupFunction_EnclosingNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeSetupFunction_EnclosingNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_EnclosingNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static NodeSetupFunction_EnclosingNode newInstance(SModel sm) {
     return NodeSetupFunction_EnclosingNode.newInstance(sm, false);
   }
+
 }

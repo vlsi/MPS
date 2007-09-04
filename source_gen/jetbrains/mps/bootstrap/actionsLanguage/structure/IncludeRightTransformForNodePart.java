@@ -15,16 +15,20 @@ public class IncludeRightTransformForNodePart extends MenuBuilderPart {
   }
 
   public static IncludeRightTransformForNodePart newInstance(SModel sm, boolean init) {
-    return (IncludeRightTransformForNodePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.IncludeRightTransformForNodePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IncludeRightTransformForNodePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static IncludeRightTransformForNodePart newInstance(SModel sm) {
     return IncludeRightTransformForNodePart.newInstance(sm, false);
   }
 
+
   public QueryFunction_RightTransform_NodeQuery getNodeBlock() {
     return (QueryFunction_RightTransform_NodeQuery)this.getChild(IncludeRightTransformForNodePart.NODE_BLOCK);
   }
+
   public void setNodeBlock(QueryFunction_RightTransform_NodeQuery node) {
     super.setChild(IncludeRightTransformForNodePart.NODE_BLOCK, node);
   }
+
 }

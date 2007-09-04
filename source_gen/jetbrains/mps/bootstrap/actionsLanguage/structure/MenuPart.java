@@ -15,9 +15,11 @@ public class MenuPart extends BaseConcept {
   }
 
   public static MenuPart newInstance(SModel sm, boolean init) {
-    return (MenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.MenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.MenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static MenuPart newInstance(SModel sm) {
     return MenuPart.newInstance(sm, false);
   }
+
 }

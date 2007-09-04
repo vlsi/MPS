@@ -16,16 +16,20 @@ public class ConceptSubstitutePart extends MenuBuilderPart {
   }
 
   public static ConceptSubstitutePart newInstance(SModel sm, boolean init) {
-    return (ConceptSubstitutePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstitutePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptSubstitutePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ConceptSubstitutePart newInstance(SModel sm) {
     return ConceptSubstitutePart.newInstance(sm, false);
   }
 
+
   public ConceptDeclaration getConcept() {
     return (ConceptDeclaration)this.getReferent(ConceptSubstitutePart.CONCEPT);
   }
+
   public void setConcept(ConceptDeclaration node) {
     super.setReferent(ConceptSubstitutePart.CONCEPT, node);
   }
+
 }

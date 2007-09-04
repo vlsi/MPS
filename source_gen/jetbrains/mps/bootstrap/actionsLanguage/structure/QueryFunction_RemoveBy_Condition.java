@@ -15,9 +15,11 @@ public class QueryFunction_RemoveBy_Condition extends ConceptFunction {
   }
 
   public static QueryFunction_RemoveBy_Condition newInstance(SModel sm, boolean init) {
-    return (QueryFunction_RemoveBy_Condition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RemoveBy_Condition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_RemoveBy_Condition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RemoveBy_Condition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static QueryFunction_RemoveBy_Condition newInstance(SModel sm) {
     return QueryFunction_RemoveBy_Condition.newInstance(sm, false);
   }
+
 }

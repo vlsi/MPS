@@ -18,34 +18,44 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
   }
 
   public static SimpleItemSubstitutePart newInstance(SModel sm, boolean init) {
-    return (SimpleItemSubstitutePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.SimpleItemSubstitutePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleItemSubstitutePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleItemSubstitutePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SimpleItemSubstitutePart newInstance(SModel sm) {
     return SimpleItemSubstitutePart.newInstance(sm, false);
   }
 
+
   public QueryFunction_SubstituteString getMatchingText() {
     return (QueryFunction_SubstituteString)this.getChild(SimpleItemSubstitutePart.MATCHING_TEXT);
   }
+
   public void setMatchingText(QueryFunction_SubstituteString node) {
     super.setChild(SimpleItemSubstitutePart.MATCHING_TEXT, node);
   }
+
   public QueryFunction_SubstituteString getDescriptionText() {
     return (QueryFunction_SubstituteString)this.getChild(SimpleItemSubstitutePart.DESCRIPTION_TEXT);
   }
+
   public void setDescriptionText(QueryFunction_SubstituteString node) {
     super.setChild(SimpleItemSubstitutePart.DESCRIPTION_TEXT, node);
   }
+
   public QueryFunction_CanSubstitute getCanSubstitute() {
     return (QueryFunction_CanSubstitute)this.getChild(SimpleItemSubstitutePart.CAN_SUBSTITUTE);
   }
+
   public void setCanSubstitute(QueryFunction_CanSubstitute node) {
     super.setChild(SimpleItemSubstitutePart.CAN_SUBSTITUTE, node);
   }
+
   public QueryFunction_Substitute_Handler getHandler() {
     return (QueryFunction_Substitute_Handler)this.getChild(SimpleItemSubstitutePart.HANDLER);
   }
+
   public void setHandler(QueryFunction_Substitute_Handler node) {
     super.setChild(SimpleItemSubstitutePart.HANDLER, node);
   }
+
 }

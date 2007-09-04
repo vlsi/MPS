@@ -20,40 +20,52 @@ public class ParameterizedSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public static ParameterizedSubstituteMenuPart newInstance(SModel sm, boolean init) {
-    return (ParameterizedSubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.ParameterizedSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParameterizedSubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ParameterizedSubstituteMenuPart newInstance(SModel sm) {
     return ParameterizedSubstituteMenuPart.newInstance(sm, false);
   }
 
+
   public Type getType() {
     return (Type)this.getChild(ParameterizedSubstituteMenuPart.TYPE);
   }
+
   public void setType(Type node) {
     super.setChild(ParameterizedSubstituteMenuPart.TYPE, node);
   }
+
   public QueryFunction_ParameterizedSubstitute_Query getQuery() {
     return (QueryFunction_ParameterizedSubstitute_Query)this.getChild(ParameterizedSubstituteMenuPart.QUERY);
   }
+
   public void setQuery(QueryFunction_ParameterizedSubstitute_Query node) {
     super.setChild(ParameterizedSubstituteMenuPart.QUERY, node);
   }
+
   public QueryFunction_ParameterizedSubstitute_String getMatchingText() {
     return (QueryFunction_ParameterizedSubstitute_String)this.getChild(ParameterizedSubstituteMenuPart.MATCHING_TEXT);
   }
+
   public void setMatchingText(QueryFunction_ParameterizedSubstitute_String node) {
     super.setChild(ParameterizedSubstituteMenuPart.MATCHING_TEXT, node);
   }
+
   public QueryFunction_ParameterizedSubstitute_String getDescriptionText() {
     return (QueryFunction_ParameterizedSubstitute_String)this.getChild(ParameterizedSubstituteMenuPart.DESCRIPTION_TEXT);
   }
+
   public void setDescriptionText(QueryFunction_ParameterizedSubstitute_String node) {
     super.setChild(ParameterizedSubstituteMenuPart.DESCRIPTION_TEXT, node);
   }
+
   public QueryFunction_ParameterizedSubstitute_Handler getHandler() {
     return (QueryFunction_ParameterizedSubstitute_Handler)this.getChild(ParameterizedSubstituteMenuPart.HANDLER);
   }
+
   public void setHandler(QueryFunction_ParameterizedSubstitute_Handler node) {
     super.setChild(ParameterizedSubstituteMenuPart.HANDLER, node);
   }
+
 }

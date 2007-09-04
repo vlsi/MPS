@@ -15,9 +15,11 @@ public class QueryFunction_Substitute_Handler extends ConceptFunction {
   }
 
   public static QueryFunction_Substitute_Handler newInstance(SModel sm, boolean init) {
-    return (QueryFunction_Substitute_Handler)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_Substitute_Handler", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_Substitute_Handler)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_Substitute_Handler", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static QueryFunction_Substitute_Handler newInstance(SModel sm) {
     return QueryFunction_Substitute_Handler.newInstance(sm, false);
   }
+
 }

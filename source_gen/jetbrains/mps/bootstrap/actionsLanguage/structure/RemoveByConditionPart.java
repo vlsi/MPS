@@ -15,16 +15,20 @@ public class RemoveByConditionPart extends MenuBuilderPart {
   }
 
   public static RemoveByConditionPart newInstance(SModel sm, boolean init) {
-    return (RemoveByConditionPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.RemoveByConditionPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemoveByConditionPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveByConditionPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static RemoveByConditionPart newInstance(SModel sm) {
     return RemoveByConditionPart.newInstance(sm, false);
   }
 
+
   public QueryFunction_RemoveBy_Condition getCondition() {
     return (QueryFunction_RemoveBy_Condition)this.getChild(RemoveByConditionPart.CONDITION);
   }
+
   public void setCondition(QueryFunction_RemoveBy_Condition node) {
     super.setChild(RemoveByConditionPart.CONDITION, node);
   }
+
 }

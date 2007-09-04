@@ -34,7 +34,7 @@ import jetbrains.mps.util.Condition;
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_TreePathOperation_1169038348122(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_TreePathOperation_1169038348122(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     if(SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
       SNode exp = parentNode;
       return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(exp, "expression", true), "jetbrains.mps.ypath.structure.TreePathOperationExpression")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(exp, "expression", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression"));
@@ -42,7 +42,7 @@ public class QueriesGenerated {
     return false;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_TreePathOperation_1169038722084(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_TreePathOperation_1169038722084(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     if(SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
       SNode exp = parentNode;
       if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(exp, "expression", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression")) {
@@ -52,7 +52,7 @@ public class QueriesGenerated {
     return false;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_TreePathOperation_1169039090800(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_TreePathOperation_1169039090800(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     if(SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
       SNode exp = parentNode;
       return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(exp, "expression", true), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
@@ -60,11 +60,11 @@ public class QueriesGenerated {
     return false;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1180011271328(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1180011271328(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.ypath.structure.VisitNodesStatement", true, false) != null);
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1180026445925(SNode parentNode, IScope scope, IOperationContext operationContext) {
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1180026445925(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.ypath.structure.VisitNodesStatement", true, false) != null);
   }
 

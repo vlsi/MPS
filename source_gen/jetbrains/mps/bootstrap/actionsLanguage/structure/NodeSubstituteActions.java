@@ -12,39 +12,48 @@ import java.util.Iterator;
 import java.util.List;
 
 public class NodeSubstituteActions extends BaseConcept implements INamedConcept {
-  public static String ACTIONS_BUILDER = "actionsBuilder";
   public static String NAME = "name";
+  public static String ACTIONS_BUILDER = "actionsBuilder";
 
   public  NodeSubstituteActions(SNode node) {
     super(node);
   }
 
   public static NodeSubstituteActions newInstance(SModel sm, boolean init) {
-    return (NodeSubstituteActions)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeSubstituteActions)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static NodeSubstituteActions newInstance(SModel sm) {
     return NodeSubstituteActions.newInstance(sm, false);
+  }
+
+
+  public String getName() {
+    return this.getProperty(NodeSubstituteActions.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(NodeSubstituteActions.NAME, value);
   }
 
   public int getActionsBuildersCount() {
     return this.getChildCount(NodeSubstituteActions.ACTIONS_BUILDER);
   }
+
   public Iterator<NodeSubstituteActionsBuilder> actionsBuilders() {
     return this.children(NodeSubstituteActions.ACTIONS_BUILDER);
   }
+
   public List<NodeSubstituteActionsBuilder> getActionsBuilders() {
     return this.getChildren(NodeSubstituteActions.ACTIONS_BUILDER);
   }
+
   public void addActionsBuilder(NodeSubstituteActionsBuilder node) {
     this.addChild(NodeSubstituteActions.ACTIONS_BUILDER, node);
   }
+
   public void insertActionsBuilder(NodeSubstituteActionsBuilder prev, NodeSubstituteActionsBuilder node) {
     this.insertChild(prev, NodeSubstituteActions.ACTIONS_BUILDER, node);
   }
-  public String getName() {
-    return this.getProperty(NodeSubstituteActions.NAME);
-  }
-  public void setName(String value) {
-    this.setProperty(NodeSubstituteActions.NAME, value);
-  }
+
 }

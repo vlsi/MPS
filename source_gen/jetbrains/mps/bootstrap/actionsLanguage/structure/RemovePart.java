@@ -16,16 +16,20 @@ public class RemovePart extends MenuBuilderPart {
   }
 
   public static RemovePart newInstance(SModel sm, boolean init) {
-    return (RemovePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.RemovePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemovePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static RemovePart newInstance(SModel sm) {
     return RemovePart.newInstance(sm, false);
   }
 
+
   public ConceptDeclaration getConceptToRemove() {
     return (ConceptDeclaration)this.getReferent(RemovePart.CONCEPT_TO_REMOVE);
   }
+
   public void setConceptToRemove(ConceptDeclaration node) {
     super.setReferent(RemovePart.CONCEPT_TO_REMOVE, node);
   }
+
 }

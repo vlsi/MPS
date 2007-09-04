@@ -15,9 +15,11 @@ public class NodeSubstitutePreconditionFunction extends ConceptFunction {
   }
 
   public static NodeSubstitutePreconditionFunction newInstance(SModel sm, boolean init) {
-    return (NodeSubstitutePreconditionFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.NodeSubstitutePreconditionFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeSubstitutePreconditionFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static NodeSubstitutePreconditionFunction newInstance(SModel sm) {
     return NodeSubstitutePreconditionFunction.newInstance(sm, false);
   }
+
 }
