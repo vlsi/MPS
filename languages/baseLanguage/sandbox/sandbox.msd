@@ -9,6 +9,8 @@
     <moduleRoot path="${mps_home}\baseLanguage\languages\baseLanguageInternal\baseLanguageInternal.mpl" />
     <moduleRoot path="${mps_home}\baseLanguage\ext\strings\strings.mpl" />
   </languages>
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}\lib\annotations\annotations.jar" />
+  </classPath>
 </solution>
 

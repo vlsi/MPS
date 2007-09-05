@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.sandbox.test">
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="27" />
+  <maxImportIndex value="28" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="26" modelUID="jetbrains.mps.baseLanguage.sandbox.misc" />
   <import index="27" modelUID="java.util@java_stub" />
+  <import index="28" modelUID="org.jetbrains.annotations@java_stub" />
   <node type="jetbrains.mps.baseLanguage.Interface" id="1115766127296">
     <property name="name" value="IBaseInterface" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1115766147547">
@@ -444,6 +445,9 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1136027173099">
         <property name="name" value="fffff" />
+        <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188995470095">
+          <link role="annotation" extResolveInfo="28.[Classifier]NotNull" />
+        </node>
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1136027173100" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1136027175492">

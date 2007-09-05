@@ -5,7 +5,7 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.baseLanguage.strings" />
   <language namespace="jetbrains.mps.baseLanguageInternal" />
-  <maxImportIndex value="120" />
+  <maxImportIndex value="121" />
   <import index="1" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="java.util@java_stub" />
   <import index="115" modelUID="jetbrains.mps.baseLanguage.structure" />
@@ -14,6 +14,7 @@
   <import index="118" modelUID="jetbrains.mps.helgins.inference@java_stub" />
   <import index="119" modelUID="jetbrains.mps.smodel@java_stub" />
   <import index="120" modelUID="jetbrains.mps.baseLanguage.sandbox.misc" />
+  <import index="121" modelUID="org.jetbrains.annotations@java_stub" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1182164226710">
     <property name="name" value="A" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1188520661794">
@@ -77,6 +78,7 @@
     <property name="name" value="C" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1183457790851">
       <property name="name" value="f" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188994140855" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1183457790852" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183457790853" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1183560533922">
@@ -101,16 +103,6 @@
   </node>
   <node type="jetbrains.mps.baseLanguage._A" id="1183718930765">
     <node role="c" type="jetbrains.mps.baseLanguage._C" id="1183718930766" />
-  </node>
-  <node type="jetbrains.mps.baseLanguage.Annotation" id="1188206970148">
-    <property name="name" value="SimpleAnnotation" />
-    <node role="method" type="jetbrains.mps.baseLanguage.AnnotationMethodDeclaration" id="1188206983932">
-      <property name="name" value="simpleProperty" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1188206995663" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188206983934" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1188206983935" />
-    </node>
-    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188206970149" />
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1181913317169">
     <property name="name" value="B" />

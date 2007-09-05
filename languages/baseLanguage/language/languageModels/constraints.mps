@@ -5181,7 +5181,21 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1188505469509">
     <link role="concept" targetNodeId="1.1188206331916" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1188505469510">
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1188505469511" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1188505469511">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1188995228293">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1188995231768">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetNewChildOperation" id="1188995233693">
+              <link role="concept" targetNodeId="1.1146644602865" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1188995228920">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1188995231361">
+                <link role="link" targetNodeId="1.1178549650460" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1188995228294" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="defaultScope" type="jetbrains.mps.bootstrap.constraintsLanguage.NodeDefaultSearchScope" id="1188505472809">
       <property name="description" value="visible annotations from model and imported models" />
