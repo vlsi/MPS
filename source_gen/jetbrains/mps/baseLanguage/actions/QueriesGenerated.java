@@ -194,6 +194,18 @@ public class QueriesGenerated {
     }
   }
 
+  public static void nodeFactory_NodeSetup_ForStatement_1188991552885(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
+      SLinkOperations.addChild(SLinkOperations.setNewChild(newNode, "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", sampleNode);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_ForeachStatement_1188991457471(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
+      SLinkOperations.addChild(SLinkOperations.setNewChild(newNode, "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", sampleNode);
+    }
+  }
+
   public static void nodeFactory_NodeSetup_TryCatchStatement_1183997671101(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
       SLinkOperations.addChild(SLinkOperations.setNewChild(newNode, "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", sampleNode);
@@ -209,12 +221,6 @@ public class QueriesGenerated {
   public static void nodeFactory_NodeSetup_NotExpression_1159218040861(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
       SLinkOperations.setTarget(newNode, "expression", sampleNode, true);
-    }
-  }
-
-  public static void nodeFactory_NodeSetup_AssignmentExpression_1187281420207(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-      SLinkOperations.setTarget(newNode, "rValue", sampleNode, true);
     }
   }
 
