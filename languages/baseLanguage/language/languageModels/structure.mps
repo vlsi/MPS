@@ -1986,6 +1986,9 @@
       <property name="value" value="[" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1188996617977">
+      <link role="conceptPropertyDeclaration" targetNodeId="1146528679895" resolveInfo="lvalue" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1173176849460">
     <property name="name" value="ArrayLengthExpression" />
