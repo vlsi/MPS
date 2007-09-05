@@ -27,6 +27,7 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
   //private @Externalizable boolean myUsesIncrementalAlgorithm = false;
 
   private @Externalizable boolean myUsesDebugHighlighting = false;
+  private @Externalizable boolean myGenerationOptimizationEnabled = false;
 
   public static HelginsPreferencesComponent getInstance() {
     return ApplicationComponents.getInstance().getComponent(HelginsPreferencesComponent.class);
@@ -44,17 +45,24 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
     return myUsesDebugHighlighting;
   }
 
+  public boolean isGenerationOptimizationEnabled() {
+    return myGenerationOptimizationEnabled;
+  }
+
   private class MyPreferencesPage implements IPreferencesPage {
   //  private JCheckBox myIncrementalCheckBox = new JCheckBox("Use incremental algorithm");
     private JCheckBox myHighlightingCheckBox = new JCheckBox("Use debug highlighting");
+    private JCheckBox myGeneratorOptimizationCheckBox = new JCheckBox("Use optimization for generation");
     private JPanel myComponent = new JPanel(new BorderLayout());
 
     public MyPreferencesPage() {
       JPanel panel = new JPanel(new GridLayout(2,1));
    //   myIncrementalCheckBox.setSelected(myUsesIncrementalAlgorithm);
       myHighlightingCheckBox.setSelected(myUsesDebugHighlighting);
+      myGeneratorOptimizationCheckBox.setSelected(myGenerationOptimizationEnabled);
    //   panel.add(myIncrementalCheckBox);
       panel.add(myHighlightingCheckBox);
+      panel.add(myGeneratorOptimizationCheckBox);
       myComponent.add(panel, BorderLayout.NORTH);
     }
 
@@ -77,6 +85,11 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
       boolean changedHighlighting = (myUsesDebugHighlighting != selectedHighlighting);
       if (changedHighlighting) {
         myUsesDebugHighlighting = selectedHighlighting;
+      }
+      boolean selectedOptimization = myGeneratorOptimizationCheckBox.isSelected();
+      boolean changedOptimization = (myGenerationOptimizationEnabled != selectedOptimization);
+      if (changedOptimization) {
+        myGenerationOptimizationEnabled = selectedOptimization;
       }
      /* if (changedIncremental) {
         myUsesIncrementalAlgorithm = selectedIncremental;

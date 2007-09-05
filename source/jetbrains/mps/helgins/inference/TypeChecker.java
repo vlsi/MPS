@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
@@ -45,6 +46,8 @@ public class TypeChecker {
 
   private MPSProject myProject;
   private boolean myIsIncrementalMode = true;
+  private boolean myIsGenerationMode = false;
+
 
   public TypeChecker() {
     mySubtypingManager = new SubtypingManager(this);
@@ -109,6 +112,10 @@ public class TypeChecker {
     myIsIncrementalMode = isIncrementalMode; 
   }
 
+  public void setGenerationMode(boolean isGenerationMode) {
+    myIsGenerationMode = isGenerationMode;
+  }
+
   public void reportTypeError(SNode nodeWithError, String errorString) {
     reportTypeError(nodeWithError, errorString, null, null);
   }
@@ -140,14 +147,22 @@ public class TypeChecker {
     checkRoot(node, false);
   }
 
-  public void checkRoot(SNode node, boolean refreshTypes) {
+  public void checkRoot(final SNode node, final boolean refreshTypes) {
     assert node.isRoot();
+    checkWithinRoot(node, new Runnable() {
+      public void run() {
+        NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node).computeTypes(refreshTypes);
+        myCheckedRoots.add(node);
+      }
+    });
+  }
+
+  public void checkWithinRoot(SNode node, Runnable checkingAction) {
 
     try {
       MyReadAccessListener listener = new MyReadAccessListener();
       NodeReadAccessCaster.setNodeAccessListener(listener);
-      NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(node).computeTypes(refreshTypes);
-      myCheckedRoots.add(node);
+      checkingAction.run();
 
       for (SNode nodeToDependOn : listener.getNodesToDependOn()) {
         WeakSet<SNode> dependentRoots = myNodesToDependentRoots.get(nodeToDependOn);
@@ -155,7 +170,7 @@ public class TypeChecker {
           dependentRoots = new WeakSet<SNode>();
           myNodesToDependentRoots.put(nodeToDependOn, dependentRoots);
         }
-        dependentRoots.add(node);
+        dependentRoots.add(node.getContainingRoot());
       }
 
       SModel model = node.getModel();
@@ -175,12 +190,46 @@ public class TypeChecker {
     return getTypeOf(node);
   }
 
+  private SNode getTypeOf_generationMode(final SNode node) {
+    if (node == null) return null;
+    SNode containingRoot = node.getContainingRoot();
+    if (containingRoot == null) return null;
+    NodeTypesComponent_new component = NodeTypesComponentsRepository.getInstance().
+            getNodeTypesComponent(node.getContainingRoot());
+    if (!myCheckedRoots.contains(containingRoot) || component == null) {
+      final SNode[] result = new SNode[1];
+      final NodeTypesComponent_new component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
+
+      checkWithinRoot(node, new Runnable() {
+        public void run() {
+          result[0] = component1.computeTypesForNodeDuringGeneration(node, new Runnable() {
+            public void run() {
+              myCheckedRoots.add(node);
+            }
+          });
+        }
+      });
+
+      return result[0];
+    }
+    return getTypeDontCheck(node);
+  }
+
   public void markAsChecked(SNode node) {
     myCheckedRoots.add(node);
   }
 
   @Nullable
   public SNode getTypeOf(SNode node) {
+    if (myIsGenerationMode && HelginsPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
+      return getTypeOf_generationMode(node);
+    } else {
+      return getTypeOf_normalMode(node);
+    }
+  }
+
+  @Nullable
+  private SNode getTypeOf_normalMode(SNode node) {
     if (node == null) return null;
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;

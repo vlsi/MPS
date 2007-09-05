@@ -16,6 +16,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.bootstrap.helgins.structure.MeetType;
 import jetbrains.mps.bootstrap.helgins.structure.JoinType;
+import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
@@ -161,8 +162,12 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     computeTypes(false);
   }
 
-
   public void computeTypes(boolean refreshTypes) {
+    computeTypes(myRootNode, refreshTypes, true);
+  }
+
+  public void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck) {
+    assert nodeToCheck.getContainingRoot() == myRootNode;
     try {
       if (!isIncrementalMode() || refreshTypes) {
         clear();
@@ -179,12 +184,12 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
       }
 
       myTypeChecker.setCurrentTypesComponent(this);
-      if (!loadTypesystemRules(myRootNode)) {
+      if (!loadTypesystemRules(nodeToCheck)) {
         return;
       }
       clearEquationManager();
 
-      computeTypesForNode(myRootNode);
+      computeTypesForNode(nodeToCheck, forceChildrenCheck);
 
       // solve residual inequations
       myEquationManager.solveInequations();
@@ -237,7 +242,34 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     //return true;
   }
 
+  public SNode computeTypesForNodeDuringGeneration(SNode node, Runnable continuation) {
+    SNode type = null;
+    while (node != null) {
+      computeTypes(type, true, false);
+      type = getType(node);
+      if (type == null ||
+              type.getAdapter() instanceof RuntimeTypeVariable ||
+              !type.allChildrenByAdaptor(RuntimeTypeVariable.class).isEmpty()) {
+        if (node.isRoot()) {
+          continuation.run();
+          return type;
+        }
+        node = node.getParent();
+      } else {
+        if (node.isRoot()) {
+          continuation.run();
+        }
+        return type;
+      }
+    }
+    return type;
+  }
+
   public void computeTypesForNode(SNode node) {
+    computeTypesForNode(node, true);
+  }
+
+  public void computeTypesForNode(SNode node, boolean forceChildrenCheck) {
     if (node == null) return;
     Set<SNode> frontier = new LinkedHashSet<SNode>();
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
@@ -247,7 +279,9 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
         if (myFullyCheckedNodes.contains(sNode)) {
           continue;
         }
-        newFrontier.addAll(sNode.getChildren()); //todo perform a check if it's necessary to check children
+        if (forceChildrenCheck) {
+          newFrontier.addAll(sNode.getChildren());
+        }
         if (!myPartlyCheckedNodes.contains(sNode)) {
           myNotSkippedNodes.add(new SNodeProxy(sNode));
           myCurrentFrontier = newFrontier;

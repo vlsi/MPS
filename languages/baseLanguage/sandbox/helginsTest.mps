@@ -335,6 +335,21 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1188997568460">
+          <node role="expression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1188997579930">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1188997594777">
+              <property name="value" value="3" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1188997568461">
+              <property name="value" value="2" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1188997633685">
+          <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1188997633686">
+            <property name="value" value="4" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1185362000192" />

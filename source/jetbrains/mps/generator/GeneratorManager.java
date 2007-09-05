@@ -392,6 +392,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       IGenerationSession generationSession = new GenerationSession(invocationContext, isSaveTransientModels(), progress, messages);
       try {
         TypeChecker.getInstance().setIncrementalMode(false);
+        TypeChecker.getInstance().setGenerationMode(true);
         for (SModelDescriptor sourceModelDescriptor : sourceModels) {
           progress.addText("");
 
@@ -452,6 +453,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       } finally {
         generationSession.discardTransients();
         TypeChecker.getInstance().setIncrementalMode(true);
+        TypeChecker.getInstance().setGenerationMode(false);
       }
 
       //update generated sources timestamp
