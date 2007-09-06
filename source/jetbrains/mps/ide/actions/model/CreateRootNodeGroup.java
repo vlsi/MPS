@@ -12,6 +12,8 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.ToStringComparator;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -53,6 +55,9 @@ public class CreateRootNodeGroup extends ActionGroup {
         }
       });
     }
+
+
+    Collections.sort(modelLanguages, new ToStringComparator());
 
     for (final Language language : modelLanguages) {
 
