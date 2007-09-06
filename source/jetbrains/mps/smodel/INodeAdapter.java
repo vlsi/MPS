@@ -47,7 +47,7 @@ public interface INodeAdapter {
 
   AbstractConceptDeclaration getConceptDeclarationAdapter();
 
-  void replaceChild(INodeAdapter c1, INodeAdapter c2);
+  void replaceChild(INodeAdapter oldChild, INodeAdapter newChild);
 
   INodeAdapter getContainingRoot();
 

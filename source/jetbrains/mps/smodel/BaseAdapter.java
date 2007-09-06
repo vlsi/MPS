@@ -109,8 +109,8 @@ public abstract class BaseAdapter implements INodeAdapter {
     return getNode().getConceptDeclarationAdapter();
   }
 
-  public void replaceChild(INodeAdapter c1, INodeAdapter c2) {
-    getNode().replaceChild(c1.getNode(), c2.getNode());
+  public void replaceChild(INodeAdapter oldChild, INodeAdapter newChild) {
+    getNode().replaceChild(oldChild.getNode(), newChild.getNode());
   }
 
   public INodeAdapter getContainingRoot() {
