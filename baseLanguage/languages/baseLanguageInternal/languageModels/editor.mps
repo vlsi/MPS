@@ -204,11 +204,28 @@
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1174914681253">
         <property name="drawBorder" value="false" />
-        <property name="text" value="_" />
+        <property name="text" value="[" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1174914171915">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1174914081067" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1189170488039">
+        <property name="text" value="extends" />
+        <link role="styleClass" targetNodeId="3.1186415544875" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1189170501707">
+        <link role="relationDeclaration" targetNodeId="4.1107535924139" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1189170501708">
+          <link role="conceptDeclaration" targetNodeId="4.1107461130800" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1189170509181">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1189170481963">
+        <property name="text" value="]" />
       </node>
     </node>
   </node>
