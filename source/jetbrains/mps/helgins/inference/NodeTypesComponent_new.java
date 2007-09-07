@@ -37,7 +37,7 @@ import org.jetbrains.annotations.Nullable;
  * Time: 13:50:13
  * To change this template use File | Settings | File Templates.
  */
-public class NodeTypesComponent_new implements IGutterMessageOwner {
+public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
 
   private static final char A_CHAR = 'a';
   private static final char Z_CHAR = 'z';
@@ -80,6 +80,24 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
     myTypeChecker = typeChecker;
     // myProject = project;
     myEquationManager = new EquationManager(myTypeChecker);
+  }
+
+  public NodeTypesComponent_new clone() throws CloneNotSupportedException {
+    NodeTypesComponent_new result = (NodeTypesComponent_new) super.clone();
+    result.myNodesToTypesMap = new HashMap<SNode, SNode>();
+    result.myNodesToErrorsMap = new HashMap<SNode, IErrorReporter>();
+    result.myFullyCheckedNodes = new WeakSet<SNode>();
+    result.myPartlyCheckedNodes = new WeakSet<SNode>();
+    result.myEquationManager = new EquationManager(result.myTypeChecker);
+    result.myNodesToDependentNodes = new WeakHashMap<SNode, WeakSet<SNode>>();
+    result.myModelDescriptorsWithListener = new HashSet<SModelDescriptor>();
+    result.myModelListener = new MyModelListener();
+    result.myNodesReadListener = new MyEventsReadListener();
+    result.myCurrentNodesToInvalidate = new HashSet<SNode>();
+    result.myCurrentFrontier = null;
+    result.myCurrentCheckedNode = null;
+    result.myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
+    return result;
   }
 
   public void clear() {
@@ -190,21 +208,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
       clearEquationManager();
 
       computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
-
-      // solve residual inequations
-      myEquationManager.solveInequations();
-
-      // setting expanded types to nodes
-      for (Map.Entry<SNode, SNode> contextEntry : new HashSet<Entry<SNode, SNode>>(myNodesToTypesMap.entrySet())) {
-        SNode term = contextEntry.getKey();
-        if (term == null) continue;
-        SNode type = expandType(contextEntry.getValue(), myTypeChecker.getRuntimeTypesModel());
-        if (BaseAdapter.isInstance(type, RuntimeErrorType.class)) {
-          RuntimeErrorType errorType = (RuntimeErrorType) BaseAdapter.fromNode(type);
-          reportTypeError(term, errorType.getErrorText(), errorType.getNodeModel(), errorType.getNodeId());
-        }
-        myNodesToTypesMap.put(term, type);
-      }
+      solveInequationsAndExpandTypes();
 
       // setting expanded errors
       for (SNode node : new HashSet<SNode>(myNodesToErrorsMap.keySet())) {
@@ -234,6 +238,23 @@ public class NodeTypesComponent_new implements IGutterMessageOwner {
       myTypeChecker.clearCurrentTypesComponent();
       myNotSkippedNodes.clear();
       clearEquationManager();
+    }
+  }
+
+  public void solveInequationsAndExpandTypes() {
+    // solve residual inequations
+    myEquationManager.solveInequations();
+
+    // setting expanded types to nodes
+    for (Entry<SNode, SNode> contextEntry : new HashSet<Entry<SNode, SNode>>(myNodesToTypesMap.entrySet())) {
+      SNode term = contextEntry.getKey();
+      if (term == null) continue;
+      SNode type = expandType(contextEntry.getValue(), myTypeChecker.getRuntimeTypesModel());
+      if (BaseAdapter.isInstance(type, RuntimeErrorType.class)) {
+        RuntimeErrorType errorType = (RuntimeErrorType) BaseAdapter.fromNode(type);
+        reportTypeError(term, errorType.getErrorText(), errorType.getNodeModel(), errorType.getNodeId());
+      }
+      myNodesToTypesMap.put(term, type);
     }
   }
 

@@ -76,24 +76,16 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1183457785427">
     <property name="name" value="C" />
-    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1183457790851">
-      <property name="name" value="f" />
-      <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188994140855" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1183457790852" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183457790853" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1183560533922">
-        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1183995258072">
-          <node role="expression" type="jetbrains.mps.baseLanguage.MinusExpression" id="1183995258074">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.MulExpression" id="1183995258077">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1183995258078">
-                <property name="value" value="6" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1183995258079">
-                <property name="value" value="9" />
-              </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1183995258082">
-              <property name="value" value="3" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1189158201357">
+      <property name="name" value="v" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1189158201358" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1189158201359" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1189158201360">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1189158296362">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1189158296363">
+            <property name="name" value="aString" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1189158296364">
+              <link role="classifier" extResolveInfo="1.[Classifier]String" />
             </node>
           </node>
         </node>

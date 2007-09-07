@@ -71,4 +71,21 @@ public class NodeTypesComponentsRepository {
     }
     myNodeTypesComponents.clear();
   }
+
+  public NodeTypesComponent_new swapTypesComponentForRoot(SNode containingRoot, NodeTypesComponent_new newComponent) {
+    if (newComponent == null) return null;
+    assert containingRoot == newComponent.getNode();
+    NodeTypesComponent_new componentToRemove = null;
+    for (NodeTypesComponent_new nodeTypesComponent : myNodeTypesComponents) {
+      if (nodeTypesComponent.getNode() == containingRoot) {
+        componentToRemove = nodeTypesComponent;
+        break;
+      }
+    }
+    if (componentToRemove != null) {
+      myNodeTypesComponents.remove(componentToRemove);
+    }
+    myNodeTypesComponents.add(newComponent);
+    return componentToRemove;
+  }
 }

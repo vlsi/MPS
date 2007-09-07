@@ -1,15 +1,24 @@
 package jetbrains.mps.util;
 
-import java.util.AbstractList;
-import java.util.AbstractSet;
-import java.util.Iterator;
-import java.util.WeakHashMap;
+import java.util.*;
 
 /**
  * @author Kostik
  */
 public class WeakSet<T> extends AbstractSet<T> {
   private WeakHashMap<T, T> myWeakHashMap = new WeakHashMap<T, T>();
+
+  public WeakSet() {
+
+  }
+
+  public WeakSet(Collection<? extends T> collection) {
+    if (collection != null) {
+      for (T t : collection) {
+        add(t);
+      }
+    }
+  }
 
   public boolean add(T t) {
     boolean result = myWeakHashMap.keySet().contains(t);

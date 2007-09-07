@@ -102,12 +102,24 @@ public class Resolver {
     SNode sNode = referenceNode.getParent();
     if (sNode == null) sNode = referenceNode;
 
+    SNode containingRoot = sNode.getContainingRoot();
     NodeTypesComponent_new nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
-            createNodeTypesComponent(sNode.getContainingRoot());
-    TypeChecker.getInstance().setCurrentTypesComponent(nodeTypesComponent);
-    nodeTypesComponent.computeTypesForNode(sNode); //todo dirty hack
+            createNodeTypesComponent(containingRoot);
+    NodeTypesComponent_new temporaryComponent;
+    try {
+      temporaryComponent = nodeTypesComponent.clone();
+    } catch(CloneNotSupportedException ex) {
+      LOG.error(ex);
+      return false;
+    }
+    TypeChecker.getInstance().setCurrentTypesComponent(temporaryComponent);
+    temporaryComponent.computeTypesForNode(sNode); //todo dirty hack
+    temporaryComponent.solveInequationsAndExpandTypes();
     TypeChecker.getInstance().clearCurrentTypesComponent();
 
+    NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, temporaryComponent);
+
+    try {
     SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(referenceNode.getParent(),
             referenceNode, referenceNodeConcept, linkDeclaration, operationContext.getScope());
     if (status.isError()) {
@@ -160,6 +172,9 @@ public class Resolver {
     }
 
     return false;
+    } finally{
+      NodeTypesComponentsRepository.getInstance().swapTypesComponentForRoot(containingRoot, nodeTypesComponent);
+    }
   }
 
   public static List<INodeSubstituteAction> createResolveActions(SReference reference, IOperationContext operationContext, EditorContext editorContext) {
