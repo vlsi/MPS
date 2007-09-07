@@ -2,15 +2,21 @@ package jetbrains.mps.cache;
 
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.logging.Logger;
 
-import java.util.List;
+import java.util.*;
+
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Igor Alshannikov
  * Aug 28, 2007
  */
-public abstract class AbstractCache implements SModelListener, SModelCommandListener {
+public abstract class AbstractCache implements SModelListener {
+  private static final Logger LOG = Logger.getLogger(AbstractCache.class);
   private Object myKey;
+  private Map<Object, DataSet> myDataSets = new HashMap<Object, DataSet>();
+  private Set<Object> myInitializingDataSetKeys = new HashSet<Object>();
 
   protected AbstractCache(Object key) {
     myKey = key;
@@ -20,17 +26,51 @@ public abstract class AbstractCache implements SModelListener, SModelCommandList
     return myKey;
   }
 
-  public void cacheAdded() {
+  public void cacheAttached() {
   }
 
   public void cacheRemoved() {
+    myDataSets.clear();
   }
 
-  public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
-    if(!isLoading) {
-      // model went out of loading state - drop cache because we don't know what has happened while in loading state
-      CachesManager.getInstance().removeCache(myKey);
+  public boolean isAttached() {
+    return CachesManager.getInstance().getCache(myKey) == this;
+  }
+
+  public void addDataSet(DataSet dataSet) {
+    Object key = dataSet.getKey();
+    if (myDataSets.containsKey(key)) {
+      throw new RuntimeException("couldn't put another DataSet by key " + key);
     }
+    LOG.assertLog(!myInitializingDataSetKeys.contains(key), "cache data set initialization re-enter : " + key);
+    myInitializingDataSetKeys.add(key);
+    try {
+      dataSet.init();
+      myDataSets.put(key, dataSet);
+    } finally {
+      myInitializingDataSetKeys.remove(key);
+    }
+  }
+
+  public void removeDataSet(DataSet dataSet) {
+    myDataSets.remove(dataSet);
+  }
+
+  public boolean containsDataSet(Object key) {
+    return myDataSets.containsKey(key);
+  }
+
+  public DataSet getDataSet(Object key) {
+    return myDataSets.get(key);
+  }
+
+  public List<DataSet> getDataSets() {
+    return new ArrayList<DataSet>(myDataSets.values());
+  }
+
+  // model listener
+
+  public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
   }
 
   public void languageAdded(SModelLanguageEvent event) {
@@ -52,7 +92,6 @@ public abstract class AbstractCache implements SModelListener, SModelCommandList
   }
 
   public void rootAdded(SModelRootEvent event) {
-    nodeChanged();
   }
 
   public void rootRemoved(SModelRootEvent event) {
@@ -85,12 +124,6 @@ public abstract class AbstractCache implements SModelListener, SModelCommandList
     nodeChanged();
   }
 
-  protected void nodeChanged()  {
+  protected void nodeChanged() {
   }
-
-  // command listener
-
-  public void modelChangedInCommand(List<SModelEvent> events) {
-  }
-
 }

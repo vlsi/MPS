@@ -1644,6 +1644,9 @@ public class SNode implements Iterable<SNode> {
     return null;
   }
 
+  /**
+   * all descendants actually 
+   */
   public List<SNode> allChildren() {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> children = this.getChildren();
