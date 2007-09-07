@@ -23,27 +23,27 @@
   <component name="ClearCase" />
   <component name="CodeSearch/QueryHistory">
     <query searchTerm="" processedSearchTerm="">
-      <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
-        <data extraArguments="-f=\.(java)$" />
-      </queryExtra>
       <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
         <data fileTypes="\.(java)$" packages="" caseSensitive="false" />
       </queryExtra>
+      <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
+        <data extraArguments="-f=\.(java)$" />
+      </queryExtra>
     </query>
     <query searchTerm="" processedSearchTerm="">
-      <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
-        <data extraArguments="-f=\.(java)|(xml)$" />
-      </queryExtra>
       <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
         <data fileTypes="\.(java)|(xml)$" packages="(uwaterloo\.ca)|(mit\.edu)" caseSensitive="false" />
       </queryExtra>
+      <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
+        <data extraArguments="-f=\.(java)|(xml)$" />
+      </queryExtra>
     </query>
     <query searchTerm="" processedSearchTerm="">
-      <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
-        <data extraArguments="-f=\.(java)|(xml)|(txt)$" />
-      </queryExtra>
       <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
         <data fileTypes="\.(java)|(xml)|(txt)$" packages="sourceforge\.net" caseSensitive="false" />
+      </queryExtra>
+      <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
+        <data extraArguments="-f=\.(java)|(xml)|(txt)$" />
       </queryExtra>
     </query>
   </component>
