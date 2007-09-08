@@ -6,8 +6,6 @@ import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
-import org.jetbrains.annotations.Nullable;
-
 /**
  * Igor Alshannikov
  * Aug 28, 2007
@@ -15,8 +13,8 @@ import org.jetbrains.annotations.Nullable;
 public abstract class AbstractCache implements SModelListener {
   private static final Logger LOG = Logger.getLogger(AbstractCache.class);
   private Object myKey;
-  private Map<Object, DataSet> myDataSets = new HashMap<Object, DataSet>();
-  private Set<Object> myInitializingDataSetKeys = new HashSet<Object>();
+  private Map<String, DataSet> myDataSets = new HashMap<String, DataSet>();
+  private Set<String> myInitializingDataSetKeys = new HashSet<String>();
 
   protected AbstractCache(Object key) {
     myKey = key;
@@ -38,30 +36,30 @@ public abstract class AbstractCache implements SModelListener {
   }
 
   public void addDataSet(DataSet dataSet) {
-    Object key = dataSet.getKey();
-    if (myDataSets.containsKey(key)) {
-      throw new RuntimeException("couldn't put another DataSet by key " + key);
+    String dataSetId = dataSet.getId();
+    if (myDataSets.containsKey(dataSetId)) {
+      throw new RuntimeException("couldn't put another data set by key " + dataSetId);
     }
-    LOG.assertLog(!myInitializingDataSetKeys.contains(key), "cache data set initialization re-enter : " + key);
-    myInitializingDataSetKeys.add(key);
+    LOG.assertLog(!myInitializingDataSetKeys.contains(dataSetId), "cache data set initialization re-enter : " + dataSetId);
+    myInitializingDataSetKeys.add(dataSetId);
     try {
       dataSet.init();
-      myDataSets.put(key, dataSet);
+      myDataSets.put(dataSetId, dataSet);
     } finally {
-      myInitializingDataSetKeys.remove(key);
+      myInitializingDataSetKeys.remove(dataSetId);
     }
   }
 
   public void removeDataSet(DataSet dataSet) {
-    myDataSets.remove(dataSet);
+    myDataSets.remove(dataSet.getId());
   }
 
-  public boolean containsDataSet(Object key) {
-    return myDataSets.containsKey(key);
+  public boolean containsDataSet(String dataSetId) {
+    return myDataSets.containsKey(dataSetId);
   }
 
-  public DataSet getDataSet(Object key) {
-    return myDataSets.get(key);
+  public DataSet getDataSet(String dataSetId) {
+    return myDataSets.get(dataSetId);
   }
 
   public List<DataSet> getDataSets() {

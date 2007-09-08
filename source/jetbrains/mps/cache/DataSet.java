@@ -16,18 +16,18 @@ public abstract class DataSet implements SModelListener {
     DROP_DATA_SET, DROP_OWNER_CACHE
   }
 
-  private Object myKey;
+  private String myId;
   private AbstractCache myOwnerCache;
   private DefaultNodeChangedProcessing myDefaultNodeChangedProcessing;
 
-  protected DataSet(Object key, AbstractCache ownerCache, DefaultNodeChangedProcessing defaultProcessing) {
-    myKey = key;
+  protected DataSet(String id, AbstractCache ownerCache, DefaultNodeChangedProcessing defaultProcessing) {
+    myId = id;
     myOwnerCache = ownerCache;
     myDefaultNodeChangedProcessing = defaultProcessing;
   }
 
-  public Object getKey() {
-    return myKey;
+  public String getId() {
+    return myId;
   }
 
   public AbstractCache getOwnerCache() {
