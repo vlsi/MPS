@@ -22,8 +22,8 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.EnumConstantReference;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.structure.FieldReference;
+import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodCall;
 
 public class QueriesUtil {
@@ -123,8 +123,9 @@ public class QueriesUtil {
     if(instanceType == null) {
       return new ArrayList<SNode>();
     }
-    ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(((ClassifierType)SNodeOperations.getAdapter(instanceType)), ((FieldReference)SNodeOperations.getAdapter(node)), IClassifiersSearchScope.INSTANCE_METHOD);
-    return BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getMethodsExcludingOverridden(classHierarchy));
+    ISearchScope hierarchyScope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))), IClassifiersSearchScope.INSTANCE_METHOD);
+    ISearchScope methodsScope = new VisibleClassifierMembersScope(hierarchyScope, ((FieldReference)SNodeOperations.getAdapter(node)));
+    return (List<SNode>)methodsScope.getNodes();
   }
 
   public static SNode replaceNodeMenu_FieldReference_createReplacementNode(SNode node, SNode parameterObject) {
