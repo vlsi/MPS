@@ -49,7 +49,13 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1189448620844" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1189448620845" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1189448620846" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1189448620846">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1189453084107">
+          <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1189453128442">
+            <property name="value" value="0" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1184668952117">
       <property name="name" value="abcdef" />
