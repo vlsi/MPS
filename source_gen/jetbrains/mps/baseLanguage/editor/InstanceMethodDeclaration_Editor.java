@@ -5,15 +5,15 @@ package jetbrains.mps.baseLanguage.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -39,34 +39,6 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   /* package */AbstractCellListHandler myParameterListHandler_parameterList_;
   /* package */AbstractCellListHandler myThrowsItemListHandler_throwsItemList_;
   /* package */AbstractCellListHandler myAnnotationListHandler_annotationList1_;
-
-  public static boolean _QueryFunction_NodeCondition_1188210514741(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "annotation") > 0;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1178608724220(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isAbstract");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1178609166621(SNode node, EditorContext editorContext, IScope scope) {
-    return SequenceOperations.getSize(SLinkOperations.getTargets(node, "throwsItem", true)) > 0;
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1178609275710(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1178609161098(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "isAbstract");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1178609059858(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1178609091789(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
-  }
 
   private static void setupBasic_AnnotationList(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210514740");
@@ -263,6 +235,34 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_AnnotationList1(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1188210514741(SNode node, EditorContext editorContext, IScope scope) {
+    return SLinkOperations.getCount(node, "annotation") > 0;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1178608724220(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isAbstract");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1178609166621(SNode node, EditorContext editorContext, IScope scope) {
+    return SequenceOperations.getSize(SLinkOperations.getTargets(node, "throwsItem", true)) > 0;
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1178609275710(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1178609161098(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isAbstract");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1178609059858(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1178609091789(SNode node, EditorContext editorContext, IScope scope) {
+    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
   }
 
 
