@@ -41,6 +41,16 @@
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1189442838744" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1189448620841">
+      <property name="name" value="iMethod" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1189448620842">
+        <property name="name" value="i" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1189448620843" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1189448620844" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1189448620845" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1189448620846" />
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1184668952117">
       <property name="name" value="abcdef" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1184668952118" />
@@ -80,6 +90,9 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1182164226711" />
     <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1188500134992">
       <link role="classifier" targetNodeId="1188499921809" resolveInfo="InnA" />
+    </node>
+    <node role="implementedInterface" type="jetbrains.mps.baseLanguage.ClassifierType" id="1189448567255">
+      <link role="classifier" targetNodeId="1189448555816" resolveInfo="Interface1" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1183457785427">
@@ -160,6 +173,13 @@
           </node>
         </node>
       </node>
+      <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1189448057096">
+        <property name="name" value="ooo" />
+        <property name="isAbstract" value="false" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1189448057097" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1189448057098" />
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1189448057099" />
+      </node>
       <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.ClassConcept" id="1188499952938">
         <property name="name" value="InnA1" />
         <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188499952939" />
@@ -169,6 +189,9 @@
         <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188500105569" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188499921810" />
+      <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1189448183480">
+        <link role="classifier" extResolveInfo="1.[Classifier]Object" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1189106886561">
@@ -274,6 +297,20 @@
       <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1189106932379" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1189106886562" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.Interface" id="1189448555816">
+    <property name="name" value="Interface1" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1189448578678">
+      <property name="name" value="iMethod" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.IntegerType" id="1189448594872" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1189448578680" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1189448578697" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1189448589026">
+        <property name="name" value="i" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1189448589027" />
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1189448555817" />
   </node>
 </model>
 
