@@ -29,7 +29,7 @@ public class StaticMethodCall_staticMethodDeclaration_ReferentConstraint impleme
   }
 
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return ReferenceUtil.getMethodScope(SLinkOperations.getTarget(referenceNode, "classConcept", false), enclosingNode);
+    return ReferenceUtil.getStaticMethodScope(SLinkOperations.getTarget(referenceNode, "classConcept", false), enclosingNode);
   }
 
   public String getNodeReferentSearchScopeDescription() {
