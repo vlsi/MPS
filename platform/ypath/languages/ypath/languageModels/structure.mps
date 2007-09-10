@@ -385,7 +385,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1183980376561">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="features" />
-      <property name="sourceCardinality" value="1..n" />
+      <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1184066209434" resolveInfo="IFeature" />
     </node>
   </node>
