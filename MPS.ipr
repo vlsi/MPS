@@ -2051,6 +2051,13 @@
         <root url="jar://$PROJECT_DIR$/lib/guice/guice-src.zip!/" />
       </SOURCES>
     </library>
+    <library name="BerkeleyDB JE">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/platform/dnq/runtime/lib/je-3.2.44.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
