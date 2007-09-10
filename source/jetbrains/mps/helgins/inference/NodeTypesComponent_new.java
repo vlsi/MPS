@@ -263,22 +263,23 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     //return true;
   }
 
-  public SNode computeTypesForNodeDuringGeneration(SNode node, Runnable continuation) {
+  public SNode computeTypesForNodeDuringGeneration(SNode initialNode, Runnable continuation) {
     SNode type = null;
     SNode prevNode = null;
+    SNode node = initialNode;
     while (node != null) {
       List<SNode> additionalNodes = new ArrayList<SNode>();
       if (prevNode != null) {
         additionalNodes.add(prevNode);
       }
       computeTypes(node, true, false, additionalNodes);
-      type = getType(node);
+      type = getType(initialNode);
       if (type == null ||
               type.getAdapter() instanceof RuntimeTypeVariable ||
               !type.allChildrenByAdaptor(RuntimeTypeVariable.class).isEmpty()) {
         if (node.isRoot()) {
           computeTypes(node, true, true, new ArrayList<SNode>()); //the last possibility: check the whole root
-          type = getType(node);
+          type = getType(initialNode);
           continuation.run();
           return type;
         }
