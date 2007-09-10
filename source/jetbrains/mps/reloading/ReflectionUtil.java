@@ -2,6 +2,7 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.generator.JavaNameUtil;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -21,7 +22,12 @@ public final class ReflectionUtil {
   }
 
   public static Class forName(SNode classNode) {
-    return forName(NameUtil.nodeFQName(classNode));
+    String dottedName = classNode.getName();
+    String dollarName = "null";
+    if (dottedName != null) {
+      dollarName = dottedName.replaceAll("\\.", "\\$");
+    }
+    return forName(JavaNameUtil.fqClassName(classNode, dollarName));
   }
 
   public static Method getMethod(SNode classNode, String methodName, Class[] parameterTypes) {
