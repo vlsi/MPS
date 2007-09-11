@@ -1500,6 +1500,50 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1178181704931">
     <link role="concept" targetNodeId="1.1107461130800" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1189552517057">
+      <property name="name" value="getVisibleMembersSearchScope" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1189552517058">
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1189552641242">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1189552641243">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1189552649188">
+              <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1189552652909">
+                <link role="baseMethodDeclaration" extResolveInfo="5.constructor [Classifier]EmptySearchScope[ConstructorDeclaration] ()" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1189552645731">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1189552647125" />
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1189552644402" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1189552684793">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1189552688124">
+            <link role="baseMethodDeclaration" extResolveInfo="10.constructor [Classifier]VisibleClassifierMembersScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Classifier]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
+            <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1189552789853">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1189552792044" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1189552727798" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1189552771538">
+              <link role="variableDeclaration" targetNodeId="1189552740066" resolveInfo="contextNode" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1189552778102">
+              <link role="variableDeclaration" targetNodeId="1189552709625" resolveInfo="constraint" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1189552600176">
+        <link role="classifier" extResolveInfo="5.[Classifier]ISearchScope" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1189552740066">
+        <property name="name" value="contextNode" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1189552747006" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1189552709625">
+        <property name="name" value="constraint" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1189552709626" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1178620561746">
       <property name="name" value="getQualifiedNameInAPackage" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178620585007">
