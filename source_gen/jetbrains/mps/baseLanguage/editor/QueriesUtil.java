@@ -7,21 +7,15 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
+import jetbrains.mps.baseLanguage.search.VisibleClassifierMembersScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.baseLanguage.search.VisibleClassifierMembersScope;
-import jetbrains.mps.baseLanguage.structure.StaticFieldReference;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.baseLanguage.structure.StaticMethodCall;
-import jetbrains.mps.baseLanguage.structure.EnumConstantReference;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.baseLanguage.structure.FieldReference;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodCall;
 
 public class QueriesUtil {
 
@@ -31,9 +25,8 @@ public class QueriesUtil {
     if(classifier == null) {
       return result;
     }
-    ISearchScope hierarchyScope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(classifier)), IClassifiersSearchScope.STATIC_MEMBER);
-    ISearchScope visibleMembersScope = new VisibleClassifierMembersScope(hierarchyScope, ((StaticFieldReference)SNodeOperations.getAdapter(node)));
-    List<SNode> members = (List<SNode>)visibleMembersScope.getNodes();
+    ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), node, IClassifiersSearchScope.STATIC_MEMBER);
+    List<SNode> members = (List<SNode>)searchScope.getNodes();
     ListOperations.addAllElements(result, SequenceOperations.where(members, new zPredicate(null, null)));
     return result;
   }
@@ -60,9 +53,8 @@ public class QueriesUtil {
     if(classifier == null) {
       return result;
     }
-    ISearchScope hierarchyScope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(classifier)), IClassifiersSearchScope.STATIC_MEMBER);
-    ISearchScope visibleMembersScope = new VisibleClassifierMembersScope(hierarchyScope, ((StaticMethodCall)SNodeOperations.getAdapter(node)));
-    List<SNode> members = (List<SNode>)visibleMembersScope.getNodes();
+    ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), node, IClassifiersSearchScope.STATIC_MEMBER);
+    List<SNode> members = (List<SNode>)searchScope.getNodes();
     ListOperations.addAllElements(result, SequenceOperations.where(members, new zPredicate1(null, null)));
     return result;
   }
@@ -89,9 +81,8 @@ public class QueriesUtil {
     if(classifier == null) {
       return result;
     }
-    ISearchScope hierarchyScope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(classifier)), IClassifiersSearchScope.STATIC_MEMBER);
-    ISearchScope visibleMembersScope = new VisibleClassifierMembersScope(hierarchyScope, ((EnumConstantReference)SNodeOperations.getAdapter(node)));
-    List<SNode> members = (List<SNode>)visibleMembersScope.getNodes();
+    ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), node, IClassifiersSearchScope.STATIC_MEMBER);
+    List<SNode> members = (List<SNode>)searchScope.getNodes();
     ListOperations.addAllElements(result, SequenceOperations.where(members, new zPredicate2(null, null)));
     return result;
   }
@@ -118,9 +109,8 @@ public class QueriesUtil {
     if(instanceType == null) {
       return new ArrayList<SNode>();
     }
-    ISearchScope hierarchyScope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))), IClassifiersSearchScope.INSTANCE_METHOD);
-    ISearchScope methodsScope = new VisibleClassifierMembersScope(hierarchyScope, ((FieldReference)SNodeOperations.getAdapter(node)));
-    return (List<SNode>)methodsScope.getNodes();
+    ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))), node, IClassifiersSearchScope.INSTANCE_METHOD);
+    return (List<SNode>)searchScope.getNodes();
   }
 
   public static SNode replaceNodeMenu_FieldReference_createReplacementNode(SNode node, SNode parameterObject) {
@@ -139,9 +129,8 @@ public class QueriesUtil {
     if(instanceType == null) {
       return new ArrayList<SNode>();
     }
-    ISearchScope hierarchyScope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))), IClassifiersSearchScope.INSTANCE_FIELD);
-    ISearchScope visibleFieldsScope = new VisibleClassifierMembersScope(hierarchyScope, ((InstanceMethodCall)SNodeOperations.getAdapter(referenceNode)));
-    return (List<SNode>)visibleFieldsScope.getNodes();
+    ISearchScope searchScope = new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))), referenceNode, IClassifiersSearchScope.INSTANCE_FIELD);
+    return (List<SNode>)searchScope.getNodes();
   }
 
   public static SNode replaceNodeMenu_InstanceMethodCall_createReplacementNode(SNode node, SNode parameterObject) {
