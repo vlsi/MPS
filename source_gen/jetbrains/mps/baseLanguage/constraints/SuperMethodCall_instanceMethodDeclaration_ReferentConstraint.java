@@ -10,12 +10,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.search.EmptySearchScope;
+import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.search.VisibleClassifierMembersScope;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import java.util.List;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -36,9 +35,12 @@ public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint implem
 
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode enclosingClass = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
-    ISearchScope hierarchyScope = BaseLanguageSearchUtil_new.createSuperClassesScope(((ClassConcept)SNodeOperations.getAdapter(enclosingClass)), IClassifiersSearchScope.INSTANCE_METHOD);
-    List methods = BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getMethodsExcludingOverridden(hierarchyScope));
-    return new SimpleSearchScope((List<SNode>)methods);
+    SNode superclass = SLinkOperations.getTarget(SLinkOperations.getTarget(enclosingClass, "superclass", true), "classifier", false);
+    if(superclass == null) {
+      return new EmptySearchScope();
+    }
+    ISearchScope hierarchyScope = new SuperMethodCall_InstanceMethodScope(((Classifier)SNodeOperations.getAdapter(superclass)));
+    return new VisibleClassifierMembersScope(hierarchyScope, ((ClassConcept)SNodeOperations.getAdapter(enclosingClass)));
   }
 
   public String getNodeReferentSearchScopeDescription() {

@@ -42,6 +42,14 @@
             <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1189532856834" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1189544975960">
+          <node role="expression" type="jetbrains.mps.baseLanguage.SuperMethodCall" id="1189544975961">
+            <link role="baseMethodDeclaration" targetNodeId="1189442620154" resolveInfo="mmm" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1189544985368">
+              <property name="value" value="" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1189442838743">
         <property name="name" value="i" />
