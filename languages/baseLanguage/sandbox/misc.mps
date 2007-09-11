@@ -35,7 +35,14 @@
       <property name="name" value="nnn" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1189442820191" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1189442820192" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1189442820193" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1189442820193">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1189532856833">
+          <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1189534236369">
+            <link role="variableDeclaration" targetNodeId="1182407705882" resolveInfo="entry" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1189532856834" />
+          </node>
+        </node>
+      </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1189442838743">
         <property name="name" value="i" />
         <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1189442838744" />
