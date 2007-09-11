@@ -2902,34 +2902,17 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1189544636543">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1189544636544">
-              <property name="name" value="hierarchyScope" />
-              <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1189544636545">
-                <link role="classifier" extResolveInfo="5.[Classifier]ISearchScope" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.NewExpression" id="1189544642375">
-                <link role="baseMethodDeclaration" extResolveInfo="32.constructor [Classifier]SuperMethodCall_InstanceMethodScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Classifier]))" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1189544782646">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1189544784415" />
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1189544777004">
-                    <link role="variableDeclaration" targetNodeId="1189544538257" resolveInfo="superclass" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1189544787010">
-            <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1189544801247">
-              <link role="baseMethodDeclaration" extResolveInfo="10.constructor [Classifier]VisibleClassifierMembersScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ISearchScope]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [INodeAdapter]))" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1189544814092">
-                <link role="variableDeclaration" targetNodeId="1189544636544" resolveInfo="scope" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1189544860706">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1189544862740" />
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1189544849767">
-                  <link role="variableDeclaration" targetNodeId="1149122818659" resolveInfo="enclosingClass" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1189549295968">
+              <link role="baseMethodDeclaration" extResolveInfo="32.constructor [Classifier]SuperMethodCall_InstanceMethodScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Classifier]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1189549295969">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1189549295970" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1189549295971">
+                  <link role="variableDeclaration" targetNodeId="1189544538257" resolveInfo="superclass" />
                 </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1189549295972">
+                <link role="variableDeclaration" targetNodeId="1149122818659" resolveInfo="enclosingClass" />
               </node>
             </node>
           </node>
