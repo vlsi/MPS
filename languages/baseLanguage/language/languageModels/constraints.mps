@@ -10,7 +10,6 @@
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" />
-  <import index="4" modelUID="jetbrains.mps.baseLanguage@java_stub" />
   <import index="5" modelUID="jetbrains.mps.smodel.search@java_stub" />
   <import index="6" modelUID="java.util@java_stub" />
   <import index="7" modelUID="jetbrains.mps.smodel@java_stub" />

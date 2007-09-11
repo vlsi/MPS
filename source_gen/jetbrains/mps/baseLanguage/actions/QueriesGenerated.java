@@ -28,8 +28,8 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import java.util.regex.Matcher;
-import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.baseLanguage.constraints.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -340,7 +340,8 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode classConcept = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-          return BaseLanguageSearchUtil_new.getVisibleInstanceFields(((ClassConcept)SNodeOperations.getAdapter(classConcept)), parentNode);
+          ISearchScope searchScope = Classifier_Behavior.call_getVisibleMembersSearchScope_1189552517057(classConcept, parentNode, IClassifiersSearchScope.INSTANCE_FIELD);
+          return searchScope.getNodes();
         }
 
       };
@@ -369,7 +370,8 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode classConcept = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-          return BaseLanguageSearchUtil_new.getVisibleInstanceMethods(((ClassConcept)SNodeOperations.getAdapter(classConcept)), parentNode);
+          ISearchScope searchScope = Classifier_Behavior.call_getVisibleMembersSearchScope_1189552517057(classConcept, parentNode, IClassifiersSearchScope.INSTANCE_METHOD);
+          return searchScope.getNodes();
         }
 
       };
