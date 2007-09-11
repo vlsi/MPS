@@ -16,10 +16,10 @@ import jetbrains.mps.baseLanguage.structure.StaticFieldReference;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
 import jetbrains.mps.baseLanguage.structure.StaticMethodCall;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
 import jetbrains.mps.baseLanguage.structure.EnumConstantReference;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.baseLanguage.structure.FieldReference;
@@ -35,8 +35,8 @@ public class QueriesUtil {
       return result;
     }
     ISearchScope hierarchyScope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(classifier)), IClassifiersSearchScope.STATIC_MEMBER);
-    ISearchScope membersScope = new VisibleClassifierMembersScope(hierarchyScope, ((StaticFieldReference)SNodeOperations.getAdapter(node)));
-    List<SNode> members = (List<SNode>)membersScope.getNodes();
+    ISearchScope visibleMembersScope = new VisibleClassifierMembersScope(hierarchyScope, ((StaticFieldReference)SNodeOperations.getAdapter(node)));
+    List<SNode> members = (List<SNode>)visibleMembersScope.getNodes();
     ListOperations.addAllElements(result, SequenceOperations.where(members, new zPredicate(null, null)));
     return result;
   }
@@ -63,11 +63,10 @@ public class QueriesUtil {
     if(classifier == null) {
       return result;
     }
-    ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(((Classifier)SNodeOperations.getAdapter(classifier)), ((StaticMethodCall)SNodeOperations.getAdapter(node)), IClassifiersSearchScope.STATIC_MEMBER);
-    List<SNode> staticFields = BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getFieldsExcludingOverridden(classHierarchy));
-    ListOperations.addAllElements(result, staticFields);
-    List<SNode> allStaticMembers = classHierarchy.getNodes();
-    ListOperations.addAllElements(result, SequenceOperations.where(allStaticMembers, new zPredicate1(null, null)));
+    ISearchScope hierarchyScope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(classifier)), IClassifiersSearchScope.STATIC_MEMBER);
+    ISearchScope visibleMembersScope = new VisibleClassifierMembersScope(hierarchyScope, ((StaticMethodCall)SNodeOperations.getAdapter(node)));
+    List<SNode> members = (List<SNode>)visibleMembersScope.getNodes();
+    ListOperations.addAllElements(result, SequenceOperations.where(members, new zPredicate1(null, null)));
     return result;
   }
 
