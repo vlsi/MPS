@@ -17,14 +17,14 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.structure.StaticMethodCall;
-import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
 import jetbrains.mps.baseLanguage.structure.EnumConstantReference;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.baseLanguage.structure.FieldReference;
+import jetbrains.mps.baseLanguage.BaseLanguageSearchUtil_new;
 import jetbrains.mps.baseLanguage.structure.ClassifierType;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodCall;
+import jetbrains.mps.smodel.BaseAdapter;
 
 public class QueriesUtil {
 
@@ -92,11 +92,10 @@ public class QueriesUtil {
     if(classifier == null) {
       return result;
     }
-    ISearchScope classHierarchy = BaseLanguageSearchUtil_new.createClassifierHierarchyScope(((Classifier)SNodeOperations.getAdapter(classifier)), ((EnumConstantReference)SNodeOperations.getAdapter(node)), IClassifiersSearchScope.STATIC_MEMBER);
-    List<SNode> staticFields = BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getFieldsExcludingOverridden(classHierarchy));
-    ListOperations.addAllElements(result, staticFields);
-    List<SNode> staticMethods = BaseAdapter.toNodes(BaseLanguageSearchUtil_new.getMethodsExcludingOverridden(classHierarchy));
-    ListOperations.addAllElements(result, staticMethods);
+    ISearchScope hierarchyScope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(classifier)), IClassifiersSearchScope.STATIC_MEMBER);
+    ISearchScope visibleMembersScope = new VisibleClassifierMembersScope(hierarchyScope, ((EnumConstantReference)SNodeOperations.getAdapter(node)));
+    List<SNode> members = (List<SNode>)visibleMembersScope.getNodes();
+    ListOperations.addAllElements(result, SequenceOperations.where(members, new zPredicate2(null, null)));
     return result;
   }
 
