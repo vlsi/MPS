@@ -37,7 +37,7 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1189442820192" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1189442820193">
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1189532856833">
-          <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1189534236369">
+          <node role="expression" type="jetbrains.mps.baseLanguage.FieldReference" id="1189549925636">
             <link role="variableDeclaration" targetNodeId="1182407705882" resolveInfo="entry" />
             <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1189532856834" />
           </node>

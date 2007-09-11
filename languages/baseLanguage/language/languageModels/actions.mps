@@ -16,7 +16,6 @@
   <import index="20" modelUID="java.lang@java_stub" />
   <import index="21" modelUID="jetbrains.mps.generator@java_stub" />
   <import index="22" modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" />
-  <import index="26" modelUID="jetbrains.mps.smodel.search@java_stub" />
   <import index="27" modelUID="jetbrains.mps.baseLanguage@java_stub" />
   <import index="28" modelUID="jetbrains.mps.baseLanguage.search@java_stub" />
   <import index="30" modelUID="jetbrains.mps.smodel.presentation@java_stub" />
@@ -24,7 +23,6 @@
   <import index="32" modelUID="jetbrains.mps.baseLanguage.editor@java_stub" />
   <import index="35" modelUID="jetbrains.mps.baseLanguage.constraints" />
   <import index="36" modelUID="jetbrains.mps.patterns.util@java_stub" />
-  <import index="37" modelUID="jetbrains.mps.baseLanguage.actions" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1138168268784">
     <property name="name" value="binaryOperations" />
     <property name="package" value="rightTransform" />
@@ -1668,18 +1666,15 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178290683297">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1178290692925">
-                  <link role="baseMethodDeclaration" extResolveInfo="27.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getVisibleInstanceFields((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ClassConcept]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [INodeAdapter])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [SNode]&gt;]))" />
                   <link role="classConcept" extResolveInfo="27.[Classifier]BaseLanguageSearchUtil_new" />
+                  <link role="baseMethodDeclaration" extResolveInfo="27.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getVisibleInstanceFields((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ClassConcept]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])))" />
                   <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178290697207">
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178290695268">
                       <link role="variableDeclaration" targetNodeId="1177361251434" resolveInfo="classConcept" />
                     </node>
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1178290698425" />
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178290703130">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1178290701269" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1178290704114" />
-                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1178290701269" />
                 </node>
               </node>
             </node>
@@ -1778,18 +1773,15 @@
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178291040372">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1178291049250">
-                  <link role="baseMethodDeclaration" extResolveInfo="27.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getVisibleInstanceMethods((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ClassConcept]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [INodeAdapter])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [SNode]&gt;]))" />
                   <link role="classConcept" extResolveInfo="27.[Classifier]BaseLanguageSearchUtil_new" />
+                  <link role="baseMethodDeclaration" extResolveInfo="27.static method ([Classifier]BaseLanguageSearchUtil_new).([StaticMethodDeclaration]getVisibleInstanceMethods((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ClassConcept]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])))" />
                   <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178291053298">
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178291051624">
                       <link role="variableDeclaration" targetNodeId="1177362994576" resolveInfo="classConcept" />
                     </node>
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1178291053969" />
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1178291060237">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1178291058251" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1178291061565" />
-                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parentNode" id="1178291058251" />
                 </node>
               </node>
             </node>
