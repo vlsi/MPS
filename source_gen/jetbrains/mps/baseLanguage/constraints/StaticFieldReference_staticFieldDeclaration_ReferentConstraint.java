@@ -29,7 +29,7 @@ public class StaticFieldReference_staticFieldDeclaration_ReferentConstraint impl
   }
 
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return ReferenceUtil.getFieldScope(SLinkOperations.getTarget(referenceNode, "classifier", false), enclosingNode);
+    return ReferenceUtil.getStaticFieldScope(SLinkOperations.getTarget(referenceNode, "classifier", false), enclosingNode);
   }
 
   public String getNodeReferentSearchScopeDescription() {
