@@ -14,7 +14,7 @@ import java.util.*;
 public class CachesManager implements IComponentLifecycle {
 
   private Map<Object, AbstractCache> myCaches = new HashMap<Object, AbstractCache>();
-  private Map<AbstractCache, ModelEventTransmitter> myEventTransmitters = new HashMap<AbstractCache, ModelEventTransmitter>();
+  private Map<AbstractCache, ModelEventRouter> myModelEventRouters = new HashMap<AbstractCache, ModelEventRouter>();
   private Map<Object, List<SModelDescriptor>> myDependsOnModels = new HashMap<Object, List<SModelDescriptor>>();
 
   public static CachesManager getInstance() {
@@ -58,11 +58,11 @@ public class CachesManager implements IComponentLifecycle {
     }
     myCaches.put(key, cache);
     myDependsOnModels.put(key, new ArrayList<SModelDescriptor>(dependsOnModels));
-    ModelEventTransmitter eventTransmitter = new ModelEventTransmitter(cache);
-    myEventTransmitters.put(cache, eventTransmitter);
+    ModelEventRouter eventRouter = new ModelEventRouter(cache);
+    myModelEventRouters.put(cache, eventRouter);
 
     for (SModelDescriptor dependsOnModel : dependsOnModels) {
-      dependsOnModel.addModelListener(eventTransmitter);
+      dependsOnModel.addModelListener(eventRouter);
     }
     cache.cacheAttached();
   }
@@ -76,10 +76,10 @@ public class CachesManager implements IComponentLifecycle {
       return;
     }
     AbstractCache cache = myCaches.remove(key);
-    ModelEventTransmitter eventTransmitter = myEventTransmitters.remove(cache);
+    ModelEventRouter eventRouter = myModelEventRouters.remove(cache);
     List<SModelDescriptor> dependsOnModels = myDependsOnModels.remove(key);
     for (SModelDescriptor dependsOnModel : dependsOnModels) {
-      dependsOnModel.removeModelListener(eventTransmitter);
+      dependsOnModel.removeModelListener(eventRouter);
     }
 
     cache.cacheRemoved();
@@ -93,10 +93,10 @@ public class CachesManager implements IComponentLifecycle {
   }
 
 
-  private static class ModelEventTransmitter implements SModelListener {
+  private static class ModelEventRouter implements SModelListener {
     private AbstractCache myCache;
 
-    public ModelEventTransmitter(AbstractCache cache) {
+    public ModelEventRouter(AbstractCache cache) {
       myCache = cache;
     }
 

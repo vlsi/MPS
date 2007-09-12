@@ -41,31 +41,24 @@ public abstract class DataSet implements SModelListener {
   // model listener
 
   public void loadingStateChanged(SModelDescriptor model, boolean isLoading) {
-    throw new RuntimeException("method should never be called");
   }
 
   public void languageAdded(SModelLanguageEvent event) {
-    throw new RuntimeException("method should never be called");
   }
 
   public void languageRemoved(SModelLanguageEvent event) {
-    throw new RuntimeException("method should never be called");
   }
 
   public void importAdded(SModelImportEvent event) {
-    throw new RuntimeException("method should never be called");
   }
 
   public void importRemoved(SModelImportEvent event) {
-    throw new RuntimeException("method should never be called");
   }
 
   public void devkitAdded(SModelDevKitEvent event) {
-    throw new RuntimeException("method should never be called");
   }
 
   public void devkitRemoved(SModelDevKitEvent event) {
-    throw new RuntimeException("method should never be called");
   }
 
   public void rootAdded(SModelRootEvent event) {

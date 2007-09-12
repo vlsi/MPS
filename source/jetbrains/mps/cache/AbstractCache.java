@@ -93,35 +93,26 @@ public abstract class AbstractCache implements SModelListener {
   }
 
   public void rootRemoved(SModelRootEvent event) {
-    nodeChanged();
   }
 
   public void beforeRootRemoved(SModelRootEvent event) {
   }
 
   public void propertyChanged(SModelPropertyEvent event) {
-    nodeChanged();
   }
 
   public void childAdded(SModelChildEvent event) {
-    nodeChanged();
   }
 
   public void childRemoved(SModelChildEvent event) {
-    nodeChanged();
   }
 
   public void beforeChildRemoved(SModelChildEvent event) {
   }
 
   public void referenceAdded(SModelReferenceEvent event) {
-    nodeChanged();
   }
 
   public void referenceRemoved(SModelReferenceEvent event) {
-    nodeChanged();
-  }
-
-  protected void nodeChanged() {
   }
 }
