@@ -6133,6 +6133,19 @@
             <property name="text" value="action node" />
           </node>
         </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1189583081427">
+          <property name="drawBorder" value="false" />
+          <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1189583081428">
+            <property name="drawBorder" value="false" />
+            <property name="text" value="selectedNodes" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1189583081429">
+            <property name="fontStyle" value="PLAIN" />
+            <property name="drawBorder" value="false" />
+            <property name="text" value="list of selected nod" />
+          </node>
+        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158958888369">
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
@@ -6216,6 +6229,19 @@
             <property name="fontStyle" value="PLAIN" />
             <property name="drawBorder" value="false" />
             <property name="text" value="action node" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1189582815553">
+          <property name="drawBorder" value="false" />
+          <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1189582815554">
+            <property name="drawBorder" value="false" />
+            <property name="text" value="selectedNodes" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1189582815555">
+            <property name="fontStyle" value="PLAIN" />
+            <property name="drawBorder" value="false" />
+            <property name="text" value="list of selected nod" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1158959240378">

@@ -4,6 +4,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <language namespace="jetbrains.mps.core" />
   <maxImportIndex value="39" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   <import index="3" modelUID="jetbrains.mps.core.structure" />
@@ -831,6 +832,21 @@
           <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
         </node>
         <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1137189922877">
+          <property name="value" value="keymap function parameter" />
+          <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
+        </node>
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1189582551383">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137546998352" />
+      <node role="target" type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1189582551384">
+        <property name="name" value="CellKeyMap_FunctionParm_selectedNodes" />
+        <link role="extends" targetNodeId="4.1107135704075" />
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1189582551385">
+          <property name="value" value="selectedNodes" />
+          <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+        </node>
+        <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1189582551386">
           <property name="value" value="keymap function parameter" />
           <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" />
         </node>
