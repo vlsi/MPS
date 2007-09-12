@@ -111,7 +111,7 @@ public class MergeResultView extends JPanel {
     myResultModel = ModelPersistence.copyModel(myBaseModel);
     myResultModel.setLoading(true);
 
-    SNode tmp = new SNode(myResultModel, "tmp");
+    SNode tmp = new SNode(myResultModel, "jetbrains.mps.vcs.ui.TmpConcept");
     myResultModel.addRoot(tmp);
 
     applyNewNodes();
@@ -136,7 +136,7 @@ public class MergeResultView extends JPanel {
     applyMoves();
 
     myResultModel.removeRoot(tmp);
-
+    myResultModel.deleteLanguage("jetbrains.mps.vcs.ui");
     myResultModel.setLoading(false);
   }
 
