@@ -1,9 +1,11 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
+import java.util.List;
 
 /**
  * Author: Sergey Dmitriev
@@ -50,5 +52,13 @@ public abstract class EditorCellKeyMapAction {
 
   public String getKeyStroke() {
     return "";
+  }
+
+  protected List<SNode> getSelectedNodes(EditorContext context) {
+    List<SNode> selecteNodes = context.getNodeEditorComponent().getNodeRangeSelection().getNodes();
+    if (selecteNodes.isEmpty()) {
+      selecteNodes.add(context.getSelectedNode());
+    }
+    return selecteNodes;
   }
 }
