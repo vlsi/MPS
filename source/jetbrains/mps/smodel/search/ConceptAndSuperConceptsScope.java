@@ -30,22 +30,6 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
     return myCache.getConcepts(myTopConcept);
   }
 
-  /**
-   * @return directly extended/implemented concept and interfaces
-   */
-  public List<AbstractConceptDeclaration> getDirectSuperConcepts() {
-    if (myTopConcept == null) return new ArrayList<AbstractConceptDeclaration>(1);
-    return myCache.getDirectSuperConcepts(myTopConcept);
-  }
-
-  /**
-   * @return direct super interfaces and they supers
-   */
-  public List<AbstractConceptDeclaration> getDirectSuperInterfacesAndTheySupers() {
-    if (myTopConcept == null) return new ArrayList<AbstractConceptDeclaration>(1);
-    return myCache.getDirectSuperInterfacesAndTheySupers(myTopConcept);
-  }
-
   public LinkDeclaration getLinkDeclarationByRole(String role) {
     if (myTopConcept == null) return null;
     return myCache.getLinkDeclarationByRole(myTopConcept, role);
