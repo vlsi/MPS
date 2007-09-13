@@ -17,8 +17,6 @@ import java.util.ArrayList;
  * Aug 30, 2007
  */
 public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
-  private ConceptAndSuperConceptsCacheHandler myCache = new ConceptAndSuperConceptsCacheHandler();
-  @Nullable
   private AbstractConceptDeclaration myTopConcept;
 
   public ConceptAndSuperConceptsScope(@Nullable AbstractConceptDeclaration topConcept) {
@@ -26,18 +24,18 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
   }
 
   public List<AbstractConceptDeclaration> getConcepts() {
-    if (myTopConcept == null) return new ArrayList<AbstractConceptDeclaration>(1);
-    return myCache.getConcepts(myTopConcept);
+    if (myTopConcept == null) return new ArrayList();
+    return new ArrayList(ConceptAndSuperConceptsCache.getInstance(myTopConcept).getConcepts());
   }
 
   public LinkDeclaration getLinkDeclarationByRole(String role) {
     if (myTopConcept == null) return null;
-    return myCache.getLinkDeclarationByRole(myTopConcept, role);
+    return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getLinkDeclarationByRole(role);
   }
 
   public List<LinkDeclaration> getLinkDeclarationsExcludingOverridden() {
     if (myTopConcept == null) return new ArrayList<LinkDeclaration>(1);
-    return myCache.getLinkDeclarationsExcludingOverridden(myTopConcept);
+    return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getLinkDeclarationsExcludingOverridden();
   }
 
 

@@ -3,10 +3,12 @@ package jetbrains.mps.smodel.search;
 import jetbrains.mps.cache.AbstractCache;
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.cache.DataSet;
+import jetbrains.mps.cache.KeyProducer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.baseLanguage.structure.Classifier;
@@ -17,9 +19,28 @@ import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import java.util.*;
 
 /*package*/ class ConceptAndSuperConceptsCache extends AbstractCache {
+  private static final KeyProducer keyProducer = new KeyProducer();
+
+  public static ConceptAndSuperConceptsCache getInstance(AbstractConceptDeclaration topConcept) {
+    SNode node = topConcept.getNode();
+    Object key = keyProducer.createKey(node);
+    ConceptAndSuperConceptsCache cache = (ConceptAndSuperConceptsCache) CachesManager.getInstance().getCache(key);
+    if (cache == null) {
+      cache = new ConceptAndSuperConceptsCache(key, topConcept);
+      Set<SModelDescriptor> dependsOnModel = new HashSet<SModelDescriptor>();
+      for (AbstractConceptDeclaration concept : cache.getConcepts()) {
+        dependsOnModel.add(concept.getModel().getModelDescriptor());
+      }
+      CachesManager.getInstance().putCache(key, cache, dependsOnModel);
+    }
+    return cache;
+  }
+
+  //-----------------------
+
   private AbstractConceptDeclaration myTopConcept;
 
-  public ConceptAndSuperConceptsCache(Object key, AbstractConceptDeclaration topConcept) {
+  protected ConceptAndSuperConceptsCache(Object key, AbstractConceptDeclaration topConcept) {
     super(key);
     myTopConcept = topConcept;
   }
