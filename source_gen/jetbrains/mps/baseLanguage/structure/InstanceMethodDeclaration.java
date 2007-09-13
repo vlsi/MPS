@@ -8,8 +8,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class InstanceMethodDeclaration extends BaseMethodDeclaration implements ClassifierMember {
-  public static String VISIBILITY = "visibility";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
   public static String IS_ABSTRACT = "isAbstract";
+  public static String VISIBILITY = "visibility";
 
   public  InstanceMethodDeclaration(SNode node) {
     super(node);
@@ -24,12 +26,20 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
   }
 
 
-  public Visibility getVisibility() {
-    return (Visibility)this.getChild(InstanceMethodDeclaration.VISIBILITY);
+  public String getShortDescription() {
+    return this.getProperty(InstanceMethodDeclaration.SHORT_DESCRIPTION);
   }
 
-  public void setVisibility(Visibility node) {
-    super.setChild(InstanceMethodDeclaration.VISIBILITY, node);
+  public void setShortDescription(String value) {
+    this.setProperty(InstanceMethodDeclaration.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(InstanceMethodDeclaration.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(InstanceMethodDeclaration.ALIAS, value);
   }
 
   public boolean getIsAbstract() {
@@ -38,6 +48,14 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
 
   public void setIsAbstract(boolean value) {
     this.setBooleanProperty(InstanceMethodDeclaration.IS_ABSTRACT, value);
+  }
+
+  public Visibility getVisibility() {
+    return (Visibility)this.getChild(InstanceMethodDeclaration.VISIBILITY);
+  }
+
+  public void setVisibility(Visibility node) {
+    super.setChild(InstanceMethodDeclaration.VISIBILITY, node);
   }
 
 }

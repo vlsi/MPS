@@ -1145,6 +1145,9 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068431790191" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1189675724652">
+      <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1083260308424">
     <property name="name" value="EnumConstantReference" />

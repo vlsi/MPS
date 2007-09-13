@@ -10,9 +10,12 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
 
-public class EnumConstantDeclaration extends NamedConcept {
-  public static String ACTUAL_ARGUMENT = "actualArgument";
+public class EnumConstantDeclaration extends NamedConcept implements ClassifierMember {
   public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VISIBILITY = "visibility";
+  public static String ACTUAL_ARGUMENT = "actualArgument";
 
   public  EnumConstantDeclaration(SNode node) {
     super(node);
@@ -26,6 +29,38 @@ public class EnumConstantDeclaration extends NamedConcept {
     return EnumConstantDeclaration.newInstance(sm, false);
   }
 
+
+  public String getName() {
+    return this.getProperty(EnumConstantDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(EnumConstantDeclaration.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(EnumConstantDeclaration.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(EnumConstantDeclaration.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(EnumConstantDeclaration.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(EnumConstantDeclaration.ALIAS, value);
+  }
+
+  public Visibility getVisibility() {
+    return (Visibility)this.getChild(EnumConstantDeclaration.VISIBILITY);
+  }
+
+  public void setVisibility(Visibility node) {
+    super.setChild(EnumConstantDeclaration.VISIBILITY, node);
+  }
 
   public int getActualArgumentsCount() {
     return this.getChildCount(EnumConstantDeclaration.ACTUAL_ARGUMENT);
@@ -45,14 +80,6 @@ public class EnumConstantDeclaration extends NamedConcept {
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, EnumConstantDeclaration.ACTUAL_ARGUMENT, node);
-  }
-
-  public String getName() {
-    return this.getProperty(EnumConstantDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(EnumConstantDeclaration.NAME, value);
   }
 
 }

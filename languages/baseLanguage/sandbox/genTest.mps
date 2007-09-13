@@ -87,7 +87,13 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1188217840287" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188217840288" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1188217840289" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1188217840289">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1189675817426">
+          <node role="expression" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1189675817427">
+            <link role="classifier" targetNodeId="1189675806458" resolveInfo="Test" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.ConstructorDeclaration" id="1188217800633">
       <node role="annotation" type="jetbrains.mps.baseLanguage.AnnotationInstance" id="1188217804199">
@@ -136,6 +142,19 @@
       <link role="annotation" targetNodeId="1188216745729" resolveInfo="SomeAnnotation" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1188217315628" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.EnumClass" id="1189675806458">
+    <property name="name" value="Test" />
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.EnumConstantDeclaration" id="1189675810257">
+      <property name="name" value="A" />
+    </node>
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.EnumConstantDeclaration" id="1189675811586">
+      <property name="name" value="B" />
+    </node>
+    <node role="enumConstant" type="jetbrains.mps.baseLanguage.EnumConstantDeclaration" id="1189675812181">
+      <property name="name" value="C" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1189675806459" />
   </node>
 </model>
 

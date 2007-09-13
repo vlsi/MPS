@@ -10,6 +10,8 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Classifier extends GenericDeclaration implements Annotable {
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
   public static String VISIBILITY = "visibility";
   public static String STATIC_FIELD = "staticField";
   public static String METHOD = "method";
@@ -27,6 +29,22 @@ public class Classifier extends GenericDeclaration implements Annotable {
     return Classifier.newInstance(sm, false);
   }
 
+
+  public String getShortDescription() {
+    return this.getProperty(Classifier.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(Classifier.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(Classifier.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(Classifier.ALIAS, value);
+  }
 
   public Visibility getVisibility() {
     return (Visibility)this.getChild(Classifier.VISIBILITY);

@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class FieldDeclaration extends VariableDeclaration implements ClassifierMember {
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
   public static String VISIBILITY = "visibility";
 
   public  FieldDeclaration(SNode node) {
@@ -22,6 +24,22 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
     return FieldDeclaration.newInstance(sm, false);
   }
 
+
+  public String getShortDescription() {
+    return this.getProperty(FieldDeclaration.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(FieldDeclaration.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(FieldDeclaration.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(FieldDeclaration.ALIAS, value);
+  }
 
   public Visibility getVisibility() {
     return (Visibility)this.getChild(FieldDeclaration.VISIBILITY);
