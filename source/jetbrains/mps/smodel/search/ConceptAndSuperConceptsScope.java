@@ -33,6 +33,11 @@ public class ConceptAndSuperConceptsScope extends AbstractSearchScope {
     return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getLinkDeclarationByRole(role);
   }
 
+  public LinkDeclaration getMostSpecificLinkDeclarationByRole(String role) {
+    if (myTopConcept == null) return null;
+    return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getMostSpecificLinkDeclarationByRole(role);
+  }
+
   public List<LinkDeclaration> getLinkDeclarationsExcludingOverridden() {
     if (myTopConcept == null) return new ArrayList<LinkDeclaration>(1);
     return ConceptAndSuperConceptsCache.getInstance(myTopConcept).getLinkDeclarationsExcludingOverridden();

@@ -4,17 +4,12 @@ import jetbrains.mps.cache.AbstractCache;
 import jetbrains.mps.cache.CachesManager;
 import jetbrains.mps.cache.DataSet;
 import jetbrains.mps.cache.KeyProducer;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.Interface;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 
 import java.util.*;
 
@@ -60,6 +55,14 @@ import java.util.*;
     }
     LinkDeclarationsDataSet dataSet = (LinkDeclarationsDataSet) getDataSet(LinkDeclarationsDataSet.ID);
     return dataSet.getLinkDeclarationByRole(role);
+  }
+
+  public LinkDeclaration getMostSpecificLinkDeclarationByRole(String role) {
+    if (!containsDataSet(LinkDeclarationsDataSet.ID)) {
+      addDataSet(new LinkDeclarationsDataSet(this));
+    }
+    LinkDeclarationsDataSet dataSet = (LinkDeclarationsDataSet) getDataSet(LinkDeclarationsDataSet.ID);
+    return dataSet.getMostSpecificLinkDeclarationByRole(role);
   }
 
   public List<LinkDeclaration> getLinkDeclarationsExcludingOverridden() {
@@ -179,8 +182,9 @@ import java.util.*;
 
   private static class LinkDeclarationsDataSet extends DataSet {
     public static final String ID = "LINK_DECLARATIONS_DATASET";
-    private Map<String, LinkDeclaration> myLinkDeclarationByRole;
-    private List<LinkDeclaration> myLinkDeclarationsExcludingOverridden;
+    private Map<String, LinkDeclaration> myLinkByRole;
+    private Map<LinkDeclaration, LinkDeclaration> myMostSpecificLinkBySpecializedLink;
+    private List<LinkDeclaration> myMostSpecificLinks;
     private Set<SNode> myDependsOnNodes;
 
     public LinkDeclarationsDataSet(AbstractCache ownerCache) {
@@ -192,41 +196,59 @@ import java.util.*;
     }
 
     public LinkDeclaration getLinkDeclarationByRole(String role) {
-      return myLinkDeclarationByRole.get(role);
+      return myLinkByRole.get(role);
+    }
+
+    public LinkDeclaration getMostSpecificLinkDeclarationByRole(String role) {
+      LinkDeclaration linkDeclaration = myLinkByRole.get(role);
+      if (linkDeclaration != null) {
+        LinkDeclaration mostSpecificLinkDeclaration = myMostSpecificLinkBySpecializedLink.get(linkDeclaration);
+        if (mostSpecificLinkDeclaration != null) {
+          return mostSpecificLinkDeclaration;
+        }
+        return linkDeclaration;
+      }
+      return null;
     }
 
     public List<LinkDeclaration> getLinkDeclarationsExcludingOverridden() {
-      return new ArrayList<LinkDeclaration>(myLinkDeclarationsExcludingOverridden);
+      return new ArrayList<LinkDeclaration>(myMostSpecificLinks);
     }
 
     protected void init() {
-      myLinkDeclarationByRole = new HashMap<String, LinkDeclaration>();
+      List<LinkDeclaration> allLinks = new ArrayList<LinkDeclaration>();
+      myLinkByRole = new HashMap<String, LinkDeclaration>();
       List<AbstractConceptDeclaration> concepts = ((ConceptAndSuperConceptsCache) getOwnerCache()).getConcepts();
       for (AbstractConceptDeclaration concept : concepts) {
         List<LinkDeclaration> list = concept.getLinkDeclarations();
+        allLinks.addAll(list);
         for (LinkDeclaration link : list) {
           String role1 = link.getRole();
           if (role1 == null) continue;
-          if (myLinkDeclarationByRole.containsKey(role1)) continue;
-          myLinkDeclarationByRole.put(role1, link);
+          if (myLinkByRole.containsKey(role1)) continue;
+          myLinkByRole.put(role1, link);
         }
       }
 
-      Collection<LinkDeclaration> links = myLinkDeclarationByRole.values();
-      Set<LinkDeclaration> overriddenLinks = new HashSet<LinkDeclaration>();
-      for (LinkDeclaration link : links) {
-        if (overriddenLinks.contains(link)) continue;
+      Map<LinkDeclaration, LinkDeclaration> specializedLinks = new HashMap<LinkDeclaration, LinkDeclaration>();
+      for (LinkDeclaration link : allLinks) {
         LinkDeclaration specializedLink = link.getSpecializedLink();
-        while (specializedLink != null) {
-          overriddenLinks.add(specializedLink);
-          specializedLink = specializedLink.getSpecializedLink();
+        if (specializedLink != null) {
+          specializedLinks.put(specializedLink, link);
         }
       }
 
-      myLinkDeclarationsExcludingOverridden = new ArrayList<LinkDeclaration>(5);
-      for (LinkDeclaration link : links) {
-        if (!overriddenLinks.contains(link)) {
-          myLinkDeclarationsExcludingOverridden.add(link);
+      myMostSpecificLinkBySpecializedLink = new HashMap<LinkDeclaration, LinkDeclaration>();
+      myMostSpecificLinks = new ArrayList<LinkDeclaration>(5);
+      for (LinkDeclaration link : allLinks) {
+        LinkDeclaration moreSpecificLink = specializedLinks.get(link);
+        if (moreSpecificLink == null) {
+          myMostSpecificLinks.add(link);
+        } else {
+          while (moreSpecificLink != null) {
+            myMostSpecificLinkBySpecializedLink.put(link, moreSpecificLink);
+            moreSpecificLink = specializedLinks.get(moreSpecificLink);
+          }
         }
       }
 
@@ -235,7 +257,7 @@ import java.util.*;
       for (AbstractConceptDeclaration concept : concepts) {
         myDependsOnNodes.add(concept.getNode());
       }
-      for (LinkDeclaration link : links) {
+      for (LinkDeclaration link : allLinks) {
         myDependsOnNodes.add(link.getNode());
       }
     }
@@ -267,7 +289,14 @@ import java.util.*;
     public void propertyChanged(SModelPropertyEvent event) {
       // don't process unless it is link's role
       if (LinkDeclaration.ROLE.equals(event.getPropertyName()) && event.getNode().getAdapter() instanceof LinkDeclaration) {
-        super.propertyChanged(event);
+        String oldRole = event.getOldPropertyValue();
+        if (oldRole != null) {
+          myLinkByRole.remove(oldRole);
+        }
+        String newRole = event.getNewPropertyValue();
+        if (!(newRole == null || myLinkByRole.containsKey(newRole))) {
+          myLinkByRole.put(newRole, (LinkDeclaration) event.getNode().getAdapter());
+        }
       }
     }
   } // private static class LinkDeclarationsDataSet

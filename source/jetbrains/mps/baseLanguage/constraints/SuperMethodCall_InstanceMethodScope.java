@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.AbstractSearchScope;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
@@ -43,5 +44,12 @@ public class SuperMethodCall_InstanceMethodScope extends AbstractSearchScope {
       }
     }
     return result;
+  }
+
+  /**
+   * test only
+   */
+  public List<SNode> findNodesByRefInfo(String searchName, AbstractConceptDeclaration concept) {
+    return mySearchScope.findNodesByRefInfo(searchName, concept);
   }
 }
