@@ -15,7 +15,18 @@
   </models>
   <module />
   <accessoryModels />
-  <generators />
+  <generators>
+    <generator generatorUID="jetbrains.mps.logging.refactoring#1189697379687" targetLanguage="jetbrains.mps.baseLanguage">
+      <models>
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.logging.refactoring.generator.baseLanguage.template" />
+      </models>
+      <module>
+        <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
+      </module>
+      <external-templates />
+      <mapping-priorities />
+    </generator>
+  </generators>
   <classPath />
 </language>
 
