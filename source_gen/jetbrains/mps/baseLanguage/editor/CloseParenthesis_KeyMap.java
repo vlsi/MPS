@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import jetbrains.mps.baseLanguage.structure.ParenthesizedExpression;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
@@ -16,8 +17,10 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
   public  CloseParenthesis_KeyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
-    this.putAction("ctrl+shift", "VK_RIGHT", new CloseParenthesis_KeyMap.CloseParenthesis_KeyMap_Action0());
-    this.putAction("ctrl+shift", "VK_LEFT", new CloseParenthesis_KeyMap.CloseParenthesis_KeyMap_Action1());
+    action = new CloseParenthesis_KeyMap.CloseParenthesis_KeyMap_Action0();
+    this.putAction("ctrl+shift", "VK_RIGHT", action);
+    action = new CloseParenthesis_KeyMap.CloseParenthesis_KeyMap_Action1();
+    this.putAction("ctrl+shift", "VK_LEFT", action);
   }
   public static class CloseParenthesis_KeyMap_Action0 extends EditorCellKeyMapAction {
 
@@ -50,10 +53,10 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
 
     public void execute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
+      this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
+    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       ParenthesisUtil.moveParenthesisToTheRight(((ParenthesizedExpression)SNodeOperations.getAdapter(node)), editorContext);
     }
 
@@ -93,10 +96,10 @@ public class CloseParenthesis_KeyMap extends EditorCellKeyMap {
 
     public void execute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
+      this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
+    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       ParenthesisUtil.moveParenthesisToTheLeftInside(((ParenthesizedExpression)SNodeOperations.getAdapter(node)), editorContext);
     }
 

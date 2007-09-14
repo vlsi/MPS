@@ -48,10 +48,6 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return false;
   }

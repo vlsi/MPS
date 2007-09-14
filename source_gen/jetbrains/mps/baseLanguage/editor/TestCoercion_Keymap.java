@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import javax.swing.JOptionPane;
@@ -17,7 +18,8 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
   public  TestCoercion_Keymap() {
     this.setApplicableToEveryModel(true);
     EditorCellKeyMapAction action;
-    this.putAction("ctrl+alt+shift", "VK_T", new TestCoercion_Keymap.TestCoercion_Keymap_Action0());
+    action = new TestCoercion_Keymap.TestCoercion_Keymap_Action0();
+    this.putAction("ctrl+alt+shift", "VK_T", action);
   }
   public static class TestCoercion_Keymap_Action0 extends EditorCellKeyMapAction {
 
@@ -47,10 +49,10 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
 
     public void execute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
+      this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
+    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode type = TypeChecker.getInstance().getTypeOf(node);
       String text = "type: " + type;
       {

@@ -26,10 +26,6 @@ public class supertypesOf_SNodeListType_ListType_SubtypingRule extends Subtyping
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return false;
   }

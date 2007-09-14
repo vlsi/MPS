@@ -26,10 +26,6 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
     return this.myMatchingPattern.match(argument);
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return false;
   }

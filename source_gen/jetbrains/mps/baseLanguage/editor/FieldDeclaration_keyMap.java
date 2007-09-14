@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.constraints.FieldDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -18,8 +19,10 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
   public  FieldDeclaration_keyMap() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
-    this.putAction("alt", "VK_INSERT", new FieldDeclaration_keyMap.FieldDeclaration_keyMap_Action0());
-    this.putAction("alt", "VK_INSERT", new FieldDeclaration_keyMap.FieldDeclaration_keyMap_Action1());
+    action = new FieldDeclaration_keyMap.FieldDeclaration_keyMap_Action0();
+    this.putAction("alt", "VK_INSERT", action);
+    action = new FieldDeclaration_keyMap.FieldDeclaration_keyMap_Action1();
+    this.putAction("alt", "VK_INSERT", action);
   }
   public static class FieldDeclaration_keyMap_Action0 extends EditorCellKeyMapAction {
 
@@ -45,22 +48,22 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
         return false;
       }
       if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-        return this.canExecute_internal(keyEvent, editorContext, contextNode);
+        return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
       }
       return false;
     }
 
     public void execute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
+      this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    public boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
+    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       return (classConcept != null) && !(FieldDeclaration_Behavior.call_hasGetter_1184161255813(node, classConcept));
     }
 
-    public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
+    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       SNode getterMethod = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
       SPropertyOperations.set(getterMethod, "name", FieldDeclaration_Behavior.call_getGetterName_1184160785366(node));
@@ -100,22 +103,22 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
         return false;
       }
       if(contextNode.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-        return this.canExecute_internal(keyEvent, editorContext, contextNode);
+        return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
       }
       return false;
     }
 
     public void execute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
+      this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    public boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
+    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       return (classConcept != null) && !(FieldDeclaration_Behavior.call_hasSetter_1184161485385(node, classConcept));
     }
 
-    public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
+    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       SNode setterMethod = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
       SPropertyOperations.set(setterMethod, "name", FieldDeclaration_Behavior.call_getSetterName_1184160800181(node));

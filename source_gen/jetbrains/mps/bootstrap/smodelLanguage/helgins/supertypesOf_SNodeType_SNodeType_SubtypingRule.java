@@ -47,10 +47,6 @@ public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRul
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return false;
   }

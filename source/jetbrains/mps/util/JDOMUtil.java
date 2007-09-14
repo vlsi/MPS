@@ -19,7 +19,7 @@ public class JDOMUtil {
 
   public static Document loadDocument(File file) throws JDOMException, IOException {
     SAXBuilder saxBuilder = createBuilder();
-    try {
+    try {            
       return saxBuilder.build(new InputStreamReader(new FileInputStream(file), ENCODING));
     } catch (JDOMException e) {
       LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());

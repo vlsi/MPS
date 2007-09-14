@@ -26,10 +26,6 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
     return this.myMatchingPattern.match(argument);
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return true;
   }

@@ -26,10 +26,6 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
     return this.myMatchingPattern.match(argument);
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return true;
   }
