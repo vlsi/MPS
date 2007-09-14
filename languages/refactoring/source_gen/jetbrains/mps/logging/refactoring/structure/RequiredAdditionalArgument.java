@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class RequiredAdditionalArgument extends BaseConcept implements INamedConcept {
+  public static String PRESENTATION = "presentation";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -26,6 +27,14 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
     return RequiredAdditionalArgument.newInstance(sm, false);
   }
 
+
+  public String getPresentation() {
+    return this.getProperty(RequiredAdditionalArgument.PRESENTATION);
+  }
+
+  public void setPresentation(String value) {
+    this.setProperty(RequiredAdditionalArgument.PRESENTATION, value);
+  }
 
   public String getName() {
     return this.getProperty(RequiredAdditionalArgument.NAME);

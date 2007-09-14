@@ -8,8 +8,22 @@
   <import index="2" modelUID="jetbrains.mps.core.structure" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1189693958814">
     <link role="conceptDeclaration" targetNodeId="1.1189693830529" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1189695835032">
-      <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1189768590115">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1189768590116">
+        <property name="textFgColor" value="DARK_MAGENTA" />
+        <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1189768593103">
+        <property name="text" value="(" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1189768595636">
+        <property name="textFgColor" value="DARK_GREEN" />
+        <link role="relationDeclaration" targetNodeId="1.1189768565365" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1189768599560">
+        <property name="text" value=")" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1189694115688">
@@ -20,6 +34,7 @@
         <link role="conceptDeclaration" targetNodeId="1.1189693830529" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1189694134365">
           <property name="readOnly" value="true" />
+          <property name="textFgColor" value="DARK_MAGENTA" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
         </node>
       </node>

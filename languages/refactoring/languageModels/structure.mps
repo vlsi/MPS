@@ -47,6 +47,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1189693830529">
     <property name="name" value="RequiredAdditionalArgument" />
     <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1189768565365">
+      <property name="name" value="presentation" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1189693905781">
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
