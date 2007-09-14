@@ -10,4 +10,12 @@ public class SimpleLoader<Item> implements ItemsLoader<Item> {
   public Item[] loadItems() {
     return myItems;
   }
+
+  public boolean canShowProgress() {
+    return false;
+  }
+
+  public int getProgress() {
+    throw new RuntimeException();
+  }
 }
