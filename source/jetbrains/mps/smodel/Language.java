@@ -550,6 +550,19 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return null;
   }
 
+  @Nullable
+  public SModelDescriptor getDocumentationModelDescriptor() {
+    if (getLanguageDescriptor().getDocumentationModel() != null) {
+      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getDocumentationModel().getName());
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      if (modelDescriptor == null) {
+        LOG.error("Couldn't get scripts model \"" + modelUID + "\"");
+      }
+      return modelDescriptor;
+    }
+    return null;
+  }
+
   public SModelDescriptor getModelDescriptor(AspectKind aspectKind) {
     SModelDescriptor modelDescriptor = null;
     switch (aspectKind) {
@@ -567,6 +580,9 @@ public class Language extends AbstractModule implements Marshallable<Language> {
         break;
       case SCRIPTS:
         modelDescriptor = getScriptsModelDescriptor();
+        break;
+      case DOCUMENTATION:
+        modelDescriptor = getDocumentationModelDescriptor();
         break;
       case STRUCTURE:
         modelDescriptor = getStructureModelDescriptor();
@@ -620,7 +636,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     SModelDescriptor actionsModelDescriptor = getActionsModelDescriptor();
     if (actionsModelDescriptor != null) result.add(actionsModelDescriptor);
     SModelDescriptor constraintsModelDescriptor = getConstraintsModelDescriptor();
-    if (constraintsModelDescriptor != null) result.add(constraintsModelDescriptor);
+    if (constraintsModelDescriptor != null) result.add(constraintsModelDescriptor);    
     return result;
   }
 
@@ -841,6 +857,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     if (modelDescriptor == language.getScriptsModelDescriptor()) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.SCRIPTS);
     }
+
+    if (modelDescriptor == language.getDocumentationModelDescriptor()) {
+      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.DOCUMENTATION);
+    }
+
     List<SModelDescriptor> acccessoryModels = language.getAccessoryModels();
     if (acccessoryModels.contains(modelDescriptor)) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACCESSORY);
@@ -855,7 +876,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   public static class LanguageAspectStatus implements IStatus {
     public static enum AspectKind {
-      STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, HELGINS_TYPESYSTEM, ACCESSORY, SCRIPTS, NONE
+      STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, HELGINS_TYPESYSTEM, ACCESSORY, SCRIPTS, DOCUMENTATION, NONE
     }
 
     private Language myLanguage;

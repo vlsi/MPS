@@ -99,6 +99,10 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
       this.add(new SModelTreeNode(scriptsModelDescriptor, "scripts", operationContext));
     }
 
+    SModelDescriptor documentationModelDescriptor = myLanguage.getDocumentationModelDescriptor();
+    if (documentationModelDescriptor != null) {
+      this.add(new SModelTreeNode(documentationModelDescriptor, "documentation", operationContext));      
+    }
 
 
     // language accessory models
