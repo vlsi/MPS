@@ -37,4 +37,5 @@ public interface ISearchScope {
    * TMP
    */
   List<SNode> findNodesByRefInfo(String searchName, AbstractConceptDeclaration concept);
+  IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept);
 }

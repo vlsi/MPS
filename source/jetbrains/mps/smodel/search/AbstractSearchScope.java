@@ -29,6 +29,11 @@ public abstract class AbstractSearchScope implements ISearchScope {
     return null;
   }
 
+  public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {
+    // not supported by default
+    return null;
+  }
+
 
   @NotNull
   public final List<SNode> getNodes() {
