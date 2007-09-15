@@ -3,6 +3,7 @@ package jetbrains.mps.smodel.search;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 import java.util.*;
 
@@ -13,14 +14,21 @@ import org.jetbrains.annotations.NotNull;
  * Mar 1, 2006
  */
 public class SimpleSearchScope extends AbstractSearchScope {
-  private LinkedHashSet myNodes;
+  private LinkedHashSet<SNode> myNodes;
 
   public SimpleSearchScope(List nodes) {
-    myNodes = new LinkedHashSet(nodes);
+    myNodes = new LinkedHashSet<SNode>();
+    for (Object node : nodes) {
+      if (node instanceof SNode) {
+        myNodes.add((SNode) node);
+      } else {
+        myNodes.add(((INodeAdapter) node).getNode());
+      }
+    }
   }
 
   public SimpleSearchScope(SNode node) {
-    myNodes = new LinkedHashSet<SNode>();
+    myNodes = new LinkedHashSet<SNode>(1);
     if (node != null) {
       myNodes.add(node);
     }
@@ -28,23 +36,26 @@ public class SimpleSearchScope extends AbstractSearchScope {
 
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
-    List<SNode> result = null;
-
-    for (Object myNode : myNodes) {
-      SNode node;
-      if (myNode instanceof SNode) {
-        node = (SNode) myNode;
-      } else {
-        node = ((INodeAdapter) myNode).getNode();
-      }
-
+    List<SNode> result = new ArrayList<SNode>(myNodes.size());
+    for (SNode node : myNodes) {
       if (condition.met(node)) {
-        if (result == null) result = new LinkedList<SNode>();
         result.add(node);
       }
     }
-
-    if (result == null) return Collections.emptyList();
     return result;
+  }
+
+  public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {
+    return new IReferenceInfoResolver() {
+      public SNode resolve(String referenceInfo) {
+        if (referenceInfo == null) return null;
+        for (SNode node : myNodes) {
+          if (referenceInfo.equals(node.getName())) { // todo: node.getRefName
+            return node;
+          }
+        }
+        return null;
+      }
+    };
   }
 }
