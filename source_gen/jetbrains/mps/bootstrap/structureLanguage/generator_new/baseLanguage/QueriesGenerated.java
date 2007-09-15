@@ -99,6 +99,10 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(node);
   }
 
+  public static Object propertyMacro_GetPropertyValue_1189815461294(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return NameUtil.nodeFQName(node);
+  }
+
   public static Object propertyMacro_GetPropertyValue_1168020996282(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(node, "name");
   }
@@ -172,6 +176,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1169755707217(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.capitalize(SPropertyOperations.getString(node, "role")) + "_AnnotationLink";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1189815514401(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return NameUtil.nodeFQName(node);
   }
 
   public static Object propertyMacro_GetPropertyValue_1170173405392(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
