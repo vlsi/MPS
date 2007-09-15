@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.core.structure.BaseConcept;
 
 public class ReferenceConceptLink extends ConceptLink {
+  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink";
   public static String TARGET = "target";
 
   public  ReferenceConceptLink(SNode node) {

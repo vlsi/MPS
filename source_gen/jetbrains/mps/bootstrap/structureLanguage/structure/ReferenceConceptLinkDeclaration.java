@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ReferenceConceptLinkDeclaration extends ConceptLinkDeclaration {
+  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLinkDeclaration";
 
   public  ReferenceConceptLinkDeclaration(SNode node) {
     super(node);

@@ -10,7 +10,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PropertyDeclaration extends BaseConcept implements INamedConcept {
+  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration";
   public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
   public static String DATA_TYPE = "dataType";
 
   public  PropertyDeclaration(SNode node) {
@@ -32,6 +35,22 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept {
 
   public void setName(String value) {
     this.setProperty(PropertyDeclaration.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(PropertyDeclaration.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(PropertyDeclaration.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(PropertyDeclaration.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(PropertyDeclaration.ALIAS, value);
   }
 
   public DataTypeDeclaration getDataType() {

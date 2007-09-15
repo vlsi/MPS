@@ -10,10 +10,11 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ConceptDeclaration extends AbstractConceptDeclaration {
+  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration";
   public static String ICON_PATH = "iconPath";
   public static String ROOTABLE = "rootable";
-  public static String IMPLEMENTS = "implements";
   public static String EXTENDS = "extends";
+  public static String IMPLEMENTS = "implements";
 
   public  ConceptDeclaration(SNode node) {
     super(node);
@@ -44,6 +45,14 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
     this.setBooleanProperty(ConceptDeclaration.ROOTABLE, value);
   }
 
+  public ConceptDeclaration getExtends() {
+    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.EXTENDS);
+  }
+
+  public void setExtends(ConceptDeclaration node) {
+    super.setReferent(ConceptDeclaration.EXTENDS, node);
+  }
+
   public int getImplementsesCount() {
     return this.getChildCount(ConceptDeclaration.IMPLEMENTS);
   }
@@ -62,14 +71,6 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
 
   public void insertImplements(InterfaceConceptReference prev, InterfaceConceptReference node) {
     this.insertChild(prev, ConceptDeclaration.IMPLEMENTS, node);
-  }
-
-  public ConceptDeclaration getExtends() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.EXTENDS);
-  }
-
-  public void setExtends(ConceptDeclaration node) {
-    super.setReferent(ConceptDeclaration.EXTENDS, node);
   }
 
 }

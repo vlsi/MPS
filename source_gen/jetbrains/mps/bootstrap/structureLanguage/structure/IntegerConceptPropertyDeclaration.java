@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IntegerConceptPropertyDeclaration extends ConceptPropertyDeclaration {
+  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.IntegerConceptPropertyDeclaration";
 
   public  IntegerConceptPropertyDeclaration(SNode node) {
     super(node);

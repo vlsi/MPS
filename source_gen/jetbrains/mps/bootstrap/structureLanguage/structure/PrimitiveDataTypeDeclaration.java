@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PrimitiveDataTypeDeclaration extends DataTypeDeclaration {
+  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration";
 
   public  PrimitiveDataTypeDeclaration(SNode node) {
     super(node);

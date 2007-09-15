@@ -10,9 +10,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class EnumerationMemberDeclaration extends BaseConcept implements INamedConcept {
+  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration";
   public static String INTERNAL_VALUE = "internalValue";
   public static String EXTERNAL_VALUE = "externalValue";
   public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
 
   public  EnumerationMemberDeclaration(SNode node) {
     super(node);
@@ -49,6 +52,22 @@ public class EnumerationMemberDeclaration extends BaseConcept implements INamedC
 
   public void setName(String value) {
     this.setProperty(EnumerationMemberDeclaration.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(EnumerationMemberDeclaration.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(EnumerationMemberDeclaration.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(EnumerationMemberDeclaration.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(EnumerationMemberDeclaration.ALIAS, value);
   }
 
 }

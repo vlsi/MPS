@@ -10,7 +10,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept {
+  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration";
   public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
   public static String TARGET_TYPE = "targetType";
 
   public  ConceptLinkDeclaration(SNode node) {
@@ -32,6 +35,22 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
 
   public void setName(String value) {
     this.setProperty(ConceptLinkDeclaration.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ConceptLinkDeclaration.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ConceptLinkDeclaration.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ConceptLinkDeclaration.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ConceptLinkDeclaration.ALIAS, value);
   }
 
   public ConceptDeclaration getTargetType() {

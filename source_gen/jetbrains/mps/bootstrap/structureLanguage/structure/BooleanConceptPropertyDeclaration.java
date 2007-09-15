@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BooleanConceptPropertyDeclaration extends ConceptPropertyDeclaration {
+  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration";
 
   public  BooleanConceptPropertyDeclaration(SNode node) {
     super(node);

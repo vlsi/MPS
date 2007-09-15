@@ -9,7 +9,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AnnotationLinkDeclaration extends LinkDeclaration implements INamedConcept {
+  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration";
   public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
   public static String STEREOTYPE = "stereotype";
   public static String SOURCE = "source";
 
@@ -32,6 +35,22 @@ public class AnnotationLinkDeclaration extends LinkDeclaration implements INamed
 
   public void setName(String value) {
     this.setProperty(AnnotationLinkDeclaration.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(AnnotationLinkDeclaration.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(AnnotationLinkDeclaration.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(AnnotationLinkDeclaration.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(AnnotationLinkDeclaration.ALIAS, value);
   }
 
   public AnnotationLinkStereotype getStereotype() {

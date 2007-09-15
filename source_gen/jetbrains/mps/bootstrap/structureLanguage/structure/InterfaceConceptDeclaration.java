@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class InterfaceConceptDeclaration extends AbstractConceptDeclaration {
+  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration";
   public static String EXTENDS = "extends";
 
   public  InterfaceConceptDeclaration(SNode node) {

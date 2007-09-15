@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.core.structure.BaseConcept;
 
 public class AggregationConceptLink extends ConceptLink {
+  public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink";
   public static String TARGET = "target";
 
   public  AggregationConceptLink(SNode node) {
@@ -24,20 +25,20 @@ public class AggregationConceptLink extends ConceptLink {
   }
 
 
-  public BaseConcept getTarget() {
-    return (BaseConcept)this.getChild(AggregationConceptLink.TARGET);
-  }
-
-  public void setTarget(BaseConcept node) {
-    super.setChild(AggregationConceptLink.TARGET, node);
-  }
-
   public AggregationConceptLinkDeclaration getAggregationConceptLinkDeclaration() {
     return (AggregationConceptLinkDeclaration)this.getConceptLinkDeclaration();
   }
 
   public void setAggregationConceptLinkDeclaration(AggregationConceptLinkDeclaration node) {
     this.setConceptLinkDeclaration(node);
+  }
+
+  public BaseConcept getTarget() {
+    return (BaseConcept)this.getChild(AggregationConceptLink.TARGET);
+  }
+
+  public void setTarget(BaseConcept node) {
+    super.setChild(AggregationConceptLink.TARGET, node);
   }
 
 }
