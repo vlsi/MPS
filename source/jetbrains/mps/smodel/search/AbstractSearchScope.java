@@ -22,18 +22,10 @@ public abstract class AbstractSearchScope implements ISearchScope {
     }
   };
 
-  /**
-   * test only - no need to implement
-   */
-  public List<SNode> findNodesByRefInfo(String searchName, AbstractConceptDeclaration concept) {
-    return null;
-  }
-
   public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {
     // not supported by default
     return null;
   }
-
 
   @NotNull
   public final List<SNode> getNodes() {
