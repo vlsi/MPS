@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DivExpression extends BinaryOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.DivExpression";
 
   public  DivExpression(SNode node) {
     super(node);

@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ClosureParameter extends NamedConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ClosureParameter";
 
   public  ClosureParameter(SNode node) {
     super(node);

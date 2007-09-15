@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class AnonymousClass extends ClassConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.AnonymousClass";
   public static String CLASSIFIER = "classifier";
   public static String PARAMETER = "parameter";
 

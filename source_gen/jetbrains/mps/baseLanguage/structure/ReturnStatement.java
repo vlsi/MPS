@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ReturnStatement extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ReturnStatement";
   public static String EXPRESSION = "expression";
 
   public  ReturnStatement(SNode node) {

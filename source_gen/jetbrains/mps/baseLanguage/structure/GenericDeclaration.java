@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class GenericDeclaration extends NamedConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.GenericDeclaration";
   public static String TYPE_VARIABLE_DECLARATION = "typeVariableDeclaration";
 
   public  GenericDeclaration(SNode node) {

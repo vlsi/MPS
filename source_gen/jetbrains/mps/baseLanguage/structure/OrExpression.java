@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class OrExpression extends BinaryOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.OrExpression";
 
   public  OrExpression(SNode node) {
     super(node);

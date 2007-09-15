@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BooleanConstant extends Expression {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.BooleanConstant";
   public static String VALUE = "value";
 
   public  BooleanConstant(SNode node) {

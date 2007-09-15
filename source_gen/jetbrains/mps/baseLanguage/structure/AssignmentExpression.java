@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AssignmentExpression extends Expression {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.AssignmentExpression";
   public static String L_VALUE = "lValue";
   public static String R_VALUE = "rValue";
 

@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class BaseMethodCall extends Expression {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.BaseMethodCall";
   public static String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static String ACTUAL_ARGUMENT = "actualArgument";
 

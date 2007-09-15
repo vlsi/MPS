@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class StatementList extends BaseConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.StatementList";
   public static String STATEMENT = "statement";
 
   public  StatementList(SNode node) {

@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AnnotationInstanceValue extends BaseConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue";
   public static String KEY = "key";
   public static String VALUE = "value";
 

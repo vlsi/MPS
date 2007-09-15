@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ForStatement extends AbstractForStatement {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ForStatement";
   public static String CONDITION = "condition";
   public static String ITERATION = "iteration";
 

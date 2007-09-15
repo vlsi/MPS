@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BlockStatement extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.BlockStatement";
   public static String STATEMENTS = "statements";
 
   public  BlockStatement(SNode node) {

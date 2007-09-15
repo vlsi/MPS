@@ -135,9 +135,6 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183457785428" />
   </node>
-  <node type="jetbrains.mps.baseLanguage._A" id="1183718930765">
-    <node role="c" type="jetbrains.mps.baseLanguage._C" id="1183718930766" />
-  </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1181913317169">
     <property name="name" value="B" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1183651954280">

@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class EnumConstantReference extends Expression {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumConstantReference";
   public static String ENUM_CLASS = "enumClass";
   public static String ENUM_CONSTANT_DECLARATION = "enumConstantDeclaration";
 

@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class SwitchStatement extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.SwitchStatement";
   public static String EXPRESSION = "expression";
   public static String DEFAULT_BLOCK = "defaultBlock";
   public static String CASE = "case";

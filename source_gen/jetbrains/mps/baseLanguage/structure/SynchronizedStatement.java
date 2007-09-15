@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SynchronizedStatement extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.SynchronizedStatement";
   public static String EXPRESSION = "expression";
   public static String BLOCK = "block";
 

@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunction extends BaseConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ConceptFunction";
   public static String CLNK_ConceptFunctionReturnType = "conceptFunctionReturnType";
   public static String CLNK_ConceptFunctionParameter = "conceptFunctionParameter";
   public static String CLNK_ApplicableConceptFunctionParameter = "applicableConceptFunctionParameter";

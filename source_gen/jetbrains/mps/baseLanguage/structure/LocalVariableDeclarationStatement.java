@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LocalVariableDeclarationStatement extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement";
   public static String LOCAL_VARIABLE_DECLARATION = "localVariableDeclaration";
 
   public  LocalVariableDeclarationStatement(SNode node) {

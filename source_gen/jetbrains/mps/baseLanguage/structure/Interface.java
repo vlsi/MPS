@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Interface extends Classifier {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.Interface";
   public static String NAME = "name";
   public static String EXTENDED_INTERFACE = "extendedInterface";
 

@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TypeVariableReference extends Type {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.TypeVariableReference";
   public static String TYPE_VARIABLE_DECLARATION = "typeVariableDeclaration";
 
   public  TypeVariableReference(SNode node) {

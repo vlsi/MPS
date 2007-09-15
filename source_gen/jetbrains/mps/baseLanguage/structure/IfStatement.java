@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IfStatement extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.IfStatement";
   public static String CONDITION = "condition";
   public static String IF_FALSE_STATEMENT = "ifFalseStatement";
   public static String IF_TRUE = "ifTrue";

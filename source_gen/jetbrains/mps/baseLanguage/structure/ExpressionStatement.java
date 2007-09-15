@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ExpressionStatement extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ExpressionStatement";
   public static String EXPRESSION = "expression";
 
   public  ExpressionStatement(SNode node) {

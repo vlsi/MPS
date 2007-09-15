@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ArrayLiteral extends Expression {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ArrayLiteral";
   public static String ITEM = "item";
 
   public  ArrayLiteral(SNode node) {

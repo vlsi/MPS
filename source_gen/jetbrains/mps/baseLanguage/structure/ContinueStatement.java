@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ContinueStatement extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ContinueStatement";
 
   public  ContinueStatement(SNode node) {
     super(node);

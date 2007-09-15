@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class EnumConstantDeclaration extends NamedConcept implements ClassifierMember {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";

@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ArrayCreatorWithInitializer extends AbstractCreator {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer";
   public static String COMPONENT_TYPE = "componentType";
   public static String INIT_VALUE = "initValue";
 

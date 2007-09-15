@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ClassConcept extends Classifier {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ClassConcept";
   public static String NAME = "name";
   public static String ABSTRACT_CLASS = "abstractClass";
   public static String EXTENDED_CLASS = "extendedClass";

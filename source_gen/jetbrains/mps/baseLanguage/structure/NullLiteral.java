@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class NullLiteral extends Expression {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.NullLiteral";
 
   public  NullLiteral(SNode node) {
     super(node);

@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ClassifierClassExpression extends Expression {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ClassifierClassExpression";
   public static String CLASSIFIER = "classifier";
 
   public  ClassifierClassExpression(SNode node) {

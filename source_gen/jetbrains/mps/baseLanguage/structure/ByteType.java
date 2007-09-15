@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ByteType extends PrimitiveType {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ByteType";
 
   public  ByteType(SNode node) {
     super(node);

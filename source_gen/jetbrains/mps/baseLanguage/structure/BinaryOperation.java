@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BinaryOperation extends Expression {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.BinaryOperation";
   public static String CPR_Priority = "priority";
   public static String RIGHT_EXPRESSION = "rightExpression";
   public static String LEFT_EXPRESSION = "leftExpression";

@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Closure extends ConceptFunction {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.Closure";
 
   public  Closure(SNode node) {
     super(node);

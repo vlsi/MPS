@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class NotEqualsExpression extends BinaryOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.NotEqualsExpression";
 
   public  NotEqualsExpression(SNode node) {
     super(node);

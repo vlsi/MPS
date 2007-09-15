@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ThisConstructorInvocation extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation";
   public static String CONSTRUCTOR_DECLARATION = "constructorDeclaration";
   public static String ACTUAL_ARGUMENT = "actualArgument";
 

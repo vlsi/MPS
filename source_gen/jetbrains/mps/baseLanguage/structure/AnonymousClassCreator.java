@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AnonymousClassCreator extends AbstractCreator {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator";
   public static String CLS = "cls";
 
   public  AnonymousClassCreator(SNode node) {

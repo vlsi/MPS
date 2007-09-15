@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AssertStatement extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.AssertStatement";
   public static String CONDITION = "condition";
   public static String MESSAGE = "message";
 

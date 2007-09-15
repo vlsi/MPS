@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class InstanceOfExpression extends Expression {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.InstanceOfExpression";
   public static String LEFT_EXPRESSION = "leftExpression";
   public static String CLASS_TYPE = "classType";
 

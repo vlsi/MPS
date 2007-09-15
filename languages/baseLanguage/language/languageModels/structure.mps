@@ -2120,30 +2120,6 @@
       <link role="target" targetNodeId="1170345865475" resolveInfo="AnonymousClass" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1183716145047">
-    <property name="name" value="_A" />
-    <property name="rootable" value="true" />
-    <link role="extends" targetNodeId="4.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1183716204892">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="b" />
-      <link role="target" targetNodeId="1183716188891" resolveInfo="_B" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1183716848223">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="c" />
-      <link role="target" targetNodeId="1183716801205" resolveInfo="_C" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1183716188891">
-    <property name="name" value="_B" />
-    <link role="extends" targetNodeId="4.1133920641626" />
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1183716801205">
-    <property name="name" value="_C" />
-    <link role="extends" targetNodeId="4.1133920641626" />
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184950988562">
     <property name="name" value="ArrayCreator" />
     <link role="extends" targetNodeId="1145552809883" resolveInfo="AbstractCreator" />

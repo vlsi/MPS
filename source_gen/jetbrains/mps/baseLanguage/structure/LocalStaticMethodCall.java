@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LocalStaticMethodCall extends BaseMethodCall {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall";
 
   public  LocalStaticMethodCall(SNode node) {
     super(node);

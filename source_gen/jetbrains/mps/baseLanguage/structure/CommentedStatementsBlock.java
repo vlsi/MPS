@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class CommentedStatementsBlock extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock";
   public static String STATEMENT = "statement";
 
   public  CommentedStatementsBlock(SNode node) {

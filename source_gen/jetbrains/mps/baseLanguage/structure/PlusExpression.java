@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class PlusExpression extends BinaryOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.PlusExpression";
 
   public  PlusExpression(SNode node) {
     super(node);

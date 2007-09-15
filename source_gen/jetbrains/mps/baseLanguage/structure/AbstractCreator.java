@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AbstractCreator extends BaseConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.AbstractCreator";
 
   public  AbstractCreator(SNode node) {
     super(node);

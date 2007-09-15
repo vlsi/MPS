@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SuperMethodCall extends BaseMethodCall {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.SuperMethodCall";
 
   public  SuperMethodCall(SNode node) {
     super(node);

@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TypeVariableDeclaration extends NamedConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration";
   public static String NAME = "name";
 
   public  TypeVariableDeclaration(SNode node) {

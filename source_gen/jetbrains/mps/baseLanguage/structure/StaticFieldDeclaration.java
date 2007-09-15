@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class StaticFieldDeclaration extends VariableDeclaration implements ClassifierMember {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VISIBILITY = "visibility";

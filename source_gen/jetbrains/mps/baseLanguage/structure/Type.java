@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Type extends NamedConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.Type";
 
   public  Type(SNode node) {
     super(node);

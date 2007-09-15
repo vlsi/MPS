@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class EnumClass extends ClassConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumClass";
   public static String NAME = "name";
   public static String ENUM_CONSTANT = "enumConstant";
 

@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class TryCatchStatement extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.TryCatchStatement";
   public static String BODY = "body";
   public static String CATCH_CLAUSE = "catchClause";
 

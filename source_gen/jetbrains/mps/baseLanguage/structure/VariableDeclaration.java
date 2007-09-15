@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class VariableDeclaration extends NamedConcept implements Annotable {
+  public static final String concept = "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
