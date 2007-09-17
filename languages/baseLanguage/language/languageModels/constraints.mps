@@ -1938,8 +1938,8 @@
                 <link role="baseMethodDeclaration" extResolveInfo="27.static method ([Classifier]JOptionPane).([StaticMethodDeclaration]showMessageDialog((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Component]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]), (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int)))" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1182162215113">
                   <link role="baseMethodDeclaration" extResolveInfo="26.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getNodeEditorComponent())" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1182162542744">
-                    <link role="variableDeclaration" targetNodeId="1182162527073" resolveInfo="editorContext" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1190052389898">
+                    <link role="variableDeclaration" targetNodeId="1190026803773" resolveInfo="editorContext" />
                   </node>
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1182162215115">
@@ -1965,8 +1965,8 @@
                     <link role="classConcept" extResolveInfo="27.[Classifier]JOptionPane" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1182162215125">
                       <link role="baseMethodDeclaration" extResolveInfo="26.method ([Classifier]EditorContext).([InstanceMethodDeclaration]getNodeEditorComponent())" />
-                      <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1182162545243">
-                        <link role="variableDeclaration" targetNodeId="1182162527073" resolveInfo="editorContext" />
+                      <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1190052392024">
+                        <link role="variableDeclaration" targetNodeId="1190026803773" resolveInfo="editorContext" />
                       </node>
                     </node>
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.PlusExpression" id="1182162215127">
