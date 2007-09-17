@@ -63,8 +63,9 @@ public class GenerationPartitioner {
     }
 
     // process coherent mappings
-    PriorityMapUtil.makeLocksEqualsForCoherentMappings(myCoherentMappings, myPriorityMap, myConflictingRules);
+    myCoherentMappings = PriorityMapUtil.joinIntersectingCoherentMappings(myCoherentMappings);
     PriorityMapUtil.makeLockedByAllCoherentIfLockedByOne(myCoherentMappings, myPriorityMap);
+    PriorityMapUtil.makeLocksEqualsForCoherentMappings(myCoherentMappings, myPriorityMap, myConflictingRules);
 
     // remove 'weak' priorities
     for (MappingConfiguration mapping : myPriorityMap.keySet()) {
@@ -111,8 +112,8 @@ public class GenerationPartitioner {
   private void checkSelfLocking(MappingConfiguration mapping) {
     Map<MappingConfiguration, PriorityData> locks = myPriorityMap.get(mapping);
     PriorityData priorityData = locks.get(mapping);
-    if(priorityData != null) {
-      if(priorityData.isStrict()) {
+    if (priorityData != null) {
+      if (priorityData.isStrict()) {
         // error
         myConflictingRules.addAll(priorityData.myCauseRules);
       }
@@ -127,7 +128,7 @@ public class GenerationPartitioner {
     while (!myPriorityMap.isEmpty()) {
       List<MappingConfiguration> mappingSet = createMappingSet(topPriorityGroup);
       if (mappingSet.isEmpty()) {
-        if(!topPriorityGroup) {
+        if (!topPriorityGroup) {
           topPriorityGroup = true;
           continue;
         }
@@ -144,7 +145,7 @@ public class GenerationPartitioner {
     // add all not-locking-mappinds to set
     List<MappingConfiguration> mappingSet = new ArrayList<MappingConfiguration>();
     for (MappingConfiguration mapping : myPriorityMap.keySet()) {
-      if(mapping.getTopPriorityGroup() != topPriorityGroup) continue;
+      if (mapping.getTopPriorityGroup() != topPriorityGroup) continue;
       if (!PriorityMapUtil.isLockingMapping(mapping, myPriorityMap)) {
         mappingSet.add(mapping);
       }
@@ -167,20 +168,20 @@ public class GenerationPartitioner {
     if (rule.getKind() == MappingPriorityRuleKind.strictly_together) {
       Set<MappingConfiguration> coherentMappings = new HashSet<MappingConfiguration>(lesserPriMappings);
       coherentMappings.addAll(greaterPriMappings);
-      // unite with other 'strictly together' set?
-      CoherentSetData toUnite = null;
-      for (CoherentSetData pair : myCoherentMappings) {
-        if (!CollectionUtil.intersection(coherentMappings, pair.myMappings).isEmpty()) {
-          toUnite = pair;
-          break;
-        }
-      }
-      if (toUnite != null) {
-        toUnite.myMappings.addAll(coherentMappings);
-        toUnite.myCauseRules.add(rule);
-      } else {
+//      // unite with other 'strictly together' set?
+//      CoherentSetData toUnite = null;
+//      for (CoherentSetData pair : myCoherentMappings) {
+//        if (!CollectionUtil.intersection(coherentMappings, pair.myMappings).isEmpty()) {
+//          toUnite = pair;
+//          break;
+//        }
+//      }
+//      if (toUnite != null) {
+//        toUnite.myMappings.addAll(coherentMappings);
+//        toUnite.myCauseRules.add(rule);
+//      } else {
         myCoherentMappings.add(new CoherentSetData(coherentMappings, rule));
-      }
+//      }
 
     } else {
       // map: lesser-pri mapping -> {greater-pri mapping, .... , greater-pri mapping }

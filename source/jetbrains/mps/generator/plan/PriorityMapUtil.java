@@ -15,6 +15,34 @@ import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
  */
 /*package*/ class PriorityMapUtil {
 
+  public static List<CoherentSetData> joinIntersectingCoherentMappings(List<CoherentSetData> coherentMappings) {
+    List<CoherentSetData> input = coherentMappings;
+    List<CoherentSetData> result = joinIntersectingCoherentMappings_internal(input);
+    while (result.size() != input.size()) {
+      input = result;
+      result = joinIntersectingCoherentMappings_internal(input);
+    }
+    return result;
+  }
+
+  private static List<CoherentSetData> joinIntersectingCoherentMappings_internal(List<CoherentSetData> coherentMappings) {
+    List<CoherentSetData> result = new ArrayList<CoherentSetData>();
+    for (CoherentSetData coherentSetData : coherentMappings) {
+      boolean joined = false;
+      for (CoherentSetData resultCoherentSetData : result) {
+        if (CollectionUtil.intersect(coherentSetData.myMappings, resultCoherentSetData.myMappings)) {
+          resultCoherentSetData.myMappings.addAll(coherentSetData.myMappings);
+          resultCoherentSetData.myCauseRules.addAll(coherentSetData.myCauseRules);
+          joined = true;
+        }
+      }
+      if (!joined) {
+        result.add(coherentSetData);
+      }
+    }
+
+    return result;
+  }
 
   public static void makeLocksEqualsForCoherentMappings(List<CoherentSetData> coherentMappings, Map<MappingConfiguration, Map<MappingConfiguration, PriorityData>> priorityMap, Set<MappingPriorityRule> conflictingRules) {
     for (CoherentSetData coherentSetData : coherentMappings) {
@@ -81,7 +109,6 @@ import jetbrains.mps.projectLanguage.structure.MappingPriorityRule;
         for (MappingConfiguration coherentMapping : coherentMappingSet) {
           PriorityData priorityData = locks.get(coherentMapping);
           if (priorityData != null) {
-            priorityData.myStrict = isStrict;
             priorityData.myCauseRules.addAll(coherentSetData.myCauseRules);
           } else {
             locks.put(coherentMapping, new PriorityData(isStrict, coherentSetData.myCauseRules));
