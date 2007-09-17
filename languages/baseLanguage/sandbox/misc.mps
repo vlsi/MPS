@@ -167,6 +167,20 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1190053015399">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1190053015400">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1190053015401" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1190053016997">
+              <property name="value" value="239" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1190053019484">
+          <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1190053019485">
+            <link role="variableDeclaration" targetNodeId="1190053015400" resolveInfo="a" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1181913317170" />

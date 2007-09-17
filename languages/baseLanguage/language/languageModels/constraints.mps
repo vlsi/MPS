@@ -2010,6 +2010,13 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1190053132210">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1190053132211">
+            <property name="name" value="newSelection" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1190053132212" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.NullLiteral" id="1190053135402" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1182162215141">
           <node role="iterable" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1182162215142">
             <link role="variableDeclaration" targetNodeId="1182162215101" resolveInfo="usages" />
@@ -2035,6 +2042,43 @@
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1182162215151">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1182162215152">
+                <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1190053145529">
+                  <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1190053145530">
+                    <property name="name" value="copy" />
+                    <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1190053145531">
+                      <link role="concept" targetNodeId="1.1068431790191" />
+                    </node>
+                    <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182162215158">
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182162215159">
+                        <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1182162329202" />
+                        <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1182162215161">
+                          <link role="link" targetNodeId="1.1068431790190" />
+                        </node>
+                      </node>
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_CopyOperation" id="1182162215162" />
+                    </node>
+                  </node>
+                </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1190053150346">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1190053150347">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1190053157511">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1190053158201">
+                        <node role="rValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1190053159141">
+                          <link role="variableDeclaration" targetNodeId="1190053145530" resolveInfo="copy" />
+                        </node>
+                        <node role="lValue" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1190053157512">
+                          <link role="variableDeclaration" targetNodeId="1190053132211" resolveInfo="newSelection" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1190053154539">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1190053155323" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1190053152772">
+                      <link role="variableDeclaration" targetNodeId="1190053132211" resolveInfo="newSelection" />
+                    </node>
+                  </node>
+                </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182162215153">
                   <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182162215154">
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1182162215155">
@@ -2044,14 +2088,8 @@
                       </node>
                     </node>
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithAnotherOperation" id="1182162215157">
-                      <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182162215158">
-                        <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182162215159">
-                          <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1182162329202" />
-                          <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1182162215161">
-                            <link role="link" targetNodeId="1.1068431790190" />
-                          </node>
-                        </node>
-                        <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_CopyOperation" id="1182162215162" />
+                      <node role="parameter" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1190053145532">
+                        <link role="variableDeclaration" targetNodeId="1190053145530" resolveInfo="copy" />
                       </node>
                     </node>
                   </node>
@@ -2081,6 +2119,27 @@
               </node>
             </node>
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_DeleteOperation" id="1182162215173" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1190053162987">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1190053162988">
+            <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1190053169746">
+              <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1190053172672">
+                <link role="baseMethodDeclaration" extResolveInfo="26.method ([Classifier]EditorContext).([InstanceMethodDeclaration]selectLater((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])))" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1190053169747">
+                  <link role="variableDeclaration" targetNodeId="1190026803773" resolveInfo="editorContext" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1190053175720">
+                  <link role="variableDeclaration" targetNodeId="1190053132211" resolveInfo="newSelection" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1190053165523">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1190053168417" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1190053164694">
+              <link role="variableDeclaration" targetNodeId="1190053132211" resolveInfo="newSelection" />
+            </node>
           </node>
         </node>
       </node>
