@@ -24,7 +24,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="actionsBuilder" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1112058030570" />
+      <link role="target" targetNodeId="1112058030570" resolveInfo="NodeSubstituteActionsBuilder" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158947211015">
       <property name="value" value="node substitute actions" />
@@ -63,13 +63,13 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="precondition" />
       <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="1154465102724" />
+      <link role="target" targetNodeId="1154465102724" resolveInfo="NodeSubstitutePreconditionFunction" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177324142645">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="part" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
+      <link role="target" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1178540170602">
       <property name="metaClass" value="aggregation" />
@@ -107,7 +107,7 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1140829165817">
       <property name="name" value="transformTag" />
-      <link role="dataType" targetNodeId="1140829206022" />
+      <link role="dataType" targetNodeId="1140829206022" resolveInfo="RTransformTag" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1138079221460">
       <property name="name" value="actionsFactoryAspectId" />
@@ -135,13 +135,13 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="precondition" />
       <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="1154622616118" />
+      <link role="target" targetNodeId="1154622616118" resolveInfo="RTransformHintSubstitutePreconditionFunction" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177442283389">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="part" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
+      <link role="target" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1138079416598">
@@ -157,7 +157,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="actionsBuilder" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1138079221458" />
+      <link role="target" targetNodeId="1138079221458" resolveInfo="RTransformHintSubstituteActionsBuilder" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1158947338814">
       <property name="value" value="r-transform hint menu actions" />
@@ -460,7 +460,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177327666243">
     <property name="package" value="MenuParts.Substitute" />
     <property name="name" value="SimpleItemSubstitutePart" />
-    <link role="extends" targetNodeId="1177323652379" resolveInfo="MenuPart" />
+    <link role="extends" targetNodeId="1177323652379" resolveInfo="SubstituteMenuPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177496097737">
       <property name="value" value="simple" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -468,12 +468,12 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177336013307">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="matchingText" />
-      <link role="target" targetNodeId="1177335944525" resolveInfo="QueryFunction_String" />
+      <link role="target" targetNodeId="1177335944525" resolveInfo="QueryFunction_SubstituteString" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177336018902">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="descriptionText" />
-      <link role="target" targetNodeId="1177335944525" resolveInfo="QueryFunction_String" />
+      <link role="target" targetNodeId="1177335944525" resolveInfo="QueryFunction_SubstituteString" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177327698839">
       <property name="metaClass" value="aggregation" />
@@ -485,13 +485,13 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="handler" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1177327570013" resolveInfo="QueryFunction_Handler" />
+      <link role="target" targetNodeId="1177327570013" resolveInfo="QueryFunction_Substitute_Handler" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177333529597">
     <property name="package" value="MenuBuilderParts" />
     <property name="name" value="ConceptPart" />
-    <link role="extends" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
+    <link role="extends" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177333551023">
       <property name="role" value="concept" />
       <property name="sourceCardinality" value="1" />
@@ -537,7 +537,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177337641126">
     <property name="package" value="MenuParts.Substitute" />
     <property name="name" value="ParameterizedSubstituteMenuPart" />
-    <link role="extends" targetNodeId="1177323652379" resolveInfo="MenuPart" />
+    <link role="extends" targetNodeId="1177323652379" resolveInfo="SubstituteMenuPart" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177337679534">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="type" />
@@ -548,23 +548,23 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="query" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1177337890340" resolveInfo="QueryFunction_ParameterizedItemQuery" />
+      <link role="target" targetNodeId="1177337890340" resolveInfo="QueryFunction_ParameterizedSubstitute_Query" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177339176647">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="matchingText" />
-      <link role="target" targetNodeId="1177339114370" resolveInfo="QueryFunction_Parameterized_String" />
+      <link role="target" targetNodeId="1177339114370" resolveInfo="QueryFunction_ParameterizedSubstitute_String" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177339186632">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="descriptionText" />
-      <link role="target" targetNodeId="1177339114370" resolveInfo="QueryFunction_Parameterized_String" />
+      <link role="target" targetNodeId="1177339114370" resolveInfo="QueryFunction_ParameterizedSubstitute_String" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177339421668">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="handler" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1177339225103" resolveInfo="QueryFunction_Parameterized_SubstituteHandler" />
+      <link role="target" targetNodeId="1177339225103" resolveInfo="QueryFunction_ParameterizedSubstitute_Handler" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177455494930">
       <property name="value" value="parameterized item" />
@@ -667,7 +667,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177398027324">
     <property name="package" value="MenuParts.Substitute" />
     <property name="name" value="ConceptsSubstituteMenuPart" />
-    <link role="extends" targetNodeId="1177323652379" resolveInfo="MenuPart" />
+    <link role="extends" targetNodeId="1177323652379" resolveInfo="SubstituteMenuPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177496107815">
       <property name="value" value="concepts menu" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -676,13 +676,13 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="query" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1177337890340" resolveInfo="QueryFunction_Parameterized_Query" />
+      <link role="target" targetNodeId="1177337890340" resolveInfo="QueryFunction_ParameterizedSubstitute_Query" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177402519659">
     <property name="package" value="MenuParts.Substitute" />
     <property name="name" value="WrapperSubstituteMenuPart" />
-    <link role="extends" targetNodeId="1177323652379" resolveInfo="MenuPart" />
+    <link role="extends" targetNodeId="1177323652379" resolveInfo="SubstituteMenuPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177496087440">
       <property name="value" value="wrapper" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -695,7 +695,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="wrapperBlock" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1177402571666" resolveInfo="QueryFunction_Wrapper" />
+      <link role="target" targetNodeId="1177402571666" resolveInfo="QueryFunction_SubstituteWrapper" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177402571666">
@@ -738,7 +738,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177409831820">
     <property name="package" value="MenuBuilderParts" />
     <property name="name" value="RemovePart" />
-    <link role="extends" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
+    <link role="extends" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177413869030">
       <property name="value" value="remove concept" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -752,7 +752,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177413882405">
     <property name="package" value="MenuBuilderParts" />
     <property name="name" value="RemoveByConditionPart" />
-    <link role="extends" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
+    <link role="extends" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1177414109676">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="condition" />
@@ -851,7 +851,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="handler" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1177498227294" resolveInfo="QueryFunction_RightTransformHandler" />
+      <link role="target" targetNodeId="1177498227294" resolveInfo="QueryFunction_RightTransform_Handler" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177498038356">
       <property name="value" value="simple item" />
@@ -868,7 +868,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1177498071306">
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
-      <link role="target" targetNodeId="1177497140107" resolveInfo="ConceptFucntionParameter_sourceNode" />
+      <link role="target" targetNodeId="1177497140107" resolveInfo="ConceptFunctionParameter_sourceNode" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1177514246986">
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
@@ -1117,7 +1117,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177614709184">
     <property name="package" value="MenuBuilderParts" />
     <property name="name" value="RemoveDefaultsPart" />
-    <link role="extends" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
+    <link role="extends" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1177614725102">
       <property name="value" value="remove defaults" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -1161,7 +1161,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="nodeBlock" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1178537049112" resolveInfo="QueryFunction_Node_Query" />
+      <link role="target" targetNodeId="1178537049112" resolveInfo="QueryFunction_RightTransform_NodeQuery" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1178537049112">
@@ -1234,11 +1234,11 @@
     <property name="name" value="QueryFunction_SubstituteVariableInitializer" />
     <link role="extends" targetNodeId="3.1137021947720" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1179456248446">
-      <link role="target" targetNodeId="1154465273778" />
+      <link role="target" targetNodeId="1154465273778" resolveInfo="ConceptFunctionParameter_parentNode" />
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1179456248447">
-      <link role="target" targetNodeId="1177568407352" />
+      <link role="target" targetNodeId="1177568407352" resolveInfo="ConceptFunctionParameter_currentTargetNode" />
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1179456248445">
@@ -1249,7 +1249,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1180111159572">
     <property name="package" value="MenuBuilderParts.RightTransform" />
     <property name="name" value="IncludeRightTransformForNodePart" />
-    <link role="extends" targetNodeId="1177323240852" resolveInfo="NodeBuilderPart" />
+    <link role="extends" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1180111513020">
       <property name="value" value="include right transform for" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />

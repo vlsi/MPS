@@ -639,7 +639,7 @@
             <node role="condition" type="jetbrains.mps.baseLanguage.NotExpression" id="1186695554795">
               <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1186695554796">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1186695554797">
-                  <link role="variableDeclaration" targetNodeId="1186695507309" />
+                  <link role="variableDeclaration" targetNodeId="1186695507309" resolveInfo="parent" />
                 </node>
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1186695554798">
                   <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1186695554799">
@@ -659,7 +659,7 @@
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.NotExpression" id="1186697336384">
               <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1186697336385">
-                <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.StringLiteral" id="1186697336386">
                   <property name="value" value="getTargetNode" />
                 </node>
@@ -668,7 +668,7 @@
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1186697336389">
                       <link role="concept" targetNodeId="5.1068580123163" />
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1186697336390">
-                        <link role="variableDeclaration" targetNodeId="1186695507309" />
+                        <link role="variableDeclaration" targetNodeId="1186695507309" resolveInfo="parent" />
                       </node>
                     </node>
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1186697336391">
@@ -759,7 +759,7 @@
                       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1186712145995">
                         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1186712160230">
                           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1186712160231">
-                            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
                             <node role="instance" type="jetbrains.mps.baseLanguage.StringLiteral" id="1186712160232">
                               <property name="value" value="findOutputNodeByInputNodeAndMappingName" />
                             </node>
@@ -817,7 +817,7 @@
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.NotExpression" id="1187126769550">
               <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1187126784411">
-                <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.StringLiteral" id="1187126771990">
                   <property name="value" value="getTargetNode" />
                 </node>
@@ -1128,7 +1128,7 @@
                       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1187130019014">
                         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1187130019015">
                           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1187130019016">
-                            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
                             <node role="instance" type="jetbrains.mps.baseLanguage.StringLiteral" id="1187130019017">
                               <property name="value" value="findOutputNodeByInputNodeAndMappingName" />
                             </node>
@@ -1294,7 +1294,7 @@
           <node role="condition" type="jetbrains.mps.baseLanguage.NotExpression" id="1187127992712">
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187127992713">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1187127992714">
-                <link role="variableDeclaration" targetNodeId="1187127970528" />
+                <link role="variableDeclaration" targetNodeId="1187127970528" resolveInfo="node" />
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_IsInstanceOfOperation" id="1187127992715">
                 <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.RefConcept_Reference" id="1187127992716">
@@ -1314,7 +1314,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1187128836519">
           <node role="condition" type="jetbrains.mps.baseLanguage.NotExpression" id="1187128836520">
             <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1187128836521">
-              <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+              <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187128836522">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187128836523">
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1187128844828">
@@ -1495,7 +1495,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1187222929775">
           <node role="condition" type="jetbrains.mps.baseLanguage.NotExpression" id="1187222929776">
             <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1187222929777">
-              <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+              <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187222929778">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1187222929779">
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeTypeCastExpression" id="1187222929780">
@@ -1590,7 +1590,7 @@
           <node role="condition" type="jetbrains.mps.baseLanguage.NotExpression" id="1187222929826">
             <node role="expression" type="jetbrains.mps.bootstrap.helgins.IsSubtypeExpression" id="1187222929832">
               <node role="subtypeExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1187222929833">
-                <link role="variableDeclaration" targetNodeId="1187222929805" resolveInfo="type1" />
+                <link role="variableDeclaration" targetNodeId="1187222929805" resolveInfo="type" />
               </node>
               <node role="supertypeExpression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1187222929834">
                 <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1187222929835">
@@ -1681,7 +1681,7 @@
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.NotExpression" id="1187222664482">
               <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1187222664483">
-                <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.StringLiteral" id="1187222664484">
                   <property name="value" value="getTargetNode" />
                 </node>
@@ -1781,7 +1781,7 @@
                       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1187222664526">
                         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1187222664527">
                           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1187222664528">
-                            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
                             <node role="instance" type="jetbrains.mps.baseLanguage.StringLiteral" id="1187222664529">
                               <property name="value" value="findCopiedOutputNodeForInputNode" />
                             </node>
@@ -1839,7 +1839,7 @@
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.NotExpression" id="1187222664549">
               <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1187222664550">
-                <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.StringLiteral" id="1187222664551">
                   <property name="value" value="getTargetNode" />
                 </node>
@@ -2150,7 +2150,7 @@
                       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1187222664677">
                         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1187222664678">
                           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1187222664679">
-                            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
                             <node role="instance" type="jetbrains.mps.baseLanguage.StringLiteral" id="1187222664680">
                               <property name="value" value="findCopiedOutputNodeForInputNode" />
                             </node>

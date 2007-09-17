@@ -39,7 +39,7 @@
                     <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184606638803">
                       <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184606638804">
                         <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184606638805">
-                          <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]String).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                          <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]String).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
                           <node role="instance" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184606638806">
                             <property name="value" value="registerSelf" />
                           </node>
@@ -110,7 +110,7 @@
                     <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184606770449">
                       <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184606770450">
                         <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184606770451">
-                          <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]String).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                          <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]String).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
                           <node role="instance" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184606770452">
                             <property name="value" value="unRegisterSelf" />
                           </node>
@@ -138,7 +138,7 @@
               <link role="link" targetNodeId="1.1068580123135" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184606770460">
-              <link role="variableDeclaration" targetNodeId="1184606770439" resolveInfo="regiserSelfMethod" />
+              <link role="variableDeclaration" targetNodeId="1184606770439" resolveInfo="unRegiserSelfMethod" />
             </node>
           </node>
         </node>

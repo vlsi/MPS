@@ -205,7 +205,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179155635092">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1179155657005">
                   <link role="classConcept" extResolveInfo="31.[Classifier]TraversalAxis" />
-                  <link role="baseMethodDeclaration" extResolveInfo="31.static method ([Classifier]TraversalAxis).([StaticMethodDeclaration]getConstants() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [TraversalAxis]&gt;]))" />
+                  <link role="baseMethodDeclaration" extResolveInfo="31.static method ([Classifier]TraversalAxis).([StaticMethodDeclaration]getConstants())" />
                 </node>
               </node>
             </node>
@@ -277,7 +277,7 @@
                   </node>
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1179156806329">
                     <node role="value" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179162577984">
-                      <link role="baseMethodDeclaration" extResolveInfo="31.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getValue() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                      <link role="baseMethodDeclaration" extResolveInfo="31.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getValue())" />
                       <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parameterObject" id="1179162564440" />
                     </node>
                   </node>
@@ -312,7 +312,7 @@
                     <property name="value" value="find " />
                   </node>
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179156604847">
-                    <link role="baseMethodDeclaration" extResolveInfo="31.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getName() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                    <link role="baseMethodDeclaration" extResolveInfo="31.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getName())" />
                     <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parameterObject" id="1179156604848" />
                   </node>
                 </node>
@@ -1257,7 +1257,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1178974734718">
           <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1178974738222">
-            <link role="variableDeclaration" targetNodeId="1178974698709" resolveInfo="treePathAspect" />
+            <link role="variableDeclaration" targetNodeId="1178974698709" resolveInfo="treePathAspects" />
           </node>
         </node>
       </node>

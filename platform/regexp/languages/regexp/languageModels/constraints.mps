@@ -23,7 +23,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1177760132957">
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1177765723306">
           <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1177765735896">
-            <link role="baseMethodDeclaration" extResolveInfo="6.static method ([Classifier]RegexpProcessor).([StaticMethodDeclaration]toString((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Regexp])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+            <link role="baseMethodDeclaration" extResolveInfo="6.static method ([Classifier]RegexpProcessor).([StaticMethodDeclaration]toString((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Regexp])))" />
             <link role="classConcept" extResolveInfo="6.[Classifier]RegexpProcessor" />
             <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177765740165">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1177765737398" />
@@ -380,7 +380,7 @@
               </node>
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1188912187306">
-              <link role="variableDeclaration" targetNodeId="1188912126382" resolveInfo="regexps" />
+              <link role="variableDeclaration" targetNodeId="1188912126382" resolveInfo="parens" />
             </node>
           </node>
         </node>

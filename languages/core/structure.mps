@@ -4,12 +4,12 @@
   <maxImportIndex value="24" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1078489098625">
     <property name="name" value="NamedConcept" />
-    <link role="extends" targetNodeId="1133920641626" />
+    <link role="extends" targetNodeId="1133920641626" resolveInfo="BaseConcept" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1173467730296">
       <link role="intfc" targetNodeId="1169194658468" resolveInfo="INamedConcept" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1133922301475">
-      <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" resolveInfo="abstract" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.PrimitiveDataTypeDeclaration" id="1082983041843">
@@ -59,7 +59,7 @@
       <property name="name" value="deprecated_next_after_415" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1133922314101">
-      <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" resolveInfo="abstract" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptDeclaration" id="1169194658468">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<model namespace="agreementLanguage">
-  <maxReferenceID value="0" />
+<model name="agreementLanguage.declarations">
   <language namespace="agreementLanguage" />
+  <maxImportIndex value="0" />
   <node type="agreementLanguage.AgreementDeclarations" id="1112315976835">
     <node role="eventType" type="agreementLanguage.EventType" id="1112316021402">
       <property name="name" value="SERVICE CALL" />

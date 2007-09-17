@@ -54,7 +54,7 @@
                       <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1177553667508">
                         <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1177553656033">
                           <node role="leftExpression" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1177553646952">
-                            <link role="closureParameter" targetNodeId="1177553627195" resolveInfo="opt" />
+                            <link role="closureParameter" targetNodeId="1177553627195" resolveInfo="op" />
                           </node>
                           <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1177553659771">
                             <link role="link" targetNodeId="1.1144104376918" />

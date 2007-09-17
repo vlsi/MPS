@@ -120,7 +120,7 @@
         <property name="drawBorder" value="false" />
         <property name="attractsFocus" value="1" />
         <link role="relationDeclaration" targetNodeId="1.1168468671991" />
-        <link role="actionMap" targetNodeId="1169042401237" resolveInfo="Foo" />
+        <link role="actionMap" targetNodeId="1169042401237" resolveInfo="TreePathOperationExpression_DELETE" />
       </node>
     </node>
   </node>
@@ -166,7 +166,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178981885143">
               <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179163084123">
                 <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179163112125">
-                  <link role="baseMethodDeclaration" extResolveInfo="33.method ([Classifier]String).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                  <link role="baseMethodDeclaration" extResolveInfo="33.method ([Classifier]String).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
                   <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1179418761538">
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.ConceptFunctionParameter_node" id="1179163112127" />
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1179418761541">
@@ -190,7 +190,7 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179163334887">
                   <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1179163334888">
                     <link role="classConcept" extResolveInfo="29.[Classifier]TraversalAxis" />
-                    <link role="baseMethodDeclaration" extResolveInfo="29.static method ([Classifier]TraversalAxis).([StaticMethodDeclaration]getConstants() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [TraversalAxis]&gt;]))" />
+                    <link role="baseMethodDeclaration" extResolveInfo="29.static method ([Classifier]TraversalAxis).([StaticMethodDeclaration]getConstants())" />
                   </node>
                 </node>
               </node>
@@ -207,7 +207,7 @@
                     </node>
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1179163334896">
                       <node role="value" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179163334897">
-                        <link role="baseMethodDeclaration" extResolveInfo="29.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getValue() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                        <link role="baseMethodDeclaration" extResolveInfo="29.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getValue())" />
                         <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_parameterObject" id="1179163334898" />
                       </node>
                     </node>
@@ -233,7 +233,7 @@
               <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179163334906">
                 <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1179163334907">
                   <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179163334908">
-                    <link role="baseMethodDeclaration" extResolveInfo="29.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getName() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                    <link role="baseMethodDeclaration" extResolveInfo="29.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getName())" />
                     <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_AbstractGroup_parameterObject" id="1179163334909" />
                   </node>
                 </node>
@@ -668,7 +668,7 @@
     <link role="conceptDeclaration" targetNodeId="1.1175160940972" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1175161147613">
       <property name="drawBorder" value="false" />
-      <link role="keyMap" targetNodeId="1175878011400" resolveInfo="keymap_makeDefault" />
+      <link role="keyMap" targetNodeId="1175878011400" resolveInfo="keymap_TreeNodeKindProperty" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Alternation" id="1175877896714">
         <property name="vertical" value="true" />
         <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175877925790">
@@ -698,7 +698,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1175161161310">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="2.1169194664001" />
-        <link role="keyMap" targetNodeId="1175878011400" resolveInfo="keymap_makeDefault" />
+        <link role="keyMap" targetNodeId="1175878011400" resolveInfo="keymap_TreeNodeKindProperty" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1175161216688">
         <property name="selectable" value="false" />
@@ -1642,7 +1642,7 @@
                       </node>
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.NotExpression" id="1184096763482">
                         <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184096763483">
-                          <link role="variableDeclaration" targetNodeId="1184096763465" resolveInfo="default" />
+                          <link role="variableDeclaration" targetNodeId="1184096763465" resolveInfo="isDefault" />
                         </node>
                       </node>
                     </node>
@@ -1733,7 +1733,7 @@
                       </node>
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.NotExpression" id="1184096694722">
                         <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1184096696620">
-                          <link role="variableDeclaration" targetNodeId="1184096663520" resolveInfo="default" />
+                          <link role="variableDeclaration" targetNodeId="1184096663520" resolveInfo="isDefault" />
                         </node>
                       </node>
                     </node>

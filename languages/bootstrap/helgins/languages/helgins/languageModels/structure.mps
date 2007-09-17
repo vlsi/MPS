@@ -74,7 +74,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174642788531">
     <property name="name" value="ConceptReference" />
-    <link role="extends" targetNodeId="1174642743670" resolveInfo="VariableCondition" />
+    <link role="extends" targetNodeId="1174642743670" resolveInfo="ApplicableNodeCondition" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1174642850193">
       <property name="value" value="concept =" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -87,7 +87,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1174642900584">
     <property name="name" value="PatternCondition" />
-    <link role="extends" targetNodeId="1174642743670" resolveInfo="VariableCondition" />
+    <link role="extends" targetNodeId="1174642743670" resolveInfo="ApplicableNodeCondition" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1174642936809">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />

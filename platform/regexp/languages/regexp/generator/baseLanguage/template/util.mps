@@ -179,14 +179,14 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1187209089334">
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1187209144582">
           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1187209195157">
-            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]ITemplateGenerator).([InstanceMethodDeclaration]findOutputNodeByInputNodeAndMappingName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]ITemplateGenerator).([InstanceMethodDeclaration]findOutputNodeByInputNodeAndMappingName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))" />
             <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1187209195158">
-              <link role="variableDeclaration" targetNodeId="3.1187209136585" />
+              <link role="variableDeclaration" targetNodeId="1187209136585" resolveInfo="generator" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalStaticMethodCall" id="1187209195159">
-              <link role="baseMethodDeclaration" targetNodeId="3.1174923515098" />
+              <link role="baseMethodDeclaration" targetNodeId="1174923515098" resolveInfo="findRegexpUsingConstructionFor" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1187209195160">
-                <link role="variableDeclaration" targetNodeId="3.1187209136603" />
+                <link role="variableDeclaration" targetNodeId="1187209136603" resolveInfo="ref" />
               </node>
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1187209195161">

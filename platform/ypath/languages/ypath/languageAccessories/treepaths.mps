@@ -18,7 +18,7 @@
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180688366353">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180688370991">
             <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180688376914">
-              <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]File).([InstanceMethodDeclaration]isDirectory() : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+              <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]File).([InstanceMethodDeclaration]isDirectory())" />
               <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1180688370992">
                 <link role="closureParameter" targetNodeId="1180688366352" resolveInfo="node" />
               </node>
@@ -38,7 +38,7 @@
           <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180688395940">
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180688415953">
               <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180688421068">
-                <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]File).([InstanceMethodDeclaration]getName() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]File).([InstanceMethodDeclaration]getName())" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1180688415954">
                   <link role="closureParameter" targetNodeId="1180688395939" resolveInfo="node" />
                 </node>
@@ -61,7 +61,7 @@
                   <link role="classifier" extResolveInfo="1.[Classifier]String" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180688512417">
-                  <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]File).([InstanceMethodDeclaration]getName() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                  <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]File).([InstanceMethodDeclaration]getName())" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1180688508651">
                     <link role="closureParameter" targetNodeId="1180688453547" resolveInfo="node" />
                   </node>
@@ -73,7 +73,7 @@
                 <property name="name" value="indexOfLastDot" />
                 <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1180688501064" />
                 <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180688519220">
-                  <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]String).([InstanceMethodDeclaration]lastIndexOf((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
+                  <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]String).([InstanceMethodDeclaration]lastIndexOf((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1180688621970">
                     <link role="variableDeclaration" targetNodeId="1180688621968" resolveInfo="name" />
                   </node>
@@ -102,7 +102,7 @@
                       <link role="variableDeclaration" targetNodeId="1180688573084" resolveInfo="ext" />
                     </node>
                     <node role="rValue" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180688643575">
-                      <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]String).([InstanceMethodDeclaration]substring((jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int)) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                      <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]String).([InstanceMethodDeclaration]substring((jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int)))" />
                       <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1180688643576">
                         <link role="variableDeclaration" targetNodeId="1180688621968" resolveInfo="name" />
                       </node>
@@ -116,7 +116,7 @@
               <node role="condition" type="jetbrains.mps.baseLanguage.AndExpression" id="1180688601545">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.LessThanExpression" id="1180688604561">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180688615405">
-                    <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]String).([InstanceMethodDeclaration]length() : (jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int))" />
+                    <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]String).([InstanceMethodDeclaration]length())" />
                     <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1180688629383">
                       <link role="variableDeclaration" targetNodeId="1180688621968" resolveInfo="name" />
                     </node>
@@ -150,7 +150,7 @@
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180688380128">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180688385189">
             <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180688388902">
-              <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]File).([InstanceMethodDeclaration]isFile() : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+              <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]File).([InstanceMethodDeclaration]isFile())" />
               <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1180688385190">
                 <link role="closureParameter" targetNodeId="1180688380127" resolveInfo="node" />
               </node>
@@ -172,7 +172,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180688328451">
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180688350262">
           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180688355338">
-            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]File).([InstanceMethodDeclaration]getParentFile() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [File]))" />
+            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]File).([InstanceMethodDeclaration]getParentFile())" />
             <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1180688350263">
               <link role="closureParameter" targetNodeId="1180688328450" resolveInfo="node" />
             </node>
@@ -187,7 +187,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1180688328454">
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1180688357635">
           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180688363776">
-            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]File).([InstanceMethodDeclaration]listFiles() : (jetbrains.mps.baseLanguage.types.array/jetbrains.mps.baseLanguage.types.array [-1, jetbrains.mps.baseLanguage.types.classifier [File]]))" />
+            <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]File).([InstanceMethodDeclaration]listFiles())" />
             <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1180688357636">
               <link role="closureParameter" targetNodeId="1180688328453" resolveInfo="node" />
             </node>
@@ -294,7 +294,7 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1180689310304">
             <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1180689321547">
               <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1180689342504">
-                <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]CompositeClassPathItem).([InstanceMethodDeclaration]getChildren() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [IClassPathItem]&gt;]))" />
+                <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]CompositeClassPathItem).([InstanceMethodDeclaration]getChildren())" />
                 <node role="instance" type="jetbrains.mps.baseLanguage.ParenthesizedExpression" id="1180689337652">
                   <node role="expression" type="jetbrains.mps.baseLanguage.CastExpression" id="1180689337653">
                     <node role="expression" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1180689337654">

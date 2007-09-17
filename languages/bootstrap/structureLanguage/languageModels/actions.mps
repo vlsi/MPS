@@ -24,10 +24,10 @@
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation" id="1163111305396">
                 <node role="parameter" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1171026435256">
-                  <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]BaseAdapter).([InstanceMethodDeclaration]getNode() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+                  <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]BaseAdapter).([InstanceMethodDeclaration]getNode())" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1163111384734">
                     <link role="classConcept" extResolveInfo="2.[Classifier]SModelUtil_new" />
-                    <link role="baseMethodDeclaration" extResolveInfo="2.static method ([Classifier]SModelUtil_new).([StaticMethodDeclaration]getBaseConcept() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration]))" />
+                    <link role="baseMethodDeclaration" extResolveInfo="2.static method ([Classifier]SModelUtil_new).([StaticMethodDeclaration]getBaseConcept())" />
                   </node>
                 </node>
               </node>

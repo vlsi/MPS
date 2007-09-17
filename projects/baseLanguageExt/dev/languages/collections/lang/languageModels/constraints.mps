@@ -38,7 +38,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1174067709781">
           <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1174067730190">
-            <link role="baseMethodDeclaration" extResolveInfo="6.static method ([Classifier]PresentationManager).([StaticMethodDeclaration]toString_1((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+            <link role="baseMethodDeclaration" extResolveInfo="6.static method ([Classifier]PresentationManager).([StaticMethodDeclaration]toString_1((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])))" />
             <link role="classConcept" extResolveInfo="6.[Classifier]PresentationManager" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.ParameterReference" id="1174067733207">
               <link role="variableDeclaration" targetNodeId="1174067649314" resolveInfo="type" />
@@ -140,7 +140,7 @@
                     <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1186061366155">
                       <node role="argument" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1186061366156">
                         <link role="classConcept" extResolveInfo="7.[Classifier]NameUtil" />
-                        <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]NameUtil).([StaticMethodDeclaration]pluralize((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                        <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]NameUtil).([StaticMethodDeclaration]pluralize((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.ForEachVariableReference" id="1186061366157">
                           <link role="variable" targetNodeId="1186061366145" resolveInfo="suffix" />
                         </node>
@@ -167,8 +167,8 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1186061356851">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1186061356852">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1190026806682">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1190026806683">
           <link role="classifier" extResolveInfo="5.[Classifier]String" />
         </node>
       </node>
@@ -221,7 +221,7 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1187947140361">
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1190026806684">
         <link role="concept" targetNodeId="4.1145552809883" />
       </node>
     </node>
@@ -309,7 +309,7 @@
                     </node>
                     <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.AddElementOperation" id="1186061283044">
                       <node role="argument" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1186061317288">
-                        <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]NameUtil).([StaticMethodDeclaration]pluralize((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                        <link role="baseMethodDeclaration" extResolveInfo="7.static method ([Classifier]NameUtil).([StaticMethodDeclaration]pluralize((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))" />
                         <link role="classConcept" extResolveInfo="7.[Classifier]NameUtil" />
                         <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.ForEachVariableReference" id="1186061319444">
                           <link role="variable" targetNodeId="1186061243031" resolveInfo="suffix" />
@@ -337,8 +337,8 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1186061137532">
-        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1186061137533">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1190026806685">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1190026806686">
           <link role="classifier" extResolveInfo="5.[Classifier]String" />
         </node>
       </node>
@@ -368,7 +368,7 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1187947301208">
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1190026806687">
         <link role="concept" targetNodeId="4.1145552809883" />
       </node>
     </node>
@@ -404,7 +404,7 @@
               <link role="baseMethodDeclaration" extResolveInfo="2.constructor [Classifier]SubnodesSearchScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1182460226583">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1182460194439">
-                  <link role="variableDeclaration" targetNodeId="1182460178600" resolveInfo="foreEachStatements" />
+                  <link role="variableDeclaration" targetNodeId="1182460178600" resolveInfo="forEachStatements" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.GetLastOperation" id="1182460228555" />
               </node>

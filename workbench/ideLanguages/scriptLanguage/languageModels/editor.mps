@@ -51,7 +51,7 @@
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1172277120423" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1172277178832">
-          <link role="conceptDeclaration" targetNodeId="3.1071489090640" />
+          <link role="conceptDeclaration" targetNodeId="3.1169125787135" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1172277182443">
             <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />

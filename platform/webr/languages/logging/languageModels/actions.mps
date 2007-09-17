@@ -22,7 +22,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178200228689">
               <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178200307875">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1178200310146">
-                  <link role="baseMethodDeclaration" extResolveInfo="3.static method ([Classifier]Severity).([StaticMethodDeclaration]getConstants() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, &lt;jetbrains.mps.baseLanguage.types.classifier [Severity]&gt;]))" />
+                  <link role="baseMethodDeclaration" extResolveInfo="3.static method ([Classifier]Severity).([StaticMethodDeclaration]getConstants())" />
                   <link role="classConcept" extResolveInfo="3.[Classifier]Severity" />
                 </node>
               </node>
@@ -56,7 +56,7 @@
                   </node>
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1178200477985">
                     <node role="value" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1178200519333">
-                      <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]Severity).([InstanceMethodDeclaration]getValueAsString() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                      <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]Severity).([InstanceMethodDeclaration]getValueAsString())" />
                       <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parameterObject" id="1178200515706" />
                     </node>
                   </node>
@@ -191,7 +191,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178200323242">
               <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1178200350843">
                 <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1178200406699">
-                  <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]Severity).([InstanceMethodDeclaration]getValueAsString() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))" />
+                  <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]Severity).([InstanceMethodDeclaration]getValueAsString())" />
                   <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parameterObject" id="1178200350844" />
                 </node>
               </node>

@@ -32,7 +32,7 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1179235973546">
-      <link role="intfc" targetNodeId="1179235924605" resolveInfo="TreePathTypeHolder" />
+      <link role="intfc" targetNodeId="1179235924605" resolveInfo="TreePath" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168428649324">
@@ -42,7 +42,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="parameter" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1168428709096" resolveInfo="LambdaParameter" />
+      <link role="target" targetNodeId="1168428709096" resolveInfo="LambdaMethodParameter" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1168428668253">
@@ -265,7 +265,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="properties" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1175160940972" resolveInfo="KindProperty" />
+      <link role="target" targetNodeId="1175160940972" resolveInfo="TreeNodeKindProperty" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1172242735136">
@@ -466,7 +466,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1180007382905">
     <property name="package" value="treeOperation.visit" />
     <property name="name" value="NodeKindSpecificCase" />
-    <link role="extends" targetNodeId="1180007355512" resolveInfo="VisitNodeCase" />
+    <link role="extends" targetNodeId="1180007355512" resolveInfo="NodeKindCase" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1180007405188">
       <property name="role" value="treeNodeKind" />
       <property name="sourceCardinality" value="1" />
@@ -480,7 +480,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1180007571027">
     <property name="package" value="treeOperation.visit" />
     <property name="name" value="NodeKindDefaultCase" />
-    <link role="extends" targetNodeId="1180007355512" resolveInfo="VisitNodeCase" />
+    <link role="extends" targetNodeId="1180007355512" resolveInfo="NodeKindCase" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1180007571029">
       <property name="value" value="default:" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -608,7 +608,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="deleteFunction" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1183978759062" resolveInfo="FeatureRemoveFun" />
+      <link role="target" targetNodeId="1183978759062" resolveInfo="FeatureDeleteFun" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1183979877584">
       <link role="intfc" targetNodeId="1.1169194658468" />

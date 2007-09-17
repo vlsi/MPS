@@ -14,7 +14,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1186794552719">
         <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1186794617828">
           <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1186794629849">
-            <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]ITemplateGenerator).([InstanceMethodDeclaration]findOutputNodeByInputNodeAndMappingName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])) : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]))" />
+            <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]ITemplateGenerator).([InstanceMethodDeclaration]findOutputNodeByInputNodeAndMappingName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))" />
             <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1186794621455">
               <link role="variableDeclaration" targetNodeId="1186794582238" resolveInfo="generator" />
             </node>

@@ -167,7 +167,7 @@ public final class SReference {
   public String getExtResolveInfo() {
     return myExtResolveInfo;
   }
-
+                                                                     
   //
   // --- new instance
   //
@@ -191,7 +191,7 @@ public final class SReference {
       String extResolveInfo = null;
       if (targetModel.isExternallyResolvable()) {
         extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(targetNode);
-      }
+      }      
       return new SReference(role, sourceNode, id, resolveInfo, extResolveInfo, targetModel.getUID());
     }
   }

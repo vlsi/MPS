@@ -226,7 +226,7 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1182160976831">
             <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1182160988232">
-              <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]SNode).([InstanceMethodDeclaration]removeChild((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])) : (jetbrains.mps.baseLanguage.types.void/jetbrains.mps.baseLanguage.types.void))" />
+              <link role="baseMethodDeclaration" extResolveInfo="2.method ([Classifier]SNode).([InstanceMethodDeclaration]removeChild((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])))" />
               <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1182160984608">
                 <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.MigrationScriptPart_node" id="1182160976832" />
               </node>
@@ -256,7 +256,7 @@
             <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182160791512">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation" id="1182160793189">
                 <node role="parameter" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1182160794771">
-                  <link role="variableDeclaration" targetNodeId="1182160746771" resolveInfo="createor" />
+                  <link role="variableDeclaration" targetNodeId="1182160746771" resolveInfo="creator" />
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1182160788769">

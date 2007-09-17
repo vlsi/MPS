@@ -179,12 +179,12 @@
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1187792810195">
                       <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Node).([InstanceMethodDeclaration]getAttributes() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NamedNodeMap]))" />
                       <node role="instance" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1187792810196">
-                        <link role="closureParameter" targetNodeId="5.1175083364499" />
+                        <link role="closureParameter" targetNodeId="1175083364499" />
                       </node>
                     </node>
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1187792810197">
-                    <link role="variableDeclaration" targetNodeId="5.1180968449702" />
+                    <link role="variableDeclaration" targetNodeId="1180968449702" />
                   </node>
                 </node>
                 <node role="type" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceType" id="1187792814127">

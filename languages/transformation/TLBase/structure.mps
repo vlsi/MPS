@@ -129,14 +129,14 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="outputRootConcept" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1114458327664" />
+      <link role="target" targetNodeId="1114458327664" resolveInfo="ConceptDeclarationReference" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1095416692159">
       <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
       <property name="role" value="mappingRule" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1095416572297" />
+      <link role="target" targetNodeId="1095416572297" resolveInfo="MappingRule" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167514678247">
       <property name="metaClass" value="aggregation" />
@@ -149,7 +149,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="weavingRule" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1095416624611" />
+      <link role="target" targetNodeId="1095416624611" resolveInfo="WeavingRule" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167172143858">
       <property name="metaClass" value="aggregation" />
@@ -162,7 +162,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="reductionRule" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1114456532170" />
+      <link role="target" targetNodeId="1114456532170" resolveInfo="ReductionRule" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167328349397">
       <property name="metaClass" value="aggregation" />
@@ -229,7 +229,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1095418098242">
       <property name="role" value="template" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1092059087312" />
+      <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1167272087006">
       <property name="value" value="replaced with Weaving_MappingRule" />
@@ -267,7 +267,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1112820671508">
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="modifiedSwitch" />
-      <link role="target" targetNodeId="1112730859144" />
+      <link role="target" targetNodeId="1112730859144" resolveInfo="TemplateSwitch" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112731491355">
       <property name="value" value="template switch" />
@@ -278,7 +278,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="template" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1112730955130" />
+      <link role="target" targetNodeId="1112730955130" resolveInfo="ConditionalTemplate" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167337076112">
       <property name="role" value="defaultTemplate" />
@@ -306,7 +306,7 @@
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="template" />
       <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="1092059087312" />
+      <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1112731289399">
       <property name="value" value="conditional template" />
@@ -342,7 +342,7 @@
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="templateSwitch" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1112730859144" />
+      <link role="target" targetNodeId="1112730859144" resolveInfo="TemplateSwitch" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1112911581741">
@@ -351,7 +351,7 @@
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="templateSwitch" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1112730859144" />
+      <link role="target" targetNodeId="1112730859144" resolveInfo="TemplateSwitch" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1114456532170">
@@ -368,7 +368,7 @@
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="template" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1092059087312" />
+      <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1114456556796">
       <property name="name" value="conditionAspectId" />
@@ -430,7 +430,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1118773211870">
     <property name="name" value="IfMacro" />
-    <link role="extends" targetNodeId="1087833466690" />
+    <link role="extends" targetNodeId="1087833466690" resolveInfo="NodeMacro" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1167945861827">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="conditionFunction" />
@@ -461,7 +461,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="sourceNodesQuery" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1167951910403" resolveInfo="SourceSubstituteMacro_NodeListQuery" />
+      <link role="target" targetNodeId="1167951910403" resolveInfo="SourceSubstituteMacro_SourceNodesQuery" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1118786554308">
       <property name="value" value="$LOOP$" />
@@ -484,7 +484,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1170725844563">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="mapperFunction" />
-      <link role="target" targetNodeId="1170725621272" resolveInfo="MapSrcNodeMacro_CreateOutputNode" />
+      <link role="target" targetNodeId="1170725621272" resolveInfo="MapSrcMacro_MapperFunction" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1131073187193">
       <property name="value" value="$MAP_SRC$" />
@@ -546,24 +546,24 @@
     <property name="stereotype" value="property" />
     <property name="role" value="propertyMacro" />
     <link role="source" targetNodeId="2.1133920641626" />
-    <link role="target" targetNodeId="1087833241328" />
+    <link role="target" targetNodeId="1087833241328" resolveInfo="PropertyMacro" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration" id="1149694500506">
     <property name="role" value="nodeMacro" />
     <property name="sourceCardinality" value="0..n" />
     <link role="source" targetNodeId="2.1133920641626" />
-    <link role="target" targetNodeId="1087833466690" />
+    <link role="target" targetNodeId="1087833466690" resolveInfo="NodeMacro" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration" id="1149694518242">
     <property name="stereotype" value="link" />
     <property name="role" value="referenceMacro" />
     <link role="source" targetNodeId="2.1133920641626" />
-    <link role="target" targetNodeId="1088761943574" />
+    <link role="target" targetNodeId="1088761943574" resolveInfo="ReferenceMacro" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration" id="1149858605876">
     <property name="role" value="templateFragment" />
     <link role="source" targetNodeId="2.1133920641626" />
-    <link role="target" targetNodeId="1095672379244" />
+    <link role="target" targetNodeId="1095672379244" resolveInfo="TemplateFragment" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1166748937193">
     <property name="name" value="TemplateFunctionParameter_sourceModel" />
@@ -1036,7 +1036,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.AnnotationLinkDeclaration" id="1168619445822">
     <property name="role" value="rootTemplateAnnotation" />
     <link role="source" targetNodeId="2.1133920641626" />
-    <link role="target" targetNodeId="1168619357332" resolveInfo="RootTemplateNodeAnnotation" />
+    <link role="target" targetNodeId="1168619357332" resolveInfo="RootTemplateAnnotation" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1169569792945">
     <property name="name" value="WeaveEach_RuleConsequence" />

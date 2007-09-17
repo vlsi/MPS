@@ -113,7 +113,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Error" id="1113344932645">
         <property name="text" value=" " />
         <property name="drawBorder" value="false" />
-        <link role="actionMap" targetNodeId="1154453497787" />
+        <link role="actionMap" targetNodeId="1154453497787" resolveInfo="Operation_symbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923174789">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923174790">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
@@ -130,13 +130,13 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1111786394057">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
-        <link role="actionMap" targetNodeId="1154452994236" />
+        <link role="actionMap" targetNodeId="1154452994236" resolveInfo="Operation_leftOperand_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1111786394058">
         <property name="editable" value="true" />
         <property name="text" value="+" />
         <property name="drawBorder" value="false" />
-        <link role="actionMap" targetNodeId="1154453497787" />
+        <link role="actionMap" targetNodeId="1154453497787" resolveInfo="Operation_symbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923126895">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923126896">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
@@ -146,7 +146,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1111786394059">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
-        <link role="actionMap" targetNodeId="1154453098790" />
+        <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
     </node>
   </node>
@@ -158,13 +158,13 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1111786434641">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
-        <link role="actionMap" targetNodeId="1154452994236" />
+        <link role="actionMap" targetNodeId="1154452994236" resolveInfo="Operation_leftOperand_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1111786434642">
         <property name="editable" value="true" />
         <property name="text" value="-" />
         <property name="drawBorder" value="false" />
-        <link role="actionMap" targetNodeId="1154453497787" />
+        <link role="actionMap" targetNodeId="1154453497787" resolveInfo="Operation_symbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923165372">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923165373">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
@@ -174,7 +174,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1111786434643">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
-        <link role="actionMap" targetNodeId="1154453098790" />
+        <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
     </node>
   </node>
@@ -186,13 +186,13 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112037733643">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
-        <link role="actionMap" targetNodeId="1154452994236" />
+        <link role="actionMap" targetNodeId="1154452994236" resolveInfo="Operation_leftOperand_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112037733644">
         <property name="editable" value="true" />
         <property name="text" value="&lt;" />
         <property name="drawBorder" value="false" />
-        <link role="actionMap" targetNodeId="1154453497787" />
+        <link role="actionMap" targetNodeId="1154453497787" resolveInfo="Operation_symbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923107000">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923107001">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
@@ -202,7 +202,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112037733645">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
-        <link role="actionMap" targetNodeId="1154453098790" />
+        <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
     </node>
   </node>
@@ -214,13 +214,13 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112384339546">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
-        <link role="actionMap" targetNodeId="1154452994236" />
+        <link role="actionMap" targetNodeId="1154452994236" resolveInfo="Operation_leftOperand_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112384339547">
         <property name="editable" value="true" />
         <property name="text" value="*" />
         <property name="drawBorder" value="false" />
-        <link role="actionMap" targetNodeId="1154453497787" />
+        <link role="actionMap" targetNodeId="1154453497787" resolveInfo="Operation_symbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923149290">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923149291">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
@@ -230,7 +230,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112384339548">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
-        <link role="actionMap" targetNodeId="1154453098790" />
+        <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
     </node>
   </node>
@@ -242,13 +242,13 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112406947630">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
-        <link role="actionMap" targetNodeId="1154452994236" />
+        <link role="actionMap" targetNodeId="1154452994236" resolveInfo="Operation_leftOperand_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1112406947631">
         <property name="editable" value="true" />
         <property name="text" value="&gt;" />
         <property name="drawBorder" value="false" />
-        <link role="actionMap" targetNodeId="1154453497787" />
+        <link role="actionMap" targetNodeId="1154453497787" resolveInfo="Operation_symbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923139811">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923139812">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
@@ -258,7 +258,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1112406947632">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
-        <link role="actionMap" targetNodeId="1154453098790" />
+        <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
     </node>
   </node>
@@ -292,13 +292,13 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1133956007437">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
-        <link role="actionMap" targetNodeId="1154452994236" />
+        <link role="actionMap" targetNodeId="1154452994236" resolveInfo="Operation_leftOperand_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1133956007438">
         <property name="editable" value="true" />
         <property name="text" value="&amp;&amp;" />
         <property name="drawBorder" value="false" />
-        <link role="actionMap" targetNodeId="1154453497787" />
+        <link role="actionMap" targetNodeId="1154453497787" resolveInfo="Operation_symbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923078964">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923081762">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
@@ -308,7 +308,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1133956007439">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
-        <link role="actionMap" targetNodeId="1154453098790" />
+        <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
     </node>
   </node>
@@ -320,13 +320,13 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1133956020434">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
-        <link role="actionMap" targetNodeId="1154452994236" />
+        <link role="actionMap" targetNodeId="1154452994236" resolveInfo="Operation_leftOperand_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1133956020435">
         <property name="editable" value="true" />
         <property name="text" value="||" />
         <property name="drawBorder" value="false" />
-        <link role="actionMap" targetNodeId="1154453497787" />
+        <link role="actionMap" targetNodeId="1154453497787" resolveInfo="Operation_symbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923096959">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923096960">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
@@ -336,7 +336,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1133956020436">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
-        <link role="actionMap" targetNodeId="1154453098790" />
+        <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
     </node>
   </node>
@@ -348,13 +348,13 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1134035401246">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784613299" />
-        <link role="actionMap" targetNodeId="1154452994236" />
+        <link role="actionMap" targetNodeId="1154452994236" resolveInfo="Operation_leftOperand_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1134035401247">
         <property name="editable" value="true" />
         <property name="text" value="==" />
         <property name="drawBorder" value="false" />
-        <link role="actionMap" targetNodeId="1154453497787" />
+        <link role="actionMap" targetNodeId="1154453497787" resolveInfo="Operation_symbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1164923157159">
           <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuPart_ReplaceNode_CustomNodeConcept" id="1164923157160">
             <link role="replacementConcept" targetNodeId="1.1111784562907" />
@@ -364,7 +364,7 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1134035401248">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1111784647019" />
-        <link role="actionMap" targetNodeId="1154453098790" />
+        <link role="actionMap" targetNodeId="1154453098790" resolveInfo="Operation_rightOperand_Actions" />
       </node>
     </node>
   </node>

@@ -30,7 +30,7 @@
           <property name="noTargetText" value="&lt;choose concept&gt;" />
           <link role="relationDeclaration" targetNodeId="1.1112058088712" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1177583946056">
-            <link role="conceptDeclaration" targetNodeId="2.1071489090640" />
+            <link role="conceptDeclaration" targetNodeId="2.1169125787135" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1177583946057">
               <property name="drawBorder" value="false" />
               <property name="noTargetText" value="&lt;no name&gt;" />

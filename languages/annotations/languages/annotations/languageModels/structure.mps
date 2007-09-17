@@ -13,7 +13,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1136027498483">
     <property name="name" value="LinkAttributeConcept" />
-    <link role="extends" targetNodeId="1136027476087" />
+    <link role="extends" targetNodeId="1136027476087" resolveInfo="AttributeConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1136027498484">
       <property name="name" value="linkRole" />
       <link role="dataType" targetNodeId="1.1082983041843" />
@@ -21,7 +21,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1136027498485">
     <property name="name" value="PropertyAttributeConcept" />
-    <link role="extends" targetNodeId="1136027476087" />
+    <link role="extends" targetNodeId="1136027476087" resolveInfo="AttributeConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1136027498486">
       <property name="name" value="propertyName" />
       <link role="dataType" targetNodeId="1.1082983041843" />

@@ -28,12 +28,12 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1147468630220">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="propertyGetter" />
-      <link role="target" targetNodeId="1147467790433" />
+      <link role="target" targetNodeId="1147467790433" resolveInfo="ConstraintFunction_PropertyGetter" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1152963095733">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="propertySetter" />
-      <link role="target" targetNodeId="1152959968041" />
+      <link role="target" targetNodeId="1152959968041" resolveInfo="ConstraintFunction_PropertySetter" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1159284283582">
       <property name="value" value="property getter/setter" />
@@ -52,7 +52,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="nodePropertyConstraint" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1147467115080" />
+      <link role="target" targetNodeId="1147467115080" resolveInfo="NodePropertyConstraint" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1159284367973">
       <property name="value" value="property constraints" />
@@ -106,7 +106,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1148684180339">
     <property name="package" value="Functions" />
     <property name="name" value="ConstraintFunction_ReferentSearchScope_Factory" />
-    <link role="extends" targetNodeId="1148934493876" />
+    <link role="extends" targetNodeId="1148934493876" resolveInfo="ConstraintFunction_ReferentSearchScope_AbstractBase" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1148685281814">
       <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" />
       <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1148685793082">
@@ -133,7 +133,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="nodeReferentConstraint" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1148687176410" />
+      <link role="target" targetNodeId="1148687176410" resolveInfo="NodeReferentConstraint" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1159285960726">
       <property name="metaClass" value="aggregation" />
@@ -176,7 +176,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="searchScopeFactory" />
       <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="1148684180339" />
+      <link role="target" targetNodeId="1148684180339" resolveInfo="ConstraintFunction_ReferentSearchScope_Factory" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1163203787401">
       <property name="metaClass" value="aggregation" />
@@ -405,7 +405,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="constructor" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1177671617671" resolveInfo="Constructor" />
+      <link role="target" targetNodeId="1177671617671" resolveInfo="ConceptConstructorDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1178177353916">
       <property name="metaClass" value="aggregation" />
@@ -428,7 +428,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="method" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1177673300966" resolveInfo="ConceptMethod" />
+      <link role="target" targetNodeId="1177673300966" resolveInfo="ConceptMethodDeclaration" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1177671617671">

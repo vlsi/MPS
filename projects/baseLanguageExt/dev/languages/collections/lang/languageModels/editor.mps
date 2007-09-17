@@ -72,7 +72,7 @@
         <property name="attractsFocus" value="1" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1151702083785" />
-        <link role="actionMap" targetNodeId="1153772879681" />
+        <link role="actionMap" targetNodeId="1153772879681" resolveInfo="SequenceOperationExpression_Operation_Actions" />
       </node>
     </node>
   </node>

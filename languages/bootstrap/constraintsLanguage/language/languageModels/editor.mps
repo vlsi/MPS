@@ -81,7 +81,7 @@
           <property name="noTargetText" value="&lt;choose declaring concept&gt;" />
           <link role="relationDeclaration" targetNodeId="1.1147467194506" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1149010775549">
-            <link role="conceptDeclaration" targetNodeId="5.1071489090640" />
+            <link role="conceptDeclaration" targetNodeId="5.1169125787135" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1149010775550">
               <property name="drawBorder" value="false" />
               <property name="noTargetText" value="&lt;no name&gt;" />
@@ -1185,7 +1185,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1177670610722">
           <link role="relationDeclaration" targetNodeId="1.1177670543683" />
           <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1177670610723">
-            <link role="conceptDeclaration" targetNodeId="5.1071489090640" />
+            <link role="conceptDeclaration" targetNodeId="5.1169125787135" />
             <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1177670612538">
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="2.1169194664001" />

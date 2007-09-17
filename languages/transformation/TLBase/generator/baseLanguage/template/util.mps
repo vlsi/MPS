@@ -22,7 +22,7 @@
             <property name="name" value="outputModel" />
             <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SModelType" id="1184619948552" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184619962732">
-              <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]ITemplateGenerator).([InstanceMethodDeclaration]getTargetModel() : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]))" />
+              <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]ITemplateGenerator).([InstanceMethodDeclaration]getTargetModel())" />
               <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1184619956398">
                 <link role="variableDeclaration" targetNodeId="1184619938962" resolveInfo="generator" />
               </node>
@@ -53,7 +53,7 @@
                     <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1184619272593">
                       <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1184619279984">
                         <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1184619291287">
-                          <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])) : (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean))" />
+                          <link role="baseMethodDeclaration" extResolveInfo="1.method ([Classifier]Object).([InstanceMethodDeclaration]equals((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
                           <node role="instance" type="jetbrains.mps.baseLanguage.StringLiteral" id="1184619279985">
                             <property name="value" value="QueriesGenerated" />
                           </node>
@@ -136,7 +136,7 @@
           <node role="condition" type="jetbrains.mps.baseLanguage.NotEqualsExpression" id="1185217473068">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1185217473069" />
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185217473070">
-              <link role="variableDeclaration" targetNodeId="1185217473052" resolveInfo="usedParm" />
+              <link role="variableDeclaration" targetNodeId="1185217473052" resolveInfo="usedInputNodeParm" />
             </node>
           </node>
         </node>
