@@ -5,12 +5,14 @@
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="5" />
+  <language namespace="jetbrains.mps.transformation.TLBase" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="java.util@java_stub" />
   <import index="2" modelUID="java.lang@java_stub" />
   <import index="3" modelUID="java.io@java_stub" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" />
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" />
+  <import index="6" modelUID="jetbrains.mps.baseLanguage.structure" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1182952452380">
     <property name="name" value="TestHelgins" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1182952459350">
@@ -525,6 +527,49 @@
       <link role="classifier" targetNodeId="1188945707402" resolveInfo="GenericParm_base" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1188945790604">
         <link role="classifier" extResolveInfo="2.[Classifier]String" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.transformation.TLBase.TemplateDeclaration" id="1190107724478">
+    <property name="name" value="Test" />
+    <link role="applicableConcept" targetNodeId="6.1068580123136" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.StatementList" id="1190107741339">
+      <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.TemplateFragment" id="1190107747840" />
+      <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1190107797234">
+        <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1190107804310">
+          <link role="baseMethodDeclaration" extResolveInfo="3.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))" />
+          <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1190107797235">
+            <link role="classifier" extResolveInfo="2.[Classifier]System" />
+            <link role="variableDeclaration" extResolveInfo="2.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+          </node>
+          <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.LoopMacro" id="1190108405218">
+            <node role="sourceNodesQuery" type="jetbrains.mps.transformation.TLBase.SourceSubstituteMacro_SourceNodesQuery" id="1190108405219">
+              <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1190108405220">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1190108492147">
+                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1190108495258">
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1190108497902">
+                      <link role="link" targetNodeId="6.1068581517665" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.transformation.TLBase.TemplateFunctionParameter_sourceNode" id="1190108492148" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1190108418924">
+            <property name="value" value="sds" />
+            <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.PropertyMacro" id="1190108428378">
+              <link role="property" targetNodeId="6.1070475926801" />
+              <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.PropertyMacro_GetPropertyValue" id="1190108428379">
+                <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1190108428380">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1190108506137">
+                    <node role="expression" type="jetbrains.mps.transformation.TLBase.TemplateFunctionParameter_sourceNode" id="1190108506138" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
