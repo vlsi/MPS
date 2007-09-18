@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.EmptySearchScope;
 import jetbrains.mps.baseLanguage.structure.Classifier;
+import jetbrains.mps.baseLanguage.structure.SuperMethodCall;
 
 public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -37,7 +38,7 @@ public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint implem
     if(superclass == null) {
       return new EmptySearchScope();
     }
-    return new SuperMethodCall_InstanceMethodScope(((Classifier)SNodeOperations.getAdapter(superclass)), enclosingClass);
+    return new SuperMethodCall_InstanceMethodScope(((Classifier)SNodeOperations.getAdapter(superclass)), ((SuperMethodCall)SNodeOperations.getAdapter(referenceNode)));
   }
 
   public String getNodeReferentSearchScopeDescription() {

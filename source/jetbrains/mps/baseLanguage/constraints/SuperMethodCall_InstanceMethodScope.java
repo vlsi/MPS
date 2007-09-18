@@ -4,11 +4,10 @@ import jetbrains.mps.baseLanguage.search.AbstractClassifiersScope;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.VisibleClassifierMembersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
+import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.AbstractSearchScope;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
@@ -24,16 +23,17 @@ import java.util.ArrayList;
  * Igor Alshannikov
  * Sep 11, 2007
  */
-public class SuperMethodCall_InstanceMethodScope extends AbstractSearchScope {
-  private ISearchScope mySearchScope;
+public class SuperMethodCall_InstanceMethodScope extends VisibleClassifierMembersScope {
+  private SuperMethodCall mySuperMethodCall;
 
-  public SuperMethodCall_InstanceMethodScope(@Nullable Classifier superclass, @NotNull SNode contextNode) {
-    mySearchScope = new VisibleClassifierMembersScope(superclass, contextNode, IClassifiersSearchScope.INSTANCE_METHOD);
+  public SuperMethodCall_InstanceMethodScope(@Nullable Classifier superclass, @NotNull SuperMethodCall superMethodCall) {
+    super(superclass, superMethodCall.getNode(), IClassifiersSearchScope.INSTANCE_METHOD);
+    mySuperMethodCall = superMethodCall;
   }
 
   @NotNull
   public List<SNode> getNodes(Condition<SNode> condition) {
-    List<SNode> nodes = mySearchScope.getNodes(condition);
+    List<SNode> nodes = super.getNodes(condition);
     List<SNode> result = new ArrayList<SNode>();
     // remove interface methods
     for (SNode node : nodes) {
@@ -48,6 +48,9 @@ public class SuperMethodCall_InstanceMethodScope extends AbstractSearchScope {
   }
 
   public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {
-    return mySearchScope.getReferenceInfoResolver(concept);
+    if (SModelUtil_new.isAssignableConcept(concept, BaseMethodDeclaration.concept)) {
+      return createMethodReferenceInfoResolver(mySuperMethodCall.getActualArguments());
+    }
+    return super.getReferenceInfoResolver(concept);
   }
 }
