@@ -3229,7 +3229,11 @@
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1149122067641">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1188411626000">
             <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1188411626001">
-              <link role="baseMethodDeclaration" extResolveInfo="32.constructor [Classifier]NewExpression_ClassConstructorScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope]))" />
+              <link role="baseMethodDeclaration" extResolveInfo="32.constructor [Classifier]NewExpression_ClassConstructorScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NewExpression]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope]))" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1190137910787">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1190137913681" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunctionParameter_referenceNode" id="1190137908849" />
+              </node>
               <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_model" id="1188411709999" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.sharedConcepts.ConceptFunctionParameter_scope" id="1188411718501" />
             </node>
