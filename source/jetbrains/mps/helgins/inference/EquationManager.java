@@ -561,8 +561,24 @@ public class EquationManager {
   public void solveInequations() {
     Set<IWrapper> types = subtypingGraphVertices();
     boolean hasConcreteTypes = true;
+    boolean hasConditionTypes = true;
 
     // we assume that there are no equations such as T1 :< T2 where T1 and T2 are both concrete
+    while (hasConditionTypes) {
+      hasConditionTypes = false;
+      for (IWrapper type : types) {
+        if (type == null) continue;
+        if (type.isCondition()) {
+          typeLessThanVar(type, true);
+          typeLessThanVar(type, false);
+          varLessThanType(type, true);
+          varLessThanType(type, false);
+          hasConditionTypes = true;
+        }
+      }
+      types = subtypingGraphVertices();
+    }
+
     while (hasConcreteTypes) {
       hasConcreteTypes = false;
       for (IWrapper type : types) {
