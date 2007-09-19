@@ -564,16 +564,19 @@ public class EquationManager {
     boolean hasConditionTypes = true;
 
     // we assume that there are no equations such as T1 :< T2 where T1 and T2 are both concrete
+    Set<IWrapper> visitedConditionTypes = new HashSet<IWrapper>();
     while (hasConditionTypes) {
       hasConditionTypes = false;
       for (IWrapper type : types) {
         if (type == null) continue;
+        if (visitedConditionTypes.contains(type)) continue;
         if (type.isCondition()) {
           typeLessThanVar(type, true);
           typeLessThanVar(type, false);
           varLessThanType(type, true);
           varLessThanType(type, false);
           hasConditionTypes = true;
+          visitedConditionTypes.add(type);
         }
       }
       types = subtypingGraphVertices();
