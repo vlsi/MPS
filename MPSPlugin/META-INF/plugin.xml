@@ -5,6 +5,7 @@
   <version>1.0</version>
   <vendor>JetBrains</vendor>
   <idea-version since-build="3000"/>
+  <depends>com.intellij.javaee</depends>
 
   <application-components>
     <component>

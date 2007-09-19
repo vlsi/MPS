@@ -1,5 +1,8 @@
 package jetbrains.mps.plugin;
 
+import com.intellij.facet.Facet;
+import com.intellij.facet.FacetManager;
+import com.intellij.javaee.web.facet.WebFacet;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.Result;
@@ -18,11 +21,11 @@ import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
 import com.intellij.openapi.roots.libraries.LibraryTablesRegistrar;
+import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.wm.WindowManager;
-import com.intellij.openapi.util.SystemInfo;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.PsiSearchHelper;
@@ -31,7 +34,6 @@ import com.intellij.refactoring.MoveDestination;
 import com.intellij.refactoring.RefactoringFactory;
 import com.intellij.refactoring.RenameRefactoring;
 import com.intellij.util.IncorrectOperationException;
-import com.intellij.javaee.JavaeeModuleProperties;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JFrame;
@@ -40,7 +42,6 @@ import java.awt.Frame;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.*;
@@ -561,6 +562,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
         if (m == null) return;
 
+/*
         // IDEA 6835
         try {
           // reflection version of the following code:
@@ -585,7 +587,16 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
         } catch (Exception e) {
           e.printStackTrace();
         }
+*/
+        //IDEA 7274
 
+        Collection<WebFacet> wfs = WebFacet.getInstances(m);
+        if (wfs.isEmpty()) {
+          return;
+        }
+
+        WebFacet wf = wfs.iterator().next();
+        res[0] = wf.getBuildConfiguration().getBuildProperties().getExplodedPath();
       }
     });
 
