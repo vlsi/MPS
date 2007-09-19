@@ -20,30 +20,29 @@
   <component name="BuildJarProjectSettings">
     <option name="BUILD_JARS_ON_MAKE" value="false" />
   </component>
-  <component name="ClearCase" />
   <component name="CodeSearch/QueryHistory">
     <query searchTerm="" processedSearchTerm="">
-      <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
-        <data fileTypes="\.(java)$" packages="" caseSensitive="false" />
-      </queryExtra>
       <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
         <data extraArguments="-f=\.(java)$" />
       </queryExtra>
+      <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
+        <data fileTypes="\.(java)$" packages="" caseSensitive="false" />
+      </queryExtra>
     </query>
     <query searchTerm="" processedSearchTerm="">
-      <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
-        <data fileTypes="\.(java)|(xml)$" packages="(uwaterloo\.ca)|(mit\.edu)" caseSensitive="false" />
-      </queryExtra>
       <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
         <data extraArguments="-f=\.(java)|(xml)$" />
       </queryExtra>
+      <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
+        <data fileTypes="\.(java)|(xml)$" packages="(uwaterloo\.ca)|(mit\.edu)" caseSensitive="false" />
+      </queryExtra>
     </query>
     <query searchTerm="" processedSearchTerm="">
-      <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
-        <data fileTypes="\.(java)|(xml)|(txt)$" packages="sourceforge\.net" caseSensitive="false" />
-      </queryExtra>
       <queryExtra class="com.google.jessewilson.codesearch.commandlinesearch.ClsQueryExtra">
         <data extraArguments="-f=\.(java)|(xml)|(txt)$" />
+      </queryExtra>
+      <queryExtra class="com.google.jessewilson.codesearch.googlecodesearch.GcsQueryExtra">
+        <data fileTypes="\.(java)|(xml)|(txt)$" packages="sourceforge\.net" caseSensitive="false" />
       </queryExtra>
     </query>
   </component>
@@ -70,7 +69,7 @@
         <option name="PACKAGES_TO_USE_IMPORT_ON_DEMAND">
           <value />
         </option>
-        <ADDITIONAL_INDENT_OPTIONS fileType="js">
+        <ADDITIONAL_INDENT_OPTIONS fileType="">
           <option name="INDENT_SIZE" value="4" />
           <option name="CONTINUATION_INDENT_SIZE" value="8" />
           <option name="TAB_SIZE" value="4" />
@@ -79,7 +78,7 @@
           <option name="LABEL_INDENT_SIZE" value="0" />
           <option name="LABEL_INDENT_ABSOLUTE" value="false" />
         </ADDITIONAL_INDENT_OPTIONS>
-        <ADDITIONAL_INDENT_OPTIONS fileType="">
+        <ADDITIONAL_INDENT_OPTIONS fileType="js">
           <option name="INDENT_SIZE" value="4" />
           <option name="CONTINUATION_INDENT_SIZE" value="8" />
           <option name="TAB_SIZE" value="4" />
@@ -114,11 +113,11 @@
       <entry name="?*.css" />
     </wildcardResourcePatterns>
   </component>
-  <component name="DataSourceManagerImpl" />
   <component name="DependenciesAnalyzeManager">
     <option name="myForwardDirection" value="false" />
   </component>
   <component name="DependencyValidationManager">
+    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
     <scope name="Generated Files" pattern="file:*source_gen/**/*.java||file:*tests_gen/**/*.java" />
     <scope name="Query Methods" pattern="file:*/Queries.java" />
     <scope name="Icons Java Files" pattern="file:*/Icons.java" />
@@ -159,6 +158,15 @@
           <module name="MPS" />
         </modules>
       </facet-type>
+      <facet-type id="jpa">
+        <modules>
+          <module name="MPS">
+            <files>
+              <file url="file://$PROJECT_DIR$/META-INF/persistence.xml" />
+            </files>
+          </module>
+        </modules>
+      </facet-type>
     </autodetection-disabled>
   </component>
   <component name="IdProvider" IDEtalkID="13400C80EA822F0B5CAF10171834B2C5" />
@@ -178,46 +186,10 @@
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Code Called Through Reflection" />
         <option name="myLocal" value="false" />
-        <used_levels>
-          <error>
-            <option name="myName" value="ERROR" />
-            <option name="myVal" value="400" />
-          </error>
-          <warning>
-            <option name="myName" value="WARNING" />
-            <option name="myVal" value="300" />
-          </warning>
-          <information>
-            <option name="myName" value="INFO" />
-            <option name="myVal" value="200" />
-          </information>
-          <server>
-            <option name="myName" value="SERVER PROBLEM" />
-            <option name="myVal" value="100" />
-          </server>
-        </used_levels>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Default" />
         <option name="myLocal" value="false" />
-        <used_levels>
-          <error>
-            <option name="myName" value="ERROR" />
-            <option name="myVal" value="400" />
-          </error>
-          <warning>
-            <option name="myName" value="WARNING" />
-            <option name="myVal" value="300" />
-          </warning>
-          <information>
-            <option name="myName" value="INFO" />
-            <option name="myVal" value="200" />
-          </information>
-          <server>
-            <option name="myName" value="SERVER PROBLEM" />
-            <option name="myVal" value="100" />
-          </server>
-        </used_levels>
         <inspection_tool class="StrutsInspection" level="ERROR" enabled="false" />
         <inspection_tool class="StrutsTilesInspection" level="ERROR" enabled="false" />
         <inspection_tool class="StrutsValidatorInspection" level="ERROR" enabled="false" />
@@ -328,7 +300,6 @@
         <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
         <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
           <option name="ADD_MAINS_TO_ENTRIES" value="true" />
-          <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_APPLET_TO_ENTRIES" value="true" />
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
           <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
@@ -338,36 +309,21 @@
             </value>
           </option>
           <option name="ADD_EJB_TO_ENTRIES" value="true" />
+          <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="ConstantConditions" level="ERROR" enabled="true">
           <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
+          <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
         </inspection_tool>
         <inspection_tool class="UNUSED_IMPORT" level="WARNING" enabled="false" />
         <inspection_tool class="SerializableHasSerialVersionUIDField" level="WARNING" enabled="true">
-          <option name="m_ignoreSerializableDueToInheritance" value="true" />
+          <option name="superClassString" value="java.awt.Component" />
         </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
         <option name="myLocal" value="false" />
-        <used_levels>
-          <error>
-            <option name="myName" value="ERROR" />
-            <option name="myVal" value="400" />
-          </error>
-          <warning>
-            <option name="myName" value="WARNING" />
-            <option name="myVal" value="300" />
-          </warning>
-          <information>
-            <option name="myName" value="INFO" />
-            <option name="myVal" value="200" />
-          </information>
-          <server>
-            <option name="myName" value="SERVER PROBLEM" />
-            <option name="myVal" value="100" />
-          </server>
-        </used_levels>
         <inspection_tool class="UnnecessaryLocalVariable" level="WARNING" enabled="false">
           <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
           <option name="m_ignoreAnnotatedVariables" value="false" />
@@ -455,7 +411,6 @@
         <inspection_tool class="WhileCanBeForeach" level="WARNING" enabled="false" />
         <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
           <option name="ADD_MAINS_TO_ENTRIES" value="true" />
-          <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_APPLET_TO_ENTRIES" value="true" />
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
           <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
@@ -465,6 +420,8 @@
             </value>
           </option>
           <option name="ADD_EJB_TO_ENTRIES" value="true" />
+          <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnusedParameters" level="WARNING" enabled="false" />
         <inspection_tool class="SameReturnValue" level="WARNING" enabled="false" />
@@ -502,29 +459,12 @@
         <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
         <inspection_tool class="ConstantConditions" level="INFO" enabled="true">
           <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
+          <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
         </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="Query methods" />
         <option name="myLocal" value="false" />
-        <used_levels>
-          <error>
-            <option name="myName" value="ERROR" />
-            <option name="myVal" value="400" />
-          </error>
-          <warning>
-            <option name="myName" value="WARNING" />
-            <option name="myVal" value="300" />
-          </warning>
-          <information>
-            <option name="myName" value="INFO" />
-            <option name="myVal" value="200" />
-          </information>
-          <server>
-            <option name="myName" value="SERVER PROBLEM" />
-            <option name="myVal" value="100" />
-          </server>
-        </used_levels>
         <inspection_tool class="StrutsInspection" level="ERROR" enabled="false" />
         <inspection_tool class="StrutsTilesInspection" level="ERROR" enabled="false" />
         <inspection_tool class="StrutsValidatorInspection" level="ERROR" enabled="false" />
@@ -634,7 +574,6 @@
         <inspection_tool class="FieldCanBeLocal" level="WARNING" enabled="false" />
         <inspection_tool class="UnusedDeclaration" level="WARNING" enabled="false">
           <option name="ADD_MAINS_TO_ENTRIES" value="true" />
-          <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
           <option name="ADD_APPLET_TO_ENTRIES" value="true" />
           <option name="ADD_SERVLET_TO_ENTRIES" value="true" />
           <option name="ADD_NONJAVA_TO_ENTRIES" value="true" />
@@ -644,6 +583,8 @@
             </value>
           </option>
           <option name="ADD_EJB_TO_ENTRIES" value="true" />
+          <option name="ADD_JUNIT_TO_ENTRIES" value="true" />
+          <option name="ADD_TESTNG_TO_ENTRIES" value="true" />
         </inspection_tool>
         <inspection_tool class="UnnecessaryLocalVariable" level="WARNING" enabled="false">
           <option name="m_ignoreImmediatelyReturnedVariables" value="false" />
@@ -657,9 +598,11 @@
         <inspection_tool class="RedundantThrows" level="WARNING" enabled="false" />
         <inspection_tool class="ConstantConditions" level="ERROR" enabled="true">
           <option name="SUGGEST_NULLABLE_ANNOTATIONS" value="false" />
+          <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
         </inspection_tool>
       </profile>
     </profiles>
+    <list size="0" />
   </component>
   <component name="JavacSettings">
     <option name="DEBUGGING_INFO" value="true" />
@@ -820,7 +763,7 @@
       </item>
     </group>
   </component>
-  <component name="ProjectFileVersion" converted="false" />
+  <component name="ProjectFileVersion" converted="true" />
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/FlexProjects/FlexEditor/FlexEditor.iml" filepath="$PROJECT_DIR$/app/FlexProjects/FlexEditor/FlexEditor.iml" group="app" />
@@ -933,6 +876,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" value="/home/vadim/dev/jdk1.6.0_02-32" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
       <module name="MPS" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="1478" />
@@ -958,51 +902,46 @@
       <option name="OPEN_IN_BROWSER" value="false" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
       <option name="COMMON_VM_ARGUMENTS" value="-Xms128m -Xmx256m" />
-      <J2EE_MODULE>
+      <JAVAEE_FACET FACET_ID="MForum/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_sandbox" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE>
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="search-watch" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/charisma" />
-        <option name="MODULE_NAME" value="charisma-app" />
-        <option name="DEPLOY" value="true" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="search-watch/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_depot" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="search-watch/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="stwiki-webapp" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="DEPLOY" value="false" />
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="DEPLOY" value="false" />
+      </JAVAEE_FACET>
       <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c4" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1077,51 +1016,46 @@
       <option name="OPEN_IN_BROWSER" value="true" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="MForum/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_sandbox" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="search-watch" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="search-watch/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma-app" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="search-watch/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_depot" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="stwiki-webapp" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="DEPLOY" value="false" />
+      </JAVAEE_FACET>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c1" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1191,51 +1125,46 @@
       <option name="OPEN_IN_BROWSER" value="true" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/app" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="MForum/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_sandbox" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="search-watch" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="search-watch/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma-app" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="search-watch/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_depot" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="stwiki-webapp" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="DEPLOY" value="false" />
+      </JAVAEE_FACET>
       <option name="DEPLOY_TOMCAT_MANAGER" value="true" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c3" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1287,51 +1216,46 @@
       <option name="OPEN_IN_BROWSER" value="true" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="MForum/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_sandbox" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="search-watch" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="search-watch/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma-app" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="search-watch/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_depot" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="stwiki-webapp" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="DEPLOY" value="false" />
+      </JAVAEE_FACET>
       <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c2" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1401,51 +1325,46 @@
       <option name="OPEN_IN_BROWSER" value="true" />
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/" />
       <option name="COMMON_VM_ARGUMENTS" value="" />
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="MForum/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_hello" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_sandbox" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="MForum" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="search-watch" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="search-watch/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="charisma-app" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="search-watch/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="webrSamples_depot" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="stwiki-webapp" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="accounting" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
-      <J2EE_MODULE DEPLOYMENT_SOURCE_NAME="exploded">
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
-        <option name="MODULE_NAME" value="PubMedDB" />
         <option name="DEPLOY" value="false" />
-      </J2EE_MODULE>
+      </JAVAEE_FACET>
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+        <option name="CONTEXT_PATH" value="/" />
+        <option name="DEPLOY" value="false" />
+      </JAVAEE_FACET>
       <option name="DEPLOY_TOMCAT_MANAGER" value="false" />
       <option name="BASE_DIRECTORY_NAME" value="tomcat_Unnamed_e7d78b7c3" />
       <predefined_log_file id="TOMCAT_LOCALHOST_LOG_ID" enabled="true" />
@@ -1526,8 +1445,6 @@
     <option name="GENERATE_IIOP_STUBS" value="false" />
     <option name="ADDITIONAL_OPTIONS_STRING" value="" />
   </component>
-  <component name="StarteamVcsAdapter" />
-  <component name="SvnBranchConfigurationManager" />
   <component name="TeamCityRootDirectoryHolder">
     <option name="myRelativeRootDirectory" />
   </component>
