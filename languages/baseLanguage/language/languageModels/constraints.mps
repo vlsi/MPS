@@ -2683,16 +2683,11 @@
           </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1190151837666">
             <node role="expression" type="jetbrains.mps.baseLanguage.NewExpression" id="1190151858199">
-              <link role="baseMethodDeclaration" extResolveInfo="32.constructor [Classifier]InstanceMethodCall_InstanceMethodScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Classifier]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [InstanceMethodCall]))" />
+              <link role="baseMethodDeclaration" extResolveInfo="32.constructor [Classifier]InstanceMethodCall_InstanceMethodScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ClassifierType]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [InstanceMethodCall]))" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1190151937426">
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1190151937427" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1190151937428">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1190151937429">
-                    <link role="link" targetNodeId="1.1107535924139" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1190151937430">
-                    <link role="variableDeclaration" targetNodeId="1179960832522" resolveInfo="classifierType" />
-                  </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1190151937430">
+                  <link role="variableDeclaration" targetNodeId="1179960832522" resolveInfo="classifierType" />
                 </node>
               </node>
               <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1190151952386">

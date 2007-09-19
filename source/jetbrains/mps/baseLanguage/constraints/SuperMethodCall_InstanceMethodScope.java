@@ -1,15 +1,11 @@
 package jetbrains.mps.baseLanguage.constraints;
 
-import jetbrains.mps.baseLanguage.search.AbstractClassifiersScope;
-import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
 import jetbrains.mps.baseLanguage.search.VisibleClassifierMembersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.smodel.search.AbstractSearchScope;
 import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
@@ -49,7 +45,18 @@ public class SuperMethodCall_InstanceMethodScope extends VisibleClassifierMember
 
   public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {
     if (SModelUtil_new.isAssignableConcept(concept, BaseMethodDeclaration.concept)) {
-      return createMethodReferenceInfoResolver(mySuperMethodCall.getActualArguments());
+      // create fake type
+      ClassifierType thisClassType = ClassifierType.newInstance(null);
+      Classifier thisClass = mySuperMethodCall.getParent(Classifier.class, false);
+      if(thisClass != null) {
+        thisClassType.setClassifier(thisClass);
+        for (TypeVariableDeclaration typeVar : thisClass.getTypeVariableDeclarations()) {
+          TypeVariableReference typeRef = TypeVariableReference.newInstance(null);
+          typeRef.setTypeVariableDeclaration(typeVar);
+          thisClassType.addParameter(typeRef);
+        }
+      }
+      return createInstanceMethodReferenceInfoResolver(thisClassType, mySuperMethodCall.getActualArguments());
     }
     return super.getReferenceInfoResolver(concept);
   }
