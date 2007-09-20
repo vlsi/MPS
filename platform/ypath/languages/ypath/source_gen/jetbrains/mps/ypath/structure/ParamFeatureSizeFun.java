@@ -8,6 +8,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ParamFeatureSizeFun extends FeatureSizeFun implements IParamFeatureFun {
+  public static final String concept = "jetbrains.mps.ypath.structure.ParamFeatureSizeFun";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
 
   public  ParamFeatureSizeFun(SNode node) {
     super(node);
@@ -19,6 +22,23 @@ public class ParamFeatureSizeFun extends FeatureSizeFun implements IParamFeature
 
   public static ParamFeatureSizeFun newInstance(SModel sm) {
     return ParamFeatureSizeFun.newInstance(sm, false);
+  }
+
+
+  public String getShortDescription() {
+    return this.getProperty(ParamFeatureSizeFun.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ParamFeatureSizeFun.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ParamFeatureSizeFun.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ParamFeatureSizeFun.ALIAS, value);
   }
 
 }

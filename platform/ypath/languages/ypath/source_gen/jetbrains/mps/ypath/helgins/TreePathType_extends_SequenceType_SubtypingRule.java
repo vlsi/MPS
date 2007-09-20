@@ -25,10 +25,6 @@ public class TreePathType_extends_SequenceType_SubtypingRule extends SubtypingRu
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return false;
   }

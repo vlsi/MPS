@@ -9,8 +9,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TreePathAdapterExpression extends Expression {
-  public static String TREEPATH_ASPECT = "treepathAspect";
+  public static final String concept = "jetbrains.mps.ypath.structure.TreePathAdapterExpression";
   public static String EXPRESSION = "expression";
+  public static String TREEPATH_ASPECT = "treepathAspect";
 
   public  TreePathAdapterExpression(SNode node) {
     super(node);
@@ -25,20 +26,20 @@ public class TreePathAdapterExpression extends Expression {
   }
 
 
-  public TreePathAspect getTreepathAspect() {
-    return (TreePathAspect)this.getReferent(TreePathAdapterExpression.TREEPATH_ASPECT);
-  }
-
-  public void setTreepathAspect(TreePathAspect node) {
-    super.setReferent(TreePathAdapterExpression.TREEPATH_ASPECT, node);
-  }
-
   public Expression getExpression() {
     return (Expression)this.getChild(TreePathAdapterExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
     super.setChild(TreePathAdapterExpression.EXPRESSION, node);
+  }
+
+  public TreePathAspect getTreepathAspect() {
+    return (TreePathAspect)this.getReferent(TreePathAdapterExpression.TREEPATH_ASPECT);
+  }
+
+  public void setTreepathAspect(TreePathAspect node) {
+    super.setReferent(TreePathAdapterExpression.TREEPATH_ASPECT, node);
   }
 
 }

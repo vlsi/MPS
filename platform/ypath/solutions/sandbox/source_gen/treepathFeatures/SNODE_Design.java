@@ -6,6 +6,7 @@ import jetbrains.mps.ypath.design.IFeatureDesign;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class SNODE_Design {
   public static class Design_Feature_child implements IFeatureDesign<String> {
@@ -24,10 +25,6 @@ public class SNODE_Design {
 
     public String parameterToString(String param) {
       return param;
-    }
-
-    public String stringToParameter(String string) {
-      return string;
     }
 
 }
@@ -49,8 +46,21 @@ public class SNODE_Design {
       return param;
     }
 
-    public String stringToParameter(String string) {
-      return string;
+}
+  public static class Design_Feature_foo implements IFeatureDesign<SNode> {
+
+    public Iterable<SNode> getParameters(SNode nodeType) {
+      return SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate4(null, null));
+    }
+
+    public SNode getTargetType(SNode param, SNode nodeType) {
+      SNode ld = param;
+      SNode trg = SLinkOperations.getTarget(ld, "target", false);
+      return new QuotationClass_2().createNode(trg);
+    }
+
+    public String parameterToString(SNode param) {
+      return SPropertyOperations.getString(param, "role");
     }
 
 }

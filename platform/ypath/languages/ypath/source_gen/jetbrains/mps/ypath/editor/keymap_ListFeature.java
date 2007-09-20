@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -17,7 +18,8 @@ public class keymap_ListFeature extends EditorCellKeyMap {
   public  keymap_ListFeature() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
-    this.putAction("alt", "VK_D", new keymap_ListFeature.keymap_ListFeature_Action0());
+    action = new keymap_ListFeature.keymap_ListFeature_Action0();
+    this.putAction("alt", "VK_D", action);
   }
   public static class keymap_ListFeature_Action0 extends EditorCellKeyMapAction {
 
@@ -50,10 +52,10 @@ public class keymap_ListFeature extends EditorCellKeyMap {
 
     public void execute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
+      this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
+    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode tp = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false);
       boolean isDefault = SPropertyOperations.getBoolean(node, "default");
       for(SNode fe : SLinkOperations.getTargets(tp, "features", true)) {

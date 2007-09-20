@@ -10,14 +10,17 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ListFeature extends BaseConcept implements INamedConcept, IFeature {
-  public static String NAME = "name";
-  public static String WRITABLE = "writable";
-  public static String DEFAULT = "default";
+  public static final String concept = "jetbrains.mps.ypath.structure.ListFeature";
   public static String GET_FUNCTION = "getFunction";
   public static String SIZE_FUNCTION = "sizeFunction";
   public static String SET_FUNCTION = "setFunction";
   public static String INSERT_FUNCTION = "insertFunction";
   public static String DELETE_FUNCTION = "deleteFunction";
+  public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String WRITABLE = "writable";
+  public static String DEFAULT = "default";
 
   public  ListFeature(SNode node) {
     super(node);
@@ -31,30 +34,6 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
     return ListFeature.newInstance(sm, false);
   }
 
-
-  public String getName() {
-    return this.getProperty(ListFeature.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ListFeature.NAME, value);
-  }
-
-  public boolean getWritable() {
-    return this.getBooleanProperty(ListFeature.WRITABLE);
-  }
-
-  public void setWritable(boolean value) {
-    this.setBooleanProperty(ListFeature.WRITABLE, value);
-  }
-
-  public boolean getDefault() {
-    return this.getBooleanProperty(ListFeature.DEFAULT);
-  }
-
-  public void setDefault(boolean value) {
-    this.setBooleanProperty(ListFeature.DEFAULT, value);
-  }
 
   public FeatureGetFun getGetFunction() {
     return (FeatureGetFun)this.getChild(ListFeature.GET_FUNCTION);
@@ -94,6 +73,46 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
 
   public void setDeleteFunction(FeatureDeleteFun node) {
     super.setChild(ListFeature.DELETE_FUNCTION, node);
+  }
+
+  public String getName() {
+    return this.getProperty(ListFeature.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ListFeature.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ListFeature.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ListFeature.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ListFeature.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ListFeature.ALIAS, value);
+  }
+
+  public boolean getWritable() {
+    return this.getBooleanProperty(ListFeature.WRITABLE);
+  }
+
+  public void setWritable(boolean value) {
+    this.setBooleanProperty(ListFeature.WRITABLE, value);
+  }
+
+  public boolean getDefault() {
+    return this.getBooleanProperty(ListFeature.DEFAULT);
+  }
+
+  public void setDefault(boolean value) {
+    this.setBooleanProperty(ListFeature.DEFAULT, value);
   }
 
 }

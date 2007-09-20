@@ -14,7 +14,7 @@ public class typeof_TreeNodeKindProperty_InferenceRule implements InferenceRule_
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(argument, null, false, false), "jetbrains.mps.ypath.helgins", "1178552999190"), argument, "jetbrains.mps.ypath.helgins", "1178552996942");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.ypath.helgins", "1190288840926"), TypeChecker.getInstance().getRuntimeSupport().typeOf(SNodeOperations.getParent(argument, null, false, false), "jetbrains.mps.ypath.helgins", "1190288859999"), argument, null, "jetbrains.mps.ypath.helgins", "1190288835157");
   }
 
   public String getApplicableConceptFQName() {

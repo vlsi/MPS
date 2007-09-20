@@ -10,8 +10,11 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TreePathType extends Type implements INamedConcept {
-  public static String NAME = "name";
+  public static final String concept = "jetbrains.mps.ypath.structure.TreePathType";
   public static String NODE_TYPE = "nodeType";
+  public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
 
   public  TreePathType(SNode node) {
     super(node);
@@ -26,6 +29,14 @@ public class TreePathType extends Type implements INamedConcept {
   }
 
 
+  public Type getNodeType() {
+    return (Type)this.getChild(TreePathType.NODE_TYPE);
+  }
+
+  public void setNodeType(Type node) {
+    super.setChild(TreePathType.NODE_TYPE, node);
+  }
+
   public String getName() {
     return this.getProperty(TreePathType.NAME);
   }
@@ -34,12 +45,20 @@ public class TreePathType extends Type implements INamedConcept {
     this.setProperty(TreePathType.NAME, value);
   }
 
-  public Type getNodeType() {
-    return (Type)this.getChild(TreePathType.NODE_TYPE);
+  public String getShortDescription() {
+    return this.getProperty(TreePathType.SHORT_DESCRIPTION);
   }
 
-  public void setNodeType(Type node) {
-    super.setChild(TreePathType.NODE_TYPE, node);
+  public void setShortDescription(String value) {
+    this.setProperty(TreePathType.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(TreePathType.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(TreePathType.ALIAS, value);
   }
 
 }

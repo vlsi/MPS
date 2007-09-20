@@ -158,7 +158,7 @@
     <link role="extends" targetNodeId="1168468681335" resolveInfo="TreePathOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184776023529">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="paramName" />
+      <property name="role" value="paramObject" />
       <link role="target" targetNodeId="1184768155075" resolveInfo="ParameterName" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1184147586245">
@@ -402,7 +402,7 @@
       <property name="value" value="arrayOrSequence" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1179573700950">
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.BooleanConceptProperty" id="1188379094432">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
   </node>
@@ -1174,8 +1174,16 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1184768155075">
     <property name="package" value="treeOperation.traverse" />
-    <property name="name" value="ParameterName" />
+    <property name="name" value="ParameterWrapper" />
     <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1190284493458">
+      <property name="name" value="paramValue" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1190213718970">
+      <property name="role" value="paramRef" />
+      <link role="target" targetNodeId="1.1133920641626" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.InterfaceConceptReference" id="1184768178957">
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>

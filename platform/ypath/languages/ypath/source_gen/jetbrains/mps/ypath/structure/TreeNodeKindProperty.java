@@ -10,9 +10,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TreeNodeKindProperty extends BaseConcept implements INamedConcept {
-  public static String NAME = "name";
-  public static String DEFAULT = "default";
+  public static final String concept = "jetbrains.mps.ypath.structure.TreeNodeKindProperty";
   public static String GETTER = "getter";
+  public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String DEFAULT = "default";
 
   public  TreeNodeKindProperty(SNode node) {
     super(node);
@@ -27,6 +30,14 @@ public class TreeNodeKindProperty extends BaseConcept implements INamedConcept {
   }
 
 
+  public PropertyGetter getGetter() {
+    return (PropertyGetter)this.getChild(TreeNodeKindProperty.GETTER);
+  }
+
+  public void setGetter(PropertyGetter node) {
+    super.setChild(TreeNodeKindProperty.GETTER, node);
+  }
+
   public String getName() {
     return this.getProperty(TreeNodeKindProperty.NAME);
   }
@@ -35,20 +46,28 @@ public class TreeNodeKindProperty extends BaseConcept implements INamedConcept {
     this.setProperty(TreeNodeKindProperty.NAME, value);
   }
 
+  public String getShortDescription() {
+    return this.getProperty(TreeNodeKindProperty.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(TreeNodeKindProperty.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(TreeNodeKindProperty.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(TreeNodeKindProperty.ALIAS, value);
+  }
+
   public boolean getDefault() {
     return this.getBooleanProperty(TreeNodeKindProperty.DEFAULT);
   }
 
   public void setDefault(boolean value) {
     this.setBooleanProperty(TreeNodeKindProperty.DEFAULT, value);
-  }
-
-  public PropertyGetter getGetter() {
-    return (PropertyGetter)this.getChild(TreeNodeKindProperty.GETTER);
-  }
-
-  public void setGetter(PropertyGetter node) {
-    super.setChild(TreeNodeKindProperty.GETTER, node);
   }
 
 }

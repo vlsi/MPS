@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LambdaMethod extends Closure {
+  public static final String concept = "jetbrains.mps.ypath.structure.LambdaMethod";
   public static String PARAMETER = "parameter";
 
   public  LambdaMethod(SNode node) {

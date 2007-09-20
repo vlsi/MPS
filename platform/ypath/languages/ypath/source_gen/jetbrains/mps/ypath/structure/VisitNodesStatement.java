@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class VisitNodesStatement extends Statement {
+  public static final String concept = "jetbrains.mps.ypath.structure.VisitNodesStatement";
   public static String VISIT_BLOCK = "visitBlock";
 
   public  VisitNodesStatement(SNode node) {

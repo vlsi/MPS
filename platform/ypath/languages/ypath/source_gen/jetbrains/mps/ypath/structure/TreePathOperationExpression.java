@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TreePathOperationExpression extends Expression {
+  public static final String concept = "jetbrains.mps.ypath.structure.TreePathOperationExpression";
   public static String EXPRESSION = "expression";
   public static String OPERATION = "operation";
 

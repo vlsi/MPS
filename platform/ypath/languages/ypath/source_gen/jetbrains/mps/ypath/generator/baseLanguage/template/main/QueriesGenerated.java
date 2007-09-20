@@ -24,7 +24,6 @@ import jetbrains.mps.ypath.constraints.ChildrenBlock_Behavior;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.ypath.constraints.FeatureTargetTypeUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 
 public class QueriesGenerated {
@@ -960,14 +959,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "toStringFunction", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1185010163131(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1185011594922(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "fromStringFunction", true), "body", true);
-  }
-
   public static SNode sourceNodeQuery_1184771191606(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "parameterType", true);
   }
@@ -977,13 +968,17 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1185030514117(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    Object param = FeatureTargetTypeUtil.getParameter(SLinkOperations.getTarget(node, "usedFeature", false), SPropertyOperations.getString(SLinkOperations.getTarget(node, "paramName", true), "name"));
-    if(param instanceof String) {
-      SNode stringLiteral = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
-      SPropertyOperations.set(stringLiteral, "value", (String)param);
-      return stringLiteral;
+    if((SLinkOperations.getTarget(SLinkOperations.getTarget(node, "paramObject", true), "paramRef", false) != null)) {
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "paramObject", true), "paramRef", false);
     }
-    return null;
+    Object param = SPropertyOperations.getString(SLinkOperations.getTarget(node, "paramObject", true), "paramValue");
+    String name = SPropertyOperations.getString(SLinkOperations.getTarget(node, "paramObject", true), "name");
+    if(param == null) {
+      param = name;
+    }
+    SNode stringLiteral = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+    SPropertyOperations.set(stringLiteral, "value", "" + (param));
+    return stringLiteral;
   }
 
 }

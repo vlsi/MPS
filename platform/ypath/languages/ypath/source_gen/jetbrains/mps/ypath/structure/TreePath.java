@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public interface TreePath extends INodeAdapter {
+  public static final String concept = "jetbrains.mps.ypath.structure.TreePath";
   public static String TREE_PATH_TYPE = "treePathType";
   public static String PARENT_BLOCK = "parentBlock";
   public static String CHILDREN_BLOCK = "childrenBlock";

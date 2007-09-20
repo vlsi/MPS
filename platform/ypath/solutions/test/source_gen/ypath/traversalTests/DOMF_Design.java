@@ -21,10 +21,6 @@ public class DOMF_Design {
       return param;
     }
 
-    public String stringToParameter(String string) {
-      return string;
-    }
-
 }
 
 }

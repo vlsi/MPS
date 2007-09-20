@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class VisitParameterDeclarationList extends BaseConcept {
+  public static final String concept = "jetbrains.mps.ypath.structure.VisitParameterDeclarationList";
   public static String VISIT_PARAMETER_DECLARATION = "visitParameterDeclaration";
 
   public  VisitParameterDeclarationList(SNode node) {

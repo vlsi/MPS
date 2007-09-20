@@ -4,12 +4,25 @@ package treepathFeatures;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.SequenceWithSupplier;
 
 public class SnodeDemo {
 
   public static void main(String[] args) {
     SNode foo = null;
     TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"), SNODE.child("implements")), TreeTraversalFactory.Axis("CHILDREN"), SNODE.link("intfc")), TreeTraversalFactory.Axis("CHILDREN"), SNODE.child("extends"));
+    SNode bar = null;
+    SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(bar, "childrenBlock", true), "body", true), null, false);
+    SNodeOperations.getAncestors(bar, null, false);
+    SNodeOperations.getAncestor(bar, null, false, false);
+    SNodeOperations.getChildren(bar);
+    SNodeOperations.getDescendants(bar, null, false);
+    SequenceOperations.map(SNodeOperations.getNextSiblings(bar, false), new zMapper(null, null));
+    SNodeOperations.getPrevSiblings(bar, false);
+    Iterable<SNode> blah = new SequenceWithSupplier<SNode>(new zValueSupplier1(null, null));
   }
 
 }

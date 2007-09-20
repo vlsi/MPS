@@ -17,6 +17,4 @@ public interface IFeatureDesign<T> {
     
     String parameterToString (T param);
     
-    T stringToParameter (String string);
-
 }

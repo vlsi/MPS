@@ -14,7 +14,15 @@ public class typeof_TreePathAdapterExpression_InferenceRule implements Inference
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true), "jetbrains.mps.ypath.helgins", "1186145190431")), argument, "jetbrains.mps.ypath.helgins", "1185018447615");
+    final SNode ExpType_typevar_1190288659521 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true), "jetbrains.mps.ypath.helgins", "1190288685890"), SLinkOperations.getTarget(argument, "expression", true), null, "jetbrains.mps.ypath.helgins", "1190288669877");
+    TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521), new Runnable() {
+
+      public void run() {
+        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521)), argument, "jetbrains.mps.ypath.helgins", "1190288701293");
+      }
+
+    }, "jetbrains.mps.ypath.helgins", "1190288695814");
   }
 
   public String getApplicableConceptFQName() {

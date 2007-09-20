@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ValueFunctionParam extends ConceptFunctionParameter {
+  public static final String concept = "jetbrains.mps.ypath.structure.ValueFunctionParam";
 
   public  ValueFunctionParam(SNode node) {
     super(node);

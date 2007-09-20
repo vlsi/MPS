@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class WhereBlock extends LambdaMethod {
+  public static final String concept = "jetbrains.mps.ypath.structure.WhereBlock";
 
   public  WhereBlock(SNode node) {
     super(node);

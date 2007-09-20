@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TreeNodeKindOccurrence extends BaseConcept {
+  public static final String concept = "jetbrains.mps.ypath.structure.TreeNodeKindOccurrence";
   public static String NODE_KIND = "nodeKind";
 
   public  TreeNodeKindOccurrence(SNode node) {

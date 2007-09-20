@@ -516,31 +516,32 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1185180364512">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1185180364513">
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1190295635760">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1190295635761">
               <property name="name" value="foo" />
-              <node role="type" type="jetbrains.mps.ypath.TreePathType" id="1185180364514">
-                <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185180364515">
+              <node role="type" type="jetbrains.mps.ypath.TreePathType" id="1190295635762">
+                <node role="nodeType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1190295635763">
                   <link role="classifier" extResolveInfo="1.[Classifier]Node" />
                 </node>
               </node>
-              <node role="initializer" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1185180211737">
-                <node role="expression" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1185180204745">
-                  <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1185180198723">
+              <node role="initializer" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1190295687346">
+                <node role="expression" type="jetbrains.mps.ypath.TreePathOperationExpression" id="1190295682704">
+                  <node role="expression" type="jetbrains.mps.ypath.TreePathAdapterExpression" id="1190295669713">
                     <link role="treepathAspect" targetNodeId="1185179283814" resolveInfo="DOMF" />
-                    <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185180197375">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1190295669248">
                       <link role="variableDeclaration" targetNodeId="1185180151098" resolveInfo="doc" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1185180204748">
+                  <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1190295682708">
                     <property name="axis" value="CHILDREN" />
                     <link role="usedFeature" targetNodeId="1185179643604" resolveInfo="elements" />
                   </node>
                 </node>
-                <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1185180211740">
+                <node role="operation" type="jetbrains.mps.ypath.IterateOperation" id="1190295687350">
                   <property name="axis" value="DESCENDANTS" />
                   <link role="usedFeature" targetNodeId="1185179320728" resolveInfo="child" />
-                  <node role="paramName" type="jetbrains.mps.ypath.ParameterName" id="1185180292658">
+                  <node role="paramObject" type="jetbrains.mps.ypath.ParameterWrapper" id="1190305296721">
+                    <property name="paramValue" value="foo" />
                     <property name="name" value="foo" />
                   </node>
                 </node>
@@ -554,8 +555,8 @@
             <node role="actual" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1185180371139">
               <link role="baseMethodDeclaration" targetNodeId="1185180141768" resolveInfo="toString" />
               <node role="instance" type="jetbrains.mps.baseLanguage.ThisExpression" id="1185180371140" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1185180373065">
-                <link role="variableDeclaration" targetNodeId="1185180364513" resolveInfo="foo" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1190295705215">
+                <link role="variableDeclaration" targetNodeId="1190295635761" resolveInfo="foo" />
               </node>
             </node>
           </node>

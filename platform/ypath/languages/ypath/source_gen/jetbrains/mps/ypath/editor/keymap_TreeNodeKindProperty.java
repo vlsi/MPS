@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
@@ -16,7 +17,8 @@ public class keymap_TreeNodeKindProperty extends EditorCellKeyMap {
   public  keymap_TreeNodeKindProperty() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
-    this.putAction("ctrl", "VK_D", new keymap_TreeNodeKindProperty.keymap_TreeNodeKindProperty_Action0());
+    action = new keymap_TreeNodeKindProperty.keymap_TreeNodeKindProperty_Action0();
+    this.putAction("ctrl", "VK_D", action);
   }
   public static class keymap_TreeNodeKindProperty_Action0 extends EditorCellKeyMapAction {
 
@@ -49,10 +51,10 @@ public class keymap_TreeNodeKindProperty extends EditorCellKeyMap {
 
     public void execute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
+      this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
+    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode treepath = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathAspect", false, false);
       for(SNode desc : SNodeOperations.getDescendants(treepath, null, false)) {
         if(SNodeOperations.isInstanceOf(desc, "jetbrains.mps.ypath.structure.TreeNodeKindProperty")) {

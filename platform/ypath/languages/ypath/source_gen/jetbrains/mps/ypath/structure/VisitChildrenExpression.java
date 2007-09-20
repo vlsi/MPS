@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class VisitChildrenExpression extends Expression {
+  public static final String concept = "jetbrains.mps.ypath.structure.VisitChildrenExpression";
   public static String ACTUAL_ARGUMENT = "actualArgument";
 
   public  VisitChildrenExpression(SNode node) {

@@ -5,6 +5,7 @@ package jetbrains.mps.ypath.structure;
 import jetbrains.mps.core.structure.INamedConcept;
 
 public interface IFeature extends INamedConcept {
+  public static final String concept = "jetbrains.mps.ypath.structure.IFeature";
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
 

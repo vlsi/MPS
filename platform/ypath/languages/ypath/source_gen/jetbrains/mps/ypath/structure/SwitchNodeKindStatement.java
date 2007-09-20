@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class SwitchNodeKindStatement extends Statement {
+  public static final String concept = "jetbrains.mps.ypath.structure.SwitchNodeKindStatement";
   public static String NODE_EXPRESSION = "nodeExpression";
   public static String NODE_KIND_CASE = "nodeKindCase";
 

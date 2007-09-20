@@ -9,6 +9,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ParamFunctionParam extends ConceptFunctionParameter implements IParamFeatureFun {
+  public static final String concept = "jetbrains.mps.ypath.structure.ParamFunctionParam";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
 
   public  ParamFunctionParam(SNode node) {
     super(node);
@@ -20,6 +23,23 @@ public class ParamFunctionParam extends ConceptFunctionParameter implements IPar
 
   public static ParamFunctionParam newInstance(SModel sm) {
     return ParamFunctionParam.newInstance(sm, false);
+  }
+
+
+  public String getShortDescription() {
+    return this.getProperty(ParamFunctionParam.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ParamFunctionParam.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ParamFunctionParam.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ParamFunctionParam.ALIAS, value);
   }
 
 }

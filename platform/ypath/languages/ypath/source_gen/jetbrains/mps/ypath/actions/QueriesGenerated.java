@@ -24,13 +24,13 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.ypath.constraints.FeatureTargetTypeUtil;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.ypath.structure.TraversalAxis;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 
 public class QueriesGenerated {
 
@@ -168,31 +168,29 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ParameterName_1184768393149(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ParameterWrapper_1184768393149(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.ParameterName", operationContext.getScope());
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.ParameterWrapper", operationContext.getScope());
       Calculable calc = new Calculable() {
 
         public Object calculate() {
           SNode op = parentNode;
           SNode tpoe = SNodeOperations.getParent(parentNode, null, false, false);
-          return FeatureTargetTypeUtil.getParameterNames(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "nodeType", true));
+          return FeatureTargetTypeUtil.getParameterObjects(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "nodeType", true));
         }
 
       };
-      Iterable<String> queryResult = (Iterable)calc.calculate();
-      for(String item : queryResult) {
+      Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      for(SNode item : queryResult) {
         result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode pn = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.ParameterName", null);
-            SPropertyOperations.set(pn, "name", ((String)this.getParameterObject()));
-            return pn;
+            return ((SNode)this.getParameterObject());
           }
 
           public String getMatchingText(String pattern) {
-            return ((String)this.getParameterObject());
+            return SPropertyOperations.getString(((SNode)this.getParameterObject()), "name");
           }
 
         });

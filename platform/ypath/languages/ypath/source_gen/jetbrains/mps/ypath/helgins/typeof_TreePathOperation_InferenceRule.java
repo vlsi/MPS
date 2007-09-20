@@ -25,6 +25,7 @@ public class typeof_TreePathOperation_InferenceRule implements InferenceRule_Run
           break;
         }
       }
+      TypeChecker.getInstance().reportTypeError(argument, "Error in model structure: wrong parent type", "jetbrains.mps.ypath.helgins", "1190288908359");
     } while(false);
   }
 

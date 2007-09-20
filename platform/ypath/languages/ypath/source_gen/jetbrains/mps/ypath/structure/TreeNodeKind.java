@@ -12,9 +12,12 @@ import java.util.Iterator;
 import java.util.List;
 
 public class TreeNodeKind extends BaseConcept implements INamedConcept {
-  public static String NAME = "name";
+  public static final String concept = "jetbrains.mps.ypath.structure.TreeNodeKind";
   public static String TRIGGER = "trigger";
   public static String PROPERTIES = "properties";
+  public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
 
   public  TreeNodeKind(SNode node) {
     super(node);
@@ -28,14 +31,6 @@ public class TreeNodeKind extends BaseConcept implements INamedConcept {
     return TreeNodeKind.newInstance(sm, false);
   }
 
-
-  public String getName() {
-    return this.getProperty(TreeNodeKind.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(TreeNodeKind.NAME, value);
-  }
 
   public KindBlock getTrigger() {
     return (KindBlock)this.getChild(TreeNodeKind.TRIGGER);
@@ -63,6 +58,30 @@ public class TreeNodeKind extends BaseConcept implements INamedConcept {
 
   public void insertProperties(TreeNodeKindProperty prev, TreeNodeKindProperty node) {
     this.insertChild(prev, TreeNodeKind.PROPERTIES, node);
+  }
+
+  public String getName() {
+    return this.getProperty(TreeNodeKind.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(TreeNodeKind.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(TreeNodeKind.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(TreeNodeKind.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(TreeNodeKind.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(TreeNodeKind.ALIAS, value);
   }
 
 }
