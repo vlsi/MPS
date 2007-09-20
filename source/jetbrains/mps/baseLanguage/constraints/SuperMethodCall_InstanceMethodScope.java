@@ -44,7 +44,7 @@ public class SuperMethodCall_InstanceMethodScope extends VisibleClassifierMember
   }
 
   public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {
-    if (SModelUtil_new.isAssignableConcept(concept, BaseMethodDeclaration.concept)) {
+    if (SModelUtil_new.isAssignableConcept(concept, InstanceMethodDeclaration.concept)) {
       // create fake type
       ClassifierType thisClassType = ClassifierType.newInstance(null);
       Classifier thisClass = mySuperMethodCall.getParent(Classifier.class, false);

@@ -4,10 +4,7 @@ import jetbrains.mps.smodel.search.IReferenceInfoResolver;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.baseLanguage.search.VisibleClassifierMembersScope;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
-import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.baseLanguage.structure.InstanceMethodCall;
-import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
-import jetbrains.mps.baseLanguage.structure.ClassifierType;
+import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 /**
@@ -26,7 +23,7 @@ public class InstanceMethodCall_InstanceMethodScope extends VisibleClassifierMem
   }
 
   public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {
-    if (SModelUtil_new.isAssignableConcept(concept, BaseMethodDeclaration.concept)) {
+    if (SModelUtil_new.isAssignableConcept(concept, InstanceMethodDeclaration.concept)) {
       return createInstanceMethodReferenceInfoResolver(myInstanceType, myMethodCall.getActualArguments());
     }
     return super.getReferenceInfoResolver(concept);
