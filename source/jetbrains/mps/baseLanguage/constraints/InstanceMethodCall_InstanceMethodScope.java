@@ -23,7 +23,7 @@ public class InstanceMethodCall_InstanceMethodScope extends VisibleClassifierMem
   }
 
   public IReferenceInfoResolver getReferenceInfoResolver(AbstractConceptDeclaration concept) {
-    if (SModelUtil_new.isAssignableConcept(concept, InstanceMethodDeclaration.concept)) {
+    if (SModelUtil_new.isAssignableConcept(concept, InstanceMethodDeclaration.concept) && myMethodCall != null) {
       return createInstanceMethodReferenceInfoResolver(myInstanceType, myMethodCall.getActualArguments());
     }
     return super.getReferenceInfoResolver(concept);

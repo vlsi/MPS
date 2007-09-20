@@ -10,7 +10,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall;
 
 public class LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -31,7 +32,7 @@ public class LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint im
 
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode clazz = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    return Classifier_Behavior.call_getVisibleMembersSearchScope_1189552517057(clazz, enclosingNode, IClassifiersSearchScope.STATIC_METHOD);
+    return new StaticMethodCall_StaticMethodScope(((ClassConcept)SNodeOperations.getAdapter(clazz)), ((LocalStaticMethodCall)SNodeOperations.getAdapter(referenceNode)));
   }
 
   public String getNodeReferentSearchScopeDescription() {
