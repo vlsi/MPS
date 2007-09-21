@@ -241,6 +241,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
     // update node proxies
     SNodeProxy.changeModelUID(oldModelUID, modelDescriptor);
+    SNodePointer.changeModelUID(oldModelUID, newModelUID);
     return true;
   }
 }
