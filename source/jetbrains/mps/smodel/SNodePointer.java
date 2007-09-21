@@ -13,7 +13,7 @@ import java.util.HashSet;
 
 /**
  * Replacement for SNodeProxy, not used yet
- *
+ * <p/>
  * Igor Alshannikov
  * Sep 21, 2007
  */
@@ -34,33 +34,40 @@ public class SNodePointer {
   }
 
   public SNodePointer(@NotNull SNode node) {
-    myNodeRef = new WeakReference<SNode>(node);
-    CommandProcessor.instance().addCommandListener(new CommandAdapter() {
-      public void commandFinished(@NotNull CommandEvent event) {
-        // convert 'young' pointer to 'mature'
-        SNode node = myNodeRef.get();
-        if (node == null || node.isRegistered()) {
-          // no need to listen any more
-          CommandProcessor.instance().removeCommandListener(this);
-        }
-        if (node != null && node.isRegistered()) {
-          // node and its model still exists?
-          if (node.getModel().getModelDescriptor() != null) {
+    if (node.isRegistered()) {
+      myModelUID = node.getModel().getUID();
+      myNodeId = node.getSNodeId();
+      registerPointer(this);
+    } else {
+      // 'young' pointer
+      myNodeRef = new WeakReference<SNode>(node);
+      CommandProcessor.instance().addCommandListener(new CommandAdapter() {
+        public void commandFinished(@NotNull CommandEvent event) {
+          // convert 'young' pointer to 'mature'
+          SNode node = myNodeRef.get();
+          if (node == null || node.isRegistered()) {
+            CommandProcessor.instance().removeCommandListener(this);
             myNodeRef = null;
-            myModelUID = node.getModel().getUID();
-            myNodeId = node.getSNodeId();
-            registerPointer(SNodePointer.this);
+            if(node != null) {
+              myModelUID = node.getModel().getUID();
+              myNodeId = node.getSNodeId();
+              registerPointer(SNodePointer.this);
+            }
           }
         }
-      }
-    });
+      });
+    }
   }
 
   public SNode getNode() {
     if (myModelUID != null) {
       SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myModelUID);
       if (modelDescriptor != null) {
-        return modelDescriptor.getSModel().getNodeById(myNodeId);
+        SNode node = modelDescriptor.getSModel().getNodeById(myNodeId);
+        if (node == null) {
+          node = UnregisteredNodes.instance().get(myModelUID, myNodeId.toString());
+        }
+        return node;
       }
     } else if (myNodeRef != null) {
       SNode node = myNodeRef.get();
@@ -128,7 +135,8 @@ public class SNodePointer {
     ourPointersByModelUID.get(pointer.myModelUID).add(pointer);
   }
 
-  /*package*/ static void changeModelUID(SModelUID oldModelUID, SModelUID newModelUID) {
+  /*package*/
+  static void changeModelUID(SModelUID oldModelUID, SModelUID newModelUID) {
     WeakSet<SNodePointer> pointers = ourPointersByModelUID.remove(oldModelUID);
     if (pointers != null) {
       for (SNodePointer pointer : pointers) {
