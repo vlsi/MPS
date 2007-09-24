@@ -10,10 +10,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class RequiredAdditionalArgument extends BaseConcept implements INamedConcept {
+  public static final String concept = "jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument";
   public static String PRESENTATION = "presentation";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String ARGUMENT_TYPE = "argumentType";
 
   public  RequiredAdditionalArgument(SNode node) {
     super(node);
@@ -58,6 +60,14 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
 
   public void setAlias(String value) {
     this.setProperty(RequiredAdditionalArgument.ALIAS, value);
+  }
+
+  public ArgumentType getArgumentType() {
+    return (ArgumentType)this.getChild(RequiredAdditionalArgument.ARGUMENT_TYPE);
+  }
+
+  public void setArgumentType(ArgumentType node) {
+    super.setChild(RequiredAdditionalArgument.ARGUMENT_TYPE, node);
   }
 
 }

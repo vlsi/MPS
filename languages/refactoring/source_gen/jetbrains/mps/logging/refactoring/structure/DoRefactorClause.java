@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class DoRefactorClause extends ConceptFunction {
+  public static final String concept = "jetbrains.mps.logging.refactoring.structure.DoRefactorClause";
 
   public  DoRefactorClause(SNode node) {
     super(node);

@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IsApplicableClause extends ConceptFunction {
+  public static final String concept = "jetbrains.mps.logging.refactoring.structure.IsApplicableClause";
 
   public  IsApplicableClause(SNode node) {
     super(node);

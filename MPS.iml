@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module relativePaths="false" type="JAVA_MODULE" version="4">
+  <component name="ModuleRootManager" />
   <component name="NewModuleRootManager" inherit-compiler-output="false">
     <output url="file://$MODULE_DIR$/classes" />
     <content url="file://$MODULE_DIR$">
@@ -8,6 +9,7 @@
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/smodelLanguage/solutions/samples/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/structureLanguage/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/helgins/languages/subtyping/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/languages/refactoring/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/mf/lair1/languages/config/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/mf/lair1/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
