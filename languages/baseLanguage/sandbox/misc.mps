@@ -140,11 +140,30 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1189158201358" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1189158201359" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1189158201360">
-        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1189158296362">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1189158296363">
-            <property name="name" value="aString" />
-            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1189158296364">
-              <link role="classifier" extResolveInfo="1.[Classifier]String" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1190211948055">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1190211948056">
+            <property name="name" value="nodes" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeListType" id="1190211948057" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1190211963981">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperationExpression" id="1190211994859">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1190211963982">
+              <link role="variableDeclaration" targetNodeId="1190211948056" resolveInfo="nodes" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.SelectOperation" id="1190212002095">
+              <node role="selector" type="jetbrains.mps.baseLanguage.ext.collections.lang.SelectorBlock" id="1190212002096">
+                <node role="defaultInputElement" type="jetbrains.mps.baseLanguage.ext.collections.lang.DefaultInputElement" id="1190212002097">
+                  <property name="name" value="it" />
+                </node>
+                <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1190212002098">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1190212044833">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.ClosureParameterReference" id="1190212044834">
+                      <link role="closureParameter" targetNodeId="1190212002097" resolveInfo="it" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
