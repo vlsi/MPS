@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.util.*;
 import java.util.List;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class ChooseRefactoringInputDataDialog extends BaseDialog {
 
@@ -19,7 +20,9 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     super(mainFrame, "Input data for refactoring");
     myComponents = new ArrayList<IChooseComponent>(components);
     myPanel.add(new JLabel("Input data for refactoring"), BorderLayout.NORTH);
-    myInnerPanel = new JPanel(new GridLayout(myComponents.size(), 1));
+    myInnerPanel = new JPanel();
+    BoxLayout layout = new BoxLayout(myInnerPanel, BoxLayout.Y_AXIS);
+    myInnerPanel.setLayout(layout);
     for (IChooseComponent component : myComponents) {
       myInnerPanel.add((Component)component);
     }
@@ -36,6 +39,11 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
 
   public Map<String, String> getResult() {
     return myResult;
+  }
+
+  protected void prepareDialog() {
+    super.prepareDialog();
+    pack();
   }
 
   @Button(position = 0, name = "OK", defaultButton = true)

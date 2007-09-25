@@ -88,6 +88,11 @@ public abstract class BaseDialog extends JDialog {
 
 
   public void showDialog() {
+    prepareDialog();
+    setVisible(true);
+  }
+
+  protected void prepareDialog() {
     ((JComponent) getContentPane()).setBorder(BorderFactory.createEmptyBorder(4, 4, 4, 4));
 
     setLayout(new BorderLayout());
@@ -114,8 +119,6 @@ public abstract class BaseDialog extends JDialog {
     }, KeyStroke.getKeyStroke("ESCAPE"), JComponent.WHEN_IN_FOCUSED_WINDOW);
 
     setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-
-    setVisible(true);
   }
 
   protected String getButtonsPosition() {
