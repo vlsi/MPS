@@ -11,6 +11,11 @@
       <property name="name" value="model" />
       <node role="argumentType" type="jetbrains.mps.logging.refactoring.SModelArgumentType" id="1190642731970" />
     </node>
+    <node role="arguments" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgument" id="1190724680349">
+      <property name="presentation" value="enter foo" />
+      <property name="name" value="foo" />
+      <node role="argumentType" type="jetbrains.mps.logging.refactoring.StringArgumentType" id="1190724800607" />
+    </node>
   </node>
 </model>
 

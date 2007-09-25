@@ -15,7 +15,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   private Map<String, String> myResult = new HashMap<String, String>();
   private List<IChooseComponent> myComponents;
 
-  protected ChooseRefactoringInputDataDialog(Frame mainFrame, List<IChooseComponent> components) throws HeadlessException {
+  public ChooseRefactoringInputDataDialog(Frame mainFrame, List<IChooseComponent> components) throws HeadlessException {
     super(mainFrame, "Input data for refactoring");
     myComponents = new ArrayList<IChooseComponent>(components);
     myPanel.add(new JLabel("Input data for refactoring"), BorderLayout.NORTH);
@@ -34,7 +34,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     return myPanel;
   }
 
-  public Object getResult() {
+  public Map<String, String> getResult() {
     return myResult;
   }
 
