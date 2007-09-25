@@ -13,6 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import java.util.List;
+import jetbrains.mps.logging.refactoring.constraints.ArgumentType_Behavior;
 
 public class QueriesGenerated {
 
@@ -21,7 +22,15 @@ public class QueriesGenerated {
     if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
       return !(SLinkOperations.getTarget(parent, "lValue", true) == node);
     }
-    return true;
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "argument", false), "argumentType", true), "jetbrains.mps.logging.refactoring.structure.StringArgumentType");
+  }
+
+  public static boolean baseMappingRule_Condition_1190731843928(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode parent = SNodeOperations.getParent(node, null, false, false);
+    if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
+      return !(SLinkOperations.getTarget(parent, "lValue", true) == node);
+    }
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "argument", false), "argumentType", true), "jetbrains.mps.logging.refactoring.structure.StringArgumentType"));
   }
 
   public static boolean baseMappingRule_Condition_1189763354452(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -121,6 +130,16 @@ public class QueriesGenerated {
     return (SNode)generator.findOutputNodeByInputNodeAndMappingName(node, "fieldByArgument");
   }
 
+  public static SNode referenceMacro_GetReferent_1190732304982(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    return (SNode)generator.findOutputNodeByInputNodeAndMappingName(node, "fieldByArgument");
+  }
+
+  public static SNode referenceMacro_GetReferent_1190732304993(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    SNode conceptFunction = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
+    SNode method = (SNode)generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent();
+    return ListOperations.getElement(SLinkOperations.getTargets(method, "parameter", true), 1);
+  }
+
   public static boolean ifMacro_Condition_1190725064806(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return (SLinkOperations.getTarget(node, "isApplicableClause", true) != null);
   }
@@ -165,8 +184,12 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "updateModelClause", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1189764415078(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode sourceNodeQuery_1190731677089(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "rValue", true);
+  }
+
+  public static SNode sourceNodeQuery_1190732347461(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return ArgumentType_Behavior.call_convertIntoType_1190731931503(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "argument", false), "argumentType", true));
   }
 
 }

@@ -5,6 +5,7 @@ package jetbrains.mps.logging.refactoring.helgins;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.logging.refactoring.constraints.ArgumentType_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -14,7 +15,7 @@ public class typeof_RequiredAdditionalArgument_InferenceRule implements Inferenc
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.logging.refactoring.helgins", "1190728902837"), RefactoringLang_HelginsUtil.convert(SLinkOperations.getTarget(argument, "argumentType", true)), argument, null, "jetbrains.mps.logging.refactoring.helgins", "1190728908074");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.logging.refactoring.helgins", "1190728902837"), ArgumentType_Behavior.call_convertIntoType_1190731931503(SLinkOperations.getTarget(argument, "argumentType", true)), argument, null, "jetbrains.mps.logging.refactoring.helgins", "1190728908074");
   }
 
   public String getApplicableConceptFQName() {
