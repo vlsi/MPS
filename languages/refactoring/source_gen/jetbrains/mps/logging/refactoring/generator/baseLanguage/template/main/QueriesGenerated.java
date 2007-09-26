@@ -155,10 +155,6 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(node, "updateModelClause", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1190642651793(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return true;
-  }
-
   public static List sourceNodesQuery_1189698183859(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "arguments", true);
   }

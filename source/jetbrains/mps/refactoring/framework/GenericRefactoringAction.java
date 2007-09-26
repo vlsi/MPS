@@ -24,8 +24,8 @@ public class GenericRefactoringAction extends MPSAction {
   }
 
   public void execute(@NotNull ActionContext context) {
-    Map<String, String> args = myRefactoring.askForInfo(context.getOperationContext());
-    if (!myRefactoring.isApplicable(context, args)) return;
+    Map<String, String> args = myRefactoring.askForInfo(context);
+    if (args == null) return;
     myRefactoring.doRefactor(context, args);
   }
 

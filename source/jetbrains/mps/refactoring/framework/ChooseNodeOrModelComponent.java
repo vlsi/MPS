@@ -9,6 +9,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.refactoring.common.move.MoveNodeRefactoring;
@@ -27,18 +28,20 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   private MyTree myTree = new MyTree();
   private String myConceptFQName;
   private IOperationContext myOperationContext;
+  private ActionContext myActionContext;
   private Set<SModelDescriptor> myModels = new HashSet<SModelDescriptor>();
   boolean myMayBeModel;
   boolean myMayBeNode;
 
 
-  public ChooseNodeOrModelComponent(String caption, String propertyName, IOperationContext operationContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
+  public ChooseNodeOrModelComponent(String caption, String propertyName, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
     myCaption = caption;
     myPropertyName = propertyName;
-    myOperationContext = operationContext;
+    myActionContext = actionContext;
+    myOperationContext = myActionContext.getOperationContext();
     myMayBeModel = mayBeModel;
     myMayBeNode = mayBeNode;
-    Set<SModelDescriptor> models = getModelsFrom(operationContext);
+    Set<SModelDescriptor> models = getModelsFrom(myOperationContext);
     myModels.addAll(models);
     myConceptFQName = conceptFQName;
 

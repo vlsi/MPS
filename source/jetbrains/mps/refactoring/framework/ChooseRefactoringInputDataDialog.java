@@ -1,6 +1,7 @@
 package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.ide.BaseDialog;
+import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 
 import javax.swing.*;
@@ -13,11 +14,15 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
 
   private JPanel myPanel = new JPanel(new BorderLayout());
   private JPanel myInnerPanel;
-  private Map<String, String> myResult = new HashMap<String, String>();
+  private Map<String, String> myResult;
   private List<IChooseComponent> myComponents;
+  private ILoggableRefactoring myRefactoring;
+  private ActionContext myActionContext;
 
-  public ChooseRefactoringInputDataDialog(Frame mainFrame, List<IChooseComponent> components) throws HeadlessException {
-    super(mainFrame, "Input data for refactoring");
+  public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, ActionContext actionContext, List<IChooseComponent> components) throws HeadlessException {
+    super(actionContext.getOperationContext().getMainFrame(), "Input data for refactoring");
+    myRefactoring = refactoring;
+    myActionContext = actionContext;
     myComponents = new ArrayList<IChooseComponent>(components);
     myPanel.add(new JLabel("Input data for refactoring"), BorderLayout.NORTH);
     myInnerPanel = new JPanel();
@@ -49,10 +54,16 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   @Button(position = 0, name = "OK", defaultButton = true)
   public void onOk() {
     try {
-    for (IChooseComponent component : myComponents) {
-      myResult.put(component.getPropertyName(), component.submit());
-    }
-    dispose();
+      myResult = new HashMap<String, String>();
+      for (IChooseComponent component : myComponents) {
+        myResult.put(component.getPropertyName(), component.submit());
+      }
+      if (myRefactoring.isApplicable(myActionContext, myResult)) {
+        dispose();
+      } else {
+        myResult = null;
+        JOptionPane.showMessageDialog(this, "refactoring is not applicable");
+      }
     } catch (InvalidInputValueException ex) {
       JOptionPane.showMessageDialog(this, ex.getMessage());
     }
