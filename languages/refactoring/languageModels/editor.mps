@@ -165,5 +165,36 @@
       <property name="text" value="snodeOrModel" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1190811176675">
+    <link role="conceptDeclaration" targetNodeId="1.1190811076950" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1190811185567">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1190811187585">
+        <link role="relationDeclaration" targetNodeId="1.1190811102680" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1190811190103">
+        <property name="text" value="/" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1190811252870">
+    <link role="conceptDeclaration" targetNodeId="1.1190811209119" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1190811255059">
+      <property name="text" value="nodeId" />
+      <property name="textFgColor" value="DARK_BLUE" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1190811375937">
+    <link role="conceptDeclaration" targetNodeId="1.1190811301530" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1190811378111">
+      <property name="text" value="getModelUID" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1190811449288">
+    <link role="conceptDeclaration" targetNodeId="1.1190811398315" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1190811451321">
+      <property name="text" value="getNodeId" />
+    </node>
+  </node>
 </model>
 
