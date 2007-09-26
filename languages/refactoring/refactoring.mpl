@@ -6,6 +6,9 @@
   <helginsTypeSystem>
     <model modelUID="jetbrains.mps.logging.refactoring.helgins" />
   </helginsTypeSystem>
+  <actions>
+    <model modelUID="jetbrains.mps.logging.refactoring.actions" />
+  </actions>
   <constraints>
     <model modelUID="jetbrains.mps.logging.refactoring.constraints" />
   </constraints>
