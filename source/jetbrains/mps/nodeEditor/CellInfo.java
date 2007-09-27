@@ -1,11 +1,10 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.components.ComponentsUtil;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
 
 
@@ -18,7 +17,7 @@ import org.jdom.Element;
  */
 public class CellInfo {
 
-  private SNodeProxy myNodeProxy;
+  private SNodePointer myNodePointer;
   private String myCellId;
   private int myCellNumber;
   private boolean myIsInList = false;
@@ -27,7 +26,7 @@ public class CellInfo {
 
   // use only within EditorCell.getCellInfo
   public CellInfo(EditorCell cell) {
-    myNodeProxy = cell.getSNodeProxy();
+    myNodePointer = cell.getSNodePointer();
     myCellId = (String) cell.getUserObject(EditorCell.CELL_ID);
 
     EditorCell_Collection parent = cell.getParent();
@@ -46,7 +45,7 @@ public class CellInfo {
     String cellId = cellElement.getAttributeValue(ComponentsUtil.ID);
     String cellNumber = cellElement.getAttributeValue(ComponentsUtil.NUMBER);
     String isInList = cellElement.getAttributeValue(ComponentsUtil.IS_IN_LIST);
-    myNodeProxy =  new SNodeProxy(ComponentsUtil.nodeFromElement(nodeElement, scope));
+    myNodePointer =  new SNodePointer(ComponentsUtil.nodeFromElement(nodeElement, scope));
     myCellId = cellId;
     if (parentInfoElement != null) {
       if (cellNumber != null) {
@@ -64,7 +63,7 @@ public class CellInfo {
     if (myCellId != null) {
       cellElement.setAttribute(ComponentsUtil.ID, myCellId);
     }
-    SNode node = myNodeProxy.getNode();
+    SNode node = myNodePointer.getNode();
     if (node != null) {
       Element nodeElement = ComponentsUtil.nodeToElement(node);
       cellElement.addContent(nodeElement);
@@ -84,15 +83,15 @@ public class CellInfo {
 
 
   private SNode getSNode() {
-    if (myNodeProxy == null) {
+    if (myNodePointer == null) {
       return null;
     }
-    return myNodeProxy.getNode();
+    return myNodePointer.getNode();
   }
 
   public int hashCode() {
     return (myParentInfo == null ? 0 : myParentInfo.hashCode()) +
-        (myNodeProxy == null?0:myNodeProxy.hashCode()) + (myCellId == null?0:myCellId.hashCode()) + myCellNumber;
+        (myNodePointer == null?0: myNodePointer.hashCode()) + (myCellId == null?0:myCellId.hashCode()) + myCellNumber;
   }
 
   public EditorCell findCell(AbstractEditorComponent editorComponent) {
@@ -103,7 +102,7 @@ public class CellInfo {
     if (myIsInList || myCellId == null) {
       return collection.getCellAt(myCellNumber);
     } else {
-      return editorComponent.findCellWithIdInCollectionWithNode(collection, myCellId, myNodeProxy.getNode());
+      return editorComponent.findCellWithIdInCollectionWithNode(collection, myCellId, myNodePointer.getNode());
     }
   }
 
@@ -111,11 +110,11 @@ public class CellInfo {
     if (!(o instanceof CellInfo)) return false;
     CellInfo cellInfo = (CellInfo) o;
     if (!EqualUtil.equals(cellInfo.myParentInfo, myParentInfo)) return false;
-    if (cellInfo.myNodeProxy == null) return false;
+    if (cellInfo.myNodePointer == null) return false;
     boolean idsBothNull = false;
     if (cellInfo.myCellId == null && myCellId == null) idsBothNull = true;
     return (cellInfo.myCellId == null ? idsBothNull : cellInfo.myCellId.equals(myCellId))
-            && (cellInfo.myNodeProxy.equals(myNodeProxy))
+            && (cellInfo.myNodePointer.equals(myNodePointer))
             && cellInfo.myCellNumber == myCellNumber;
   }
 }
