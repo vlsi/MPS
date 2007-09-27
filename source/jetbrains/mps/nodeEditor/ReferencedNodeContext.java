@@ -1,10 +1,10 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
 
-import java.util.*;
+import java.util.Stack;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,14 +14,14 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class ReferencedNodeContext {
-  private Stack<SNodeProxy> myContextRefererNodes = new Stack<SNodeProxy>();
-  private SNodeProxy myNodeProxy = null;
+  private Stack<SNodePointer> myContextRefererNodes = new Stack<SNodePointer>();
+  private SNodePointer myNodePointer = null;
   private Stack<String> myContextRoles = new Stack<String>();
-  private Stack<SNodeProxy> myAttributesStack = new Stack<SNodeProxy>();
+  private Stack<SNodePointer> myAttributesStack = new Stack<SNodePointer>();
 
   private ReferencedNodeContext(SNode node) {
     assert node != null;
-    myNodeProxy = new SNodeProxy(node);
+    myNodePointer = new SNodePointer(node);
     node.putUserObject(this, this); //context must be collected only after its target node is collected
   }
 
@@ -39,7 +39,7 @@ public class ReferencedNodeContext {
   public ReferencedNodeContext contextWithOneMoreReference(SNode node, SNode contextRefererNode, String contextRole) {
     ReferencedNodeContext result = sameContextButAnotherNode(node);
     result.myContextRoles.push(contextRole);
-    result.myContextRefererNodes.push(new SNodeProxy(contextRefererNode));
+    result.myContextRefererNodes.push(new SNodePointer(contextRefererNode));
     return result;
   }
 
@@ -49,17 +49,17 @@ public class ReferencedNodeContext {
 
   public ReferencedNodeContext contextWithOneMoreAttribute(SNode attribute) {
     ReferencedNodeContext result = sameContextButAnotherNode(getNode());
-    result.myAttributesStack.push(new SNodeProxy(attribute));
+    result.myAttributesStack.push(new SNodePointer(attribute));
     return result;
   }
 
   public SNode getNode() {
-    return myNodeProxy.getNode();
+    return myNodePointer.getNode();
   }
 
   public int hashCode() {
     return EqualUtil.hashCode(myContextRefererNodes)
-            + EqualUtil.hashCode(myNodeProxy)
+            + EqualUtil.hashCode(myNodePointer)
             + EqualUtil.hashCode(myContextRoles)
             + EqualUtil.hashCode(myAttributesStack);
   }
@@ -72,7 +72,7 @@ public class ReferencedNodeContext {
       return EqualUtil.equals(myContextRoles, o.myContextRoles)
               && EqualUtil.equals(myContextRefererNodes, o.myContextRefererNodes)
               && EqualUtil.equals(myAttributesStack, o.myAttributesStack)
-              && EqualUtil.equals(myNodeProxy, o.myNodeProxy);
+              && EqualUtil.equals(myNodePointer, o.myNodePointer);
     } else {
       return false;
     }

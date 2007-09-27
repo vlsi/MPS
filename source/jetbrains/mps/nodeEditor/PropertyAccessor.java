@@ -9,14 +9,14 @@ import jetbrains.mps.util.annotation.Hack;
  * Date: Jan 16, 2004
  */
 public class PropertyAccessor implements ModelAccessor {
-  private SNodeProxy myNodeProxy;
+  private SNodePointer myNodePointer;
   private String myPropertyName;
   private boolean myReadOnly;
   private boolean myAllowEmptyText;
   private PropertyDeclaration myPropertyDeclaration;
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, EditorContext editorContext) {
-    myNodeProxy = new SNodeProxy(node);
+    myNodePointer = new SNodePointer(node);
     myPropertyName = propertyName;
     myReadOnly = readOnly || node.getModel().isNotEditable() || editorContext.getNodeEditorComponent().isReadOnly();
     myAllowEmptyText = allowEmptyText;
@@ -24,15 +24,15 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   public PropertyAccessor(SNode node, String propertyName, boolean readOnly, boolean allowEmptyText, IOperationContext context) {
-    myNodeProxy = new SNodeProxy(node);
+    myNodePointer = new SNodePointer(node);
     myPropertyName = propertyName;
     myReadOnly = readOnly || node.getModel().isNotEditable();
     myAllowEmptyText = allowEmptyText;
     myPropertyDeclaration = node.getPropertyDeclaration(propertyName, context.getScope());
   }
 
-  public SNodeProxy getNodeProxy() {
-    return myNodeProxy;
+  public SNodePointer getNodePointer() {
+    return myNodePointer;
   }
 
   public String getPropertyName() {
@@ -51,7 +51,7 @@ public class PropertyAccessor implements ModelAccessor {
       }
       if (isValidText_internal(text)) {
         String propertyValue = toInternal(text);
-        myNodeProxy.getNode().setProperty(myPropertyName, propertyValue);
+        myNodePointer.getNode().setProperty(myPropertyName, propertyValue);
       }
     }
   }

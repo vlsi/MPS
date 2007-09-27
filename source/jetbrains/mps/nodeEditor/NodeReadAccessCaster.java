@@ -64,9 +64,9 @@ public class NodeReadAccessCaster {
   public static String runEditorCellPropertyAccessAction(PropertyAccessor accessor) {
     ourPropertyAccessor = accessor;
     String propertyName = accessor.getPropertyName();
-    SNodeProxy nodeProxy = accessor.getNodeProxy();
+    SNodePointer pointer = accessor.getNodePointer();
     try {
-      SNode node = nodeProxy.getNode();
+      SNode node = pointer.getNode();
       if (node == null) return null;
       return node.getProperty(propertyName);
     } finally {
@@ -98,7 +98,7 @@ public class NodeReadAccessCaster {
     if (ourPropertyAccessor != null) {
       if (ourPropertyCellCreationAccessListener != null) {
         switchOffFiringPropertyReadAccessedEvent();
-        ourPropertyCellCreationAccessListener.propertyCleanReadAccess(new SNodeProxy(node), propertyName);
+        ourPropertyCellCreationAccessListener.propertyCleanReadAccess(new SNodePointer(node), propertyName);
         switchOnFiringPropertyReadAccessedEvent();
       }
       return;

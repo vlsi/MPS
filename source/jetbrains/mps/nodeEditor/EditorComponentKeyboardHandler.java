@@ -8,11 +8,11 @@ package jetbrains.mps.nodeEditor;
 
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
 
 import java.awt.event.KeyEvent;
-import java.util.*;
+import java.util.List;
 
 public class EditorComponentKeyboardHandler implements IKeyboardHandler {
   private static final Logger LOG = Logger.getLogger(EditorComponentKeyboardHandler.class);
@@ -24,8 +24,8 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
   public boolean processKeyPressed(final EditorContext editorContext, final KeyEvent keyEvent) {
     if (keyEvent.isConsumed()) return false;
     AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
-    SNodeProxy sNodeProxy = editor.getRootCell().getSNodePointer();
-    boolean notEditable = sNodeProxy != null && sNodeProxy.getModel().isNotEditable();
+    SNodePointer pointer = editor.getRootCell().getSNodePointer();
+    boolean notEditable = pointer != null && pointer.getModel().isNotEditable();
     notEditable = (editorContext.getNodeEditorComponent().isReadOnly() || notEditable);
 
     if (notEditable) return false;

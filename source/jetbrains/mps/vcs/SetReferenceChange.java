@@ -1,14 +1,11 @@
 package jetbrains.mps.vcs;
 
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.*;
 
 public class SetReferenceChange extends Change {
   private SNodeId myNodeId;
   private String myRole;
-  private SNodeProxy myProxy;
+  private SNodePointer myNodePointer;
 
   private SModel myModel;
 
@@ -23,7 +20,7 @@ public class SetReferenceChange extends Change {
 
     if (target == null || target.getModel() != model) {
       myInternal = false;
-      myProxy = new SNodeProxy(target);
+      myNodePointer = new SNodePointer(target);
     } else {
       myInternal = true;
       myTargetId = target.getSNodeId();
@@ -39,22 +36,22 @@ public class SetReferenceChange extends Change {
   }
 
 
-  public SNodeProxy getProxy() {
-    return myProxy;
+  public SNodePointer getPointer() {
+    return myNodePointer;
   }
 
   public boolean isBrokenReference() {
-    if (!myInternal && myProxy.getNode() == null) return true;
+    if (!myInternal && myNodePointer.getNode() == null) return true;
     return false;
   }
 
 
   public String toString() {
     if (!myInternal) {
-      if (myProxy.getNode() == null) {
+      if (myNodePointer.getNode() == null) {
         return "set reference" + myNodeId + " in role. [BAD REFERENCE]";
       } else {
-        return "set reference " + myNodeId + " in role " + myRole + " to " + myProxy + " in model " + myProxy.getModel();
+        return "set reference " + myNodeId + " in role " + myRole + " to " + myNodePointer + " in model " + myNodePointer.getModel();
       }
     } else {
       return "set reference " + myNodeId + " in role " + myRole + " to " + myModel.getNodeById(myTargetId);
@@ -72,10 +69,10 @@ public class SetReferenceChange extends Change {
         SNode target = m.getNodeById(myTargetId);
         node.setReferent(getRole(), target);
       } else {
-        if (myProxy == null) {
+        if (myNodePointer == null) {
           node.setReferent(getRole(), null);
         } else {
-          node.setReferent(getRole(), myProxy.getNode());
+          node.setReferent(getRole(), myNodePointer.getNode());
         }
       }
     }
