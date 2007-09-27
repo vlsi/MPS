@@ -25,6 +25,10 @@ public class SNodePointer {
     this(SModelUID.fromString(modelUID), nodeId);
   }
 
+  public SNodePointer(@NotNull INodeAdapter node) {
+    this(node.getModel().getUID(), node.getNode().getSNodeId());
+  }
+
   public SNodePointer(@NotNull SNode node) {
     this(node.getModel().getUID(), node.getSNodeId());
   }

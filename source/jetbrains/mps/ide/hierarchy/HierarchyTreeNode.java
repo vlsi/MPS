@@ -10,7 +10,6 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.bootstrap.structureLanguage.icons.Icons;
 
 import javax.swing.JPopupMenu;
 import javax.swing.Icon;
@@ -27,12 +26,12 @@ import org.jetbrains.annotations.NotNull;
  */
 public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 
-    protected SNodeProxy myNodeProxy;
+    private SNodePointer myNodePointer;
     protected AbstractHierarchyTree<T> myHierarchyTree;
 
     public HierarchyTreeNode(@NotNull T declaration, IOperationContext operationContext, AbstractHierarchyTree<T> tree) {
       super(operationContext);
-      myNodeProxy = new SNodeProxy(declaration);
+      myNodePointer = new SNodePointer(declaration);
       myHierarchyTree = tree;
       setUserObject(declaration);
     }
@@ -42,7 +41,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     }
 
     public T getNode() {
-      return (T) BaseAdapter.fromNode(myNodeProxy.getNode());
+      return (T) BaseAdapter.fromNode(myNodePointer.getNode());
     }
 
     public String getNodeIdentifier() {
@@ -55,7 +54,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
       JPopupMenu result = new JPopupMenu();
       result.add(new AbstractActionWithEmptyIcon("Show Hierarchy For This Concept") {
         public void actionPerformed(ActionEvent e) {
-          final SNode node = myNodeProxy.getNode();
+          final SNode node = myNodePointer.getNode();
           myHierarchyTree.getHierarchyView().showConceptInHierarchy((T) node.getAdapter(), getOperationContext());
         }
       }).setBorder(null);
@@ -63,7 +62,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     }
 
     public void doubleClick() {
-      final SNode node = myNodeProxy.getNode();
+      final SNode node = myNodePointer.getNode();
 
       final EditorsPane editorsPane = myHierarchyTree.getHierarchyView().myIde.getEditorsPane();
       final IEditor currentEditor = editorsPane.getCurrentEditor();
@@ -79,7 +78,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     }
 
     public Icon getIcon(boolean expanded) {
-      return IconManager.getIconFor(myNodeProxy.getNode());
+      return IconManager.getIconFor(myNodePointer.getNode());
     }
 
   }

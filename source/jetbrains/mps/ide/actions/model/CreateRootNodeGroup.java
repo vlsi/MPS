@@ -73,7 +73,7 @@ public class CreateRootNodeGroup extends ActionGroup {
 
       for (ConceptDeclaration conceptDeclaration : language.getConceptDeclarations()) {
         if (conceptDeclaration.getRootable()) {
-          langRootsGroup.add(newRootNodeAction(new SNodeProxy(conceptDeclaration), modelDescriptor, ide));
+          langRootsGroup.add(newRootNodeAction(new SNodePointer(conceptDeclaration), modelDescriptor, ide));
         }
       }
       if (langRootsGroup.getElements().size() > 0) {
@@ -84,7 +84,7 @@ public class CreateRootNodeGroup extends ActionGroup {
     setVisible(context.hasOneSelectedItem());
   }
 
-  private MPSAction newRootNodeAction(final SNodeProxy nodeConcept, final SModelDescriptor modelDescriptor, final IDEProjectFrame ide) {
+  private MPSAction newRootNodeAction(final SNodePointer nodeConcept, final SModelDescriptor modelDescriptor, final IDEProjectFrame ide) {
     return new MPSAction(NodePresentationUtil.matchingText(nodeConcept.getNode())) {
       public Icon getIcon() {
         return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept.getNode()));
