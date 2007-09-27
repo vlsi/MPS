@@ -100,7 +100,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private MessagesGutter myMessagesGutter = new MessagesGutter(this);
   private LeftEditorHighlighter myLeftHighlighter;
-  protected SNodeProxy myNodeProxy;
+  protected SNodePointer myNodePointer;
   private EditorContext myEditorContext;
   private List<RebuildListener> myRebuildListeners;
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
@@ -399,14 +399,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public SNode getEditedNode() {
-    if (myNodeProxy != null) {
-      return myNodeProxy.getNode();
+    if (myNodePointer != null) {
+      return myNodePointer.getNode();
     }
     return null;
   }
 
-  public SNodeProxy getEditedNodeProxy() {
-    return myNodeProxy;
+  public SNodePointer getEditedNodePointer() {
+    return myNodePointer;
   }
 
   public void editNode(SNode node, IOperationContext operationContext) {
@@ -419,7 +419,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   protected void editNode(SNode node) {
     IOperationContext operationContext = getOperationContext();
-    myNodeProxy = new SNodeProxy(node);
+    myNodePointer = new SNodePointer(node);
     SModel model = node == null ? null : node.getModel();
     setEditorContext(new EditorContext(this, model, operationContext));
     rebuildEditorContent();
@@ -1106,11 +1106,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   void updateModelCheckerMessages() {
-    if (myNodeProxy == null) {
+    if (myNodePointer == null) {
       return;
     }
 
-    SNode rootNode = myNodeProxy.getNode();
+    SNode rootNode = myNodePointer.getNode();
     if (rootNode == null) {
       return;
     }

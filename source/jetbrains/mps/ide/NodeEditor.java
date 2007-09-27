@@ -1,11 +1,11 @@
 package jetbrains.mps.ide;
 
-import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.navigation.EditorInfo;
+import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -75,20 +75,11 @@ public class NodeEditor implements IEditor {
   }
 
   public SNode getEditedNode() {
-//    EditorCell rootCell = getRootCell();
-//    if (rootCell == null) return null;
-//    return rootCell.getSNode();
     return myEditorComponent.getEditedNode();
   }
 
-  public SNodeProxy getEditedNodeProxy() {
-//    EditorCell rootCell = getRootCell();
-//    if (rootCell != null) {
-//      return rootCell.getSNodeProxy();
-//    } else {
-//      return null;
-//    }
-    return myEditorComponent.getEditedNodeProxy();
+  public SNodePointer getEditedNodePointer() {
+    return myEditorComponent.getEditedNodePointer();
   }
 
   public void selectNode(SNode node) {

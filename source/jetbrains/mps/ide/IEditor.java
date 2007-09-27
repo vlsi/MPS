@@ -8,13 +8,12 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.ICellSelectionListener;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
-import java.util.Set;
 
 public interface IEditor {
   JComponent getComponent();
@@ -38,7 +37,7 @@ public interface IEditor {
 
   @Nullable SNode getEditedNode();
 
-  @Nullable SNodeProxy getEditedNodeProxy();
+  @Nullable SNodePointer getEditedNodePointer();
 
   //for those types of editors which do not contain node: to find them in another way 
   @Nullable EditorInfo getEditorInfo();

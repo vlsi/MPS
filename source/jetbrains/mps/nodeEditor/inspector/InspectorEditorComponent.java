@@ -15,7 +15,7 @@ import jetbrains.mps.ide.navigation.InspectorHistoryItem;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -28,8 +28,7 @@ final class InspectorEditorComponent extends AbstractEditorComponent implements 
 
   InspectorEditorComponent() {
     super(null);
-
-    myNodeProxy = new SNodeProxy((SNode) null);
+    myNodePointer = new SNodePointer((SNode) null);
     reinitEditor();
   }
 
@@ -68,10 +67,10 @@ final class InspectorEditorComponent extends AbstractEditorComponent implements 
     }
     if (node == null) {
       setOperationContext(null);
-      myNodeProxy = null;
+      myNodePointer = null;
     } else {
       setOperationContext(context);
-      myNodeProxy = new SNodeProxy(node);
+      myNodePointer = new SNodePointer(node);
     }
 
     reinitEditor();

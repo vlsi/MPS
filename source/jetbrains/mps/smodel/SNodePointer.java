@@ -12,7 +12,7 @@ import java.util.WeakHashMap;
 import java.util.HashSet;
 
 /**
- * Replacement for SNodeProxy, not used yet
+ * Replacement for SNodeProxy
  * <p/>
  * Igor Alshannikov
  * Sep 21, 2007
@@ -29,8 +29,11 @@ public class SNodePointer {
     this(node.getModel().getUID(), node.getNode().getSNodeId());
   }
 
-  public SNodePointer(@NotNull SNode node) {
-    this(node.getModel().getUID(), node.getSNodeId());
+  public SNodePointer(SNode node) {
+    if (node == null) return;
+    myModelUID = node.getModel().getUID();
+    myNodeId = node.getSNodeId();
+    registerPointer(this);
   }
 
   public SNodePointer(SModelUID modelUID, SNodeId nodeId) {
@@ -40,14 +43,17 @@ public class SNodePointer {
   }
 
   public SNode getNode() {
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myModelUID);
-    if (modelDescriptor != null) {
-      return modelDescriptor.getSModel().getNodeById(myNodeId);
+    if (myModelUID != null) {
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myModelUID);
+      if (modelDescriptor != null) {
+        return modelDescriptor.getSModel().getNodeById(myNodeId);
+      }
     }
     return null;
   }
 
   public SModelDescriptor getModel() {
+    if (myModelUID == null) return null;
     return SModelRepository.getInstance().getModelDescriptor(myModelUID);
   }
 
@@ -67,6 +73,7 @@ public class SNodePointer {
   }
 
   public int hashCode() {
+    if (myModelUID == null) return 0;
     return myModelUID.hashCode() + myNodeId.hashCode();
   }
 

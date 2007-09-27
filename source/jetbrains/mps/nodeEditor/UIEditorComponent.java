@@ -5,7 +5,7 @@ import jetbrains.mps.ide.navigation.*;
 import jetbrains.mps.nodeEditor.inspector.IInspectorEditorComponent;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.GenericContext;
@@ -180,8 +180,8 @@ public class UIEditorComponent extends AbstractEditorComponent implements IEdito
       return UIEditorComponent.this.getEditedNode();
     }
 
-    public SNodeProxy getEditedNodeProxy() {
-      return UIEditorComponent.this.getEditedNodeProxy();
+    public SNodePointer getEditedNodePointer() {
+      return UIEditorComponent.this.getEditedNodePointer();
     }
 
     public void selectNode(SNode node) {
