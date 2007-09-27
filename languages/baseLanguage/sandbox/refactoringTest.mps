@@ -486,6 +486,19 @@
         </node>
       </node>
     </node>
+    <node role="updateModelClause" type="jetbrains.mps.logging.refactoring.UpdateModelClause" id="1190893126638">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1190893126639">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1190893144323">
+          <node role="expression" type="jetbrains.mps.logging.refactoring.GetNodeIdOperation" id="1190893186595">
+            <node role="argument" type="jetbrains.mps.logging.refactoring.DowncastOperation" id="1190893169140">
+              <node role="argument" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1190893144324">
+                <link role="argument" targetNodeId="1190806349868" resolveInfo="nodePlace" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

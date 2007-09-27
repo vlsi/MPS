@@ -121,6 +121,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "argument", false), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1190892656070(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "argument", true), "argument", false), "name");
+  }
+
   public static SNode referenceMacro_GetReferent_1189764427569(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode conceptFunction = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode method = (SNode)generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
@@ -134,6 +138,12 @@ public class QueriesGenerated {
   }
 
   public static SNode referenceMacro_GetReferent_1190733777030(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    SNode conceptFunction = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
+    SNode method = (SNode)generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
+    return ListOperations.getElement(SLinkOperations.getTargets(method, "parameter", true), 1);
+  }
+
+  public static SNode referenceMacro_GetReferent_1190892656038(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode conceptFunction = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode method = (SNode)generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
     return ListOperations.getElement(SLinkOperations.getTargets(method, "parameter", true), 1);
@@ -185,6 +195,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1190733777006(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return ArgumentType_Behavior.call_convertIntoType_1190731931503(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "argument", false), "argumentType", true));
+  }
+
+  public static SNode sourceNodeQuery_1190892890191(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "argument", true);
+  }
+
+  public static SNode sourceNodeQuery_1190892964458(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "argument", true);
   }
 
 }
