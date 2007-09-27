@@ -1,9 +1,6 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.INodeReadAccessListener;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.annotation.Hack;
 
 import java.util.Set;
@@ -38,7 +35,7 @@ public class NodeReadAccessCaster {
       ourReadAccessListener = null;
     } else {
       Set<SNode> nodesWhichChildCellDependsOn = ourReadAccessListener.getNodesToDependOn();
-      Set<SNodeProxy> refTargetsWhichCellDependsOn = ourReadAccessListener.getRefTargetsToDependOn();
+      Set<SNodePointer> refTargetsWhichCellDependsOn = ourReadAccessListener.getRefTargetsToDependOn();
       ourReadAccessListener = ourReadAccessListenerStack.pop();
       ourReadAccessListener.addNodesToDependOn(nodesWhichChildCellDependsOn);
       ourReadAccessListener.addRefTargetsToDependOn(refTargetsWhichCellDependsOn);

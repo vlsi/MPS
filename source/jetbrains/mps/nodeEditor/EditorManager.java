@@ -7,10 +7,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclara
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultAttributeSubstituteInfo;
-import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
@@ -201,7 +198,7 @@ public class EditorManager {
         if (myMap.containsKey(refContext)) {
           EditorCell editorCell = myMap.get(refContext);
           final Set<SNode> nodesOldCellDependsOn = nodeEditorComponent.getCopyOfNodesCellDependsOn(editorCell);
-          final Set<SNodeProxy> refTargetsOldCellDependsOn = nodeEditorComponent.getCopyOfRefTargetsCellDependsOn(editorCell);
+          final Set<SNodePointer> refTargetsOldCellDependsOn = nodeEditorComponent.getCopyOfRefTargetsCellDependsOn(editorCell);
           if (nodesOldCellDependsOn != null || refTargetsOldCellDependsOn != null) {
             //voodoo for editor incremental rebuild support:
             // add listen-nothing listener, fill it up,

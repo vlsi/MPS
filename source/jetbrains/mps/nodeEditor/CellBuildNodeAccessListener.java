@@ -1,10 +1,11 @@
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.util.Pair;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -20,9 +21,9 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
 
 
   protected HashSet<SNode> myNodesToDependOn = new HashSet<SNode>();
-  protected HashSet<SNodeProxy> myReferentTargetsToDependOn = new HashSet<SNodeProxy>();
-  protected HashSet<Pair<SNodeProxy,String>> myDirtilyReadAccessedProperties = new HashSet<Pair<SNodeProxy, String>>();
-  protected HashSet<Pair<SNodeProxy,String>> myExistenceReadAccessProperties = new HashSet<Pair<SNodeProxy, String>>();
+  protected HashSet<SNodePointer> myReferentTargetsToDependOn = new HashSet<SNodePointer>();
+  protected HashSet<Pair<SNodePointer,String>> myDirtilyReadAccessedProperties = new HashSet<Pair<SNodePointer, String>>();
+  protected HashSet<Pair<SNodePointer,String>> myExistenceReadAccessProperties = new HashSet<Pair<SNodePointer, String>>();
   private static final Logger LOG = Logger.getLogger(CellBuildNodeAccessListener.class);
 
   public CellBuildNodeAccessListener(AbstractEditorComponent editor) {
@@ -31,10 +32,10 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
 
   public void recordingFinishedForCell(EditorCell cell) {
     myEditor.putCellAndNodesToDependOn(cell, myNodesToDependOn, myReferentTargetsToDependOn);
-    for (Pair<SNodeProxy, String> pair : myDirtilyReadAccessedProperties) {
+    for (Pair<SNodePointer, String> pair : myDirtilyReadAccessedProperties) {
       myEditor.addCellDependentOnNodePropertyWhichWasAccessedDirtily(cell, pair);
     }
-     for (Pair<SNodeProxy, String> pair : myExistenceReadAccessProperties) {
+     for (Pair<SNodePointer, String> pair : myExistenceReadAccessProperties) {
       myEditor.addCellDependentOnNodePropertyWhichExistenceWasChecked(cell, pair);
     }
   }
@@ -43,7 +44,7 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
     return myNodesToDependOn;
   }
 
-  public Set<SNodeProxy> getRefTargetsToDependOn() {
+  public Set<SNodePointer> getRefTargetsToDependOn() {
     return myReferentTargetsToDependOn;
   }
 
@@ -55,13 +56,13 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
     myNodesToDependOn.addAll(nodes);
   }
 
-  public void addRefTargetsToDependOn(Set<SNodeProxy> nodeProxies) {
+  public void addRefTargetsToDependOn(Set<SNodePointer> nodeProxies) {
     myReferentTargetsToDependOn.addAll(nodeProxies);
   }
 
   public void propertyDirtyReadAccess(SNode node, String propertyName) {
     NodeReadAccessCaster.switchOffFiringPropertyReadAccessedEvent();
-    myDirtilyReadAccessedProperties.add(new Pair<SNodeProxy, String>(new SNodeProxy(node), propertyName));
+    myDirtilyReadAccessedProperties.add(new Pair<SNodePointer, String>(new SNodePointer(node), propertyName));
     NodeReadAccessCaster.switchOnFiringPropertyReadAccessedEvent();
   }
 
@@ -70,12 +71,12 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
   }
 
   public void readAccess(SReference reference) {
-    myReferentTargetsToDependOn.add(new SNodeProxy(reference));
+    myReferentTargetsToDependOn.add(SNodePointer.adapt(new SNodeProxy(reference)));
   }
 
   public void propertyExistenceAccess(SNode node, String propertyName) {
     NodeReadAccessCaster.switchOffFiringPropertyReadAccessedEvent();
-    myExistenceReadAccessProperties.add(new Pair<SNodeProxy, String>(new SNodeProxy(node), propertyName));
+    myExistenceReadAccessProperties.add(new Pair<SNodePointer, String>(new SNodePointer(node), propertyName));
     NodeReadAccessCaster.switchOnFiringPropertyReadAccessedEvent();
   }
 }

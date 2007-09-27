@@ -59,10 +59,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private WeakHashMap<SNode, EditorCell> myNodesToBigCellsMap = new WeakHashMap<SNode, EditorCell>();
   private WeakHashMap<ReferencedNodeContext, EditorCell> myRefNodeContextsToBigCellsMap = new WeakHashMap<ReferencedNodeContext, EditorCell>();
 
-  private HashMap<EditorCell, Set<SNodeProxy>> myCellsToRefTargetsToDependOnMap = new HashMap<EditorCell, Set<SNodeProxy>>();
-  private HashMap<Pair<SNodeProxy, String>, Set<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell_Property>>();
-  private HashMap<Pair<SNodeProxy, String>, Set<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell>>();
-  private HashMap<Pair<SNodeProxy, String>, Set<EditorCell>> myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap = new HashMap<Pair<SNodeProxy, String>, Set<EditorCell>>();
+  private HashMap<EditorCell, Set<SNodePointer>> myCellsToRefTargetsToDependOnMap = new HashMap<EditorCell, Set<SNodePointer>>();
+  private HashMap<Pair<SNodePointer, String>, Set<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, Set<EditorCell_Property>>();
+  private HashMap<Pair<SNodePointer, String>, Set<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, Set<EditorCell>>();
+  private HashMap<Pair<SNodePointer, String>, Set<EditorCell>> myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, Set<EditorCell>>();
 
   private IGutterMessageOwner myMessageOwner = new IGutterMessageOwner() { };
 
@@ -651,10 +651,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
 
-    Set<SNodeProxy> refTargetsWhichEditorDependsOn = myCellsToRefTargetsToDependOnMap.get(myRootCell);
+    Set<SNodePointer> refTargetsWhichEditorDependsOn = myCellsToRefTargetsToDependOnMap.get(myRootCell);
     if (refTargetsWhichEditorDependsOn != null) {
-      Set<SNodeProxy> nodeProxiesToDelete = new HashSet<SNodeProxy>();
-      for (SNodeProxy nodeProxy : refTargetsWhichEditorDependsOn) {
+      Set<SNodePointer> nodeProxiesToDelete = new HashSet<SNodePointer>();
+      for (SNodePointer nodeProxy : refTargetsWhichEditorDependsOn) {
         SModelDescriptor model = nodeProxy.getModel();
         if (model == null) {
           nodeProxiesToDelete.add(nodeProxy);
@@ -1699,7 +1699,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myHasLastCaretX = true;
   }
 
-  public void addCellDependentOnNodeProperty(EditorCell_Property cell, Pair<SNodeProxy, String> pair) {
+  public void addCellDependentOnNodeProperty(EditorCell_Property cell, Pair<SNodePointer, String> pair) {
     Set<EditorCell_Property> dependentCells = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
     if (dependentCells == null) {
       dependentCells = new HashSet<EditorCell_Property>();
@@ -1708,7 +1708,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     dependentCells.add(cell);
   }
 
-  public void addCellDependentOnNodePropertyWhichWasAccessedDirtily(EditorCell cell, Pair<SNodeProxy, String> pair) {
+  public void addCellDependentOnNodePropertyWhichWasAccessedDirtily(EditorCell cell, Pair<SNodePointer, String> pair) {
     Set<EditorCell> dependentCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
     if (dependentCells == null) {
       dependentCells = new HashSet<EditorCell>();
@@ -1718,7 +1718,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
 
-  public void addCellDependentOnNodePropertyWhichExistenceWasChecked(EditorCell cell, Pair<SNodeProxy, String> pair) {
+  public void addCellDependentOnNodePropertyWhichExistenceWasChecked(EditorCell cell, Pair<SNodePointer, String> pair) {
     Set<EditorCell> dependentCells = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
     if (dependentCells == null) {
       dependentCells = new HashSet<EditorCell>();
@@ -1728,7 +1728,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
 
-  public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes, Set<SNodeProxy> refTargets) {
+  public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes, Set<SNodePointer> refTargets) {
     myCellsToNodesToDependOnMap.put(cell, nodes);
     myCellsToRefTargetsToDependOnMap.put(cell, refTargets);
   }
@@ -1739,17 +1739,17 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return new HashSet<SNode>(nodes);
   }
 
-  public Set<SNodeProxy> getCopyOfRefTargetsCellDependsOn(EditorCell cell) {
-    Set<SNodeProxy> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
+  public Set<SNodePointer> getCopyOfRefTargetsCellDependsOn(EditorCell cell) {
+    Set<SNodePointer> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
     if (nodeProxies == null) return null;
-    return new HashSet<SNodeProxy>(nodeProxies);
+    return new HashSet<SNodePointer>(nodeProxies);
   }
 
   public boolean doesCellDependOnNode(EditorCell cell, SNode node) {
     if ((cell == null) && node != null) return true;
     Set<SNode> sNodes = myCellsToNodesToDependOnMap.get(cell);
-    Set<SNodeProxy> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
-    return ((sNodes != null) && (sNodes.contains(node))) || ((nodeProxies != null && nodeProxies.contains(new SNodeProxy(node))));
+    Set<SNodePointer> nodeProxies = myCellsToRefTargetsToDependOnMap.get(cell);
+    return ((sNodes != null) && (sNodes.contains(node))) || ((nodeProxies != null && nodeProxies.contains(new SNodePointer(node))));
   }
 
   public void clearNodesCellDependsOn(EditorCell cell, EditorManager editorManager) {
@@ -1882,8 +1882,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       if (!EventUtil.isDramaticalChange(events)) {
         if (EventUtil.isPropertyChange(events)) {
           String propertyName = ((SModelPropertyEvent) events.get(0)).getPropertyName();
-          SNodeProxy nodeProxy = new SNodeProxy(((SModelPropertyEvent) events.get(0)).getNode());
-          Pair<SNodeProxy, String> pair = new Pair<SNodeProxy, String>(nodeProxy, propertyName);
+          SNodePointer nodeProxy = new SNodePointer(((SModelPropertyEvent) events.get(0)).getNode());
+          Pair<SNodePointer, String> pair = new Pair<SNodePointer, String>(nodeProxy, propertyName);
           Set<EditorCell_Property> editorCell_properties = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
           Set<EditorCell> editorCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
           Set<EditorCell> editorCellsDependentOnExistence = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
