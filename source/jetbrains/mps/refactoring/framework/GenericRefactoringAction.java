@@ -40,7 +40,7 @@ public class GenericRefactoringAction extends MPSAction {
       }
       if (!anotherDescriptor.isInitialized()) continue;
       SModel anotherModel = anotherDescriptor.getSModel();
-      if (!anotherModel.getImportedModelUIDs().contains(model.getUID())) continue;
+      if (model != anotherModel && !anotherModel.getImportedModelUIDs().contains(model.getUID())) continue;
       processModel(anotherModel, args);
     }
   }

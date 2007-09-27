@@ -170,6 +170,9 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183457785428" />
+    <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1190907112206">
+      <link role="classifier" targetNodeId="1190807299922" resolveInfo="B" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1188499791313">
     <property name="name" value="TmpClass" />

@@ -51,7 +51,7 @@ public class SReference {
     return myIsLocal ? mySourceNode.getModel().getUID() : myTargetModelUID;
   }
 
-  /*package*/ void setTargetModelUID(@NotNull SModelUID modelUID) {
+  public void setTargetModelUID(@NotNull SModelUID modelUID) {
     if (mySourceNode.getModel().getUID().equals(modelUID)) {
       myIsLocal = true;
       myTargetModelUID = null;
@@ -59,6 +59,10 @@ public class SReference {
       myIsLocal = false;
       myTargetModelUID = modelUID;
     }
+  }
+
+  public void setTargetNodeId(String targetNodeId) {
+    myTargetNodeId = InternUtil.intern(targetNodeId);
   }
 
   public String getRole() {
