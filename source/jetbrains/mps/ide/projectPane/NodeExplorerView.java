@@ -13,7 +13,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeProxy;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
 
 import javax.swing.Icon;
@@ -31,7 +31,7 @@ import java.awt.BorderLayout;
  */
 public class NodeExplorerView extends DefaultTool {
   private MyTree myTree = new MyTree();
-  private SNodeProxy myNode;
+  private SNodePointer myNode;
   private JPanel myComponent = new JPanel(new BorderLayout());
   private AbstractProjectFrame myAbstractProjectFrame;
 //  private JCheckBox myHelginsCheckBox;
@@ -78,7 +78,7 @@ public class NodeExplorerView extends DefaultTool {
     if (!getToolsPane().isVisible(this)) {
       getToolsPane().selectTool(this);
     }
-    myNode = node == null ? null : new SNodeProxy(node);
+    myNode = node == null ? null : new SNodePointer(node);
     myTree.setOperationContext(new ProjectOperationContext(project));
     myTree.rebuildTree();
   }
@@ -153,12 +153,12 @@ public class NodeExplorerView extends DefaultTool {
   }
 
   private class MyReferentsNode extends TextTreeNode {
-    private SNodeProxy myNode;
+    private SNodePointer myNode;
     private boolean myIsInitialized = false;
 
     public MyReferentsNode(SNode node, IOperationContext operationContext) {
       super("referents", operationContext);
-      myNode = new SNodeProxy(node);
+      myNode = new SNodePointer(node);
     }
 
     public void init() {
@@ -177,12 +177,12 @@ public class NodeExplorerView extends DefaultTool {
   }
 
   private class MyPropertiesNode extends TextTreeNode {
-    private SNodeProxy myNode;
+    private SNodePointer myNode;
     private boolean myIsInitialized = false;
 
     public MyPropertiesNode(SNode node, IOperationContext operationContext) {
       super("properties", operationContext);
-      myNode = new SNodeProxy(node);
+      myNode = new SNodePointer(node);
     }
 
     public void init() {

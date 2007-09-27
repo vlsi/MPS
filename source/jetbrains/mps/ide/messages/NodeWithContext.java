@@ -1,20 +1,20 @@
 package jetbrains.mps.ide.messages;
 
-import jetbrains.mps.smodel.SNodeProxy;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeWithContext {
-  private SNodeProxy myProxy;
+  private SNodePointer myNodePointer;
   private IOperationContext myContext;
 
   public NodeWithContext(SNode node, IOperationContext context) {
-    myProxy = new SNodeProxy(node);
+    myNodePointer = new SNodePointer(node);
     myContext = context;
   }
 
   public SNode getNode() {
-    return myProxy.getNode();
+    return myNodePointer.getNode();
   }
 
   public IOperationContext getContext() {
