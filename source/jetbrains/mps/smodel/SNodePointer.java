@@ -18,13 +18,15 @@ import java.util.HashSet;
  * Sep 21, 2007
  */
 public class SNodePointer {
-  private WeakReference<SNode> myNodeRef;
   private SModelUID myModelUID;
   private SNodeId myNodeId;
-  private Integer myHashCode;
 
   public SNodePointer(String modelUID, SNodeId nodeId) {
     this(SModelUID.fromString(modelUID), nodeId);
+  }
+
+  public SNodePointer(@NotNull SNode node) {
+    this(node.getModel().getUID(), node.getSNodeId());
   }
 
   public SNodePointer(SModelUID modelUID, SNodeId nodeId) {
@@ -33,62 +35,16 @@ public class SNodePointer {
     registerPointer(this);
   }
 
-  public SNodePointer(@NotNull SNode node) {
-    if (node.isRegistered()) {
-      myModelUID = node.getModel().getUID();
-      myNodeId = node.getSNodeId();
-      registerPointer(this);
-    } else {
-      // 'young' pointer
-      myNodeRef = new WeakReference<SNode>(node);
-      CommandProcessor.instance().addCommandListener(new CommandAdapter() {
-        public void commandFinished(@NotNull CommandEvent event) {
-          // convert 'young' pointer to 'mature'
-          SNode node = myNodeRef.get();
-          if (node == null || node.isRegistered()) {
-            CommandProcessor.instance().removeCommandListener(this);
-            myNodeRef = null;
-            if(node != null) {
-              myModelUID = node.getModel().getUID();
-              myNodeId = node.getSNodeId();
-              registerPointer(SNodePointer.this);
-            }
-          }
-        }
-      });
-    }
-  }
-
   public SNode getNode() {
-    if (myModelUID != null) {
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myModelUID);
-      if (modelDescriptor != null) {
-        SNode node = modelDescriptor.getSModel().getNodeById(myNodeId);
-        if (node == null) {
-          node = UnregisteredNodes.instance().get(myModelUID, myNodeId.toString());
-        }
-        return node;
-      }
-    } else if (myNodeRef != null) {
-      SNode node = myNodeRef.get();
-      // node and its model still exists?
-      if (node != null && node.getModel().getModelDescriptor() != null) {
-        return node;
-      }
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myModelUID);
+    if (modelDescriptor != null) {
+      return modelDescriptor.getSModel().getNodeById(myNodeId);
     }
     return null;
   }
 
   public SModelDescriptor getModel() {
-    if (myModelUID != null) {
-      return SModelRepository.getInstance().getModelDescriptor(myModelUID);
-    } else if (myNodeRef != null) {
-      SNode node = myNodeRef.get();
-      if (node != null) {
-        return node.getModel().getModelDescriptor();
-      }
-    }
-    return null;
+    return SModelRepository.getInstance().getModelDescriptor(myModelUID);
   }
 
   public String toString() {
@@ -107,19 +63,7 @@ public class SNodePointer {
   }
 
   public int hashCode() {
-    if (myHashCode == null) {
-      int result = 0;
-      if (myModelUID != null) {
-        result = myModelUID.hashCode() + myNodeId.hashCode();
-      } else if (myNodeRef != null) {
-        SNode node = myNodeRef.get();
-        if (node != null) {
-          result = node.getModel().getUID().hashCode() + node.getId().hashCode();
-        }
-      }
-      myHashCode = result;
-    }
-    return myHashCode;
+    return myModelUID.hashCode() + myNodeId.hashCode();
   }
 
   //----------------------

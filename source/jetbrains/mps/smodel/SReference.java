@@ -12,7 +12,7 @@ import org.jetbrains.annotations.NotNull;
  * User: Sergey Dmitriev
  * Date: Aug 2, 2003
  */
-public final class SReference {
+public class SReference {
   private static final Logger LOG = Logger.getLogger(SReference.class);
 
   private String myRole;
