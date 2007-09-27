@@ -68,7 +68,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
   private Set<SNode> myCurrentNodesToInvalidate = new HashSet<SNode>();
 
   // for diagnostics
-  private Set<SNodeProxy> myNotSkippedNodes = new HashSet<SNodeProxy>();
+  private Set<SNodePointer> myNotSkippedNodes = new HashSet<SNodePointer>();
 
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent_new.class);
   private Set<SNode> myCurrentFrontier;
@@ -222,13 +222,13 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
       for (SNode nodeToDependOn : myNodesToDependentNodes.keySet()) {
         addOurListener(nodeToDependOn.getModel().getModelDescriptor());
       }
-      final Set<SNodeProxy> skippedNodes = new HashSet<SNodeProxy>(myNotSkippedNodes);
+      final Set<SNodePointer> skippedNodes = new HashSet<SNodePointer>(myNotSkippedNodes);
       if (HelginsPreferencesComponent.getInstance().isUsesDebugHighlighting()) {
         CommandProcessor.instance().invokeLater(new Runnable() {
           public void run() {
             AbstractEditorComponent component = getEditorComponent();
             if (component == null) return;
-            for (SNodeProxy skippedNode : skippedNodes) {
+            for (SNodePointer skippedNode : skippedNodes) {
               component.getHighlightManager().mark(skippedNode.getNode(), new Color(255, 127, 0, 50),"", NodeTypesComponent_new.this);
             }
           }
@@ -314,7 +314,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
           newFrontier.addAll(sNode.getChildren());
         }
         if (!myPartlyCheckedNodes.contains(sNode)) {
-          myNotSkippedNodes.add(new SNodeProxy(sNode));
+          myNotSkippedNodes.add(new SNodePointer(sNode));
           myCurrentFrontier = newFrontier;
 
           if (isIncrementalMode()) {
