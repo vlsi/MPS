@@ -1,22 +1,22 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.PathManager;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.Merger;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.plugin.IProjectHandler;
-import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
+import java.rmi.RemoteException;
 import java.util.HashSet;
 import java.util.Set;
-import java.rmi.RemoteException;
 
 /**
  * @author Kostik
@@ -239,8 +239,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     // update model repository and rename descriptor itself
     SModelRepository.getInstance().renameUID(modelDescriptor, newModelUID);
 
-    // update node proxies
-    SNodeProxy.changeModelUID(oldModelUID, modelDescriptor);
+    // update node pointers
     SNodePointer.changeModelUID(oldModelUID, newModelUID);
     return true;
   }

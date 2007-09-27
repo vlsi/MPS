@@ -100,44 +100,4 @@ public class SNodePointer {
       }
     }
   }
-
-
-
-  //----------------------
-  // obsolete code support
-  //----------------------
-
-  private SNodePointer() {
-  }
-
-  public static SNodePointer adapt(SNodeProxy nodeProxy) {
-    return new ProxyAsPointer(nodeProxy);
-  }
-
-  private static class ProxyAsPointer extends SNodePointer {
-    private SNodeProxy myNodeProxy;
-    ProxyAsPointer(SNodeProxy nodeProxy) {
-      myNodeProxy = nodeProxy;
-    }
-
-    public SNode getNode() {
-      return myNodeProxy.getNode();
-    }
-
-    public SModelDescriptor getModel() {
-      return myNodeProxy.getModel();
-    }
-
-    public String toString() {
-      return myNodeProxy.toString();
-    }
-
-    public boolean equals(Object o) {
-      return myNodeProxy.equals(o);
-    }
-
-    public int hashCode() {
-      return myNodeProxy.hashCode();
-    }
-  }
 }

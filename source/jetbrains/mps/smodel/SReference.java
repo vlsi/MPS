@@ -74,8 +74,9 @@ public class SReference {
   }
 
   public final SNode getTargetNode() {
-    NodeReadAccessCaster.fireReferenceTargetReadAccessed(this);
-    return getTargetNode_impl();
+    SNode target = getTargetNode_impl();
+    NodeReadAccessCaster.fireReferenceTargetReadAccessed(this, target);
+    return target;
   }
 
   private SModel getTargetModel() {

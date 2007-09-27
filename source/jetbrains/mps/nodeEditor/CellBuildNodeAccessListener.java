@@ -3,8 +3,6 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNodeProxy;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.Pair;
 
 import java.util.HashSet;
@@ -56,8 +54,8 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
     myNodesToDependOn.addAll(nodes);
   }
 
-  public void addRefTargetsToDependOn(Set<SNodePointer> nodeProxies) {
-    myReferentTargetsToDependOn.addAll(nodeProxies);
+  public void addRefTargetsToDependOn(Set<SNodePointer> targets) {
+    myReferentTargetsToDependOn.addAll(targets);
   }
 
   public void propertyDirtyReadAccess(SNode node, String propertyName) {
@@ -70,8 +68,8 @@ public class CellBuildNodeAccessListener extends AbstractNodeReadAccessOnCellCre
     myNodesToDependOn.add(node);
   }
 
-  public void readAccess(SReference reference) {
-    myReferentTargetsToDependOn.add(SNodePointer.adapt(new SNodeProxy(reference)));
+  public void addRefTargetToDependOn(SNodePointer target) {
+    myReferentTargetsToDependOn.add(target);
   }
 
   public void propertyExistenceAccess(SNode node, String propertyName) {
