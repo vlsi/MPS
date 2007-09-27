@@ -1,30 +1,31 @@
 package jetbrains.mps.ide.hierarchy;
 
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.IEditorOpener;
-import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.action.IActionDataProvider;
+import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.navigation.RecentEditorsMenu;
-import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.ide.action.IActionDataProvider;
+import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.nodeEditor.EditorSettings;
+import jetbrains.mps.nodeEditor.IEditorOpener;
+import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.ColorAndGraphicsUtil;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.*;
 import java.util.List;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Created by IntelliJ IDEA.
@@ -316,7 +317,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
 
   public static class ConceptContainer {
 
-    private SNodeProxy myNodeProxy;
+    private SNodePointer myNodePointer;
     private int myX;
     private int myY;
     private int myWidth;
@@ -346,7 +347,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
       myRootable = conceptDeclaration.getRootable();
       myIsAbstract = conceptDeclaration.getConceptProperty("abstract", myOperationContext.getScope()) != null;
       myNamespace = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, myOperationContext.getScope()).getNamespace();
-      myNodeProxy = new SNodeProxy(BaseAdapter.fromAdapter(conceptDeclaration));
+      myNodePointer = new SNodePointer(conceptDeclaration);
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
           IDEProjectFrame frame = myOperationContext.getComponent(IDEProjectFrame.class);
@@ -371,7 +372,7 @@ public class LanguageHierarchiesComponent extends JComponent implements Scrollab
     }
 
     public ConceptDeclaration getNode() {
-      return (ConceptDeclaration) BaseAdapter.fromNode(myNodeProxy.getNode());
+      return (ConceptDeclaration) BaseAdapter.fromNode(myNodePointer.getNode());
     }
 
     public void paint(Graphics graphics) {
