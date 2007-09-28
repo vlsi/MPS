@@ -59,6 +59,7 @@ public class SModel implements Iterable<SNode> {
   private SNode myLog;
   private boolean myUsesLog;
   private boolean myRegistrationsForbidden = false;
+  private int myVersion = -1;
 
   public SModel(@NotNull SModelUID modelUID) {
     addWeakSModelListener(myEventTranslator);
@@ -946,6 +947,10 @@ public class SModel implements Iterable<SNode> {
   @NotNull
   public List<String> getEngagedOnGenerationLanguages() {
     return new ArrayList<String>(myLanguagesEngagedOnGeneration);
+  }
+
+  /*package*/ void setVersion(int version) {
+    myVersion = version;
   }
 
 

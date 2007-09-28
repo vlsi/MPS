@@ -2,7 +2,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.languageLog.ModelLogger;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Document;
@@ -79,7 +78,7 @@ public class ModelPersistence {
   @NotNull
   public static SModel readModel(@NotNull byte[] bytes) {
     Document document = loadModelDocument(bytes);
-    return readModel(document, "", "", false);
+    return readModel(document, "", "");
   }
 
   @NotNull
@@ -100,20 +99,19 @@ public class ModelPersistence {
 
     Document document = loadModelDocument(file);
 
-    return readModel(document, modelName, modelStereotype, true);
+    return readModel(document, modelName, modelStereotype);
   }
 
   @NotNull
   public static SModel copyModel(@NotNull SModel model) {
-    return readModel(saveModel(model), model.getShortName(), model.getStereotype(), false);
+    return readModel(saveModel(model), model.getShortName(), model.getStereotype());
   }
 
   @NotNull
   public static SModel readModel(
           @NotNull Document document,
           @NotNull String modelName,
-          @NotNull String stereotype,
-          boolean checkVersion) {
+          @NotNull String stereotype) {
     Element rootElement = document.getRootElement();
 
     VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
@@ -140,35 +138,11 @@ public class ModelPersistence {
       LOG.error(e);
     }
 
-    List<LogInfo> logs = new ArrayList<LogInfo>();
     // languages
     List languages = rootElement.getChildren(LANGUAGE);
     for (Object language : languages) {
       Element element = (Element) language;
       String languageNamespace = element.getAttributeValue(NAMESPACE);
-
-      if (checkVersion) {
-        String oldVersion_string = element.getAttributeValue(VERSION);
-        int oldVersion = -1;
-        if (oldVersion_string != null) {
-          oldVersion = Integer.parseInt(oldVersion_string);
-        }
-        Language modelLanguage = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
-        if (modelLanguage != null) {
-          int newVersion = modelLanguage.getVersion();
-          if (newVersion > oldVersion) {
-            LOG.debug("new language version detected: model = " + model
-                    + " language = " + languageNamespace + " current language version: " +
-                    oldVersion + " new version: " + newVersion);
-            try {
-              SModel structureModel = modelLanguage.getStructureModelDescriptor().getSModel();
-              logs.add(new LogInfo(structureModel.getLog(), oldVersion, newVersion, element));
-            } catch (Throwable t) {
-              LOG.error(t);
-            }
-          }
-        }
-      }
       model.addLanguage(languageNamespace);
     }
 
@@ -214,57 +188,10 @@ public class ModelPersistence {
       }
 
       SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
-
-      if (checkVersion && !(importedModelUID.equals(modelUID))) {
-        int importedModelVersion = -1;
-        String importedModelVersionValue = element.getAttributeValue(VERSION);
-        if (importedModelVersionValue != null) {
-          importedModelVersion = Integer.parseInt(importedModelVersionValue);
-        }
-        SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(importedModelUID);
-        if (importedModelDescriptor != null) {
-          int newVersion = importedModelDescriptor.getVersion();
-          if (newVersion > importedModelVersion) {
-            LOG.debug("new imported model version detected: model = " + model
-                    + " imported model = " + importedModelUID + " current import version: " +
-                    importedModelVersion + " new version: " + newVersion);
-            try {
-              SModel importedModel = SModelRepository.getInstance().getModelDescriptor(importedModelUID).getSModel();
-              logs.add(new LogInfo(importedModel.getLog(), importedModelVersion, newVersion, element));
-            } catch (Throwable t) {
-              LOG.error(t);
-            }
-          }
-        }
-      }
-
       model.addImportElement(importedModelUID, importIndex);
     }
 
-    if (logs.size() > 0) {
-      ModelLogger modelLogger = new ModelLogger();
-      for (LogInfo log : logs) {
-        // todo test
-        modelLogger.playRefactoringSequence(log.myNode, document, log.myOldVersion, log.myNewVersion);
-        log.myElement.setAttribute(VERSION, log.myNewVersion + "");
-      }
-      SModel sModel = readModel(document, modelName, stereotype, false);
-      SModelRepository.getInstance().markChanged(sModel, true);
-      return sModel;
-    }
-
-    // version & log
     ArrayList<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
-    String versionString = rootElement.getAttributeValue(VERSION);
-    if (versionString != null) {
-      model.setUsesLog(true);
-      Element logElement = rootElement.getChild(REFACTORING_LOG);
-      if (logElement != null) {
-        Element nodeElement = logElement.getChild(NODE);
-        SNode node = readNode(nodeElement, model, referenceDescriptors, false);
-        model.setLog(node);
-      }
-    }
 
     // nodes
     List children = rootElement.getChildren(NODE);
@@ -462,17 +389,6 @@ public class ModelPersistence {
       rootElement.addContent(importElem);
     }
 
-    // version & log
-    if (sourceModel.usesLog()) {
-      rootElement.setAttribute(VERSION, sourceModel.getVersion() + "");
-      SNode log = sourceModel.getLog();
-      if (log != null) {
-        Element logElement = new Element(REFACTORING_LOG);
-        saveNode(logElement, log, visibleModelElements);
-        rootElement.addContent(logElement);
-      }
-    }
-
     Iterator<SNode> iterator = sourceModel.roots();
     while (iterator.hasNext()) {
       SNode semanticNode = iterator.next();
@@ -589,12 +505,6 @@ public class ModelPersistence {
   }
 
   private static SModel createModel(SModelUID uid) {
-
-    if (uid.toString().startsWith("jetbrains.pubMedDB.web")) {
-      return new MyModel(uid);
-    }
-
-
     return new SModel(uid);
   }
 
@@ -645,27 +555,4 @@ public class ModelPersistence {
     }
   }
 
-  private static class LogInfo {
-    int myOldVersion;
-    int myNewVersion;
-    SNode myNode;
-    Element myElement;
-
-    public LogInfo(SNode node, int oldVersion, int newVersion, Element element) {
-      myNode = node;
-      myOldVersion = oldVersion;
-      myNewVersion = newVersion;
-      myElement = element;
-    }
-  }
-
-  private static class MyModel extends SModel {
-
-    public MyModel(@NotNull SModelUID modelUID) {
-      super(modelUID);
-    }
-
-    public MyModel() {
-    }
-  }
 }

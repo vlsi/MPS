@@ -154,11 +154,17 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private void doPostLoadStuff() {
     myModelRootManager.updateAfterLoad(this);
     SModelsMulticaster.getInstance().fireModelLoadedEvent(this);
-
     LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
-    myDiskTimestamp = fileTimestamp();
+    mySModel.setVersion(myModelRootManager.getVersion(this));
 
+    updateModelWithRefactorings();
+
+    myDiskTimestamp = fileTimestamp();
     addListenersToNewModel();
+  }
+
+  private void updateModelWithRefactorings() {
+
   }
 
   private void addListenersToNewModel() {
