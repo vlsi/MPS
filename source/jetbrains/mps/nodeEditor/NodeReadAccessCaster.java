@@ -120,10 +120,11 @@ public class NodeReadAccessCaster {
   }
 
 
-  public static void fireReferenceTargetReadAccessed(SReference reference, SNode target) {
+  public static void fireReferenceTargetReadAccessed(SReference reference) {
     if (myEventsBlocked) return;
     if(!reference.getSourceNode().isRegistered()) return;
-    if (ourReadAccessListener != null) ourReadAccessListener.addRefTargetToDependOn(new SNodePointer(target));
+    if(reference.getTargetNodeId() == null) return; // tmp: old refs to java_stub has no id
+    if (ourReadAccessListener != null) ourReadAccessListener.addRefTargetToDependOn(new SNodePointer(reference.getTargetModelUID().toString(), reference.getTargetNodeId()));
   }
 
 

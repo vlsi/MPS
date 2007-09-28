@@ -76,9 +76,8 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
   }
 
   public final SNode getTargetNode() {
-    SNode target = getTargetNode_impl();
-    NodeReadAccessCaster.fireReferenceTargetReadAccessed(this, target);
-    return target;
+    NodeReadAccessCaster.fireReferenceTargetReadAccessed(this);
+    return getTargetNode_impl();
   }
 
   protected abstract SNode getTargetNode_impl();
