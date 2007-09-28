@@ -80,6 +80,18 @@ public abstract class SReference {
   }
 
   //
+  // --- new instance NEW
+  //
+  public static SReference create(String role, SNode sourceNode, SNode targetNode) {
+     return new StaticReference(role, sourceNode, targetNode);
+  }
+
+  public static SReference create(String role, SNode sourceNode, SModelUID targetModelUID, String targetNodeId) {
+     return new StaticReference(role, sourceNode, targetModelUID, targetNodeId);
+  }
+
+
+  //
   // --- new instance OLD
   //
 
