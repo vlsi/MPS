@@ -969,6 +969,10 @@ public class SModel implements Iterable<SNode> {
     importElement.myUsedVersion = currentVersion;
   }
 
+  /*package*/ void increaseVersion() {
+    myVersion++;
+  }
+
 
   /*package*/
   static class ImportElement {
