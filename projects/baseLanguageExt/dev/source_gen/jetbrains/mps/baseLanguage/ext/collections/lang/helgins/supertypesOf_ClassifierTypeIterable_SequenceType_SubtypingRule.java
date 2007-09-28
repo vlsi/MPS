@@ -26,10 +26,6 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
     return this.myMatchingPattern.match(argument);
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return true;
   }

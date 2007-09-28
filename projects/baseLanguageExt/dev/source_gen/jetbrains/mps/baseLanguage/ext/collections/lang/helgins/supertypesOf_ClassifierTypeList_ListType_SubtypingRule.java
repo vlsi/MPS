@@ -26,10 +26,6 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
     return this.myMatchingPattern.match(argument);
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return true;
   }

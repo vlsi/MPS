@@ -25,10 +25,6 @@ public class supertypesOf_ListType_ClassifierTypeList_SubtypingRule extends Subt
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
 
-  public boolean isSupertyping() {
-    return false;
-  }
-
   public boolean isWeak() {
     return true;
   }

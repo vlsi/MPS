@@ -30,8 +30,8 @@ public class RulesFunctions_Collections {
     SNode input = RulesFunctions_Collections.getInput(op);
     if((input != null)) {
       final SNode elementType_typevar_1184784638219 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input), new QuotationClass_().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184784638219)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184843140648");
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(target), new QuotationClass_1().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184784638219)), target, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184844101686");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184843134901"), new QuotationClass_().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184784638219)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184843140648");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(target, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184844094867"), new QuotationClass_1().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184784638219)), target, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184844101686");
     }
   }
 
@@ -42,8 +42,8 @@ public class RulesFunctions_Collections {
     SNode input = RulesFunctions_Collections.getInput(op);
     if((input != null)) {
       final SNode elementType_typevar_1184844804662 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input), new QuotationClass_2().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184844804662)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184844804663");
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(target), TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184844804662), target, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184844804671");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184844804669"), new QuotationClass_2().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184844804662)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184844804663");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(target, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184844804677"), TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184844804662), target, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184844804671");
     }
   }
 
@@ -54,8 +54,8 @@ public class RulesFunctions_Collections {
     SNode input = RulesFunctions_Collections.getInput(op);
     if((input != null)) {
       final SNode elementType_typevar_1184850451264 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input), new QuotationClass_3().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184850451264)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850451265");
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(target), TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184850451264), target, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850492036");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850451271"), new QuotationClass_3().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184850451264)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850451265");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(target, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850492037"), TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184850451264), target, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850492036");
     }
   }
 
@@ -65,7 +65,7 @@ public class RulesFunctions_Collections {
   }
 
   public static SNode computeLeastCommonSupertype(SNode exprWithType, SNode currentLeastCommonSupertype) {
-    SNode exprType = TypeChecker.getInstance().getRuntimeSupport().typeOf(exprWithType);
+    SNode exprType = TypeChecker.getInstance().getRuntimeSupport().typeOf(exprWithType, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178748193116");
     if(exprType == null) {
       TypeChecker.getInstance().reportTypeError(exprWithType, "no type", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178748193120");
       return currentLeastCommonSupertype;
