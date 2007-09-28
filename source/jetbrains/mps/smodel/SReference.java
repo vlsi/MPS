@@ -11,37 +11,16 @@ import org.jetbrains.annotations.NotNull;
  * Date: Aug 2, 2003
  */
 public abstract class SReference {
-//  private static final Logger LOG = Logger.getLogger(SReference.class);
-
   private String myRole;
   private SNode mySourceNode;
 
-  //  private String myTargetNodeId;
-  //  private String myExtResolveInfo = "";
-  //  private SModelUID myTargetModelUID;
-  //  private boolean myIsLocal;
   private String myResolveInfo;
-  //  private boolean myLoggingOff = false;
   private static boolean ourLoggingOff = false;
 
   protected SReference(String role, SNode sourceNode) {
     myRole = InternUtil.intern(role);
     mySourceNode = sourceNode;
   }
-
-  //  private SReference(String role, SNode sourceNode, String targetNodeId, String resolveInfo, String extResolveInfo, @NotNull SModelUID targetModelUID) {
-//    myRole = InternUtil.intern(role);
-//    mySourceNode = sourceNode;
-//    myTargetNodeId = InternUtil.intern(targetNodeId);
-//    myResolveInfo = InternUtil.intern(resolveInfo);
-//    myExtResolveInfo = InternUtil.intern(extResolveInfo);
-////    LOG.assertLog(targetModelUID != null, "targetModelUID is NULL");
-//    if (targetModelUID.equals(sourceNode.getModel().getUID())) {
-//      myIsLocal = true;
-//    } else {
-//      myTargetModelUID = targetModelUID;
-//    }
-//  }
 
   public String getResolveInfo() {
     return myResolveInfo;
@@ -55,32 +34,16 @@ public abstract class SReference {
    * todo: remove. It makes no sence for dynamic references
    */
   public abstract SModelUID getTargetModelUID();
-//  public SModelUID getTargetModelUID() {
-//    return myIsLocal ? mySourceNode.getModel().getUID() : myTargetModelUID;
-//  }
 
   /**
    * todo: remove. It makes no sence for dynamic references
    */
   public abstract void setTargetModelUID(@NotNull SModelUID modelUID);
-//  public void setTargetModelUID(@NotNull SModelUID modelUID) {
-//    if (mySourceNode.getModel().getUID().equals(modelUID)) {
-//      myIsLocal = true;
-//      myTargetModelUID = null;
-//    } else {
-//      myIsLocal = false;
-//      myTargetModelUID = modelUID;
-//    }
-//  }
 
   /**
    * todo: remove. It makes no sence for dynamic references
    */
   public abstract void setTargetNodeId(String targetNodeId);
-
-//  public void setTargetNodeId(String targetNodeId) {
-//    myTargetNodeId = InternUtil.intern(targetNodeId);
-//  }
 
   public String getRole() {
     return myRole;
@@ -91,97 +54,16 @@ public abstract class SReference {
   }
 
   public abstract SNode getTargetNode();
-//  public final SNode getTargetNode() {
-//    SNode target = getTargetNode_impl();
-//    NodeReadAccessCaster.fireReferenceTargetReadAccessed(this, target);
-//    return target;
-//  }
-//
-//  private SModel getTargetModel() {
-//    SModel model;
-//    if (myIsLocal) {
-//      // DO NOT REMOVE THIS CODE
-//      // it needed in merge view. In this view we create models in air
-//      // and it's possible that a couple of models with the same uid
-//      // will be loaded. So we have to resolve internal references only
-//      // internally
-//      model = mySourceNode.getModel();
-//    } else {
-//      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myTargetModelUID);
-//      if (modelDescriptor == null) {
-//        logGetTargetNodeErrors(GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR);
-//        model = mySourceNode.getModel();
-//      } else {
-//        model = modelDescriptor.getSModel();
-//      }
-//    }
-//    return model;
-//  }
-//
-//  private SNode getTargetNode_impl() {
-//    SModel targetModel = getTargetModel();
-//    SModel sourceModel = mySourceNode.getModel();
-//    if (targetModel == null) {
-//      logGetTargetNodeErrors(GetTargetNodeErrorState.NO_MODEL);
-//      return null;
-//    }
-//    if (ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo)) {
-//      if (myTargetNodeId == null) {
-//        logGetTargetNodeErrors(GetTargetNodeErrorState.CANT_RESOLVE_BY_ID);
-//        return null;
-//      }
-//      SNode nodeById = targetModel.getNodeById(myTargetNodeId);
-//      if (nodeById == null) {
-//        nodeById = UnregisteredNodes.instance().get(targetModel.getUID(), myTargetNodeId);
-//        if (nodeById == null) {
-//          logGetTargetNodeErrors(GetTargetNodeErrorState.CANT_RESOLVE_BY_ID);
-//        }
-//      } else {
-//        if (targetModel.isExternallyResolvable() && targetModel != sourceModel) {
-//          String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(nodeById);
-//          if (extResolveInfo != null) {//then resolve this reference by ext resolve info
-//            LOG.warning("reference is resolved by ID, while should be resolved by ERI");
-//            LOG.info("re-resolving reference");
-//            targetModel.setNodeExtResolveInfo(nodeById, extResolveInfo);
-//            myExtResolveInfo = extResolveInfo;
-//            myTargetNodeId = null;
-//            markChanged();
-//          }
-//        }
-//      }
-//      return nodeById;
-//
-//    } else {//else external resolve info isn't empty
-//      SNode nodeByExtResolveInfo = targetModel.getNodeByExtResolveInfo(myExtResolveInfo);
-//      if (nodeByExtResolveInfo == null) {
-//        logGetTargetNodeErrors(GetTargetNodeErrorState.CANT_RESOLVE_BY_ERI);
-//      }
-//      return nodeByExtResolveInfo;
-//    }
-//  }
-//
-//  private void markChanged() {
-//    SModelRepository.getInstance().markChanged(getSourceNode().getModel(), true);
-//  }
-//
 
   /**
    * todo: remove. It makes no sence for dynamic references
    */
   public abstract boolean isExternal();
 
-//  public boolean isExternal() {
-//    return !myIsLocal;
-//  }
-
   /**
    * todo: remove. It makes no sence for dynamic references
    */
   public abstract String getTargetNodeId();
-
-//  public String getTargetNodeId() {
-//    return myTargetNodeId;
-//  }
 
   /**
    * todo: remove.
@@ -190,21 +72,6 @@ public abstract class SReference {
     return true;
   }
 
-//  public boolean isResolved() {
-//    boolean oldLoggingOff = myLoggingOff;
-//    myLoggingOff = true;
-//    try {
-//      SNode targetNode = getTargetNode();
-//      if (targetNode != null) return true;
-//      if (ExternalResolver.isEmptyExtResolveInfo(myExtResolveInfo)) {
-//        return (ExternalResolver.isEmptyExtResolveInfo(myResolveInfo));
-//      }
-//      return false;
-//    } finally {
-//      myLoggingOff = oldLoggingOff;
-//    }
-//  }
-
   /**
    * todo: remove this later
    */
@@ -212,10 +79,9 @@ public abstract class SReference {
     return null;
   }
 
-//  //
-//  // --- new instance
-//  //
-
+  //
+  // --- new instance OLD
+  //
 
   /**
    * reference created by target node
@@ -281,9 +147,9 @@ public abstract class SReference {
     }
   }
 
-//  //
-//  // --- end new instance
-//  //
+  //
+  // --- end new instance OLD
+  //
 
   public static void disableLogging() {
     ourLoggingOff = true;
@@ -302,28 +168,6 @@ public abstract class SReference {
   }
 
   protected abstract void error(GetTargetNodeErrorState errorState);
-
-//  protected void logGetTargetNodeErrors(GetTargetNodeErrorState errorState) {
-//    //skip errors in java stubs because they can have reference to classes that doesn't present
-//    //in class path
-//    if (mySourceNode.getModel().getStereotype().endsWith(SModelStereotype.JAVA_STUB)) return;
-//    if (mySourceNode.getModel().getUserObject(SModel.TMP_MODEL) != null) return;
-//    if (myLoggingOff || ourLoggingOff) return;
-//
-//    if (errorState == GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR) {
-//      LOG.error("\nCouldn't resolve reference '" + myRole + "' from " + getSourceNode().getDebugText(), getSourceNode());
-//      LOG.error("Path to the target model " + getTargetModelUID() + " is not specified");
-//    } else if (errorState == GetTargetNodeErrorState.NO_MODEL) {
-//      LOG.error("\nCouldn't resolve reference '" + myRole + "' from " + getSourceNode().getDebugText(), getSourceNode());
-//      LOG.error("The modelDescriptor.getSModel() failed to load model");
-//    } else if (errorState == GetTargetNodeErrorState.CANT_RESOLVE_BY_ID) {
-//      LOG.error("\nCouldn't resolve reference '" + myRole + "' from " + getSourceNode().getDebugText(), getSourceNode());
-//      LOG.error("The target model " + getTargetModelUID() + " doesn't contain node with id=" + myTargetNodeId);
-//    } else if (errorState == GetTargetNodeErrorState.CANT_RESOLVE_BY_ERI) {
-//      LOG.error("\nCouldn't resolve reference '" + myRole + "' from " + getSourceNode().getDebugText(), getSourceNode());
-//      LOG.error("The target model " + getTargetModelUID() + " doesn't contain node with ERI=" + myExtResolveInfo);
-//    }
-//  }
 
   /**
    * todo: remove.
@@ -353,5 +197,4 @@ public abstract class SReference {
   /*package*/ void setRole(String newRole) {
     myRole = InternUtil.intern(newRole);
   }
-
 }

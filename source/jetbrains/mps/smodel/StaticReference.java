@@ -50,7 +50,7 @@ import org.jetbrains.annotations.NotNull;
       }
       SNode node = targetModel.getNodeById(getTargetNodeId());
       if (node == null) {
-        node = UnregisteredNodes.instance().get(getTargetModelUID(), getTargetNodeId().toString());
+        node = UnregisteredNodes.instance().get(getTargetModelUID(), getTargetNodeId());
         if(node == null) {
           SReference.error(this, GetTargetNodeErrorState.CANT_RESOLVE_BY_ID);
         }
