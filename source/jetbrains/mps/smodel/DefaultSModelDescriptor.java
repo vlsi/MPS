@@ -164,7 +164,17 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   private void updateModelWithRefactorings() {
-
+    assert mySModel != null;
+    for (SModelUID sModelUID : mySModel.getImportedModelUIDs()) {
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelUID);
+      if (modelDescriptor == null) continue;
+      int currentVersion = modelDescriptor.getVersion();
+      int usedVersion = mySModel.getUsedVersion(sModelUID);
+      if (currentVersion > usedVersion) {
+        //todo update this model
+        mySModel.updateImportedModelUsedVersion(sModelUID, currentVersion);
+      }
+    }
   }
 
   private void addListenersToNewModel() {

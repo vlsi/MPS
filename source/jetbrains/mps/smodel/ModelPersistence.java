@@ -170,6 +170,16 @@ public class ModelPersistence {
       String indexValue = element.getAttributeValue(MODEL_IMPORT_INDEX, element.getAttributeValue("referenceID"));
       int importIndex = Integer.parseInt(indexValue);
 
+      String usedModelVersionString = element.getAttributeValue(VERSION);
+      int usedModelVersion = -1;
+      try {
+        if (usedModelVersionString != null) {
+          usedModelVersion = Integer.parseInt(usedModelVersionString);
+        }
+      } catch(Throwable t) {
+        LOG.error(t);
+      }
+
       String importedModelUIDString = element.getAttributeValue(MODEL_UID);
       if (importedModelUIDString == null) {
         // read in old manner...
@@ -188,7 +198,7 @@ public class ModelPersistence {
       }
 
       SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
-      model.addImportElement(importedModelUID, importIndex);
+      model.addImportElement(importedModelUID, importIndex, usedModelVersion);
     }
 
     ArrayList<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
@@ -377,6 +387,7 @@ public class ModelPersistence {
       importElem.setAttribute(MODEL_IMPORT_INDEX, "" + importElement.getReferenceID());
       SModelUID modelUID = importElement.getModelUID();
       importElem.setAttribute(MODEL_UID, modelUID.toString());
+      importElem.setAttribute(VERSION, "" + importElement.getUsedVersion());
 
       int version = -1;
       SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);

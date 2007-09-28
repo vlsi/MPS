@@ -13,7 +13,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.smodel.languageLog.ModelLogger;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
@@ -111,7 +110,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public int getVersion() {
-    return new ModelLogger().getVersion(this);
+    return myVersion;
   }
 
   public void setLog(SNode log) {
@@ -588,13 +587,18 @@ public class SModel implements Iterable<SNode> {
   void addImportElement(@NotNull SModelUID modelUID) {
     ImportElement importElement = getImportElement(modelUID);
     if (importElement != null) return;
-    importElement = new ImportElement(modelUID, ++myMaxImportIndex);
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+    int usedVersion = -1;
+    if (modelDescriptor != null) {
+      usedVersion = modelDescriptor.getVersion();
+    }
+    importElement = new ImportElement(modelUID, ++myMaxImportIndex, usedVersion);
     myImports.add(importElement);
     fireImportAddedEvent(modelUID);
   }
 
-  void addImportElement(@NotNull SModelUID modelUID, int referenceId) {
-    ImportElement importElement = new ImportElement(modelUID, referenceId);
+  void addImportElement(@NotNull SModelUID modelUID, int referenceId, int usedVersion) {
+    ImportElement importElement = new ImportElement(modelUID, referenceId, usedVersion);
     myImports.add(importElement);
     fireImportAddedEvent(modelUID);
   }
@@ -953,15 +957,33 @@ public class SModel implements Iterable<SNode> {
     myVersion = version;
   }
 
+  public int getUsedVersion(SModelUID sModelUID) {
+    ImportElement importElement = getImportElement(sModelUID);
+    if (importElement == null) return -1;
+    return importElement.getUsedVersion();
+  }
+
+  /*package*/ void updateImportedModelUsedVersion(SModelUID sModelUID, int currentVersion) {
+    ImportElement importElement = getImportElement(sModelUID);
+    if (importElement == null) return;
+    importElement.myUsedVersion = currentVersion;
+  }
+
 
   /*package*/
   static class ImportElement {
     private SModelUID myModelDescriptor;
     private int myReferenceID;
+    private int myUsedVersion;
 
     public ImportElement(SModelUID modelUID, int referenceID) {
+      this(modelUID, referenceID, -1);
+    }
+
+    public ImportElement(SModelUID modelUID, int referenceID, int usedVersion) {
       myModelDescriptor = modelUID;
       myReferenceID = referenceID;
+      myUsedVersion = usedVersion;
     }
 
     public SModelUID getModelUID() {
@@ -970,6 +992,10 @@ public class SModel implements Iterable<SNode> {
 
     public int getReferenceID() {
       return myReferenceID;
+    }
+
+    public int getUsedVersion() {
+      return myUsedVersion;
     }
   }
 
