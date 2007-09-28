@@ -6,8 +6,6 @@ import org.jetbrains.annotations.NotNull;
 import java.util.WeakHashMap;
 
 /**
- * Replacement for SNodeProxy
- * <p/>
  * Igor Alshannikov
  * Sep 21, 2007
  */

@@ -1,11 +1,9 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.externalResolve.ExternalResolver;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.resolve.Resolver;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -262,7 +260,6 @@ public class SReference {
     if (mySourceNode.getModel().getUserObject(SModel.TMP_MODEL) != null) return;
     if (myLoggingOff || ourLoggingOff) return;
 
-    if (SNodeProxy.getOurSourceNode() == mySourceNode) return;
     if (errorState == GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR) {
       LOG.error("\nCouldn't resolve reference '" + myRole + "' from " + getSourceNode().getDebugText(), getSourceNode());
       LOG.error("Path to the target model " + getTargetModelUID() + " is not specified");
