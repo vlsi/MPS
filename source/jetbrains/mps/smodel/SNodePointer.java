@@ -1,15 +1,9 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.ICommandListener;
-import jetbrains.mps.ide.command.CommandAdapter;
-import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.ref.WeakReference;
 import java.util.WeakHashMap;
-import java.util.HashSet;
 
 /**
  * Replacement for SNodeProxy
@@ -21,8 +15,8 @@ public class SNodePointer {
   private SModelUID myModelUID;
   private SNodeId myNodeId;
 
-  public SNodePointer(String modelUID, SNodeId nodeId) {
-    this(SModelUID.fromString(modelUID), nodeId);
+  public SNodePointer(String modelUID, String nodeId) {
+    this(SModelUID.fromString(modelUID), SNodeId.fromString(nodeId));
   }
 
   public SNodePointer(@NotNull INodeAdapter node) {

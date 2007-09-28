@@ -14,7 +14,6 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.languageLog.ModelLogger;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
@@ -718,7 +717,7 @@ public class SModel implements Iterable<SNode> {
 
   @Nullable
   public SNode getNodeById(String idString) {
-    SNodeId nodeId = SNodeId.createId(idString);
+    SNodeId nodeId = SNodeId.fromString(idString);
     return myIdToNodeMap.get(nodeId);
   }
 

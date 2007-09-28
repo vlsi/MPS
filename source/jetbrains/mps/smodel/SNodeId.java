@@ -6,7 +6,7 @@ package jetbrains.mps.smodel;
  */
 public abstract class SNodeId {
 
-  public static SNodeId createId(String idString) {
+  public static SNodeId fromString(String idString) {
     if(idString.startsWith(Foreign.ID_PREFIX)) {
       return new Foreign(idString);
     }

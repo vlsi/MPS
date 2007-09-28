@@ -313,7 +313,7 @@ public class ModelPersistence {
     SNode node = new SNode(model, conceptFqName);
 
     String idValue = nodeElement.getAttributeValue(ID);
-    node.setId(SNodeId.createId(idValue));
+    node.setId(SNodeId.fromString(idValue));
 
 
     String cachedExtResolveInfo = nodeElement.getAttributeValue(EXT_RESOLVE_INFO);
