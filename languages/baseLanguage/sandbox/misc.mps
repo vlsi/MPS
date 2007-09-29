@@ -3,18 +3,9 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <language namespace="jetbrains.mps.baseLanguage.strings" />
-  <language namespace="jetbrains.mps.baseLanguageInternal" />
-  <maxImportIndex value="121" />
-  <import index="1" modelUID="java.lang@java_stub" />
-  <import index="3" modelUID="java.util@java_stub" />
-  <import index="115" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <import index="116" modelUID="jetbrains.mps.core.structure" />
-  <import index="117" modelUID="java.io@java_stub" />
-  <import index="118" modelUID="jetbrains.mps.helgins.inference@java_stub" />
-  <import index="119" modelUID="jetbrains.mps.smodel@java_stub" />
-  <import index="120" modelUID="jetbrains.mps.baseLanguage.sandbox.misc" />
-  <import index="121" modelUID="org.jetbrains.annotations@java_stub" />
+  <maxImportIndex value="122" />
+  <import index="1" modelUID="java.lang@java_stub" version="-1" />
+  <import index="3" modelUID="java.util@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1182164226710">
     <property name="name" value="A" />
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1188520661794">
