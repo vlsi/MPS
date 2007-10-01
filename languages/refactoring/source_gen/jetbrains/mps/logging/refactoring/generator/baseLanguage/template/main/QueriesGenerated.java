@@ -213,4 +213,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "argument", true);
   }
 
+  public static SNode sourceNodeQuery_1191256012221(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "updateModelClause", true), "body", true);
+  }
+
 }
