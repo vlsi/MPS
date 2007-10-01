@@ -6,6 +6,9 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDecla
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.logging.refactoring.structure.RuntimeLog;
+import jetbrains.mps.logging.refactoring.structure.RuntimeLogStack;
+import jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
@@ -173,8 +176,17 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       if (currentVersion > usedVersion) {
         SModel importedModel = modelDescriptor.getSModel();
         SNode logstack = importedModel.getLog();
-
-        // todo
+        if (logstack != null) {
+          RuntimeLogStack runtimeLogStack = (RuntimeLogStack) logstack.getAdapter();
+          for (RuntimeLog runtimeLog : runtimeLogStack.getLogs()) {
+            if (runtimeLog.getModelVersion() <= usedVersion) continue;
+            Map<String, String> arguments = new HashMap<String, String>();
+            for (RequiredAdditionalArgumentValue value : runtimeLog.getArgumentValues()) {
+              arguments.put(value.getArgument().getName(), value.getValue());
+            }
+            //todo generate runtimeLog and run
+          }
+        }
         mySModel.updateImportedModelUsedVersion(sModelUID, currentVersion);
       }
     }
@@ -286,7 +298,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public boolean needsReloading() {
     if (myDiskTimestamp == -1) {
-      return false;    
+      return false;
     }
     return fileTimestamp() != myDiskTimestamp;
   }
@@ -502,7 +514,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   public FastNodeFinder getFastNodeFinder() {
     if (myFastNodeFinder == null || myFastNodeFinder.getStructuralState() < structuralState()) {
       myFastNodeFinder = new FastNodeFinder(this);
-    }    
+    }
     return myFastNodeFinder;
   }
 
