@@ -339,6 +339,7 @@
           <option name="METHOD" value="true" />
           <option name="CLASS" value="true" />
           <option name="PARAMETER" value="true" />
+          <option name="REPORT_PARAMETER_FOR_PUBLIC_METHODS" value="true" />
           <option name="INJECTION_ANNOS">
             <value>
               <list size="0" />
@@ -539,6 +540,7 @@
           <option name="METHOD" value="true" />
           <option name="CLASS" value="true" />
           <option name="PARAMETER" value="false" />
+          <option name="REPORT_PARAMETER_FOR_PUBLIC_METHODS" value="true" />
           <option name="INJECTION_ANNOS">
             <value>
               <list size="0" />
@@ -607,7 +609,12 @@
         </inspection_tool>
       </profile>
     </profiles>
-    <list size="0" />
+    <list size="4">
+      <item index="0" class="java.lang.String" itemvalue="SERVER PROBLEM" />
+      <item index="1" class="java.lang.String" itemvalue="INFO" />
+      <item index="2" class="java.lang.String" itemvalue="WARNING" />
+      <item index="3" class="java.lang.String" itemvalue="ERROR" />
+    </list>
   </component>
   <component name="JavacSettings">
     <option name="DEBUGGING_INFO" value="true" />
@@ -915,11 +922,11 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="charisma-app/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -927,19 +934,15 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="search-watch/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_hello/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1025,11 +1028,11 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="charisma-app/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1037,19 +1040,15 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="search-watch/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_hello/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1130,11 +1129,11 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="charisma-app/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1142,19 +1141,15 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="search-watch/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_hello/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1217,11 +1212,11 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="charisma-app/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1229,19 +1224,15 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="search-watch/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_hello/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1322,11 +1313,11 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="PubMedDB/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="charisma-app/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1334,19 +1325,15 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="search-watch/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="stwiki-webapp/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_hello/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web2" DEPLOYMENT_SOURCE_NAME="exploded">
+      <JAVAEE_FACET FACET_ID="webrSamples_sandbox/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
