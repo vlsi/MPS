@@ -5,15 +5,19 @@
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <maxImportIndex value="5" />
-  <import index="1" modelUID="jetbrains.mps.core.structure" />
-  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <import index="3" modelUID="jetbrains.mps.ide.action@java_stub" />
-  <import index="4" modelUID="java.util@java_stub" />
-  <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
+  <import index="4" modelUID="java.util@java_stub" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1189693812263">
     <property name="name" value="Refactoring" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1191237830649">
+      <property name="name" value="userFriendlyName" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1189693888592">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="arguments" />
@@ -227,6 +231,50 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1190811443427">
       <property name="value" value=".getNodeId" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1191242246174">
+    <property name="name" value="RuntimeLog" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1191248266761">
+      <property name="name" value="modelVersion" />
+      <link role="dataType" targetNodeId="1.1082983657062" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1191242392112">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="updateModelClause" />
+      <link role="target" targetNodeId="1189694434958" resolveInfo="UpdateModelClause" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1191242471544">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="argumentValue" />
+      <link role="target" targetNodeId="1191242504560" resolveInfo="RequiredAdditionalArgumentValue" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1191242504560">
+    <property name="name" value="RequiredAdditionalArgumentValue" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1191242535007">
+      <property name="name" value="value" />
+      <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1191242515202">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="argument" />
+      <link role="target" targetNodeId="1189693830529" resolveInfo="RequiredAdditionalArgument" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1191242766616">
+    <property name="name" value="RuntimeLogStack" />
+    <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1191242781477">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="log" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1191242246174" resolveInfo="RuntimeLog" />
     </node>
   </node>
 </model>

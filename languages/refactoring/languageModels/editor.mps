@@ -4,9 +4,9 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <maxImportIndex value="3" />
-  <import index="1" modelUID="jetbrains.mps.logging.refactoring.structure" />
-  <import index="2" modelUID="jetbrains.mps.core.structure" />
-  <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
+  <import index="1" modelUID="jetbrains.mps.logging.refactoring.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1189693958814">
     <link role="conceptDeclaration" targetNodeId="1.1189693830529" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1189768590115">
@@ -59,6 +59,15 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1189695242647">
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1191237886331">
+          <property name="text" value="(" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1191237890551">
+          <link role="relationDeclaration" targetNodeId="1.1191237830649" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1191237897600">
+          <property name="text" value=")" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1189695620833">

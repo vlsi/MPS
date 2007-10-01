@@ -171,7 +171,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       int currentVersion = modelDescriptor.getVersion();
       int usedVersion = mySModel.getUsedVersion(sModelUID);
       if (currentVersion > usedVersion) {
-        //todo update this model
+        SModel importedModel = modelDescriptor.getSModel();
+        SNode logstack = importedModel.getLog();
+
+        // todo
         mySModel.updateImportedModelUsedVersion(sModelUID, currentVersion);
       }
     }

@@ -3,7 +3,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <maxImportIndex value="29" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
-  <import index="26" modelUID="jetbrains.mps.baseLanguage.sandbox.misc" version="-1" />
+  <import index="26" modelUID="jetbrains.mps.baseLanguage.sandbox.misc" version="0" />
   <import index="27" modelUID="java.util@java_stub" version="-1" />
   <import index="28" modelUID="org.jetbrains.annotations@java_stub" version="-1" />
   <import index="29" modelUID="java.applet@java_stub" version="-1" />
@@ -1218,6 +1218,53 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1179231288896" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1191250519549">
+    <property name="name" value="B" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1191250519550" />
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1191250519551">
+      <property name="name" value="foo" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1191250519552" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1191250519553" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1191250519554">
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1191250519555">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1191250519548">
+            <property name="name" value="m1" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1191250519556">
+              <link role="classifier" extResolveInfo="27.[Classifier]Map" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1191250519557">
+                <link role="classifier" extResolveInfo="1.[Classifier]String" />
+              </node>
+              <node role="parameter" type="jetbrains.mps.baseLanguage.ClassifierType" id="1191250519558">
+                <link role="classifier" extResolveInfo="27.[Classifier]List" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1191250519559">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1191250519560">
+            <property name="name" value="abcdef" />
+            <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1191250519561">
+              <link role="classifier" extResolveInfo="27.[Classifier]List" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1191250519562">
+              <link role="baseMethodDeclaration" extResolveInfo="27.method ([Classifier]Map).([InstanceMethodDeclaration]get((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1191250519563">
+                <property name="value" value="" />
+              </node>
+              <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1191250519564">
+                <link role="variableDeclaration" targetNodeId="1191250519548" resolveInfo="m1" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1191250519565">
+          <node role="expression" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1191250519566">
+            <property name="value" value="239" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 

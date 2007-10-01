@@ -203,6 +203,15 @@ public class ModelPersistence {
 
     ArrayList<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
 
+    // log
+    Element logElement = rootElement.getChild(REFACTORING_LOG);
+    if (logElement != null) {
+      SNode log = readNode(logElement, model, referenceDescriptors, false);
+      if (log != null) {
+        model.setLog(log);
+      }
+    }
+
     // nodes
     List children = rootElement.getChildren(NODE);
     for (Object child : children) {
@@ -400,6 +409,11 @@ public class ModelPersistence {
       rootElement.addContent(importElem);
     }
 
+    SNode log = sourceModel.getLog();
+    if (log != null) {
+      saveNode(rootElement, REFACTORING_LOG, log, false , visibleModelElements);
+    }
+
     Iterator<SNode> iterator = sourceModel.roots();
     while (iterator.hasNext()) {
       SNode semanticNode = iterator.next();
@@ -410,15 +424,19 @@ public class ModelPersistence {
   }
 
   public static void saveNode(@NotNull Element parentElement, @NotNull SNode node) {
-    saveNode(parentElement, node, false, null);
+    saveNode(parentElement, null, node, false, null);
   }
 
   public static void saveNode(@NotNull Element parentElement, @NotNull SNode node, VisibleModelElements visibleModelElements) {
-    saveNode(parentElement, node, false, visibleModelElements);
+    saveNode(parentElement, null, node, false, visibleModelElements);
   }
 
-  public static void saveNode(@NotNull Element parentElement, @NotNull SNode node, boolean useUIDs, VisibleModelElements visibleModelElements) {
-    Element element = new Element(NODE);
+  public static void saveNode(@NotNull Element parentElement, String elementName, @NotNull SNode node, boolean useUIDs, VisibleModelElements visibleModelElements) {
+    String theElementName = elementName;
+    if (theElementName == null) {
+      theElementName = NODE;
+    }
+    Element element = new Element(theElementName);
     setNotNullAttribute(element, ROLE, node.getRole_());
     // todo: save node's concept fQName
     String oldStructureClassName = NameUtil.removeStructureFromFqName(node.getConceptFqName());
@@ -455,7 +473,7 @@ public class ModelPersistence {
     // children ...
     List<SNode> children = node.getChildren();
     for (SNode childNode : children) {
-      saveNode(element, childNode, useUIDs, visibleModelElements);
+      saveNode(element, null, childNode, useUIDs, visibleModelElements);
     }
 
     parentElement.addContent(element);
