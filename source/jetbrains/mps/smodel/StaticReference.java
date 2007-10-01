@@ -35,9 +35,9 @@ import org.jetbrains.annotations.NotNull;
     });
   }
 
-  StaticReference(String role, SNode sourceNode, SModelUID modelUID, String nodeId) {
+  StaticReference(String role, SNode sourceNode, SModelUID modelUID, SNodeId nodeId) {
     // 'mature' reference
-    super(role, sourceNode, modelUID, nodeId);
+    super(role, sourceNode, modelUID, nodeId.toString());
     myMature = true;
   }
 
