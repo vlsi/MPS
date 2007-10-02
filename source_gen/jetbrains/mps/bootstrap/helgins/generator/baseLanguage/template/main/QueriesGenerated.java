@@ -979,7 +979,7 @@ public class QueriesGenerated {
       SNode referenceNode = BaseConcept.newInstance(model).getNode();
       referenceNode.setProperty("targetModel", reference.getTargetModelUID().toString());
       referenceNode.setProperty("role", reference.getRole());
-      referenceNode.setProperty("targetNodeId", reference.getTargetNodeId());
+      referenceNode.setProperty("targetNodeId", reference.getTargetNode().getSNodeId().toString());
       result.add(referenceNode);
     }
     return result;
