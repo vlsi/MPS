@@ -15,10 +15,18 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.messages.DefaultMessageHandler;
 
 import java.io.File;
 import java.util.*;
+
+import org.eclipse.jdt.internal.compiler.CompilationResult;
 
 /**
  * @author Kostik
@@ -168,12 +176,29 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   private void updateModelWithRefactorings() {
     assert mySModel != null;
+
     for (SModelUID sModelUID : mySModel.getImportedModelUIDs()) {
       SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelUID);
       if (modelDescriptor == null) continue;
       int currentVersion = modelDescriptor.getVersion();
       int usedVersion = mySModel.getUsedVersion(sModelUID);
       if (currentVersion > usedVersion) {
+        IOperationContext invocationContext = null;
+        outer : for (IModule module : SModelRepository.getInstance().getOwners(this, IModule.class)) {
+          Set<MPSModuleOwner> mpsModuleOwners = MPSModuleRepository.getInstance().getOwners(module);
+          if (mpsModuleOwners == null) continue;
+          for (MPSModuleOwner owner : mpsModuleOwners) {
+            if (owner instanceof MPSProject) {
+              invocationContext = new ModuleContext(module, (MPSProject) owner);
+              break outer;
+            }
+          }
+        }
+        if (invocationContext == null) {
+          LOG.error("can't find a context for updating model " + getModelUID());
+          return;
+        }
+
         SModel importedModel = modelDescriptor.getSModel();
         SNode logstack = importedModel.getLog();
         if (logstack != null) {
@@ -184,7 +209,37 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
             for (RequiredAdditionalArgumentValue value : runtimeLog.getArgumentValues()) {
               arguments.put(value.getArgument().getName(), value.getValue());
             }
-            //todo generate runtimeLog and run
+
+            ModelOwner modelOwner = new ModelOwner() {};
+            final SModelDescriptor fakeModelDescriptor = TransientModels.createTransientModel(modelOwner, "temp", "$logplaying$");
+            try {
+              fakeModelDescriptor.getSModel().addRoot(runtimeLog);
+              IGenerationScript script = new IGenerationScript() {
+                public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
+                  return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
+                }
+              };
+              DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
+              GenerationSession generationSession = new GenerationSession(null, false, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, messages);
+              GenerationStatus status = generationSession.generateModel(fakeModelDescriptor, BootstrapLanguages.getInstance().getBaseLanguage(), script);
+              if (!status.isOk()) {
+                LOG.error(status.getMessage());
+                continue;
+              }
+              GenerateClassesGenerationType generationType = new GenerateClassesGenerationType() {
+                protected boolean isPutClassesOnTheDisk() {
+                  return false;
+                }
+              };
+              generationType.handleOutput(invocationContext, status, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, null);
+              Class aClass = generationType.getClass(status.getOutputModel().getLongName()+"."+"Log");//todo LOG?
+            } catch(Throwable t) {
+              LOG.error(t);
+              continue;
+            } finally{
+              SModelRepository.getInstance().removeModelDescriptor(fakeModelDescriptor);
+            }
+            //todo run
           }
         }
         mySModel.updateImportedModelUsedVersion(sModelUID, currentVersion);

@@ -124,7 +124,9 @@ public class MPSModuleRepository {
 
   @NotNull
   public Set<MPSModuleOwner> getOwners(@NotNull IModule module) {
-    return new HashSet<MPSModuleOwner>(myModuleToOwnersMap.get(module));
+    Set<MPSModuleOwner> mpsModuleOwners = myModuleToOwnersMap.get(module);
+    if (mpsModuleOwners == null) return null;
+    return new HashSet<MPSModuleOwner>(mpsModuleOwners);
   }
 
   @NotNull
