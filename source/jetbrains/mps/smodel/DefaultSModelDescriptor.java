@@ -238,6 +238,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
                 Class aClass = generationType.getClass(status.getOutputModel().getLongName()+"."+"LogRunner");
                 Method method = aClass.getDeclaredMethod("updateModel", SModel.class, Map.class);
                 method.invoke(null, mySModel, arguments);
+                save();
               } catch(Throwable t) {
                 LOG.error(t);
                 continue;

@@ -51,6 +51,7 @@ public class GenericRefactoring {
   private void processModel(SModel model, SModel usedModel, Map<String, String> args) {
     myRefactoring.updateModel(model, args);
     model.updateImportedModelUsedVersion(usedModel.getUID(), usedModel.getVersion());
+    SModelRepository.getInstance().markChanged(model, true);
   }
 
   private void writeIntoLog(SModel model, Map<String, String> args) {
