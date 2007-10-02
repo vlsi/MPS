@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.*;
+import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -1540,6 +1541,12 @@ public class SNode implements Iterable<SNode> {
   public String getLanguageNamespace() {
     fireNodeReadAccess();
     return NameUtil.namespaceFromConceptFQName(myConceptFqName);
+  }
+
+  @UseCarefully
+  public void setConceptFqName(String conceptFQName) {
+    myConceptFqName = conceptFQName;
+    myAdapter = null;
   }
 
   public boolean isInstanceOfConcept(AbstractConceptDeclaration concept) {

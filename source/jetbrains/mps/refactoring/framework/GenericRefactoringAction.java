@@ -15,8 +15,8 @@ import org.jetbrains.annotations.NotNull;
 public class GenericRefactoringAction extends MPSAction {
   private GenericRefactoring myRefactoring;
 
-  public GenericRefactoringAction(@NotNull String name, ILoggableRefactoring refactoring) {
-    super(name);
+  public GenericRefactoringAction(ILoggableRefactoring refactoring) {
+    super("".equals(refactoring.getUserFriendlyName()) ? refactoring.getClass().getName() : refactoring.getUserFriendlyName());
     myRefactoring = new GenericRefactoring(refactoring);
   }
 
