@@ -25,6 +25,7 @@ import jetbrains.mps.ide.messages.DefaultMessageHandler;
 
 import java.io.File;
 import java.util.*;
+import java.lang.reflect.Method;
 
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
@@ -235,13 +236,14 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
                 };
                 generationType.handleOutput(invocationContext, status, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, null);
                 Class aClass = generationType.getClass(status.getOutputModel().getLongName()+"."+"LogRunner");
+                Method method = aClass.getDeclaredMethod("updateModel", SModel.class, Map.class);
+                method.invoke(null, mySModel, arguments);
               } catch(Throwable t) {
                 LOG.error(t);
                 continue;
               } finally{
                 SModelRepository.getInstance().removeModelDescriptor(fakeModelDescriptor);
               }
-              //todo run
             }
           }
           mySModel.updateImportedModelUsedVersion(sModelUID, currentVersion);
