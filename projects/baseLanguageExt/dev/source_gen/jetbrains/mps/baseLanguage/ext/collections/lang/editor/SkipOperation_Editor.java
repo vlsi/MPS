@@ -24,28 +24,36 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172658541028");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ElementsToSkipCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172658545280");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172658547564");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172658539229");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ElementsToSkipCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     SkipOperation_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -57,6 +65,7 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell1(context, node, ")"));
     return editorCell;
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     SkipOperation_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -65,6 +74,7 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new BasicCellContext(node), new ISubstituteInfoPart[]{new SkipOperation_Editor.SkipOperation_replaceWith_SequenceOperation_cellMenu()}));
     return editorCell;
   }
+
   public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     SkipOperation_Editor.setupBasic_ConstantCell1(editorCell, node, context);
@@ -72,6 +82,7 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
+
   public EditorCell createElementsToSkipCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -83,6 +94,7 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createElementsToSkipCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("elementsToSkip");
@@ -99,6 +111,7 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
   public static class SkipOperation_replaceWith_SequenceOperation_cellMenu extends AbstractCellMenuPart_ReplaceNode_CustomNodeConcept {
 
     public  SkipOperation_replaceWith_SequenceOperation_cellMenu() {
@@ -107,6 +120,7 @@ public class SkipOperation_Editor extends DefaultNodeEditor {
     public String getReplacementConceptName() {
       return "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation";
     }
+
 }
 
 }

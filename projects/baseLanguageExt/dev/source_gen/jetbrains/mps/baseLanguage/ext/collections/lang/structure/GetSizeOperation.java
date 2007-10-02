@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class GetSizeOperation extends SequenceOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation";
 
   public  GetSizeOperation(SNode node) {
     super(node);
   }
 
   public static GetSizeOperation newInstance(SModel sm, boolean init) {
-    return (GetSizeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.GetSizeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetSizeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetSizeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static GetSizeOperation newInstance(SModel sm) {
     return GetSizeOperation.newInstance(sm, false);
   }
+
 }

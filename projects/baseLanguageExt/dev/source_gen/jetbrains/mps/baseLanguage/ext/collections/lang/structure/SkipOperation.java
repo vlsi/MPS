@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class SkipOperation extends SequenceOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SkipOperation";
   public static String ELEMENTS_TO_SKIP = "elementsToSkip";
 
   public  SkipOperation(SNode node) {
@@ -16,16 +17,20 @@ public class SkipOperation extends SequenceOperation {
   }
 
   public static SkipOperation newInstance(SModel sm, boolean init) {
-    return (SkipOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.SkipOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SkipOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SkipOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SkipOperation newInstance(SModel sm) {
     return SkipOperation.newInstance(sm, false);
   }
 
+
   public Expression getElementsToSkip() {
     return (Expression)this.getChild(SkipOperation.ELEMENTS_TO_SKIP);
   }
+
   public void setElementsToSkip(Expression node) {
     super.setChild(SkipOperation.ELEMENTS_TO_SKIP, node);
   }
+
 }

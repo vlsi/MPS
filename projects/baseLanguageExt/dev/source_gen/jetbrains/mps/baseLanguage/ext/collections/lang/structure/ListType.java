@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ListType extends Type {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType";
   public static String ELEMENT_TYPE = "elementType";
 
   public  ListType(SNode node) {
@@ -16,16 +17,20 @@ public class ListType extends Type {
   }
 
   public static ListType newInstance(SModel sm, boolean init) {
-    return (ListType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ListType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ListType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ListType newInstance(SModel sm) {
     return ListType.newInstance(sm, false);
   }
 
+
   public Type getElementType() {
     return (Type)this.getChild(ListType.ELEMENT_TYPE);
   }
+
   public void setElementType(Type node) {
     super.setChild(ListType.ELEMENT_TYPE, node);
   }
+
 }

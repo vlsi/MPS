@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class ForEachStatement extends AbstractLoopStatement {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement";
   public static String VARIABLE = "variable";
   public static String INPUT_SEQUENCE = "inputSequence";
 
@@ -18,22 +19,28 @@ public class ForEachStatement extends AbstractLoopStatement {
   }
 
   public static ForEachStatement newInstance(SModel sm, boolean init) {
-    return (ForEachStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ForEachStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ForEachStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ForEachStatement newInstance(SModel sm) {
     return ForEachStatement.newInstance(sm, false);
   }
 
+
   public ForEachVariable getVariable() {
     return (ForEachVariable)this.getChild(ForEachStatement.VARIABLE);
   }
+
   public void setVariable(ForEachVariable node) {
     super.setChild(ForEachStatement.VARIABLE, node);
   }
+
   public Expression getInputSequence() {
     return (Expression)this.getChild(ForEachStatement.INPUT_SEQUENCE);
   }
+
   public void setInputSequence(Expression node) {
     super.setChild(ForEachStatement.INPUT_SEQUENCE, node);
   }
+
 }

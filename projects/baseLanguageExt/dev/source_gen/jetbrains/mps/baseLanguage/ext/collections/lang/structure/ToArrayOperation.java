@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ToArrayOperation extends SequenceOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToArrayOperation";
 
   public  ToArrayOperation(SNode node) {
     super(node);
   }
 
   public static ToArrayOperation newInstance(SModel sm, boolean init) {
-    return (ToArrayOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ToArrayOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ToArrayOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ToArrayOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ToArrayOperation newInstance(SModel sm) {
     return ToArrayOperation.newInstance(sm, false);
   }
+
 }

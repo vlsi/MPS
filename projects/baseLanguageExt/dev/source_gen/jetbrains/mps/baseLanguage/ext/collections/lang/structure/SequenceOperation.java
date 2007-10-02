@@ -9,15 +9,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SequenceOperation extends BaseConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation";
 
   public  SequenceOperation(SNode node) {
     super(node);
   }
 
   public static SequenceOperation newInstance(SModel sm, boolean init) {
-    return (SequenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.SequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SequenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static SequenceOperation newInstance(SModel sm) {
     return SequenceOperation.newInstance(sm, false);
   }
+
 }

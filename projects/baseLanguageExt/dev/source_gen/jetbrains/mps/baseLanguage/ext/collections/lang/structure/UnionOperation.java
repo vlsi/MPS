@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class UnionOperation extends BinaryOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.UnionOperation";
 
   public  UnionOperation(SNode node) {
     super(node);
   }
 
   public static UnionOperation newInstance(SModel sm, boolean init) {
-    return (UnionOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.UnionOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UnionOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.UnionOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static UnionOperation newInstance(SModel sm) {
     return UnionOperation.newInstance(sm, false);
   }
+
 }

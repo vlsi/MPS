@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class RemoveElementOperation extends AbstractListOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.RemoveElementOperation";
   public static String ARGUMENT = "argument";
 
   public  RemoveElementOperation(SNode node) {
@@ -16,16 +17,20 @@ public class RemoveElementOperation extends AbstractListOperation {
   }
 
   public static RemoveElementOperation newInstance(SModel sm, boolean init) {
-    return (RemoveElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.RemoveElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemoveElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.RemoveElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static RemoveElementOperation newInstance(SModel sm) {
     return RemoveElementOperation.newInstance(sm, false);
   }
 
+
   public Expression getArgument() {
     return (Expression)this.getChild(RemoveElementOperation.ARGUMENT);
   }
+
   public void setArgument(Expression node) {
     super.setChild(RemoveElementOperation.ARGUMENT, node);
   }
+
 }

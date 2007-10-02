@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class AddAllElementsOperation extends AbstractListOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation";
   public static String ARGUMENT = "argument";
 
   public  AddAllElementsOperation(SNode node) {
@@ -16,16 +17,20 @@ public class AddAllElementsOperation extends AbstractListOperation {
   }
 
   public static AddAllElementsOperation newInstance(SModel sm, boolean init) {
-    return (AddAllElementsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.AddAllElementsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AddAllElementsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.AddAllElementsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static AddAllElementsOperation newInstance(SModel sm) {
     return AddAllElementsOperation.newInstance(sm, false);
   }
 
+
   public Expression getArgument() {
     return (Expression)this.getChild(AddAllElementsOperation.ARGUMENT);
   }
+
   public void setArgument(Expression node) {
     super.setChild(AddAllElementsOperation.ARGUMENT, node);
   }
+
 }

@@ -9,15 +9,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ForEachVariable extends NamedConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable";
 
   public  ForEachVariable(SNode node) {
     super(node);
   }
 
   public static ForEachVariable newInstance(SModel sm, boolean init) {
-    return (ForEachVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ForEachVariable", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ForEachVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ForEachVariable newInstance(SModel sm) {
     return ForEachVariable.newInstance(sm, false);
   }
+
 }

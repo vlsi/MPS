@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class TakeOperation extends SequenceOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.TakeOperation";
   public static String ELEMENTS_TO_TAKE = "elementsToTake";
 
   public  TakeOperation(SNode node) {
@@ -16,16 +17,20 @@ public class TakeOperation extends SequenceOperation {
   }
 
   public static TakeOperation newInstance(SModel sm, boolean init) {
-    return (TakeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.TakeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TakeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.TakeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static TakeOperation newInstance(SModel sm) {
     return TakeOperation.newInstance(sm, false);
   }
 
+
   public Expression getElementsToTake() {
     return (Expression)this.getChild(TakeOperation.ELEMENTS_TO_TAKE);
   }
+
   public void setElementsToTake(Expression node) {
     super.setChild(TakeOperation.ELEMENTS_TO_TAKE, node);
   }
+
 }

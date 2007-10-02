@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ExcludeOperation extends BinaryOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ExcludeOperation";
 
   public  ExcludeOperation(SNode node) {
     super(node);
   }
 
   public static ExcludeOperation newInstance(SModel sm, boolean init) {
-    return (ExcludeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ExcludeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExcludeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ExcludeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ExcludeOperation newInstance(SModel sm) {
     return ExcludeOperation.newInstance(sm, false);
   }
+
 }

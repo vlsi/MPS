@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IsNotEmptyOperation extends SequenceOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation";
 
   public  IsNotEmptyOperation(SNode node) {
     super(node);
   }
 
   public static IsNotEmptyOperation newInstance(SModel sm, boolean init) {
-    return (IsNotEmptyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.IsNotEmptyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IsNotEmptyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.IsNotEmptyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static IsNotEmptyOperation newInstance(SModel sm) {
     return IsNotEmptyOperation.newInstance(sm, false);
   }
+
 }

@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IntersectOperation extends BinaryOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.IntersectOperation";
 
   public  IntersectOperation(SNode node) {
     super(node);
   }
 
   public static IntersectOperation newInstance(SModel sm, boolean init) {
-    return (IntersectOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.IntersectOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntersectOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.IntersectOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static IntersectOperation newInstance(SModel sm) {
     return IntersectOperation.newInstance(sm, false);
   }
+
 }

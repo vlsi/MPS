@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class ContainsOperation extends SequenceOperation {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ContainsOperation";
   public static String ARGUMENT = "argument";
 
   public  ContainsOperation(SNode node) {
@@ -16,16 +17,20 @@ public class ContainsOperation extends SequenceOperation {
   }
 
   public static ContainsOperation newInstance(SModel sm, boolean init) {
-    return (ContainsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ContainsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ContainsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ContainsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ContainsOperation newInstance(SModel sm) {
     return ContainsOperation.newInstance(sm, false);
   }
 
+
   public Expression getArgument() {
     return (Expression)this.getChild(ContainsOperation.ARGUMENT);
   }
+
   public void setArgument(Expression node) {
     super.setChild(ContainsOperation.ARGUMENT, node);
   }
+
 }

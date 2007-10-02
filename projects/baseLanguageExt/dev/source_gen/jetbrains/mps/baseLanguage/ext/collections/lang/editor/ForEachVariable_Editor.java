@@ -27,16 +27,20 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184772415109");
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184772415108");
     editorCell.setSelectable(false);
   }
+
   private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     ForEachVariable_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -46,6 +50,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createNameCell(context, node));
     return editorCell;
   }
+
   public EditorCell createNameCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -58,6 +63,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new ForEachVariable_Editor.ForEachVariable_name_postfixCellMenu()}));
     return editorCell;
   }
+
   public EditorCell createNameCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, context);
     provider.setRole("name");
@@ -74,6 +80,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
   public static class ForEachVariable_name_postfixCellMenu extends AbstractCellMenuPart_PropertyPostfixHints {
 
     public  ForEachVariable_name_postfixCellMenu() {
@@ -86,6 +93,7 @@ public class ForEachVariable_Editor extends DefaultNodeEditor {
       }
       return postfixes;
     }
+
 }
 
 }

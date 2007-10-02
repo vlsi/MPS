@@ -13,6 +13,7 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.List;
 
 public class ListCreatorWithInit extends AbstractCreator {
+  public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit";
   public static String ELEMENT_TYPE = "elementType";
   public static String INIT_VALUE = "initValue";
 
@@ -21,31 +22,40 @@ public class ListCreatorWithInit extends AbstractCreator {
   }
 
   public static ListCreatorWithInit newInstance(SModel sm, boolean init) {
-    return (ListCreatorWithInit)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.ListCreatorWithInit", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ListCreatorWithInit)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ListCreatorWithInit newInstance(SModel sm) {
     return ListCreatorWithInit.newInstance(sm, false);
   }
 
+
   public Type getElementType() {
     return (Type)this.getChild(ListCreatorWithInit.ELEMENT_TYPE);
   }
+
   public void setElementType(Type node) {
     super.setChild(ListCreatorWithInit.ELEMENT_TYPE, node);
   }
+
   public int getInitValuesCount() {
     return this.getChildCount(ListCreatorWithInit.INIT_VALUE);
   }
+
   public Iterator<Expression> initValues() {
     return this.children(ListCreatorWithInit.INIT_VALUE);
   }
+
   public List<Expression> getInitValues() {
     return this.getChildren(ListCreatorWithInit.INIT_VALUE);
   }
+
   public void addInitValue(Expression node) {
     this.addChild(ListCreatorWithInit.INIT_VALUE, node);
   }
+
   public void insertInitValue(Expression prev, Expression node) {
     this.insertChild(prev, ListCreatorWithInit.INIT_VALUE, node);
   }
+
 }
