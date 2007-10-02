@@ -16,6 +16,7 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
@@ -179,11 +180,19 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     assert mySModel != null;
     try {
       mySModel.setLoading(true);
+      Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>();
+    /*  List<Language> languages = mySModel.getLanguages(GlobalScope.getInstance());
+      for (Language language : languages) {
+        modelDescriptors.addAll(language.getAspectModelDescriptors());
+      }*/
       for (SModelUID sModelUID : mySModel.getImportedModelUIDs()) {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelUID);
         if (modelDescriptor == null) continue;
+        modelDescriptors.add(modelDescriptor);
+      }
+      for (SModelDescriptor modelDescriptor : modelDescriptors) {
         int currentVersion = modelDescriptor.getVersion();
-        int usedVersion = mySModel.getUsedVersion(sModelUID);
+        int usedVersion = mySModel.getUsedVersion(modelDescriptor.getModelUID());
         if (currentVersion > usedVersion) {
           IOperationContext invocationContext = null;
           outer : for (IModule module : SModelRepository.getInstance().getOwners(this, IModule.class)) {
@@ -247,7 +256,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
               }
             }
           }
-          mySModel.updateImportedModelUsedVersion(sModelUID, currentVersion);
+          mySModel.updateImportedModelUsedVersion(modelDescriptor.getModelUID(), currentVersion);
         }
       }
     }finally{
