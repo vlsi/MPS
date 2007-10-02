@@ -173,6 +173,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(node, "updateModelClause", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1191321705134(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "updateModelClause", true) != null);
+  }
+
   public static List sourceNodesQuery_1189698183859(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "arguments", true);
   }
@@ -213,7 +217,7 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "argument", true);
   }
 
-  public static SNode sourceNodeQuery_1191256012221(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode sourceNodeQuery_1191321740273(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "updateModelClause", true), "body", true);
   }
 
