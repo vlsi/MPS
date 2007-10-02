@@ -10,5 +10,12 @@
       <link role="classifier" targetNodeId="1.1191320001477" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1191327613036">
+    <property name="name" value="E" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1191327613037" />
+    <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1191327616147">
+      <link role="classifier" targetNodeId="1.1191327608581" />
+    </node>
+  </node>
 </model>
 

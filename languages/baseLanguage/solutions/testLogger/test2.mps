@@ -6,5 +6,9 @@
     <property name="name" value="B" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1191320001478" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1191327608581">
+    <property name="name" value="C" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1191327608582" />
+  </node>
 </model>
 
