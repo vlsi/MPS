@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class Link_SetTargetOperation extends SNodeOperation {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation";
   public static String PARAMETER = "parameter";
 
   public  Link_SetTargetOperation(SNode node) {

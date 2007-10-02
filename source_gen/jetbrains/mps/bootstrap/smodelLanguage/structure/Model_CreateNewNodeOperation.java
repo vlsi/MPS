@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class Model_CreateNewNodeOperation extends SNodeOperation {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewNodeOperation";
   public static String PROTOTYPE_NODE = "prototypeNode";
   public static String CONCEPT = "concept";
 

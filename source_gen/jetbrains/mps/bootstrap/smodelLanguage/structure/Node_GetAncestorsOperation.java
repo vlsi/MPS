@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class Node_GetAncestorsOperation extends SNodeOperation {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorsOperation";
 
   public  Node_GetAncestorsOperation(SNode node) {
     super(node);

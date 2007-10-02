@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class Node_InsertNewNextSiblingOperation extends SNodeOperation {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_InsertNewNextSiblingOperation";
   public static String CONCEPT = "concept";
 
   public  Node_InsertNewNextSiblingOperation(SNode node) {

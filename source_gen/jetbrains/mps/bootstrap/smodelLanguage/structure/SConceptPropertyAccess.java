@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration;
 
 public class SConceptPropertyAccess extends SNodeOperation {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess";
   public static String CONCEPT_PROPERTY = "conceptProperty";
 
   public  SConceptPropertyAccess(SNode node) {

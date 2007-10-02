@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 
 public class SPropertyAccess extends SNodeOperation {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess";
   public static String PROPERTY = "property";
 
   public  SPropertyAccess(SNode node) {

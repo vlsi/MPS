@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class Concept_IsExactlyOperation extends SNodeOperation {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_IsExactlyOperation";
   public static String CONCEPT_DECLARATION = "conceptDeclaration";
 
   public  Concept_IsExactlyOperation(SNode node) {

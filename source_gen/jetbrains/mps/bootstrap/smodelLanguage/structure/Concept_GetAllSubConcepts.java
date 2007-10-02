@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class Concept_GetAllSubConcepts extends SNodeOperation {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_GetAllSubConcepts";
   public static String SMODEL = "smodel";
   public static String SCOPE = "scope";
 

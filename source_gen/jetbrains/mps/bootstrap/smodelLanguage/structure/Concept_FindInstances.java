@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class Concept_FindInstances extends SNodeOperation {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_FindInstances";
   public static String SCOPE = "scope";
 
   public  Concept_FindInstances(SNode node) {

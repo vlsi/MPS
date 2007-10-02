@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class Model_RootsIncludingImportedOperation extends SNodeOperation {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_RootsIncludingImportedOperation";
   public static String SCOPE = "scope";
   public static String CONCEPT = "concept";
 

@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class LinkList_InsertChildFirstOperation extends SNodeOperation {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.LinkList_InsertChildFirstOperation";
   public static String PARAMETER = "parameter";
 
   public  LinkList_InsertChildFirstOperation(SNode node) {

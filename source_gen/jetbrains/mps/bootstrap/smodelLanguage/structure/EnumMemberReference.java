@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration;
 
 public class EnumMemberReference extends Expression {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference";
   public static String ENUM_MEMBER = "enumMember";
 
   public  EnumMemberReference(SNode node) {

@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class SNodeTypeCastExpression extends Expression {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression";
   public static String LEFT_EXPRESSION = "leftExpression";
   public static String CONCEPT = "concept";
 

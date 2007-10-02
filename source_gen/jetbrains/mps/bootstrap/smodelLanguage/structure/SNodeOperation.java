@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class SNodeOperation extends BaseConcept {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation";
   public static String CPR_Applicable_to_model = "applicable_to_model";
   public static String CPR_Applicable_to_node = "applicable_to_node";
   public static String CPR_Applicable_to_simple_property = "applicable_to_simple_property";

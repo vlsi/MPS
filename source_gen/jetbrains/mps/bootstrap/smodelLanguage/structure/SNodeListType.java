@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class SNodeListType extends Type {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType";
   public static String ELEMENT_CONCEPT = "elementConcept";
 
   public  SNodeListType(SNode node) {

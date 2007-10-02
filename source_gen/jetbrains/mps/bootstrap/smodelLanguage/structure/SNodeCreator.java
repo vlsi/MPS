@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class SNodeCreator extends AbstractCreator {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator";
   public static String CREATED_TYPE = "createdType";
   public static String PROTOTYPE_NODE = "prototypeNode";
 

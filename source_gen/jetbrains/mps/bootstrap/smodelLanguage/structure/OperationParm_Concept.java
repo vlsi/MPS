@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class OperationParm_Concept extends AbstractOperationParameter {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept";
   public static String CONCEPT = "concept";
 
   public  OperationParm_Concept(SNode node) {

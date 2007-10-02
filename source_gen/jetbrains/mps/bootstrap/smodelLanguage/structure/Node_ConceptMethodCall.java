@@ -12,6 +12,7 @@ import java.util.List;
 import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration;
 
 public class Node_ConceptMethodCall extends SNodeOperation {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall";
   public static String ACTUAL_ARGUMENT = "actualArgument";
   public static String CONCEPT_METHOD_DECLARATION = "conceptMethodDeclaration";
 

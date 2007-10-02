@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class RefConcept_Reference extends RefConcept_Abstract {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference";
   public static String CONCEPT_DECLARATION = "conceptDeclaration";
 
   public  RefConcept_Reference(SNode node) {

@@ -10,6 +10,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 
 public class Node_IsRoleOperation extends SNodeOperation {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsRoleOperation";
   public static String CONCEPT_OF_PARENT = "conceptOfParent";
   public static String LINK_IN_PARENT = "linkInParent";
 

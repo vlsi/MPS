@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class Node_CopyOperation extends SNodeOperation {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation";
   public static String MODEL_TO_COPY = "modelToCopy";
 
   public  Node_CopyOperation(SNode node) {

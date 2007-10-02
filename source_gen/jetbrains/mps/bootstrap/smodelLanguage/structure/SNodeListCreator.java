@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SNodeListCreator extends AbstractCreator {
+  public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListCreator";
   public static String CREATED_TYPE = "createdType";
 
   public  SNodeListCreator(SNode node) {
