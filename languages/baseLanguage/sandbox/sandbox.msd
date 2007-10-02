@@ -9,6 +9,7 @@
     <moduleRoot path="${mps_home}\baseLanguage\languages\baseLanguageInternal\baseLanguageInternal.mpl" />
     <moduleRoot path="${mps_home}\baseLanguage\ext\strings\strings.mpl" />
     <moduleRoot path="${mps_home}\languages\refactoring\refactoring.mpl" />
+    <moduleRoot path="${mps_home}\languages\baseLanguage\languages\refactoringTest\refactoringTest.mpl" />
   </languages>
   <classPath>
     <entry path="${mps_home}\lib\annotations\annotations.jar" />
