@@ -13,16 +13,20 @@ public class typeof_InternalStaticMethodCall_InferenceRule implements InferenceR
   public  typeof_InternalStaticMethodCall_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), SLinkOperations.getTarget(argument, "returnType", true), argument, null);
+  public void applyRule(final SNode argument) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguageInternal.helgins", "1179333045923"), SLinkOperations.getTarget(argument, "returnType", true), argument, null, "jetbrains.mps.baseLanguageInternal.helgins", "1179333045922");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return true;
   }
+
 }

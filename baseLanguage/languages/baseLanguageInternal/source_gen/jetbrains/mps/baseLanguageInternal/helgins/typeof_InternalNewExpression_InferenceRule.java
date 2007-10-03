@@ -13,7 +13,7 @@ public class typeof_InternalNewExpression_InferenceRule implements InferenceRule
   public  typeof_InternalNewExpression_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     SNode type;
     if((SLinkOperations.getTarget(argument, "type", true) != null)) {
       type = SLinkOperations.getTarget(argument, "type", true);
@@ -21,15 +21,19 @@ public class typeof_InternalNewExpression_InferenceRule implements InferenceRule
     {
       type = new QuotationClass_().createNode();
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), type, argument, null);
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguageInternal.helgins", "1181300754742"), type, argument, null, "jetbrains.mps.baseLanguageInternal.helgins", "1181300754740");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return true;
   }
+
 }

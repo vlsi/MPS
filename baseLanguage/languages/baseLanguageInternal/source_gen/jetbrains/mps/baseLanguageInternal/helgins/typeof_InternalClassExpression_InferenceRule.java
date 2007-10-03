@@ -13,16 +13,20 @@ public class typeof_InternalClassExpression_InferenceRule implements InferenceRu
   public  typeof_InternalClassExpression_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), new QuotationClass_1().createNode(SLinkOperations.getTarget(argument, "type", true)), argument, null);
+  public void applyRule(final SNode argument) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguageInternal.helgins", "1179333045911"), new QuotationClass_1().createNode(SLinkOperations.getTarget(argument, "type", true)), argument, null, "jetbrains.mps.baseLanguageInternal.helgins", "1179333045910");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

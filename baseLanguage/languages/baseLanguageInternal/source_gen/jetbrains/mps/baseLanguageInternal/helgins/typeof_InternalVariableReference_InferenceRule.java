@@ -13,16 +13,20 @@ public class typeof_InternalVariableReference_InferenceRule implements Inference
   public  typeof_InternalVariableReference_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument), SLinkOperations.getTarget(argument, "type", true), argument, null);
+  public void applyRule(final SNode argument) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguageInternal.helgins", "1179333045931"), SLinkOperations.getTarget(argument, "type", true), argument, null, "jetbrains.mps.baseLanguageInternal.helgins", "1179333045930");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }
