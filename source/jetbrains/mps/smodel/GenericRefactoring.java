@@ -72,11 +72,9 @@ public class GenericRefactoring {
       throw new RefactoringLoggingFailedException("refactoring source node is not a refactoring source, id="+nodeId);
     }
 
-    SNode nodeToBeLogged = CopyUtil.copy(refactoringSourceNode, model);
-    Refactoring refactoring = (Refactoring) nodeToBeLogged.getAdapter();
+    Refactoring refactoring = (Refactoring) refactoringSourceNode.getAdapter();
     RuntimeLog refactoringLog = RuntimeLog.newInstance(model);
     UpdateModelClause updateModelClause = refactoring.getUpdateModelClause();
-    updateModelClause.getParent().removeChild(updateModelClause);
     refactoringLog.setUpdateModelClause(updateModelClause);
     for (String name : args.keySet()) {
       RequiredAdditionalArgument argument = findArgumentByName(refactoring, name);
@@ -84,8 +82,8 @@ public class GenericRefactoring {
       RequiredAdditionalArgumentValue value = RequiredAdditionalArgumentValue.newInstance(model);
       refactoringLog.addArgumentValue(value);
       value.setValue(args.get(name));
-      argument.getParent().removeChild(argument);
-      value.setArgument(argument);
+      RequiredAdditionalArgument argumentCopy = CopyUtil.copy(argument, model);
+      value.setArgument(argumentCopy);
     }
 
     SNode log = model.getLog();

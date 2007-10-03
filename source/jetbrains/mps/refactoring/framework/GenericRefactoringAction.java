@@ -22,6 +22,6 @@ public class GenericRefactoringAction extends MPSAction {
 
   public void execute(@NotNull ActionContext context) {
     myRefactoring.execute(context);
-  }
+  }       
   
 }

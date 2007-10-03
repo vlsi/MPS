@@ -6,6 +6,9 @@
   <constraints>
     <model modelUID="jetbrains.mps.core.constraints" />
   </constraints>
+  <scripts>
+    <model modelUID="jetbrains.mps.core.scripts" />
+  </scripts>
   <editor>
     <model modelUID="jetbrains.mps.core.editor" />
   </editor>
