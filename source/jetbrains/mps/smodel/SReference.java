@@ -147,17 +147,17 @@ public abstract class SReference {
     return new SReference_old(role, sourceNode, targetNodeId, resolveInfo, extResolveInfo, targetModelUID);
   }
 
-  public static SReference newInstance(String role,
-                                       SNode sourceNode,
-                                       String targetModelUID,
-                                       String targetInfo,
-                                       boolean isExtResolveInfo) {
-    if (isExtResolveInfo) {
-      return new SReference_old(role, sourceNode, null, null, targetInfo, SModelUID.fromString(targetModelUID));
-    } else {
-      return new SReference_old(role, sourceNode, targetInfo, null, null, SModelUID.fromString(targetModelUID));
-    }
-  }
+//  public static SReference newInstance(String role,
+//                                       SNode sourceNode,
+//                                       String targetModelUID,
+//                                       String targetInfo,
+//                                       boolean isExtResolveInfo) {
+//    if (isExtResolveInfo) {
+//      return new SReference_old(role, sourceNode, null, null, targetInfo, SModelUID.fromString(targetModelUID));
+//    } else {
+//      return new SReference_old(role, sourceNode, targetInfo, null, null, SModelUID.fromString(targetModelUID));
+//    }
+//  }
 
   //
   // --- end new instance OLD
