@@ -177,6 +177,7 @@ public abstract class SReference {
     //in class path
     if (reference.getSourceNode().getModel().getStereotype().endsWith(SModelStereotype.JAVA_STUB)) return;
     if (reference.getSourceNode().getModel().getUserObject(SModel.TMP_MODEL) != null) return;
+    reference.error(errorState);
   }
 
   protected abstract void error(GetTargetNodeErrorState errorState);
