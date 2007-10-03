@@ -4,6 +4,7 @@ import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.GlobalScope;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -42,6 +43,7 @@ public class ModelPersistence {
   public static final String MODEL_IMPORT_INDEX = "index";
   public static final String MAX_IMPORT_INDEX = "maxImportIndex";
   public static final String LANGUAGE = "language";
+  public static final String LANGUAGE_ASPECT = "languageAspect";
   public static final String LANGUAGE_ENGAGED_ON_GENERATION = "language-engaged-on-generation";
   public static final String DEVKIT = "devkit";
   public static final String STEREOTYPE = "stereotype";
@@ -144,6 +146,24 @@ public class ModelPersistence {
       Element element = (Element) language;
       String languageNamespace = element.getAttributeValue(NAMESPACE);
       model.addLanguage(languageNamespace);
+      List<Element> aspectElements = element.getChildren(LANGUAGE_ASPECT);
+
+      //aspect models versions
+      for (Element aspectElement : aspectElements) {
+        String aspectModelUID = aspectElement.getAttributeValue(MODEL_UID);
+        String versionString = aspectElement.getAttributeValue(VERSION);
+        int version = -1;
+        if (versionString != null) {
+          try {
+            version = Integer.parseInt(versionString);
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
+        }
+        if (aspectModelUID != null) {
+          model.addLanguageAspectModelVersion(SModelUID.fromString(aspectModelUID), version);
+        }
+      }
     }
 
     // languages engaged on generation
@@ -359,13 +379,14 @@ public class ModelPersistence {
     for (String languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {
       Element languageElem = new Element(LANGUAGE);
       languageElem.setAttribute(NAMESPACE, languageNamespace);
-      int version = -1;
-      Language modelLanguage = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
-      if (modelLanguage != null) {
-        version = modelLanguage.getVersion();
-      }
-      if (version > -1) {
-        languageElem.setAttribute(VERSION, version + "");
+      Language l = GlobalScope.getInstance().getLanguage(languageNamespace);
+      if (l != null) {
+        for (SModelDescriptor sModelDescriptor : l.getAspectModelDescriptors()) {
+          Element aspectModelElement = new Element(LANGUAGE_ASPECT);
+          SModelUID uid = sModelDescriptor.getModelUID();
+          aspectModelElement.setAttribute(MODEL_UID, uid.toString());
+          aspectModelElement.setAttribute(VERSION, ""+sourceModel.getLanguageAspectModelVersion(uid));
+        }
       }
       rootElement.addContent(languageElem);
     }

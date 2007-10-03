@@ -48,6 +48,7 @@ public class SModel implements Iterable<SNode> {
   private List<String> myLanguagesEngagedOnGeneration = new ArrayList<String>();
   private List<String> myDevKits = new ArrayList<String>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
+  private List<ImportElement> myLanguagesAspectsModelsVersions = new ArrayList<ImportElement>();
 
   private Map<SNodeId, SNode> myIdToNodeMap = new HashMap<SNodeId, SNode>();
   private Map<String, SNode> myExternalResolveInfoToNodeMap = new HashMap<String, SNode>();
@@ -603,9 +604,24 @@ public class SModel implements Iterable<SNode> {
     fireImportAddedEvent(modelUID);
   }
 
+  void addLanguageAspectModelVersion(@NotNull SModelUID modelUID, int usedVersion) {
+    ImportElement importElement = new ImportElement(modelUID, -1, usedVersion);
+    myLanguagesAspectsModelsVersions.add(importElement);
+  }
+
   @Nullable
   ImportElement getImportElement(@NotNull SModelUID modelUID) {
     for (ImportElement importElement : myImports) {
+      if (importElement.getModelUID().equals(modelUID)) {
+        return importElement;
+      }
+    }
+    return null;
+  }
+
+  @Nullable
+  ImportElement getLanguageAspectModelElement(@NotNull SModelUID modelUID) {
+    for (ImportElement importElement : myLanguagesAspectsModelsVersions) {
       if (importElement.getModelUID().equals(modelUID)) {
         return importElement;
       }
@@ -634,6 +650,15 @@ public class SModel implements Iterable<SNode> {
   public List<SModelUID> getImportedModelUIDs() {
     List<SModelUID> uids = new ArrayList<SModelUID>();
     for (ImportElement importElement : myImports) {
+      uids.add(importElement.getModelUID());
+    }
+    return Collections.unmodifiableList(uids);
+  }
+
+  @NotNull
+  public List<SModelUID> getLanguageAspectModelsUIDs() {
+     List<SModelUID> uids = new ArrayList<SModelUID>();
+    for (ImportElement importElement : myLanguagesAspectsModelsVersions) {
       uids.add(importElement.getModelUID());
     }
     return Collections.unmodifiableList(uids);
@@ -963,10 +988,21 @@ public class SModel implements Iterable<SNode> {
     return importElement.getUsedVersion();
   }
 
+  public int getLanguageAspectModelVersion(SModelUID sModelUID) {
+    ImportElement importElement = getLanguageAspectModelElement(sModelUID);
+    if (importElement == null) return -1;
+    return importElement.getUsedVersion();
+  }
+
   /*package*/ void updateImportedModelUsedVersion(SModelUID sModelUID, int currentVersion) {
     ImportElement importElement = getImportElement(sModelUID);
-    if (importElement == null) return;
-    importElement.myUsedVersion = currentVersion;
+    if (importElement != null) {
+      importElement.myUsedVersion = currentVersion;
+    }
+    importElement = getLanguageAspectModelElement(sModelUID);
+    if (importElement != null) {
+      importElement.myUsedVersion = currentVersion;
+    }
   }
 
   /*package*/ void increaseVersion() {
