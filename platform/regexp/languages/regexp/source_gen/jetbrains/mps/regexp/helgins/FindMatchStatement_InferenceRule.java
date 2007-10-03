@@ -13,16 +13,20 @@ public class FindMatchStatement_InferenceRule implements InferenceRule_Runtime {
   public  FindMatchStatement_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expr", true)), new QuotationClass_6().createNode(), SLinkOperations.getTarget(argument, "expr", true), null);
+  public void applyRule(final SNode argument) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expr", true), "jetbrains.mps.regexp.helgins", "1178179183657"), new QuotationClass_6().createNode(), SLinkOperations.getTarget(argument, "expr", true), null, "jetbrains.mps.regexp.helgins", "1178179183656");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.regexp.structure.FindMatchStatement";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

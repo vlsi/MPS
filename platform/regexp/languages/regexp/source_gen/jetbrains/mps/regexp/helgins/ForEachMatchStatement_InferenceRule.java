@@ -13,16 +13,20 @@ public class ForEachMatchStatement_InferenceRule implements InferenceRule_Runtim
   public  ForEachMatchStatement_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expr", true)), new QuotationClass_2().createNode(), SLinkOperations.getTarget(argument, "expr", true), null);
+  public void applyRule(final SNode argument) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expr", true), "jetbrains.mps.regexp.helgins", "1178179183625"), new QuotationClass_2().createNode(), SLinkOperations.getTarget(argument, "expr", true), null, "jetbrains.mps.regexp.helgins", "1178179183624");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.regexp.structure.ForEachMatchStatement";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

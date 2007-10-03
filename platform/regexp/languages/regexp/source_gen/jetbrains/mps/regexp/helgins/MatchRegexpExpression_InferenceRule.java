@@ -12,16 +12,20 @@ public class MatchRegexpExpression_InferenceRule implements InferenceRule_Runtim
   public  MatchRegexpExpression_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_7().createNode(), argument);
+  public void applyRule(final SNode argument) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_7().createNode(), argument, "jetbrains.mps.regexp.helgins", "1179358945232");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.regexp.structure.MatchRegexpExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

@@ -12,16 +12,20 @@ public class MatchVariableReference_InferenceRule implements InferenceRule_Runti
   public  MatchVariableReference_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(), argument);
+  public void applyRule(final SNode argument) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(), argument, "jetbrains.mps.regexp.helgins", "1178179183609");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.regexp.structure.MatchVariableReference";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

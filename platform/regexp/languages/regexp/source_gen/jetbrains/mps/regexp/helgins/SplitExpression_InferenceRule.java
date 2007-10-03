@@ -13,17 +13,21 @@ public class SplitExpression_InferenceRule implements InferenceRule_Runtime {
   public  SplitExpression_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expr", true)), new QuotationClass_4().createNode(), SLinkOperations.getTarget(argument, "expr", true), null);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_5().createNode(), argument);
+  public void applyRule(final SNode argument) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expr", true), "jetbrains.mps.regexp.helgins", "1178179183643"), new QuotationClass_4().createNode(), SLinkOperations.getTarget(argument, "expr", true), null, "jetbrains.mps.regexp.helgins", "1178179183642");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_5().createNode(), argument, "jetbrains.mps.regexp.helgins", "1178179183649");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.regexp.structure.SplitExpression";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }
