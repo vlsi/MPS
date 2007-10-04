@@ -83,7 +83,7 @@ public class SNodePointer {
   }
 
   /*package*/
-  static void changeModelUID(SModelUID oldModelUID, SModelUID newModelUID) {
+  public static void changeModelUID(SModelUID oldModelUID, SModelUID newModelUID) {
     WeakSet<SNodePointer> pointers = ourPointersByModelUID.remove(oldModelUID);
     if (pointers != null) {
       for (SNodePointer pointer : pointers) {

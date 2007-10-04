@@ -1,7 +1,12 @@
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.ModelOwner;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

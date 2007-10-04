@@ -1,7 +1,11 @@
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.ModelOwner;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;

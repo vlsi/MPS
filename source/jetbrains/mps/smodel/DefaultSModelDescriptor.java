@@ -10,13 +10,13 @@ import jetbrains.mps.logging.refactoring.structure.RuntimeLog;
 import jetbrains.mps.logging.refactoring.structure.RuntimeLogStack;
 import jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
@@ -27,8 +27,6 @@ import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import java.io.File;
 import java.util.*;
 import java.lang.reflect.Method;
-
-import org.eclipse.jdt.internal.compiler.CompilationResult;
 
 /**
  * @author Kostik
@@ -650,7 +648,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     getSModel().changeModelUID(newModelUID);
   }
 
-  /*package*/ void setModelFile(File file) {
+  /*package*/
+  public void setModelFile(File file) {
     myModelFile = file;
   }
 

@@ -1,4 +1,4 @@
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
@@ -7,6 +7,8 @@ import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;

@@ -18,6 +18,8 @@ import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.structure.Model;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import org.jetbrains.annotations.NotNull;

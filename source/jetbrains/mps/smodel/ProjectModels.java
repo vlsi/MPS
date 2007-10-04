@@ -1,6 +1,8 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

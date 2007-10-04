@@ -914,13 +914,13 @@ public class SModel implements Iterable<SNode> {
     return null;
   }
 
-  void clearAdapters() {
+  public void clearAdapters() {
     for (SNode root : getRoots()) {
       root.clearAdapters();
     }
   }
 
-  void clearUserObjects() {
+  public void clearUserObjects() {
     for (SNode root : getRoots()) {
       root.clearUserObjects();
     }

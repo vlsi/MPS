@@ -7,6 +7,7 @@ import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -18,7 +19,7 @@ import java.util.Set;
 /**
  * @author Kostik
  */
-public class ClassPathModelRootManager extends AbstractModelRootManager  {
+public class ClassPathModelRootManager extends AbstractModelRootManager {
 
   private static Map<SModelUID, Long> ourTimestamps = new HashMap<SModelUID, Long>();
   private ModelOwner myOwner;

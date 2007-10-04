@@ -1,6 +1,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
 
 /**
  * Igor Alshannikov
