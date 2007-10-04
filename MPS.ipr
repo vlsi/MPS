@@ -64,6 +64,7 @@
             <option name="LABEL_INDENT_ABSOLUTE" value="false" />
           </value>
         </option>
+        <option name="LINE_SEPARATOR" value="&#13;&#10;" />
         <option name="FIELD_NAME_PREFIX" value="my" />
         <option name="INSERT_INNER_CLASS_IMPORTS" value="true" />
         <option name="PACKAGES_TO_USE_IMPORT_ON_DEMAND">
@@ -848,6 +849,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/webrSamples/sandbox/webrSamples_sandbox.iml" filepath="$PROJECT_DIR$/app/webrSamples/sandbox/webrSamples_sandbox.iml" group="app/webrSamples" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/baseTemplate/webr_baseTemplate.iml" filepath="$PROJECT_DIR$/platform/webr/languages/baseTemplate/webr_baseTemplate.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/baseTemplateInternal/webr_baseTemplateInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/baseTemplateInternal/webr_baseTemplateInternal.iml" group="platform/webr/languages" />
+      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/component/webr_component.iml" filepath="$PROJECT_DIR$/platform/webr/languages/component/webr_component.iml" group="platform/webr/languages" />
+      <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/componentInternal/webr_componentInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/componentInternal/webr_componentInternal.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/css/webr_css.iml" filepath="$PROJECT_DIR$/platform/webr/languages/css/webr_css.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/cssInternal/webr_cssInternal.iml" filepath="$PROJECT_DIR$/platform/webr/languages/cssInternal/webr_cssInternal.iml" group="platform/webr/languages" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/languages/cssSchema/webr_cssSchema.iml" filepath="$PROJECT_DIR$/platform/webr/languages/cssSchema/webr_cssSchema.iml" group="platform/webr/languages" />
@@ -876,13 +879,13 @@
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/wiki/wiki.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/wiki/wiki.iml" group="platform/webr/extensions" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xms128m -Xmx1024m -ea" />
+      <option name="VM_PARAMETERS" value="-Xms128m -Xmx2000m -ea -XX:MaxPermSize=200m" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
