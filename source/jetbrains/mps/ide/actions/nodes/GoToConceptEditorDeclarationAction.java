@@ -20,6 +20,7 @@ import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
+import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 import org.jetbrains.annotations.NotNull;
@@ -153,7 +154,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     ModelRoot modelRoot = null;
     List<ModelRoot> modelRoots = language.getModelRoots();
     for (ModelRoot mRoot : modelRoots) {
-      IModelRootManager rootManager = SModelRepository.getInstance().getManagerFor(mRoot);
+      IModelRootManager rootManager = ModelRootsUtil.getManagerFor(mRoot);
       if (rootManager instanceof DefaultModelRootManager) {
         modelRoot = mRoot;
         break;
@@ -185,7 +186,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     ModelRoot modelRoot = null;
     List<ModelRoot> modelRoots = language.getModelRoots();
     for (ModelRoot mRoot : modelRoots) {
-      IModelRootManager rootManager = SModelRepository.getInstance().getManagerFor(mRoot);
+      IModelRootManager rootManager = ModelRootsUtil.getManagerFor(mRoot);
       if (rootManager instanceof DefaultModelRootManager) {
         modelRoot = mRoot;
         break;

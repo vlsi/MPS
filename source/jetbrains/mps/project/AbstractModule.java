@@ -5,6 +5,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -205,7 +206,7 @@ public abstract class AbstractModule implements IModule {
 
   @NotNull
   public SModelDescriptor createModel(@NotNull SModelUID uid, @NotNull ModelRoot root) {
-    IModelRootManager manager = SModelRepository.getInstance().getManagerFor(root);
+    IModelRootManager manager = ModelRootsUtil.getManagerFor(root);
 
     if (!manager.isNewModelsSupported()) {
       LOG.error("Trying to create model root manager in root which doesn't support new models");
@@ -234,7 +235,16 @@ public abstract class AbstractModule implements IModule {
       for (IModule im : MPSModuleRepository.getInstance().getModules(this)) {
         im.readModels();
       }
-      SModelRepository.getInstance().readModelDescriptors(getModelRoots(), this);
+
+      for (ModelRoot modelRoot : getModelRoots()) {
+        try {
+          IModelRootManager manager = ModelRootsUtil.getManagerFor(modelRoot);
+          manager.read(modelRoot, this);
+        } catch (Exception e) {
+          LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + this, e);
+        }
+      }
+
       myInitialized = true;
     }
   }

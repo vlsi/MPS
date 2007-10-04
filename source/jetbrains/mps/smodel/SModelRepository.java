@@ -1,17 +1,13 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.component.Dependency;
-import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;
@@ -38,7 +34,6 @@ public class SModelRepository extends SModelAdapter {
   private List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
 
   private MPSModuleRepository myModuleRepository;
-  private ClassLoaderManager myClassLoaderManager;
 
   private Map<String, List<SModelCommandListener>> myCommandListeners = new HashMap<String, List<SModelCommandListener>>();
   private Map<ILanguageModelListenerOwner, List<SModelCommandListener>> myOwnersToListeners = new HashMap<ILanguageModelListenerOwner, List<SModelCommandListener>>();
@@ -57,12 +52,6 @@ public class SModelRepository extends SModelAdapter {
   @Dependency
   public void setModuleRepository(MPSModuleRepository moduleRepository) {
     myModuleRepository = moduleRepository;
-  }
-
-
-  @Dependency
-  public void setClassLoaderManager(ClassLoaderManager classLoaderManager) {
-    myClassLoaderManager = classLoaderManager;
   }
 
   public static SModelRepository getInstance() {
@@ -473,44 +462,6 @@ public class SModelRepository extends SModelAdapter {
   public void reloadAll() {
     for (SModelDescriptor modelDescriptor : new HashSet<SModelDescriptor>(myModelToOwnerMap.keySet())) {
       modelDescriptor.reloadFromDisk();
-    }
-  }
-
-  @NotNull
-  public List<SModelDescriptor> readModelDescriptors(
-          @NotNull Iterable<ModelRoot> modelRoots,
-          @NotNull ModelOwner owner) {
-    return readModelDescriptors(modelRoots.iterator(), owner);
-  }
-
-  @NotNull
-  public List<SModelDescriptor> readModelDescriptors(
-          @NotNull Iterator<ModelRoot> modelRoots,
-          @NotNull ModelOwner owner) {
-    List<SModelDescriptor> list = new ArrayList<SModelDescriptor>();
-    while (modelRoots.hasNext()) {
-      ModelRoot modelRoot = modelRoots.next();
-      try {
-        IModelRootManager manager = getManagerFor(modelRoot);
-        list.addAll(manager.read(modelRoot, owner));
-      } catch (Exception e) {
-        LOG.error("Error loading models from root: prefix: \"" + modelRoot.getPrefix() + "\" path: \"" + modelRoot.getPath() + "\". Requested by: " + owner, e);
-      }
-    }
-
-    return list;
-  }
-
-  @NotNull
-  public IModelRootManager getManagerFor(@NotNull ModelRoot modelRoot) {
-    if (modelRoot.getHandlerClass() == null) return new DefaultModelRootManager();
-    String fqName = modelRoot.getHandlerClass();
-    try {
-      Class cls = Class.forName(fqName, true, myClassLoaderManager.getClassLoader());
-      return (IModelRootManager) cls.newInstance();
-    } catch (Exception e) {
-      LOG.error(e);
-      return IModelRootManager.NULL_MANAGER;
     }
   }
 
