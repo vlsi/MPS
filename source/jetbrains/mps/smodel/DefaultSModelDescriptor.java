@@ -114,7 +114,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public boolean isExternallyResolvable() {
     String stereotype = getModelUID().getStereotype();
-    return stereotype.equals(SModelStereotype.JAVA_STUB) || stereotype.equals(SModelStereotype.GENERATED);
+    return stereotype.equals(SModelStereotype.JAVA_STUB);
   }
 
   public boolean isNotEditable() {
