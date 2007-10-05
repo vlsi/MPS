@@ -77,10 +77,6 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(node).toString() + "#" + node.getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1191587705973(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.getBoolean(node, "requiresModelGeneration");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1189697560065(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(node, "name");
   }
@@ -173,6 +169,14 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(node, "doRefactorClause", true) != null);
   }
 
+  public static boolean ifMacro_Condition_1191592317472(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "getModelsToGenerateClause", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1191592504958(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "getModelsToGenerateClause", true) == null);
+  }
+
   public static boolean ifMacro_Condition_1190724916731(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return (SLinkOperations.getTarget(node, "updateModelClause", true) != null);
   }
@@ -199,6 +203,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1190724963405(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "doRefactorClause", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1191592317463(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "getModelsToGenerateClause", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1190724923720(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

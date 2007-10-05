@@ -41,7 +41,7 @@ public class GenericRefactoring {
     if (modelDescriptor == null) return;
     SModel model = modelDescriptor.getSModel();
 
-    if (myRefactoring.requiresModelGeneration()) {
+  /*  if (myRefactoring.requiresModelGeneration()) {
       List<SModel> sourceModels = new ArrayList<SModel>();
       sourceModels.add(model);
       IOperationContext operationContext = context.getOperationContext();
@@ -56,7 +56,7 @@ public class GenericRefactoring {
               },
               IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
               new DefaultMessageHandler(operationContext.getProject()));
-    }
+    }*/
 
     writeIntoLog(model, args);
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {

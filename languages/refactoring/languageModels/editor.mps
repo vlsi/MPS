@@ -109,6 +109,15 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1189695303186">
         <link role="relationDeclaration" targetNodeId="1.1189695170518" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1191591986713">
+        <property name="selectable" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1191592020355">
+        <property name="text" value="get models to generate:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1191592037295">
+        <link role="relationDeclaration" targetNodeId="1.1191591935289" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1189695305376">
         <property name="selectable" value="false" />
       </node>
@@ -117,19 +126,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1189695320894">
         <link role="relationDeclaration" targetNodeId="1.1189695176456" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1191587239699">
-        <property name="selectable" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1191587422952">
-        <property name="selectable" value="false" />
-        <property name="vertical" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1191587422953">
-          <property name="text" value="requires model generation:" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1191587481830">
-          <link role="relationDeclaration" targetNodeId="1.1191587183018" resolveInfo="requiresModelGeneration" />
-        </node>
       </node>
     </node>
   </node>

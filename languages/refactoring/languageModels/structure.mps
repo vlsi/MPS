@@ -4,12 +4,14 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="5" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
   <import index="4" modelUID="java.util@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  <import index="6" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1189693812263">
     <property name="name" value="Refactoring" />
     <property name="rootable" value="true" />
@@ -17,10 +19,6 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1191237830649">
       <property name="name" value="userFriendlyName" />
       <link role="dataType" targetNodeId="1.1082983041843" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1191587183018">
-      <property name="name" value="requiresModelGeneration" />
-      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1189693888592">
       <property name="metaClass" value="aggregation" />
@@ -43,6 +41,11 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="doRefactorClause" />
       <link role="target" targetNodeId="1189694053795" resolveInfo="DoRefactorClause" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1191591935289">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="getModelsToGenerateClause" />
+      <link role="target" targetNodeId="1191591349007" resolveInfo="GetModelsToGenerateClause" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1189695176456">
       <property name="metaClass" value="aggregation" />
@@ -278,6 +281,20 @@
       <property name="role" value="log" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1191242246174" resolveInfo="RuntimeLog" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1191591349007">
+    <property name="name" value="GetModelsToGenerateClause" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1191591414955">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ext.collections.lang.ListType" id="1191591631848">
+        <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.SModelType" id="1191591633709" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1191591642633">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1189694712372" resolveInfo="ConceptFunctionParameter_ActionContext" />
     </node>
   </node>
 </model>
