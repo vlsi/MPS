@@ -41,22 +41,10 @@ public class GenericRefactoring {
     if (modelDescriptor == null) return;
     SModel model = modelDescriptor.getSModel();
 
-  /*  if (myRefactoring.requiresModelGeneration()) {
-      List<SModel> sourceModels = new ArrayList<SModel>();
-      sourceModels.add(model);
-      IOperationContext operationContext = context.getOperationContext();
-      new GeneratorManager().generateModels(sourceModels,
-              BootstrapLanguages.getInstance().getBaseLanguage(),
-              operationContext,
-              IGenerationType.FILES,
-              new IGenerationScript() {
-                public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
-                  return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
-                }
-              },
-              IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
-              new DefaultMessageHandler(operationContext.getProject()));
-    }*/
+    List<SModel> sourceModels = myRefactoring.getModelsToGenerate(context, args);
+    if (!sourceModels.isEmpty()) {
+      generateModels(context, sourceModels);
+    }
 
     writeIntoLog(model, args);
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
@@ -72,6 +60,21 @@ public class GenericRefactoring {
       processModel(anotherModel, model, args);
     }
 
+  }
+
+  private void generateModels(ActionContext context, List<SModel> sourceModels) {
+    IOperationContext operationContext = context.getOperationContext();
+    new GeneratorManager().generateModels(sourceModels,
+            BootstrapLanguages.getInstance().getBaseLanguage(),
+            operationContext,
+            IGenerationType.FILES,
+            new IGenerationScript() {
+              public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
+                return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
+              }
+            },
+            IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
+            new DefaultMessageHandler(operationContext.getProject()));
   }
 
   private void processModel(SModel model, SModel usedModel, Map<String, String> args) {
