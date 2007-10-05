@@ -27,7 +27,6 @@ public class ModelPersistence {
   public static final String ROLE = "role";
   public static final String NAME = "name";
   public static final String NAMESPACE = "namespace";
-  public static final String IS_EXTERNALLY_RESOLVED = "externallyResolved";
   public static final String EXT_RESOLVE_INFO = "extResolveInfo";
   public static final String NODE = "node";
   public static final String TYPE = "type";
@@ -78,7 +77,7 @@ public class ModelPersistence {
   }
 
   @NotNull
-  public static SModel readModel(@NotNull byte[] bytes) {
+  private static SModel readModel(@NotNull byte[] bytes) {
     Document document = loadModelDocument(bytes);
     return readModel(document, "", "");
   }
@@ -464,16 +463,17 @@ public class ModelPersistence {
     element.setAttribute(TYPE, oldStructureClassName);
     element.setAttribute(ID, node.getId());
 
-    if (node.getModel().isExternallyResolvable()) {
-      try {
-        String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
-        if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
-          element.setAttribute(EXT_RESOLVE_INFO, extResolveInfo);
-        }
-      } catch (Exception e) {
-        LOG.error("Failed to save extResolveInfo for node " + node.getDebugText(), e);
-      }
-    }
+    // we don't save java_stubs ?
+//    if (node.getModel().isExternallyResolvable()) {
+//      try {
+//        String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
+//        if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
+//          element.setAttribute(EXT_RESOLVE_INFO, extResolveInfo);
+//        }
+//      } catch (Exception e) {
+//        LOG.error("Failed to save extResolveInfo for node " + node.getDebugText(), e);
+//      }
+//    }
 
     // properties ...
     Map<String, String> properties = node.getProperties();
