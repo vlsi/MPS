@@ -13,6 +13,7 @@
   <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <node type="jetbrains.mps.logging.refactoring.Refactoring" id="1191583490852">
     <property name="name" value="RenameConceptRefactoring" />
+    <property name="requiresModelGeneration" value="true" />
     <node role="arguments" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgument" id="1191583490853">
       <property name="name" value="newConceptName" />
       <property name="presentation" value="enter new concept name" />

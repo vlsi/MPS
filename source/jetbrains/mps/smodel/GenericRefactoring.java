@@ -34,6 +34,11 @@ public class GenericRefactoring {
     SModelDescriptor modelDescriptor = context.getModel();
     if (modelDescriptor == null) return;
     SModel model = modelDescriptor.getSModel();
+
+    if (myRefactoring.requiresModelGeneration()) {
+      //todo generate 
+    }
+
     writeIntoLog(model, args);
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
       String stereotype = anotherDescriptor.getStereotype();

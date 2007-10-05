@@ -177,6 +177,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   private void updateModelWithRefactorings() {
     assert mySModel != null;
+    String stereotype = mySModel.getStereotype();
+    if (!SModelStereotype.NONE.equals(stereotype) && !SModelStereotype.TEMPLATES.equals(stereotype)) {
+      return;
+    }
     try {
       mySModel.setLoading(true);
       Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>();

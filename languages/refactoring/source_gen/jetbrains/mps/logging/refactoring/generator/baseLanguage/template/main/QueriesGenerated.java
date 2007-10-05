@@ -77,6 +77,10 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(node).toString() + "#" + node.getId();
   }
 
+  public static Object propertyMacro_GetPropertyValue_1191587705973(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getBoolean(node, "requiresModelGeneration");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1189697560065(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(node, "name");
   }

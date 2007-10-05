@@ -18,6 +18,10 @@
       <property name="name" value="userFriendlyName" />
       <link role="dataType" targetNodeId="1.1082983041843" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1191587183018">
+      <property name="name" value="requiresModelGeneration" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1189693888592">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="arguments" />
