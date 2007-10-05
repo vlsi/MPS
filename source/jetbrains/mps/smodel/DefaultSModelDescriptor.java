@@ -17,6 +17,7 @@ import jetbrains.mps.util.PathManager;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
@@ -179,10 +180,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     try {
       mySModel.setLoading(true);
       Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>();
-    /*  List<Language> languages = mySModel.getLanguages(GlobalScope.getInstance());
+      List<Language> languages = mySModel.getLanguages(GlobalScope.getInstance());
       for (Language language : languages) {
         modelDescriptors.addAll(language.getAspectModelDescriptors());
-      }*/
+      }
       for (SModelUID sModelUID : mySModel.getImportedModelUIDs()) {
         SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelUID);
         if (modelDescriptor == null) continue;
