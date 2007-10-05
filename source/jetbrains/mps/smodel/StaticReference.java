@@ -30,14 +30,16 @@ import org.jetbrains.annotations.NotNull;
           myMature = true;
           setTargetModelUID(node.getModel().getUID());
           setTargetNodeId(node.getSNodeId().toString());
+          setResolveInfo(node.getName());
         }
       }
     });
   }
 
-  StaticReference(String role, SNode sourceNode, SModelUID modelUID, SNodeId nodeId) {
+  StaticReference(String role, SNode sourceNode, SModelUID modelUID, SNodeId nodeId, String resolveInfo) {
     // 'mature' reference
     super(role, sourceNode, modelUID, nodeId.toString());
+    setResolveInfo(resolveInfo);
     myMature = true;
   }
 
@@ -51,7 +53,7 @@ import org.jetbrains.annotations.NotNull;
       SNode node = targetModel.getNodeById(getTargetNodeId());
       if (node == null) {
         node = UnregisteredNodes.instance().get(getTargetModelUID(), getTargetNodeId());
-        if(node == null) {
+        if (node == null) {
           SReference.error(this, GetTargetNodeErrorState.CANT_RESOLVE_BY_ID);
         }
       }

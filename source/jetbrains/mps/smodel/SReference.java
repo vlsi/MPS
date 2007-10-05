@@ -83,13 +83,20 @@ public abstract class SReference {
   // --- new instance NEW
   //
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
-     return new StaticReference(role, sourceNode, targetNode);
+    if (targetNode.isRegistered()) {
+      // 'mature' reference
+      return new StaticReference(role, sourceNode, targetNode.getModel().getUID(), targetNode.getSNodeId(), targetNode.getName());
+    }
+    return new StaticReference(role, sourceNode, targetNode);
   }
 
   public static SReference create(String role, SNode sourceNode, SModelUID targetModelUID, SNodeId targetNodeId) {
-     return new StaticReference(role, sourceNode, targetModelUID, targetNodeId);
+    return create(role, sourceNode, targetModelUID, targetNodeId, null);
   }
 
+  public static SReference create(String role, SNode sourceNode, SModelUID targetModelUID, SNodeId targetNodeId, String resolveInfo) {
+    return new StaticReference(role, sourceNode, targetModelUID, targetNodeId, resolveInfo);
+  }
 
   //
   // --- new instance OLD
@@ -98,7 +105,7 @@ public abstract class SReference {
   /**
    * reference created by target node
    * todo: annotate targetNode as NotNull. If targetNode=null there is neither ID nor resolve infos
-   * update: targetNode=null can happen. See CopuPasteUtil.processReferencesIn() - when copied reference is unresolved (i.e. oldTargetNode==null)
+   * update: targetNode=null can happen. See CopyPasteUtil.processReferencesIn() - when copied reference is unresolved (i.e. oldTargetNode==null)
    * todo: another 'newInstance' should be used there in this case.
    */
   public static SReference newInstance(String role, SNode sourceNode, SNode targetNode) {
@@ -182,18 +189,18 @@ public abstract class SReference {
 
   protected abstract void error(GetTargetNodeErrorState errorState);
 
-  /**
-   * todo: remove.
-   */
-  public static void setResolveInfoByOldReference(SReference sourceReference, SReference newReference) {
-    SNode targetNode = sourceReference.getTargetNode();
-    if (targetNode == null) {//if we copy a reference which is not resolved yet
-      newReference.setResolveInfo(sourceReference.getResolveInfo());
-    } else {//we copy resolved reference
-      String name = targetNode.getName();
-      newReference.setResolveInfo(name);
-    }
-  }
+//  /**
+//   * todo: remove.
+//   */
+//  public static void setResolveInfoByOldReference(SReference sourceReference, SReference newReference) {
+//    SNode targetNode = sourceReference.getTargetNode();
+//    if (targetNode == null) {//if we copy a reference which is not resolved yet
+//      newReference.setResolveInfo(sourceReference.getResolveInfo());
+//    } else {//we copy resolved reference
+//      String name = targetNode.getName();
+//      newReference.setResolveInfo(name);
+//    }
+//  }
 
   protected enum GetTargetNodeErrorState {
     OK,

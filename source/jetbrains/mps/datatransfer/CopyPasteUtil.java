@@ -152,18 +152,22 @@ public class CopyPasteUtil {
       SNode oldTargetNode = sourceReference.getTargetNode();
       SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
 
+      SReference newReference;
       if (newTargetNode != null) {//if our reference points inside our node's subtree
-        newSourceNode.addSReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
+        newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode);
       } else {//otherwise it points out of our node's subtree
-        SReference newReference;
-        if (!sourceReference.isExternal()) {
-          newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNode);
-          SReference.setResolveInfoByOldReference(sourceReference, newReference);
-        } else {
+        if (sourceReference.isExternal()) {
           newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference);
+        } else {
+          if (oldTargetNode != null) {
+            newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNode);
+            newReference.setResolveInfo(oldTargetNode.getName());
+          } else {
+            newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, null, null, newSourceNode.getModel().getUID(), sourceReference.getResolveInfo());
+          }
         }
-        newSourceNode.addSReference(newReference);
       }
+      newSourceNode.addSReference(newReference);
     }
   }
 
