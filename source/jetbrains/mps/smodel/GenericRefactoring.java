@@ -2,6 +2,9 @@ package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.messages.DefaultMessageHandler;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -10,8 +13,11 @@ import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.MarshallUtil;
 import jetbrains.mps.refactoring.framework.RefactoringLoggingFailedException;
 import jetbrains.mps.logging.refactoring.structure.*;
+import jetbrains.mps.generator.*;
 
 import java.util.Map;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -36,7 +42,20 @@ public class GenericRefactoring {
     SModel model = modelDescriptor.getSModel();
 
     if (myRefactoring.requiresModelGeneration()) {
-      //todo generate 
+      List<SModel> sourceModels = new ArrayList<SModel>();
+      sourceModels.add(model);
+      IOperationContext operationContext = context.getOperationContext();
+      new GeneratorManager().generateModels(sourceModels,
+              BootstrapLanguages.getInstance().getBaseLanguage(),
+              operationContext,
+              IGenerationType.FILES,
+              new IGenerationScript() {
+                public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
+                  return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
+                }
+              },
+              IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
+              new DefaultMessageHandler(operationContext.getProject()));
     }
 
     writeIntoLog(model, args);
@@ -114,7 +133,7 @@ public class GenericRefactoring {
       }
     }
     for (RequiredAdditionalArgument argument : refactoring.getInternalArgumentses()) {
-       if (name.equals(argument.getName())) {
+      if (name.equals(argument.getName())) {
         return argument;
       }
     }
