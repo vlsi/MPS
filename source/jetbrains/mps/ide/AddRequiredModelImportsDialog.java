@@ -110,7 +110,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
       myModel.addImportedModel(imported);
     }
     for (String language : myLanguages) {
-      myModel.addLanguage(language);
+      myModel.addNewlyImportedLanguage(language);
     }
     for (String devkit : myDevKits) {
       myModel.addDevKit(devkit);
@@ -125,7 +125,7 @@ public class AddRequiredModelImportsDialog extends BaseDialog {
       myModel.addImportedModel(imported);
     }
     for (String language : myLanguagesToAdd) {
-      myModel.addLanguage(language);
+      myModel.addNewlyImportedLanguage(language);
     }
     for (String devKit : myDevKits) {
       myModel.addDevKit(devKit);

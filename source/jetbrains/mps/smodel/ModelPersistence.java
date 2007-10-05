@@ -380,6 +380,7 @@ public class ModelPersistence {
       languageElem.setAttribute(NAMESPACE, languageNamespace);
       Language l = GlobalScope.getInstance().getLanguage(languageNamespace);
       if (l != null) {
+        sourceModel.addAspectModelVersions(languageNamespace, l);
         for (SModelDescriptor sModelDescriptor : l.getAspectModelDescriptors()) {
           Element aspectModelElement = new Element(LANGUAGE_ASPECT);
           SModelUID uid = sModelDescriptor.getModelUID();

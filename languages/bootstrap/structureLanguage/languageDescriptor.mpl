@@ -12,6 +12,9 @@
   <constraints>
     <model modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" />
   </constraints>
+  <scripts>
+    <model modelUID="jetbrains.mps.bootstrap.structureLanguage.scripts" />
+  </scripts>
   <editor>
     <model modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" />
   </editor>
@@ -31,6 +34,7 @@
       </models>
       <module />
       <external-templates />
+      <mapping-priorities />
     </generator>
   </generators>
   <classPath />

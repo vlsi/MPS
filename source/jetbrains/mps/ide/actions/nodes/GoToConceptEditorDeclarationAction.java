@@ -165,7 +165,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
     SModelDescriptor editorModelDescriptor = language.createModel(new SModelUID(language.getModuleUID(), "editor", ""), modelRoot);
     SModel editorModel = editorModelDescriptor.getSModel();
-    editorModel.addLanguage(BootstrapLanguages.getInstance().getEditorLanguage());
+    editorModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getEditorLanguage());
     editorModelDescriptor.save();
 
     // updateTypesystem language
@@ -197,9 +197,9 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
 
     SModelDescriptor constraintsModelDescriptor = language.createModel(new SModelUID(language.getModuleUID(), "constraints", ""), modelRoot);
     SModel constraintsModel = constraintsModelDescriptor.getSModel();
-    constraintsModel.addLanguage(BootstrapLanguages.getInstance().getConstraintsLanguage());
-    constraintsModel.addLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
-    constraintsModel.addLanguage(BootstrapLanguages.getInstance().getSModelLanguage());
+    constraintsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getConstraintsLanguage());
+    constraintsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
+    constraintsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getSModelLanguage());
     constraintsModelDescriptor.save();
 
 

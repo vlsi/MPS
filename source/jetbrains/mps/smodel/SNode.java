@@ -1024,7 +1024,7 @@ public class SNode implements Iterable<SNode> {
     }
 
     // add language because helgins needs it to invalidate/revalidate its caches
-    myModel.addLanguage(getLanguageNamespace());
+    myModel.addNewlyImportedLanguage(getLanguageNamespace());
   }
 
   public boolean isDetached() {

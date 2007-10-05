@@ -60,6 +60,7 @@ public class SModel implements Iterable<SNode> {
   private boolean myUsesLog;
   private boolean myRegistrationsForbidden = false;
   private int myVersion = -1;
+  private Set<String> myNewLanguageNamespaces = new HashSet<String>();
 
   public SModel(@NotNull SModelUID modelUID) {
     addWeakSModelListener(myEventTranslator);
@@ -444,6 +445,30 @@ public class SModel implements Iterable<SNode> {
     return false;
   }
 
+  public void addNewlyImportedLanguage(@NotNull Language language) {
+    addLanguage(language);
+    addAspectModelsVersions(language);
+  }
+
+  public void addNewlyImportedLanguage(@NotNull String languageNamespace) {
+    addLanguage(languageNamespace);
+    myNewLanguageNamespaces.add(languageNamespace);
+  }
+
+  private void addAspectModelsVersions(Language language) {
+    for (SModelDescriptor modelDescriptor : language.getAspectModelDescriptors()) {
+      addLanguageAspectModelVersion(modelDescriptor.getModelUID(), modelDescriptor.getVersion());
+    }
+  }
+
+  /*package*/ void addAspectModelVersions(@NotNull String languageNamespace, @NotNull Language language) {
+    assert language.getNamespace().equals(languageNamespace);
+    if (myNewLanguageNamespaces.contains(languageNamespace)) {
+      addAspectModelsVersions(language);
+      myNewLanguageNamespaces.remove(languageNamespace);
+    }
+  }
+
   public void addLanguage(@NotNull Language language) {
     addLanguage(language.getModuleUID());
   }
@@ -500,6 +525,7 @@ public class SModel implements Iterable<SNode> {
       Language language = scope.getLanguage(languageNamespace);
       if (language != null) {
         languages.add(language);
+        addAspectModelVersions(languageNamespace, language);
       } else {
         LOG.error("Language \"" + languageNamespace + "\" isn't visible in scope " + scope + " . Used by model \"" + getUID() +
                 "\"\nAdd this language to the LANGUAGES section of the project properties");
@@ -872,7 +898,7 @@ public class SModel implements Iterable<SNode> {
       String languageNamespace = node.getLanguageNamespace();
       if (!usedLanguages.contains(languageNamespace)) {
         usedLanguages.add(languageNamespace);
-        addLanguage(languageNamespace);
+        addNewlyImportedLanguage(languageNamespace);
       }
     }
   }
@@ -888,7 +914,7 @@ public class SModel implements Iterable<SNode> {
       String languageNamespace = node.getLanguageNamespace();
       if (!usedLanguages.contains(languageNamespace)) {
         usedLanguages.add(languageNamespace);
-        addLanguage(languageNamespace);
+        addNewlyImportedLanguage(languageNamespace);
       }
 
       List<SReference> references = node.getReferences();
