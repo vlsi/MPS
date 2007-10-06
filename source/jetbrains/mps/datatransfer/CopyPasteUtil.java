@@ -178,7 +178,7 @@ public class CopyPasteUtil {
       SNode oldTargetNode = sourceReference.getTargetNode();
       SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
       if (newTargetNode != null) {//if our reference points inside our node's subtree
-        newSourceNode.addSReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
+        newSourceNode.addSReference(SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode));
       } else {//otherwise it points out of our node's subtree
         // prefer resolveInfo over direct reference
         String resolveInfo = oldTargetNode == null ? sourceReference.getResolveInfo() : oldTargetNode.getName(); // todo: getRefName()
