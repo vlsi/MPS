@@ -435,6 +435,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1191629990763">
+          <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1191629990764">
+            <link role="variableDeclaration" targetNodeId="1189106974269" resolveInfo="i" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1191630004674">
+          <node role="expression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1191630004675">
+            <link role="variableDeclaration" targetNodeId="1189106966469" resolveInfo="intParm" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1189106982211">
           <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1189106982604">
             <node role="rValue" type="jetbrains.mps.baseLanguage.PlusExpression" id="1189106986983">

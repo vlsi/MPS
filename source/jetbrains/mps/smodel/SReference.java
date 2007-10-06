@@ -83,7 +83,7 @@ public abstract class SReference {
   // --- new instance NEW
   //
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
-    if (targetNode.isRegistered()) {
+    if (sourceNode.isRegistered() && targetNode.isRegistered()) {
       // 'mature' reference
       return new StaticReference(role, sourceNode, targetNode.getModel().getUID(), targetNode.getSNodeId(), targetNode.getName());
     }
@@ -95,7 +95,10 @@ public abstract class SReference {
   }
 
   public static SReference create(String role, SNode sourceNode, SModelUID targetModelUID, SNodeId targetNodeId, String resolveInfo) {
-    return new StaticReference(role, sourceNode, targetModelUID, targetNodeId, resolveInfo);
+    if (targetModelUID != null && targetNodeId != null) {
+      return new StaticReference(role, sourceNode, targetModelUID, targetNodeId, resolveInfo);
+    }
+    return new UnresolvedStaticReference(role, sourceNode, resolveInfo);
   }
 
   //

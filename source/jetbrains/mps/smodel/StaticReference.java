@@ -24,13 +24,16 @@ import org.jetbrains.annotations.NotNull;
     CommandProcessor.instance().addCommandListener(new CommandAdapter() {
       public void commandFinished(@NotNull CommandEvent event) {
         CommandProcessor.instance().removeCommandListener(this);
-        SNode node = myNodeRef.get();
-        if (node != null && node.isRegistered()) {
-          // convert 'young' reference to 'mature'
-          myMature = true;
-          setTargetModelUID(node.getModel().getUID());
-          setTargetNodeId(node.getSNodeId().toString());
-          setResolveInfo(node.getName());
+        // if src/trg are registered after command finished - convert 'young' to 'mature' reference
+        if (getSourceNode().isRegistered()) {
+          SNode node = myNodeRef.get();
+          if (node != null && node.isRegistered()) {
+            // convert 'young' reference to 'mature'
+            myMature = true;
+            setTargetModelUID(node.getModel().getUID());
+            setTargetNodeId(node.getSNodeId().toString());
+            setResolveInfo(node.getName());
+          }
         }
       }
     });
@@ -60,11 +63,7 @@ import org.jetbrains.annotations.NotNull;
       return node;
 
     } else if (myNodeRef != null) {
-      SNode node = myNodeRef.get();
-      // node and its model still exists?
-      if (node != null && node.getModel().getModelDescriptor() != null) {
-        return node;
-      }
+      return myNodeRef.get();
     }
 
     return null;

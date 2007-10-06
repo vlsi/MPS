@@ -3,12 +3,12 @@ package jetbrains.mps.datatransfer;
 import jetbrains.mps.ide.AddRequiredModelImportsDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.Parser;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.annotation.Hack;
+import org.jetbrains.annotations.Nullable;
 
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
@@ -16,8 +16,6 @@ import java.awt.datatransfer.Transferable;
 import java.awt.datatransfer.UnsupportedFlavorException;
 import java.io.IOException;
 import java.util.*;
-
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -154,13 +152,13 @@ public class CopyPasteUtil {
 
       SReference newReference;
       if (newTargetNode != null) {//if our reference points inside our node's subtree
-        newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode);
+        newReference = SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
       } else {//otherwise it points out of our node's subtree
         if (sourceReference.isExternal()) {
           newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference);
         } else {
           if (oldTargetNode != null) {
-            newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, oldTargetNode);
+            newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
             newReference.setResolveInfo(oldTargetNode.getName());
           } else {
             newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, null, null, newSourceNode.getModel().getUID(), sourceReference.getResolveInfo());
@@ -182,16 +180,17 @@ public class CopyPasteUtil {
       if (newTargetNode != null) {//if our reference points inside our node's subtree
         newSourceNode.addSReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
       } else {//otherwise it points out of our node's subtree
-        //internal resolve info has a higher priority than target node id here
-        SReference newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference, true);
-
-        if (newReference.getResolveInfo() != null) {
-          referencesRequireResolve.add(newReference);
+        //internal resolve info has a higher priority
+        if (sourceReference.getResolveInfo() != null) {
+          SReference unresolvedReference = SReference.create(sourceReference.getRole(), newSourceNode, null, null, sourceReference.getResolveInfo());
+          referencesRequireResolve.add(unresolvedReference);
+          newSourceNode.addSReference(unresolvedReference);
+        } else if (oldTargetNode != null) {
+          newSourceNode.addSReference(SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode));
         } else {
-          newSourceNode.addSReference(newReference);
+          continue; // don't create reference
         }
       }
-
     }
   }
 

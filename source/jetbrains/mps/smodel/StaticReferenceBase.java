@@ -19,7 +19,7 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
   protected StaticReferenceBase(String role, SNode sourceNode, SModelUID targetModelUID, String targetNodeId) {
     super(role, sourceNode);
     myTargetNodeId = InternUtil.intern(targetNodeId);
-    if (targetModelUID.equals(sourceNode.getModel().getUID())) {
+    if (sourceNode.getModel().getUID().equals(targetModelUID)) {
       myLocal = true;
     } else {
       myTargetModelUID = targetModelUID;
