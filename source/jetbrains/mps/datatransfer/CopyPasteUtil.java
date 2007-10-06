@@ -180,15 +180,14 @@ public class CopyPasteUtil {
       if (newTargetNode != null) {//if our reference points inside our node's subtree
         newSourceNode.addSReference(SReference.newInstance(sourceReference.getRole(), newSourceNode, newTargetNode));
       } else {//otherwise it points out of our node's subtree
-        //internal resolve info has a higher priority
-        if (sourceReference.getResolveInfo() != null) {
-          SReference unresolvedReference = SReference.create(sourceReference.getRole(), newSourceNode, null, null, sourceReference.getResolveInfo());
+        // prefer resolveInfo over direct reference
+        String resolveInfo = oldTargetNode == null ? sourceReference.getResolveInfo() : oldTargetNode.getName(); // todo: getRefName()
+        if (resolveInfo != null) {
+          SReference unresolvedReference = SReference.create(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);
           referencesRequireResolve.add(unresolvedReference);
           newSourceNode.addSReference(unresolvedReference);
         } else if (oldTargetNode != null) {
           newSourceNode.addSReference(SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode));
-        } else {
-          continue; // don't create reference
         }
       }
     }
