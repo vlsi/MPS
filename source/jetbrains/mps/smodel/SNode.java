@@ -1159,7 +1159,7 @@ public class SNode implements Iterable<SNode> {
 
   @NotNull
   public SReference addReferent(@NotNull String role, SNode target) {
-    SReference reference = SReference.newInstance(role, this, target);
+    SReference reference = SReference.create(role, this, target);
     insertReferenceAt(myReferences == null ? 0 : myReferences.size(), reference);
     return reference;
   }
@@ -1320,7 +1320,7 @@ public class SNode implements Iterable<SNode> {
     if (isAggregation) {
       insertChildAt(index, role, insertNode);
     } else {
-      insertReferenceAt(index, SReference.newInstance(role, this, insertNode));
+      insertReferenceAt(index, SReference.create(role, this, insertNode));
     }
   }
 

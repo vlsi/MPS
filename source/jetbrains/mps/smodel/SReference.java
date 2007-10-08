@@ -128,22 +128,22 @@ public abstract class SReference {
     }
   }
 
-  /**
-   * reference created by template reference
-   */
-  public static SReference newInstance(String role, SNode sourceNode, SReference templateRef) {
-    return newInstance(role, sourceNode, templateRef, false);
-  }
+//  /**
+//   * reference created by template reference
+//   */
+//  public static SReference newInstance(String role, SNode sourceNode, SReference templateRef) {
+//    return newInstance(role, sourceNode, templateRef, false);
+//  }
 
-  public static SReference newInstance(String role, SNode sourceNode, SReference templateRef, boolean preferResolveInfo) {
-    String resolveInfo = templateRef.getResolveInfo();
-    boolean willNotPassTargetId = resolveInfo != null && preferResolveInfo;
-    return newInstance(role, sourceNode,
-            willNotPassTargetId ? null : templateRef.getTargetNodeId(),
-            templateRef.getExtResolveInfo(),
-            templateRef.getTargetModelUID(),
-            resolveInfo);
-  }
+//  public static SReference newInstance(String role, SNode sourceNode, SReference templateRef, boolean preferResolveInfo) {
+//    String resolveInfo = templateRef.getResolveInfo();
+//    boolean willNotPassTargetId = resolveInfo != null && preferResolveInfo;
+//    return newInstance(role, sourceNode,
+//            willNotPassTargetId ? null : templateRef.getTargetNodeId(),
+//            templateRef.getExtResolveInfo(),
+//            templateRef.getTargetModelUID(),
+//            resolveInfo);
+//  }
 
   /**
    * reference created by specifying all info

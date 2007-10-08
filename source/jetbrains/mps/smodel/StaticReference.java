@@ -24,17 +24,7 @@ import org.jetbrains.annotations.NotNull;
     CommandProcessor.instance().addCommandListener(new CommandAdapter() {
       public void commandFinished(@NotNull CommandEvent event) {
         CommandProcessor.instance().removeCommandListener(this);
-        // if src/trg are registered after command finished - convert 'young' to 'mature' reference
-        if (getSourceNode().isRegistered()) {
-          SNode node = myNodeRef.get();
-          if (node != null && node.isRegistered()) {
-            // convert 'young' reference to 'mature'
-            myMature = true;
-            setTargetModelUID(node.getModel().getUID());
-            setTargetNodeId(node.getSNodeId().toString());
-            setResolveInfo(node.getName());
-          }
-        }
+        mature();
       }
     });
   }
@@ -46,8 +36,13 @@ import org.jetbrains.annotations.NotNull;
     myMature = true;
   }
 
+  public SModelUID getTargetModelUID() {
+    mature();
+    return super.getTargetModelUID();
+  }
+
   public SNode getTargetNode_impl() {
-    if (myMature) {
+    if (mature()) {
       SModel targetModel = getTargetModel();
       if (targetModel == null) {
         SReference.error(this, GetTargetNodeErrorState.NO_MODEL);
@@ -67,5 +62,21 @@ import org.jetbrains.annotations.NotNull;
     }
 
     return null;
+  }
+
+  private boolean mature() {
+    if (myMature) return true;
+    // both source and target should be registered
+    if (!getSourceNode().isRegistered()) return false;
+    SNode targetNode = myNodeRef.get();
+    if (targetNode == null || !targetNode.isRegistered()) return false;
+
+    // convert 'young' reference to 'mature'
+    myMature = true;
+    myNodeRef = null;
+    setTargetModelUID(targetNode.getModel().getUID());
+    setTargetNodeId(targetNode.getSNodeId().toString());
+    setResolveInfo(targetNode.getName());
+    return true;
   }
 }
