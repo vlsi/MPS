@@ -7,20 +7,20 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.patterns" />
   <maxImportIndex value="60" />
-  <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <import index="18" modelUID="jetbrains.mps.core.structure" />
-  <import index="20" modelUID="jetbrains.mps.smodel@java_stub" />
-  <import index="21" modelUID="jetbrains.mps.nodeEditor@java_stub" />
-  <import index="23" modelUID="javax.swing@java_stub" />
-  <import index="24" modelUID="java.lang@java_stub" />
-  <import index="27" modelUID="jetbrains.mps.baseLanguage.actions" />
-  <import index="45" modelUID="jetbrains.mps.smodel.search@java_stub" />
-  <import index="46" modelUID="jetbrains.mps.baseLanguage.search@java_stub" />
-  <import index="48" modelUID="jetbrains.mps.baseLanguage.editor@java_stub" />
-  <import index="51" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
-  <import index="53" modelUID="jetbrains.mps.baseLanguage.constraints" />
-  <import index="54" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
-  <import index="56" modelUID="java.awt@java_stub" />
+  <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="20" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
+  <import index="21" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
+  <import index="23" modelUID="javax.swing@java_stub" version="-1" />
+  <import index="24" modelUID="java.lang@java_stub" version="-1" />
+  <import index="27" modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
+  <import index="45" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
+  <import index="46" modelUID="jetbrains.mps.baseLanguage.search@java_stub" version="-1" />
+  <import index="48" modelUID="jetbrains.mps.baseLanguage.editor@java_stub" version="-1" />
+  <import index="51" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  <import index="53" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
+  <import index="54" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
+  <import index="56" modelUID="java.awt@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1073416106125">
     <property name="name" value="StatementList_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123136" />
@@ -2379,7 +2379,12 @@
     <property name="everyModel" value="true" />
     <link role="applicableConcept" targetNodeId="17.1068431790191" />
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1140723699454">
-      <property name="description" value="put expression in parenthesis" />
+      <property name="description" value="(expr) surround with parenthesis" />
+      <property name="showInPopup" value="true" />
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1191842621459">
+        <property name="modifiers" value="ctrl+alt" />
+        <property name="keycode" value="VK_T" />
+      </node>
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1140723699566">
         <property name="keycode" value="VK_P" />
         <property name="modifiers" value="ctrl+shift" />
@@ -2391,6 +2396,68 @@
               <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1158862234755" />
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithNewOperation" id="1158862262461">
                 <link role="concept" targetNodeId="17.1079359253375" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapItem" id="1191842687726">
+      <property name="description" value="((Type) expr) surround with typecast" />
+      <property name="showInPopup" value="true" />
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMapKeystroke" id="1191842687727">
+        <property name="modifiers" value="ctrl+alt" />
+        <property name="keycode" value="VK_T" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_ExecuteFunction" id="1191842687728">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1191842687729">
+          <node role="statement" type="jetbrains.mps.baseLanguage.LocalVariableDeclarationStatement" id="1191842879658">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1191842879659">
+              <property name="name" value="castExpression" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1191842879660">
+                <link role="concept" targetNodeId="17.1070534934090" resolveInfo="CastExpression" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1191842856507">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ReplaceWithNewOperation" id="1191842869197">
+                  <link role="concept" targetNodeId="17.1070534934090" resolveInfo="CastExpression" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1191842855608" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1191842883138">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1191842892268">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation" id="1191842893618">
+                <node role="parameter" type="jetbrains.mps.bootstrap.editorLanguage.CellKeyMap_FunctionParm_selectedNode" id="1191842894958" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1191842883673">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1191842891676">
+                  <link role="link" targetNodeId="17.1070534934092" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1191842883140">
+                  <link role="variableDeclaration" targetNodeId="1191842879659" resolveInfo="castExpression" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1191844704005">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1191844708672">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Link_SetTargetOperation" id="1191844710173">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1191844721134">
+                  <link role="baseMethodDeclaration" targetNodeId="27.1158872840752" resolveInfo="createExpectedType" />
+                  <link role="classConcept" targetNodeId="27.1158872173903" resolveInfo="ExpectedType_FactoryUtil" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1191844749944">
+                    <link role="variableDeclaration" targetNodeId="1191842879659" resolveInfo="castExpression" />
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1191844704816">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkAccess" id="1191844707822">
+                  <link role="link" targetNodeId="17.1070534934091" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1191844704006">
+                  <link role="variableDeclaration" targetNodeId="1191842879659" resolveInfo="castExpression" />
+                </node>
               </node>
             </node>
           </node>
