@@ -27,6 +27,14 @@ public class CopyUtil {
     return result;
   }
 
+  public static SNode copyAndGetMapping(SNode node, SModel targetModel, Map<SNode,SNode> mapping) {
+    List<SNode> nodes = new ArrayList<SNode>();
+    nodes.add(node);
+    List<SNode> result = clone(nodes, targetModel, mapping);
+    addReferences(nodes, mapping, true);
+    return result.get(0);
+  }
+
   public static <BA extends BaseAdapter> BA copy(BA node, SModel targetModel) {
     return (BA) copy(node.getNode(), targetModel, new HashMap<SNode, SNode>(), true).getAdapter();
   }
