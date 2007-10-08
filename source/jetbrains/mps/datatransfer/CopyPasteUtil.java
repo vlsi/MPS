@@ -155,15 +155,12 @@ public class CopyPasteUtil {
       if (newTargetNode != null) {//if our reference points inside our node's subtree
         newReference = SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
       } else {//otherwise it points out of our node's subtree
-        if (sourceReference.isExternal()) {
-          newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, sourceReference);
+        if (oldTargetNode != null) {
+          newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
+        } else if (sourceReference.getResolveInfo() != null) {
+          newReference = SReference.create(sourceReference.getRole(), newSourceNode, null, null, sourceReference.getResolveInfo());
         } else {
-          if (oldTargetNode != null) {
-            newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
-            newReference.setResolveInfo(oldTargetNode.getName());
-          } else {
-            newReference = SReference.newInstance(sourceReference.getRole(), newSourceNode, null, null, newSourceNode.getModel().getUID(), sourceReference.getResolveInfo());
-          }
+          continue;
         }
       }
       newSourceNode.addSReference(newReference);
@@ -178,24 +175,27 @@ public class CopyPasteUtil {
 
       SNode oldTargetNode = sourceReference.getTargetNode();
       SNode newTargetNode = sourceNodesToNewNodes.get(oldTargetNode);
+      SReference newReference;
       if (newTargetNode != null) {//if our reference points inside our node's subtree
-        newSourceNode.addSReference(SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode));
+        newReference = SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
       } else {//otherwise it points out of our node's subtree
         // prefer resolveInfo over direct reference
         // todo: ?. Method call is exception - it can't be resolved just by name.
         if (BaseAdapter.isInstance(newSourceNode, BaseMethodCall.class) && oldTargetNode != null) {
-          newSourceNode.addSReference(SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode));
+          newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
         } else {
           String resolveInfo = oldTargetNode == null ? sourceReference.getResolveInfo() : oldTargetNode.getName(); // todo: getRefName()
           if (resolveInfo != null) {
-            SReference unresolvedReference = SReference.create(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);
-            referencesRequireResolve.add(unresolvedReference);
-            newSourceNode.addSReference(unresolvedReference);
+            newReference = SReference.create(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);
+            referencesRequireResolve.add(newReference);
           } else if (oldTargetNode != null) {
-            newSourceNode.addSReference(SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode));
+            newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode);
+          } else {
+            continue;
           }
         }
       }
+      newSourceNode.addSReference(newReference);
     }
   }
 
