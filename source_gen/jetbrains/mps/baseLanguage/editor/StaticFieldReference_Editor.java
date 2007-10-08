@@ -15,15 +15,15 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
+import jetbrains.mps.nodeEditor.MPSFonts;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.PrimaryReferentMenuCellMenuPart;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.MPSColors;
 
 public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
@@ -142,33 +142,6 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class StaticFieldReference_customReplace_cellMenu extends AbstractCellMenuPart_ReplaceNode_Group {
-
-    public  StaticFieldReference_customReplace_cellMenu() {
-    }
-
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return QueriesUtil.replaceNodeMenu_StaticFieldReference_getParameterObjects(node);
-    }
-
-    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return this.createReplacementNode_impl((SNode)parameterObject, node, model, scope, operationContext);
-    }
-
-    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return QueriesUtil.replaceNodeMenu_StaticFieldReference_createReplacementNode(node, parameterObject);
-    }
-
-    public boolean isReferentPresentation() {
-      return true;
-    }
-
-}
-  public static class StaticFieldReference_staticFieldDeclaration_cellMenu extends PrimaryReferentMenuCellMenuPart {
-
-    public  StaticFieldReference_staticFieldDeclaration_cellMenu() {
-    }
-}
   public static class _Inline9 extends AbstractCellProvider {
 
     public  _Inline9() {
@@ -276,6 +249,33 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       return cellWithRole;
     }
 
+}
+  public static class StaticFieldReference_customReplace_cellMenu extends AbstractCellMenuPart_ReplaceNode_Group {
+
+    public  StaticFieldReference_customReplace_cellMenu() {
+    }
+
+    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      return QueriesUtil.replaceNodeMenu_StaticFieldReference_getParameterObjects(node);
+    }
+
+    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      return this.createReplacementNode_impl((SNode)parameterObject, node, model, scope, operationContext);
+    }
+
+    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      return QueriesUtil.replaceNodeMenu_StaticFieldReference_createReplacementNode(node, parameterObject);
+    }
+
+    public boolean isReferentPresentation() {
+      return true;
+    }
+
+}
+  public static class StaticFieldReference_staticFieldDeclaration_cellMenu extends PrimaryReferentMenuCellMenuPart {
+
+    public  StaticFieldReference_staticFieldDeclaration_cellMenu() {
+    }
 }
 
 }
