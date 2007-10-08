@@ -1,5 +1,6 @@
 package jetbrains.mps.datatransfer;
 
+import jetbrains.mps.baseLanguage.structure.BaseMethodCall;
 import jetbrains.mps.ide.AddRequiredModelImportsDialog;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.text.Parser;
@@ -181,13 +182,18 @@ public class CopyPasteUtil {
         newSourceNode.addSReference(SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode));
       } else {//otherwise it points out of our node's subtree
         // prefer resolveInfo over direct reference
-        String resolveInfo = oldTargetNode == null ? sourceReference.getResolveInfo() : oldTargetNode.getName(); // todo: getRefName()
-        if (resolveInfo != null) {
-          SReference unresolvedReference = SReference.create(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);
-          referencesRequireResolve.add(unresolvedReference);
-          newSourceNode.addSReference(unresolvedReference);
-        } else if (oldTargetNode != null) {
+        // todo: ?. Method call is exception - it can't be resolved just by name.
+        if (BaseAdapter.isInstance(newSourceNode, BaseMethodCall.class) && oldTargetNode != null) {
           newSourceNode.addSReference(SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode));
+        } else {
+          String resolveInfo = oldTargetNode == null ? sourceReference.getResolveInfo() : oldTargetNode.getName(); // todo: getRefName()
+          if (resolveInfo != null) {
+            SReference unresolvedReference = SReference.create(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);
+            referencesRequireResolve.add(unresolvedReference);
+            newSourceNode.addSReference(unresolvedReference);
+          } else if (oldTargetNode != null) {
+            newSourceNode.addSReference(SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode));
+          }
         }
       }
     }

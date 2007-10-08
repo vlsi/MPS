@@ -3,10 +3,11 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="123" />
+  <maxImportIndex value="124" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
   <import index="123" modelUID="jetbrains.mps.baseLanguage.sandbox.test" version="-1" />
+  <import index="124" modelUID="java.io@java_stub" version="-1" />
   <visible index="2" modelUID="jetbrains.mps.smodel@java_stub" />
   <refactoringLog type="jetbrains.mps.logging.refactoring.RuntimeLogStack" id="1191250524181">
     <node role="log" type="jetbrains.mps.logging.refactoring.RuntimeLog" id="1191250524182">
@@ -421,6 +422,16 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1189107131291" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1189107131292" />
     </node>
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1191866342785">
+      <property name="name" value="mmmmmm" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1191866342786" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1191866342787" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1191866342788" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1191866347461">
+        <property name="name" value="i" />
+        <node role="type" type="jetbrains.mps.baseLanguage.IntegerType" id="1191866347462" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1189106961996">
       <property name="name" value="aaaa" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1189106961997" />
@@ -529,7 +540,48 @@
       <property name="name" value="mm" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1189107140794" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1189107140795" />
-      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1189107140796" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1189107140796">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1191866227184">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1191866254529">
+            <link role="baseMethodDeclaration" extResolveInfo="124.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1191866227185">
+              <link role="classifier" extResolveInfo="1.[Classifier]System" />
+              <link role="variableDeclaration" extResolveInfo="1.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1191866259718">
+              <property name="value" value="true" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1191866275359">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1191866275360">
+            <link role="baseMethodDeclaration" extResolveInfo="124.method ([Classifier]PrintStream).([InstanceMethodDeclaration]println())" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.StaticFieldReference" id="1191866275361">
+              <link role="classifier" extResolveInfo="1.[Classifier]System" />
+              <link role="variableDeclaration" extResolveInfo="1.static field ([Classifier]System).([StaticFieldDeclaration]out : (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [PrintStream]))" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.BooleanConstant" id="1191866275362">
+              <property name="value" value="true" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1191866356745">
+          <node role="expression" type="jetbrains.mps.baseLanguage.LocalStaticMethodCall" id="1191866356746">
+            <link role="baseMethodDeclaration" targetNodeId="1191866342785" resolveInfo="mmmmmm" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1191866358325">
+              <property name="value" value="10" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1191866361092">
+          <node role="expression" type="jetbrains.mps.baseLanguage.LocalStaticMethodCall" id="1191866361093">
+            <link role="baseMethodDeclaration" targetNodeId="1189107131289" resolveInfo="mmmmmm" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.IntegerConstant" id="1191866361094">
+              <property name="value" value="10" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.FieldDeclaration" id="1189106948490">
       <property name="name" value="myInt" />
