@@ -2,9 +2,6 @@ package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.smodel.*;
 
-import java.util.List;
-import java.util.ArrayList;
-
 /**
  * Created by: Sergey Dmitriev
  * Date: Apr 2, 2007
@@ -31,7 +28,7 @@ public class CloneUtil {
     for (SReference reference : node.getReferences()) {
       SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : outputModel.getUID();
       SReference sReference = SReference.newInstance(reference.getRole(), result, reference.getTargetNodeId(), reference.getExtResolveInfo(), targetModelUID, reference.getResolveInfo());
-      result.addSReference(sReference);
+      result.addReference(sReference);
     }
     for (SNode child : node.getChildren()) {
       result.addChild(node.getRoleOf(child), clone(child, outputModel, scope));

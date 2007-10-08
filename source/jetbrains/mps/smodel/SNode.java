@@ -1164,7 +1164,7 @@ public class SNode implements Iterable<SNode> {
     return reference;
   }
 
-  public void addSReference(@NotNull SReference reference) {
+  public void addReference(@NotNull SReference reference) {
     insertReferenceAt(myReferences == null ? 0 : myReferences.size(), reference);
   }
 

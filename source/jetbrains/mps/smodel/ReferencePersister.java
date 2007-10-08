@@ -3,7 +3,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import org.jdom.Element;
-import org.jdom.Document;
 
 /**
  * Created by IntelliJ IDEA.
@@ -127,7 +126,7 @@ public class ReferencePersister {
 
   public void createReferenceInModel(SModel model, ModelPersistence.VisibleModelElements visibleModelElements) {
     SReference reference = createReferenceInModelDoNotAddToSourceNode(model, visibleModelElements);
-    if (reference != null) this.getSourceNode().addSReference(reference);
+    if (reference != null) this.getSourceNode().addReference(reference);
   }
   //--
 
