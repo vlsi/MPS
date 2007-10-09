@@ -3,7 +3,7 @@ package jetbrains.mps.smodel.persistence.def;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence.VisibleModelElements;
+import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -116,7 +116,7 @@ public class ModelWriter implements IModelWriter {
       theElementName = ModelPersistence.NODE;
     }
     Element element = new Element(theElementName);
-    ModelPersistence.setNotNullAttribute(element, ModelPersistence.ROLE, node.getRole_());
+    DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, node.getRole_());
     // todo: save node's concept fQName
     String oldStructureClassName = NameUtil.removeStructureFromFqName(node.getConceptFqName());
     element.setAttribute(ModelPersistence.TYPE, oldStructureClassName);
@@ -129,7 +129,7 @@ public class ModelWriter implements IModelWriter {
       Element propertyElement = new Element(ModelPersistence.PROPERTY);
       element.addContent(propertyElement);
       propertyElement.setAttribute(ModelPersistence.NAME, propertyName);
-      ModelPersistence.setNotNullAttribute(propertyElement, ModelPersistence.VALUE, node.getPersistentProperty(propertyName));
+      DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.VALUE, node.getPersistentProperty(propertyName));
     }
 
     // references ...

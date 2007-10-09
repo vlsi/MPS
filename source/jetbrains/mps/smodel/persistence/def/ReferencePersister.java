@@ -103,7 +103,7 @@ public class ReferencePersister {
   }
 
   // -- create reference
-  SReference createReferenceInModelDoNotAddToSourceNode(SModel model, ModelPersistence.VisibleModelElements visibleModelElements) {
+  SReference createReferenceInModelDoNotAddToSourceNode(SModel model, VisibleModelElements visibleModelElements) {
     SModelUID importedModelUID = model.getUID();
     if (myUseUIDs) {
       if (!myImportedModelInfo.equals("-1")) {
@@ -129,7 +129,7 @@ public class ReferencePersister {
     );
   }
 
-  public void createReferenceInModel(SModel model, ModelPersistence.VisibleModelElements visibleModelElements) {
+  public void createReferenceInModel(SModel model, VisibleModelElements visibleModelElements) {
     SReference reference = createReferenceInModelDoNotAddToSourceNode(model, visibleModelElements);
     if (reference != null) this.getSourceNode().addReference(reference);
   }
@@ -161,7 +161,7 @@ public class ReferencePersister {
 
 
   //-- save reference
-  public static void saveReference(Element parentElement, SReference reference, boolean useUIDs, ModelPersistence.VisibleModelElements visibleModelElements) {
+  public static void saveReference(Element parentElement, SReference reference, boolean useUIDs, VisibleModelElements visibleModelElements) {
     assert useUIDs || visibleModelElements != null;
     SNode node = reference.getSourceNode();
     Element linkElement = new Element(ModelPersistence.LINK);

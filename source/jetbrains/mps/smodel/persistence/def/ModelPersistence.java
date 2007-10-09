@@ -73,25 +73,6 @@ public class ModelPersistence {
     return document;
   }
 
-//  @NotNull
-//  private static Document loadModelDocument(@NotNull byte[] bytes) {
-//    Document document;
-//    try {
-//      document = JDOMUtil.loadDocument(new ByteArrayInputStream(bytes));
-//    } catch (JDOMException e) {
-//      throw new RuntimeException(e);
-//    } catch (IOException e) {
-//      throw new RuntimeException(e);
-//    }
-//    return document;
-//  }
-
-//  @NotNull
-//  private static SModel readModel(@NotNull byte[] bytes) {
-//    Document document = loadModelDocument(bytes);
-//    return readModel(document, "", "");
-//  }
-
   @NotNull
   public static SModel readModel(@NotNull File file) {
     LOG.debug("ModelPersistence readModel from :" + file.getAbsolutePath());
@@ -109,7 +90,6 @@ public class ModelPersistence {
     }
 
     Document document = loadModelDocument(file);
-
     return readModel(document, modelName, modelStereotype);
   }
 
@@ -147,30 +127,6 @@ public class ModelPersistence {
     }
   }
 
-//  public static void saveModel(@NotNull SModel model, @NotNull OutputStream output) {
-//    Document document = saveModel(model);
-//    try {
-//      JDOMUtil.writeDocument(document, output);
-//      output.close();
-//      SModelRepository.getInstance().markChanged(model, false);
-//    } catch (IOException e) {
-//      LOG.error(e);
-//    }
-//  }
-
-//  @NotNull
-//  public static byte[] saveModelToBytes(@NotNull SModel model) {
-//    ByteArrayOutputStream output = new ByteArrayOutputStream();
-//    saveModel(model, output);
-//    return output.toByteArray();
-//  }
-
-//  @NotNull
-//  public static SModel modelFromBytes(@NotNull byte[] bytes) {
-//    return readModel(bytes);
-//  }
-
-
   @NotNull
   public static Document saveModel(@NotNull SModel sourceModel) {
     return saveModel(sourceModel, true);
@@ -185,23 +141,6 @@ public class ModelPersistence {
     modelWriter.saveNode(container, node);
   }
 
-
-
-
-  public static void setNotNullAttribute(
-          @NotNull Element element,
-          @NotNull String attrName,
-          @Nullable String attrValue) {
-    if (attrValue != null) {
-      element.setAttribute(attrName, attrValue);
-    }
-  }
-
-  public static int readIntAttributeValue(
-          @NotNull Element element,
-          @NotNull String attrName) throws NumberFormatException {
-    return Integer.parseInt(element.getAttributeValue(attrName));
-  }
 
   private static File getVersionFile(File modelFile) {
     String modelPath = modelFile.getAbsolutePath();
@@ -239,52 +178,6 @@ public class ModelPersistence {
       }
     }
     return -1;
-  }
-
-  public static class VisibleModelElements {
-    private Map<Integer, SModelUID> myVisibleModelElements = new HashMap<Integer, SModelUID>();
-    private int myMaxVisibleModelIndex = 1;
-    private Element myModelElement;
-
-    public VisibleModelElements(Element modelElement) {
-      myModelElement = modelElement;
-      parseVisibleElements();
-    }
-
-    private void parseVisibleElements() {
-      List visibles = myModelElement.getChildren(VISIBLE_ELEMENT);
-      for (Object aVisible : visibles) {
-        Element element = (Element) aVisible;
-        String indexValue = element.getAttributeValue(MODEL_IMPORT_INDEX);
-        int index = Integer.parseInt(indexValue);
-        String visibleModelUIDString = element.getAttributeValue(MODEL_UID);
-        myVisibleModelElements.put(index, SModelUID.fromString(visibleModelUIDString));
-        myMaxVisibleModelIndex = Math.max(index, myMaxVisibleModelIndex);
-      }
-    }
-
-    public int getVisibleModelIndex(SModelUID modelUID) {
-      for (Map.Entry<Integer, SModelUID> entry : myVisibleModelElements.entrySet()) {
-        if (modelUID.equals(entry.getValue())) {
-          return entry.getKey();
-        }
-      }
-      return addModel(modelUID);
-    }
-
-    private int addModel(SModelUID modelUID) {
-      myMaxVisibleModelIndex++;
-      myVisibleModelElements.put(myMaxVisibleModelIndex, modelUID);
-      Element visibleElement = new Element(VISIBLE_ELEMENT);
-      visibleElement.setAttribute(MODEL_IMPORT_INDEX, myMaxVisibleModelIndex + "");
-      visibleElement.setAttribute(MODEL_UID, modelUID.toString());
-      myModelElement.addContent(visibleElement);
-      return myMaxVisibleModelIndex;
-    }
-
-    public SModelUID getModelUID(int index) {
-      return myVisibleModelElements.get(index);
-    }
   }
 
 }

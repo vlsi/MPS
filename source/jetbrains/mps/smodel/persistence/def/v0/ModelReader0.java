@@ -6,10 +6,8 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.persistence.def.IModelReader;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence.VisibleModelElements;
-import jetbrains.mps.smodel.persistence.def.ReferencePersister;
+import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
+import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -48,7 +46,7 @@ public class ModelReader0 implements IModelReader {
     try {
       Element maxImportIndex = rootElement.getChild(ModelPersistence.MAX_IMPORT_INDEX);
       if (maxImportIndex == null) maxImportIndex = rootElement.getChild("maxReferenceID"); // old manner
-      model.setMaxImportIndex(ModelPersistence.readIntAttributeValue(maxImportIndex, ModelPersistence.VALUE));
+      model.setMaxImportIndex(DocUtil.readIntAttributeValue(maxImportIndex, ModelPersistence.VALUE));
     } catch (Throwable e) {
       LOG.error(e);
     }
