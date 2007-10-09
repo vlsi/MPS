@@ -1,6 +1,7 @@
 package jetbrains.mps.vcs.ui;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vcs.*;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;

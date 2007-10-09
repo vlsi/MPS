@@ -20,6 +20,7 @@ import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModuleRoot;
 import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.NotNull;

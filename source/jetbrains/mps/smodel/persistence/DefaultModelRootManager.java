@@ -8,6 +8,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;

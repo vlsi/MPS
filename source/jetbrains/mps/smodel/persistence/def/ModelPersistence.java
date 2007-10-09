@@ -1,10 +1,12 @@
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.GlobalScope;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -50,6 +52,14 @@ public class ModelPersistence {
   public static final String VERSION = "version";
   public static final String REFACTORING_LOG = "refactoringLog";
 
+  private static final int currentPersistenceVersion = 0;
+  private static final IModelWriter modelWriter = new ModelWriter();
+  private static final Map<Integer, IModelReader> modelReaders = new HashMap<Integer, IModelReader>();
+
+  static {
+    modelReaders.put(0, new ModelReader0());
+  }
+
   @NotNull
   private static Document loadModelDocument(@NotNull File file) {
     Document document;
@@ -63,24 +73,24 @@ public class ModelPersistence {
     return document;
   }
 
-  @NotNull
-  private static Document loadModelDocument(@NotNull byte[] bytes) {
-    Document document;
-    try {
-      document = JDOMUtil.loadDocument(new ByteArrayInputStream(bytes));
-    } catch (JDOMException e) {
-      throw new RuntimeException(e);
-    } catch (IOException e) {
-      throw new RuntimeException(e);
-    }
-    return document;
-  }
+//  @NotNull
+//  private static Document loadModelDocument(@NotNull byte[] bytes) {
+//    Document document;
+//    try {
+//      document = JDOMUtil.loadDocument(new ByteArrayInputStream(bytes));
+//    } catch (JDOMException e) {
+//      throw new RuntimeException(e);
+//    } catch (IOException e) {
+//      throw new RuntimeException(e);
+//    }
+//    return document;
+//  }
 
-  @NotNull
-  private static SModel readModel(@NotNull byte[] bytes) {
-    Document document = loadModelDocument(bytes);
-    return readModel(document, "", "");
-  }
+//  @NotNull
+//  private static SModel readModel(@NotNull byte[] bytes) {
+//    Document document = loadModelDocument(bytes);
+//    return readModel(document, "", "");
+//  }
 
   @NotNull
   public static SModel readModel(@NotNull File file) {
@@ -195,7 +205,7 @@ public class ModelPersistence {
         if (usedModelVersionString != null) {
           usedModelVersion = Integer.parseInt(usedModelVersionString);
         }
-      } catch(Throwable t) {
+      } catch (Throwable t) {
         LOG.error(t);
       }
 
@@ -330,28 +340,28 @@ public class ModelPersistence {
     }
   }
 
-  public static void saveModel(@NotNull SModel model, @NotNull OutputStream output) {
-    Document document = saveModel(model);
-    try {
-      JDOMUtil.writeDocument(document, output);
-      output.close();
-      SModelRepository.getInstance().markChanged(model, false);
-    } catch (IOException e) {
-      LOG.error(e);
-    }
-  }
+//  public static void saveModel(@NotNull SModel model, @NotNull OutputStream output) {
+//    Document document = saveModel(model);
+//    try {
+//      JDOMUtil.writeDocument(document, output);
+//      output.close();
+//      SModelRepository.getInstance().markChanged(model, false);
+//    } catch (IOException e) {
+//      LOG.error(e);
+//    }
+//  }
 
-  @NotNull
-  public static byte[] saveModelToBytes(@NotNull SModel model) {
-    ByteArrayOutputStream output = new ByteArrayOutputStream();
-    saveModel(model, output);
-    return output.toByteArray();
-  }
+//  @NotNull
+//  public static byte[] saveModelToBytes(@NotNull SModel model) {
+//    ByteArrayOutputStream output = new ByteArrayOutputStream();
+//    saveModel(model, output);
+//    return output.toByteArray();
+//  }
 
-  @NotNull
-  public static SModel modelFromBytes(@NotNull byte[] bytes) {
-    return readModel(bytes);
-  }
+//  @NotNull
+//  public static SModel modelFromBytes(@NotNull byte[] bytes) {
+//    return readModel(bytes);
+//  }
 
 
   @NotNull
@@ -385,7 +395,7 @@ public class ModelPersistence {
           Element aspectModelElement = new Element(LANGUAGE_ASPECT);
           SModelUID uid = sModelDescriptor.getModelUID();
           aspectModelElement.setAttribute(MODEL_UID, uid.toString());
-          aspectModelElement.setAttribute(VERSION, ""+sourceModel.getLanguageAspectModelVersion(uid));
+          aspectModelElement.setAttribute(VERSION, "" + sourceModel.getLanguageAspectModelVersion(uid));
         }
       }
       rootElement.addContent(languageElem);
@@ -432,7 +442,7 @@ public class ModelPersistence {
 
     SNode log = sourceModel.getLog();
     if (log != null) {
-      saveNode(rootElement, REFACTORING_LOG, log, false , visibleModelElements);
+      saveNode(rootElement, REFACTORING_LOG, log, false, visibleModelElements);
     }
 
     Iterator<SNode> iterator = sourceModel.roots();

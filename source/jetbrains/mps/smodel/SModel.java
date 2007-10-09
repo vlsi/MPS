@@ -461,7 +461,8 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  /*package*/ void addAspectModelVersions(@NotNull String languageNamespace, @NotNull Language language) {
+  /*package*/
+  public void addAspectModelVersions(@NotNull String languageNamespace, @NotNull Language language) {
     assert language.getNamespace().equals(languageNamespace);
     if (myNewLanguageNamespaces.contains(languageNamespace)) {
       addAspectModelsVersions(language);
@@ -624,19 +625,19 @@ public class SModel implements Iterable<SNode> {
     fireImportAddedEvent(modelUID);
   }
 
-  void addImportElement(@NotNull SModelUID modelUID, int referenceId, int usedVersion) {
+  public void addImportElement(@NotNull SModelUID modelUID, int referenceId, int usedVersion) {
     ImportElement importElement = new ImportElement(modelUID, referenceId, usedVersion);
     myImports.add(importElement);
     fireImportAddedEvent(modelUID);
   }
 
-  void addLanguageAspectModelVersion(@NotNull SModelUID modelUID, int usedVersion) {
+  public void addLanguageAspectModelVersion(@NotNull SModelUID modelUID, int usedVersion) {
     ImportElement importElement = new ImportElement(modelUID, -1, usedVersion);
     myLanguagesAspectsModelsVersions.add(importElement);
   }
 
   @Nullable
-  ImportElement getImportElement(@NotNull SModelUID modelUID) {
+  public ImportElement getImportElement(@NotNull SModelUID modelUID) {
     for (ImportElement importElement : myImports) {
       if (importElement.getModelUID().equals(modelUID)) {
         return importElement;
@@ -691,7 +692,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   @Nullable
-  SModelUID getImportedModelUID(int referenceID) {
+  public SModelUID getImportedModelUID(int referenceID) {
     for (ImportElement importElement : myImports) {
       if (importElement.getReferenceID() == referenceID) {
         return importElement.getModelUID();
@@ -750,7 +751,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   @NotNull
-  Iterator<ImportElement> importElements() {
+  public Iterator<ImportElement> importElements() {
     return myImports.iterator();
   }
 
@@ -1037,7 +1038,7 @@ public class SModel implements Iterable<SNode> {
 
 
   /*package*/
-  static class ImportElement {
+  public static class ImportElement {
     private SModelUID myModelDescriptor;
     private int myReferenceID;
     private int myUsedVersion;

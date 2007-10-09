@@ -1,7 +1,12 @@
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.externalResolve.ExternalResolver;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelUID;
 import org.jdom.Element;
 
 /**

@@ -106,46 +106,6 @@ public abstract class SReference {
   //
 
   /**
-   * reference created by target node
-   * todo: annotate targetNode as NotNull. If targetNode=null there is neither ID nor resolve infos
-   * update: targetNode=null can happen. See CopyPasteUtil.processReferencesIn() - when copied reference is unresolved (i.e. oldTargetNode==null)
-   * todo: another 'newInstance' should be used there in this case.
-   */
-  public static SReference newInstance(String role, SNode sourceNode, SNode targetNode) {
-
-    String resolveInfo = targetNode == null ? null : targetNode.getName();
-    SModel sourceModel = sourceNode.getModel();
-    SModel targetModel = targetNode == null ? null : targetNode.getModel();
-    String id = targetNode == null ? null : targetNode.getId();
-    if (sourceModel == targetModel || targetModel == null) {
-      return new SReference_old(role, sourceNode, id, resolveInfo, null, sourceModel.getUID());
-    } else {
-      String extResolveInfo = null;
-      if (targetModel.isExternallyResolvable()) {
-        extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(targetNode);
-      }
-      return new SReference_old(role, sourceNode, id, resolveInfo, extResolveInfo, targetModel.getUID());
-    }
-  }
-
-//  /**
-//   * reference created by template reference
-//   */
-//  public static SReference newInstance(String role, SNode sourceNode, SReference templateRef) {
-//    return newInstance(role, sourceNode, templateRef, false);
-//  }
-
-//  public static SReference newInstance(String role, SNode sourceNode, SReference templateRef, boolean preferResolveInfo) {
-//    String resolveInfo = templateRef.getResolveInfo();
-//    boolean willNotPassTargetId = resolveInfo != null && preferResolveInfo;
-//    return newInstance(role, sourceNode,
-//            willNotPassTargetId ? null : templateRef.getTargetNodeId(),
-//            templateRef.getExtResolveInfo(),
-//            templateRef.getTargetModelUID(),
-//            resolveInfo);
-//  }
-
-  /**
    * reference created by specifying all info
    */
   public static SReference newInstance(String role,
@@ -157,17 +117,6 @@ public abstract class SReference {
     return new SReference_old(role, sourceNode, targetNodeId, resolveInfo, extResolveInfo, targetModelUID);
   }
 
-//  public static SReference newInstance(String role,
-//                                       SNode sourceNode,
-//                                       String targetModelUID,
-//                                       String targetInfo,
-//                                       boolean isExtResolveInfo) {
-//    if (isExtResolveInfo) {
-//      return new SReference_old(role, sourceNode, null, null, targetInfo, SModelUID.fromString(targetModelUID));
-//    } else {
-//      return new SReference_old(role, sourceNode, targetInfo, null, null, SModelUID.fromString(targetModelUID));
-//    }
-//  }
 
   //
   // --- end new instance OLD
