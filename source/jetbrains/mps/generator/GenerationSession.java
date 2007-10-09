@@ -60,7 +60,9 @@ public class GenerationSession implements IGenerationSession {
         Object o = msg.getHintObject();
         if (o instanceof NodeWithContext) {
           SNode node = ((NodeWithContext) o).getNode();
-          myCurrentContext.addTransientModelToKeep(node.getModel());
+          if (node != null) {
+            myCurrentContext.addTransientModelToKeep(node.getModel());
+          }
           //uncomment to disable 'smart' transient removal
 //            myDiscardTransients = false;
         }
