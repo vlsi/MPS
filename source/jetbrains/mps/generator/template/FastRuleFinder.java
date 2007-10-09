@@ -15,9 +15,9 @@ import java.util.*;
  */
 public class FastRuleFinder {
   private List<Reduction_MappingRule> myRuleList;
-  private Map<ConceptDeclaration, List<Reduction_MappingRule>> myRules_all = new HashMap<ConceptDeclaration, List<Reduction_MappingRule>>();
+  private Map<AbstractConceptDeclaration, List<Reduction_MappingRule>> myRules_all = new HashMap<AbstractConceptDeclaration, List<Reduction_MappingRule>>();
   private Map<AbstractConceptDeclaration, List<Reduction_MappingRule>> myRules_applicableExactly = new HashMap<AbstractConceptDeclaration, List<Reduction_MappingRule>>();
-  private Map<ConceptDeclaration, List<Reduction_MappingRule>> myRules_applicableInheritor = new HashMap<ConceptDeclaration, List<Reduction_MappingRule>>();
+  private Map<AbstractConceptDeclaration, List<Reduction_MappingRule>> myRules_applicableInheritor = new HashMap<AbstractConceptDeclaration, List<Reduction_MappingRule>>();
 
   public FastRuleFinder(List<Reduction_MappingRule> reductionRules) {
     myRuleList = reductionRules;
@@ -40,18 +40,21 @@ public class FastRuleFinder {
     myRules_applicableExactly.get(concept).add(rule);
   }
 
-  private ConceptDeclaration getExtendedConcept(ConceptDeclaration concept, ConceptDeclaration baseConcept) {
+  private ConceptDeclaration getExtendedConcept(AbstractConceptDeclaration concept, ConceptDeclaration baseConcept) {
     if (concept == baseConcept) return null;
-    ConceptDeclaration extendedConcept = concept.getExtends();
+    ConceptDeclaration extendedConcept = null;
+    if (concept instanceof ConceptDeclaration) {
+      extendedConcept = ((ConceptDeclaration) concept).getExtends();
+    }
     if (extendedConcept != null) return extendedConcept;
     return baseConcept;
   }
 
-  private void cacheAllApplicableRules(ConceptDeclaration inputConcept, ConceptDeclaration baseConcept) {
+  private void cacheAllApplicableRules(AbstractConceptDeclaration inputConcept, ConceptDeclaration baseConcept) {
     if (myRules_all.containsKey(inputConcept)) return;
 
     // create partial hierarhy where last concept is always 'processed'
-    List<ConceptDeclaration> partialHierarchy = new ArrayList<ConceptDeclaration>(5);
+    List<AbstractConceptDeclaration> partialHierarchy = new ArrayList<AbstractConceptDeclaration>(5);
     while (inputConcept != null) {
       partialHierarchy.add(inputConcept);
       if (myRules_all.containsKey(inputConcept)) {
@@ -64,7 +67,7 @@ public class FastRuleFinder {
 
     // for each concept: all rules rules applicable to it and rules applicable to inheritor 
     List<Reduction_MappingRule> rulesForInheritor = new ArrayList(myRules_applicableInheritor.get(partialHierarchy.get(0)));
-    for (ConceptDeclaration hrrConcept : partialHierarchy) {
+    for (AbstractConceptDeclaration hrrConcept : partialHierarchy) {
       if (myRules_all.containsKey(hrrConcept)) {
         continue;  // skip first
       }
@@ -111,7 +114,7 @@ public class FastRuleFinder {
 //  }
 
   public SNode findReductionRule(SNode node, ITemplateGenerator generator) {
-    ConceptDeclaration concept = (ConceptDeclaration) node.getConceptDeclarationAdapter();
+    AbstractConceptDeclaration concept = (AbstractConceptDeclaration) node.getConceptDeclarationAdapter();
     if (concept == null) {
       generator.showWarningMessage(node, "skip reduction: couldn't find concept declaration adapter for " + node.getDebugText());
       return null;
