@@ -178,148 +178,17 @@ public class ModelPersistence {
 
   @NotNull
   public static Document saveModel(@NotNull SModel sourceModel, boolean validate) {
-    Element rootElement = new Element(MODEL);
-
-    VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
-
-    rootElement.setAttribute(NAME, sourceModel.getLongName());
-
-    Document document = new Document();
-    document.setRootElement(rootElement);
-
-    if (validate) {
-      sourceModel.validateLanguagesAndImports();
-    }
-
-    // languages
-    for (String languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {
-      Element languageElem = new Element(LANGUAGE);
-      languageElem.setAttribute(NAMESPACE, languageNamespace);
-      Language l = GlobalScope.getInstance().getLanguage(languageNamespace);
-      if (l != null) {
-        sourceModel.addAspectModelVersions(languageNamespace, l);
-        for (SModelDescriptor sModelDescriptor : l.getAspectModelDescriptors()) {
-          Element aspectModelElement = new Element(LANGUAGE_ASPECT);
-          SModelUID uid = sModelDescriptor.getModelUID();
-          aspectModelElement.setAttribute(MODEL_UID, uid.toString());
-          aspectModelElement.setAttribute(VERSION, "" + sourceModel.getLanguageAspectModelVersion(uid));
-        }
-      }
-      rootElement.addContent(languageElem);
-    }
-
-    // languages engaged on generation
-    for (String languageNamespace : sourceModel.getEngagedOnGenerationLanguages()) {
-      Element languageElem = new Element(LANGUAGE_ENGAGED_ON_GENERATION);
-      languageElem.setAttribute(NAMESPACE, languageNamespace);
-      rootElement.addContent(languageElem);
-    }
-
-    //devkits
-    for (String devkitNamespace : sourceModel.getDevKitNamespaces()) {
-      Element devkitElem = new Element(DEVKIT);
-      devkitElem.setAttribute(NAMESPACE, devkitNamespace);
-      rootElement.addContent(devkitElem);
-    }
-
-    // imports
-    Element maxRefID = new Element(MAX_IMPORT_INDEX);
-    maxRefID.setAttribute(VALUE, "" + sourceModel.getMaxImportIndex());
-    rootElement.addContent(maxRefID);
-
-    Iterator<SModel.ImportElement> imports = sourceModel.importElements();
-    while (imports.hasNext()) {
-      SModel.ImportElement importElement = imports.next();
-      Element importElem = new Element(IMPORT_ELEMENT);
-      importElem.setAttribute(MODEL_IMPORT_INDEX, "" + importElement.getReferenceID());
-      SModelUID modelUID = importElement.getModelUID();
-      importElem.setAttribute(MODEL_UID, modelUID.toString());
-      importElem.setAttribute(VERSION, "" + importElement.getUsedVersion());
-
-      int version = -1;
-      SModelDescriptor importedModelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
-      if (importedModelDescriptor != null) {
-        version = importedModelDescriptor.getVersion();
-      }
-      if (version > -1) {
-        importElem.setAttribute(VERSION, version + "");
-      }
-      rootElement.addContent(importElem);
-    }
-
-    SNode log = sourceModel.getLog();
-    if (log != null) {
-      saveNode(rootElement, REFACTORING_LOG, log, false, visibleModelElements);
-    }
-
-    Iterator<SNode> iterator = sourceModel.roots();
-    while (iterator.hasNext()) {
-      SNode semanticNode = iterator.next();
-      saveNode(rootElement, semanticNode, visibleModelElements);
-    }
-
-    return document;
+    return modelWriter.saveModel(sourceModel, validate);
   }
 
-  public static void saveNode(@NotNull Element parentElement, @NotNull SNode node) {
-    saveNode(parentElement, null, node, false, null);
-  }
-
-  public static void saveNode(@NotNull Element parentElement, @NotNull SNode node, VisibleModelElements visibleModelElements) {
-    saveNode(parentElement, null, node, false, visibleModelElements);
-  }
-
-  public static void saveNode(@NotNull Element parentElement, String elementName, @NotNull SNode node, boolean useUIDs, VisibleModelElements visibleModelElements) {
-    String theElementName = elementName;
-    if (theElementName == null) {
-      theElementName = NODE;
-    }
-    Element element = new Element(theElementName);
-    setNotNullAttribute(element, ROLE, node.getRole_());
-    // todo: save node's concept fQName
-    String oldStructureClassName = NameUtil.removeStructureFromFqName(node.getConceptFqName());
-    element.setAttribute(TYPE, oldStructureClassName);
-    element.setAttribute(ID, node.getId());
-
-    // we don't save java_stubs ?
-//    if (node.getModel().isExternallyResolvable()) {
-//      try {
-//        String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
-//        if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
-//          element.setAttribute(EXT_RESOLVE_INFO, extResolveInfo);
-//        }
-//      } catch (Exception e) {
-//        LOG.error("Failed to save extResolveInfo for node " + node.getDebugText(), e);
-//      }
-//    }
-
-    // properties ...
-    Map<String, String> properties = node.getProperties();
-    Set<String> keys = properties.keySet();
-    for (String propertyName : keys) {
-      Element propertyElement = new Element(PROPERTY);
-      element.addContent(propertyElement);
-      propertyElement.setAttribute(NAME, propertyName);
-      setNotNullAttribute(propertyElement, VALUE, node.getPersistentProperty(propertyName));
-    }
-
-    // references ...
-    List<SReference> references = node.getReferences();
-    for (SReference reference : references) {
-      ReferencePersister.saveReference(element, reference, useUIDs, visibleModelElements);
-    }
-
-    // children ...
-    List<SNode> children = node.getChildren();
-    for (SNode childNode : children) {
-      saveNode(element, null, childNode, useUIDs, visibleModelElements);
-    }
-
-    parentElement.addContent(element);
+  public static void saveNode(Element container, SNode node) {
+    modelWriter.saveNode(container, node);
   }
 
 
-  private static void setNotNullAttribute(
+
+
+  public static void setNotNullAttribute(
           @NotNull Element element,
           @NotNull String attrName,
           @Nullable String attrValue) {
@@ -371,7 +240,6 @@ public class ModelPersistence {
     }
     return -1;
   }
-
 
   public static class VisibleModelElements {
     private Map<Integer, SModelUID> myVisibleModelElements = new HashMap<Integer, SModelUID>();

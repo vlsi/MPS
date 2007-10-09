@@ -1,5 +1,6 @@
 package jetbrains.mps.smodel.persistence.def.v0;
 
+import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
@@ -10,11 +11,9 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence.VisibleModelElements;
 import jetbrains.mps.smodel.persistence.def.ReferencePersister;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.externalResolve.ExternalResolver;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -170,8 +169,8 @@ public class ModelReader0 implements IModelReader {
 
   @Nullable
   private SNode readNode(
-          @NotNull Element nodeElement,
-          @NotNull SModel model,
+          Element nodeElement,
+          SModel model,
           boolean useUIDs,
           VisibleModelElements visibleModelElements) {
     List<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
@@ -184,9 +183,9 @@ public class ModelReader0 implements IModelReader {
 
   @Nullable
   private SNode readNode(
-          @NotNull Element nodeElement,
-          @NotNull SModel model,
-          @NotNull List<ReferencePersister> referenceDescriptors,
+          Element nodeElement,
+          SModel model,
+          List<ReferencePersister> referenceDescriptors,
           boolean useUIDs
   ) {
     // todo: save 'conceptFqName' (i.e. <namespace>.structure.<name>)
