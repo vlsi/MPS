@@ -123,209 +123,16 @@ public class ModelPersistence {
           @NotNull Document document,
           @NotNull String modelName,
           @NotNull String stereotype) {
-    Element rootElement = document.getRootElement();
-
-    VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
-
-    String modelLongName = rootElement.getAttributeValue(NAME);
-
-    if (modelLongName == null) {//back compatibility
-      String modelNamespace = rootElement.getAttributeValue(NAMESPACE, "");
-      modelLongName = NameUtil.longNameFromNamespaceAndShortName(modelNamespace, modelName);
-    } else {
-      String shortName = NameUtil.shortNameFromLongName(modelLongName);
-//      LOG.assertLog(shortName.equals(modelName));  todo commented out temporary 
-    }
-
-    SModelUID modelUID = new SModelUID(modelLongName, stereotype);
-    SModel model = createModel(modelUID);
-
-    model.setLoading(true);
-    try {
-      Element maxImportIndex = rootElement.getChild(MAX_IMPORT_INDEX);
-      if (maxImportIndex == null) maxImportIndex = rootElement.getChild("maxReferenceID"); // old manner
-      model.setMaxImportIndex(readIntAttributeValue(maxImportIndex, VALUE));
-    } catch (Throwable e) {
-      LOG.error(e);
-    }
-
-    // languages
-    List languages = rootElement.getChildren(LANGUAGE);
-    for (Object language : languages) {
-      Element element = (Element) language;
-      String languageNamespace = element.getAttributeValue(NAMESPACE);
-      model.addLanguage(languageNamespace);
-      List<Element> aspectElements = element.getChildren(LANGUAGE_ASPECT);
-
-      //aspect models versions
-      for (Element aspectElement : aspectElements) {
-        String aspectModelUID = aspectElement.getAttributeValue(MODEL_UID);
-        String versionString = aspectElement.getAttributeValue(VERSION);
-        int version = -1;
-        if (versionString != null) {
-          try {
-            version = Integer.parseInt(versionString);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
-        }
-        if (aspectModelUID != null) {
-          model.addLanguageAspectModelVersion(SModelUID.fromString(aspectModelUID), version);
-        }
-      }
-    }
-
-    // languages engaged on generation
-    List languagesEOG = rootElement.getChildren(LANGUAGE_ENGAGED_ON_GENERATION);
-    for (Object languageEOG : languagesEOG) {
-      Element element = (Element) languageEOG;
-      String languageNamespace = element.getAttributeValue(NAMESPACE);
-      model.addEngagedOnGenerationLanguage(languageNamespace);
-    }
-
-    //devkits
-    List devkits = rootElement.getChildren(DEVKIT);
-    for (Object devkit : devkits) {
-      Element element = (Element) devkit;
-      String devkitNamespace = element.getAttributeValue(NAMESPACE);
-      model.addDevKit(devkitNamespace);
-    }
-
-    // imports
-    List imports = rootElement.getChildren(IMPORT_ELEMENT);
-    for (Object anImport : imports) {
-      Element element = (Element) anImport;
-
-      String indexValue = element.getAttributeValue(MODEL_IMPORT_INDEX, element.getAttributeValue("referenceID"));
-      int importIndex = Integer.parseInt(indexValue);
-
-      String usedModelVersionString = element.getAttributeValue(VERSION);
-      int usedModelVersion = -1;
-      try {
-        if (usedModelVersionString != null) {
-          usedModelVersion = Integer.parseInt(usedModelVersionString);
-        }
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-
-      String importedModelUIDString = element.getAttributeValue(MODEL_UID);
-      if (importedModelUIDString == null) {
-        // read in old manner...
-        String importedModelFQName = NameUtil.longNameFromNamespaceAndShortName(element.getAttributeValue(NAMESPACE),
-                element.getAttributeValue(NAME));
-        String importedModelStereotype = element.getAttributeValue(STEREOTYPE, "");
-        importedModelUIDString = new SModelUID(importedModelFQName, importedModelStereotype).toString();
-      }
-      if (importedModelUIDString == null) {
-        LOG.error("Error loading import element for index " + importIndex + " in " + model.getUID());
-        continue;
-      }
-      if (importIndex > model.getMaxImportIndex()) {
-        LOG.warning("Import element " + importIndex + ":" + importedModelUIDString + " greater then max import index (" + model.getMaxImportIndex() + ") in " + model.getUID());
-        model.setMaxImportIndex(importIndex);
-      }
-
-      SModelUID importedModelUID = SModelUID.fromString(importedModelUIDString);
-      model.addImportElement(importedModelUID, importIndex, usedModelVersion);
-    }
-
-    ArrayList<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
-
-    // log
-    Element logElement = rootElement.getChild(REFACTORING_LOG);
-    if (logElement != null) {
-      SNode log = readNode(logElement, model, referenceDescriptors, false);
-      if (log != null) {
-        model.setLog(log);
-      }
-    }
-
-    // nodes
-    List children = rootElement.getChildren(NODE);
-    for (Object child : children) {
-      Element element = (Element) child;
-      SNode snode = readNode(element, model, referenceDescriptors, false);
-      if (snode != null) {
-        model.addRoot(snode);
-      }
-    }
-
-    for (ReferencePersister referencePersister : referenceDescriptors) {
-      referencePersister.createReferenceInModel(model, visibleModelElements);
-    }
-
-    model.setLoading(false);
-    return model;
+    return modelReaders.get(0).readModel(document, modelName, stereotype);
   }
 
   @Nullable
   public static SNode readNode(
           @NotNull Element nodeElement,
-          @NotNull SModel model,
-          boolean useUIDs,
-          VisibleModelElements visibleModelElements) {
-    List<ReferencePersister> referenceDescriptors = new ArrayList<ReferencePersister>();
-    SNode result = readNode(nodeElement, model, referenceDescriptors, useUIDs);
-    for (ReferencePersister referencePersister : referenceDescriptors) {
-      referencePersister.createReferenceInModel(model, visibleModelElements);
-    }
-    return result;
+          @NotNull SModel model) {
+    return modelReaders.get(0).readNode(nodeElement, model);
   }
 
-  @Nullable
-  private static SNode readNode(
-          @NotNull Element nodeElement,
-          @NotNull SModel model,
-          @NotNull List<ReferencePersister> referenceDescriptors,
-          boolean useUIDs
-  ) {
-    // todo: save 'conceptFqName' (i.e. <namespace>.structure.<name>)
-    String oldStructureClassName = nodeElement.getAttributeValue(TYPE);
-    String conceptName = NameUtil.shortNameFromLongName(oldStructureClassName);
-    String languageNamespace = NameUtil.namespaceFromLongName(oldStructureClassName);
-    String conceptFqName = languageNamespace + ".structure." + conceptName;
-    SNode node = new SNode(model, conceptFqName);
-
-    String idValue = nodeElement.getAttributeValue(ID);
-    node.setId(SNodeId.fromString(idValue));
-
-
-    String cachedExtResolveInfo = nodeElement.getAttributeValue(EXT_RESOLVE_INFO);
-    if (!ExternalResolver.isEmptyExtResolveInfo(cachedExtResolveInfo)) {
-      model.loadCachedNodeExtResolveInfo(node, cachedExtResolveInfo);
-    }
-
-    List properties = nodeElement.getChildren(PROPERTY);
-    for (Object property : properties) {
-      Element propertyElement = (Element) property;
-      String propertyName = propertyElement.getAttributeValue(NAME);
-      String propertyValue = propertyElement.getAttributeValue(VALUE);
-      if (propertyValue != null) {
-        node.setProperty(propertyName, propertyValue);
-      }
-    }
-
-    List links = nodeElement.getChildren(LINK);
-    for (Object link : links) {
-      Element linkElement = (Element) link;
-      referenceDescriptors.add(ReferencePersister.readReferencePersister(linkElement, node, useUIDs));
-    }
-
-    List childNodes = nodeElement.getChildren(NODE);
-    for (Object childNode1 : childNodes) {
-      Element childNodeElement = (Element) childNode1;
-      String role = childNodeElement.getAttributeValue(ROLE);
-      SNode childNode = readNode(childNodeElement, model, referenceDescriptors, useUIDs);
-      if (childNode != null) {
-        node.addChild(role, childNode);
-      } else {
-        LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
-      }
-    }
-
-    return node;
-  }
 
   public static void saveModel(@NotNull SModel model, @NotNull File file) {
     LOG.debug("Save model " + model.getUID() + " to file " + file.getAbsolutePath());
@@ -521,7 +328,7 @@ public class ModelPersistence {
     }
   }
 
-  private static int readIntAttributeValue(
+  public static int readIntAttributeValue(
           @NotNull Element element,
           @NotNull String attrName) throws NumberFormatException {
     return Integer.parseInt(element.getAttributeValue(attrName));
@@ -563,10 +370,6 @@ public class ModelPersistence {
       }
     }
     return -1;
-  }
-
-  private static SModel createModel(SModelUID uid) {
-    return new SModel(uid);
   }
 
 
