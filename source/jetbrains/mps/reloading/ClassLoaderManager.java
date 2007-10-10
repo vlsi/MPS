@@ -133,6 +133,16 @@ public class ClassLoaderManager implements IComponentLifecycle {
       myItems.add(supportPath);
     }
 
+    if (myModuleRepository != null) {
+      for (IModule l : myModuleRepository.getAllModules()) {
+        LOG.debug("Adding classpath from model " + l);
+        for (String s : l.getClassPathItems()) {
+          LOG.debug("Add " + s);
+          addClassPathItem(s);
+        }
+      }
+    }
+
     Set<String> classPath = new LinkedHashSet<String>();
     if (myProjects != null) {
       for (MPSProject project : myProjects.getProjects()) {
@@ -144,16 +154,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
     for (String s : classPath) {
       addClassPathItem(s);
-    }
-
-    if (myModuleRepository != null) {
-      for (IModule l : myModuleRepository.getAllModules()) {
-        LOG.debug("Adding classpath from model " + l);
-        for (String s : l.getClassPathItems()) {
-          LOG.debug("Add " + s);
-          addClassPathItem(s);
-        }
-      }
     }
 
     myClassLoader = new MPSClassLoader(myItems);
@@ -172,6 +172,12 @@ public class ClassLoaderManager implements IComponentLifecycle {
         }
       }
     }
+
+    System.out.println("Items:");
+    for (IClassPathItem item : myItems.getChildren()) {
+      System.out.println(item);
+    }
+    System.out.println("-----");
 
     myCachedItems.clear();
     myAlreadyAdded.clear();

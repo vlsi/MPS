@@ -268,9 +268,11 @@ public abstract class AbstractModule implements IModule {
   public List<String> getClassPathItems() {
     ArrayList<String> result = new ArrayList<String>();
     File classesGen = getClassesGen();
-    if (classesGen != null) {
+
+    if (classesGen != null && classesGen.exists()) {
       result.add(classesGen.getAbsolutePath());
     }
+
     return result;
   }
 

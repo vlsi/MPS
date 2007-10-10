@@ -3,6 +3,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
+import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.ide.IDEProjectFrame;
@@ -168,6 +169,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   public IPreferencesPage createPreferencesPage() {
     return new GeneratorManagerPreferencesPage(this);
+  }
+
+  public IGenerationType getDefaultModuleGenerationType() {
+    if (isCompileInMps()) {
+      return new GenerateClassesGenerationType(true, true);
+    } else {
+      return IGenerationType.FILES;
+    }
   }
 
   /**
@@ -496,6 +505,12 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             checkMonitorCanceled(progress);
           }
         }
+
+        if (generationType.forceReload()) {
+          progress.addText("reloading MPS classes");
+          ReloadUtils.reloadAll(false);
+        }
+
         progress.addText("generation completed successfully");
 
         messages.handle(new Message(MessageKind.INFORMATION, "generation completed successfully"));
