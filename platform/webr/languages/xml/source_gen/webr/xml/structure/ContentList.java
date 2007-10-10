@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ContentList extends Content {
+  public static final String concept = "webr.xml.structure.ContentList";
   public static String CONTENT = "content";
   public static String IS_HORIZONTAL = "isHorizontal";
 

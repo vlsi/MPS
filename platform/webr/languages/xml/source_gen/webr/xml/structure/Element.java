@@ -9,8 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 import webr.xmlSchema.structure.ElementDeclaration;
 
 public class Element extends BaseElement {
-  public static String ELEMENT_DECLARATION = "elementDeclaration";
+  public static final String concept = "webr.xml.structure.Element";
   public static String IS_EMPTY = "isEmpty";
+  public static String ELEMENT_DECLARATION = "elementDeclaration";
 
   public  Element(SNode node) {
     super(node);
@@ -25,20 +26,20 @@ public class Element extends BaseElement {
   }
 
 
-  public ElementDeclaration getElementDeclaration() {
-    return (ElementDeclaration)this.getReferent(Element.ELEMENT_DECLARATION);
-  }
-
-  public void setElementDeclaration(ElementDeclaration node) {
-    super.setReferent(Element.ELEMENT_DECLARATION, node);
-  }
-
   public boolean getIsEmpty() {
     return this.getBooleanProperty(Element.IS_EMPTY);
   }
 
   public void setIsEmpty(boolean value) {
     this.setBooleanProperty(Element.IS_EMPTY, value);
+  }
+
+  public ElementDeclaration getElementDeclaration() {
+    return (ElementDeclaration)this.getReferent(Element.ELEMENT_DECLARATION);
+  }
+
+  public void setElementDeclaration(ElementDeclaration node) {
+    super.setReferent(Element.ELEMENT_DECLARATION, node);
   }
 
 }

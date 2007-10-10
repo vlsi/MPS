@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import webr.xmlSchema.structure.AttributeDeclaration;
 
 public class Attribute extends BaseAttribute {
+  public static final String concept = "webr.xml.structure.Attribute";
   public static String VALUE = "value";
   public static String ATTRIBUTE_DECLARATION = "attributeDeclaration";
 

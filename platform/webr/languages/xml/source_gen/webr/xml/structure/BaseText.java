@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BaseText extends Content {
+  public static final String concept = "webr.xml.structure.BaseText";
 
   public  BaseText(SNode node) {
     super(node);

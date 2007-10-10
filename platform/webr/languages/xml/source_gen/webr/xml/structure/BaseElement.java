@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class BaseElement extends Content {
+  public static final String concept = "webr.xml.structure.BaseElement";
   public static String CONTENT_LIST = "contentList";
   public static String ATTRIBUTE = "attribute";
 

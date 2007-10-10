@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import webr.xmlSchema.structure.EntityDeclaration;
 
 public class EntityReference extends BaseText {
+  public static final String concept = "webr.xml.structure.EntityReference";
   public static String ENTITY_DECLARATION = "entityDeclaration";
 
   public  EntityReference(SNode node) {
