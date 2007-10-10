@@ -127,7 +127,7 @@
                 <property name="name" value="nodeCopy" />
                 <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1191408536270" />
                 <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1191930977652">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~CopyUtil.copyAndGetMapping(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SModel,java.util.Map)" resolveInfo="copyAndGetMapping" />
+                  <link role="baseMethodDeclaration" targetNodeId="5.~CopyUtil.copyAndGetMapping(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SModel,java.util.Map):jetbrains.mps.smodel.SNode" resolveInfo="copyAndGetMapping" />
                   <link role="classConcept" targetNodeId="5.~CopyUtil" resolveInfo="CopyUtil" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1191930977653">
                     <link role="variableDeclaration" targetNodeId="1191408536252" resolveInfo="node" />
@@ -175,7 +175,7 @@
             <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1191931028575">
               <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1191931029764">
                 <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1191931067934">
-                  <link role="baseMethodDeclaration" targetNodeId="8.~MarshallUtil.marshallNodeMap(java.util.Map)" resolveInfo="marshallNodeMap" />
+                  <link role="baseMethodDeclaration" targetNodeId="8.~MarshallUtil.marshallNodeMap(java.util.Map):java.lang.String" resolveInfo="marshallNodeMap" />
                   <link role="classConcept" targetNodeId="8.~MarshallUtil" resolveInfo="MarshallUtil" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1191931071810">
                     <link role="variableDeclaration" targetNodeId="1191930995364" resolveInfo="map" />
@@ -249,7 +249,7 @@
                           <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
                         </node>
                         <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1191930782275">
-                          <link role="baseMethodDeclaration" targetNodeId="5.~CopyUtil.copyAndGetMapping(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SModel,java.util.Map)" resolveInfo="copyAndGetMapping" />
+                          <link role="baseMethodDeclaration" targetNodeId="5.~CopyUtil.copyAndGetMapping(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SModel,java.util.Map):jetbrains.mps.smodel.SNode" resolveInfo="copyAndGetMapping" />
                           <link role="classConcept" targetNodeId="5.~CopyUtil" resolveInfo="CopyUtil" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1191930785885">
                             <link role="variableDeclaration" targetNodeId="1191408536252" resolveInfo="node" />
@@ -308,7 +308,7 @@
                     <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1191931084296">
                       <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1191931084297">
                         <node role="rValue" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1191931084298">
-                          <link role="baseMethodDeclaration" targetNodeId="8.~MarshallUtil.marshallNodeMap(java.util.Map)" resolveInfo="marshallNodeMap" />
+                          <link role="baseMethodDeclaration" targetNodeId="8.~MarshallUtil.marshallNodeMap(java.util.Map):java.lang.String" resolveInfo="marshallNodeMap" />
                           <link role="classConcept" targetNodeId="8.~MarshallUtil" resolveInfo="MarshallUtil" />
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1191931084299">
                             <link role="variableDeclaration" targetNodeId="1191930825816" resolveInfo="map" />
@@ -624,7 +624,7 @@
             <link role="baseMethodDeclaration" targetNodeId="1191843774738" resolveInfo="updateModelAfterMove" />
             <node role="actualArgument" type="jetbrains.mps.logging.refactoring.ConceptFunctionParameter_SModel" id="1191848311622" />
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1191933777282">
-              <link role="baseMethodDeclaration" targetNodeId="8.~MarshallUtil.unmarshallNodeMapToIdMap(java.lang.String)" resolveInfo="unmarshallNodeMapToIdMap" />
+              <link role="baseMethodDeclaration" targetNodeId="8.~MarshallUtil.unmarshallNodeMapToIdMap(java.lang.String):java.util.Map" resolveInfo="unmarshallNodeMapToIdMap" />
               <link role="classConcept" targetNodeId="8.~MarshallUtil" resolveInfo="MarshallUtil" />
               <node role="actualArgument" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1191933780049">
                 <link role="argument" targetNodeId="1191930946086" resolveInfo="mapping" />
