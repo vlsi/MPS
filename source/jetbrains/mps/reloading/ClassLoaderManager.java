@@ -9,8 +9,6 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.PathManager;
-import sun.misc.Launcher;
-import sun.security.pkcs11.Secmod.Module;
 
 import java.io.File;
 import java.net.URISyntaxException;
