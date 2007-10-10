@@ -1,8 +1,9 @@
-package jetbrains.mps.smodel.persistence.def;
+package jetbrains.mps.smodel.persistence.def.v0;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModel;
@@ -16,7 +17,7 @@ import org.jdom.Element;
  * Time: 20:54:31
  * To change this template use File | Settings | File Templates.
  */
-public class ReferencePersister {
+public class ReferencePersister0 {
 
   private static Logger LOG = Logger.getLogger(ReferenceDescriptor.class);
 
@@ -30,11 +31,11 @@ public class ReferencePersister {
   private boolean myNotImported;
 
 
-  protected ReferencePersister(ReferenceDescriptor rd, boolean useUIDs) {
+  protected ReferencePersister0(ReferenceDescriptor rd, boolean useUIDs) {
     this(rd.sourceNode, rd.role, rd.attTargetNodeId, rd.attExtResolveInfo, rd.resolveInfo, useUIDs);
   }
 
-  protected ReferencePersister(SNode sourceNode, String role, String attTargetNodeId, String attExtResolveInfo, String resolveInfo, boolean useUIDs) {
+  protected ReferencePersister0(SNode sourceNode, String role, String attTargetNodeId, String attExtResolveInfo, String resolveInfo, boolean useUIDs) {
     this.myUseUIDs = useUIDs;
     this.mySourceNode = sourceNode;
     this.myRole = role;
@@ -142,9 +143,9 @@ public class ReferencePersister {
   //-----
 
   // -- create descriptor
-  public static ReferencePersister readReferencePersister(Element linkElement, SNode sourceNode, boolean useUIDs) {
+  public static ReferencePersister0 readReferencePersister(Element linkElement, SNode sourceNode, boolean useUIDs) {
     ReferenceDescriptor rd = readReferenceDescriptor(linkElement, sourceNode);
-    return new ReferencePersister(rd, useUIDs);
+    return new ReferencePersister0(rd, useUIDs);
   }
 
   private static ReferenceDescriptor readReferenceDescriptor(Element linkElement, SNode sourceNode) {

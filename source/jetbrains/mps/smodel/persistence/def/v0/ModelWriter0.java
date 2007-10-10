@@ -135,7 +135,7 @@ public class ModelWriter0 implements IModelWriter {
     // references ...
     List<SReference> references = node.getReferences();
     for (SReference reference : references) {
-      ReferencePersister.saveReference(element, reference, useUIDs, visibleModelElements);
+      ReferencePersister0.saveReference(element, reference, useUIDs, visibleModelElements);
     }
 
     // children ...
