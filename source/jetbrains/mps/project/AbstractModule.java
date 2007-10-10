@@ -126,6 +126,15 @@ public abstract class AbstractModule implements IModule {
     return modelDescriptors;
   }
 
+  @Nullable
+  public File getClassesGen() {
+    File descriptorFile = getDescriptorFile();
+    if (descriptorFile != null) {
+      return new File(descriptorFile.getParentFile(), "classes_gen");
+    }
+    return null;
+  }
+
   //
   // AbstractModule
   //
@@ -257,7 +266,12 @@ public abstract class AbstractModule implements IModule {
 
   @NotNull
   public List<String> getClassPathItems() {
-    return new ArrayList<String>();
+    ArrayList<String> result = new ArrayList<String>();
+    File classesGen = getClassesGen();
+    if (classesGen != null) {
+      result.add(classesGen.getAbsolutePath());
+    }
+    return result;
   }
 
   protected void rereadModels() {

@@ -150,6 +150,7 @@ public class DevKit extends AbstractModule {
   @NotNull
   public List<String> getClassPathItems() {
     List<String> result = new ArrayList<String>();
+    result.addAll(super.getClassPathItems());
     for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myDescriptor.classPathEntrys())) {
       result.add(entry.getPath());
     }

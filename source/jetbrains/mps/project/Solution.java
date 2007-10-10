@@ -177,6 +177,7 @@ public class Solution extends AbstractModule {
   @NotNull
   public List<String> getClassPathItems() {
     List<String> result = new ArrayList<String>();
+    result.addAll(super.getClassPathItems());
     for (ClassPathEntry entry : mySolutionDescriptor.getClassPathEntrys()) {
       result.add(entry.getPath());
     }
