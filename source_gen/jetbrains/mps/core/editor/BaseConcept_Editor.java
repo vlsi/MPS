@@ -16,14 +16,17 @@ public class BaseConcept_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1133921115694");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.setEditable(true);
     editorCell.getTextLine().setTextColor(Color.lightGray);
   }
 
+
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createConstantCell(context, node, "");
   }
+
   public EditorCell createConstantCell(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     BaseConcept_Editor.setupBasic_ConstantCell(editorCell, node, context);
@@ -31,4 +34,5 @@ public class BaseConcept_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("<abstract concept>");
     return editorCell;
   }
+
 }

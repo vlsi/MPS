@@ -5,8 +5,11 @@ package jetbrains.mps.core.structure;
 import jetbrains.mps.smodel.INodeAdapter;
 
 public interface INamedConcept extends INodeAdapter {
+  public static final String concept = "jetbrains.mps.core.structure.INamedConcept";
   public static String NAME = "name";
 
   public String getName();
+
   public void setName(String value);
+
 }

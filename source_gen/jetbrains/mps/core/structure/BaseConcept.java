@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BaseConcept extends BaseAdapter {
+  public static final String concept = "jetbrains.mps.core.structure.BaseConcept";
   public static String CPR_Abstract = "abstract";
   public static String CPR_Alias = "alias";
   public static String CPR_Short_description = "short_description";
@@ -26,22 +27,28 @@ public class BaseConcept extends BaseAdapter {
   }
 
   public static BaseConcept newInstance(SModel sm, boolean init) {
-    return (BaseConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.BaseConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.structure.BaseConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static BaseConcept newInstance(SModel sm) {
     return BaseConcept.newInstance(sm, false);
   }
 
+
   public String getShortDescription() {
     return this.getProperty(BaseConcept.SHORT_DESCRIPTION);
   }
+
   public void setShortDescription(String value) {
     this.setProperty(BaseConcept.SHORT_DESCRIPTION, value);
   }
+
   public String getAlias() {
     return this.getProperty(BaseConcept.ALIAS);
   }
+
   public void setAlias(String value) {
     this.setProperty(BaseConcept.ALIAS, value);
   }
+
 }
