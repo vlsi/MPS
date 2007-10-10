@@ -1,12 +1,10 @@
 package jetbrains.mps.smodel.persistence.def;
 
-import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
+import jetbrains.mps.smodel.persistence.def.v0.ModelWriter0;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.NameUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -52,12 +50,13 @@ public class ModelPersistence {
   public static final String VERSION = "version";
   public static final String REFACTORING_LOG = "refactoringLog";
 
-  private static final int currentPersistenceVersion = 0;
-  private static final IModelWriter modelWriter = new ModelWriter();
   private static final Map<Integer, IModelReader> modelReaders = new HashMap<Integer, IModelReader>();
+  private static final Map<Integer, IModelWriter> modelWriters = new HashMap<Integer, IModelWriter>();
+  private static final int currentPersistenceVersion = 0;
 
   static {
     modelReaders.put(0, new ModelReader0());
+    modelWriters.put(0, new ModelWriter0());
   }
 
   @NotNull
@@ -90,7 +89,33 @@ public class ModelPersistence {
     }
 
     Document document = loadModelDocument(file);
-    return readModel(document, modelName, modelStereotype);
+    int modelPersistenceVersion = getModelPersistenceVersion(document);
+    SModel model = modelReaders.get(modelPersistenceVersion).readModel(document, modelName, modelStereotype);
+    if (modelPersistenceVersion < currentPersistenceVersion) {
+      model = upgradeModelPersistence(model, modelPersistenceVersion);
+    }
+    return model;
+  }
+
+  private static SModel upgradeModelPersistence(SModel model, int fromVersion) {
+    SModelUID uid = model.getUID();
+    int version = fromVersion;
+    while (version < currentPersistenceVersion) {
+      Document document = modelWriters.get(++version).saveModel(model, false);
+      model.dispose();
+      model = modelReaders.get(version).readModel(document, uid.getShortName(), uid.getStereotype());
+    }
+    LOG.info("persistence upgraded: " + fromVersion + "->" + currentPersistenceVersion + " " + uid);
+    return model;
+  }
+
+  private static int getModelPersistenceVersion(Document document) {
+    Element modelElement = document.getRootElement();
+    Element persistence = modelElement.getChild("persistence");
+    if (persistence != null) {
+      return DocUtil.readIntAttributeValue(persistence, "version");
+    }
+    return 0;
   }
 
   @NotNull
@@ -103,14 +128,14 @@ public class ModelPersistence {
           @NotNull Document document,
           @NotNull String modelName,
           @NotNull String stereotype) {
-    return modelReaders.get(0).readModel(document, modelName, stereotype);
+    return modelReaders.get(currentPersistenceVersion).readModel(document, modelName, stereotype);
   }
 
   @Nullable
   public static SNode readNode(
           @NotNull Element nodeElement,
           @NotNull SModel model) {
-    return modelReaders.get(0).readNode(nodeElement, model);
+    return modelReaders.get(currentPersistenceVersion).readNode(nodeElement, model);
   }
 
 
@@ -134,11 +159,11 @@ public class ModelPersistence {
 
   @NotNull
   public static Document saveModel(@NotNull SModel sourceModel, boolean validate) {
-    return modelWriter.saveModel(sourceModel, validate);
+    return modelWriters.get(currentPersistenceVersion).saveModel(sourceModel, validate);
   }
 
   public static void saveNode(Element container, SNode node) {
-    modelWriter.saveNode(container, node);
+    modelWriters.get(currentPersistenceVersion).saveNode(container, node);
   }
 
 

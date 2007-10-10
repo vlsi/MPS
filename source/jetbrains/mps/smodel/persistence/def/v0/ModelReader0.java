@@ -24,7 +24,7 @@ public class ModelReader0 implements IModelReader {
   private static final Logger LOG = Logger.getLogger(ModelReader0.class);
 
 
-  public SModel readModel(Document document, String modelName, String stereotype) {
+  public SModel readModel(Document document, String modelShortName, String stereotype) {
     Element rootElement = document.getRootElement();
 
     VisibleModelElements visibleModelElements = new VisibleModelElements(rootElement);
@@ -33,10 +33,10 @@ public class ModelReader0 implements IModelReader {
 
     if (modelLongName == null) {//back compatibility
       String modelNamespace = rootElement.getAttributeValue(ModelPersistence.NAMESPACE, "");
-      modelLongName = NameUtil.longNameFromNamespaceAndShortName(modelNamespace, modelName);
+      modelLongName = NameUtil.longNameFromNamespaceAndShortName(modelNamespace, modelShortName);
     } else {
       String shortName = NameUtil.shortNameFromLongName(modelLongName);
-//      LOG.assertLog(shortName.equals(modelName));  todo commented out temporary
+//      LOG.assertLog(shortName.equals(modelShortName));  todo commented out temporary
     }
 
     SModelUID modelUID = new SModelUID(modelLongName, stereotype);

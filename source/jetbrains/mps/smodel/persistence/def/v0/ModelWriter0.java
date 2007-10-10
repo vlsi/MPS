@@ -1,9 +1,9 @@
-package jetbrains.mps.smodel.persistence.def;
+package jetbrains.mps.smodel.persistence.def.v0;
 
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
-import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
+import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -17,7 +17,7 @@ import java.util.Set;
  * Igor Alshannikov
  * Oct 9, 2007
  */
-public class ModelWriter implements IModelWriter {
+public class ModelWriter0 implements IModelWriter {
   public Document saveModel(SModel sourceModel, boolean validate) {
     Element rootElement = new Element(ModelPersistence.MODEL);
 

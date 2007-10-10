@@ -58,7 +58,9 @@ import java.util.HashMap;
     }
     if (node.hasId()) {
       String key = node.getModel().getUID() + "#" + node.getId();
-      LOG.assertLog(!myMap.containsKey(key), "attempt to put another node with same key: " + key);
+      if (myMap.containsKey(key)) {
+        LOG.assertLog(myMap.get(key).getModel().isDisposed(), "attempt to put another node with same key: " + key);
+      }
       myMap.put(key, node);
     }
   }

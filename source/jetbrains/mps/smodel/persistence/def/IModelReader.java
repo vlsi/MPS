@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SNode;
  * Oct 9, 2007
  */
 public interface IModelReader {
-  SModel readModel(Document document, String modelName, String stereotype);
+  SModel readModel(Document document, String modelShortName, String stereotype);
 
   SNode readNode(Element nodeElement, SModel model);
 }
