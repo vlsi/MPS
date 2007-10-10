@@ -800,7 +800,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   @NotNull
   public List<String> getClassPathItems() {
     List<String> result = new ArrayList<String>();
-    result.addAll(super.getClassPathItems())
+    result.addAll(super.getClassPathItems());
     for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myLanguageDescriptor.classPathEntrys())) {
       result.add(entry.getPath());
     }
