@@ -56,6 +56,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   @NotNull List<String> getClassPathItems();
 
+  File getClassesGen();
+
   Set<IModule> getVisibleModules();
 
   Set<IModule> getExplicitlyVisibleModules();
