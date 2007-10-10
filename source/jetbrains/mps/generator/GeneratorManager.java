@@ -1,15 +1,14 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.component.Dependency;
 import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
-import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
-import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
+import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
+import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
+import jetbrains.mps.generator.template.Statistics;
+import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.ide.modelchecker.ModelCheckResult;
 import jetbrains.mps.ide.modelchecker.ModelChecker;
@@ -25,15 +24,15 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import org.jdom.Element;
 
 import javax.swing.JOptionPane;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -507,8 +506,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         }
 
         if (generationType.forceReload()) {
-          progress.addText("reloading MPS classes");
-          ReloadUtils.reloadAll(false);
+          ReloadUtils.reloadAll(true, true, true, new HashSet<SModelDescriptor>(), invocationContext.getModule(), new Runnable() {
+            public void run() {              
+            }
+          });
         }
 
         progress.addText("generation completed successfully");

@@ -3,13 +3,14 @@ package jetbrains.mps.reloading;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
+import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.ide.SystemInfo;
 import sun.misc.Launcher;
+import sun.security.pkcs11.Secmod.Module;
 
 import java.io.File;
 import java.net.URISyntaxException;
@@ -77,7 +78,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return myClassLoader;
   }
 
-
   public void updateClassPathIfTimestampChanged() {
     if (myUseSystemClassLoader) return;
 
@@ -89,13 +89,15 @@ public class ClassLoaderManager implements IComponentLifecycle {
     } 
   }
 
-  private void cacheOldItems(CompositeClassPathItem ci) {
+  private void cacheOldItems(CompositeClassPathItem ci, boolean cacheFiles) {
     for (IClassPathItem c : ci.getChildren()) {
 
-//      if (c instanceof FileClassPathItem) {
-//        FileClassPathItem fcpi = (FileClassPathItem) c;
-//        myCachedItems.put(fcpi.getClassPath(), c);
-//      }
+      if (cacheFiles) {
+        if (c instanceof FileClassPathItem) {
+          FileClassPathItem fcpi = (FileClassPathItem) c;
+          myCachedItems.put(fcpi.getClassPath(), c);
+        }
+      }
 
       if (c instanceof JarFileClassPathItem) {
         JarFileClassPathItem jfcpi = (JarFileClassPathItem) c;
@@ -103,22 +105,32 @@ public class ClassLoaderManager implements IComponentLifecycle {
       }
 
       if (c instanceof CompositeClassPathItem) {
-        cacheOldItems((CompositeClassPathItem) c);
+        cacheOldItems((CompositeClassPathItem) c, cacheFiles);
       }
     }
   }
 
   public void updateClassPath() {
+    updateClassPath(null);
+  }
+
+  public void updateClassPath(IModule changeModule) {
     if (myUseSystemClassLoader) return;
 
     LOG.debug("Updating class path");
 
     if (myItems != null) {
-      cacheOldItems(myItems);
+      cacheOldItems(myItems, changeModule != null);
+    }
+
+    if (changeModule != null) {
+      List<String> items = changeModule.getClassPathItems();
+      for (String item : items) {
+        myCachedItems.remove(item);
+      }
     }
 
     myItems = new CompositeClassPathItem();
-
 
     IClassPathItem rtJar = getRTJar();
     if (rtJar != null) {
@@ -133,12 +145,14 @@ public class ClassLoaderManager implements IComponentLifecycle {
       myItems.add(supportPath);
     }
 
+    boolean useTimestamps = changeModule == null;
+
     if (myModuleRepository != null) {
       for (IModule l : myModuleRepository.getAllModules()) {
         LOG.debug("Adding classpath from model " + l);
         for (String s : l.getClassPathItems()) {
           LOG.debug("Add " + s);
-          addClassPathItem(s);
+          addClassPathItem(s, useTimestamps);
         }
       }
     }
@@ -153,7 +167,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
 
     for (String s : classPath) {
-      addClassPathItem(s);
+      addClassPathItem(s, useTimestamps);
     }
 
     myClassLoader = new MPSClassLoader(myItems);
@@ -173,19 +187,13 @@ public class ClassLoaderManager implements IComponentLifecycle {
       }
     }
 
-    System.out.println("Items:");
-    for (IClassPathItem item : myItems.getChildren()) {
-      System.out.println(item);
-    }
-    System.out.println("-----");
-
     myCachedItems.clear();
     myAlreadyAdded.clear();
 
     LOG.debug("Done");
   }
 
-  private void addClassPathItem(String s) {    
+  private void addClassPathItem(String s, boolean useTimestamps) {
     if (myAlreadyAdded.contains(s)) {
       return;
     }
@@ -193,13 +201,12 @@ public class ClassLoaderManager implements IComponentLifecycle {
     if (myCachedItems.containsKey(s)) {
       IClassPathItem i = myCachedItems.get(s);
 
-      if (i.getTimestamp() == new File(s).lastModified()) {
+      if (!useTimestamps || i.getTimestamp() == new File(s).lastModified()) {
         myItems.add(i);
       }
 
       return;
     }
-
 
     if (!new File(s).exists()) {
       LOG.warning("Class path item doesn't exist " + s);
