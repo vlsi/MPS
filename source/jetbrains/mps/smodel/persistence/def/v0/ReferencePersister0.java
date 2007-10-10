@@ -1,13 +1,10 @@
 package jetbrains.mps.smodel.persistence.def.v0;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.externalResolve.ExternalResolver;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUID;
 import org.jdom.Element;
 
 /**
@@ -72,7 +69,7 @@ public class ReferencePersister0 {
       String info = referenceTargetDescriptor.myImportedModelInfo;
       if (info.endsWith("v")) {
         referenceTargetDescriptor.myNotImported = true;
-        referenceTargetDescriptor.myImportedModelInfo = info.substring(0, info.length()-1);
+        referenceTargetDescriptor.myImportedModelInfo = info.substring(0, info.length() - 1);
       }
       referenceTargetDescriptor.myTargetInfo = attTargetNodeId.substring(i + 1);
     } else {
@@ -121,6 +118,7 @@ public class ReferencePersister0 {
         return null;
       }
     }
+
     return SReference.newInstance(this.getRole(),
             this.getSourceNode(),
             this.getTargetId(),
@@ -134,15 +132,36 @@ public class ReferencePersister0 {
     SReference reference = createReferenceInModelDoNotAddToSourceNode(model, visibleModelElements);
     if (reference != null) this.getSourceNode().addReference(reference);
   }
+
+  public void createReferenceInModel_(SModel model, VisibleModelElements visibleModelElements) {
+    SReference reference = createReferenceInModelDoNotAddToSourceNode(model, visibleModelElements);
+    SReference newReference = null;
+    // upgrade to new reference
+    if (reference instanceof SReference_old) {
+      SModelUID modelUID = ((SReference_old) reference).getTargetModelUID();
+      if (SModelStereotype.JAVA_STUB.equals(modelUID.getStereotype())) {
+        SNode javaStubNode = reference.getTargetNode();
+        if (javaStubNode != null) {
+          newReference = SReference.create(reference.getRole(), this.getSourceNode(), javaStubNode);
+        } else if (reference.getExtResolveInfo() != null) {
+          String resolveInfo = ExternalResolver.getHumanFriendlyString(reference.getExtResolveInfo());
+          newReference = SReference.create(this.getRole(), this.getSourceNode(), null, null, resolveInfo);
+        }
+      } else {
+        newReference = SReference.create(this.getRole(), this.getSourceNode(), reference.getTargetModelUID(), SNodeId.fromString(this.getTargetId()), this.getResolveInfo());
+      }
+    }
+
+    if (newReference != null) this.getSourceNode().addReference(newReference);
+  }
   //--
-
-
 
   //-----
   //impl
   //-----
 
   // -- create descriptor
+
   public static ReferencePersister0 readReferencePersister(Element linkElement, SNode sourceNode, boolean useUIDs) {
     ReferenceDescriptor rd = readReferenceDescriptor(linkElement, sourceNode);
     return new ReferencePersister0(rd, useUIDs);
@@ -160,8 +179,8 @@ public class ReferencePersister0 {
   }
   // --
 
-
   //-- save reference
+
   public static void saveReference(Element parentElement, SReference reference, boolean useUIDs, VisibleModelElements visibleModelElements) {
     assert useUIDs || visibleModelElements != null;
     SNode node = reference.getSourceNode();
@@ -205,7 +224,7 @@ public class ReferencePersister0 {
   public int getImportIndex() {
     try {
       return Integer.parseInt(myImportedModelInfo);
-    } catch( NumberFormatException e) {
+    } catch (NumberFormatException e) {
       return -1;
     }
   }
@@ -227,12 +246,13 @@ public class ReferencePersister0 {
     public ReferenceDescriptor() {
 
     }
+
     public SNode sourceNode;
     public String role;
-    public  String resolveInfo;
-    public  String targetClassResolveInfo;
-    public  String attExtResolveInfo;
-    public  String attTargetNodeId;
+    public String resolveInfo;
+    public String targetClassResolveInfo;
+    public String attExtResolveInfo;
+    public String attTargetNodeId;
   }
 
 
