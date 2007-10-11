@@ -195,6 +195,17 @@
         </node>
       </node>
     </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1192116994451">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1192116995858">
+        <property name="text" value="java identifier:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1192117034706">
+        <property name="noTargetText" value="&lt;default&gt;" />
+        <property name="allowEmptyText" value="true" />
+        <link role="relationDeclaration" targetNodeId="1.1192116978809" resolveInfo="javaIdentifier" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1083172476027">
     <property name="name" value="EnumerationDataTypeDeclaration_Editor" />
@@ -536,8 +547,8 @@
                             <node role="argument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1185271281369">
                               <link role="baseMethodDeclaration" extResolveInfo="29.method ([Classifier]Cardinality).([InstanceMethodDeclaration]getValueAsString())" />
                               <node role="instance" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230297816">
-                                <link role="enumConstantDeclaration" extResolveInfo="29.enum const ([Classifier]Cardinality).([EnumConstantDeclaration]_0_1)" />
                                 <link role="enumClass" extResolveInfo="29.[Classifier]Cardinality" />
+                                <link role="enumConstantDeclaration" targetNodeId="29.~Cardinality._0__1" resolveInfo="_0__1" />
                               </node>
                             </node>
                           </node>

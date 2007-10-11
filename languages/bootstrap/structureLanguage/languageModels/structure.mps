@@ -2,7 +2,7 @@
 <model name="jetbrains.mps.bootstrap.structureLanguage.structure">
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <maxImportIndex value="3" />
-  <import index="1" modelUID="jetbrains.mps.core.structure" />
+  <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1071489090640">
     <property name="name" value="ConceptDeclaration" />
     <property name="iconPath" value="${language_descriptor}\icons\structure.png" />
@@ -135,6 +135,10 @@
       <property name="name" value="externalValue" />
       <property name="propertyType" value="string" />
       <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.PropertyDeclaration" id="1192116978809">
+      <property name="name" value="javaIdentifier" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1083243159079">

@@ -13,6 +13,7 @@ public class EnumerationMemberDeclaration extends BaseConcept implements INamedC
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration";
   public static String INTERNAL_VALUE = "internalValue";
   public static String EXTERNAL_VALUE = "externalValue";
+  public static String JAVA_IDENTIFIER = "javaIdentifier";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -44,6 +45,14 @@ public class EnumerationMemberDeclaration extends BaseConcept implements INamedC
 
   public void setExternalValue(String value) {
     this.setProperty(EnumerationMemberDeclaration.EXTERNAL_VALUE, value);
+  }
+
+  public String getJavaIdentifier() {
+    return this.getProperty(EnumerationMemberDeclaration.JAVA_IDENTIFIER);
+  }
+
+  public void setJavaIdentifier(String value) {
+    this.setProperty(EnumerationMemberDeclaration.JAVA_IDENTIFIER, value);
   }
 
   public String getName() {
