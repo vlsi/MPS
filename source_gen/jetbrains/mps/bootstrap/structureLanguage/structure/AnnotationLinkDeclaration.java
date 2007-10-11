@@ -10,11 +10,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AnnotationLinkDeclaration extends LinkDeclaration implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration";
+  public static String SOURCE = "source";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String STEREOTYPE = "stereotype";
-  public static String SOURCE = "source";
 
   public  AnnotationLinkDeclaration(SNode node) {
     super(node);
@@ -28,6 +28,14 @@ public class AnnotationLinkDeclaration extends LinkDeclaration implements INamed
     return AnnotationLinkDeclaration.newInstance(sm, false);
   }
 
+
+  public ConceptDeclaration getSource() {
+    return (ConceptDeclaration)this.getReferent(AnnotationLinkDeclaration.SOURCE);
+  }
+
+  public void setSource(ConceptDeclaration node) {
+    super.setReferent(AnnotationLinkDeclaration.SOURCE, node);
+  }
 
   public String getName() {
     return this.getProperty(AnnotationLinkDeclaration.NAME);
@@ -60,14 +68,6 @@ public class AnnotationLinkDeclaration extends LinkDeclaration implements INamed
 
   public void setStereotype(AnnotationLinkStereotype value) {
     super.setProperty(AnnotationLinkDeclaration.STEREOTYPE, value.getValueAsString());
-  }
-
-  public ConceptDeclaration getSource() {
-    return (ConceptDeclaration)this.getReferent(AnnotationLinkDeclaration.SOURCE);
-  }
-
-  public void setSource(ConceptDeclaration node) {
-    super.setReferent(AnnotationLinkDeclaration.SOURCE, node);
   }
 
 }

@@ -11,9 +11,9 @@ import java.util.List;
 
 public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration";
+  public static String MEMBER = "member";
   public static String MEMBER_DATA_TYPE = "memberDataType";
   public static String DEFAULT_MEMBER = "defaultMember";
-  public static String MEMBER = "member";
 
   public  EnumerationDataTypeDeclaration(SNode node) {
     super(node);
@@ -27,22 +27,6 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
     return EnumerationDataTypeDeclaration.newInstance(sm, false);
   }
 
-
-  public PrimitiveDataTypeDeclaration getMemberDataType() {
-    return (PrimitiveDataTypeDeclaration)this.getReferent(EnumerationDataTypeDeclaration.MEMBER_DATA_TYPE);
-  }
-
-  public void setMemberDataType(PrimitiveDataTypeDeclaration node) {
-    super.setReferent(EnumerationDataTypeDeclaration.MEMBER_DATA_TYPE, node);
-  }
-
-  public EnumerationMemberDeclaration getDefaultMember() {
-    return (EnumerationMemberDeclaration)this.getReferent(EnumerationDataTypeDeclaration.DEFAULT_MEMBER);
-  }
-
-  public void setDefaultMember(EnumerationMemberDeclaration node) {
-    super.setReferent(EnumerationDataTypeDeclaration.DEFAULT_MEMBER, node);
-  }
 
   public int getMembersCount() {
     return this.getChildCount(EnumerationDataTypeDeclaration.MEMBER);
@@ -62,6 +46,22 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
 
   public void insertMember(EnumerationMemberDeclaration prev, EnumerationMemberDeclaration node) {
     this.insertChild(prev, EnumerationDataTypeDeclaration.MEMBER, node);
+  }
+
+  public PrimitiveDataTypeDeclaration getMemberDataType() {
+    return (PrimitiveDataTypeDeclaration)this.getReferent(EnumerationDataTypeDeclaration.MEMBER_DATA_TYPE);
+  }
+
+  public void setMemberDataType(PrimitiveDataTypeDeclaration node) {
+    super.setReferent(EnumerationDataTypeDeclaration.MEMBER_DATA_TYPE, node);
+  }
+
+  public EnumerationMemberDeclaration getDefaultMember() {
+    return (EnumerationMemberDeclaration)this.getReferent(EnumerationDataTypeDeclaration.DEFAULT_MEMBER);
+  }
+
+  public void setDefaultMember(EnumerationMemberDeclaration node) {
+    super.setReferent(EnumerationDataTypeDeclaration.DEFAULT_MEMBER, node);
   }
 
 }
