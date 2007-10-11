@@ -12,6 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
+import java.io.File;
 
 /**
  * @author Kostik
@@ -175,5 +176,10 @@ public class Generator extends AbstractModule {
   @Nullable
   public String getGeneratorOutputPath() {
     return mySourceLanguage.getGeneratorOutputPath();
+  }
+
+  @Nullable
+  public File getClassesGen() {
+    return mySourceLanguage.getClassesGen();
   }
 }
