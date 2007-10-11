@@ -879,7 +879,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/wiki/wiki.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/wiki/wiki.iml" group="platform/webr/extensions" />
     </modules>
   </component>
-  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="1.6" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" assert-keyword="true" jdk-15="true" project-jdk-name="jdk 1.5" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/classes" />
   </component>
   <component name="ProjectRunConfigurationManager">
@@ -892,6 +892,7 @@
       <option name="ALTERNATIVE_JRE_PATH" value="/home/vadim/dev/jdk1.6.0_02-32" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
       <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
       <module name="MPS" />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="1478" />
@@ -965,13 +966,13 @@
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" run" />
         </STARTUP>
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" stop" />
         </SHUTDOWN>
@@ -995,13 +996,13 @@
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" run" />
         </STARTUP>
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" stop" />
         </SHUTDOWN>
@@ -1071,13 +1072,13 @@
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" run" />
         </STARTUP>
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" stop" />
         </SHUTDOWN>
@@ -1101,13 +1102,13 @@
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" run" />
         </STARTUP>
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" stop" />
         </SHUTDOWN>
@@ -1169,13 +1170,13 @@
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" run" />
         </STARTUP>
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" stop" />
         </SHUTDOWN>
@@ -1184,13 +1185,13 @@
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" run" />
         </STARTUP>
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" stop" />
         </SHUTDOWN>
@@ -1255,13 +1256,13 @@
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" run" />
         </STARTUP>
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" stop" />
         </SHUTDOWN>
@@ -1285,13 +1286,13 @@
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" run" />
         </STARTUP>
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" stop" />
         </SHUTDOWN>
@@ -1356,13 +1357,13 @@
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" run" />
         </STARTUP>
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" stop" />
         </SHUTDOWN>
@@ -1386,13 +1387,13 @@
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" run" />
         </STARTUP>
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="C:/MPS/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" stop" />
         </SHUTDOWN>
