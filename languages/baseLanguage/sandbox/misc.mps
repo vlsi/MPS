@@ -331,6 +331,33 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.InstanceMethodDeclaration" id="1192134776221">
+      <property name="name" value="m" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.VoidType" id="1192134776222" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1192134776223" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1192134776224">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1192134834538">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1192134843451">
+            <link role="baseMethodDeclaration" targetNodeId="1.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1192134837136">
+              <link role="baseMethodDeclaration" targetNodeId="1.~StringBuffer.toString():java.lang.String" resolveInfo="toString" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1192134834539">
+                <link role="variableDeclaration" targetNodeId="1192134826208" resolveInfo="sb" />
+              </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1192134845827">
+              <property name="value" value="" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1192134826208">
+        <property name="name" value="sb" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1192134826209">
+          <link role="classifier" targetNodeId="1.~StringBuffer" resolveInfo="StringBuffer" />
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1183457785428" />
     <node role="superclass" type="jetbrains.mps.baseLanguage.ClassifierType" id="1190907112206">
       <link role="classifier" targetNodeId="123.1191250519549" />
@@ -527,6 +554,17 @@
             <property name="name" value="s020202" />
             <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1191545309835">
               <link role="classifier" extResolveInfo="1.[Classifier]String" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1192133948447">
+          <node role="expression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1192133952669">
+            <link role="baseMethodDeclaration" targetNodeId="1.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1192133948448">
+              <link role="variableDeclaration" targetNodeId="1191543420711" resolveInfo="s010101" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.StringLiteral" id="1192133954233">
+              <property name="value" value="" />
             </node>
           </node>
         </node>

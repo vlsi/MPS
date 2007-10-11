@@ -82,7 +82,7 @@ public class SNode implements Iterable<SNode> {
     if (myChildren == null) {
       myChildren = new ArrayList<SNode>(2);
       if (myChildrenLoader != null) {
-        getModel().runLoadingAction(new Runnable() {
+        myModel.runLoadingAction(new Runnable() {
           public void run() {
             try {
               myChildrenLoader.loadChildren(SNode.this);
@@ -91,9 +91,7 @@ public class SNode implements Iterable<SNode> {
             }
           }
         });
-        for (SNode node : myChildren) {
-          node.registerInModel(node.getModel());
-        }
+        myChildrenLoader = null;
       }
     }
     return myChildren;
@@ -1652,7 +1650,7 @@ public class SNode implements Iterable<SNode> {
   }
 
   /**
-   * all descendants actually 
+   * all descendants actually
    */
   public List<SNode> allChildren() {
     List<SNode> result = new ArrayList<SNode>();
@@ -1967,7 +1965,7 @@ public class SNode implements Iterable<SNode> {
    */
   void loadAllChildren() {
     for (SNode child : _children()) {
-       child.loadAllChildren();
+      child.loadAllChildren();
     }
   }
 
