@@ -64,7 +64,7 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
     if (myLocal) {
       model = getSourceNode().getModel();
     } else {
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myTargetModelUID);
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(getTargetModelUID());
       if (modelDescriptor == null) {
         SReference.error(this, GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR);
         model = getSourceNode().getModel();
@@ -92,7 +92,7 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
       LOG.error("The modelDescriptor.getSModel() failed to load model");
     } else if (errorState == GetTargetNodeErrorState.CANT_RESOLVE_BY_ID) {
       LOG.error("\nCouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), getSourceNode());
-      LOG.error("The target model " + getTargetModelUID() + " doesn't contain node with id=" + myTargetNodeId);
+      LOG.error("The target model " + getTargetModelUID() + " doesn't contain node with id=" + getTargetNodeId());
     }
   }
 }

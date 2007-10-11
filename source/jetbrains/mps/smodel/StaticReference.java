@@ -37,8 +37,31 @@ import org.jetbrains.annotations.NotNull;
   }
 
   public SModelUID getTargetModelUID() {
-    mature();
-    return super.getTargetModelUID();
+    if (mature()) {
+      return super.getTargetModelUID();
+    } else if (myNodeRef != null && myNodeRef.get() != null) {
+      return myNodeRef.get().getModel().getUID();
+    }
+    return null;
+  }
+
+  public void setTargetModelUID(@NotNull SModelUID modelUID) {
+    if (!mature()) makeMature();
+    super.setTargetModelUID(modelUID);
+  }
+
+  public String getTargetNodeId() {
+    if (mature()) {
+      return super.getTargetNodeId();
+    } else if (myNodeRef != null && myNodeRef.get() != null) {
+      return myNodeRef.get().getSNodeId().toString();
+    }
+    return null;
+  }
+
+  public void setTargetNodeId(String nodeId) {
+    if (!mature()) makeMature();
+    super.setTargetNodeId(nodeId);
   }
 
   public SNode getTargetNode_impl() {
@@ -72,11 +95,16 @@ import org.jetbrains.annotations.NotNull;
     if (targetNode == null || !targetNode.isRegistered()) return false;
 
     // convert 'young' reference to 'mature'
+    makeMature();
+    return true;
+  }
+
+  private void makeMature() {
+    SNode targetNode = myNodeRef.get();
     myMature = true;
     myNodeRef = null;
     setTargetModelUID(targetNode.getModel().getUID());
     setTargetNodeId(targetNode.getSNodeId().toString());
     setResolveInfo(targetNode.getName());
-    return true;
   }
 }
