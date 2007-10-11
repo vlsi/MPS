@@ -438,6 +438,9 @@ public class SubtypingManager {
   }
 
   public boolean isComparableWRTRules(IWrapper wrapper1, IWrapper wrapper2, EquationManager equationManager, ErrorInfo errorInfo, boolean isWeak) {
+    if (wrapper1 == null || wrapper2 == null) {
+      return false;
+    }
     SNode term1 = wrapper1.getNode();
     SNode term2 = wrapper2.getNode();
     if (term1 == null || term2 == null) {

@@ -241,6 +241,7 @@ public class EquationManager {
 
     // no equation needed
     if (EqualUtil.equals(rhsRepresentator, lhsRepresentator)) return;
+    if (rhsRepresentator == null || lhsRepresentator == null) return;
 
     // add var to type's multieq
     RuntimeTypeVariable varRhs = rhsRepresentator == null ? null : rhsRepresentator.getVariable();
