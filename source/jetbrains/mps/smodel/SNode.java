@@ -1824,7 +1824,7 @@ public class SNode implements Iterable<SNode> {
     LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(conceptDeclaration, role);
     LOG.assertLog(linkDeclaration != null, "Couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
     Cardinality cardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
-    if (cardinality == Cardinality._1 || cardinality == Cardinality._1_n) {
+    if (cardinality == Cardinality._1 || cardinality == Cardinality._1__n) {
       return true;
     }
     return false;

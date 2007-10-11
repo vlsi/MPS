@@ -326,7 +326,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
         }
       } else
       {
-        ListOperations.addElement(result, Cardinality._0_1.getValueAsString());
+        ListOperations.addElement(result, Cardinality._0__1.getValueAsString());
         ListOperations.addElement(result, Cardinality._1.getValueAsString());
       }
       return result;

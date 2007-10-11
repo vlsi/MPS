@@ -131,7 +131,7 @@ public class PasteNodeUtil {
       CommandProcessor.instance().executeCommand(new Runnable() {
         public void run() {
           Cardinality cardinality = linkDeclaration.getSourceCardinality();
-          boolean uniqueChild = (cardinality == Cardinality._0_1 || cardinality == Cardinality._1);
+          boolean uniqueChild = (cardinality == Cardinality._0__1 || cardinality == Cardinality._1);
           if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
             if (uniqueChild) pasteTarget.setChild(linkDeclaration.getRole(), pasteNode);
             else pasteTarget.insertChild(anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);

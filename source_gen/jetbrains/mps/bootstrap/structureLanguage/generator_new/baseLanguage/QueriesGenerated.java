@@ -144,7 +144,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1174698110415(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.getString(node, "name");
+    return NameUtil.toValidIdentifier(SPropertyOperations.getString(node, "externalValue"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1174698054118(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

@@ -67,7 +67,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
       role = childNode.getRole_();
       LinkDeclaration childDeclaration = parentNode.getLinkDeclaration(role, myEditorComponent.getEditorContext().getOperationContext().getScope());
       Cardinality cardinality = childDeclaration.getSourceCardinality();
-      if (cardinality == Cardinality._0_n || cardinality == Cardinality._1_n) {
+      if (cardinality == Cardinality._0__n || cardinality == Cardinality._1__n) {
         break;
       }
       childNode = parentNode;

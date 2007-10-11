@@ -6,19 +6,19 @@
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="29" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
-  <import index="2" modelUID="jetbrains.mps.core.structure" />
-  <import index="4" modelUID="jetbrains.mps.nodeEditor@java_stub" />
-  <import index="5" modelUID="jetbrains.mps.smodel@java_stub" />
-  <import index="6" modelUID="java.lang@java_stub" />
-  <import index="7" modelUID="java.util@java_stub" />
-  <import index="13" modelUID="jetbrains.mps.project@java_stub" />
-  <import index="14" modelUID="jetbrains.mps.util@java_stub" />
-  <import index="16" modelUID="java.io@java_stub" />
-  <import index="26" modelUID="javax.swing@java_stub" />
-  <import index="27" modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor@java_stub" />
-  <import index="28" modelUID="jetbrains.mps.bootstrap.structureLanguage.editor@java_stub" />
-  <import index="29" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
+  <import index="6" modelUID="java.lang@java_stub" version="-1" />
+  <import index="7" modelUID="java.util@java_stub" version="-1" />
+  <import index="13" modelUID="jetbrains.mps.project@java_stub" version="-1" />
+  <import index="14" modelUID="jetbrains.mps.util@java_stub" version="-1" />
+  <import index="16" modelUID="java.io@java_stub" version="-1" />
+  <import index="26" modelUID="javax.swing@java_stub" version="-1" />
+  <import index="27" modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor@java_stub" version="-1" />
+  <import index="28" modelUID="jetbrains.mps.bootstrap.structureLanguage.editor@java_stub" version="-1" />
+  <import index="29" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1082979388796">
     <property name="name" value="ConstrainedDataTypeDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1082978499127" />
@@ -108,16 +108,24 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1083925414250">
       <property name="vertical" value="false" />
       <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083925414252">
-        <property name="drawBorder" value="false" />
-        <property name="noTargetText" value="&lt;no name&gt;" />
-        <property name="textBgColorSelected" value="cyan" />
-        <property name="textFgColor" value="DARK_BLUE" />
-        <link role="relationDeclaration" targetNodeId="2.1169194664001" />
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162585934258">
         <property name="drawBorder" value="false" />
-        <property name="text" value="  extrn.val" />
+        <property name="fontStyle" value="ITALIC" />
+        <property name="selectable" value="false" />
+        <property name="textFgColor" value="darkGray" />
+        <property name="text" value="  value" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083925414256">
+        <property name="allowEmptyText" value="true" />
+        <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;NULL&gt;" />
+        <property name="textBgColorSelected" value="cyan" />
+        <property name="textFgColor" value="blue" />
+        <link role="relationDeclaration" targetNodeId="1.1083923523171" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162585954651">
+        <property name="drawBorder" value="false" />
+        <property name="text" value="  presentation" />
         <property name="fontStyle" value="ITALIC" />
         <property name="selectable" value="false" />
         <property name="textFgColor" value="darkGray" />
@@ -128,21 +136,6 @@
         <property name="noTargetText" value="&lt;no external value&gt;" />
         <property name="textFgColor" value="DARK_MAGENTA" />
         <link role="relationDeclaration" targetNodeId="1.1083923523172" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1162585954651">
-        <property name="drawBorder" value="false" />
-        <property name="text" value="  intrn.val" />
-        <property name="fontStyle" value="ITALIC" />
-        <property name="selectable" value="false" />
-        <property name="textFgColor" value="darkGray" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1083925414256">
-        <property name="allowEmptyText" value="true" />
-        <property name="drawBorder" value="false" />
-        <property name="noTargetText" value="&lt;NULL&gt;" />
-        <property name="textBgColorSelected" value="cyan" />
-        <property name="textFgColor" value="blue" />
-        <link role="relationDeclaration" targetNodeId="1.1083923523171" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1083925414258">
         <property name="drawBorder" value="false" />

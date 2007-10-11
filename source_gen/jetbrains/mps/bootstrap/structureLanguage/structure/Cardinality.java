@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.LinkedList;
 
 public enum Cardinality {
-  _0_1("0..1", "0..1"),
+  _0__1("0..1", "0..1"),
   _1("1", "1"),
-  _0_n("0..n", "0..n"),
-  _1_n("1..n", "1..n");
+  _0__n("0..n", "0..n"),
+  _1__n("1..n", "1..n");
 
   /* package */String myName;
   /* package */String myValue;
@@ -21,32 +21,32 @@ public enum Cardinality {
 
   public static List<Cardinality> getConstants() {
     List<Cardinality> list = new LinkedList<Cardinality>();
-    list.add(Cardinality._0_1);
+    list.add(Cardinality._0__1);
     list.add(Cardinality._1);
-    list.add(Cardinality._0_n);
-    list.add(Cardinality._1_n);
+    list.add(Cardinality._0__n);
+    list.add(Cardinality._1__n);
     return list;
   }
 
   public static Cardinality getDefault() {
-    return Cardinality._0_1;
+    return Cardinality._0__1;
   }
 
   public static Cardinality parseValue(String value) {
     if(value == null) {
       return Cardinality.getDefault();
     }
-    if(value.equals(Cardinality._0_1.getValueAsString())) {
-      return Cardinality._0_1;
+    if(value.equals(Cardinality._0__1.getValueAsString())) {
+      return Cardinality._0__1;
     }
     if(value.equals(Cardinality._1.getValueAsString())) {
       return Cardinality._1;
     }
-    if(value.equals(Cardinality._0_n.getValueAsString())) {
-      return Cardinality._0_n;
+    if(value.equals(Cardinality._0__n.getValueAsString())) {
+      return Cardinality._0__n;
     }
-    if(value.equals(Cardinality._1_n.getValueAsString())) {
-      return Cardinality._1_n;
+    if(value.equals(Cardinality._1__n.getValueAsString())) {
+      return Cardinality._1__n;
     }
     return Cardinality.getDefault();
   }

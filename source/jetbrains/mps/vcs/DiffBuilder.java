@@ -187,7 +187,7 @@ public class DiffBuilder {
     if (ld == null) {
       return false;
     }
-    return ld.getSourceCardinality() != Cardinality._0_1 && ld.getSourceCardinality() != Cardinality._1;
+    return ld.getSourceCardinality() != Cardinality._0__1 && ld.getSourceCardinality() != Cardinality._1;
   }
 
   public List<Change> getChanges() {

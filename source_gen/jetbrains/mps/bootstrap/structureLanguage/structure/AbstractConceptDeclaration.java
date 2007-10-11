@@ -13,15 +13,15 @@ import java.util.List;
 
 public class AbstractConceptDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration";
+  public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
   public static String LINK_DECLARATION = "linkDeclaration";
   public static String PROPERTY_DECLARATION = "propertyDeclaration";
   public static String CONCEPT_PROPERTY = "conceptProperty";
   public static String CONCEPT_LINK = "conceptLink";
   public static String CONCEPT_PROPERTY_DECLARATION = "conceptPropertyDeclaration";
   public static String CONCEPT_LINK_DECLARATION = "conceptLinkDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
 
   public  AbstractConceptDeclaration(SNode node) {
     super(node);
@@ -35,6 +35,30 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
     return AbstractConceptDeclaration.newInstance(sm, false);
   }
 
+
+  public String getName() {
+    return this.getProperty(AbstractConceptDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(AbstractConceptDeclaration.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(AbstractConceptDeclaration.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(AbstractConceptDeclaration.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(AbstractConceptDeclaration.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(AbstractConceptDeclaration.ALIAS, value);
+  }
 
   public int getLinkDeclarationsCount() {
     return this.getChildCount(AbstractConceptDeclaration.LINK_DECLARATION);
@@ -154,30 +178,6 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
 
   public void insertConceptLinkDeclaration(ConceptLinkDeclaration prev, ConceptLinkDeclaration node) {
     this.insertChild(prev, AbstractConceptDeclaration.CONCEPT_LINK_DECLARATION, node);
-  }
-
-  public String getName() {
-    return this.getProperty(AbstractConceptDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(AbstractConceptDeclaration.NAME, value);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(AbstractConceptDeclaration.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(AbstractConceptDeclaration.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(AbstractConceptDeclaration.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(AbstractConceptDeclaration.ALIAS, value);
   }
 
 }
