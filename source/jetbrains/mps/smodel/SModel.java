@@ -358,9 +358,9 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void fireBeforeChildRemovedEvent(@NotNull SNode parent,
-                             @NotNull String role,
-                             @NotNull SNode child,
-                             int childIndex) {
+                                          @NotNull String role,
+                                          @NotNull SNode child,
+                                          int childIndex) {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       sModelListener.beforeChildRemoved(new SModelChildEvent(this, false, parent, role, childIndex, child));
@@ -684,7 +684,7 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   public List<SModelUID> getLanguageAspectModelsUIDs() {
-     List<SModelUID> uids = new ArrayList<SModelUID>();
+    List<SModelUID> uids = new ArrayList<SModelUID>();
     for (ImportElement importElement : myLanguagesAspectsModelsVersions) {
       uids.add(importElement.getModelUID());
     }
@@ -775,20 +775,25 @@ public class SModel implements Iterable<SNode> {
   @Nullable
   public SNode getNodeById(String idString) {
     SNodeId nodeId = SNodeId.fromString(idString);
-    return myIdToNodeMap.get(nodeId);
+    return getNodeById(nodeId);
   }
 
   @Nullable
   public SNode getNodeById(SNodeId nodeId) {
+    SNode node = myIdToNodeMap.get(nodeId);
+    if (node != null) return node;
+    // tmp patch
+    // todo ?
+    if (SModelStereotype.JAVA_STUB.equals(getStereotype())) {
+      for (SNode root : getRoots()) {
+        root.loadAllChildren();
+      }
+    }
     return myIdToNodeMap.get(nodeId);
   }
 
   public Set<SNodeId> getNodeIds() {
     return new HashSet<SNodeId>(myIdToNodeMap.keySet());
-  }
-
-  public boolean containsNode(SNodeId id) {
-    return myIdToNodeMap.containsKey(id);
   }
 
   @Nullable

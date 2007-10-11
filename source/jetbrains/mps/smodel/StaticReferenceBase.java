@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
  * Sep 28, 2007
  */
 /*package*/ abstract class StaticReferenceBase extends SReference {
-  private static final Logger LOG = Logger.getLogger(SReference.class);
+  private static final Logger LOG = Logger.getLogger(StaticReferenceBase.class);
 
   private SModelUID myTargetModelUID;
   private boolean myLocal;

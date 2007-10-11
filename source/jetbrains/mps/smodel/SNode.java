@@ -1962,6 +1962,15 @@ public class SNode implements Iterable<SNode> {
     return childDepth + 1;
   }
 
+  /**
+   * tmp
+   */
+  void loadAllChildren() {
+    for (SNode child : _children()) {
+       child.loadAllChildren();
+    }
+  }
+
   abstract class NodeUndoableAction implements IUndoableAction {
     public SNode getNode() {
       return SNode.this;
