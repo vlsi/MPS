@@ -63,13 +63,16 @@ public class MessagesGutter extends JPanel {
     myOwners.remove(message);
   }
 
-  public void removeMessages(IGutterMessageOwner owner) {
+  public boolean removeMessages(IGutterMessageOwner owner) {
+    boolean removedAnything = false;
     for (IGutterMessage m : new ArrayList<IGutterMessage>(myMessages)) {
       if (myOwners.get(m) == owner) {
         myMessages.remove(m);
         myOwners.remove(m);
+        removedAnything = true;
       }
     }
+    return removedAnything;
   }
 
   private class MyMessagesGutter extends JPanel {

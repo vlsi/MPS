@@ -27,10 +27,11 @@ public class NodeHighlightManager implements IGutterMessageOwner {
     myEditor.getExternalComponent().repaint();
   }
 
-  public void clearForOwner(IGutterMessageOwner owner) {
-    myEditor.getMessagesGutter().removeMessages(owner);
+  public boolean clearForOwner(IGutterMessageOwner owner) {
+    boolean result = myEditor.getMessagesGutter().removeMessages(owner);
     myMessages.remove(owner);
     myEditor.getExternalComponent().repaint();
+    return result;
   }
 
   private Iterable<HighlighterMessage> myMessages() {

@@ -8,6 +8,7 @@ import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.action.*;
 import jetbrains.mps.ide.actions.nodes.GoByFirstReferenceAction;
+import jetbrains.mps.ide.actions.view.ReturnToEditorAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.modelchecker.ModelCheckResult;
@@ -210,10 +211,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        getHighlightManager().clearForOwner(myOwner);
+        if (!getHighlightManager().clearForOwner(myOwner)) {
+          new ReturnToEditorAction().execute(new ActionContext());
+        }
       }
     }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-
+                                  
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         EditorCell cell = getSelectedCell();
