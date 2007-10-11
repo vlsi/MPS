@@ -4,10 +4,10 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <maxImportIndex value="13" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
-  <import index="2" modelUID="jetbrains.mps.smodel@java_stub" />
-  <import index="12" modelUID="java.util@java_stub" />
-  <import index="13" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
+  <import index="12" modelUID="java.util@java_stub" version="-1" />
+  <import index="13" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1167253485745">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1167253634949">
@@ -783,8 +783,8 @@
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1188522160892">
-              <link role="baseMethodDeclaration" extResolveInfo="2.static method ([Classifier]SModelUtil_new).([StaticMethodDeclaration]getDirectSuperInterfacesAndTheySupers((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ConceptDeclaration])))" />
               <link role="classConcept" extResolveInfo="2.[Classifier]SModelUtil_new" />
+              <link role="baseMethodDeclaration" targetNodeId="2.~SModelUtil_new.getDirectSuperInterfacesAndTheySupers(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):java.util.List" resolveInfo="getDirectSuperInterfacesAndTheySupers" />
               <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1188522180878">
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_GetAdapterOperation" id="1188522181788" />
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1188522179034">
