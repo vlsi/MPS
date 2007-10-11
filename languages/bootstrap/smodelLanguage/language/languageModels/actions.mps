@@ -7,15 +7,15 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <maxImportIndex value="18" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <import index="7" modelUID="jetbrains.mps.smodel@java_stub" />
-  <import index="8" modelUID="java.util@java_stub" />
-  <import index="13" modelUID="jetbrains.mps.smodel.search@java_stub" />
-  <import index="14" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
-  <import index="15" modelUID="jetbrains.mps.core.structure" />
-  <import index="16" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" />
-  <import index="17" modelUID="java.lang@java_stub" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="7" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
+  <import index="8" modelUID="java.util@java_stub" version="-1" />
+  <import index="13" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
+  <import index="14" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  <import index="15" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="16" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
+  <import index="17" modelUID="java.lang@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.NodeSubstituteActions" id="1138078942005">
     <property name="name" value="snodeOperation" />
     <property name="package" value="substitute" />
@@ -1631,8 +1631,8 @@
                                 <link role="variableDeclaration" targetNodeId="1179531430820" resolveInfo="cardinality" />
                               </node>
                               <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230491863">
-                                <link role="enumConstantDeclaration" extResolveInfo="16.enum const ([Classifier]Cardinality).([EnumConstantDeclaration]_0_1)" />
                                 <link role="enumClass" extResolveInfo="16.[Classifier]Cardinality" />
+                                <link role="enumConstantDeclaration" targetNodeId="16.~Cardinality._0__1" resolveInfo="_0__1" />
                               </node>
                             </node>
                           </node>
@@ -1691,8 +1691,8 @@
                                 <link role="variableDeclaration" targetNodeId="1179531467655" resolveInfo="cardinality" />
                               </node>
                               <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230488488">
-                                <link role="enumConstantDeclaration" extResolveInfo="16.enum const ([Classifier]Cardinality).([EnumConstantDeclaration]_0_n)" />
                                 <link role="enumClass" extResolveInfo="16.[Classifier]Cardinality" />
+                                <link role="enumConstantDeclaration" targetNodeId="16.~Cardinality._0__n" resolveInfo="_0__n" />
                               </node>
                             </node>
                             <node role="rightExpression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179531467666">
@@ -1700,8 +1700,8 @@
                                 <link role="variableDeclaration" targetNodeId="1179531467655" resolveInfo="cardinality" />
                               </node>
                               <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188230485581">
-                                <link role="enumConstantDeclaration" extResolveInfo="16.enum const ([Classifier]Cardinality).([EnumConstantDeclaration]_1_n)" />
                                 <link role="enumClass" extResolveInfo="16.[Classifier]Cardinality" />
+                                <link role="enumConstantDeclaration" targetNodeId="16.~Cardinality._1__n" resolveInfo="_1__n" />
                               </node>
                             </node>
                           </node>

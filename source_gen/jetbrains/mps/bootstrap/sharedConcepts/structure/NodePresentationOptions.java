@@ -10,8 +10,8 @@ public enum NodePresentationOptions {
   referent_("<referent node>", "default_referent"),
   custom_("<custom>", "custom");
 
-  public String myName;
-  public String myValue;
+  /* package */String myName;
+  /* package */String myValue;
 
  NodePresentationOptions(String name, String value) {
     this.myName = name;
@@ -25,9 +25,11 @@ public enum NodePresentationOptions {
     list.add(NodePresentationOptions.custom_);
     return list;
   }
+
   public static NodePresentationOptions getDefault() {
     return NodePresentationOptions.default_;
   }
+
   public static NodePresentationOptions parseValue(String value) {
     if(value == null) {
       return NodePresentationOptions.getDefault();
@@ -44,13 +46,17 @@ public enum NodePresentationOptions {
     return NodePresentationOptions.getDefault();
   }
 
+
   public String getName() {
     return this.myName;
   }
+
   public String getValueAsString() {
     return this.myValue;
   }
+
   public String getValue() {
     return this.myValue;
   }
+
 }
