@@ -42,14 +42,9 @@ public interface IProjectHandler extends Remote {
   String getWebModuleExplodedFolder(final String path) throws RemoteException;
 
   void createNewModule(final String moduleName, final String path) throws RemoteException;
-
   void addIdeHandler(IMPSIDEHandler handler) throws RemoteException;
-
   void removeIdeHandler(IMPSIDEHandler handler) throws RemoteException;
-
   void deleteFilesAndRemoveFromVCS(List<File> files) throws RemoteException;
-
   void renamePackage(String oldPackageName, String newPackageName) throws RemoteException;
-
   void movePackage(String oldPackageName, String newLongPackageName) throws RemoteException;
 }

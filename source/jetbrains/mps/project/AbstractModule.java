@@ -129,9 +129,20 @@ public abstract class AbstractModule implements IModule {
   @Nullable
   public File getClassesGen() {
     File descriptorFile = getDescriptorFile();
-    if (descriptorFile != null) {
-      return new File(descriptorFile.getParentFile(), "classes_gen");
+
+    if (descriptorFile == null) {
+      return null;
     }
+
+    File current = descriptorFile.getParentFile();
+    while (descriptorFile != null) {
+      File classesDir = new File(current, "classes");
+      if (classesDir.exists()) {
+        return classesDir;
+      }
+      current = current.getParentFile();
+    }
+
     return null;
   }
 
