@@ -38,6 +38,7 @@ public class RulesManager {
     myInferenceRules.clear();
     mySubtypingRules.clear();
     mySupertypingRules.clear();
+    myComparisonRules.clear();
   }
 
   public boolean loadLanguage(Language l) {
