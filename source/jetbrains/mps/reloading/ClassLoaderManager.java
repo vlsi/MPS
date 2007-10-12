@@ -147,15 +147,15 @@ public class ClassLoaderManager implements IComponentLifecycle {
     boolean useTimestamps = changeModule == null;
 
 
-    System.out.println("collecting stuff");
+//    System.out.println("collecting stuff");
     if (myModuleRepository != null) {
       for (IModule l : myModuleRepository.getAllModules()) {
-        System.out.println("from " + l);
+//        System.out.println("from " + l);
 
         LOG.debug("Adding classpath from model " + l);
         for (String s : l.getClassPathItems()) {
           LOG.debug("Add " + s);
-          System.out.println("add " + s);
+//          System.out.println("add " + s);
           addClassPathItem(s, useTimestamps);
         }
       }
