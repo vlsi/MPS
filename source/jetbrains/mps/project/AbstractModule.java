@@ -135,7 +135,7 @@ public abstract class AbstractModule implements IModule {
     }
 
     File current = descriptorFile.getParentFile();
-    while (descriptorFile != null) {
+    while (current != null) {
       File classesDir = new File(current, "classes");
       if (classesDir.exists()) {
         return classesDir;
