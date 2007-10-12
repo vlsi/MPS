@@ -178,7 +178,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
           LOG.debug("Updating in module " + module);          
           AbstractModule am = (AbstractModule) module;
           ClassPathModelRootManager manager = new ClassPathModelRootManager();
-          //todo where we are going to release classes that we don't need anymore?          
           for (ModelRoot r : am.getDefaultModelRoots()) {
             manager.read(r, module);
           }
