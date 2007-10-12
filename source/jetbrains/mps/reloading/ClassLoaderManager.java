@@ -146,11 +146,16 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
     boolean useTimestamps = changeModule == null;
 
+
+    System.out.println("collecting stuff");
     if (myModuleRepository != null) {
       for (IModule l : myModuleRepository.getAllModules()) {
+        System.out.println("from " + l);
+
         LOG.debug("Adding classpath from model " + l);
         for (String s : l.getClassPathItems()) {
           LOG.debug("Add " + s);
+          System.out.println("add " + s);
           addClassPathItem(s, useTimestamps);
         }
       }
@@ -198,8 +203,8 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
     if (myCachedItems.containsKey(s)) {
       IClassPathItem i = myCachedItems.get(s);
-
       if (!useTimestamps || i.getTimestamp() == new File(s).lastModified()) {
+        myAlreadyAdded.add(s);
         myItems.add(i);
       }
 
@@ -209,6 +214,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
     if (!new File(s).exists()) {
       LOG.warning("Class path item doesn't exist " + s);
     } else {
+      myAlreadyAdded.add(s);
       if (new File(s).isDirectory()) {
         myItems.add(new FileClassPathItem(s));
       } else {
