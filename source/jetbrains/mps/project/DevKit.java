@@ -48,7 +48,7 @@ public class DevKit extends AbstractModule {
   private File myDescriptorFile;
   private DevKitEventTranslator myTranslator = new DevKitEventTranslator();
   private List<DevKitCommandListener> myListeners = new ArrayList<DevKitCommandListener>();
-  private MPSModuleOwner myGenerationOnlyModelsModelOwner = new MPSModuleOwner() { };  
+  private MPSModuleOwner myGenerationOnlyModelsModelOwner = this;
 
   public DevKit() {
     CommandProcessor.instance().addCommandListener(myTranslator);
