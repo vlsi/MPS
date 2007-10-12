@@ -62,7 +62,7 @@ final class InspectorEditorComponent extends AbstractEditorComponent implements 
   }
 
   public void inspectNode(SNode node, IOperationContext context) {
-    if (getEditedNode() == node) {
+    if (node != null && getEditedNode() == node) {
       return;
     }
     if (node == null) {
