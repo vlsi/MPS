@@ -7,20 +7,20 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <maxImportIndex value="33" />
-  <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <import index="2" modelUID="jetbrains.mps.core.structure" />
-  <import index="3" modelUID="jetbrains.mps.util@java_stub" />
-  <import index="5" modelUID="jetbrains.mps.smodel.search@java_stub" />
-  <import index="6" modelUID="java.util@java_stub" />
-  <import index="7" modelUID="jetbrains.mps.smodel@java_stub" />
-  <import index="10" modelUID="jetbrains.mps.baseLanguage.search@java_stub" />
-  <import index="11" modelUID="jetbrains.mps.smodel.presentation@java_stub" />
-  <import index="13" modelUID="java.lang@java_stub" />
-  <import index="26" modelUID="jetbrains.mps.nodeEditor@java_stub" />
-  <import index="27" modelUID="javax.swing@java_stub" />
-  <import index="28" modelUID="java.lang.reflect@java_stub" />
-  <import index="30" modelUID="jetbrains.mps.reloading@java_stub" />
-  <import index="32" modelUID="jetbrains.mps.baseLanguage.constraints@java_stub" />
+  <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
+  <import index="6" modelUID="java.util@java_stub" version="-1" />
+  <import index="7" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
+  <import index="10" modelUID="jetbrains.mps.baseLanguage.search@java_stub" version="-1" />
+  <import index="11" modelUID="jetbrains.mps.smodel.presentation@java_stub" version="-1" />
+  <import index="13" modelUID="java.lang@java_stub" version="-1" />
+  <import index="26" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
+  <import index="27" modelUID="javax.swing@java_stub" version="-1" />
+  <import index="28" modelUID="java.lang.reflect@java_stub" version="-1" />
+  <import index="30" modelUID="jetbrains.mps.reloading@java_stub" version="-1" />
+  <import index="32" modelUID="jetbrains.mps.baseLanguage.constraints@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1156246260769">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1156246279317">
@@ -4829,6 +4829,68 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1192184779567">
+    <link role="concept" targetNodeId="1.1083245097125" resolveInfo="EnumClass" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1192184783133">
+      <property name="name" value="findConstantByName" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1192184833847">
+        <link role="concept" targetNodeId="1.1083245299891" resolveInfo="EnumConstantDeclaration" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1192184783135">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ForeachStatement" id="1192184862176">
+          <node role="iterable" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1192184873291">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SLinkListAccess" id="1192184876106">
+              <link role="link" targetNodeId="1.1083245396908" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1192184872915" />
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.LocalVariableDeclaration" id="1192184862178">
+            <property name="name" value="constant" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1192184864431">
+              <link role="concept" targetNodeId="1.1083245299891" resolveInfo="EnumConstantDeclaration" />
+            </node>
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1192184862180">
+            <node role="statement" type="jetbrains.mps.baseLanguage.IfStatement" id="1192184878154">
+              <node role="condition" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1192184882566">
+                <link role="baseMethodDeclaration" targetNodeId="13.~String.equalsIgnoreCase(java.lang.String):boolean" resolveInfo="equalsIgnoreCase" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.ParameterReference" id="1192184879235">
+                  <link role="variableDeclaration" targetNodeId="1192184857862" resolveInfo="name" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1192184891742">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.SPropertyAccess" id="1192184893073">
+                    <link role="property" targetNodeId="1.1095257688468" resolveInfo="name" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1192184885223">
+                    <link role="variableDeclaration" targetNodeId="1192184862178" resolveInfo="constant" />
+                  </node>
+                </node>
+              </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.StatementList" id="1192184878156">
+                <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1192184896074">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1192184901388">
+                    <link role="variableDeclaration" targetNodeId="1192184862178" resolveInfo="constant" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1192184904687">
+          <node role="expression" type="jetbrains.mps.baseLanguage.NullLiteral" id="1192184905970" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1192184857862">
+        <property name="name" value="name" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1192184857863">
+          <link role="classifier" targetNodeId="13.~String" resolveInfo="String" />
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1192184779568">
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1192184779569" />
     </node>
   </node>
 </model>
