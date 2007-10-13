@@ -69,6 +69,10 @@ public class SNodePointer {
     return myModelUID.hashCode() + myNodeId.hashCode();
   }
 
+  public static void clearNodePointerStuff() {
+    ourPointersByModelUID.clear();
+  }
+
   //----------------------
   // model rename support
   //----------------------
