@@ -14,6 +14,10 @@ public class MemoryLeaksTest extends TestCase {
     assertTrue(TestMain.testProjectGenerationForLeaks(new File("app/PubMedDB/pubMedDB.mpr")));
   }
 
+  public void testSTWikiForLeaks() {
+    assertTrue(TestMain.testProjectGenerationForLeaks(new File("app/stwiki/stwiki.mpr")));
+  }
+
   public void testCharismaGenerationLeaks() {
     assertTrue(TestMain.testProjectGenerationForLeaks(new File("app/charisma/charisma-app/charisma-app.mpr")));
   }
