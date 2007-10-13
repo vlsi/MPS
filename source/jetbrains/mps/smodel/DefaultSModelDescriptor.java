@@ -388,7 +388,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   public void refresh() {
-    if (isInitialized()) {
+    if (isInitialized()) {                  
       long start = System.currentTimeMillis();
       myFastNodeFinder = null;
       myWeakModelListeners.addAll(mySModel.getWeakModelListeners());

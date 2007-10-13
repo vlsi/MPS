@@ -72,7 +72,6 @@ public class FastNodeFinder {
     }
   }
 
-
   private void collectParents(final AbstractConceptDeclaration current, final Set<AbstractConceptDeclaration> result) {
     if (result.contains(current)) {
       return;
