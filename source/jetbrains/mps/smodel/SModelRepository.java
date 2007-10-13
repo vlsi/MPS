@@ -25,7 +25,7 @@ import java.util.*;
 public class SModelRepository extends SModelAdapter {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
 
-  private ArrayList<SModelDescriptor> myModelDescriptors = new ArrayList<SModelDescriptor>();
+  private Set<SModelDescriptor> myModelDescriptors = new HashSet<SModelDescriptor>();
   private Map<SModelDescriptor, Long> myChangedModels = new HashMap<SModelDescriptor, Long>();
   private Map<SModelUID, SModelDescriptor> myUIDToModelDescriptorMap = new HashMap<SModelUID, SModelDescriptor>();
   private Map<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
