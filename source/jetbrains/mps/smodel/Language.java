@@ -191,8 +191,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
 
-    ConversionUtil.convert(language, language.myLanguageDescriptor.getModuleRoots());
-
     MPSModuleRepository.getInstance().addModule(language, moduleOwner);
     language.updateDependenciesAndGenerators();
     return language;
@@ -230,6 +228,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   // do not use directly.
   @UseCarefully
   public Language() {
+  }
+
+  public void convert() {
+    ConversionUtil.convert(this, myLanguageDescriptor.getModuleRoots());
   }
 
   private void updateDependenciesAndGenerators() {

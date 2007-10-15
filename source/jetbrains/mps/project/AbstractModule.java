@@ -35,6 +35,10 @@ public abstract class AbstractModule implements IModule {
   // IScope
   //
 
+  public void convert() {
+    
+  }
+
   @NotNull
   public String getModuleUID() {
     return toString();

@@ -65,4 +65,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   void invalidateCaches();
 
   void save();
+
+  void convert();
 }
