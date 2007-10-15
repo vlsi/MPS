@@ -3,9 +3,9 @@
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <maxImportIndex value="3" />
-  <import index="1" modelUID="jetbrains.mps.core.structure" />
-  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
+  <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1151688443754">
     <property name="name" value="ListType" />
     <link role="extends" targetNodeId="2.1068431790189" />
@@ -579,6 +579,14 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1184963488862">
       <property name="value" value="toArray" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1192413483650">
+    <property name="name" value="ToSetListOperation" />
+    <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1192413504699">
+      <property name="value" value="toSetList" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>

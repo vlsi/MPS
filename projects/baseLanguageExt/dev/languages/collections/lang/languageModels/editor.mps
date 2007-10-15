@@ -6,11 +6,11 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <maxImportIndex value="14" />
-  <import index="1" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
-  <import index="2" modelUID="jetbrains.mps.core.structure" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <import index="13" modelUID="java.lang@java_stub" />
-  <import index="14" modelUID="jetbrains.mps.baseLanguage.constraints" />
+  <import index="1" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="13" modelUID="java.lang@java_stub" version="-1" />
+  <import index="14" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1151690785393">
     <link role="conceptDeclaration" targetNodeId="1.1151688443754" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1151690792786">
@@ -904,6 +904,12 @@
     <link role="conceptDeclaration" targetNodeId="1.1184963466173" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1184963496459">
       <property name="text" value="toArray" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1192413532418">
+    <link role="conceptDeclaration" targetNodeId="1.1192413483650" resolveInfo="ToSetListOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_ConceptProperty" id="1192413535998">
+      <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
     </node>
   </node>
 </model>
