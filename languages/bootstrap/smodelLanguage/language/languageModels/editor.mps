@@ -5,14 +5,14 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <maxImportIndex value="9" />
-  <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" />
-  <import index="2" modelUID="jetbrains.mps.core.structure" />
-  <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
-  <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <import index="5" modelUID="jetbrains.mps.baseLanguage.editor" />
-  <import index="7" modelUID="java.lang@java_stub" />
-  <import index="8" modelUID="java.io@java_stub" />
-  <import index="9" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" />
+  <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
+  <import index="7" modelUID="java.lang@java_stub" version="-1" />
+  <import index="8" modelUID="java.io@java_stub" version="-1" />
+  <import index="9" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1138063451695">
     <link role="conceptDeclaration" targetNodeId="1.1138056022639" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefCell" id="1138412409274">
@@ -2076,6 +2076,7 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.InlineEditorComponent" id="1179409337168">
           <link role="conceptDeclaration" targetNodeId="9.1177673300966" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1179409341654">
+            <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="4.1083152972672" />
           </node>
         </node>

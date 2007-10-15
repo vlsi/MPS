@@ -175,7 +175,7 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = new PropertyCellProvider(node, context);
       provider.setRole("name");
       provider.setNoTargetText("");
-      provider.setReadOnly(false);
+      provider.setReadOnly(true);
       provider.setAllowsEmptyTarget(false);
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
