@@ -12,9 +12,7 @@
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.formulaLanguage" />
   </models>
-  <module>
-    <moduleRoot path="${mps_home}\platform\regexp\languages\regexp\regexp.mpl" />
-  </module>
+  <module />
   <accessoryModels />
   <generators>
     <generator name="generator" generatorUID="jetbrains.mps.formulaLanguage#1130266266255" targetLanguage="jetbrains.mps.baseLanguage">
@@ -27,5 +25,8 @@
     </generator>
   </generators>
   <classPath />
+  <dependencies>
+    <dependency>jetbrains.mps.regexp</dependency>
+  </dependencies>
 </language>
 

@@ -12,10 +12,12 @@
   </models>
   <module>
     <moduleRoot path="${mps_home}\languages\annotations\languages\annotations" />
-    <moduleRoot path="${mps_home}\languages\formulaLanguage\language\formulaLanguage.mpl" />
   </module>
   <accessoryModels />
   <generators />
   <classPath />
+  <dependencies>
+    <dependency>jetbrains.mps.formulaLanguage</dependency>
+  </dependencies>
 </language>
 

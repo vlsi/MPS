@@ -21,12 +21,7 @@
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.baseLanguage" />
   </models>
-  <module>
-    <moduleRoot path="${mps_home}\languages\patternLanguage\languages\patterns\patterns.mpl" />
-    <moduleRoot path="${mps_home}\languages\helgins\languages\quotation\quotation.mpl" />
-    <moduleRoot path="${mps_home}\languages\baseLanguage\languages\blTypes\blTypes.mpl" />
-    <moduleRoot path="${mps_home}\platform\regexp\languages\regexp\regexp.mpl" />
-  </module>
+  <module />
   <accessoryModels />
   <generators>
     <generator name="reduce to java" generatorUID="jetbrains.mps.baseLanguage#1129914002933" targetLanguage="jetbrains.mps.baseLanguage">
@@ -41,6 +36,10 @@
   <classPath />
   <dependencies>
     <dependency>jetbrains.mps.baseLanguage.ext.collections.lang</dependency>
+    <dependency>jetbrains.mps.patterns</dependency>
+    <dependency>jetbrains.mps.quotation</dependency>
+    <dependency>jetbrains.mps.baseLanguage.blTypes</dependency>
+    <dependency>jetbrains.mps.regexp</dependency>
   </dependencies>
 </language>
 
