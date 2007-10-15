@@ -156,6 +156,21 @@ public class PathManager {
     return getHomePath() + File.separator + "help" + File.separator + "acknowledgements.html";
   }
 
+  public static String getLanguagesPath() {
+    return getHomePath() + File.separator + "languages";
+  }
+
+  public static String getPlatformPath() {
+    return getHomePath() + File.separator + "platform";
+  }
+
+  public static String getWorkbenchPath() {
+    return getHomePath() + File.separator + "workbench";
+  }
+
+  public static String getProjectsPath() {
+    return getHomePath() + File.separator + "projects";
+  }
 
   private static String getAbsolutePath(String path) {
     if (path.startsWith("~/") || path.startsWith("~\\")) {

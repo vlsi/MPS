@@ -92,6 +92,11 @@ public class LibraryManagerPreferences implements IPreferencesPage {
     }
 
     Library l = (Library) myListModel.get(index);
+
+    if (!l.canSetPath()) {
+      JOptionPane.showMessageDialog(myMainPanel, "You can't edit a predefined library", "Error", JOptionPane.ERROR_MESSAGE);
+      return;
+    }
     
     final JFileChooser chooser = new SmartFileChooser();
     chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);

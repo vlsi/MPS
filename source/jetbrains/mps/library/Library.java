@@ -16,6 +16,10 @@ public class Library {
     return myPath;
   }
 
+  public boolean canSetPath() {
+    return true;
+  }
+
   public void setPath(String path) {
     myPath = path;
   }
