@@ -62,7 +62,6 @@ public class LibraryManagerPreferences implements IPreferencesPage {
 
   private void updateModel() {
     Library oldSelection = (Library) myLibrariesList.getSelectedValue();
-
     List<Library> libraries = new ArrayList<Library>(myManager.getLibraries());
     Collections.sort(libraries, new ToStringComparator());
     myListModel.clear();
@@ -73,6 +72,8 @@ public class LibraryManagerPreferences implements IPreferencesPage {
     if (oldSelection != null) {
       myLibrariesList.setSelectedValue(oldSelection, true);
     }
+
+    myManager.update();
   }
 
   private void remove() {
@@ -147,6 +148,5 @@ public class LibraryManagerPreferences implements IPreferencesPage {
   }
 
   public void commit() {
-
   }
 }

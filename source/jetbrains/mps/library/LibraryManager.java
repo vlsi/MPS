@@ -4,13 +4,22 @@ import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.PathManager;
+import org.jdom.Element;
 
-import java.util.*;
+import java.io.File;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 public class LibraryManager extends DefaultExternalizableComponent implements IComponentWithPreferences {
   private @Externalizable Map<String, Library> myLibraries = new HashMap<String, Library>();
 
+  private MPSModuleOwner myOwner;
 
   public Library newLibrary(String name) {
     Library library = new Library(name);    
@@ -53,6 +62,21 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
     });
 
     return result;
+  }
+
+  public void read(Element element, MPSProject project) {
+    super.read(element, project);
+    update();
+  }
+
+  public void update() {
+    if (myOwner != null) {
+      MPSModuleRepository.getInstance().unRegisterModules(myOwner);
+    }
+    myOwner = new MPSModuleOwner() { };
+    for (Library l : getLibraries()) {
+      MPSModuleRepository.getInstance().readModuleDescriptors(new File(l.getPath()), myOwner);
+    }
   }
 
   public IPreferencesPage createPreferencesPage() {
