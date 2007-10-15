@@ -152,7 +152,7 @@ public class Generator extends AbstractModule {
   @NotNull
   public List<IModule> getExplicitlyDependOnModules() {
     // depends on source language and all owned modules (target language etc.)
-    List<IModule> result = new ArrayList<IModule>(getOwnModules());
+    List<IModule> result = super.getExplicitlyDependOnModules();
     if (!result.contains(mySourceLanguage)) {
       result.add(mySourceLanguage);
     }

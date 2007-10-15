@@ -3,6 +3,7 @@ package jetbrains.mps.project;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.projectLanguage.structure.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.ModelRootsUtil;
@@ -194,7 +195,18 @@ public abstract class AbstractModule implements IModule {
    */
   @NotNull
   public List<IModule> getExplicitlyDependOnModules() {
-    return new LinkedList<IModule>(getOwnModules());
+    LinkedList<IModule> result = new LinkedList<IModule>(getOwnModules());
+    if (getModuleDescriptor() != null) {
+      for (ModuleReference mr : getModuleDescriptor().getDependencys()) {
+        IModule m = MPSModuleRepository.getInstance().getModuleByUID(mr.getName());
+        if (m != null) {
+          result.add(m);
+        } else {
+          LOG.error("Can't load module " + mr.getName());
+        }
+      }
+    }
+    return result;
   }
 
   /**
