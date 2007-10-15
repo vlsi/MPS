@@ -4,5 +4,7 @@
     <modelRoot path="${solution_descriptor}\." namespacePrefix="" />
   </models>
   <module />
+  <languages />
+  <classPath />
 </solution>
 

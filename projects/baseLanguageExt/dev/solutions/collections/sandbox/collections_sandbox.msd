@@ -7,5 +7,6 @@
   <languages>
     <moduleRoot path="${mps_home}\projects\baseLanguageExt\dev\languages\collections\lang" />
   </languages>
+  <classPath />
 </solution>
 

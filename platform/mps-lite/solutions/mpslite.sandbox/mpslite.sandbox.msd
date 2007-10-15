@@ -6,9 +6,10 @@
   <module>
     <moduleRoot path="${mps_home}\projects\mps-lite\languages\nanoj\nanoj.mpl" />
   </module>
-  <languages>
-    <moduleRoot path="${mps_home}\platform\mps-lite\languages\mpslite\mpslite.mpl" />
-  </languages>
+  <languages />
   <classPath />
+  <dependencies>
+    <dependency>jetbrains.mpslite</dependency>
+  </dependencies>
 </solution>
 

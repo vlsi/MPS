@@ -5,5 +5,6 @@
   </models>
   <module />
   <languages />
+  <classPath />
 </solution>
 

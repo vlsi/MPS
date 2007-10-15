@@ -21,9 +21,7 @@
   <models>
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.actionsLanguage" />
   </models>
-  <module>
-    <moduleRoot path="${mps_home}\languages\bootstrap\sharedConcepts\languages\sharedConcepts\sharedConcepts.mpl" />
-  </module>
+  <module />
   <accessoryModels />
   <generators>
     <generator name="default" generatorUID="jetbrains.mps.bootstrap.actionsLanguage#1154466409006" targetLanguage="jetbrains.mps.baseLanguage">
@@ -40,5 +38,8 @@
     </generator>
   </generators>
   <classPath />
+  <dependencies>
+    <dependency>jetbrains.mps.bootstrap.sharedConcepts</dependency>
+  </dependencies>
 </language>
 

@@ -4,9 +4,10 @@
     <modelRoot path="${solution_descriptor}\." namespacePrefix="" />
   </models>
   <module />
-  <languages>
-    <moduleRoot path="${mps_home}\platform\regexp\languages\regexp\regexp.mpl" />
-  </languages>
+  <languages />
   <classPath />
+  <dependencies>
+    <dependency>jetbrains.mps.regexp</dependency>
+  </dependencies>
 </solution>
 

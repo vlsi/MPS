@@ -13,11 +13,12 @@
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.helgins.test" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.helgins.test" />
   </models>
-  <module>
-    <moduleRoot path="${mps_home}\languages\bootstrap\helgins\languages\helgins\helgins.mpl" />
-  </module>
+  <module />
   <accessoryModels />
   <generators />
   <classPath />
+  <dependencies>
+    <dependency>jetbrains.mps.bootstrap.helgins</dependency>
+  </dependencies>
 </language>
 

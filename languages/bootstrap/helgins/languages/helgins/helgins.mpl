@@ -20,9 +20,7 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.helgins" />
   </models>
   <module>
-    <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
     <moduleRoot path="${mps_home}\languages\bootstrap\smodelLanguage\language\smodelLanguage.mpl" />
-    <moduleRoot path="${mps_home}\languages\patternLanguage\languages\patterns\patterns.mpl" />
   </module>
   <accessoryModels />
   <generators>
@@ -40,5 +38,9 @@
   <classPath>
     <entry path="${mps_home}\lib\junit\junit.jar" />
   </classPath>
+  <dependencies>
+    <dependency>jetbrains.mps.baseLanguage</dependency>
+    <dependency>jetbrains.mps.patterns</dependency>
+  </dependencies>
 </language>
 

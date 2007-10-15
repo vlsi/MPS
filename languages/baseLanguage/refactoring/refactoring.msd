@@ -8,5 +8,7 @@
   <module>
     <moduleRoot path="${mps_home}\languages\annotations\languages" />
   </module>
+  <languages />
+  <classPath />
 </solution>
 

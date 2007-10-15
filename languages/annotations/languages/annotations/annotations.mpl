@@ -13,5 +13,6 @@
   <module />
   <accessoryModels />
   <generators />
+  <classPath />
 </language>
 

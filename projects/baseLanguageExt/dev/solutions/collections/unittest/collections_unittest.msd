@@ -4,10 +4,11 @@
     <modelRoot path="${solution_descriptor}\." namespacePrefix="jetbrains.mps.baseLanguage.ext.collections.unittest" />
   </models>
   <module />
-  <languages>
-    <moduleRoot path="${mps_home}\baseLanguage\ext\unitTest\unitTest.mpl" />
-    <moduleRoot path="${mps_home}\projects\baseLanguageExt\dev\languages\collections\lang\collections.mpl" />
-  </languages>
+  <languages />
   <classPath />
+  <dependencies>
+    <dependency>jetbrains.mps.baseLanguage.ext.collections.lang</dependency>
+    <dependency>jetbrains.mps.baseLanguage.unitTest</dependency>
+  </dependencies>
 </solution>
 

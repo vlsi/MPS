@@ -5,8 +5,11 @@
   </models>
   <module />
   <languages>
-    <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
     <moduleRoot path="${mps_home}\projects\baseLanguageExt\dev\languages\collections\lang" />
   </languages>
+  <classPath />
+  <dependencies>
+    <dependency>jetbrains.mps.baseLanguage</dependency>
+  </dependencies>
 </solution>
 

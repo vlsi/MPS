@@ -4,8 +4,10 @@
     <modelRoot path="${solution_descriptor}\." namespacePrefix="" />
   </models>
   <module />
-  <languages>
-    <moduleRoot path="${mps_home}\languages\transformation\TLBase\languageDescriptor.mpl" />
-  </languages>
+  <languages />
+  <classPath />
+  <dependencies>
+    <dependency>jetbrains.mps.transformation.TLBase</dependency>
+  </dependencies>
 </solution>
 

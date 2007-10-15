@@ -4,10 +4,11 @@
     <modelRoot path="${solution_descriptor}\." namespacePrefix="" />
   </models>
   <module />
-  <languages>
-    <moduleRoot path="${mps_home}\languages\bootstrap\helgins\languages\helgins\helgins.mpl" />
-    <moduleRoot path="${mps_home}\languages\bootstrap\helgins\languages\test\test.mpl" />
-  </languages>
+  <languages />
   <classPath />
+  <dependencies>
+    <dependency>jetbrains.mps.bootstrap.helgins</dependency>
+    <dependency>jetbrains.mps.bootstrap.helgins.test</dependency>
+  </dependencies>
 </solution>
 

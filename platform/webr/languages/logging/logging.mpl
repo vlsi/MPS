@@ -13,9 +13,7 @@
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="webr.logging" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="webr.logging" />
   </models>
-  <module>
-    <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
-  </module>
+  <module />
   <accessoryModels />
   <generators>
     <generator generatorUID="webr.logging#1167240554582" targetLanguage="jetbrains.mps.baseLanguage">
@@ -25,11 +23,16 @@
       <module>
         <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
       </module>
+      <external-templates />
+      <mapping-priorities />
     </generator>
   </generators>
   <classPath>
     <entry path="${language_descriptor}\classes" />
     <entry path="${mps_home}\lib\commons-logging\commons-logging-1.1.jar" />
   </classPath>
+  <dependencies>
+    <dependency>jetbrains.mps.baseLanguage</dependency>
+  </dependencies>
 </language>
 

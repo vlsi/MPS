@@ -18,6 +18,7 @@
       <external-templates>
         <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
       </external-templates>
+      <mapping-priorities />
     </generator>
   </generators>
   <classPath />

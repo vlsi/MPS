@@ -4,9 +4,10 @@
     <modelRoot path="${solution_descriptor}\." namespacePrefix="" />
   </models>
   <module />
-  <languages>
-    <moduleRoot path="${mps_home}\platform\ypath\languages\ypath\ypath.mpl" />
-  </languages>
+  <languages />
   <classPath />
+  <dependencies>
+    <dependency>jetbrains.mps.ypath</dependency>
+  </dependencies>
 </solution>
 
