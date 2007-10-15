@@ -9,9 +9,9 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StaticMethodDeclaration extends BaseMethodDeclaration implements ClassifierMember {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration";
+  public static String VISIBILITY = "visibility";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
-  public static String VISIBILITY = "visibility";
 
   public  StaticMethodDeclaration(SNode node) {
     super(node);
@@ -25,6 +25,14 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
     return StaticMethodDeclaration.newInstance(sm, false);
   }
 
+
+  public Visibility getVisibility() {
+    return (Visibility)this.getChild(StaticMethodDeclaration.VISIBILITY);
+  }
+
+  public void setVisibility(Visibility node) {
+    super.setChild(StaticMethodDeclaration.VISIBILITY, node);
+  }
 
   public String getShortDescription() {
     return this.getProperty(StaticMethodDeclaration.SHORT_DESCRIPTION);
@@ -40,14 +48,6 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
 
   public void setAlias(String value) {
     this.setProperty(StaticMethodDeclaration.ALIAS, value);
-  }
-
-  public Visibility getVisibility() {
-    return (Visibility)this.getChild(StaticMethodDeclaration.VISIBILITY);
-  }
-
-  public void setVisibility(Visibility node) {
-    super.setChild(StaticMethodDeclaration.VISIBILITY, node);
   }
 
 }

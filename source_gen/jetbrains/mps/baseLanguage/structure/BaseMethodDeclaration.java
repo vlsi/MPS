@@ -12,15 +12,15 @@ import java.util.List;
 
 public class BaseMethodDeclaration extends NamedConcept implements Annotable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String IS_FINAL = "isFinal";
   public static String RETURN_TYPE = "returnType";
   public static String BODY = "body";
   public static String PARAMETER = "parameter";
   public static String THROWS_ITEM = "throwsItem";
   public static String ANNOTATION = "annotation";
+  public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String IS_FINAL = "isFinal";
 
   public  BaseMethodDeclaration(SNode node) {
     super(node);
@@ -34,38 +34,6 @@ public class BaseMethodDeclaration extends NamedConcept implements Annotable {
     return BaseMethodDeclaration.newInstance(sm, false);
   }
 
-
-  public String getName() {
-    return this.getProperty(BaseMethodDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(BaseMethodDeclaration.NAME, value);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(BaseMethodDeclaration.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(BaseMethodDeclaration.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(BaseMethodDeclaration.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(BaseMethodDeclaration.ALIAS, value);
-  }
-
-  public boolean getIsFinal() {
-    return this.getBooleanProperty(BaseMethodDeclaration.IS_FINAL);
-  }
-
-  public void setIsFinal(boolean value) {
-    this.setBooleanProperty(BaseMethodDeclaration.IS_FINAL, value);
-  }
 
   public Type getReturnType() {
     return (Type)this.getChild(BaseMethodDeclaration.RETURN_TYPE);
@@ -141,6 +109,38 @@ public class BaseMethodDeclaration extends NamedConcept implements Annotable {
 
   public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
     this.insertChild(prev, BaseMethodDeclaration.ANNOTATION, node);
+  }
+
+  public String getName() {
+    return this.getProperty(BaseMethodDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(BaseMethodDeclaration.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(BaseMethodDeclaration.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(BaseMethodDeclaration.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(BaseMethodDeclaration.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(BaseMethodDeclaration.ALIAS, value);
+  }
+
+  public boolean getIsFinal() {
+    return this.getBooleanProperty(BaseMethodDeclaration.IS_FINAL);
+  }
+
+  public void setIsFinal(boolean value) {
+    this.setBooleanProperty(BaseMethodDeclaration.IS_FINAL, value);
   }
 
 }

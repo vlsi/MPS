@@ -4,7 +4,6 @@ import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -22,12 +21,8 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
 
   private MPSModuleOwner myOwner;
 
-  public LibraryManager() {
-    update();
-  }
-
   public Library newLibrary(String name) {
-    Library library = new Library(name);    
+    Library library = new Library(name);
     myLibraries.put(library.getName(), library);
     return library;
   }
@@ -65,11 +60,6 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
         return PathManager.getWorkbenchPath();
       }
     });
-    result.add(new PredefinedLibrary("mps.projects") {
-      public String getPath() {
-        return PathManager.getProjectsPath();
-      }
-    });
 
     return result;
   }
@@ -86,9 +76,6 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
     myOwner = new MPSModuleOwner() { };
     for (Library l : getLibraries()) {
       MPSModuleRepository.getInstance().readModuleDescriptors(new File(l.getPath()), myOwner);
-    }    
-    for (IModule m : MPSModuleRepository.getInstance().getModules(myOwner)) {
-      m.readModels();
     }
   }
 

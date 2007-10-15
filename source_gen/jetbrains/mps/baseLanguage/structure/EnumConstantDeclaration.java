@@ -12,11 +12,11 @@ import java.util.List;
 
 public class EnumConstantDeclaration extends NamedConcept implements ClassifierMember {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration";
+  public static String VISIBILITY = "visibility";
+  public static String ACTUAL_ARGUMENT = "actualArgument";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
-  public static String VISIBILITY = "visibility";
-  public static String ACTUAL_ARGUMENT = "actualArgument";
 
   public  EnumConstantDeclaration(SNode node) {
     super(node);
@@ -30,30 +30,6 @@ public class EnumConstantDeclaration extends NamedConcept implements ClassifierM
     return EnumConstantDeclaration.newInstance(sm, false);
   }
 
-
-  public String getName() {
-    return this.getProperty(EnumConstantDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(EnumConstantDeclaration.NAME, value);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(EnumConstantDeclaration.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(EnumConstantDeclaration.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(EnumConstantDeclaration.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(EnumConstantDeclaration.ALIAS, value);
-  }
 
   public Visibility getVisibility() {
     return (Visibility)this.getChild(EnumConstantDeclaration.VISIBILITY);
@@ -81,6 +57,30 @@ public class EnumConstantDeclaration extends NamedConcept implements ClassifierM
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, EnumConstantDeclaration.ACTUAL_ARGUMENT, node);
+  }
+
+  public String getName() {
+    return this.getProperty(EnumConstantDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(EnumConstantDeclaration.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(EnumConstantDeclaration.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(EnumConstantDeclaration.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(EnumConstantDeclaration.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(EnumConstantDeclaration.ALIAS, value);
   }
 
 }
