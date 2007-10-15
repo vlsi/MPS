@@ -329,7 +329,7 @@ public class MPSModuleRepository {
   }
 
 
-  private void readModuleDescriptors(
+  public void readModuleDescriptors(
           @NotNull File dir,
           @NotNull MPSModuleOwner owner) {
     if (dir.getName().equals(".svn")) { //skip svn

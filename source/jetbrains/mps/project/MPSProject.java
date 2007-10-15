@@ -12,7 +12,6 @@ import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ProjectPathsDialog;
 import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.undo.UndoManager;
@@ -24,25 +23,28 @@ import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.library.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.plugins.PluginManager;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.projectLanguage.structure.Library;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
+import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.eclipse.jdt.internal.compiler.CompilationResult;
-import org.eclipse.jdt.core.compiler.CategorizedProblem;
 
 import java.io.File;
 import java.io.PrintStream;
@@ -169,6 +171,17 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         LOG.error("Couldn't load devkit from: " + devKit.getAbsolutePath() + " : file doesn't exist");
       }
     }
+
+
+    for (Library l : myProjectDescriptor.getLibrarys()) {
+      String name = l.getName();
+      jetbrains.mps.library.Library lib = ApplicationComponents.getInstance().getComponentSafe(LibraryManager.class).get(name);
+      if (lib != null) {
+        MPSModuleRepository.getInstance().readModuleDescriptors(new File(lib.getPath()), this);
+      } else {
+        LOG.error("Can't find a global library " + name);
+      }
+    }    
   }
 
   @Nullable
