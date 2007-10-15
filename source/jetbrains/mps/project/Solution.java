@@ -45,8 +45,14 @@ public class Solution extends AbstractModule {
     } else {
       solutionDescriptor = SolutionDescriptor.newInstance(model);
     }
+
+
     solution.mySolutionDescriptor = solutionDescriptor;
     solution.myDescriptorFile = descriptorFile;
+
+    ConversionUtil.convert(solution, solutionDescriptor.getModuleRoots());
+    ConversionUtil.convert(solution, solutionDescriptor.getLanguageRoots());
+
     MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
     solution.readDependOnModules();
     return solution;
