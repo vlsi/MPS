@@ -13,6 +13,7 @@ import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ConversionUtil;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.languages.RenameModelRefactoring;
@@ -189,6 +190,9 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     LanguageDescriptor languageDescriptor = DescriptorsPersistence.loadLanguageDescriptor(descriptorFile, model);
     language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
+
+    ConversionUtil.convert(language, language.myLanguageDescriptor.getModuleRoots());
+
     MPSModuleRepository.getInstance().addModule(language, moduleOwner);
     language.updateDependenciesAndGenerators();
     return language;

@@ -7,6 +7,7 @@ import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.PathManager;
@@ -20,6 +21,11 @@ import java.util.Map;
 import java.util.Set;
 
 public class LibraryManager extends DefaultExternalizableComponent implements IComponentWithPreferences, IComponentLifecycle {
+
+  public static LibraryManager getInstance() {
+    return ApplicationComponents.getInstance().getComponent(LibraryManager.class);
+  }
+
   private @Externalizable Map<String, Library> myLibraries = new HashMap<String, Library>();
 
   private MPSModuleOwner myOwner;
@@ -77,6 +83,10 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
     });
 
     return result;
+  }
+
+  public boolean isOwns(IModule m) {
+    return MPSModuleRepository.getInstance().getOwners(m).contains(myOwner);
   }
 
   public void read(Element element, MPSProject project) {
