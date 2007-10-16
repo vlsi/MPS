@@ -10,14 +10,13 @@
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.quotation" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.quotation" />
   </models>
-  <module>
-    <moduleRoot path="${mps_home}\languages\annotations\languages\annotations" />
-  </module>
+  <module />
   <accessoryModels />
   <generators />
   <classPath />
   <dependencies>
     <dependency>jetbrains.mps.formulaLanguage</dependency>
+    <dependency>jetbrains.mps.annotations</dependency>
   </dependencies>
 </language>
 

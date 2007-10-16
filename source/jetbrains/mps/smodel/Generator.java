@@ -4,6 +4,7 @@ import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ConversionUtil;
 import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.GeneratorReference;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
@@ -171,6 +172,10 @@ public class Generator extends AbstractModule {
       }
     }
     return list;
+  }
+
+  public void convert() {
+    ConversionUtil.convert(this, myGeneratorDescriptor.getModuleRoots());
   }
 
   @Nullable

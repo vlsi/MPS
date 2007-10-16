@@ -4,12 +4,11 @@
     <modelRoot path="${solution_descriptor}\." namespacePrefix="jetbrains.mps.baseLanguage.ext.collections.samples" />
   </models>
   <module />
-  <languages>
-    <moduleRoot path="${mps_home}\projects\baseLanguageExt\dev\languages\collections\lang" />
-  </languages>
+  <languages />
   <classPath />
   <dependencies>
     <dependency>jetbrains.mps.baseLanguage</dependency>
+    <dependency>jetbrains.mps.baseLanguage.ext.collections.lang</dependency>
   </dependencies>
 </solution>
 

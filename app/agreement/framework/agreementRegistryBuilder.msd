@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="agreement registry builder">
+<solution name="agreement registry builder" extenallyVisible="true">
   <models>
     <modelRoot path="${solution_descriptor}\models\postingrules" namespacePrefix="postingrules" />
   </models>
-  <module>
-    <moduleRoot path="${mps_home}\languages\formulaLanguage" />
-    <moduleRoot path="${mps_home}\app\agreement\agreementLanguage" />
-  </module>
+  <module />
   <languages />
   <classPath />
+  <dependencies>
+    <dependency>jetbrains.mps.formulaLanguage</dependency>
+    <dependency>agreementLanguage</dependency>
+  </dependencies>
 </solution>
 

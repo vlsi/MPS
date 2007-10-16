@@ -16,9 +16,7 @@
     <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="agreementLanguage" />
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="agreementLanguage" />
   </models>
-  <module>
-    <moduleRoot path="${mps_home}\languages\formulaLanguage\language" />
-  </module>
+  <module />
   <accessoryModels>
     <model modelUID="agreementLanguage.declarations" />
   </accessoryModels>
@@ -29,7 +27,13 @@
         <modelRoot path="${mps_home}\languages\formulaLanguage\language\generator" namespacePrefix="jetbrains.mps.formulaLanguage.generator" />
       </models>
       <module />
+      <external-templates />
+      <mapping-priorities />
     </generator>
   </generators>
+  <classPath />
+  <dependencies>
+    <dependency>jetbrains.mps.formulaLanguage</dependency>
+  </dependencies>
 </language>
 

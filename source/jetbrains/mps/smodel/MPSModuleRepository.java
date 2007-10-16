@@ -502,4 +502,16 @@ public class MPSModuleRepository {
       m.dispose();
     }
   }
+
+  public List<IModule> getAllModulesInDirectory(File file) {
+    String path = FileUtil.getCanonicalPath(file);
+    List<IModule> result = new ArrayList<IModule>();
+    for (IModule m : getAllModules()) {
+      String modulePath = FileUtil.getCanonicalPath(m.getDescriptorFile());
+      if (modulePath != null && modulePath.startsWith(path)) {
+        result.add(m);
+      }
+    }
+    return result;
+  }
 }

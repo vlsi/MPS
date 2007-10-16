@@ -5,10 +5,12 @@
     <modelRoot path="${mps_home}\models" namespacePrefix="" />
     <modelRoot path="${mps_home}\models\java" namespacePrefix="java" />
   </models>
-  <module>
-    <moduleRoot path="${mps_home}\languages\annotations\languages" />
-  </module>
+  <module />
   <languages />
   <classPath />
+  <dependencies>
+    <dependency>jetbrains.mps.comments</dependency>
+    <dependency>jetbrains.mps.annotations</dependency>
+  </dependencies>
 </solution>
 
