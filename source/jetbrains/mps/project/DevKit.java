@@ -106,14 +106,15 @@ public class DevKit extends AbstractModule {
 
   public List<Language> getExportedLanguages() {
     List<Language> langs = new ArrayList<Language>();
-    for (jetbrains.mps.projectLanguage.structure.Language l : myDescriptor.getExportedLanguages()) {
-      Language lng = getScope().getLanguage("" + l.getName());
-      if (lng != null) {
-        langs.add(lng);
-      } else {
-        System.out.println("Can't find a language " + l.getName() + " in " + this);
+
+
+    for (ModuleReference ref : myDescriptor.getDependencys()) {
+      IModule m = MPSModuleRepository.getInstance().getModuleByUID(ref.getName());
+      if (m instanceof Language) {
+        langs.add((Language) m);
       }
     }
+
     Collections.sort(langs, new ToStringComparator());
     return langs;
   }
@@ -170,6 +171,17 @@ public class DevKit extends AbstractModule {
   public void convert() {
     ConversionUtil.convert(this, myDescriptor.getModuleRoots());
     ConversionUtil.convert(this, myDescriptor.getGenerationOnlyModules());
+
+
+    boolean changed = false;
+    for (jetbrains.mps.projectLanguage.structure.Language l : myDescriptor.getExportedLanguages()) {
+      l.delete();
+      changed = true;
+    }
+
+    if (changed) {
+      save();
+    }
   }
 
   private void devKitChanged() {
