@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDecla
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.IStatus;
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -21,6 +22,9 @@ import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.smodel.Language.LanguageAspectStatus.AspectKind;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.persistence.ModelRootsUtil;
+import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
@@ -775,6 +779,70 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   public ModelRoot getDefaultModelRoot() {
     return getLanguageDescriptor().modelRoots().next();
   }
+
+  public SModelDescriptor createLanguageEditorModel() {
+    ModelRoot modelRoot = null;
+    List<ModelRoot> modelRoots = this.getModelRoots();
+    for (ModelRoot mRoot : modelRoots) {
+      IModelRootManager rootManager = ModelRootsUtil.getManagerFor(mRoot);
+      if (rootManager instanceof DefaultModelRootManager) {
+        modelRoot = mRoot;
+        break;
+      }
+    }
+
+    assert modelRoot != null;
+
+    SModelDescriptor editorModelDescriptor = this.createModel(new SModelUID(this.getModuleUID(), "editor", ""), modelRoot);
+    SModel editorModel = editorModelDescriptor.getSModel();
+    editorModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getEditorLanguage());
+    editorModelDescriptor.save();
+
+    // updateTypesystem language
+    LanguageDescriptor languageDescriptor = this.getLanguageDescriptor();
+    Model _model = Model.newInstance(languageDescriptor.getModel());
+    _model.setName(editorModel.getUID().toString());
+    Editor _editor = Editor.newInstance(languageDescriptor.getModel());
+    _editor.setEditorModel(_model);
+    _editor.setStereotype("");
+    languageDescriptor.addEditor(_editor);
+    this.setLanguageDescriptor(languageDescriptor);
+    this.save();
+
+    return editorModelDescriptor;
+  }
+
+  public SModelDescriptor createLanguageBehaviorModel() {
+    ModelRoot modelRoot = null;
+    List<ModelRoot> modelRoots = this.getModelRoots();
+    for (ModelRoot mRoot : modelRoots) {
+      IModelRootManager rootManager = ModelRootsUtil.getManagerFor(mRoot);
+      if (rootManager instanceof DefaultModelRootManager) {
+        modelRoot = mRoot;
+        break;
+      }
+    }
+
+    assert modelRoot != null;
+
+    SModelDescriptor behaviorModelDescriptor = this.createModel(new SModelUID(this.getModuleUID(), "constraints", ""), modelRoot);
+    SModel behaviorModel = behaviorModelDescriptor.getSModel();
+    behaviorModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
+    behaviorModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getSModelLanguage());
+    behaviorModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getConstraintsLanguage());
+    behaviorModelDescriptor.save();
+
+    // updateTypesystem language
+    LanguageDescriptor languageDescriptor = this.getLanguageDescriptor();
+    Model _model = Model.newInstance(languageDescriptor.getModel());
+    _model.setName(behaviorModel.getUID().toString());
+    languageDescriptor.setConstraintsModel(_model);
+    this.setLanguageDescriptor(languageDescriptor);
+    this.save();
+
+    return behaviorModelDescriptor;
+  }
+
 
   private class LanguageEventTranslator extends CommandEventTranslator {
     public void languageChanged() {

@@ -13,7 +13,6 @@ import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.projectLanguage.structure.Editor;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.structure.Model;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
@@ -122,7 +121,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
         if (languageEditorFinal == null) {
-          createLanguageEditorModel(languageFinal);
+          languageFinal.createLanguageEditorModel();
           createEditorDeclaration((ConceptDeclaration) node.getAdapter(), languageFinal.getEditorModelDescriptor(), scope);
         } else {
           createEditorDeclaration((ConceptDeclaration) node.getAdapter(), languageEditorFinal, scope);
@@ -148,38 +147,6 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     editorDeclaration.setConceptDeclaration(conceptDeclaration);
     editorModel.addRoot(editorDeclaration);
     return editorDeclaration;
-  }
-
-  public static SModelDescriptor createLanguageEditorModel(Language language) {
-    ModelRoot modelRoot = null;
-    List<ModelRoot> modelRoots = language.getModelRoots();
-    for (ModelRoot mRoot : modelRoots) {
-      IModelRootManager rootManager = ModelRootsUtil.getManagerFor(mRoot);
-      if (rootManager instanceof DefaultModelRootManager) {
-        modelRoot = mRoot;
-        break;
-      }
-    }
-
-    assert modelRoot != null;
-
-    SModelDescriptor editorModelDescriptor = language.createModel(new SModelUID(language.getModuleUID(), "editor", ""), modelRoot);
-    SModel editorModel = editorModelDescriptor.getSModel();
-    editorModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getEditorLanguage());
-    editorModelDescriptor.save();
-
-    // updateTypesystem language
-    LanguageDescriptor languageDescriptor = language.getLanguageDescriptor();
-    Model _model = Model.newInstance(languageDescriptor.getModel());
-    _model.setName(editorModel.getUID().toString());
-    Editor _editor = Editor.newInstance(languageDescriptor.getModel());
-    _editor.setEditorModel(_model);
-    _editor.setStereotype("");
-    languageDescriptor.addEditor(_editor);
-    language.setLanguageDescriptor(languageDescriptor);
-    language.save();
-
-    return editorModelDescriptor;
   }
 
   public static SModelDescriptor createConstraintsModel(Language language) {
