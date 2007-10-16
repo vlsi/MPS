@@ -26,10 +26,11 @@
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template" />
       </models>
-      <module>
-        <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
-      </module>
+      <module />
       <external-templates />
+      <dependencies>
+        <dependency>jetbrains.mps.baseLanguage</dependency>
+      </dependencies>
       <mapping-priorities />
     </generator>
   </generators>

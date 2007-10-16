@@ -17,14 +17,19 @@
         <modelRoot path="${language_descriptor}\generator\baseLanguage" namespacePrefix="readerConfigLanguage.generator.baseLanguage" />
       </models>
       <module />
+      <external-templates />
+      <mapping-priorities />
     </generator>
     <generator name="xml" generatorUID="readerConfigLanguage#1129923281152" targetLanguage="jetbrains.mps.xml">
       <models>
         <modelRoot path="${language_descriptor}\generator\xml" namespacePrefix="readerConfigLanguage.generator.xml" />
       </models>
-      <module>
-        <moduleRoot path="${mps_home}\languages\xml" />
-      </module>
+      <module />
+      <external-templates />
+      <dependencies>
+        <dependency>jetbrains.mps.xml</dependency>
+      </dependencies>
+      <mapping-priorities />
     </generator>
   </generators>
   <classPath />

@@ -25,13 +25,14 @@
       <models>
         <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mpslite.generator.baseLanguage.template" />
       </models>
-      <module>
-        <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
-      </module>
+      <module />
       <external-templates>
         <generator generatorUID="jetbrains.mps.bootstrap.structureLanguage#1170324972255" />
         <generator generatorUID="jetbrains.mps.bootstrap.editorLanguage#1129914002149" />
       </external-templates>
+      <dependencies>
+        <dependency>jetbrains.mps.baseLanguage</dependency>
+      </dependencies>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>

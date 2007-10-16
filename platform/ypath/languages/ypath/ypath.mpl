@@ -31,13 +31,14 @@
       <models>
         <modelRoot path="${language_descriptor}\generators\baseLanguage\templates" namespacePrefix="jetbrains.mps.ypath.generator.baseLanguage.template" />
       </models>
-      <module>
-        <moduleRoot path="${mps_home}\languages\baseLanguage\language\baseLanguage.mpl" />
-        <moduleRoot path="${mps_home}\baseLanguage\languages\baseLanguageInternal\baseLanguageInternal.mpl" />
-      </module>
+      <module />
       <external-templates>
         <generator generatorUID="jetbrains.mps.baseLanguage#1129914002933" />
       </external-templates>
+      <dependencies>
+        <dependency>jetbrains.mps.baseLanguage</dependency>
+        <dependency>jetbrains.mps.baseLanguageInternal</dependency>
+      </dependencies>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>

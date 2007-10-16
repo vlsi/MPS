@@ -232,6 +232,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   public void convert() {
     ConversionUtil.convert(this, myLanguageDescriptor.getModuleRoots());
+
+    for (Generator g : getGenerators()) {
+      g.convert();
+    }
   }
 
   private void updateDependenciesAndGenerators() {
