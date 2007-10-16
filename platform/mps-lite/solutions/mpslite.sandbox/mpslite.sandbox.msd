@@ -3,9 +3,7 @@
   <models>
     <modelRoot path="${solution_descriptor}\." namespacePrefix="" />
   </models>
-  <module>
-    <moduleRoot path="${mps_home}\projects\mps-lite\languages\nanoj\nanoj.mpl" />
-  </module>
+  <module />
   <languages />
   <classPath />
   <dependencies>
