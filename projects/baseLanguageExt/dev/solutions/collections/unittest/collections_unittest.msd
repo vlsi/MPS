@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="collections_unittest" generatorOutputPath="${mps_home}\projects\baseLanguageExt\dev\tests_gen">
+<solution name="collections_unittest" extenallyVisible="true" generatorOutputPath="${mps_home}\projects\baseLanguageExt\dev\tests_gen">
   <models>
     <modelRoot path="${solution_descriptor}\." namespacePrefix="jetbrains.mps.baseLanguage.ext.collections.unittest" />
   </models>

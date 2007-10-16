@@ -71,7 +71,7 @@ public class LibraryManagerPreferences implements IPreferencesPage {
 
     if (oldSelection != null) {
       myLibrariesList.setSelectedValue(oldSelection, true);
-    }
+    }                                                              
 
     myManager.update();
   }
