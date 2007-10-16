@@ -47,16 +47,7 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
   }
 
   private List<IModule> collectModules() {
-    Set<IModule> modules = new HashSet<IModule>();
-    collectModules(myProject, modules);
-    Set<Language> bootstrapLanguages = BootstrapLanguages.getInstance().getLanguages();
-    for (Language language : bootstrapLanguages) {
-      if (!modules.contains(language)) {
-        modules.add(language);
-        collectModules(language, modules);
-      }
-    }
-    return SortUtil.sortModules(new LinkedList<IModule>(modules));
+    return MPSModuleRepository.getInstance().getAllModules();
   }
 
   private void collectModules(MPSModuleOwner moduleOwner, Set<IModule> modules) {
