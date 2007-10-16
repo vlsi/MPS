@@ -132,8 +132,14 @@ public class DevKit extends AbstractModule {
     return modelDescriptors;
   }
 
-  public List<Language> getGenerationOnlyLanuages() {
-    List<Language> languages = MPSModuleRepository.getInstance().getLanguages(myGenerationOnlyModelsModelOwner);
+  public List<IModule> getGenerationOnlyLanuages() {
+    List<IModule> languages = MPSModuleRepository.getInstance().getModules(myGenerationOnlyModelsModelOwner);
+
+    for (ModuleReference ref : myDescriptor.getGenerationOnlyDependencys()) {
+      IModule m = MPSModuleRepository.getInstance().getModuleByUID(ref.getName());
+      languages.add(m);
+    }
+
     Collections.sort(languages, new ToStringComparator());
     return languages;
   }
@@ -159,6 +165,11 @@ public class DevKit extends AbstractModule {
 
   public void save() {
     DescriptorsPersistence.saveDevKitDescriptor(getModuleDescriptor(), myDescriptorFile);
+  }
+
+  public void convert() {
+    ConversionUtil.convert(this, myDescriptor.getModuleRoots());
+    ConversionUtil.convert(this, myDescriptor.getGenerationOnlyModules());
   }
 
   private void devKitChanged() {

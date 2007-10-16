@@ -1,18 +1,19 @@
 package jetbrains.mps.ide.projectPane;
 
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionManager;
+import jetbrains.mps.project.DevKit;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 
-import javax.swing.JPopupMenu;
 import javax.swing.Icon;
+import javax.swing.JPopupMenu;
 import java.io.File;
 
 
@@ -69,7 +70,7 @@ class ProjectDevKitTreeNode extends MPSTreeNode {
     TextTreeNode generationOnly = new TextTreeNode("Generation only languages");
     add(generationOnly);
 
-    for (Language l : myDevKit.getGenerationOnlyLanuages()) {
+    for (IModule l : myDevKit.getGenerationOnlyLanuages()) {
       generationOnly.add(new GenericModuleTreeNode(l, getOperationContext().getProject()));
     }
   }
