@@ -56,6 +56,10 @@ public class Solution extends AbstractModule {
   public void convert() {
     ConversionUtil.convert(this, mySolutionDescriptor.getModuleRoots());
     ConversionUtil.convert(this, mySolutionDescriptor.getLanguageRoots());
+
+    if ("sandbox".equalsIgnoreCase(mySolutionDescriptor.getName()) || mySolutionDescriptor.getName() == null) {
+      mySolutionDescriptor.setExternallyVisible(false);
+    }
   }
 
 
@@ -159,9 +163,17 @@ public class Solution extends AbstractModule {
     return text;
   }
 
+  public boolean isExternallyVisible() {
+    return mySolutionDescriptor.getExternallyVisible();
+  }
+
   @NotNull
   public String getModuleUID() {
-    return FileUtil.getCanonicalPath(myDescriptorFile.getAbsolutePath());
+    if (isExternallyVisible() && mySolutionDescriptor.getName() != null) {
+      return mySolutionDescriptor.getName();
+    } else {
+      return FileUtil.getCanonicalPath(myDescriptorFile.getAbsolutePath());
+    }
   }
 
   public String getGeneratorOutputPath() {
