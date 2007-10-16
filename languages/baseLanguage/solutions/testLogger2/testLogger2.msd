@@ -3,10 +3,11 @@
   <models>
     <modelRoot path="${solution_descriptor}\." namespacePrefix="" />
   </models>
-  <module>
-    <moduleRoot path="${mps_home}\languages\baseLanguage\solutions\testLogger\testLogger.msd" />
-  </module>
+  <module />
   <languages />
   <classPath />
+  <dependencies>
+    <dependency>testLogger</dependency>
+  </dependencies>
 </solution>
 

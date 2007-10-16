@@ -81,6 +81,11 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
         return PathManager.getProjectsPath()  ;
       }
     });
+    result.add(new PredefinedLibrary("mps.app") {
+      public String getPath() {
+        return PathManager.getAppPath()  ;
+      }
+    });
 
     return result;
   }

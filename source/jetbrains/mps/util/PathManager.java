@@ -172,6 +172,10 @@ public class PathManager {
     return getHomePath() + File.separator + "projects";
   }
 
+  public static String getAppPath() {
+    return getHomePath() + File.separator + "app";
+  }
+
   private static String getAbsolutePath(String path) {
     if (path.startsWith("~/") || path.startsWith("~\\")) {
       path = System.getProperty("user.home") + path.substring(1);

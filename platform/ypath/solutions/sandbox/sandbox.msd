@@ -3,13 +3,12 @@
   <models>
     <modelRoot path="${solution_descriptor}\." namespacePrefix="" />
   </models>
-  <module>
-    <moduleRoot path="${mps_home}\platform\ypath\solutions\main\main.msd" />
-  </module>
+  <module />
   <languages />
   <classPath />
   <dependencies>
     <dependency>jetbrains.mps.ypath</dependency>
+    <dependency>main</dependency>
   </dependencies>
 </solution>
 

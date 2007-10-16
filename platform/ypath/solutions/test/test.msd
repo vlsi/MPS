@@ -3,9 +3,7 @@
   <models>
     <modelRoot path="${solution_descriptor}\." namespacePrefix="" />
   </models>
-  <module>
-    <moduleRoot path="${mps_home}\platform\ypath\solutions\main\main.msd" />
-  </module>
+  <module />
   <languages />
   <classPath>
     <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
@@ -13,6 +11,7 @@
   <dependencies>
     <dependency>jetbrains.mps.ypath</dependency>
     <dependency>jetbrains.mps.baseLanguage.unitTest</dependency>
+    <dependency>main</dependency>
   </dependencies>
 </solution>
 

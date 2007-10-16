@@ -96,6 +96,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         LOG.assertLog(myProjectDescriptor.isRoot(), "Project descriptor has to be root");
 
         readModules();
+
+        for (IModule m : getModules()) {
+          m.convert();
+        }
+
         ReloadUtils.reloadAll(true, false);
         readModelsFromModules();
 
