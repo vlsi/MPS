@@ -148,6 +148,7 @@ public class Generator extends AbstractModule {
 
 
   public void save() {
+    mySourceLanguage.save();
   }
 
   @NotNull
