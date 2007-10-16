@@ -1,9 +1,9 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.WeakHashMap;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * Igor Alshannikov
@@ -12,6 +12,7 @@ import java.util.WeakHashMap;
 public class SNodePointer {
   private SModelUID myModelUID;
   private SNodeId myNodeId;
+  private int myTimestamp;
 
   public SNodePointer(String modelUID, String nodeId) {
     this(SModelUID.fromString(modelUID), SNodeId.fromString(nodeId));
@@ -25,33 +26,32 @@ public class SNodePointer {
     if (node == null) return;
     myModelUID = node.getModel().getUID();
     myNodeId = node.getSNodeId();
-    registerPointer(this);
+    myTimestamp = createPointerTimestamp();
   }
 
   public SNodePointer(SModelUID modelUID, SNodeId nodeId) {
     myModelUID = modelUID;
     myNodeId = nodeId;
-    registerPointer(this);
+    myTimestamp = createPointerTimestamp();
   }
 
   public SNode getNode() {
-    if (myModelUID != null) {
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(myModelUID);
-      if (modelDescriptor != null) {
-        return modelDescriptor.getSModel().getNodeById(myNodeId);
-      }
+    SModelDescriptor model = getModel();
+    if (model == null) {
+      return null;
     }
-    return null;
+    return model.getSModel().getNodeById(myNodeId);
   }
 
   public SModelDescriptor getModel() {
-    if (myModelUID == null) return null;
-    return SModelRepository.getInstance().getModelDescriptor(myModelUID);
+    SModelUID modelUID = getCurrentModelUID(myModelUID, myTimestamp);
+    if (modelUID == null) return null;
+    return SModelRepository.getInstance().getModelDescriptor(modelUID);
   }
 
   public String toString() {
     if (getNode() == null) {
-      return "[bad pointer] model=" + myModelUID + " node id=" + myNodeId;
+      return "[bad pointer] model=" + getCurrentModelUID(myModelUID, myTimestamp) + " node id=" + myNodeId;
     }
     return getNode().toString();
   }
@@ -69,31 +69,37 @@ public class SNodePointer {
     return myModelUID.hashCode() + myNodeId.hashCode();
   }
 
-  public static void clearNodePointerStuff() {
-    ourPointersByModelUID.clear();
-  }
 
   //----------------------
   // model rename support
   //----------------------
-  private static final WeakHashMap<SModelUID, WeakSet<SNodePointer>> ourPointersByModelUID = new WeakHashMap<SModelUID, WeakSet<SNodePointer>>();
+  private static int ourPointersTimestamp = 0;
+  private static int ourModelsTimestamp = 0;
+  private static final Map<Integer, Map<SModelUID, SModelUID>> ourRenamedModelUIDsByTimestamp = new HashMap<Integer, Map<SModelUID, SModelUID>>();
 
-  private static void registerPointer(SNodePointer pointer) {
-    assert pointer.myModelUID != null : "only mature pointers can be registered";
-    if (!ourPointersByModelUID.containsKey(pointer.myModelUID)) {
-      ourPointersByModelUID.put(pointer.myModelUID, new WeakSet<SNodePointer>());
-    }
-    ourPointersByModelUID.get(pointer.myModelUID).add(pointer);
-  }
 
   /*package*/
   public static void changeModelUID(SModelUID oldModelUID, SModelUID newModelUID) {
-    WeakSet<SNodePointer> pointers = ourPointersByModelUID.remove(oldModelUID);
-    if (pointers != null) {
-      for (SNodePointer pointer : pointers) {
-        pointer.myModelUID = newModelUID;
-        registerPointer(pointer);
-      }
+    if (!ourRenamedModelUIDsByTimestamp.containsKey(ourPointersTimestamp)) {
+      ourRenamedModelUIDsByTimestamp.put(ourPointersTimestamp, new HashMap<SModelUID, SModelUID>());
+      ourModelsTimestamp++;
     }
+
+    ourRenamedModelUIDsByTimestamp.get(ourPointersTimestamp).put(oldModelUID, newModelUID);
+  }
+
+  private static SModelUID getCurrentModelUID(SModelUID modelUID, int pointerTimestamp) {
+    if (modelUID == null) return null;
+    if (pointerTimestamp == ourModelsTimestamp) return modelUID;
+    SModelUID renamedModelUID = ourRenamedModelUIDsByTimestamp.get(pointerTimestamp).get(modelUID);
+    if (renamedModelUID != null) return renamedModelUID;
+    return modelUID;
+  }
+
+  private static int createPointerTimestamp() {
+    if (ourPointersTimestamp < ourModelsTimestamp) {
+      ourPointersTimestamp = ourModelsTimestamp;
+    }
+    return ourPointersTimestamp;
   }
 }
