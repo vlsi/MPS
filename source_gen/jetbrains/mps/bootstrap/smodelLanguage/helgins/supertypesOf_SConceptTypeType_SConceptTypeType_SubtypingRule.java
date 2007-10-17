@@ -8,6 +8,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
@@ -21,7 +22,7 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
   public List<SNode> getSubOrSuperTypes(SNode type) {
     List<SNode> list = ListOperations.createList(new SNode[]{});
     SNode concept = SLinkOperations.getTarget(type, "conceptDeclaraton", false);
-    if(concept != null) {
+    if(SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept);
       {
         ICursor<SNode> _zCursor2 = CursorFactory.createCursor(superConcepts);
