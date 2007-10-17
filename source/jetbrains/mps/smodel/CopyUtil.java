@@ -102,7 +102,7 @@ public class CopyUtil {
       for (SReference ref : node.getReferences()) {
         SNode targetNode = ref.getTargetNode();
         if (targetNode == null) {
-          LOG.warning("broken reference '" + ref.getRole() + "' in " + node.getDebugText(), node);
+//          LOG.warning("broken reference '" + ref.getRole() + "' in " + node.getDebugText(), node);
         } else if (mapping.containsKey(targetNode)) {
           target.addReferent(ref.getRole(), mapping.get(targetNode));
         } else {

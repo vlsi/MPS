@@ -1,10 +1,10 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.externalResolve.ExternalResolver;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.util.InternUtil;
+import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.Set;
 
 /**
  * User: Sergey Dmitriev
@@ -130,12 +130,17 @@ public abstract class SReference {
     ourLoggingOff = false;
   }
 
+  private static final Set<SReference> ourErrorReportedRefs = new WeakSet<SReference>();
+
   protected static void error(SReference reference, GetTargetNodeErrorState errorState) {
     if (ourLoggingOff) return;
     //skip errors in java stubs because they can have reference to classes that doesn't present
     //in class path
     if (reference.getSourceNode().getModel().getStereotype().endsWith(SModelStereotype.JAVA_STUB)) return;
     if (reference.getSourceNode().getModel().getUserObject(SModel.TMP_MODEL) != null) return;
+
+    if(ourErrorReportedRefs.contains(reference)) return;
+    ourErrorReportedRefs.add(reference);
     reference.error(errorState);
   }
 
@@ -159,7 +164,8 @@ public abstract class SReference {
     NO_MODEL_DESCRIPTOR,
     NO_MODEL,
     CANT_RESOLVE_BY_ID,
-    CANT_RESOLVE_BY_ERI
+    CANT_RESOLVE_BY_ERI,
+    TARGET_COLLECTED_TO_GARBAGE
   }
 
   public void replaceSourceReferent(SNode newReferent) {

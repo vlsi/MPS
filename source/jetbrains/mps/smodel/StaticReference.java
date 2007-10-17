@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
+import jetbrains.mps.logging.Logger;
 
 import java.lang.ref.WeakReference;
 
@@ -13,10 +14,10 @@ import org.jetbrains.annotations.NotNull;
  * Sep 26, 2007
  */
 /*package*/ class StaticReference extends StaticReferenceBase {
+  private static final Logger LOG = Logger.getLogger(StaticReference.class);
+
   private WeakReference<SNode> myNodeRef;
   private boolean myMature;
-
-//  private SModelUID myOrigModelUID;
 
   StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
     // 'young' reference
@@ -29,14 +30,6 @@ import org.jetbrains.annotations.NotNull;
         mature();
       }
     });
-
-//    //test
-//      myOrigModelUID = targetNode.getModel().getUID();
-//      if("typesModel@$runtimeTypes$".equals(targetNode.getModel().getUID().toString()) &&
-//              sourceNode.getModel().getUID().toString().indexOf("actions@") > -1) {
-//        System.out.println("aa");
-//      }
-
   }
 
   StaticReference(String role, SNode sourceNode, SModelUID modelUID, SNodeId nodeId, String resolveInfo) {
@@ -49,7 +42,7 @@ import org.jetbrains.annotations.NotNull;
   public SModelUID getTargetModelUID() {
     if (mature()) {
       return super.getTargetModelUID();
-    } else if (myNodeRef != null && myNodeRef.get() != null) {
+    } else if (myNodeRef.get() != null) {
       return myNodeRef.get().getModel().getUID();
     }
     return null;
@@ -63,7 +56,7 @@ import org.jetbrains.annotations.NotNull;
   public String getTargetNodeId() {
     if (mature()) {
       return super.getTargetNodeId();
-    } else if (myNodeRef != null && myNodeRef.get() != null) {
+    } else if (myNodeRef.get() != null) {
       return myNodeRef.get().getSNodeId().toString();
     }
     return null;
@@ -89,12 +82,22 @@ import org.jetbrains.annotations.NotNull;
         }
       }
       return node;
-
-    } else if (myNodeRef != null) {
-      return myNodeRef.get();
     }
 
-    return null;
+    SNode node = myNodeRef.get();
+    if (node == null) {
+      SReference.error(this, GetTargetNodeErrorState.TARGET_COLLECTED_TO_GARBAGE);
+    }
+    return node;
+  }
+
+  protected void error(GetTargetNodeErrorState errorState) {
+    if (errorState == GetTargetNodeErrorState.TARGET_COLLECTED_TO_GARBAGE) {
+      LOG.error("\nCouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), getSourceNode());
+      LOG.error("The target node has been collected to garbage");
+    } else {
+      super.error(errorState);
+    }
   }
 
   private boolean mature() {
