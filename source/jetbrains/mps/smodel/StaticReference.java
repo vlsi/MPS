@@ -5,8 +5,6 @@ import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.logging.Logger;
 
-import java.lang.ref.WeakReference;
-
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -16,18 +14,40 @@ import org.jetbrains.annotations.NotNull;
 /*package*/ class StaticReference extends StaticReferenceBase {
   private static final Logger LOG = Logger.getLogger(StaticReference.class);
 
-  private WeakReference<SNode> myNodeRef;
+//  private WeakReference<SNode> myNodeRef;
+  private MyStrongRef myNodeRef;
   private boolean myMature;
+
+  /**
+   * tmp: strong ref. to test if no leaks will be created by replacing weak ref with strong ref
+   */
+  private static class MyStrongRef {
+    private SNode myNode;
+
+    private MyStrongRef(SNode node) {
+      myNode = node;
+    }
+
+    public SNode get() {
+      return myNode;
+    }
+  }
 
   StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
     // 'young' reference
     super(role, sourceNode);
     myMature = false;
-    myNodeRef = new WeakReference<SNode>(targetNode);
+//    myNodeRef = new WeakReference<SNode>(targetNode);
+    myNodeRef = new MyStrongRef(targetNode);
     CommandProcessor.instance().addCommandListener(new CommandAdapter() {
       public void commandFinished(@NotNull CommandEvent event) {
         CommandProcessor.instance().removeCommandListener(this);
-        mature();
+        if (!myMature && myNodeRef.get() != null) {
+          // don't keep ref to registered targetNode
+          if (myNodeRef.get().isRegistered()) {
+            makeMature();
+          }
+        }
       }
     });
   }
