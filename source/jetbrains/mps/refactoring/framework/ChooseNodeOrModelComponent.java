@@ -54,11 +54,9 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   }
 
    private static Set<SModelDescriptor> getModelsFrom(IOperationContext context) {
-    IModule module = context.getModule();
-    assert module != null;
-    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(module.getOwnModelDescriptors());
+    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(context.getProject().getScope().getModelDescriptors());
     for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
-      if (model.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+      if (!model.getStereotype().equals(SModelStereotype.NONE) && !model.getStereotype().equals(SModelStereotype.TEMPLATES)) {
         models.remove(model);
       }
     }
