@@ -17,9 +17,8 @@ import org.jetbrains.annotations.NotNull;
   private boolean myMature;
 
 //  private SModelUID myOrigModelUID;
-//  private SModelUID myOrigNodeID;
 
-  StaticReference(String role, SNode sourceNode, SNode targetNode) {
+  StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
     // 'young' reference
     super(role, sourceNode);
     myMature = false;
@@ -32,11 +31,11 @@ import org.jetbrains.annotations.NotNull;
     });
 
 //    //test
-//    if(targetNode == null) {
-//      System.out.println("aaa");
-//    } else {
 //      myOrigModelUID = targetNode.getModel().getUID();
-//    }
+//      if("typesModel@$runtimeTypes$".equals(targetNode.getModel().getUID().toString()) &&
+//              sourceNode.getModel().getUID().toString().indexOf("actions@") > -1) {
+//        System.out.println("aa");
+//      }
 
   }
 

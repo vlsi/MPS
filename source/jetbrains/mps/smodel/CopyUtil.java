@@ -1,7 +1,7 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,6 +10,8 @@ import java.util.Map;
 
 
 public class CopyUtil {
+  private static final Logger LOG = Logger.getLogger(CopyUtil.class);
+
   public static List<SNode> copy(List<SNode> nodes, SModel targetModel) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> result = clone(nodes, targetModel, mapping);
@@ -27,7 +29,7 @@ public class CopyUtil {
     return result;
   }
 
-  public static SNode copyAndGetMapping(SNode node, SModel targetModel, Map<SNode,SNode> mapping) {
+  public static SNode copyAndGetMapping(SNode node, SModel targetModel, Map<SNode, SNode> mapping) {
     List<SNode> nodes = new ArrayList<SNode>();
     nodes.add(node);
     List<SNode> result = clone(nodes, targetModel, mapping);
@@ -98,10 +100,13 @@ public class CopyUtil {
       SNode target = mapping.get(node);
 
       for (SReference ref : node.getReferences()) {
-        if (mapping.containsKey(ref.getTargetNode())) {
-          target.addReferent(ref.getRole(), mapping.get(ref.getTargetNode()));
+        SNode targetNode = ref.getTargetNode();
+        if (targetNode == null) {
+          LOG.warning("broken reference '" + ref.getRole() + "' in " + node.getDebugText(), node);
+        } else if (mapping.containsKey(targetNode)) {
+          target.addReferent(ref.getRole(), mapping.get(targetNode));
         } else {
-          target.addReferent(ref.getRole(), ref.getTargetNode());
+          target.addReferent(ref.getRole(), targetNode);
         }
       }
 
