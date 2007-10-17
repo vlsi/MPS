@@ -75,7 +75,7 @@ public class ModuleContext extends StandaloneMPSContext {
     assert modelDescriptor != null;
     Set<IModule> owningModules = SModelRepository.getInstance().getOwners(modelDescriptor, IModule.class);
     if (owningModules.isEmpty()) {
-      LOG.errorWithTrace("Couldn't create module context for node:" +
+      LOG.error("Couldn't create module context for node:" +
               "\nCouldn't find owner module for model \"" + modelDescriptor.getModelUID() + "\"");
       return null;
     }

@@ -21,12 +21,12 @@ public class CloneUtil {
     copyProperties(node, result);
     for (SReference reference : node.getReferences()) {
       SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : outputModel.getUID();
-      if(targetModelUID == null) {
+      if (targetModelUID == null) {
         LOG.warning("broken reference '" + reference.getRole() + "' in " + node.getDebugText(), node);
-        continue;
+      } else {
+        SReference sReference = SReference.newInstance(reference.getRole(), result, reference.getTargetNodeId(), reference.getExtResolveInfo(), targetModelUID, reference.getResolveInfo());
+        result.addReference(sReference);
       }
-      SReference sReference = SReference.newInstance(reference.getRole(), result, reference.getTargetNodeId(), reference.getExtResolveInfo(), targetModelUID, reference.getResolveInfo());
-      result.addReference(sReference);
     }
     for (SNode child : node.getChildren()) {
       result.addChild(node.getRoleOf(child), clone(child, outputModel, scope));

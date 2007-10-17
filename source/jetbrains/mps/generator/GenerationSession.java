@@ -10,7 +10,10 @@ import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.logging.LoggingHandlerAdapter;
+import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -41,6 +44,7 @@ public class GenerationSession implements IGenerationSession {
   private boolean myDiscardTransients;
   private IAdaptiveProgressMonitor myProgressMonitor;
   private IMessageHandler myMessagesHandler;
+  private ILoggingHandler myLoggingHandler;
 
   private String mySessionId;
   private GenerationSessionContext myCurrentContext;
@@ -69,6 +73,20 @@ public class GenerationSession implements IGenerationSession {
         }
       }
     };
+  }
+
+  public ILoggingHandler getLoggingHandler() {
+    if (myLoggingHandler == null) {
+      myLoggingHandler = new LoggingHandlerAdapter() {
+        public void addLogEntry(LogEntry e) {
+          Object o = e.getHintObject();
+          if(o instanceof SNode) {
+            myCurrentContext.addTransientModelToKeep(((SNode) o).getModel());
+          }
+        }
+      };
+    }
+    return myLoggingHandler;
   }
 
   public String getSessionId() {

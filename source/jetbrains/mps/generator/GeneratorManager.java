@@ -413,6 +413,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       GenerationStatus status = null;
       IGenerationSession generationSession = new GenerationSession(invocationContext, isSaveTransientModels(), progress, messages);
       try {
+        Logger.addLoggingHandler(generationSession.getLoggingHandler());
         TypeChecker.getInstance().setIncrementalMode(false);
         TypeChecker.getInstance().setGenerationMode(true);
         for (SModelDescriptor sourceModelDescriptor : sourceModels) {
@@ -470,6 +471,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         }
       } finally {
         generationSession.discardTransients();
+        Logger.removeLoggingHandler(generationSession.getLoggingHandler());
         TypeChecker.getInstance().setIncrementalMode(true);
         TypeChecker.getInstance().setGenerationMode(false);
       }
