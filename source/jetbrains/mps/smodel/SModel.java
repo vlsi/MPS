@@ -927,7 +927,7 @@ public class SModel implements Iterable<SNode> {
       for (SReference reference : references) {
         if (reference.isExternal()) {
           SModelUID targetModelUID = reference.getTargetModelUID();
-          if (!importedModels.contains(targetModelUID)) {
+          if (targetModelUID != null && !importedModels.contains(targetModelUID)) {
             addImportedModel(targetModelUID);
             importedModels.add(targetModelUID);
           }

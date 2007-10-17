@@ -16,6 +16,9 @@ import org.jetbrains.annotations.NotNull;
   private WeakReference<SNode> myNodeRef;
   private boolean myMature;
 
+//  private SModelUID myOrigModelUID;
+//  private SModelUID myOrigNodeID;
+
   StaticReference(String role, SNode sourceNode, SNode targetNode) {
     // 'young' reference
     super(role, sourceNode);
@@ -27,6 +30,14 @@ import org.jetbrains.annotations.NotNull;
         mature();
       }
     });
+
+//    //test
+//    if(targetNode == null) {
+//      System.out.println("aaa");
+//    } else {
+//      myOrigModelUID = targetNode.getModel().getUID();
+//    }
+
   }
 
   StaticReference(String role, SNode sourceNode, SModelUID modelUID, SNodeId nodeId, String resolveInfo) {
