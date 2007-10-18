@@ -172,7 +172,7 @@ public abstract class SReference {
     mySourceNode.setReferent(myRole, newReferent);
   }
 
-  /*package*/ void setRole(String newRole) {
+  public void setRole(String newRole) { // todo add undo
     myRole = InternUtil.intern(newRole);
   }
 }

@@ -1946,7 +1946,7 @@ public class SNode implements Iterable<SNode> {
     }
   }
 
-  void setRoleInParent(String newRoleInParent) {
+  public void setRoleInParent(String newRoleInParent) {//todo add undo
     myRoleInParent = newRoleInParent;
   }
 
