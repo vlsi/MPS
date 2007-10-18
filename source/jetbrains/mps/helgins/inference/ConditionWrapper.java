@@ -13,15 +13,17 @@ import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
-* User: Cyril.Konopko
-* Date: 20.07.2007
-* Time: 14:19:18
-* To change this template use File | Settings | File Templates.
-*/
+ * User: Cyril.Konopko
+ * Date: 20.07.2007
+ * Time: 14:19:18
+ * To change this template use File | Settings | File Templates.
+ */
 public class ConditionWrapper implements IWrapper {
   private Condition<SNode> myCondition;
   private String myNodeModel;
   private String myNodeId;
+  private Set<SNode> myVariables = new HashSet<SNode>();
+  private IWrapper myWrapperToCheck;
 
   public ConditionWrapper(Condition<SNode> condition) {
     myCondition = condition;
@@ -58,15 +60,30 @@ public class ConditionWrapper implements IWrapper {
     if (type.isCondition() || type.isVariable()) {
       return false;
     }
-    boolean hasVars = false;
-    for (RuntimeTypeVariable var : type.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
-      hasVars = true;
-      if (equationManager != null) {
-        equationManager.addEquation(new NodeWrapper(var.getNode()), this, errorInfo);
+    if (equationManager == null) {
+      return false;
+    }
+
+    //first check
+    if (myWrapperToCheck == null) {
+      myWrapperToCheck = type;
+      for (RuntimeTypeVariable var : type.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
+        myVariables.add(var.getNode());
       }
     }
-    if (hasVars) {
-      return true;
+
+    //processing additional variables
+    for (SNode var : new HashSet<SNode>(myVariables)) {
+      if (equationManager.getRepresentatorWrapper(new NodeWrapper(var)).isConcrete()) {
+        myVariables.remove(var);
+        for (RuntimeTypeVariable varChild : type.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
+          myVariables.add(varChild.getNode());
+        }
+      }
+    }
+
+    if (!(myVariables.isEmpty())) {
+      return false;
     } else {
       return myCondition.met(type.getNode());
     }
