@@ -2,8 +2,10 @@ package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import org.jetbrains.annotations.Nullable;
@@ -22,7 +24,7 @@ public class ConditionWrapper implements IWrapper {
   private Condition<SNode> myCondition;
   private String myNodeModel;
   private String myNodeId;
-  private Set<SNode> myVariables = new HashSet<SNode>();
+  private Set<SNodePointer> myVariables;
   private IWrapper myWrapperToCheck;
 
   public ConditionWrapper(Condition<SNode> condition) {
@@ -64,29 +66,39 @@ public class ConditionWrapper implements IWrapper {
       return false;
     }
 
- /*   //first check
+    //first check
     if (myWrapperToCheck == null) {
       myWrapperToCheck = type;
       for (RuntimeTypeVariable var : type.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
-        myVariables.add(var.getNode());
+        if (myVariables == null) {
+          myVariables = new HashSet<SNodePointer>(1);
+        }
+        myVariables.add(new SNodePointer(var.getNode()));
       }
     }
 
     //processing additional variables
-    for (SNode var : new HashSet<SNode>(myVariables)) {
-      if (equationManager.getRepresentatorWrapper(new NodeWrapper(var)).isConcrete()) {
-        myVariables.remove(var);
-        for (RuntimeTypeVariable varChild : type.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
-          myVariables.add(varChild.getNode());
+    if (myVariables != null) {
+      for (SNodePointer var : new HashSet<SNodePointer>(myVariables)) {
+        if (var.getNode() == null) {
+          myVariables.remove(var);
+          continue;
+        }
+        if (equationManager.getRepresentatorWrapper(new NodeWrapper(var.getNode())).isConcrete()) {
+          myVariables.remove(var);
+          for (RuntimeTypeVariable varChild : type.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
+            myVariables.add(new SNodePointer(varChild.getNode()));
+          }
         }
       }
     }
 
-    if (!(myVariables.isEmpty())) {
+    if (myVariables != null && !(myVariables.isEmpty())) {
       return false;
-    } else {*/
+    } else {
+      myVariables = null;
       return myCondition.met(type.getNode());
-    //}
+    }
   }
 
   public String getNodeModel() {
