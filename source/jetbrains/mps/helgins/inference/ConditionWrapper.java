@@ -64,7 +64,7 @@ public class ConditionWrapper implements IWrapper {
       return false;
     }
 
-    //first check
+ /*   //first check
     if (myWrapperToCheck == null) {
       myWrapperToCheck = type;
       for (RuntimeTypeVariable var : type.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
@@ -84,9 +84,9 @@ public class ConditionWrapper implements IWrapper {
 
     if (!(myVariables.isEmpty())) {
       return false;
-    } else {
+    } else {*/
       return myCondition.met(type.getNode());
-    }
+    //}
   }
 
   public String getNodeModel() {
