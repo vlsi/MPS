@@ -1,10 +1,15 @@
 package jetbrains.mps.helgins.inference;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Set;
+import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -53,11 +58,18 @@ public class ConditionWrapper implements IWrapper {
     if (type.isCondition() || type.isVariable()) {
       return false;
     }
-    return myCondition.met(type.getNode());
-  }
-
-  public boolean met(SNode node) {
-    return myCondition.met(node);
+    boolean hasVars = false;
+    for (RuntimeTypeVariable var : type.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
+      hasVars = true;
+      if (equationManager != null) {
+        equationManager.addEquation(new NodeWrapper(var.getNode()), this, errorInfo);
+      }
+    }
+    if (hasVars) {
+      return true;
+    } else {
+      return myCondition.met(type.getNode());
+    }
   }
 
   public String getNodeModel() {
