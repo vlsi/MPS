@@ -35,9 +35,8 @@ public class IntentionsManager {
   public void reload() {
     myIntentions.clear();
     for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
-
     }
-    /*Intention i = new Intention() {
+      /*Intention i = new Intention() {
       public String getConcept() {
         return "jetbrains.mps.baseLanguage.structure.IfStatement";
       }
