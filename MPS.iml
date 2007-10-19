@@ -4,6 +4,7 @@
     <output url="file://$MODULE_DIR$/classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/helgins/solutions/jetbrains.mps.bootstrap.helgins.sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/intentionsLanguage/languages/intentionsLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/refactoringLanguage/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/smodelLanguage/solutions/samples/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/structureLanguage/solutions/sandbox/source_gen" isTestSource="false" />
@@ -14,6 +15,7 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/tools/tomcat/webapps" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

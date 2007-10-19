@@ -34,6 +34,8 @@ import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.intentions.IntentionsManager;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -106,6 +108,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private List<RebuildListener> myRebuildListeners;
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private CellInfo myRecentlySelectedCellInfo = null;
+
+  private List<Intention> myAvailableIntentions = new ArrayList<Intention>();
+
 //  private Color myBackground = Color.white;
 
   private final IGutterMessageOwner myOwner = new IGutterMessageOwner() {
@@ -114,6 +119,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
   private CellSpeedSearch myCellSpeedSearch;
+  private AbstractAction myApplyIntentionAction;
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -252,6 +258,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
 
+    myApplyIntentionAction = new AbstractAction() {
+      public void actionPerformed(ActionEvent e) {
+        showIntentionsMenu();
+      }
+    };
+    registerKeyboardAction(myApplyIntentionAction, KeyStroke.getKeyStroke("control alt ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
         if (e.isPopupTrigger()) {
@@ -314,6 +327,24 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                 (myNodeSubstituteChooser.getWindow().isAncestorOf(e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
           return;
         myNodeSubstituteChooser.setVisible(false);
+      }
+    });
+
+    addCellSelectionListener(new ICellSelectionListener() {
+      public void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
+        try {
+          myAvailableIntentions.clear();
+          if (newSelection == null){
+            return;
+          }
+
+          SNode newNode = newSelection.getSNode();
+          if (newNode != null) {
+            myAvailableIntentions.addAll(IntentionsManager.getInstance().getAvailableIntentions(newNode, editor.getOperationContext()));
+          }
+        } finally {
+          myApplyIntentionAction.setEnabled(!myAvailableIntentions.isEmpty());
+        }
       }
     });
 
@@ -1460,6 +1491,21 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (myRootCell != null) {
       myRootCell.paint(g);
     }
+
+    if (!myAvailableIntentions.isEmpty()) {
+      paintLightBulb(g);
+    }
+  }
+
+  private void paintLightBulb(Graphics g) {
+    EditorCell selectedCell = getSelectedCell();
+
+    assert selectedCell != null : "selected cell mustn't be null";
+
+    g.setColor(new Color(255,0,0,100));
+    g.fillRect(
+            getSelectedCell().getX(), getSelectedCell().getY(),
+            getSelectedCell().getWidth(), getSelectedCell().getHeight());
   }
 
   protected void paintChildren(Graphics g) {
@@ -2060,6 +2106,24 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public IEditorOpener getEditorOpener() {
     return getOperationContext().getComponent(EditorsPane.class);
+  }
+
+  private void showIntentionsMenu() {
+    JPopupMenu menu = new JPopupMenu();
+
+    EditorCell cell = getSelectedCell();
+    final SNode node = cell.getSNode();
+    final IOperationContext context = getOperationContext();
+
+    for (final Intention i : myAvailableIntentions) {
+      menu.add(new AbstractAction(i.getDescription(node, context)) {
+        public void actionPerformed(ActionEvent e) {
+          i.execute(node,context);
+        }
+      });
+    }
+
+    menu.show(this, cell.getX(), cell.getY());
   }
 
   public static interface RebuildListener {
