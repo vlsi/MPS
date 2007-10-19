@@ -35,7 +35,7 @@ public class ModelReader0 implements IModelReader {
       String modelNamespace = rootElement.getAttributeValue(ModelPersistence.NAMESPACE, "");
       modelLongName = NameUtil.longNameFromNamespaceAndShortName(modelNamespace, modelShortName);
     } else {
-      String shortName = NameUtil.shortNameFromLongName(modelLongName);
+//      String shortName = NameUtil.shortNameFromLongName(modelLongName);
 //      LOG.assertLog(shortName.equals(modelShortName));  todo commented out temporary
     }
 
@@ -194,8 +194,9 @@ public class ModelReader0 implements IModelReader {
     SNode node = new SNode(model, conceptFqName);
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
-    node.setId(SNodeId.fromString(idValue));
-
+    if (idValue != null) {
+      node.setId(SNodeId.fromString(idValue));
+    }
 
     String cachedExtResolveInfo = nodeElement.getAttributeValue(ModelPersistence.EXT_RESOLVE_INFO);
     if (!ExternalResolver.isEmptyExtResolveInfo(cachedExtResolveInfo)) {
@@ -223,10 +224,10 @@ public class ModelReader0 implements IModelReader {
       Element childNodeElement = (Element) childNode1;
       String role = childNodeElement.getAttributeValue(ModelPersistence.ROLE);
       SNode childNode = readNode(childNodeElement, model, referenceDescriptors, useUIDs);
-      if (childNode != null) {
-        node.addChild(role, childNode);
-      } else {
+      if (role == null || childNode == null) {
         LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
+      } else {
+        node.addChild(role, childNode);
       }
     }
 

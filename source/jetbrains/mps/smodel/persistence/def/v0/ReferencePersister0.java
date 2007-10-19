@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel.persistence.def.v0;
 
-import jetbrains.mps.externalResolve.ExternalResolveInfoParser;
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
@@ -120,6 +119,34 @@ public class ReferencePersister0 {
       }
     }
 
+//    return SReference.newInstance(this.getRole(),
+//            this.getSourceNode(),
+//            this.getTargetId(),
+//            this.getExtResolveInfo(),
+//            importedModelUID,
+//            this.getResolveInfo()
+//    );
+
+    if (this.getExtResolveInfo() == null) {
+      return SReference.create(this.getRole(),
+              this.getSourceNode(),
+              importedModelUID,
+              SNodeId.fromString(this.getTargetId()),
+              this.getResolveInfo());
+    }
+
+    String extResolveInfo = this.getExtResolveInfo();
+    SNodeId targetId = ERI2IDConverter.convert(this.getSourceNode(), this.getRole(), extResolveInfo);
+    if (targetId != null) {
+      String resolveInfo = ExternalResolver.getHumanFriendlyString(extResolveInfo);
+      return SReference.create(this.getRole(),
+              this.getSourceNode(),
+              importedModelUID,
+              targetId,
+              resolveInfo);
+    }
+
+    // couldn't convert 
     return SReference.newInstance(this.getRole(),
             this.getSourceNode(),
             this.getTargetId(),
@@ -133,80 +160,6 @@ public class ReferencePersister0 {
     SReference reference = createReferenceInModelDoNotAddToSourceNode(model, visibleModelElements);
     if (reference != null) this.getSourceNode().addReference(reference);
   }
-
-  // do not delete pls
-//  public void createReferenceInModel(SModel model, VisibleModelElements visibleModelElements) {
-//    SReference reference = createReferenceInModelDoNotAddToSourceNode(model, visibleModelElements);
-//    SReference newReference = null;
-//    // upgrade to new reference
-//    if (reference instanceof SReference_old) {
-//      SModelUID modelUID = ((SReference_old) reference).getTargetModelUID();
-//      if (SModelStereotype.JAVA_STUB.equals(modelUID.getStereotype())) {
-//        SNode javaStubNode = reference.getTargetNode();
-//        if (javaStubNode != null) {
-//          newReference = SReference.create(reference.getRole(), this.getSourceNode(), javaStubNode);
-//        } else if (reference.getExtResolveInfo() != null) {
-//          String extResolveInfo = reference.getExtResolveInfo();
-//          String memType = ExternalResolveInfoParser.getMemberType(extResolveInfo);
-////          if(ExternalResolver.CLASSIFIER.equals(memType)) {
-////            System.out.println("-----------------------------");
-////            System.out.println(memType + ":");
-////            System.out.println(ExternalResolver.getHumanFriendlyString(extResolveInfo));
-////          }
-////          if(ExternalResolver.STATIC_METHOD.equals(memType)) {
-////            System.out.println("-----------------------------");
-////            System.out.println(memType + ":");
-////            System.out.println(ExternalResolveInfoParser.getMembersClassifierResolveInfo(extResolveInfo, memType));
-////            System.out.println(ExternalResolveInfoParser.getOwnResolveInfo(extResolveInfo));
-////          }
-////          if (ExternalResolver.METHOD.equals(memType)) {
-////            System.out.println("-----------------------------");
-////            System.out.println(memType + ":");
-////            System.out.println(ExternalResolveInfoParser.getMembersClassifierResolveInfo(extResolveInfo, memType));
-////            System.out.println(ExternalResolveInfoParser.getOwnResolveInfo(extResolveInfo));
-////            System.out.println(ExternalResolver.getHumanFriendlyString(extResolveInfo));
-////          }
-////          if(ExternalResolver.CONSTRUCTOR.equals(memType)) {
-////            System.out.println("-----------------------------");
-////            System.out.println(memType + ":");
-////            System.out.println(ExternalResolveInfoParser.getConstructorClassifierResolveInfo(extResolveInfo));
-////            System.out.println(ExternalResolveInfoParser.getConstructorOwnResolveInfo(extResolveInfo));
-////          }
-////          if(ExternalResolver.ENUM_CONST.equals(memType)) {
-////            System.out.println("-----------------------------");
-////            System.out.println(memType + ":");
-////            System.out.println(ExternalResolveInfoParser.getMembersClassifierResolveInfo(extResolveInfo, memType));
-////            System.out.println(ExternalResolveInfoParser.getOwnResolveInfo(extResolveInfo));
-////          }
-////          if(ExternalResolver.FIELD.equals(memType)) {
-////            System.out.println("-----------------------------");
-////            System.out.println(memType + ":");
-////            System.out.println(ExternalResolveInfoParser.getMembersClassifierResolveInfo(extResolveInfo, memType));
-////            System.out.println(ExternalResolveInfoParser.getOwnResolveInfo(extResolveInfo));
-////          }
-////          if (ExternalResolver.STATIC_FIELD.equals(memType)) {
-////            System.out.println("-----------------------------");
-////            System.out.println(memType + ":");
-////            System.out.println(ExternalResolveInfoParser.getMembersClassifierResolveInfo(extResolveInfo, memType));
-////            System.out.println(ExternalResolveInfoParser.getOwnResolveInfo(extResolveInfo));
-////            System.out.println("~" +
-////                    ExternalResolver.getHumanFriendlyString(ExternalResolveInfoParser.getMembersClassifierResolveInfo(extResolveInfo, memType)) +
-////                    "." +
-////                    ExternalResolver.getHumanFriendlyString(ExternalResolveInfoParser.getOwnResolveInfo(extResolveInfo)));
-////            System.out.println(ExternalResolver.getHumanFriendlyString(extResolveInfo));
-////          }
-//
-////          newReference = SReference.create(this.getRole(), this.getSourceNode(), null, null, resolveInfo);
-//          newReference = reference;
-//        }
-//      } else {
-//        newReference = SReference.create(this.getRole(), this.getSourceNode(), reference.getTargetModelUID(), SNodeId.fromString(this.getTargetId()), this.getResolveInfo());
-//      }
-//    }
-//
-//    if (newReference != null) this.getSourceNode().addReference(newReference);
-//  }
-  //--
 
   //-----
   //impl
