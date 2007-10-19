@@ -185,6 +185,14 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(node, "updateModelClause", false) != null);
   }
 
+  public static boolean ifMacro_Condition_1192803873886(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "filterClause", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1192803930628(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "filterClause", true) == null);
+  }
+
   public static List sourceNodesQuery_1189698183859(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "arguments", true);
   }
@@ -231,6 +239,18 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1191321740273(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "updateModelClause", false), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1192804088431(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return ArgumentType_Behavior.call_convertIntoTypeForInput_1192804777821(SLinkOperations.getTarget(node, "argumentType", true));
+  }
+
+  public static SNode sourceNodeQuery_1192804118336(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return ArgumentType_Behavior.call_convertIntoTypeForInput_1192804777821(SLinkOperations.getTarget(node, "argumentType", true));
+  }
+
+  public static SNode sourceNodeQuery_1192803833747(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "filterClause", true), "body", true);
   }
 
 }

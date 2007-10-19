@@ -58,10 +58,10 @@
     <property name="name" value="RenameConceptRefactoring" />
     <property name="requiresModelGeneration" value="true" />
     <property name="userFriendlyName" value="Rename Concept" />
-    <node role="arguments" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgument" id="1191583490853">
+    <node role="arguments" type="jetbrains.mps.logging.refactoring.RequiredUserEnteredArgument" id="1192797467099">
       <property name="name" value="newConceptName" />
       <property name="presentation" value="enter new concept name" />
-      <node role="argumentType" type="jetbrains.mps.logging.refactoring.StringArgumentType" id="1191583490854" />
+      <node role="argumentType" type="jetbrains.mps.logging.refactoring.StringArgumentType" id="1192797493040" />
     </node>
     <node role="isApplicableClause" type="jetbrains.mps.logging.refactoring.IsApplicableClause" id="1191583490855">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1191583490856">
@@ -135,8 +135,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1191583490887">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1191583490888">
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1191583490889">
-              <node role="value" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1191583490890">
-                <link role="argument" targetNodeId="1191583490853" resolveInfo="newConceptName" />
+              <node role="value" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192797504400">
+                <link role="argument" targetNodeId="1192797467099" resolveInfo="newConceptName" />
               </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1191583490891">
@@ -206,8 +206,8 @@
                     <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]SNode).([InstanceMethodDeclaration]setConceptFqName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.PlusExpression" id="1191583490921">
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.PlusExpression" id="1191583490922">
-                        <node role="rightExpression" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1191583490923">
-                          <link role="argument" targetNodeId="1191583490853" resolveInfo="newConceptName" />
+                        <node role="rightExpression" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192797513011">
+                          <link role="argument" targetNodeId="1192797467099" resolveInfo="newConceptName" />
                         </node>
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.StringLiteral" id="1191583490924">
                           <property name="value" value="." />
@@ -369,10 +369,30 @@
   <node type="jetbrains.mps.logging.refactoring.Refactoring" id="1191831157961">
     <property name="name" value="MoveConceptRefactoring" />
     <property name="userFriendlyName" value="Move Concept" />
-    <node role="arguments" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgument" id="1191831195836">
+    <node role="arguments" type="jetbrains.mps.logging.refactoring.RequiredUserEnteredArgument" id="1192796745248">
       <property name="name" value="targetModel" />
       <property name="presentation" value="choose target model" />
-      <node role="argumentType" type="jetbrains.mps.logging.refactoring.SModelArgumentType" id="1191831221463" />
+      <node role="argumentType" type="jetbrains.mps.logging.refactoring.SModelArgumentType" id="1192796766969" />
+      <node role="filterClause" type="jetbrains.mps.logging.refactoring.FilterArgumentClause" id="1192796770720">
+        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1192796770721">
+          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1192796782796">
+            <node role="expression" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1192796807855">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1192796866780">
+                <link role="enumConstantDeclaration" targetNodeId="5.~Language$LanguageAspectStatus$AspectKind.STRUCTURE" resolveInfo="STRUCTURE" />
+                <link role="enumClass" targetNodeId="5.~Language$LanguageAspectStatus$AspectKind" resolveInfo="Language.LanguageAspectStatus.AspectKind" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1192796803916">
+                <link role="baseMethodDeclaration" targetNodeId="5.~Language$LanguageAspectStatus.getAspectKind():jetbrains.mps.smodel.Language$LanguageAspectStatus$AspectKind" resolveInfo="getAspectKind" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1192796785683">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~Language.getLanguageAspectStatus(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.Language$LanguageAspectStatus" resolveInfo="getLanguageAspectStatus" />
+                  <link role="classConcept" targetNodeId="5.~Language" resolveInfo="Language" />
+                  <node role="actualArgument" type="jetbrains.mps.logging.refactoring.ConceptFunctionParameter_UserArgument" id="1192796789679" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="isApplicableClause" type="jetbrains.mps.logging.refactoring.IsApplicableClause" id="1191831279151">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1191831279152">
@@ -462,8 +482,8 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1191831368806">
                 <link role="baseMethodDeclaration" extResolveInfo="5.method ([Classifier]SModel).([InstanceMethodDeclaration]getModelDescriptor())" />
                 <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.SemanticDowncastExpression" id="1191831362037">
-                  <node role="leftExpression" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1191831350718">
-                    <link role="argument" targetNodeId="1191831195836" resolveInfo="targetModel" />
+                  <node role="leftExpression" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192797368581">
+                    <link role="argument" targetNodeId="1192796745248" resolveInfo="targetModel" />
                   </node>
                 </node>
               </node>
@@ -928,8 +948,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1192547670301">
           <node role="expression" type="jetbrains.mps.baseLanguage.AssignmentExpression" id="1192547671569">
             <node role="rValue" type="jetbrains.mps.logging.refactoring.DowncastOperation" id="1192547685576">
-              <node role="argument" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192547674275">
-                <link role="argument" targetNodeId="1191831195836" resolveInfo="targetModel" />
+              <node role="argument" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192797340407">
+                <link role="argument" targetNodeId="1192796745248" resolveInfo="targetModel" />
               </node>
             </node>
             <node role="lValue" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192547670302">
@@ -945,8 +965,8 @@
               <node role="actualArgument" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192544353086">
                 <link role="argument" targetNodeId="1191835983129" resolveInfo="sourceNode" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192544359324">
-                <link role="argument" targetNodeId="1191831195836" resolveInfo="targetModel" />
+              <node role="actualArgument" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192797345049">
+                <link role="argument" targetNodeId="1192796745248" resolveInfo="targetModel" />
               </node>
             </node>
             <node role="lValue" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192544332092">
@@ -1455,10 +1475,10 @@
   <node type="jetbrains.mps.logging.refactoring.Refactoring" id="1192719711307">
     <property name="name" value="RenameLinkRefactoring" />
     <property name="userFriendlyName" value="Rename Link" />
-    <node role="arguments" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgument" id="1192719724324">
+    <node role="arguments" type="jetbrains.mps.logging.refactoring.RequiredUserEnteredArgument" id="1192797557423">
       <property name="name" value="newLinkRole" />
       <property name="presentation" value="enter new link role" />
-      <node role="argumentType" type="jetbrains.mps.logging.refactoring.StringArgumentType" id="1192719742372" />
+      <node role="argumentType" type="jetbrains.mps.logging.refactoring.StringArgumentType" id="1192797573128" />
     </node>
     <node role="isApplicableClause" type="jetbrains.mps.logging.refactoring.IsApplicableClause" id="1192719746826">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1192719746827">
@@ -1614,8 +1634,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1192720051786">
           <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1192720056839">
             <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1192720058045">
-              <node role="value" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192720062984">
-                <link role="argument" targetNodeId="1192719724324" resolveInfo="newLinkRole" />
+              <node role="value" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192797600004">
+                <link role="argument" targetNodeId="1192797557423" resolveInfo="newLinkRole" />
               </node>
             </node>
             <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1192720052678">
@@ -1702,8 +1722,8 @@
                             <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1192720383885">
                               <link role="variableDeclaration" targetNodeId="1192720349172" resolveInfo="reference" />
                             </node>
-                            <node role="actualArgument" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192720391452">
-                              <link role="argument" targetNodeId="1192719724324" resolveInfo="newLinkRole" />
+                            <node role="actualArgument" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192797610958">
+                              <link role="argument" targetNodeId="1192797557423" resolveInfo="newLinkRole" />
                             </node>
                           </node>
                         </node>
@@ -1755,8 +1775,8 @@
                                   <node role="instance" type="jetbrains.mps.baseLanguage.LocalVariableReference" id="1192720475853">
                                     <link role="variableDeclaration" targetNodeId="1192720402676" resolveInfo="child" />
                                   </node>
-                                  <node role="actualArgument" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192720491716">
-                                    <link role="argument" targetNodeId="1192719724324" resolveInfo="newLinkRole" />
+                                  <node role="actualArgument" type="jetbrains.mps.logging.refactoring.RequiredAdditionalArgumentReference" id="1192797617412">
+                                    <link role="argument" targetNodeId="1192797557423" resolveInfo="newLinkRole" />
                                   </node>
                                 </node>
                               </node>

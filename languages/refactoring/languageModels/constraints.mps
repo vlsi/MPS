@@ -6,11 +6,12 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.core" />
-  <maxImportIndex value="4" />
-  <import index="1" modelUID="jetbrains.mps.logging.refactoring.structure" />
-  <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" />
-  <import index="3" modelUID="java.lang@java_stub" />
-  <import index="4" modelUID="jetbrains.mps.core.structure" />
+  <maxImportIndex value="5" />
+  <import index="1" modelUID="jetbrains.mps.logging.refactoring.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
+  <import index="3" modelUID="java.lang@java_stub" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptBehavior" id="1189696897907">
     <link role="concept" targetNodeId="1.1189694084608" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1189696897908">
@@ -107,6 +108,21 @@
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1190731936027" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1190731931505" />
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1192804777821">
+      <property name="name" value="convertIntoTypeForInput" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1192804792842" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1192804777823">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1192804819124">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeOperationExpression" id="1192804824878">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Node_ConceptMethodCall" id="1192804827334">
+              <link role="conceptMethodDeclaration" targetNodeId="1190731931503" resolveInfo="convertIntoType" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression" id="1192804823955" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1190731928220">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1190731928221" />
     </node>
@@ -124,6 +140,20 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1190732053554" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptMethodDeclaration" id="1192804859522">
+      <property name="name" value="convertIntoTypeForInput" />
+      <link role="overridenMethod" targetNodeId="1192804777821" resolveInfo="convertIntoTypeForInput" />
+      <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1192804859524">
+        <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1192804876510">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1192804879466">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.ClassifierType" id="1192804902891">
+              <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.SNodeType" id="1192804871806" />
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.ConceptConstructorDeclaration" id="1190732045487">
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1190732045488" />

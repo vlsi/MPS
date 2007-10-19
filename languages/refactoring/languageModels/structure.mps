@@ -5,13 +5,14 @@
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="6" />
+  <maxImportIndex value="7" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
   <import index="4" modelUID="java.util@java_stub" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="6" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
+  <import index="7" modelUID="java.lang@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1189693812263">
     <property name="name" value="Refactoring" />
     <property name="rootable" value="true" />
@@ -295,6 +296,41 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1191591642633">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1189694712372" resolveInfo="ConceptFunctionParameter_ActionContext" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1192792808079">
+    <property name="name" value="RequiredUserEnteredArgument" />
+    <link role="extends" targetNodeId="1189693830529" resolveInfo="RequiredAdditionalArgument" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.LinkDeclaration" id="1192793165066">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="filterClause" />
+      <link role="target" targetNodeId="1192793302394" resolveInfo="FilterArgumentClause" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1192793302394">
+    <property name="name" value="FilterArgumentClause" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1192793349872">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.BooleanType" id="1192793352702" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.ReferenceConceptLink" id="1192793355954">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1192793411861" resolveInfo="ConceptFunctionParameter_UserArgument" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.ConceptDeclaration" id="1192793411861">
+    <property name="name" value="ConceptFunctionParameter_UserArgument" />
+    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.StringConceptProperty" id="1192793457394">
+      <property name="value" value="argument" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.AggregationConceptLink" id="1192793482145">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.ClassifierType" id="1192793508372">
+        <link role="classifier" targetNodeId="7.~Object" resolveInfo="Object" />
+      </node>
     </node>
   </node>
 </model>

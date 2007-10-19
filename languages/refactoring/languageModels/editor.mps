@@ -226,5 +226,37 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.ConceptEditorDeclaration" id="1192793556170">
+    <link role="conceptDeclaration" targetNodeId="1.1192792808079" resolveInfo="RequiredUserEnteredArgument" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Collection" id="1192793558937">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1192793558938">
+        <property name="textFgColor" value="DARK_MAGENTA" />
+        <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1192793558939">
+        <property name="text" value="(" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Property" id="1192793558940">
+        <property name="textFgColor" value="DARK_GREEN" />
+        <link role="relationDeclaration" targetNodeId="1.1189768565365" resolveInfo="presentation" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1192793558941">
+        <property name="text" value=")" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1192793558942">
+        <property name="text" value=":" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1192793558943">
+        <link role="relationDeclaration" targetNodeId="1.1190637130098" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_Constant" id="1192793573680">
+        <property name="text" value=" filter:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.CellModel_RefNode" id="1192793585338">
+        <link role="relationDeclaration" targetNodeId="1.1192793165066" />
+      </node>
+    </node>
+  </node>
 </model>
 

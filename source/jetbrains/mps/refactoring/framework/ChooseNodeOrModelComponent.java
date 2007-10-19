@@ -12,6 +12,7 @@ import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.refactoring.common.move.MoveNodeRefactoring;
 
 import javax.swing.JPanel;
@@ -33,15 +34,17 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   boolean myMayBeModel;
   boolean myMayBeNode;
 
+  private Condition myCondition = Condition.TRUE_CONDITION;
 
-  public ChooseNodeOrModelComponent(String caption, String propertyName, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
+  public ChooseNodeOrModelComponent(String caption, String propertyName, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode, Condition condition) {
     myCaption = caption;
     myPropertyName = propertyName;
     myActionContext = actionContext;
     myOperationContext = myActionContext.getOperationContext();
     myMayBeModel = mayBeModel;
     myMayBeNode = mayBeNode;
-    Set<SModelDescriptor> models = getModelsFrom(myOperationContext);
+    myCondition = condition;
+    Set<SModelDescriptor> models = getModelsFrom(myOperationContext, myCondition);
     myModels.addAll(models);
     myConceptFQName = conceptFQName;
 
@@ -53,10 +56,17 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     myTree.expandPath(new TreePath(myTree.getRootNode()));
   }
 
-   private static Set<SModelDescriptor> getModelsFrom(IOperationContext context) {
+   public ChooseNodeOrModelComponent(String caption, String propertyName, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
+     this(caption, propertyName, actionContext, conceptFQName, mayBeModel, mayBeNode, Condition.TRUE_CONDITION);
+   }
+
+   private static Set<SModelDescriptor> getModelsFrom(IOperationContext context, Condition condition) {
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(context.getProject().getScope().getModelDescriptors());
     for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
       if (!model.getStereotype().equals(SModelStereotype.NONE) && !model.getStereotype().equals(SModelStereotype.TEMPLATES)) {
+        models.remove(model);
+      }
+      if (!condition.met(model)) {
         models.remove(model);
       }
     }
