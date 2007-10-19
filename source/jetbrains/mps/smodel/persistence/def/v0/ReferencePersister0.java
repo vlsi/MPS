@@ -119,14 +119,6 @@ public class ReferencePersister0 {
       }
     }
 
-//    return SReference.newInstance(this.getRole(),
-//            this.getSourceNode(),
-//            this.getTargetId(),
-//            this.getExtResolveInfo(),
-//            importedModelUID,
-//            this.getResolveInfo()
-//    );
-
     if (this.getExtResolveInfo() == null) {
       return SReference.create(this.getRole(),
               this.getSourceNode(),
