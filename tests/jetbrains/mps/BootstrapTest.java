@@ -76,6 +76,12 @@ public class BootstrapTest extends TestCase {
     assertTrue(res, res == null);
   }
 
+  public void testIntentionsLanguage() {
+    String res = TestMain.testProject(new File("languages/bootstrap/intentionsLanguage/intentionsLanguage.mpr"));
+    assertTrue(res, res == null);
+  }
+
+
   public void testXML() {
     String res = TestMain.testProject(new File("languages/xml/xml.mpr"));
     assertTrue(res, res == null);
