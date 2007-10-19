@@ -28,7 +28,11 @@ public class GlobalScope implements IScope {
   private GlobalScope() {
   }
 
-  public Language getLanguage(@NotNull String languageNamespace) {            
+  public String toString() {
+    return "glogal scope";
+  }
+
+  public Language getLanguage(@NotNull String languageNamespace) {
     Language language = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
     return language;
   }
