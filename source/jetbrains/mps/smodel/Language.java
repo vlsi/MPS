@@ -10,6 +10,7 @@ import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.logging.refactoring.structure.Refactoring;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
@@ -19,7 +20,9 @@ import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.refactoring.languages.RenameModelRefactoring;
 import jetbrains.mps.refactoring.logging.Marshallable;
+import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.reloading.ReloadUtils;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language.LanguageAspectStatus.AspectKind;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -28,6 +31,7 @@ import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.core.structure.BaseConcept;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -640,7 +644,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     SModelDescriptor actionsModelDescriptor = getActionsModelDescriptor();
     if (actionsModelDescriptor != null) result.add(actionsModelDescriptor);
     SModelDescriptor constraintsModelDescriptor = getConstraintsModelDescriptor();
-    if (constraintsModelDescriptor != null) result.add(constraintsModelDescriptor);    
+    if (constraintsModelDescriptor != null) result.add(constraintsModelDescriptor);
     return result;
   }
 
@@ -871,6 +875,27 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     result.addAll(super.getClassPathItems());
     for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myLanguageDescriptor.classPathEntrys())) {
       result.add(entry.getPath());
+    }
+    return result;
+  }
+
+  public Set<ILoggableRefactoring> getRefactorings() {
+    Set<ILoggableRefactoring> result = new HashSet<ILoggableRefactoring>();
+    SModelDescriptor scriptsModelDescriptor = getScriptsModelDescriptor();
+    if (scriptsModelDescriptor == null) {
+      return result;
+    }
+    SModel scriptsModel = scriptsModelDescriptor.getSModel();
+    String packageName = scriptsModel.getLongName();
+    for (Refactoring refactoring : scriptsModel.allAdapters(Refactoring.class)) {
+      try {
+        Class<ILoggableRefactoring> cls = (Class<ILoggableRefactoring>) Class.forName(packageName + "." + refactoring.getName(), false, ClassLoaderManager.getInstance().getClassLoader());
+        result.add(cls.getConstructor().newInstance());
+      } catch (ClassNotFoundException e) {
+        LOG.error("Can't find a class : " + e.getMessage());
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
     return result;
   }

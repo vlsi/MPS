@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.logging.refactoring">
+<language namespace="jetbrains.mps.logging.refactoring" pluginClass="jetbrains.mps.refactoring.plugin.LoggingRefactoringLanguagePlugin">
   <structure>
     <model modelUID="jetbrains.mps.logging.refactoring.structure" />
   </structure>
