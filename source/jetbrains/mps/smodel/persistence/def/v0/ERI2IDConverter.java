@@ -108,7 +108,5 @@ public class ERI2IDConverter {
   public static final Map<String, String> ourERI2IdMap = new HashMap<String, String>();
 
   static {
-    ourERI2IdMap.put("constructor [Classifier]StateChartViewer[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [StateMachine]))", "~StateChartViewer.<init>(tinyStateMachine.structure.StateMachine)");
-    ourERI2IdMap.put("constructor [Classifier]InstanceMethodCall_InstanceMethodScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ClassifierType]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [InstanceMethodCall]))", "~InstanceMethodCall_InstanceMethodScope.<init>(jetbrains.mps.baseLanguage.structure.ClassifierType,jetbrains.mps.baseLanguage.structure.InstanceMethodCall)");
   }
 }
