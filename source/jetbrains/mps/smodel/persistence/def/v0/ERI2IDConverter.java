@@ -1,7 +1,5 @@
 package jetbrains.mps.smodel.persistence.def.v0;
 
-import jetbrains.mps.externalResolve.ExternalResolveInfoParser;
-import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
@@ -19,9 +17,9 @@ public class ERI2IDConverter {
   public static SNodeId convert(SNode sourceNode, String role, String extResolveInfo) {
     return null;
   }
-  
+
 //  public static SNodeId convert(SNode sourceNode, String role, String extResolveInfo) {
-//    String nodeId = ourERICvtMap.get(extResolveInfo);
+//    String nodeId = ourERI2IdMap.get(extResolveInfo);
 //    if(nodeId != null) {
 //      return SNodeId.fromString(nodeId);
 //    }
@@ -107,36 +105,10 @@ public class ERI2IDConverter {
 //    return SNodeId.fromString(result + ")");
 //  }
 
-//  private static final Map<String, String> ourParmCvtMap = new HashMap<String, String>();
-  private static final Map<String, String> ourERICvtMap = new HashMap<String, String>();
-
-//  static {
-//    ourParmCvtMap.put("", "");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int)", "int");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean)", "boolean");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])", "java.lang.String");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [CellModel_Image])", "jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Image");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Classifier])", "jetbrains.mps.baseLanguage.structure.Classifier");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SNode])", "jetbrains.mps.smodel.SNode");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModel])", "jetbrains.mps.smodel.SModel");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [IScope])", "jetbrains.mps.smodel.IScope");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SelectionMode])", "jetbrains.mps.projectLanguage.editor.SelectionMode");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [File])", "java.io.File");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [OutputStream])", "java.io.OutputStream");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [HttpServletRequest])", "javax.servlet.http.HttpServletRequest");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List])", "java.util.List");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List", "java.util.List");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Collection])", "java.util.Collection");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Collection", "java.util.Collection");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [AbstractConceptDeclaration])", "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ILoggableRefactoring])", "jetbrains.mps.refactoring.framework.ILoggableRefactoring");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [NewExpression])", "jetbrains.mps.baseLanguage.structure.NewExpression");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [RuleEngine])", "jetbrains.mps.businessRules.runtime.RuleEngine");
-//    ourParmCvtMap.put("(jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [EditorContext])", "jetbrains.mps.nodeEditor.EditorContext");
-//  }
+  public static final Map<String, String> ourERI2IdMap = new HashMap<String, String>();
 
   static {
-    ourERICvtMap.put("constructor [Classifier]StateChartViewer[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [StateMachine]))","~StateChartViewer.<init>(tinyStateMachine.structure.StateMachine)");
-    ourERICvtMap.put("constructor [Classifier]InstanceMethodCall_InstanceMethodScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ClassifierType]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [InstanceMethodCall]))","~InstanceMethodCall_InstanceMethodScope.<init>(jetbrains.mps.baseLanguage.structure.ClassifierType,jetbrains.mps.baseLanguage.structure.InstanceMethodCall)");
+    ourERI2IdMap.put("constructor [Classifier]StateChartViewer[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [StateMachine]))", "~StateChartViewer.<init>(tinyStateMachine.structure.StateMachine)");
+    ourERI2IdMap.put("constructor [Classifier]InstanceMethodCall_InstanceMethodScope[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [ClassifierType]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [InstanceMethodCall]))", "~InstanceMethodCall_InstanceMethodScope.<init>(jetbrains.mps.baseLanguage.structure.ClassifierType,jetbrains.mps.baseLanguage.structure.InstanceMethodCall)");
   }
 }
