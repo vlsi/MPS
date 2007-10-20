@@ -81,6 +81,7 @@ public class IdByEriMap extends HashMap<String, String> {
     idByEriMap.put("method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean)))", "~PrintStream.println(boolean):void");
     idByEriMap.put("method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))", "~PrintStream.println(java.lang.String):void");
     idByEriMap.put("method ([Classifier]PrintStream).([InstanceMethodDeclaration]println((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Object])))", "~PrintStream.println(java.lang.Object):void");
+    idByEriMap.put("method ([Classifier]PrintStream).([InstanceMethodDeclaration]print((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))", "~PrintStream.print(java.lang.String):void");
     idByEriMap.put("constructor [Classifier]BufferedReader[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Reader]))", "~BufferedReader.<init>(java.io.Reader)");
     idByEriMap.put("method ([Classifier]BufferedReader).([InstanceMethodDeclaration]readLine())", "~BufferedReader.readLine():java.lang.String");
     idByEriMap.put("method ([Classifier]InputStream).([InstanceMethodDeclaration]read())", "~InputStream.read():int");
