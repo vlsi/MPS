@@ -28,8 +28,8 @@ public class ModelReader1 implements IModelReader {
     Element rootElement = document.getRootElement();
     String modelLongName = rootElement.getAttributeValue(ModelPersistence.NAME);
 
-      String shortName = NameUtil.shortNameFromLongName(modelLongName);
-      LOG.assertLog(shortName.equals(modelShortName));
+    String shortName = NameUtil.shortNameFromLongName(modelLongName);
+    LOG.assertLog(shortName.equals(modelShortName));
 
     SModelUID modelUID = new SModelUID(modelLongName, stereotype);
     SModel model = new SModel(modelUID);
@@ -172,10 +172,11 @@ public class ModelReader1 implements IModelReader {
           boolean useUIDs
   ) {
     // todo: save 'conceptFqName' (i.e. <namespace>.structure.<name>)
-    String oldStructureClassName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
-    String conceptName = NameUtil.shortNameFromLongName(oldStructureClassName);
-    String languageNamespace = NameUtil.namespaceFromLongName(oldStructureClassName);
-    String conceptFqName = languageNamespace + ".structure." + conceptName;
+//    String oldStructureClassName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
+//    String conceptName = NameUtil.shortNameFromLongName(oldStructureClassName);
+//    String languageNamespace = NameUtil.namespaceFromLongName(oldStructureClassName);
+//    String conceptFqName = languageNamespace + ".structure." + conceptName;
+    String conceptFqName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
     SNode node = new SNode(model, conceptFqName);
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);

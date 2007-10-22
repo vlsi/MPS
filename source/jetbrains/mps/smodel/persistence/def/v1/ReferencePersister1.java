@@ -92,9 +92,14 @@ import org.jdom.Element;
         importedModelUID = model.getImportedModelUID(getImportIndex());
       }
       if (importedModelUID == null) {
-        LOG.error("Couldn't create reference from " + this.getSourceNode().getDebugText() + " : import for index [" + getImportIndex() + "] not found");
+        LOG.error("couldn't create reference '" + this.getRole() + "' from " + this.getSourceNode().getDebugText() + " : import for index [" + getImportIndex() + "] not found");
         return null;
       }
+    }
+
+    if (this.getTargetId() == null) {
+      LOG.error("couldn't create reference '" + this.getRole() + "' from " + this.getSourceNode().getDebugText() + " : target node id is null");
+      return null;
     }
 
     return SReference.create(this.getRole(),

@@ -128,9 +128,9 @@ import org.jdom.Element;
     }
 
     String extResolveInfo = this.getExtResolveInfo();
+    String resolveInfo = ExternalResolver.getHumanFriendlyString(extResolveInfo);
     SNodeId targetId = ERI2IDConverter.convert(this.getSourceNode(), this.getRole(), extResolveInfo);
     if (targetId != null) {
-      String resolveInfo = ExternalResolver.getHumanFriendlyString(extResolveInfo);
       return SReference.create(this.getRole(),
               this.getSourceNode(),
               importedModelUID,
@@ -138,14 +138,23 @@ import org.jdom.Element;
               resolveInfo);
     }
 
-    // couldn't convert 
-    return SReference.newInstance(this.getRole(),
+    // couldn't convert
+    if (resolveInfo == null) {
+      resolveInfo = this.getResolveInfo();
+    }
+    return SReference.create(this.getRole(),
             this.getSourceNode(),
-            this.getTargetId(),
-            this.getExtResolveInfo(),
             importedModelUID,
-            this.getResolveInfo()
-    );
+            null,
+            resolveInfo);
+
+//    return SReference.newInstance(this.getRole(),
+//            this.getSourceNode(),
+//            this.getTargetId(),
+//            this.getExtResolveInfo(),
+//            importedModelUID,
+//            this.getResolveInfo()
+//    );
   }
 
   public void createReferenceInModel(SModel model, VisibleModelElements visibleModelElements) {

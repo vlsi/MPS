@@ -45,7 +45,7 @@ public class ERI2IDConverter {
     } catch (Exception e) {
       //
     }
-//    LOG.error("couldn't convert reference '" + role + "' ERI=" + extResolveInfo, sourceNode);
+    LOG.error("couldn't convert reference '" + role + "' ERI=" + extResolveInfo, sourceNode);
     return null;
   }
 }

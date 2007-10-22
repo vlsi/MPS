@@ -1,9 +1,14 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.smodel.persistence.def.v0.ModelWriter0;
+import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
+import jetbrains.mps.smodel.persistence.def.v1.ModelWriter1;
 import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -12,7 +17,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 
 /**
@@ -55,11 +61,13 @@ public class ModelPersistence {
 
   private static final Map<Integer, IModelReader> modelReaders = new HashMap<Integer, IModelReader>();
   private static final Map<Integer, IModelWriter> modelWriters = new HashMap<Integer, IModelWriter>();
-  private static final int currentPersistenceVersion = 0;
+  private static final int currentPersistenceVersion = 1;
 
   static {
     modelReaders.put(0, new ModelReader0());
     modelWriters.put(0, new ModelWriter0());
+    modelReaders.put(1, new ModelReader1());
+    modelWriters.put(1, new ModelWriter1());
   }
 
   @NotNull
@@ -96,6 +104,12 @@ public class ModelPersistence {
     SModel model = modelReaders.get(modelPersistenceVersion).readModel(document, modelName, modelStereotype);
     if (modelPersistenceVersion < currentPersistenceVersion) {
       model = upgradeModelPersistence(model, modelPersistenceVersion);
+      document = saveModel(model, false);
+      try {
+        JDOMUtil.writeDocument(document, file);
+      } catch (IOException e) {
+        LOG.error("error while saving model after persistence upgrade " + model.getUID(), e);
+      }
     }
     return model;
   }
