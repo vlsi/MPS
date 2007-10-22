@@ -26,14 +26,14 @@ public class ModelPersistence {
   public static final String LINK = "link";
   public static final String ROLE = "role";
   public static final String NAME = "name";
-  public static final String NAMESPACE = "namespace";
-  public static final String EXT_RESOLVE_INFO = "extResolveInfo";
+  public static final String NAMESPACE = "namespace";  // v0
+  public static final String EXT_RESOLVE_INFO = "extResolveInfo"; //v0
   public static final String NODE = "node";
   public static final String TYPE = "type";
   public static final String ID = "id";
   public static final String NO_ID = "noId";
   public static final String RESOLVE_INFO = "resolveInfo";
-  public static final String TARGET_CLASS_RESOLVE_INFO = "targetClassResolveInfo";
+  public static final String TARGET_CLASS_RESOLVE_INFO = "targetClassResolveInfo"; //v0
   public static final String MODEL = "model";
   public static final String PROPERTY = "property";
   public static final String VALUE = "value";
@@ -49,6 +49,9 @@ public class ModelPersistence {
   public static final String MODEL_UID = "modelUID";
   public static final String VERSION = "version";
   public static final String REFACTORING_LOG = "refactoringLog";
+
+  public static final String PERSISTENCE = "persistence";
+  public static final String PERSISTENCE_VERSION = "version";
 
   private static final Map<Integer, IModelReader> modelReaders = new HashMap<Integer, IModelReader>();
   private static final Map<Integer, IModelWriter> modelWriters = new HashMap<Integer, IModelWriter>();
@@ -111,9 +114,9 @@ public class ModelPersistence {
 
   private static int getModelPersistenceVersion(Document document) {
     Element modelElement = document.getRootElement();
-    Element persistence = modelElement.getChild("persistence");
+    Element persistence = modelElement.getChild(PERSISTENCE);
     if (persistence != null) {
-      return DocUtil.readIntAttributeValue(persistence, "version");
+      return DocUtil.readIntAttributeValue(persistence, PERSISTENCE_VERSION);
     }
     return 0;
   }

@@ -1,4 +1,4 @@
-package jetbrains.mps.smodel.persistence.def.v0;
+package jetbrains.mps.smodel.persistence.def.v1;
 
 import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
@@ -7,14 +7,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import org.jdom.Element;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 10.11.2005
- * Time: 20:54:31
- * To change this template use File | Settings | File Templates.
- */
-/*package*/ class ReferencePersister0 {
+/*package*/ class ReferencePersister1 {
 
   private static Logger LOG = Logger.getLogger(ReferenceDescriptor.class);
 
@@ -22,39 +15,28 @@ import org.jdom.Element;
   protected String myRole;
   protected String myTargetId;
   protected String myResolveInfo;
-  protected String myExtResolveInfo;
   protected String myImportedModelInfo = "-1";
   protected boolean myUseUIDs;
   private boolean myNotImported;
 
 
-  protected ReferencePersister0(ReferenceDescriptor rd, boolean useUIDs) {
-    this(rd.sourceNode, rd.role, rd.attTargetNodeId, rd.attExtResolveInfo, rd.resolveInfo, useUIDs);
+  protected ReferencePersister1(ReferenceDescriptor rd, boolean useUIDs) {
+    this(rd.sourceNode, rd.role, rd.targetNodeId, rd.resolveInfo, useUIDs);
   }
 
-  protected ReferencePersister0(SNode sourceNode, String role, String attTargetNodeId, String attExtResolveInfo, String resolveInfo, boolean useUIDs) {
+  protected ReferencePersister1(SNode sourceNode, String role, String attTargetNodeId, String resolveInfo, boolean useUIDs) {
     this.myUseUIDs = useUIDs;
     this.mySourceNode = sourceNode;
     this.myRole = role;
     if (attTargetNodeId != null) {
       ReferenceTargetDescriptor targetDescriptor = parseAttTargetNodeId(attTargetNodeId, useUIDs);
-      this.myTargetId = targetDescriptor.myTargetInfo;
-      this.myImportedModelInfo = targetDescriptor.myImportedModelInfo;
-      this.myNotImported = targetDescriptor.myNotImported;
-    }
-    if (attExtResolveInfo != null) {
-      ReferenceTargetDescriptor targetDescriptor = parseAttExtResolveInfo(attExtResolveInfo, useUIDs);
-      this.myExtResolveInfo = targetDescriptor.myTargetInfo;
-      this.myImportedModelInfo = targetDescriptor.myImportedModelInfo;
-      this.myNotImported = targetDescriptor.myNotImported;
+      this.myTargetId = targetDescriptor.targetInfo;
+      this.myImportedModelInfo = targetDescriptor.importedModelInfo;
+      this.myNotImported = targetDescriptor.notImported;
     }
     this.myResolveInfo = resolveInfo;
   }
 
-
-  protected ReferenceTargetDescriptor parseAttExtResolveInfo(String attExtResolveInfo, boolean useUIDs) {
-    return parseAttTargetNodeId(attExtResolveInfo, useUIDs); // same format of string
-  }
 
   protected ReferenceTargetDescriptor parseAttTargetNodeId(String attTargetNodeId, boolean useUIDs) {
     ReferenceTargetDescriptor referenceTargetDescriptor = new ReferenceTargetDescriptor();
@@ -65,16 +47,16 @@ import org.jdom.Element;
       i = attTargetNodeId.indexOf('.');
     }
     if (i > 0) {
-      referenceTargetDescriptor.myImportedModelInfo = attTargetNodeId.substring(0, i);
-      String info = referenceTargetDescriptor.myImportedModelInfo;
+      referenceTargetDescriptor.importedModelInfo = attTargetNodeId.substring(0, i);
+      String info = referenceTargetDescriptor.importedModelInfo;
       if (info.endsWith("v")) {
-        referenceTargetDescriptor.myNotImported = true;
-        referenceTargetDescriptor.myImportedModelInfo = info.substring(0, info.length() - 1);
+        referenceTargetDescriptor.notImported = true;
+        referenceTargetDescriptor.importedModelInfo = info.substring(0, info.length() - 1);
       }
-      referenceTargetDescriptor.myTargetInfo = attTargetNodeId.substring(i + 1);
+      referenceTargetDescriptor.targetInfo = attTargetNodeId.substring(i + 1);
     } else {
-      referenceTargetDescriptor.myImportedModelInfo = "-1";
-      referenceTargetDescriptor.myTargetInfo = attTargetNodeId;
+      referenceTargetDescriptor.importedModelInfo = "-1";
+      referenceTargetDescriptor.targetInfo = attTargetNodeId;
     }
     return referenceTargetDescriptor;
   }
@@ -96,10 +78,6 @@ import org.jdom.Element;
     return myResolveInfo;
   }
 
-  public String getExtResolveInfo() {
-    return myExtResolveInfo;
-  }
-
   // -- create reference
   SReference createReferenceInModelDoNotAddToSourceNode(SModel model, VisibleModelElements visibleModelElements) {
     SModelUID importedModelUID = model.getUID();
@@ -119,33 +97,11 @@ import org.jdom.Element;
       }
     }
 
-    if (this.getExtResolveInfo() == null) {
-      return SReference.create(this.getRole(),
-              this.getSourceNode(),
-              importedModelUID,
-              SNodeId.fromString(this.getTargetId()),
-              this.getResolveInfo());
-    }
-
-    String extResolveInfo = this.getExtResolveInfo();
-    SNodeId targetId = ERI2IDConverter.convert(this.getSourceNode(), this.getRole(), extResolveInfo);
-    if (targetId != null) {
-      String resolveInfo = ExternalResolver.getHumanFriendlyString(extResolveInfo);
-      return SReference.create(this.getRole(),
-              this.getSourceNode(),
-              importedModelUID,
-              targetId,
-              resolveInfo);
-    }
-
-    // couldn't convert 
-    return SReference.newInstance(this.getRole(),
+    return SReference.create(this.getRole(),
             this.getSourceNode(),
-            this.getTargetId(),
-            this.getExtResolveInfo(),
             importedModelUID,
-            this.getResolveInfo()
-    );
+            SNodeId.fromString(this.getTargetId()),
+            this.getResolveInfo());
   }
 
   public void createReferenceInModel(SModel model, VisibleModelElements visibleModelElements) {
@@ -159,9 +115,9 @@ import org.jdom.Element;
 
   // -- create descriptor
 
-  public static ReferencePersister0 readReferencePersister(Element linkElement, SNode sourceNode, boolean useUIDs) {
+  public static ReferencePersister1 readReferencePersister(Element linkElement, SNode sourceNode, boolean useUIDs) {
     ReferenceDescriptor rd = readReferenceDescriptor(linkElement, sourceNode);
-    return new ReferencePersister0(rd, useUIDs);
+    return new ReferencePersister1(rd, useUIDs);
   }
 
   private static ReferenceDescriptor readReferenceDescriptor(Element linkElement, SNode sourceNode) {
@@ -169,9 +125,7 @@ import org.jdom.Element;
     rd.sourceNode = sourceNode;
     rd.role = linkElement.getAttributeValue(ModelPersistence.ROLE);
     rd.resolveInfo = linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO);
-    rd.targetClassResolveInfo = linkElement.getAttributeValue(ModelPersistence.TARGET_CLASS_RESOLVE_INFO);
-    rd.attExtResolveInfo = linkElement.getAttributeValue(ModelPersistence.EXT_RESOLVE_INFO);
-    rd.attTargetNodeId = linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
+    rd.targetNodeId = linkElement.getAttributeValue(ModelPersistence.TARGET_NODE_ID);
     return rd;
   }
   // --
@@ -228,29 +182,18 @@ import org.jdom.Element;
   // --
 
 
+  @SuppressWarnings({"InstanceVariableNamingConvention"})
   public static class ReferenceTargetDescriptor {
-    public ReferenceTargetDescriptor() {
-
-    }
-
-    public boolean myNotImported = false;
-    public String myTargetInfo;
-    public String myImportedModelInfo;
+    public boolean notImported = false;
+    public String targetInfo;
+    public String importedModelInfo;
   }
 
   @SuppressWarnings({"InstanceVariableNamingConvention"})
   protected static class ReferenceDescriptor {
-    public ReferenceDescriptor() {
-
-    }
-
     public SNode sourceNode;
     public String role;
     public String resolveInfo;
-    public String targetClassResolveInfo;
-    public String attExtResolveInfo;
-    public String attTargetNodeId;
+    public String targetNodeId;
   }
-
-
 }
