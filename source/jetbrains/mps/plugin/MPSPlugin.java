@@ -31,7 +31,7 @@ public class MPSPlugin {
 
   private IMPSPlugin getPlugin() {
     if (myPlugin == null) {
-      try {
+      try {        
         myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
       } catch (Exception e) {
         LOG.error("Can't connect ot IDEA : " + e.getMessage());

@@ -25,6 +25,7 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 /**
  * @author Kostik
@@ -130,8 +131,9 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
 
   private ProjectJdk findSuitableJDK() {
     for (ProjectJdk jdk : ProjectJdkTable.getInstance().getAllJdks()) {
-      if ("java version \"1.5".startsWith(jdk.getVersionString()) ||
-              "java version \"1.6".startsWith(jdk.getVersionString())) return jdk;
+      if (("" + jdk.getVersionString()).startsWith("java version \"1.5") ||
+              ("" + jdk.getVersionString()).startsWith("java version \"1.6") ||
+              ("" + jdk.getVersionString()).startsWith("java version \"1.7")) return jdk;
     }
     return null;
   }
