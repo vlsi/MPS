@@ -14,7 +14,6 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
   public static String TO_STRING_FUNCTION = "toStringFunction";
-  public static String FROM_STRING_FUNCTION = "fromStringFunction";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
 
@@ -39,36 +38,28 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
     super.setChild(ParamListFeature.PARAMETER_TYPE, node);
   }
 
-  public ParameterQueryFunction getParameterQueryFunction() {
-    return (ParameterQueryFunction)this.getChild(ParamListFeature.PARAMETER_QUERY_FUNCTION);
+  public ParameterQueryFun getParameterQueryFunction() {
+    return (ParameterQueryFun)this.getChild(ParamListFeature.PARAMETER_QUERY_FUNCTION);
   }
 
-  public void setParameterQueryFunction(ParameterQueryFunction node) {
+  public void setParameterQueryFunction(ParameterQueryFun node) {
     super.setChild(ParamListFeature.PARAMETER_QUERY_FUNCTION, node);
   }
 
-  public TargetTypeFunction getTargetTypeFunction() {
-    return (TargetTypeFunction)this.getChild(ParamListFeature.TARGET_TYPE_FUNCTION);
+  public TargetTypeFun getTargetTypeFunction() {
+    return (TargetTypeFun)this.getChild(ParamListFeature.TARGET_TYPE_FUNCTION);
   }
 
-  public void setTargetTypeFunction(TargetTypeFunction node) {
+  public void setTargetTypeFunction(TargetTypeFun node) {
     super.setChild(ParamListFeature.TARGET_TYPE_FUNCTION, node);
   }
 
-  public NameFunction getToStringFunction() {
-    return (NameFunction)this.getChild(ParamListFeature.TO_STRING_FUNCTION);
+  public ToStringFun getToStringFunction() {
+    return (ToStringFun)this.getChild(ParamListFeature.TO_STRING_FUNCTION);
   }
 
-  public void setToStringFunction(NameFunction node) {
+  public void setToStringFunction(ToStringFun node) {
     super.setChild(ParamListFeature.TO_STRING_FUNCTION, node);
-  }
-
-  public StringToParamFun getFromStringFunction() {
-    return (StringToParamFun)this.getChild(ParamListFeature.FROM_STRING_FUNCTION);
-  }
-
-  public void setFromStringFunction(StringToParamFun node) {
-    super.setChild(ParamListFeature.FROM_STRING_FUNCTION, node);
   }
 
   public ParamFeatureGetFun getParamGetFunction() {

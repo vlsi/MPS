@@ -11,11 +11,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ParameterWrapper extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.ypath.structure.ParameterWrapper";
+  public static String PARAM_REF = "paramRef";
   public static String PARAM_VALUE = "paramValue";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
-  public static String PARAM_REF = "paramRef";
 
   public  ParameterWrapper(SNode node) {
     super(node);
@@ -29,6 +29,14 @@ public class ParameterWrapper extends BaseConcept implements INamedConcept {
     return ParameterWrapper.newInstance(sm, false);
   }
 
+
+  public BaseConcept getParamRef() {
+    return (BaseConcept)this.getReferent(ParameterWrapper.PARAM_REF);
+  }
+
+  public void setParamRef(BaseConcept node) {
+    super.setReferent(ParameterWrapper.PARAM_REF, node);
+  }
 
   public String getParamValue() {
     return this.getProperty(ParameterWrapper.PARAM_VALUE);
@@ -60,14 +68,6 @@ public class ParameterWrapper extends BaseConcept implements INamedConcept {
 
   public void setAlias(String value) {
     this.setProperty(ParameterWrapper.ALIAS, value);
-  }
-
-  public BaseConcept getParamRef() {
-    return (BaseConcept)this.getReferent(ParameterWrapper.PARAM_REF);
-  }
-
-  public void setParamRef(BaseConcept node) {
-    super.setReferent(ParameterWrapper.PARAM_REF, node);
   }
 
 }

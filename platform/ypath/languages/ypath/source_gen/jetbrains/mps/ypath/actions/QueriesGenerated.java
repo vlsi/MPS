@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.ypath.structure.TraversalAxis;
+import jetbrains.mps.ypath.runtime.TraversalAxis;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -162,6 +162,11 @@ public class QueriesGenerated {
     }
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.ParamSequenceFeature", operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
+      result.addAll(defaultActions);
+    }
+    {
+      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericParamFeature", operationContext.getScope());
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
       result.addAll(defaultActions);
     }

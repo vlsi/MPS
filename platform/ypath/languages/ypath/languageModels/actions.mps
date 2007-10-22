@@ -6,20 +6,21 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="45" />
-  <import index="1" modelUID="jetbrains.mps.ypath.structure" />
-  <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <import index="6" modelUID="jetbrains.mps.smodel@java_stub" />
-  <import index="21" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
-  <import index="25" modelUID="java.lang@java_stub" />
-  <import index="30" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
-  <import index="31" modelUID="jetbrains.mps.ypath.structure@java_stub" />
-  <import index="38" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" />
-  <import index="39" modelUID="jetbrains.mps.ypath.constraints" />
-  <import index="40" modelUID="jetbrains.mps.core.structure" />
-  <import index="41" modelUID="jetbrains.mps.generator@java_stub" />
-  <import index="44" modelUID="jetbrains.mps.ypath.design@java_stub" />
-  <import index="45" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" />
+  <maxImportIndex value="46" />
+  <import index="1" modelUID="jetbrains.mps.ypath.structure" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="6" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
+  <import index="21" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  <import index="25" modelUID="java.lang@java_stub" version="-1" />
+  <import index="30" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
+  <import index="31" modelUID="jetbrains.mps.ypath.structure@java_stub" version="-1" />
+  <import index="38" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
+  <import index="39" modelUID="jetbrains.mps.ypath.constraints" version="-1" />
+  <import index="40" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="41" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
+  <import index="44" modelUID="jetbrains.mps.ypath.design@java_stub" version="-1" />
+  <import index="45" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+  <import index="46" modelUID="jetbrains.mps.ypath.runtime@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActions" id="1168462842641">
     <property name="name" value="YPath_rhint" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.RTransformHintSubstituteActionsBuilder" id="1168893677147">
@@ -204,8 +205,8 @@
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178629631874">
               <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1179155635092">
                 <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1179155657005">
-                  <link role="classConcept" extResolveInfo="31.[Classifier]TraversalAxis" />
-                  <link role="baseMethodDeclaration" extResolveInfo="31.static method ([Classifier]TraversalAxis).([StaticMethodDeclaration]getConstants())" />
+                  <link role="baseMethodDeclaration" targetNodeId="31.~TraversalAxis.getConstants():java.util.List" resolveInfo="getConstants" />
+                  <link role="classConcept" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
                 </node>
               </node>
             </node>
@@ -277,7 +278,7 @@
                   </node>
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.Property_SetOperation" id="1179156806329">
                     <node role="value" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179162577984">
-                      <link role="baseMethodDeclaration" extResolveInfo="31.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getValue())" />
+                      <link role="baseMethodDeclaration" targetNodeId="31.~TraversalAxis.getValue():java.lang.String" resolveInfo="getValue" />
                       <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parameterObject" id="1179162564440" />
                     </node>
                   </node>
@@ -290,8 +291,8 @@
               </node>
             </node>
           </node>
-          <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179162435753">
-            <link role="classifier" extResolveInfo="31.[Classifier]TraversalAxis" />
+          <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1192887133817">
+            <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
           </node>
           <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.QueryFunction_RightTransform_String" id="1178629632042">
             <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1178629632043">
@@ -299,7 +300,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.StaticMethodCall" id="1179162504897">
                   <link role="baseMethodDeclaration" targetNodeId="1179161831408" resolveInfo="getOperationSign" />
                   <link role="classConcept" targetNodeId="1179161788761" resolveInfo="TraversalAxisUtil" />
-                  <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parameterObject" id="1179162508929" />
+                  <node role="actualArgument" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parameterObject" id="1192555112187" />
                 </node>
               </node>
             </node>
@@ -312,7 +313,7 @@
                     <property name="value" value="find " />
                   </node>
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.InstanceMethodCall" id="1179156604847">
-                    <link role="baseMethodDeclaration" extResolveInfo="31.method ([Classifier]TraversalAxis).([InstanceMethodDeclaration]getName())" />
+                    <link role="baseMethodDeclaration" targetNodeId="31.~TraversalAxis.getName():java.lang.String" resolveInfo="getName" />
                     <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptFunctionParameter_parameterObject" id="1179156604848" />
                   </node>
                 </node>
@@ -1270,7 +1271,7 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1178974593898">
         <property name="name" value="scope" />
         <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1178974598400">
-          <link role="classifier" extResolveInfo="6.[Classifier]IScope" />
+          <link role="classifier" targetNodeId="6.~IScope" resolveInfo="IScope" />
         </node>
       </node>
     </node>
@@ -1281,7 +1282,7 @@
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1179161831408">
       <property name="name" value="getOperationSign" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179161889730">
-        <link role="classifier" extResolveInfo="25.[Classifier]String" />
+        <link role="classifier" targetNodeId="25.~String" resolveInfo="String" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.PublicVisibility" id="1179161831410" />
       <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1179161831411">
@@ -1368,8 +1369,8 @@
                           </node>
                           <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179162032858">
                             <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188244489280">
-                              <link role="enumConstantDeclaration" extResolveInfo="31.enum const ([Classifier]TraversalAxis).([EnumConstantDeclaration]SELF_ANCESTORS)" />
-                              <link role="enumClass" extResolveInfo="31.[Classifier]TraversalAxis" />
+                              <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                              <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.SELF_ANCESTORS" resolveInfo="SELF_ANCESTORS" />
                             </node>
                             <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179162032860">
                               <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
@@ -1378,8 +1379,8 @@
                         </node>
                         <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179162020391">
                           <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188244487825">
-                            <link role="enumConstantDeclaration" extResolveInfo="31.enum const ([Classifier]TraversalAxis).([EnumConstantDeclaration]SELF_FOLLOWING_SIBLINGS)" />
-                            <link role="enumClass" extResolveInfo="31.[Classifier]TraversalAxis" />
+                            <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                            <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.SELF_FOLLOWING_SIBLINGS" resolveInfo="SELF_FOLLOWING_SIBLINGS" />
                           </node>
                           <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179162020393">
                             <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
@@ -1388,8 +1389,8 @@
                       </node>
                       <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179162010092">
                         <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188244486918">
-                          <link role="enumConstantDeclaration" extResolveInfo="31.enum const ([Classifier]TraversalAxis).([EnumConstantDeclaration]FOLLOWING_SIBLINGS)" />
-                          <link role="enumClass" extResolveInfo="31.[Classifier]TraversalAxis" />
+                          <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                          <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.FOLLOWING_SIBLINGS" resolveInfo="FOLLOWING_SIBLINGS" />
                         </node>
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179162010094">
                           <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
@@ -1398,8 +1399,8 @@
                     </node>
                     <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179162000570">
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188244485058">
-                        <link role="enumConstantDeclaration" extResolveInfo="31.enum const ([Classifier]TraversalAxis).([EnumConstantDeclaration]PRECEDING_SIBLINGS_SELF)" />
-                        <link role="enumClass" extResolveInfo="31.[Classifier]TraversalAxis" />
+                        <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                        <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.PRECEDING_SIBLINGS_SELF" resolveInfo="PRECEDING_SIBLINGS_SELF" />
                       </node>
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179162000572">
                         <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
@@ -1408,8 +1409,8 @@
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179161993419">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188244484135">
-                      <link role="enumConstantDeclaration" extResolveInfo="31.enum const ([Classifier]TraversalAxis).([EnumConstantDeclaration]PRECEDING_SIBLINGS)" />
-                      <link role="enumClass" extResolveInfo="31.[Classifier]TraversalAxis" />
+                      <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                      <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.PRECEDING_SIBLINGS" resolveInfo="PRECEDING_SIBLINGS" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179161993421">
                       <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
@@ -1418,8 +1419,8 @@
                 </node>
                 <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179161981503">
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188244481087">
-                    <link role="enumConstantDeclaration" extResolveInfo="31.enum const ([Classifier]TraversalAxis).([EnumConstantDeclaration]SELF_DESCENDANTS)" />
-                    <link role="enumClass" extResolveInfo="31.[Classifier]TraversalAxis" />
+                    <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.SELF_DESCENDANTS" resolveInfo="SELF_DESCENDANTS" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179161981505">
                     <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
@@ -1428,8 +1429,8 @@
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179161972516">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188244480289">
-                  <link role="enumConstantDeclaration" extResolveInfo="31.enum const ([Classifier]TraversalAxis).([EnumConstantDeclaration]DESCENDANTS)" />
-                  <link role="enumClass" extResolveInfo="31.[Classifier]TraversalAxis" />
+                  <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                  <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.DESCENDANTS" resolveInfo="DESCENDANTS" />
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179161972518">
                   <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
@@ -1441,15 +1442,15 @@
                 <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188244479444">
-                <link role="enumConstantDeclaration" extResolveInfo="31.enum const ([Classifier]TraversalAxis).([EnumConstantDeclaration]CHILDREN)" />
-                <link role="enumClass" extResolveInfo="31.[Classifier]TraversalAxis" />
+                <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+                <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.CHILDREN" resolveInfo="CHILDREN" />
               </node>
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.EqualsExpression" id="1179162369093">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.EnumConstantReference" id="1188244478084">
-              <link role="enumConstantDeclaration" extResolveInfo="31.enum const ([Classifier]TraversalAxis).([EnumConstantDeclaration]ANCESTORS)" />
-              <link role="enumClass" extResolveInfo="31.[Classifier]TraversalAxis" />
+              <link role="enumClass" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
+              <link role="enumConstantDeclaration" targetNodeId="46.~TraversalAxis.ANCESTORS" resolveInfo="ANCESTORS" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.ParameterReference" id="1179161948346">
               <link role="variableDeclaration" targetNodeId="1179161879728" resolveInfo="axis" />
@@ -1459,8 +1460,8 @@
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.ParameterDeclaration" id="1179161879728">
         <property name="name" value="axis" />
-        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1179162241745">
-          <link role="classifier" extResolveInfo="31.[Classifier]TraversalAxis" />
+        <node role="type" type="jetbrains.mps.baseLanguage.ClassifierType" id="1192554736257">
+          <link role="classifier" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
         </node>
       </node>
     </node>
@@ -1482,6 +1483,9 @@
       </node>
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstitutePart" id="1184775633398">
         <link role="concept" targetNodeId="1.1184658874084" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.ConceptSubstitutePart" id="1190800518984">
+        <link role="concept" targetNodeId="1.1190798501119" />
       </node>
     </node>
   </node>

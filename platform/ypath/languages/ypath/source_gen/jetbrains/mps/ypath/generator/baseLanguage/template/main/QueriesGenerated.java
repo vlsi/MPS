@@ -20,6 +20,7 @@ import jetbrains.mps.ypath.constraints.TreeNodeKind_Behavior;
 import jetbrains.mps.ypath.constraints.MatchKindOperation_Behavior;
 import jetbrains.mps.ypath.constraints.TreeNodeKindProperty_Behavior;
 import jetbrains.mps.ypath.constraints.MatchDefaultPropertyOperation_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.ypath.constraints.ChildrenBlock_Behavior;
 import java.util.List;
 import java.util.ArrayList;
@@ -28,8 +29,12 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOp
 
 public class QueriesGenerated {
 
+  public static boolean baseMappingRule_Condition_1191923770124(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "features", true)) || !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate(null, null))));
+  }
+
   public static boolean baseMappingRule_Condition_1184762279213(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate(null, null))));
+    return !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate1(null, null))));
   }
 
   public static boolean baseMappingRule_Condition_1168444397739(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -208,7 +213,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1185030157421(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate1(null, null)));
+    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate2(null, null)));
     return JavaNameUtil.fqClassName(SNodeOperations.getModel(SLinkOperations.getTarget(tpae, "treepathAspect", false)), SPropertyOperations.getString(SLinkOperations.getTarget(tpae, "treepathAspect", false), "name"));
   }
 
@@ -219,54 +224,50 @@ public class QueriesGenerated {
   public static SNode referenceMacro_GetReferent_1184059521295(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode feature = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.IFeature", false, false);
     SNode featureClass = generator.findOutputNodeByInputNodeAndMappingName(feature, "feature_class");
-    return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(featureClass, "field", true), new zPredicate2(null, null)));
+    return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(featureClass, "field", true), new zPredicate3(null, null)));
   }
 
   public static SNode referenceMacro_GetReferent_1183990372956(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode fun = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode body = generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(fun, "body", true), "function_body");
     SNode imd = SNodeOperations.getAncestor(body, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
-    return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(imd, "parameter", true), new zPredicate3(null, null)));
+    return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(imd, "parameter", true), new zPredicate4(null, null)));
   }
 
   public static SNode referenceMacro_GetReferent_1183991612087(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode fun = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode body = generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(fun, "body", true), "function_body");
     SNode imd = SNodeOperations.getAncestor(body, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
-    return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(imd, "parameter", true), new zPredicate4(null, null)));
+    return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(imd, "parameter", true), new zPredicate5(null, null)));
   }
 
   public static SNode referenceMacro_GetReferent_1184674316408(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode feature = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.IFeature", false, false);
     SNode featureClass = generator.findOutputNodeByInputNodeAndMappingName(feature, "feature_class");
-    return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(featureClass, "field", true), new zPredicate5(null, null)));
+    return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(featureClass, "field", true), new zPredicate6(null, null)));
   }
 
   public static SNode referenceMacro_GetReferent_1184771402282(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    final zClosureContext _zClosureContext = new zClosureContext();
     SNode df = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.IDesignFunction", false, false);
     SNode stmts = generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(df, "body", true), "body");
-    return SequenceOperations.getFirst(SLinkOperations.getTargets(SNodeOperations.getAncestor(stmts, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false), "parameter", true));
+    _zClosureContext.paramAlias = SConceptPropertyOperations.getString(node, "alias");
+    return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getAncestor(stmts, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false), "parameter", true), new zPredicate7(null, _zClosureContext)));
   }
 
   public static SNode referenceMacro_GetReferent_1184763478621(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    final zClosureContext _zClosureContext = new zClosureContext();
-    _zClosureContext.fun = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
+    final zClosureContext1 _zClosureContext1 = new zClosureContext1();
+    _zClosureContext1.fun = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode feature = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.IParamFeature", false, false);
     SNode designClass = generator.findOutputNodeByInputNodeAndMappingName(feature, "feature_design");
-    SNode method = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(designClass, "method", true), new zPredicate6(null, _zClosureContext)));
-    return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(method, "parameter", true), new zPredicate7(null, _zClosureContext)));
-  }
-
-  public static SNode referenceMacro_GetReferent_1185012771795(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode df = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.IDesignFunction", false, false);
-    SNode stmts = generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(df, "body", true), "body");
-    return SequenceOperations.getFirst(SLinkOperations.getTargets(SNodeOperations.getAncestor(stmts, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false), "parameter", true));
+    SNode method = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(designClass, "method", true), new zPredicate8(null, _zClosureContext1)));
+    return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(method, "parameter", true), new zPredicate9(null, _zClosureContext1)));
   }
 
   public static SNode referenceMacro_GetReferent_1172658935860(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode tpCreator = SLinkOperations.getTarget(node, "creator", true);
     SNode klass = generator.findOutputNodeByInputNodeAndMappingName(tpCreator, "treePathCreator_class");
-    return SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(klass, null, false), new zPredicate8(null, null)));
+    return SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(klass, null, false), new zPredicate10(null, null)));
   }
 
   public static SNode referenceMacro_GetReferent_1179324381847(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
@@ -432,12 +433,20 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(node, "writable");
   }
 
+  public static boolean ifMacro_Condition_1192793707454(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature");
+  }
+
+  public static boolean ifMacro_Condition_1193058147469(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature");
+  }
+
   public static List sourceNodesQuery_1184679753545(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate9(null, null)));
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate11(null, null)));
   }
 
   public static List sourceNodesQuery_1184237003214(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate10(null, null)));
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate12(null, null)));
   }
 
   public static List sourceNodesQuery_1179331802560(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -499,7 +508,7 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1184762104927(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate11(null, null)));
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate13(null, null)));
   }
 
   public static SNode sourceNodeQuery_1172656490871(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -640,13 +649,13 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1184849691168(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate12(null, null)));
+    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate14(null, null)));
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1172650748986(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate13(null, null)));
+    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate15(null, null)));
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
   }
 
@@ -679,7 +688,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1179334580327(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate14(null, null)));
+    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate16(null, null)));
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
   }
 
@@ -959,6 +968,22 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "toStringFunction", true), "body", true);
   }
 
+  public static SNode sourceNodeQuery_1192793676557(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "getter", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1192793648146(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1193058124500(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "cardinal", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1193058105157(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "parameterType", true);
+  }
+
   public static SNode sourceNodeQuery_1184771191606(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "parameterType", true);
   }
@@ -979,6 +1004,14 @@ public class QueriesGenerated {
     SNode stringLiteral = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
     SPropertyOperations.set(stringLiteral, "value", "" + (param));
     return stringLiteral;
+  }
+
+  public static SNode sourceNodeQuery_1192793393648(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1192887473913(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "parameterType", true);
   }
 
 }

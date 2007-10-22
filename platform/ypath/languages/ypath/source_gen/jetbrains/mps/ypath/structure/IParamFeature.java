@@ -11,26 +11,21 @@ public interface IParamFeature extends INodeAdapter {
   public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
   public static String TO_STRING_FUNCTION = "toStringFunction";
-  public static String FROM_STRING_FUNCTION = "fromStringFunction";
 
   public Type getParameterType();
 
   public void setParameterType(Type node);
 
-  public ParameterQueryFunction getParameterQueryFunction();
+  public ParameterQueryFun getParameterQueryFunction();
 
-  public void setParameterQueryFunction(ParameterQueryFunction node);
+  public void setParameterQueryFunction(ParameterQueryFun node);
 
-  public TargetTypeFunction getTargetTypeFunction();
+  public TargetTypeFun getTargetTypeFunction();
 
-  public void setTargetTypeFunction(TargetTypeFunction node);
+  public void setTargetTypeFunction(TargetTypeFun node);
 
-  public NameFunction getToStringFunction();
+  public ToStringFun getToStringFunction();
 
-  public void setToStringFunction(NameFunction node);
-
-  public StringToParamFun getFromStringFunction();
-
-  public void setFromStringFunction(StringToParamFun node);
+  public void setToStringFunction(ToStringFun node);
 
 }

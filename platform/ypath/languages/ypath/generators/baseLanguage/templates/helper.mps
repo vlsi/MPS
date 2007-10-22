@@ -3,11 +3,15 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="4" />
-  <import index="1" modelUID="jetbrains.mps.util@java_stub" />
-  <import index="2" modelUID="jetbrains.mps.generator.template@java_stub" />
-  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" />
-  <import index="4" modelUID="java.lang@java_stub" />
+  <language namespace="jetbrains.mps.ypath" />
+  <maxImportIndex value="7" />
+  <import index="1" modelUID="jetbrains.mps.util@java_stub" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="4" modelUID="java.lang@java_stub" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.ypath.structure" version="-1" />
+  <import index="6" modelUID="jetbrains.mps.core.constraints" version="-1" />
+  <import index="7" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.ClassConcept" id="1180382275013">
     <property name="name" value="NodeBuilderUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.StaticMethodDeclaration" id="1180382275014">

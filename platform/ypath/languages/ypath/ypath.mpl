@@ -40,6 +40,14 @@
         <dependency>jetbrains.mps.baseLanguageInternal</dependency>
       </dependencies>
       <mapping-priorities>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1190373998785" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.main@templates" nodeID="*" />
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_together">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.main@templates" nodeID="1168438163478" />

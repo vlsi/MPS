@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ParamFunctionParam extends ConceptFunctionParameter implements IParamFeatureFun {
+public class ParamFunctionParam extends ConceptFunctionParameter implements IFunctionParam {
   public static final String concept = "jetbrains.mps.ypath.structure.ParamFunctionParam";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";

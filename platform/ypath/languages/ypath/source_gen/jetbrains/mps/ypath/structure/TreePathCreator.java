@@ -12,13 +12,13 @@ import java.util.List;
 
 public class TreePathCreator extends AbstractCreator implements TreePath {
   public static final String concept = "jetbrains.mps.ypath.structure.TreePathCreator";
+  public static String DEFAULT_FEATURE = "defaultFeature";
   public static String TREE_PATH_TYPE = "treePathType";
   public static String PARENT_BLOCK = "parentBlock";
   public static String CHILDREN_BLOCK = "childrenBlock";
   public static String FEATURES = "features";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
-  public static String DEFAULT_FEATURE = "defaultFeature";
 
   public  TreePathCreator(SNode node) {
     super(node);
@@ -32,6 +32,14 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
     return TreePathCreator.newInstance(sm, false);
   }
 
+
+  public IFeature getDefaultFeature() {
+    return (IFeature)this.getReferent(TreePathCreator.DEFAULT_FEATURE);
+  }
+
+  public void setDefaultFeature(IFeature node) {
+    super.setReferent(TreePathCreator.DEFAULT_FEATURE, node);
+  }
 
   public TreePathType getTreePathType() {
     return (TreePathType)this.getChild(TreePathCreator.TREE_PATH_TYPE);
@@ -91,14 +99,6 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
 
   public void setAlias(String value) {
     this.setProperty(TreePathCreator.ALIAS, value);
-  }
-
-  public IFeature getDefaultFeature() {
-    return (IFeature)this.getReferent(TreePathCreator.DEFAULT_FEATURE);
-  }
-
-  public void setDefaultFeature(IFeature node) {
-    super.setReferent(TreePathCreator.DEFAULT_FEATURE, node);
   }
 
 }

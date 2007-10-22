@@ -893,7 +893,7 @@
       <node role="parameterType" type="jetbrains.mps.baseLanguage.ClassifierType" id="1185179334361">
         <link role="classifier" extResolveInfo="2.[Classifier]String" />
       </node>
-      <node role="parameterQueryFunction" type="jetbrains.mps.ypath.ParameterQueryFunction" id="1185179320738">
+      <node role="parameterQueryFunction" type="jetbrains.mps.ypath.ParameterQueryFun" id="1185179320738">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179320739">
           <node role="statement" type="jetbrains.mps.baseLanguage.ReturnStatement" id="1185179367998">
             <node role="expression" type="jetbrains.mps.baseLanguage.GenericNewExpression" id="1185179371204">
@@ -922,7 +922,7 @@
           </node>
         </node>
       </node>
-      <node role="targetTypeFunction" type="jetbrains.mps.ypath.TargetTypeFunction" id="1185179320740">
+      <node role="targetTypeFunction" type="jetbrains.mps.ypath.TargetTypeFun" id="1185179320740">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179320741">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185179415888">
             <node role="expression" type="jetbrains.mps.bootstrap.helgins.Quotation" id="1185179415889">
@@ -933,17 +933,10 @@
           </node>
         </node>
       </node>
-      <node role="toStringFunction" type="jetbrains.mps.ypath.NameFunction" id="1185179320742">
+      <node role="toStringFunction" type="jetbrains.mps.ypath.ToStringFun" id="1185179320742">
         <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179320743">
           <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185179430277">
             <node role="expression" type="jetbrains.mps.ypath.ParamFunctionParam" id="1185179430278" />
-          </node>
-        </node>
-      </node>
-      <node role="fromStringFunction" type="jetbrains.mps.ypath.StringToParamFun" id="1185179320744">
-        <node role="body" type="jetbrains.mps.baseLanguage.StatementList" id="1185179320745">
-          <node role="statement" type="jetbrains.mps.baseLanguage.ExpressionStatement" id="1185179435911">
-            <node role="expression" type="jetbrains.mps.ypath.StringFunctionParam" id="1185179435912" />
           </node>
         </node>
       </node>
