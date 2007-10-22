@@ -130,7 +130,8 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
 
   private ProjectJdk findSuitableJDK() {
     for (ProjectJdk jdk : ProjectJdkTable.getInstance().getAllJdks()) {
-      if (jdk.getVersionString().startsWith("java version \"1.5")) return jdk;
+      if ("java version \"1.5".startsWith(jdk.getVersionString()) ||
+              "java version \"1.6".startsWith(jdk.getVersionString())) return jdk;
     }
     return null;
   }
