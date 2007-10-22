@@ -1967,6 +1967,7 @@
         <property name="fontStyle" value="BOLD_ITALIC" />
         <property name="editable" value="true" />
         <property name="textFgColor" value="DARK_BLUE" />
+        <property name="attractsFocus" value="1" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1185229261881">
@@ -2474,6 +2475,7 @@
         <property name="fontStyle" value="BOLD_ITALIC" />
         <property name="editable" value="true" />
         <property name="textFgColor" value="DARK_BLUE" />
+        <property name="attractsFocus" value="1" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1185229081260">
@@ -2646,6 +2648,7 @@
         <property name="fontStyle" value="BOLD_ITALIC" />
         <property name="editable" value="true" />
         <property name="textFgColor" value="DARK_BLUE" />
+        <property name="attractsFocus" value="1" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1185229126496">
@@ -2706,6 +2709,7 @@
           <property name="fontStyle" value="BOLD_ITALIC" />
           <property name="editable" value="true" />
           <property name="textFgColor" value="DARK_BLUE" />
+          <property name="attractsFocus" value="1" />
           <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
           <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
           <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1185228138164">
@@ -2723,6 +2727,7 @@
             <property name="fontStyle" value="BOLD_ITALIC" />
             <property name="editable" value="true" />
             <property name="textFgColor" value="DARK_BLUE" />
+            <property name="attractsFocus" value="1" />
             <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
             <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
             <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1185229144623">
@@ -2945,6 +2950,7 @@
         <property name="fontStyle" value="BOLD_ITALIC" />
         <property name="editable" value="true" />
         <property name="textFgColor" value="DARK_BLUE" />
+        <property name="attractsFocus" value="1" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1185229158782">
@@ -3241,6 +3247,7 @@
         <property name="fontStyle" value="BOLD_ITALIC" />
         <property name="editable" value="true" />
         <property name="textFgColor" value="DARK_BLUE" />
+        <property name="attractsFocus" value="1" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1185229239786">
@@ -3580,6 +3587,7 @@
         <property name="fontStyle" value="BOLD_ITALIC" />
         <property name="editable" value="true" />
         <property name="textFgColor" value="DARK_BLUE" />
+        <property name="attractsFocus" value="1" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.CellMenuDescriptor" id="1185229219830">
