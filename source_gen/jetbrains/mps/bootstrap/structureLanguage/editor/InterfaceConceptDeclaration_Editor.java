@@ -26,7 +26,13 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.AggregationCellContext;
+import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
 
@@ -102,29 +108,29 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182235045132");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193064095866");
   }
 
   private static void setupBasic_LinkDeclarationList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182235045133");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193064095867");
   }
 
   private static void setupBasic_Separator2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182235045162");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193064095921");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182235060326");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193064095922");
   }
 
   private static void setupBasic_LinkDeclarationList1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182235060327");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193064095923");
   }
 
   private static void setupBasic_ConstantCell6(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182235060356");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193064095977");
     editorCell.setSelectable(false);
   }
 
@@ -784,9 +790,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
-        }
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new ISubstituteInfoPart[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu()}));
       }
     }
 
@@ -837,9 +841,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
-          elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
-        }
+        elementCell.setSubstituteInfo(new CompositeSubstituteInfo(context, new AggregationCellContext(listOwner, elementNode, super.getLinkDeclaration()), new ISubstituteInfoPart[]{new InterfaceConceptDeclaration_Editor.InterfaceConceptDeclaration_generic_cellMenu1()}));
       }
     }
 
@@ -1021,6 +1023,38 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
 
     public EditorCell createSeparatorCell(EditorContext context) {
       return super.createSeparatorCell(context);
+    }
+
+}
+  public static class InterfaceConceptDeclaration_generic_cellMenu extends AbstractCellMenuPart_Generic_Item {
+
+    public  InterfaceConceptDeclaration_generic_cellMenu() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration", null);
+      ((LinkDeclaration)SNodeOperations.getAdapter(result)).setMetaClass(LinkMetaclass.aggregation);
+      SLinkOperations.addChild(node, "linkDeclaration", result);
+    }
+
+    public String getMatchingText() {
+      return "new child";
+    }
+
+}
+  public static class InterfaceConceptDeclaration_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
+
+    public  InterfaceConceptDeclaration_generic_cellMenu1() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration", null);
+      ((LinkDeclaration)SNodeOperations.getAdapter(result)).setMetaClass(LinkMetaclass.reference);
+      SLinkOperations.addChild(node, "linkDeclaration", result);
+    }
+
+    public String getMatchingText() {
+      return "new reference";
     }
 
 }
