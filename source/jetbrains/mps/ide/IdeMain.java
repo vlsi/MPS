@@ -67,7 +67,7 @@ public class IdeMain {
       JOptionPane.showMessageDialog(SplashScreen.getInstance(), "Program is expired. You can download latest version from www.jetbrains.com");
       System.exit(0);
     }
-
+        
     LoggerUtil.configureLogger();
 
     ApplicationComponents.getInstance();
