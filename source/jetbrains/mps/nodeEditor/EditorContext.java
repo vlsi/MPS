@@ -156,16 +156,33 @@ public class EditorContext {
       public void run() {
         getNodeEditorComponent().selectNode(node);
         EditorCell selectedCell = getNodeEditorComponent().getSelectedCell();
-        if (selectedCell instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label) selectedCell;
-          label.getTextLine().setCaretPosition(position);
-        }
+        setCaretPosition(selectedCell, position);
       }
-    });
 
+      private int setCaretPosition(EditorCell editorCell, int position) {
+        int newPosition = position;
+        if (editorCell instanceof EditorCell_Label) {
+          EditorCell_Label editorCell_label = (EditorCell_Label) editorCell;
+          newPosition = position - editorCell_label.getTextLine().getText().length();
+          if (newPosition < 0) {
+            getNodeEditorComponent().changeSelection(editorCell);
+            editorCell_label.getTextLine().setCaretPosition(position);
+          }
+        } else if (editorCell instanceof EditorCell_Iterable) {
+          EditorCell_Iterable editorCell_iterable = (EditorCell_Iterable) editorCell;
+          for (EditorCell subEditorCell: editorCell_iterable) {
+            newPosition = setCaretPosition(subEditorCell, newPosition);
+            if (newPosition < 0) {
+              break;
+            }
+          }
+        }
+        return newPosition;
+      }      
+    });
   }
 
-  public boolean setMemento(Object o) {        
+  public boolean setMemento(Object o) {
     if (o instanceof Memento) {
       Memento memento = (Memento) o;
       if (myNodeEditorComponent == memento.myNodeEditor) {
