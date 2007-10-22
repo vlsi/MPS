@@ -30,6 +30,14 @@ public class MPSPlugin {
   }
 
   private IMPSPlugin getPlugin() {
+    if (myPlugin != null) {
+      try {
+        myPlugin.getProjectCreator().ping();
+      } catch (RemoteException e) {
+        myPlugin = null;
+      }
+    }
+
     if (myPlugin == null) {
       try {        
         myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
