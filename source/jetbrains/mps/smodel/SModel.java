@@ -528,8 +528,10 @@ public class SModel implements Iterable<SNode> {
         languages.add(language);
         addAspectModelVersions(languageNamespace, language);
       } else {
+        if (!isLoading()) {
         LOG.error("Language \"" + languageNamespace + "\" isn't visible in scope " + scope + " . Used by model \"" + getUID() +
                 "\"\nAdd this language to the LANGUAGES section of the project properties");
+        }
       }
     }
 

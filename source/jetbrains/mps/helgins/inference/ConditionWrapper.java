@@ -42,7 +42,7 @@ public class ConditionWrapper implements IWrapper {
   }
 
   public boolean isVariable() {
-    return false;
+    return false;                           
   }
 
   public boolean isConcrete() {
