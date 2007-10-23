@@ -847,6 +847,37 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return behaviorModelDescriptor;
   }
 
+  public SModelDescriptor createHelginsModel() {
+    ModelRoot modelRoot = null;
+    List<ModelRoot> modelRoots = this.getModelRoots();
+    for (ModelRoot mRoot : modelRoots) {
+      IModelRootManager rootManager = ModelRootsUtil.getManagerFor(mRoot);
+      if (rootManager instanceof DefaultModelRootManager) {
+        modelRoot = mRoot;
+        break;
+      }
+    }
+
+    assert modelRoot != null;
+
+    SModelDescriptor helginsModelDescriptor = this.createModel(new SModelUID(this.getModuleUID(), "helgins", ""), modelRoot);
+    SModel helginsModel = helginsModelDescriptor.getSModel();
+    helginsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
+    helginsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getSModelLanguage());
+    helginsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getConstraintsLanguage());
+    helginsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getHelginsLanguage());
+    helginsModelDescriptor.save();
+
+    // updateTypesystem language
+    LanguageDescriptor languageDescriptor = this.getLanguageDescriptor();
+    Model _model = Model.newInstance(languageDescriptor.getModel());
+    _model.setName(helginsModel.getUID().toString());
+    languageDescriptor.setHelginsTypesystemModel(_model);
+    this.setLanguageDescriptor(languageDescriptor);
+    this.save();
+
+    return helginsModelDescriptor;
+  }
 
   private class LanguageEventTranslator extends CommandEventTranslator {
     public void languageChanged() {
