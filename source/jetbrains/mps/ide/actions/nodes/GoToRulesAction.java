@@ -57,23 +57,7 @@ public class GoToRulesAction extends MPSAction {
   public void execute(@NotNull ActionContext context) {
     final ConceptDeclaration conceptDeclaration = (ConceptDeclaration) BaseAdapter.fromNode(context.getNode());
     final IOperationContext operationContext = context.getOperationContext();
-    Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, operationContext.getScope());
-    List<SNode> rules = new ArrayList<SNode>();
-    if (language != null && language.getHelginsTypesystemModelDescriptor() != null) {
-      SModelDescriptor helginsDescriptor = language.getHelginsTypesystemModelDescriptor();
-      if (helginsDescriptor != null) {
-        rules.addAll(helginsDescriptor.getSModel().getRoots(new Condition<SNode>() {
-          public boolean met(SNode n) {
-            INodeAdapter object = BaseAdapter.fromNode(n);
-            if (object instanceof AbstractRule) {
-              AbstractRule rule = (AbstractRule) object;
-              return (maybeApplicable_new(conceptDeclaration, rule.getApplicableNode(), operationContext.getScope()));
-            }
-            return false;
-          }
-        }));
-      }
-    }
+    List<SNode> rules = getHelginsRules(conceptDeclaration, operationContext);
     EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
     IEditor currentEditor = editorsPane.getCurrentEditor();
     
@@ -100,7 +84,28 @@ public class GoToRulesAction extends MPSAction {
     m.show(invoker, x, y);
   }
 
-  private boolean maybeApplicable_new(ConceptDeclaration conceptDeclaration, ApplicableNodeCondition applicableNode, IScope scope) {
+  public static List<SNode> getHelginsRules(final ConceptDeclaration conceptDeclaration, final IOperationContext operationContext) {
+    Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, operationContext.getScope());
+    List<SNode> rules = new ArrayList<SNode>();
+    if (language != null && language.getHelginsTypesystemModelDescriptor() != null) {
+      SModelDescriptor helginsDescriptor = language.getHelginsTypesystemModelDescriptor();
+      if (helginsDescriptor != null) {
+        rules.addAll(helginsDescriptor.getSModel().getRoots(new Condition<SNode>() {
+          public boolean met(SNode n) {
+            INodeAdapter object = BaseAdapter.fromNode(n);
+            if (object instanceof AbstractRule) {
+              AbstractRule rule = (AbstractRule) object;
+              return (maybeApplicable_new(conceptDeclaration, rule.getApplicableNode(), operationContext.getScope()));
+            }
+            return false;
+          }
+        }));
+      }
+    }
+    return rules;
+  }
+
+  private static boolean maybeApplicable_new(ConceptDeclaration conceptDeclaration, ApplicableNodeCondition applicableNode, IScope scope) {
     if (applicableNode instanceof jetbrains.mps.bootstrap.helgins.structure.ConceptReference) {
       jetbrains.mps.bootstrap.helgins.structure.ConceptReference conceptReference =
               (jetbrains.mps.bootstrap.helgins.structure.ConceptReference) applicableNode;
