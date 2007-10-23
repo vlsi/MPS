@@ -13,6 +13,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ypath.constraints.IGenericFeature_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.generator.newGenerator.CloneUtil;
 
 public class QueriesGenerated {
 
@@ -68,7 +69,8 @@ public class QueriesGenerated {
     if(SNodeOperations.isInstanceOf(expression, "jetbrains.mps.ypath.structure.TreePathAdapterExpression")) {
       expression = SLinkOperations.getTarget(expression, "expression", true);
     }
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "usedFeature", false), SNodeOperations.copyNode(expression), SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "paramObject", true), "paramRef", false));
+    expression = CloneUtil.clone(expression, generator.getTargetModel(), generator.getScope());
+    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "usedFeature", false), expression, SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "paramObject", true), "paramRef", false));
   }
 
   public static SNode mapSrcMacro_mapper_1191922089607(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
@@ -76,7 +78,8 @@ public class QueriesGenerated {
     if(SNodeOperations.isInstanceOf(expression, "jetbrains.mps.ypath.structure.TreePathAdapterExpression")) {
       expression = SLinkOperations.getTarget(expression, "expression", true);
     }
-    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "usedFeature", false), SNodeOperations.copyNode(expression), SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "paramObject", true), "paramRef", false));
+    expression = CloneUtil.clone(expression, generator.getTargetModel(), generator.getScope());
+    return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "usedFeature", false), expression, SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "paramObject", true), "paramRef", false));
   }
 
 }

@@ -375,13 +375,13 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1179298507919">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="parentBlock" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1168428668253" resolveInfo="ParentBlock" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1179298620994">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="childrenBlock" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1168428680123" resolveInfo="ChildrenBlock" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1183980376561">

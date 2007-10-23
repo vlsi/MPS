@@ -14,7 +14,7 @@ public class CloneUtil {
    * Creates cloned model, each node in target model has the same nodeId that corresponding node in source model
    * it allows to resolve internal references much faster
    */
-  static SNode clone(SNode node, SModel outputModel, IScope scope) {
+  public static SNode clone(SNode node, SModel outputModel, IScope scope) {
     SNode result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), outputModel, scope, false);
     assert result != null;
     result.setId(node.getSNodeId());

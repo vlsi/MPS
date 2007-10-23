@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -69,65 +70,116 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984107");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143484713");
+  }
+
+  private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143456734");
+    editorCell.setSelectable(false);
+  }
+
+  private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143510811");
+  }
+
+  private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143609964");
+  }
+
+  private static void setupBasic_ConstantCell6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143612718");
+  }
+
+  private static void setupBasic_RowCell3(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143603127");
+    editorCell.setSelectable(false);
+  }
+
+  private static void setupBasic_ConstantCell7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143672154");
+  }
+
+  private static void setupBasic_ConstantCell8(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143549560");
+  }
+
+  private static void setupBasic_ConstantCell9(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143518360");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ParentBlockCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984108");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143518361");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984105");
+  private static void setupBasic_RowCell4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143518359");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984109");
+  private static void setupBasic_ConstantCell10(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143518362");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984112");
+  private static void setupBasic_ConstantCell11(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143559189");
+  }
+
+  private static void setupBasic_ConstantCell12(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143518364");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_ChildrenBlockCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984113");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143518365");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984110");
+  private static void setupBasic_RowCell5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143518363");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell6(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell13(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143524858");
+  }
+
+  private static void setupBasic_ConstantCell14(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143501937");
+  }
+
+  private static void setupBasic_RowCell6(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1193143498179");
+    editorCell.setSelectable(false);
+  }
+
+  private static void setupBasic_ConstantCell15(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984114");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell7(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell16(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1183981071681");
   }
 
-  private static void setupBasic_RowCell4(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RowCell7(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1183981070403");
     editorCell.setSelectable(false);
   }
 
-  private static void setupBasic_ConstantCell8(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell17(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1183981145356");
   }
 
-  private static void setupBasic_ConstantCell9(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell18(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1183981081501");
     editorCell.setSelectable(false);
   }
@@ -136,45 +188,45 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1183981085225");
   }
 
-  private static void setupBasic_RowCell5(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RowCell8(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1183981081500");
   }
 
-  private static void setupBasic_ConstantCell11(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell20(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1183981149071");
   }
 
-  private static void setupBasic_ConstantCell12(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell21(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1183981106897");
   }
 
-  private static void setupBasic_RowCell6(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RowCell9(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1183981105660");
     editorCell.setSelectable(false);
   }
 
-  private static void setupBasic_ConstantCell13(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell22(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1183980638244");
   }
 
-  private static void setupBasic_ConstantCell14(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell23(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984117");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell7(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RowCell10(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984115");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell15(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell24(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984118");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell16(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell25(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984121");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -185,25 +237,25 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell8(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RowCell11(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984119");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell18(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell27(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984124");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell19(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell28(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984127");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_RowCell9(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_RowCell12(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984125");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -217,7 +269,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971936966");
   }
 
-  private static void setupBasic_ConstantCell20(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell29(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168883515937");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
@@ -246,19 +298,14 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ParentBlockCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell5(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ChildrenBlockCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_ConstantCell6(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(Color.lightGray);
   }
 
   private static void setupLabel_ConstantCell7(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -270,13 +317,19 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell9(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_FeaturesList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ParentBlockCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell10(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell11(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell12(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ChildrenBlockCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell13(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -291,16 +344,43 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell16(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_NodeKindsList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell17(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell18(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell19(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_FeaturesList(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell20(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell21(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell22(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell23(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell24(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell25(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_NodeKindsList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell27(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell28(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell29(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -327,8 +407,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell3(context, node, "parent:"));
-    editorCell.addEditorCell(this.createParentBlockCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell3(context, node, "obsolete {"));
     return editorCell;
   }
 
@@ -338,8 +417,8 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell5(context, node, "children:"));
-    editorCell.addEditorCell(this.createChildrenBlockCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell5(context, node, "  "));
+    editorCell.addEditorCell(this.createConstantCell6(context, node, "/* this section is deprecated */"));
     return editorCell;
   }
 
@@ -349,7 +428,9 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell7(context, node, "features {"));
+    editorCell.addEditorCell(this.createConstantCell8(context, node, "  "));
+    editorCell.addEditorCell(this.createConstantCell9(context, node, "parent:"));
+    editorCell.addEditorCell(this.createParentBlockCell(context, node));
     return editorCell;
   }
 
@@ -359,8 +440,9 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell9(context, node, "  "));
-    editorCell.addEditorCell(this.createFeaturesList(context, node));
+    editorCell.addEditorCell(this.createConstantCell11(context, node, "  "));
+    editorCell.addEditorCell(this.createConstantCell12(context, node, "children:"));
+    editorCell.addEditorCell(this.createChildrenBlockCell(context, node));
     return editorCell;
   }
 
@@ -370,7 +452,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell12(context, node, "}"));
+    editorCell.addEditorCell(this.createConstantCell14(context, node, "}"));
     return editorCell;
   }
 
@@ -380,7 +462,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell14(context, node, "nodekinds {"));
+    editorCell.addEditorCell(this.createConstantCell16(context, node, "features {"));
     return editorCell;
   }
 
@@ -390,8 +472,8 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell16(context, node, "  "));
-    editorCell.addEditorCell(this.createNodeKindsList(context, node));
+    editorCell.addEditorCell(this.createConstantCell18(context, node, "  "));
+    editorCell.addEditorCell(this.createFeaturesList(context, node));
     return editorCell;
   }
 
@@ -401,7 +483,38 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell19(context, node, "}"));
+    editorCell.addEditorCell(this.createConstantCell21(context, node, "}"));
+    return editorCell;
+  }
+
+  public EditorCell createRowCell10(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    TreePathAspect_Editor.setupBasic_RowCell10(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell23(context, node, "nodekinds {"));
+    return editorCell;
+  }
+
+  public EditorCell createRowCell11(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    TreePathAspect_Editor.setupBasic_RowCell11(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell25(context, node, "  "));
+    editorCell.addEditorCell(this.createNodeKindsList(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createRowCell12(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    TreePathAspect_Editor.setupBasic_RowCell12(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell28(context, node, "}"));
     return editorCell;
   }
 
@@ -414,18 +527,24 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell2(context, node));
     editorCell.addEditorCell(this.createConstantCell4(context, node, ""));
     editorCell.addEditorCell(this.createRowCell3(context, node));
-    editorCell.addEditorCell(this.createConstantCell6(context, node, ""));
+    editorCell.addEditorCell(this.createConstantCell7(context, node, ""));
     editorCell.addEditorCell(this.createRowCell4(context, node));
-    editorCell.addEditorCell(this.createConstantCell8(context, node, ""));
+    editorCell.addEditorCell(this.createConstantCell10(context, node, ""));
     editorCell.addEditorCell(this.createRowCell5(context, node));
-    editorCell.addEditorCell(this.createConstantCell11(context, node, ""));
-    editorCell.addEditorCell(this.createRowCell6(context, node));
     editorCell.addEditorCell(this.createConstantCell13(context, node, ""));
-    editorCell.addEditorCell(this.createRowCell7(context, node));
+    editorCell.addEditorCell(this.createRowCell6(context, node));
     editorCell.addEditorCell(this.createConstantCell15(context, node, ""));
+    editorCell.addEditorCell(this.createRowCell7(context, node));
+    editorCell.addEditorCell(this.createConstantCell17(context, node, ""));
     editorCell.addEditorCell(this.createRowCell8(context, node));
-    editorCell.addEditorCell(this.createConstantCell18(context, node, ""));
+    editorCell.addEditorCell(this.createConstantCell20(context, node, ""));
     editorCell.addEditorCell(this.createRowCell9(context, node));
+    editorCell.addEditorCell(this.createConstantCell22(context, node, ""));
+    editorCell.addEditorCell(this.createRowCell10(context, node));
+    editorCell.addEditorCell(this.createConstantCell24(context, node, ""));
+    editorCell.addEditorCell(this.createRowCell11(context, node));
+    editorCell.addEditorCell(this.createConstantCell27(context, node, ""));
+    editorCell.addEditorCell(this.createRowCell12(context, node));
     return editorCell;
   }
 
@@ -449,7 +568,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRowCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, ""));
     editorCell.addEditorCell(this.createRowCell1(context, node));
-    editorCell.addEditorCell(this.createConstantCell20(context, node, "}"));
+    editorCell.addEditorCell(this.createConstantCell29(context, node, "}"));
     return editorCell;
   }
 
@@ -544,6 +663,14 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstantCell10(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    TreePathAspect_Editor.setupBasic_ConstantCell10(editorCell, node, context);
+    TreePathAspect_Editor.setupLabel_ConstantCell10(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createConstantCell11(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     TreePathAspect_Editor.setupBasic_ConstantCell11(editorCell, node, context);
@@ -592,6 +719,14 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  public EditorCell createConstantCell17(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    TreePathAspect_Editor.setupBasic_ConstantCell17(editorCell, node, context);
+    TreePathAspect_Editor.setupLabel_ConstantCell17(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   public EditorCell createConstantCell18(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     TreePathAspect_Editor.setupBasic_ConstantCell18(editorCell, node, context);
@@ -600,18 +735,74 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createConstantCell19(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    TreePathAspect_Editor.setupBasic_ConstantCell19(editorCell, node, context);
-    TreePathAspect_Editor.setupLabel_ConstantCell19(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createConstantCell20(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     TreePathAspect_Editor.setupBasic_ConstantCell20(editorCell, node, context);
     TreePathAspect_Editor.setupLabel_ConstantCell20(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell21(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    TreePathAspect_Editor.setupBasic_ConstantCell21(editorCell, node, context);
+    TreePathAspect_Editor.setupLabel_ConstantCell21(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell22(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    TreePathAspect_Editor.setupBasic_ConstantCell22(editorCell, node, context);
+    TreePathAspect_Editor.setupLabel_ConstantCell22(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell23(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    TreePathAspect_Editor.setupBasic_ConstantCell23(editorCell, node, context);
+    TreePathAspect_Editor.setupLabel_ConstantCell23(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell24(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    TreePathAspect_Editor.setupBasic_ConstantCell24(editorCell, node, context);
+    TreePathAspect_Editor.setupLabel_ConstantCell24(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell25(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    TreePathAspect_Editor.setupBasic_ConstantCell25(editorCell, node, context);
+    TreePathAspect_Editor.setupLabel_ConstantCell25(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell27(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    TreePathAspect_Editor.setupBasic_ConstantCell27(editorCell, node, context);
+    TreePathAspect_Editor.setupLabel_ConstantCell27(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell28(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    TreePathAspect_Editor.setupBasic_ConstantCell28(editorCell, node, context);
+    TreePathAspect_Editor.setupLabel_ConstantCell28(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell29(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    TreePathAspect_Editor.setupBasic_ConstantCell29(editorCell, node, context);
+    TreePathAspect_Editor.setupLabel_ConstantCell29(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -764,11 +955,11 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       super(ownerNode, childRole, context, false);
     }
 
-    private static void setupBasic_ConstantCell10(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_ConstantCell19(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1183981085226");
     }
 
-    private static void setupLabel_ConstantCell10(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_ConstantCell19(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 
@@ -791,7 +982,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext context, SNode node) {
-      return this.createConstantCell10(context, node, "<<features>>");
+      return this.createConstantCell19(context, node, "<<features>>");
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
@@ -818,10 +1009,10 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstantCell10(EditorContext context, SNode node, String text) {
+    public EditorCell createConstantCell19(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      TreePathAspect_Editor._RefNodeListHandler.setupBasic_ConstantCell10(editorCell, node, context);
-      TreePathAspect_Editor._RefNodeListHandler.setupLabel_ConstantCell10(editorCell, node, context);
+      TreePathAspect_Editor._RefNodeListHandler.setupBasic_ConstantCell19(editorCell, node, context);
+      TreePathAspect_Editor._RefNodeListHandler.setupLabel_ConstantCell19(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }
@@ -833,12 +1024,12 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       super(ownerNode, childRole, context, false);
     }
 
-    private static void setupBasic_ConstantCell17(EditorCell editorCell, SNode node, EditorContext context) {
+    private static void setupBasic_ConstantCell26(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178971984123");
       editorCell.setDrawBorder(false);
     }
 
-    private static void setupLabel_ConstantCell17(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    private static void setupLabel_ConstantCell26(EditorCell_Label editorCell, SNode node, EditorContext context) {
     }
 
 
@@ -861,7 +1052,7 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEmptyCell_internal(EditorContext context, SNode node) {
-      return this.createConstantCell17(context, node, "<< node kinds >>");
+      return this.createConstantCell26(context, node, "<< node kinds >>");
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
@@ -888,10 +1079,10 @@ public class TreePathAspect_Editor extends DefaultNodeEditor {
       }
     }
 
-    public EditorCell createConstantCell17(EditorContext context, SNode node, String text) {
+    public EditorCell createConstantCell26(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      TreePathAspect_Editor._RefNodeListHandler1.setupBasic_ConstantCell17(editorCell, node, context);
-      TreePathAspect_Editor._RefNodeListHandler1.setupLabel_ConstantCell17(editorCell, node, context);
+      TreePathAspect_Editor._RefNodeListHandler1.setupBasic_ConstantCell26(editorCell, node, context);
+      TreePathAspect_Editor._RefNodeListHandler1.setupLabel_ConstantCell26(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

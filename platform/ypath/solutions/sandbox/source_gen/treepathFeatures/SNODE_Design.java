@@ -16,7 +16,7 @@ public class SNODE_Design {
     }
 
     public SNode getTargetType(String param, SNode nodeType) {
-      final zClosureContext1 _zClosureContext1 = new zClosureContext1();
+      final zClosureContext2 _zClosureContext1 = new zClosureContext2();
       _zClosureContext1._param = param;
       SNode ld = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate1(null, _zClosureContext1)));
       SNode trg = SLinkOperations.getTarget(ld, "target", false);
@@ -35,7 +35,7 @@ public class SNODE_Design {
     }
 
     public SNode getTargetType(String param, SNode nodeType) {
-      final zClosureContext2 _zClosureContext2 = new zClosureContext2();
+      final zClosureContext3 _zClosureContext2 = new zClosureContext3();
       _zClosureContext2._param = param;
       SNode ld = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate3(null, _zClosureContext2)));
       SNode trg = SLinkOperations.getTarget(ld, "target", false);
