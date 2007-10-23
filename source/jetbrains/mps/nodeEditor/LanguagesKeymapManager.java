@@ -25,6 +25,8 @@ public class LanguagesKeymapManager {
 
   private Map<String, List<EditorCellKeyMap>> myLanguagesToKeyMaps = new HashMap<String, List<EditorCellKeyMap>>();
   private Set<Language> myLanguages = new HashSet<Language>();
+  private Set<Language> myRegisteredLanguages = new HashSet<Language>();
+   private List<Language> myLanguagesToRegister = new LinkedList<Language>();
   private MyModuleRepositoryListener myListener = new MyModuleRepositoryListener();
 
 
@@ -33,7 +35,7 @@ public class LanguagesKeymapManager {
   
   @Dependency
   public void addMyListener(MPSModuleRepository repository) {
-    CommandProcessor.instance().addWeakCommandListener(myListener);
+   // CommandProcessor.instance().addWeakCommandListener(myListener);
     repository.addModuleRepositoryListener(myListener);
   }
 
@@ -43,6 +45,7 @@ public class LanguagesKeymapManager {
 
   public void clearCaches() {
     myLanguagesToKeyMaps.clear();
+    myRegisteredLanguages.clear();
     for (Language l : myLanguages) {
       registerLanguageKeyMaps(l);
     }
@@ -61,7 +64,9 @@ public class LanguagesKeymapManager {
 
   private void registerLanguageKeyMaps(Language language) {
 //    System.out.println("register KeyMaps " + language.getNamespace());
-    myLanguages.add(language);    
+    if (myRegisteredLanguages.contains(language)) return;
+    myLanguages.add(language);
+    myRegisteredLanguages.add(language);
     SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
     if (editorModelDescriptor == null) return;
     SModel editorModel = editorModelDescriptor.getSModel();
@@ -80,6 +85,8 @@ public class LanguagesKeymapManager {
 
   private void unregisterLanguageKeyMaps(Language language) {
     myLanguages.remove(language);
+    myRegisteredLanguages.remove(language);
+    myLanguagesToRegister.remove(language);
 //    System.out.println("unregister KeyMaps " + language.getNamespace());
     SModelDescriptor editorModelDescriptor = language.getEditorModelDescriptor();
     if (editorModelDescriptor == null) return;
@@ -96,11 +103,19 @@ public class LanguagesKeymapManager {
   }
 
   public List<EditorCellKeyMap> getKeyMapsForLanguage(String languageNamespace) {
+    if (!myLanguagesToKeyMaps.containsKey(languageNamespace)) {
+      for (Language l : myLanguagesToRegister) {
+        if (languageNamespace.equals(l.getNamespace())) {
+          registerLanguageKeyMaps(l);
+          break;
+        }
+      }
+    }
     return myLanguagesToKeyMaps.get(languageNamespace);
   }
 
-  private class MyModuleRepositoryListener extends CommandAdapter implements ModuleRepositoryListener {
-    private List<Language> myLanguagesToRegister = new LinkedList<Language>();
+  private class MyModuleRepositoryListener /*extends CommandAdapter*/ implements ModuleRepositoryListener {
+
 
     public void moduleInitialized(IModule module) {         
       if (module instanceof Language) {
@@ -120,11 +135,11 @@ public class LanguagesKeymapManager {
       }
     }
 
-    public void beforeCommandFinished(@NotNull CommandEvent event) {
+  /*  public void beforeCommandFinished(@NotNull CommandEvent event) {
       for (Language language : myLanguagesToRegister) {
         registerLanguageKeyMaps(language);
       }
       myLanguagesToRegister.clear();
-    }
+    }*/
   }
 }
