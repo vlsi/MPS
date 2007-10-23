@@ -1789,5 +1789,10 @@ public class IdByEriMap extends HashMap<String, String> {
 
     idByEriMap.put("constructor [Classifier]MultiplyOperation[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Function, <jetbrains.mps.baseLanguage.types.classifier [Double]>]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Function, <jetbrains.mps.baseLanguage.types.classifier [Double]>]))", "~MultiplyOperation.<init>(jetbrains.mps.formulaLanguage.api.Function,jetbrains.mps.formulaLanguage.api.Function)");
     idByEriMap.put("constructor [Classifier]DoubleConstant[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.double/jetbrains.mps.baseLanguage.types.double))", "~DoubleConstant.<init>(double)");
+
+    idByEriMap.put("constructor [Classifier]SModelUID[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))", "~SModelUID.<init>(java.lang.String,java.lang.String)");
+    idByEriMap.put("method ([Classifier]SModel).([InstanceMethodDeclaration]getRootByName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))", "~SModel.getRootByName(java.lang.String):jetbrains.mps.smodel.SNode");
+    idByEriMap.put("method ([Classifier]SModelRepository).([InstanceMethodDeclaration]getModelDescriptor((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModelUID])))", "~SModelRepository.getModelDescriptor(jetbrains.mps.smodel.SModelUID):jetbrains.mps.smodel.SModelDescriptor");
+    idByEriMap.put("static method ([Classifier]SModelRepository).([StaticMethodDeclaration]getInstance())", "~SModelRepository.getInstance():jetbrains.mps.smodel.SModelRepository");
   }
 }

@@ -201,5 +201,14 @@ public class UsedEriSet extends HashSet<String> {
     usedERISet.add("constructor [Classifier]DoubleConstant[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.double/jetbrains.mps.baseLanguage.types.double))");
     usedERISet.add("constructor [Classifier]IfFunction[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Function, <jetbrains.mps.baseLanguage.types.classifier [Boolean]>]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Function, <stringable_>]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Function, <stringable_>]))");
     usedERISet.add("constructor [Classifier]MultiplyOperation[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Function, <jetbrains.mps.baseLanguage.types.classifier [Double]>]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Function, <jetbrains.mps.baseLanguage.types.classifier [Double]>]))");
+
+    usedERISet.add("static method ([Classifier]SModelRepository).([StaticMethodDeclaration]getInstance())");
+    usedERISet.add("constructor [Classifier]SModelUID[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))");
+    usedERISet.add("method ([Classifier]ITemplateGenerator).([InstanceMethodDeclaration]getSourceModel())");
+    usedERISet.add("method ([Classifier]SModel).([InstanceMethodDeclaration]getRootsAdapters((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Class, <jetbrains.mps.baseLanguage.types.classifier [Object]>])))");
+    usedERISet.add("method ([Classifier]SModelRepository).([InstanceMethodDeclaration]getModelDescriptor((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [SModelUID])))");
+    usedERISet.add("method ([Classifier]SModel).([InstanceMethodDeclaration]getLongName())");
+    usedERISet.add("method ([Classifier]SModel).([InstanceMethodDeclaration]getRootByName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))");
+    usedERISet.add("static method ([Classifier]BaseAdapter).([StaticMethodDeclaration]toNodes((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, <? extends jetbrains.mps.baseLanguage.types.classifier [INodeAdapter]>])))");
   }
 }
