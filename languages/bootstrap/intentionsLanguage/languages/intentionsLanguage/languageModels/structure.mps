@@ -11,7 +11,7 @@
   <import index="6" modelUID="java.lang@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1192794744107">
     <property name="rootable" value="true" />
-    <property name="name" value="Intention" />
+    <property name="name" value="IntentionDeclaration" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1192796383601">
       <property name="role" value="forConcept" />

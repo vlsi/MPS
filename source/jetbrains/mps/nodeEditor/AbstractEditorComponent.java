@@ -19,6 +19,9 @@ import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
+import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.intentions.IntentionsManager;
+import jetbrains.mps.intentions.icons.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
@@ -34,8 +37,6 @@ import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.intentions.Intention;
-import jetbrains.mps.intentions.IntentionsManager;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -120,6 +121,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
   private CellSpeedSearch myCellSpeedSearch;
   private AbstractAction myApplyIntentionAction;
+  private boolean paintIntentionIcon = true;
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -1498,14 +1500,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void paintLightBulb(Graphics g) {
-    EditorCell selectedCell = getSelectedCell();
+    if (paintIntentionIcon == false) return;
 
+    EditorCell selectedCell = getSelectedCell();
+    selectedCell = getBigCellForNode(selectedCell.getSNode());
     assert selectedCell != null : "selected cell mustn't be null";
 
     g.setColor(new Color(255,0,0,100));
-    g.fillRect(
-            getSelectedCell().getX(), getSelectedCell().getY(),
-            getSelectedCell().getWidth(), getSelectedCell().getHeight());
+    Icon icon = Icons.INTENTION_ICON;
+    int x = selectedCell.getX() - icon.getIconWidth() - 3;
+    int y = selectedCell.getY();
+    x=x<0 ? 2 : x;
+    y=y<0 ? 2 : y;
+    icon.paintIcon(this,g, x, y);
   }
 
   protected void paintChildren(Graphics g) {
@@ -2118,12 +2125,24 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     for (final Intention i : myAvailableIntentions) {
       menu.add(new AbstractAction(i.getDescription(node, context)) {
         public void actionPerformed(ActionEvent e) {
-          i.execute(node,context);
+          CommandProcessor.instance().executeCommand(new Runnable() {
+            public void run() {
+              i.execute(node,context);
+              setPaintIntention(true);
+            }
+          });
         }
       });
     }
 
+    setPaintIntention(false);
+
     menu.show(this, cell.getX(), cell.getY());
+  }
+
+  private void setPaintIntention(boolean value){
+    paintIntentionIcon = value;
+    invalidate();
   }
 
   public static interface RebuildListener {

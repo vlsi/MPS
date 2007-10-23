@@ -23,6 +23,9 @@
   </models>
   <module />
   <accessoryModels />
+  <intentions>
+    <model modelUID="jetbrains.mps.baseLanguage.intentions" />
+  </intentions>
   <generators>
     <generator name="reduce to java" generatorUID="jetbrains.mps.baseLanguage#1129914002933" targetLanguage="jetbrains.mps.baseLanguage">
       <models>

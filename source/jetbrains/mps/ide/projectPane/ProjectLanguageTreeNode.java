@@ -94,7 +94,12 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
       this.add(new SModelTreeNode(constraintsModelDescriptor, "constraints", operationContext));
     }
 
-    SModelDescriptor scriptsModelDescriptor = myLanguage.getScriptsModelDescriptor();
+    SModelDescriptor intentionsModelDescriptor = myLanguage.getIntentionsModelDescriptor();
+    if (intentionsModelDescriptor != null) {
+      this.add(new SModelTreeNode(intentionsModelDescriptor, "intentions", operationContext));
+    }
+
+      SModelDescriptor scriptsModelDescriptor = myLanguage.getScriptsModelDescriptor();
     if (scriptsModelDescriptor != null) {
       this.add(new SModelTreeNode(scriptsModelDescriptor, "scripts", operationContext));
     }

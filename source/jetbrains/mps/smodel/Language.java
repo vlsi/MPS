@@ -546,6 +546,19 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   @Nullable
+  public SModelDescriptor getIntentionsModelDescriptor() {
+    if (getLanguageDescriptor().getIntentionsModel() != null) {
+      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getIntentionsModel().getName());
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      if (modelDescriptor == null) {
+        LOG.error("Couldn't get intentions model \"" + modelUID + "\"");
+      }
+      return modelDescriptor;
+    }
+    return null;
+  }
+
+  @Nullable
   public SModelDescriptor getScriptsModelDescriptor() {
     if (getLanguageDescriptor().getScriptsModel() != null) {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getScriptsModel().getName());
