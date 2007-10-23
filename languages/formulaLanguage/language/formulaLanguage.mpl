@@ -17,7 +17,7 @@
   <generators>
     <generator name="generator" generatorUID="jetbrains.mps.formulaLanguage#1130266266255" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
-        <modelRoot path="${language_descriptor}\generator\generator" namespacePrefix="jetbrains.mps.formulaLanguage.generator" />
+        <modelRoot path="${language_descriptor}\generator" namespacePrefix="jetbrains.mps.formulaLanguage.generator" />
       </models>
       <module />
       <external-templates />

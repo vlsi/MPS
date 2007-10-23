@@ -197,5 +197,9 @@ public class UsedEriSet extends HashSet<String> {
 
     usedERISet.add("method ([Classifier]Element).([InstanceMethodDeclaration]setText((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))");
     usedERISet.add("constructor [Classifier]TBuilderContext[ConstructorDeclaration] ()");
+
+    usedERISet.add("constructor [Classifier]DoubleConstant[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.double/jetbrains.mps.baseLanguage.types.double))");
+    usedERISet.add("constructor [Classifier]IfFunction[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Function, <jetbrains.mps.baseLanguage.types.classifier [Boolean]>]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Function, <stringable_>]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Function, <stringable_>]))");
+    usedERISet.add("constructor [Classifier]MultiplyOperation[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Function, <jetbrains.mps.baseLanguage.types.classifier [Double]>]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Function, <jetbrains.mps.baseLanguage.types.classifier [Double]>]))");
   }
 }

@@ -1786,5 +1786,8 @@ public class IdByEriMap extends HashMap<String, String> {
 
     idByEriMap.put("constructor [Classifier]TBuilderContext[ConstructorDeclaration] ()", "~TBuilderContext.<init>()");
     idByEriMap.put("method ([Classifier]Element).([InstanceMethodDeclaration]setText((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))", "~Element.setText(java.lang.String):org.jdom.Element");
+
+    idByEriMap.put("constructor [Classifier]MultiplyOperation[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Function, <jetbrains.mps.baseLanguage.types.classifier [Double]>]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Function, <jetbrains.mps.baseLanguage.types.classifier [Double]>]))", "~MultiplyOperation.<init>(jetbrains.mps.formulaLanguage.api.Function,jetbrains.mps.formulaLanguage.api.Function)");
+    idByEriMap.put("constructor [Classifier]DoubleConstant[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.double/jetbrains.mps.baseLanguage.types.double))", "~DoubleConstant.<init>(double)");
   }
 }
