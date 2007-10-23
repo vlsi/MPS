@@ -181,5 +181,18 @@ public class UsedEriSet extends HashSet<String> {
     usedERISet.add("method ([Classifier]List).([InstanceMethodDeclaration]add((jetbrains.mps.baseLanguage.types.any/jetbrains.mps.baseLanguage.types.any)))");
     usedERISet.add("method ([Classifier]Set).([InstanceMethodDeclaration]add((jetbrains.mps.baseLanguage.types.any/jetbrains.mps.baseLanguage.types.any)))");
     usedERISet.add("method ([Classifier]ITemplates).([InstanceMethodDeclaration]selectorByName((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))");
+
+usedERISet.add("static method ([Classifier]BaseParser).([StaticMethodDeclaration]pushTreeListBack((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LexemStream]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, <jetbrains.mps.baseLanguage.types.classifier [AbstractNode]>])))");
+usedERISet.add("static method ([Classifier]BaseParser).([StaticMethodDeclaration]readTerm((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LexemStream]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))");
+usedERISet.add("method ([Classifier]String).([InstanceMethodDeclaration]toString())");
+usedERISet.add("method ([Classifier]Vector).([InstanceMethodDeclaration]add((jetbrains.mps.baseLanguage.types.any/jetbrains.mps.baseLanguage.types.any)))");
+usedERISet.add("constructor [Classifier]InvalidInputException[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]))");
+usedERISet.add("constructor [Classifier]Node[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [List, <jetbrains.mps.baseLanguage.types.classifier [AbstractNode]>]))");
+usedERISet.add("constructor [Classifier]BaseLexer[ConstructorDeclaration] ((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [Reader]))");
+usedERISet.add("static method ([Classifier]Integer).([StaticMethodDeclaration]toString((jetbrains.mps.baseLanguage.types.int/jetbrains.mps.baseLanguage.types.int)))");
+usedERISet.add("method ([Classifier]BaseLexer).([InstanceMethodDeclaration]addLexem((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String]), (jetbrains.mps.baseLanguage.types.boolean/jetbrains.mps.baseLanguage.types.boolean), (jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [String])))");
+usedERISet.add("method ([Classifier]Stack).([InstanceMethodDeclaration]peek())");
+usedERISet.add("method ([Classifier]LexemStream).([InstanceMethodDeclaration]nextLexem((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LexerState])))");
+usedERISet.add("method ([Classifier]BaseLexer).([InstanceMethodDeclaration]nextLexemExt((jetbrains.mps.baseLanguage.types.classifier/jetbrains.mps.baseLanguage.types.classifier [LexerState])))");    
   }
 }
