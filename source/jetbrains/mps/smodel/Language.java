@@ -200,10 +200,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
 
-    MPSModuleRepository.getInstance().addModule(language, moduleOwner);
-    language.updateDependenciesAndGenerators();
-
     language.updateClassPath();
+
+    MPSModuleRepository.getInstance().addModule(language, moduleOwner);
+
+    language.updateDependenciesAndGenerators();
 
     return language;
   }
@@ -232,9 +233,9 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
 
-    MPSModuleRepository.getInstance().addModule(language, moduleOwner);
-
     language.updateClassPath();
+
+    MPSModuleRepository.getInstance().addModule(language, moduleOwner);
 
     language.updateDependenciesAndGenerators();
     return language;

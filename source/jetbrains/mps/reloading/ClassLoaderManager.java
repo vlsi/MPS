@@ -47,12 +47,9 @@ public class ClassLoaderManager implements IComponentLifecycle {
   public ClassLoaderManager() {
   }
 
-  public void initComponent() {
-    if (myItems == null) {
-      updateClassPath();
-    }
-
-    MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryListener() {
+  @Dependency
+  public void setModuleRepostiory(MPSModuleRepository repository) {
+    repository.addModuleRepositoryListener(new ModuleRepositoryListener() {
       public void moduleAdded(IModule module) {
         if (myRuntimeEnvironment.get(module.getModuleUID()) == null) {
           myRuntimeEnvironment.add(new Bundle(module.getModuleUID(), module.getByteCodeLocator()));
@@ -69,9 +66,15 @@ public class ClassLoaderManager implements IComponentLifecycle {
       }
 
       public void moduleInitialized(IModule module) {
-        
+
       }
     });
+  }
+
+  public void initComponent() {
+    if (myItems == null) {
+      updateClassPath();
+    }
   }
 
   @Dependency

@@ -252,7 +252,7 @@ public class MPSModuleRepository {
   }
 
   @NotNull
-  public Set<dfiIModule> getModelsToBeRemoved(Set<MPSModuleOwner> willBeReleased) {
+  public Set<IModule> getModelsToBeRemoved(Set<MPSModuleOwner> willBeReleased) {
     Set<MPSModuleOwner> rootOwners = new HashSet<MPSModuleOwner>();
     for (IModule m : myModuleToOwnersMap.keySet()) {
       for (MPSModuleOwner owner : myModuleToOwnersMap.get(m)) {
