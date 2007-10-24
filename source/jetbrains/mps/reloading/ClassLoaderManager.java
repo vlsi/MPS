@@ -43,7 +43,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   private List<String> myRemoveList = new ArrayList<String>();
 
-  private boolean myUseNewClassLoader = false;
+  private boolean myUseNewClassLoader = true;
 
 
   public static ClassLoaderManager getInstance() {
@@ -99,9 +99,13 @@ public class ClassLoaderManager implements IComponentLifecycle {
     
     CommandProcessor.instance().addCommandListener(new CommandAdapter() {
       public void commandFinished(@NotNull CommandEvent event) {
-        if (!myRemoveList.isEmpty()) {
-          String[] toUnload = myRemoveList.toArray(new String[0]);
-          myRuntimeEnvironment.unload(toUnload);
+        try {
+          if (!myRemoveList.isEmpty()) {
+            String[] toUnload = myRemoveList.toArray(new String[0]);
+            myRuntimeEnvironment.unload(toUnload);
+
+          }
+        } finally {
           myRemoveList.clear();
         }
       }
