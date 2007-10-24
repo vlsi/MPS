@@ -245,7 +245,7 @@ public class EditorManager {
       //-voodoo
     } catch (Exception e) {
       LOG.error("Failed to create cell for node " + node.getDebugText(), e);
-      nodeCell = EditorCell_Error.create(context, node, "!exception!:" + node.getDebugText());
+      nodeCell = new EditorCell_Error(context, node, "!exception!:" + node.getDebugText());
     } finally {
       if (nodeCell != null) {
         nodeCell.putUserObject(BIG_CELL_CONTEXT, refContext);
