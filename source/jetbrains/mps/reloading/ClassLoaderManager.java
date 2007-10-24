@@ -92,6 +92,9 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return myUseSystemClassLoader;
   }
 
+  /**
+   * @deprecated User getClassLoader(IModule) instead
+   **/
   public ClassLoader getClassLoader() {
     if (myUseSystemClassLoader) return getClass().getClassLoader();
 
