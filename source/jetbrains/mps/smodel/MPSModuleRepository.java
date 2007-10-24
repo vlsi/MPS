@@ -195,13 +195,11 @@ public class MPSModuleRepository {
       modulesWithUID = new ArrayList<IModule>(1);
       myUIDToModulesMap.put(moduleUID, modulesWithUID);
     }
-    if (module instanceof Language || modulesWithUID instanceof DevKit) {
-      if (modulesWithUID.size() > 1) {
-        LOG.error("can't add module " + moduleUID + " : module with the same UID exists");
-      }
-      if (modulesWithUID.size() == 1 && modulesWithUID.get(0) != module) {
-        LOG.error("can't add module " + moduleUID + " : module with the same UID exists");
-      }
+    if (modulesWithUID.size() > 1) {
+      LOG.error("can't add module " + moduleUID + " : module with the same UID exists");
+    }
+    if (modulesWithUID.size() == 1 && modulesWithUID.get(0) != module) {
+      LOG.error("can't add module " + moduleUID + " : module with the same UID exists");
     }
     modulesWithUID.add(module);
   }
@@ -221,6 +219,7 @@ public class MPSModuleRepository {
     if (canonicalDescriptorPath != null && !myFileToModuleMap.containsKey(canonicalDescriptorPath)) {
       myFileToModuleMap.put(canonicalDescriptorPath, module);
     }
+
     putModuleWithUID(module.getModuleUID(), module);
     Set<MPSModuleOwner> owners = myModuleToOwnersMap.get(module);
     if (owners == null) owners = new HashSet<MPSModuleOwner>();

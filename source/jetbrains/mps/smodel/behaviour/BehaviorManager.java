@@ -33,6 +33,8 @@ public final class BehaviorManager {
   }
 
   public void initNode(SNode node) {
+    assert node != null;
+
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
     Language langauge = node.getLanguage(GlobalScope.getInstance());
 
