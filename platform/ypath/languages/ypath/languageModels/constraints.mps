@@ -9,7 +9,7 @@
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.ypath" />
-  <maxImportIndex value="17" />
+  <maxImportIndex value="18" />
   <import index="1" modelUID="jetbrains.mps.ypath.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
@@ -26,6 +26,7 @@
   <import index="15" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
   <import index="16" modelUID="jetbrains.mps.ypath.constraints" version="-1" />
   <import index="17" modelUID="jetbrains.mps.ypath.runtime@java_stub" version="-1" />
+  <import index="18" modelUID="jetbrains.mps.ypath.plugin@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178187486791">
     <link role="concept" targetNodeId="1.1168428529658" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1184345381945">
@@ -2176,69 +2177,17 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="1184840371021">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184840371022">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1184840371023">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1184840371024">
-                <property name="name" value="klass" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184840371025">
-                  <link role="classifier" targetNodeId="3.~Class" resolveInfo="Class" />
-                </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1184840371026">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Class.forName(java.lang.String):java.lang.Class" resolveInfo="forName" />
-                  <link role="classConcept" targetNodeId="3.~Class" resolveInfo="Class" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184840371027">
-                    <link role="variableDeclaration" targetNodeId="1184840364158" resolveInfo="fqClassName" />
-                  </node>
-                </node>
-              </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193221836921">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1193221849347">
+            <link role="baseMethodDeclaration" targetNodeId="18.~DesignPartLoader.getFeatureDesign(java.lang.String):jetbrains.mps.ypath.design.IFeatureDesign" resolveInfo="getFeatureDesign" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193221841234">
+              <link role="baseMethodDeclaration" targetNodeId="18.~DesignPartLoader.getInstance():jetbrains.mps.ypath.plugin.DesignPartLoader" resolveInfo="getInstance" />
+              <link role="classConcept" targetNodeId="18.~DesignPartLoader" resolveInfo="DesignPartLoader" />
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1184840371028">
-              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1184840371029">
-                <property name="name" value="fd" />
-                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184840371030">
-                  <link role="classifier" targetNodeId="14.~IFeatureDesign" resolveInfo="IFeatureDesign" />
-                </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1184840371031">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Class.newInstance():java.lang.Object" resolveInfo="newInstance" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1184840371032">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184840371033">
-                      <link role="variableDeclaration" targetNodeId="1184840371024" resolveInfo="klass" />
-                    </node>
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184840371034">
-                      <link role="classifier" targetNodeId="14.~IFeatureDesign" resolveInfo="IFeatureDesign" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1184840371035">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184840382949">
-                <link role="variableDeclaration" targetNodeId="1184840371029" resolveInfo="fd" />
-              </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193221853973">
+              <link role="variableDeclaration" targetNodeId="1184840364158" resolveInfo="fqClassName" />
             </node>
           </node>
-          <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1184840371039">
-            <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1184840371040">
-              <property name="name" value="e" />
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184840371041">
-                <link role="classifier" targetNodeId="3.~Exception" resolveInfo="Exception" />
-              </node>
-            </node>
-            <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184840371042">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1184840371043">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1184840371044">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~Throwable.printStackTrace():void" resolveInfo="printStackTrace" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1184840371045">
-                    <link role="variableDeclaration" targetNodeId="1184840371040" resolveInfo="e" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1184840393176">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1184840394938" />
         </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1184840326518">

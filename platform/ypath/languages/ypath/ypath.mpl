@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.ypath">
+<language namespace="jetbrains.mps.ypath" pluginClass="jetbrains.mps.ypath.plugin.YpathPlugin">
   <structure>
     <model modelUID="jetbrains.mps.ypath.structure" />
   </structure>
