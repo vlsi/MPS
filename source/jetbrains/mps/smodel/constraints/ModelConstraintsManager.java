@@ -63,9 +63,6 @@ public class ModelConstraintsManager implements IComponentLifecycle {
   }
 
   public void initComponent() {
-
-    System.out.println("init mode constraints");
-
     for (Language l : myModuleRepository.getAllLanguages()) {
       processLanguageAdded(l);
     }
