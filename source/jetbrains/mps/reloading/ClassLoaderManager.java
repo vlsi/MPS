@@ -327,6 +327,9 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public ClassLoader getClassLoaderFor(IModule module) {
+
+    return getClassLoader();
+/*
     Bundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
 
     if (bundle == null) {
@@ -339,7 +342,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
       myRuntimeEnvironment.init(bundle);
     }
 
-    return bundle.getClassLoader();
+    return bundle.getClassLoader();*/
   }
 
   public void addReloadHandler(IReloadHandler handler) {
