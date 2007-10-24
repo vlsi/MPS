@@ -8,7 +8,10 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.runtime.RuntimeEnvironment;
+import jetbrains.mps.runtime.Bundle;
 import sun.misc.Launcher;
 
 import java.io.File;
@@ -29,6 +32,8 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private Map<String, IClassPathItem> myCachedItems = new HashMap<String, IClassPathItem>();
   private Set<String> myAlreadyAdded = new HashSet<String>();
 
+  private RuntimeEnvironment myRuntimeEnvironment = new RuntimeEnvironment();
+
   private List<IReloadHandler> myReloadHandlers = new ArrayList<IReloadHandler>();
 
   public static ClassLoaderManager getInstance() {
@@ -47,6 +52,27 @@ public class ClassLoaderManager implements IComponentLifecycle {
     if (myItems == null) {
       updateClassPath();
     }
+
+    MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryListener() {
+      public void moduleAdded(IModule module) {
+        if (myRuntimeEnvironment.get(module.getModuleUID()) != null) {        
+          myRuntimeEnvironment.add(new Bundle(module.getModuleUID(), module.getByteCodeLocator()));
+        }
+      }
+
+      public void beforeModuleRemoved(IModule module) {
+      }
+
+      public void moduleRemoved(IModule module) {
+        if (myRuntimeEnvironment.get(module.getModuleUID()) != null) {
+          myRuntimeEnvironment.unload(module.getModuleUID());
+        }
+      }
+
+      public void moduleInitialized(IModule module) {
+        
+      }
+    });
   }
 
   @Dependency

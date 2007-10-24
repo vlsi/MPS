@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.runtime.BytecodeLocator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -322,6 +323,14 @@ public abstract class AbstractModule implements IModule {
     return new HashSet<IModule>(getExplicitlyDependOnModules());
   }
 
+  public BytecodeLocator getByteCodeLocator() {
+    return new BytecodeLocator() {
+      public byte[] find(String fqName) {
+        return null;
+      }
+    };
+  }
+
   public void invalidateCaches() {
     myScope.invalidateCaches();
   }
@@ -340,5 +349,5 @@ public abstract class AbstractModule implements IModule {
     public String toString() {
       return "Scope of module " + AbstractModule.this;
     }
-  }
+  }    
 }
