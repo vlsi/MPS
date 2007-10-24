@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.baseLanguage.textGen.JavaNodeTextGen;
+import jetbrains.mps.project.GlobalScope;
 
 /**
  * User: Dmitriev.
@@ -65,7 +66,7 @@ public class TextGenManager {
       String packageName = NameUtil.namespaceFromConcept(cd);
       String className = cd.getName();
       String textgenClassname = packageName + ".textGen." + className + "_TextGen";
-      try {
+      try {                
         Class textgenClass = Class.forName(textgenClassname, true, ClassLoaderManager.getInstance().getClassLoader());
         return (SNodeTextGen) textgenClass.newInstance();
       } catch (ClassNotFoundException e) {

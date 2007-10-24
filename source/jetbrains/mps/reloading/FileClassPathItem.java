@@ -31,6 +31,10 @@ public class FileClassPathItem extends AbstractClassPathItem {
     String namespace = NameUtil.namespaceFromLongName(name);
     String shortname = NameUtil.shortNameFromLongName(name);
 
+    if (!myAvailableClassesCache.containsKey(namespace)) {
+      buildCacheFor(namespace);
+    }
+
     Set<String> classes = myAvailableClassesCache.get(namespace);
     if (classes == null
             || !classes.contains(shortname)) {

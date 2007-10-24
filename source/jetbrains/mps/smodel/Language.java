@@ -202,6 +202,9 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     MPSModuleRepository.getInstance().addModule(language, moduleOwner);
     language.updateDependenciesAndGenerators();
+
+    language.updateClassPath();
+
     return language;
   }
 
@@ -228,7 +231,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     language.myDescriptorFile = descriptorFile;
     language.myLanguageDescriptor = languageDescriptor;
+
     MPSModuleRepository.getInstance().addModule(language, moduleOwner);
+
+    language.updateClassPath();
+
     language.updateDependenciesAndGenerators();
     return language;
   }
@@ -343,10 +350,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return BootstrapLanguages.getInstance().getLanguages().contains(this);
   }
 
-  public BytecodeLocator getByteCodeLocator() {    
-    if (isBootstrap()) {
-      return new BytecodeLocator() {
-        public byte[] find(String fqName) {
+  public BytecodeLocator getByteCodeLocator() {
+    final BytecodeLocator oldLocator = super.getByteCodeLocator();
+    return new BytecodeLocator() {
+      public byte[] find(String fqName) {
+        if (isBootstrap()) {
           String namesapce = NameUtil.namespaceFromLongName(fqName);
 
           String editorPack = getModuleUID() + ".editor";
@@ -360,11 +368,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
           }
 
           return null;
+        } else {
+          return oldLocator.find(fqName);
         }
-      };
-    } else {
-      return super.getByteCodeLocator();
-    }
+      }
+    };
   }
 
   private void registerAspectListener() {
@@ -1121,7 +1129,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       return myAspectKind.name();
     }
   }
-
 
   private class LanguageModelsAdapter extends SModelsAdapter {
     public void modelWillBeDeleted(SModelDescriptor modelDescriptor) {

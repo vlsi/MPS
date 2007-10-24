@@ -7,11 +7,11 @@ import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.runtime.Bundle;
+import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.runtime.RuntimeEnvironment;
-import jetbrains.mps.runtime.Bundle;
 import sun.misc.Launcher;
 
 import java.io.File;
@@ -54,7 +54,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
     MPSModuleRepository.getInstance().addModuleRepositoryListener(new ModuleRepositoryListener() {
       public void moduleAdded(IModule module) {
-        if (myRuntimeEnvironment.get(module.getModuleUID()) != null) {        
+        if (myRuntimeEnvironment.get(module.getModuleUID()) == null) {
           myRuntimeEnvironment.add(new Bundle(module.getModuleUID(), module.getByteCodeLocator()));
         }
       }
@@ -326,6 +326,21 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return null;
   }
 
+  public ClassLoader getClassLoaderFor(IModule module) {
+    Bundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
+
+    if (bundle == null) {
+      myRuntimeEnvironment.get(module.getModuleUID());
+    }
+
+    assert bundle != null : "Can't find a bundle for a module " + module.getModuleUID();
+
+    if (!bundle.isInitialized()) {
+      myRuntimeEnvironment.init(bundle);
+    }
+
+    return bundle.getClassLoader();
+  }
 
   public void addReloadHandler(IReloadHandler handler) {
     myReloadHandlers.add(handler);
