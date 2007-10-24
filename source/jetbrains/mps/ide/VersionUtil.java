@@ -1,6 +1,8 @@
 package jetbrains.mps.ide;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.PathUtil;
+import jetbrains.mps.util.PathManager;
 
 import java.util.Properties;
 import java.io.FileInputStream;
@@ -15,7 +17,7 @@ public class VersionUtil {
   public static String getVersionString() {
     Properties props = new Properties();
     try {
-      props.load(new FileInputStream(new File("build.number")));
+      props.load(new FileInputStream(new File(PathManager.getHomePath() + File.separator + "build.number")));
     } catch (Exception e) {
       LOG.error(e);
     }
