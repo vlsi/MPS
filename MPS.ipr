@@ -162,6 +162,16 @@
               <file url="file://$PROJECT_DIR$/app/stwiki/exploded/WEB-INF/web.xml" />
             </files>
           </module>
+          <module name="MForum">
+            <files>
+              <file url="file://$PROJECT_DIR$/app/MForum/exploded/WEB-INF/web.xml" />
+            </files>
+          </module>
+          <module name="accounting">
+            <files>
+              <file url="file://$PROJECT_DIR$/app/accounting/web-app/WEB-INF/web.xml" />
+            </files>
+          </module>
         </modules>
       </facet-type>
       <facet-type id="jpa">
@@ -786,8 +796,8 @@
       <module fileurl="file://$PROJECT_DIR$/platform/mps-lite/MPS-lite.iml" filepath="$PROJECT_DIR$/platform/mps-lite/MPS-lite.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSPlugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" filepath="$PROJECT_DIR$/MPSPlugin/MPSSupport/MPSSupport.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/MoneyLang_language/MoneyLang_language.iml" filepath="$PROJECT_DIR$/app/MoneyLang_language/MoneyLang_language.iml" group="app/MoneyLang" />
-      <module fileurl="file://$PROJECT_DIR$/app/MoneyLang_runtime/MoneyLang_runtime.iml" filepath="$PROJECT_DIR$/app/MoneyLang_runtime/MoneyLang_runtime.iml" group="app/MoneyLang" />
+      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/money/MoneyLang_language/MoneyLang_language.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/money/MoneyLang_language/MoneyLang_language.iml" group="baseLanguage/ext/money" />
+      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/money/MoneyLang_runtime/MoneyLang_runtime.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/money/MoneyLang_runtime/MoneyLang_runtime.iml" group="baseLanguage/ext/money" />
       <module fileurl="file://$PROJECT_DIR$/platform/panacea/Panacea.iml" filepath="$PROJECT_DIR$/platform/panacea/Panacea.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" filepath="$PROJECT_DIR$/app/ProjectHalo/ProjectHalo.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" filepath="$PROJECT_DIR$/app/PubMedDB/pubmed-ws/PubMed-WS.iml" group="app/PubMedDB" />
@@ -796,7 +806,6 @@
       <module fileurl="file://$PROJECT_DIR$/platform/xml4BL/runtime/XML4BL_Runtime.iml" filepath="$PROJECT_DIR$/platform/xml4BL/runtime/XML4BL_Runtime.iml" group="platform/XML4BL" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/YPath.iml" filepath="$PROJECT_DIR$/platform/ypath/YPath.iml" group="platform/YPath-Panacea" />
       <module fileurl="file://$PROJECT_DIR$/platform/ypath/runtime/YPath-runtime.iml" filepath="$PROJECT_DIR$/platform/ypath/runtime/YPath-runtime.iml" group="platform/YPath-Panacea" />
-      <module fileurl="file://$PROJECT_DIR$/app/accounting/accounting.iml" filepath="$PROJECT_DIR$/app/accounting/accounting.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/app/agreement/agreement.iml" filepath="$PROJECT_DIR$/app/agreement/agreement.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" group="Projects/BaseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/languages/baseLanguageInternal/baseLanguageInternal.iml" filepath="$PROJECT_DIR$/baseLanguage/languages/baseLanguageInternal/baseLanguageInternal.iml" group="baseLanguage" />
@@ -927,10 +936,6 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="charisma-app/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
@@ -1033,10 +1038,6 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="charisma-app/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
@@ -1134,10 +1135,6 @@
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="charisma-app/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
@@ -1214,10 +1211,6 @@
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="PubMedDB/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1315,10 +1308,6 @@
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
       <JAVAEE_FACET FACET_ID="PubMedDB/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
-        <option name="CONTEXT_PATH" value="/" />
-        <option name="DEPLOY" value="false" />
-      </JAVAEE_FACET>
-      <JAVAEE_FACET FACET_ID="accounting/web/Web" DEPLOYMENT_SOURCE_NAME="exploded">
         <option name="CONTEXT_PATH" value="/" />
         <option name="DEPLOY" value="false" />
       </JAVAEE_FACET>
@@ -1427,10 +1416,6 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="svn" />
-  </component>
-  <component name="VssVcs">
-    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/projects/SemanticFunctions/source/jetbrains/naturalLanguageDescription/scope</SourceSafePersistencyRemovedFolder>
-    <SourceSafePersistencyRemovedFolder>$PROJECT_DIR$/source/jetbrains/mps/generator/types</SourceSafePersistencyRemovedFolder>
   </component>
   <component name="WebServicesPlugin" addRequiredLibraries="true" />
   <component name="com.intellij.jsf.UserDefinedFacesConfigs">
