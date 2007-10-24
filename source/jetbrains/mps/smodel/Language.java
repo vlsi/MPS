@@ -354,7 +354,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   public BytecodeLocator getByteCodeLocator() {
     final BytecodeLocator oldLocator = super.getByteCodeLocator();
     return new BytecodeLocator() {
-      public byte[] find(String fqName) {
+      public byte[] find(String fqName) {        
+        if (!fqName.startsWith(getModuleUID())) {
+          return null;
+        }
+
         if (isBootstrap()) {
           String namesapce = NameUtil.namespaceFromLongName(fqName);
 

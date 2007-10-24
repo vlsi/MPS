@@ -336,21 +336,26 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return null;
   }
 
+  private boolean myUseNewClassLoader = false;
+
   public ClassLoader getClassLoaderFor(IModule module) {
-    return getClassLoader();
-/*    Bundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
+    if (myUseNewClassLoader) {
+      Bundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
 
-    if (bundle == null) {
-      myRuntimeEnvironment.get(module.getModuleUID());
+      if (bundle == null) {
+        myRuntimeEnvironment.get(module.getModuleUID());
+      }
+
+      assert bundle != null : "Can't find a bundle for a module " + module.getModuleUID();
+
+      if (!bundle.isInitialized()) {
+        myRuntimeEnvironment.init(bundle);
+      }
+
+      return bundle.getClassLoader();
+    } else {
+      return getClassLoader();
     }
-
-    assert bundle != null : "Can't find a bundle for a module " + module.getModuleUID();
-
-    if (!bundle.isInitialized()) {
-      myRuntimeEnvironment.init(bundle);
-    }
-
-    return bundle.getClassLoader();*/
   }
 
   public void addReloadHandler(IReloadHandler handler) {
