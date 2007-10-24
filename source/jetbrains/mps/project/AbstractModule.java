@@ -372,7 +372,7 @@ public abstract class AbstractModule implements IModule {
       }
 
       public URL findResource(String name) {
-        myClassPathItem.getResource(name);
+        return myClassPathItem.getResource(name);
       }
     };
   }
