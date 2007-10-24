@@ -1,8 +1,7 @@
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.smodel.SNode;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -13,7 +12,7 @@ public final class ReflectionUtil {
   private ReflectionUtil() {
   }
 
-  public static Class forName(String className) {
+  private static Class forName(String className) {
     try {
       return Class.forName(className, true, ClassLoaderManager.getInstance().getClassLoader());
     } catch (ClassNotFoundException e) {
