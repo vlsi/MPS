@@ -330,7 +330,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public ClassLoader getClassLoaderFor(IModule module) {
-
     return getClassLoader();
 /*
     Bundle bundle = myRuntimeEnvironment.get(module.getModuleUID());

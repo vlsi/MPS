@@ -90,6 +90,8 @@ public final class BehaviorManager {
   }
 
   private Method getMethod(AbstractConceptDeclaration concept, String methodName, Class[] parameterTypes) {
+    Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+
     Method method = null;
     String fqName = NameUtil.nodeFQName(concept);
 
@@ -102,7 +104,7 @@ public final class BehaviorManager {
     String behaviorClass = behaviorClassByConceptFqName(fqName);
 
     try {
-      Class cls = Class.forName(behaviorClass, true, ClassLoaderManager.getInstance().getClassLoader());
+      Class cls = Class.forName(behaviorClass, true, ClassLoaderManager.getInstance().getClassLoaderFor(l));
       method = cls.getMethod(methodName, parameterTypes);
     } catch (ClassNotFoundException e) {
       //ignore

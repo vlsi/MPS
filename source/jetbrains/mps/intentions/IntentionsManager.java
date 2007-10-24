@@ -40,7 +40,7 @@ public class IntentionsManager {
           String className = smodel.getUID().getLongName() + "." + IntentionDeclaration_Behavior.call_getGeneratedName_1193141280918(intentionDeclaration.getNode());
           String conceptName = IntentionDeclaration_Behavior.call_getConceptName_1193142194523(intentionDeclaration.getNode());
           try {
-            Object intention = Class.forName(className, true, ClassLoaderManager.getInstance().getClassLoader()).newInstance();
+            Object intention = Class.forName(className, true, ClassLoaderManager.getInstance().getClassLoaderFor(l)).newInstance();
             Set <Intention> intentions = myIntentions.get(conceptName);
             if (intentions == null){
               intentions = new HashSet<Intention>();

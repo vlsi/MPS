@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.baseLanguage.textGen.JavaNodeTextGen;
@@ -63,11 +64,13 @@ public class TextGenManager {
   private SNodeTextGen loadNodeTextGen(SNode node) {
     ConceptDeclaration cd = (ConceptDeclaration) node.getConceptDeclarationAdapter();
     while (cd != SModelUtil_new.getBaseConcept()) {
+      Language l = SModelUtil_new.getDeclaringLanguage(cd, GlobalScope.getInstance());
+
       String packageName = NameUtil.namespaceFromConcept(cd);
       String className = cd.getName();
       String textgenClassname = packageName + ".textGen." + className + "_TextGen";
       try {                
-        Class textgenClass = Class.forName(textgenClassname, true, ClassLoaderManager.getInstance().getClassLoader());
+        Class textgenClass = Class.forName(textgenClassname, true, ClassLoaderManager.getInstance().getClassLoaderFor(l));
         return (SNodeTextGen) textgenClass.newInstance();
       } catch (ClassNotFoundException e) {
         //that's ok

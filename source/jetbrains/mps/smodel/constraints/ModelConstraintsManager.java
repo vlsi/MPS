@@ -320,12 +320,15 @@ public class ModelConstraintsManager {
 
   private void loadConstraints(String languageNamespace, List<IModelConstraints> loadedConstraints) {
     // load constraints
+
+    Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+
     String packageName = languageNamespace + ".constraints";
     IClassPathItem classPathItem = myClassLoaderManager.getClassPathItem();
     Set<String> availableClasses = classPathItem.getAvailableClasses(packageName);
     for (String shortClassName : availableClasses) {
       try {
-        ClassLoader classLoader = myClassLoaderManager.getClassLoader();
+        ClassLoader classLoader = myClassLoaderManager.getClassLoaderFor(l);
         Class constraintsClass = Class.forName(packageName + "." + shortClassName, true, classLoader);
         if (IModelConstraints.class.isAssignableFrom(constraintsClass)) {
           IModelConstraints constraints = (IModelConstraints) constraintsClass.newInstance();
