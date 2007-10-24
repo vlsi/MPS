@@ -196,10 +196,10 @@ public class MPSModuleRepository {
       myUIDToModulesMap.put(moduleUID, modulesWithUID);
     }
     if (modulesWithUID.size() > 1) {
-      LOG.error("can't add module " + moduleUID + " : module with the same UID exists");
+      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + modulesWithUID.get(0).getDescriptorFile());
     }
     if (modulesWithUID.size() == 1 && modulesWithUID.get(0) != module) {
-      LOG.error("can't add module " + moduleUID + " : module with the same UID exists");
+      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + modulesWithUID.get(0).getDescriptorFile());
     }
     modulesWithUID.add(module);
   }
@@ -252,7 +252,7 @@ public class MPSModuleRepository {
   }
 
   @NotNull
-  public Set<IModule> getModelsToBeRemoved(Set<MPSModuleOwner> willBeReleased) {
+  public Set<dfiIModule> getModelsToBeRemoved(Set<MPSModuleOwner> willBeReleased) {
     Set<MPSModuleOwner> rootOwners = new HashSet<MPSModuleOwner>();
     for (IModule m : myModuleToOwnersMap.keySet()) {
       for (MPSModuleOwner owner : myModuleToOwnersMap.get(m)) {
