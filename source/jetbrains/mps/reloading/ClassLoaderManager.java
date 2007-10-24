@@ -4,6 +4,9 @@ import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
 import jetbrains.mps.ide.SystemInfo;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.CommandAdapter;
+import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
@@ -18,6 +21,8 @@ import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
+
+import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Kostik
@@ -35,6 +40,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private RuntimeEnvironment myRuntimeEnvironment = new RuntimeEnvironment();
 
   private List<IReloadHandler> myReloadHandlers = new ArrayList<IReloadHandler>();
+
+  private List<String> myRemoveList = new ArrayList<String>();
+
+  private boolean myUseNewClassLoader = false;
+
 
   public static ClassLoaderManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(ClassLoaderManager.class);
@@ -64,9 +74,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
       }
 
       public void moduleRemoved(IModule module) {
-        if (myRuntimeEnvironment.get(module.getModuleUID()) != null) {
-          myRuntimeEnvironment.unload(module.getModuleUID());
-        }
+        myRemoveList.add(module.getModuleUID());
       }
 
       public void moduleInitialized(IModule module) {
@@ -79,6 +87,16 @@ public class ClassLoaderManager implements IComponentLifecycle {
     if (myItems == null) {
       updateClassPath();
     }
+    
+    CommandProcessor.instance().addCommandListener(new CommandAdapter() {
+      public void commandFinished(@NotNull CommandEvent event) {
+        if (!myRemoveList.isEmpty()) {
+          String[] toUnload = myRemoveList.toArray(new String[0]);
+          myRuntimeEnvironment.unload(toUnload);
+          myRemoveList.clear();
+        }
+      }
+    });
   }
 
   @Dependency
@@ -335,8 +353,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
     return null;
   }
-
-  private boolean myUseNewClassLoader = false;
 
   public ClassLoader getClassLoaderFor(IModule module) {
     if (myUseNewClassLoader) {
