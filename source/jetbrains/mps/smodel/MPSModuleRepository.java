@@ -207,10 +207,10 @@ public class MPSModuleRepository {
       myUIDToModulesMap.put(moduleUID, modulesWithUID);
     }
     if (modulesWithUID.size() > 1) {
-      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + modulesWithUID.get(0).getDescriptorFile());
+      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + modulesWithUID.get(0).getDescriptorFile() + " and " + module.getDescriptorFile());
     }
     if (modulesWithUID.size() == 1 && modulesWithUID.get(0) != module) {
-      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + modulesWithUID.get(0).getDescriptorFile());
+      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + modulesWithUID.get(0).getDescriptorFile() + " and " + module.getDescriptorFile());       
     }
     modulesWithUID.add(module);
   }
