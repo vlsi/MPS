@@ -4,9 +4,11 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.project.GlobalScope;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -32,6 +34,8 @@ public final class BehaviorManager {
 
   public void initNode(SNode node) {
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
+    Language langauge = node.getLanguage(GlobalScope.getInstance());
+
     String conceptFqName = NameUtil.nodeFQName(concept);
 
     List<Method> methodsToCall = new ArrayList<Method>();
@@ -45,7 +49,8 @@ public final class BehaviorManager {
         String behaviourClass = behaviorClassByConceptFqName(fqName);
 
         try {
-          Class cls = Class.forName(behaviourClass, true, ClassLoaderManager.getInstance().getClassLoader());
+          ClassLoader cl = ClassLoaderManager.getInstance().getClassLoaderFor(langauge);
+          Class cls = Class.forName(behaviourClass, true, cl);
           Method method = cls.getMethod("init", SNode.class);
 
           method.setAccessible(true);
