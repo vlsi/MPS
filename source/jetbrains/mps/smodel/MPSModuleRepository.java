@@ -95,22 +95,33 @@ public class MPSModuleRepository {
 
   private void fireModuleAdded(@NotNull IModule module) {
     for (ModuleRepositoryListener l : myModuleListeners) {
-      l.moduleAdded(module);
+      try {
+        l.moduleAdded(module);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   private void fireBeforeModuleRemoved(@NotNull IModule module) {
     for (ModuleRepositoryListener l : myModuleListeners) {
-      l.beforeModuleRemoved(module);
+      try {
+        l.beforeModuleRemoved(module);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   private void fireModuleRemoved(@NotNull IModule module) {
     for (ModuleRepositoryListener l : myModuleListeners) {
-      l.moduleRemoved(module);
+      try {
+        l.moduleRemoved(module);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
-
 
   public void fireModuleInitialized(@NotNull IModule module) {
     for (ModuleRepositoryListener l : myModuleListeners) {
