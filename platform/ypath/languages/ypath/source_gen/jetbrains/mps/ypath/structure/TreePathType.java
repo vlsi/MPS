@@ -11,10 +11,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TreePathType extends Type implements INamedConcept {
   public static final String concept = "jetbrains.mps.ypath.structure.TreePathType";
+  public static String NODE_TYPE = "nodeType";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
-  public static String NODE_TYPE = "nodeType";
 
   public  TreePathType(SNode node) {
     super(node);
@@ -28,6 +28,14 @@ public class TreePathType extends Type implements INamedConcept {
     return TreePathType.newInstance(sm, false);
   }
 
+
+  public Type getNodeType() {
+    return (Type)this.getChild(TreePathType.NODE_TYPE);
+  }
+
+  public void setNodeType(Type node) {
+    super.setChild(TreePathType.NODE_TYPE, node);
+  }
 
   public String getName() {
     return this.getProperty(TreePathType.NAME);
@@ -51,14 +59,6 @@ public class TreePathType extends Type implements INamedConcept {
 
   public void setAlias(String value) {
     this.setProperty(TreePathType.ALIAS, value);
-  }
-
-  public Type getNodeType() {
-    return (Type)this.getChild(TreePathType.NODE_TYPE);
-  }
-
-  public void setNodeType(Type node) {
-    super.setChild(TreePathType.NODE_TYPE, node);
   }
 
 }

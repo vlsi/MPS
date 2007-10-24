@@ -11,15 +11,15 @@ import jetbrains.mps.project.GlobalScope;
 
 public class SequenceFeature extends BaseConcept implements INamedConcept, IFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.SequenceFeature";
+  public static String SEQUENCE_FUNCTION = "sequenceFunction";
+  public static String SIZE_FUNCTION = "sizeFunction";
+  public static String ADD_FUNCTION = "addFunction";
+  public static String REMOVE_FUNCTION = "removeFunction";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
-  public static String SEQUENCE_FUNCTION = "sequenceFunction";
-  public static String SIZE_FUNCTION = "sizeFunction";
-  public static String ADD_FUNCTION = "addFunction";
-  public static String REMOVE_FUNCTION = "removeFunction";
 
   public  SequenceFeature(SNode node) {
     super(node);
@@ -33,6 +33,38 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
     return SequenceFeature.newInstance(sm, false);
   }
 
+
+  public FeatureSequenceFun getSequenceFunction() {
+    return (FeatureSequenceFun)this.getChild(SequenceFeature.SEQUENCE_FUNCTION);
+  }
+
+  public void setSequenceFunction(FeatureSequenceFun node) {
+    super.setChild(SequenceFeature.SEQUENCE_FUNCTION, node);
+  }
+
+  public FeatureSizeFun getSizeFunction() {
+    return (FeatureSizeFun)this.getChild(SequenceFeature.SIZE_FUNCTION);
+  }
+
+  public void setSizeFunction(FeatureSizeFun node) {
+    super.setChild(SequenceFeature.SIZE_FUNCTION, node);
+  }
+
+  public FeatureAddFun getAddFunction() {
+    return (FeatureAddFun)this.getChild(SequenceFeature.ADD_FUNCTION);
+  }
+
+  public void setAddFunction(FeatureAddFun node) {
+    super.setChild(SequenceFeature.ADD_FUNCTION, node);
+  }
+
+  public FeatureRemoveFun getRemoveFunction() {
+    return (FeatureRemoveFun)this.getChild(SequenceFeature.REMOVE_FUNCTION);
+  }
+
+  public void setRemoveFunction(FeatureRemoveFun node) {
+    super.setChild(SequenceFeature.REMOVE_FUNCTION, node);
+  }
 
   public String getName() {
     return this.getProperty(SequenceFeature.NAME);
@@ -72,38 +104,6 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
 
   public void setDefault(boolean value) {
     this.setBooleanProperty(SequenceFeature.DEFAULT, value);
-  }
-
-  public FeatureSequenceFun getSequenceFunction() {
-    return (FeatureSequenceFun)this.getChild(SequenceFeature.SEQUENCE_FUNCTION);
-  }
-
-  public void setSequenceFunction(FeatureSequenceFun node) {
-    super.setChild(SequenceFeature.SEQUENCE_FUNCTION, node);
-  }
-
-  public FeatureSizeFun getSizeFunction() {
-    return (FeatureSizeFun)this.getChild(SequenceFeature.SIZE_FUNCTION);
-  }
-
-  public void setSizeFunction(FeatureSizeFun node) {
-    super.setChild(SequenceFeature.SIZE_FUNCTION, node);
-  }
-
-  public FeatureAddFun getAddFunction() {
-    return (FeatureAddFun)this.getChild(SequenceFeature.ADD_FUNCTION);
-  }
-
-  public void setAddFunction(FeatureAddFun node) {
-    super.setChild(SequenceFeature.ADD_FUNCTION, node);
-  }
-
-  public FeatureRemoveFun getRemoveFunction() {
-    return (FeatureRemoveFun)this.getChild(SequenceFeature.REMOVE_FUNCTION);
-  }
-
-  public void setRemoveFunction(FeatureRemoveFun node) {
-    super.setChild(SequenceFeature.REMOVE_FUNCTION, node);
   }
 
 }

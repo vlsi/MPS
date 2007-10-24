@@ -10,12 +10,12 @@ import jetbrains.mps.baseLanguage.structure.Type;
 
 public class ParamSequenceFeature extends SequenceFeature implements IParamFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.ParamSequenceFeature";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
   public static String PARAMETER_TYPE = "parameterType";
   public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
   public static String TO_STRING_FUNCTION = "toStringFunction";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
 
   public  ParamSequenceFeature(SNode node) {
     super(node);
@@ -29,22 +29,6 @@ public class ParamSequenceFeature extends SequenceFeature implements IParamFeatu
     return ParamSequenceFeature.newInstance(sm, false);
   }
 
-
-  public String getShortDescription() {
-    return this.getProperty(ParamSequenceFeature.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(ParamSequenceFeature.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(ParamSequenceFeature.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(ParamSequenceFeature.ALIAS, value);
-  }
 
   public Type getParameterType() {
     return (Type)this.getChild(ParamSequenceFeature.PARAMETER_TYPE);
@@ -108,6 +92,22 @@ public class ParamSequenceFeature extends SequenceFeature implements IParamFeatu
 
   public void setParamRemoveFunction(ParamFeatureRemoveFun node) {
     this.setRemoveFunction(node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ParamSequenceFeature.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ParamSequenceFeature.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ParamSequenceFeature.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ParamSequenceFeature.ALIAS, value);
   }
 
 }

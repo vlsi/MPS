@@ -69,7 +69,7 @@ public class QueriesGenerated {
     if(SNodeOperations.isInstanceOf(expression, "jetbrains.mps.ypath.structure.TreePathAdapterExpression")) {
       expression = SLinkOperations.getTarget(expression, "expression", true);
     }
-    expression = CloneUtil.clone(expression, generator.getTargetModel(), generator.getScope());
+    expression = CloneUtil.cloneNotPreservingId(expression, generator.getTargetModel(), generator.getScope());
     return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "usedFeature", false), expression, SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "paramObject", true), "paramRef", false));
   }
 
@@ -78,7 +78,7 @@ public class QueriesGenerated {
     if(SNodeOperations.isInstanceOf(expression, "jetbrains.mps.ypath.structure.TreePathAdapterExpression")) {
       expression = SLinkOperations.getTarget(expression, "expression", true);
     }
-    expression = CloneUtil.clone(expression, generator.getTargetModel(), generator.getScope());
+    expression = CloneUtil.cloneNotPreservingId(expression, generator.getTargetModel(), generator.getScope());
     return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "usedFeature", false), expression, SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "paramObject", true), "paramRef", false));
   }
 
