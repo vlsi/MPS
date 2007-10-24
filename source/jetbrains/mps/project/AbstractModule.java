@@ -18,6 +18,7 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
+import java.net.URL;
 
 /**
  * Created by IntelliJ IDEA.
@@ -368,6 +369,10 @@ public abstract class AbstractModule implements IModule {
       public byte[] find(String fqName) {
         assert myClassPathItem != null : "module " + getModuleUID() + "'s classpath wasn't initialized";
         return myClassPathItem.getClass(fqName);
+      }
+
+      public URL findResource(String name) {
+        myClassPathItem.getResource(name);
       }
     };
   }

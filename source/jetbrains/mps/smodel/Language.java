@@ -37,6 +37,7 @@ import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import java.rmi.RemoteException;
 import java.util.*;
+import java.net.URL;
 
 
 /**
@@ -374,6 +375,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
         } else {
           return oldLocator.find(fqName);
         }
+      }
+
+      public URL findResource(String name) {
+        return oldLocator.findResource(name);
       }
     };
   }
