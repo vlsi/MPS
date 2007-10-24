@@ -14,7 +14,6 @@ import jetbrains.mps.logging.refactoring.structure.Refactoring;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ConversionUtil;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
@@ -31,7 +30,6 @@ import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.runtime.BytecodeLocator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -347,8 +345,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
 
-  public boolean isBootstrap() {
-    return BootstrapLanguages.getInstance().getLanguages().contains(this);
+  public boolean structureHaveToBeLoadedFromApplicationClassLoader() {
+    return BootstrapLanguages.getInstance().getLanguagesUsedInCore().contains(this);
   }
 
   public BytecodeLocator getByteCodeLocator() {
@@ -359,7 +357,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
           return null;
         }
 
-        if (isBootstrap()) {
+        if (structureHaveToBeLoadedFromApplicationClassLoader()) {
           String namesapce = NameUtil.namespaceFromLongName(fqName);
 
           String editorPack = getModuleUID() + ".editor";

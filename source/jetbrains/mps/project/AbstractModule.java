@@ -367,11 +367,6 @@ public abstract class AbstractModule implements IModule {
     return new BytecodeLocator() {
       public byte[] find(String fqName) {
         assert myClassPathItem != null : "module " + getModuleUID() + "'s classpath wasn't initialized";
-
-//        if (fqName.contains("SNode")) {
-//          System.out.println("aha!");
-//        }
-
         return myClassPathItem.getClass(fqName);
       }
     };
