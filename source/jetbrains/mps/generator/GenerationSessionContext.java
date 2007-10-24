@@ -365,7 +365,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     @NotNull
     public String getModuleUID() {
-      return "";
+      return "TransientModule" + System.identityHashCode(this);
     }
 
     public String getGeneratorOutputPath() {

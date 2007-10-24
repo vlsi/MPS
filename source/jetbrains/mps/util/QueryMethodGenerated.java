@@ -2,9 +2,9 @@ package jetbrains.mps.util;
 
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.*;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -15,6 +15,30 @@ public class QueryMethodGenerated {
   private static final Logger LOG = Logger.getLogger(QueryMethodGenerated.class);
 
   private static Map<Pair<SModelUID, String>, Method> ourMethods = new HashMap<Pair<SModelUID, String>, Method>();
+
+
+  public static IModule findModuleForModel(SModel sourceModel) {
+    SModelDescriptor smd = sourceModel.getModelDescriptor();
+
+    for (ModelOwner owner : SModelRepository.getInstance().getOwners(smd)) {
+      if (owner instanceof Generator && SModelStereotype.TEMPLATES.equals(smd.getStereotype())) {
+        Generator g = (Generator) owner;
+        return g.getSourceLanguage();
+      }
+
+      if (owner instanceof Language && ((Language) owner).getAspectModelDescriptors().contains(smd)) {
+        return (IModule) owner;
+      }
+    }
+
+    return null;
+  }
+
+  public static ClassLoader findClassLoader(SModel model) {
+    IModule module = findModuleForModel(model);
+    assert module != null;
+    return ClassLoaderManager.getInstance().getClassLoaderFor(module);
+  }
 
   public static void clearCaches() {
     ourMethods.clear();
@@ -30,7 +54,7 @@ public class QueryMethodGenerated {
     String queriesClassName = packageName + ".QueriesGenerated";
     Class queriesClass;
     try {
-      queriesClass = Class.forName(queriesClassName, true, ClassLoaderManager.getInstance().getClassLoader());
+      queriesClass = Class.forName(queriesClassName, true, findClassLoader(sourceModel));
     } catch (ClassNotFoundException cfe) {
       if (!suppressErrorLogging) {
         LOG.error("couldn't find class 'QueriesGenerated' for model '" + sourceModel.getUID() + "' : TRY TO GENERATE");
