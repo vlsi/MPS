@@ -40,7 +40,6 @@
   <dependencies>
     <dependency>jetbrains.mps.baseLanguage.ext.collections.lang</dependency>
     <dependency>jetbrains.mps.patterns</dependency>
-    <dependency>jetbrains.mps.quotation</dependency>
     <dependency>jetbrains.mps.baseLanguage.blTypes</dependency>
     <dependency>jetbrains.mps.regexp</dependency>
   </dependencies>

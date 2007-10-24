@@ -52,7 +52,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
     repository.addModuleRepositoryListener(new ModuleRepositoryListener() {
       public void moduleAdded(IModule module) {
         if (myRuntimeEnvironment.get(module.getModuleUID()) == null) {
-          myRuntimeEnvironment.add(new Bundle(module.getModuleUID(), module.getByteCodeLocator()));
+          Bundle bundle = new Bundle(module.getModuleUID(), module.getByteCodeLocator());
+          for (String d : module.getExplicitlyDependOnModuleUIDs()) {
+            bundle.addDependency(d);
+          }
+          myRuntimeEnvironment.add(bundle);
         }
       }
 
@@ -334,8 +338,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   public ClassLoader getClassLoaderFor(IModule module) {
     return getClassLoader();
-/*
-    Bundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
+/*    Bundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
 
     if (bundle == null) {
       myRuntimeEnvironment.get(module.getModuleUID());

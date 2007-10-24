@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.component.Dependency;
+import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
@@ -13,6 +14,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
+import jetbrains.mps.ide.BootstrapLanguages;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -24,7 +26,7 @@ import java.util.*;
  * Time: 8:09:10 PM
  * To change this template use File | Settings | File Templates.
  */
-public class ModelConstraintsManager {
+public class ModelConstraintsManager implements IComponentLifecycle {
   private static final Logger LOG = Logger.getLogger(ModelConstraintsManager.class);
 
   private Map<String, List<IModelConstraints>> myAddedLanguageNamespaces = new HashMap<String, List<IModelConstraints>>();
@@ -36,7 +38,11 @@ public class ModelConstraintsManager {
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
 
+
+
   private ClassLoaderManager myClassLoaderManager;
+  private BootstrapLanguages myBootstrapLanguages;
+  private MPSModuleRepository myModuleRepository;
 
   public ModelConstraintsManager() {
   }
@@ -47,8 +53,24 @@ public class ModelConstraintsManager {
   }
 
   @Dependency
+  public void setBootstrapLanguages(BootstrapLanguages langs) {
+    myBootstrapLanguages = langs;
+  }
+
+  @Dependency
   public void setModuleRepository(MPSModuleRepository r) {
-    r.addModuleRepositoryListener(new ModuleRepositoryListener() {
+    myModuleRepository = r;
+  }
+
+  public void initComponent() {
+
+    System.out.println("init mode constraints");
+
+    for (Language l : myModuleRepository.getAllLanguages()) {
+      processLanguageAdded(l);
+    }
+
+    myModuleRepository.addModuleRepositoryListener(new ModuleRepositoryListener() {
       public void beforeModuleRemoved(IModule module) {
       }
 

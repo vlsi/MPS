@@ -22,7 +22,6 @@
   <module />
   <accessoryModels>
     <model modelUID="jetbrains.mps.regexp.jetbrains.mps.regexp.accessory" />
-    <model modelUID="jetbrains.mps.regexp.zzzzzz" />
   </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.regexp#1174510748147" targetLanguage="jetbrains.mps.baseLanguage">

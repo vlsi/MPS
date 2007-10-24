@@ -39,6 +39,8 @@ public class DevKit extends AbstractModule {
     result.myDescriptor = devKitDescriptor;
     result.myDescriptorFile = descriptorFile;
 
+    result.updateClassPath();
+
     MPSModuleRepository.getInstance().addModule(result, moduleOwner);
     result.readDependOnModules();
     return result;

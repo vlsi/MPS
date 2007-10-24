@@ -418,18 +418,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return getLanguageDescriptor().getLanguagePluginClass();
   }
 
-  @NotNull
-  public List<IModule> getExplicitlyDependOnModules() {
-    List<IModule> result = new LinkedList<IModule>();
-    for (IModule ownModule : super.getExplicitlyDependOnModules()) {
-      if (ownModule instanceof Generator || result.contains(ownModule)) {
-        continue;
-      }
-      result.add(ownModule);
-    }
-    return result;
-  }
-
   public void updateLastGenerationTime() {
     long lastGenerationTime = FileUtil.getNewestFileTime(
             new File(getSourceDir().getAbsolutePath() + File.separator + getNamespace().replace('.', File.separatorChar)));

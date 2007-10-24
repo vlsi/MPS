@@ -32,6 +32,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   @NotNull List<ModelRoot> getNonDefaultModelRoots();
 
+  @NotNull List<String> getExplicitlyDependOnModuleUIDs();
+
   @NotNull List<IModule> getExplicitlyDependOnModules();
 
   @NotNull List<IModule> getDependOnModules();
@@ -44,7 +46,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   @Nullable File getDescriptorFile();
 
-  @NotNull ModuleDescriptor getModuleDescriptor();
+  ModuleDescriptor getModuleDescriptor();
 
   void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor);
 

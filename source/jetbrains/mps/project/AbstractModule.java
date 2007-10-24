@@ -200,6 +200,17 @@ public abstract class AbstractModule implements IModule {
     return CollectionUtil.iteratorAsList(getModuleDescriptor().modelRoots());
   }
 
+  @NotNull
+  public List<String> getExplicitlyDependOnModuleUIDs() {
+    List<String> result = new ArrayList<String>();
+    if (getModuleDescriptor() != null) {
+      for (ModuleReference mr : getModuleDescriptor().getDependencys()) {
+        result.add(mr.getName());
+      }
+    }
+    return result;
+  }
+
   /**
    * @return all modules which this explicitly and immediately depends on,
    *         i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
@@ -207,16 +218,16 @@ public abstract class AbstractModule implements IModule {
   @NotNull
   public List<IModule> getExplicitlyDependOnModules() {
     LinkedList<IModule> result = new LinkedList<IModule>(getOwnModules());
-    if (getModuleDescriptor() != null) {
-      for (ModuleReference mr : getModuleDescriptor().getDependencys()) {
-        IModule m = MPSModuleRepository.getInstance().getModuleByUID(mr.getName());
-        if (m != null) {
-          result.add(m);
-        } else {
-          LOG.error("Can't load module " + mr.getName());
-        }
+
+    for (String uid : getExplicitlyDependOnModuleUIDs()) {
+      IModule m = MPSModuleRepository.getInstance().getModuleByUID(uid);
+      if (m != null) {
+        result.add(m);
+      } else {
+        LOG.error("Can't load module " + uid);
       }
     }
+
     return result;
   }
 
@@ -355,7 +366,7 @@ public abstract class AbstractModule implements IModule {
   public BytecodeLocator getByteCodeLocator() {
     return new BytecodeLocator() {
       public byte[] find(String fqName) {
-        assert myClassPathItem != null;
+        assert myClassPathItem != null : "module " + getModuleUID() + "'s classpath wasn't initialized";
         return myClassPathItem.getClass(fqName);
       }
     };

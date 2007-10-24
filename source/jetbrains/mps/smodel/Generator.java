@@ -152,27 +152,34 @@ public class Generator extends AbstractModule {
   }
 
   @NotNull
-  public List<IModule> getExplicitlyDependOnModules() {
-    // depends on source language and all owned modules (target language etc.)
-    List<IModule> result = super.getExplicitlyDependOnModules();
-    if (!result.contains(mySourceLanguage)) {
-      result.add(mySourceLanguage);
+  public List<String> getExplicitlyDependOnModuleUIDs() {
+    List<String> result = super.getExplicitlyDependOnModuleUIDs();
+    if (!result.contains(mySourceLanguage.getNamespace())) {
+      result.add(mySourceLanguage.getNamespace());
     }
-    // depends on refrenced generators
-    result.addAll(getReferencedGenerators());
+    result.addAll(getReferencedGeneratorUIDs());
     return result;
+  }
+
+  public List<String> getReferencedGeneratorUIDs() {
+    List<String> result = new ArrayList<String>();
+    for (GeneratorReference generatorReference : myGeneratorDescriptor.getGeneratorReferences()) {
+      result.add(generatorReference.getGeneratorUID());
+    }
+    return result;
+
   }
 
   @NotNull
   public List<Generator> getReferencedGenerators() {
-    List<Generator> list = new ArrayList<Generator>();
-    for (GeneratorReference generatorReference : myGeneratorDescriptor.getGeneratorReferences()) {
-      IModule module = MPSModuleRepository.getInstance().getModuleByUID(generatorReference.getGeneratorUID());
+    List<Generator> result = new ArrayList<Generator>();
+    for (String guid : getReferencedGeneratorUIDs()) {
+      IModule module = MPSModuleRepository.getInstance().getModuleByUID(guid);
       if (module instanceof Generator) {
-        list.add((Generator) module);
+        result.add((Generator) module);
       }
     }
-    return list;
+    return result;
   }
 
   public void convert() {
