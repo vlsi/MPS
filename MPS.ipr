@@ -826,6 +826,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" group="app/ParserGenerator" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/regexp.iml" filepath="$PROJECT_DIR$/platform/regexp/regexp.iml" group="platform/regexp" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" filepath="$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" group="platform/regexp" />
+      <module fileurl="file://$PROJECT_DIR$/runtime/runtime.iml" filepath="$PROJECT_DIR$/runtime/runtime.iml" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/scriptLanguage.iml" filepath="$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/scriptLanguage.iml" group="workbench/ideLanguages/scriptLanguage" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideLanguages/scriptLanguageInternal/scriptLanguageInternal.iml" filepath="$PROJECT_DIR$/workbench/ideLanguages/scriptLanguageInternal/scriptLanguageInternal.iml" group="workbench/ideLanguages/scriptLanguage" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/runtime/scriptLanguage_runtime.iml" filepath="$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/runtime/scriptLanguage_runtime.iml" group="workbench/ideLanguages/scriptLanguage" />
@@ -981,13 +982,13 @@
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" run" />
         </STARTUP>
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" stop" />
         </SHUTDOWN>
@@ -1087,13 +1088,13 @@
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" run" />
         </STARTUP>
         <SHUTDOWN>
           <option name="USE_DEFAULT" value="true" />
-          <option name="SCRIPT" value="C:\MPS\tools\tomcat\bin\catalina.bat" />
+          <option name="SCRIPT" value="$PROJECT_DIR$/tools/tomcat/bin/catalina.bat" />
           <option name="VM_PARAMETERS" value="" />
           <option name="PROGRAM_PARAMETERS" value=" stop" />
         </SHUTDOWN>
