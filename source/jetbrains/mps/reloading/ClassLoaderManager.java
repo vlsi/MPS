@@ -47,7 +47,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
   public ClassLoaderManager() {
   }
 
-
   public void initComponent() {
     if (myItems == null) {
       updateClassPath();
@@ -198,6 +197,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
 
     myClassLoader = new MPSClassLoader(myItems);
+    myRuntimeEnvironment.reloadAll();
 
     if (myProjects != null) {
       LOG.debug("Updating java stubs");

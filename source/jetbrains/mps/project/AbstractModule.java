@@ -9,6 +9,10 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.runtime.BytecodeLocator;
+import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.reloading.JarFileClassPathItem;
+import jetbrains.mps.reloading.FileClassPathItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,6 +35,8 @@ public abstract class AbstractModule implements IModule {
   protected File myDescriptorFile;
 
   private MyScope myScope = new MyScope();
+
+  private IClassPathItem myClassPathItem;
 
   //
   // IScope
@@ -318,15 +324,39 @@ public abstract class AbstractModule implements IModule {
     MPSModuleRepository.getInstance().fireModuleInitialized(this);
   }
 
-
   public Set<IModule> getExplicitlyVisibleModules() {
     return new HashSet<IModule>(getExplicitlyDependOnModules());
+  }
+
+  /**
+   * Call this method after you have set module descriptor
+   */
+  public void updateClassPath() {
+    CompositeClassPathItem result = new CompositeClassPathItem();
+    for (String s : getClassPathItems()) {
+      if (!new File(s).exists()) {
+        LOG.error("Classpath item doesn't exist " + s);
+        continue;
+      }
+      if (new File(s).isDirectory()) {
+        result.add(new FileClassPathItem(s));
+      } else {
+        result.add(new JarFileClassPathItem(s));
+      }
+    }
+
+    myClassPathItem = result;
+  }
+
+  public IClassPathItem getClasspath() {
+    return myClassPathItem;
   }
 
   public BytecodeLocator getByteCodeLocator() {
     return new BytecodeLocator() {
       public byte[] find(String fqName) {
-        return null;
+        assert myClassPathItem != null;
+        return myClassPathItem.getClass(fqName);
       }
     };
   }

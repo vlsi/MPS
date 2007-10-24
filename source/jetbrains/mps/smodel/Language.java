@@ -32,6 +32,7 @@ import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.runtime.BytecodeLocator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -277,6 +278,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     while (generators.hasNext()) {
       GeneratorDescriptor generatorDescriptor = generators.next();
       Generator generator = new Generator(this, generatorDescriptor);
+      generator.updateClassPath();
       MPSModuleRepository.getInstance().addModule(generator, this);
       myGenerators.add(generator);
     }
@@ -321,8 +323,9 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     rereadModels();
 
-    ReloadUtils.reloadAll(true, true, false);
+    updateClassPath();
 
+    ReloadUtils.reloadAll(true, true, false);
 
     registerAspectListener();
     updateLastGenerationTime();
@@ -333,6 +336,35 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     MPSModuleRepository.getInstance().invalidateCaches();
 
     myEventTranslator.languageChanged();
+  }
+
+
+  public boolean isBootstrap() {
+    return BootstrapLanguages.getInstance().getLanguages().contains(this);
+  }
+
+  public BytecodeLocator getByteCodeLocator() {    
+    if (isBootstrap()) {
+      return new BytecodeLocator() {
+        public byte[] find(String fqName) {
+          String namesapce = NameUtil.namespaceFromLongName(fqName);
+
+          String editorPack = getModuleUID() + ".editor";
+          String actionsPack = getModuleUID() + ".actions";
+          String constraintsPack = getModuleUID() + ".constraints";
+          String intentionsPack = getModuleUID() + ".intentions";
+
+          if (namesapce.equals(editorPack) || namesapce.equals(actionsPack) || namesapce.equals(constraintsPack) ||
+                  namesapce.equals(intentionsPack)) {
+            return getClasspath().getClass(fqName);
+          }
+
+          return null;
+        }
+      };
+    } else {
+      return super.getByteCodeLocator();
+    }
   }
 
   private void registerAspectListener() {

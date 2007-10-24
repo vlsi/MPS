@@ -4,6 +4,7 @@ import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.runtime.BytecodeLocator;
+import jetbrains.mps.reloading.IClassPathItem;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -62,6 +63,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   Set<IModule> getVisibleModules();
 
   Set<IModule> getExplicitlyVisibleModules();
+
+  IClassPathItem getClasspath();
 
   BytecodeLocator getByteCodeLocator();
 

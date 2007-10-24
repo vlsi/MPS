@@ -106,6 +106,8 @@ public class Solution extends AbstractModule {
     Set<IModule> after = new HashSet<IModule>(MPSModuleRepository.getInstance().getAllModules());
     rereadModels();
 
+    updateClassPath();
+
     myEventTranslator.solutionChanged();
 
     if (!before.equals(after) || mySolutionDescriptor.getClassPathEntrysCount() > 0) {

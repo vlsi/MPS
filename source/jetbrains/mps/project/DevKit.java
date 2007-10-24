@@ -88,6 +88,8 @@ public class DevKit extends AbstractModule {
     readDependOnModules();
     rereadModels();
 
+    updateClassPath();
+    
     devKitChanged();
   }
 
