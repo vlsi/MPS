@@ -1,8 +1,10 @@
 package jetbrains.mps.nodeEditor.text;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.lang.reflect.Method;
 import java.util.List;
@@ -18,7 +20,8 @@ public class Parser {
   public static List<SNode> parse(String input, SModel model, String languageNamespace) {
     Class cls;
     try {
-      cls = Class.forName(languageNamespace + ".parser.Parser", true, ClassLoaderManager.getInstance().getClassLoader());
+      Language l = (Language) MPSModuleRepository.getInstance().getModuleByUID(languageNamespace);
+      cls = Class.forName(languageNamespace + ".parser.Parser", true, ClassLoaderManager.getInstance().getClassLoaderFor(l));
     } catch(Exception e) {
       return null;
     }

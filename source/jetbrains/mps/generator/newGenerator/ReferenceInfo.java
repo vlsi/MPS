@@ -1,10 +1,13 @@
 package jetbrains.mps.generator.newGenerator;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.generator.template.IReferenceResolver;
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.generator.template.IReferenceResolver;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 /**
  * Created by: Sergey Dmitriev
@@ -50,8 +53,11 @@ public abstract class ReferenceInfo {
       String modelPackageName = JavaNameUtil.packageNameForModelUID(conceptDeclaration.getModel().getUID());
       String buildersPackageName = JavaNameUtil.withoutStructure(modelPackageName) + ".builder";
       String resolverClassName = buildersPackageName + "." + conceptDeclaration.getName() + "_ReferenceResolver";
+
+      Language l = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, GlobalScope.getInstance());
+
       try {
-        Class resolverClass = Class.forName(resolverClassName, true, ClassLoaderManager.getInstance().getClassLoader());
+        Class resolverClass = Class.forName(resolverClassName, true, ClassLoaderManager.getInstance().getClassLoaderFor(l));
         return (IReferenceResolver) resolverClass.newInstance();
       } catch (ClassNotFoundException e) {
         // ok

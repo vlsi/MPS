@@ -9,9 +9,11 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.project.GlobalScope;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -71,10 +73,14 @@ public abstract class PropertySupport {
 
   private static PropertySupport loadPropertySupport(PropertyDeclaration propertyDeclaration) {
     DataTypeDeclaration propertyDataType = propertyDeclaration.getDataType();
+
+    ConceptDeclaration cd = (ConceptDeclaration) propertyDeclaration.getParent();
+    Language l = SModelUtil_new.getDeclaringLanguage(cd, GlobalScope.getInstance());
+
     String propertySupportClassName = JavaNameUtil.fqClassName(propertyDataType.getModel(), getClassName(propertyDataType));
     PropertySupport propertySupport = null;
     try {
-      Class propertySupportClass = Class.forName(propertySupportClassName, true, ClassLoaderManager.getInstance().getClassLoader());
+      Class propertySupportClass = Class.forName(propertySupportClassName, true, ClassLoaderManager.getInstance().getClassLoaderFor(l));
       Constructor constructor = propertySupportClass.getConstructor();
       propertySupport = (PropertySupport) constructor.newInstance();
     } catch (ClassNotFoundException e) {
