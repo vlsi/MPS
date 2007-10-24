@@ -310,8 +310,8 @@ public class MPSModuleRepository {
     removeModuleFromUIDMap(module);
     if (descriptorFile != null) {
       myFileToModuleMap.remove(FileUtil.getCanonicalPath(descriptorFile));
-      fireModuleRemoved(module);
     }
+    fireModuleRemoved(module);
   }
 
   private void removeModuleFromUIDMap(IModule module) {

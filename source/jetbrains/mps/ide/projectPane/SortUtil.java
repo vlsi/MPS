@@ -46,8 +46,7 @@ public class SortUtil {
         String name2 = ((IModule) o2).getModuleUID();        
         return name1.compareTo(name2);
       }
-    }
-    );
+    });
 
     return sortedModules;
   }

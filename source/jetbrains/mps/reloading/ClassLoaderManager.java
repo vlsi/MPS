@@ -4,25 +4,25 @@ import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
 import jetbrains.mps.ide.SystemInfo;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.runtime.Bundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.util.PathManager;
+import org.jetbrains.annotations.NotNull;
 import sun.misc.Launcher;
 
 import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Kostik
@@ -61,6 +61,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
   public void setModuleRepostiory(MPSModuleRepository repository) {
     repository.addModuleRepositoryListener(new ModuleRepositoryListener() {
       public void moduleAdded(IModule module) {
+        if (module instanceof Generator) {
+          //generators are temporarily ignored
+          return;
+        }
+
         if (myRuntimeEnvironment.get(module.getModuleUID()) == null) {
           Bundle bundle = new Bundle(module.getModuleUID(), module.getByteCodeLocator());
           for (String d : module.getExplicitlyDependOnModuleUIDs()) {
@@ -74,6 +79,10 @@ public class ClassLoaderManager implements IComponentLifecycle {
       }
 
       public void moduleRemoved(IModule module) {
+        if (module instanceof Generator) {
+          //generators are temporarily ignored
+          return;
+        }
         myRemoveList.add(module.getModuleUID());
       }
 
