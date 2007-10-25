@@ -25,10 +25,10 @@ import java.util.*;
 public class JavaCompiler {
   private static final Logger LOG = Logger.getLogger(JavaCompiler.class);
 
-  private MapClassLoader myClassLoader = new MapClassLoader();
   private Map<String, CompilationUnit> myCompilationUnits = new HashMap<String, CompilationUnit>();
   private IClassPathItem myClassPathItem;
   private List<CompilationResult> myCompilationResults = new ArrayList<CompilationResult>();
+  private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
 
   public JavaCompiler() {
     this(ClassLoaderManager.getInstance().getClassPathItem());
@@ -53,8 +53,8 @@ public class JavaCompiler {
     c.compile(myCompilationUnits.values().toArray(new CompilationUnit[0]));
   }
 
-  public ClassLoader getClassLoader() {
-    return myClassLoader;
+  public ClassLoader getClassLoader(ClassLoader parent) {
+    return new MapClassLoader(parent);
   }
 
   public List<CompilationResult> getCompilationResults() {
@@ -93,27 +93,20 @@ public class JavaCompiler {
   }
 
   private Set<String> getCompiledClasses() {
-    return new HashSet<String>(myClassLoader.myClasses.keySet());
+    return new HashSet<String>(myClasses.keySet());
   }
 
-
-
   private byte[] getClass(String name) {
-    byte[] bytes = myClassLoader.myClasses.get(name);
+    byte[] bytes = myClasses.get(name);
     byte[] result = new byte[bytes.length];
     System.arraycopy(bytes, 0, result, 0, bytes.length);
     return bytes;
   }
 
-  private static class MapClassLoader extends AbstractMPSClassLoader {
-    private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
+  private class MapClassLoader extends AbstractMPSClassLoader {
 
-    public MapClassLoader() {
-      super(ClassLoaderManager.getInstance().getClassLoader());
-    }
-
-    public void put(String name, byte[] bytes) {
-      myClasses.put(name, bytes);
+    private MapClassLoader(ClassLoader parent) {
+      super(parent);
     }
 
     protected byte[] findClassBytes(String name) {
@@ -160,7 +153,7 @@ public class JavaCompiler {
             name += ".";
           }
         }
-        myClassLoader.put(name, file.getBytes());
+        myClasses.put(name, file.getBytes());
       }
 
       myCompilationResults.add(result);

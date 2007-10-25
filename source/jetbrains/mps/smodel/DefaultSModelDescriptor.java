@@ -24,6 +24,7 @@ import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.io.File;
 import java.util.*;
@@ -255,7 +256,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
               }
             };
             generationType.handleOutput(invocationContext, status, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, null);
-            Class aClass = generationType.getClass(status.getOutputModel().getLongName()+"."+"LogRunner");
+
+            ClassLoader classLoader = generationType.getClassLoader(ClassLoaderManager.getInstance().getClassLoader());
+            String className = status.getOutputModel().getLongName() + "." + "LogRunner";
+            Class aClass = Class.forName(className, true, classLoader);
             Method method = aClass.getDeclaredMethod("updateModel", SModel.class, Map.class);
             method.invoke(null, mySModel, arguments);
             save();
