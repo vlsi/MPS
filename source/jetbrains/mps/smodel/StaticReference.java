@@ -12,39 +12,22 @@ import org.jetbrains.annotations.NotNull;
  * Sep 26, 2007
  */
 /*package*/ class StaticReference extends StaticReferenceBase {
-  private static final Logger LOG = Logger.getLogger(StaticReference.class);
 
-//  private WeakReference<SNode> myNodeRef;
-  private MyStrongRef myNodeRef;
+  private SNode myTargetNode;
   private boolean myMature;
-
-  /**
-   * tmp: strong ref. to test if no leaks will be created by replacing weak ref with strong ref
-   */
-  private static class MyStrongRef {
-    private SNode myNode;
-
-    private MyStrongRef(SNode node) {
-      myNode = node;
-    }
-
-    public SNode get() {
-      return myNode;
-    }
-  }
 
   StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
     // 'young' reference
     super(role, sourceNode);
     myMature = false;
-//    myNodeRef = new WeakReference<SNode>(targetNode);
-    myNodeRef = new MyStrongRef(targetNode);
+//    myTargetNode = new WeakReference<SNode>(targetNode);
+    myTargetNode = targetNode;
     CommandProcessor.instance().addCommandListener(new CommandAdapter() {
       public void commandFinished(@NotNull CommandEvent event) {
         CommandProcessor.instance().removeCommandListener(this);
-        if (!myMature && myNodeRef.get() != null) {
+        if (!myMature && myTargetNode != null) {
           // don't keep ref to registered targetNode
-          if (myNodeRef.get().isRegistered()) {
+          if (myTargetNode.isRegistered()) {
             makeMature();
           }
         }
@@ -62,8 +45,8 @@ import org.jetbrains.annotations.NotNull;
   public SModelUID getTargetModelUID() {
     if (mature()) {
       return super.getTargetModelUID();
-    } else if (myNodeRef.get() != null) {
-      return myNodeRef.get().getModel().getUID();
+    } else if (myTargetNode != null) {
+      return myTargetNode.getModel().getUID();
     }
     return null;
   }
@@ -76,8 +59,8 @@ import org.jetbrains.annotations.NotNull;
   public String getTargetNodeId() {
     if (mature()) {
       return super.getTargetNodeId();
-    } else if (myNodeRef.get() != null) {
-      return myNodeRef.get().getSNodeId().toString();
+    } else if (myTargetNode != null) {
+      return myTargetNode.getSNodeId().toString();
     }
     return null;
   }
@@ -104,28 +87,14 @@ import org.jetbrains.annotations.NotNull;
       return node;
     }
 
-    SNode node = myNodeRef.get();
-    if (node == null) {
-      SReference.error(this, GetTargetNodeErrorState.TARGET_COLLECTED_TO_GARBAGE);
-    }
-    return node;
-  }
-
-  protected void error(GetTargetNodeErrorState errorState) {
-    if (errorState == GetTargetNodeErrorState.TARGET_COLLECTED_TO_GARBAGE) {
-      LOG.error("\nCouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), getSourceNode());
-      LOG.error("The target node has been collected to garbage");
-    } else {
-      super.error(errorState);
-    }
+    return myTargetNode;
   }
 
   private boolean mature() {
     if (myMature) return true;
     // both source and target should be registered
     if (!getSourceNode().isRegistered()) return false;
-    SNode targetNode = myNodeRef.get();
-    if (targetNode == null || !targetNode.isRegistered()) return false;
+    if (!myTargetNode.isRegistered()) return false;
 
     // convert 'young' reference to 'mature'
     makeMature();
@@ -133,9 +102,9 @@ import org.jetbrains.annotations.NotNull;
   }
 
   private void makeMature() {
-    SNode targetNode = myNodeRef.get();
+    SNode targetNode = myTargetNode;
     myMature = true;
-    myNodeRef = null;
+    myTargetNode = null;
     setTargetModelUID(targetNode.getModel().getUID());
     setTargetNodeId(targetNode.getSNodeId().toString());
     setResolveInfo(targetNode.getName());

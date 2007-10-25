@@ -112,8 +112,7 @@ public abstract class SReference {
     OK,
     NO_MODEL_DESCRIPTOR,
     NO_MODEL,
-    CANT_RESOLVE_BY_ID,
-    TARGET_COLLECTED_TO_GARBAGE
+    CANT_RESOLVE_BY_ID
   }
 
   public void replaceSourceReferent(SNode newReferent) {
