@@ -365,9 +365,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
           String actionsPack = getModuleUID() + ".actions";
           String constraintsPack = getModuleUID() + ".constraints";
           String intentionsPack = getModuleUID() + ".intentions";
+          String builderPack = getModuleUID() + ".builder";
 
           if (namesapce.equals(editorPack) || namesapce.equals(actionsPack) || namesapce.equals(constraintsPack) ||
-                  namesapce.equals(intentionsPack)) {
+                  namesapce.equals(intentionsPack) || namesapce.equals(builderPack)) {
             return getRuntimeClasspath().getClass(fqName);
           }
 
