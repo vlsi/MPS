@@ -11,6 +11,8 @@ import jetbrains.mps.logging.refactoring.structure.RuntimeLogStack;
 import jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.Language.LanguageAspectStatus;
+import jetbrains.mps.smodel.Language.LanguageAspectStatus.AspectKind;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
@@ -233,6 +235,11 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
             arguments.put(value.getArgument().getName(), value.getValue());
           }
 
+          SModel scriptsModel = runtimeLog.getUpdateModelClause().getModel();
+          LanguageAspectStatus aspectStatus = Language.getLanguageAspectStatus(scriptsModel.getModelDescriptor());
+          assert aspectStatus.getAspectKind() == AspectKind.SCRIPTS;
+          Language scriptslanguage = aspectStatus.getLanguage();
+
           ModelOwner modelOwner = new ModelOwner() {};
           final SModelDescriptor fakeModelDescriptor = TransientModels.createTransientModel(modelOwner, "temp", "$logplaying$");
           try {
@@ -257,7 +264,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
             };
             generationType.handleOutput(invocationContext, status, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, null);
 
-            ClassLoader classLoader = generationType.getClassLoader(ClassLoaderManager.getInstance().getClassLoader());
+            ClassLoader classLoader = generationType.getClassLoader(ClassLoaderManager.getInstance().getClassLoaderFor(scriptslanguage));
             String className = status.getOutputModel().getLongName() + "." + "LogRunner";
             Class aClass = Class.forName(className, true, classLoader);
             Method method = aClass.getDeclaredMethod("updateModel", SModel.class, Map.class);
