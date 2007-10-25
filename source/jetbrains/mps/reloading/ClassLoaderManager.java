@@ -68,6 +68,10 @@ public class ClassLoaderManager implements IComponentLifecycle {
         if (myRuntimeEnvironment.get(module.getModuleUID()) == null) {
           Bundle bundle = new Bundle(module.getModuleUID(), module.getByteCodeLocator());
           for (String d : module.getExplicitlyDependOnModuleUIDs()) {
+            if (d.contains("#")) { //i.e. generator
+              continue;
+            }
+
             bundle.addDependency(d);
           }
           myRuntimeEnvironment.add(bundle);

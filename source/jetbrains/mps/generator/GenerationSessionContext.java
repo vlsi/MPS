@@ -311,6 +311,15 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       MPSModuleRepository.getInstance().addModule(this, myOwnOnwer);
     }
 
+    @NotNull
+    public List<String> getExplicitlyDependOnModuleUIDs() {
+      List<String> result = new ArrayList<String>();
+      for (IModule dep : myDependOnModules) {
+        result.add(dep.getModuleUID());
+      }
+      return result;
+    }
+
     public void addGeneratorModules(List<Generator> generatorModules) {
       for (IModule module : generatorModules) {
         if (!myDependOnModules.contains(module)) {
