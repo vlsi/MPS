@@ -43,7 +43,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   private List<String> myRemoveList = new ArrayList<String>();
 
-  private boolean myUseNewClassLoader = false;
+  private boolean myUseNewClassLoader = true;
 
 
   public static ClassLoaderManager getInstance() {
