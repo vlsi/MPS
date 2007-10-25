@@ -39,6 +39,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.runtime.BundleClassLoader;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jdom.Document;
@@ -59,6 +60,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   public static final String COMPONENTS = "components";
   public static final String COMPONENT = "component";
   public static final String CLASS = "class";
+  public static final String BUNDLE = "bundle";
 
   private static final Logger LOG = Logger.getLogger(MPSProject.class);
 
@@ -472,7 +474,18 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         for (Element component : components) {
           try {
             String className = component.getAttributeValue(CLASS);
-            Class cls = Class.forName(className, true, ClassLoaderManager.getInstance().getClassLoader());
+            String bundle = component.getAttributeValue(BUNDLE);
+
+            IModule module = MPSModuleRepository.getInstance().getModuleByUID(bundle);
+
+            ClassLoader cl;
+            if (module != null) {
+              cl = ClassLoaderManager.getInstance().getClassLoaderFor(module);
+            } else {
+              cl = getClass().getClassLoader();
+            }
+
+            Class cls = Class.forName(className, true, cl);
 
             if (containsComponent(cls) && getComponent(cls) instanceof IExternalizableComponent) {
               ((IExternalizableComponent) getComponentSafe(cls)).read(component, this);
@@ -507,6 +520,12 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           if (component instanceof IExternalizableComponent) {
             Element componentElement = new Element(COMPONENT);
             componentElement.setAttribute(CLASS, cls.getName());
+
+            if (component.getClass().getClassLoader() instanceof BundleClassLoader) {
+              BundleClassLoader bcl = (BundleClassLoader) component.getClass().getClassLoader();
+              componentElement.setAttribute(BUNDLE, bcl.getBundle().getName());
+            }
+
             ((IExternalizableComponent) component).write(componentElement, this);
             root.addContent(componentElement);
           }
