@@ -38,8 +38,6 @@ public class CloneUtil {
       if (targetModelUID == null) {
         LOG.warning("broken reference '" + reference.getRole() + "' in " + node.getDebugText(), node);
       } else {
-//          SReference sReference = SReference.newInstance(reference.getRole(), result, reference.getTargetNodeId(), reference.getExtResolveInfo(), targetModelUID, reference.getResolveInfo());
-//          result.addReference(sReference);
         result.addReference(SReference.create(reference.getRole(),
                 result,
                 targetModelUID,

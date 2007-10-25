@@ -79,9 +79,6 @@ public abstract class SReference {
     return null;
   }
 
-  //
-  // --- new instance NEW
-  //
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.isRegistered() && targetNode.isRegistered()) {
       // 'mature' reference
@@ -100,27 +97,6 @@ public abstract class SReference {
     }
     return new UnresolvedStaticReference(role, sourceNode, resolveInfo);
   }
-
-  //
-  // --- new instance OLD
-  //
-
-//  /**
-//   * reference created by specifying all info
-//   */
-//  public static SReference newInstance(String role,
-//                                       SNode sourceNode,
-//                                       String targetNodeId,
-//                                       String extResolveInfo,
-//                                       SModelUID targetModelUID,
-//                                       String resolveInfo) {
-//    return new SReference_old(role, sourceNode, targetNodeId, resolveInfo, extResolveInfo, targetModelUID);
-//  }
-
-
-  //
-  // --- end new instance OLD
-  //
 
   public static void disableLogging() {
     ourLoggingOff = true;

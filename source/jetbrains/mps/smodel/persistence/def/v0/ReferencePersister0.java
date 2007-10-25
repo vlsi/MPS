@@ -147,14 +147,6 @@ import org.jdom.Element;
             importedModelUID,
             null,
             resolveInfo);
-
-//    return SReference.newInstance(this.getRole(),
-//            this.getSourceNode(),
-//            this.getTargetId(),
-//            this.getExtResolveInfo(),
-//            importedModelUID,
-//            this.getResolveInfo()
-//    );
   }
 
   public void createReferenceInModel(SModel model, VisibleModelElements visibleModelElements) {
