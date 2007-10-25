@@ -7,6 +7,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.SequenceWithSupplier;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class SnodeDemo {
@@ -19,6 +21,7 @@ public class SnodeDemo {
     SequenceOperations.map(SequenceOperations.map((new SequenceWithSupplier<SNode>(new zValueSupplier1(null, _zClosureContext3))), new zMapper(null, _zClosureContext3)), new zMapper1(null, _zClosureContext3));
     SNode foo2;
     SequenceOperations.map(SequenceOperations.map((new SequenceWithSupplier<SNode>(new zValueSupplier2(null, _zClosureContext3))), new zMapper2(null, _zClosureContext3)), new zMapper3(null, _zClosureContext3));
+    SConceptOperations.createNewNode(NameUtil.nodeFQName(SequenceOperations.getFirst((new SequenceWithSupplier<SNode>(new zValueSupplier3(null, _zClosureContext3))))), null);
     SNode bar = null;
     SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(bar, "childrenBlock", true), "body", true), null, false);
     SNodeOperations.getAncestors(bar, null, false);
@@ -27,7 +30,7 @@ public class SnodeDemo {
     SNodeOperations.getDescendants(bar, null, false);
     SequenceOperations.map(SNodeOperations.getNextSiblings(bar, false), new zMapper4(null, _zClosureContext3));
     SNodeOperations.getPrevSiblings(bar, false);
-    Iterable<SNode> blah = new SequenceWithSupplier<SNode>(new zValueSupplier3(null, _zClosureContext3));
+    Iterable<SNode> blah = new SequenceWithSupplier<SNode>(new zValueSupplier4(null, _zClosureContext3));
   }
 
 }

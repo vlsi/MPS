@@ -6,9 +6,16 @@ package jetbrains.mps.ypath.plugin;
 import java.util.HashMap;
 import java.util.Map;
 
+import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IReloadHandler;
+import jetbrains.mps.smodel.ModelOwner;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ypath.design.IFeatureDesign;
 
 /**
@@ -30,16 +37,45 @@ public class DesignPartLoader {
         return INSTANCE;
     }
 
+    public <T> IFeatureDesign<T> getFeatureDesign (String fqClassName, SModel smodel) {
+        ClassLoader classLoader = getClassLoader (smodel);
+        if (classLoader != null) {
+            return getFeatureDesign(fqClassName, classLoader);
+        }
+        return null;
+    }
+
+    private ClassLoader getClassLoader(SModel smodel) {
+        SModelDescriptor smd = smodel.getModelDescriptor();
+        IModule module = null;
+        
+        for (ModelOwner owner : SModelRepository.getInstance().getOwners(smd)) {
+            if (owner instanceof Solution || owner instanceof GenerationSessionContext.TransientModule) {
+                module = (IModule) owner;
+                break;
+            }
+        }
+
+        if (module != null) {
+            return ClassLoaderManager.getInstance().getClassLoaderFor(module);
+        }
+        
+        LOG.error("Not found owner solution for "+smodel);
+        return null;
+    }
+
     @SuppressWarnings("unchecked")
-    public <T> IFeatureDesign<T> getFeatureDesign (String fqClassName) {
+    private <T> IFeatureDesign<T> getFeatureDesign(String fqClassName, ClassLoader classLoader) {
         try {
             Class<?> klass = classes.get(fqClassName); 
             if (klass == null) {
-                klass = Class.forName(fqClassName, true, ClassLoaderManager.getInstance().getClassLoader());
+                klass = Class.forName(fqClassName, true, classLoader);
                 classes.put(fqClassName, klass);
             }
             // TODO: optimize instances? 
-            IFeatureDesign<T> newInstance = (IFeatureDesign<T>) klass.newInstance();
+            Object o = klass.newInstance();
+            Class IFD_class = IFeatureDesign.class;
+            IFeatureDesign<T> newInstance = (IFeatureDesign<T>) o;
             return newInstance;
         }
         catch (ClassNotFoundException e) {

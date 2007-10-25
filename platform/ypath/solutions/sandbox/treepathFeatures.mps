@@ -1254,6 +1254,30 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193313665457">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1193313695157">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Concept_NewInstance" id="1193313709994" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1193313681121">
+              <node role="leftExpression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1193313673581">
+                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1193313668496">
+                  <link role="treepathAspect" targetNodeId="1191934136657" resolveInfo="SNODE_GEN" />
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193313665458">
+                    <link role="variableDeclaration" targetNodeId="1193064047895" resolveInfo="foo2" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1193313673587">
+                  <property name="axis" value="CHILDREN" />
+                  <link role="usedFeature" targetNodeId="1192878435111" resolveInfo="link" />
+                  <node role="paramObject" type="jetbrains.mps.ypath.structure.ParameterWrapper" id="1193313679557">
+                    <property name="name" value="extends" />
+                    <link role="paramRef" targetNodeId="6.1071489389519" />
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1193313693915" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1187955482251">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1187955482252">
             <property name="name" value="bar" />
