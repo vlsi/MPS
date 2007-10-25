@@ -27,7 +27,6 @@ public interface SModelDescriptor {
   String getLongName();
   String getStereotype();
   boolean isInitialized();
-  boolean isExternallyResolvable();
 
   void addWeakModelListener(SModelListener listener);
   void addModelListener(SModelListener listener);
