@@ -41,9 +41,10 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   private List<IReloadHandler> myReloadHandlers = new ArrayList<IReloadHandler>();
 
-  private List<String> myRemoveList = new ArrayList<String>();
+  private Set<String> myToRemove = new LinkedHashSet<String>();
+  private Set<String> myToAdd = new LinkedHashSet<String>();
 
-  private boolean myUseNewClassLoader = false;
+  private boolean myUseNewClassLoader = true;
 
   public static ClassLoaderManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(ClassLoaderManager.class);
@@ -66,15 +67,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
         }
 
         if (myRuntimeEnvironment.get(module.getModuleUID()) == null) {
-          Bundle bundle = new Bundle(module.getModuleUID(), module.getByteCodeLocator());
-          for (String d : module.getExplicitlyDependOnModuleUIDs()) {
-            if (d.contains("#")) { //i.e. generator
-              continue;
-            }
-
-            bundle.addDependency(d);
-          }
-          myRuntimeEnvironment.add(bundle);
+          myToAdd.add(module.getModuleUID());
         }
       }
 
@@ -82,11 +75,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
       }
 
       public void moduleRemoved(IModule module) {
-        if (module instanceof Generator) {
-          //generators are temporarily ignored
-          return;
-        }
-        myRemoveList.add(module.getModuleUID());
+        myToRemove.add(module.getModuleUID());
       }
 
       public void moduleInitialized(IModule module) {
@@ -103,13 +92,42 @@ public class ClassLoaderManager implements IComponentLifecycle {
     CommandProcessor.instance().addCommandListener(new CommandAdapter() {
       public void commandFinished(@NotNull CommandEvent event) {
         try {
-          if (!myRemoveList.isEmpty()) {
-            String[] toUnload = myRemoveList.toArray(new String[0]);
-            myRuntimeEnvironment.unload(toUnload);
+          Set<String> toReload = new LinkedHashSet<String>(myToAdd);
+          toReload.retainAll(myToRemove);
 
+          Set<String> toRemove = new LinkedHashSet<String>(myToRemove);
+          toRemove.removeAll(myToAdd);                    
+
+          Set<String> toAdd = new LinkedHashSet<String>(myToAdd);
+          toAdd.removeAll(myToRemove);
+
+
+
+          if (!toRemove.isEmpty()) {
+            String[] unloadList = toRemove.toArray(new String[0]);
+            myRuntimeEnvironment.unload(unloadList);
+          }
+
+          if (!toReload.isEmpty()) {
+            String[] reloadList = toReload.toArray(new String[0]);
+            myRuntimeEnvironment.reload(reloadList);
+          }
+
+          if (!toAdd.isEmpty()) {
+            for (String moduleUID : toAdd) {
+              IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
+              Bundle b = new Bundle(module.getModuleUID(), module.getByteCodeLocator());
+
+              for (String dep : module.getExplicitlyDependOnModuleUIDs()) {
+                b.addDependency(dep);
+              }
+
+              myRuntimeEnvironment.add(b);
+            }
           }
         } finally {
-          myRemoveList.clear();
+          myToRemove.clear();
+          myToAdd.clear();
         }
       }
     });
