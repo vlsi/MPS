@@ -1,10 +1,10 @@
 package jetbrains.mps.smodel.persistence.def.v0;
 
-import jetbrains.mps.smodel.persistence.def.v0.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
+import jetbrains.mps.smodel.persistence.def.v0.externalResolve.ExternalResolver;
 import org.jdom.Element;
 
 /**
@@ -179,45 +179,45 @@ import org.jdom.Element;
 
   //-- save reference
 
-  public static void saveReference(Element parentElement, SReference reference, boolean useUIDs, VisibleModelElements visibleModelElements) {
-    assert useUIDs || visibleModelElements != null;
-    SNode node = reference.getSourceNode();
-    Element linkElement = new Element(ModelPersistence.LINK);
-    parentElement.addContent(linkElement);
-    linkElement.setAttribute(ModelPersistence.ROLE, reference.getRole());
-
-    if (reference.isExternal()) {//external reference
-      SModelUID targetModelUID = reference.getTargetModelUID();
-      String targetModelInfo = "";
-      if (!useUIDs) {
-        SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
-        if (importElement != null) {
-          int importIndex = importElement.getReferenceID();
-          targetModelInfo = importIndex + ".";
-        } else {
-          int visibleIndex = visibleModelElements.getVisibleModelIndex(targetModelUID);
-          targetModelInfo = visibleIndex + "v.";
-        }
-      } else {
-        targetModelInfo = targetModelUID.toString() + "#";
-      }
-      String extResolveInfo = reference.getExtResolveInfo();
-      if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
-        // no external info - save target node id
-        linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetModelInfo + reference.getTargetNodeId());
-        String resolveInfo = reference.getResolveInfo();
-        if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
-      } else {
-        linkElement.setAttribute(ModelPersistence.EXT_RESOLVE_INFO, targetModelInfo + extResolveInfo);
-      }
-
-    } else {//internal reference
-      String targetNodeId = reference.getTargetNodeId();
-      if (targetNodeId != null) linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
-      String resolveInfo = reference.getResolveInfo();
-      if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
-    }
-  }
+//  public static void saveReference(Element parentElement, SReference reference, boolean useUIDs, VisibleModelElements visibleModelElements) {
+//    assert useUIDs || visibleModelElements != null;
+//    SNode node = reference.getSourceNode();
+//    Element linkElement = new Element(ModelPersistence.LINK);
+//    parentElement.addContent(linkElement);
+//    linkElement.setAttribute(ModelPersistence.ROLE, reference.getRole());
+//
+//    if (reference.isExternal()) {//external reference
+//      SModelUID targetModelUID = reference.getTargetModelUID();
+//      String targetModelInfo = "";
+//      if (!useUIDs) {
+//        SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
+//        if (importElement != null) {
+//          int importIndex = importElement.getReferenceID();
+//          targetModelInfo = importIndex + ".";
+//        } else {
+//          int visibleIndex = visibleModelElements.getVisibleModelIndex(targetModelUID);
+//          targetModelInfo = visibleIndex + "v.";
+//        }
+//      } else {
+//        targetModelInfo = targetModelUID.toString() + "#";
+//      }
+//      String extResolveInfo = reference.getExtResolveInfo();
+//      if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
+//        // no external info - save target node id
+//        linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetModelInfo + reference.getTargetNodeId());
+//        String resolveInfo = reference.getResolveInfo();
+//        if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
+//      } else {
+//        linkElement.setAttribute(ModelPersistence.EXT_RESOLVE_INFO, targetModelInfo + extResolveInfo);
+//      }
+//
+//    } else {//internal reference
+//      String targetNodeId = reference.getTargetNodeId();
+//      if (targetNodeId != null) linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
+//      String resolveInfo = reference.getResolveInfo();
+//      if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
+//    }
+//  }
 
   public int getImportIndex() {
     try {

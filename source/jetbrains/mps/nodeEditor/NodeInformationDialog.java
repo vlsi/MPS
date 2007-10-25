@@ -3,11 +3,9 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
-import jetbrains.mps.util.WindowsUtil;
 
-import javax.swing.*;
-import java.awt.*;
-import java.awt.event.*;
+import java.awt.Frame;
+import java.awt.Point;
 
 public class NodeInformationDialog extends AbstractNodeInformationDialog {
   public NodeInformationDialog(Frame owner, Point location, SNode node) {
@@ -29,10 +27,6 @@ public class NodeInformationDialog extends AbstractNodeInformationDialog {
         result.append("Model = ").append(target.getModel().getUID()).append("\n");
         result.append("Node = ").append(NodePresentationUtil.getPathToRoot(target)).append("\n");
         result.append("ID  = ").append(target.getId()).append("\n");
-
-        if (ref.getExtResolveInfo() != null) {
-          result.append("External resolve info = ").append(ref.getExtResolveInfo()).append("\n");
-        }
       }
 
       result.append("\n");

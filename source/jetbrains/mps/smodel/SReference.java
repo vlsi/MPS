@@ -72,13 +72,6 @@ public abstract class SReference {
     return true;
   }
 
-  /**
-   * todo: remove this later
-   */
-  public String getExtResolveInfo() {
-    return null;
-  }
-
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.isRegistered() && targetNode.isRegistered()) {
       // 'mature' reference
@@ -115,32 +108,18 @@ public abstract class SReference {
     if (reference.getSourceNode().getModel().getStereotype().endsWith(SModelStereotype.JAVA_STUB)) return;
     if (reference.getSourceNode().getModel().getUserObject(SModel.TMP_MODEL) != null) return;
 
-    if(ourErrorReportedRefs.contains(reference)) return;
+    if (ourErrorReportedRefs.contains(reference)) return;
     ourErrorReportedRefs.add(reference);
     reference.error(errorState);
   }
 
   protected abstract void error(GetTargetNodeErrorState errorState);
 
-//  /**
-//   * todo: remove.
-//   */
-//  public static void setResolveInfoByOldReference(SReference sourceReference, SReference newReference) {
-//    SNode targetNode = sourceReference.getTargetNode();
-//    if (targetNode == null) {//if we copy a reference which is not resolved yet
-//      newReference.setResolveInfo(sourceReference.getResolveInfo());
-//    } else {//we copy resolved reference
-//      String name = targetNode.getName();
-//      newReference.setResolveInfo(name);
-//    }
-//  }
-
   protected enum GetTargetNodeErrorState {
     OK,
     NO_MODEL_DESCRIPTOR,
     NO_MODEL,
     CANT_RESOLVE_BY_ID,
-    CANT_RESOLVE_BY_ERI,
     TARGET_COLLECTED_TO_GARBAGE
   }
 

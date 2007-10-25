@@ -1,15 +1,14 @@
 package jetbrains.mps.smodel.persistence.def.v0.externalResolve;
 
 
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.baseLanguage.structure.*;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 
-import java.util.Set;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -31,13 +30,12 @@ public class ExternalResolver {
   public static final String NO_MEMBER_TYPE = "none ";
   public static final Set<String> MEMBER_TYPES = CollectionUtil.asSet(FIELD, STATIC_FIELD, METHOD, STATIC_METHOD, ENUM_CONST);
 
-
-  public static String createExternalResolveInfo(SReference reference) {
-    if (!isEmptyExtResolveInfo(reference.getExtResolveInfo())) return reference.getExtResolveInfo();
-    SNode targetNode = reference.getTargetNode();
-    if (targetNode == null) return null;
-    return getExternalResolveInfoFromTarget(targetNode);
-  }
+//  public static String createExternalResolveInfo(SReference reference) {
+//    if (!isEmptyExtResolveInfo(reference.getExtResolveInfo())) return reference.getExtResolveInfo();
+//    SNode targetNode = reference.getTargetNode();
+//    if (targetNode == null) return null;
+//    return getExternalResolveInfoFromTarget(targetNode);
+//  }
 
 
   public static String getExternalResolveInfoFromTarget(SNode targetNode) {

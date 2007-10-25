@@ -65,7 +65,7 @@ public class ModelPersistence {
 
   static {
     modelReaders.put(0, new ModelReader0());
-    modelWriters.put(0, new ModelWriter0());
+//    modelWriters.put(0, new ModelWriter0());
     modelReaders.put(1, new ModelReader1());
     modelWriters.put(1, new ModelWriter1());
   }
