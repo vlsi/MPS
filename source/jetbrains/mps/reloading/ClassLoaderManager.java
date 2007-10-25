@@ -237,7 +237,12 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
 
     myClassLoader = new MPSClassLoader(myItems);
-    myRuntimeEnvironment.reloadAll();
+
+    if (changeModule == null) {
+      myRuntimeEnvironment.reloadAll();
+    } else {
+      myRuntimeEnvironment.replace(new Bundle(changeModule.getModuleUID(), changeModule.getByteCodeLocator()));
+    }
 
     if (myProjects != null) {
       LOG.debug("Updating java stubs");

@@ -80,7 +80,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   private void checkModelDuplication() {
-
     SModelDescriptor anotherModel = SModelRepository.getInstance().getModelDescriptor(myModelUID);
     if (anotherModel != null) {
       String message = "Model Already Register : " + myModelUID + "\n";
