@@ -1,15 +1,10 @@
 package jetbrains.mps.smodel.persistence.def.v0;
 
-import jetbrains.mps.externalResolve.ExternalResolveInfoParser;
-import jetbrains.mps.externalResolve.ExternalResolver;
+import jetbrains.mps.smodel.persistence.def.v0.externalResolve.ExternalResolveInfoParser;
+import jetbrains.mps.smodel.persistence.def.v0.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
-
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
 
 /**
  * Igor Alshannikov

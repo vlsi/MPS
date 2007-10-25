@@ -1,15 +1,13 @@
-package jetbrains.mps.externalResolve;
+package jetbrains.mps.smodel.persistence.def.v0.externalResolve;
 
 
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.util.CollectionUtil;
 
-import java.util.Collection;
 import java.util.Set;
 import java.util.List;
 

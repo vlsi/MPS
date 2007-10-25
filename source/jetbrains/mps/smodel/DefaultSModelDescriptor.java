@@ -1,35 +1,36 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
+import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.messages.DefaultMessageHandler;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue;
 import jetbrains.mps.logging.refactoring.structure.RuntimeLog;
 import jetbrains.mps.logging.refactoring.structure.RuntimeLogStack;
-import jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue;
-import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language.LanguageAspectStatus;
 import jetbrains.mps.smodel.Language.LanguageAspectStatus.AspectKind;
+import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
-import jetbrains.mps.generator.*;
-import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.ide.messages.DefaultMessageHandler;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
-import java.util.*;
 import java.lang.reflect.Method;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -84,7 +85,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       String message = "Model Already Register : " + myModelUID + "\n";
       message += "file = " + myModelFile + "\n";
       message += "another model's file = " + anotherModel.getModelFile();
-
       LOG.error(message);
     }
   }
@@ -103,9 +103,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       mySModel = loadModel();
       doPostLoadStuff();
       oldModel.dispose();
-
       SModelRepository.getInstance().markChanged(this, false);
-
       MPSModuleRepository.getInstance().invalidateCaches();
     }
   }
@@ -144,9 +142,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return myModelUID.getLongName();
   }
 
-  /**
-   * @return never NULL
-   */
+  @NotNull
   public String getStereotype() {
     return myModelUID.getStereotype();
   }

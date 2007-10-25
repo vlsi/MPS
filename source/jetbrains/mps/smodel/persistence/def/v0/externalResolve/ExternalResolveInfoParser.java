@@ -1,4 +1,4 @@
-package jetbrains.mps.externalResolve;
+package jetbrains.mps.smodel.persistence.def.v0.externalResolve;
 
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.smodel.SNode;

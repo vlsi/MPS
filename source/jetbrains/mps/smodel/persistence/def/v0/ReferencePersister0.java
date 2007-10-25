@@ -1,6 +1,6 @@
 package jetbrains.mps.smodel.persistence.def.v0;
 
-import jetbrains.mps.externalResolve.ExternalResolver;
+import jetbrains.mps.smodel.persistence.def.v0.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
