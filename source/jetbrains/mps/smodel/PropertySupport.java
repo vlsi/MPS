@@ -6,14 +6,11 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.DataTypeDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PrimitiveDataTypeDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.reloading.ClassLoaderManager;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -74,7 +71,7 @@ public abstract class PropertySupport {
   private static PropertySupport loadPropertySupport(PropertyDeclaration propertyDeclaration) {
     DataTypeDeclaration propertyDataType = propertyDeclaration.getDataType();
 
-    ConceptDeclaration cd = (ConceptDeclaration) propertyDeclaration.getParent();
+    AbstractConceptDeclaration cd = (AbstractConceptDeclaration) propertyDeclaration.getParent();
     Language l = SModelUtil_new.getDeclaringLanguage(cd, GlobalScope.getInstance());
 
     String propertySupportClassName = JavaNameUtil.fqClassName(propertyDataType.getModel(), getClassName(propertyDataType));
