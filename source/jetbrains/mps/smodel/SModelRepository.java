@@ -32,8 +32,8 @@ public class SModelRepository extends SModelAdapter {
   private Map<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
   private Set<SModelDescriptor> myModelsWithNoOwners = new HashSet<SModelDescriptor>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
-  private List<SModelRepositoryAdapter> mySModelRepositoryListeners = new ArrayList<SModelRepositoryAdapter>();
-  private WeakSet<SModelRepositoryAdapter> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryAdapter>();
+  private List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
+  private WeakSet<SModelRepositoryListener> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryListener>();
 
   private MPSModuleRepository myModuleRepository;
 
@@ -143,15 +143,15 @@ public class SModelRepository extends SModelAdapter {
     myListeners.remove(l);
   }
 
-  public void addModelRepositoryListener(@NotNull SModelRepositoryAdapter l) {
+  public void addModelRepositoryListener(@NotNull SModelRepositoryListener l) {
     mySModelRepositoryListeners.add(l);
   }
 
-  public void addWeakModelRepositoryListener(@NotNull SModelRepositoryAdapter l) {
+  public void addWeakModelRepositoryListener(@NotNull SModelRepositoryListener l) {
     myWeakSModelRepositoryListeners.add(l);
   }
 
-  public void removeModelRepositoryListener(@NotNull SModelRepositoryAdapter l) {
+  public void removeModelRepositoryListener(@NotNull SModelRepositoryListener l) {
     mySModelRepositoryListeners.remove(l);
     myWeakSModelRepositoryListeners.remove(l);
   }
@@ -559,19 +559,19 @@ public class SModelRepository extends SModelAdapter {
   }
 
   private void fireModelRemoved(SModelDescriptor modelDescriptor) {
-    for (SModelRepositoryAdapter l : mySModelRepositoryListeners) {
+    for (SModelRepositoryListener l : mySModelRepositoryListeners) {
       l.modelRemoved(modelDescriptor);
     }
-    for (SModelRepositoryAdapter l : myWeakSModelRepositoryListeners) {
+    for (SModelRepositoryListener l : myWeakSModelRepositoryListeners) {
       l.modelRemoved(modelDescriptor);
     }
   }
 
    private void fireModelAdded(SModelDescriptor modelDescriptor) {
-    for (SModelRepositoryAdapter l : mySModelRepositoryListeners) {
+    for (SModelRepositoryListener l : mySModelRepositoryListeners) {
       l.modelAdded(modelDescriptor);
     }
-    for (SModelRepositoryAdapter l : myWeakSModelRepositoryListeners) {
+    for (SModelRepositoryListener l : myWeakSModelRepositoryListeners) {
       l.modelAdded(modelDescriptor);
     }
   }
