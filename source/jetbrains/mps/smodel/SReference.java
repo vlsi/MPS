@@ -65,13 +65,6 @@ public abstract class SReference {
    */
   public abstract String getTargetNodeId();
 
-  /**
-   * todo: remove.
-   */
-  public boolean isResolved() {
-    return true;
-  }
-
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.isRegistered() && targetNode.isRegistered()) {
       // 'mature' reference

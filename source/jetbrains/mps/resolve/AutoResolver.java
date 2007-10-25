@@ -37,7 +37,7 @@ public class AutoResolver extends GenericEditorUpdater implements IGutterMessage
     SNode node = editor.getEditedNode();
     if (node == null) return false;
 
-   // if (myCheckedRoots.contains(node)) return false;
+    // if (myCheckedRoots.contains(node)) return false;
 
     // clear highlighting
     NodeHighlightManager highlightManager = editor.getHighlightManager();
@@ -82,7 +82,7 @@ public class AutoResolver extends GenericEditorUpdater implements IGutterMessage
     Set<SReference> result = new HashSet<SReference>();
     for (SNode node : CollectionUtil.iteratorAsIterable(editor.getRootCell().getSNode().depthFirstChildren(true))) {
       for (SReference ref : node.getReferences()) {
-        if (!ref.isResolved()) {
+        if (ref.getTargetNode() == null) {
           result.add(ref);
         }
       }
