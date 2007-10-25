@@ -294,15 +294,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return myItems;
   }
 
-  public MPSClassLoader getMPSClassLoader() {
-    if (myClassLoader == null) {
-      updateClassPath();
-    }
-
-    if (myClassLoader instanceof MPSClassLoader) return (MPSClassLoader) myClassLoader;
-    return null;
-  }
-
   public IClassPathItem getRTJar() {    
     if (myRTJar == null) {
       if (! SystemInfo.isMac) {

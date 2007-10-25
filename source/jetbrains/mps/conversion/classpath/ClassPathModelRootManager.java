@@ -87,8 +87,7 @@ public class ClassPathModelRootManager extends AbstractModelRootManager {
   }
 
   private IClassPathItem getClassPathItem() {
-    ClassLoaderManager manager = ClassLoaderManager.getInstance();
-    return manager.getMPSClassLoader().getClassPathItem();
+    return ClassLoaderManager.getInstance().getClassPathItem();
   }
 
   private void addPackageModelDescriptors(Set<SModelDescriptor> descriptors, ModelRoot root, String pack) {
