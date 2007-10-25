@@ -1,6 +1,5 @@
 package jetbrains.mps.ide.components;
 
-import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.CellInfo;
@@ -26,7 +25,6 @@ public class ComponentsUtil {
   public static final String MODULE = "module"; // old
   public static final String MODULE_UID = "module-uid";
   public static final String ID = "id";
-  public static final String ERI = "extResolveInfo";
   public static final String RECTANGLE = "rectangle";
   private static final String X = "x";
   private static final String Y = "y";
@@ -37,19 +35,10 @@ public class ComponentsUtil {
   public static final String CELL_INFO = "cellInfo";
 
   public static Element nodeToElement(SNode node) {
-    Element nodeElement = new Element(NODE);    
+    Element nodeElement = new Element(NODE);
     SModel model = node.getModel();
     nodeElement.setAttribute(MODEL, model.getUID().toString());
-    if (model.isExternallyResolvable()) {
-      String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
-      if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
-        nodeElement.setAttribute(ID, node.getId());
-      } else {
-        nodeElement.setAttribute(ERI, extResolveInfo);
-      }
-    } else {
-      nodeElement.setAttribute(ID, node.getId());
-    }
+    nodeElement.setAttribute(ID, node.getId());
     return nodeElement;
   }
 
@@ -61,14 +50,9 @@ public class ComponentsUtil {
   public static SNode nodeFromElement(Element nodeElement, IScope scope) {
     String modelUID = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
-    String extResolveInfo = nodeElement.getAttributeValue(ERI);
     SModelDescriptor modelDescriptor = scope.getModelDescriptor(SModelUID.fromString(modelUID));
     if (modelDescriptor == null) return null;
-    if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
-      return modelDescriptor.getSModel().getNodeByExtResolveInfo(extResolveInfo);
-    } else {
-      return modelDescriptor.getSModel().getNodeById(id);
-    }
+    return modelDescriptor.getSModel().getNodeById(id);
   }
 
   public static Element nodeToElement(SNode node, @NotNull IModule module) {
@@ -77,23 +61,13 @@ public class ComponentsUtil {
     nodeElement.setAttribute(MODEL, model.getUID().toString());
     String module_uid = module.getModuleUID();
     nodeElement.setAttribute(MODULE_UID, module_uid);
-    if (model.isExternallyResolvable()) {
-      String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
-      if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
-        nodeElement.setAttribute(ID, node.getId());
-      } else {
-        nodeElement.setAttribute(ERI, extResolveInfo);
-      }
-    } else {
-      nodeElement.setAttribute(ID, node.getId());
-    }
+    nodeElement.setAttribute(ID, node.getId());
     return nodeElement;
   }
 
   public static NodeWithContext nodeFromElement(Element nodeElement, MPSProject project) {
     String modelUID = nodeElement.getAttributeValue(MODEL);
     String id = nodeElement.getAttributeValue(ID);
-    String extResolveInfo = nodeElement.getAttributeValue(ERI);
 
     String moduleUID = nodeElement.getAttributeValue(MODULE_UID);
     if (moduleUID == null) return null;
@@ -102,12 +76,7 @@ public class ComponentsUtil {
     SModelDescriptor modelDescriptor = module.getScope().getModelDescriptor(SModelUID.fromString(modelUID));
     if (modelDescriptor == null) return null;
 
-    SNode node;
-    if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
-      node = modelDescriptor.getSModel().getNodeByExtResolveInfo(extResolveInfo);
-    } else {
-      node = modelDescriptor.getSModel().getNodeById(id);
-    }
+    SNode node = modelDescriptor.getSModel().getNodeById(id);
     return new NodeWithContext(node, new ModuleContext(module, project));
   }
 

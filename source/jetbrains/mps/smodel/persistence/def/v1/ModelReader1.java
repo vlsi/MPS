@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel.persistence.def.v1;
 
-import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
@@ -169,24 +168,14 @@ public class ModelReader1 implements IModelReader {
           Element nodeElement,
           SModel model,
           List<ReferencePersister1> referenceDescriptors,
-          boolean useUIDs
-  ) {
-    // todo: save 'conceptFqName' (i.e. <namespace>.structure.<name>)
-//    String oldStructureClassName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
-//    String conceptName = NameUtil.shortNameFromLongName(oldStructureClassName);
-//    String languageNamespace = NameUtil.namespaceFromLongName(oldStructureClassName);
-//    String conceptFqName = languageNamespace + ".structure." + conceptName;
+          boolean useUIDs) {
+
     String conceptFqName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
     SNode node = new SNode(model, conceptFqName);
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
     if (idValue != null) {
       node.setId(SNodeId.fromString(idValue));
-    }
-
-    String cachedExtResolveInfo = nodeElement.getAttributeValue(ModelPersistence.EXT_RESOLVE_INFO);
-    if (!ExternalResolver.isEmptyExtResolveInfo(cachedExtResolveInfo)) {
-      model.loadCachedNodeExtResolveInfo(node, cachedExtResolveInfo);
     }
 
     List properties = nodeElement.getChildren(ModelPersistence.PROPERTY);
