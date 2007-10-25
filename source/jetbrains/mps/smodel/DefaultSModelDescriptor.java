@@ -4,7 +4,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
-import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.refactoring.structure.RuntimeLog;
 import jetbrains.mps.logging.refactoring.structure.RuntimeLogStack;
@@ -451,12 +450,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
     for (SNode node : nodes) {
       if (mySModel == null || !SModelRepository.getInstance().isChanged(mySModel)) {
-        String nodeInfo = node.getId();
-        if (node.getModel().isExternallyResolvable()) {
-          String extResolveInfo = ExternalResolver.getExternalResolveInfoFromTarget(node);
-          if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) nodeInfo = extResolveInfo;
-        }
-        strings.add(nodeInfo);
+        strings.add(node.getId());
       }
     }
 

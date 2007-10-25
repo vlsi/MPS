@@ -2,7 +2,6 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.ICommandListener;
@@ -51,7 +50,6 @@ public class SModel implements Iterable<SNode> {
   private List<ImportElement> myLanguagesAspectsModelsVersions = new ArrayList<ImportElement>();
 
   private Map<SNodeId, SNode> myIdToNodeMap = new HashMap<SNodeId, SNode>();
-  private Map<String, SNode> myExternalResolveInfoToNodeMap = new HashMap<String, SNode>();
 
   private SModelEventTranslator myEventTranslator = new SModelEventTranslator();
 
@@ -798,53 +796,6 @@ public class SModel implements Iterable<SNode> {
     return new HashSet<SNodeId>(myIdToNodeMap.keySet());
   }
 
-  @Nullable
-  public SNode getNodeByExtResolveInfo(@NotNull String extResolveInfo) {
-    if (!isExternallyResolvable()) return null;
-    if (ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) return null;
-    SNode node = myExternalResolveInfoToNodeMap.get(extResolveInfo);
-    if (node != null) {
-      if (ExternalResolver.doesNodeMatchERI(extResolveInfo, node)) {
-        return node;
-      } else {
-        return findNodeWithExtResolveInfo(extResolveInfo);
-      }
-    } else {
-      return findNodeWithExtResolveInfo(extResolveInfo);
-    }
-  }
-
-  @Nullable
-  private SNode findNodeWithExtResolveInfo(@NotNull String extResolveInfo) {
-    SNode targetNode = ExternalResolver.findTargetNode(this, extResolveInfo);
-    if (targetNode != null) {
-      myExternalResolveInfoToNodeMap.put(extResolveInfo, targetNode);
-    }
-    return targetNode;
-  }
-
-  public void loadCachedNodeExtResolveInfo(@NotNull SNode node, @NotNull String extResolveInfo) {
-    if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
-      myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
-    }
-  }
-
-  public void setNodeExtResolveInfo(@NotNull SNode node, @NotNull String extResolveInfo) {
-    if (!isExternallyResolvable()) {
-      return;
-    }
-    if (node.getModel() != this) {
-      LOG.error("trying to cache in model" + this + "ext resolve info for node from another model, namely " + node.getModel());
-      return;
-    }
-    if (!ExternalResolver.isEmptyExtResolveInfo(extResolveInfo)) {
-      myExternalResolveInfoToNodeMap.put(extResolveInfo, node);
-      SModelRepository.getInstance().markChanged(this, true);
-      return;
-    }
-  }
-
-
   void putNodeId(@NotNull SNodeId id, @NotNull SNode node) {
     if (myRegistrationsForbidden) {
       LOG.error("Registration in model " + getUID() + " is temporarely forbidden");
@@ -867,12 +818,6 @@ public class SModel implements Iterable<SNode> {
   public Collection<SNode> getAllNodesWithIds() {
     Collection<SNode> nodes = myIdToNodeMap.values();
     return Collections.unmodifiableCollection(nodes);
-  }
-
-  public boolean isExternallyResolvable() {
-    SModelDescriptor modelDescriptor = getModelDescriptor();
-    if (modelDescriptor == null) return false;
-    return modelDescriptor.isExternallyResolvable();
   }
 
   public boolean isNotEditable() {

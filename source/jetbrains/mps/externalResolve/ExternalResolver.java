@@ -69,36 +69,36 @@ public class ExternalResolver {
   }
 
 
-  public static SNode findTargetNode(SModel model, String extResolveInfo) {
-
-    if (isEmptyExtResolveInfo(extResolveInfo)) {
-      LOG.error("EXTERNAL RESOLVE: resolve info is empty");
-      return null;
-    }
-
-    if (!model.isExternallyResolvable()) {
-      LOG.error("model " + model + " is not for external resolve");
-      return null;
-    }
-
-    Collection<? extends SNode> roots = model.getRoots();
-    String classifierExtResolveInfo = ExternalResolveInfoParser.getClassifierResolveInfo(extResolveInfo);
-    boolean isClassifier = CLASSIFIER.equals(ExternalResolveInfoParser.getMemberType(extResolveInfo));
-
-    for (SNode root : roots ) {
-      String targetExtResolveInfo = ExternalResolveInfoProvider.getExtResolveInfoForTargetClassGenericDeclaration((GenericDeclaration) BaseAdapter.fromNode(root));
-      if (!ExternalResolveInfoParser.doClassifiersERIMatch(classifierExtResolveInfo, targetExtResolveInfo)) continue;
-      if (isClassifier) {
-        return root;
-      } else {
-        for (SNode memberNode : root.getChildren()) {
-          if (doesNodeMatchERI(extResolveInfo, memberNode)) return memberNode;
-        }
-      }
-    }
-
-    return null;
-  }
+//  public static SNode findTargetNode(SModel model, String extResolveInfo) {
+//
+//    if (isEmptyExtResolveInfo(extResolveInfo)) {
+//      LOG.error("EXTERNAL RESOLVE: resolve info is empty");
+//      return null;
+//    }
+//
+//    if (!model.isExternallyResolvable()) {
+//      LOG.error("model " + model + " is not for external resolve");
+//      return null;
+//    }
+//
+//    Collection<? extends SNode> roots = model.getRoots();
+//    String classifierExtResolveInfo = ExternalResolveInfoParser.getClassifierResolveInfo(extResolveInfo);
+//    boolean isClassifier = CLASSIFIER.equals(ExternalResolveInfoParser.getMemberType(extResolveInfo));
+//
+//    for (SNode root : roots ) {
+//      String targetExtResolveInfo = ExternalResolveInfoProvider.getExtResolveInfoForTargetClassGenericDeclaration((GenericDeclaration) BaseAdapter.fromNode(root));
+//      if (!ExternalResolveInfoParser.doClassifiersERIMatch(classifierExtResolveInfo, targetExtResolveInfo)) continue;
+//      if (isClassifier) {
+//        return root;
+//      } else {
+//        for (SNode memberNode : root.getChildren()) {
+//          if (doesNodeMatchERI(extResolveInfo, memberNode)) return memberNode;
+//        }
+//      }
+//    }
+//
+//    return null;
+//  }
 
 
   public static boolean isEmptyExtResolveInfo(String extResolveInfo) {

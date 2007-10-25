@@ -1,13 +1,14 @@
 package jetbrains.mps.smodel.persistence.def.v0;
 
-import jetbrains.mps.externalResolve.ExternalResolver;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.persistence.def.DocUtil;
+import jetbrains.mps.smodel.persistence.def.IModelReader;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
-import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -198,10 +199,10 @@ public class ModelReader0 implements IModelReader {
       node.setId(SNodeId.fromString(idValue));
     }
 
-    String cachedExtResolveInfo = nodeElement.getAttributeValue(ModelPersistence.EXT_RESOLVE_INFO);
-    if (!ExternalResolver.isEmptyExtResolveInfo(cachedExtResolveInfo)) {
-      model.loadCachedNodeExtResolveInfo(node, cachedExtResolveInfo);
-    }
+//    String cachedExtResolveInfo = nodeElement.getAttributeValue(ModelPersistence.EXT_RESOLVE_INFO);
+//    if (!ExternalResolver.isEmptyExtResolveInfo(cachedExtResolveInfo)) {
+//      model.loadCachedNodeExtResolveInfo(node, cachedExtResolveInfo);
+//    }
 
     List properties = nodeElement.getChildren(ModelPersistence.PROPERTY);
     for (Object property : properties) {
