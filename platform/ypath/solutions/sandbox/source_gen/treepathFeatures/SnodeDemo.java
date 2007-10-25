@@ -20,7 +20,7 @@ public class SnodeDemo {
     SLinkOperations.getTargets(SLinkOperations.getTarget(SequenceOperations.getFirst(SLinkOperations.getTargets(_zClosureContext3.foo, "implements", true)), "intfc", false), "extends", true);
     SequenceOperations.map(SequenceOperations.map((new SequenceWithSupplier<SNode>(new zValueSupplier1(null, _zClosureContext3))), new zMapper(null, _zClosureContext3)), new zMapper1(null, _zClosureContext3));
     SNode foo2;
-    SequenceOperations.map(SequenceOperations.map((new SequenceWithSupplier<SNode>(new zValueSupplier2(null, _zClosureContext3))), new zMapper2(null, _zClosureContext3)), new zMapper3(null, _zClosureContext3));
+    SequenceOperations.map(SequenceOperations.map((new SequenceWithSupplier<Object>(new zValueSupplier2(null, _zClosureContext3))), new zMapper2(null, _zClosureContext3)), new zMapper3(null, _zClosureContext3));
     SConceptOperations.createNewNode(NameUtil.nodeFQName(SequenceOperations.getFirst((new SequenceWithSupplier<SNode>(new zValueSupplier3(null, _zClosureContext3))))), null);
     SNode bar = null;
     SNodeOperations.getDescendants(SLinkOperations.getTarget(SLinkOperations.getTarget(bar, "childrenBlock", true), "body", true), null, false);
