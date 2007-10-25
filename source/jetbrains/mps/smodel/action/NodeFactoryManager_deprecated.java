@@ -3,7 +3,9 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 
 import java.lang.reflect.InvocationTargetException;
@@ -50,8 +52,10 @@ import java.lang.reflect.Method;
 
   private static Class getFactoryClass(ConceptDeclaration conceptDeclaration) {
     String languageNamespace = NameUtil.namespaceFromConcept(conceptDeclaration);
+    Language langauge = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
+    assert langauge != null;
     try {
-      return Class.forName(languageNamespace + ".Factory", true, ClassLoaderManager.getInstance().getClassLoader());
+      return Class.forName(languageNamespace + ".Factory", true, ClassLoaderManager.getInstance().getClassLoaderFor(langauge));
     } catch (ClassNotFoundException e) {
       // ok
     }
