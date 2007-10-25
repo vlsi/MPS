@@ -23,31 +23,39 @@ public class CloneUtil {
    * Same as <code>clone()</code> but assigns a new ID to the cloned node.
    */
   public static SNode cloneNotPreservingId(SNode node, SModel outputModel, IScope scope) {
-      return cloneInt(node, outputModel, scope, false);
-    }
-
-  private static SNode cloneInt(SNode node, SModel outputModel, IScope scope, boolean keepOldId) {
-      SNode result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), outputModel, scope, false);
-      assert result != null;
-      if (keepOldId) {
-          result.setId(node.getSNodeId());
-      }
-      copyProperties(node, result);
-      for (SReference reference : node.getReferences()) {
-        SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : outputModel.getUID();
-        if (targetModelUID == null) {
-          LOG.warning("broken reference '" + reference.getRole() + "' in " + node.getDebugText(), node);
-        } else {
-          SReference sReference = SReference.newInstance(reference.getRole(), result, reference.getTargetNodeId(), reference.getExtResolveInfo(), targetModelUID, reference.getResolveInfo());
-          result.addReference(sReference);
-        }
-      }
-      for (SNode child : node.getChildren()) {
-        result.addChild(node.getRoleOf(child), clone(child, outputModel, scope));
-      }
-      return result;
+    return cloneInt(node, outputModel, scope, false);
   }
 
+  private static SNode cloneInt(SNode node, SModel outputModel, IScope scope, boolean keepOldId) {
+    SNode result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), outputModel, scope, false);
+    assert result != null;
+    if (keepOldId) {
+      result.setId(node.getSNodeId());
+    }
+    copyProperties(node, result);
+    for (SReference reference : node.getReferences()) {
+      SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : outputModel.getUID();
+      if (targetModelUID == null) {
+        LOG.warning("broken reference '" + reference.getRole() + "' in " + node.getDebugText(), node);
+      } else {
+//          SReference sReference = SReference.newInstance(reference.getRole(), result, reference.getTargetNodeId(), reference.getExtResolveInfo(), targetModelUID, reference.getResolveInfo());
+//          result.addReference(sReference);
+        result.addReference(SReference.create(reference.getRole(),
+                result,
+                targetModelUID,
+                SNodeId.fromString(reference.getTargetNodeId()),
+                reference.getResolveInfo()));
+      }
+    }
+    for (SNode child : node.getChildren()) {
+      result.addChild(node.getRoleOf(child), clone(child, outputModel, scope));
+    }
+    return result;
+  }
+
+  /**
+   * todo: move to SNode?
+   */
   public static void copyProperties(SNode fromNode, SNode toNode) {
     for (String property : fromNode.getProperties().keySet()) {
       toNode.setProperty(property, fromNode.getPersistentProperty(property), false);

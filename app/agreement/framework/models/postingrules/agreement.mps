@@ -1,133 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="postingrules.agreement">
+  <persistence version="1" />
   <language namespace="agreementLanguage" />
   <language namespace="jetbrains.mps.formulaLanguage" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="agreementLanguage.declarations" />
-  <node type="agreementLanguage.Plan" id="1112303557868">
+  <import index="1" modelUID="agreementLanguage.declarations" version="-1" />
+  <node type="agreementLanguage.structure.Plan" id="1112303557868">
     <property name="name" value="Regular" />
-    <node role="event" type="agreementLanguage.Event" id="1112383986387">
+    <node role="event" type="agreementLanguage.structure.Event" id="1112383986387">
       <link role="type" targetNodeId="1.1112316681746" />
-      <node role="postingRule" type="agreementLanguage.PostingRuleTemporalProperty" id="1112384017937">
-        <node role="value" type="agreementLanguage.PostingRule" id="1112384017938">
+      <node role="postingRule" type="agreementLanguage.structure.PostingRuleTemporalProperty" id="1112384017937">
+        <node role="value" type="agreementLanguage.structure.PostingRule" id="1112384017938">
           <link role="account" targetNodeId="1.1112315990977" />
-          <node role="expression" type="jetbrains.mps.formulaLanguage.MultOperation" id="1112384394412">
-            <node role="leftOperand" type="agreementLanguage.ValueReference" id="1112384405975">
+          <node role="expression" type="jetbrains.mps.formulaLanguage.structure.MultOperation" id="1112384394412">
+            <node role="leftOperand" type="agreementLanguage.structure.ValueReference" id="1112384405975">
               <link role="value" targetNodeId="1112383765038" />
             </node>
-            <node role="rightOperand" type="agreementLanguage.EventVariableReference" id="1112384408586">
+            <node role="rightOperand" type="agreementLanguage.structure.EventVariableReference" id="1112384408586">
               <link role="eventVariable" targetNodeId="1.1112316685513" />
             </node>
           </node>
         </node>
-        <node role="date" type="agreementLanguage.Date" id="1112383994545">
+        <node role="date" type="agreementLanguage.structure.Date" id="1112383994545">
           <property name="year" value="1999" />
           <property name="month" value="10" />
           <property name="day" value="01" />
         </node>
       </node>
     </node>
-    <node role="event" type="agreementLanguage.Event" id="1112384423559">
+    <node role="event" type="agreementLanguage.structure.Event" id="1112384423559">
       <link role="type" targetNodeId="1.1112316021402" />
-      <node role="postingRule" type="agreementLanguage.PostingRuleTemporalProperty" id="1112384647065">
-        <node role="value" type="agreementLanguage.PostingRule" id="1112384488572">
+      <node role="postingRule" type="agreementLanguage.structure.PostingRuleTemporalProperty" id="1112384647065">
+        <node role="value" type="agreementLanguage.structure.PostingRule" id="1112384488572">
           <link role="account" targetNodeId="1.1112316007244" />
-          <node role="expression" type="jetbrains.mps.formulaLanguage.PlusOperation" id="1112384458969">
-            <node role="leftOperand" type="jetbrains.mps.formulaLanguage.MultOperation" id="1112384462940">
-              <node role="leftOperand" type="agreementLanguage.EventVariableReference" id="1112384464879">
+          <node role="expression" type="jetbrains.mps.formulaLanguage.structure.PlusOperation" id="1112384458969">
+            <node role="leftOperand" type="jetbrains.mps.formulaLanguage.structure.MultOperation" id="1112384462940">
+              <node role="leftOperand" type="agreementLanguage.structure.EventVariableReference" id="1112384464879">
                 <link role="eventVariable" targetNodeId="1.1112316252581" />
               </node>
-              <node role="rightOperand" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112384472881">
+              <node role="rightOperand" type="jetbrains.mps.formulaLanguage.structure.FloatingPointConstant" id="1112384472881">
                 <property name="value" value="0.5" />
                 <property name="fractionalPart" value="5" />
               </node>
             </node>
-            <node role="rightOperand" type="agreementLanguage.Quantity" id="1112384483477">
+            <node role="rightOperand" type="agreementLanguage.structure.Quantity" id="1112384483477">
               <property name="unit" value="USD" />
-              <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112384483476">
+              <node role="amount" type="jetbrains.mps.formulaLanguage.structure.FloatingPointConstant" id="1112384483476">
                 <property name="integerPart" value="10" />
                 <property name="value" value="10.0" />
               </node>
             </node>
           </node>
         </node>
-        <node role="date" type="agreementLanguage.Date" id="1112384434482">
+        <node role="date" type="agreementLanguage.structure.Date" id="1112384434482">
           <property name="year" value="1999" />
           <property name="month" value="10" />
           <property name="day" value="01" />
         </node>
       </node>
-      <node role="postingRule" type="agreementLanguage.PostingRuleTemporalProperty" id="1112384647066">
-        <node role="value" type="agreementLanguage.PostingRule" id="1112384560413">
+      <node role="postingRule" type="agreementLanguage.structure.PostingRuleTemporalProperty" id="1112384647066">
+        <node role="value" type="agreementLanguage.structure.PostingRule" id="1112384560413">
           <link role="account" targetNodeId="1.1112316007244" />
-          <node role="expression" type="jetbrains.mps.formulaLanguage.PlusOperation" id="1112384540389">
-            <node role="leftOperand" type="jetbrains.mps.formulaLanguage.MultOperation" id="1112384543203">
-              <node role="leftOperand" type="agreementLanguage.EventVariableReference" id="1112384548298">
+          <node role="expression" type="jetbrains.mps.formulaLanguage.structure.PlusOperation" id="1112384540389">
+            <node role="leftOperand" type="jetbrains.mps.formulaLanguage.structure.MultOperation" id="1112384543203">
+              <node role="leftOperand" type="agreementLanguage.structure.EventVariableReference" id="1112384548298">
                 <link role="eventVariable" targetNodeId="1.1112316252581" />
               </node>
-              <node role="rightOperand" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112384551659">
+              <node role="rightOperand" type="jetbrains.mps.formulaLanguage.structure.FloatingPointConstant" id="1112384551659">
                 <property name="value" value="0.5" />
                 <property name="fractionalPart" value="5" />
               </node>
             </node>
-            <node role="rightOperand" type="agreementLanguage.Quantity" id="1112384556772">
+            <node role="rightOperand" type="agreementLanguage.structure.Quantity" id="1112384556772">
               <property name="unit" value="USD" />
-              <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112384556771">
+              <node role="amount" type="jetbrains.mps.formulaLanguage.structure.FloatingPointConstant" id="1112384556771">
                 <property name="integerPart" value="15" />
                 <property name="value" value="15.0" />
               </node>
             </node>
           </node>
         </node>
-        <node role="date" type="agreementLanguage.Date" id="1112384528448">
+        <node role="date" type="agreementLanguage.structure.Date" id="1112384528448">
           <property name="year" value="1999" />
           <property name="month" value="12" />
           <property name="day" value="01" />
         </node>
       </node>
     </node>
-    <node role="event" type="agreementLanguage.Event" id="1112384607478">
+    <node role="event" type="agreementLanguage.structure.Event" id="1112384607478">
       <property name="taxable" value="false" />
       <link role="type" targetNodeId="1.1112316644479" />
-      <node role="postingRule" type="agreementLanguage.PostingRuleTemporalProperty" id="1112384647067">
-        <node role="value" type="agreementLanguage.PostingRule" id="1112384638486">
+      <node role="postingRule" type="agreementLanguage.structure.PostingRuleTemporalProperty" id="1112384647067">
+        <node role="value" type="agreementLanguage.structure.PostingRule" id="1112384638486">
           <link role="account" targetNodeId="1.1112316013167" />
-          <node role="expression" type="jetbrains.mps.formulaLanguage.MultOperation" id="1112384627513">
-            <node role="leftOperand" type="agreementLanguage.EventVariableReference" id="1112384629280">
+          <node role="expression" type="jetbrains.mps.formulaLanguage.structure.MultOperation" id="1112384627513">
+            <node role="leftOperand" type="agreementLanguage.structure.EventVariableReference" id="1112384629280">
               <link role="eventVariable" targetNodeId="1.1112316673589" />
             </node>
-            <node role="rightOperand" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112384632188">
+            <node role="rightOperand" type="jetbrains.mps.formulaLanguage.structure.FloatingPointConstant" id="1112384632188">
               <property name="value" value="0.055" />
               <property name="fractionalPart" value="055" />
             </node>
           </node>
         </node>
-        <node role="date" type="agreementLanguage.Date" id="1112384610291">
+        <node role="date" type="agreementLanguage.structure.Date" id="1112384610291">
           <property name="year" value="1999" />
           <property name="month" value="10" />
           <property name="day" value="01" />
         </node>
       </node>
     </node>
-    <node role="value" type="agreementLanguage.Value" id="1112383765038">
+    <node role="value" type="agreementLanguage.structure.Value" id="1112383765038">
       <property name="name" value="BASE_RATE" />
-      <node role="quantity" type="agreementLanguage.QuantityTemporalProperty" id="1112383882932">
-        <node role="value" type="agreementLanguage.Quantity" id="1112383882933">
-          <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112383772351">
+      <node role="quantity" type="agreementLanguage.structure.QuantityTemporalProperty" id="1112383882932">
+        <node role="value" type="agreementLanguage.structure.Quantity" id="1112383882933">
+          <node role="amount" type="jetbrains.mps.formulaLanguage.structure.FloatingPointConstant" id="1112383772351">
             <property name="integerPart" value="10" />
             <property name="value" value="10.0" />
           </node>
         </node>
-        <node role="date" type="agreementLanguage.Date_Past" id="1116446878604" />
+        <node role="date" type="agreementLanguage.structure.Date_Past" id="1116446878604" />
       </node>
-      <node role="quantity" type="agreementLanguage.QuantityTemporalProperty" id="1112383979448">
-        <node role="value" type="agreementLanguage.Quantity" id="1112383979449">
-          <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112383963275">
+      <node role="quantity" type="agreementLanguage.structure.QuantityTemporalProperty" id="1112383979448">
+        <node role="value" type="agreementLanguage.structure.Quantity" id="1112383979449">
+          <node role="amount" type="jetbrains.mps.formulaLanguage.structure.FloatingPointConstant" id="1112383963275">
             <property name="integerPart" value="12" />
             <property name="value" value="12.0" />
           </node>
         </node>
-        <node role="date" type="agreementLanguage.Date" id="1112383954446">
+        <node role="date" type="agreementLanguage.structure.Date" id="1112383954446">
           <property name="year" value="1999" />
           <property name="month" value="12" />
           <property name="day" value="01" />
@@ -135,134 +136,134 @@
       </node>
     </node>
   </node>
-  <node type="agreementLanguage.Plan" id="1112304761925">
+  <node type="agreementLanguage.structure.Plan" id="1112304761925">
     <property name="name" value="LowPay" />
-    <node role="event" type="agreementLanguage.Event" id="1112393068783">
+    <node role="event" type="agreementLanguage.structure.Event" id="1112393068783">
       <link role="type" targetNodeId="1.1112316681746" />
-      <node role="postingRule" type="agreementLanguage.PostingRuleTemporalProperty" id="1112393265148">
-        <node role="value" type="agreementLanguage.PostingRule" id="1112393120898">
+      <node role="postingRule" type="agreementLanguage.structure.PostingRuleTemporalProperty" id="1112393265148">
+        <node role="value" type="agreementLanguage.structure.PostingRule" id="1112393120898">
           <link role="account" targetNodeId="1.1112315990977" />
-          <node role="expression" type="jetbrains.mps.formulaLanguage.IfFunction" id="1112393084582">
-            <node role="valueIfTrue" type="jetbrains.mps.formulaLanguage.MultOperation" id="1112393099763">
-              <node role="leftOperand" type="agreementLanguage.ValueReference" id="1112407052649">
+          <node role="expression" type="jetbrains.mps.formulaLanguage.structure.IfFunction" id="1112393084582">
+            <node role="valueIfTrue" type="jetbrains.mps.formulaLanguage.structure.MultOperation" id="1112393099763">
+              <node role="leftOperand" type="agreementLanguage.structure.ValueReference" id="1112407052649">
                 <link role="value" targetNodeId="1112392957192" />
               </node>
-              <node role="rightOperand" type="agreementLanguage.EventVariableReference" id="1112393104282">
+              <node role="rightOperand" type="agreementLanguage.structure.EventVariableReference" id="1112393104282">
                 <link role="eventVariable" targetNodeId="1.1112316685513" />
               </node>
             </node>
-            <node role="valueIfFalse" type="jetbrains.mps.formulaLanguage.MultOperation" id="1112393106926">
-              <node role="leftOperand" type="agreementLanguage.ValueReference" id="1112407055697">
+            <node role="valueIfFalse" type="jetbrains.mps.formulaLanguage.structure.MultOperation" id="1112393106926">
+              <node role="leftOperand" type="agreementLanguage.structure.ValueReference" id="1112407055697">
                 <link role="value" targetNodeId="1112393006024" />
               </node>
-              <node role="rightOperand" type="agreementLanguage.EventVariableReference" id="1112393114163">
+              <node role="rightOperand" type="agreementLanguage.structure.EventVariableReference" id="1112393114163">
                 <link role="eventVariable" targetNodeId="1.1112316685513" />
               </node>
             </node>
-            <node role="logicalTest" type="jetbrains.mps.formulaLanguage.GreaterThanOperation" id="1112717731865">
-              <node role="leftOperand" type="agreementLanguage.EventVariableReference" id="1112717731270">
+            <node role="logicalTest" type="jetbrains.mps.formulaLanguage.structure.GreaterThanOperation" id="1112717731865">
+              <node role="leftOperand" type="agreementLanguage.structure.EventVariableReference" id="1112717731270">
                 <link role="eventVariable" targetNodeId="1.1112316685513" />
               </node>
-              <node role="rightOperand" type="agreementLanguage.ValueReference" id="1112717733617">
+              <node role="rightOperand" type="agreementLanguage.structure.ValueReference" id="1112717733617">
                 <link role="value" targetNodeId="1112393034216" />
               </node>
             </node>
           </node>
         </node>
-        <node role="date" type="agreementLanguage.Date" id="1112393071752">
+        <node role="date" type="agreementLanguage.structure.Date" id="1112393071752">
           <property name="year" value="1999" />
           <property name="month" value="10" />
           <property name="day" value="01" />
         </node>
       </node>
     </node>
-    <node role="event" type="agreementLanguage.Event" id="1112393126916">
+    <node role="event" type="agreementLanguage.structure.Event" id="1112393126916">
       <link role="type" targetNodeId="1.1112316021402" />
-      <node role="postingRule" type="agreementLanguage.PostingRuleTemporalProperty" id="1112393265149">
-        <node role="value" type="agreementLanguage.PostingRule" id="1112393162687">
+      <node role="postingRule" type="agreementLanguage.structure.PostingRuleTemporalProperty" id="1112393265149">
+        <node role="value" type="agreementLanguage.structure.PostingRule" id="1112393162687">
           <link role="account" targetNodeId="1.1112316007244" />
-          <node role="expression" type="agreementLanguage.Quantity" id="1112393154670">
+          <node role="expression" type="agreementLanguage.structure.Quantity" id="1112393154670">
             <property name="unit" value="USD" />
-            <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112393154669">
+            <node role="amount" type="jetbrains.mps.formulaLanguage.structure.FloatingPointConstant" id="1112393154669">
               <property name="integerPart" value="10" />
               <property name="value" value="10.0" />
             </node>
           </node>
         </node>
-        <node role="date" type="agreementLanguage.Date" id="1112393138448">
+        <node role="date" type="agreementLanguage.structure.Date" id="1112393138448">
           <property name="year" value="1999" />
           <property name="month" value="10" />
           <property name="day" value="01" />
         </node>
       </node>
     </node>
-    <node role="event" type="agreementLanguage.Event" id="1112393222389">
+    <node role="event" type="agreementLanguage.structure.Event" id="1112393222389">
       <property name="taxable" value="false" />
       <link role="type" targetNodeId="1.1112316644479" />
-      <node role="postingRule" type="agreementLanguage.PostingRuleTemporalProperty" id="1112393265151">
-        <node role="value" type="agreementLanguage.PostingRule" id="1112393255131">
+      <node role="postingRule" type="agreementLanguage.structure.PostingRuleTemporalProperty" id="1112393265151">
+        <node role="value" type="agreementLanguage.structure.PostingRule" id="1112393255131">
           <link role="account" targetNodeId="1.1112316013167" />
-          <node role="expression" type="jetbrains.mps.formulaLanguage.MultOperation" id="1112393235456">
-            <node role="leftOperand" type="agreementLanguage.EventVariableReference" id="1112393237535">
+          <node role="expression" type="jetbrains.mps.formulaLanguage.structure.MultOperation" id="1112393235456">
+            <node role="leftOperand" type="agreementLanguage.structure.EventVariableReference" id="1112393237535">
               <link role="eventVariable" targetNodeId="1.1112316673589" />
             </node>
-            <node role="rightOperand" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112393248818">
+            <node role="rightOperand" type="jetbrains.mps.formulaLanguage.structure.FloatingPointConstant" id="1112393248818">
               <property name="value" value="0.055" />
               <property name="fractionalPart" value="055" />
             </node>
           </node>
         </node>
-        <node role="date" type="agreementLanguage.Date" id="1112393225124">
+        <node role="date" type="agreementLanguage.structure.Date" id="1112393225124">
           <property name="year" value="1999" />
           <property name="month" value="10" />
           <property name="day" value="01" />
         </node>
       </node>
     </node>
-    <node role="value" type="agreementLanguage.Value" id="1112392957192">
+    <node role="value" type="agreementLanguage.structure.Value" id="1112392957192">
       <property name="name" value="BASE_RATE" />
-      <node role="quantity" type="agreementLanguage.QuantityTemporalProperty" id="1112393265152">
-        <node role="value" type="agreementLanguage.Quantity" id="1112393265153">
-          <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112392991085">
+      <node role="quantity" type="agreementLanguage.structure.QuantityTemporalProperty" id="1112393265152">
+        <node role="value" type="agreementLanguage.structure.Quantity" id="1112393265153">
+          <node role="amount" type="jetbrains.mps.formulaLanguage.structure.FloatingPointConstant" id="1112392991085">
             <property name="integerPart" value="10" />
             <property name="value" value="10.0" />
           </node>
         </node>
-        <node role="date" type="agreementLanguage.Date_Past" id="1116446666034" />
+        <node role="date" type="agreementLanguage.structure.Date_Past" id="1116446666034" />
       </node>
     </node>
-    <node role="value" type="agreementLanguage.Value" id="1112393006024">
+    <node role="value" type="agreementLanguage.structure.Value" id="1112393006024">
       <property name="name" value="REDUCED_RATE" />
-      <node role="quantity" type="agreementLanguage.QuantityTemporalProperty" id="1112393265154">
-        <node role="value" type="agreementLanguage.Quantity" id="1112393034215">
-          <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112393022197">
+      <node role="quantity" type="agreementLanguage.structure.QuantityTemporalProperty" id="1112393265154">
+        <node role="value" type="agreementLanguage.structure.Quantity" id="1112393034215">
+          <node role="amount" type="jetbrains.mps.formulaLanguage.structure.FloatingPointConstant" id="1112393022197">
             <property name="integerPart" value="5" />
             <property name="value" value="5.0" />
           </node>
         </node>
-        <node role="date" type="agreementLanguage.Date_Past" id="1116446834806" />
+        <node role="date" type="agreementLanguage.structure.Date_Past" id="1116446834806" />
       </node>
     </node>
-    <node role="value" type="agreementLanguage.Value" id="1112393034216">
+    <node role="value" type="agreementLanguage.structure.Value" id="1112393034216">
       <property name="name" value="CAP" />
-      <node role="quantity" type="agreementLanguage.QuantityTemporalProperty" id="1112393265155">
-        <node role="value" type="agreementLanguage.Quantity" id="1112393052453">
+      <node role="quantity" type="agreementLanguage.structure.QuantityTemporalProperty" id="1112393265155">
+        <node role="value" type="agreementLanguage.structure.Quantity" id="1112393052453">
           <property name="unit" value="KWH" />
-          <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1112393046749">
+          <node role="amount" type="jetbrains.mps.formulaLanguage.structure.FloatingPointConstant" id="1112393046749">
             <property name="integerPart" value="50" />
             <property name="value" value="50.0" />
           </node>
         </node>
-        <node role="date" type="agreementLanguage.Date_Past" id="1116446763488" />
+        <node role="date" type="agreementLanguage.structure.Date_Past" id="1116446763488" />
       </node>
-      <node role="quantity" type="agreementLanguage.QuantityTemporalProperty" id="1116446773943">
-        <node role="value" type="agreementLanguage.Quantity" id="1116446773945">
+      <node role="quantity" type="agreementLanguage.structure.QuantityTemporalProperty" id="1116446773943">
+        <node role="value" type="agreementLanguage.structure.Quantity" id="1116446773945">
           <property name="unit" value="KWH" />
-          <node role="amount" type="jetbrains.mps.formulaLanguage.FloatingPointConstant" id="1116446773946">
+          <node role="amount" type="jetbrains.mps.formulaLanguage.structure.FloatingPointConstant" id="1116446773946">
             <property name="value" value="60.0" />
           </node>
         </node>
-        <node role="date" type="agreementLanguage.Date" id="1116446773944">
+        <node role="date" type="agreementLanguage.structure.Date" id="1116446773944">
           <property name="year" value="1999" />
           <property name="month" value="12" />
           <property name="day" value="01" />
