@@ -66,5 +66,8 @@
     <entry path="${mps_home}\platform\ypath\classes" />
     <entry path="${mps_home}\platform\ypath\runtime\classes" />
   </classPath>
+  <runtimeClassPath>
+    <entry path="${mps_home}\platform\ypath\runtime\classes" />
+  </runtimeClassPath>
 </language>
 

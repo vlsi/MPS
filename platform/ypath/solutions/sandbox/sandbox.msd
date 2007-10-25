@@ -5,7 +5,9 @@
   </models>
   <module />
   <languages />
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}\platform\ypath\solutions\classes" />
+  </classPath>
   <runtimeClassPath>
     <entry path="${mps_home}\platform\ypath\solutions\classes" />
   </runtimeClassPath>
