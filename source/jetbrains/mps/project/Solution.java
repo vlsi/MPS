@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
@@ -79,6 +80,12 @@ public class Solution extends AbstractModule {
         fireModuleInitialized();
       }
     }
+  }
+
+  @Nullable
+  public File getClassesGen() {
+    //solution doesn't have auto classes gen discovery
+    return null;
   }
 
   public void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
