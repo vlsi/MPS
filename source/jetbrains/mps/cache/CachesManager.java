@@ -22,7 +22,7 @@ public class CachesManager implements IComponentLifecycle {
   }
 
   public void initComponent() {
-    SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryListener() {
+    SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
       public void modelRemoved(SModelDescriptor modelDescriptor) {
         List keysToRemove = new ArrayList();
         SModelUID uid = modelDescriptor.getModelUID();

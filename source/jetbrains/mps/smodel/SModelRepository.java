@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -31,7 +32,8 @@ public class SModelRepository extends SModelAdapter {
   private Map<SModelDescriptor, HashSet<ModelOwner>> myModelToOwnerMap = new HashMap<SModelDescriptor, HashSet<ModelOwner>>();
   private Set<SModelDescriptor> myModelsWithNoOwners = new HashSet<SModelDescriptor>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
-  private List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
+  private List<SModelRepositoryAdapter> mySModelRepositoryListeners = new ArrayList<SModelRepositoryAdapter>();
+  private WeakSet<SModelRepositoryAdapter> myWeakSModelRepositoryListeners = new WeakSet<SModelRepositoryAdapter>();
 
   private MPSModuleRepository myModuleRepository;
 
@@ -141,12 +143,17 @@ public class SModelRepository extends SModelAdapter {
     myListeners.remove(l);
   }
 
-  public void addModelRepositoryListener(@NotNull SModelRepositoryListener l) {
+  public void addModelRepositoryListener(@NotNull SModelRepositoryAdapter l) {
     mySModelRepositoryListeners.add(l);
   }
 
-  public void removeModelRepositoryListener(@NotNull SModelRepositoryListener l) {
+  public void addWeakModelRepositoryListener(@NotNull SModelRepositoryAdapter l) {
+    myWeakSModelRepositoryListeners.add(l);
+  }
+
+  public void removeModelRepositoryListener(@NotNull SModelRepositoryAdapter l) {
     mySModelRepositoryListeners.remove(l);
+    myWeakSModelRepositoryListeners.remove(l);
   }
 
   @NotNull
@@ -202,6 +209,7 @@ public class SModelRepository extends SModelAdapter {
     modelDescriptor.addWeakModelListener(this);
     modelDescriptor.addModelCommandListener(myListener);
     fireRepositoryChanged();
+    fireModelAdded(modelDescriptor);
   }
 
   public void unRegisterModelDescriptor(@NotNull SModelDescriptor modelDescriptor, @NotNull ModelOwner owner) {
@@ -551,8 +559,20 @@ public class SModelRepository extends SModelAdapter {
   }
 
   private void fireModelRemoved(SModelDescriptor modelDescriptor) {
-    for (SModelRepositoryListener l : mySModelRepositoryListeners) {
+    for (SModelRepositoryAdapter l : mySModelRepositoryListeners) {
       l.modelRemoved(modelDescriptor);
+    }
+    for (SModelRepositoryAdapter l : myWeakSModelRepositoryListeners) {
+      l.modelRemoved(modelDescriptor);
+    }
+  }
+
+   private void fireModelAdded(SModelDescriptor modelDescriptor) {
+    for (SModelRepositoryAdapter l : mySModelRepositoryListeners) {
+      l.modelAdded(modelDescriptor);
+    }
+    for (SModelRepositoryAdapter l : myWeakSModelRepositoryListeners) {
+      l.modelAdded(modelDescriptor);
     }
   }
 }

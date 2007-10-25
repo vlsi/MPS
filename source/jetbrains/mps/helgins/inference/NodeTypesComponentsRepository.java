@@ -17,7 +17,7 @@ import java.util.HashSet;
 public class NodeTypesComponentsRepository {
   private Set<NodeTypesComponent_new> myNodeTypesComponents = new HashSet<NodeTypesComponent_new>();
   private TypeChecker myTypeChecker;
-  private SModelRepositoryListener myModelRepositoryListener = new SModelRepositoryListener() {
+  private SModelRepositoryAdapter myModelRepositoryListener = new SModelRepositoryAdapter() {
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       for (NodeTypesComponent_new nodeTypesComponent : new HashSet<NodeTypesComponent_new>(myNodeTypesComponents)) {
         if (nodeTypesComponent.getNode().getModel().getUID().equals(modelDescriptor.getModelUID())) {

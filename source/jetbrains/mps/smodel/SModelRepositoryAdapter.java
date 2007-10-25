@@ -7,6 +7,11 @@ package jetbrains.mps.smodel;
  * Time: 14:40:45
  * To change this template use File | Settings | File Templates.
  */
-public interface SModelRepositoryListener {
-  public void modelRemoved(SModelDescriptor modelDescriptor);
+public abstract class SModelRepositoryAdapter {
+  public void modelRemoved(SModelDescriptor modelDescriptor) {
+
+  }
+  public void modelAdded(SModelDescriptor modelDescriptor) {
+
+  }
 }

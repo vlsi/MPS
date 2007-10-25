@@ -694,6 +694,12 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     if (actionsModelDescriptor != null) result.add(actionsModelDescriptor);
     SModelDescriptor constraintsModelDescriptor = getConstraintsModelDescriptor();
     if (constraintsModelDescriptor != null) result.add(constraintsModelDescriptor);
+    SModelDescriptor helginsModelDescriptor = getHelginsTypesystemModelDescriptor();
+    if (helginsModelDescriptor != null) result.add(helginsModelDescriptor);
+    SModelDescriptor scriptsModelDescriptor = getScriptsModelDescriptor();
+    if (scriptsModelDescriptor != null) result.add(scriptsModelDescriptor);
+    SModelDescriptor documentationModelDescriptor = getDocumentationModelDescriptor();
+    if (documentationModelDescriptor != null) result.add(documentationModelDescriptor);
     return result;
   }
 
@@ -1004,6 +1010,15 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
     if (accessoryStatus != null) return accessoryStatus;
     return new LanguageAspectStatus(null, LanguageAspectStatus.AspectKind.NONE);
+  }
+
+  public SModelDescriptor getAspectModelDescriptor(AspectKind aspectKind) {
+    for (SModelDescriptor modelDescriptor : getAspectModelDescriptors()) {
+      if (getLanguageAspectStatus(this, modelDescriptor).getAspectKind() == aspectKind) {
+        return modelDescriptor;
+      }
+    }
+    return null;
   }
 
   public static LanguageAspectStatus getLanguageAspectStatus(Language language, SModelDescriptor modelDescriptor) {
