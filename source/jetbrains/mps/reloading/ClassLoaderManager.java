@@ -7,6 +7,7 @@ import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.CommandKind;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
@@ -61,13 +62,13 @@ public class ClassLoaderManager implements IComponentLifecycle {
   public void setModuleRepostiory(MPSModuleRepository repository) {
     repository.addModuleRepositoryListener(new ModuleRepositoryListener() {
       public void moduleAdded(IModule module) {
-        if (module instanceof Generator) {
-          //generators are temporarily ignored
-          return;
-        }
-
         if (myRuntimeEnvironment.get(module.getModuleUID()) == null) {
           myToAdd.add(module.getModuleUID());
+        }
+
+
+        if (CommandProcessor.instance().getCurrentCommandKind() == CommandKind.GENERATION) {
+          handleAddAndRemoves();
         }
       }
 
@@ -76,6 +77,10 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
       public void moduleRemoved(IModule module) {
         myToRemove.add(module.getModuleUID());
+
+        if (CommandProcessor.instance().getCurrentCommandKind() == CommandKind.GENERATION) {
+          handleAddAndRemoves();
+        }
       }
 
       public void moduleInitialized(IModule module) {
@@ -91,46 +96,48 @@ public class ClassLoaderManager implements IComponentLifecycle {
     
     CommandProcessor.instance().addCommandListener(new CommandAdapter() {
       public void commandFinished(@NotNull CommandEvent event) {
-        try {
-          Set<String> toReload = new LinkedHashSet<String>(myToAdd);
-          toReload.retainAll(myToRemove);
-
-          Set<String> toRemove = new LinkedHashSet<String>(myToRemove);
-          toRemove.removeAll(myToAdd);                    
-
-          Set<String> toAdd = new LinkedHashSet<String>(myToAdd);
-          toAdd.removeAll(myToRemove);
-
-
-
-          if (!toRemove.isEmpty()) {
-            String[] unloadList = toRemove.toArray(new String[0]);
-            myRuntimeEnvironment.unload(unloadList);
-          }
-
-          if (!toReload.isEmpty()) {
-            String[] reloadList = toReload.toArray(new String[0]);
-            myRuntimeEnvironment.reload(reloadList);
-          }
-
-          if (!toAdd.isEmpty()) {
-            for (String moduleUID : toAdd) {
-              IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
-              Bundle b = new Bundle(module.getModuleUID(), module.getByteCodeLocator());
-
-              for (String dep : module.getExplicitlyDependOnModuleUIDs()) {
-                b.addDependency(dep);
-              }
-
-              myRuntimeEnvironment.add(b);
-            }
-          }
-        } finally {
-          myToRemove.clear();
-          myToAdd.clear();
-        }
+        handleAddAndRemoves();
       }
     });
+  }
+
+  private void handleAddAndRemoves() {
+    try {
+      Set<String> toReload = new LinkedHashSet<String>(myToAdd);
+      toReload.retainAll(myToRemove);
+
+      Set<String> toRemove = new LinkedHashSet<String>(myToRemove);
+      toRemove.removeAll(myToAdd);
+
+      Set<String> toAdd = new LinkedHashSet<String>(myToAdd);
+      toAdd.removeAll(myToRemove);
+
+      if (!toRemove.isEmpty()) {
+        String[] unloadList = toRemove.toArray(new String[0]);
+        myRuntimeEnvironment.unload(unloadList);
+      }
+
+      if (!toReload.isEmpty()) {
+        String[] reloadList = toReload.toArray(new String[0]);
+        myRuntimeEnvironment.reload(reloadList);
+      }
+
+      if (!toAdd.isEmpty()) {
+        for (String moduleUID : toAdd) {
+          IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
+          Bundle b = new Bundle(module.getModuleUID(), module.getByteCodeLocator());
+
+          for (String dep : module.getExplicitlyDependOnModuleUIDs()) {
+            b.addDependency(dep);
+          }
+
+          myRuntimeEnvironment.add(b);
+        }
+      }
+    } finally {
+      myToRemove.clear();
+      myToAdd.clear();
+    }
   }
 
   @Dependency
