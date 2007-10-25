@@ -63,12 +63,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
     repository.addModuleRepositoryListener(new ModuleRepositoryListener() {
       public void moduleAdded(IModule module) {
         if (myRuntimeEnvironment.get(module.getModuleUID()) == null) {
-          myToAdd.add(module.getModuleUID());
-        }
-
-
-        if (CommandProcessor.instance().getCurrentCommandKind() == CommandKind.GENERATION) {
-          handleAddAndRemoves();
+          if (!myToRemove.contains(module.getModuleUID())) {
+            addModule(module.getModuleUID());
+          } else {
+            myToAdd.add(module.getModuleUID());
+          }
         }
       }
 
@@ -124,20 +123,24 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
       if (!toAdd.isEmpty()) {
         for (String moduleUID : toAdd) {
-          IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
-          Bundle b = new Bundle(module.getModuleUID(), module.getByteCodeLocator());
-
-          for (String dep : module.getExplicitlyDependOnModuleUIDs()) {
-            b.addDependency(dep);
-          }
-
-          myRuntimeEnvironment.add(b);
+          addModule(moduleUID);
         }
       }
     } finally {
       myToRemove.clear();
       myToAdd.clear();
     }
+  }
+
+  private void addModule(String moduleUID) {
+    IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
+    Bundle b = new Bundle(module.getModuleUID(), module.getByteCodeLocator());
+
+    for (String dep : module.getExplicitlyDependOnModuleUIDs()) {
+      b.addDependency(dep);
+    }
+
+    myRuntimeEnvironment.add(b);
   }
 
   @Dependency
