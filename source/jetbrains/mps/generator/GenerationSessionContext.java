@@ -306,6 +306,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       myDependOnModules.addAll(generatorModules);
       myDependOnModules.add(invocationModule);
 
+      updateClassPath();
+
       MPSModuleRepository.getInstance().addModule(this, myOwnOnwer);
     }
 

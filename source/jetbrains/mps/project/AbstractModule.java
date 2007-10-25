@@ -320,8 +320,10 @@ public abstract class AbstractModule implements IModule {
       result.add(classesGen.getAbsolutePath());
     }
 
-    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(getModuleDescriptor().classPathEntrys())) {
-      result.add(entry.getPath());
+    if (getModuleDescriptor() != null) {
+      for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(getModuleDescriptor().classPathEntrys())) {
+        result.add(entry.getPath());
+      }
     }
 
     return result;
@@ -336,8 +338,10 @@ public abstract class AbstractModule implements IModule {
       result.add(classesGen.getAbsolutePath());
     }
 
-    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(getModuleDescriptor().runtimeClassPathEntrys())) {
-      result.add(entry.getPath());
+    if (getModuleDescriptor() != null) {
+      for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(getModuleDescriptor().runtimeClassPathEntrys())) {
+        result.add(entry.getPath());
+      }
     }
 
     return result;
