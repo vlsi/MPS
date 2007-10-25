@@ -45,7 +45,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   private boolean myUseNewClassLoader = false;
 
-
   public static ClassLoaderManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(ClassLoaderManager.class);
   }

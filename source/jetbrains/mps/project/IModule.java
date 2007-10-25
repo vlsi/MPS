@@ -60,13 +60,15 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   @NotNull List<String> getClassPathItems();
 
+  @NotNull List<String> getRuntimeClassPathItems();
+
   File getClassesGen();
 
   Set<IModule> getVisibleModules();
 
   Set<IModule> getExplicitlyVisibleModules();
 
-  IClassPathItem getClasspath();
+  IClassPathItem getRuntimeClasspath();
 
   BytecodeLocator getByteCodeLocator();
 

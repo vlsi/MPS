@@ -368,7 +368,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
           if (namesapce.equals(editorPack) || namesapce.equals(actionsPack) || namesapce.equals(constraintsPack) ||
                   namesapce.equals(intentionsPack)) {
-            return getClasspath().getClass(fqName);
+            return getRuntimeClasspath().getClass(fqName);
           }
 
           return null;
@@ -949,15 +949,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return languages;
   }
 
-  @NotNull
-  public List<String> getClassPathItems() {
-    List<String> result = new ArrayList<String>();
-    result.addAll(super.getClassPathItems());
-    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(myLanguageDescriptor.classPathEntrys())) {
-      result.add(entry.getPath());
-    }
-    return result;
-  }
 
   public Set<ILoggableRefactoring> getRefactorings() {
     Set<ILoggableRefactoring> result = new HashSet<ILoggableRefactoring>();

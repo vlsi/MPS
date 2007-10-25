@@ -4,6 +4,7 @@ import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModuleReference;
+import jetbrains.mps.projectLanguage.structure.ClassPathEntry;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.ModelRootsUtil;
@@ -319,6 +320,26 @@ public abstract class AbstractModule implements IModule {
       result.add(classesGen.getAbsolutePath());
     }
 
+    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(getModuleDescriptor().classPathEntrys())) {
+      result.add(entry.getPath());
+    }
+
+    return result;
+  }
+
+  @NotNull
+  public List<String> getRuntimeClassPathItems() {
+    ArrayList<String> result = new ArrayList<String>();
+    File classesGen = getClassesGen();
+
+    if (classesGen != null && classesGen.exists()) {
+      result.add(classesGen.getAbsolutePath());
+    }
+
+    for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(getModuleDescriptor().runtimeClassPathEntrys())) {
+      result.add(entry.getPath());
+    }
+
     return result;
   }
 
@@ -345,7 +366,7 @@ public abstract class AbstractModule implements IModule {
    */
   public void updateClassPath() {
     CompositeClassPathItem result = new CompositeClassPathItem();
-    for (String s : getClassPathItems()) {
+    for (String s : getRuntimeClassPathItems()) {
       if (!new File(s).exists()) {
         LOG.error("Classpath item doesn't exist " + s);
         continue;
@@ -360,7 +381,7 @@ public abstract class AbstractModule implements IModule {
     myClassPathItem = result;
   }
 
-  public IClassPathItem getClasspath() {
+  public IClassPathItem getRuntimeClasspath() {
     return myClassPathItem;
   }
 

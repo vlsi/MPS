@@ -61,7 +61,7 @@ public class Solution extends AbstractModule {
 
     if ("sandbox".equalsIgnoreCase(mySolutionDescriptor.getName()) || mySolutionDescriptor.getName() == null) {
       mySolutionDescriptor.setExternallyVisible(false);
-    }
+    }    
   }
 
 
@@ -194,15 +194,5 @@ public class Solution extends AbstractModule {
     assert file != null;
     SolutionDescriptor descriptor = DescriptorsPersistence.loadSolutionDescriptor(file, model);
     setSolutionDescriptor(descriptor);
-  }
-
-  @NotNull
-  public List<String> getClassPathItems() {
-    List<String> result = new ArrayList<String>();
-    result.addAll(super.getClassPathItems());
-    for (ClassPathEntry entry : mySolutionDescriptor.getClassPathEntrys()) {
-      result.add(entry.getPath());
-    }
-    return result;
   }
 }
