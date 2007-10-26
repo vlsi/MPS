@@ -1,14 +1,15 @@
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.baseLanguage.textGen.JavaNodeTextGen;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
 
 /**
  * User: Dmitriev.
@@ -30,25 +31,25 @@ public class TextGenManager {
     return myInstance;
   }
 
-  public TextGenerationResult generateText(SNode node) {
+  public TextGenerationResult generateText(IOperationContext context, SNode node) {
     TextGenBuffer buffer = new TextGenBuffer();
     buffer.putUserObject(JavaNodeTextGen.PACKAGE_NAME, node.getModel().getLongName());
-    appendNodeText(buffer, node);
+    appendNodeText(context, buffer, node);
     return new TextGenerationResult(buffer.getText(), buffer.hasErrors());
   }
 
   public boolean canGenerateTextFor(SNode node) {
-    return !(loadNodeTextGen(node) instanceof DefaultTextGen);
+    return !(loadNodeTextGen(null, node) instanceof DefaultTextGen);
   }
 
-  protected void appendNodeText(TextGenBuffer buffer, SNode node) {
+  protected void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node) {
     if(node == null) {
       buffer.append("???");
       buffer.foundError();
       return;
     }
 
-    SNodeTextGen nodeTextGen = loadNodeTextGen(node);
+    SNodeTextGen nodeTextGen = loadNodeTextGen(context, node);
     LOG.assertLog(nodeTextGen != null, "Couldn't find text generator for " + node.getDebugText());
     
     assert nodeTextGen != null;
@@ -61,7 +62,7 @@ public class TextGenManager {
     }
   }
 
-  private SNodeTextGen loadNodeTextGen(SNode node) {
+  private SNodeTextGen loadNodeTextGen(IOperationContext context, SNode node) {
     ConceptDeclaration cd = (ConceptDeclaration) node.getConceptDeclarationAdapter();
     while (cd != SModelUtil_new.getBaseConcept()) {
       Language l = SModelUtil_new.getDeclaringLanguage(cd, GlobalScope.getInstance());
@@ -71,7 +72,9 @@ public class TextGenManager {
       String textgenClassname = packageName + ".textGen." + className + "_TextGen";
       try {                
         Class textgenClass = Class.forName(textgenClassname, true, ClassLoaderManager.getInstance().getClassLoaderFor(l));
-        return (SNodeTextGen) textgenClass.newInstance();
+        SNodeTextGen result = (SNodeTextGen) textgenClass.newInstance();
+        result.setContext(context);
+        return result;
       } catch (ClassNotFoundException e) {
         //that's ok
       } catch (InstantiationException e) {
@@ -81,7 +84,9 @@ public class TextGenManager {
       }
       cd = cd.getExtends();
     }
-    return new DefaultTextGen();
+    DefaultTextGen result = new DefaultTextGen();
+    result.setContext(context);
+    return result;
   }
 
   public static class TextGenerationResult {

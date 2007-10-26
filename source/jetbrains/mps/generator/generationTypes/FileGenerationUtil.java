@@ -22,7 +22,7 @@ public class FileGenerationUtil {
     GeneratorManager gm = context.getProject().getComponentSafe(GeneratorManager.class);
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
 
-    if (generateText(status, outputNodeContents)) {
+    if (generateText(context, status, outputNodeContents)) {
       int yesNo = JOptionPane.showConfirmDialog(context.getMainFrame(), "Generated code isn't compilable." + "" +
               "Are you sure that you want generate file from it?", "Generated Code Isn't Compilable", JOptionPane.YES_NO_OPTION);
 
@@ -37,11 +37,11 @@ public class FileGenerationUtil {
     cleanUp(context, generatedFiles, directories);
   }
 
-  public static boolean generateText(GenerationStatus status, Map<SNode, String> outputNodeContents) {
+  public static boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {
     boolean hasErrors = false;
     for (SNode outputNode : status.getOutputModel().getRoots()) {
       try {
-        TextGenerationUtil.TextGenerationResult result = TextGenerationUtil.generateText(outputNode);
+        TextGenerationUtil.TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
         hasErrors |= result.hasErrors();
         outputNodeContents.put(outputNode, result.getText());
       } finally {

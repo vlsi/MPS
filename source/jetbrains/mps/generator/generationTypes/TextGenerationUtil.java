@@ -1,9 +1,6 @@
 package jetbrains.mps.generator.generationTypes;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.textPresentation.TextPresentationManager;
 import jetbrains.mps.compiler.JavaCompiler;
@@ -13,11 +10,11 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Interface;
 
 public class TextGenerationUtil {
-  public static TextGenerationResult generateText(SNode node) {
+  public static TextGenerationResult generateText(IOperationContext context, SNode node) {
     String nodeText;
     boolean containsErrors = false;
     if (TextGenManager.instance().canGenerateTextFor(node)) {
-      TextGenManager.TextGenerationResult generationResult = TextGenManager.instance().generateText(node);
+      TextGenManager.TextGenerationResult generationResult = TextGenManager.instance().generateText(context, node);
       containsErrors = generationResult.hasErrors();
       nodeText = generationResult.getText();
     } else {
@@ -26,13 +23,13 @@ public class TextGenerationUtil {
     return new TextGenerationResult(nodeText, containsErrors);
   }
 
-  public static JavaCompiler compile(SModel targetModel, IAdaptiveProgressMonitor progress) {
+  public static JavaCompiler compile(IOperationContext context, SModel targetModel, IAdaptiveProgressMonitor progress) {
     JavaCompiler compiler = new JavaCompiler();
 
     for (SNode root : targetModel.getRoots()) {
       INodeAdapter outputNode = BaseAdapter.fromNode(root);
       if (outputNode instanceof ClassConcept || outputNode instanceof Interface) {
-        compiler.addSource(generateText(root).getText(),
+        compiler.addSource(generateText(context, root).getText(),
                 JavaNameUtil.packageNameForModelUID(targetModel.getUID()) + "." + root.getName());
       }
     }
