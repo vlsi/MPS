@@ -2119,24 +2119,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void showIntentionsMenu() {
+    EditorCell cell = getSelectedCell();
+
     IntentionsMenu menu = new IntentionsMenu();
 
-    EditorCell cell = getSelectedCell();
-    final SNode node = cell.getSNode();
-    final IOperationContext context = getOperationContext();
-
-    for (final Intention i : myAvailableIntentions) {
-      menu.add(new AbstractAction(i.getDescription(node, context)) {
-        public void actionPerformed(ActionEvent e) {
-          CommandProcessor.instance().executeCommand(new Runnable() {
-            public void run() {
-              i.execute(node,context);
-            }
-          });
-        }
-      });
-    }
-
+    menu.init(cell.getSNode(),getOperationContext(),myAvailableIntentions);
 
     menu.addPopupMenuListener(new PopupMenuListener() {
       public void popupMenuWillBecomeVisible(PopupMenuEvent e) {

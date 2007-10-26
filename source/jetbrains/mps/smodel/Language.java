@@ -702,6 +702,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     if (scriptsModelDescriptor != null) result.add(scriptsModelDescriptor);
     SModelDescriptor documentationModelDescriptor = getDocumentationModelDescriptor();
     if (documentationModelDescriptor != null) result.add(documentationModelDescriptor);
+    SModelDescriptor intentionsModelDescriptor = getIntentionsModelDescriptor();
+    if (intentionsModelDescriptor != null) result.add(intentionsModelDescriptor);
     return result;
   }
 
@@ -936,6 +938,36 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return helginsModelDescriptor;
   }
 
+  public SModelDescriptor createIntentionsModel() {
+    ModelRoot modelRoot = null;
+    List<ModelRoot> modelRoots = this.getModelRoots();
+    for (ModelRoot mRoot : modelRoots) {
+      IModelRootManager rootManager = ModelRootsUtil.getManagerFor(mRoot);
+      if (rootManager instanceof DefaultModelRootManager) {
+        modelRoot = mRoot;
+        break;
+      }
+    }
+
+    assert modelRoot != null;
+
+    SModelDescriptor intentionsModelDescriptor = this.createModel(new SModelUID(this.getModuleUID(), "intentions", ""), modelRoot);
+    SModel intentionsModel = intentionsModelDescriptor.getSModel();
+    intentionsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
+    intentionsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getSModelLanguage());
+    intentionsModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getIntentionsLanguage());
+    intentionsModelDescriptor.save();
+
+    LanguageDescriptor languageDescriptor = this.getLanguageDescriptor();
+    Model _model = Model.newInstance(languageDescriptor.getModel());
+    _model.setName(intentionsModel.getUID().toString());
+    languageDescriptor.setIntentionsModel(_model);
+    this.setLanguageDescriptor(languageDescriptor);
+    this.save();
+
+    return intentionsModelDescriptor;
+  }
+
   private class LanguageEventTranslator extends CommandEventTranslator {
     public void languageChanged() {
       markCurrentCommandsDirty();
@@ -1043,6 +1075,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     if (modelDescriptor == language.getDocumentationModelDescriptor()) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.DOCUMENTATION);
     }
+    if (modelDescriptor == language.getIntentionsModelDescriptor()) {
+         return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.INTENTIONS);
+       }
+
 
     List<SModelDescriptor> acccessoryModels = language.getAccessoryModels();
     if (acccessoryModels.contains(modelDescriptor)) {
@@ -1058,7 +1094,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   public static class LanguageAspectStatus implements IStatus {
     public static enum AspectKind {
-      STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, HELGINS_TYPESYSTEM, ACCESSORY, SCRIPTS, DOCUMENTATION, NONE
+      STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, HELGINS_TYPESYSTEM, ACCESSORY, SCRIPTS, DOCUMENTATION, INTENTIONS, NONE
     }
 
     private Language myLanguage;
