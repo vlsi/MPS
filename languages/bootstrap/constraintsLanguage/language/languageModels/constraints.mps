@@ -7,7 +7,7 @@
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <maxImportIndex value="17" />
+  <maxImportIndex value="18" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel.constraints@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
@@ -23,6 +23,7 @@
   <import index="15" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
   <import index="16" modelUID="java.io@java_stub" version="-1" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
+  <import index="18" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1177681174380">
     <property name="package" value="Behavior" />
     <link role="concept" targetNodeId="1.1177673300966" />
@@ -188,6 +189,40 @@
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1181725315293">
               <property name="value" value="call_" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1193402369204">
+      <property name="name" value="getSuperCallerMethodName" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193402369205">
+        <link role="classifier" targetNodeId="10.~String" resolveInfo="String" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193402369206">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193402369207">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1193402369208">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1193402369209">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1193402369210">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1193402369211">
+                  <link role="baseMethodDeclaration" targetNodeId="9.~SNode.getId():java.lang.String" resolveInfo="getId" />
+                  <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1193402369212">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1193402369213" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193402369214">
+                  <property name="value" value="_" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1193402369215">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1193402374406">
+                  <link role="property" targetNodeId="12.1083152972672" resolveInfo="name" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1193402369217" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193402369218">
+              <property name="value" value="callSuper_" />
             </node>
           </node>
         </node>

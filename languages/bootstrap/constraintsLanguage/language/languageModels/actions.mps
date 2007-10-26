@@ -20,6 +20,9 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart" id="1177673390932">
         <link role="conceptToRemove" targetNodeId="2.1070475354124" />
       </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart" id="1193401210854">
+        <link role="conceptToRemove" targetNodeId="2.1073063089578" resolveInfo="SuperMethodCall" />
+      </node>
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1177671835252">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177671835253">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177671843145">
@@ -40,6 +43,9 @@
       </node>
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1180137890394">
         <link role="concept" targetNodeId="1.1177671741405" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1193401055012">
+        <link role="concept" targetNodeId="1.1193400262258" resolveInfo="SuperNodeExpression" />
       </node>
     </node>
   </node>

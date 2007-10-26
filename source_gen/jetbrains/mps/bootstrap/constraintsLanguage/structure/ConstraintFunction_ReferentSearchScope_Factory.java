@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConstraintFunction_ReferentSearchScope_Factory extends ConstraintFunction_ReferentSearchScope_AbstractBase {
+  public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory";
 
   public  ConstraintFunction_ReferentSearchScope_Factory(SNode node) {
     super(node);
   }
 
   public static ConstraintFunction_ReferentSearchScope_Factory newInstance(SModel sm, boolean init) {
-    return (ConstraintFunction_ReferentSearchScope_Factory)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.ConstraintFunction_ReferentSearchScope_Factory", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunction_ReferentSearchScope_Factory)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_ReferentSearchScope_Factory", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ConstraintFunction_ReferentSearchScope_Factory newInstance(SModel sm) {
     return ConstraintFunction_ReferentSearchScope_Factory.newInstance(sm, false);
   }
+
 }

@@ -14,22 +14,26 @@ public class typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule im
   public  typeof_ConstraintFunctionParameter_oldReferentNode_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     SNode targetConcept = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeReferentConstraint", false, false), "applicableLink", false), "target", false);
     if((targetConcept == null)) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_6().createNode(), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_6().createNode(), argument, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1178176661368");
     } else
     {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_7().createNode(targetConcept), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_7().createNode(targetConcept), argument, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1178176661374");
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunctionParameter_oldReferentNode";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

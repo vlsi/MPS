@@ -120,7 +120,12 @@ public final class BehaviorManager {
     return method;
   }
 
+
   public<T> T invoke(Class<T> returnType, SNode node, String methodName, List<Class> parametersTypes, Object... parameters) {
+    return invoke(returnType, node, methodName, parametersTypes, false, parameters);
+  }
+
+  public<T> T invoke(Class<T> returnType, SNode node, String methodName, List<Class> parametersTypes, boolean superCall, Object... parameters) {
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
 
     Method method = null;
@@ -129,7 +134,13 @@ public final class BehaviorManager {
     paramTypes.addAll(parametersTypes);
     Class[] parameterTypeArray = paramTypes.toArray(new Class[0]);
 
-    for (AbstractConceptDeclaration conceptDeclaration : SModelUtil_new.getConceptAndSuperConcepts(concept)) {
+    List<AbstractConceptDeclaration> superConcepts = SModelUtil_new.getConceptAndSuperConcepts(concept);
+
+    if (superCall) {
+      superConcepts.remove(concept);
+    }
+
+    for (AbstractConceptDeclaration conceptDeclaration : superConcepts) {
       method = getMethod(conceptDeclaration, methodName, parameterTypeArray);
       if (method != null) {
         break;

@@ -24,9 +24,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
-import java.util.List;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -35,6 +32,9 @@ import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
+import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
 
 public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
 
@@ -891,32 +891,6 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class ConceptMethodDeclaration_component_cellMenu implements ISubstituteInfoPart {
-
-    /* package */ConceptMethodDeclaration_Visibility myComponent;
-
-    public  ConceptMethodDeclaration_component_cellMenu() {
-      this.myComponent = new ConceptMethodDeclaration_Visibility();
-    }
-
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
-  public static class ConceptMethodDeclaration_component_cellMenu1 implements ISubstituteInfoPart {
-
-    /* package */ConceptMethodDeclaration_Visibility myComponent;
-
-    public  ConceptMethodDeclaration_component_cellMenu1() {
-      this.myComponent = new ConceptMethodDeclaration_Visibility();
-    }
-
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
   public static class _Inline6 extends AbstractCellProvider {
 
     public  _Inline6() {
@@ -1087,6 +1061,32 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
       ConceptMethodDeclaration_Editor._RefNodeListHandler6.setupLabel_ConstantCell5(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
+    }
+
+}
+  public static class ConceptMethodDeclaration_component_cellMenu implements ISubstituteInfoPart {
+
+    /* package */ConceptMethodDeclaration_Visibility myComponent;
+
+    public  ConceptMethodDeclaration_component_cellMenu() {
+      this.myComponent = new ConceptMethodDeclaration_Visibility();
+    }
+
+    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+
+}
+  public static class ConceptMethodDeclaration_component_cellMenu1 implements ISubstituteInfoPart {
+
+    /* package */ConceptMethodDeclaration_Visibility myComponent;
+
+    public  ConceptMethodDeclaration_component_cellMenu1() {
+      this.myComponent = new ConceptMethodDeclaration_Visibility();
+    }
+
+    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
     }
 
 }

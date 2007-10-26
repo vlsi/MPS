@@ -508,7 +508,13 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1183618936210(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return ConceptMethodDeclaration_Behavior.call_getCallerMethodName_1181725268250(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false));
+    SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
+    if(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.constraintsLanguage.structure.SuperNodeExpression")) {
+      return ConceptMethodDeclaration_Behavior.call_getSuperCallerMethodName_1193402369204(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false));
+    } else
+    {
+      return ConceptMethodDeclaration_Behavior.call_getCallerMethodName_1181725268250(SLinkOperations.getTarget(node, "conceptMethodDeclaration", false));
+    }
   }
 
   public static Object propertyMacro_GetPropertyValue_1180028472291(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

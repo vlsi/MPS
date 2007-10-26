@@ -12,8 +12,10 @@ public class QueriesUtil {
     SNode regiserSelfMethod = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(clazz, "method", true), new zPredicate(null, null)));
     return SLinkOperations.getTarget(regiserSelfMethod, "body", true);
   }
+
   public static SNode get_unRegisterSelf_body(SNode clazz) {
     SNode unRegiserSelfMethod = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(clazz, "method", true), new zPredicate1(null, null)));
     return SLinkOperations.getTarget(unRegiserSelfMethod, "body", true);
   }
+
 }

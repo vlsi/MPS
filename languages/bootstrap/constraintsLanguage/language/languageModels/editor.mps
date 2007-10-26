@@ -1728,5 +1728,16 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1193400304721">
+    <property name="package" value="Behavior" />
+    <link role="conceptDeclaration" targetNodeId="1.1193400262258" resolveInfo="SuperNodeExpression" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1193400305817">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1193400305818">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <property name="text" value="super" />
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -9,15 +9,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ThisNodeExpression extends Expression {
+  public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression";
 
   public  ThisNodeExpression(SNode node) {
     super(node);
   }
 
   public static ThisNodeExpression newInstance(SModel sm, boolean init) {
-    return (ThisNodeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.ThisNodeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ThisNodeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static ThisNodeExpression newInstance(SModel sm) {
     return ThisNodeExpression.newInstance(sm, false);
   }
+
 }
