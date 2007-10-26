@@ -64,55 +64,100 @@ public class ChildSubstituteActionsHelper {
 
   private static List<INodeSubstituteAction> createActions_internal(SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
     List<INodeSubstituteAction> resultActions = new ArrayList<INodeSubstituteAction>();
-      if (childConcept == null) {
-        return resultActions;
-      }
-      IScope scope = context.getScope();
-      Language primaryLanguage = SModelUtil_new.getDeclaringLanguage(childConcept, scope);
-      if (primaryLanguage == null) {
-        LOG.error("Couldn't build actions : couldn't get declaring language for concept " + childConcept.getDebugText());
-        return resultActions;
-      }
-
-      // add actions from 'primary' language
-      List<NodeSubstituteActionsBuilder> primaryBuilders = getActionBuilders(parentNode, primaryLanguage, childConcept, context);
-      if (primaryBuilders.isEmpty()) {
-        // if 'primary' language hasn't defined actions for that target - create 'default' actions
-        resultActions = createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context);
-      } else {
-        if (!containsLegacyQueries(primaryBuilders) && !containsRemoveDefaults(primaryBuilders)) {
-          // if 'primary' language doesn't contain legacy queries, than default actions will be created by default
-          resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context));
-        }
-
-        for (NodeSubstituteActionsBuilder builder : primaryBuilders) {
-          resultActions.addAll(invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context));
-        }
-      }
-
-      // search 'extending' builders
-      List<NodeSubstituteActionsBuilder> extendedBuilders = new ArrayList<NodeSubstituteActionsBuilder>();
-      List<Language> languages = parentNode.getModel().getLanguages(scope);
-      for (Language language : languages) {
-        if (language == primaryLanguage) {
-          continue;
-        }
-        extendedBuilders.addAll(getActionBuilders(parentNode, language, childConcept, context));
-      }
-
-      // for each builder create actions and apply all filters
-      for (NodeSubstituteActionsBuilder builder : extendedBuilders) {
-        List<INodeSubstituteAction> addActions = invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context);
-        resultActions.addAll(addActions);
-      }
-
-      // apply all filters
-      primaryBuilders.addAll(extendedBuilders);
-      for (NodeSubstituteActionsBuilder builder : primaryBuilders) {
-        resultActions = applyActionFilter(builder, resultActions, parentNode, currentChild, childConcept.getNode(), context);
-      }
-
+    if (childConcept == null) {
       return resultActions;
+    }
+    IScope scope = context.getScope();
+    Language primaryLanguage = SModelUtil_new.getDeclaringLanguage(childConcept, scope);
+    if (primaryLanguage == null) {
+      LOG.error("Couldn't build actions : couldn't get declaring language for concept " + childConcept.getDebugText());
+      return resultActions;
+    }
+
+    List<NodeSubstituteActionsBuilder> allBuilders = new ArrayList<NodeSubstituteActionsBuilder>();
+
+    // add actions from 'primary' language
+    List<NodeSubstituteActionsBuilder> primaryBuilders = getActionsBuilders(parentNode, primaryLanguage, childConcept, context);
+    allBuilders.addAll(primaryBuilders);
+
+    for (NodeSubstituteActionsBuilder builder : primaryBuilders) {
+      resultActions.addAll(invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context));
+    }
+
+    // need create default actions?
+    if (!containsLegacyQueries(primaryBuilders) && !containsRemoveDefaults(primaryBuilders)) {
+      // yes, if 'primary' language
+      // doesn't define actions for that target, or it does but
+      // those actions don't ban 'default actions' explicitly and don't contain legacy queries
+
+      // action builders might be defined for sub-concepts of childConcept (i.e. link target)
+      // if so, we have to
+      // add those actions to result and
+      // exculde those sub-concept from 'applicable concepts' to avoid duplication
+      List<NodeSubstituteActionsBuilder> buildersFromSubconcepts = new ArrayList<NodeSubstituteActionsBuilder>();
+      final List<AbstractConceptDeclaration> excludedConcepts = new ArrayList<AbstractConceptDeclaration>();
+      List<Language> languages = parentNode.getModel().getLanguages(scope);
+      for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(languages)) {
+        AbstractConceptDeclaration applicableConcept = actionsBuilder.getApplicableConcept();
+        if (applicableConcept == null) continue;
+        if (applicableConcept == childConcept) continue;
+        // applicable, if builder's applicable-concept is sub-concept of the childConcept
+        if (SModelUtil_new.isAssignableConcept(applicableConcept, childConcept)) {
+          excludedConcepts.add(applicableConcept);
+          // check precondition tricking builder by passing builder's own applicable-concept as child-concept
+          if (satisfiesPrecondition(actionsBuilder, parentNode, applicableConcept, context)) {
+            buildersFromSubconcepts.add(actionsBuilder);
+          }
+        }
+      }
+      allBuilders.addAll(buildersFromSubconcepts);
+      // create default action 1
+      for (NodeSubstituteActionsBuilder builder : buildersFromSubconcepts) {
+        List<INodeSubstituteAction> actions = invokeActionFactory(builder, parentNode, currentChild, builder.getApplicableConcept(), childSetter, context);
+        resultActions.addAll(actions);
+      }
+
+      Condition<SNode> filter = TRUE_CONDITION;
+      if (excludedConcepts.size() > 0) {
+        filter = new Condition<SNode>() {
+          public boolean met(SNode node) {
+            for (AbstractConceptDeclaration excluded : excludedConcepts) {
+              if (SModelUtil_new.isAssignableConcept((AbstractConceptDeclaration) BaseAdapter.fromNode(node), excluded)) {
+                return false;
+              }
+            }
+            return true;
+          }
+        };
+      }
+
+      // create default action 2
+      resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, filter, context));
+    }
+
+    // search 'extending' builders
+    List<NodeSubstituteActionsBuilder> extendedBuilders = new ArrayList<NodeSubstituteActionsBuilder>();
+    List<Language> languages = parentNode.getModel().getLanguages(scope);
+    for (Language language : languages) {
+      if (language == primaryLanguage) {
+        continue;
+      }
+      extendedBuilders.addAll(getActionsBuilders(parentNode, language, childConcept, context));
+    }
+    allBuilders.addAll(extendedBuilders);
+
+    // create 'extended' actions
+    for (NodeSubstituteActionsBuilder builder : extendedBuilders) {
+      List<INodeSubstituteAction> addActions = invokeActionFactory(builder, parentNode, currentChild, childConcept, childSetter, context);
+      resultActions.addAll(addActions);
+    }
+
+    // apply all filters
+    for (NodeSubstituteActionsBuilder builder : allBuilders) {
+      resultActions = applyActionFilter(builder, resultActions, parentNode, currentChild, childConcept.getNode(), context);
+    }
+
+    return resultActions;
   }
 
   private static boolean containsLegacyQueries(List<NodeSubstituteActionsBuilder> list) {
@@ -151,7 +196,7 @@ public class ChildSubstituteActionsHelper {
     ISearchScope conceptsSearchScope = SModelSearchUtil_new.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, scope);
     List<SNode> applicableConcepts = conceptsSearchScope.getNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
-        return isDefaultSubstitutableConcept((ConceptDeclaration) BaseAdapter.fromNode(object), childConcept, scope) &&
+        return isDefaultSubstitutableConcept((AbstractConceptDeclaration) BaseAdapter.fromNode(object), childConcept, scope) &&
                 filter.met(object);
       }
     });
@@ -270,29 +315,61 @@ public class ChildSubstituteActionsHelper {
     return sb.toString();
   }
 
-  private static List<NodeSubstituteActionsBuilder> getActionBuilders(SNode parentNode, Language language, AbstractConceptDeclaration childConcept, IOperationContext context) {
-    List<NodeSubstituteActionsBuilder> actionsBuilders = new ArrayList<NodeSubstituteActionsBuilder>();
+  private static List<NodeSubstituteActionsBuilder> getActionsBuilders(SNode parentNode, Language language, AbstractConceptDeclaration childConcept, IOperationContext context) {
+    List<NodeSubstituteActionsBuilder> result = new ArrayList<NodeSubstituteActionsBuilder>();
+//    SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
+//    if (actionsModelDescr != null) {
+//      // find appropriate actions builder
+//      List<INodeAdapter> roots = actionsModelDescr.getSModel().getRootsAdapters();
+//      for (INodeAdapter root : roots) {
+//        if (root instanceof NodeSubstituteActions) {
+//          Iterator<NodeSubstituteActionsBuilder> iterator = ((NodeSubstituteActions) root).actionsBuilders();
+//          while (iterator.hasNext()) {
+//            NodeSubstituteActionsBuilder actionsBuilder = iterator.next();
+//            // is applicable ?
+//            // the aggregation link target (child concept) should be sub-concept of the 'applicable concept'
+//            AbstractConceptDeclaration applicableChildConcept = actionsBuilder.getApplicableConcept();
+//            if (SModelUtil_new.isAssignableConcept(childConcept, applicableChildConcept) &&
+//                    satisfiesPrecondition(actionsBuilder, parentNode, childConcept, context)) {
+//              result.add(actionsBuilder);
+//            }
+//          }
+//        }
+//      }
+//    }
+
+    for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(language)) {
+      // is applicable ?
+      // the aggregation link target (child concept) should be sub-concept of the 'applicable concept'
+      AbstractConceptDeclaration applicableChildConcept = actionsBuilder.getApplicableConcept();
+      if (SModelUtil_new.isAssignableConcept(childConcept, applicableChildConcept) &&
+              satisfiesPrecondition(actionsBuilder, parentNode, childConcept, context)) {
+        result.add(actionsBuilder);
+      }
+    }
+    return result;
+  }
+
+  private static List<NodeSubstituteActionsBuilder> getAllActionsBuilders(Language language) {
+    List<NodeSubstituteActionsBuilder> result = new ArrayList<NodeSubstituteActionsBuilder>();
     SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
     if (actionsModelDescr != null) {
-      // find appropriate actions builder
       List<INodeAdapter> roots = actionsModelDescr.getSModel().getRootsAdapters();
       for (INodeAdapter root : roots) {
         if (root instanceof NodeSubstituteActions) {
-          Iterator<NodeSubstituteActionsBuilder> iterator = ((NodeSubstituteActions) root).actionsBuilders();
-          while (iterator.hasNext()) {
-            NodeSubstituteActionsBuilder actionsBuilder = iterator.next();
-            // is applicable ?
-            // the aggregation link target (child concept) should be sub-concept of the 'applicable concept'
-            AbstractConceptDeclaration applicableChildConcept = actionsBuilder.getApplicableConcept();
-            if (SModelUtil_new.isAssignableConcept(childConcept, applicableChildConcept) &&
-                    satisfiesPrecondition(actionsBuilder, parentNode, childConcept, context)) {
-              actionsBuilders.add(actionsBuilder);
-            }
-          }
+          result.addAll(((NodeSubstituteActions) root).getActionsBuilders());
         }
       }
     }
-    return actionsBuilders;
+    return result;
+  }
+
+  private static List<NodeSubstituteActionsBuilder> getAllActionsBuilders(List<Language> languages) {
+    List<NodeSubstituteActionsBuilder> result = new ArrayList<NodeSubstituteActionsBuilder>();
+    for (Language language : languages) {
+      result.addAll(getAllActionsBuilders(language));
+    }
+    return result;
   }
 
   // --------------------------------
@@ -369,7 +446,7 @@ public class ChildSubstituteActionsHelper {
 
       for (RemoveByConditionPart part : removesByCondition) {
         String methodName = "removeActionsByCondition_" + part.getId();
-        Object[] args = { actions.iterator(), parentNode, currentChild, childConcept, context };
+        Object[] args = {actions.iterator(), parentNode, currentChild, childConcept, context};
         try {
           QueryMethodGenerated.invoke(methodName, args, substituteActionsBuilder.getModel());
         } catch (Exception e) {
