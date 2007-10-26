@@ -1,14 +1,14 @@
-package jetbrains.mps.reloading;
+package jetbrains.mps.util;
 
 import jetbrains.mps.util.NodeNameUtil;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class AbstractMPSClassLoader extends ClassLoader {
+public abstract class AbstractClassLoader extends ClassLoader {
   private Map<String, Class> myCache = new HashMap<String, Class>();
 
-  public AbstractMPSClassLoader(ClassLoader classLoader) {
+  public AbstractClassLoader(ClassLoader classLoader) {
     super(classLoader);
   }
 

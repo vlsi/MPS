@@ -1,25 +1,20 @@
 package jetbrains.mps.compiler;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.AbstractMPSClassLoader;
+import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import org.eclipse.jdt.internal.compiler.*;
 import org.eclipse.jdt.internal.compiler.Compiler;
 import org.eclipse.jdt.internal.compiler.batch.CompilationUnit;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
-import org.eclipse.jdt.internal.compiler.classfmt.ClassFileReader;
-import org.eclipse.jdt.internal.compiler.classfmt.ClassFormatException;
-import org.eclipse.jdt.internal.compiler.env.INameEnvironment;
 import org.eclipse.jdt.internal.compiler.env.NameEnvironmentAnswer;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import org.eclipse.jdt.internal.compiler.problem.DefaultProblemFactory;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.*;
 
 public class JavaCompiler {
@@ -103,7 +98,7 @@ public class JavaCompiler {
     return bytes;
   }
 
-  private class MapClassLoader extends AbstractMPSClassLoader {
+  private class MapClassLoader extends AbstractClassLoader {
 
     private MapClassLoader(ClassLoader parent) {
       super(parent);
