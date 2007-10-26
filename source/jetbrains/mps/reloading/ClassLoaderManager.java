@@ -45,14 +45,10 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private Set<String> myToRemove = new LinkedHashSet<String>();
   private Set<String> myToAdd = new LinkedHashSet<String>();
 
-  private boolean myUseNewClassLoader = true;
-
   public static ClassLoaderManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(ClassLoaderManager.class);
   }
 
-  private ClassLoader myClassLoader = null;
-  private boolean myUseSystemClassLoader;
   private IClassPathItem myRTJar = null;
 
   public ClassLoaderManager() {
@@ -153,36 +149,8 @@ public class ClassLoaderManager implements IComponentLifecycle {
     myModuleRepository = moduleRepository;
   }
 
-  public void setUseSystemClassLoader(boolean useSystemClassLoader) {
-    myUseSystemClassLoader = useSystemClassLoader;
-  }
-
-  public boolean isUseSystemClassLoader() {
-    return myUseSystemClassLoader;
-  }
-
-  /**
-   * @deprecated User getClassLoader(IModule) instead
-   **/
-  public ClassLoader getClassLoader() {
-    if (myUseSystemClassLoader) return getClass().getClassLoader();
-
-    if (myClassLoader == null) {
-      return ClassLoader.getSystemClassLoader();
-    }
-
-    return myClassLoader;
-  }
-
   public void updateClassPathIfTimestampChanged() {
-    if (myUseSystemClassLoader) return;
-
-    long currentTimestamp = ((MPSClassLoader) myClassLoader).getClassPathItem().getTimestamp();
-    long oldTimestamp = ((MPSClassLoader) myClassLoader).getTimestamp();
-
-    if (currentTimestamp > oldTimestamp) {
-      updateClassPath();
-    } 
+    updateClassPath();
   }
 
   private void cacheOldItems(CompositeClassPathItem ci, boolean cacheFiles) {
@@ -211,8 +179,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public void updateClassPath(IModule changeModule) {
-    if (myUseSystemClassLoader) return;
-
     LOG.debug("Updating class path");
 
     if (myItems != null) {
@@ -267,8 +233,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
     for (String s : classPath) {
       addClassPathItem(s, useTimestamps);
     }
-
-    myClassLoader = new MPSClassLoader(myItems);
 
     if (changeModule == null) {
       myRuntimeEnvironment.reloadAll();
@@ -395,23 +359,19 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public ClassLoader getClassLoaderFor(IModule module) {
-    if (myUseNewClassLoader) {
-      Bundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
+    Bundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
 
-      if (bundle == null) {
-        myRuntimeEnvironment.get(module.getModuleUID());
-      }
-
-      assert bundle != null : "Can't find a bundle for a module " + module.getModuleUID();
-
-      if (!bundle.isInitialized()) {
-        myRuntimeEnvironment.init(bundle);
-      }
-
-      return bundle.getClassLoader();
-    } else {
-      return getClassLoader();
+    if (bundle == null) {
+      myRuntimeEnvironment.get(module.getModuleUID());
     }
+
+    assert bundle != null : "Can't find a bundle for a module " + module.getModuleUID();
+
+    if (!bundle.isInitialized()) {
+      myRuntimeEnvironment.init(bundle);
+    }
+
+    return bundle.getClassLoader();
   }
 
   public void addReloadHandler(IReloadHandler handler) {
