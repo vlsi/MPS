@@ -9,6 +9,7 @@ import jetbrains.mps.ide.toolsPane.ITool;
 import java.awt.*;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -21,6 +22,11 @@ public abstract class StandaloneMPSContext implements IOperationContext {
   @NotNull
   public Frame getMainFrame() {
     return getComponent(AbstractProjectFrame.class).getMainFrame();
+  }
+
+  @Nullable
+  public ClassLoader getContextClassLoader() {
+    return null;
   }
 
   public <T> T getComponent(@NotNull Class<T> clazz) {

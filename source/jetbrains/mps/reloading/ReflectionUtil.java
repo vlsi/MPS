@@ -8,34 +8,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 public final class ReflectionUtil {
-
   private ReflectionUtil() {
-  }
-
-  @Deprecated
-  private static Class forName(String className) {
-    return forName(ClassLoaderManager.getInstance().getClassLoader(), className);
-  }
-
-  @Deprecated
-  public static Class forName(SNode classNode) {
-    String dottedName = classNode.getName();
-    String dollarName = "null";
-    if (dottedName != null) {
-      dollarName = dottedName.replaceAll("\\.", "\\$");
-    }
-    return forName(JavaNameUtil.fqClassName(classNode, dollarName));
-  }
-
-
-  @Deprecated
-  public static Method getMethod(SNode classNode, String methodName, Class[] parameterTypes) {
-    Class aClass = forName(classNode);
-    try {
-      return aClass.getMethod(methodName, parameterTypes);
-    } catch (NoSuchMethodException e) {
-      throw new RuntimeException();
-    }
   }
 
   private static Class forName(ClassLoader classLoader, String className) {
@@ -78,9 +51,9 @@ public final class ReflectionUtil {
     }
   }
 
-  public static Enum getEnum(SNode classNode, String enumConstantName) {
+  public static Enum getEnum(ClassLoader cl, SNode classNode, String enumConstantName) {
     Enum result = null;
-    Class aClass = forName(classNode);
+    Class aClass = forName(cl, classNode);
     Enum[] enumConstants = (Enum[]) aClass.getEnumConstants();
     for (Enum enumConstant : enumConstants) {
       String name = enumConstant.name();
@@ -92,8 +65,8 @@ public final class ReflectionUtil {
     return result;
   }
 
-  public static Object getConstant(SNode classNode, String constantName) {
-    Class aClass = forName(classNode);
+  public static Object getConstant(ClassLoader cl, SNode classNode, String constantName) {
+    Class aClass = forName(cl, classNode);
     Field field;
     try {
       field = aClass.getField(constantName);
