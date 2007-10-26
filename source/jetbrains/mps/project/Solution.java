@@ -117,6 +117,8 @@ public class Solution extends AbstractModule {
 
     updateClassPath();
 
+    ReloadUtils.reloadAll(true, true, false);
+
     myEventTranslator.solutionChanged();
 
     if (!before.equals(after) || mySolutionDescriptor.getClassPathEntrysCount() > 0) {

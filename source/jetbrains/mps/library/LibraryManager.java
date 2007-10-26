@@ -115,6 +115,10 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
     }
   }
 
+  public <M extends IModule> Set<M> getGlobalModules(Class<M> cls) {
+    return new HashSet<M>(MPSModuleRepository.getInstance().getModules(myOwner, cls));
+  }
+
   public IPreferencesPage createPreferencesPage() {
     return new LibraryManagerPreferences(this);
   }
