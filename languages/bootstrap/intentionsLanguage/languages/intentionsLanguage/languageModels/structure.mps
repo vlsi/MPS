@@ -12,7 +12,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1192794744107">
     <property name="rootable" value="true" />
     <property name="name" value="IntentionDeclaration" />
+    <property name="iconPath" value="${mps_home}\source\jetbrains\mps\intentions\icons\intentionBulb.png" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1193396901469">
+      <property name="name" value="isErrorIntention" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1192796383601">
       <property name="role" value="forConcept" />
       <property name="sourceCardinality" value="1" />

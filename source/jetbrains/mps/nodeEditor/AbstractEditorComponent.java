@@ -21,6 +21,7 @@ import jetbrains.mps.ide.ui.CellSpeedSearch;
 import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
+import jetbrains.mps.intentions.IntentionsMenu;
 import jetbrains.mps.intentions.icons.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
@@ -40,6 +41,8 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
+import javax.swing.event.PopupMenuListener;
+import javax.swing.event.PopupMenuEvent;
 import javax.swing.border.LineBorder;
 import java.awt.*;
 import java.awt.event.*;
@@ -121,7 +124,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
   private CellSpeedSearch myCellSpeedSearch;
   private AbstractAction myApplyIntentionAction;
-  private boolean paintIntentionIcon = true;
+  private boolean myPaintIntentionIcon = true;
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -1500,7 +1503,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void paintLightBulb(Graphics g) {
-    if (paintIntentionIcon == false) return;
+    if (myPaintIntentionIcon == false) return;
 
     EditorCell selectedCell = getSelectedCell();
     selectedCell = getBigCellForNode(selectedCell.getSNode());
@@ -2116,7 +2119,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void showIntentionsMenu() {
-    JPopupMenu menu = new JPopupMenu();
+    IntentionsMenu menu = new IntentionsMenu();
 
     EditorCell cell = getSelectedCell();
     final SNode node = cell.getSNode();
@@ -2128,21 +2131,33 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           CommandProcessor.instance().executeCommand(new Runnable() {
             public void run() {
               i.execute(node,context);
-              setPaintIntention(true);
             }
           });
         }
       });
     }
 
-    setPaintIntention(false);
+
+    menu.addPopupMenuListener(new PopupMenuListener() {
+      public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
+        setPaintIntention(false);
+      }
+
+      public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
+        setPaintIntention(true);
+      }
+
+      public void popupMenuCanceled(PopupMenuEvent e) {
+        setPaintIntention(true);
+      }
+    });
 
     menu.show(this, cell.getX(), cell.getY());
   }
 
   private void setPaintIntention(boolean value){
-    paintIntentionIcon = value;
-    invalidate();
+    myPaintIntentionIcon = value;
+    repaint();
   }
 
   public static interface RebuildListener {

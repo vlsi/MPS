@@ -4,12 +4,13 @@
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="5" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="5" modelUID="jetbrains.mps.core.constraints" version="-1" />
+  <import index="6" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1193141220087">
     <link role="concept" targetNodeId="2.1192794744107" resolveInfo="IntentionDeclaration" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1193141280918">
@@ -19,15 +20,19 @@
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193141280920">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193141304002">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1193141309943">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1193141321110">
-              <link role="baseMethodDeclaration" targetNodeId="3.~SNode.getId():java.lang.String" resolveInfo="getId" />
-              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1193141317200">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1193141310805" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1193399660577">
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193399660578">
+              <link role="baseMethodDeclaration" targetNodeId="6.~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolveInfo="toValidIdentifier" />
+              <link role="classConcept" targetNodeId="6.~NameUtil" resolveInfo="NameUtil" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1193399660579">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1193399660580">
+                  <link role="property" targetNodeId="4.1169194664001" resolveInfo="name" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1193399660581" />
               </node>
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193141306145">
-              <property name="value" value="Intention_" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193399660582">
+              <property name="value" value="_Intention" />
             </node>
           </node>
         </node>

@@ -11,4 +11,6 @@ public interface Intention {
   boolean isApplicable(SNode node, IOperationContext context);
 
   void execute(SNode node, IOperationContext context);
+
+  boolean isErrorIntention();
 }
