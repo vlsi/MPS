@@ -21,6 +21,9 @@
   </models>
   <module />
   <accessoryModels />
+  <intentions>
+    <model modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" />
+  </intentions>
   <generators>
     <generator name="default" generatorUID="jetbrains.mps.baseLanguage.ext.collections.lang#1151699677197" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
@@ -52,5 +55,6 @@
     <entry path="${mps_home}\projects\baseLanguageExt\dev\classes" />
     <entry path="${mps_home}\projects\baseLanguageExt\collections-runtime\classes" />
   </classPath>
+  <runtimeClassPath />
 </language>
 
