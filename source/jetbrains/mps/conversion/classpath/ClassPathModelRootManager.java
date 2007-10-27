@@ -86,7 +86,7 @@ public class ClassPathModelRootManager extends AbstractModelRootManager {
     return false;
   }
 
-  private IClassPathItem getClassPathItem() {
+  protected IClassPathItem getClassPathItem() {
     return ClassLoaderManager.getInstance().getClassPathItem();
   }
 

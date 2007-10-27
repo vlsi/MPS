@@ -6,7 +6,6 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
-import jetbrains.mps.projectLanguage.structure.ClassPathEntry;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.logging.Logger;
@@ -49,7 +48,7 @@ public class Solution extends AbstractModule {
     solution.mySolutionDescriptor = solutionDescriptor;
     solution.myDescriptorFile = descriptorFile;
 
-    solution.updateClassPath();
+    solution.updateRuntimeClassPath();
 
     MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
     solution.readDependOnModules();
@@ -115,7 +114,7 @@ public class Solution extends AbstractModule {
     Set<IModule> after = new HashSet<IModule>(MPSModuleRepository.getInstance().getAllModules());
     rereadModels();
 
-    updateClassPath();
+    updateRuntimeClassPath();
 
     ReloadUtils.reloadAll(true, true, false);
 

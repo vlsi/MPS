@@ -14,6 +14,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
+import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -38,6 +39,7 @@ public abstract class AbstractModule implements IModule {
 
   private MyScope myScope = new MyScope();
 
+  private IClassPathItem myRuntimeClassPathItem;
   private IClassPathItem myClassPathItem;
 
   //
@@ -368,7 +370,7 @@ public abstract class AbstractModule implements IModule {
   /**
    * Call this method after you have set module descriptor
    */
-  public void updateClassPath() {
+  public void updateRuntimeClassPath() {
     CompositeClassPathItem result = new CompositeClassPathItem();
     for (String s : getRuntimeClassPathItems()) {
       if (!new File(s).exists()) {
@@ -382,25 +384,82 @@ public abstract class AbstractModule implements IModule {
       }
     }
 
-    myClassPathItem = result;
+    myRuntimeClassPathItem = result;
   }
 
   public IClassPathItem getRuntimeClasspath() {
-    return myClassPathItem;
+    return myRuntimeClassPathItem;
   }
 
   public BytecodeLocator getByteCodeLocator() {
     return new BytecodeLocator() {
       public byte[] find(String fqName) {
-        assert myClassPathItem != null : "module " + getModuleUID() + "'s classpath wasn't initialized";
-        return myClassPathItem.getClass(fqName);
+        assert myRuntimeClassPathItem != null : "module " + getModuleUID() + "'s classpath wasn't initialized";
+        return myRuntimeClassPathItem.getClass(fqName);
       }
 
       public URL findResource(String name) {
-        return myClassPathItem.getResource(name);
+        return myRuntimeClassPathItem.getResource(name);
       }
     };
   }
+
+  public void reloadStubs() {
+    updateClassPathItem();
+    releaseJavaStubs();
+    loadNewStubs();
+  }
+
+  private void updateClassPathItem() {
+    CompositeClassPathItem result = new CompositeClassPathItem();
+
+    for (String s : getClassPathItems()) {
+      File file = new File(s);
+      if (!file.exists()) {
+        LOG.error("Can't load class path item " + s);
+      }
+
+      IClassPathItem currentItem;
+      if (file.isDirectory()) {
+        currentItem = new FileClassPathItem(s);
+      } else {
+        currentItem = new JarFileClassPathItem(s);
+      }
+
+      result.add(currentItem);
+    }
+
+    myClassPathItem = result;
+  }
+
+  private void releaseJavaStubs() {
+    for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(this)) {
+      if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) {
+        SModelRepository.getInstance().unRegisterModelDescriptor(sm, this);
+      }
+    }
+  }
+
+  private void loadNewStubs() {
+    ClassPathModelRootManager manager = new ClassPathModelRootManager() {
+      protected IClassPathItem getClassPathItem() {
+        return myClassPathItem;
+      }
+    };
+
+    SModel sm = new SModel();
+    sm.setLoading(true);
+
+    ModelRoot mr = ModelRoot.newInstance(sm);
+    mr.setPrefix("");
+
+    manager.read(mr, this);
+  }
+
+  public IClassPathItem getClassPathItem() {
+    return myClassPathItem;
+  }
+
 
   public void invalidateCaches() {
     myScope.invalidateCaches();
