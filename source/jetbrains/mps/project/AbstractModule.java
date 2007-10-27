@@ -454,7 +454,6 @@ public abstract class AbstractModule implements IModule {
     return myClassPathItem;
   }
 
-
   public void invalidateCaches() {
     myScope.invalidateCaches();
   }
