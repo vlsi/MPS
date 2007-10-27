@@ -181,7 +181,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
   public void updateClassPath(IModule changeModule) {
     LOG.debug("Updating class path");
 
-    /*
     if (myItems != null) {
       cacheOldItems(myItems, changeModule != null);
     }
@@ -233,7 +232,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
     for (String s : classPath) {
       addClassPathItem(s, useTimestamps);
     }
-    */
 
     if (changeModule == null) {
       myRuntimeEnvironment.reloadAll();
