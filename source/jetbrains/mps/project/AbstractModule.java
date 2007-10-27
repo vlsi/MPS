@@ -174,26 +174,9 @@ public abstract class AbstractModule implements IModule {
   }
 
   @NotNull
-  public List<ModelRoot> getDefaultModelRoots() {
-    List<ModelRoot> result = new ArrayList<ModelRoot>();
-    if (myClassPathModelRoot == null) {
-
-      myClassPathModelRoot = ModelRoot.newInstance(getModuleDescriptorModel().getSModel());
-      myClassPathModelRoot.setPrefix("");
-      myClassPathModelRoot.setPath("");
-
-      myClassPathModelRoot.setHandlerClass("jetbrains.mps.conversion.classpath.ClassPathModelRootManager");
-
-    }
-    result.add(myClassPathModelRoot);
-    return result;
-  }
-
-  @NotNull
   public final List<ModelRoot> getModelRoots() {
     List<ModelRoot> result = new ArrayList<ModelRoot>();
 
-    result.addAll(getDefaultModelRoots());
     result.addAll(getNonDefaultModelRoots());
 
     return result;
@@ -454,6 +437,17 @@ public abstract class AbstractModule implements IModule {
     mr.setPrefix("");
 
     manager.read(mr, this);
+
+    loadJavaStubModelRoots();
+  }
+
+  private void loadJavaStubModelRoots() {
+    for (ModelRoot mr : getModelRoots()) {
+      IModelRootManager m = ModelRootsUtil.getManagerFor(mr);
+      if (m instanceof ClassPathModelRootManager) {
+        m.read(mr, this);
+      }
+    }
   }
 
   public IClassPathItem getClassPathItem() {

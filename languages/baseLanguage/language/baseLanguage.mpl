@@ -37,11 +37,13 @@
     </generator>
   </generators>
   <classPath />
+  <runtimeClassPath />
   <dependencies>
     <dependency>jetbrains.mps.baseLanguage.ext.collections.lang</dependency>
     <dependency>jetbrains.mps.patterns</dependency>
     <dependency>jetbrains.mps.baseLanguage.blTypes</dependency>
     <dependency>jetbrains.mps.regexp</dependency>
+    <dependency>JDK</dependency>
   </dependencies>
 </language>
 

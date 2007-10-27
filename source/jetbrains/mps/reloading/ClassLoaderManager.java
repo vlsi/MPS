@@ -201,7 +201,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
     IClassPathItem mpsPath = getMPSPath();
     if (mpsPath != null) {
       myItems.add(mpsPath);
-    }    
+    }
     IClassPathItem supportPath = getMPSSupportPath();
     if (supportPath != null) {
       myItems.add(supportPath);
@@ -212,7 +212,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
     if (myModuleRepository != null) {
       for (IModule l : myModuleRepository.getAllModules()) {
-
         LOG.debug("Adding classpath from model " + l);
         for (String s : l.getClassPathItems()) {
           LOG.debug("Add " + s);
@@ -240,18 +239,8 @@ public class ClassLoaderManager implements IComponentLifecycle {
       myRuntimeEnvironment.replace(new Bundle(changeModule.getModuleUID(), changeModule.getByteCodeLocator()));
     }
 
-    if (myProjects != null) {
-      LOG.debug("Updating java stubs");
-      for (MPSProject project : myProjects.getProjects()) {
-        for (IModule module : project.getModules()) {
-          LOG.debug("Updating in module " + module);          
-          AbstractModule am = (AbstractModule) module;
-          ClassPathModelRootManager manager = new ClassPathModelRootManager();
-          for (ModelRoot r : am.getDefaultModelRoots()) {
-            manager.read(r, module);
-          }
-        }
-      }
+    for (IModule m : myModuleRepository.getAllModules()) {
+      m.reloadStubs();
     }
 
     myCachedItems.clear();

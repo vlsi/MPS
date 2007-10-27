@@ -200,6 +200,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     language.myLanguageDescriptor = languageDescriptor;
 
     language.updateRuntimeClassPath();
+    language.reloadStubs();
 
     MPSModuleRepository.getInstance().addModule(language, moduleOwner);
 
@@ -233,6 +234,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     language.myLanguageDescriptor = languageDescriptor;
 
     language.updateRuntimeClassPath();
+    language.reloadStubs();
 
     MPSModuleRepository.getInstance().addModule(language, moduleOwner);
 
@@ -286,6 +288,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       GeneratorDescriptor generatorDescriptor = generators.next();
       Generator generator = new Generator(this, generatorDescriptor);
       generator.updateRuntimeClassPath();
+      generator.reloadStubs();
       MPSModuleRepository.getInstance().addModule(generator, this);
       myGenerators.add(generator);
     }
@@ -331,6 +334,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     rereadModels();
 
     updateRuntimeClassPath();
+    reloadStubs();
 
     ReloadUtils.reloadAll(true, true, false);
 

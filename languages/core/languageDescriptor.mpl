@@ -19,5 +19,9 @@
   <accessoryModels />
   <generators />
   <classPath />
+  <runtimeClassPath />
+  <dependencies>
+    <dependency>MPS.Classpath</dependency>
+  </dependencies>
 </language>
 
