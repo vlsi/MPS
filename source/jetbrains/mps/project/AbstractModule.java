@@ -417,16 +417,16 @@ public abstract class AbstractModule implements IModule {
       File file = new File(s);
       if (!file.exists()) {
         LOG.error("Can't load class path item " + s);
-      }
-
-      IClassPathItem currentItem;
-      if (file.isDirectory()) {
-        currentItem = new FileClassPathItem(s);
       } else {
-        currentItem = new JarFileClassPathItem(s);
-      }
+        IClassPathItem currentItem;
+        if (file.isDirectory()) {
+          currentItem = new FileClassPathItem(s);
+        } else {
+          currentItem = new JarFileClassPathItem(s);
+        }
 
-      result.add(currentItem);
+        result.add(currentItem);
+      }
     }
 
     myClassPathItem = result;
