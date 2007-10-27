@@ -239,8 +239,13 @@ public class ClassLoaderManager implements IComponentLifecycle {
       myRuntimeEnvironment.replace(new Bundle(changeModule.getModuleUID(), changeModule.getByteCodeLocator()));
     }
 
-    for (IModule m : myModuleRepository.getAllModules()) {
-      m.reloadStubs();
+
+    if (changeModule == null) {
+      for (IModule m : myModuleRepository.getAllModules()) {
+        m.reloadStubs();
+      }
+    } else {
+      changeModule.reloadStubs();
     }
 
     myCachedItems.clear();
