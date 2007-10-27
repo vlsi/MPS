@@ -64,10 +64,6 @@ public class ModelConstraintsManager implements IComponentLifecycle {
   }
 
   public void initComponent() {
-    for (Language l : myModuleRepository.getAllLanguages()) {
-      processLanguageAdded(l);
-    }
-
     myModuleRepository.addModuleRepositoryListener(new ModuleRepositoryListener() {
       public void moduleAdded(IModule module) {
       }
