@@ -24,11 +24,20 @@ import java.util.Set;
  */
 class ProjectModulesPoolTreeNode extends TextTreeNode {
   private MPSProject myProject;
+  private boolean myInitialized;
 
   public ProjectModulesPoolTreeNode(MPSProject project) {
     super("modules pool");
     myProject = project;
+  }
+
+  public boolean isInitialized() {
+    return myInitialized;
+  }
+
+  public void init() {
     populate();
+    myInitialized = true;
   }
 
   public Icon getIcon(boolean expanded) {
