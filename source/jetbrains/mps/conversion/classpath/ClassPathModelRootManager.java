@@ -20,7 +20,7 @@ import java.util.Set;
 /**
  * @author Kostik
  */
-public class ClassPathModelRootManager extends AbstractModelRootManager {
+public abstract class ClassPathModelRootManager extends AbstractModelRootManager {
 
   private static Map<SModelUID, Long> ourTimestamps = new HashMap<SModelUID, Long>();
   private ModelOwner myOwner;
@@ -87,9 +87,7 @@ public class ClassPathModelRootManager extends AbstractModelRootManager {
     return false;
   }
 
-  protected IClassPathItem getClassPathItem() {
-    return ClassLoaderManager.getInstance().getClassPathItem();
-  }
+  protected abstract IClassPathItem getClassPathItem();
 
   private void addPackageModelDescriptors(Set<SModelDescriptor> descriptors, ModelRoot root, String pack) {
     Set<String> subpackages = getClassPathItem().getSubpackages(pack);

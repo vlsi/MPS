@@ -10,10 +10,7 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.runtime.BytecodeLocator;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.JarFileClassPathItem;
-import jetbrains.mps.reloading.FileClassPathItem;
+import jetbrains.mps.reloading.*;
 import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -354,6 +351,11 @@ public abstract class AbstractModule implements IModule {
       } else {
         result.add(new JarFileClassPathItem(s));
       }
+    }
+
+    //todo this is a temporary hack
+    if (BootstrapLanguages.getInstance().getLanguagesUsedInCore().contains(this)) {
+      result.add(ClassLoaderManager.getInstance().getMPSPath());
     }
 
     myRuntimeClassPathItem = result;

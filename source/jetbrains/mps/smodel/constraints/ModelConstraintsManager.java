@@ -363,7 +363,7 @@ public class ModelConstraintsManager implements IComponentLifecycle {
     Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
 
     String packageName = languageNamespace + ".constraints";
-    IClassPathItem classPathItem = myClassLoaderManager.getClassPathItem();
+    IClassPathItem classPathItem = l.getRuntimeClasspath();
     Set<String> availableClasses = classPathItem.getAvailableClasses(packageName);
     for (String shortClassName : availableClasses) {
       try {
