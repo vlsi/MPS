@@ -90,8 +90,6 @@ public final class BehaviorManager {
   }
 
   private Method getMethod(AbstractConceptDeclaration concept, String methodName, Class[] parameterTypes) {
-    System.out.println("concept = " + concept);
-    System.out.println("methodName = " + methodName);
     Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
 
     Method method = null;
@@ -100,22 +98,14 @@ public final class BehaviorManager {
     MethodInfo mi = new MethodInfo(fqName, methodName, parameterTypes);
 
     if (myMethods.containsKey(mi)) {
-      Method method1 = myMethods.get(mi);
-      System.out.println("method1 = " + method1);
-      return method1;
+      return myMethods.get(mi);
     }
 
     String behaviorClass = behaviorClassByConceptFqName(fqName);
-    System.out.println("behaviorClass = " + behaviorClass);
 
     try {
       Class cls = Class.forName(behaviorClass, true, ClassLoaderManager.getInstance().getClassLoaderFor(l));
-      System.out.println("cls = " + cls);
-      for (Class parameterType : parameterTypes) {
-        System.out.println("parameterType = " + parameterType);
-      }
       method = cls.getMethod(methodName, parameterTypes);
-      System.out.println("method = " + method);
     } catch (ClassNotFoundException e) {
       //ignore
     } catch (NoSuchMethodException e) {
@@ -155,8 +145,6 @@ public final class BehaviorManager {
     if (superCall) {
       superConcepts.remove(concept);
     }
-
-    System.out.println("superConcepts = " + superConcepts);
 
     for (AbstractConceptDeclaration conceptDeclaration : superConcepts) {
       method = getMethod(conceptDeclaration, methodName, parameterTypeArray);
