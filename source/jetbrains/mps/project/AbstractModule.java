@@ -207,7 +207,7 @@ public abstract class AbstractModule implements IModule {
       if (m != null) {
         result.add(m);
       } else {
-        LOG.error("Can't load module " + uid);
+        LOG.error("Can't load module " + uid + " from " + this);
       }
     }
 
@@ -389,7 +389,7 @@ public abstract class AbstractModule implements IModule {
     for (String s : getClassPath()) {
       File file = new File(s);
       if (!file.exists()) {
-        LOG.error("Can't load class path item " + s);
+        LOG.error("Can't load class path item " + s + " in " + this);
       } else {
         IClassPathItem currentItem;
         if (file.isDirectory()) {
