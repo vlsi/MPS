@@ -211,14 +211,14 @@ public class ModelConstraintsManager implements IComponentLifecycle {
       return null;
     }
 
-    if (!myAddedLanguageNamespaces.containsKey(namespace)) {
-      processLanguageAdded(MPSModuleRepository.getInstance().getLanguage(namespace));
-    }
-
-    //language is not loaded yet (bootstrap)?
-    if (!myAddedLanguageNamespaces.containsKey(namespace)) {
-      return null;
-    }
+//    if (!myAddedLanguageNamespaces.containsKey(namespace)) {
+//      processLanguageAdded(MPSModuleRepository.getInstance().getLanguage(namespace));
+//    }
+//
+//    language is not loaded yet (bootstrap)?
+//    if (!myAddedLanguageNamespaces.containsKey(namespace)) {
+//      return null;
+//    }
 
     final StringBuilder builder = StringBuilderSpinAllocator.alloc();
     try {
@@ -231,6 +231,7 @@ public class ModelConstraintsManager implements IComponentLifecycle {
       builder.append(nodeConceptFqName);
       builder.append(prefixedPropertyName);
       String originalKey = builder.toString();
+      
       if (isSetter) {
         if (myNodePropertySettersCache.containsKey(originalKey)) {
           return myNodePropertySettersCache.get(originalKey);
@@ -243,7 +244,13 @@ public class ModelConstraintsManager implements IComponentLifecycle {
 
       // find getter/setter and put to cache
       List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
+
       for (final AbstractConceptDeclaration concept : hierarchy) {
+        Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+        if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
+          processLanguageAdded(l);
+        }
+
         final String conceptFqName = NameUtil.nodeFQName(concept);
         final IModelConstraints result;
         builder.setLength(0);
