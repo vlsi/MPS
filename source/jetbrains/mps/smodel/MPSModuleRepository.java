@@ -6,6 +6,7 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.Root;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.ide.command.CommandProcessor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

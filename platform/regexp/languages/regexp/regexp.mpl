@@ -54,5 +54,8 @@
     <entry path="${mps_home}\platform\regexp\classes" />
     <entry path="${mps_home}\platform\regexp\runtime\classes" />
   </classPath>
+  <runtimeClassPath>
+    <entry path="${mps_home}\platform\regexp\classes" />
+  </runtimeClassPath>
 </language>
 

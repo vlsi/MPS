@@ -9,12 +9,14 @@ import jetbrains.mps.core.structure.NamedConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
 import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.command.CommandProcessor;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -37,7 +39,6 @@ public class ModelConstraintsManager implements IComponentLifecycle {
   private Map<String, INodeReferentSetEventHandler> myNodeReferentSetEventHandlersMap = new HashMap<String, INodeReferentSetEventHandler>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeReferentSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
   private Map<String, INodeReferentSearchScopeProvider> myNodeDefaultSearchScopeProvidersMap = new HashMap<String, INodeReferentSearchScopeProvider>();
-
 
 
   private ClassLoaderManager myClassLoaderManager;
@@ -68,13 +69,10 @@ public class ModelConstraintsManager implements IComponentLifecycle {
     }
 
     myModuleRepository.addModuleRepositoryListener(new ModuleRepositoryListener() {
-      public void beforeModuleRemoved(IModule module) {
+      public void moduleAdded(IModule module) {
       }
 
-      public void moduleAdded(IModule module) {
-        if (module instanceof Language) {
-          processLanguageAdded((Language) module);
-        }
+      public void beforeModuleRemoved(IModule module) {
       }
 
       public void moduleRemoved(IModule module) {
@@ -150,6 +148,11 @@ public class ModelConstraintsManager implements IComponentLifecycle {
     // find set-event-handler and put to cache
     List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationAdapter());
     for (AbstractConceptDeclaration concept : hierarchy) {
+      Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
+      if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
+        processLanguageAdded(l);
+      }
+
       String conceptFqName = NameUtil.nodeFQName(concept);
       INodeReferentSetEventHandler result = myNodeReferentSetEventHandlersMap.get(conceptFqName + "#" + referentRole);
       if (result != null) {
@@ -210,6 +213,10 @@ public class ModelConstraintsManager implements IComponentLifecycle {
     if (node instanceof RuntimeTypeVariable) {
       // helgins fhtagn!
       return null;
+    }
+
+    if (!myAddedLanguageNamespaces.containsKey(namespace)) {
+      processLanguageAdded(MPSModuleRepository.getInstance().getLanguage(namespace));
     }
 
     //language is not loaded yet (bootstrap)?
@@ -276,6 +283,11 @@ public class ModelConstraintsManager implements IComponentLifecycle {
 
   /*package*/ INodeReferentSearchScopeProvider getNodeDefaultSearchScopeProvider(AbstractConceptDeclaration referentConcept) {
     while (referentConcept != null) {
+      Language l = SModelUtil_new.getDeclaringLanguage(referentConcept, GlobalScope.getInstance());
+      if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
+        processLanguageAdded(l);
+      }
+
       String conceptFqName = NameUtil.nodeFQName(referentConcept);
       INodeReferentSearchScopeProvider provider = myNodeDefaultSearchScopeProvidersMap.get(conceptFqName);
       if (provider != null) return provider;
@@ -291,6 +303,11 @@ public class ModelConstraintsManager implements IComponentLifecycle {
   /*package*/ INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(AbstractConceptDeclaration nodeConcept, String referentRole) {
     if (nodeConcept instanceof ConceptDeclaration) {
       while (nodeConcept != null) {
+        Language l = SModelUtil_new.getDeclaringLanguage(nodeConcept, GlobalScope.getInstance());
+        if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
+          processLanguageAdded(l);
+        }
+
         String conceptFqName = NameUtil.nodeFQName(nodeConcept);
         INodeReferentSearchScopeProvider provider = myNodeReferentSearchScopeProvidersMap.get(conceptFqName + "#" + referentRole);
         if (provider != null) return provider;
@@ -301,7 +318,6 @@ public class ModelConstraintsManager implements IComponentLifecycle {
   }
 
   private void processLanguageAdded(Language language) {
-//    System.out.println("processLanguageAdded: " + language.getNamespace());
     String namespace = language.getNamespace();
     if (myAddedLanguageNamespaces.containsKey(namespace)) {
       return;
@@ -313,8 +329,12 @@ public class ModelConstraintsManager implements IComponentLifecycle {
   }
 
   private void processLanguageRemoved(Language language) {
-    //System.out.println("processLanguageRemoved: " + language.getNamespace());
     String namespace = language.getNamespace();
+
+    if (!myAddedLanguageNamespaces.containsKey(namespace)) {
+      return;
+    }
+
     List<IModelConstraints> loadedConstraints = myAddedLanguageNamespaces.get(namespace);
     for (IModelConstraints constraints : loadedConstraints) {
       constraints.unRegisterSelf(this);

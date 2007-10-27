@@ -32,7 +32,6 @@ import java.net.URL;
 public abstract class AbstractModule implements IModule {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
-  private ModelRoot myClassPathModelRoot;
   private boolean myModelsRead = false;
   private boolean myInitialized = false;
   protected File myDescriptorFile;
@@ -299,11 +298,6 @@ public abstract class AbstractModule implements IModule {
   @NotNull
   public List<String> getClassPathItems() {
     ArrayList<String> result = new ArrayList<String>();
-    File classesGen = getClassesGen();
-
-    if (classesGen != null && classesGen.exists()) {
-      result.add(classesGen.getAbsolutePath());
-    }
 
     if (getModuleDescriptor() != null) {
       for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(getModuleDescriptor().classPathEntrys())) {
@@ -317,11 +311,6 @@ public abstract class AbstractModule implements IModule {
   @NotNull
   public List<String> getRuntimeClassPathItems() {
     ArrayList<String> result = new ArrayList<String>();
-    File classesGen = getClassesGen();
-
-    if (classesGen != null && classesGen.exists()) {
-      result.add(classesGen.getAbsolutePath());
-    }
 
     if (getModuleDescriptor() != null) {
       for (ClassPathEntry entry : CollectionUtil.iteratorAsIterable(getModuleDescriptor().runtimeClassPathEntrys())) {
@@ -395,7 +384,6 @@ public abstract class AbstractModule implements IModule {
 
   private void updateClassPathItem() {
     CompositeClassPathItem result = new CompositeClassPathItem();
-
     for (String s : getClassPathItems()) {
       File file = new File(s);
       if (!file.exists()) {
@@ -424,6 +412,8 @@ public abstract class AbstractModule implements IModule {
   }
 
   private void loadNewStubs() {
+    loadJavaStubModelRoots();
+    
     ClassPathModelRootManager manager = new ClassPathModelRootManager() {
       protected IClassPathItem getClassPathItem() {
         return myClassPathItem;
@@ -437,8 +427,6 @@ public abstract class AbstractModule implements IModule {
     mr.setPrefix("");
 
     manager.read(mr, this);
-
-    loadJavaStubModelRoots();
   }
 
   private void loadJavaStubModelRoots() {
