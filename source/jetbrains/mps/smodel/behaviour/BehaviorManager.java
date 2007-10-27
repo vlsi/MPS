@@ -125,12 +125,6 @@ public final class BehaviorManager {
     return invokeSuper(returnType, node, methodName, parametersTypes, false, parameters);
   }
 
-  /*
-    public<T> T invoke(Class<T> returnType, SNode node, String methodName, List<Class> parametersTypes, boolean superCall, Object... parameters) {
-      return invokeSuper(returnType, node, methodName, parametersTypes, superCall, parameters);
-    }
-
-  */
   public <T> T invokeSuper(Class<T> returnType, SNode node, String methodName, List<Class> parametersTypes, boolean superCall, Object... parameters) {
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
 
