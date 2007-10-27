@@ -68,9 +68,13 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   Set<IModule> getExplicitlyVisibleModules();
 
+  void reloadStubs();
+
   IClassPathItem getRuntimeClasspath();
 
   BytecodeLocator getByteCodeLocator();
+  
+  IClassPathItem getClassPathItem();
 
   void invalidateCaches();
 
