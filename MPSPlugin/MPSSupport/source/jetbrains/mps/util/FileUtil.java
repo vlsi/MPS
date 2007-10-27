@@ -211,7 +211,11 @@ public class FileUtil {
       return dir.lastModified();
     }
     long result = dir.lastModified();
-    for (File file : files) {
+    for (File file : files) {      
+      if (file.getName().equals(".svn")) {
+        continue;
+      }
+
       result = Math.max(result, getNewestFileTime(file));
     }
     return result;
