@@ -3,7 +3,7 @@
   <models>
     <modelRoot path="${solution_descriptor}\." namespacePrefix="jetbrains.mps.baseLanguage.refactoring" />
     <modelRoot path="${mps_home}\languages\baseLanguage\resolve" namespacePrefix="jetbrains.mps.baseLanguage.resolve" />
-    <modelRoot path="${mps_home}\models" namespacePrefix="" persistenceHandler="jetbrains.mps.conversion.classpath.ClassPathModelRootManager" />
+    <modelRoot path="${mps_home}\models" namespacePrefix=""  />
   </models>
   <module />
   <languages />
