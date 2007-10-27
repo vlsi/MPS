@@ -19,7 +19,7 @@ public interface IOperationContext {
 
   @NotNull MPSProject getProject();
 
-  @Nullable IModule getModule();
+  IModule getModule();
 
   @NotNull IScope getScope();
 

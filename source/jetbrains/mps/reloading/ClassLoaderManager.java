@@ -2,7 +2,6 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
-import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
@@ -10,10 +9,8 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandKind;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.runtime.Bundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.util.PathManager;
@@ -30,13 +27,7 @@ import java.util.*;
  */
 public class ClassLoaderManager implements IComponentLifecycle {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
-
-  private CompositeClassPathItem myItems;
-  private MPSProjects myProjects;
-  private MPSModuleRepository myModuleRepository;
-
-  private Map<String, IClassPathItem> myCachedItems = new HashMap<String, IClassPathItem>();
-  private Set<String> myAlreadyAdded = new HashSet<String>();
+    private MPSModuleRepository myModuleRepository;
 
   private RuntimeEnvironment myRuntimeEnvironment = new RuntimeEnvironment();
 
@@ -85,9 +76,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public void initComponent() {
-    if (myItems == null) {
-      updateClassPath();
-    }
+    updateClassPath();
     
     CommandProcessor.instance().addCommandListener(new CommandAdapter() {
       public void commandFinished(@NotNull CommandEvent event) {
@@ -141,7 +130,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   @Dependency
   public void setProjects(MPSProjects projects) {
-    myProjects = projects;
   }
 
   @Dependency
@@ -153,85 +141,12 @@ public class ClassLoaderManager implements IComponentLifecycle {
     updateClassPath();
   }
 
-  private void cacheOldItems(CompositeClassPathItem ci, boolean cacheFiles) {
-    for (IClassPathItem c : ci.getChildren()) {
-
-      if (cacheFiles) {
-        if (c instanceof FileClassPathItem) {
-          FileClassPathItem fcpi = (FileClassPathItem) c;
-          myCachedItems.put(fcpi.getClassPath(), c);
-        }
-      }
-
-      if (c instanceof JarFileClassPathItem) {
-        JarFileClassPathItem jfcpi = (JarFileClassPathItem) c;
-        myCachedItems.put(jfcpi.getFile().getAbsolutePath(), c);
-      }
-
-      if (c instanceof CompositeClassPathItem) {
-        cacheOldItems((CompositeClassPathItem) c, cacheFiles);
-      }
-    }
-  }
-
   public void updateClassPath() {
     updateClassPath(null);
   }
 
   public void updateClassPath(IModule changeModule) {
     LOG.debug("Updating class path");
-
-    if (myItems != null) {
-      cacheOldItems(myItems, changeModule != null);
-    }
-
-    if (changeModule != null) {
-      List<String> items = changeModule.getClassPathItems();
-      for (String item : items) {
-        myCachedItems.remove(item);
-      }
-    }
-
-    myItems = new CompositeClassPathItem();
-
-    IClassPathItem rtJar = getRTJar();
-    if (rtJar != null) {
-      myItems.add(rtJar);
-    }
-    IClassPathItem mpsPath = getMPSPath();
-    if (mpsPath != null) {
-      myItems.add(mpsPath);
-    }
-    IClassPathItem supportPath = getMPSSupportPath();
-    if (supportPath != null) {
-      myItems.add(supportPath);
-    }
-
-    boolean useTimestamps = changeModule == null;
-
-
-    if (myModuleRepository != null) {
-      for (IModule l : myModuleRepository.getAllModules()) {
-        LOG.debug("Adding classpath from model " + l);
-        for (String s : l.getClassPathItems()) {
-          LOG.debug("Add " + s);
-          addClassPathItem(s, useTimestamps);
-        }
-      }
-    }
-
-    Set<String> classPath = new LinkedHashSet<String>();
-    if (myProjects != null) {
-      for (MPSProject project : myProjects.getProjects()) {
-        for (String s : project.getClassPath()) {
-          classPath.add(s);
-        }
-      }
-    }
-
-    for (String s : classPath) {
-      addClassPathItem(s, useTimestamps);
-    }
 
     if (changeModule == null) {
       myRuntimeEnvironment.reloadAll();
@@ -248,49 +163,9 @@ public class ClassLoaderManager implements IComponentLifecycle {
       changeModule.reloadStubs();
     }
 
-    myCachedItems.clear();
-    myAlreadyAdded.clear();
-
     LOG.debug("Done");
   }
 
-  private void addClassPathItem(String s, boolean useTimestamps) {
-    if (myAlreadyAdded.contains(s)) {
-      return;
-    }
-
-    if (myCachedItems.containsKey(s)) {
-      IClassPathItem i = myCachedItems.get(s);
-      if (!useTimestamps || i.getTimestamp() == new File(s).lastModified()) {
-        myAlreadyAdded.add(s);
-        myItems.add(i);
-      }
-
-      return;
-    }
-
-    if (!new File(s).exists()) {
-      LOG.warning("Class path item doesn't exist " + s);
-    } else {
-      myAlreadyAdded.add(s);
-      if (new File(s).isDirectory()) {
-        myItems.add(new FileClassPathItem(s));
-      } else {
-        myItems.add(new JarFileClassPathItem(s));
-      }
-    }
-  }
-
-  /**
-   * @deprecated
-   */
-  public IClassPathItem getClassPathItem() {
-    if (myItems == null) {
-      updateClassPath();
-    }
-
-    return myItems;
-  }
 
   public IClassPathItem getRTJar() {    
     if (myRTJar == null) {

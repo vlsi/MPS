@@ -24,7 +24,7 @@ public class TextGenerationUtil {
   }
 
   public static JavaCompiler compile(IOperationContext context, SModel targetModel, IAdaptiveProgressMonitor progress) {
-    JavaCompiler compiler = new JavaCompiler();
+    JavaCompiler compiler = new JavaCompiler(context.getModule().getModuleWithDependenciesClassPathItem());
 
     for (SNode root : targetModel.getRoots()) {
       INodeAdapter outputNode = BaseAdapter.fromNode(root);

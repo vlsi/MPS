@@ -25,10 +25,6 @@ public class JavaCompiler {
   private List<CompilationResult> myCompilationResults = new ArrayList<CompilationResult>();
   private Map<String, byte[]> myClasses = new HashMap<String, byte[]>();
 
-  public JavaCompiler() {
-    this(ClassLoaderManager.getInstance().getClassPathItem());
-  }
-
   public JavaCompiler(IClassPathItem item) {
     myClassPathItem = item;
   }

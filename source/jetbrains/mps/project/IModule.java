@@ -58,7 +58,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   void readModels();
 
-  @NotNull List<String> getClassPathItems();
+  @NotNull List<String> getClassPath();
 
   @NotNull List<String> getRuntimeClassPathItems();
 
@@ -75,6 +75,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   BytecodeLocator getByteCodeLocator();
   
   IClassPathItem getClassPathItem();
+
+  IClassPathItem getModuleWithDependenciesClassPathItem();
 
   void invalidateCaches();
 

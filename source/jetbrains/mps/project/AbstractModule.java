@@ -293,7 +293,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   @NotNull
-  public List<String> getClassPathItems() {
+  public List<String> getClassPath() {
     ArrayList<String> result = new ArrayList<String>();
 
     if (getModuleDescriptor() != null) {
@@ -386,7 +386,7 @@ public abstract class AbstractModule implements IModule {
 
   private void updateClassPathItem() {
     CompositeClassPathItem result = new CompositeClassPathItem();
-    for (String s : getClassPathItems()) {
+    for (String s : getClassPath()) {
       File file = new File(s);
       if (!file.exists()) {
         LOG.error("Can't load class path item " + s);
@@ -442,6 +442,31 @@ public abstract class AbstractModule implements IModule {
 
   public IClassPathItem getClassPathItem() {
     return myClassPathItem;
+  }
+
+  public IClassPathItem getModuleWithDependenciesClassPathItem() {
+    Set<IModule> module = getAllDependOnModules(IModule.class);
+
+    module.addAll(BootstrapLanguages.getInstance().getLanguages());
+
+    CompositeClassPathItem item = new CompositeClassPathItem();
+    for (IModule m : module) {
+      for (String s : m.getClassPath()) {
+        File f = new File(s);
+
+        if (!f.exists()) {
+          continue;
+        }
+
+        if (f.isDirectory()) {
+          item.add(new FileClassPathItem(s));
+        } else {
+          item.add(new JarFileClassPathItem(s));
+        }
+      }
+    }
+
+    return item;
   }
 
   public void invalidateCaches() {
