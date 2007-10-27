@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -15,7 +16,7 @@ public class ProjectModels {
   private static long ourProjectModelDescriptorCount = 0;
   private static final IModelRootManager ourModelRootManager = new AbstractModelRootManager() {
     @NotNull
-    public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull ModelOwner owner) {
+    public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull IModule owner) {
       throw new RuntimeException();
     }
 

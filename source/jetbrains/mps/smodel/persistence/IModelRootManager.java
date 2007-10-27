@@ -2,6 +2,7 @@ package jetbrains.mps.smodel.persistence;
 
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -14,7 +15,7 @@ import java.util.Set;
 public interface IModelRootManager {
   public static final IModelRootManager NULL_MANAGER = new NullModelRootManager();
 
-  @NotNull Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull ModelOwner owner);
+  @NotNull Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull IModule owner);
 
   @NotNull
   SModel loadModel(@NotNull SModelDescriptor modelDescriptor);

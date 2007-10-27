@@ -276,6 +276,9 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
   }
 
+  /**
+   * @deprecated
+   */
   public IClassPathItem getClassPathItem() {
     if (myItems == null) {
       updateClassPath();

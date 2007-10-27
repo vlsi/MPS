@@ -5,6 +5,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.event.SModelsMulticaster;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -28,7 +29,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   private static final Logger LOG = Logger.getLogger(DefaultModelRootManager.class);
 
   @NotNull
-  public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull ModelOwner owner) {
+  public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull IModule owner) {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
     readModelDescriptors(result, new File(root.getPath()), root, owner);
     return result;

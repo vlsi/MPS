@@ -8,6 +8,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -27,10 +28,10 @@ public class ClassPathModelRootManager extends AbstractModelRootManager {
 
 
   @NotNull
-  public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull ModelOwner owner) {
+  public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull IModule owner) {
     try {
       myOwner = owner;
-      myConverter = ConverterFactory.createClassPathConverter(this, root, myOwner);
+      myConverter = ConverterFactory.createClassPathConverter(this, root, owner);
 
       Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
       addPackageModelDescriptors(result, root, root.getPrefix());
