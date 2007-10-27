@@ -29,11 +29,13 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
   private @Externalizable Map<String, Library> myLibraries = new HashMap<String, Library>();
 
   private MPSModuleOwner myOwner;
+  private MPSModuleOwner myPredefinedLibrariesOwner;
 
   public LibraryManager() {
   }
 
   public void initComponent() {
+    updatePredefinedLibraries();
     update();
   }
 
@@ -99,18 +101,34 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
     update();
   }
 
+  private void updatePredefinedLibraries() {
+    myPredefinedLibrariesOwner = new MPSModuleOwner() { };
+    for (Library l : getLibraries()) {
+      if (l.isPredefined()) {
+        MPSModuleRepository.getInstance().readModuleDescriptors(new File(l.getPath()), myPredefinedLibrariesOwner);
+      }
+    }
+    readAndConvert(myPredefinedLibrariesOwner);
+  }
+
   public void update() {
     if (myOwner != null) {
       MPSModuleRepository.getInstance().unRegisterModules(myOwner);
     }
     myOwner = new MPSModuleOwner() { };
     for (Library l : getLibraries()) {
-      MPSModuleRepository.getInstance().readModuleDescriptors(new File(l.getPath()), myOwner);
+      if (!l.isPredefined()) {
+        MPSModuleRepository.getInstance().readModuleDescriptors(new File(l.getPath()), myOwner);
+      }
     }
-    for (IModule m : MPSModuleRepository.getInstance().getModules(myOwner)) {
+    readAndConvert(myOwner);
+  }
+
+  private void readAndConvert(MPSModuleOwner owner) {
+    for (IModule m : MPSModuleRepository.getInstance().getModules(owner)) {
       m.readModels();
     }
-    for (IModule m : MPSModuleRepository.getInstance().getModules(myOwner)) {
+    for (IModule m : MPSModuleRepository.getInstance().getModules(owner)) {
       m.convert();
     }
   }

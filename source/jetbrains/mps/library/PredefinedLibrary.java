@@ -9,6 +9,10 @@ public class PredefinedLibrary extends Library {
     return false;
   }
 
+  public boolean isPredefined() {
+    return true;
+  }
+
   public void setPath(String path) {
     throw new RuntimeException();
   }

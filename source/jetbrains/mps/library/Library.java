@@ -27,4 +27,8 @@ public class Library {
   public String toString() {
     return myName;
   }
+
+  public boolean isPredefined() {
+    return false;
+  }
 }
