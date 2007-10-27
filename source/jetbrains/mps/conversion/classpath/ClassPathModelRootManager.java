@@ -31,7 +31,7 @@ public class ClassPathModelRootManager extends AbstractModelRootManager {
   public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull IModule owner) {
     try {
       myOwner = owner;
-      myConverter = ConverterFactory.createClassPathConverter(this, root, owner);
+      myConverter = ConverterFactory.createClassPathConverter(this, root, getClassPathItem(), owner);
 
       Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
       addPackageModelDescriptors(result, root, root.getPrefix());

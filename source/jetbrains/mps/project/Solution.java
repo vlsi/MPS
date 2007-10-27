@@ -49,6 +49,7 @@ public class Solution extends AbstractModule {
     solution.myDescriptorFile = descriptorFile;
 
     solution.updateRuntimeClassPath();
+    solution.reloadStubs();
 
     MPSModuleRepository.getInstance().addModule(solution, moduleOwner);
     solution.readDependOnModules();
