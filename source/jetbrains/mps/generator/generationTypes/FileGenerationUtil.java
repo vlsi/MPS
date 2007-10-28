@@ -88,6 +88,7 @@ public class FileGenerationUtil {
         IFileGenerator fileGenerator = gm.chooseFileGenerator(outputRootNode, originalInputNode);
         if (fileGenerator == null) {
           GenerateFilesGenerationType.LOG.error("Couldn't find file generator for output node: " + outputRootNode.getDebugText());
+          gm.chooseFileGenerator(outputRootNode, originalInputNode);
         } else {
           File generatedFile = fileGenerator.generateFile(outputRootNode, originalInputNode, status.getSourceModel(), outputNodeContents.get(outputRootNode), outputRootDirectory);
 

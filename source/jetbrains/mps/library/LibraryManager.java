@@ -32,9 +32,6 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
   }
 
   public void initComponent() {
-
-    System.out.println("init library manager");
-
     updatePredefinedLibraries();
     update();
   }
