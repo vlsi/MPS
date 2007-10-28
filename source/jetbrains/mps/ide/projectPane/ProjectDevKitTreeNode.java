@@ -17,13 +17,17 @@ import javax.swing.JPopupMenu;
 import java.io.File;
 
 
-class ProjectDevKitTreeNode extends MPSTreeNode {
+class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   private DevKit myDevKit;
 
   public ProjectDevKitTreeNode(DevKit devkit, MPSProject project) {
     super(new ModuleContext(devkit, project));
     myDevKit = devkit;
     populate();
+  }
+
+  public IModule getModule() {
+    return myDevKit;
   }
 
   public DevKit getDevKit() {

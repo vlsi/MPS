@@ -7,6 +7,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
@@ -22,7 +23,7 @@ import java.util.List;
  * Time: 5:20:32 PM
  * To change this template use File | Settings | File Templates.
  */
-class ProjectLanguageTreeNode extends MPSTreeNode {
+class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   private Language myLanguage;
   private MPSProject myProject;
 
@@ -35,6 +36,10 @@ class ProjectLanguageTreeNode extends MPSTreeNode {
 
   public Icon getIcon(boolean expanded) {
     return Icons.PROJECT_LANGUAGE_ICON;
+  }
+
+  public IModule getModule() {
+    return myLanguage;
   }
 
   public Language getLanguage() {

@@ -395,6 +395,19 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     return result;
   }
 
+  public List<IModule> getSelectedModules() {
+    List<IModule> result = new ArrayList<IModule>();
+    TreePath[] paths = myTree.getSelectionPaths();
+    if (paths == null) return result;
+    for (TreePath path : paths) {
+      TreeNode node = (TreeNode) path.getLastPathComponent();
+      if (node instanceof ProjectModuleTreeNode) {
+        result.add(((ProjectModuleTreeNode) node).getModule());
+      }
+    }
+    return result;
+  }
+
   List<SNode> getSelectedNodes() {
     List<SNode> result = new ArrayList<SNode>();
     TreePath[] paths = myTree.getSelectionPaths();
@@ -410,6 +423,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     }
     return result;
   }
+
+  
 
   public List<SNode> getNormalizedSelectedNodes() {
     List<SNode> selectedNodes = new ArrayList<SNode>(getSelectedNodes());
@@ -501,23 +516,32 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       }
       ProjectTreeNode root = new ProjectTreeNode(getProject());
 
+
+      List<MPSTreeNode> moduleNodes = new ArrayList<MPSTreeNode>();
+
       List<Solution> solutions = getProject().getProjectSolutions();
       for (Solution solution : solutions) {
         ProjectSolutionTreeNode solutionTreeNode = new ProjectSolutionTreeNode(solution, getProject());
-        root.add(solutionTreeNode);
+        moduleNodes.add(solutionTreeNode);
       }
 
       List<Language> languages = getProject().getProjectLanguages();
       for (Language language : languages) {
         ProjectLanguageTreeNode node = new ProjectLanguageTreeNode(language, getProject());
-        root.add(node);
+        moduleNodes.add(node);
       }
 
       List<DevKit> devkits = getProject().getProjectDevKits();
       for (DevKit devKit : devkits) {
         ProjectDevKitTreeNode node = new ProjectDevKitTreeNode(devKit, getProject());
-        root.add(node);
+        moduleNodes.add(node);
       }
+
+      ModulesNamespaceTreeBuilder builder = new ModulesNamespaceTreeBuilder(getProject());
+      for (MPSTreeNode mtn : moduleNodes) {
+        builder.addNode(mtn);
+      }      
+      builder.fillNode(root);
 
       if (languages.size() + solutions.size() > 0) {
         root.add(new ProjectModulesPoolTreeNode(getProject()));
@@ -525,5 +549,28 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       return root;
     }
   } // private class MyTree
+
+  private class ModulesNamespaceTreeBuilder extends NamespaceTreeBuilder {
+    private MPSProject myProject;
+
+    private ModulesNamespaceTreeBuilder(MPSProject project) {
+      myProject = project;
+    }
+
+    protected String getNamespace(MPSTreeNode node) {
+      String folder = null;
+
+      if (node instanceof ProjectModuleTreeNode) {
+        ProjectModuleTreeNode pmtn = (ProjectModuleTreeNode) node;
+        folder = myProject.getFolderFor(pmtn.getModule());
+      }
+
+      if (folder != null) {
+        return folder;
+      }
+
+      return "";
+    }
+  }
 
 }

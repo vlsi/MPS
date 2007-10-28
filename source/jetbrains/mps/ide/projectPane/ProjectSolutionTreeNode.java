@@ -6,6 +6,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.IModule;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
@@ -17,13 +18,17 @@ import java.io.File;
  * Date: Aug 25, 2005
  * Time: 5:20:32 PM
  */
-class ProjectSolutionTreeNode extends MPSTreeNode {
+class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   private Solution mySolution;
 
   public ProjectSolutionTreeNode(Solution solution, MPSProject project) {
     super(new ModuleContext(solution, project));
     mySolution = solution;
     populate();
+  }
+
+  public IModule getModule() {
+    return mySolution;
   }
 
   public Solution getSolution() {
