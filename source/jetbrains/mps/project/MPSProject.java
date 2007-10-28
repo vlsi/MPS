@@ -361,6 +361,57 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     getProjectDescriptor().addProjectLanguage(path);
   }
 
+  public String getFolderFor(IModule module) {
+    File file = module.getDescriptorFile();
+    assert file != null;
+    String path = FileUtil.getCanonicalPath(file.getAbsolutePath());
+    for (SolutionPath sp : myProjectDescriptor.getProjectSolutions()) {
+      if (path.equals(sp.getPath())) {
+        return sp.getFolder();
+      }
+    }
+
+    for (LanguagePath lp : myProjectDescriptor.getProjectLanguages()) {
+      if (path.equals(lp.getPath())) {
+        return lp.getFolder();
+      }
+    }
+
+    for (DevKitPath dp : myProjectDescriptor.getProjectDevkits()) {
+      if (path.equals(dp.getPath())) {
+        return dp.getFolder();
+      }
+    }
+
+    return null;    
+  }
+
+  public void setFolderFor(IModule module, String newFolder) {
+    File file = module.getDescriptorFile();
+    assert file != null;
+    String path = FileUtil.getCanonicalPath(file.getAbsolutePath());
+    for (SolutionPath sp : myProjectDescriptor.getProjectSolutions()) {
+      if (path.equals(sp.getPath())) {
+        sp.setFolder(newFolder);
+        return;
+      }
+    }
+
+    for (LanguagePath lp : myProjectDescriptor.getProjectLanguages()) {
+      if (path.equals(lp.getPath())) {
+        lp.setFolder(newFolder);
+        return;
+      }
+    }
+
+    for (DevKitPath dp : myProjectDescriptor.getProjectDevkits()) {
+      if (path.equals(dp.getPath())) {
+        dp.setFolder(newFolder);
+        return;
+      }
+    }
+  }
+
   @NotNull
   public ProjectDescriptor getProjectDescriptor() {
     return myProjectDescriptor;
