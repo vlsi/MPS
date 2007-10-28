@@ -49,6 +49,10 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
     return myGenerationOptimizationEnabled;
   }
 
+  public void setGenerationOptimizationEnabled(boolean generationOptimizationEnabled) {
+    myGenerationOptimizationEnabled = generationOptimizationEnabled;
+  }
+
   private class MyPreferencesPage implements IPreferencesPage {
   //  private JCheckBox myIncrementalCheckBox = new JCheckBox("Use incremental algorithm");
     private JCheckBox myHighlightingCheckBox = new JCheckBox("Use debug highlighting");
