@@ -15,10 +15,7 @@ import jetbrains.mps.component.IComponentLifecycle;
 import org.jdom.Element;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class LibraryManager extends DefaultExternalizableComponent implements IComponentWithPreferences, IComponentLifecycle {
 
@@ -35,6 +32,9 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
   }
 
   public void initComponent() {
+
+    System.out.println("init library manager");
+
     updatePredefinedLibraries();
     update();
   }
@@ -134,7 +134,9 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
   }
 
   public <M extends IModule> Set<M> getGlobalModules(Class<M> cls) {
-    return new HashSet<M>(MPSModuleRepository.getInstance().getModules(myOwner, cls));
+    List<M> result = MPSModuleRepository.getInstance().getModules(myOwner, cls);
+    result.addAll(MPSModuleRepository.getInstance().getModules(myPredefinedLibrariesOwner, cls));
+    return new HashSet<M>(result);
   }
 
   public IPreferencesPage createPreferencesPage() {
