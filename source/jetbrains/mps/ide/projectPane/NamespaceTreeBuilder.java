@@ -9,6 +9,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.ToStringComparator;
 
 import javax.swing.JPopupMenu;
 import java.util.*;
@@ -42,27 +43,34 @@ public abstract class NamespaceTreeBuilder<N extends MPSTreeNode> {
     }
   }
 
+  protected boolean isSorted() {
+    return true;
+  }
+
   private void sortTree(NamespaceNode node) {
     List<MPSTreeNode> nodes = new ArrayList<MPSTreeNode>();
-
+    List<NamespaceNode> namespaces = new ArrayList<NamespaceNode>();
     for (int i = 0; i < node.getChildCount(); i++) {
       MPSTreeNode child = (MPSTreeNode) node.getChildAt(i);
       if (child instanceof NamespaceNode) {
         sortTree((NamespaceNode) child);
+        namespaces.add((NamespaceNode) child);
+      } else {
+        nodes.add(child);
       }
-      nodes.add(child);
     }
 
-
-    Collections.sort(nodes, new Comparator<MPSTreeNode>() {
-      public int compare(MPSTreeNode o1, MPSTreeNode o2) {
-        if (o1 instanceof NamespaceNode && !(o2 instanceof NamespaceNode)) return -1;
-        if (o2 instanceof NamespaceNode && !(o1 instanceof NamespaceNode)) return 1;
-        return o1.toString().compareTo(o2.toString());
-      }
-    });
+    Collections.sort(namespaces, new ToStringComparator());
+    if (isSorted()) {
+      Collections.sort(nodes, new ToStringComparator());
+    }
 
     node.removeAllChildren();
+
+    for (NamespaceNode ns : namespaces) {
+      node.add(ns);
+    }
+
     for (MPSTreeNode n : nodes) {
       node.add(n);
     }

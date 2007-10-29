@@ -557,6 +557,10 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       myProject = project;
     }
 
+    protected boolean isSorted() {
+      return false;
+    }
+
     protected String getNamespace(MPSTreeNode node) {
       String folder = null;
 
