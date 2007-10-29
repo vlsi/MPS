@@ -158,9 +158,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
     if (changeModule == null) {
       for (IModule m : myModuleRepository.getAllModules()) {
         m.reloadStubs();
+        ((AbstractModule) m).updateRuntimeClassPath();
       }
     } else {
       changeModule.reloadStubs();
+      ((AbstractModule) changeModule).updateRuntimeClassPath();
     }
 
     LOG.debug("Done");
