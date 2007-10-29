@@ -368,6 +368,12 @@ public class ModelConstraintsManager implements IComponentLifecycle {
     String packageName = languageNamespace + ".constraints";
     IClassPathItem classPathItem = l.getRuntimeClasspath();
     Set<String> availableClasses = classPathItem.getAvailableClasses(packageName);
+
+    if (availableClasses.isEmpty() && l.getConstraintsModelDescriptor() != null && l.getConstraintsModelDescriptor().getSModel().getRoots().size() > 0) {
+      LOG.error("Can't load constraints from language " + l + ". Please set runtime classpath correctly.");
+    }
+
+
     for (String shortClassName : availableClasses) {
       try {
         ClassLoader classLoader = myClassLoaderManager.getClassLoaderFor(l);
