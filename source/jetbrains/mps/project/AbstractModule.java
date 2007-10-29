@@ -446,6 +446,7 @@ public abstract class AbstractModule implements IModule {
 
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
     Set<IModule> module = getAllDependOnModules(IModule.class);
+    module.add(this);
 
     module.addAll(BootstrapLanguages.getInstance().getLanguages());
 
