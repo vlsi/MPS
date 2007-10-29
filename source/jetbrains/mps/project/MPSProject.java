@@ -692,11 +692,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   }
 
   public static class TestResult {
-    public List<Message> myGenerationErrors;
-    public List<Message> myGenerationWarnings;
+    public List<String> myGenerationErrors;
+    public List<String> myGenerationWarnings;
     public List<String> myCompilationProblems;
 
-    public TestResult(List<Message> generationErrors, List<Message> generationWarnings, List<String> compilationProblems) {
+    public TestResult(List<String> generationErrors, List<String> generationWarnings, List<String> compilationProblems) {
       this.myGenerationErrors = generationErrors;
       this.myGenerationWarnings = generationWarnings;
       this.myCompilationProblems = compilationProblems;
@@ -708,8 +708,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     public int warningsStartsWith(String warn) {
       int i = 0;
-      for (Message w : myGenerationWarnings) {
-        if (w.getText().startsWith(warn)) {
+      for (String w : myGenerationWarnings) {
+        if (w.startsWith(warn)) {
           i++;
         }
       }
@@ -734,8 +734,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
       if (hasGenerationErrors()) {
         out.println("Generation errors:");
-        for (Message e: myGenerationErrors) {
-          out.println("  "  + e.getText());
+        for (String e: myGenerationErrors) {
+          out.println("  "  + e);
         }
       } else {
         out.println("No generation errors.");
@@ -744,8 +744,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
       if (hasGenerationWarnings()) {
         out.println("Generation warnings:");
-        for (Message w: myGenerationWarnings) {
-          out.println("  "  + w.getText());
+        for (String w: myGenerationWarnings) {
+          out.println("  "  + w);
         }
       } else {
         out.println("No generation warnings.");
@@ -769,20 +769,20 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   public TestResult testProject() {
     getPluginManager().reloadPlugins();
 
-    final List<Message> errors = new ArrayList<Message>();
-    final List<Message> warnings = new ArrayList<Message>();
+    final List<String> errors = new ArrayList<String>();
+    final List<String> warnings = new ArrayList<String>();
 
     final IMessageHandler handler = new IMessageHandler() {
       public void handle(Message msg) {
         final String message = msg.getText();
         switch(msg.getKind()) {
           case ERROR:
-            errors.add(msg);
+            errors.add(msg.getText());
             LOG.error(message);
             break;
 
           case WARNING:
-            warnings.add(msg);
+            warnings.add(msg.getText());
             LOG.warning(message);
             break;
 
@@ -817,7 +817,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           try {
             parms = GeneratorConfigUtil.calculate(MPSProject.this, t);
           } catch (GeneratorConfigUtil.GeneratorConfigurationException e) {            
-            errors.add(new Message(MessageKind.ERROR, "Can't create a generator configuration : " + e.getMessage()));
+            errors.add("Can't create a generator configuration : " + e.getMessage());
             return;
           }
 
