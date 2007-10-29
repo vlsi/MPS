@@ -372,10 +372,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
           String builderPack = getModuleUID() + ".builder";
           String scriptsPack = getModuleUID() + ".scripts";
           String helginsPack = getModuleUID() + ".helgins";
+          String generatorPack = getModuleUID() + ".generator";
 
           if (namespace.equals(editorPack) || namespace.equals(actionsPack) || namespace.equals(constraintsPack) ||
                   namespace.equals(intentionsPack) || namespace.equals(builderPack) || namespace.equals(scriptsPack) ||
-                  namespace.equals(helginsPack)) {
+                  namespace.equals(helginsPack) || namespace.equals(generatorPack)) {
             return getRuntimeClasspath().getClass(fqName);
           }
 
