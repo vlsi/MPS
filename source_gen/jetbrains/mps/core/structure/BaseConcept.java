@@ -21,6 +21,7 @@ public class BaseConcept extends BaseAdapter {
   public static String CPR_Deprecated_next_after_415 = "deprecated_next_after_415";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  BaseConcept(SNode node) {
     super(node);
@@ -49,6 +50,14 @@ public class BaseConcept extends BaseAdapter {
 
   public void setAlias(String value) {
     this.setProperty(BaseConcept.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(BaseConcept.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(BaseConcept.VIRTUAL_PACKAGE, value);
   }
 
 }

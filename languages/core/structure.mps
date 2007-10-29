@@ -32,6 +32,10 @@
       <property name="name" value="alias" />
       <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1193676396447">
+      <property name="name" value="virtualPackage" />
+      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+    </node>
     <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration" id="1137473854053">
       <property name="name" value="abstract" />
     </node>
