@@ -357,6 +357,8 @@ public class ModelConstraintsManager implements IComponentLifecycle {
       }
       loadedConstraints.clear();
     }
+
+    myAddedLanguageNamespaces.clear();
   }
 
   private void loadConstraints(String languageNamespace, List<IModelConstraints> loadedConstraints) {
