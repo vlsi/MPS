@@ -1,13 +1,14 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 
 /**
  * Igor Alshannikov
@@ -31,6 +32,18 @@ import java.util.HashMap;
         myMap.clear();
       }
     });
+  }
+
+  /**
+   * We need this method to make generation to be economical with memory during generation
+   * Do not remove it
+   */
+  void clear(SModelUID uid) {
+    for (String key : new HashSet<String>(myMap.keySet())) {
+      if (key.startsWith(uid.toString() + "#")) {
+        myMap.remove(key);
+      }
+    }
   }
 
   /*package*/ void put(SNode node) {

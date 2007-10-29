@@ -430,6 +430,9 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     myModelCommandListeners.clear();
     myWeakModelListeners.clear();
     myModelListeners.clear();
+
+    UnregisteredNodes.instance().clear(getModelUID());
+
     if (mySModel != null) {
       mySModel.dispose();
     }

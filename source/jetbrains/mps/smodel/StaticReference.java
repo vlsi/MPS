@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 
   private SNode myTargetNode;
   private boolean myMature;
+  private CommandAdapter myListener;
 
   StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
     // 'young' reference
@@ -22,7 +23,7 @@ import org.jetbrains.annotations.NotNull;
     myMature = false;
 //    myTargetNode = new WeakReference<SNode>(targetNode);
     myTargetNode = targetNode;
-    CommandProcessor.instance().addCommandListener(new CommandAdapter() {
+    CommandProcessor.instance().addWeakCommandListener(myListener = new CommandAdapter() {
       public void commandFinished(@NotNull CommandEvent event) {
         CommandProcessor.instance().removeCommandListener(this);
         if (!myMature && myTargetNode != null) {
