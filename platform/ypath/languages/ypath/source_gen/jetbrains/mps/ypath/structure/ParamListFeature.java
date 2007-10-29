@@ -10,12 +10,12 @@ import jetbrains.mps.baseLanguage.structure.Type;
 
 public class ParamListFeature extends ListFeature implements IParamFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.ParamListFeature";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
   public static String PARAMETER_TYPE = "parameterType";
   public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
   public static String TO_STRING_FUNCTION = "toStringFunction";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
 
   public  ParamListFeature(SNode node) {
     super(node);
@@ -29,6 +29,22 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
     return ParamListFeature.newInstance(sm, false);
   }
 
+
+  public String getShortDescription() {
+    return this.getProperty(ParamListFeature.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ParamListFeature.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ParamListFeature.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ParamListFeature.ALIAS, value);
+  }
 
   public Type getParameterType() {
     return (Type)this.getChild(ParamListFeature.PARAMETER_TYPE);
@@ -100,22 +116,6 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
 
   public void setParamDeleteFunction(ParamFeatureDeleteFun node) {
     this.setDeleteFunction(node);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(ParamListFeature.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(ParamListFeature.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(ParamListFeature.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(ParamListFeature.ALIAS, value);
   }
 
 }

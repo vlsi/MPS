@@ -6,12 +6,14 @@
   <module />
   <languages />
   <classPath>
+    <entry path="${mps_home}\platform\ypath\classes" />
     <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
   </classPath>
+  <runtimeClassPath />
   <dependencies>
     <dependency>jetbrains.mps.ypath</dependency>
     <dependency>jetbrains.mps.baseLanguage.unitTest</dependency>
-    <dependency>main</dependency>
+    <dependency>C:\MPS\platform\ypath\solutions\main\main.msd</dependency>
   </dependencies>
 </solution>
 

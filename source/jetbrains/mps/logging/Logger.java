@@ -61,9 +61,9 @@ public class Logger {
 
   private static synchronized void error(LogEntry e) {
     for (ILoggingHandler lh : ourLoggingHandlers) {
-      lh.error(e);
+          lh.error(e);
     }
-  }
+  }   
 
   private static synchronized void fatal(LogEntry e) {
     for (ILoggingHandler lh : ourLoggingHandlers) {
