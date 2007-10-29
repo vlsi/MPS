@@ -35,7 +35,7 @@ import java.util.Map;
   }
 
   /**
-   * We need this method to make generation to be economical with memory during generation
+   * We need this method to make generation economical with memory during generation
    * Do not remove it
    */
   void clear(SModelUID uid) {
