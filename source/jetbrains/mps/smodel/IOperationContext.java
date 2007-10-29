@@ -25,5 +25,7 @@ public interface IOperationContext {
 
   @NotNull Frame getMainFrame();
 
+  boolean isTestMode();
+
   <T> T getComponent(@NotNull Class<T> clazz);
 }

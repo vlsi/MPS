@@ -268,8 +268,12 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return set.contains(inputNode);
   }
 
+  private boolean keepTransientForMessageNavigation() {
+    return !myInvocationContext.isTestMode();
+  }
+
   public void addTransientModelToKeep(SModel transientModel) {
-    if (transientModel.getModelDescriptor().isTransient()) {
+    if (transientModel.getModelDescriptor().isTransient() && keepTransientForMessageNavigation()) {
       myTransientModelsToKeep.add(transientModel);
       if (!SModelRepository.getInstance().isRegisteredModelDescriptor(transientModel.getModelDescriptor(), myTransientModule)) {
         SModelRepository.getInstance().registerModelDescriptor(transientModel.getModelDescriptor(), myTransientModule);
