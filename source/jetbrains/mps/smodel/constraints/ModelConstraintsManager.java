@@ -356,7 +356,6 @@ public class ModelConstraintsManager implements IComponentLifecycle {
         constraints.unRegisterSelf(this);
       }
       loadedConstraints.clear();
-      loadConstraints(languageNamespace, loadedConstraints);
     }
   }
 
