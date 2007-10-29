@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ApplicableNodeReference extends Expression {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference";
   public static String APPLICABLE_NODE = "applicableNode";
 
   public  ApplicableNodeReference(SNode node) {

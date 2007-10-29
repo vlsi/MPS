@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.patterns.structure.PatternExpression;
 
 public class PatternCondition extends ApplicableNodeCondition {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.PatternCondition";
   public static String PATTERN = "pattern";
 
   public  PatternCondition(SNode node) {

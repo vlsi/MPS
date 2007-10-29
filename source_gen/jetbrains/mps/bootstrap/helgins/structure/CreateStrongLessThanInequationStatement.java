@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class CreateStrongLessThanInequationStatement extends AbstractEquationStatement {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.CreateStrongLessThanInequationStatement";
 
   public  CreateStrongLessThanInequationStatement(SNode node) {
     super(node);

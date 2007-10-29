@@ -33,6 +33,10 @@ public class RuntimeSupport {
   }
 
   public SNode typeOf(SNode node, String ruleModel, String ruleId) {
+    return typeOf(node, ruleModel, ruleId, true);
+  }
+
+  public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     if (node == null) return null;
     SNode type;
     NodeTypesComponent_new currentTypesComponent = myTypeChecker.getCurrentTypesComponent();   //first, in current component

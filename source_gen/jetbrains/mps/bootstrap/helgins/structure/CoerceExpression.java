@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class CoerceExpression extends Expression {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.CoerceExpression";
   public static String PATTERN = "pattern";
   public static String NODE_TO_COERCE = "nodeToCoerce";
 

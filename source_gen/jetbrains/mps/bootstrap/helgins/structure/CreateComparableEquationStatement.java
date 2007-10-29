@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class CreateComparableEquationStatement extends AbstractEquationStatement {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.CreateComparableEquationStatement";
 
   public  CreateComparableEquationStatement(SNode node) {
     super(node);

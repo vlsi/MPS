@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SubtypingRule extends AbstractSubtypingRule {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.SubtypingRule";
 
   public  SubtypingRule(SNode node) {
     super(node);

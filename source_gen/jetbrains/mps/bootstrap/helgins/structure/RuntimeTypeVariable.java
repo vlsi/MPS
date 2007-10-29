@@ -10,7 +10,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class RuntimeTypeVariable extends BaseConcept implements INamedConcept {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable";
   public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
   public static String NULLABLE = "nullable";
 
   public  RuntimeTypeVariable(SNode node) {
@@ -32,6 +35,22 @@ public class RuntimeTypeVariable extends BaseConcept implements INamedConcept {
 
   public void setName(String value) {
     this.setProperty(RuntimeTypeVariable.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(RuntimeTypeVariable.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(RuntimeTypeVariable.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(RuntimeTypeVariable.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(RuntimeTypeVariable.ALIAS, value);
   }
 
   public boolean getNullable() {

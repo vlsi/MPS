@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class AbstractSubtypingRule extends AbstractRule {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule";
   public static String IS_WEAK = "isWeak";
   public static String BODY = "body";
 

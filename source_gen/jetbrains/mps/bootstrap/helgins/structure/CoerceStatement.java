@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class CoerceStatement extends Statement {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement";
   public static String PATTERN = "pattern";
   public static String NODE_TO_COERCE = "nodeToCoerce";
   public static String BODY = "body";

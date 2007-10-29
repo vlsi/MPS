@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class JoinType extends BaseConcept {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.JoinType";
   public static String ARGUMENT = "argument";
 
   public  JoinType(SNode node) {

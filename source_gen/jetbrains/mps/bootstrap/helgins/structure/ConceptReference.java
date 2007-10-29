@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class ConceptReference extends ApplicableNodeCondition {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ConceptReference";
   public static String CONCEPT = "concept";
 
   public  ConceptReference(SNode node) {

@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class GivetypeStatement extends Statement {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.GivetypeStatement";
   public static String TYPE_EXPRESSION = "typeExpression";
   public static String TERM_EXPRESSION = "termExpression";
 

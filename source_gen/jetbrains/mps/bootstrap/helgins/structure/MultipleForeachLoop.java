@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class MultipleForeachLoop extends AbstractLoopStatement {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.MultipleForeachLoop";
   public static String LOOP_VARIABLE = "loopVariable";
 
   public  MultipleForeachLoop(SNode node) {

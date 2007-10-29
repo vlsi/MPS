@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class RuntimeErrorType extends RuntimeTypeVariable {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType";
   public static String ERROR_TEXT = "errorText";
   public static String NODE_ID = "nodeId";
   public static String NODE_MODEL = "nodeModel";

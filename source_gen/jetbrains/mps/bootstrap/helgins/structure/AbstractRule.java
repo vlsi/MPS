@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class AbstractRule extends NamedConcept {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.AbstractRule";
   public static String APPLICABLE_NODE = "applicableNode";
 
   public  AbstractRule(SNode node) {

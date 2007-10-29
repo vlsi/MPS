@@ -8,6 +8,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class CreateEquationStatement extends AbstractEquationStatement {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement";
+  public static String DIRECTION = "direction";
 
   public  CreateEquationStatement(SNode node) {
     super(node);
@@ -19,6 +21,16 @@ public class CreateEquationStatement extends AbstractEquationStatement {
 
   public static CreateEquationStatement newInstance(SModel sm) {
     return CreateEquationStatement.newInstance(sm, false);
+  }
+
+
+  public EquationDirection_Enum getDirection() {
+    String value = super.getProperty(CreateEquationStatement.DIRECTION);
+    return EquationDirection_Enum.parseValue(value);
+  }
+
+  public void setDirection(EquationDirection_Enum value) {
+    super.setProperty(CreateEquationStatement.DIRECTION, value.getValueAsString());
   }
 
 }

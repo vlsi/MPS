@@ -155,6 +155,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174658326157">
     <property name="name" value="CreateEquationStatement" />
     <link role="extends" targetNodeId="1174660718586" resolveInfo="AbstractEquationStatement" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1193662477920">
+      <property name="name" value="direction" />
+      <link role="dataType" targetNodeId="1193662402729" resolveInfo="EquationDirection_Enum" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1174658543003">
       <property name="value" value=":==:" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -773,6 +777,24 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="anotherNode" />
       <link role="target" targetNodeId="1174642743670" resolveInfo="ApplicableNodeCondition" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1193662402729">
+    <property name="name" value="EquationDirection_Enum" />
+    <link role="memberDataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1193662402730">
+      <property name="internalValue" value="none" />
+      <property name="externalValue" value="none" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1193662428543">
+      <property name="internalValue" value="left" />
+      <property name="externalValue" value=":=" />
+      <property name="javaIdentifier" value="left" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1193662442981">
+      <property name="internalValue" value="right" />
+      <property name="externalValue" value="=:" />
+      <property name="javaIdentifier" value="right" />
     </node>
   </node>
 </model>

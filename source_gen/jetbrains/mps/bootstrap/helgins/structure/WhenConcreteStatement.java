@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class WhenConcreteStatement extends Statement {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement";
   public static String BODY = "body";
   public static String ARGUMENT = "argument";
 

@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class NormalTypeClause extends TypeClause {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause";
   public static String NORMAL_TYPE = "normalType";
 
   public  NormalTypeClause(SNode node) {

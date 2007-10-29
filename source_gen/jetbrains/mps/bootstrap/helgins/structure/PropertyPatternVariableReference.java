@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration;
 
 public class PropertyPatternVariableReference extends Expression {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.PropertyPatternVariableReference";
   public static String PATTERN_VAR_DECL = "patternVarDecl";
 
   public  PropertyPatternVariableReference(SNode node) {

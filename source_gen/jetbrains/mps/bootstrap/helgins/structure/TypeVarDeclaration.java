@@ -10,7 +10,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TypeVarDeclaration extends Statement implements INamedConcept {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.TypeVarDeclaration";
   public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
   public static String NULLABLE = "nullable";
 
   public  TypeVarDeclaration(SNode node) {
@@ -32,6 +35,22 @@ public class TypeVarDeclaration extends Statement implements INamedConcept {
 
   public void setName(String value) {
     this.setProperty(TypeVarDeclaration.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(TypeVarDeclaration.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(TypeVarDeclaration.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(TypeVarDeclaration.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(TypeVarDeclaration.ALIAS, value);
   }
 
   public boolean getNullable() {

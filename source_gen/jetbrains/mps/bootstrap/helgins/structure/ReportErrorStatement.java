@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class ReportErrorStatement extends Statement {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ReportErrorStatement";
   public static String ERROR_STRING = "errorString";
   public static String NODE_TO_REPORT = "nodeToReport";
 

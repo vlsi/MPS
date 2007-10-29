@@ -11,6 +11,7 @@ import jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class MultipleForeachLoopVariable extends BaseConcept {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.MultipleForeachLoopVariable";
   public static String VARIABLE = "variable";
   public static String ITERABLE = "iterable";
 

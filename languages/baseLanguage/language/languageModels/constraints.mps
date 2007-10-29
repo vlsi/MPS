@@ -1125,6 +1125,24 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1193670432254">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="getJavaType" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1193670476620">
+        <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193670432256">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193670544870">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.CoerceExpression" id="1193670546919">
+            <node role="pattern" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1193670563970">
+              <property name="name" value="classifierType" />
+              <link role="concept" targetNodeId="1.1107535904670" resolveInfo="ClassifierType" />
+            </node>
+            <node role="nodeToCoerce" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1193670552907" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181704919">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181704920" />
     </node>
@@ -3715,6 +3733,18 @@
         <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190026804809">
           <link role="classifier" targetNodeId="13.~String" resolveInfo="String" />
         </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1193670576127">
+      <property name="name" value="getJavaType" />
+      <link role="overridenMethod" targetNodeId="1193670432254" resolveInfo="getJavaType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193670576129">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193670582537">
+          <node role="expression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1193670584024" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1193670580458">
+        <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1182417073822">

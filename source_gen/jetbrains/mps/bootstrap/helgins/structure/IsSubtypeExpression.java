@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IsSubtypeExpression extends Expression {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.IsSubtypeExpression";
   public static String SUBTYPE_EXPRESSION = "subtypeExpression";
   public static String SUPERTYPE_EXPRESSION = "supertypeExpression";
 

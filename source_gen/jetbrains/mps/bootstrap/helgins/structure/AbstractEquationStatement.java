@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class AbstractEquationStatement extends Statement {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement";
   public static String LEFT_EXPRESSION = "leftExpression";
   public static String RIGHT_EXPRESSION = "rightExpression";
   public static String NODE_TO_CHECK = "nodeToCheck";

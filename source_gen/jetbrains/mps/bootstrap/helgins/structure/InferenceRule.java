@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class InferenceRule extends AbstractRule {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.InferenceRule";
   public static String OVERRIDES = "overrides";
   public static String BODY = "body";
 

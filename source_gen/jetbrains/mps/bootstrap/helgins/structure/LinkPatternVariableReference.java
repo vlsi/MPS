@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration;
 
 public class LinkPatternVariableReference extends Expression {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.LinkPatternVariableReference";
   public static String PATTERN_VAR_DECL = "patternVarDecl";
 
   public  LinkPatternVariableReference(SNode node) {

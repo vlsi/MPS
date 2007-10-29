@@ -12,6 +12,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class MatchStatement extends Statement {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.MatchStatement";
   public static String EXPRESSION = "expression";
   public static String IF_FALSE_STATEMENT = "ifFalseStatement";
   public static String ITEM = "item";

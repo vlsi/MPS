@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ImmediateSupertypesExpression extends Expression {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ImmediateSupertypesExpression";
   public static String SUBTYPE_EXPRESSION = "subtypeExpression";
 
   public  ImmediateSupertypesExpression(SNode node) {

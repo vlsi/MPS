@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 
 public class MatchStatementItem extends BaseConcept {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem";
   public static String CONDITION = "condition";
   public static String IF_TRUE = "ifTrue";
 

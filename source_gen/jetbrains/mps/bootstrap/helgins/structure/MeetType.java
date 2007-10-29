@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class MeetType extends BaseConcept {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.MeetType";
   public static String ARGUMENT = "argument";
 
   public  MeetType(SNode node) {

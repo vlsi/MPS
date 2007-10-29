@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class TypeOfExpression extends Expression {
+  public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression";
   public static String TERM = "term";
 
   public  TypeOfExpression(SNode node) {
