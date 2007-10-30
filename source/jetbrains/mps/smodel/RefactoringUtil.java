@@ -20,9 +20,6 @@ public final class RefactoringUtil {
   public static List<ReferenceMacro> renameLink(Set<SNode> nodes, boolean aggregation, String oldRole, String newRole) {
     List<ReferenceMacro> referenceMacros = new ArrayList<ReferenceMacro>();
     SModelRepository modelRepository = SModelRepository.getInstance();
-    if (nodes instanceof HashSet) {
-
-    }
     for (SNode node : nodes) {
       if (aggregation) {
         List<SNode> children = node.getChildren(oldRole);

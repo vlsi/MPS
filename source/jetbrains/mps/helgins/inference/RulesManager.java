@@ -26,6 +26,7 @@ public class RulesManager {
   private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<SubtypingRule_Runtime>();
   private RuleSet<SupertypingRule_Runtime> mySupertypingRules = new RuleSet<SupertypingRule_Runtime>();
   private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
+  private DependenciesContainer myDependenciesContainer = new DependenciesContainer();
 
   private static Logger LOG = Logger.getLogger(RulesManager.class);
 
@@ -39,6 +40,7 @@ public class RulesManager {
     mySubtypingRules.clear();
     mySupertypingRules.clear();
     myComparisonRules.clear();
+    myDependenciesContainer.clear();
   }
 
   public boolean loadLanguage(Language l) {
@@ -58,10 +60,12 @@ public class RulesManager {
       mySubtypingRules.addRuleSetItem(helginsDescriptor.getSubtypingRules());
       mySupertypingRules.addRuleSetItem(helginsDescriptor.getSupertypingRules());
       myComparisonRules.addRuleSetItem(helginsDescriptor.getComparisonRules());
+      myDependenciesContainer.addDependencies(helginsDescriptor.getDependencies());
       myInferenceRules.makeConsistent();
       mySubtypingRules.makeConsistent();
       mySupertypingRules.makeConsistent();
       myComparisonRules.makeConsistent();
+      myDependenciesContainer.makeConsistent();
       myLoadedLanguages.add(l.getNamespace());
       return true;
     } catch(Throwable t) {
@@ -104,6 +108,10 @@ public class RulesManager {
       }
     }));
     return result;
+  }
+
+  public Set<SNode> getDependencies(SNode node) {
+    return myDependenciesContainer.getDependencies(node);
   }
 
   public TypeChecker getTypeChecker() {

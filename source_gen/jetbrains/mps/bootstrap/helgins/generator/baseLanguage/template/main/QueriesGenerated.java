@@ -24,6 +24,7 @@ import jetbrains.mps.bootstrap.helgins.structure.InferenceRule;
 import jetbrains.mps.bootstrap.helgins.structure.SubtypingRule;
 import jetbrains.mps.bootstrap.helgins.structure.SupertypingRule;
 import jetbrains.mps.bootstrap.helgins.structure.ComparisonRule;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.helgins.structure.ReferenceAntiquotation_AnnotationLink;
@@ -203,6 +204,25 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1174916988756(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getBoolean(node, "result") + "";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1193741165504(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode rule = SNodeOperations.getParent(node, null, false, false);
+    SNode conceptDeclaration;
+    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference")) {
+      SNode conceptReference = SLinkOperations.getTarget(rule, "applicableNode", true);
+      conceptDeclaration = SLinkOperations.getTarget(conceptReference, "concept", false);
+    } else
+    {
+      SNode patternCondition = SLinkOperations.getTarget(rule, "applicableNode", true);
+      conceptDeclaration = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(patternCondition, "pattern", true), "patternNode", true));
+    }
+    return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1193740794372(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode conceptDeclaration = SLinkOperations.getTarget(node, "targetConcept", false);
+    return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1185024196506(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -907,6 +927,10 @@ public class QueriesGenerated {
     return BaseAdapter.toNodes(sourceModel.getRootsAdapters(ComparisonRule.class));
   }
 
+  public static List sourceNodesQuery_1193740670223(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SModelOperations.getNodes(sourceModel, "jetbrains.mps.bootstrap.helgins.structure.Dependency");
+  }
+
   public static List sourceNodesQuery_1176548514510(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "loopVariable", true);
   }
@@ -1094,6 +1118,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1175149818478(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1193740734076(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "findSourceBlock", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1175496456158(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

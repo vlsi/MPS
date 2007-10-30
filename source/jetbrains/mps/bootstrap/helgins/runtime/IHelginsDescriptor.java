@@ -1,5 +1,7 @@
 package jetbrains.mps.bootstrap.helgins.runtime;
 
+import jetbrains.mps.helgins.inference.util.IDependency_Runtime;
+
 import java.util.Set;
 import java.util.HashSet;
 
@@ -15,4 +17,5 @@ public interface IHelginsDescriptor {
   public Set<SubtypingRule_Runtime> getSubtypingRules();
   public Set<SupertypingRule_Runtime> getSupertypingRules();
   public Set<ComparisonRule_Runtime> getComparisonRules();
+  public Set<IDependency_Runtime> getDependencies();
 }

@@ -48,6 +48,7 @@ public class TypeChecker {
   private MPSProject myProject;
   private boolean myIsIncrementalMode = true;
   private boolean myIsGenerationMode = false;
+  private DependenciesContainer myDependenciesContainer;
 
 
   public TypeChecker() {
