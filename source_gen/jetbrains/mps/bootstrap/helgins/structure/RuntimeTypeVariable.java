@@ -14,6 +14,7 @@ public class RuntimeTypeVariable extends BaseConcept implements INamedConcept {
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String NULLABLE = "nullable";
 
   public  RuntimeTypeVariable(SNode node) {
@@ -51,6 +52,14 @@ public class RuntimeTypeVariable extends BaseConcept implements INamedConcept {
 
   public void setAlias(String value) {
     this.setProperty(RuntimeTypeVariable.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(RuntimeTypeVariable.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(RuntimeTypeVariable.VIRTUAL_PACKAGE, value);
   }
 
   public boolean getNullable() {

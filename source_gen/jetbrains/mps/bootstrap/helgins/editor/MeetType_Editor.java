@@ -66,7 +66,7 @@ public class MeetType_Editor extends DefaultNodeEditor {
 
   public EditorCell createArgumentList(EditorContext context, SNode node) {
     if(this.myArgumentListHandler_argumentList_ == null) {
-      this.myArgumentListHandler_argumentList_ = new MeetType_Editor._RefNodeListHandler5(node, "argument", context);
+      this.myArgumentListHandler_argumentList_ = new MeetType_Editor._RefNodeListHandler6(node, "argument", context);
     }
     EditorCell_Collection editorCell = this.myArgumentListHandler_argumentList_.createCells(context, new CellLayout_Horizontal(), false);
     MeetType_Editor.setupBasic_ArgumentList(editorCell, node, context);
@@ -77,9 +77,9 @@ public class MeetType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _RefNodeListHandler5 extends RefNodeListHandler {
+  public static class _RefNodeListHandler6 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler5(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler6(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

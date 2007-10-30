@@ -66,7 +66,7 @@ public class JoinType_Editor extends DefaultNodeEditor {
 
   public EditorCell createArgumentList(EditorContext context, SNode node) {
     if(this.myArgumentListHandler_argumentList_ == null) {
-      this.myArgumentListHandler_argumentList_ = new JoinType_Editor._RefNodeListHandler3(node, "argument", context);
+      this.myArgumentListHandler_argumentList_ = new JoinType_Editor._RefNodeListHandler4(node, "argument", context);
     }
     EditorCell_Collection editorCell = this.myArgumentListHandler_argumentList_.createCells(context, new CellLayout_Horizontal(), false);
     JoinType_Editor.setupBasic_ArgumentList(editorCell, node, context);
@@ -77,9 +77,9 @@ public class JoinType_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _RefNodeListHandler3 extends RefNodeListHandler {
+  public static class _RefNodeListHandler4 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler4(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

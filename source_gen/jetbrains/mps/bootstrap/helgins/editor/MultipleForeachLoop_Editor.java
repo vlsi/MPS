@@ -176,7 +176,7 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
 
   public EditorCell createLoopVariableList(EditorContext context, SNode node) {
     if(this.myLoopVariableListHandler_loopVariableList_ == null) {
-      this.myLoopVariableListHandler_loopVariableList_ = new MultipleForeachLoop_Editor._RefNodeListHandler1(node, "loopVariable", context);
+      this.myLoopVariableListHandler_loopVariableList_ = new MultipleForeachLoop_Editor._RefNodeListHandler2(node, "loopVariable", context);
     }
     EditorCell_Collection editorCell = this.myLoopVariableListHandler_loopVariableList_.createCells(context, new CellLayout_Horizontal(), false);
     MultipleForeachLoop_Editor.setupBasic_LoopVariableList(editorCell, node, context);
@@ -216,9 +216,9 @@ public class MultipleForeachLoop_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler1 extends RefNodeListHandler {
+  public static class _RefNodeListHandler2 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler2(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

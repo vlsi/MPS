@@ -311,7 +311,7 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
 
   public EditorCell createItemList(EditorContext context, SNode node) {
     if(this.myItemListHandler_itemList_ == null) {
-      this.myItemListHandler_itemList_ = new MatchStatement_Editor._RefNodeListHandler2(node, "item", context);
+      this.myItemListHandler_itemList_ = new MatchStatement_Editor._RefNodeListHandler3(node, "item", context);
     }
     EditorCell_Collection editorCell = this.myItemListHandler_itemList_.createCells(context, new CellLayout_Vertical(), false);
     MatchStatement_Editor.setupBasic_ItemList(editorCell, node, context);
@@ -380,9 +380,9 @@ public class MatchStatement_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler2 extends RefNodeListHandler {
+  public static class _RefNodeListHandler3 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler2(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler3(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 

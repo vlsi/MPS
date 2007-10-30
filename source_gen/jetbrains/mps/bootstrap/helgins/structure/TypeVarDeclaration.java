@@ -14,6 +14,7 @@ public class TypeVarDeclaration extends Statement implements INamedConcept {
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String NULLABLE = "nullable";
 
   public  TypeVarDeclaration(SNode node) {
@@ -51,6 +52,14 @@ public class TypeVarDeclaration extends Statement implements INamedConcept {
 
   public void setAlias(String value) {
     this.setProperty(TypeVarDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(TypeVarDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(TypeVarDeclaration.VIRTUAL_PACKAGE, value);
   }
 
   public boolean getNullable() {
