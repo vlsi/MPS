@@ -27,7 +27,12 @@ public class IntentionsManager {
     if (!myIntentions.containsKey(conceptFqName)){
       return Collections.unmodifiableSet(new HashSet<Intention>());
     }
-    return Collections.unmodifiableSet(myIntentions.get(conceptFqName));
+    for (Intention intention : Collections.unmodifiableSet(myIntentions.get(conceptFqName))) {
+      if (intention.isApplicable(node, context)) {
+        result.add(intention);
+      }
+    }
+    return result;
   }
 
   public void reload() {
