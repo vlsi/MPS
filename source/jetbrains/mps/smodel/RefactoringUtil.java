@@ -6,6 +6,7 @@ import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_AnnotationLi
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.HashSet;
 
 public final class RefactoringUtil {
 
@@ -19,6 +20,9 @@ public final class RefactoringUtil {
   public static List<ReferenceMacro> renameLink(Set<SNode> nodes, boolean aggregation, String oldRole, String newRole) {
     List<ReferenceMacro> referenceMacros = new ArrayList<ReferenceMacro>();
     SModelRepository modelRepository = SModelRepository.getInstance();
+    if (nodes instanceof HashSet) {
+
+    }
     for (SNode node : nodes) {
       if (aggregation) {
         List<SNode> children = node.getChildren(oldRole);
