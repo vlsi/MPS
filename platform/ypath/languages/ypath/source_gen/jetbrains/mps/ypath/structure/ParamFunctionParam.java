@@ -12,6 +12,7 @@ public class ParamFunctionParam extends ConceptFunctionParameter implements IFun
   public static final String concept = "jetbrains.mps.ypath.structure.ParamFunctionParam";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  ParamFunctionParam(SNode node) {
     super(node);
@@ -40,6 +41,14 @@ public class ParamFunctionParam extends ConceptFunctionParameter implements IFun
 
   public void setAlias(String value) {
     this.setProperty(ParamFunctionParam.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ParamFunctionParam.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ParamFunctionParam.VIRTUAL_PACKAGE, value);
   }
 
 }

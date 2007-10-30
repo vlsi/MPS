@@ -9,10 +9,10 @@ import jetbrains.mps.project.GlobalScope;
 
 public class IterateOperation extends TreePathOperation {
   public static final String concept = "jetbrains.mps.ypath.structure.IterateOperation";
-  public static String USED_FEATURE = "usedFeature";
+  public static String PARAM_OBJECT = "paramObject";
   public static String USE_DEFAULT = "useDefault";
   public static String AXIS = "axis";
-  public static String PARAM_OBJECT = "paramObject";
+  public static String USED_FEATURE = "usedFeature";
 
   public  IterateOperation(SNode node) {
     super(node);
@@ -27,12 +27,12 @@ public class IterateOperation extends TreePathOperation {
   }
 
 
-  public IFeature getUsedFeature() {
-    return (IFeature)this.getReferent(IterateOperation.USED_FEATURE);
+  public ParameterWrapper getParamObject() {
+    return (ParameterWrapper)this.getChild(IterateOperation.PARAM_OBJECT);
   }
 
-  public void setUsedFeature(IFeature node) {
-    super.setReferent(IterateOperation.USED_FEATURE, node);
+  public void setParamObject(ParameterWrapper node) {
+    super.setChild(IterateOperation.PARAM_OBJECT, node);
   }
 
   public boolean getUseDefault() {
@@ -52,12 +52,12 @@ public class IterateOperation extends TreePathOperation {
     super.setProperty(IterateOperation.AXIS, value.getValueAsString());
   }
 
-  public ParameterWrapper getParamObject() {
-    return (ParameterWrapper)this.getChild(IterateOperation.PARAM_OBJECT);
+  public IFeature getUsedFeature() {
+    return (IFeature)this.getReferent(IterateOperation.USED_FEATURE);
   }
 
-  public void setParamObject(ParameterWrapper node) {
-    super.setChild(IterateOperation.PARAM_OBJECT, node);
+  public void setUsedFeature(IFeature node) {
+    super.setReferent(IterateOperation.USED_FEATURE, node);
   }
 
 }

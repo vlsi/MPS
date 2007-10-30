@@ -11,6 +11,7 @@ public class ParamFeatureSizeFun extends FeatureSizeFun implements IParamFeature
   public static final String concept = "jetbrains.mps.ypath.structure.ParamFeatureSizeFun";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  ParamFeatureSizeFun(SNode node) {
     super(node);
@@ -39,6 +40,14 @@ public class ParamFeatureSizeFun extends FeatureSizeFun implements IParamFeature
 
   public void setAlias(String value) {
     this.setProperty(ParamFeatureSizeFun.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ParamFeatureSizeFun.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ParamFeatureSizeFun.VIRTUAL_PACKAGE, value);
   }
 
 }

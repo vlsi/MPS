@@ -12,6 +12,7 @@ public class ToStringFun extends ConceptFunction implements IDesignFunction {
   public static final String concept = "jetbrains.mps.ypath.structure.ToStringFun";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  ToStringFun(SNode node) {
     super(node);
@@ -40,6 +41,14 @@ public class ToStringFun extends ConceptFunction implements IDesignFunction {
 
   public void setAlias(String value) {
     this.setProperty(ToStringFun.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ToStringFun.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ToStringFun.VIRTUAL_PACKAGE, value);
   }
 
 }

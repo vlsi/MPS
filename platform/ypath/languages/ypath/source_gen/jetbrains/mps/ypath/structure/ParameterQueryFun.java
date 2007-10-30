@@ -12,6 +12,7 @@ public class ParameterQueryFun extends ConceptFunction implements IDesignFunctio
   public static final String concept = "jetbrains.mps.ypath.structure.ParameterQueryFun";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  ParameterQueryFun(SNode node) {
     super(node);
@@ -40,6 +41,14 @@ public class ParameterQueryFun extends ConceptFunction implements IDesignFunctio
 
   public void setAlias(String value) {
     this.setProperty(ParameterQueryFun.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ParameterQueryFun.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ParameterQueryFun.VIRTUAL_PACKAGE, value);
   }
 
 }

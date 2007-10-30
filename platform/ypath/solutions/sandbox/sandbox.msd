@@ -13,7 +13,7 @@
   </runtimeClassPath>
   <dependencies>
     <dependency>jetbrains.mps.ypath</dependency>
-    <dependency>main</dependency>
+    <dependency>/home/fyodor/devel/mps-workspace/MPS/platform/ypath/solutions/main/main.msd</dependency>
   </dependencies>
 </solution>
 

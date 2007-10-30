@@ -11,6 +11,7 @@ public class ParamFeatureGetFun extends FeatureGetFun implements IParamFeatureFu
   public static final String concept = "jetbrains.mps.ypath.structure.ParamFeatureGetFun";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  ParamFeatureGetFun(SNode node) {
     super(node);
@@ -39,6 +40,14 @@ public class ParamFeatureGetFun extends FeatureGetFun implements IParamFeatureFu
 
   public void setAlias(String value) {
     this.setProperty(ParamFeatureGetFun.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ParamFeatureGetFun.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ParamFeatureGetFun.VIRTUAL_PACKAGE, value);
   }
 
 }

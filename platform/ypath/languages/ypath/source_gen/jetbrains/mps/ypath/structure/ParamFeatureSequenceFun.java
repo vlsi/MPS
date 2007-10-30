@@ -11,6 +11,7 @@ public class ParamFeatureSequenceFun extends FeatureSequenceFun implements IPara
   public static final String concept = "jetbrains.mps.ypath.structure.ParamFeatureSequenceFun";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  ParamFeatureSequenceFun(SNode node) {
     super(node);
@@ -39,6 +40,14 @@ public class ParamFeatureSequenceFun extends FeatureSequenceFun implements IPara
 
   public void setAlias(String value) {
     this.setProperty(ParamFeatureSequenceFun.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ParamFeatureSequenceFun.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ParamFeatureSequenceFun.VIRTUAL_PACKAGE, value);
   }
 
 }

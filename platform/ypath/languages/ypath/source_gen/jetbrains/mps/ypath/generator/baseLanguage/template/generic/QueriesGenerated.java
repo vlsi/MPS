@@ -34,7 +34,7 @@ public class QueriesGenerated {
     return IGenericFeature_Behavior.call_isSingleCardinality_1191862685760(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "usedFeature", false), SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "paramObject", true), "paramRef", false));
   }
 
-  public static boolean ifMacro_Condition_1191863174439(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1193757842704(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return !(IGenericFeature_Behavior.call_isSingleCardinality_1191862685760(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "usedFeature", false), SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "paramObject", true), "paramRef", false)));
   }
 
@@ -57,7 +57,7 @@ public class QueriesGenerated {
     return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "usedFeature", false), cpr, SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "paramObject", true), "paramRef", false));
   }
 
-  public static SNode mapSrcMacro_mapper_1191923283663(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
+  public static SNode mapSrcMacro_mapper_1193757829951(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     SNode cp = SLinkOperations.getTarget(SNodeOperations.getAncestor(parentOutputNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock", false, false), "defaultInputElement", true);
     SNode cpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", null);
     SLinkOperations.setTarget(cpr, "closureParameter", cp, false);
