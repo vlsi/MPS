@@ -187,6 +187,7 @@ public class TypeChecker {
 
   // we assume that type of a node does not depend on its ancestors
   @Hack
+  @Deprecated
   @Nullable
   public SNode hackTypeOf(SNode node) {
     return getTypeOf(node);

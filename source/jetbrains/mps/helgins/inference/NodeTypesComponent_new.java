@@ -74,6 +74,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
   private Set<SNode> myCurrentFrontier;
   private SNode myCurrentCheckedNode;
   private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
+  private boolean myIsGeneration = false;
 
   public NodeTypesComponent_new(SNode rootNode, TypeChecker typeChecker) {
     myRootNode = rootNode;
@@ -267,30 +268,35 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
-    while (node != null) {
-      List<SNode> additionalNodes = new ArrayList<SNode>();
-      if (prevNode != null) {
-        additionalNodes.add(prevNode);
-      }
-      computeTypes(node, true, false, additionalNodes);
-      type = getType(initialNode);
-      if (type == null ||
-              type.getAdapter() instanceof RuntimeTypeVariable ||
-              !type.allChildrenByAdaptor(RuntimeTypeVariable.class).isEmpty()) {
-        if (node.isRoot()) {
-          computeTypes(node, true, true, new ArrayList<SNode>()); //the last possibility: check the whole root
-          type = getType(initialNode);
-          continuation.run();
+    myIsGeneration = true;
+    try {
+      while (node != null) {
+        List<SNode> additionalNodes = new ArrayList<SNode>();
+        if (prevNode != null) {
+          additionalNodes.add(prevNode);
+        }
+        computeTypes(node, true, false, additionalNodes);
+        type = getType(initialNode);
+        if (type == null ||
+                type.getAdapter() instanceof RuntimeTypeVariable ||
+                !type.allChildrenByAdaptor(RuntimeTypeVariable.class).isEmpty()) {
+          if (node.isRoot()) {
+            computeTypes(node, true, true, new ArrayList<SNode>()); //the last possibility: check the whole root
+            type = getType(initialNode);
+            continuation.run();
+            return type;
+          }
+          prevNode = node;
+          node = node.getParent();
+        } else {
+          if (node.isRoot()) {
+            continuation.run();
+          }
           return type;
         }
-        prevNode = node;
-        node = node.getParent();
-      } else {
-        if (node.isRoot()) {
-          continuation.run();
-        }
-        return type;
       }
+    } finally {
+      myIsGeneration = false;
     }
     return type;
   }
@@ -309,6 +315,9 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
       for (SNode sNode : frontier) {
         if (myFullyCheckedNodes.contains(sNode)) {
           continue;
+        }
+        if (myIsGeneration) {
+          newFrontier.addAll(myTypeChecker.getRulesManager().getDependencies(sNode));
         }
         if (forceChildrenCheck) {
           newFrontier.addAll(sNode.getChildren());
