@@ -12,6 +12,9 @@
   <editor>
     <model modelUID="jetbrains.mps.core.editor" />
   </editor>
+  <actions>
+    <model modelUID="jetbrains.mps.core.actions" />
+  </actions>
   <models>
     <modelRoot path="${language_descriptor}\." namespacePrefix="jetbrains.mps.core" />
   </models>

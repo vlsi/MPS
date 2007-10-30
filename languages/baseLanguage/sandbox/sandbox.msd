@@ -8,12 +8,14 @@
   <classPath>
     <entry path="${mps_home}\lib\annotations\annotations.jar" />
   </classPath>
+  <runtimeClassPath />
   <dependencies>
     <dependency>jetbrains.mps.baseLanguage</dependency>
     <dependency>jetbrains.mps.baseLanguageInternal</dependency>
     <dependency>jetbrains.mps.baseLanguage.strings</dependency>
     <dependency>jetbrains.mps.logging.refactoring</dependency>
     <dependency>jetbrains.mps.logging.refactoringTest</dependency>
+    <dependency>C:\MPS\languages\baseLanguage\sandbox\sandbox.msd</dependency>
   </dependencies>
 </solution>
 

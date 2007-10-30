@@ -1704,7 +1704,7 @@ public class SNode implements Iterable<SNode> {
   }
 
 
-  public ConceptProperty findConceptProperty(String propertyName, IScope scope) {
+  public ConceptProperty findConceptProperty(String propertyName, IScope scope) { //??? remove scope
     INodeAdapter node = getAdapter();
     AbstractConceptDeclaration conceptDeclaration;
     if (node instanceof AbstractConceptDeclaration) {

@@ -317,27 +317,6 @@ public class ChildSubstituteActionsHelper {
 
   private static List<NodeSubstituteActionsBuilder> getActionsBuilders(SNode parentNode, Language language, AbstractConceptDeclaration childConcept, IOperationContext context) {
     List<NodeSubstituteActionsBuilder> result = new ArrayList<NodeSubstituteActionsBuilder>();
-//    SModelDescriptor actionsModelDescr = language.getActionsModelDescriptor();
-//    if (actionsModelDescr != null) {
-//      // find appropriate actions builder
-//      List<INodeAdapter> roots = actionsModelDescr.getSModel().getRootsAdapters();
-//      for (INodeAdapter root : roots) {
-//        if (root instanceof NodeSubstituteActions) {
-//          Iterator<NodeSubstituteActionsBuilder> iterator = ((NodeSubstituteActions) root).actionsBuilders();
-//          while (iterator.hasNext()) {
-//            NodeSubstituteActionsBuilder actionsBuilder = iterator.next();
-//            // is applicable ?
-//            // the aggregation link target (child concept) should be sub-concept of the 'applicable concept'
-//            AbstractConceptDeclaration applicableChildConcept = actionsBuilder.getApplicableConcept();
-//            if (SModelUtil_new.isAssignableConcept(childConcept, applicableChildConcept) &&
-//                    satisfiesPrecondition(actionsBuilder, parentNode, childConcept, context)) {
-//              result.add(actionsBuilder);
-//            }
-//          }
-//        }
-//      }
-//    }
-
     for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(language)) {
       // is applicable ?
       // the aggregation link target (child concept) should be sub-concept of the 'applicable concept'

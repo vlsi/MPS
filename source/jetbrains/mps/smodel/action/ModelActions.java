@@ -37,16 +37,16 @@ public class ModelActions {
             context);
   }
 
-  /**
-   * helper method
-   */
-  public static List<AbstractConceptDeclaration> getDefaultSubstitutableConcepts(SModel sourceModel, final ConceptDeclaration targetConcept, final IScope scope) {
-    return sourceModel.conceptAdaptersFromModelLanguages(new Condition<AbstractConceptDeclaration>() {
-      public boolean met(AbstractConceptDeclaration node) {
-        return ChildSubstituteActionsHelper.isDefaultSubstitutableConcept(node, targetConcept, scope);
-      }
-    }, scope);
-  }
+//  /**
+//   * helper method
+//   */
+//  public static List<AbstractConceptDeclaration> getDefaultSubstitutableConcepts(SModel sourceModel, final ConceptDeclaration targetConcept, final IScope scope) {
+//    return sourceModel.conceptAdaptersFromModelLanguages(new Condition<AbstractConceptDeclaration>() {
+//      public boolean met(AbstractConceptDeclaration node) {
+//        return ChildSubstituteActionsHelper.isDefaultSubstitutableConcept(node, targetConcept, scope);
+//      }
+//    }, scope);
+//  }
 
   //-------------------
   // referent substitute
