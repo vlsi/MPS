@@ -27,7 +27,8 @@ import java.util.*;
  */
 public class ClassLoaderManager implements IComponentLifecycle {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
-    private MPSModuleRepository myModuleRepository;
+
+  private MPSModuleRepository myModuleRepository;
 
   private RuntimeEnvironment myRuntimeEnvironment = new RuntimeEnvironment();
 
@@ -55,6 +56,8 @@ public class ClassLoaderManager implements IComponentLifecycle {
           } else {
             myToAdd.add(module.getModuleUID());
           }
+        } else {
+          myToAdd.add(module.getModuleUID());
         }
       }
 
@@ -96,14 +99,15 @@ public class ClassLoaderManager implements IComponentLifecycle {
       Set<String> toAdd = new LinkedHashSet<String>(myToAdd);
       toAdd.removeAll(myToRemove);
 
-      if (!toRemove.isEmpty()) {
-        String[] unloadList = toRemove.toArray(new String[0]);
-        myRuntimeEnvironment.unload(unloadList);
-      }
 
       if (!toReload.isEmpty()) {
         String[] reloadList = toReload.toArray(new String[0]);
         myRuntimeEnvironment.reload(reloadList);
+      }
+
+      if (!toRemove.isEmpty()) {
+        String[] unloadList = toRemove.toArray(new String[0]);
+        myRuntimeEnvironment.unload(unloadList);
       }
 
       if (!toAdd.isEmpty()) {
