@@ -574,25 +574,5 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1193778299722">
-    <property name="name" value="QuetationContainer" />
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1193778309740">
-      <property name="name" value="m" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1193778309741" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193778309742" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193778309743">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1193778345798">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1193778345799">
-            <property name="name" value="n" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1193778345800" />
-            <node role="initializer" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1193778639398">
-              <node role="quotedNode" type="jetbrains.mps.core.structure.BaseConcept" id="1193778639399" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193778299723" />
-  </node>
 </model>
 

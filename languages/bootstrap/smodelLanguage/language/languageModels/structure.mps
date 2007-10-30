@@ -1275,7 +1275,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1172326788598">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="conceptDeclaration" />
-      <link role="target" targetNodeId="3.1071489090640" />
+      <link role="target" targetNodeId="3.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1172326559519">
       <property name="value" value="isExactly" />
