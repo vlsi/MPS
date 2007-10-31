@@ -122,6 +122,10 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   private void addModule(String moduleUID) {
+    if (myRuntimeEnvironment.get(moduleUID) != null) {
+      return;
+    }
+
     IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
     Bundle b = new Bundle(module.getModuleUID(), module.getByteCodeLocator());
 
