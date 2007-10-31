@@ -180,6 +180,11 @@
   </refactoringLog>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1182164226710">
     <property name="name" value="A" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1193788635559">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1193788635560" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193788635561" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193788635562" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1188520661794">
       <property name="name" value="mmm" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1188520661795" />
@@ -246,8 +251,19 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1189448620845" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1189448620846">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1189453084107">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1189453128442">
-            <property name="value" value="0" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1193788650846">
+            <link role="baseMethodDeclaration" targetNodeId="1189448620841" resolveInfo="iMethod" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1193788615362">
+              <link role="baseMethodDeclaration" targetNodeId="1193788635559" resolveInfo="A" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1193788655551">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1193788657336">
+                <property name="value" value="20" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1193788653566">
+                <property name="value" value="10" />
+              </node>
+            </node>
           </node>
         </node>
       </node>
