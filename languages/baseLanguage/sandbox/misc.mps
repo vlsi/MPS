@@ -4,6 +4,8 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <language namespace="jetbrains.mps.core" />
   <maxImportIndex value="124" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -627,6 +629,22 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1189448555817" />
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1193757114043">
+    <property name="name" value="QuotationContainer" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1193757127295">
+      <property name="name" value="foo" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1193757127296" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193757127297" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193757127298">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193757173289">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1193757173290">
+            <node role="quotedNode" type="jetbrains.mps.core.structure.BaseConcept" id="1193757173291" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193757114044" />
   </node>
 </model>
 

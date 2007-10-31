@@ -15,7 +15,7 @@ public class typeof_GetElementOperation_InferenceRule implements InferenceRule_R
 
   public void applyRule(final SNode argument) {
     RulesFunctions_Collections.setInputElementType(argument, argument);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "argument", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856462630"), new QuotationClass_25().createNode(), SLinkOperations.getTarget(argument, "argument", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856469305");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "argument", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856462630"), new QuotationClass_24().createNode(), SLinkOperations.getTarget(argument, "argument", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856469305");
   }
 
   public String getApplicableConceptFQName() {

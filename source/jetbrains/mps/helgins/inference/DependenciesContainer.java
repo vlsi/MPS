@@ -42,6 +42,7 @@ public class DependenciesContainer {
       Set<SNode> result = new HashSet<SNode>();
       for (IDependency_Runtime dependency_runtime : dependencies) {
         SNode sourceNode = dependency_runtime.getSourceNode(node);
+        if (sourceNode == null) continue;
         if (SModelUtil_new.isAssignableConcept(sourceNode.getConceptFqName(), dependency_runtime.getSourceConceptFQName())) {
           result.add(sourceNode);
         }

@@ -7,7 +7,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 
 public class RulesFunctions_Collections {
 
@@ -21,6 +20,18 @@ public class RulesFunctions_Collections {
       TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184783963366");
     }
     return input;
+  }
+
+  public static SNode getOutput(SNode op) {
+    SNode output = null;
+    SNode parent = SNodeOperations.getParent(op, null, false, false);
+    if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression")) {
+      output = SLinkOperations.getTarget(parent, "operation", true);
+      return output;
+    } else
+    {
+      return null;
+    }
   }
 
   public static void setInputSequenceType(SNode op, SNode target) {
@@ -62,34 +73,6 @@ public class RulesFunctions_Collections {
   public static Iterable<SNode> collectYieldStatements(SNode node) {
     Iterable<SNode> yieldStatements = SequenceOperations.map(SNodeOperations.getChildren(node), new zMapper(null, null));
     return yieldStatements;
-  }
-
-  public static SNode computeLeastCommonSupertype(SNode exprWithType, SNode currentLeastCommonSupertype) {
-    SNode exprType = TypeChecker.getInstance().getRuntimeSupport().typeOf(exprWithType, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178748193116");
-    if(exprType == null) {
-      TypeChecker.getInstance().reportTypeError(exprWithType, "no type", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178748193120");
-      return currentLeastCommonSupertype;
-    }
-    if(currentLeastCommonSupertype == null) {
-      return exprType;
-    }
-    if(TypeChecker.getInstance().getSubtypingManager().isSubtype(currentLeastCommonSupertype, exprType)) {
-      return exprType;
-    }
-    if(TypeChecker.getInstance().getSubtypingManager().isSubtype(exprType, currentLeastCommonSupertype)) {
-      return currentLeastCommonSupertype;
-    }
-    TypeChecker.getInstance().reportTypeError(exprWithType, "type " + exprType + " is not compatible with infered " + currentLeastCommonSupertype, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178748193168");
-    return currentLeastCommonSupertype;
-  }
-
-  public static SNode boxPrimitive(SNode primitiveType, SNode nodeToReportError) {
-    SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce(primitiveType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
-    if(classifierType != null) {
-      return classifierType;
-    }
-    TypeChecker.getInstance().reportTypeError(nodeToReportError, "couldn't coerse " + primitiveType + " to classifier", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178929402053");
-    return new QuotationClass_4().createNode();
   }
 
 }

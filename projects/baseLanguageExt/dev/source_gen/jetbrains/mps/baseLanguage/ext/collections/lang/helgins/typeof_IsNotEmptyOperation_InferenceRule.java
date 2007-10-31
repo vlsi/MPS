@@ -20,7 +20,7 @@ public class typeof_IsNotEmptyOperation_InferenceRule implements InferenceRule_R
         boolean matches_1178725705671 = false;
         matches_1178725705671 = SModelUtil_new.isAssignableConcept(SNodeOperations.getParent(argument, null, false, false).getConceptFqName(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression");
         if(matches_1178725705671) {
-          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_35().createNode(), argument, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705674");
+          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_34().createNode(), argument, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705674");
           break;
         }
       }

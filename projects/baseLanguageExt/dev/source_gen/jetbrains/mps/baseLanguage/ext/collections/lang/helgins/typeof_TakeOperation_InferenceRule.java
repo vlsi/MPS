@@ -15,7 +15,7 @@ public class typeof_TakeOperation_InferenceRule implements InferenceRule_Runtime
 
   public void applyRule(final SNode argument) {
     RulesFunctions_Collections.setInputSequenceType(argument, argument);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "elementsToTake", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847262796"), new QuotationClass_8().createNode(), SLinkOperations.getTarget(argument, "elementsToTake", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847269142");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "elementsToTake", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847262796"), new QuotationClass_7().createNode(), SLinkOperations.getTarget(argument, "elementsToTake", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184847269142");
   }
 
   public String getApplicableConceptFQName() {
