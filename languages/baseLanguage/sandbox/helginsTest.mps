@@ -574,5 +574,40 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1193851125301">
+    <property name="name" value="Bug_MPS_329" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1193851179652">
+      <property name="name" value="m" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193851190229">
+        <link role="classifier" targetNodeId="1193851125301" resolveInfo="Bug" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193851179654" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193851179655">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193851196011">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1193851199092">
+            <link role="baseMethodDeclaration" targetNodeId="1193851153914" resolveInfo="Bug" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193851248010">
+              <property name="value" value="string" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1193851153914">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1193851153915" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193851153916" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193851153917" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193851176025">
+        <property name="name" value="t" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="1193851176026">
+          <link role="typeVariableDeclaration" targetNodeId="1193851138507" resolveInfo="T" />
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193851125302" />
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1193851138507">
+      <property name="name" value="T" />
+    </node>
+  </node>
 </model>
 
