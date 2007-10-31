@@ -5,12 +5,12 @@ import org.jetbrains.annotations.NotNull;
 
 public class GenerateFilesFromCurrentModelAction extends GenerateCurrentModelAction {
   public GenerateFilesFromCurrentModelAction() {
-    super("Generate Text From Current Model");
+    super("Generate Files From Current Model");
   }
 
   @NotNull
   public String getKeyStroke() {
-    return "control shift F10";
+    return "control shift F9";
   }
 
   public IGenerationType getGenerationType() {
