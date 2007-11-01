@@ -8,6 +8,10 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Interface;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.plugin.CompilationResult;
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
 
 public class TextGenerationUtil {
   public static TextGenerationResult generateText(IOperationContext context, SNode node) {
@@ -24,7 +28,14 @@ public class TextGenerationUtil {
   }
 
   public static JavaCompiler compile(IOperationContext context, SModel targetModel, IAdaptiveProgressMonitor progress) {
-    JavaCompiler compiler = new JavaCompiler(context.getModule().getModuleWithDependenciesClassPathItem());
+
+    CompositeClassPathItem item = new CompositeClassPathItem();
+    item.add(context.getModule().getModuleWithDependenciesClassPathItem());
+    item.add(ClassLoaderManager.getInstance().getMPSPath());
+    item.add(ClassLoaderManager.getInstance().getMPSSupportPath());
+    item.add(ClassLoaderManager.getInstance().getRTJar());
+
+    JavaCompiler compiler = new JavaCompiler(item);
 
     for (SNode root : targetModel.getRoots()) {
       INodeAdapter outputNode = BaseAdapter.fromNode(root);
@@ -36,6 +47,14 @@ public class TextGenerationUtil {
     
     progress.addText("Compiling...");
     compiler.compile();
+
+    for (org.eclipse.jdt.internal.compiler.CompilationResult cr : compiler.getCompilationResults()) {
+      CategorizedProblem[] categorizedProblems = cr.getErrors();
+      if (categorizedProblems != null && categorizedProblems.length > 0) {
+        System.err.println("Warning. Compilation failed.");
+      }
+    }
+
     progress.addText("Compilation finished.");
     return compiler;
   }
