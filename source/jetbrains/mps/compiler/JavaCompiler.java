@@ -105,7 +105,7 @@ public class JavaCompiler {
     }
 
     protected boolean isExcluded(String name) {
-      return name.startsWith("jetbrains.prolog.");
+      return false;
     }
   }
 
