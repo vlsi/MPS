@@ -200,6 +200,9 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     if (currentVersion > usedVersion) {
       IOperationContext invocationContext = null;
       outer : for (IModule module : SModelRepository.getInstance().getOwners(this, IModule.class)) {
+        if (module instanceof Generator) {
+          module = ((Generator)module).getSourceLanguage();
+        }
         Set<MPSModuleOwner> mpsModuleOwners = MPSModuleRepository.getInstance().getOwners(module);
         if (mpsModuleOwners == null) continue;
         for (MPSModuleOwner owner : mpsModuleOwners) {
