@@ -3864,7 +3864,7 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1193950691564">
     <property name="name" value="BugReport" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1193950700285">
-      <property name="name" value="m" />
+      <property name="name" value="MPS_" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1193950700286" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193950700287" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193950700288">
