@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
-public class GetIndexOfOperation extends AbstractListOperation {
+public class GetIndexOfOperation extends SequenceOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetIndexOfOperation";
   public static String ARGUMENT = "argument";
 

@@ -98,8 +98,28 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193919151109">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193919160830">
+            <link role="classConcept" targetNodeId="3.~Assert" resolveInfo="Assert" />
+            <link role="baseMethodDeclaration" targetNodeId="3.~Assert.assertEquals(int,int):void" resolveInfo="assertEquals" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1193919422239">
+              <property name="value" value="-1" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1193919196428">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193919341619">
+                <link role="variableDeclaration" targetNodeId="1165526704347" resolveInfo="S" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetIndexOfOperation" id="1193919199944">
+                <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193919203843">
+                  <property name="value" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1165526704364" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193924847518" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1165526644939">
       <property name="name" value="test_S2" />
@@ -212,8 +232,85 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193919359017">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193919361759">
+            <link role="classConcept" targetNodeId="3.~Assert" resolveInfo="Assert" />
+            <link role="baseMethodDeclaration" targetNodeId="3.~Assert.assertEquals(int,int):void" resolveInfo="assertEquals" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1193919381868">
+              <property name="value" value="0" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1193919387179">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193919386330">
+                <link role="variableDeclaration" targetNodeId="1165526656443" resolveInfo="S" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetIndexOfOperation" id="1193919389890">
+                <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193919392879">
+                  <property name="value" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193919396557">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193919396558">
+            <link role="classConcept" targetNodeId="3.~Assert" resolveInfo="Assert" />
+            <link role="baseMethodDeclaration" targetNodeId="3.~Assert.assertEquals(int,int):void" resolveInfo="assertEquals" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1193919396559">
+              <property name="value" value="1" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1193919396560">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193919396561">
+                <link role="variableDeclaration" targetNodeId="1165526656443" resolveInfo="S" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetIndexOfOperation" id="1193919396562">
+                <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193919396563">
+                  <property name="value" value="1" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193919397113">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193919397114">
+            <link role="classConcept" targetNodeId="3.~Assert" resolveInfo="Assert" />
+            <link role="baseMethodDeclaration" targetNodeId="3.~Assert.assertEquals(int,int):void" resolveInfo="assertEquals" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1193919397115">
+              <property name="value" value="2" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1193919397116">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193919397117">
+                <link role="variableDeclaration" targetNodeId="1165526656443" resolveInfo="S" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetIndexOfOperation" id="1193919397118">
+                <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193919397119">
+                  <property name="value" value="2" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193919397740">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193919397741">
+            <link role="classConcept" targetNodeId="3.~Assert" resolveInfo="Assert" />
+            <link role="baseMethodDeclaration" targetNodeId="3.~Assert.assertEquals(int,int):void" resolveInfo="assertEquals" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1193919397742">
+              <property name="value" value="-1" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1193919397743">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193919397744">
+                <link role="variableDeclaration" targetNodeId="1165526656443" resolveInfo="S" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetIndexOfOperation" id="1193919397745">
+                <node role="argument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193919397746">
+                  <property name="value" value="3" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1165526644941" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193924850055" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1165597541289">
       <property name="name" value="test_S3" />
@@ -347,6 +444,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1165597541335" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193924853399" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1165526992412">
       <property name="name" value="test_L1" />
@@ -452,6 +550,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1165526992446" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193924858593" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1165527190595">
       <property name="name" value="test_L2" />
@@ -574,10 +673,12 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1165527190616" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193924861536" />
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1165789775949">
       <link role="classifier" targetNodeId="3.~TestCase" resolveInfo="TestCase" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193919604009" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1170977643149">
     <property name="name" value="Sort_Test1" />
@@ -735,6 +836,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193924867098" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1170979239248">
       <property name="name" value="test_2" />
@@ -891,10 +993,12 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193924870219" />
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1170977662194">
       <link role="classifier" targetNodeId="3.~TestCase" resolveInfo="TestCase" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193919609083" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1171392073356">
     <property name="name" value="ListOperations_Test" />
@@ -996,6 +1100,7 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193924839815" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1172278345458">
       <property name="name" value="test_2" />
@@ -1060,10 +1165,12 @@
           </node>
         </node>
       </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193924842300" />
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1171392114612">
       <link role="classifier" targetNodeId="3.~TestCase" resolveInfo="TestCase" />
     </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193919590954" />
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1172256754301">
     <property name="testCaseName" value="Contains" />

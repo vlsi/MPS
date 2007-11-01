@@ -410,7 +410,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1171391069720">
     <property name="name" value="GetIndexOfOperation" />
-    <link role="extends" targetNodeId="1160612356232" resolveInfo="AbstractListOperation" />
+    <link role="extends" targetNodeId="1151701983961" resolveInfo="SequenceOperation" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1171391518575">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />
