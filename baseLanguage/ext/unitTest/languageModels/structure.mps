@@ -17,6 +17,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1171931851043">
     <property name="rootable" value="true" />
     <property name="name" value="BTestCase" />
+    <property name="iconPath" value="${language_descriptor}\icons\test.png" />
     <link role="extends" targetNodeId="2.1068390468198" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1171931851044">
       <property name="metaClass" value="aggregation" />
