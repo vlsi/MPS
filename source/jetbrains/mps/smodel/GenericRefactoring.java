@@ -41,11 +41,6 @@ public class GenericRefactoring {
     if (modelDescriptor == null) return;
     SModel model = modelDescriptor.getSModel();
 
-    List<SModel> sourceModels = myRefactoring.getModelsToGenerate(context, args);
-    if (!sourceModels.isEmpty()) {
-      generateModels(context, sourceModels);
-    }
-
     writeIntoLog(model, args);
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
       String stereotype = anotherDescriptor.getStereotype();
@@ -60,6 +55,10 @@ public class GenericRefactoring {
       processModel(anotherModel, model, args);
     }
 
+    List<SModel> sourceModels = myRefactoring.getModelsToGenerate(context, args);
+    if (!sourceModels.isEmpty()) {
+      generateModels(context, sourceModels);
+    }
   }
 
   private void generateModels(ActionContext context, List<SModel> sourceModels) {
