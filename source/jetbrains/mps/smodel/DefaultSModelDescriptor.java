@@ -237,7 +237,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
           final SModelDescriptor fakeModelDescriptor = TransientModels.createTransientModel(modelOwner, "temp", "$logplaying$");
           try {
             fakeModelDescriptor.getSModel().setLoading(true);
-            fakeModelDescriptor.getSModel().addRoot(runtimeLog);
+            fakeModelDescriptor.getSModel().addRoot(CopyUtil.copy(runtimeLog, fakeModelDescriptor.getSModel()));
             IGenerationScript script = new IGenerationScript() {
               public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
                 return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
