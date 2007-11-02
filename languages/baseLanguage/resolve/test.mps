@@ -10,6 +10,15 @@
   <import index="234" modelUID="java.io@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1121166935562">
     <property name="name" value="New" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1194009305660">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1194009305661" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1194009305662" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194009305663">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="1194009321415">
+          <link role="constructorDeclaration" targetNodeId="2.~Object.&lt;init&gt;()" resolveInfo="Object" />
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1144313193353">
       <property name="name" value="test" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1144313196146" />
