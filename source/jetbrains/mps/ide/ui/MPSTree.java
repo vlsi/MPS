@@ -391,6 +391,11 @@ public abstract class MPSTree extends JTree {
     expandAll(node);
   }
 
+  public void collapseAll(){
+    MPSTreeNode node = getRootNode();
+    collapseAll(node);
+  }
+
   public void selectFirstLeaf() {
     List<MPSTreeNode> path = new ArrayList<MPSTreeNode>();
     MPSTreeNode current = getRootNode();
@@ -415,6 +420,13 @@ public abstract class MPSTree extends JTree {
     expandPath(new TreePath(node.getPath()));
     for (int i = 0; i < node.getChildCount(); i++) {
       expandAll((MPSTreeNode) node.getChildAt(i));
+    }
+  }
+
+  public void collapseAll(MPSTreeNode node){
+    super.collapsePath(new TreePath(node.getPath()));
+    for (int i = 0; i < node.getChildCount(); i++) {
+      collapseAll((MPSTreeNode) node.getChildAt(i));
     }
   }
 
