@@ -17,8 +17,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.NodePropertyConstraint_Behavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDeclaration_Behavior;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
@@ -182,14 +180,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(node, "name");
   }
 
-  public static SNode referenceMacro_GetReferent_1182493540128(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(node, "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true), "classifier", false);
-  }
-
-  public static SNode referenceMacro_GetReferent_1193402330820(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(node, "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true), "classifier", false);
-  }
-
   public static boolean ifMacro_Condition_1184610641051(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "searchScopeCanCreate", true) != null;
   }
@@ -342,6 +332,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "returnType", true);
   }
 
+  public static SNode sourceNodeQuery_1194036062489(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return Type_Behavior.call_getClassExpression_1194035415601(SLinkOperations.getTarget(node, "type", true));
+  }
+
   public static SNode sourceNodeQuery_1181727110484(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "type", true);
   }
@@ -360,6 +354,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1193402330776(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "returnType", true);
+  }
+
+  public static SNode sourceNodeQuery_1194036012818(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return Type_Behavior.call_getClassExpression_1194035415601(SLinkOperations.getTarget(node, "type", true));
   }
 
   public static SNode sourceNodeQuery_1193402330865(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
