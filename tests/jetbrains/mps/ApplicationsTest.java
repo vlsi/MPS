@@ -46,4 +46,9 @@ public class ApplicationsTest extends TestCase {
     String res = TestMain.testProject(new File("platform/textLanguage/jetbrains.mps.textLanguage.mpr"));
     assertTrue(res, res == null);
   }
+
+  public void testAccounting() {
+      String res = TestMain.testProject(new File("app/accounting/web-app/accounting-webapp.mpr"));
+      assertTrue(res, res == null);
+  }
 }
