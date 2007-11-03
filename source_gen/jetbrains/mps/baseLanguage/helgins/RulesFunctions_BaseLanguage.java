@@ -8,7 +8,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
 public class RulesFunctions_BaseLanguage {
 
@@ -56,7 +55,7 @@ public class RulesFunctions_BaseLanguage {
           if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
             SNode tvr = child;
             SNode tvd = SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false);
-            int index = ListOperations.indexOf(SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true), tvd);
+            int index = SequenceOperations.indexOf(SLinkOperations.getTargets(genericClassifier, "typeVariableDeclaration", true), tvd);
             SNode actualParam = (index < actualParams.size() ?
               actualParams.get(index) :
               new QuotationClass_31().createNode()

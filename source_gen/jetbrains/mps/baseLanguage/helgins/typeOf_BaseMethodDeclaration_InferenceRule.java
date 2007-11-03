@@ -36,7 +36,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
     }
     // =============
     SNode expectedRetType = SLinkOperations.getTarget(argument, "returnType", true);
-    if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType")) {
+    if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType") || SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
       // actually - no return type
       expectedRetType = null;
     }
