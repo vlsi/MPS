@@ -1,7 +1,8 @@
 package jetbrains.mps.intentions;
 
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 
 
 public class BaseIntention implements Intention{
@@ -17,7 +18,7 @@ public class BaseIntention implements Intention{
     return false;
   }
 
-  public void execute(SNode node, IOperationContext context) {
+  public void execute(SNode node, EditorContext context) {
 
   }
 

@@ -88,7 +88,7 @@
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1192796533231">
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="2.1161622753914" resolveInfo="ConceptFunctionParameter_operationContext" />
+      <link role="target" targetNodeId="2.1194033889146" resolveInfo="ConceptFunctionParameter_editorContext" />
     </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1192797536303">
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />

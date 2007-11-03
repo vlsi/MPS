@@ -1503,7 +1503,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void paintLightBulb(Graphics g) {
-    if (myPaintIntentionIcon == false) return;
+    if (!myPaintIntentionIcon) return;
 
     EditorCell selectedCell = getSelectedCell();
     selectedCell = getBigCellForNode(selectedCell.getSNode());
@@ -2123,7 +2123,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     IntentionsMenu menu = new IntentionsMenu();
 
-    menu.init(cell.getSNode(),getOperationContext(),myAvailableIntentions);
+    menu.init(cell.getSNode(),getEditorContext(),myAvailableIntentions);
 
     menu.addPopupMenuListener(new PopupMenuListener() {
       public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
