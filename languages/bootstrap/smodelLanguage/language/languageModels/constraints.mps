@@ -7,6 +7,7 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <language namespace="jetbrains.mps.core" />
   <maxImportIndex value="18" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -355,6 +356,22 @@
       </node>
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1190026812674">
         <link role="concept" targetNodeId="18.1145552809883" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1194294765614">
+      <property name="name" value="getClassExpression" />
+      <link role="overridenMethod" targetNodeId="15.1194035415601" resolveInfo="getClassExpression" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194294765616">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1194294866147">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1194294881821">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1194294971256">
+              <link role="classifier" targetNodeId="6.~SNode" resolveInfo="SNode" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1194294850662">
+        <link role="concept" targetNodeId="18.1068431790191" resolveInfo="Expression" />
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181704907">
