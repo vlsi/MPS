@@ -480,7 +480,7 @@ public class SNode implements Iterable<SNode> {
   }
 
   public void putProperties(SNode fromNode) {
-    if(fromNode == null || fromNode.myProperties == null) return;
+    if (fromNode == null || fromNode.myProperties == null) return;
     if (myProperties == null) {
       myProperties = new LinkedHashMap<String, String>(fromNode.myProperties);
     } else {
@@ -731,19 +731,6 @@ public class SNode implements Iterable<SNode> {
   }
 
   @NotNull
-  public Iterator<SNode> reverseChildren(@NotNull String role) {
-    fireNodeReadAccess();
-    List<SNode> list = new ArrayList<SNode>();
-    for (SNode child : _children()) {
-      if (role.equals(child.getRole_())) {
-        list.add(child);
-      }
-    }
-    Collections.reverse(list);
-    return list.iterator();
-  }
-
-  @NotNull
   public Iterator<SNode> iterator() {
     return getChildren().iterator();
   }
@@ -776,7 +763,7 @@ public class SNode implements Iterable<SNode> {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     List<SNode> children = _children();
-    if(children.isEmpty()) return Collections.emptyList();
+    if (children.isEmpty()) return Collections.emptyList();
     List<SNode> result = new ArrayList<SNode>();
     for (SNode child : children) {
       if (role.equals(child.getRole_())) result.add(child);
