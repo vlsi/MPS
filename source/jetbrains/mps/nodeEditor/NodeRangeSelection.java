@@ -98,11 +98,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
 
   public List<SNode> getNodes() {
     if (myParentNode == null) return new ArrayList<SNode>();
-    Iterator<SNode> iterator = myParentNode.children(myRole);
-    List<SNode> children = new LinkedList<SNode>();
-    while (iterator.hasNext()) {
-      children.add(iterator.next());
-    }
+    List<SNode> children = myParentNode.getChildren(myRole);
     LinkedList<SNode> resultList = new LinkedList<SNode>();
     int i1 = children.indexOf(myFirstNode);
     int i2 = children.indexOf(myLastNode);
@@ -173,7 +169,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
 
     boolean next = (keyEvent.getKeyCode() == KeyEvent.VK_RIGHT || keyEvent.getKeyCode() == KeyEvent.VK_DOWN);
     SNode newLastNode = null;
-    Iterator<SNode> iterator = myParentNode.children(myRole);
+    Iterator<SNode> iterator = myParentNode.getChildren(myRole).iterator();
     while (iterator.hasNext()) {
       SNode semanticNode = iterator.next();
       if (semanticNode == myLastNode) {

@@ -57,11 +57,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
   protected SNode getAnchorNode(EditorCell anchorCell) {
     SNode anchorNode = (anchorCell != null ? anchorCell.getSNode() : null);
     if (anchorNode != null) {
-      Iterator<SNode> listElementsIter = getOwner().children(getElementRole());
-      List<SNode> listElements = new LinkedList<SNode>();
-      while (listElementsIter.hasNext()) {
-        listElements.add(listElementsIter.next());
-      }
+      List<SNode> listElements = getOwner().getChildren(getElementRole());
       // anchor should be directly referenced from "list owner"
       while (anchorNode != null && !listElements.contains(anchorNode)) {
         anchorNode = anchorNode.getParent();
@@ -74,8 +70,8 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
     getOwner().insertChild(anchorNode, getElementRole(), myInsertedNode, insertBefore);
   }
 
-  protected Iterator<SNode> getNodesForList() {
-    return myOwnerNode.children(getElementRole());
+  protected List<SNode> getNodesForList() {
+    return myOwnerNode.getChildren(getElementRole());
   }
 
 }

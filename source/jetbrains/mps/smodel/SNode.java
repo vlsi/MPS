@@ -731,18 +731,6 @@ public class SNode implements Iterable<SNode> {
   }
 
   @NotNull
-  public <T extends SNode> Iterator<T> children(@NotNull String role) {
-    fireNodeReadAccess();
-    List<T> list = new ArrayList<T>();
-    for (SNode child : _children()) {
-      if (role.equals(child.getRole_())) {
-        list.add((T) child);
-      }
-    }
-    return list.iterator();
-  }
-
-  @NotNull
   public Iterator<SNode> reverseChildren(@NotNull String role) {
     fireNodeReadAccess();
     List<SNode> list = new ArrayList<SNode>();
@@ -784,12 +772,14 @@ public class SNode implements Iterable<SNode> {
   }
 
   @NotNull
-  public <T extends SNode> List<T> getChildren(@NotNull String role) {
+  public List<SNode> getChildren(@NotNull String role) {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    List<T> result = new ArrayList<T>();
-    for (SNode child : _children()) {
-      if (role.equals(child.getRole_())) result.add((T) child);
+    List<SNode> children = _children();
+    if(children.isEmpty()) return Collections.emptyList();
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode child : children) {
+      if (role.equals(child.getRole_())) result.add(child);
     }
     return result;
   }
@@ -812,46 +802,6 @@ public class SNode implements Iterable<SNode> {
     int index = children.indexOf(child);
     if (index <= 0) return null;
     return children.get(index - 1);
-  }
-
-  public SNode getPrevSibling() {
-    SNode parent = getParent();
-    if (parent == null) {
-      return null;
-    }
-
-    SNode prev = null;
-    String role = getRole_();
-    assert role != null;
-    Iterator<SNode> children = parent.children(role);
-    while (children.hasNext()) {
-      SNode child = children.next();
-      if (child == this) {
-        break;
-      }
-      prev = child;
-    }
-    return prev;
-  }
-
-  public SNode getNextSibling() {
-    SNode parent = getParent();
-    if (parent == null) {
-      return null;
-    }
-
-    String role = getRole_();
-    assert role != null;
-    Iterator<SNode> children = parent.children(role);
-    while (children.hasNext()) {
-      SNode child = children.next();
-      if (child == this) {
-        if (children.hasNext()) {
-          return children.next();
-        }
-      }
-    }
-    return null;
   }
 
   private void removeChildAt(final int index) {

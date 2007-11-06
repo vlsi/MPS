@@ -92,7 +92,7 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
 
   public EditorCell_Collection createCells(EditorContext editorContext, CellLayout cellLayout, boolean selectable) {
     EditorCell_Collection cellsCollection = createCells(editorContext, cellLayout);
-    if(!selectable) {
+    if (!selectable) {
       return cellsCollection;
     }
 
@@ -109,7 +109,7 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
     myListEditorCell_Collection.setSelectable(false);
     myListEditorCell_Collection.setDrawBorder(false);
 
-    Iterator<SNode> listNodes = getNodesForList();
+    Iterator<SNode> listNodes = getNodesForList().iterator();
     if (!listNodes.hasNext()) {
       myListEditorCell_Collection.addEditorCell(createEmptyCell(editorContext));
     } else {
@@ -128,7 +128,7 @@ public abstract class AbstractCellListHandler implements IKeyboardHandler {
     return myListEditorCell_Collection;
   }
 
-  protected abstract Iterator<SNode> getNodesForList();
+  protected abstract List<SNode> getNodesForList();
 
   protected EditorCell addSeparatorCell(EditorContext editorContext, EditorCell separatorCell) {
     if (separatorCell != null) {
