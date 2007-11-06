@@ -645,9 +645,10 @@ public class RuleUtil {
       }
     }
 
-    for (INodeAdapter inputChildNode : inputNode.getAdapter().getChildren()) {
-      String childRole = inputNode.getRoleOf(inputChildNode.getNode());
-      List<SNode> outputChildNodes = copyNodeFromInputNode(null, inputChildNode.getNode(), inputChildNode.getNode());
+    for (SNode inputChildNode : inputNode.getChildren()) {
+      String childRole = inputChildNode.getRole_();
+      assert childRole != null;
+      List<SNode> outputChildNodes = copyNodeFromInputNode(null, inputChildNode, inputChildNode);
       if (outputChildNodes != null) {
         for (SNode outputChildNode : outputChildNodes) {
           outputNode.addChild(childRole, outputChildNode);

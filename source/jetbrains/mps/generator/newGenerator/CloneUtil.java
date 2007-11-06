@@ -46,7 +46,9 @@ public class CloneUtil {
       }
     }
     for (SNode child : node.getChildren()) {
-      result.addChild(node.getRoleOf(child), clone(child, outputModel, scope));
+      String role = child.getRole_();
+      assert role != null;
+      result.addChild(role, clone(child, outputModel, scope));
     }
     return result;
   }
