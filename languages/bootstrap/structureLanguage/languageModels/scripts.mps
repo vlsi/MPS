@@ -1181,13 +1181,8 @@
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1192546078052">
                       <property name="value" value="_Editor" />
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1192546071248">
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1192546073970">
-                        <link role="property" targetNodeId="3.1169194664001" resolveInfo="name" />
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1192546069591">
-                        <link role="argument" targetNodeId="1191835983129" resolveInfo="sourceNode" />
-                      </node>
+                    <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1194362537995">
+                      <link role="argument" targetNodeId="1192547619143" resolveInfo="sourceNodeName" />
                     </node>
                   </node>
                 </node>
@@ -1338,13 +1333,8 @@
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1192547121994">
                       <property name="value" value="_Behavior" />
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1192547121995">
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1192547121996">
-                        <link role="property" targetNodeId="3.1169194664001" resolveInfo="name" />
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1192547121997">
-                        <link role="argument" targetNodeId="1191835983129" resolveInfo="sourceNode" />
-                      </node>
+                    <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1194362564578">
+                      <link role="argument" targetNodeId="1192547619143" resolveInfo="sourceNodeName" />
                     </node>
                   </node>
                 </node>
