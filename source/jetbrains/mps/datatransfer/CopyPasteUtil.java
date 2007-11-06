@@ -116,7 +116,12 @@ public class CopyPasteUtil {
   }
 
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
-    SNode targetNode = sourceNode.cloneProperties();
+    SNode targetNode = new SNode(sourceNode.getModel(), sourceNode.getConceptFqName());
+    Map<String, String> properties = sourceNode.getProperties();
+    for (String property : properties.keySet()) {
+      targetNode.setProperty(property, properties.get(property), false);
+    }
+
     sourceNodesToNewNodes.put(sourceNode, targetNode);
 
     List<SReference> references = sourceNode.getReferences();

@@ -185,11 +185,11 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1145576838847" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1145576838848">
               <link role="baseMethodDeclaration" targetNodeId="5.~List.size():int" resolveInfo="size" />
-              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1145576838850">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1145583516177">
-                  <link role="variableDeclaration" targetNodeId="1145583482393" />
+              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1194376746833">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194376746834">
+                  <link role="variableDeclaration" targetNodeId="1145583482393" resolveInfo="methodCall" />
                 </node>
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccessAsList" id="1171483448259">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccessAsList" id="1194376746835">
                   <link role="link" targetNodeId="1.1068499141038" />
                 </node>
               </node>
@@ -695,9 +695,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1171311897876">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1171311897877">
             <property name="name" value="root" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1171311897879">
-              <link role="concept" targetNodeId="6.1133920641626" />
-            </node>
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1171311897879" />
             <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1171311656651">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetContainingRootOperation" id="1171311660295" />
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1171311655432">

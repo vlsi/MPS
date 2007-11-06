@@ -70,10 +70,6 @@ public class CopyUtil {
     assert result != null;
     mapping.put(node, result);
 
-    // don't need to add language now because result node is 'in air'.
-    // if this is necessary, this should be done when a node is registered in model
-//    targetModel.addLanguage(node.getLanguage(GlobalScope.getInstance()));
-
     for (String property : node.getProperties().keySet()) {
       result.setProperty(property, node.getProperty(property), false);
     }
