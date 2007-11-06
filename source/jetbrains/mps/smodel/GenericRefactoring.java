@@ -14,10 +14,13 @@ import jetbrains.mps.refactoring.framework.MarshallUtil;
 import jetbrains.mps.refactoring.framework.RefactoringLoggingFailedException;
 import jetbrains.mps.logging.refactoring.structure.*;
 import jetbrains.mps.generator.*;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleContext;
 
 import java.util.Map;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by IntelliJ IDEA.
@@ -55,15 +58,17 @@ public class GenericRefactoring {
       processModel(anotherModel, model, args);
     }
 
-    List<SModel> sourceModels = myRefactoring.getModelsToGenerate(context, args);
+    Map<IModule, List<SModel>> sourceModels = myRefactoring.getModelsToGenerate(context, args);
     if (!sourceModels.isEmpty()) {
       generateModels(context, sourceModels);
     }
   }
 
-  private void generateModels(ActionContext context, List<SModel> sourceModels) {
-    IOperationContext operationContext = context.getOperationContext();
-    new GeneratorManager().generateModels(sourceModels,
+  private void generateModels(ActionContext context, Map<IModule, List<SModel>> sourceModels) {
+
+    for (IModule sourceModule : sourceModels.keySet()) {
+      IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getProject());
+      new GeneratorManager().generateModels(sourceModels.get(sourceModule),
             BootstrapLanguages.getInstance().getBaseLanguage(),
             operationContext,
             IGenerationType.FILES,
@@ -74,6 +79,9 @@ public class GenericRefactoring {
             },
             IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
             new DefaultMessageHandler(operationContext.getProject()));
+    }
+
+
   }
 
   private void processModel(SModel model, SModel usedModel, Map<String, String> args) {
