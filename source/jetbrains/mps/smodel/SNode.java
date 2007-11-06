@@ -214,28 +214,6 @@ public class SNode implements Iterable<SNode> {
     return myParent.getContainingRoot();
   }
 
-  public void replace(@NotNull SNode node,
-                      @NotNull SNode replacement) {
-    // look through children and referents and replace 1st occurance (may be all occurances?) of the node
-    for (SNode child : _children()) {
-      if (child == node) {
-        String role = child.getRole_();
-        assert role != null;
-        insertChild(node, role, replacement);
-        removeChild(node);
-        return;
-      }
-    }
-
-    for (SReference reference : myReferences) {
-      if (reference.getTargetNode() == node) {
-        insertReferent(node, reference.getRole(), replacement);
-        removeReferent(reference.getRole(), node);
-        return;
-      }
-    }
-  }
-
   public void replaceChild(@NotNull SNode oldChild,
                            @NotNull SNode newChild) {
     assert _children().contains(oldChild);

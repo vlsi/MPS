@@ -166,7 +166,7 @@ public class Resolver {
         SNode target = filteredRefTargets.get(0);
         SNode newNode = SModelUtil_new.instantiateConceptDeclaration(applicableConcept, referenceNode.getModel()).getNode();
         newNode.setReferent(SModelUtil_new.getGenuineLinkRole(smartReference), target);
-        parent.replace(referenceNode, newNode);
+        parent.replaceChild(referenceNode, newNode);
         return true;
       }
     }
