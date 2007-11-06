@@ -70,9 +70,7 @@ public class CopyUtil {
     assert result != null;
     mapping.put(node, result);
 
-    for (String property : node.getProperties().keySet()) {
-      result.setProperty(property, node.getProperty(property), false);
-    }
+    result.putProperties(node);
 
     for (String role : node.getChildRoles(copyAttributes)) {
       for (SNode child : node.getChildren(role)) {
