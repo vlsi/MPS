@@ -127,7 +127,8 @@ public class SNode implements Iterable<SNode> {
   @NotNull
   public String getRoleOf(@NotNull SNode node) {
     fireNodeReadAccess();
-    if (getChildren().contains(node)) {
+    fireNodeUnclassifiedReadAccess();
+    if (_children().contains(node)) {
       String role = node.getRole_();
       assert role != null;
       return role;
@@ -144,9 +145,11 @@ public class SNode implements Iterable<SNode> {
   @NotNull
   public Set<String> getChildRoles(boolean includeAttributeRoles) {
     fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
     Set<String> result = new HashSet<String>();
-    for (SNode child : getChildren()) {
-      String roleOf = getRoleOf(child);
+    for (SNode child : _children()) {
+      String roleOf = child.getRole_();
+      assert roleOf != null;
       if (includeAttributeRoles || !(roleOf.contains(AttributesRolesUtil.STEREOTYPE_DELIM))) {
         result.add(roleOf);
       }
@@ -157,8 +160,10 @@ public class SNode implements Iterable<SNode> {
   @NotNull
   public Set<String> addChildRoles(@NotNull final Set<String> augend, boolean includeAttributeRoles) {
     fireNodeReadAccess();
-    for (SNode child : getChildren()) {
-      String roleOf = getRoleOf(child);
+    fireNodeUnclassifiedReadAccess();
+    for (SNode child : _children()) {
+      String roleOf = child.getRole_();
+      assert roleOf != null;
       if (includeAttributeRoles || !(roleOf.contains(AttributesRolesUtil.STEREOTYPE_DELIM))) {
         augend.add(roleOf);
       }
