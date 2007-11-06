@@ -475,8 +475,17 @@ public class SNode implements Iterable<SNode> {
   @NotNull
   public Map<String, String> getProperties() {
     fireNodeReadAccess();
-    if (myProperties == null) return new HashMap<String, String>(0);
+    if (myProperties == null) return Collections.emptyMap();
     return Collections.unmodifiableMap(myProperties);
+  }
+
+  public void putProperties(SNode fromNode) {
+    if(fromNode == null || fromNode.myProperties == null) return;
+    if (myProperties == null) {
+      myProperties = new LinkedHashMap<String, String>(fromNode.myProperties);
+    } else {
+      myProperties.putAll(fromNode.myProperties);
+    }
   }
 
   @NotNull

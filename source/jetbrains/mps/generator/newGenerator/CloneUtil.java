@@ -32,7 +32,7 @@ public class CloneUtil {
     if (keepOldId) {
       result.setId(node.getSNodeId());
     }
-    copyProperties(node, result);
+    result.putProperties(node);
     for (SReference reference : node.getReferences()) {
       SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : outputModel.getUID();
       if (targetModelUID == null) {
@@ -52,14 +52,4 @@ public class CloneUtil {
     }
     return result;
   }
-
-  /**
-   * todo: move to SNode?
-   */
-  public static void copyProperties(SNode fromNode, SNode toNode) {
-    for (String property : fromNode.getProperties().keySet()) {
-      toNode.setProperty(property, fromNode.getPersistentProperty(property), false);
-    }
-  }
-
 }
