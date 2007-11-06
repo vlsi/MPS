@@ -14,6 +14,7 @@ import java.awt.datatransfer.StringSelection;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
 
 /**
  * @author Kostik
@@ -47,7 +48,7 @@ public class MessageView extends DefaultTool {
 
     myList.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
-        if (e.getClickCount() == 2) {
+        if (e.getClickCount() == 1) {
           openCurrentMessageNodeIfPossible();
         }
       }
@@ -65,16 +66,35 @@ public class MessageView extends DefaultTool {
       }
     });
 
+    myList.addMouseMotionListener(new MouseMotionListener() {
+      public void mouseDragged(MouseEvent e) {
+      }
+
+      public void mouseMoved(MouseEvent e) {
+        int index = myList.locationToIndex(e.getPoint());
+
+        Message item = null;
+        if (index != -1) {
+          item = (Message) myModel.get(index);
+        }
+
+        if (item != null && item.getHintObject() != null) {
+          myList.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        } else {
+          myList.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+        }
+      }
+    });
+
     myList.setCellRenderer(new DefaultListCellRenderer() {
       public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
         super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
 
         Message msg = (Message) value;
-        setText(msg.getCreationTimeString() + "\t: " + msg.getText());
-
         if (msg.getHintObject() != null) {
-          setForeground(MPSColors.DARK_BLUE);
+          setText("<html>" + msg.getCreationTimeString() + "\t: <u style='color:#0000EE'>" + msg.getText() + "</u>");
         } else {
+          setText(msg.getCreationTimeString() + "\t: " + msg.getText());
           setForeground(Color.BLACK);
         }
 
