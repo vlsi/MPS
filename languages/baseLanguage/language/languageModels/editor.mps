@@ -1600,6 +1600,7 @@
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
         <link role="relationDeclaration" targetNodeId="17.1068498886295" />
+        <link role="actionMap" targetNodeId="1194344707826" resolveInfo="AssignmentExpression_LeftArgument_Actions" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1075310480285">
         <property name="text" value="=" />
@@ -1611,6 +1612,7 @@
         <property name="drawBorder" value="false" />
         <property name="selectable" value="true" />
         <link role="relationDeclaration" targetNodeId="17.1068498886297" />
+        <link role="actionMap" targetNodeId="1194344968841" resolveInfo="AssignmentExpression_RightArgument_Actions" />
       </node>
     </node>
   </node>
@@ -11212,6 +11214,56 @@
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetLastOperation" id="1191847606660" />
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1194344707826">
+    <property name="name" value="AssignmentExpression_LeftArgument_Actions" />
+    <link role="applicableConcept" targetNodeId="17.1068498886294" resolveInfo="AssignmentExpression" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem" id="1194344788457">
+      <property name="actionId" value="delete_action_id" />
+      <property name="description" value="Delete left argument" />
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_ExecuteFunction" id="1194344788458">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194344788459">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1194344800564">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1194344800995">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1194344805625">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1194344807856">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1194344961465">
+                    <link role="link" targetNodeId="17.1068498886297" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1194344807465" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1194344800565" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1194344968841">
+    <property name="name" value="AssignmentExpression_RightArgument_Actions" />
+    <link role="applicableConcept" targetNodeId="17.1068498886294" resolveInfo="AssignmentExpression" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem" id="1194344968842">
+      <property name="actionId" value="delete_action_id" />
+      <property name="description" value="Delete right argument" />
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_ExecuteFunction" id="1194344968843">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194344968844">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1194344968845">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1194344968846">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1194344968847">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1194344968848">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1194344989422">
+                    <link role="link" targetNodeId="17.1068498886295" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1194344968850" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1194344968851" />
             </node>
           </node>
         </node>
