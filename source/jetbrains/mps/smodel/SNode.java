@@ -28,7 +28,7 @@ import java.util.*;
  * User: Sergey Dmitriev
  * Date: Aug 2, 2003
  */
-public class SNode implements Iterable<SNode> {
+public final class SNode {
 
   private static final Logger LOG = Logger.getLogger(SNode.class);
 
@@ -728,11 +728,6 @@ public class SNode implements Iterable<SNode> {
       }
     }
     return -1;
-  }
-
-  @NotNull
-  public Iterator<SNode> iterator() {
-    return getChildren().iterator();
   }
 
   @NotNull
