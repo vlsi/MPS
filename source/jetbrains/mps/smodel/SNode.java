@@ -940,7 +940,9 @@ public final class SNode {
 
     SReference resultReference = null;
     if (newReferent != null) {
-      resultReference = addReferent(role, newReferent);
+//      resultReference = addReferent(role, newReferent);
+      resultReference = SReference.create(role, this, newReferent);
+      insertReferenceAt(myReferences == null ? 0 : myReferences.size(), resultReference);
     }
 
     if (!getModel().isLoading()) {
@@ -1011,12 +1013,12 @@ public final class SNode {
     return result;
   }
 
-  @NotNull
-  public SReference addReferent(@NotNull String role, SNode target) {
-    SReference reference = SReference.create(role, this, target);
-    insertReferenceAt(myReferences == null ? 0 : myReferences.size(), reference);
-    return reference;
-  }
+//  @NotNull
+//  public SReference addReferent(@NotNull String role, SNode target) {
+//    SReference reference = SReference.create(role, this, target);
+//    insertReferenceAt(myReferences == null ? 0 : myReferences.size(), reference);
+//    return reference;
+//  }
 
   public void addReference(@NotNull SReference reference) {
     insertReferenceAt(myReferences == null ? 0 : myReferences.size(), reference);

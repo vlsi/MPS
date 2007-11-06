@@ -28,7 +28,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
       // output target node might has been copied (reduced) from the input target node
       SNode outputTargetNode = generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
       if (outputTargetNode != null) {
-        getOutputNode().addReferent(myInputReference.getRole(), outputTargetNode);
+        getOutputNode().setReferent(myInputReference.getRole(), outputTargetNode);
         setSuccess(true);
         return;
       }
@@ -53,7 +53,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
         }
 
         if (outputTargetNode != null) {
-          getOutputNode().addReferent(myInputReference.getRole(), outputTargetNode);
+          getOutputNode().setReferent(myInputReference.getRole(), outputTargetNode);
           setSuccess(true);
           return;
         }
@@ -69,7 +69,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     if (referenceResolver != null) {
       SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myInputReference);
       if (outputTargetNode != null) {
-        getOutputNode().addReferent(myInputReference.getRole(), outputTargetNode);
+        getOutputNode().setReferent(myInputReference.getRole(), outputTargetNode);
         setSuccess(true);
         return;
       }

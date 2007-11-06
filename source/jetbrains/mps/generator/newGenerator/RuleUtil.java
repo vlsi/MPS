@@ -567,7 +567,7 @@ public class RuleUtil {
       if (templateReferentNode.getModel().equals(templateModel)) {
         myGenerator.addReferenceInfo(new ReferenceInfo_TemplateNode(outputNode, reference, inputNode));
       } else {
-        outputNode.addReferent(reference.getRole(), templateReferentNode);
+        outputNode.setReferent(reference.getRole(), templateReferentNode);
       }
     }
 
@@ -639,7 +639,7 @@ public class RuleUtil {
       if (inputTargetNode.getModel().equals(inputModel)) {
         myGenerator.addReferenceInfo(new ReferenceInfo_CopiedInputNode(outputNode, inputReference));
       } else {
-        outputNode.addReferent(inputReference.getRole(), inputTargetNode);
+        outputNode.setReferent(inputReference.getRole(), inputTargetNode);
       }
     }
 

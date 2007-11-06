@@ -27,7 +27,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     {
       SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
       if (outputTargetNode != null) {
-        getOutputNode().addReferent(myTemplateReference.getRole(), outputTargetNode);
+        getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
         setSuccess(true);
         return;
       }
@@ -37,7 +37,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       // if template has been applied exactly once, then we have unique output node for each template node
       SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, true);
       if (outputTargetNode != null) {
-        getOutputNode().addReferent(myTemplateReference.getRole(), outputTargetNode);
+        getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
         setSuccess(true);
         return;
       }
@@ -50,7 +50,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       SNode outputParentNode = getOutputNode().getParent();
       while (templateParentNode != null && outputParentNode != null) {
         if (templateParentNode.equals(myTemplateTargetNode)) {
-          getOutputNode().addReferent(myTemplateReference.getRole(), outputParentNode);
+          getOutputNode().setReferent(myTemplateReference.getRole(), outputParentNode);
           setSuccess(true);
           return;
         }
@@ -67,7 +67,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     if (referenceResolver != null) {
       SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myTemplateReference);
       if (outputTargetNode != null) {
-        getOutputNode().addReferent(myTemplateReference.getRole(), outputTargetNode);
+        getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
         setSuccess(true);
         return;
       }
@@ -85,7 +85,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       if (leastCommonParent_output != null) {
         SNode outputTargetNode = findOutputSubnodeByTemplateNode(generator, leastCommonParent_output, myTemplateTargetNode);
         if (outputTargetNode != null) {
-          getOutputNode().addReferent(myTemplateReference.getRole(), outputTargetNode);
+          getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
           setSuccess(true);
           return;
         }
@@ -96,7 +96,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   public void resolveAnyhow(TemplateModelGenerator_New generator) {
     SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, false);
     if (outputTargetNode != null) {
-      getOutputNode().addReferent(myTemplateReference.getRole(), outputTargetNode);
+      getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
       setSuccess(true);
     }
   }
