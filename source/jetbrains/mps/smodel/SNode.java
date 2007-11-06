@@ -915,20 +915,6 @@ public final class SNode {
     return new ArrayList<SReference>(myReferences);
   }
 
-  @NotNull
-  public List<SReference> getReferences(@NotNull String role) {
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    if (myReferences == null) return new ArrayList<SReference>(0);
-    List<SReference> refs = new ArrayList<SReference>(1);
-    for (SReference ref : myReferences) {
-      if (role.equals(ref.getRole())) {
-        refs.add(ref);
-      }
-    }
-    return refs;
-  }
-
   @Nullable
   public SReference setReferent(@NotNull String role, SNode newReferent) {
     // remove old references
@@ -1036,14 +1022,9 @@ public final class SNode {
     insertReferenceAt(myReferences == null ? 0 : myReferences.size(), reference);
   }
 
-  private void insertReferent(SNode anchorNode, @NotNull String role, @NotNull SNode referent) {
-    insertReferent(anchorNode, role, referent, false);
-  }
-
   public void insertReferent(SNode anchorNode, @NotNull String role, @NotNull SNode insertNode, boolean insertBefore) {
     insertChildOrReferent(anchorNode, role, insertNode, insertBefore, false);
   }
-
 
   public void removeReferent(@NotNull String role, @NotNull SNode target) {
     if (myReferences == null) return;
