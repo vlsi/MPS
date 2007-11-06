@@ -57,10 +57,10 @@ public abstract class ReferenceInfo {
       Language l = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, GlobalScope.getInstance());
 
       try {
-        Class resolverClass = Class.forName(resolverClassName, true, ClassLoaderManager.getInstance().getClassLoaderFor(l));
-        return (IReferenceResolver) resolverClass.newInstance();
-      } catch (ClassNotFoundException e) {
-        // ok
+        Class resolverClass = l.getClass(resolverClassName);
+        if (resolverClass != null) {
+          return (IReferenceResolver) resolverClass.newInstance();
+        }
       } catch (IllegalAccessException e) {
         throw new RuntimeException(e);
       } catch (InstantiationException e) {

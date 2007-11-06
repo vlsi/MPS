@@ -72,6 +72,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   IClassPathItem getRuntimeClasspath();
 
+  Class getClass(String fqName);
+
   BytecodeLocator getByteCodeLocator();
   
   IClassPathItem getClassPathItem();

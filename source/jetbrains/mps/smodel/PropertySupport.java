@@ -77,11 +77,9 @@ public abstract class PropertySupport {
     String propertySupportClassName = JavaNameUtil.fqClassName(propertyDataType.getModel(), getClassName(propertyDataType));
     PropertySupport propertySupport = null;
     try {
-      Class propertySupportClass = Class.forName(propertySupportClassName, true, ClassLoaderManager.getInstance().getClassLoaderFor(l));
+      Class propertySupportClass = l.getClass(propertySupportClassName);
       Constructor constructor = propertySupportClass.getConstructor();
       propertySupport = (PropertySupport) constructor.newInstance();
-    } catch (ClassNotFoundException e) {
-      LOG.error(e);
     } catch (NoSuchMethodException e) {
       LOG.error(e);
     } catch (InstantiationException e) {

@@ -66,7 +66,7 @@ public class IconManager {
     String className = namespace + ".icons.Icons";
     try {
       Language language = MPSModuleRepository.getInstance().getLanguage(namespace);
-      Class icons = Class.forName(className, true, ClassLoaderManager.getInstance().getClassLoaderFor(language));
+      Class icons = language.getClass(className);
       Icon icon = (Icon) icons.getMethod("getLanguageIcon").invoke(null);
       if (icon != null) return icon;
     } catch (Exception e) {

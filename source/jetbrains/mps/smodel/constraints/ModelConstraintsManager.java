@@ -377,15 +377,18 @@ public class ModelConstraintsManager implements IComponentLifecycle {
 
     for (String shortClassName : availableClasses) {
       try {
-        ClassLoader classLoader = myClassLoaderManager.getClassLoaderFor(l);
-        Class constraintsClass = Class.forName(packageName + "." + shortClassName, true, classLoader);
+        String className = packageName + "." + shortClassName;
+        Class constraintsClass = l.getClass(className);
+
+        if (constraintsClass == null) {
+          LOG.error("Can't find " + className);
+        }
+
         if (IModelConstraints.class.isAssignableFrom(constraintsClass)) {
           IModelConstraints constraints = (IModelConstraints) constraintsClass.newInstance();
           constraints.registerSelf(this);
           loadedConstraints.add(constraints);
         }
-      } catch (ClassNotFoundException e) {
-        LOG.error(e);
       } catch (InstantiationException e) {
         LOG.error(e);
       } catch (IllegalAccessException e) {

@@ -523,26 +523,23 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         Element rootElement = document.getRootElement();
         List<Element> components = rootElement.getChildren(COMPONENT);
         for (Element component : components) {
-          try {
-            String className = component.getAttributeValue(CLASS);
-            String bundle = component.getAttributeValue(BUNDLE);
+          String className = component.getAttributeValue(CLASS);
+          String bundle = component.getAttributeValue(BUNDLE);
 
-            IModule module = MPSModuleRepository.getInstance().getModuleByUID(bundle);
+          IModule module = MPSModuleRepository.getInstance().getModuleByUID(bundle);
 
-            ClassLoader cl;
-            if (module != null) {
-              cl = ClassLoaderManager.getInstance().getClassLoaderFor(module);
+          if (module != null) {
+            Class cls = module.getClass(className);
+
+            if (cls != null) {
+              if (containsComponent(cls) && getComponent(cls) instanceof IExternalizableComponent) {
+                ((IExternalizableComponent) getComponentSafe(cls)).read(component, this);
+              }
             } else {
-              cl = getClass().getClassLoader();
+              LOG.error("Can't find a class " + className);
             }
-
-            Class cls = Class.forName(className, true, cl);
-
-            if (containsComponent(cls) && getComponent(cls) instanceof IExternalizableComponent) {
-              ((IExternalizableComponent) getComponentSafe(cls)).read(component, this);
-            }
-          } catch (ClassNotFoundException e) {
-            LOG.error(e);
+          } else {
+            LOG.error("Can't find a module " + bundle);
           }
         }
       }

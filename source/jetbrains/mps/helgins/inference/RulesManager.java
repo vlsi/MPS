@@ -53,8 +53,7 @@ public class RulesManager {
     String classname = "HelginsDescriptor";
     try {
       IHelginsDescriptor helginsDescriptor;
-      ClassLoader loader = ClassLoaderManager.getInstance().getClassLoaderFor(l);
-      Class<? extends IHelginsDescriptor> c = (Class<? extends IHelginsDescriptor>) Class.forName(packageName + "." + classname, true, loader);
+      Class<? extends IHelginsDescriptor> c = (Class<? extends IHelginsDescriptor>) l.getClass(packageName + "." + classname);
       helginsDescriptor = c.newInstance();
       myInferenceRules.addRuleSetItem(helginsDescriptor.getInferenceRules());
       mySubtypingRules.addRuleSetItem(helginsDescriptor.getSubtypingRules());

@@ -14,6 +14,7 @@ import jetbrains.mps.reloading.*;
 import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.eclipse.jdt.internal.compiler.classfmt.ClassFormatException;
 
 import java.io.File;
 import java.util.*;
@@ -363,6 +364,15 @@ public abstract class AbstractModule implements IModule {
 
   public IClassPathItem getRuntimeClasspath() {
     return myRuntimeClassPathItem;
+  }
+
+  public Class getClass(String fqName) {
+    ClassLoader loader = ClassLoaderManager.getInstance().getClassLoaderFor(this);
+    try {
+      return Class.forName(fqName, true, loader);
+    } catch (ClassNotFoundException e) {
+      return null;
+    }
   }
 
   public BytecodeLocator getByteCodeLocator() {

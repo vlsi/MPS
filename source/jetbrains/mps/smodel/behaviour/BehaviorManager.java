@@ -36,7 +36,7 @@ public final class BehaviorManager {
     assert node != null;
 
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
-    Language langauge = node.getLanguage(GlobalScope.getInstance());
+    Language language = node.getLanguage(GlobalScope.getInstance());
 
     String conceptFqName = NameUtil.nodeFQName(concept);
 
@@ -51,15 +51,14 @@ public final class BehaviorManager {
         String behaviourClass = behaviorClassByConceptFqName(fqName);
 
         try {
-          ClassLoader cl = ClassLoaderManager.getInstance().getClassLoaderFor(langauge);
-          Class cls = Class.forName(behaviourClass, true, cl);
-          Method method = cls.getMethod("init", SNode.class);
+          Class cls = language.getClass(behaviourClass);          
+          if (cls != null) {
+            Method method = cls.getMethod("init", SNode.class);
 
-          method.setAccessible(true);
+            method.setAccessible(true);
 
-          methodsToCall.add(method);
-        } catch (ClassNotFoundException e) {
-          //ignore
+            methodsToCall.add(method);
+          }
         } catch (NoSuchMethodException e) {
           //ignor too
         }
@@ -104,10 +103,10 @@ public final class BehaviorManager {
     String behaviorClass = behaviorClassByConceptFqName(fqName);
 
     try {
-      Class cls = Class.forName(behaviorClass, true, ClassLoaderManager.getInstance().getClassLoaderFor(l));
-      method = cls.getMethod(methodName, parameterTypes);
-    } catch (ClassNotFoundException e) {
-      //ignore
+      Class cls = l.getClass(behaviorClass);
+      if (cls != null) {
+        method = cls.getMethod(methodName, parameterTypes);
+      }
     } catch (NoSuchMethodException e) {
       //ignor too
     }

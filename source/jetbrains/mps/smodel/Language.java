@@ -1007,10 +1007,13 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     String packageName = scriptsModel.getLongName();
     for (Refactoring refactoring : scriptsModel.allAdapters(Refactoring.class)) {
       try {
-        Class<ILoggableRefactoring> cls = (Class<ILoggableRefactoring>) Class.forName(packageName + "." + refactoring.getName(), false, ClassLoaderManager.getInstance().getClassLoaderFor(this));
+        String fqName = packageName + "." + refactoring.getName();
+        Class<ILoggableRefactoring> cls = getClass(fqName);
+        if (cls == null) {
+          LOG.error("Can't find " + fqName);          
+          continue;
+        }
         result.add(cls.getConstructor().newInstance());
-      } catch (ClassNotFoundException e) {
-        LOG.error("Can't find a class : " + e.getMessage());
       } catch (Throwable t) {
         LOG.error(t);
       }

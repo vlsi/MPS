@@ -257,9 +257,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
             };
             generationType.handleOutput(invocationContext, status, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, null);
 
-            ClassLoader classLoader = generationType.getClassLoader(ClassLoaderManager.getInstance().getClassLoaderFor(scriptslanguage));
             String className = status.getOutputModel().getLongName() + "." + "LogRunner";
-            Class aClass = Class.forName(className, true, classLoader);
+            Class aClass = scriptslanguage.getClass(className);
             Method method = aClass.getDeclaredMethod("updateModel", SModel.class, Map.class);
             method.invoke(null, mySModel, arguments);
             save();

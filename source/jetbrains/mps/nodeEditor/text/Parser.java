@@ -21,7 +21,8 @@ public class Parser {
     Class cls;
     try {
       Language l = (Language) MPSModuleRepository.getInstance().getModuleByUID(languageNamespace);
-      cls = Class.forName(languageNamespace + ".parser.Parser", true, ClassLoaderManager.getInstance().getClassLoaderFor(l));
+      String name = languageNamespace + ".parser.Parser";
+      cls = l.getClass(name);
     } catch(Exception e) {
       return null;
     }

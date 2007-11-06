@@ -45,15 +45,19 @@ public class IntentionsManager {
           String className = smodel.getUID().getLongName() + "." + IntentionDeclaration_Behavior.call_getGeneratedName_1193141280918(intentionDeclaration.getNode());
           String conceptName = IntentionDeclaration_Behavior.call_getConceptName_1193142194523(intentionDeclaration.getNode());
           try {
-            Object intention = Class.forName(className, true, ClassLoaderManager.getInstance().getClassLoaderFor(l)).newInstance();
-            Set <Intention> intentions = myIntentions.get(conceptName);
-            if (intentions == null){
-              intentions = new HashSet<Intention>();
+            Class<?> cls = l.getClass(className);
+
+            if (cls != null) {
+              Object intention = cls.newInstance();
+              Set <Intention> intentions = myIntentions.get(conceptName);
+              if (intentions == null){
+                intentions = new HashSet<Intention>();
+              }
+              intentions.add((Intention)intention);
+              myIntentions.put(conceptName,intentions);
+            } else {
+              LOG.error("Intention is registered but isn't compiled", intentionDeclaration);
             }
-            intentions.add((Intention)intention);
-            myIntentions.put(conceptName,intentions);
-          } catch (ClassNotFoundException e) {
-            LOG.error("Intention is registered but isn't compiled",intentionDeclaration);
           } catch (Exception e){
             LOG.error(e, intentionDeclaration);
           }

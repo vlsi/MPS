@@ -209,7 +209,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
       return new FileClassPathItem(file.getAbsolutePath());
     }
 
-    LOG.error("Can't find mps classpath");
+    LOG.error("Can't find mps classpath");                      
     return null;
   }
 

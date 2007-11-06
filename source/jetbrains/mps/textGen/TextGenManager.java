@@ -71,12 +71,12 @@ public class TextGenManager {
       String className = cd.getName();
       String textgenClassname = packageName + ".textGen." + className + "_TextGen";
       try {                
-        Class textgenClass = Class.forName(textgenClassname, true, ClassLoaderManager.getInstance().getClassLoaderFor(l));
-        SNodeTextGen result = (SNodeTextGen) textgenClass.newInstance();
-        result.setContext(context);
-        return result;
-      } catch (ClassNotFoundException e) {
-        //that's ok
+        Class textgenClass = l.getClass(textgenClassname);
+        if (textgenClass != null) {
+          SNodeTextGen result = (SNodeTextGen) textgenClass.newInstance();
+          result.setContext(context);
+          return result;
+        }
       } catch (InstantiationException e) {
         LOG.error(e, node);
       } catch (IllegalAccessException e) {

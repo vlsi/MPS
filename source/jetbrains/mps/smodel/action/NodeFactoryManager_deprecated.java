@@ -54,12 +54,7 @@ import java.lang.reflect.Method;
     String languageNamespace = NameUtil.namespaceFromConcept(conceptDeclaration);
     Language langauge = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
     assert langauge != null;
-    try {
-      return Class.forName(languageNamespace + ".Factory", true, ClassLoaderManager.getInstance().getClassLoaderFor(langauge));
-    } catch (ClassNotFoundException e) {
-      // ok
-    }
-    return null;
+    return langauge.getClass(languageNamespace + ".Factory");
   }
 
   private static Method getSetupMethod_new(Class factoryClass, SNode node) {
