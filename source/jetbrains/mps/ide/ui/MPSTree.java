@@ -425,9 +425,9 @@ public abstract class MPSTree extends JTree {
 
   public void collapseAll(MPSTreeNode node){
     super.collapsePath(new TreePath(node.getPath()));
-    for (int i = 0; i < node.getChildCount(); i++) {
-      collapseAll((MPSTreeNode) node.getChildAt(i));
-    }
+    //for (int i = 0; i < node.getChildCount(); i++) {
+    //  collapseAll((MPSTreeNode) node.getChildAt(i));
+    //}
   }
 
   public void selectNode(TreeNode node) {
