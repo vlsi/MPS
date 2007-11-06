@@ -3861,37 +3861,5 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1193950691564">
-    <property name="name" value="BugReport" />
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1193950700285">
-      <property name="name" value="MPS_336" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1193950700286" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193950700287" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193950700288">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1193950764605">
-          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1193950775424">
-            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetNewChildOperation" id="1193950779911">
-              <link role="concept" targetNodeId="6.1081516740877" resolveInfo="NotExpression" />
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1193950771013">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1193950774063">
-                <link role="link" targetNodeId="6.1068580123160" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193950764606">
-                <link role="variableDeclaration" targetNodeId="1193950725358" resolveInfo="ifStatement" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193950725358">
-        <property name="name" value="ifStatement" />
-        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1193950725359">
-          <link role="concept" targetNodeId="6.1068580123159" resolveInfo="IfStatement" />
-        </node>
-      </node>
-    </node>
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193950691565" />
-  </node>
 </model>
 
