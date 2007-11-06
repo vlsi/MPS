@@ -1022,10 +1022,6 @@ public final class SNode {
     insertReferenceAt(myReferences == null ? 0 : myReferences.size(), reference);
   }
 
-  public void insertReferent(SNode anchorNode, @NotNull String role, @NotNull SNode insertNode, boolean insertBefore) {
-    insertChildOrReferent(anchorNode, role, insertNode, insertBefore, false);
-  }
-
   public void removeReferent(@NotNull String role, @NotNull SNode target) {
     if (myReferences == null) return;
     for (SReference reference : myReferences) {

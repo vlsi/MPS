@@ -136,8 +136,7 @@ public class PasteNodeUtil {
             if (uniqueChild) pasteTarget.setChild(linkDeclaration.getRole(), pasteNode);
             else pasteTarget.insertChild(anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
           } else {
-            if (uniqueChild) pasteTarget.insertReferent(anchorNode, linkDeclaration.getRole(), pasteNode, pasteBefore);
-            else pasteTarget.setReferent(linkDeclaration.getRole(), pasteNode);
+            pasteTarget.setReferent(linkDeclaration.getRole(), pasteNode);
           }
         //Add resolving here!
 
