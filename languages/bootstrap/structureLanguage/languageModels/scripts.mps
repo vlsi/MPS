@@ -1084,23 +1084,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1192544317676">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1192544319178">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1192544345395">
-              <link role="baseMethodDeclaration" targetNodeId="7.1192544184887" resolveInfo="moveNodeToModel" />
-              <link role="classConcept" targetNodeId="7.1191843360262" resolveInfo="RefactoringUtils" />
-              <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1192544353086">
-                <link role="argument" targetNodeId="1191835983129" resolveInfo="sourceNode" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1192797345049">
-                <link role="argument" targetNodeId="1192796745248" resolveInfo="targetModel" />
-              </node>
-            </node>
-            <node role="lValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1192544332092">
-              <link role="argument" targetNodeId="1192540806687" resolveInfo="mapping" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1192545408376">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1192545408377">
             <property name="name" value="scope" />
@@ -1448,6 +1431,23 @@
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1192547122040" />
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1192547180081">
               <link role="variableDeclaration" targetNodeId="1192547129996" resolveInfo="sourceConstraintsModelDescriptor" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1194364673155">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1194364673156">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1194364673157">
+              <link role="baseMethodDeclaration" targetNodeId="7.1192544184887" resolveInfo="moveNodeToModel" />
+              <link role="classConcept" targetNodeId="7.1191843360262" resolveInfo="RefactoringUtils" />
+              <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1194364673158">
+                <link role="argument" targetNodeId="1191835983129" resolveInfo="sourceNode" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1194364673159">
+                <link role="argument" targetNodeId="1192796745248" resolveInfo="targetModel" />
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1194364673160">
+              <link role="argument" targetNodeId="1192540806687" resolveInfo="mapping" />
             </node>
           </node>
         </node>
