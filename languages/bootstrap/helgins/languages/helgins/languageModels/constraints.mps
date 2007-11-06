@@ -924,7 +924,7 @@
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182946460391">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="1182946476238">
               <node role="throwable" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1182946479333">
-                <link role="baseMethodDeclaration" targetNodeId="7.~AssertionFailedError.&lt;init&gt;(java.lang.String)" resolveInfo="AssertionFailedError" />
+                <link role="baseMethodDeclaration" targetNodeId="9.~RuntimeException.&lt;init&gt;(java.lang.String)" resolveInfo="RuntimeException" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1182946578911">
                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1182946571921">
                     <property name="value" value="node " />
