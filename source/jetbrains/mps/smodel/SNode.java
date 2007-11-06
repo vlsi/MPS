@@ -970,45 +970,28 @@ public final class SNode {
 
   @Nullable
   public SNode getReferent(String role) {
-    // tmp check
-    int count = getReferentCount(role);
-    if (count > 1) {
-      LOG.errorWithTrace("ERROR: " + count + " referents for role \"" + role + "\" in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getId() + "] " + getModel().getUID());
-    }
-    // tmp check
-
-    SNode referent = null;
-    if (myReferences != null) {
-      for (SReference sReference : myReferences) {
-        if (sReference.getRole().equals(role)) {
-          referent = sReference.getTargetNode();
-          break;
-        }
-      }
-    }
-    NodeReadEventsCaster.fireNodeReferentReadAccess(this, role, referent);
-    return referent;
+    SReference reference = getReference(role);
+    return reference == null ? null : reference.getTargetNode();
   }
 
   @Nullable
   public SReference getReference(@NotNull String role) {
     fireNodeReadAccess();
-    // tmp check
-    int count = getReferentCount(role);
-    if (count > 1) {
-      LOG.errorWithTrace("ERROR: " + count + " referents for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getId() + "] " + getModel().getUID());
-    }
-    // tmp check
-
     SReference result = null;
+    int count = 0; // paranoid check
     if (myReferences != null) {
-      for (SReference sReference : myReferences) {
-        if (sReference.getRole().equals(role)) {
-          result = sReference;
-          break;
+      for (SReference reference : myReferences) {
+        if (reference.getRole().equals(role)) {
+          result = reference;
+          count++;
         }
       }
     }
+
+    if (count > 1) {
+      LOG.errorWithTrace("ERROR: " + count + " referents for role '" + role + "' in " + getDebugText());
+    }
+
     NodeReadEventsCaster.fireNodeReferentReadAccess(this, role, result == null ? null : result.getTargetNode());
     return result;
   }
@@ -1045,19 +1028,6 @@ public final class SNode {
         break;
       }
     }
-  }
-
-  public int getReferentCount(@NotNull String role) {
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    if (myReferences == null) return 0;
-    int count = 0;
-    for (SReference reference : myReferences) {
-      if (reference.getRole().equals(role)) {
-        count++;
-      }
-    }
-    return count;
   }
 
   @NotNull
