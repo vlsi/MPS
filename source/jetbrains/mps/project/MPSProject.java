@@ -19,27 +19,24 @@ import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.library.*;
+import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.plugins.PluginManager;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
-import jetbrains.mps.projectLanguage.structure.Library;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadUtils;
+import jetbrains.mps.runtime.BundleClassLoader;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.runtime.BundleClassLoader;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jdom.Document;
@@ -528,18 +525,25 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
           IModule module = MPSModuleRepository.getInstance().getModuleByUID(bundle);
 
-          if (module != null) {
-            Class cls = module.getClass(className);
 
-            if (cls != null) {
-              if (containsComponent(cls) && getComponent(cls) instanceof IExternalizableComponent) {
-                ((IExternalizableComponent) getComponentSafe(cls)).read(component, this);
-              }
-            } else {
-              LOG.error("Can't find a class " + className);
+          Class cls = null;
+
+          if (module != null) {
+            cls = module.getClass(className);
+          } else {
+            try {
+              cls = Class.forName(className);
+            } catch (ClassNotFoundException cnfe) {              
+            }
+          }
+
+
+          if (cls != null) {
+            if (containsComponent(cls) && getComponent(cls) instanceof IExternalizableComponent) {
+              ((IExternalizableComponent) getComponentSafe(cls)).read(component, this);
             }
           } else {
-            LOG.error("Can't find a module " + bundle);
+            LOG.error("Can't find a class " + className + " in module " + module);
           }
         }
       }
