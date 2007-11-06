@@ -34,9 +34,8 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath>
-    <entry path="${mps_home}\lib\junit\junit.jar" />
-  </classPath>
+  <classPath />
+  <runtimeClassPath />
   <dependencies>
     <dependency>jetbrains.mps.baseLanguage</dependency>
     <dependency>jetbrains.mps.patterns</dependency>
