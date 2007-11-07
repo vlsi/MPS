@@ -241,8 +241,8 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   /**
-   * DO NOT USE THIS METHOD DIRECTLY. I'M GOING TO GET RID OF IT
-   * USE {IModule.getClass(String name)} instead 
+   * DO NOT USE THIS METHOD DIRECTLY. I'M GOING TO GET RID OF IT.
+   * USE {IModule.getClass(String name)} INSTEAD
    */
   public ClassLoader getClassLoaderFor(IModule module) {
     Bundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
