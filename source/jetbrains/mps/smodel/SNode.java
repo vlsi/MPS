@@ -1567,15 +1567,6 @@ public final class SNode {
     return sb.toString();
   }
 
-  public void dumpNodePath(int currLevel, PrintStream stream) {
-    char[] indent = new char[currLevel * 2];
-    Arrays.fill(indent, ' ');
-    stream.println(new String(indent) + "- " + getDebugText());
-    if (getParent() != null) {
-      getParent().dumpNodePath(++currLevel, stream);
-    }
-  }
-
   public boolean isReferentRequired(String role, IScope scope) {
     AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
     LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(conceptDeclaration, role);
