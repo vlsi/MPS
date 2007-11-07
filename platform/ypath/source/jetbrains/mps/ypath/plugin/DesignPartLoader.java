@@ -38,14 +38,14 @@ public class DesignPartLoader {
     }
 
     public <T> IFeatureDesign<T> getFeatureDesign (String fqClassName, SModel smodel) {
-        ClassLoader classLoader = getClassLoader (smodel);
-        if (classLoader != null) {
-            return getFeatureDesign(fqClassName, classLoader);
+        IModule module = getModuleFor(smodel);
+        if (module != null) {
+            return getFeatureDesign(fqClassName, module);
         }
         return null;
     }
 
-    private ClassLoader getClassLoader(SModel smodel) {
+    private IModule getModuleFor(SModel smodel) {
         SModelDescriptor smd = smodel.getModelDescriptor();
         IModule module = null;
         
@@ -56,20 +56,15 @@ public class DesignPartLoader {
             }
         }
 
-        if (module != null) {
-            return ClassLoaderManager.getInstance().getClassLoaderFor(module);
-        }
-        
-        LOG.error("Not found owner solution for "+smodel);
-        return null;
+      return module;
     }
 
     @SuppressWarnings("unchecked")
-    private <T> IFeatureDesign<T> getFeatureDesign(String fqClassName, ClassLoader classLoader) {
+    private <T> IFeatureDesign<T> getFeatureDesign(String fqClassName, IModule module) {
         try {
             Class<?> klass = classes.get(fqClassName); 
             if (klass == null) {
-                klass = Class.forName(fqClassName, true, classLoader);
+                klass = module.getClass(fqClassName);
                 classes.put(fqClassName, klass);
             }
             // TODO: optimize instances? 
@@ -77,9 +72,6 @@ public class DesignPartLoader {
             Class IFD_class = IFeatureDesign.class;
             IFeatureDesign<T> newInstance = (IFeatureDesign<T>) o;
             return newInstance;
-        }
-        catch (ClassNotFoundException e) {
-            LOG.error(e);
         }
         catch (InstantiationException e) {
             LOG.error(e);
