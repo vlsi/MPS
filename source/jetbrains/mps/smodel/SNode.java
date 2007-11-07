@@ -703,7 +703,17 @@ public final class SNode {
                           @NotNull String role,
                           @NotNull SNode child,
                           boolean insertBefore) {
-    insertChildOrReferent(anchorChild, role, child, insertBefore, true);
+    int index = 0;
+    if (anchorChild != null) {
+      int anchorIndex = _children().indexOf(anchorChild);
+
+      if (!insertBefore) {
+        index = anchorIndex + 1;
+      } else {
+        index = anchorIndex;
+      }
+    }
+    insertChildAt(index, role, child);
   }
 
   public int getChildCount(@NotNull String role) {
@@ -940,7 +950,6 @@ public final class SNode {
 
     SReference resultReference = null;
     if (newReferent != null) {
-//      resultReference = addReferent(role, newReferent);
       resultReference = SReference.create(role, this, newReferent);
       insertReferenceAt(myReferences == null ? 0 : myReferences.size(), resultReference);
     }
@@ -995,13 +1004,6 @@ public final class SNode {
     NodeReadEventsCaster.fireNodeReferentReadAccess(this, role, result == null ? null : result.getTargetNode());
     return result;
   }
-
-//  @NotNull
-//  public SReference addReferent(@NotNull String role, SNode target) {
-//    SReference reference = SReference.create(role, this, target);
-//    insertReferenceAt(myReferences == null ? 0 : myReferences.size(), reference);
-//    return reference;
-//  }
 
   public void addReference(@NotNull SReference reference) {
     insertReferenceAt(myReferences == null ? 0 : myReferences.size(), reference);
@@ -1087,48 +1089,6 @@ public final class SNode {
       getModel().fireReferenceRemovedEvent(reference);
     }
   }
-
-  //
-  // ----------------------------------
-  //
-
-  private void insertChildOrReferent(@Nullable SNode anchorNode,
-                                     @NotNull String role,
-                                     @NotNull SNode insertNode,
-                                     boolean insertBefore,
-                                     boolean isAggregation) {
-    int index = 0;
-    if (anchorNode != null) {
-      int anchorIndex = -1;
-      if (isAggregation) {
-        anchorIndex = _children().indexOf(anchorNode);
-      } else {
-        if (myReferences != null) {
-          for (SReference reference : myReferences) {
-            if (reference.getTargetNode() == anchorNode) {
-              anchorIndex = myReferences.indexOf(reference);
-            }
-          }
-        }
-      }
-
-      if (!insertBefore) {
-        index = anchorIndex + 1;
-      } else {
-        index = anchorIndex;
-      }
-    }
-
-    if (isAggregation) {
-      insertChildAt(index, role, insertNode);
-    } else {
-      insertReferenceAt(index, SReference.create(role, this, insertNode));
-    }
-  }
-
-  //
-  // ----------------------------------
-  //
 
   public void delete() {
     delete_internal();
