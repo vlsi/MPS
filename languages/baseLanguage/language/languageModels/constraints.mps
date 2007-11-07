@@ -8,7 +8,7 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.core" />
-  <maxImportIndex value="33" />
+  <maxImportIndex value="34" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
@@ -23,6 +23,7 @@
   <import index="28" modelUID="java.lang.reflect@java_stub" version="-1" />
   <import index="30" modelUID="jetbrains.mps.reloading@java_stub" version="-1" />
   <import index="32" modelUID="jetbrains.mps.baseLanguage.constraints@java_stub" version="-1" />
+  <import index="34" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1156246260769">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1156246279317">
@@ -1112,9 +1113,9 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1184959766673">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1184959766674">
             <link role="classConcept" targetNodeId="30.~ReflectionUtil" resolveInfo="ReflectionUtil" />
-            <link role="baseMethodDeclaration" targetNodeId="30.~ReflectionUtil.forName(java.lang.ClassLoader,jetbrains.mps.smodel.SNode):java.lang.Class" resolveInfo="forName" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193390174080">
-              <link role="variableDeclaration" targetNodeId="1193390166342" resolveInfo="cl" />
+            <link role="baseMethodDeclaration" targetNodeId="30.~ReflectionUtil.forName(jetbrains.mps.project.IModule,jetbrains.mps.smodel.SNode):java.lang.Class" resolveInfo="forName" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194439094783">
+              <link role="variableDeclaration" targetNodeId="1194439082156" resolveInfo="module" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1184959766675">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1184959766676">
@@ -1131,10 +1132,10 @@
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193390166342">
-        <property name="name" value="cl" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193390166343">
-          <link role="classifier" targetNodeId="13.~ClassLoader" resolveInfo="ClassLoader" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1194439082156">
+        <property name="name" value="module" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194439082157">
+          <link role="classifier" targetNodeId="34.~IModule" resolveInfo="IModule" />
         </node>
       </node>
     </node>
@@ -1410,9 +1411,9 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1184959904600">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1184959909384">
             <link role="classConcept" targetNodeId="30.~ReflectionUtil" resolveInfo="ReflectionUtil" />
-            <link role="baseMethodDeclaration" targetNodeId="30.~ReflectionUtil.getMethod(java.lang.ClassLoader,jetbrains.mps.smodel.SNode,java.lang.String,java.lang.Class[]):java.lang.reflect.Method" resolveInfo="getMethod" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193390408925">
-              <link role="variableDeclaration" targetNodeId="1193390282028" resolveInfo="cl" />
+            <link role="baseMethodDeclaration" targetNodeId="30.~ReflectionUtil.getMethod(jetbrains.mps.project.IModule,jetbrains.mps.smodel.SNode,java.lang.String,java.lang.Class[]):java.lang.reflect.Method" resolveInfo="getMethod" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194439064574">
+              <link role="variableDeclaration" targetNodeId="1194439059384" resolveInfo="module" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1184959909385">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1184959909386" />
@@ -1427,8 +1428,8 @@
             <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1184968961410">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1184968961411">
                 <link role="conceptMethodDeclaration" targetNodeId="1184950182063" resolveInfo="getParameterTypes" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193390354836">
-                  <link role="variableDeclaration" targetNodeId="1193390282028" resolveInfo="cl" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194439101222">
+                  <link role="variableDeclaration" targetNodeId="1194439059384" resolveInfo="module" />
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1184968961412" />
@@ -1436,10 +1437,10 @@
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193390282028">
-        <property name="name" value="cl" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193390282029">
-          <link role="classifier" targetNodeId="13.~ClassLoader" resolveInfo="ClassLoader" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1194439059384">
+        <property name="name" value="module" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194439059385">
+          <link role="classifier" targetNodeId="34.~IModule" resolveInfo="IModule" />
         </node>
       </node>
     </node>
@@ -1471,8 +1472,8 @@
                       <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1184964616096">
                         <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1184964617365">
                           <link role="conceptMethodDeclaration" targetNodeId="1184959749711" resolveInfo="getClass" />
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193390352616">
-                            <link role="variableDeclaration" targetNodeId="1193390350958" resolveInfo="cl" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194439074827">
+                            <link role="variableDeclaration" targetNodeId="1194439070762" resolveInfo="module" />
                           </node>
                         </node>
                         <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1184964613124">
@@ -1493,10 +1494,10 @@
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193390350958">
-        <property name="name" value="cl" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193390350959">
-          <link role="classifier" targetNodeId="13.~ClassLoader" resolveInfo="ClassLoader" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1194439070762">
+        <property name="name" value="module" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194439070763">
+          <link role="classifier" targetNodeId="34.~IModule" resolveInfo="IModule" />
         </node>
       </node>
     </node>
@@ -1803,10 +1804,10 @@
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193389769391">
-        <property name="name" value="contextClassLoader" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389769392">
-          <link role="classifier" targetNodeId="13.~ClassLoader" resolveInfo="ClassLoader" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1194439182492">
+        <property name="name" value="module" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194439182493">
+          <link role="classifier" targetNodeId="34.~IModule" resolveInfo="IModule" />
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389769393">
@@ -2588,9 +2589,9 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1185039106545">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1185039110438">
             <link role="classConcept" targetNodeId="30.~ReflectionUtil" resolveInfo="ReflectionUtil" />
-            <link role="baseMethodDeclaration" targetNodeId="30.~ReflectionUtil.getConstant(java.lang.ClassLoader,jetbrains.mps.smodel.SNode,java.lang.String):java.lang.Object" resolveInfo="getConstant" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193390604944">
-              <link role="variableDeclaration" targetNodeId="1193389831998" resolveInfo="contextClassLoader" />
+            <link role="baseMethodDeclaration" targetNodeId="30.~ReflectionUtil.getConstant(jetbrains.mps.project.IModule,jetbrains.mps.smodel.SNode,java.lang.String):java.lang.Object" resolveInfo="getConstant" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194439203655">
+              <link role="variableDeclaration" targetNodeId="1194439199263" resolveInfo="module" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1185039112001">
               <link role="variableDeclaration" targetNodeId="1185039079872" resolveInfo="classifier" />
@@ -2601,10 +2602,10 @@
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193389831998">
-        <property name="name" value="contextClassLoader" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389831999">
-          <link role="classifier" targetNodeId="13.~ClassLoader" resolveInfo="ClassLoader" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1194439199263">
+        <property name="name" value="module" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194439199264">
+          <link role="classifier" targetNodeId="34.~IModule" resolveInfo="IModule" />
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389832000">
@@ -2671,8 +2672,8 @@
             <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1185034343699">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1185034344593">
                 <link role="conceptMethodDeclaration" targetNodeId="1184884309598" resolveInfo="eval" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193389807106">
-                  <link role="variableDeclaration" targetNodeId="1193389802415" resolveInfo="contextClassLoader" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194439168128">
+                  <link role="variableDeclaration" targetNodeId="1194439165142" resolveInfo="module" />
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1185034340867">
@@ -2693,8 +2694,8 @@
             <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1185034096486">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1185034097833">
                 <link role="conceptMethodDeclaration" targetNodeId="1184949950947" resolveInfo="getMethod" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193390294172">
-                  <link role="variableDeclaration" targetNodeId="1193389802415" resolveInfo="contextClassLoader" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194439169973">
+                  <link role="variableDeclaration" targetNodeId="1194439165142" resolveInfo="module" />
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1185034093592">
@@ -2717,8 +2718,8 @@
             <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1185034106043">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1185034107562">
                 <link role="conceptMethodDeclaration" targetNodeId="1185033838760" resolveInfo="getActualArguments" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193389893776">
-                  <link role="variableDeclaration" targetNodeId="1193389802415" resolveInfo="contextClassLoader" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194439171614">
+                  <link role="variableDeclaration" targetNodeId="1194439165142" resolveInfo="module" />
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1185034105495" />
@@ -2741,10 +2742,10 @@
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193389802415">
-        <property name="name" value="contextClassLoader" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389802416">
-          <link role="classifier" targetNodeId="13.~ClassLoader" resolveInfo="ClassLoader" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1194439165142">
+        <property name="name" value="module" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194439165143">
+          <link role="classifier" targetNodeId="34.~IModule" resolveInfo="IModule" />
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389802417">
@@ -2907,8 +2908,8 @@
             <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1184946703269">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1184946705319">
                 <link role="conceptMethodDeclaration" targetNodeId="1184949950947" resolveInfo="getMethod" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193390299782">
-                  <link role="variableDeclaration" targetNodeId="1193389787193" resolveInfo="contextClassLoader" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194439107801">
+                  <link role="variableDeclaration" targetNodeId="1194439050694" resolveInfo="module" />
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1184946700906">
@@ -2931,8 +2932,8 @@
             <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1185033976000">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1185033977534">
                 <link role="conceptMethodDeclaration" targetNodeId="1185033838760" resolveInfo="getActualArguments" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193389901730">
-                  <link role="variableDeclaration" targetNodeId="1193389787193" resolveInfo="contextClassLoader" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194439127836">
+                  <link role="variableDeclaration" targetNodeId="1194439050694" resolveInfo="module" />
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1185033975358" />
@@ -2952,10 +2953,10 @@
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193389787193">
-        <property name="name" value="contextClassLoader" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389787194">
-          <link role="classifier" targetNodeId="13.~ClassLoader" resolveInfo="ClassLoader" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1194439050694">
+        <property name="name" value="module" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194439050695">
+          <link role="classifier" targetNodeId="34.~IModule" resolveInfo="IModule" />
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389787195">
@@ -3216,9 +3217,9 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1185035483010">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1185035484903">
             <link role="classConcept" targetNodeId="30.~ReflectionUtil" resolveInfo="ReflectionUtil" />
-            <link role="baseMethodDeclaration" targetNodeId="30.~ReflectionUtil.getEnum(java.lang.ClassLoader,jetbrains.mps.smodel.SNode,java.lang.String):java.lang.Enum" resolveInfo="getEnum" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193390524777">
-              <link role="variableDeclaration" targetNodeId="1193389840907" resolveInfo="contextClassLoader" />
+            <link role="baseMethodDeclaration" targetNodeId="30.~ReflectionUtil.getEnum(jetbrains.mps.project.IModule,jetbrains.mps.smodel.SNode,java.lang.String):java.lang.Enum" resolveInfo="getEnum" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194439193965">
+              <link role="variableDeclaration" targetNodeId="1194439188447" resolveInfo="module" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1185035487029">
               <link role="variableDeclaration" targetNodeId="1185035405520" resolveInfo="enumClass" />
@@ -3229,10 +3230,10 @@
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193389840907">
-        <property name="name" value="contextClassLoader" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389840908">
-          <link role="classifier" targetNodeId="13.~ClassLoader" resolveInfo="ClassLoader" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1194439188447">
+        <property name="name" value="module" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194439188448">
+          <link role="classifier" targetNodeId="34.~IModule" resolveInfo="IModule" />
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389840909">
@@ -4454,10 +4455,10 @@
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193389715522">
-        <property name="name" value="contextClassLoader" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389715523">
-          <link role="classifier" targetNodeId="13.~ClassLoader" resolveInfo="ClassLoader" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1194439027181">
+        <property name="name" value="module" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194439027182">
+          <link role="classifier" targetNodeId="34.~IModule" resolveInfo="IModule" />
         </node>
       </node>
     </node>
@@ -4506,8 +4507,8 @@
                       <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1185033957415">
                         <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1185033957416">
                           <link role="conceptMethodDeclaration" targetNodeId="1184884309598" resolveInfo="eval" />
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193389888228">
-                            <link role="variableDeclaration" targetNodeId="1193389881945" resolveInfo="contextClassLoader" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194439118804">
+                            <link role="variableDeclaration" targetNodeId="1194439115099" resolveInfo="module" />
                           </node>
                         </node>
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1185033960263">
@@ -4523,10 +4524,10 @@
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193389881945">
-        <property name="name" value="contextClassLoader" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389881946">
-          <link role="classifier" targetNodeId="13.~ClassLoader" resolveInfo="ClassLoader" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1194439115099">
+        <property name="name" value="module" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194439115100">
+          <link role="classifier" targetNodeId="34.~IModule" resolveInfo="IModule" />
         </node>
       </node>
     </node>
@@ -4688,8 +4689,8 @@
             <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1185038220158">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1185038220848">
                 <link role="conceptMethodDeclaration" targetNodeId="1184884309598" resolveInfo="eval" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193389756576">
-                  <link role="variableDeclaration" targetNodeId="1193389751948" resolveInfo="contextClassLoader" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194439143666">
+                  <link role="variableDeclaration" targetNodeId="1194439137430" resolveInfo="module" />
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1185038218107">
@@ -4710,8 +4711,8 @@
             <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1185038238453">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1185038239222">
                 <link role="conceptMethodDeclaration" targetNodeId="1184884309598" resolveInfo="eval" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193389759874">
-                  <link role="variableDeclaration" targetNodeId="1193389751948" resolveInfo="contextClassLoader" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194439145855">
+                  <link role="variableDeclaration" targetNodeId="1194439137430" resolveInfo="module" />
                 </node>
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1185038235371">
@@ -4770,10 +4771,10 @@
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193389751948">
-        <property name="name" value="contextClassLoader" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389751949">
-          <link role="classifier" targetNodeId="13.~ClassLoader" resolveInfo="ClassLoader" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1194439137430">
+        <property name="name" value="module" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194439137431">
+          <link role="classifier" targetNodeId="34.~IModule" resolveInfo="IModule" />
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389751950">
@@ -4794,10 +4795,10 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1187398909714" />
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193389777628">
-        <property name="name" value="contextClassLoader" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389777629">
-          <link role="classifier" targetNodeId="13.~ClassLoader" resolveInfo="ClassLoader" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1194439176834">
+        <property name="name" value="module" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194439176835">
+          <link role="classifier" targetNodeId="34.~IModule" resolveInfo="IModule" />
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193389777630">

@@ -1,6 +1,7 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SNode;
 
 import java.lang.reflect.Field;
@@ -11,25 +12,26 @@ public final class ReflectionUtil {
   private ReflectionUtil() {
   }
 
-  private static Class forName(ClassLoader classLoader, String className) {
-    try {
-      return Class.forName(className, true, classLoader);
-    } catch (ClassNotFoundException e) {
+  private static Class forName(IModule module, String className) {
+    Class result = module.getClass(className);
+    if (result != null) {
+      return result;
+    } else {
       throw new RuntimeException(className);
     }
   }
 
-  public static Class forName(ClassLoader classLoader, SNode classNode) {
+  public static Class forName(IModule module, SNode classNode) {
     String dottedName = classNode.getName();
     String dollarName = "null";
     if (dottedName != null) {
       dollarName = dottedName.replaceAll("\\.", "\\$");
     }
-    return forName(classLoader, JavaNameUtil.fqClassName(classNode, dollarName));
+    return forName(module, JavaNameUtil.fqClassName(classNode, dollarName));
   }
 
-  public static Method getMethod(ClassLoader classLoader, SNode classNode, String methodName, Class[] parameterTypes) {
-    Class aClass = forName(classLoader, classNode);
+  public static Method getMethod(IModule module, SNode classNode, String methodName, Class[] parameterTypes) {
+    Class aClass = forName(module, classNode);
     try {
       return aClass.getMethod(methodName, parameterTypes);
     } catch (NoSuchMethodException e) {
@@ -51,9 +53,9 @@ public final class ReflectionUtil {
     }
   }
 
-  public static Enum getEnum(ClassLoader cl, SNode classNode, String enumConstantName) {
+  public static Enum getEnum(IModule module, SNode classNode, String enumConstantName) {
     Enum result = null;
-    Class aClass = forName(cl, classNode);
+    Class aClass = forName(module, classNode);
     Enum[] enumConstants = (Enum[]) aClass.getEnumConstants();
     for (Enum enumConstant : enumConstants) {
       String name = enumConstant.name();
@@ -65,8 +67,8 @@ public final class ReflectionUtil {
     return result;
   }
 
-  public static Object getConstant(ClassLoader cl, SNode classNode, String constantName) {
-    Class aClass = forName(cl, classNode);
+  public static Object getConstant(IModule module, SNode classNode, String constantName) {
+    Class aClass = forName(module, classNode);
     Field field;
     try {
       field = aClass.getField(constantName);
