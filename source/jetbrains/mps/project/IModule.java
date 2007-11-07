@@ -80,6 +80,10 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   IClassPathItem getModuleWithDependenciesClassPathItem();
 
+  String generateManifest();
+
+  void createManifest();  
+
   void invalidateCaches();
 
   void save();

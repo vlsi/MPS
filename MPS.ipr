@@ -1840,10 +1840,12 @@
     <library name="Equinox">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/equinox/org.eclipse.osgi_3.3.1.R33x_v20070828.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/equinox/org.eclipse.equinox.launcher_1.0.1.R33x_v20070828.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/equinox/src.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/equinox/launcher-src.zip!/" />
       </SOURCES>
     </library>
   </component>

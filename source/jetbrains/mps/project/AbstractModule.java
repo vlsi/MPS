@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
@@ -17,6 +18,7 @@ import org.jetbrains.annotations.Nullable;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFormatException;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.*;
 import java.net.URL;
 
@@ -162,14 +164,6 @@ public abstract class AbstractModule implements IModule {
   //
   // AbstractModule
   //
-  @NotNull
-  private SModelDescriptor getModuleDescriptorModel() {
-    SModel model = getModuleDescriptor().getModel();
-    SModelDescriptor result = model.getModelDescriptor();
-    assert result != null;
-    return result;
-  }
-
   @NotNull
   public final List<ModelRoot> getModelRoots() {
     List<ModelRoot> result = new ArrayList<ModelRoot>();
@@ -478,6 +472,47 @@ public abstract class AbstractModule implements IModule {
     }
 
     return item;
+  }
+
+  public String generateManifest() {
+    return "Manifest-Version: 1.0\n" +
+           "Bundle-ManifestVersion: 2\n" +
+           "Bundle-SymbolicName: " + getModuleUID() + "\n" +
+           "Eclipse-LazyStart: true\n" +
+           "Require-Bundle: " + getRequiredBundlesString() + "\n" +
+           "Bundle-Classpath: /classes\n";
+  }
+
+  public void createManifest() {
+    String manifestContents = generateManifest();
+    File descriptorFile = getDescriptorFile();
+    if (descriptorFile == null) {
+      return;
+    }
+
+    File descriptorDir = descriptorFile.getParentFile();
+    File metaInfDir = new File(descriptorDir, "META-INF");
+
+    metaInfDir.mkdir();
+
+    File manifest = new File(metaInfDir, "MANIFEST.MF");
+
+    if (manifest.exists()) {
+      System.out.println("MANIFEST ALREADY EXISTS " + manifest);
+    }
+
+    FileUtil.write(manifest, manifestContents);
+  }
+
+  private String getRequiredBundlesString() {
+    StringBuilder result = new StringBuilder();
+    for (IModule m : getDependOnModules()) {
+      if (result.length() > 0) {
+        result.append(",");
+      }
+      result.append(m.getModuleUID());
+    }    
+    return result.toString();
   }
 
   public void invalidateCaches() {

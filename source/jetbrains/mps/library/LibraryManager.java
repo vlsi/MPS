@@ -127,6 +127,7 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
     }
     for (IModule m : MPSModuleRepository.getInstance().getModules(owner)) {
       m.convert();
+//      m.createManifest();
     }
   }
 
