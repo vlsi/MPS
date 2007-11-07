@@ -46,6 +46,9 @@ public class RulesFunctions_BaseLanguage {
 
   public static SNode concreteTypeFromGenericType(SNode type, SNode genericClassifier, SNode instanceType) {
     SNode returnType = SNodeOperations.copyNode(type);
+    if(genericClassifier == null) {
+      return returnType;
+    }
     {
       Pattern_1 pattern_1181217694220 = new Pattern_1(genericClassifier);
       SNode coercedNode_1181217694219 = TypeChecker.getInstance().getRuntimeSupport().coerce(instanceType, pattern_1181217694220);

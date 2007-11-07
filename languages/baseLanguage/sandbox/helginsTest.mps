@@ -576,18 +576,18 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1193851125301">
     <property name="name" value="Bug_MPS_329" />
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1193851179652">
-      <property name="name" value="m" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193851190229">
-        <link role="classifier" targetNodeId="1193851125301" resolveInfo="Bug" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1194439117508">
+      <property name="name" value="fff" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194439182374">
+        <link role="classifier" targetNodeId="1193851125301" resolveInfo="Bug_MPS_329" />
       </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1193851179654" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193851179655">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193851196011">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1193851199092">
-            <link role="baseMethodDeclaration" targetNodeId="1193851153914" resolveInfo="Bug" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1193851248010">
-              <property name="value" value="string" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1194439117510" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194439117511">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1194439151761">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1194440070965">
+            <link role="baseMethodDeclaration" targetNodeId="1193851153914" resolveInfo="Bug_MPS_329" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1194440079682">
+              <property name="value" value="hello" />
             </node>
           </node>
         </node>
