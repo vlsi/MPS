@@ -568,15 +568,16 @@ public final class SNode {
           myPropertyGettersInProgress.remove(propertyName);
         }
       } else {
-        propertyValue = getRawProperty(propertyName);
+        propertyValue = getPersistentProperty(propertyName);
       }
     } else {
-      propertyValue = getRawProperty(propertyName);
+      propertyValue = getPersistentProperty(propertyName);
     }
     return propertyValue;
   }
 
-  private String getRawProperty(String propertyName) {
+  @Nullable
+  public String getPersistentProperty(@NotNull String propertyName) {
     if (myProperties == null) return null;
     return myProperties.get(propertyName);
   }
@@ -1274,11 +1275,6 @@ public final class SNode {
         return "removeRTHint";
       }
     });
-  }
-
-  @Nullable
-  public String getPersistentProperty(@NotNull String propertyName) {
-    return getRawProperty(propertyName);
   }
 
   @NotNull
