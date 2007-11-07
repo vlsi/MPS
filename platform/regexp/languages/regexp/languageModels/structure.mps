@@ -2,9 +2,12 @@
 <model name="jetbrains.mps.regexp.structure">
   <persistence version="1" />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <maxImportIndex value="2" />
+  <language namespace="jetbrains.mps.core" />
+  <language namespace="jetbrains.mps.baseLanguage" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="3" modelUID="java.lang@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174482743037">
     <property name="name" value="Regexp" />
     <property name="package" value="Regexps" />
@@ -400,6 +403,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174656254036">
     <property name="name" value="ReplaceBlock" />
     <link role="extends" targetNodeId="2.1152728232947" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1194438891205">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194438943261">
+        <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174660461415">
     <property name="name" value="LazyStarRegexp" />

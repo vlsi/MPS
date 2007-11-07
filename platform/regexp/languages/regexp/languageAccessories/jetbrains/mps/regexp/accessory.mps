@@ -96,6 +96,18 @@
       <property name="description" value="any character except one in the Gree block" />
       <property name="name" value="\P{InGreek}" />
     </node>
+    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1194467092978">
+      <property name="name" value="\n" />
+      <property name="description" value="new line symbol" />
+    </node>
+    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1194467108770">
+      <property name="name" value="\r" />
+      <property name="description" value="return carret symbol" />
+    </node>
+    <node role="symbolClass" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassDeclaration" id="1194467120363">
+      <property name="name" value="\t" />
+      <property name="description" value="tabulation symbol" />
+    </node>
   </node>
   <node type="jetbrains.mps.regexp.structure.Regexps" id="1174662820983">
     <property name="name" value="Common" />
