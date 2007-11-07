@@ -34,12 +34,6 @@ public class QueryMethodGenerated {
     return null;
   }
 
-  public static ClassLoader findClassLoader(SModel model) {
-    IModule module = findModuleForModel(model);
-    assert module != null;
-    return ClassLoaderManager.getInstance().getClassLoaderFor(module);
-  }
-
   public static void clearCaches() {
     ourMethods.clear();
   }
@@ -53,13 +47,15 @@ public class QueryMethodGenerated {
     String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
     String queriesClassName = packageName + ".QueriesGenerated";
     Class queriesClass;
-    try {
-      queriesClass = Class.forName(queriesClassName, true, findClassLoader(sourceModel));
-    } catch (ClassNotFoundException cfe) {
+    IModule module = findModuleForModel(sourceModel);
+    assert module != null;
+    queriesClass = module.getClass(queriesClassName);
+
+    if (queriesClass == null) {
       if (!suppressErrorLogging) {
         LOG.error("couldn't find class 'QueriesGenerated' for model '" + sourceModel.getUID() + "' : TRY TO GENERATE");
       }
-      throw cfe;
+      throw new ClassNotFoundException();
     }
 
     Method method = null;
