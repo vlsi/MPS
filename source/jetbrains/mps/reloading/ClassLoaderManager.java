@@ -240,6 +240,10 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return null;
   }
 
+  /**
+   * DO NOT USE THIS METHOD DIRECTLY. I'M GOING TO GET RID OF IT
+   * USE {IModule.getClass(String name)} instead 
+   */
   public ClassLoader getClassLoaderFor(IModule module) {
     Bundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
 
