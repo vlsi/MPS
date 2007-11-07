@@ -43,7 +43,7 @@ public class CellAction_DeleteSmart extends EditorCellAction {
 
     } else if (metaclass == LinkMetaclass.reference) {
       String role = genuineLink.getRole();
-      mySource.removeReferent(role, myTarget);
+      mySource.removeReferent(role);
     }
   }
 }

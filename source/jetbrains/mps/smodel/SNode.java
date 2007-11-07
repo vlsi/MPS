@@ -1009,11 +1009,10 @@ public final class SNode {
     insertReferenceAt(myReferences == null ? 0 : myReferences.size(), reference);
   }
 
-  public void removeReferent(@NotNull String role, @NotNull SNode target) {
+  public void removeReferent(@NotNull String role) {
     if (myReferences == null) return;
     for (SReference reference : myReferences) {
-      if (reference.getTargetNode() == target &&
-              reference.getRole().equals(role)) {
+      if (reference.getRole().equals(role)) {
         int index = myReferences.indexOf(reference);
         removeReferenceAt(index);
         break;

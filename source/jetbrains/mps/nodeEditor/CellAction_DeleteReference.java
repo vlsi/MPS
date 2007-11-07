@@ -21,9 +21,6 @@ public class CellAction_DeleteReference extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    SNode referent = mySource.getReferent(myRole);
-    if (referent != null) {
-      mySource.removeReferent(myRole, referent);
-    }
+    mySource.removeReferent(myRole);
   }
 }
