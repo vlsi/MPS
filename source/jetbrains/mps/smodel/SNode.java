@@ -1031,21 +1031,6 @@ public final class SNode {
   }
 
   @NotNull
-  public List<SNode> getReferents(@NotNull String role) {
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    List<SNode> result = new ArrayList<SNode>();
-    if (myReferences == null) return result;
-    for (SReference reference : myReferences) {
-      if (role.equals(reference.getRole())) {
-        SNode targetNode = reference.getTargetNode();
-        if (targetNode != null) result.add(targetNode);
-      }
-    }
-    return result;
-  }
-
-  @NotNull
   public List<SNode> getReferents() {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
