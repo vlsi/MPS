@@ -2139,7 +2139,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     });
 
-    menu.show(this, cell.getX(), cell.getY());
+    EditorCell bigCell = getBigCellForNode(cell.getSNode());
+    assert bigCell != null : "selected cell mustn't be null";
+
+    menu.show(this, bigCell.getX(), bigCell.getY());
   }
 
   private void setPaintIntention(boolean value){
