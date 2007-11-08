@@ -43,8 +43,6 @@ public class ModelDifferenceView extends JPanel {
 
   private Set<SNodeId> myChangedNodes = new HashSet<SNodeId>();
   private Set<SNodeId> myAddedNodes = new HashSet<SNodeId>();
-
-//  private SModel myOldModel;
   private SModel myNewModel;
   private List<Change> myChanges;
 
@@ -237,7 +235,7 @@ public class ModelDifferenceView extends JPanel {
     }
 
     public Color getColor() {
-      String id = getSNode().getId();
+      SNodeId id = getSNode().getSNodeId();
 
       if (myAddedNodes.contains(id)) {
         return new Color(0, 120, 0);
