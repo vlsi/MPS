@@ -163,8 +163,8 @@ import org.jdom.Element;
       if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
 
     } else {//internal reference
-      String targetNodeId = reference.getTargetNodeId();
-      if (targetNodeId != null) linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
+      SNodeId targetNodeId = reference.getTargetNodeId();
+      if (targetNodeId != null) linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId.toString());
       String resolveInfo = reference.getResolveInfo();
       if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
     }

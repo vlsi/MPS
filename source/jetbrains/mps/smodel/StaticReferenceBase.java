@@ -14,11 +14,11 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 
   private SModelUID myTargetModelUID;
   private boolean myLocal;
-  private String myTargetNodeId;
+  private SNodeId myTargetNodeId;
 
-  protected StaticReferenceBase(String role, SNode sourceNode, SModelUID targetModelUID, String targetNodeId) {
+  protected StaticReferenceBase(String role, SNode sourceNode, SModelUID targetModelUID, SNodeId targetNodeId) {
     super(role, sourceNode);
-    myTargetNodeId = InternUtil.intern(targetNodeId);
+    myTargetNodeId = targetNodeId;
     if (sourceNode.getModel().getUID().equals(targetModelUID)) {
       myLocal = true;
     } else {
@@ -37,12 +37,12 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
     return !myLocal;
   }
 
-  public String getTargetNodeId() {
+  public SNodeId getTargetNodeId() {
     return myTargetNodeId;
   }
 
-  public void setTargetNodeId(String nodeId) {
-    myTargetNodeId = InternUtil.intern(nodeId);
+  public void setTargetNodeId(SNodeId nodeId) {
+    myTargetNodeId = nodeId;
   }
 
   public SModelUID getTargetModelUID() {

@@ -675,11 +675,11 @@
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1191843943178">
                   <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1191843943179">
                     <property name="name" value="targetNodeId" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1191843943180">
-                      <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194527026344">
+                      <link role="classifier" targetNodeId="5.~SNodeId" resolveInfo="SNodeId" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1191843888473">
-                      <link role="baseMethodDeclaration" targetNodeId="5.~SReference.getTargetNodeId():java.lang.String" resolveInfo="getTargetNodeId" />
+                      <link role="baseMethodDeclaration" targetNodeId="5.~SReference.getTargetNodeId():jetbrains.mps.smodel.SNodeId" resolveInfo="getTargetNodeId" />
                       <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191843879783">
                         <link role="variableDeclaration" targetNodeId="1191843850830" resolveInfo="reference" />
                       </node>
@@ -712,8 +712,11 @@
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1192533819516">
                       <link role="baseMethodDeclaration" targetNodeId="8.~MarshallUtil.nodeInfoFromIdAndModel(java.lang.String,java.lang.String):java.lang.String" resolveInfo="nodeInfoFromIdAndModel" />
                       <link role="classConcept" targetNodeId="8.~MarshallUtil" resolveInfo="MarshallUtil" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1192533825642">
-                        <link role="variableDeclaration" targetNodeId="1191843943179" resolveInfo="targetNodeId" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1194527032800">
+                        <link role="baseMethodDeclaration" targetNodeId="4.~Object.toString():java.lang.String" resolveInfo="toString" />
+                        <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1192533825642">
+                          <link role="variableDeclaration" targetNodeId="1191843943179" resolveInfo="targetNodeId" />
+                        </node>
                       </node>
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1192533831535">
                         <link role="variableDeclaration" targetNodeId="1191843955901" resolveInfo="targetModelUID" />
@@ -761,16 +764,20 @@
                     </node>
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1191843850840">
                       <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1191843921392">
-                        <link role="baseMethodDeclaration" targetNodeId="5.~SReference.setTargetNodeId(java.lang.String):void" resolveInfo="setTargetNodeId" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1192537719264">
-                          <link role="classConcept" targetNodeId="8.~MarshallUtil" resolveInfo="MarshallUtil" />
-                          <link role="baseMethodDeclaration" targetNodeId="8.~MarshallUtil.getNodeId(java.lang.String):java.lang.String" resolveInfo="getNodeId" />
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1192537719265">
-                            <link role="variableDeclaration" targetNodeId="1192533881027" resolveInfo="newNodeInfo" />
-                          </node>
-                        </node>
+                        <link role="baseMethodDeclaration" targetNodeId="5.~SReference.setTargetNodeId(jetbrains.mps.smodel.SNodeId):void" resolveInfo="setTargetNodeId" />
                         <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191843915732">
                           <link role="variableDeclaration" targetNodeId="1191843850830" resolveInfo="reference" />
+                        </node>
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1194527047266">
+                          <link role="baseMethodDeclaration" targetNodeId="5.~SNodeId.fromString(java.lang.String):jetbrains.mps.smodel.SNodeId" resolveInfo="fromString" />
+                          <link role="classConcept" targetNodeId="5.~SNodeId" resolveInfo="SNodeId" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1194527047908">
+                            <link role="classConcept" targetNodeId="8.~MarshallUtil" resolveInfo="MarshallUtil" />
+                            <link role="baseMethodDeclaration" targetNodeId="8.~MarshallUtil.getNodeId(java.lang.String):java.lang.String" resolveInfo="getNodeId" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194527047909">
+                              <link role="variableDeclaration" targetNodeId="1192533881027" resolveInfo="newNodeInfo" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>

@@ -124,7 +124,7 @@ public class NodeReadAccessCaster {
     if (myEventsBlocked) return;
     if(!reference.getSourceNode().isRegistered()) return;
     if(reference.getTargetNodeId() == null) return; // tmp: old refs to java_stub has no id
-    if (ourReadAccessListener != null) ourReadAccessListener.addRefTargetToDependOn(new SNodePointer(reference.getTargetModelUID().toString(), reference.getTargetNodeId()));
+    if (ourReadAccessListener != null) ourReadAccessListener.addRefTargetToDependOn(new SNodePointer(reference.getTargetModelUID(), reference.getTargetNodeId()));
   }
 
 

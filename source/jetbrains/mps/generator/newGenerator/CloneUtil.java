@@ -41,7 +41,7 @@ public class CloneUtil {
         result.addReference(SReference.create(reference.getRole(),
                 result,
                 targetModelUID,
-                SNodeId.fromString(reference.getTargetNodeId()),
+                reference.getTargetNodeId(),
                 reference.getResolveInfo()));
       }
     }
