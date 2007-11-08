@@ -1,20 +1,22 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.annotations.structure.AttributeConcept;
+import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
+import jetbrains.mps.ide.SystemInfo;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.actions.model.CreateRootNodeGroup;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.modelchecker.ModelCheckResult;
+import jetbrains.mps.ide.modelchecker.ModelChecker;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.modelchecker.ModelChecker;
-import jetbrains.mps.ide.modelchecker.ModelCheckResult;
-import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
@@ -23,11 +25,15 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
 
 import javax.swing.Icon;
+import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.Color;
+import java.awt.Frame;
 import java.awt.Rectangle;
+import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.util.*;
 
@@ -617,7 +623,48 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       cg.update(context);
       cg.add(menu, context);
 
+      menu.addSeparator();
+      menu.add(new AbstractActionWithEmptyIcon("Rename") {
+        public void actionPerformed(ActionEvent e) {
+          Frame frame = SModelTreeNode.this.getOperationContext().getMainFrame();
+          final String newName = JOptionPane.showInputDialog(frame, "Enter New Package Name", myName);
+          if (newName != null) {
+            CommandProcessor.instance().executeCommand(new Runnable() {
+              public void run() {
+                for (SNode n : getNodesUnderPackage()) {
+                  String oldPackage = n.getProperty(PACK);
+                  String newPack = newName + oldPackage.substring(myName.length());
+                  if (newPack.length() > 0) {
+                    n.setProperty(PACK, newPack);
+                  } else {
+                    n.setProperty(PACK, null);
+                  }
+                }
+              }
+            });
+          }
+        }
+      });
+
+
       return menu;
+    }
+
+    private List<SNode> getNodesUnderPackage() {
+      List<SNode> result = new ArrayList<SNode>();
+      for (int i = 0; i < getChildCount(); i++) {
+        TreeNode tn = getChildAt(i);
+        if (tn instanceof SNodeTreeNode) {
+          SNode node = ((SNodeTreeNode) tn).getSNode();
+          assert node.isRoot();
+          result.add(node);
+        }
+
+        if (tn instanceof PackageNode) {
+          result.addAll(((PackageNode) tn).getNodesUnderPackage());
+        }
+      }
+      return result;
     }
 
     private String getPackage() {
