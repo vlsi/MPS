@@ -34,6 +34,16 @@ public class FileGenerationUtil {
 
     generateFiles(status, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
 
+
+    IProjectHandler handler = context.getProject().getProjectHandler();
+    if (handler != null) {
+      try {
+        handler.addFilesToVCS(new ArrayList<File>(generatedFiles));
+      } catch (RemoteException e) {
+        e.printStackTrace();
+      }
+    }
+
     cleanUp(context, generatedFiles, directories);
   }
 

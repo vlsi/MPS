@@ -12,6 +12,7 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
   public static String VISIBILITY = "visibility";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  StaticFieldDeclaration(SNode node) {
     super(node);
@@ -48,6 +49,14 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
 
   public void setAlias(String value) {
     this.setProperty(StaticFieldDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(StaticFieldDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(StaticFieldDeclaration.VIRTUAL_PACKAGE, value);
   }
 
 }

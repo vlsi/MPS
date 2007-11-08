@@ -17,6 +17,7 @@ public class Classifier extends GenericDeclaration implements Annotable {
   public static String ANNOTATION = "annotation";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  Classifier(SNode node) {
     super(node);
@@ -113,6 +114,14 @@ public class Classifier extends GenericDeclaration implements Annotable {
 
   public void setAlias(String value) {
     this.setProperty(Classifier.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(Classifier.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(Classifier.VIRTUAL_PACKAGE, value);
   }
 
 }

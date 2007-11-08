@@ -17,6 +17,7 @@ public class EnumConstantDeclaration extends NamedConcept implements ClassifierM
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  EnumConstantDeclaration(SNode node) {
     super(node);
@@ -81,6 +82,14 @@ public class EnumConstantDeclaration extends NamedConcept implements ClassifierM
 
   public void setAlias(String value) {
     this.setProperty(EnumConstantDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(EnumConstantDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(EnumConstantDeclaration.VIRTUAL_PACKAGE, value);
   }
 
 }

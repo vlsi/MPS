@@ -12,6 +12,7 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
   public static String VISIBILITY = "visibility";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  StaticMethodDeclaration(SNode node) {
     super(node);
@@ -48,6 +49,14 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
 
   public void setAlias(String value) {
     this.setProperty(StaticMethodDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(StaticMethodDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(StaticMethodDeclaration.VIRTUAL_PACKAGE, value);
   }
 
 }

@@ -18,6 +18,7 @@ public class VariableDeclaration extends NamedConcept implements Annotable {
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String IS_FINAL = "isFinal";
 
   public  VariableDeclaration(SNode node) {
@@ -91,6 +92,14 @@ public class VariableDeclaration extends NamedConcept implements Annotable {
 
   public void setAlias(String value) {
     this.setProperty(VariableDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(VariableDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(VariableDeclaration.VIRTUAL_PACKAGE, value);
   }
 
   public boolean getIsFinal() {

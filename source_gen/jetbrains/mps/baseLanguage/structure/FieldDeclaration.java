@@ -12,6 +12,7 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
   public static String VISIBILITY = "visibility";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  FieldDeclaration(SNode node) {
     super(node);
@@ -48,6 +49,14 @@ public class FieldDeclaration extends VariableDeclaration implements ClassifierM
 
   public void setAlias(String value) {
     this.setProperty(FieldDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(FieldDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(FieldDeclaration.VIRTUAL_PACKAGE, value);
   }
 
 }

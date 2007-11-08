@@ -12,6 +12,7 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
   public static String VISIBILITY = "visibility";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String IS_ABSTRACT = "isAbstract";
 
   public  InstanceMethodDeclaration(SNode node) {
@@ -49,6 +50,14 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
 
   public void setAlias(String value) {
     this.setProperty(InstanceMethodDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(InstanceMethodDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(InstanceMethodDeclaration.VIRTUAL_PACKAGE, value);
   }
 
   public boolean getIsAbstract() {

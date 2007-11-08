@@ -1,7 +1,5 @@
 package jetbrains.mps.plugin;
 
-import com.intellij.facet.Facet;
-import com.intellij.facet.FacetManager;
 import com.intellij.javaee.web.facet.WebFacet;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
@@ -22,6 +20,12 @@ import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
 import com.intellij.openapi.roots.libraries.LibraryTablesRegistrar;
 import com.intellij.openapi.util.SystemInfo;
+import com.intellij.openapi.vcs.AbstractVcs;
+import com.intellij.openapi.vcs.FilePath;
+import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vcs.VcsException;
+import com.intellij.openapi.vcs.changes.VcsDirtyScopeManager;
+import com.intellij.openapi.vcs.checkin.CheckinEnvironment;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
@@ -34,6 +38,7 @@ import com.intellij.refactoring.MoveDestination;
 import com.intellij.refactoring.RefactoringFactory;
 import com.intellij.refactoring.RenameRefactoring;
 import com.intellij.util.IncorrectOperationException;
+import com.intellij.peer.PeerFactory;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JFrame;
@@ -723,6 +728,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
       public void run() {
         RefactoringFactory refactoringFactory = RefactoringFactory.getInstance(myProject);
         VirtualFile targetRoot = LocalFileSystem.getInstance().findFileByIoFile(targetSourceRoot);
+        assert targetRoot != null;
         PsiClass psiClass = PsiManager.getInstance(myProject).findClass(classFQName, GlobalSearchScope.allScope(myProject));
         MoveClassesOrPackagesRefactoring refactoring = refactoringFactory.createMoveClassesOrPackages(new PsiElement[]{psiClass},
                 refactoringFactory.createSourceRootMoveDestination(targetPackageNamespace, targetRoot));
@@ -881,6 +887,33 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
                   vfile.delete(this);
                 } catch(IOException ex) {
                   ex.printStackTrace();
+                }
+              }
+            }
+          }
+        });
+      }
+    });
+  }
+
+  public void addFilesToVCS(final List<File> files) throws RemoteException {
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        ApplicationManager.getApplication().runWriteAction(new Runnable() {
+          public void run() {
+            LocalFileSystem lfs = LocalFileSystem.getInstance();
+            for (File f : files) {
+              VirtualFile vf = lfs.refreshAndFindFileByIoFile(f);
+              ProjectLevelVcsManager vcsManager = ProjectLevelVcsManager.getInstance(myProject);
+              FilePath fp = PeerFactory.getInstance().getVcsContextFactory().createFilePathOn(vf);
+              AbstractVcs vcs = vcsManager.getVcsFor(vf);
+              if (vcs != null) {
+                CheckinEnvironment ci = vcs.getCheckinEnvironment();                
+                if (ci != null && !vcs.fileIsUnderVcs(fp)) {
+                  List<VirtualFile> vfs = new ArrayList<VirtualFile>();
+                  vfs.add(vf);
+                  List<VcsException> result = ci.scheduleUnversionedFilesForAddition(vfs);
+                  VcsDirtyScopeManager.getInstance(myProject).fileDirty(vf);
                 }
               }
             }
