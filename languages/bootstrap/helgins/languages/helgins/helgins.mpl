@@ -20,7 +20,9 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.helgins" />
   </models>
   <module />
-  <accessoryModels />
+  <accessoryModels>
+    <model modelUID="jetbrains.mps.bootstrap.helgins.dependencies" />
+  </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.bootstrap.helgins#1174411220599" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
