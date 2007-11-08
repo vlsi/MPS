@@ -4,9 +4,9 @@
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.core.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactories" id="1163111159679">
     <property name="name" value="STRL_node_factories" />
     <node role="nodeFactory" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory" id="1163111194508">
@@ -23,12 +23,8 @@
                 </node>
               </node>
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1163111305396">
-                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1171026435256">
-                  <link role="baseMethodDeclaration" targetNodeId="4.~BaseAdapter.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
-                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1163111384734">
-                    <link role="classConcept" targetNodeId="4.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-                    <link role="baseMethodDeclaration" targetNodeId="4.~SModelUtil_new.getBaseConcept():jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" resolveInfo="getBaseConcept" />
-                  </node>
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptRefExpression" id="1194562679502">
+                  <link role="conceptDeclaration" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
                 </node>
               </node>
             </node>
