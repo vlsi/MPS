@@ -15,10 +15,7 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.QueryMethod;
-import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.*;
 
 import java.util.*;
 
@@ -67,6 +64,23 @@ public class ChildSubstituteActionsHelper {
     if (childConcept == null) {
       return resultActions;
     }
+
+    // exception
+    if (childConcept == SModelUtil_new.getBaseConcept()) {
+      if ((currentChild == null || currentChild.getConceptFqName().equals(BaseConcept.concept))) {
+        return createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context);
+      }
+      // pretend we are going to substitute more concrete concept
+      childConcept = currentChild.getConceptDeclarationAdapter();
+//      if (childConcept instanceof ConceptDeclaration) {
+//        while (((ConceptDeclaration) childConcept).getExtends() != null) {
+//          ConceptDeclaration extendedConcept = ((ConceptDeclaration) childConcept).getExtends();
+//          if (extendedConcept == SModelUtil_new.getBaseConcept()) break;
+//          childConcept = extendedConcept;
+//        }
+//      }
+    }
+
     IScope scope = context.getScope();
     Language primaryLanguage = SModelUtil_new.getDeclaringLanguage(childConcept, scope);
     if (primaryLanguage == null) {
@@ -95,7 +109,7 @@ public class ChildSubstituteActionsHelper {
       // add those actions to result and
       // exculde those sub-concept from 'applicable concepts' to avoid duplication
       List<NodeSubstituteActionsBuilder> buildersFromSubconcepts = new ArrayList<NodeSubstituteActionsBuilder>();
-      final List<AbstractConceptDeclaration> excludedConcepts = new ArrayList<AbstractConceptDeclaration>();
+//      final Set<AbstractConceptDeclaration> excludedConcepts = new HashSet<AbstractConceptDeclaration>();
       List<Language> languages = parentNode.getModel().getLanguages(scope);
       for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(languages)) {
         AbstractConceptDeclaration applicableConcept = actionsBuilder.getApplicableConcept();
@@ -103,7 +117,7 @@ public class ChildSubstituteActionsHelper {
         if (applicableConcept == childConcept) continue;
         // applicable, if builder's applicable-concept is sub-concept of the childConcept
         if (SModelUtil_new.isAssignableConcept(applicableConcept, childConcept)) {
-          excludedConcepts.add(applicableConcept);
+//          excludedConcepts.add(applicableConcept);
           // check precondition tricking builder by passing builder's own applicable-concept as child-concept
           if (satisfiesPrecondition(actionsBuilder, parentNode, applicableConcept, context)) {
             buildersFromSubconcepts.add(actionsBuilder);
@@ -118,18 +132,18 @@ public class ChildSubstituteActionsHelper {
       }
 
       Condition<SNode> filter = TRUE_CONDITION;
-      if (excludedConcepts.size() > 0) {
-        filter = new Condition<SNode>() {
-          public boolean met(SNode node) {
-            for (AbstractConceptDeclaration excluded : excludedConcepts) {
-              if (SModelUtil_new.isAssignableConcept((AbstractConceptDeclaration) BaseAdapter.fromNode(node), excluded)) {
-                return false;
-              }
-            }
-            return true;
-          }
-        };
-      }
+//      if (excludedConcepts.size() > 0) {
+//        filter = new Condition<SNode>() {
+//          public boolean met(SNode node) {
+//            for (AbstractConceptDeclaration excluded : excludedConcepts) {
+//              if (SModelUtil_new.isAssignableConcept((AbstractConceptDeclaration) BaseAdapter.fromNode(node), excluded)) {
+//                return false;
+//              }
+//            }
+//            return true;
+//          }
+//        };
+//      }
 
       // create default action 2
       resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, filter, context));
@@ -154,7 +168,13 @@ public class ChildSubstituteActionsHelper {
 
     // apply all filters
     for (NodeSubstituteActionsBuilder builder : allBuilders) {
-      resultActions = applyActionFilter(builder, resultActions, parentNode, currentChild, childConcept.getNode(), context);
+      AbstractConceptDeclaration applicableConcept = builder.getApplicableConcept();
+      // try to apply only if childConcept (link target) is sub-concept of builder's applicableConcept
+      // otherwise builder's filter can't handle context of node insertion correctly
+      // case: 'Quotation' can have any node as child, but some filters can treat the 'quotation' as incorrect parent.
+      if (SModelUtil_new.isAssignableConcept(childConcept, applicableConcept)) {
+        resultActions = applyActionFilter(builder, resultActions, parentNode, currentChild, childConcept.getNode(), context);
+      }
     }
 
     return resultActions;
@@ -405,24 +425,31 @@ public class ChildSubstituteActionsHelper {
       SModel model = substituteActionsBuilder.getModel();
       return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
     } else {
+
+      // remove banned concepts
       Set<SNode> conceptsToRemove = new HashSet<SNode>();
       for (RemovePart rp : substituteActionsBuilder.getSubnodes(RemovePart.class)) {
         conceptsToRemove.add(rp.getConceptToRemove().getNode());
       }
-
-
-      List<RemoveByConditionPart> removesByCondition = substituteActionsBuilder.getSubnodes(RemoveByConditionPart.class);
-
-      Iterator<INodeSubstituteAction> it = actions.iterator();
-      while (it.hasNext()) {
-        INodeSubstituteAction action = it.next();
-        if (action.getParameterObject() instanceof SNode && ((SNode) action.getParameterObject()).getAdapter() instanceof ConceptDeclaration) {
-          if (conceptsToRemove.contains(action.getParameterObject())) {
-            it.remove();
+      if (!conceptsToRemove.isEmpty()) {
+        Iterator<INodeSubstituteAction> it = actions.iterator();
+        while (it.hasNext()) {
+          INodeSubstituteAction action = it.next();
+          Object parameterObject = action.getParameterObject();
+          if (parameterObject instanceof SNode && ((SNode) parameterObject).getAdapter() instanceof AbstractConceptDeclaration) {
+            if (conceptsToRemove.contains(((SNode) parameterObject))) {
+              it.remove();
+            }
+          } else if (parameterObject instanceof AbstractConceptDeclaration) {
+            if (conceptsToRemove.contains(((AbstractConceptDeclaration) parameterObject).getNode())) {
+              it.remove();
+            }
           }
         }
       }
 
+      // apply custom filters
+      List<RemoveByConditionPart> removesByCondition = substituteActionsBuilder.getSubnodes(RemoveByConditionPart.class);
       for (RemoveByConditionPart part : removesByCondition) {
         String methodName = "removeActionsByCondition_" + part.getId();
         Object[] args = {actions.iterator(), parentNode, currentChild, childConcept, context};
@@ -431,7 +458,6 @@ public class ChildSubstituteActionsHelper {
         } catch (Exception e) {
           LOG.error(e);
         }
-
       }
 
       return actions;

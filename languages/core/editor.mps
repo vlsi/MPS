@@ -2,8 +2,14 @@
 <model name="jetbrains.mps.core.editor">
   <persistence version="1" />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
-  <maxImportIndex value="1" />
+  <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
+  <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1117830771316">
     <link role="conceptDeclaration" targetNodeId="1.1078489098625" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1152908253258">
