@@ -15,9 +15,13 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
+import org.eclipse.core.runtime.adaptor.EclipseStarter;
+import org.osgi.framework.BundleContext;
+import org.osgi.framework.BundleException;
 import sun.misc.Launcher;
 
 import java.io.File;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
@@ -29,10 +33,9 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
 
   private MPSModuleRepository myModuleRepository;
-
   private RuntimeEnvironment myRuntimeEnvironment = new RuntimeEnvironment();
-
   private List<IReloadHandler> myReloadHandlers = new ArrayList<IReloadHandler>();
+  private BundleContext myContext;
 
   private Set<String> myToRemove = new LinkedHashSet<String>();
   private Set<String> myToAdd = new LinkedHashSet<String>();
@@ -79,6 +82,14 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public void initComponent() {
+//    try {
+//      EclipseStarter.main(new String[] { "-configuration ",  "C:/temp/configurartion"});
+//    } catch (Exception e) {
+//      e.printStackTrace();
+//    }
+//
+//    myContext = EclipseStarter.getSystemBundleContext();
+
     updateClassPath();
     
     CommandProcessor.instance().addCommandListener(new CommandAdapter() {
@@ -107,6 +118,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
       if (!toRemove.isEmpty()) {
         String[] unloadList = toRemove.toArray(new String[0]);
+                        
         myRuntimeEnvironment.unload(unloadList);
       }
 
@@ -134,6 +146,22 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
 
     myRuntimeEnvironment.add(b);
+
+
+//    module.createManifest();
+//
+//    try {
+//      File file = module.getDescriptorFile();
+//      if (file == null) {
+//        return;
+//      }
+//      String bundleHome = "file:/" + file.getParentFile().getAbsolutePath();
+//      System.out.println("install to " + bundleHome);
+//      org.osgi.framework.Bundle bundle = myContext.installBundle(bundleHome, null);
+//      bundle.update();
+//    } catch (Exception e) {
+//      e.printStackTrace();
+//    }
   }
 
   @Dependency
