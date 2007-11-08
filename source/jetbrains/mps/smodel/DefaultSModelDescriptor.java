@@ -593,7 +593,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   public FastNodeFinder getFastNodeFinder() {
-    if (myFastNodeFinder == null || myFastNodeFinder.getStructuralState() < structuralState()) {
+    if (myFastNodeFinder == null) {
       myFastNodeFinder = new FastNodeFinder(this);
     }
     return myFastNodeFinder;

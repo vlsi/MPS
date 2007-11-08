@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
+import jetbrains.mps.smodel.event.*;
 
 import java.lang.ref.WeakReference;
 import java.util.*;
@@ -18,6 +19,21 @@ public class FastNodeFinder {
 
   public FastNodeFinder(SModelDescriptor modelDescriptor) {
     myModelDescriptor = modelDescriptor;
+    modelDescriptor.addWeakModelListener(new SModelAdapter() {
+      public void childAdded(SModelChildEvent event) {
+        buildCache(event.getChild(), new HashSet<AbstractConceptDeclaration>());
+      }
+
+      public void childRemoved(SModelChildEvent event) {
+      }
+
+      public void rootAdded(SModelRootEvent event) {
+        buildCache(event.getRoot(), new HashSet<AbstractConceptDeclaration>());
+      }
+
+      public void rootRemoved(SModelRootEvent event) {
+      }
+    });
   }
 
   private void initCache() {
