@@ -33,7 +33,11 @@ import java.util.regex.Pattern;
 public class IDEAHandler extends UnicastRemoteObject implements ApplicationComponent, IIDEAHandler {
   static {
     RMIHandler.class.getClassLoader();
-  } 
+  }
+
+  public static IDEAHandler getInstance() {
+    return ApplicationManager.getApplication().getComponent(IDEAHandler.class);
+  }
 
   private ProjectManagerEx myProjectManager;
 
@@ -129,12 +133,31 @@ public class IDEAHandler extends UnicastRemoteObject implements ApplicationCompo
     return result;
   }
 
-  private ProjectJdk findSuitableJDK() {
+  public ProjectJdk findSuitableJDK() {
+    ProjectJdk jdk15 = null;
+    ProjectJdk jdk16 = null;
+
     for (ProjectJdk jdk : ProjectJdkTable.getInstance().getAllJdks()) {
-      if (("" + jdk.getVersionString()).startsWith("java version \"1.5") ||
-              ("" + jdk.getVersionString()).startsWith("java version \"1.6") ||
-              ("" + jdk.getVersionString()).startsWith("java version \"1.7")) return jdk;
+      if (("" + jdk.getVersionString()).startsWith("java version \"1.5")) {
+        jdk15 = jdk;
+      }
+
+      if (("" + jdk.getVersionString()).startsWith("java version \"1.6")) {
+        jdk16 = jdk;
+      }
     }
+
+    //we need such a smart way of choosing JDK because MPS might be run under 1.5
+    //but we might inadvertenly choose 1.6 which will cause a lot of exception which
+    //aren't very understandly for a regular user
+    if (jdk15 != null) {
+      return jdk15;
+    }
+
+    if (jdk16 != null) {
+      return jdk16;
+    }
+
     return null;
   }
 

@@ -976,6 +976,9 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
               }
               rootModel.setCompilerOutputPath(contentRootFile.findChild("classes"));
               rootModel.setExcludeOutput(true);
+
+              rootModel.setJdk(IDEAHandler.getInstance().findSuitableJDK());
+              
             } catch (IOException e) {
               e.printStackTrace();
             }
