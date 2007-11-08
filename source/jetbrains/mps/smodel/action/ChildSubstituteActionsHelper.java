@@ -72,13 +72,14 @@ public class ChildSubstituteActionsHelper {
       }
       // pretend we are going to substitute more concrete concept
       childConcept = currentChild.getConceptDeclarationAdapter();
-//      if (childConcept instanceof ConceptDeclaration) {
-//        while (((ConceptDeclaration) childConcept).getExtends() != null) {
-//          ConceptDeclaration extendedConcept = ((ConceptDeclaration) childConcept).getExtends();
-//          if (extendedConcept == SModelUtil_new.getBaseConcept()) break;
-//          childConcept = extendedConcept;
-//        }
-//      }
+      if (childConcept instanceof ConceptDeclaration) {
+        while (((ConceptDeclaration) childConcept).getExtends() != null) {
+          ConceptDeclaration extendedConcept = ((ConceptDeclaration) childConcept).getExtends();
+          if (extendedConcept == SModelUtil_new.getBaseConcept()) break;
+          if (extendedConcept == SModelUtil_new.getNamedConcept()) break; // NamedConcept must die
+          childConcept = extendedConcept;
+        }
+      }
     }
 
     IScope scope = context.getScope();

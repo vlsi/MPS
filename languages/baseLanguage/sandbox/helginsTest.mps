@@ -583,7 +583,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194457867172">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1194490656377">
           <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1194490656378">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194493691650">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194562423370">
               <link role="classifier" targetNodeId="2.~Boolean" resolveInfo="Boolean" />
             </node>
           </node>
@@ -598,7 +598,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1194474852612">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1194474852613">
             <property name="name" value="a" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194491992096">
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194561528772">
               <link role="classifier" targetNodeId="2.~Boolean" resolveInfo="Boolean" />
             </node>
           </node>
