@@ -27,7 +27,7 @@ public class HelginsPreferencesComponent extends DefaultExternalizableComponent 
   //private @Externalizable boolean myUsesIncrementalAlgorithm = false;
 
   private @Externalizable boolean myUsesDebugHighlighting = false;
-  private @Externalizable boolean myGenerationOptimizationEnabled = false;
+  private @Externalizable boolean myGenerationOptimizationEnabled = true;
 
   public static HelginsPreferencesComponent getInstance() {
     return ApplicationComponents.getInstance().getComponent(HelginsPreferencesComponent.class);
