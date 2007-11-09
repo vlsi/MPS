@@ -59,7 +59,7 @@ public class TemplateGenUtil {
   private static boolean checkConditionForIfMacro(SNode sourceNode, IfMacro ifMacro, ITemplateGenerator generator) {
     // new
     IfMacro_Condition function = ifMacro.getConditionFunction();
-    long t1 = System.currentTimeMillis();
+    long startTime = System.currentTimeMillis();
     Boolean res = false;
     if (function != null) {
       String methodName = TemplateFunctionMethodName.ifMacro_Condition(function.getNode());
@@ -77,7 +77,7 @@ public class TemplateGenUtil {
         LOG.error(e);
         return false;
       } finally {
-        Statistics.getStatistic(Statistics.TPL).add(ifMacro.getModel().getLongName() + "." + methodName, System.currentTimeMillis() - t1, res);
+        Statistics.getStatistic(Statistics.TPL).add(ifMacro.getModel(), methodName, startTime, res);
       }
     }
 
@@ -94,7 +94,7 @@ public class TemplateGenUtil {
         LOG.error(e);
         return false;
       } finally {
-        Statistics.getStatistic(Statistics.TPL).add(ifMacro.getModel().getLongName() + "." + methodName, System.currentTimeMillis() - t1, res);
+        Statistics.getStatistic(Statistics.TPL).add(ifMacro.getModel(), methodName, startTime, res);
       }
     }
 
@@ -109,7 +109,7 @@ public class TemplateGenUtil {
             generator,
             generator.getScope(),
             generator.getGeneratorSessionContext()};
-    long t1 = System.currentTimeMillis();
+    long startTime = System.currentTimeMillis();
     try {
       List<SNode> sourceNodes = (List<SNode>) QueryMethodGenerated.invoke(methodName, args, queryOwner.getModel());
       return sourceNodes;
@@ -118,7 +118,7 @@ public class TemplateGenUtil {
       LOG.error(e);
       return new LinkedList<SNode>();
     } finally {
-      Statistics.getStatistic(Statistics.TPL).add(query.getModel().getLongName() + "." + methodName, System.currentTimeMillis() - t1, true);
+      Statistics.getStatistic(Statistics.TPL).add(query.getModel(), methodName, startTime);
     }
   }
 
@@ -137,7 +137,7 @@ public class TemplateGenUtil {
     if (sourceQueryAspectMethodName != null) {
       String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
       Object[] args = new Object[]{sourceNode, generator};
-      long t1 = System.currentTimeMillis();
+      long startTime = System.currentTimeMillis();
       try {
         List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, macro.getModel());
         if (sourceNodes != null) {
@@ -149,7 +149,7 @@ public class TemplateGenUtil {
         LOG.error(e);
         return new LinkedList<SNode>();
       } finally {
-        Statistics.getStatistic(Statistics.TPL).add(macro.getModel().getLongName() + "." + methodName, System.currentTimeMillis() - t1, true);
+        Statistics.getStatistic(Statistics.TPL).add(macro.getModel(), methodName, startTime);
       }
     }
 
@@ -182,7 +182,7 @@ public class TemplateGenUtil {
               generator,
               generator.getScope(),
               generator.getGeneratorSessionContext()};
-      long t1 = System.currentTimeMillis();
+      long startTime = System.currentTimeMillis();
       try {
         SNode outputSourceNode = (SNode) QueryMethodGenerated.invoke(methodName, args, macro.getModel());
         if (outputSourceNode != null) {
@@ -194,7 +194,7 @@ public class TemplateGenUtil {
         LOG.error(e);
         return new LinkedList<SNode>();
       } finally {
-        Statistics.getStatistic(Statistics.TPL).add(macro.getModel().getLongName() + "." + methodName, System.currentTimeMillis() - t1, true);
+        Statistics.getStatistic(Statistics.TPL).add(macro.getModel(), methodName, startTime);
       }
     }
 
@@ -202,7 +202,7 @@ public class TemplateGenUtil {
     if (sourceQueryAspectMethodName != null) {
       String methodName = "templateSourceNodeQuery_" + sourceQueryAspectMethodName;
       Object[] args = new Object[]{sourceNode, generator};
-      long t1 = System.currentTimeMillis();
+      long startTime = System.currentTimeMillis();
       try {
         SNode outputSourceNode = (SNode) QueryMethod.invoke(methodName, args, macro.getModel());
         if (outputSourceNode != null) {
@@ -214,7 +214,7 @@ public class TemplateGenUtil {
         LOG.error(e);
         return new LinkedList<SNode>();
       } finally {
-        Statistics.getStatistic(Statistics.TPL).add(macro.getModel().getLongName() + "." + methodName, System.currentTimeMillis() - t1, true);
+        Statistics.getStatistic(Statistics.TPL).add(macro.getModel(), methodName, startTime);
       }
     }
 
@@ -242,7 +242,7 @@ public class TemplateGenUtil {
               generator,
               generator.getScope(),
               generator.getGeneratorSessionContext()};
-      long t1 = System.currentTimeMillis();
+      long startTime = System.currentTimeMillis();
       try {
         SNode outputSourceNode = (SNode) QueryMethodGenerated.invoke(methodName, args, macro.getModel());
         if (outputSourceNode != null) {
@@ -254,14 +254,14 @@ public class TemplateGenUtil {
         LOG.error(e);
         return new LinkedList<SNode>();
       } finally {
-        Statistics.getStatistic(Statistics.TPL).add(macro.getModel().getLongName() + "." + methodName, System.currentTimeMillis() - t1, true);
+        Statistics.getStatistic(Statistics.TPL).add(macro.getModel(), methodName, startTime);
       }
     }
 
     // old (returns list in switch)
     String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
     Object[] args = new Object[]{sourceNode, generator};
-    long t1 = System.currentTimeMillis();
+    long startTime = System.currentTimeMillis();
     try {
       sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, macro.getModel());
       return sourceNodes;
@@ -270,7 +270,7 @@ public class TemplateGenUtil {
       LOG.error(e);
       return new LinkedList<SNode>();
     } finally {
-      Statistics.getStatistic(Statistics.TPL).add(macro.getModel().getLongName() + "." + methodName, System.currentTimeMillis() - t1, true);
+      Statistics.getStatistic(Statistics.TPL).add(macro.getModel(), methodName, startTime);
     }
   }
 
@@ -299,7 +299,7 @@ public class TemplateGenUtil {
             generator,
             generator.getScope(),
             generator.getGeneratorSessionContext()};
-    long t1 = System.currentTimeMillis();
+    long startTime = System.currentTimeMillis();
     boolean res = false;
     try {
       res = (Boolean) QueryMethodGenerated.invoke(methodName, args, mappingRule.getModel());
@@ -310,7 +310,7 @@ public class TemplateGenUtil {
 
       return false;
     } finally {
-      Statistics.getStatistic(Statistics.TPL).add(mappingRule.getModel().getLongName() + "." + methodName, System.currentTimeMillis() - t1, res);
+      Statistics.getStatistic(Statistics.TPL).add(mappingRule.getModel(), methodName, startTime, res);
     }
   }
 

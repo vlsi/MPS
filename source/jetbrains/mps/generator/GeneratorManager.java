@@ -411,6 +411,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
       //++ generation
       GenerationStatus status = null;
+      Statistics.setEnabled(Statistics.TPL, isDumpStatistics());
       IGenerationSession generationSession = new GenerationSession(invocationContext, isSaveTransientModels(), progress, messages);
       try {
         Logger.addLoggingHandler(generationSession.getLoggingHandler());
