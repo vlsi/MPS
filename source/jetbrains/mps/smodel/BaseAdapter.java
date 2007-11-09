@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLink;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -135,11 +136,19 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public <E extends INodeAdapter> List<E> getSubnodes(final Class<E> cls) {
-    return (List<E>) getSubnodes(new Condition<INodeAdapter>() {
-      public boolean met(INodeAdapter object) {
-        return cls.isInstance(object);
+    FastNodeFinder finder = getModel().getModelDescriptor().getFastNodeFinder();
+    AbstractConceptDeclaration acd = SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance());
+    List<E> result = toAdapters(finder.getNodes(acd, true));
+
+    Iterator<E> it = result.iterator();
+    while (it.hasNext()) {
+      E current = it.next();
+      if (!current.getNode().isDescendantOf(getNode(), false)) {
+        it.remove();
       }
-    });
+    }
+
+    return result;
   }
 
   @NotNull

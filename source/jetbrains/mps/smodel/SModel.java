@@ -1170,7 +1170,7 @@ public class SModel implements Iterable<SNode> {
     myRegistrationsForbidden = registrationsForbidden;
   }
 
-  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {
+  public <E extends INodeAdapter> List<E> allAdapters(final Class<E> cls) {    
     return BaseAdapter.toAdapters(allNodes(new Condition<SNode>() {
       public boolean met(SNode object) {
         return cls.isInstance(BaseAdapter.fromNode(object));

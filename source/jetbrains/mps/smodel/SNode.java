@@ -1244,6 +1244,26 @@ public final class SNode {
     }
   }
 
+  public boolean isDescendantOf(SNode node, boolean includeThis) {
+    SNode current;
+
+    if (includeThis) {
+      current = this;
+    } else {
+      current = getParent();
+    }
+
+    while (current != null) {
+      if (current == node) {
+        return true;
+      }
+
+      current = current.getParent();
+    }
+
+    return false;
+  }
+
   public void addRightTransformHint() {
     putUserObject(RIGHT_TRANSFORM_HINT, RIGHT_TRANSFORM_HINT);
     getModel().firePropertyChangedEvent(this, RIGHT_TRANSFORM_HINT, null, "", true, false);
