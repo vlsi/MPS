@@ -26,7 +26,7 @@ public class RuleSet<T extends Rule_Runtime> {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(rule.getApplicableConceptFQName(), GlobalScope.getInstance());
       Set<T> existingRules = myRules.get(concept);
       if (existingRules == null) {
-        existingRules = new HashSet<T>();
+        existingRules = new HashSet<T>(2);
         myRules.put(concept,
                 existingRules);
       }
@@ -53,7 +53,7 @@ public class RuleSet<T extends Rule_Runtime> {
         conceptDeclaration = conceptDeclaration.getExtends();
       }
     }
-    HashSet<T> hashSet = new HashSet<T>();
+    HashSet<T> hashSet = new HashSet<T>(2);
     myRules.put(key, hashSet);
     return hashSet;
   }
