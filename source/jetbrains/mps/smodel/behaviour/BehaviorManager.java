@@ -199,5 +199,4 @@ public final class BehaviorManager {
       return myConceptFqName.hashCode() * 239 + myMethodName.hashCode() * 7 + myParameters.length;
     }
   }
-
 }
