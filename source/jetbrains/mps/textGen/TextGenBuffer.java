@@ -1,6 +1,5 @@
 package jetbrains.mps.textGen;
 
-
 import java.util.HashMap;
 
 /**

@@ -10,6 +10,9 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.ide.messages.IMessageHandler;
+import jetbrains.mps.ide.messages.Message;
+import jetbrains.mps.ide.messages.MessageKind;
 
 /**
  * User: Dmitriev.
@@ -31,25 +34,25 @@ public class TextGenManager {
     return myInstance;
   }
 
-  public TextGenerationResult generateText(IOperationContext context, SNode node) {
+  public TextGenerationResult generateText(IOperationContext context, SNode node, IMessageHandler messages) {
     TextGenBuffer buffer = new TextGenBuffer();
     buffer.putUserObject(JavaNodeTextGen.PACKAGE_NAME, node.getModel().getLongName());
-    appendNodeText(context, buffer, node);
+    appendNodeText(context, buffer, node, messages);
     return new TextGenerationResult(buffer.getText(), buffer.hasErrors());
   }
 
   public boolean canGenerateTextFor(SNode node) {
-    return !(loadNodeTextGen(null, node) instanceof DefaultTextGen);
+    return !(loadNodeTextGen(null, IMessageHandler.NULL_HANDLER, node) instanceof DefaultTextGen);
   }
 
-  protected void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node) {
+  protected void appendNodeText(IOperationContext context, TextGenBuffer buffer, SNode node, IMessageHandler messages) {
     if(node == null) {
       buffer.append("???");
       buffer.foundError();
       return;
     }
 
-    SNodeTextGen nodeTextGen = loadNodeTextGen(context, node);
+    SNodeTextGen nodeTextGen = loadNodeTextGen(context, messages, node);
     LOG.assertLog(nodeTextGen != null, "Couldn't find text generator for " + node.getDebugText());
     
     assert nodeTextGen != null;
@@ -58,11 +61,12 @@ public class TextGenManager {
     try {
       nodeTextGen.doGenerateText(node.getAdapter());
     } catch (Exception e) {
-      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+      messages.handle(new Message(MessageKind.ERROR, e.getClass() + " : " + e.getMessage()));
+      e.printStackTrace();
     }
   }
 
-  private SNodeTextGen loadNodeTextGen(IOperationContext context, SNode node) {
+  private SNodeTextGen loadNodeTextGen(IOperationContext context, IMessageHandler messages, SNode node) {
     ConceptDeclaration cd = (ConceptDeclaration) node.getConceptDeclarationAdapter();
     while (cd != SModelUtil_new.getBaseConcept()) {
       Language l = SModelUtil_new.getDeclaringLanguage(cd, GlobalScope.getInstance());
@@ -75,6 +79,7 @@ public class TextGenManager {
         if (textgenClass != null) {
           SNodeTextGen result = (SNodeTextGen) textgenClass.newInstance();
           result.setContext(context);
+          result.setMessageHandler(messages);
           return result;
         }
       } catch (InstantiationException e) {

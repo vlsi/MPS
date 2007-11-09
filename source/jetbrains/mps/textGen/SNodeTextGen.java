@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ide.messages.IMessageHandler;
 
 /**
  * Author: Sergey Dmitriev
@@ -15,6 +16,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
 
   private TextGenBuffer myBuffer;
   private IOperationContext myContext;
+  private IMessageHandler myMessageHandler;
 
   public void setBuffer(TextGenBuffer buffer) {
     myBuffer = buffer;
@@ -32,11 +34,19 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
     myContext = context;
   }
 
+  public IMessageHandler getMessageHandler() {
+    return myMessageHandler;
+  }
+
+  public void setMessageHandler(IMessageHandler messageHandler) {
+    myMessageHandler = messageHandler;
+  }
+
   protected abstract void doGenerateText(BA ba);
 
   protected final void appendNodeText(INodeAdapter ba) {
     try {
-      TextGenManager.instance().appendNodeText(myContext, myBuffer, BaseAdapter.fromAdapter(ba));
+      TextGenManager.instance().appendNodeText(myContext, myBuffer, BaseAdapter.fromAdapter(ba), getMessageHandler());
     } catch (Exception e) {
       LOGGER.error(e);
       append("\n<<<" + e + ">>>");

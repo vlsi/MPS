@@ -449,7 +449,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             }
 
             if (generateText) {
-              generationType.handleOutput(invocationContext, status, progress, outputFolder);
+              generationType.handleOutput(invocationContext, status, progress, outputFolder, messages);
             }
           }
           generationSession.discardTransients();

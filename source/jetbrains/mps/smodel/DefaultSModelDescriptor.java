@@ -18,7 +18,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language.LanguageAspectStatus;
 import jetbrains.mps.smodel.Language.LanguageAspectStatus.AspectKind;
 import jetbrains.mps.smodel.event.*;
@@ -255,7 +254,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
                 return false;
               }
             };
-            generationType.handleOutput(invocationContext, status, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, null);
+            generationType.handleOutput(invocationContext, status, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, null, messages);
 
             String className = status.getOutputModel().getLongName() + "." + "LogRunner";
             Class aClass = scriptslanguage.getClass(className);
