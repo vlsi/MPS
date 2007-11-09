@@ -274,6 +274,14 @@
       <property name="value" value="template switch" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194566050217">
+      <property name="value" value="link 'template' is replaced with 'reductionMappingRule'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1170898673630" resolveInfo="deprecated_415" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194566129968">
+      <property name="value" value="link 'defaultTemplate' is replaced with 'defaultConsequence'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1170898673630" resolveInfo="deprecated_415" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1112731464728">
       <property name="targetCardinality" value="1" />
       <property name="metaClass" value="aggregation" />
@@ -750,7 +758,7 @@
     <property name="name" value="Reduction_MappingRule" />
     <link role="extends" targetNodeId="1167169308231" resolveInfo="BaseMappingRule" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1169672780802">
-      <property name="value" value="the 'template' reference is deprecated" />
+      <property name="value" value="link 'template' is replaced with 'ruleConsequence'" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1167327847732">
@@ -1222,6 +1230,32 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1184792613453">
       <link role="conceptLinkDeclaration" targetNodeId="6.1137545963098" />
       <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1184792613454" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194565793557">
+    <property name="name" value="IncludeMacro" />
+    <link role="extends" targetNodeId="1167951328751" resolveInfo="SourceSubstituteMacro" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194566366375">
+      <property name="role" value="includeTemplate" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194565843148">
+      <property name="value" value="$INCLUDE$" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194565843149">
+      <property name="value" value="include template macro" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1194567738425">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194565823413">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="sourceNodeQuery" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1168024337012" resolveInfo="SourceSubstituteMacro_SourceNodeQuery" />
     </node>
   </node>
 </model>

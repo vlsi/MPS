@@ -9,6 +9,10 @@
     <property name="iconPath" value="${language_descriptor}\icons\structure.png" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194565364187">
+      <property name="value" value="concept" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1096454100552">
       <property name="name" value="rootable" />
       <link role="dataType" targetNodeId="1.1082983657063" />
@@ -110,6 +114,10 @@
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1083171877298" resolveInfo="EnumerationMemberDeclaration" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194565666568">
+      <property name="value" value="enum data type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1082978499127">
     <property name="name" value="ConstrainedDataTypeDeclaration" />
@@ -120,6 +128,10 @@
       <property name="name" value="constraint" />
       <property name="propertyType" value="string" />
       <link role="dataType" targetNodeId="1.1082983041843" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194565683319">
+      <property name="value" value="constrained data type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1083171877298">
@@ -384,6 +396,10 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1174386183942">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194565744884">
+      <property name="value" value="annotation link" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1149608316235">
