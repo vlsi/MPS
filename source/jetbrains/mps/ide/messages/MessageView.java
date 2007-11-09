@@ -92,7 +92,9 @@ public class MessageView extends DefaultTool {
 
         Message msg = (Message) value;
         if (msg.getHintObject() != null) {
-          setText("<html>" + msg.getCreationTimeString() + "\t: <u style='color:#0000EE'>" + msg.getText() + "</u>");
+//          setText("<html>" + msg.getCreationTimeString() + "\t: <u style='color:#0000EE'>" + msg.getText() + "</u>");
+          setText(msg.getCreationTimeString() + "\t: " + msg.getText());
+          setForeground(Color.BLUE);
         } else {
           setText(msg.getCreationTimeString() + "\t: " + msg.getText());
           setForeground(Color.BLACK);
