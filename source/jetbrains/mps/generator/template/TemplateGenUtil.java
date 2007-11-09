@@ -340,6 +340,8 @@ public class TemplateGenUtil {
         return getSourceNodesForMacroWithSourceNodesQuery(parentSourceNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcListMacro) nodeMacro).getSourceNodesQuery(), generator);
       } else if (nodeMacro instanceof SwitchMacro) {
         return getSourceNodesForSwitchMacro(parentSourceNode, (SwitchMacro) nodeMacro, generator);
+      } else if (nodeMacro instanceof IncludeMacro) {
+        return getSourceNodesForMacroWithSourceNodeQuery(parentSourceNode, (SourceSubstituteMacro) nodeMacro, ((IncludeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
       }
 
       if (nodeMacro != null) {

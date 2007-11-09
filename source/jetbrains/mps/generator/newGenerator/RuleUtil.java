@@ -397,13 +397,13 @@ public class RuleUtil {
                                                          SNode inputNode,
                                                          int nodeMacrosToSkip,
                                                          boolean registerTopOutput) {
-    int i = 0;
+    int macroCount = 0;
     List<SNode> outputNodes = new ArrayList<SNode>();
     // templateNode has unprocessed node-macros?
     for (INodeAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
       if (!(templateChildNode instanceof NodeMacro)) continue;
-      i++;
-      if (i <= nodeMacrosToSkip) continue;
+      macroCount++;
+      if (macroCount <= nodeMacrosToSkip) continue;
       NodeMacro nodeMacro = (NodeMacro) templateChildNode;
       String mappingName_ = nodeMacro.getMappingId() != null ? nodeMacro.getMappingId() : mappingName;
       if (nodeMacro instanceof LoopMacro) {
@@ -476,7 +476,7 @@ public class RuleUtil {
       } else if (nodeMacro instanceof SwitchMacro) {
         // $SWITCH$
         TemplateSwitch templateSwitch = ((SwitchMacro) nodeMacro).getTemplateSwitch();
-        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, i - 1, myGenerator);
+        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, macroCount - 1, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
           RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getConsequenceForSwitchCase(newInputNode, templateSwitch);
@@ -491,7 +491,7 @@ public class RuleUtil {
             } else if (consequenceForCase instanceof InlineTemplate_RuleConsequence) {
               templateNodeForCase = BaseAdapter.fromAdapter(((InlineTemplate_RuleConsequence) consequenceForCase).getTemplateNode());
             } else {
-              myGenerator.showErrorMessage(newInputNode, null, consequenceForCase.getNode(), "failed to process switch : unsupported rule consequence");
+              myGenerator.showErrorMessage(newInputNode, null, consequenceForCase.getNode(), "failed to process $SWITCH$ : unsupported rule consequence");
               return null;
             }
           } else {
@@ -514,6 +514,29 @@ public class RuleUtil {
               outputNodes.addAll(outputChildNodes);
             }
           }
+
+          if (registerTopOutput && !inputChanged) {
+            myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
+          }
+        } // for (SNode newInputNode : newInputNodes)
+
+        return outputNodes;
+
+      } else if (nodeMacro instanceof IncludeMacro) {
+        // $INCLUDE$
+        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, macroCount - 1, myGenerator);
+        for (SNode newInputNode : newInputNodes) {
+          boolean inputChanged = (newInputNode != inputNode);
+          TemplateDeclaration includeTemplate = ((IncludeMacro) nodeMacro).getIncludeTemplate();
+          if(includeTemplate == null) {
+            myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "failed to process $INCLIDE$ : no 'include template'");
+            return null;
+          }
+            List<SNode> outputChildNodes = createOutputNodesForTemplateNode(mappingName_, includeTemplate.getNode(), newInputNode, 0, inputChanged);
+            if (outputChildNodes != null) {
+              outputNodes.addAll(outputChildNodes);
+            }
+
 
           if (registerTopOutput && !inputChanged) {
             myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
