@@ -3,7 +3,6 @@ package jetbrains.mps.smodel.behaviour;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
@@ -119,21 +118,20 @@ public final class BehaviorManager {
     return method;
   }
 
-
-  public <T> T invoke(Class<T> returnType, SNode node, String methodName, List<Class> parametersTypes, Object... parameters) {
-    assert node != null;
-    return invokeSuper(returnType, node, methodName, parametersTypes, false, parameters);
+  public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
+    return _invokeInternal(returnType, node, methodName, parametersTypes, false, parameters);
   }
 
-  public <T> T invokeSuper(Class<T> returnType, SNode node, String methodName, List<Class> parametersTypes, boolean superCall, Object... parameters) {
+  public <T> T invokeSuper(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, boolean superCall, Object... parameters) {
+    return _invokeInternal(returnType, node, methodName, parametersTypes, superCall, parameters);    
+  }
+
+  private <T> T _invokeInternal(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, boolean superCall, Object... parameters) {
     assert node != null;    
     AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
 
     Method method = null;
-    List<Class> paramTypes = new ArrayList<Class>();
-    paramTypes.add(SNode.class);
-    paramTypes.addAll(parametersTypes);
-    Class[] parameterTypeArray = paramTypes.toArray(new Class[paramTypes.size()]);
+    Class[] parameterTypeArray = parametersTypes;
 
     List<AbstractConceptDeclaration> superConcepts = SModelUtil_new.getConceptAndSuperConcepts(concept);
 
