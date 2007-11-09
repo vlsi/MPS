@@ -23,10 +23,10 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import java.util.regex.Pattern;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
+import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.constraints.Classifier_Behavior;
@@ -246,7 +246,7 @@ public class QueriesGenerated {
         }
 
         public boolean canSubstitute_internal(String pattern) {
-          return Pattern.compile("(?:\\d)+", 0).matcher(pattern).matches();
+          return _PrecompiledPatterns.REGEXP_1179358622511.matcher(pattern).matches();
         }
 
         public String getMatchingText(String pattern) {
@@ -296,7 +296,7 @@ public class QueriesGenerated {
         }
 
         public boolean canSubstitute_internal(String pattern) {
-          return Pattern.compile("(?:(?:(?:-)?))(?:(?:(?:\\d)+)(?:(?:\\.)(?:(?:\\d)*)))", 0).matcher(pattern).matches();
+          return _PrecompiledPatterns.REGEXP_1179359008506.matcher(pattern).matches();
         }
 
         public String getMatchingText(String pattern) {
@@ -312,7 +312,7 @@ public class QueriesGenerated {
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
           SNode stringLiteral = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.StringLiteral", null);
           {
-            Pattern _pattern_0 = Pattern.compile("(?:(?:\")(?:((?:[^\"])*)))(?:(?:\")?)", 0);
+            Pattern _pattern_0 = _PrecompiledPatterns.REGEXP_1180107881062;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if(_matcher_0.matches()) {
               SPropertyOperations.set(stringLiteral, "value", _matcher_0.group(1));
@@ -326,7 +326,7 @@ public class QueriesGenerated {
         }
 
         public boolean canSubstitute_internal(String pattern) {
-          return Pattern.compile("(?:\")(?:(?:(?:[^\"])*)(?:(?:\")?))", 0).matcher(pattern).matches();
+          return _PrecompiledPatterns.REGEXP_1180107302355.matcher(pattern).matches();
         }
 
         public String getMatchingText(String pattern) {
