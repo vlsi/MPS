@@ -30,7 +30,7 @@ public class MessageView extends DefaultTool {
   private ToolsPane myToolsPane;
 
   public MessageView(ToolsPane toolsPane) {
-    myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);    
     myToolsPane = toolsPane;
     myComponent.setLayout(new BorderLayout());
     myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
