@@ -16,6 +16,7 @@ import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFormatException;
+import org.osgi.framework.Bundle;
 
 import java.io.File;
 import java.io.IOException;
@@ -506,6 +507,7 @@ public abstract class AbstractModule implements IModule {
 
   private String getRequiredBundlesString() {
     StringBuilder result = new StringBuilder();
+    result.append("jetbrains.mps");
     for (IModule m : getDependOnModules()) {
       if (result.length() > 0) {
         result.append(",");
