@@ -15,20 +15,22 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class DependenciesCollector {
 
-  public void collectDependencies(SNode inferenceRule, Map<SNode, Pair<SNode, INodeGetter>> dependencies, Set<SNode> leafs) {
+  public void collectDependencies(SNode inferenceRule, Map<SNode, Pair<SNode, INodeGetter>> dependencies, Set<SNode> leaves) {
     Set<SNode> roots = new HashSet<SNode>();
     for(SNode applicableNodeReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference", false)) {
       if(SLinkOperations.getTarget(applicableNodeReference, "applicableNode", false) == SLinkOperations.getTarget(inferenceRule, "applicableNode", true)) {
         roots.add(applicableNodeReference);
       }
     }
-    int prevSize = 0;
+    int prevSize = dependencies.size();
+    int leavesSize = leaves.size();
     for(SNode root : roots) {
       dependencies.put(root, null);
     }
-    while(dependencies.size() > prevSize) {
+    while(dependencies.size() > prevSize || leaves.size() > leavesSize) {
       prevSize = dependencies.size();
-      for(SNode node : dependencies.keySet()) {
+      leavesSize = leaves.size();
+      for(SNode node : new HashSet<SNode>(dependencies.keySet())) {
         SNode parent = SNodeOperations.getParent(node, null, false, false);
         do {
           SNode matchedNode_1194538774943 = parent;
@@ -36,7 +38,9 @@ public class DependenciesCollector {
             boolean matches_1194538774945 = false;
             matches_1194538774945 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
             if(matches_1194538774945) {
-              leafs.add(matchedNode_1194538774943);
+              if(!(roots.contains(node))) {
+                leaves.add(node);
+              }
               break;
             }
           }
@@ -62,11 +66,12 @@ public class DependenciesCollector {
           }
           {
             boolean matches_1194539042393 = false;
-            matches_1194539042393 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess");
+            matches_1194539042393 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression");
             if(matches_1194539042393) {
-              {
-                SNode operationExpression = SNodeOperations.getParent(matchedNode_1194538774943, null, false, false);
-                if(SLinkOperations.getTarget(operationExpression, "leftExpression", true) == node && SPropertyOperations.hasValue(SLinkOperations.getTarget(matchedNode_1194538774943, "link", false), "metaClass", "aggregation", null)) {
+              if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_1194538774943, "nodeOperation", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess")) {
+                SNode sLinkAccess = SLinkOperations.getTarget(matchedNode_1194538774943, "nodeOperation", true);
+                if(SLinkOperations.getTarget(matchedNode_1194538774943, "leftExpression", true) == node && SPropertyOperations.hasValue(SLinkOperations.getTarget(sLinkAccess, "link", false), "metaClass", "aggregation", null)) {
+                  SNode operationExpression = SNodeOperations.getParent(sLinkAccess, null, false, false);
                   dependencies.put(operationExpression, new Pair<SNode, INodeGetter>(node, new INodeGetter() {
 
                     public SNode getNode(SNode p0) {
