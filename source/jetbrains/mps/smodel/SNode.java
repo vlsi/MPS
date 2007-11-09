@@ -745,7 +745,7 @@ public final class SNode {
   public List<SNode> getChildren() {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
-    return new ArrayList(_children());
+    return Collections.unmodifiableList(_children());
   }
 
   private void fireNodeUnclassifiedReadAccess() {
