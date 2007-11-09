@@ -147,12 +147,11 @@ public final class BehaviorManager {
     }
 
     if (method != null) {
-      List<Object> params = new ArrayList<Object>();
-      params.add(node);
-      params.addAll(Arrays.asList(parameters));
-
+      Object[] params = new Object[parameters.length + 1];
+      params[0] = node;
+      System.arraycopy(parameters, 0, params, 1, parameters.length);
       try {
-        return (T) method.invoke(null, params.toArray());
+        return (T) method.invoke(null, params);
       } catch (IllegalAccessException e) {
         throw new RuntimeException(e);
       } catch (InvocationTargetException e) {
