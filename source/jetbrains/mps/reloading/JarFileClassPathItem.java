@@ -99,14 +99,14 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
 
   private Set<String> getClassesSetFor(String pack) {
     if (!myClasses.containsKey(pack)) {
-      myClasses.put(pack, new HashSet<String>());
+      myClasses.put(pack, new HashSet<String>(0));
     }
     return myClasses.get(pack);
   }
 
   private Set<String> getSubpackagesSetFor(String pack) {
     if (!mySubpackages.containsKey(pack)) {
-      mySubpackages.put(pack, new HashSet<String>());
+      mySubpackages.put(pack, new HashSet<String>(0));
     }
     return mySubpackages.get(pack);
   }

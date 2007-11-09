@@ -44,7 +44,7 @@ public class CompositeClassPathItem implements IClassPathItem {
   @NotNull
   public Set<String> getAvailableClasses(String namespace) {
     if (!myClasses.containsKey(namespace)) {
-      Set<String> result = new HashSet<String>();
+      Set<String> result = new HashSet<String>(0);
       for (IClassPathItem item : myChildren) {
         result.addAll(item.getAvailableClasses(namespace));
       }
@@ -57,7 +57,7 @@ public class CompositeClassPathItem implements IClassPathItem {
   @NotNull
   public Set<String> getSubpackages(String namespace) {
     if (!mySubpackages.containsKey(namespace)) {
-      Set<String> result = new HashSet<String>();
+      Set<String> result = new HashSet<String>(0);
 
       for (IClassPathItem item : myChildren) {
         result.addAll(item.getSubpackages(namespace));

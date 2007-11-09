@@ -22,7 +22,6 @@ public class FileClassPathItem extends AbstractClassPathItem {
     myClassPath = classPath;
   }
 
-
   public String getClassPath() {
     return myClassPath;
   }
