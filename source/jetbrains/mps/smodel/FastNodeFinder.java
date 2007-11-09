@@ -119,7 +119,7 @@ public class FastNodeFinder {
   private List<WeakReference<SNode>> getNodes_noInheritance(AbstractConceptDeclaration concept) {
     List<WeakReference<SNode>> list = myNodesNoInheritance.get(concept);
     if (list == null) {
-      list = new LinkedList<WeakReference<SNode>>();
+      list = new ArrayList<WeakReference<SNode>>(2);
       myNodesNoInheritance.put(concept, list);
     }
     return list;
@@ -128,7 +128,7 @@ public class FastNodeFinder {
   private List<WeakReference<SNode>> getNodes_all(AbstractConceptDeclaration concept) {
     List<WeakReference<SNode>> list = myNodesAll.get(concept);
     if (list == null) {
-      list = new LinkedList<WeakReference<SNode>>();
+      list = new ArrayList<WeakReference<SNode>>(2);
       myNodesAll.put(concept, list);
     }
     return list;
