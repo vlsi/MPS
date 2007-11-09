@@ -5,7 +5,6 @@ package jetbrains.mps.bootstrap.helgins.dependencies;
 import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.helgins.inference.util.INodeGetter;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -15,7 +14,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 
 public class DependenciesCollector {
 
-  public void collectDependencies(SNode inferenceRule, Map<SNode, Pair<SNode, INodeGetter>> dependencies, Set<SNode> leaves) {
+  public void collectDependencies(SNode inferenceRule, Map<SNode, Pair<SNode, SNode>> dependencies, Set<SNode> leaves) {
     Set<SNode> roots = new HashSet<SNode>();
     for(SNode applicableNodeReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference", false)) {
       if(SLinkOperations.getTarget(applicableNodeReference, "applicableNode", false) == SLinkOperations.getTarget(inferenceRule, "applicableNode", true)) {
@@ -49,17 +48,7 @@ public class DependenciesCollector {
             matches_1194538897614 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
             if(matches_1194538897614) {
               if(SLinkOperations.getTarget(matchedNode_1194538774943, "rValue", true) == node) {
-                dependencies.put(SLinkOperations.getTarget(matchedNode_1194538774943, "lValue", true), new Pair<SNode, INodeGetter>(node, new INodeGetter() {
-
-                  public SNode getNode(SNode p0) {
-                    SNode assignmentExpression;
-                    SNode n;
-                    n = p0.getParent();
-                    assignmentExpression = n;
-                    return SLinkOperations.getTarget(assignmentExpression, "rValue", true);
-                  }
-
-                }));
+                dependencies.put(SLinkOperations.getTarget(matchedNode_1194538774943, "lValue", true), new Pair<SNode, SNode>(node, new QuotationClass_().createNode()));
               }
               break;
             }
@@ -72,28 +61,14 @@ public class DependenciesCollector {
                 SNode sLinkAccess = SLinkOperations.getTarget(matchedNode_1194538774943, "nodeOperation", true);
                 if(SLinkOperations.getTarget(matchedNode_1194538774943, "leftExpression", true) == node && SPropertyOperations.hasValue(SLinkOperations.getTarget(sLinkAccess, "link", false), "metaClass", "aggregation", null)) {
                   SNode operationExpression = SNodeOperations.getParent(sLinkAccess, null, false, false);
-                  dependencies.put(operationExpression, new Pair<SNode, INodeGetter>(node, new INodeGetter() {
-
-                    public SNode getNode(SNode p0) {
-                      return p0.getParent();
-                    }
-
-                  }));
+                  dependencies.put(operationExpression, new Pair<SNode, SNode>(node, new QuotationClass_1().createNode()));
                 }
               }
               break;
             }
           }
           if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
-            dependencies.put(SLinkOperations.getTarget(node, "variableDeclaration", false), new Pair<SNode, INodeGetter>(node, new INodeGetter() {
-
-              public SNode getNode(SNode p0) {
-                SNode n = p0;
-                SNode variableReference = n;
-                return SLinkOperations.getTarget(variableReference, "variableDeclaration", false);
-              }
-
-            }));
+            dependencies.put(SLinkOperations.getTarget(node, "variableDeclaration", false), new Pair<SNode, SNode>(node, new QuotationClass_2().createNode()));
           }
         } while(false);
       }
