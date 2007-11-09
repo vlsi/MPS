@@ -363,7 +363,7 @@ public abstract class AbstractModule implements IModule {
   public Class getClass(String fqName) {
     ClassLoader loader = ClassLoaderManager.getInstance().getClassLoaderFor(this);
     try {
-      return Class.forName(fqName, true, loader);
+      return Class.forName(fqName, false, loader);
     } catch (ClassNotFoundException e) {
       return null;
     }

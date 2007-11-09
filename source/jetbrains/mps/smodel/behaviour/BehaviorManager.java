@@ -133,7 +133,7 @@ public final class BehaviorManager {
     List<Class> paramTypes = new ArrayList<Class>();
     paramTypes.add(SNode.class);
     paramTypes.addAll(parametersTypes);
-    Class[] parameterTypeArray = paramTypes.toArray(new Class[0]);
+    Class[] parameterTypeArray = paramTypes.toArray(new Class[paramTypes.size()]);
 
     List<AbstractConceptDeclaration> superConcepts = SModelUtil_new.getConceptAndSuperConcepts(concept);
 
