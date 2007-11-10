@@ -211,15 +211,6 @@ public class ModelConstraintsManager implements IComponentLifecycle {
       return null;
     }
 
-//    if (!myAddedLanguageNamespaces.containsKey(namespace)) {
-//      processLanguageAdded(MPSModuleRepository.getInstance().getLanguage(namespace));
-//    }
-//
-//    language is not loaded yet (bootstrap)?
-//    if (!myAddedLanguageNamespaces.containsKey(namespace)) {
-//      return null;
-//    }
-
     final StringBuilder builder = StringBuilderSpinAllocator.alloc();
     try {
       builder.append('#');
