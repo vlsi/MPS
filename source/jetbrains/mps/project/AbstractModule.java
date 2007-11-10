@@ -473,7 +473,7 @@ public abstract class AbstractModule implements IModule {
     result.append("Bundle-ManifestVersion: 2\n");
     result.append("Bundle-SymbolicName: ").append(getModuleUID()).append("\n");
     result.append("Eclipse-LazyStart: true\n");
-    result.append("Require-Bundle: ").append(getRequiredBundlesString()).append("\n");
+    result.append("Require-Bundle: \n").append(getRequiredBundlesString());
     if (getClassPathString().length() > 0) {
       result.append("Bundle-Classpath: \n").append(getClassPathString());
     }
@@ -485,21 +485,29 @@ public abstract class AbstractModule implements IModule {
 
   protected String getRequiredBundlesString() {
     StringBuilder result = new StringBuilder();
-    result.append("jetbrains.mps");
-    List<String> modules = getExplicitlyDependOnModuleUIDs();
-    for (Language l : BootstrapLanguages.getInstance().getLanguagesUsedInCore()) {
-      modules.add(l.getModuleUID());
-    }
-    for (String m : modules) {
-      if (result.length() > 0) {
+    List<String> requiredBundles = getRequiredBundles();
+    for (int i = 0; i < requiredBundles.size(); i++) {
+      String m = requiredBundles.get(i);
+      result.append("  ").append(m).append(";visibility:=reexport");
+      if (i != requiredBundles.size() - 1) {
         result.append(",");
       }
-      result.append(m);
+      result.append("\n");
     }
     return result.toString();
   }
 
-  protected String getClassPathString() {
+  private List<String> getRequiredBundles() {
+    List<String> result = new ArrayList<String>();
+    result.add("jetbrains.mps");
+    for (Language l : BootstrapLanguages.getInstance().getLanguagesUsedInCore()) {
+      result.add(l.getModuleUID());
+    }
+    result.addAll(getExplicitlyDependOnModuleUIDs());
+    return result;
+  }
+
+  private String getClassPathString() {
     StringBuilder result = new StringBuilder();
 
     File descriptor = getDescriptorFile();
@@ -533,7 +541,7 @@ public abstract class AbstractModule implements IModule {
       result.append("\n");
     }
     return result.toString();
-  }
+  }    
 
   protected List<String> getExportedPackages() {
     return new ArrayList<String>();
