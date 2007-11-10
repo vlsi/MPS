@@ -86,14 +86,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public void initComponent() {
-//    try {
-//      EclipseStarter.main(new String[] { "-configuration ",  "C:/temp/configurartion"});
-//    } catch (Exception e) {
-//      e.printStackTrace();
-//    }
-//
-//    myContext = EclipseStarter.getSystemBundleContext();
-
     updateClassPath();
     
     CommandProcessor.instance().addCommandListener(new CommandAdapter() {
@@ -284,7 +276,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
    * USE {IModule.getClass(String name)} INSTEAD
    */
   public Class getClassFor(IModule module, String classFqName) {
-
     if (!myUseOSGI) {
       RBundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
 
