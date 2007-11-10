@@ -109,13 +109,21 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
       if (!toReload.isEmpty()) {
         String[] reloadList = toReload.toArray(new String[0]);
-        myRuntimeEnvironment.reload(reloadList);
+
+        if (!myUseOSGI) {        
+          myRuntimeEnvironment.reload(reloadList);
+        } else {
+          //todo
+        }
       }
 
       if (!toRemove.isEmpty()) {
-        String[] unloadList = toRemove.toArray(new String[0]);
-                        
-        myRuntimeEnvironment.unload(unloadList);
+        if (!myUseOSGI) {
+          String[] unloadList = toRemove.toArray(new String[0]);
+          myRuntimeEnvironment.unload(unloadList);
+        } else {
+          //todo
+        }
       }
 
       if (!toAdd.isEmpty()) {
@@ -294,7 +302,10 @@ public class ClassLoaderManager implements IComponentLifecycle {
       Bundle b = myOSGIBundles.get(module.getModuleUID());
       try {
         return b.loadClass(classFqName);
-      } catch (ClassNotFoundException e) {
+      } catch (ClassNotFoundException e) {        
+        if (e.getMessage().contains("because the bundle")) {
+          LOG.error(e);
+        }
         return null;
       } catch (NoClassDefFoundError e) {
         LOG.error(e);
