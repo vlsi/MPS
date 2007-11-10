@@ -367,14 +367,17 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       }
     }
 
+    public Class getClass(String fqName) {
+      for (IModule m : getDependOnModules()) {
+        Class result = m.getClass(fqName);
+        if (result != null) {
+          return result;
+        }
+      }
+      return null;
+    }
+
     public String toString() {
-//      String generatorsString = "/";
-//      for (Generator generator : GenerationSessionContext.this.getGeneratorModules()) {
-//        generatorsString += generator.getModuleUID();
-//        generatorsString += "/";
-//      }
-//
-//      return "TransientModule:[" + myInvocationModule + "]->[" + generatorsString + "] ";
       return myText;
     }
 

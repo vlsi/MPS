@@ -182,6 +182,10 @@ public class Generator extends AbstractModule {
     return result;
   }
 
+  public Class getClass(String fqName) {
+    return getSourceLanguage().getClass(fqName);
+  }
+
   public void convert() {
     ConversionUtil.convert(this, myGeneratorDescriptor.getModuleRoots());
   }
@@ -194,5 +198,5 @@ public class Generator extends AbstractModule {
   @Nullable
   public File getClassesGen() {
     return mySourceLanguage.getClassesGen();
-  }
+  }    
 }

@@ -159,6 +159,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
       try {
         File file = module.getDescriptorFile();
         if (file == null) {
+          //it's generator or stuff like this
           return;
         }
         String bundleHome = "reference:file:/" + file.getParentFile().getAbsolutePath();
