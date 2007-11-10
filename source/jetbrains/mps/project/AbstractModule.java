@@ -188,7 +188,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   /**
-   * @return all modules which this explicitly and immediately depends on,
+   *g @return all modules which this explicitly and immediately depends on,
    *         i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
    */
   @NotNull
@@ -309,6 +309,15 @@ public abstract class AbstractModule implements IModule {
     }
 
     return result;
+  }
+
+  protected void collectPackages(List<String> result, String current) {    
+    if (!"".equals(current)) {
+      result.add(current);
+    }
+    for (String subpack : getRuntimeClasspath().getSubpackages(current)) {
+      collectPackages(result, subpack);
+    }
   }
 
   protected void rereadModels() {

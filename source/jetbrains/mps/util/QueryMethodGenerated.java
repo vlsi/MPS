@@ -23,7 +23,7 @@ public class QueryMethodGenerated {
     for (ModelOwner owner : SModelRepository.getInstance().getOwners(smd)) {
       if (owner instanceof Generator && SModelStereotype.TEMPLATES.equals(smd.getStereotype())) {
         Generator g = (Generator) owner;
-        return g.getSourceLanguage();
+        return g;
       }
 
       if (owner instanceof Language && ((Language) owner).getAspectModelDescriptors().contains(smd)) {

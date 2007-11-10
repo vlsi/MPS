@@ -153,7 +153,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
       myRuntimeEnvironment.add(b);
 
-    } else {      
+    } else {
       if (module.getBundleHome() == null) {
         return; //i.e. transient module
       }

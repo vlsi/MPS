@@ -204,4 +204,10 @@ public class Solution extends AbstractModule {
     SolutionDescriptor descriptor = DescriptorsPersistence.loadSolutionDescriptor(file, model);
     setSolutionDescriptor(descriptor);
   }
+
+  protected List<String> getExportedPackages() {
+    List<String> result = new ArrayList<String>();
+    collectPackages(result, "");
+    return result;
+  }
 }

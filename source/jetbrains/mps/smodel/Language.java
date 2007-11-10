@@ -21,7 +21,6 @@ import jetbrains.mps.refactoring.languages.RenameModelRefactoring;
 import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.reloading.ReloadUtils;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language.LanguageAspectStatus.AspectKind;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -412,15 +411,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   private List<String> getGeneratorsPacks() {
     List<String> result = new ArrayList<String>();
 
-    collectPacks(result, getModuleUID() + ".generator");
+    collectPackages(result, getModuleUID() + ".generator");
     return result;
-  }
-
-  private void collectPacks(List<String> result, String current) {
-    result.add(current);
-    for (String subpack : getRuntimeClasspath().getSubpackages(current)) {
-      collectPacks(result, subpack);
-    }
   }
 
   private void registerAspectListener() {
