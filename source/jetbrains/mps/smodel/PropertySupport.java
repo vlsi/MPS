@@ -78,8 +78,12 @@ public abstract class PropertySupport {
     PropertySupport propertySupport = null;
     try {
       Class propertySupportClass = l.getClass(propertySupportClassName);
-      Constructor constructor = propertySupportClass.getConstructor();
-      propertySupport = (PropertySupport) constructor.newInstance();
+      if (propertySupportClass != null) {
+        Constructor constructor = propertySupportClass.getConstructor();
+        propertySupport = (PropertySupport) constructor.newInstance();
+      } else {
+        LOG.error("Can't find a class " + propertySupportClassName);
+      }
     } catch (NoSuchMethodException e) {
       LOG.error(e);
     } catch (InstantiationException e) {
