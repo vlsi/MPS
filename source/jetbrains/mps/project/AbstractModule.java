@@ -504,10 +504,34 @@ public abstract class AbstractModule implements IModule {
 
   protected String getClassPathString() {
     StringBuilder result = new StringBuilder();
+
+    File descriptor = getDescriptorFile();
+    if (descriptor == null) {
+      return "";
+    }
+
+    String basePath = FileUtil.getCanonicalPath(descriptor.getParent());
     for (String s : getRuntimeClassPathItems()) {
-      result.append("  ").append(s).append("\n");
+      String relativePath = getPathRelativeTo(s, basePath);
+      relativePath = relativePath.replace(File.separatorChar, '/');
+      result.append("  ").append(relativePath).append("\n");
     }
     return result.toString();
+  }
+
+
+  private String getPathRelativeTo(String path, String base) {
+    if (path.startsWith(base)) {
+      return path.substring(base.length());
+    }
+
+    String relativeToParent = getPathRelativeTo(path, new File(base).getParent());
+
+    if (relativeToParent.startsWith(File.separator)) {
+      return ".." + relativeToParent;
+    } else {
+      return ".." + File.separator + relativeToParent;
+    }
   }
 
   protected String getExportedPackages() {

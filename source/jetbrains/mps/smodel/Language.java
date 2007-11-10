@@ -397,7 +397,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     List<String> aspects = CollectionUtil.asList(
       ".editor", ".actions", ".constraints", ".intentions",
       ".builder", ".scripts", ".helgins", ".plugin"
-    );
+    );    
+    result.append("  ").append(getModuleUID()).append(",").append("\n");
     for (int i = 0; i < aspects.size(); i++) {
       String aspect = aspects.get(i);
       result.append("  ").append(getModuleUID()).append(aspect);

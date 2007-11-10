@@ -296,6 +296,9 @@ public class ClassLoaderManager implements IComponentLifecycle {
         return b.loadClass(classFqName);
       } catch (ClassNotFoundException e) {
         return null;
+      } catch (NoClassDefFoundError e) {
+        LOG.error(e);
+        return null;
       }
     }
   }
