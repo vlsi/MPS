@@ -368,7 +368,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
 
     public Class getClass(String fqName) {
-      for (IModule m : getDependOnModules()) {
+      for (IModule m : getAllDependOnModules(IModule.class)) {
         Class result = m.getClass(fqName);
         if (result != null) {
           return result;

@@ -183,14 +183,7 @@ public class Generator extends AbstractModule {
   }
 
   public Class getClass(String fqName) {    
-    for (IModule m : getDependOnModules()) {
-      Class result = m.getClass(fqName);
-      if (result != null) {
-        return result;
-      }
-    }
-
-    return null;
+    return getSourceLanguage().getClass(fqName);
   }
 
   public void convert() {
