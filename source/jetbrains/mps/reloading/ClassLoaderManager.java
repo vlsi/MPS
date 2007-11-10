@@ -42,7 +42,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   private Map<String, Bundle> myOSGIBundles = new HashMap<String, Bundle>();
 
-  private boolean myUseOSGI = false;
+  private boolean myUseOSGI = MPSActivator.ourBundleContext != null;
 
   public static ClassLoaderManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(ClassLoaderManager.class);
