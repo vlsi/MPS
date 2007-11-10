@@ -136,10 +136,10 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public <E extends INodeAdapter> List<E> getSubnodes(final Class<E> cls) {
+    // this strategy is very effective when model doesn't contain too many nodes of required type
     FastNodeFinder finder = getModel().getModelDescriptor().getFastNodeFinder();
     AbstractConceptDeclaration acd = SModelUtil_new.findConceptDeclaration(cls.getName(), GlobalScope.getInstance());
     List<E> result = toAdapters(finder.getNodes(acd, true));
-
     Iterator<E> it = result.iterator();
     while (it.hasNext()) {
       E current = it.next();
@@ -149,6 +149,13 @@ public abstract class BaseAdapter implements INodeAdapter {
     }
 
     return result;
+
+// this strategy must be more effective for small subtree     
+//    return toAdapters(myNode.getSubnodes(new Condition<SNode>() {
+//      public boolean met(SNode node) {
+//        return cls.isInstance(node.getAdapter());
+//      }
+//    }));
   }
 
   @NotNull

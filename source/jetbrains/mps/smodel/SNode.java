@@ -81,6 +81,7 @@ public final class SNode {
 
   private List<SNode> _children() {
     if (myChildren == null) {
+      if (myChildrenLoader == null) return Collections.emptyList();
       myChildren = new ArrayList<SNode>(2);
       if (myChildrenLoader != null) {
         myModel.runLoadingAction(new Runnable() {
@@ -808,7 +809,7 @@ public final class SNode {
       getModel().fireBeforeChildRemovedEvent(this, wasRole, wasChild, index);
     }
 
-    _children().remove(wasChild);
+    _children().remove(index);
     wasChild.myParent = null;
     wasChild.myRoleInParent = null;
     wasChild.unRegisterFromModel();
@@ -843,7 +844,11 @@ public final class SNode {
 
     ModelChange.assertLegalNodeChange(this);
 
-    _children().add(index, child);
+//    _children().add(index, child);
+    _children();
+    if (myChildren == null) myChildren = new ArrayList<SNode>();
+    myChildren.add(index, child);
+
     child.myRoleInParent = InternUtil.intern(role);
     child.myParent = this;
 
