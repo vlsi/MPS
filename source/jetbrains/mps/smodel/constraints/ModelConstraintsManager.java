@@ -373,6 +373,7 @@ public class ModelConstraintsManager implements IComponentLifecycle {
 
         if (constraintsClass == null) {
           LOG.error("Can't find " + className);
+          continue;
         }
 
         if (IModelConstraints.class.isAssignableFrom(constraintsClass)) {
