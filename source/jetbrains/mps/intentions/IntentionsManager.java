@@ -6,6 +6,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.util.NameUtil;
 
 import java.util.*;
 
@@ -56,7 +57,7 @@ public class IntentionsManager {
               intentions.add((Intention)intention);
               myIntentions.put(conceptName,intentions);
             } else {
-              LOG.error("Intention is registered but isn't compiled", intentionDeclaration);
+              LOG.error("Intention is registered but isn't compiled " + NameUtil.nodeFQName(intentionDeclaration), intentionDeclaration);
             }
           } catch (Exception e){
             LOG.error(e, intentionDeclaration);

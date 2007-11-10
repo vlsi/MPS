@@ -269,10 +269,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return null;
   }
 
-  /**
-   * DO NOT USE THIS METHOD DIRECTLY. I'M GOING TO GET RID OF IT.
-   * USE {IModule.getClass(String name)} INSTEAD
-   */
   public Class getClassFor(IModule module, String classFqName) {
     if (!myUseOSGI) {
       RBundle bundle = myRuntimeEnvironment.get(module.getModuleUID());

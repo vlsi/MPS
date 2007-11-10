@@ -489,11 +489,15 @@ public abstract class AbstractModule implements IModule {
   protected String getRequiredBundlesString() {
     StringBuilder result = new StringBuilder();
     result.append("jetbrains.mps");
-    for (IModule m : getDependOnModules()) {
+    List<String> modules = getExplicitlyDependOnModuleUIDs();
+    for (Language l : BootstrapLanguages.getInstance().getLanguagesUsedInCore()) {
+      modules.add(l.getModuleUID());
+    }
+    for (String m : modules) {
       if (result.length() > 0) {
         result.append(",");
       }
-      result.append(m.getModuleUID());
+      result.append(m);
     }
     return result.toString();
   }
