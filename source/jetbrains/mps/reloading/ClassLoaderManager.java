@@ -9,19 +9,16 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandKind;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
-import jetbrains.mps.runtime.Bundle;
+import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
-import org.eclipse.core.runtime.adaptor.EclipseStarter;
 import org.osgi.framework.BundleContext;
-import org.osgi.framework.BundleException;
 import sun.misc.Launcher;
 
 import java.io.File;
-import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
@@ -139,7 +136,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
 
     IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
-    Bundle b = new Bundle(module.getModuleUID(), module.getByteCodeLocator());
+    RBundle b = new RBundle(module.getModuleUID(), module.getByteCodeLocator());
 
     for (String dep : module.getExplicitlyDependOnModuleUIDs()) {
       b.addDependency(dep);
@@ -157,7 +154,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
 //      }
 //      String bundleHome = "file:/" + file.getParentFile().getAbsolutePath();
 //      System.out.println("install to " + bundleHome);
-//      org.osgi.framework.Bundle bundle = myContext.installBundle(bundleHome, null);
+//      org.osgi.framework.RBundle bundle = myContext.installBundle(bundleHome, null);
 //      bundle.update();
 //    } catch (Exception e) {
 //      e.printStackTrace();
@@ -187,7 +184,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
     if (changeModule == null) {
       myRuntimeEnvironment.reloadAll();
     } else {
-      myRuntimeEnvironment.replace(new Bundle(changeModule.getModuleUID(), changeModule.getByteCodeLocator()));
+      myRuntimeEnvironment.replace(new RBundle(changeModule.getModuleUID(), changeModule.getByteCodeLocator()));
     }
 
 
@@ -273,7 +270,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
    * USE {IModule.getClass(String name)} INSTEAD
    */
   public ClassLoader getClassLoaderFor(IModule module) {
-    Bundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
+    RBundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
 
     if (bundle == null) {
       myRuntimeEnvironment.get(module.getModuleUID());
