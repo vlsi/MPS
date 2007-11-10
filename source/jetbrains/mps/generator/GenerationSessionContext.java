@@ -367,6 +367,9 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       }
     }
 
+    public void createManifest() {      
+    }
+
     public Class getClass(String fqName) {
       for (IModule m : getAllDependOnModules(IModule.class)) {
         Class result = m.getClass(fqName);

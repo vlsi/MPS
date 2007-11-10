@@ -153,17 +153,15 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
       myRuntimeEnvironment.add(b);
 
-    } else {
+    } else {      
+      if (module.getBundleHome() == null) {
+        return; //i.e. transient module
+      }
+
       module.createManifest();
 
       try {
-        File file = module.getDescriptorFile();
-        if (file == null) {
-          //it's generator or stuff like this
-          return;
-        }
-        String bundleHome = "reference:file:/" + file.getParentFile().getAbsolutePath();
-        Bundle bundle = MPSActivator.ourBundleContext.installBundle(bundleHome);
+        Bundle bundle = MPSActivator.ourBundleContext.installBundle("reference:file:/" + module.getBundleHome());
 
         myOSGIBundles.put(moduleUID, bundle);
 

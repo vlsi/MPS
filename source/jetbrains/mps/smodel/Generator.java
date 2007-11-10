@@ -182,8 +182,15 @@ public class Generator extends AbstractModule {
     return result;
   }
 
-  public Class getClass(String fqName) {    
-    return getSourceLanguage().getClass(fqName);
+  public File getBundleHome() {
+    //eclipse's OSGi implementation doesn't allow directories with #. Probably #s are
+    //forbidden inside urls
+    File home = new File(getSourceLanguage().getBundleHome(), getModuleUID().replace('#', '.'));
+    if (!home.exists()) {
+      home.mkdirs();
+    }
+
+    return home.getAbsoluteFile();
   }
 
   public void convert() {

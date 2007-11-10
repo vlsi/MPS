@@ -80,6 +80,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   IClassPathItem getModuleWithDependenciesClassPathItem();
 
+  File getBundleHome();
+
   String generateManifest();
 
   void createManifest();  

@@ -467,6 +467,14 @@ public abstract class AbstractModule implements IModule {
     return item;
   }
 
+  public File getBundleHome() {
+    File descriptorFile = getDescriptorFile();
+    if (descriptorFile != null) {
+      return descriptorFile.getParentFile().getAbsoluteFile();
+    }
+    return null;
+  }
+
   public String generateManifest() {
     StringBuilder result = new StringBuilder();
     result.append("Manifest-Version: 1.0\n");
@@ -565,13 +573,12 @@ public abstract class AbstractModule implements IModule {
 
   public void createManifest() {
     String manifestContents = generateManifest();
-    File descriptorFile = getDescriptorFile();
-    if (descriptorFile == null) {
-      return;
-    }
 
-    File descriptorDir = descriptorFile.getParentFile();
-    File metaInfDir = new File(descriptorDir, "META-INF");
+    File bundleHome = getBundleHome();
+
+    assert bundleHome != null;
+
+    File metaInfDir = new File(bundleHome, "META-INF");
 
     metaInfDir.mkdir();
 
