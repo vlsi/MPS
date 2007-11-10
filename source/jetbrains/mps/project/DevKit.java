@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -203,6 +204,13 @@ public class DevKit extends AbstractModule {
   @Nullable
   public String getDevKitPluginClass() {
     return myDescriptor.getDevKitPlugin();
+  }
+
+  protected String getExportedPackages() {
+    if (getDevKitPluginClass() == null) {
+      return "";
+    }    
+    return "  " + NameUtil.namespaceFromLongName(getDevKitPluginClass()) + "\n";
   }
 
   private class DevKitEventTranslator extends CommandEventTranslator {

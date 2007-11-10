@@ -303,9 +303,9 @@ public class ClassLoaderManager implements IComponentLifecycle {
       try {
         return b.loadClass(classFqName);
       } catch (ClassNotFoundException e) {        
-        if (e.getMessage().contains("because the bundle")) {
+//        if (e.getMessage().contains("because the bundle")) {
           LOG.error(e);
-        }
+//        }
         return null;
       } catch (NoClassDefFoundError e) {
         LOG.error(e);
