@@ -2,20 +2,24 @@ package jetbrains.mps.reloading;
 
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
+import jetbrains.mps.ide.MPSActivator;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandKind;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProjects;
 import jetbrains.mps.runtime.RBundle;
 import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
-import org.osgi.framework.BundleContext;
+import org.osgi.framework.Bundle;
 import sun.misc.Launcher;
 
 import java.io.File;
@@ -32,10 +36,13 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private MPSModuleRepository myModuleRepository;
   private RuntimeEnvironment myRuntimeEnvironment = new RuntimeEnvironment();
   private List<IReloadHandler> myReloadHandlers = new ArrayList<IReloadHandler>();
-  private BundleContext myContext;
 
   private Set<String> myToRemove = new LinkedHashSet<String>();
   private Set<String> myToAdd = new LinkedHashSet<String>();
+
+  private Map<String, Bundle> myOSGIBundles = new HashMap<String, Bundle>();
+
+  private boolean myUseOSGI = false;
 
   public static ClassLoaderManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(ClassLoaderManager.class);
@@ -131,34 +138,41 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   private void addModule(String moduleUID) {
-    if (myRuntimeEnvironment.get(moduleUID) != null) {
-      return;
-    }
-
     IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
-    RBundle b = new RBundle(module.getModuleUID(), module.getByteCodeLocator());
+    if (!myUseOSGI) {
 
-    for (String dep : module.getExplicitlyDependOnModuleUIDs()) {
-      b.addDependency(dep);
+      if (myRuntimeEnvironment.get(moduleUID) != null) {
+        return;
+      }
+
+      RBundle b = new RBundle(module.getModuleUID(), module.getByteCodeLocator());
+
+      for (String dep : module.getExplicitlyDependOnModuleUIDs()) {
+        b.addDependency(dep);
+      }
+
+      myRuntimeEnvironment.add(b);
+
+    } else {
+      module.createManifest();
+
+      try {
+        File file = module.getDescriptorFile();
+        if (file == null) {
+          return;
+        }
+        String bundleHome = "reference:file:/" + file.getParentFile().getAbsolutePath();
+        System.out.println("install to " + bundleHome);
+
+        Bundle bundle = MPSActivator.ourBundleContext.installBundle(bundleHome);
+
+        myOSGIBundles.put(moduleUID, bundle);
+
+        bundle.update();
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
     }
-
-    myRuntimeEnvironment.add(b);
-
-
-//    module.createManifest();
-//
-//    try {
-//      File file = module.getDescriptorFile();
-//      if (file == null) {
-//        return;
-//      }
-//      String bundleHome = "file:/" + file.getParentFile().getAbsolutePath();
-//      System.out.println("install to " + bundleHome);
-//      org.osgi.framework.RBundle bundle = myContext.installBundle(bundleHome, null);
-//      bundle.update();
-//    } catch (Exception e) {
-//      e.printStackTrace();
-//    }
   }
 
   @Dependency
@@ -269,20 +283,36 @@ public class ClassLoaderManager implements IComponentLifecycle {
    * DO NOT USE THIS METHOD DIRECTLY. I'M GOING TO GET RID OF IT.
    * USE {IModule.getClass(String name)} INSTEAD
    */
-  public ClassLoader getClassLoaderFor(IModule module) {
-    RBundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
+  public Class getClassFor(IModule module, String classFqName) {
 
-    if (bundle == null) {
-      myRuntimeEnvironment.get(module.getModuleUID());
+    if (!myUseOSGI) {
+      RBundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
+
+      if (bundle == null) {
+        myRuntimeEnvironment.get(module.getModuleUID());
+      }
+
+      assert bundle != null : "Can't find a bundle for a module " + module.getModuleUID();
+
+      if (!bundle.isInitialized()) {
+        myRuntimeEnvironment.init(bundle);
+      }
+
+      ClassLoader cl = bundle.getClassLoader();
+
+      try {
+        return Class.forName(classFqName, true, cl);
+      } catch (ClassNotFoundException e) {
+        return null;
+      }
+    } else {
+      Bundle b = myOSGIBundles.get(module.getModuleUID());
+      try {
+        return b.loadClass(classFqName);
+      } catch (ClassNotFoundException e) {
+        return null;
+      }
     }
-
-    assert bundle != null : "Can't find a bundle for a module " + module.getModuleUID();
-
-    if (!bundle.isInitialized()) {
-      myRuntimeEnvironment.init(bundle);
-    }
-
-    return bundle.getClassLoader();
   }
 
   public void addReloadHandler(IReloadHandler handler) {
