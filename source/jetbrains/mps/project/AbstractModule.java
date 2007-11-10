@@ -15,11 +15,8 @@ import jetbrains.mps.reloading.*;
 import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.eclipse.jdt.internal.compiler.classfmt.ClassFormatException;
-import org.osgi.framework.Bundle;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.*;
 import java.net.URL;
 
@@ -480,8 +477,8 @@ public abstract class AbstractModule implements IModule {
     if (getClassPathString().length() > 0) {
       result.append("Bundle-Classpath: \n").append(getClassPathString());
     }
-    if (getExportedPackages().length() > 0) {
-      result.append("Export-Package:\n").append(getExportedPackages());
+    if (getExportedPackagesString().length() > 0) {
+      result.append("Export-Package:\n").append(getExportedPackagesString());
     }
     return result.toString();
   }
@@ -524,6 +521,24 @@ public abstract class AbstractModule implements IModule {
     return result.toString();
   }
 
+  private String getExportedPackagesString() {
+    StringBuilder result = new StringBuilder();
+    List<String> packs = getExportedPackages();
+    for (int i = 0; i < packs.size(); i++) {
+      String s = getExportedPackages().get(i);
+      result.append("  ").append(s);
+      if (i != packs.size() - 1) {
+        result.append(",");
+      }
+      result.append("\n");
+    }
+    return result.toString();
+  }
+
+  protected List<String> getExportedPackages() {
+    return new ArrayList<String>();
+  }
+
 
   private String getPathRelativeTo(String path, String base) {
     if (path.startsWith(base)) {
@@ -539,9 +554,6 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
-  protected String getExportedPackages() {
-    return "";
-  }
 
   public void createManifest() {
     String manifestContents = generateManifest();

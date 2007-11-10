@@ -206,11 +206,12 @@ public class DevKit extends AbstractModule {
     return myDescriptor.getDevKitPlugin();
   }
 
-  protected String getExportedPackages() {
-    if (getDevKitPluginClass() == null) {
-      return "";
-    }    
-    return "  " + NameUtil.namespaceFromLongName(getDevKitPluginClass()) + "\n";
+  protected List<String> getExportedPackages() {
+    List<String> result = new ArrayList<String>();
+    if (getDevKitPluginClass() != null) {
+      result.add(NameUtil.namespaceFromLongName(getDevKitPluginClass()));
+    }
+    return result;
   }
 
   private class DevKitEventTranslator extends CommandEventTranslator {
