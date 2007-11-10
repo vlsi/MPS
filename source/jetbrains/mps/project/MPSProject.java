@@ -7,10 +7,7 @@ import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.ide.AbstractProjectFrame;
-import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.ProjectPathsDialog;
+import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -571,8 +568,9 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           Object component = myContext.get(cls);
           if (component instanceof IExternalizableComponent) {
             Element componentElement = new Element(COMPONENT);
-            componentElement.setAttribute(CLASS, cls.getName());
+            componentElement.setAttribute(CLASS, cls.getName());            
 
+            //todo use osgi stuff instead
             if (component.getClass().getClassLoader() instanceof BundleClassLoader) {
               BundleClassLoader bcl = (BundleClassLoader) component.getClass().getClassLoader();
               componentElement.setAttribute(BUNDLE, bcl.getBundle().getName());

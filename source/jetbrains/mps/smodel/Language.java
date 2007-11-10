@@ -403,7 +403,23 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     for (String aspect : aspects) {
       result.add(getModuleUID() + aspect);
     }
+
+    result.addAll(getGeneratorsPacks());
+
     return result;
+  }
+
+  private List<String> getGeneratorsPacks() {
+    List<String> result = new ArrayList<String>();
+    collectPacks(result, getModuleUID() + ".generator");
+    return result;
+  }
+
+  private void collectPacks(List<String> result, String current) {
+    result.add(current);
+    for (String subpack : getRuntimeClasspath().getSubpackages(current)) {
+      collectPacks(result, current + "." + subpack);
+    }
   }
 
   private void registerAspectListener() {
