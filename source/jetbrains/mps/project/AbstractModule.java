@@ -471,12 +471,43 @@ public abstract class AbstractModule implements IModule {
   }
 
   public String generateManifest() {
-    return "Manifest-Version: 1.0\n" +
-           "Bundle-ManifestVersion: 2\n" +
-           "Bundle-SymbolicName: " + getModuleUID() + "\n" +
-           "Eclipse-LazyStart: true\n" +
-           "Require-Bundle: " + getRequiredBundlesString() + "\n" +
-           "Bundle-Classpath: /classes\n";
+    StringBuilder result = new StringBuilder();
+    result.append("Manifest-Version: 1.0\n");
+    result.append("Bundle-ManifestVersion: 2\n");
+    result.append("Bundle-SymbolicName: ").append(getModuleUID()).append("\n");
+    result.append("Eclipse-LazyStart: true\n");
+    result.append("Require-Bundle: ").append(getRequiredBundlesString()).append("\n");
+    if (getClassPathString().length() > 0) {
+      result.append("Bundle-Classpath: \n").append(getClassPathString());
+    }
+    if (getExportedPackages().length() > 0) {
+      result.append("Export-Package:\n").append(getExportedPackages());
+    }
+    return result.toString();
+  }
+
+  protected String getRequiredBundlesString() {
+    StringBuilder result = new StringBuilder();
+    result.append("jetbrains.mps");
+    for (IModule m : getDependOnModules()) {
+      if (result.length() > 0) {
+        result.append(",");
+      }
+      result.append(m.getModuleUID());
+    }
+    return result.toString();
+  }
+
+  protected String getClassPathString() {
+    StringBuilder result = new StringBuilder();
+    for (String s : getRuntimeClassPathItems()) {
+      result.append("  ").append(s).append("\n");
+    }
+    return result.toString();
+  }
+
+  protected String getExportedPackages() {
+    return "";
   }
 
   public void createManifest() {
@@ -493,23 +524,7 @@ public abstract class AbstractModule implements IModule {
 
     File manifest = new File(metaInfDir, "MANIFEST.MF");
 
-    if (manifest.exists()) {
-      System.out.println("MANIFEST ALREADY EXISTS " + manifest);
-    }
-
     FileUtil.write(manifest, manifestContents);
-  }
-
-  private String getRequiredBundlesString() {
-    StringBuilder result = new StringBuilder();
-    result.append("jetbrains.mps");
-    for (IModule m : getDependOnModules()) {
-      if (result.length() > 0) {
-        result.append(",");
-      }
-      result.append(m.getModuleUID());
-    }    
-    return result.toString();
   }
 
   public void invalidateCaches() {

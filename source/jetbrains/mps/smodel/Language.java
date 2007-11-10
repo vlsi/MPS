@@ -392,6 +392,23 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     };
   }
 
+  protected String getExportedPackages() {
+    StringBuilder result = new StringBuilder();
+    List<String> aspects = CollectionUtil.asList(
+      ".editor", ".actions", ".constraints", ".intentions",
+      ".builder", ".scripts", ".helgins", ".plugin"
+    );
+    for (int i = 0; i < aspects.size(); i++) {
+      String aspect = aspects.get(i);
+      result.append("  ").append(getModuleUID()).append(aspect);
+      if (i != aspects.size() - 1) {
+        result.append(",");
+      }
+      result.append("\n");
+    }
+    return result.toString();
+  }
+
   private void registerAspectListener() {
     for (SModelDescriptor aspectModel : getAspectModelDescriptors()) {
       if (aspectModel != null) aspectModel.addModelCommandListener(myAspectModelsListener);

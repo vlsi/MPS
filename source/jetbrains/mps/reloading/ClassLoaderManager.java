@@ -154,8 +154,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
           return;
         }
         String bundleHome = "reference:file:/" + file.getParentFile().getAbsolutePath();
-        System.out.println("install to " + bundleHome);
-
         Bundle bundle = MPSActivator.ourBundleContext.installBundle(bundleHome);
 
         myOSGIBundles.put(moduleUID, bundle);
