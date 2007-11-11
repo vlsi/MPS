@@ -141,11 +141,14 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
       if (!toReload.isEmpty()) {
         String[] reloadList = toReload.toArray(new String[0]);
-
         if (!myUseOSGI) {
           myRuntimeEnvironment.reload(reloadList);
         } else {
-          //todo
+          Bundle[] bundles = new Bundle[reloadList.length];
+          for (int i = 0; i < reloadList.length; i++) {
+            bundles[i] = myOSGIBundles.get(i);
+          }
+          refreshBundles(bundles);
         }
       }
 
@@ -154,7 +157,17 @@ public class ClassLoaderManager implements IComponentLifecycle {
         if (!myUseOSGI) {
           myRuntimeEnvironment.unload(unloadList);
         } else {
-          //todo
+          Bundle[] bundles = new Bundle[unloadList.length];
+          for (int i = 0; i < unloadList.length; i++) {
+            try {
+              Bundle bundle = myOSGIBundles.get(unloadList[i]);
+              bundles[i] = bundle;
+              bundle.uninstall();
+            } catch (BundleException e) {
+              LOG.error(e);
+            }
+          }
+          refreshBundles(bundles);
         }
       }
 
