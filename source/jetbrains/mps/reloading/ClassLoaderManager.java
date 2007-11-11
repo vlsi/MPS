@@ -80,7 +80,13 @@ public class ClassLoaderManager implements IComponentLifecycle {
       }
 
       public void moduleRemoved(IModule module) {
-        myToRemove.add(module.getModuleUID());
+        if (!myUseOSGI) {
+          myToRemove.add(module.getModuleUID());
+        } else {
+          if (myOSGIBundles.get(module.getModuleUID()) != null) {
+            myToRemove.add(module.getModuleUID());
+          }
+        }
 
         if (CommandProcessor.instance().getCurrentCommandKind() == CommandKind.GENERATION) {
           handleAddAndRemoves();
