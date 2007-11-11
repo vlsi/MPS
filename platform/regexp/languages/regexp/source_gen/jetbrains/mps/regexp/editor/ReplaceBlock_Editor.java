@@ -22,16 +22,20 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
     editorCell.setDrawBrackets(true);
     editorCell.setBracketsColor(MPSColors.DARK_MAGENTA);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174656460068");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_BodyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     ReplaceBlock_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -41,6 +45,7 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createBodyCell(context, node));
     return editorCell;
   }
+
   public EditorCell createBodyCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -52,6 +57,7 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createBodyCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("body");
@@ -68,4 +74,5 @@ public class ReplaceBlock_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

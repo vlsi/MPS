@@ -20,23 +20,29 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     BinaryRegexp_Left_Actions.setCellActions(editorCell, node, context);
   }
+
   private static void setupBasic_RightCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900573371");
     editorCell.setDrawBorder(false);
     BinaryRegexp_Right_Actions.setCellActions(editorCell, node, context);
   }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174900567679");
     editorCell.setDrawBorder(false);
   }
+
   private static void setupLabel_LeftCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
   private static void setupLabel_RightCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
+
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
   }
+
   public EditorCell createRowCell(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
     SeqRegexp_Editor.setupBasic_RowCell(editorCell, node, context);
@@ -47,6 +53,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRightCell(context, node));
     return editorCell;
   }
+
   public EditorCell createLeftCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -58,6 +65,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createLeftCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("left");
@@ -74,6 +82,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
   public EditorCell createRightCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
     provider.setAuxiliaryCellProvider(null);
@@ -85,6 +94,7 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
   }
+
   public EditorCell createRightCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("right");
@@ -101,4 +111,5 @@ public class SeqRegexp_Editor extends DefaultNodeEditor {
     } else
     return cellWithRole;
   }
+
 }

@@ -19,13 +19,17 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
-import org.osgi.framework.Bundle;
+import org.osgi.framework.*;
+import org.osgi.service.packageadmin.PackageAdmin;
 import sun.misc.Launcher;
 
 import java.io.File;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.*;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @author Kostik
@@ -42,7 +46,11 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   private Map<String, Bundle> myOSGIBundles = new HashMap<String, Bundle>();
 
-  private boolean myUseOSGI = MPSActivator.ourBundleContext != null;
+  private BundleContext myBundleContext = MPSActivator.ourBundleContext;
+  private boolean myUseOSGI = myBundleContext != null;
+  private PackageAdmin myPackageAdmin;
+
+  private final List<Runnable> myInvokeOnRefresh = new ArrayList<Runnable>();
 
   public static ClassLoaderManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(ClassLoaderManager.class);
@@ -86,13 +94,37 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public void initComponent() {
+    if (myBundleContext != null) {
+      myBundleContext.addFrameworkListener(new FrameworkListener() {
+        public void frameworkEvent(FrameworkEvent event) {
+          synchronized (myInvokeOnRefresh) {
+            if (event.getType() == FrameworkEvent.PACKAGES_REFRESHED) {
+              for (Runnable r : myInvokeOnRefresh) {
+                r.run();
+              }
+              myInvokeOnRefresh.clear();
+            }
+          }
+        }
+      });
+
+      ServiceReference ref = myBundleContext.getServiceReference(PackageAdmin.class.getName());
+      myPackageAdmin = (PackageAdmin) myBundleContext.getService(ref);
+    }
+
     updateClassPath();
-    
+
     CommandProcessor.instance().addCommandListener(new CommandAdapter() {
       public void commandFinished(@NotNull CommandEvent event) {
         handleAddAndRemoves();
       }
     });
+  }
+
+  private void invokeOnRefresh(Runnable r) {
+    synchronized (myInvokeOnRefresh) {
+      myInvokeOnRefresh.add(r);
+    }    
   }
 
   private void handleAddAndRemoves() {
@@ -110,7 +142,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
       if (!toReload.isEmpty()) {
         String[] reloadList = toReload.toArray(new String[0]);
 
-        if (!myUseOSGI) {        
+        if (!myUseOSGI) {
           myRuntimeEnvironment.reload(reloadList);
         } else {
           //todo
@@ -118,8 +150,8 @@ public class ClassLoaderManager implements IComponentLifecycle {
       }
 
       if (!toRemove.isEmpty()) {
+        String[] unloadList = toRemove.toArray(new String[0]);
         if (!myUseOSGI) {
-          String[] unloadList = toRemove.toArray(new String[0]);
           myRuntimeEnvironment.unload(unloadList);
         } else {
           //todo
@@ -161,7 +193,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
       module.createManifest();
 
       try {
-        Bundle bundle = MPSActivator.ourBundleContext.installBundle("reference:file:/" + module.getBundleHome());
+        Bundle bundle = myBundleContext.installBundle("reference:file:/" + module.getBundleHome());
 
         myOSGIBundles.put(moduleUID, bundle);
 
@@ -193,11 +225,18 @@ public class ClassLoaderManager implements IComponentLifecycle {
     LOG.debug("Updating class path");
 
     if (changeModule == null) {
-      myRuntimeEnvironment.reloadAll();
+      if (!myUseOSGI) {
+        myRuntimeEnvironment.reloadAll();
+      } else {
+        refreshBundles(myOSGIBundles.values().toArray(new Bundle[0]));
+      }
     } else {
-      myRuntimeEnvironment.replace(new RBundle(changeModule.getModuleUID(), changeModule.getByteCodeLocator()));
+      if (!myUseOSGI) {
+        myRuntimeEnvironment.replace(new RBundle(changeModule.getModuleUID(), changeModule.getByteCodeLocator()));
+      } else {
+        refreshBundles(new Bundle[] { myOSGIBundles.get(changeModule.getModuleUID())});
+      }
     }
-
 
     if (changeModule == null) {
       for (IModule m : myModuleRepository.getAllModules()) {
@@ -210,6 +249,31 @@ public class ClassLoaderManager implements IComponentLifecycle {
     }
 
     LOG.debug("Done");
+  }
+
+  private void refreshBundles(Bundle[] bundles) {
+    if (bundles.length == 0) {
+      return;
+    }
+
+    final Lock lock = new ReentrantLock();
+    final Condition refreshCompleted = lock.newCondition();
+    lock.lock();
+    try {
+      myPackageAdmin.refreshPackages(bundles);
+      invokeOnRefresh(new Runnable() {
+        public void run() {
+          lock.lock();
+          refreshCompleted.signal();
+          lock.unlock();
+        }
+      });
+      refreshCompleted.await();
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    } finally {
+      lock.unlock();
+    }
   }
 
 
