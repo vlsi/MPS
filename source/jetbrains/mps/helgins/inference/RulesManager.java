@@ -54,23 +54,27 @@ public class RulesManager {
     try {
       IHelginsDescriptor helginsDescriptor;
       Class<? extends IHelginsDescriptor> c = (Class<? extends IHelginsDescriptor>) l.getClass(packageName + "." + classname);
-      helginsDescriptor = c.newInstance();
-      myInferenceRules.addRuleSetItem(helginsDescriptor.getInferenceRules());
-      mySubtypingRules.addRuleSetItem(helginsDescriptor.getSubtypingRules());
-      mySupertypingRules.addRuleSetItem(helginsDescriptor.getSupertypingRules());
-      myComparisonRules.addRuleSetItem(helginsDescriptor.getComparisonRules());
-      myDependenciesContainer.addDependencies(helginsDescriptor.getDependencies());
-      myInferenceRules.makeConsistent();
-      mySubtypingRules.makeConsistent();
-      mySupertypingRules.makeConsistent();
-      myComparisonRules.makeConsistent();
-      myDependenciesContainer.makeConsistent();
-      myLoadedLanguages.add(l.getNamespace());
-      return true;
+      if (c != null) {
+        helginsDescriptor = c.newInstance();
+        myInferenceRules.addRuleSetItem(helginsDescriptor.getInferenceRules());
+        mySubtypingRules.addRuleSetItem(helginsDescriptor.getSubtypingRules());
+        mySupertypingRules.addRuleSetItem(helginsDescriptor.getSupertypingRules());
+        myComparisonRules.addRuleSetItem(helginsDescriptor.getComparisonRules());
+        myDependenciesContainer.addDependencies(helginsDescriptor.getDependencies());
+        myInferenceRules.makeConsistent();
+        mySubtypingRules.makeConsistent();
+        mySupertypingRules.makeConsistent();
+        myComparisonRules.makeConsistent();
+        myDependenciesContainer.makeConsistent();
+        return true;
+      } else {
+        return false;
+      }
     } catch(Throwable t) {
  //     LOG.error("fail to instantiate HelginsDescriptor for language " + l.getNamespace());
-      myLoadedLanguages.add(l.getNamespace());
       return false;
+    } finally {
+      myLoadedLanguages.add(l.getNamespace());
     }
   }
 
