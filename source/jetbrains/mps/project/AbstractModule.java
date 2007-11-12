@@ -546,7 +546,7 @@ public abstract class AbstractModule implements IModule {
     return result.toString();
   }
 
-  private String getExportedPackagesString() {
+  public String getExportedPackagesString() {
     StringBuilder result = new StringBuilder();
     List<String> packs = getExportedPackages();
     for (int i = 0; i < packs.size(); i++) {

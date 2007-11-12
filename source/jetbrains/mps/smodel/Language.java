@@ -394,12 +394,20 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   protected List<String> getExportedPackages() {
     List<String> result = new ArrayList<String>();
-    List<String> aspects = CollectionUtil.asList(
-      ".structure", ".editor", ".actions", ".constraints",
+    List<String> aspects = new ArrayList<String>();
+    if (!BootstrapLanguages.getInstance().getLanguagesUsedInCore().contains(this)) {
+      aspects.add(".structure");
+    }
+        
+    aspects.addAll(CollectionUtil.asList(
+      ".editor", ".actions", ".constraints",
       ".intentions", ".builder", ".scripts", ".helgins", ".plugin"
-    );
+    ));
     result.add(getModuleUID());
     for (String aspect : aspects) {
+
+
+
       result.add(getModuleUID() + aspect);
     }
 

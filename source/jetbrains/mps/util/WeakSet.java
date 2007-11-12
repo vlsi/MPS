@@ -6,10 +6,15 @@ import java.util.*;
  * @author Kostik
  */
 public class WeakSet<T> extends AbstractSet<T> {
-  private WeakHashMap<T, T> myWeakHashMap = new WeakHashMap<T, T>();
+  private WeakHashMap<T, T> myWeakHashMap;
+
+  public WeakSet(int size) {
+    myWeakHashMap = new WeakHashMap<T, T>(size);
+
+  }
 
   public WeakSet() {
-
+    myWeakHashMap = new WeakHashMap<T, T>();
   }
 
   public WeakSet(Collection<? extends T> collection) {

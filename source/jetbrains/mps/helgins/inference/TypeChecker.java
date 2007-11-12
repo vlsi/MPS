@@ -168,7 +168,7 @@ public class TypeChecker {
       for (SNode nodeToDependOn : listener.getNodesToDependOn()) {
         WeakSet<SNode> dependentRoots = myNodesToDependentRoots.get(nodeToDependOn);
         if (dependentRoots == null) {
-          dependentRoots = new WeakSet<SNode>();
+          dependentRoots = new WeakSet<SNode>(1);
           myNodesToDependentRoots.put(nodeToDependOn, dependentRoots);
         }
         dependentRoots.add(node.getContainingRoot());
