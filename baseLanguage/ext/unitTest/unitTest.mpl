@@ -34,6 +34,7 @@
   </classPath>
   <runtimeClassPath>
     <entry path="${language_descriptor}\classes" />
+    <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
   </runtimeClassPath>
 </language>
 
