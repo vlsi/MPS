@@ -36,7 +36,9 @@ import org.jetbrains.annotations.NotNull;
     super(role, sourceNode);
     myMature = false;
     myTargetNode = targetNode;
-    ourImmatureReferences.add(this);
+    synchronized (ourImmatureReferences) {
+      ourImmatureReferences.add(this);
+    }
   }
 
   private void makeMatureIfItsNot() {
