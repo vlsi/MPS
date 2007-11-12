@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
         synchronized (ourImmatureReferences) {
           for (StaticReference sr : ourImmatureReferences) {
             if (sr != null) {
-              sr.makeMatureIfItsNot();
+              sr.mature();
             }
           }
           ourImmatureReferences.clear();
@@ -38,15 +38,6 @@ import org.jetbrains.annotations.NotNull;
     myTargetNode = targetNode;
     synchronized (ourImmatureReferences) {
       ourImmatureReferences.add(this);
-    }
-  }
-
-  private void makeMatureIfItsNot() {
-    if (!myMature && myTargetNode != null) {
-      // don't keep ref to registered targetNode
-      if (myTargetNode.isRegistered()) {
-        makeMature();
-      }
     }
   }
 
