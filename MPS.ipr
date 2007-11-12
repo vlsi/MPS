@@ -844,7 +844,6 @@
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" group="app/ParserGenerator" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/regexp.iml" filepath="$PROJECT_DIR$/platform/regexp/regexp.iml" group="platform/regexp" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" filepath="$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" group="platform/regexp" />
-      <module fileurl="file://$PROJECT_DIR$/runtime/runtime.iml" filepath="$PROJECT_DIR$/runtime/runtime.iml" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/scriptLanguage.iml" filepath="$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/scriptLanguage.iml" group="workbench/ideLanguages/scriptLanguage" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideLanguages/scriptLanguageInternal/scriptLanguageInternal.iml" filepath="$PROJECT_DIR$/workbench/ideLanguages/scriptLanguageInternal/scriptLanguageInternal.iml" group="workbench/ideLanguages/scriptLanguage" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/runtime/scriptLanguage_runtime.iml" filepath="$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/runtime/scriptLanguage_runtime.iml" group="workbench/ideLanguages/scriptLanguage" />
@@ -904,7 +903,7 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xms128m -Xmx600m" />
+      <option name="VM_PARAMETERS" value="-Xms128m -Xmx256m" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />

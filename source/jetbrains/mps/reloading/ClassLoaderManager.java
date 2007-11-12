@@ -13,8 +13,6 @@ import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProjects;
-import jetbrains.mps.runtime.RBundle;
-import jetbrains.mps.runtime.RuntimeEnvironment;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.util.PathManager;
@@ -38,7 +36,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
 
   private MPSModuleRepository myModuleRepository;
-  private RuntimeEnvironment myRuntimeEnvironment = new RuntimeEnvironment();
   private List<IReloadHandler> myReloadHandlers = new ArrayList<IReloadHandler>();
 
   private Set<String> myToRemove = new LinkedHashSet<String>();
@@ -47,7 +44,6 @@ public class ClassLoaderManager implements IComponentLifecycle {
   private Map<String, Bundle> myOSGIBundles = new HashMap<String, Bundle>();
 
   private BundleContext myBundleContext = MPSActivator.ourBundleContext;
-  private boolean myUseOSGI = myBundleContext != null;
   private PackageAdmin myPackageAdmin;
 
   private final List<Runnable> myInvokeOnRefresh = new ArrayList<Runnable>();
@@ -65,7 +61,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
   public void setModuleRepostiory(MPSModuleRepository repository) {
     repository.addModuleRepositoryListener(new ModuleRepositoryListener() {
       public void moduleAdded(IModule module) {
-        if (myRuntimeEnvironment.get(module.getModuleUID()) == null) {
+        if (myOSGIBundles.get(module.getModuleUID()) == null) {
           if (!myToRemove.contains(module.getModuleUID())) {
             addModule(module.getModuleUID());
           } else {
@@ -80,12 +76,8 @@ public class ClassLoaderManager implements IComponentLifecycle {
       }
 
       public void moduleRemoved(IModule module) {
-        if (!myUseOSGI) {
+        if (myOSGIBundles.get(module.getModuleUID()) != null) {
           myToRemove.add(module.getModuleUID());
-        } else {
-          if (myOSGIBundles.get(module.getModuleUID()) != null) {
-            myToRemove.add(module.getModuleUID());
-          }
         }
 
         if (CommandProcessor.instance().getCurrentCommandKind() == CommandKind.GENERATION) {
@@ -147,34 +139,26 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
       if (!toReload.isEmpty()) {
         String[] reloadList = toReload.toArray(new String[0]);
-        if (!myUseOSGI) {
-          myRuntimeEnvironment.reload(reloadList);
-        } else {
-          Bundle[] bundles = new Bundle[reloadList.length];
-          for (int i = 0; i < reloadList.length; i++) {
-            bundles[i] = myOSGIBundles.get(i);
-          }
-          refreshBundles(bundles);
+        Bundle[] bundles = new Bundle[reloadList.length];
+        for (int i = 0; i < reloadList.length; i++) {
+          bundles[i] = myOSGIBundles.get(i);
         }
+        refreshBundles(bundles);
       }
 
       if (!toRemove.isEmpty()) {
         String[] unloadList = toRemove.toArray(new String[0]);
-        if (!myUseOSGI) {
-          myRuntimeEnvironment.unload(unloadList);
-        } else {
-          Bundle[] bundles = new Bundle[unloadList.length];
-          for (int i = 0; i < unloadList.length; i++) {
-            try {
-              Bundle bundle = myOSGIBundles.get(unloadList[i]);
-              bundles[i] = bundle;
-              bundle.uninstall();
-            } catch (BundleException e) {
-              LOG.error(e);
-            }
+        Bundle[] bundles = new Bundle[unloadList.length];
+        for (int i = 0; i < unloadList.length; i++) {
+          try {
+            Bundle bundle = myOSGIBundles.get(unloadList[i]);
+            bundles[i] = bundle;
+            bundle.uninstall();
+          } catch (BundleException e) {
+            LOG.error(e);
           }
-          refreshBundles(bundles);
         }
+        refreshBundles(bundles);
       }
 
       if (!toAdd.isEmpty()) {
@@ -190,36 +174,20 @@ public class ClassLoaderManager implements IComponentLifecycle {
 
   private void addModule(String moduleUID) {
     IModule module = MPSModuleRepository.getInstance().getModuleByUID(moduleUID);
-    if (!myUseOSGI) {
+    if (module.getBundleHome() == null) {
+      return; //i.e. transient module
+    }
 
-      if (myRuntimeEnvironment.get(moduleUID) != null) {
-        return;
-      }
+    module.createManifest();
 
-      RBundle b = new RBundle(module.getModuleUID(), module.getByteCodeLocator());
+    try {
+      Bundle bundle = myBundleContext.installBundle("reference:file:/" + module.getBundleHome());
 
-      for (String dep : module.getExplicitlyDependOnModuleUIDs()) {
-        b.addDependency(dep);
-      }
+      myOSGIBundles.put(moduleUID, bundle);
 
-      myRuntimeEnvironment.add(b);
-
-    } else {
-      if (module.getBundleHome() == null) {
-        return; //i.e. transient module
-      }
-
-      module.createManifest();
-
-      try {
-        Bundle bundle = myBundleContext.installBundle("reference:file:/" + module.getBundleHome());
-
-        myOSGIBundles.put(moduleUID, bundle);
-
-        bundle.update();
-      } catch (Exception e) {
-        e.printStackTrace();
-      }
+      bundle.update();
+    } catch (Exception e) {
+      e.printStackTrace();
     }
   }
 
@@ -244,17 +212,9 @@ public class ClassLoaderManager implements IComponentLifecycle {
     LOG.debug("Updating class path");
 
     if (changeModule == null) {
-      if (!myUseOSGI) {
-        myRuntimeEnvironment.reloadAll();
-      } else {
-        refreshBundles(myOSGIBundles.values().toArray(new Bundle[0]));
-      }
+      refreshBundles(myOSGIBundles.values().toArray(new Bundle[0]));
     } else {
-      if (!myUseOSGI) {
-        myRuntimeEnvironment.replace(new RBundle(changeModule.getModuleUID(), changeModule.getByteCodeLocator()));
-      } else {
-        refreshBundles(new Bundle[] { myOSGIBundles.get(changeModule.getModuleUID())});
-      }
+      refreshBundles(new Bundle[] { myOSGIBundles.get(changeModule.getModuleUID())});
     }
 
     if (changeModule == null) {
@@ -360,39 +320,17 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   public Class getClassFor(IModule module, String classFqName) {
-    if (!myUseOSGI) {
-      RBundle bundle = myRuntimeEnvironment.get(module.getModuleUID());
-
-      if (bundle == null) {
-        myRuntimeEnvironment.get(module.getModuleUID());
-      }
-
-      assert bundle != null : "Can't find a bundle for a module " + module.getModuleUID();
-
-      if (!bundle.isInitialized()) {
-        myRuntimeEnvironment.init(bundle);
-      }
-
-      ClassLoader cl = bundle.getClassLoader();
-
-      try {
-        return Class.forName(classFqName, true, cl);
-      } catch (ClassNotFoundException e) {
-        return null;
-      }
-    } else {
-      Bundle b = myOSGIBundles.get(module.getModuleUID());
-      try {
-        return b.loadClass(classFqName);
-      } catch (ClassNotFoundException e) {        
-        if (e.getMessage().contains("because the bundle")) {
-          LOG.error(e);
-        }
-        return null;
-      } catch (NoClassDefFoundError e) {
+    Bundle b = myOSGIBundles.get(module.getModuleUID());
+    try {
+      return b.loadClass(classFqName);
+    } catch (ClassNotFoundException e) {
+      if (e.getMessage().contains("because the bundle")) {
         LOG.error(e);
-        return null;
       }
+      return null;
+    } catch (NoClassDefFoundError e) {
+      LOG.error(e);
+      return null;
     }
   }
 

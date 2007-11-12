@@ -27,7 +27,6 @@ import jetbrains.mps.plugins.PluginManager;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.reloading.ReloadUtils;
-import jetbrains.mps.runtime.BundleClassLoader;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
@@ -571,10 +570,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
             componentElement.setAttribute(CLASS, cls.getName());            
 
             //todo use osgi stuff instead
-            if (component.getClass().getClassLoader() instanceof BundleClassLoader) {
-              BundleClassLoader bcl = (BundleClassLoader) component.getClass().getClassLoader();
-              componentElement.setAttribute(BUNDLE, bcl.getBundle().getName());
-            }
+//            if (component.getClass().getClassLoader() instanceof BundleClassLoader) {
+//              BundleClassLoader bcl = (BundleClassLoader) component.getClass().getClassLoader();
+//              componentElement.setAttribute(BUNDLE, bcl.getBundle().getName());
+//            }
 
             ((IExternalizableComponent) component).write(componentElement, this);
             root.addContent(componentElement);

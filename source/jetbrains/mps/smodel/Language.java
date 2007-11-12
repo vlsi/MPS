@@ -29,7 +29,6 @@ import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.runtime.BytecodeLocator;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -352,45 +351,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   public boolean structureHaveToBeLoadedFromApplicationClassLoader() {
     return BootstrapLanguages.getInstance().getLanguagesUsedInCore().contains(this);
   }
-
-  public BytecodeLocator getByteCodeLocator() {
-    final BytecodeLocator oldLocator = super.getByteCodeLocator();
-    return new BytecodeLocator() {
-      public byte[] find(String fqName) {        
-        if (!fqName.startsWith(getModuleUID())) {
-          return null;
-        }
-
-        if (structureHaveToBeLoadedFromApplicationClassLoader()) {
-          String namespace = NameUtil.namespaceFromLongName(fqName);
-
-          String editorPack = getModuleUID() + ".editor";
-          String actionsPack = getModuleUID() + ".actions";
-          String constraintsPack = getModuleUID() + ".constraints";
-          String intentionsPack = getModuleUID() + ".intentions";
-          String builderPack = getModuleUID() + ".builder";
-          String scriptsPack = getModuleUID() + ".scripts";
-          String helginsPack = getModuleUID() + ".helgins";
-          String generatorPack = getModuleUID() + ".generator";
-
-          if (namespace.equals(editorPack) || namespace.equals(actionsPack) || namespace.equals(constraintsPack) ||
-                  namespace.equals(intentionsPack) || namespace.equals(builderPack) || namespace.equals(scriptsPack) ||
-                  namespace.equals(helginsPack) || namespace.startsWith(generatorPack)) {
-            return getRuntimeClasspath().getClass(fqName);
-          }
-
-          return null;
-        } else {
-          return oldLocator.find(fqName);
-        }
-      }
-
-      public URL findResource(String name) {
-        return oldLocator.findResource(name);
-      }
-    };
-  }
-
 
   protected List<String> getExportedPackages() {
     List<String> result = new ArrayList<String>();

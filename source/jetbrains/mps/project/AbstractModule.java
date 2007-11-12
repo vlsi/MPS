@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
 import org.jetbrains.annotations.NotNull;
@@ -369,19 +368,6 @@ public abstract class AbstractModule implements IModule {
 
   public Class getClass(String fqName) {
     return ClassLoaderManager.getInstance().getClassFor(this, fqName);
-  }
-
-  public BytecodeLocator getByteCodeLocator() {
-    return new BytecodeLocator() {
-      public byte[] find(String fqName) {
-        assert myRuntimeClassPathItem != null : "module " + getModuleUID() + "'s classpath wasn't initialized";
-        return myRuntimeClassPathItem.getClass(fqName);
-      }
-
-      public URL findResource(String name) {
-        return myRuntimeClassPathItem.getResource(name);
-      }
-    };
   }
 
   public void reloadStubs() {

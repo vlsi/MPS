@@ -51,10 +51,6 @@ public class IdeMain {
     defaults.put("Tree.font", font);
   }
 
-  public static void main(String[] args) {
-    openProjectWindow(true);
-  }
-
   public static IDEProjectFrame openProjectWindow(boolean loadOldProject) {
     long start = System.currentTimeMillis();
 

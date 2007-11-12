@@ -34,7 +34,6 @@
     <orderEntry type="library" name="commons-logging" level="project" />
     <orderEntry type="library" name="jetty" level="project" />
     <orderEntry type="library" name="stax" level="project" />
-    <orderEntry type="module" module-name="runtime" />
     <orderEntry type="library" name="Equinox" level="project" />
     <orderEntryProperties />
   </component>
