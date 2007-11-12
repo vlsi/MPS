@@ -7,18 +7,21 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ypath.constraints.TreePathOperationExpression_Behavior;
+import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ypath.constraints.IGenericFeature_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.newGenerator.CloneUtil;
+import jetbrains.mps.ypath.constraints.ParameterWrapper_Behavior;
 
 public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1191842720188(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode tpa = TreePathOperationExpression_Behavior.call_getTreePath_1184590859224(node);
+    SNode tpa = ITreePathExpression_Behavior.call_getTreePath_1194366873089(node);
     return !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(tpa, "features", true), new zPredicate(null, null))));
   }
 
@@ -28,6 +31,34 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1191856350792(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "operation", true), "jetbrains.mps.ypath.structure.IterateOperation") && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "expression", true), "jetbrains.mps.ypath.structure.TreePathAdapterExpression"));
+  }
+
+  public static boolean baseMappingRule_Condition_1194727667091(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true));
+    SNode targType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "writePath", true)), "targetType", true);
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_().createNode(targType)));
+  }
+
+  public static boolean baseMappingRule_Condition_1194727970307(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true));
+    SNode targType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "writePath", true)), "targetType", true);
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_1().createNode(targType));
+  }
+
+  public static boolean baseMappingRule_Condition_1194727311425(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getBoolean(node, "before");
+  }
+
+  public static boolean baseMappingRule_Condition_1194727359444(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return !(SPropertyOperations.getBoolean(node, "before"));
+  }
+
+  public static boolean baseMappingRule_Condition_1194728309348(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getBoolean(node, "before");
+  }
+
+  public static boolean baseMappingRule_Condition_1194728474411(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return !(SPropertyOperations.getBoolean(node, "before"));
   }
 
   public static boolean ifMacro_Condition_1191863129014(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -47,6 +78,74 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1191861038777(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194654504117(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194654807657(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1194654778371(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "anchor", true);
+  }
+
+  public static SNode sourceNodeQuery_1194655235957(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194655235966(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1194655237996(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194655238005(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1194655239447(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1194729639536(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194655241373(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1194655241383(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "anchor", true);
+  }
+
+  public static SNode sourceNodeQuery_1194727296294(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194727341086(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194727382535(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194728257034(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194728447046(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194728504533(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "expression", true);
   }
 
@@ -80,6 +179,12 @@ public class QueriesGenerated {
     }
     expression = CloneUtil.cloneNotPreservingId(expression, generator.getTargetModel(), generator.getScope());
     return IGenericFeature_Behavior.call_getterExpression_1191865774161(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "usedFeature", false), expression, SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "operation", true), "paramObject", true), "paramRef", false));
+  }
+
+  public static SNode mapSrcMacro_mapper_1194803621436(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
+    Object param = ParameterWrapper_Behavior.call_getParameterValue_1194378161915(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "paramObject", true));
+    SNode gf = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "usedFeature", false);
+    return IGenericFeature_Behavior.call_replaceExpression_1194808495467(gf, SNodeOperations.copyNode(SLinkOperations.getTarget(node, "expression", true)), param, SNodeOperations.copyNode(SLinkOperations.getTarget(node, "range", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "expression", true)));
   }
 
 }

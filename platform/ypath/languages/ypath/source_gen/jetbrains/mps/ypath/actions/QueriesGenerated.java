@@ -25,12 +25,13 @@ import jetbrains.mps.util.Calculable;
 import jetbrains.mps.ypath.constraints.FeatureTargetTypeUtil;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 
 public class QueriesGenerated {
 
@@ -83,6 +84,10 @@ public class QueriesGenerated {
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_TreeNodeKindOccurrence_1175170178382(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(sourceNode, null, false, false), "jetbrains.mps.ypath.structure.MatchKindOperation");
+  }
+
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1194616749686(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(sourceNode), new QuotationClass_().createNode(), false, false);
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TreePathOperation_1169037620751(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
@@ -200,6 +205,48 @@ public class QueriesGenerated {
 
         });
       }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IAnchor_1194436439282(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.IndexAnchor", operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
+      result.addAll(defaultActions);
+    }
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.ElementAnchor", operationContext.getScope());
+      result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+          SNode anchor = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.ElementAnchor", null);
+          SPropertyOperations.set(anchor, "before", "" + (true));
+          return anchor;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "BEFORE";
+        }
+
+      });
+    }
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.ElementAnchor", operationContext.getScope());
+      result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+          SNode anchor = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.ElementAnchor", null);
+          SPropertyOperations.set(anchor, "before", "" + (false));
+          return anchor;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "AFTER";
+        }
+
+      });
     }
     return result;
   }
@@ -366,6 +413,71 @@ public class QueriesGenerated {
 
         public String getDescriptionText(String pattern) {
           return "match property value";
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1194616742213(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode res = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.IsWithinRangeExpression");
+          SLinkOperations.setTarget(res, "range", sourceNode, true);
+          return res;
+        }
+
+        public String getMatchingText(String pattern) {
+          return ".isWithinRange ()";
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "IRange expression";
+        }
+
+      });
+    }
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode res = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.IsAtInsertionPointExpression");
+          SLinkOperations.setTarget(res, "range", sourceNode, true);
+          return res;
+        }
+
+        public String getMatchingText(String pattern) {
+          return ".isAtInsertionPoint ()";
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "IRange expression";
+        }
+
+      });
+    }
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode res = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.NextElementStatement");
+          SLinkOperations.setTarget(res, "range", sourceNode, true);
+          return res;
+        }
+
+        public String getMatchingText(String pattern) {
+          return ".next ()";
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "IRange statement";
         }
 
       });

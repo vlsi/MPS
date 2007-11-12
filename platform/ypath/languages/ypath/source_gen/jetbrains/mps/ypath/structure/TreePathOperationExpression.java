@@ -8,10 +8,13 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class TreePathOperationExpression extends Expression {
+public class TreePathOperationExpression extends Expression implements ITreePathExpression {
   public static final String concept = "jetbrains.mps.ypath.structure.TreePathOperationExpression";
   public static String EXPRESSION = "expression";
   public static String OPERATION = "operation";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  TreePathOperationExpression(SNode node) {
     super(node);
@@ -40,6 +43,30 @@ public class TreePathOperationExpression extends Expression {
 
   public void setOperation(TreePathOperation node) {
     super.setChild(TreePathOperationExpression.OPERATION, node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(TreePathOperationExpression.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(TreePathOperationExpression.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(TreePathOperationExpression.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(TreePathOperationExpression.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(TreePathOperationExpression.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(TreePathOperationExpression.VIRTUAL_PACKAGE, value);
   }
 
 }

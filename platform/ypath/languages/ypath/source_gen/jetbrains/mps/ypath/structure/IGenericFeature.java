@@ -7,11 +7,16 @@ import jetbrains.mps.smodel.INodeAdapter;
 public interface IGenericFeature extends INodeAdapter {
   public static final String concept = "jetbrains.mps.ypath.structure.IGenericFeature";
   public static String GETTER = "getter";
+  public static String SETTER = "setter";
   public static String CARDINAL = "cardinal";
 
-  public GenericFeatureSingleValueFun getGetter();
+  public GenericFeatureGetterFun getGetter();
 
-  public void setGetter(GenericFeatureSingleValueFun node);
+  public void setGetter(GenericFeatureGetterFun node);
+
+  public GenericFeatureSetterFun getSetter();
+
+  public void setSetter(GenericFeatureSetterFun node);
 
   public GenericFeatureCardinalFun getCardinal();
 

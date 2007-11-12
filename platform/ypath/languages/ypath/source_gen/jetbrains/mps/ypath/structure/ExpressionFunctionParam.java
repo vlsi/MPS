@@ -8,8 +8,11 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class ExpressionFunctionParam extends ConceptFunctionParameter {
+public class ExpressionFunctionParam extends ConceptFunctionParameter implements IFunctionParam {
   public static final String concept = "jetbrains.mps.ypath.structure.ExpressionFunctionParam";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  ExpressionFunctionParam(SNode node) {
     super(node);
@@ -21,6 +24,31 @@ public class ExpressionFunctionParam extends ConceptFunctionParameter {
 
   public static ExpressionFunctionParam newInstance(SModel sm) {
     return ExpressionFunctionParam.newInstance(sm, false);
+  }
+
+
+  public String getShortDescription() {
+    return this.getProperty(ExpressionFunctionParam.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ExpressionFunctionParam.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ExpressionFunctionParam.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ExpressionFunctionParam.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ExpressionFunctionParam.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ExpressionFunctionParam.VIRTUAL_PACKAGE, value);
   }
 
 }

@@ -1265,7 +1265,7 @@
     <property name="name" value="SNODE_GEN" />
     <node role="features" type="jetbrains.mps.ypath.structure.GenericParamFeature" id="1192878365674">
       <property name="name" value="child" />
-      <node role="getter" type="jetbrains.mps.ypath.structure.GenericFeatureSingleValueFun" id="1192878365675">
+      <node role="getter" type="jetbrains.mps.ypath.structure.GenericFeatureGetterFun" id="1192878365675">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1192878365676">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1193063049621">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1193063049622">
@@ -1589,7 +1589,7 @@
     </node>
     <node role="features" type="jetbrains.mps.ypath.structure.GenericParamFeature" id="1192878435111">
       <property name="name" value="link" />
-      <node role="getter" type="jetbrains.mps.ypath.structure.GenericFeatureSingleValueFun" id="1192878435112">
+      <node role="getter" type="jetbrains.mps.ypath.structure.GenericFeatureGetterFun" id="1192878435112">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1192878435113">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1193047912064">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1193047912065">

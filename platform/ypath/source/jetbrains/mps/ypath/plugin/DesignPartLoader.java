@@ -50,13 +50,16 @@ public class DesignPartLoader {
         IModule module = null;
         
         for (ModelOwner owner : SModelRepository.getInstance().getOwners(smd)) {
-            if (owner instanceof Solution || owner instanceof GenerationSessionContext.TransientModule) {
+            if (owner instanceof Solution) {
                 module = (IModule) owner;
                 break;
             }
+            else if (module == null && owner instanceof GenerationSessionContext.TransientModule) {
+                module = (IModule) owner;
+            }
         }
 
-      return module;
+        return module;
     }
 
     @SuppressWarnings("unchecked")
@@ -66,6 +69,10 @@ public class DesignPartLoader {
             if (klass == null) {
                 klass = module.getClass(fqClassName);
                 classes.put(fqClassName, klass);
+            }
+            if (klass == null) {
+                LOG.error("Unable to load the class \""+fqClassName+"\" using module <"+module+">");
+                return null;
             }
             // TODO: optimize instances? 
             Object o = klass.newInstance();

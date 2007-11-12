@@ -12,7 +12,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ypath.constraints.TreePath_Behavior;
-import jetbrains.mps.ypath.constraints.TreePathOperationExpression_Behavior;
+import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.ypath.constraints.IFeature_Behavior;
@@ -57,6 +57,14 @@ public class QueriesGenerated {
     return (SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.IDesignFunction", false, false) != null);
   }
 
+  public static boolean baseMappingRule_Condition_1194863856918(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return !(SPropertyOperations.getBoolean(node, "writable"));
+  }
+
+  public static boolean baseMappingRule_Condition_1194863928045(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getBoolean(node, "writable");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1172648115916(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "TreePath_" + ((SNode)node).getId();
   }
@@ -68,7 +76,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1184166962487(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     if(SPropertyOperations.getBoolean(node, "useDefault")) {
       SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-      return SPropertyOperations.getString(SequenceOperations.getFirst(TreePath_Behavior.call_getFeature_1184591220431(TreePathOperationExpression_Behavior.call_getTreePath_1184590859224(tpoe), SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(tpoe), "nodeType", true))), "name");
+      return SPropertyOperations.getString(SequenceOperations.getFirst(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(tpoe), "nodeType", true))), "name");
     } else
     {
       return SPropertyOperations.getString(SLinkOperations.getTarget(node, "usedFeature", false), "name");
@@ -435,6 +443,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1192793707454(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature");
+  }
+
+  public static boolean ifMacro_Condition_1194810996821(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(node, "writable");
   }
 
   public static boolean ifMacro_Condition_1193058147469(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -976,6 +988,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "parameterType", true);
   }
 
+  public static SNode sourceNodeQuery_1194810971977(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1194811212752(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "setter", true), "body", true);
+  }
+
   public static SNode sourceNodeQuery_1193058124500(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "cardinal", true), "body", true);
   }
@@ -1007,6 +1027,10 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1192793393648(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1194864092496(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "parameterType", true);
   }
 

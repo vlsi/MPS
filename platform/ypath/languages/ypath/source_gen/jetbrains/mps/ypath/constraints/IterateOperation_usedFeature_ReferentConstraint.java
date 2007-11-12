@@ -40,7 +40,7 @@ public class IterateOperation_usedFeature_ReferentConstraint implements IModelCo
     {
       tpoe = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
     }
-    return new SimpleSearchScope(SequenceOperations.toList(TreePath_Behavior.call_getFeature_1184591220431(TreePathOperationExpression_Behavior.call_getTreePath_1184590859224(tpoe), SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(tpoe), "nodeType", true))));
+    return new SimpleSearchScope(SequenceOperations.toList(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(tpoe), "nodeType", true))));
   }
 
   public String getNodeReferentSearchScopeDescription() {

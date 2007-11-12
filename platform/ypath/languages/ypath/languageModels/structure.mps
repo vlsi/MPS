@@ -127,6 +127,9 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1168468681335" resolveInfo="TreePathOperation" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194366915856">
+      <link role="intfc" targetNodeId="1194366835810" resolveInfo="ITreePathExpression" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1168468681335">
     <property name="package" value="treeOperation" />
@@ -1217,7 +1220,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1190800051916">
     <property name="package" value="treePath.features.functions" />
-    <property name="name" value="GenericFeatureSingleValueFun" />
+    <property name="name" value="GenericFeatureGetterFun" />
     <link role="extends" targetNodeId="2.1137021947720" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1190800080009">
       <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
@@ -1243,6 +1246,12 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1190800051916" resolveInfo="GenericFeatureSingleValueFun" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194545216305">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="setter" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1194545263074" resolveInfo="GenericFeatureSetterFun" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1193057911192">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="cardinal" />
@@ -1260,6 +1269,9 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1192620463775">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194868309326">
+      <link role="intfc" targetNodeId="1192805568452" resolveInfo="IFunctionParam" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1192805568452">
@@ -1279,6 +1291,355 @@
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1193057965835">
       <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194007636117">
+    <property name="name" value="WritePathStatement" />
+    <property name="package" value="writePath" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194183840736">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="writePath" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1194013204484" resolveInfo="WritePathExpression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1194183799097">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194013204484">
+    <property name="package" value="writePath" />
+    <property name="name" value="WritePathExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194013242049">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="expression" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194180532459">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="paramObject" />
+      <link role="target" targetNodeId="1184768155075" resolveInfo="ParameterWrapper" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194013217171">
+      <property name="role" value="usedFeature" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1184066209434" resolveInfo="IFeature" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194367274658">
+      <link role="intfc" targetNodeId="1194366835810" resolveInfo="ITreePathExpression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194182910610">
+    <property name="name" value="WritePathType" />
+    <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194188619952">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="nodeType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194357856748">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="targetType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194192992436">
+      <property name="value" value="writepath" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194183816448">
+    <property name="package" value="writePath" />
+    <property name="name" value="InsertWritePathStatement" />
+    <link role="extends" targetNodeId="1194187790800" resolveInfo="ExpressionWritePathStatement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194433340048">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="anchor" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1194433312052" resolveInfo="IAnchor" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194427510805">
+      <property name="value" value="INSERT" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194187790800">
+    <property name="package" value="writePath" />
+    <property name="name" value="ExpressionWritePathStatement" />
+    <link role="extends" targetNodeId="1194007636117" resolveInfo="WritePathStatement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194187847981">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="expression" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1194366835810">
+    <property name="package" value="treePath" />
+    <property name="name" value="ITreePathExpression" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194432051248">
+    <property name="package" value="writePath" />
+    <property name="name" value="AppendWritePathStatement" />
+    <link role="extends" targetNodeId="1194187790800" resolveInfo="ExpressionWritePathStatement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194432083546">
+      <property name="value" value="APPEND" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194432127816">
+    <property name="package" value="writePath" />
+    <property name="name" value="PrependWritePathStatement" />
+    <link role="extends" targetNodeId="1194187790800" resolveInfo="ExpressionWritePathStatement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194432145176">
+      <property name="value" value="PREPEND" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194432506089">
+    <property name="package" value="writePath" />
+    <property name="name" value="RemoveWritePathStatement" />
+    <link role="extends" targetNodeId="1194187790800" resolveInfo="ExpressionWritePathStatement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194432522372">
+      <property name="value" value="REMOVE" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194457459141">
+      <property name="value" value="Remove element" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1194433312052">
+    <property name="package" value="writePath.range" />
+    <property name="name" value="IAnchor" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194700181003">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="expression" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194435322566">
+    <property name="package" value="writePath.range" />
+    <property name="name" value="IndexAnchor" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194435470735">
+      <property name="value" value="AT" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1194436921446">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194436048354">
+      <link role="intfc" targetNodeId="1194433312052" resolveInfo="IAnchor" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194435898264">
+    <property name="package" value="writePath.range" />
+    <property name="name" value="ElementAnchor" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1194436178465">
+      <property name="name" value="before" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194436044046">
+      <link role="intfc" targetNodeId="1194433312052" resolveInfo="IAnchor" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1194436909493">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194437702626">
+    <property name="package" value="writePath" />
+    <property name="name" value="RemoveAtWritePathStatement" />
+    <link role="extends" targetNodeId="1194007636117" resolveInfo="WritePathStatement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194457485556">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="anchor" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1194433312052" resolveInfo="IAnchor" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194437742154">
+      <property name="value" value="REMOVE" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194457404315">
+      <property name="value" value="Remove at location" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194545263074">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="GenericFeatureSetterFun" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194545289778">
+      <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194545290314">
+      <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1194545345035">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1194545354632">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1194610811419">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1194610572276" resolveInfo="RangeFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1194610815477">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1194610690988" resolveInfo="ReplaceExpressionFunctionParam" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1194568341931">
+    <property name="package" value="writePath.range" />
+    <property name="name" value="IRange" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1194609143713">
+      <property name="name" value="has_start" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1194609144501">
+      <property name="name" value="has_end" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1194609145210">
+      <property name="name" value="includes_start" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1194609145937">
+      <property name="name" value="includes_end" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194568360537">
+    <property name="package" value="writePath.range" />
+    <property name="name" value="IndexRange" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194568581597">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="start" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194568638768">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="end" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194568843306">
+      <link role="intfc" targetNodeId="1194568341931" resolveInfo="IRange" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194568850581">
+    <property name="package" value="writePath.range" />
+    <property name="name" value="ElementRange" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194568866390">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="notBefore" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194568884925">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="notAfter" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194568863713">
+      <link role="intfc" targetNodeId="1194568341931" resolveInfo="IRange" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194610572276">
+    <property name="package" value="treePath.features.functions.params" />
+    <property name="name" value="RangeFunctionParam" />
+    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194610593969">
+      <property name="value" value="range" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1194610605301">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194868343303">
+      <link role="intfc" targetNodeId="1192805568452" resolveInfo="IFunctionParam" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194610690988">
+    <property name="package" value="treePath.features.functions.params" />
+    <property name="name" value="ReplaceExpressionFunctionParam" />
+    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194610748573">
+      <property name="value" value="replaceExpression" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1194610756227">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194868351131">
+      <link role="intfc" targetNodeId="1192805568452" resolveInfo="IFunctionParam" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194616547141">
+    <property name="package" value="writePath.range" />
+    <property name="name" value="IsWithinRangeExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194616616051">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="range" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194621189019">
+    <property name="package" value="writePath" />
+    <property name="name" value="ReplaceWritePathStatement" />
+    <link role="extends" targetNodeId="1194187790800" resolveInfo="ExpressionWritePathStatement" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1194621317811">
+      <property name="value" value="REPLACE" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194621275686">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="range" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1194568341931" resolveInfo="IRange" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194796453748">
+    <property name="package" value="writePath.range" />
+    <property name="name" value="IsAtInsertionPointExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194796475264">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="range" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194796699421">
+    <property name="package" value="writePath.range" />
+    <property name="name" value="NextElementStatement" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194796712440">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="range" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194796776200">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="element" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
   </node>
 </model>
