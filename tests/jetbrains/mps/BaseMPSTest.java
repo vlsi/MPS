@@ -49,4 +49,15 @@ public class BaseMPSTest extends TestCase {
       throw new RuntimeException(t);
     }
   }
+
+  protected void testHelgins(File project, String modelName) {
+    try {
+      Bundle mpsBundle = MPSLauncher.getMPSBundle();
+      Class helginsTestUtil = mpsBundle.loadClass("jetbrains.mps.bootstrap.helgins.tests.HelginsTestUtil");
+      Method testMethod = helginsTestUtil.getMethod("doTest", File.class, String.class);
+      testMethod.invoke(null, project, modelName);
+    } catch (Throwable t) {
+      throw new RuntimeException(t);
+    }
+  }
 }
