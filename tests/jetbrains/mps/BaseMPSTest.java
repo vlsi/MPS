@@ -38,4 +38,15 @@ public class BaseMPSTest extends TestCase {
       throw new RuntimeException(t);
     }
   }
+
+  protected boolean testProjectGenerationForLeaks(File project) {
+    try {
+      Bundle mpsBundle = MPSLauncher.getMPSBundle();
+      Class testMain = mpsBundle.loadClass("jetbrains.mps.ide.TestMain");
+      Method testMethod = testMain.getMethod("testProjectGenerationForLeaks", File.class);
+      return (Boolean) testMethod.invoke(null, project);
+    } catch (Throwable t) {
+      throw new RuntimeException(t);
+    }
+  }
 }

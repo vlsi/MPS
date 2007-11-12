@@ -5,17 +5,17 @@ import jetbrains.mps.ide.TestMain;
 
 import java.io.File;
 
-public class MemoryLeaksTest extends TestCase {
+public class MemoryLeaksTest extends BaseMPSTest {
   public void testEditorLanguageGenerationLeaks() {
-    assertTrue(TestMain.testProjectGenerationForLeaks(new File("languages/bootstrap/editorLanguage/editorLanguage.mpr")));
+    assertTrue(testProjectGenerationForLeaks(new File("languages/bootstrap/editorLanguage/editorLanguage.mpr")));
   }
 
   public void testPubMedDBGenerationLeaks() {
-    assertTrue(TestMain.testProjectGenerationForLeaks(new File("app/PubMedDB/pubMedDB.mpr")));
+    assertTrue(testProjectGenerationForLeaks(new File("app/PubMedDB/pubMedDB.mpr")));
   }
 
   public void testSTWikiForLeaks() {
-    assertTrue(TestMain.testProjectGenerationForLeaks(new File("app/stwiki/stwiki.mpr")));
+    assertTrue(testProjectGenerationForLeaks(new File("app/stwiki/stwiki.mpr")));
   }
 
 //  public void testCharismaGenerationLeaks() {
