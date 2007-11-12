@@ -75,7 +75,7 @@ public class TextGenManager {
       String packageName = NameUtil.namespaceFromConcept(cd);
       String className = cd.getName();
       String textgenClassname = packageName + ".textGen." + className + "_TextGen";
-      try {                
+      try {
         Class textgenClass = l.getClass(textgenClassname);
         if (textgenClass != null) {
           SNodeTextGen result = (SNodeTextGen) textgenClass.newInstance();
