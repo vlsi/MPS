@@ -27,4 +27,15 @@ public class BaseMPSTest extends TestCase {
       throw new RuntimeException(t);
     }
   }
+
+  protected String testProject(File project, String message) {
+    try {
+      Bundle mpsBundle = MPSLauncher.getMPSBundle();
+      Class testMain = mpsBundle.loadClass("jetbrains.mps.ide.TestMain");
+      Method testMethod = testMain.getMethod("testProject", File.class, String.class);
+      return (String) testMethod.invoke(null, project, message);
+    } catch (Throwable t) {
+      throw new RuntimeException(t);
+    }
+  }
 }
