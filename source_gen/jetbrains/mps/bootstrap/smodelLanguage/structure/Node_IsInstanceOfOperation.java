@@ -10,8 +10,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 
 public class Node_IsInstanceOfOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation";
-  public static String CONCEPT = "concept";
   public static String CONCEPT_ARGUMENT = "conceptArgument";
+  public static String CONCEPT = "concept";
 
   public  Node_IsInstanceOfOperation(SNode node) {
     super(node);
@@ -26,20 +26,20 @@ public class Node_IsInstanceOfOperation extends SNodeOperation {
   }
 
 
-  public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(Node_IsInstanceOfOperation.CONCEPT);
-  }
-
-  public void setConcept(AbstractConceptDeclaration node) {
-    super.setReferent(Node_IsInstanceOfOperation.CONCEPT, node);
-  }
-
   public RefConcept_Abstract getConceptArgument() {
     return (RefConcept_Abstract)this.getChild(Node_IsInstanceOfOperation.CONCEPT_ARGUMENT);
   }
 
   public void setConceptArgument(RefConcept_Abstract node) {
     super.setChild(Node_IsInstanceOfOperation.CONCEPT_ARGUMENT, node);
+  }
+
+  public AbstractConceptDeclaration getConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(Node_IsInstanceOfOperation.CONCEPT);
+  }
+
+  public void setConcept(AbstractConceptDeclaration node) {
+    super.setReferent(Node_IsInstanceOfOperation.CONCEPT, node);
   }
 
 }

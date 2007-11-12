@@ -12,12 +12,12 @@ import java.util.List;
 
 public class EnumConstantDeclaration extends NamedConcept implements ClassifierMember {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration";
+  public static String VISIBILITY = "visibility";
+  public static String ACTUAL_ARGUMENT = "actualArgument";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String VISIBILITY = "visibility";
-  public static String ACTUAL_ARGUMENT = "actualArgument";
 
   public  EnumConstantDeclaration(SNode node) {
     super(node);
@@ -31,6 +31,34 @@ public class EnumConstantDeclaration extends NamedConcept implements ClassifierM
     return EnumConstantDeclaration.newInstance(sm, false);
   }
 
+
+  public Visibility getVisibility() {
+    return (Visibility)this.getChild(EnumConstantDeclaration.VISIBILITY);
+  }
+
+  public void setVisibility(Visibility node) {
+    super.setChild(EnumConstantDeclaration.VISIBILITY, node);
+  }
+
+  public int getActualArgumentsCount() {
+    return this.getChildCount(EnumConstantDeclaration.ACTUAL_ARGUMENT);
+  }
+
+  public Iterator<Expression> actualArguments() {
+    return this.children(EnumConstantDeclaration.ACTUAL_ARGUMENT);
+  }
+
+  public List<Expression> getActualArguments() {
+    return this.getChildren(EnumConstantDeclaration.ACTUAL_ARGUMENT);
+  }
+
+  public void addActualArgument(Expression node) {
+    this.addChild(EnumConstantDeclaration.ACTUAL_ARGUMENT, node);
+  }
+
+  public void insertActualArgument(Expression prev, Expression node) {
+    this.insertChild(prev, EnumConstantDeclaration.ACTUAL_ARGUMENT, node);
+  }
 
   public String getName() {
     return this.getProperty(EnumConstantDeclaration.NAME);
@@ -62,34 +90,6 @@ public class EnumConstantDeclaration extends NamedConcept implements ClassifierM
 
   public void setVirtualPackage(String value) {
     this.setProperty(EnumConstantDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public Visibility getVisibility() {
-    return (Visibility)this.getChild(EnumConstantDeclaration.VISIBILITY);
-  }
-
-  public void setVisibility(Visibility node) {
-    super.setChild(EnumConstantDeclaration.VISIBILITY, node);
-  }
-
-  public int getActualArgumentsCount() {
-    return this.getChildCount(EnumConstantDeclaration.ACTUAL_ARGUMENT);
-  }
-
-  public Iterator<Expression> actualArguments() {
-    return this.children(EnumConstantDeclaration.ACTUAL_ARGUMENT);
-  }
-
-  public List<Expression> getActualArguments() {
-    return this.getChildren(EnumConstantDeclaration.ACTUAL_ARGUMENT);
-  }
-
-  public void addActualArgument(Expression node) {
-    this.addChild(EnumConstantDeclaration.ACTUAL_ARGUMENT, node);
-  }
-
-  public void insertActualArgument(Expression prev, Expression node) {
-    this.insertChild(prev, EnumConstantDeclaration.ACTUAL_ARGUMENT, node);
   }
 
 }

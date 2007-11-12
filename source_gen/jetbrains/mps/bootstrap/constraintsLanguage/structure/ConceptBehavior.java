@@ -19,10 +19,11 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept {
   public static String PROPERTIES = "properties";
   public static String REFERENCES = "references";
   public static String METHOD = "method";
+  public static String CONCEPT = "concept";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
-  public static String CONCEPT = "concept";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  ConceptBehavior(SNode node) {
     super(node);
@@ -113,6 +114,14 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept {
     this.insertChild(prev, ConceptBehavior.METHOD, node);
   }
 
+  public AbstractConceptDeclaration getConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(ConceptBehavior.CONCEPT);
+  }
+
+  public void setConcept(AbstractConceptDeclaration node) {
+    super.setReferent(ConceptBehavior.CONCEPT, node);
+  }
+
   public String getName() {
     return this.getProperty(ConceptBehavior.NAME);
   }
@@ -137,12 +146,12 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept {
     this.setProperty(ConceptBehavior.ALIAS, value);
   }
 
-  public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(ConceptBehavior.CONCEPT);
+  public String getVirtualPackage() {
+    return this.getProperty(ConceptBehavior.VIRTUAL_PACKAGE);
   }
 
-  public void setConcept(AbstractConceptDeclaration node) {
-    super.setReferent(ConceptBehavior.CONCEPT, node);
+  public void setVirtualPackage(String value) {
+    this.setProperty(ConceptBehavior.VIRTUAL_PACKAGE, value);
   }
 
 }
