@@ -524,15 +524,17 @@ public class RuleUtil {
 
       } else if (nodeMacro instanceof IncludeMacro) {
         // $INCLUDE$
+        IncludeMacro includeMacro = (IncludeMacro) nodeMacro;
         List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, macroCount - 1, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
-          TemplateDeclaration includeTemplate = ((IncludeMacro) nodeMacro).getIncludeTemplate();
+          TemplateDeclaration includeTemplate = includeMacro.getIncludeTemplate();
           if(includeTemplate == null) {
             myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "failed to process $INCLIDE$ : no 'include template'");
             return null;
           }
-            List<SNode> outputChildNodes = createOutputNodesForTemplateNode(mappingName_, includeTemplate.getNode(), newInputNode, 0, inputChanged);
+          SNode templateForInclude = getTemplateNodeForIncludeTemplate(newInputNode, includeTemplate, includeMacro, myGenerator);
+          List<SNode> outputChildNodes = createOutputNodesForTemplateNode(mappingName_, templateForInclude, newInputNode, 0, inputChanged);
             if (outputChildNodes != null) {
               outputNodes.addAll(outputChildNodes);
             }
@@ -690,6 +692,22 @@ public class RuleUtil {
     }
     if (templateFragments.size() > 1) {
       generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch: more than one (" + templateFragments.size() + ") fragments found");
+      return null;
+    }
+
+    TemplateFragment templateFragment = templateFragments.get(0);
+    SNode templateNode = BaseAdapter.fromAdapter(templateFragment.getParent());
+    return templateNode;
+  }
+
+  private static SNode getTemplateNodeForIncludeTemplate(SNode inputNode, TemplateDeclaration template, IncludeMacro includeMacro, ITemplateGenerator generator) {
+    List<TemplateFragment> templateFragments = getTemplateFragments(template);
+    if (templateFragments.isEmpty()) {
+      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(includeMacro), "couldn't include: no template fragments found");
+      return null;
+    }
+    if (templateFragments.size() > 1) {
+      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(includeMacro), "couldn't include: more than one (" + templateFragments.size() + ") fragments found");
       return null;
     }
 

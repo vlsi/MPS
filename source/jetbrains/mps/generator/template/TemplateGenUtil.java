@@ -160,10 +160,10 @@ public class TemplateGenUtil {
     List<SNode> sourceNodes = new ArrayList<SNode>(1);
 
     // optional query is not defined?
-    String sourceQueryAspectMethodName;
+    String sourceQueryAspectMethodName = null;
     if (macro instanceof CopySrcNodeMacro) {
       sourceQueryAspectMethodName = ((CopySrcNodeMacro) macro).getSourceNodeQueryId();
-    } else {
+    } else if (macro instanceof MapSrcNodeMacro) {
       sourceQueryAspectMethodName = ((MapSrcNodeMacro) macro).getSourceNodeQueryId();
     }
 
