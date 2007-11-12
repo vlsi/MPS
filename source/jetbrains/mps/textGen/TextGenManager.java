@@ -62,6 +62,7 @@ public class TextGenManager {
       nodeTextGen.doGenerateText(node.getAdapter());
     } catch (Exception e) {
       messages.handle(new Message(MessageKind.ERROR, e.getClass() + " : " + e.getMessage()));
+      LOG.error("Exception during text generation on node ", node);
       e.printStackTrace();
     }
   }
