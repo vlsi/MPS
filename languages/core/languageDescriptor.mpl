@@ -3,6 +3,9 @@
   <structure>
     <model modelUID="jetbrains.mps.core.structure" />
   </structure>
+  <actions>
+    <model modelUID="jetbrains.mps.core.actions" />
+  </actions>
   <constraints>
     <model modelUID="jetbrains.mps.core.constraints" />
   </constraints>
@@ -12,9 +15,6 @@
   <editor>
     <model modelUID="jetbrains.mps.core.editor" />
   </editor>
-  <actions>
-    <model modelUID="jetbrains.mps.core.actions" />
-  </actions>
   <models>
     <modelRoot path="${language_descriptor}\." namespacePrefix="jetbrains.mps.core" />
   </models>
@@ -22,7 +22,9 @@
   <accessoryModels />
   <generators />
   <classPath />
-  <runtimeClassPath />
+  <runtimeClassPath>
+    <entry path="${mps_home}\classes" />
+  </runtimeClassPath>
   <dependencies>
     <dependency>MPS.Classpath</dependency>
   </dependencies>

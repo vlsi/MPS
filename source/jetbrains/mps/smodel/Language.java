@@ -405,9 +405,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     ));
     result.add(getModuleUID());
     for (String aspect : aspects) {
-
-
-
       result.add(getModuleUID() + aspect);
     }
 
@@ -420,6 +417,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     List<String> result = new ArrayList<String>();
 
     collectPackages(result, getModuleUID() + ".generator");
+    collectPackages(result, getModuleUID() + ".generator_new");
     return result;
   }
 
