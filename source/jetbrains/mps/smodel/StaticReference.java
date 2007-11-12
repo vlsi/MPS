@@ -30,7 +30,6 @@ import org.jetbrains.annotations.NotNull;
 
   private SNode myTargetNode;
   private boolean myMature;
-  private CommandAdapter myListener;
 
   StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
     // 'young' reference

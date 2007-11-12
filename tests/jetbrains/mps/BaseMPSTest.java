@@ -13,7 +13,7 @@ public class BaseMPSTest extends TestCase {
   }
 
   protected void tearDown() throws Exception {
-    MPSLauncher.stopMPS();
+//    MPSLauncher.stopMPS();
     super.tearDown();
   }
 
