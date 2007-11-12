@@ -12,14 +12,14 @@ import java.util.List;
 
 public class VariableDeclaration extends NamedConcept implements Annotable {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
-  public static String TYPE = "type";
-  public static String INITIALIZER = "initializer";
-  public static String ANNOTATION = "annotation";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String IS_FINAL = "isFinal";
+  public static String TYPE = "type";
+  public static String INITIALIZER = "initializer";
+  public static String ANNOTATION = "annotation";
 
   public  VariableDeclaration(SNode node) {
     super(node);
@@ -33,42 +33,6 @@ public class VariableDeclaration extends NamedConcept implements Annotable {
     return VariableDeclaration.newInstance(sm, false);
   }
 
-
-  public Type getType() {
-    return (Type)this.getChild(VariableDeclaration.TYPE);
-  }
-
-  public void setType(Type node) {
-    super.setChild(VariableDeclaration.TYPE, node);
-  }
-
-  public Expression getInitializer() {
-    return (Expression)this.getChild(VariableDeclaration.INITIALIZER);
-  }
-
-  public void setInitializer(Expression node) {
-    super.setChild(VariableDeclaration.INITIALIZER, node);
-  }
-
-  public int getAnnotationsCount() {
-    return this.getChildCount(VariableDeclaration.ANNOTATION);
-  }
-
-  public Iterator<AnnotationInstance> annotations() {
-    return this.children(VariableDeclaration.ANNOTATION);
-  }
-
-  public List<AnnotationInstance> getAnnotations() {
-    return this.getChildren(VariableDeclaration.ANNOTATION);
-  }
-
-  public void addAnnotation(AnnotationInstance node) {
-    this.addChild(VariableDeclaration.ANNOTATION, node);
-  }
-
-  public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
-    this.insertChild(prev, VariableDeclaration.ANNOTATION, node);
-  }
 
   public String getName() {
     return this.getProperty(VariableDeclaration.NAME);
@@ -108,6 +72,42 @@ public class VariableDeclaration extends NamedConcept implements Annotable {
 
   public void setIsFinal(boolean value) {
     this.setBooleanProperty(VariableDeclaration.IS_FINAL, value);
+  }
+
+  public Type getType() {
+    return (Type)this.getChild(VariableDeclaration.TYPE);
+  }
+
+  public void setType(Type node) {
+    super.setChild(VariableDeclaration.TYPE, node);
+  }
+
+  public Expression getInitializer() {
+    return (Expression)this.getChild(VariableDeclaration.INITIALIZER);
+  }
+
+  public void setInitializer(Expression node) {
+    super.setChild(VariableDeclaration.INITIALIZER, node);
+  }
+
+  public int getAnnotationsCount() {
+    return this.getChildCount(VariableDeclaration.ANNOTATION);
+  }
+
+  public Iterator<AnnotationInstance> annotations() {
+    return this.children(VariableDeclaration.ANNOTATION);
+  }
+
+  public List<AnnotationInstance> getAnnotations() {
+    return this.getChildren(VariableDeclaration.ANNOTATION);
+  }
+
+  public void addAnnotation(AnnotationInstance node) {
+    this.addChild(VariableDeclaration.ANNOTATION, node);
+  }
+
+  public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
+    this.insertChild(prev, VariableDeclaration.ANNOTATION, node);
   }
 
 }
