@@ -17,10 +17,14 @@ public class BaseMPSTest extends TestCase {
     super.tearDown();
   }
 
-  protected String testProject(File project) throws Exception {
-    Bundle mpsBundle = MPSLauncher.getMPSBundle();
-    Class testMain = mpsBundle.loadClass("jetbrains.mps.ide.TestMain");
-    Method testMethod = testMain.getMethod("testProject", File.class);
-    return (String) testMethod.invoke(null, project);
+  protected String testProject(File project) {
+    try {
+      Bundle mpsBundle = MPSLauncher.getMPSBundle();
+      Class testMain = mpsBundle.loadClass("jetbrains.mps.ide.TestMain");
+      Method testMethod = testMain.getMethod("testProject", File.class);
+      return (String) testMethod.invoke(null, project);
+    } catch (Throwable t) {
+      throw new RuntimeException(t);
+    }
   }
 }
