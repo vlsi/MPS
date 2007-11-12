@@ -1,10 +1,9 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
-import jetbrains.mps.logging.Logger;
-
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -12,6 +11,22 @@ import org.jetbrains.annotations.NotNull;
  * Sep 26, 2007
  */
 /*package*/ class StaticReference extends StaticReferenceBase {
+  private static final WeakSet<StaticReference> ourImmatureReferences = new WeakSet<StaticReference>();
+
+  static {
+    CommandProcessor.instance().addCommandListener(new CommandAdapter() {
+      public void commandFinished(@NotNull CommandEvent event) {
+        synchronized (ourImmatureReferences) {
+          for (StaticReference sr : ourImmatureReferences) {
+            if (sr != null) {
+              sr.makeMatureIfItsNot();
+            }
+          }
+          ourImmatureReferences.clear();
+        }
+      }
+    });
+  }
 
   private SNode myTargetNode;
   private boolean myMature;
@@ -21,19 +36,17 @@ import org.jetbrains.annotations.NotNull;
     // 'young' reference
     super(role, sourceNode);
     myMature = false;
-//    myTargetNode = new WeakReference<SNode>(targetNode);
     myTargetNode = targetNode;
-    CommandProcessor.instance().addWeakCommandListener(myListener = new CommandAdapter() {
-      public void commandFinished(@NotNull CommandEvent event) {
-        CommandProcessor.instance().removeCommandListener(this);
-        if (!myMature && myTargetNode != null) {
-          // don't keep ref to registered targetNode
-          if (myTargetNode.isRegistered()) {
-            makeMature();
-          }
-        }
+    ourImmatureReferences.add(this);
+  }
+
+  private void makeMatureIfItsNot() {
+    if (!myMature && myTargetNode != null) {
+      // don't keep ref to registered targetNode
+      if (myTargetNode.isRegistered()) {
+        makeMature();
       }
-    });
+    }
   }
 
   StaticReference(String role, SNode sourceNode, SModelUID modelUID, SNodeId nodeId, String resolveInfo) {
