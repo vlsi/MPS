@@ -16,7 +16,6 @@ import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
-import java.net.URL;
 
 /**
  * Created by IntelliJ IDEA.
@@ -35,7 +34,7 @@ public abstract class AbstractModule implements IModule {
   private MyScope myScope = new MyScope();
 
   private IClassPathItem myRuntimeClassPathItem;
-  private IClassPathItem myClassPathItem;
+  private IClassPathItem myJavaStubsClassPathItem;
 
   //
   // IScope
@@ -401,7 +400,7 @@ public abstract class AbstractModule implements IModule {
       }
     }
 
-    myClassPathItem = result;
+    myJavaStubsClassPathItem = result;
   }
 
   private void releaseJavaStubs() {
@@ -417,7 +416,7 @@ public abstract class AbstractModule implements IModule {
     
     ClassPathModelRootManager manager = new ClassPathModelRootManager() {
       protected IClassPathItem getClassPathItem() {
-        return myClassPathItem;
+        return myJavaStubsClassPathItem;
       }
     };
 
@@ -439,8 +438,8 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
-  public IClassPathItem getClassPathItem() {
-    return myClassPathItem;
+  public IClassPathItem getJavaStubsClassPathItem() {
+    return myJavaStubsClassPathItem;
   }
 
   public IClassPathItem getModuleWithDependenciesClassPathItem() {

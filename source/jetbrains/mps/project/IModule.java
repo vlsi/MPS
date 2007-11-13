@@ -69,7 +69,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   Class getClass(String fqName);
 
-  IClassPathItem getClassPathItem();
+  IClassPathItem getJavaStubsClassPathItem();
 
   IClassPathItem getModuleWithDependenciesClassPathItem();
 
