@@ -277,11 +277,29 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return myRTJar;
   }
 
-  public IClassPathItem getMPSPath() {
+  public String getBaseMPSPath() {
     String classesPath = PathManager.getHomePath() + File.separator + "classes";
-    if (new File(classesPath).exists()) return new FileClassPathItem(classesPath);
+    if (new File(classesPath).exists()) {
+      return classesPath;
+    }
     String mpsJarPath = PathManager.getHomePath() + File.separator + "lib" + File.separatorChar + "mps.jar";
-    if (new File(mpsJarPath).exists()) return new JarFileClassPathItem(new File(mpsJarPath));
+    if (new File(mpsJarPath).exists()) {
+      return mpsJarPath;
+    }
+    return null;
+  }
+
+  public IClassPathItem getMPSPath() {
+    String path = getBaseMPSPath();
+
+
+    if (path != null) {
+      if (path.endsWith(".jar")) {
+        return new JarFileClassPathItem(path);
+      } else {
+        return new FileClassPathItem(path);
+      }
+    }
 
     File file = new File(PathManager.getResourceRoot(ClassLoaderManager.class, "/" + ClassLoaderManager.class.getName().replace('.', '/') + ".class"));
     if (file.exists()) {
