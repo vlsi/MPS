@@ -357,37 +357,33 @@ public class ModelConstraintsManager implements IComponentLifecycle {
 
     Language l = MPSModuleRepository.getInstance().getLanguage(languageNamespace);
 
-    String packageName = languageNamespace + ".constraints";
-    IClassPathItem classPathItem = l.getRuntimeClasspath();
-    Set<String> availableClasses = classPathItem.getAvailableClasses(packageName);
+    assert l != null;
 
-    if (availableClasses.isEmpty() && l.getConstraintsModelDescriptor() != null && l.getConstraintsModelDescriptor().getSModel().getRoots().size() > 0) {
-      LOG.error("Can't load constraints from language " + l + ". Please set runtime classpath correctly.");
+    String packageName = languageNamespace + ".constraints";
+
+    SModelDescriptor constraintsModelDescriptor = l.getConstraintsModelDescriptor();
+    if (constraintsModelDescriptor == null) {
+      return;
     }
 
+    try {
+      String className = packageName + "." + "ConstraintsDescriptor";
+      Class constraintsClass = l.getClass(className);
 
-    for (String shortClassName : availableClasses) {
-      try {
-        String className = packageName + "." + shortClassName;
-        Class constraintsClass = l.getClass(className);
-
-        if (constraintsClass == null) {
-          LOG.error("Can't find " + className);
-          continue;
-        }
-
-        if (IModelConstraints.class.isAssignableFrom(constraintsClass)) {
-          IModelConstraints constraints = (IModelConstraints) constraintsClass.newInstance();
-          constraints.registerSelf(this);
-          loadedConstraints.add(constraints);
-        }
-      } catch (InstantiationException e) {
-        LOG.error(e);
-      } catch (IllegalAccessException e) {
-        LOG.error(e);
-      } catch (Throwable t) {
-        LOG.error(t);
+      if (constraintsClass == null) {
+        LOG.error("Can't find " + className);
+        return;
       }
+
+      IModelConstraints constraints = (IModelConstraints) constraintsClass.newInstance();
+      constraints.registerSelf(this);
+      loadedConstraints.add(constraints);
+    } catch (InstantiationException e) {
+      LOG.error(e);
+    } catch (IllegalAccessException e) {
+      LOG.error(e);
+    } catch (Throwable t) {
+      LOG.error(t);
     }
   }
 }
