@@ -2,10 +2,9 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
-import jetbrains.mps.projectLanguage.structure.ModuleReference;
-import jetbrains.mps.projectLanguage.structure.ClassPathEntry;
+import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.util.CollectionUtil;
@@ -310,6 +309,12 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  public List<String> getRuntimePackages() {
+    List<String> result = new ArrayList<String>();
+    collectPackages(result, "");
+    return result;
+  }
+
   protected void collectPackages(List<String> result, String current) {    
     if (!"".equals(current)) {
       result.add(current);
@@ -446,7 +451,6 @@ public abstract class AbstractModule implements IModule {
     for (IModule m : module) {
       for (String s : m.getClassPath()) {
         File f = new File(s);
-
         if (!f.exists()) {
           continue;
         }
@@ -506,6 +510,14 @@ public abstract class AbstractModule implements IModule {
     for (String s : BootstrapLanguages.getInstance().getLanguagesUIDsUsedInCore()) {
       result.add(s);
     }
+
+    OSGiOptions osgiOptions = getModuleDescriptor().getOsgiOptions();
+    if (osgiOptions != null) {
+      for (BundleReference br : osgiOptions.getRequiredBundles()) {
+        result.add(br.getName());
+      }
+    }
+
     result.addAll(getExplicitlyDependOnModuleUIDs());
     return result;
   }
@@ -547,7 +559,14 @@ public abstract class AbstractModule implements IModule {
   }    
 
   protected List<String> getExportedPackages() {
-    return new ArrayList<String>();
+    List<String> result = new ArrayList<String>();
+    OSGiOptions osgiOptions = getModuleDescriptor().getOsgiOptions();
+    if (osgiOptions != null) {
+      for (PackageReference pr : osgiOptions.getExportedPackages()) {
+        result.add(pr.getName());
+      }
+    }
+    return result;
   }
 
 

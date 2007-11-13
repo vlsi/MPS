@@ -207,7 +207,7 @@ public class DevKit extends AbstractModule {
   }
 
   protected List<String> getExportedPackages() {
-    List<String> result = new ArrayList<String>();
+    List<String> result = new ArrayList<String>(super.getExportedPackages());
     if (getDevKitPluginClass() != null) {
       result.add(NameUtil.namespaceFromLongName(getDevKitPluginClass()));
     }

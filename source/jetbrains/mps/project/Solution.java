@@ -206,7 +206,7 @@ public class Solution extends AbstractModule {
   }
 
   protected List<String> getExportedPackages() {
-    List<String> result = new ArrayList<String>();
+    List<String> result = new ArrayList<String>(super.getExportedPackages());
     collectPackages(result, "");
     return result;
   }
