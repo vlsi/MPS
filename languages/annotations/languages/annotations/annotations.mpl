@@ -15,7 +15,6 @@
   <generators />
   <classPath />
   <runtimeClassPath>
-    <entry path="${mps_home}\classes" />
   </runtimeClassPath>
 </language>
 

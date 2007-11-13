@@ -38,7 +38,6 @@
   </generators>
   <classPath />
   <runtimeClassPath>
-    <entry path="${mps_home}\classes" />
   </runtimeClassPath>
   <dependencies>
     <dependency>jetbrains.mps.baseLanguage.ext.collections.lang</dependency>

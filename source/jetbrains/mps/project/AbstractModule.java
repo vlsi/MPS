@@ -306,6 +306,16 @@ public abstract class AbstractModule implements IModule {
       }
     }
 
+    if (BootstrapLanguages.getInstance().getLanguagesUIDsUsedInCore().contains(getModuleUID())) {
+      IClassPathItem item = ClassLoaderManager.getInstance().getMPSPath();
+      if (item instanceof FileClassPathItem) {
+        String pathItem = ((FileClassPathItem) item).getClassPath();
+        result.add(pathItem);
+      } else {
+        result.add(((JarFileClassPathItem) item).getFile().getAbsolutePath());
+      }
+    }
+
     return result;
   }
 
