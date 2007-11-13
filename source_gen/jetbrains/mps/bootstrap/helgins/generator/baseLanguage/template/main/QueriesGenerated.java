@@ -28,6 +28,12 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.bootstrap.helgins.structure.ReferenceAntiquotation_AnnotationLink;
+import jetbrains.mps.bootstrap.helgins.dependencies.DependenciesCollector;
+import java.util.Map;
+import jetbrains.mps.util.Pair;
+import java.util.HashMap;
+import java.util.Set;
+import java.util.HashSet;
 
 public class QueriesGenerated {
 
@@ -397,6 +403,25 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1191271497924(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return node.getRole_();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1194972375104(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode rule = SNodeOperations.getAncestor(((SNode)node.getReferent("leaf")), "jetbrains.mps.bootstrap.helgins.structure.InferenceRule", false, false);
+    SNode conceptDeclaration;
+    if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference")) {
+      SNode conceptReference = SLinkOperations.getTarget(rule, "applicableNode", true);
+      conceptDeclaration = SLinkOperations.getTarget(conceptReference, "concept", false);
+    } else
+    {
+      SNode patternCondition = SLinkOperations.getTarget(rule, "applicableNode", true);
+      conceptDeclaration = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(patternCondition, "pattern", true), "patternNode", true));
+    }
+    return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1194972375205(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode conceptDeclaration = (SNode)(node.getReferent("leaf").getConceptDeclarationAdapter().getNode());
+    return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
   public static SNode referenceMacro_GetReferent_1175002013260(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
@@ -1030,6 +1055,34 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List sourceNodesQuery_1194972375179(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return node.getChildren("method");
+  }
+
+  public static List sourceNodesQuery_1194972375237(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    DependenciesCollector dependenciesCollector = new DependenciesCollector();
+    Map<SNode, Pair<SNode, SNode>> dependencies = new HashMap<SNode, Pair<SNode, SNode>>();
+    Set<SNode> leaves = new HashSet<SNode>();
+    for(SNode inferenceRule : SModelOperations.getRoots(sourceModel, "jetbrains.mps.bootstrap.helgins.structure.InferenceRule")) {
+      dependenciesCollector.collectDependencies(inferenceRule, dependencies, leaves);
+    }
+    List<SNode> result = new ArrayList<SNode>();
+    SModel targetModel = generator.getTargetModel();
+    for(SNode leaf : leaves) {
+      SNode composite = SModelOperations.createNewNode(targetModel, "jetbrains.mps.core.structure.BaseConcept", null);
+      composite.setReferent("leaf", leaf);
+      SNode current = leaf;
+      while(dependencies.get(current) != null) {
+        Pair<SNode, SNode> pair = dependencies.get(current);
+        current = pair.o1;
+        SNode method = pair.o2;
+        composite.addChild("method", method);
+      }
+      result.add(composite);
+    }
+    return result;
+  }
+
   public static SNode sourceNodeQuery_1174578748617(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "quotedNode", true);
   }
@@ -1310,6 +1363,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1191271497934(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.Quotation", false, false);
+  }
+
+  public static SNode sourceNodeQuery_1194880100321(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1194972375189(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
   }
 
 }

@@ -11,8 +11,14 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import java.util.List;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
 
 public class DependenciesCollector {
+
+  public  DependenciesCollector() {
+  }
 
   public void collectDependencies(SNode inferenceRule, Map<SNode, Pair<SNode, SNode>> dependencies, Set<SNode> leaves) {
     Set<SNode> roots = new HashSet<SNode>();
@@ -54,6 +60,16 @@ public class DependenciesCollector {
             }
           }
           {
+            boolean matches_1194964521497 = false;
+            matches_1194964521497 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+            if(matches_1194964521497) {
+              if(SLinkOperations.getTarget(matchedNode_1194538774943, "initializer", true) == node) {
+                dependencies.put(matchedNode_1194538774943, new Pair<SNode, SNode>(node, new QuotationClass_1().createNode()));
+              }
+              break;
+            }
+          }
+          {
             boolean matches_1194539042393 = false;
             matches_1194539042393 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression");
             if(matches_1194539042393) {
@@ -61,15 +77,56 @@ public class DependenciesCollector {
                 SNode sLinkAccess = SLinkOperations.getTarget(matchedNode_1194538774943, "nodeOperation", true);
                 if(SLinkOperations.getTarget(matchedNode_1194538774943, "leftExpression", true) == node && SPropertyOperations.hasValue(SLinkOperations.getTarget(sLinkAccess, "link", false), "metaClass", "aggregation", null)) {
                   SNode operationExpression = SNodeOperations.getParent(sLinkAccess, null, false, false);
-                  dependencies.put(operationExpression, new Pair<SNode, SNode>(node, new QuotationClass_1().createNode()));
+                  dependencies.put(operationExpression, new Pair<SNode, SNode>(node, new QuotationClass_2().createNode()));
                 }
               }
               break;
             }
           }
-          if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
-            dependencies.put(SLinkOperations.getTarget(node, "variableDeclaration", false), new Pair<SNode, SNode>(node, new QuotationClass_2().createNode()));
-          }
+          do {
+            SNode matchedNode_1194966957317 = node;
+            {
+              boolean matches_1194966957319 = false;
+              matches_1194966957319 = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+              if(matches_1194966957319) {
+                for(SNode variableReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false)) {
+                  if(SLinkOperations.getTarget(variableReference, "variableDeclaration", false) == node) {
+                    dependencies.put(variableReference, new Pair<SNode, SNode>(node, new QuotationClass_3().createNode()));
+                  }
+                }
+                break;
+              }
+            }
+            {
+              boolean matches_1194967010187 = false;
+              matches_1194967010187 = SModelUtil_new.isAssignableConcept(node.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableReference");
+              if(matches_1194967010187) {
+                {
+                  SNode variableDeclaration = SLinkOperations.getTarget(matchedNode_1194966957317, "variableDeclaration", false);
+                  for(SNode reference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false)) {
+                    if(SLinkOperations.getTarget(matchedNode_1194966957317, "variableDeclaration", false) == variableDeclaration) {
+                      SNode nodeStatement = SNodeOperations.getAncestor(matchedNode_1194966957317, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+                      SNode usageStatement = SNodeOperations.getAncestor(reference, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+                      while(SNodeOperations.getParent(nodeStatement, null, false, false) != SNodeOperations.getParent(usageStatement, null, false, false)) {
+                        usageStatement = SNodeOperations.getAncestor(usageStatement, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+                      }
+                      List list = CollectionUtil.filter(SNodeOperations.getParent(nodeStatement, null, false, false).getChildren(), new Condition() {
+
+                        public boolean met(Object p0) {
+                          return SNodeOperations.isInstanceOf(((SNode)p0), "jetbrains.mps.baseLanguage.structure.Statement");
+                        }
+
+                      });
+                      if(list.indexOf(nodeStatement) <= list.indexOf(usageStatement)) {
+                        dependencies.put(reference, new Pair<SNode, SNode>(node, new QuotationClass_4().createNode()));
+                      }
+                    }
+                  }
+                }
+                break;
+              }
+            }
+          } while(false);
         } while(false);
       }
     }
