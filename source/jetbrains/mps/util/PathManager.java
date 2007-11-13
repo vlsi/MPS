@@ -93,6 +93,7 @@ public class PathManager {
       }
 
       ourHomePath = root.getAbsolutePath();    // one step back to getCollectionClass rid of "lib" or "classes" folder
+      return ourHomePath;
     }
 
     return new File(".").getAbsolutePath(); //we need this for build server on which stuff written above
