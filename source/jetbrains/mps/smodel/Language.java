@@ -370,6 +370,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       result.add(getModuleUID() + aspect);
     }
 
+    for (Model m : getLanguageDescriptor().getAccessoryModels()) {
+      result.add(m.getName());
+    }
+
     result.addAll(getGeneratorsPacks());
 
     return result;
