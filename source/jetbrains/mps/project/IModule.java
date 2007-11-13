@@ -57,10 +57,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   void readModels();
 
-  @NotNull List<String> getClassPath();
-
-  @NotNull List<String> getRuntimeClassPathItems();
-
   File getClassesGen();
 
   Set<IModule> getVisibleModules();
@@ -68,8 +64,6 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   Set<IModule> getExplicitlyVisibleModules();
 
   void reloadStubs();
-
-  IClassPathItem getRuntimeClasspath();
 
   List<String> getRuntimePackages();
 

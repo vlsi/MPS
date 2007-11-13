@@ -53,6 +53,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
   }
 
   private IClassPathItem myRTJar = null;
+  private IClassPathItem myMPSJar = null;
 
   public ClassLoaderManager() {
   }
@@ -292,10 +293,12 @@ public class ClassLoaderManager implements IComponentLifecycle {
   public IClassPathItem getMPSPath() {
     String path = getBaseMPSPath();
 
-
     if (path != null) {
       if (path.endsWith(".jar")) {
-        return new JarFileClassPathItem(path);
+        if (myMPSJar == null) {
+          myMPSJar = new JarFileClassPathItem(path);
+        }
+        return myMPSJar;
       } else {
         return new FileClassPathItem(path);
       }

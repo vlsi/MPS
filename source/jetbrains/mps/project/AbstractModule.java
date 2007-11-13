@@ -356,16 +356,14 @@ public abstract class AbstractModule implements IModule {
         LOG.error("Classpath item doesn't exist " + s);
         continue;
       }
-      if (new File(s).isDirectory()) {
+
+      if (s.equals(ClassLoaderManager.getInstance().getBaseMPSPath())) {
+        result.add(ClassLoaderManager.getInstance().getMPSPath());
+      } else if (new File(s).isDirectory()) {
         result.add(new FileClassPathItem(s));
       } else {
         result.add(new JarFileClassPathItem(s));
       }
-    }
-
-    //todo this is a temporary hack
-    if (BootstrapLanguages.getInstance().getLanguagesUsedInCore().contains(this)) {
-      result.add(ClassLoaderManager.getInstance().getMPSPath());
     }
 
     myRuntimeClassPathItem = result;
@@ -453,7 +451,7 @@ public abstract class AbstractModule implements IModule {
 
     CompositeClassPathItem item = new CompositeClassPathItem();
     for (IModule m : module) {
-      for (String s : m.getClassPath()) {
+      for (String s : ((AbstractModule) m).getClassPath()) {
         File f = new File(s);
         if (!f.exists()) {
           continue;
