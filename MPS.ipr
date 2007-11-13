@@ -902,8 +902,8 @@
   </component>
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="IdeMain" type="Application" factoryName="Application" enabled="false" merge="false">
-      <option name="MAIN_CLASS_NAME" value="jetbrains.mps.ide.IdeMain" />
-      <option name="VM_PARAMETERS" value="-Xms128m -Xmx256m" />
+      <option name="MAIN_CLASS_NAME" value="jetbrains.mps.MPSLauncher" />
+      <option name="VM_PARAMETERS" value="-Xms192m -Xmx1400m -XX:MaxPermSize=128m" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
