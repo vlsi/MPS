@@ -949,7 +949,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1139535219968">
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="applicableConcept" />
-      <link role="target" targetNodeId="1.1071489090640" />
+      <link role="target" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1139535219969">
       <property name="targetCardinality" value="1" />
