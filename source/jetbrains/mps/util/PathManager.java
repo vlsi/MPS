@@ -3,10 +3,10 @@ package jetbrains.mps.util;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.Thread.State;
 import java.net.URL;
 import java.util.Collection;
 import java.util.Iterator;
@@ -302,32 +302,27 @@ public class PathManager {
     return path;
   }
 
-  public static SModelUID getModelUID(File modelFile, File root, String namespacePrefix) {
+  public static SModelUID getModelUID(IFile modelFile, IFile root, String namespacePrefix) {
     String rawLongName = getModelUIDString(modelFile, root, namespacePrefix);
     return SModelUID.fromString(rawLongName);
   }
 
-  public static String getModelUIDString(File modelFile, File root, String namespacePrefix) {
-    try {
-      String modelPath = modelFile.getCanonicalPath();
-      String rootPath = root.getCanonicalPath();
-      if(!modelPath.startsWith(rootPath)) {
-        return null;
-      }
-      int length = rootPath.length();
-      if(rootPath.endsWith(File.separator)) {
-        length--;
-      }
-      String longName = modelPath.substring(length+1);
-      longName = longName.substring(0, longName.lastIndexOf("."));
-      longName = longName.replace(File.separatorChar, '.');
-      if(namespacePrefix != null && namespacePrefix.length() > 0) {
-        longName = namespacePrefix + "." + longName;
-      }
-      return longName;
-    } catch (IOException e) {
-      LOG.error(e);
+  public static String getModelUIDString(IFile modelFile, IFile root, String namespacePrefix) {
+    String modelPath = modelFile.getCanonicalPath();
+    String rootPath = root.getCanonicalPath();
+    if(!modelPath.startsWith(rootPath)) {
+      return null;
     }
-    return null;
+    int length = rootPath.length();
+    if(rootPath.endsWith(File.separator)) {
+      length--;
+    }
+    String longName = modelPath.substring(length + 1);
+    longName = longName.substring(0, longName.lastIndexOf("."));
+    longName = longName.replace(File.separatorChar, '.');
+    if(namespacePrefix != null && namespacePrefix.length() > 0) {
+      longName = namespacePrefix + "." + longName;
+    }
+    return longName;
   }
 }

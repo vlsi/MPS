@@ -634,7 +634,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     Set<IModule> modelOwners = SModelRepository.getInstance().getOwners(this, IModule.class);
     for (IModule module : modelOwners) {
       for (ModelRoot modelRoot : module.getModelRoots()) {
-        if (this.getModelUID().toString().equals(PathManager.getModelUIDString(FileSystem.toFile(sourceFile), new File(modelRoot.getPath()), modelRoot.getPrefix()))) {
+        if (this.getModelUID().toString().equals(PathManager.getModelUIDString(sourceFile, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix()))) {
           result.add(modelRoot);
         }
       }

@@ -14,12 +14,17 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.Merger;
-import jetbrains.mps.vfs.*;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileNameFilter;
 import org.jetbrains.annotations.NotNull;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
 import java.rmi.RemoteException;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -31,7 +36,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   @NotNull
   public Set<SModelDescriptor> read(@NotNull ModelRoot root, @NotNull IModule owner) {
     Set<SModelDescriptor> result = new HashSet<SModelDescriptor>();
-    readModelDescriptors(result, new File(root.getPath()), root, owner);
+    readModelDescriptors(result, FileSystem.getFile(root.getPath()), root, owner);
     return result;
   }
 
@@ -105,23 +110,23 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     ModelPersistence.saveModel(modelDescriptor.getSModel(), modelDescriptor.getModelFile());
   }
 
-  private void readModelDescriptors(Set<SModelDescriptor> modelDescriptors, File dir, ModelRoot modelRoot, ModelOwner owner) {
+  private void readModelDescriptors(Set<SModelDescriptor> modelDescriptors, IFile dir, ModelRoot modelRoot, ModelOwner owner) {
     if (!dir.isDirectory()) {
       return;
     }
-    File[] files = dir.listFiles(new FilenameFilter() {
-      public boolean accept(File d, String name) {
+    List<IFile> files = dir.list(new IFileNameFilter() {
+      public boolean accept(IFile d, String name) {
         return name.endsWith(".mps");
       }
     });
-    for (File file : files) {
-      SModelUID modelUID = PathManager.getModelUID(file, new File(modelRoot.getPath()), modelRoot.getPrefix());
+    for (IFile file : files) {
+      SModelUID modelUID = PathManager.getModelUID(file, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
       SModelDescriptor modelDescriptor = getInstance(this, modelRoot, file.getAbsolutePath(), modelUID, owner);
       LOG.debug("I've read model descriptor " + modelDescriptor.getModelUID() + "\n" + "Model root is " + modelRoot.getPath() + " " + modelRoot.getPrefix());
       modelDescriptors.add(modelDescriptor);
     }
-    File[] dirs = dir.listFiles();
-    for (File childDir : dirs) {
+    List<IFile> dirs = dir.list();
+    for (IFile childDir : dirs) {
       if (childDir.isDirectory()) {
         readModelDescriptors(modelDescriptors, childDir, modelRoot, owner);
       }
