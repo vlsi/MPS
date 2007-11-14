@@ -175,10 +175,4 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
   public String toString() {
     return "jar file class path item : " + myFile;
   }
-
-  public static void main(String[] args) {
-    JarFileClassPathItem item = new JarFileClassPathItem(new File("lib/jdom/jdom-1.0.jar"));
-
-    System.err.println(item.getClassesSetFor(""));
-  }
 }
