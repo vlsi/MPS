@@ -575,6 +575,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "prototypeNode", true) != null;
   }
 
+  public static boolean ifMacro_Condition_1195002168281(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "scope", true) != null;
+  }
+
   public static boolean ifMacro_Condition_1195001644032(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "creator", true), "prototypeNode", true) != null;
   }
@@ -949,6 +953,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1182281034369(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.getLeftExpression(node);
+  }
+
+  public static SNode sourceNodeQuery_1195002214342(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "scope", true);
   }
 
   public static SNode sourceNodeQuery_1172329130127(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
