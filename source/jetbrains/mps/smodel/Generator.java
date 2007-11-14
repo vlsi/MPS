@@ -31,7 +31,7 @@ public class Generator extends AbstractModule {
     // read modules and models
     readDependOnModules();
   }
-
+                                  
   public void readModels() {
     if (!isInitialized()) {
       super.readModels();
