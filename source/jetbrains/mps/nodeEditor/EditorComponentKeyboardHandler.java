@@ -10,9 +10,11 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.helgins.integration.Highlighter;
 
 import java.awt.event.KeyEvent;
 import java.util.List;
+import java.lang.Thread.State;
 
 public class EditorComponentKeyboardHandler implements IKeyboardHandler {
   private static final Logger LOG = Logger.getLogger(EditorComponentKeyboardHandler.class);
@@ -29,7 +31,16 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     notEditable = (editorContext.getNodeEditorComponent().isReadOnly() || notEditable);
 
     if (notEditable) return false;
-
+    Highlighter highlighter = editorContext.getOperationContext().getProject().getComponent(Highlighter.class);
+    if (highlighter != null) {
+      Thread thread = highlighter.getThread();
+      //System.err.println("helgins thread state = " + thread.getState());
+      //System.err.println("name = " + thread.getName());
+     /* if (thread.getState() == State.TIMED_WAITING) {
+        thread.interrupt();
+      }*/
+      thread.interrupt();
+    }
     EditorCell selectedCell = editor.getSelectedCell();
 
     // process cell keymaps first

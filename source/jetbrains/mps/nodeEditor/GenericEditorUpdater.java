@@ -18,6 +18,8 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
 
   private MPSProjects myProjects;
 
+  protected Thread myThread;
+
   public GenericEditorUpdater() {
   }
 
@@ -27,7 +29,11 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
   }
 
   public void initComponent() {
-    new Thread() {
+    System.err.println("starting highlighter");
+    if (myThread != null && myThread.isAlive()) {
+      return;
+    }
+    myThread = new Thread() {
       {
         setDaemon(true);
       }
@@ -38,21 +44,28 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
         CommandProcessor commandProcessor = CommandProcessor.instance();
         try {
           while (true) {
-            while (commandProcessor.isInsideCommand()) {
-              Thread.sleep(200);
+            try {
+              while (commandProcessor.isInsideCommand()) {
+                Thread.sleep(200);
+              }
+              doUpdate();
+              if (myStopThread) {
+                //System.err.println("stopping highlighter");
+                break;
+              }
+              Thread.sleep(300);
+            } catch(InterruptedException e) {
+              //ok
             }
-            doUpdate();
-            if (myStopThread) {
-              break;
-            }
-            Thread.sleep(300);
           }
         } catch (Exception e) {
           LOG.error(e);
         }
       }
 
-    }.start();
+    };
+    System.err.println("thread name = " + myThread.getName());
+    myThread.start();
   }
 
   public void stopUpdater() {
@@ -137,4 +150,8 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
   protected abstract boolean updateEditor(IEditorComponent editor);
 
   protected abstract int getCheckDelay();
+
+  public Thread getThread() {
+    return myThread;
+  }
 }

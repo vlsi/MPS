@@ -10,6 +10,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
+import jetbrains.mps.helgins.integration.Highlighter;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
@@ -331,6 +332,14 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
             NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
           }
           try {
+            try {
+              if (Thread.interrupted()) {
+                //System.err.println("helgins sleeping");
+                Thread.sleep(Highlighter.CHECK_DELAY);
+              }
+            } catch(InterruptedException e) {
+              Thread.currentThread().interrupt();
+            }
             applyRulesToNode(sNode);
           } finally{
             if (isIncrementalMode()) {
