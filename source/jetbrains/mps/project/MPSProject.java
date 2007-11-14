@@ -181,7 +181,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       } else {
         LOG.error("Can't find a global library " + name);
       }
-    }    
+    }
   }
 
   @Nullable
@@ -376,7 +376,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       }
     }
 
-    return null;    
+    return null;
   }
 
   public void setFolderFor(IModule module, String newFolder) {
@@ -529,14 +529,18 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           } else {
             try {
               cls = Class.forName(className);
-            } catch (ClassNotFoundException cnfe) {              
+            } catch (ClassNotFoundException cnfe) {
             }
           }
 
 
           if (cls != null) {
             if (containsComponent(cls) && getComponent(cls) instanceof IExternalizableComponent) {
-              ((IExternalizableComponent) getComponentSafe(cls)).read(component, this);
+              try {
+                ((IExternalizableComponent) getComponentSafe(cls)).read(component, this);
+              } catch (Exception e) {
+                LOG.error(e);
+              }
             }
           } else {
             LOG.error("Can't find a class " + className + " in module " + module);
@@ -567,7 +571,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           Object component = myContext.get(cls);
           if (component instanceof IExternalizableComponent) {
             Element componentElement = new Element(COMPONENT);
-            componentElement.setAttribute(CLASS, cls.getName());            
+            componentElement.setAttribute(CLASS, cls.getName());
 
             //todo use osgi stuff instead
 //            if (component.getClass().getClassLoader() instanceof BundleClassLoader) {
@@ -575,7 +579,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 //              componentElement.setAttribute(BUNDLE, bcl.getBundle().getName());
 //            }
 
-            ((IExternalizableComponent) component).write(componentElement, this);
+            try {
+              ((IExternalizableComponent) component).write(componentElement, this);
+            } catch (Exception e) {
+              LOG.error(e);
+            }
             root.addContent(componentElement);
           }
         }
@@ -732,8 +740,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
       if (hasGenerationErrors()) {
         out.println("Generation errors:");
-        for (String e: myGenerationErrors) {
-          out.println("  "  + e);
+        for (String e : myGenerationErrors) {
+          out.println("  " + e);
         }
       } else {
         out.println("No generation errors.");
@@ -742,8 +750,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
       if (hasGenerationWarnings()) {
         out.println("Generation warnings:");
-        for (String w: myGenerationWarnings) {
-          out.println("  "  + w);
+        for (String w : myGenerationWarnings) {
+          out.println("  " + w);
         }
       } else {
         out.println("No generation warnings.");
@@ -752,8 +760,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
       if (hasCompilationProblems()) {
         out.println("Compilation problems:");
-        for (String c: myCompilationProblems) {
-          out.println("  "  + c);
+        for (String c : myCompilationProblems) {
+          out.println("  " + c);
         }
       } else {
         out.println("No compilation problems.");
@@ -773,7 +781,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     final IMessageHandler handler = new IMessageHandler() {
       public void handle(Message msg) {
         final String message = msg.getText();
-        switch(msg.getKind()) {
+        switch (msg.getKind()) {
           case ERROR:
             errors.add(msg.getText());
             LOG.error(message);
@@ -814,7 +822,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           GenParameters parms;
           try {
             parms = GeneratorConfigUtil.calculate(MPSProject.this, t);
-          } catch (GeneratorConfigUtil.GeneratorConfigurationException e) {            
+          } catch (GeneratorConfigUtil.GeneratorConfigurationException e) {
             errors.add("Can't create a generator configuration : " + e.getMessage());
             return;
           }
@@ -838,7 +846,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
           System.out.println("");
         }
       }
-    });        
+    });
 
     return new TestResult(errors, warnings, createCompilationProblemsList(generationType.getCompilationResults()));
   }
@@ -848,7 +856,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     for (CompilationResult r : compilationResults) {
       if (r.getErrors() != null) {
-        for (CategorizedProblem p: r.getErrors()) {
+        for (CategorizedProblem p : r.getErrors()) {
           res.add(new String(
                   r.getCompilationUnit().getFileName()) +
                   " (" + p.getSourceLineNumber() + "): " +
