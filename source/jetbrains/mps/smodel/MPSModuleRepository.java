@@ -12,8 +12,8 @@ import jetbrains.mps.vfs.IFileNameFilter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.awt.Color;
 import java.io.File;
-import java.io.FilenameFilter;
 import java.util.*;
 
 /**
@@ -36,6 +36,7 @@ public class MPSModuleRepository {
   public static final String LANGUAGE_EXT = ".mpl";
   public static final String SOLUTION_EXT = ".msd";
   public static final String DEVKIT_EXT = ".devkit";
+  public static final String MPS_ARCHIVE = ".mar";
 
   public static MPSModuleRepository getInstance() {
     return ApplicationComponents.getInstance().getComponent(MPSModuleRepository.class);
@@ -355,7 +356,7 @@ public class MPSModuleRepository {
 
     List<IFile> files = dir.list(new IFileNameFilter() {
       public boolean accept(IFile parent, String name) {
-        return hasModuleExtension(name);
+        return hasModuleExtension(name) || name.endsWith(MPS_ARCHIVE);
       }
     });
 
@@ -364,7 +365,11 @@ public class MPSModuleRepository {
     }
 
     for (IFile file : files) {
-      readModuleDescriptor_internal(file, owner, getModuleExtension(file.getName()));
+      if (hasModuleExtension(file.getName())) {
+        readModuleDescriptor_internal(file, owner, getModuleExtension(file.getName()));
+      } else {
+        readModuleDescriptors(FileSystem.getJarFileRoot(file.toFile()), owner);
+      }
     }
     List<IFile> dirs = dir.list();
     for (IFile childDir : dirs) {

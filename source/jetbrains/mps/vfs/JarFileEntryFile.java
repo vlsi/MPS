@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-class JarFileEntryFile implements IFile {
+public class JarFileEntryFile implements IFile {
   private JarFileData myJarFileData;
   private String myEntryPath;
 
@@ -34,6 +34,10 @@ class JarFileEntryFile implements IFile {
     return result;
   }
 
+  public File getJarFile() {
+    return myJarFileData.getFile();
+  }
+
   public IFile getParent() {    
     return new JarFileEntryFile(myJarFileData, myJarFileData.getParentDirectory(myEntryPath));
   }
@@ -48,7 +52,7 @@ class JarFileEntryFile implements IFile {
       result.add(new JarFileEntryFile(myJarFileData, e));
     }
     for (String e : myJarFileData.getFiles(myEntryPath)) {
-      result.add(new JarFileEntryFile(myJarFileData, e));
+      result.add(new JarFileEntryFile(myJarFileData, myEntryPath.length() > 0 ? myEntryPath + "/" + e : e));
     }
 
     return result;
@@ -128,6 +132,10 @@ class JarFileEntryFile implements IFile {
 
   public OutputStream openOutputStream() throws IOException {
     throw new UnsupportedOperationException();
+  }
+
+  public boolean isReadOnly() {
+    return true;
   }
 
   public File toFile() {

@@ -6,7 +6,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-class FileSystemFile implements IFile {
+public class FileSystemFile implements IFile {
   private File myFile;
 
   public FileSystemFile(File file) {
@@ -119,6 +119,10 @@ class FileSystemFile implements IFile {
 
   public OutputStream openOutputStream() throws IOException {
     return new FileOutputStream(myFile);
+  }
+
+  public boolean isReadOnly() {
+    return false;
   }
 
   public File toFile() {

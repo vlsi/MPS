@@ -42,33 +42,36 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
   @NotNull
   public SModel loadModel(final @NotNull SModelDescriptor modelDescriptor) {
-    final File file = FileSystem.toFile(modelDescriptor.getModelFile());
 
-    File mineFile = new File(file.getPath() + ".mine");
+    if (!modelDescriptor.getModelFile().isReadOnly()) {
+      final File file = FileSystem.toFile(modelDescriptor.getModelFile());
 
-    if (mineFile.exists()) {
-      FileUtil.copyFile(mineFile, file);
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        public void run() {
-          NodeReadAccessCaster.blockEvents();
-         try {
-          Merger.merge(file);
-         }
-          finally {
-          NodeReadAccessCaster.unblockEvents();
-        }
-          modelDescriptor.reloadFromDisk();
-        }
-      });
+      File mineFile = new File(file.getPath() + ".mine");
+
+      if (mineFile.exists()) {
+        FileUtil.copyFile(mineFile, file);
+        ThreadUtils.runInUIThreadNoWait(new Runnable() {
+          public void run() {
+            NodeReadAccessCaster.blockEvents();
+           try {
+            Merger.merge(file);
+           }
+            finally {
+            NodeReadAccessCaster.unblockEvents();
+          }
+            modelDescriptor.reloadFromDisk();
+          }
+        });
+      }
+
+      if (!file.exists()) {
+        return new SModel(modelDescriptor.getModelUID());
+      }
     }
 
-    if (!file.exists()) {
-      return new SModel(modelDescriptor.getModelUID());
-    }
-
-    SModel model = ModelPersistence.readModel(FileSystem.getFile(file));
+    SModel model = ModelPersistence.readModel(modelDescriptor.getModelFile());
     LOG.assertLog(model.getUID().equals(modelDescriptor.getModelUID()),
-            "\nError loading model from file: \"" + file + "\"\n" +
+            "\nError loading model from file: \"" + modelDescriptor.getModelFile() + "\"\n" +
                     "expected model UID     : \"" + modelDescriptor.getModelUID() + "\"\n" +
                     "but was UID            : \"" + model.getUID() + "\"\n" +
                     "the model will not be available.\n" +

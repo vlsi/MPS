@@ -9,7 +9,7 @@ import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-class JarFileData {
+public class JarFileData {
   private File myFile;
   private ZipFile myZipFile;
 

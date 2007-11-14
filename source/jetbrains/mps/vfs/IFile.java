@@ -33,5 +33,7 @@ public interface IFile {
   InputStream openInputStream() throws IOException;
   OutputStream openOutputStream() throws IOException;
 
+  boolean isReadOnly();
+
   File toFile();
 }

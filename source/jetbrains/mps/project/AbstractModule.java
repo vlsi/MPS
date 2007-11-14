@@ -13,11 +13,13 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.JarFileEntryFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
+import java.util.jar.JarFile;
 
 /**
  * Created by IntelliJ IDEA.
@@ -470,9 +472,16 @@ public abstract class AbstractModule implements IModule {
 
   public File getBundleHome() {
     IFile descriptorFile = getDescriptorFile();
+
     if (descriptorFile != null) {
+      if (descriptorFile instanceof JarFileEntryFile) {
+        return ((JarFileEntryFile) descriptorFile).getJarFile();
+      }
+
       return FileSystem.toFile(descriptorFile.getParent());
     }
+
+
     return null;
   }
 
@@ -598,6 +607,11 @@ public abstract class AbstractModule implements IModule {
     File bundleHome = getBundleHome();
 
     assert bundleHome != null;
+
+    if (bundleHome.isFile()) { //i.e. packaged      
+      return;
+    }
+
 
     File metaInfDir = new File(bundleHome, "META-INF");
 
