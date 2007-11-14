@@ -105,6 +105,10 @@ public class PathManager {
 
   }
 
+  public static String getTmpPath() {
+    return getConfigPath() + File.separator + "tmp";
+  }
+
   public static String getConfigPath() {
     if (ourConfigPath != null) return ourConfigPath;
 

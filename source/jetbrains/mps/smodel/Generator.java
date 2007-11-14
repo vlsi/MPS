@@ -9,6 +9,7 @@ import jetbrains.mps.projectLanguage.structure.GeneratorDescriptor;
 import jetbrains.mps.projectLanguage.structure.GeneratorReference;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.util.PathManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -185,7 +186,7 @@ public class Generator extends AbstractModule {
   public File getBundleHome() {
     //eclipse's OSGi implementation doesn't allow directories with #. Probably #s are
     //forbidden inside urls
-    File home = new File(getSourceLanguage().getBundleHome(), getModuleUID().replace('#', '.'));
+    File home = new File(PathManager.getTmpPath() + "generators", getModuleUID().replace('#', '.'));
     if (!home.exists()) {
       home.mkdirs();
     }
