@@ -489,6 +489,11 @@ public abstract class AbstractModule implements IModule {
     if (getExportedPackagesString().length() > 0) {
       result.append("Export-Package:\n").append(getExportedPackagesString());
     }
+
+    if (getDescriptorFile() != null) {
+      result.append("MPS-Module-File:").append(getDescriptorFile().getName()).append("\n");
+    }
+    
     return result.toString();
   }
 
