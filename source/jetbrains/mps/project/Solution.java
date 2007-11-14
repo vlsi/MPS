@@ -110,6 +110,7 @@ public class Solution extends AbstractModule {
 
     mySolutionDescriptor = newDescriptor;
 
+    createManifest();
 
     // read languages and models
     Set<IModule> before = new HashSet<IModule>(MPSModuleRepository.getInstance().getAllModules());

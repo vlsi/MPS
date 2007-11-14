@@ -279,6 +279,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     while (generators.hasNext()) {
       GeneratorDescriptor generatorDescriptor = generators.next();
       Generator generator = new Generator(this, generatorDescriptor);
+      generator.createManifest();
       generator.updateRuntimeClassPath();
       generator.reloadStubs();
       MPSModuleRepository.getInstance().addModule(generator, this);
@@ -319,9 +320,13 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     }
 
     myLanguageDescriptor = newDescriptor;
+
+    createManifest();
+
     //read modules and models
     readDependOnModules();
     revalidateGenerators();
+
 
     rereadModels();
 
