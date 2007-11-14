@@ -119,25 +119,27 @@ public final class BehaviorManager {
   }
 
   public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    return _invokeInternal(returnType, node, methodName, parametersTypes, false, parameters);
+    return _invokeInternal(returnType, node, null, methodName, parametersTypes, parameters);
   }
 
-  public <T> T invokeSuper(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, boolean superCall, Object... parameters) {
-    return _invokeInternal(returnType, node, methodName, parametersTypes, superCall, parameters);    
+  public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
+    return _invokeInternal(returnType, node, callerConceptFqName, methodName, parametersTypes, parameters);    
   }
 
-  private <T> T _invokeInternal(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, boolean superCall, Object... parameters) {
+  private <T> T _invokeInternal(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
     assert node != null;    
-    AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
+    List<AbstractConceptDeclaration> superConcepts;
+    if (callerConceptFqName == null) {
+      AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
+      superConcepts = SModelUtil_new.getConceptAndSuperConcepts(concept);
+    } else {
+      AbstractConceptDeclaration callerConcept = SModelUtil_new.findConceptDeclaration(callerConceptFqName, GlobalScope.getInstance());
+      superConcepts = SModelUtil_new.getConceptAndSuperConcepts(callerConcept);
+      superConcepts.remove(callerConcept);
+    }
 
     Method method = null;
     Class[] parameterTypeArray = parametersTypes;
-
-    List<AbstractConceptDeclaration> superConcepts = SModelUtil_new.getConceptAndSuperConcepts(concept);
-
-    if (superCall) {
-      superConcepts.remove(concept);
-    }
 
     for (AbstractConceptDeclaration conceptDeclaration : superConcepts) {
       method = getMethod(conceptDeclaration, methodName, parameterTypeArray);

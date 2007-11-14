@@ -1241,6 +1241,9 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1188208561367">
       <link role="intfc" targetNodeId="1188208481402" resolveInfo="Annotable" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194954146531">
+      <link role="intfc" targetNodeId="1194952169813" resolveInfo="IMemberContainer" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1107535904670">
     <property name="name" value="ClassifierType" />
@@ -2245,6 +2248,9 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1194952169813">
+    <property name="name" value="IMemberContainer" />
   </node>
 </model>
 

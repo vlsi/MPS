@@ -9,7 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.Iterator;
 import java.util.List;
 
-public class Classifier extends GenericDeclaration implements Annotable {
+public class Classifier extends GenericDeclaration implements Annotable, IMemberContainer {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Classifier";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
