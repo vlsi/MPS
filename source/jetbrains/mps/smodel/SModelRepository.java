@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -116,14 +117,13 @@ public class SModelRepository extends SModelAdapter {
     refreshModels(new HashSet<SModelDescriptor>());
   }
 
-  public boolean containsModelWithFile(@NotNull File modelFile) {
+  public boolean containsModelWithFile(@NotNull IFile modelFile) {
     return findModel(modelFile) != null;
   }
 
   @Nullable
-  public SModelDescriptor findModel(@NotNull File modelFile) {
-    String canonicalPath = FileUtil.getCanonicalPath(modelFile);
-
+  public SModelDescriptor findModel(@NotNull IFile modelFile) {
+    String canonicalPath = modelFile.getCanonicalPath();
 
     for (SModelDescriptor model : getAllModelDescriptors()) {
       if (model.getModelFile() == null) continue;
