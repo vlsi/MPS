@@ -430,15 +430,38 @@ public class RuleUtil {
         return outputNodes;
       } else if (nodeMacro instanceof IfMacro) {
         // $IF$
-        List<SNode> newInputNodes = TemplateGenUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
-        for (SNode newInputNode : newInputNodes) {
-          boolean inputChanged = (newInputNode != inputNode);
-          List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
-          if (_outputNodes != null) {
-            outputNodes.addAll(_outputNodes);
-            if (registerTopOutput && !inputChanged) {
-              myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
+        List<SNode> _outputNodes = null;
+        if (TemplateGenUtil.checkConditionForIfMacro(inputNode, (IfMacro) nodeMacro, myGenerator)) {
+          _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, inputNode, nodeMacrosToSkip + 1, false);
+        } else {
+          // alternative consequence
+          RuleConsequence altConsequence = ((IfMacro) nodeMacro).getAlternativeConsequence();
+          if(altConsequence != null) {
+            SNode altTemplateNode;
+            if (altConsequence instanceof DismissTopMappingRule) {
+              TemplateGenUtil.showGeneratorMessage(((DismissTopMappingRule) altConsequence).getGeneratorMessage(), inputNode, altConsequence.getNode(), myGenerator);
+              throw new ReductionNotNeededException();
+            } else if (altConsequence instanceof TemplateDeclarationReference) {
+              TemplateDeclaration alternativeTemplate = ((TemplateDeclarationReference) altConsequence).getTemplate();
+              altTemplateNode = getTemplateNodeFromFragment(alternativeTemplate, inputNode, nodeMacro.getNode(), myGenerator);
+            } else if (altConsequence instanceof InlineTemplate_RuleConsequence) {
+              altTemplateNode = BaseAdapter.fromAdapter(((InlineTemplate_RuleConsequence) altConsequence).getTemplateNode());
+            } else {
+              myGenerator.showErrorMessage(inputNode, null, altConsequence.getNode(), "unsupported rule consequence");
+              return null;
             }
+            if (altTemplateNode != null) {
+              List<SNode> outputChildNodes = createOutputNodesForTemplateNode(mappingName_, altTemplateNode, inputNode, 0, false);
+              if (outputChildNodes != null) {
+                outputNodes.addAll(outputChildNodes);
+              }
+            }
+          }
+        }
+        if (_outputNodes != null) {
+          outputNodes.addAll(_outputNodes);
+          if (registerTopOutput) {
+            myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
           }
         }
         return outputNodes;
@@ -487,7 +510,8 @@ public class RuleUtil {
               throw new ReductionNotNeededException();
             } else if (consequenceForCase instanceof TemplateDeclarationReference) {
               TemplateDeclaration templateForSwitchCase = ((TemplateDeclarationReference) consequenceForCase).getTemplate();
-              templateNodeForCase = getTemplateNodeForSwitchCaseTemplate(newInputNode, templateForSwitchCase, templateSwitch, myGenerator);
+//              templateNodeForCase = getTemplateNodeForSwitchCaseTemplate(newInputNode, templateForSwitchCase, templateSwitch, myGenerator);
+              templateNodeForCase = getTemplateNodeFromFragment(templateForSwitchCase, newInputNode, nodeMacro.getNode(), myGenerator);
             } else if (consequenceForCase instanceof InlineTemplate_RuleConsequence) {
               templateNodeForCase = BaseAdapter.fromAdapter(((InlineTemplate_RuleConsequence) consequenceForCase).getTemplateNode());
             } else {
@@ -498,7 +522,8 @@ public class RuleUtil {
             // for back compatibility
             TemplateDeclaration templateForSwitchCase = myGenerator.getTemplateForSwitchCase_deprecated(newInputNode, templateSwitch);
             if (templateForSwitchCase != null) {
-              templateNodeForCase = getTemplateNodeForSwitchCaseTemplate(newInputNode, templateForSwitchCase, templateSwitch, myGenerator);
+//              templateNodeForCase = getTemplateNodeForSwitchCaseTemplate(newInputNode, templateForSwitchCase, templateSwitch, myGenerator);
+              templateNodeForCase = getTemplateNodeFromFragment(templateForSwitchCase, newInputNode, nodeMacro.getNode(), myGenerator);
             }
           }
 
@@ -533,12 +558,12 @@ public class RuleUtil {
             myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "failed to process $INCLIDE$ : no 'include template'");
             return null;
           }
-          SNode templateForInclude = getTemplateNodeForIncludeTemplate(newInputNode, includeTemplate, includeMacro, myGenerator);
+//          SNode templateForInclude = getTemplateNodeForIncludeTemplate(newInputNode, includeTemplate, includeMacro, myGenerator);
+          SNode templateForInclude = getTemplateNodeFromFragment(includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator);
           List<SNode> outputChildNodes = createOutputNodesForTemplateNode(mappingName_, templateForInclude, newInputNode, 0, inputChanged);
             if (outputChildNodes != null) {
               outputNodes.addAll(outputChildNodes);
             }
-
 
           if (registerTopOutput && !inputChanged) {
             myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
@@ -684,37 +709,54 @@ public class RuleUtil {
     return outputNodes;
   }
 
-  private static SNode getTemplateNodeForSwitchCaseTemplate(SNode inputNode, TemplateDeclaration template, TemplateSwitch templateSwitch, ITemplateGenerator generator) {
+  public static SNode getTemplateNodeFromFragment(TemplateDeclaration template, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     List<TemplateFragment> templateFragments = getTemplateFragments(template);
     if (templateFragments.isEmpty()) {
-      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch: no template fragments found");
+      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: no template fragments found");
       return null;
     }
     if (templateFragments.size() > 1) {
-      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch: more than one (" + templateFragments.size() + ") fragments found");
+      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: more than one (" + templateFragments.size() + ") fragments found");
       return null;
     }
 
+    // todo: fragment can have name (mapping name)
     TemplateFragment templateFragment = templateFragments.get(0);
     SNode templateNode = BaseAdapter.fromAdapter(templateFragment.getParent());
     return templateNode;
   }
 
-  private static SNode getTemplateNodeForIncludeTemplate(SNode inputNode, TemplateDeclaration template, IncludeMacro includeMacro, ITemplateGenerator generator) {
-    List<TemplateFragment> templateFragments = getTemplateFragments(template);
-    if (templateFragments.isEmpty()) {
-      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(includeMacro), "couldn't include: no template fragments found");
-      return null;
-    }
-    if (templateFragments.size() > 1) {
-      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(includeMacro), "couldn't include: more than one (" + templateFragments.size() + ") fragments found");
-      return null;
-    }
+//  private static SNode getTemplateNodeForSwitchCaseTemplate(SNode inputNode, TemplateDeclaration template, TemplateSwitch templateSwitch, ITemplateGenerator generator) {
+//    List<TemplateFragment> templateFragments = getTemplateFragments(template);
+//    if (templateFragments.isEmpty()) {
+//      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch: no template fragments found");
+//      return null;
+//    }
+//    if (templateFragments.size() > 1) {
+//      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(templateSwitch), "couldn't create builder for switch: more than one (" + templateFragments.size() + ") fragments found");
+//      return null;
+//    }
+//
+//    TemplateFragment templateFragment = templateFragments.get(0);
+//    SNode templateNode = BaseAdapter.fromAdapter(templateFragment.getParent());
+//    return templateNode;
+//  }
 
-    TemplateFragment templateFragment = templateFragments.get(0);
-    SNode templateNode = BaseAdapter.fromAdapter(templateFragment.getParent());
-    return templateNode;
-  }
+//  private static SNode getTemplateNodeForIncludeTemplate(SNode inputNode, TemplateDeclaration template, IncludeMacro includeMacro, ITemplateGenerator generator) {
+//    List<TemplateFragment> templateFragments = getTemplateFragments(template);
+//    if (templateFragments.isEmpty()) {
+//      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(includeMacro), "couldn't include: no template fragments found");
+//      return null;
+//    }
+//    if (templateFragments.size() > 1) {
+//      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), BaseAdapter.fromAdapter(includeMacro), "couldn't include: more than one (" + templateFragments.size() + ") fragments found");
+//      return null;
+//    }
+//
+//    TemplateFragment templateFragment = templateFragments.get(0);
+//    SNode templateNode = BaseAdapter.fromAdapter(templateFragment.getParent());
+//    return templateNode;
+//  }
 
 
 }

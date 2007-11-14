@@ -53,5 +53,34 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration" id="1194988745939">
+    <property name="name" value="test_template3" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1194988763066">
+      <property name="name" value="m" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1194988763067" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1194988763068" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194988763069">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1194988789175">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1194988796708">
+            <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.IfMacro" id="1194988838228">
+              <node role="conditionFunction" type="jetbrains.mps.transformation.TLBase.structure.IfMacro_Condition" id="1194988838229">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194988838230">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1194988849496">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1194988849497">
+                      <property name="value" value="true" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="alternativeConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1194989693709">
+                <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1194989701478" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1194988824180" />
+    </node>
+  </node>
 </model>
 

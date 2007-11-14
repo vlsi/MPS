@@ -56,7 +56,7 @@ public class TemplateGenUtil {
             n instanceof RootTemplateAnnotation;
   }
 
-  private static boolean checkConditionForIfMacro(SNode sourceNode, IfMacro ifMacro, ITemplateGenerator generator) {
+  public static boolean checkConditionForIfMacro(SNode sourceNode, IfMacro ifMacro, ITemplateGenerator generator) {
     // new
     IfMacro_Condition function = ifMacro.getConditionFunction();
     long startTime = System.currentTimeMillis();
@@ -326,13 +326,13 @@ public class TemplateGenUtil {
         return getSourceNodesForMacroWithSourceNodeQuery(parentSourceNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcNodeMacro) nodeMacro).getSourceNodeQuery(), false, generator);
       } else if (nodeMacro instanceof MapSrcNodeMacro) {
         return getSourceNodesForMacroWithSourceNodeQuery(parentSourceNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcNodeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
-      } else if (nodeMacro instanceof IfMacro) {
+      } /*else if (nodeMacro instanceof IfMacro) {
         List<SNode> sourceNodes = new ArrayList<SNode>(1);
         if (checkConditionForIfMacro(parentSourceNode, (IfMacro) nodeMacro, generator)) {
           sourceNodes.add(parentSourceNode);
         }
         return sourceNodes;
-      } else if (nodeMacro instanceof LoopMacro) {
+      } */else if (nodeMacro instanceof LoopMacro) {
         return getSourceNodesForMacroWithSourceNodesQuery(parentSourceNode, (SourceSubstituteMacro) nodeMacro, ((LoopMacro) nodeMacro).getSourceNodesQuery(), generator);
       } else if (nodeMacro instanceof CopySrcListMacro) {
         return getSourceNodesForMacroWithSourceNodesQuery(parentSourceNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcListMacro) nodeMacro).getSourceNodesQuery(), generator);

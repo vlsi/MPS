@@ -446,6 +446,11 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1167945743726" resolveInfo="IfMacro_Condition" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194989344771">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="alternativeConsequence" />
+      <link role="target" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1118773211871">
       <property name="value" value="$IF$" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />

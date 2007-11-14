@@ -62,43 +62,6 @@ public class MacroUtil {
   }
 
 
-  public static boolean checkConditionForIfMacro(SNode sourceNode, IfMacro ifMacro, ITemplateGenerator generator) {
-    // new
-    IfMacro_Condition function = ifMacro.getConditionFunction();
-    if (function != null) {
-      String methodName = TemplateFunctionMethodName.ifMacro_Condition(function.getNode());
-      Object[] args = new Object[]{
-              sourceNode,
-              generator.getSourceModel(),
-              generator,
-              generator.getScope(),
-              generator.getGeneratorSessionContext()};
-      try {
-        return (Boolean) QueryMethodGenerated.invoke(methodName, args, ifMacro.getModel());
-      } catch (Exception e) {
-        generator.showErrorMessage(sourceNode, null, BaseAdapter.fromAdapter(ifMacro), "couldn't evaluate if-macro condition");
-        LOG.error(e);
-        return false;
-      }
-    }
-
-    // old
-    String conditionAspectId = ifMacro.getConditionAspectId();
-    if (conditionAspectId != null) {
-      String methodName = "semanticNodeCondition_" + conditionAspectId;
-      Object[] args = new Object[]{sourceNode};
-      try {
-        return (Boolean) QueryMethod.invokeWithOptionalArg(methodName, args, ifMacro.getModel(), generator.getGeneratorSessionContext());
-      } catch (Exception e) {
-        generator.showErrorMessage(sourceNode, null, BaseAdapter.fromAdapter(ifMacro), "couldn't evaluate if-macro condition: " + NameUtil.shortNameFromLongName(e.getClass().getName()) + " : " + e.getMessage());
-        LOG.error(e);
-        return false;
-      }
-    }
-    throw new GenerationFailedException(new GenerationFailueInfo("couldn't evaluate if-macro condition", sourceNode, BaseAdapter.fromAdapter(ifMacro), null, generator.getGeneratorSessionContext()));
-  }
-
-
   public static SNode executeMapSrcNodeMacro(SNode sourceNode, SNode myMapSrcNodeOrListMacro, SNode parentOutputNode, ITemplateGenerator generator) {
     INodeAdapter adapter = myMapSrcNodeOrListMacro.getAdapter();
     // new
