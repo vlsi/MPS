@@ -1,55 +1,105 @@
 package jetbrains.mps.vfs;
 
-import java.util.List;
+import jetbrains.mps.util.FileUtil;
+
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 class JarFileEntryFile implements IFile {
-  public String getName() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  private JarFileData myJarFileData;
+  private String myEntryPath;
+
+  JarFileEntryFile(File zipFile) {
+    this(new JarFileData(zipFile), "");
   }
 
-  public IFile getParent() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+  JarFileEntryFile(JarFileData jarFileData, String path) {
+    myJarFileData = jarFileData;
+    myEntryPath = path;
+  }
+
+  public String getName() {    
+    String result = myEntryPath;
+
+    if (result.endsWith("/")) {
+      result = result.substring(0, result.length() - 2);
+    }
+
+    int index = result.lastIndexOf('/');
+    if (index != -1) {
+      result = result.substring(index + 1);
+    }
+    return result;
+  }
+
+  public IFile getParent() {    
+    return new JarFileEntryFile(myJarFileData, myJarFileData.getParentDirectory(myEntryPath));
   }
 
   public List<IFile> list() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
-  }
+    if (isFile()) {
+      return null;
+    }
 
-  public IFile child(String suffix) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    List<IFile> result = new ArrayList<IFile>();
+    for (String e : myJarFileData.getSubdirectories(myEntryPath)) {
+      result.add(new JarFileEntryFile(myJarFileData, e));
+    }
+    for (String e : myJarFileData.getFiles(myEntryPath)) {
+      result.add(new JarFileEntryFile(myJarFileData, e));
+    }
+
+    return result;
   }
 
   public List<IFile> list(IFileNameFilter filter) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    List<IFile> files = list();
+
+    Iterator<IFile> result = files.iterator();
+
+    while (result.hasNext()) {
+      IFile file = result.next();
+
+      if (!filter.accept(this, file.getName())) {
+        result.remove();
+      }
+    }
+
+    return files;
+  }
+
+  public IFile child(String suffix) {
+    return new JarFileEntryFile(myJarFileData, myEntryPath + "/" + suffix);
   }
 
   public boolean isDirectory() {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return myJarFileData.isDirectory(myEntryPath);
   }
 
   public boolean isFile() {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return !isDirectory();
   }
 
   public String getPath() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return getCanonicalPath();
   }
 
   public String getAbsolutePath() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return getCanonicalPath();
   }
 
   public String getCanonicalPath() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return FileUtil.getCanonicalPath(myJarFileData.getFile()) + "!" + myEntryPath;
   }
 
   public long lastModified() {
-    return 0;  //To change body of implemented methods use File | Settings | File Templates.
+    return myJarFileData.getFile().lastModified();
   }
 
   public boolean exists() {
-    return false;  //To change body of implemented methods use File | Settings | File Templates.
+    return myJarFileData.exists(myEntryPath);
   }
 
   public boolean createNewFile() {
@@ -65,7 +115,7 @@ class JarFileEntryFile implements IFile {
   }
 
   public Reader openReader() throws IOException {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return new InputStreamReader(openInputStream());
   }
 
   public Writer openWriter() throws IOException {
@@ -73,7 +123,7 @@ class JarFileEntryFile implements IFile {
   }
 
   public InputStream openInputStream() throws IOException {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return myJarFileData.openStream(myEntryPath);
   }
 
   public OutputStream openOutputStream() throws IOException {
@@ -82,5 +132,26 @@ class JarFileEntryFile implements IFile {
 
   public File toFile() {
     throw new UnsupportedOperationException();
+  }
+
+  public String toString() {
+    return myEntryPath;
+  }
+
+  public static void main(String[] args) {
+    JarFileEntryFile jfef = new JarFileEntryFile(new File("C:/MPS/lib/asm/asm.jar"));
+
+    printTree("", jfef);
+  }
+
+  private static void printTree(String indent, IFile file) {
+    if (file.isFile()) {
+      System.out.println(indent + file.getName());
+    } else {
+      System.out.println(indent + file.getName() + "/");
+      for (IFile f : file.list()) {
+        printTree("  " + indent, f);
+      }
+    }
   }
 }

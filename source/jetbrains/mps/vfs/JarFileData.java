@@ -2,23 +2,37 @@ package jetbrains.mps.vfs;
 
 import jetbrains.mps.util.CollectionUtil;
 
-import java.io.InputStream;
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.*;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 class JarFileData {
+  private File myFile;
   private ZipFile myZipFile;
 
   private Map<String, Set<String>> myFiles = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> mySubDirectories = new HashMap<String, Set<String>>();
   private Map<String, ZipEntry> myEntries = new HashMap<String, ZipEntry>();
 
-  JarFileData(ZipFile zipFile) {
-    myZipFile = zipFile;
+  JarFileData(File file) {
+    try {
+      myFile = file;
+      myZipFile = new ZipFile(file);
+      buildCaches();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
 
-    buildCaches();
+  public File getFile() {
+    return myFile;
+  }
+
+  public ZipFile getZipFile() {
+    return myZipFile;
   }
 
   Set<String> getFiles(String dir) {
@@ -26,7 +40,7 @@ class JarFileData {
   }
 
   Set<String> getSubdirectories(String dir) {
-    return Collections.unmodifiableSet(myFiles.get(dir));
+    return Collections.unmodifiableSet(mySubDirectories.get(dir));
   }
 
   boolean exists(String path) {
@@ -34,11 +48,19 @@ class JarFileData {
   }
 
   boolean isDirectory(String path) {
-    if (myEntries.get(path) == null) {
-      return false;
+    if (myEntries.get(path) != null) {
+      return myEntries.get(path).isDirectory();
     }
 
-    return myEntries.get(path).isDirectory();
+    if (myFiles.get(path) != null) {
+      return true;
+    }
+
+    if (mySubDirectories.get(path) != null) {
+      return true;
+    }
+
+    return false;
   }
 
   InputStream openStream(String path) throws IOException {
@@ -84,12 +106,16 @@ class JarFileData {
 
   private void buildDirectoryCaches(String dir) {
     String parent = getParentDirectory(dir);
+
+    getDirectoriesFor(dir);
+    getFilesFor(dir);
+
     if (parent.equals(dir)) return;
     getDirectoriesFor(parent).add(dir);
     buildDirectoryCaches(parent);
   }
 
-  private String getParentDirectory(String dir) {
+  String getParentDirectory(String dir) {
     int lastSlash = dir.lastIndexOf("/");
     if (lastSlash == -1) return "";
     return dir.substring(0, lastSlash);

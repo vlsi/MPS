@@ -140,9 +140,6 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
         }
         
         buildPackageCaches(pack);
-
-
-
         getClassesSetFor(pack).add(className);
 
         if (pack.length() > 0) {
