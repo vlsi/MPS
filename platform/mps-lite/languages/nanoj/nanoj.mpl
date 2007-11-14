@@ -17,5 +17,10 @@
   <accessoryModels />
   <generators />
   <classPath />
+  <runtimeClassPath />
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
 </language>
 

@@ -1,5 +1,8 @@
 package jetbrains.mps.util;
 
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystem;
+
 import java.io.File;
 
 /**
@@ -27,34 +30,40 @@ public abstract class Macros {
   }
 
   public final String expandPath(String path, File anchorFile) {
+    return expandPath(path, FileSystem.getFile(anchorFile));
+  }
+
+  public final String expandPath(String path, IFile anchorFile) {
     if(path == null) return null;
     path = path.replace('\\', File.separatorChar);
     return expandPath_internal(path, anchorFile);
   }
 
-  public final String shrinkPath(String absolutePath, File anchorFile) {
+  public final String shrinkPath(String path, File anchor) {
+    return shrinkPath(path, FileSystem.getFile(anchor));
+  }
+
+  public final String shrinkPath(String absolutePath, IFile anchorFile) {
     if(absolutePath == null) return null;
     String fileName = shrinkPath_internal(absolutePath, anchorFile);
     return fileName.replace(File.separatorChar, '\\');
   }
 
-  protected String expandPath_internal(String path, File anchorFile) {
-    String absolutePath;
+  protected String expandPath_internal(String path, IFile anchorFile) {
+    IFile result;
     if (path.startsWith("${mps_home}")) {
       String relativePath = removePrefix(path, "${mps_home}");
-      absolutePath = PathManager.getAbsolutePathByRelational(new File(PathManager.getHomePath()), relativePath);
-    } else if (new File(path).isAbsolute()) {
-      absolutePath = new File(path).getAbsolutePath();
+      result = FileSystem.getFile(PathManager.getHomePath()).child(relativePath);
     } else {
-      absolutePath = PathManager.getAbsolutePathByRelational(anchorFile, path);
+      result = FileSystem.getFile(path);
     }
-    return FileUtil.getCanonicalPath(absolutePath);
+    return result.getCanonicalPath();
   }
 
-  protected String shrinkPath_internal(String absolutePath, File anchorFile) {
+  protected String shrinkPath_internal(String absolutePath, IFile anchorFile) {
     String fileName;
     if (pathStartsWith(absolutePath, PathManager.getHomePath())) {
-      String relationalPath = PathManager.getRelationalPathByAbsolute(new File(PathManager.getHomePath()), absolutePath);
+      String relationalPath = shrink(absolutePath, PathManager.getHomePath());
       fileName = "${mps_home}" + relationalPath;
     } else {
       fileName = absolutePath;
@@ -69,17 +78,19 @@ public abstract class Macros {
   }
 
   private static class LanguageDescriptorMacros extends Macros {
-    protected String expandPath_internal(String path, File languageDescriptor) {
+    protected String expandPath_internal(String path, IFile languageDescriptor) {
+
       if (path.startsWith("${language_descriptor}")) {
         String modelRelativePath = removePrefix(path, "${language_descriptor}");
-        return PathManager.getAbsolutePathByRelational(languageDescriptor, modelRelativePath);
+        return languageDescriptor.getParent().child(modelRelativePath).getCanonicalPath();
       }
       return super.expandPath_internal(path, languageDescriptor);
     }
 
-    protected String shrinkPath_internal(String absolutePath, File languageDescriptor) {
-      if (pathStartsWith(absolutePath, languageDescriptor.getParent())) {
-        String relationalPath = PathManager.getRelationalPathByAbsolute(languageDescriptor, absolutePath);
+    protected String shrinkPath_internal(String absolutePath, IFile languageDescriptor) {
+      String prefix = languageDescriptor.getParent().getCanonicalPath();
+      if (pathStartsWith(absolutePath, prefix)) {
+        String relationalPath = shrink(absolutePath, prefix);
         return "${language_descriptor}" + relationalPath;
       }
       return super.shrinkPath_internal(absolutePath, languageDescriptor);
@@ -87,17 +98,18 @@ public abstract class Macros {
   }
 
   private static class SolutionDescriptorMacros extends Macros {
-    protected String expandPath_internal(String path, File solutionDescriptor) {
+    protected String expandPath_internal(String path, IFile solutionDescriptor) {
       if (path.startsWith("${solution_descriptor}")) {
         String modelRelativePath = removePrefix(path, "${solution_descriptor}");
-        return PathManager.getAbsolutePathByRelational(solutionDescriptor, modelRelativePath);
+        return solutionDescriptor.getParent().child(modelRelativePath).getCanonicalPath();
       }
       return super.expandPath_internal(path, solutionDescriptor);
     }
 
-    protected String shrinkPath_internal(String absolutePath, File solutionDescriptor) {
-      if (pathStartsWith(absolutePath, solutionDescriptor.getParent())) {
-        String relationalPath = PathManager.getRelationalPathByAbsolute(solutionDescriptor, absolutePath);
+    protected String shrinkPath_internal(String absolutePath, IFile solutionDescriptor) {
+      String prefix = solutionDescriptor.getParent().getCanonicalPath();
+      if (pathStartsWith(absolutePath, prefix)) {
+        String relationalPath = shrink(absolutePath, prefix);
         return "${solution_descriptor}" + relationalPath;
       }
       return super.shrinkPath_internal(absolutePath, solutionDescriptor);
@@ -105,17 +117,18 @@ public abstract class Macros {
   }
 
   private static class DevKitDescriptorMacros extends Macros {
-    protected String expandPath_internal(String path, File devkitDescriptor) {
+    protected String expandPath_internal(String path, IFile devkitDescriptor) {
       if (path.startsWith("${devkit_descriptor}")) {
         String modelRelativePath = removePrefix(path, "${devkit_descriptor}");
-        return PathManager.getAbsolutePathByRelational(devkitDescriptor, modelRelativePath);
+        return devkitDescriptor.getParent().child(modelRelativePath).getCanonicalPath();
       }
       return super.expandPath_internal(path, devkitDescriptor);
     }
 
-    protected String shrinkPath_internal(String absolutePath, File devkitDescriptor) {
-      if (pathStartsWith(absolutePath,  devkitDescriptor.getParent())) {
-        String relationalPath = PathManager.getRelationalPathByAbsolute(devkitDescriptor, absolutePath);
+    protected String shrinkPath_internal(String absolutePath, IFile devkitDescriptor) {
+      String prefix = devkitDescriptor.getParent().getCanonicalPath();
+      if (pathStartsWith(absolutePath, prefix)) {
+        String relationalPath = shrink(absolutePath, prefix);
         return "${devkit_descriptor}" + relationalPath;
       }
       return super.shrinkPath_internal(absolutePath, devkitDescriptor);
@@ -123,17 +136,18 @@ public abstract class Macros {
   }
 
   private static class ProjectDescriptorMacros extends Macros {
-    protected String expandPath_internal(String path, File projectDescriptor) {
+    protected String expandPath_internal(String path, IFile projectDescriptor) {
       if (path.startsWith("${project}")) {
         String modelRelativePath = removePrefix(path, "${project}");
-        return PathManager.getAbsolutePathByRelational(projectDescriptor, modelRelativePath);
+        return projectDescriptor.getParent().child(modelRelativePath).getCanonicalPath();
       }
       return super.expandPath_internal(path, projectDescriptor);
     }
 
-    protected String shrinkPath_internal(String absolutePath, File projectDescriptor) {
-      if (pathStartsWith(absolutePath, projectDescriptor.getParent())) {
-        String relationalPath = PathManager.getRelationalPathByAbsolute(projectDescriptor, absolutePath);
+    protected String shrinkPath_internal(String absolutePath, IFile projectDescriptor) {
+      String prefix = projectDescriptor.getParent().getCanonicalPath();
+      if (pathStartsWith(absolutePath, prefix)) {
+        String relationalPath = shrink(absolutePath, prefix);
         return "${project}" + relationalPath;
       }
       return super.shrinkPath_internal(absolutePath, projectDescriptor);
@@ -143,5 +157,16 @@ public abstract class Macros {
   private static boolean pathStartsWith(String path, String with) {
     if (path.equals(with)) return true;
     return path.startsWith(with + File.separator);
+  }
+
+  private static String shrink(String path, String prefix) {
+    assert path.startsWith(prefix);
+    String result = path.substring(prefix.length());
+    
+    if (result.length() == 0) {
+      return "\\";
+    }
+
+    return result;
   }
 }

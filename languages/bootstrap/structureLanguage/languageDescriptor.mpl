@@ -38,7 +38,10 @@
     </generator>
   </generators>
   <classPath />
-  <runtimeClassPath>
-  </runtimeClassPath>
+  <runtimeClassPath />
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
 </language>
 

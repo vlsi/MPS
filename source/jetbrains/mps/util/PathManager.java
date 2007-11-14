@@ -1,12 +1,12 @@
 package jetbrains.mps.util;
 
-import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.IOperationContext;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.Thread.State;
 import java.net.URL;
 import java.util.Collection;
 import java.util.Iterator;
@@ -300,51 +300,6 @@ public class PathManager {
       return null;
     }
     return path;
-  }
-
-  public static String getAbsolutePathByRelational(String relationalPath, IOperationContext operationContext) {
-    File projectFile = operationContext.getProject().getProjectFile();
-    return Macros.projectDescriptor().expandPath(relationalPath, projectFile);
-  }
-
-  public static String getRelationalPathByAbsolute(String absolutePath, IOperationContext operationContext) {
-    File projectFile = operationContext.getProject().getProjectFile();
-    return Macros.projectDescriptor().shrinkPath(absolutePath, projectFile);
-  }
-
-  public static String getAbsolutePathByRelational(File baseFile, String relationalPath) {
-    File relationalFile = new File(relationalPath);
-    if (relationalFile.isAbsolute()) {
-      return relationalPath;
-    }
-    if (!baseFile.isDirectory()) {
-      baseFile = baseFile.getParentFile();
-    }
-    return baseFile.getAbsolutePath() + File.separatorChar + relationalPath;
-  }
-
-  public static String getRelationalPathByAbsolute(File baseFile, String absolutePath) {
-    File absoluteFile = new File(absolutePath);
-    if (!absoluteFile.isAbsolute()) {
-      return absolutePath;
-    }
-    if (!baseFile.isDirectory()) {
-      baseFile = baseFile.getParentFile();
-    }
-    if (baseFile.getPath().equals(absoluteFile.getPath())) return File.separator + ".";
-
-    StringBuffer relativePath = new StringBuffer(absoluteFile.getName());
-    File parent = absoluteFile.getParentFile();
-    while (parent != null) {
-      if (baseFile.equals(parent)) {
-        break;
-      }
-      relativePath.insert(0, File.separator);
-      relativePath.insert(0, parent.getName());
-      parent = parent.getParentFile();
-    }
-    relativePath.insert(0, File.separator);
-    return relativePath.toString();
   }
 
   public static SModelUID getModelUID(File modelFile, File root, String namespacePrefix) {

@@ -9,6 +9,7 @@ public interface IFile {
 
   IFile getParent();
   List<IFile> list();
+  IFile child(String suffix);
 
 
   boolean isDirectory();

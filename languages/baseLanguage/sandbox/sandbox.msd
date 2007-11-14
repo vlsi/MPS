@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="sandbox" extenallyVisible="false" generatorOutputPath="${mps_home}\source_gen">
   <models>
-    <modelRoot path="${solution_descriptor}\." namespacePrefix="jetbrains.mps.baseLanguage.sandbox" />
+    <modelRoot path="${solution_descriptor}\" namespacePrefix="jetbrains.mps.baseLanguage.sandbox" />
   </models>
   <module />
   <languages />

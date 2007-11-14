@@ -37,8 +37,11 @@
     </generator>
   </generators>
   <classPath />
-  <runtimeClassPath>
-  </runtimeClassPath>
+  <runtimeClassPath />
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
   <dependencies>
     <dependency>jetbrains.mps.baseLanguage.ext.collections.lang</dependency>
     <dependency>jetbrains.mps.patterns</dependency>

@@ -16,14 +16,17 @@
     <model modelUID="jetbrains.mps.core.editor" />
   </editor>
   <models>
-    <modelRoot path="${language_descriptor}\." namespacePrefix="jetbrains.mps.core" />
+    <modelRoot path="${language_descriptor}\" namespacePrefix="jetbrains.mps.core" />
   </models>
   <module />
   <accessoryModels />
   <generators />
   <classPath />
-  <runtimeClassPath>
-  </runtimeClassPath>
+  <runtimeClassPath />
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
   <dependencies>
     <dependency>MPS.Classpath</dependency>
   </dependencies>

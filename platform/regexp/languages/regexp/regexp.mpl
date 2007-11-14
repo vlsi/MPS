@@ -57,5 +57,9 @@
   <runtimeClassPath>
     <entry path="${mps_home}\platform\regexp\classes" />
   </runtimeClassPath>
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
 </language>
 

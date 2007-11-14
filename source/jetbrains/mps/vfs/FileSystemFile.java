@@ -18,7 +18,7 @@ class FileSystemFile implements IFile {
   }
 
   public IFile getParent() {
-    return new FileSystemFile(myFile);
+    return new FileSystemFile(myFile.getParentFile());
   }
 
   public boolean isDirectory() {
@@ -73,6 +73,10 @@ class FileSystemFile implements IFile {
     }
 
     return result;
+  }
+
+  public IFile child(String suffix) {
+    return new FileSystemFile(new File(myFile, suffix));
   }
 
   public File getFile() {

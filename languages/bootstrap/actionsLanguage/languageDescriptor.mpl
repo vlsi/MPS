@@ -39,8 +39,11 @@
     </generator>
   </generators>
   <classPath />
-  <runtimeClassPath>
-  </runtimeClassPath>
+  <runtimeClassPath />
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
   <dependencies>
     <dependency>jetbrains.mps.bootstrap.sharedConcepts</dependency>
   </dependencies>

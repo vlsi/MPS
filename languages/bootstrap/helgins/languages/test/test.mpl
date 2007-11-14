@@ -14,6 +14,11 @@
   <accessoryModels />
   <generators />
   <classPath />
+  <runtimeClassPath />
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
   <dependencies>
     <dependency>jetbrains.mps.bootstrap.helgins</dependency>
   </dependencies>

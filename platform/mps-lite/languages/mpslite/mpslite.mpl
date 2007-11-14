@@ -65,6 +65,10 @@
   <runtimeClassPath>
     <entry path="${mps_home}\platform\mps-lite\classes" />
   </runtimeClassPath>
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
   <dependencies>
     <dependency>jetbrains.mps.quotation</dependency>
   </dependencies>

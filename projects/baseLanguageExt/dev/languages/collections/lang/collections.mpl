@@ -58,5 +58,9 @@
   <runtimeClassPath>
     <entry path="${mps_home}\projects\baseLanguageExt\dev\classes" />
   </runtimeClassPath>
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
 </language>
 

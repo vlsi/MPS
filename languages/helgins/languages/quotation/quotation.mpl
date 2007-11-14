@@ -14,6 +14,11 @@
   <accessoryModels />
   <generators />
   <classPath />
+  <runtimeClassPath />
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
   <dependencies>
     <dependency>jetbrains.mps.formulaLanguage</dependency>
     <dependency>jetbrains.mps.annotations</dependency>

@@ -70,5 +70,9 @@
     <entry path="${mps_home}\platform\ypath\runtime\classes" />
     <entry path="${mps_home}\platform\ypath\classes" />
   </runtimeClassPath>
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
 </language>
 
