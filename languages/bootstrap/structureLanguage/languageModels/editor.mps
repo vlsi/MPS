@@ -1197,7 +1197,7 @@
                     </node>
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1161166255983">
-                    <link role="baseMethodDeclaration" targetNodeId="13.~AbstractModule.getDescriptorFile():java.io.File" resolveInfo="getDescriptorFile" />
+                    <link role="baseMethodDeclaration" targetNodeId="13.~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolveInfo="getDescriptorFile" />
                     <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1161166250159">
                       <link role="variableDeclaration" targetNodeId="1161165897339" resolveInfo="l" />
                     </node>
@@ -1280,7 +1280,7 @@
                     <link role="variableDeclaration" targetNodeId="1176901521425" resolveInfo="iconPath" />
                   </node>
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1176901559320">
-                    <link role="baseMethodDeclaration" targetNodeId="13.~AbstractModule.getDescriptorFile():java.io.File" resolveInfo="getDescriptorFile" />
+                    <link role="baseMethodDeclaration" targetNodeId="13.~AbstractModule.getDescriptorFile():jetbrains.mps.vfs.IFile" resolveInfo="getDescriptorFile" />
                     <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1176901556888">
                       <link role="variableDeclaration" targetNodeId="1176901491577" resolveInfo="language" />
                     </node>

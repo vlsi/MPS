@@ -16,13 +16,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceChild_CustomChildConcept;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
-import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceChild_CustomChildConcept;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class AggregationConceptLink_Editor extends DefaultNodeEditor {
 
@@ -139,6 +139,16 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public static class AggregationConceptLink_target_cellMenu extends AbstractCellMenuPart_ReplaceChild_CustomChildConcept {
+
+    public  AggregationConceptLink_target_cellMenu() {
+    }
+
+    public SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext operationContext) {
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptLinkDeclaration", false), "targetType", false);
+    }
+
+}
   public static class _Inline12 extends AbstractCellProvider {
 
     public  _Inline12() {
@@ -191,16 +201,6 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-}
-  public static class AggregationConceptLink_target_cellMenu extends AbstractCellMenuPart_ReplaceChild_CustomChildConcept {
-
-    public  AggregationConceptLink_target_cellMenu() {
-    }
-
-    public SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext operationContext) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptLinkDeclaration", false), "targetType", false);
     }
 
 }

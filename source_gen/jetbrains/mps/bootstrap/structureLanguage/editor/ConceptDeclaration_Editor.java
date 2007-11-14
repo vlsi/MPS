@@ -28,6 +28,12 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
@@ -35,15 +41,9 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
 import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.AggregationCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
-import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Item;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
@@ -1021,6 +1021,38 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public static class ConceptDeclaration_generic_cellMenu extends AbstractCellMenuPart_Generic_Item {
+
+    public  ConceptDeclaration_generic_cellMenu() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration");
+      ((LinkDeclaration)SNodeOperations.getAdapter(result)).setMetaClass(LinkMetaclass.aggregation);
+      SLinkOperations.addChild(node, "linkDeclaration", result);
+    }
+
+    public String getMatchingText() {
+      return "new child";
+    }
+
+}
+  public static class ConceptDeclaration_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
+
+    public  ConceptDeclaration_generic_cellMenu1() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration");
+      ((LinkDeclaration)SNodeOperations.getAdapter(result)).setMetaClass(LinkMetaclass.reference);
+      SLinkOperations.addChild(node, "linkDeclaration", result);
+    }
+
+    public String getMatchingText() {
+      return "new reference";
+    }
+
+}
   public static class _Inline5 extends AbstractCellProvider {
 
     public  _Inline5() {
@@ -1172,7 +1204,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration", null);
+      SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration");
       ((LinkDeclaration)SNodeOperations.getAdapter(result)).setMetaClass(LinkMetaclass.aggregation);
       return result;
     }
@@ -1223,7 +1255,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration", null);
+      SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration");
       ((LinkDeclaration)SNodeOperations.getAdapter(result)).setMetaClass(LinkMetaclass.reference);
       return result;
     }
@@ -1431,38 +1463,6 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
 
     public EditorCell createSeparatorCell(EditorContext context) {
       return super.createSeparatorCell(context);
-    }
-
-}
-  public static class ConceptDeclaration_generic_cellMenu extends AbstractCellMenuPart_Generic_Item {
-
-    public  ConceptDeclaration_generic_cellMenu() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration", null);
-      ((LinkDeclaration)SNodeOperations.getAdapter(result)).setMetaClass(LinkMetaclass.aggregation);
-      SLinkOperations.addChild(node, "linkDeclaration", result);
-    }
-
-    public String getMatchingText() {
-      return "new child";
-    }
-
-}
-  public static class ConceptDeclaration_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Item {
-
-    public  ConceptDeclaration_generic_cellMenu1() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration", null);
-      ((LinkDeclaration)SNodeOperations.getAdapter(result)).setMetaClass(LinkMetaclass.reference);
-      SLinkOperations.addChild(node, "linkDeclaration", result);
-    }
-
-    public String getMatchingText() {
-      return "new reference";
     }
 
 }
