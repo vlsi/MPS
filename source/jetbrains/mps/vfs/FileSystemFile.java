@@ -17,6 +17,10 @@ class FileSystemFile implements IFile {
     return myFile.getName();
   }
 
+  public IFile getParent() {
+    return new FileSystemFile(myFile);
+  }
+
   public boolean isDirectory() {
     return myFile.isDirectory();
   }
@@ -45,6 +49,18 @@ class FileSystemFile implements IFile {
     return myFile.exists();
   }
 
+  public boolean createNewFile() {
+    try {
+      return myFile.createNewFile();
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
+  }
+
+  public boolean mkdirs() {
+    return myFile.mkdirs();
+  }
+
   public boolean delete() {
     return myFile.delete();
   }
@@ -69,6 +85,14 @@ class FileSystemFile implements IFile {
 
   public Writer openWriter() throws IOException {
     return new FileWriter(myFile);    
+  }
+
+  public InputStream openInputStream() throws IOException {
+    return new FileInputStream(myFile);
+  }
+
+  public OutputStream openOutputStream() throws IOException {
+    return new FileOutputStream(myFile);
   }
 
   public int hashCode() {

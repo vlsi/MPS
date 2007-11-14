@@ -1,25 +1,38 @@
 package jetbrains.mps.util;
 
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 import org.jdom.input.SAXBuilder;
-import org.jdom.output.XMLOutputter;
 import org.jdom.output.Format;
+import org.jdom.output.XMLOutputter;
 import org.xml.sax.EntityResolver;
 import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 
 import java.io.*;
 
-import jetbrains.mps.logging.Logger;
-
 public class JDOMUtil {
   private static final Logger LOG = Logger.getLogger(JDOMUtil.class);
   private static final String ENCODING = "UTF-8";
 
-  public static Document loadDocument(File file) throws JDOMException, IOException {
+  public static Document loadDocument(IFile file) throws JDOMException, IOException {
     SAXBuilder saxBuilder = createBuilder();
     try {            
+      return saxBuilder.build(new InputStreamReader(file.openInputStream(), ENCODING));
+    } catch (JDOMException e) {
+      LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
+      throw e;
+    } catch (IOException e) {
+      LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
+      throw e;
+    }
+  }
+
+  public static Document loadDocument(File file) throws JDOMException, IOException {
+    SAXBuilder saxBuilder = createBuilder();
+    try {
       return saxBuilder.build(new InputStreamReader(new FileInputStream(file), ENCODING));
     } catch (JDOMException e) {
       LOG.error("FAILED TO LOAD FILE : " + file.getAbsolutePath());
@@ -67,6 +80,24 @@ public class JDOMUtil {
       }
     });
     return saxBuilder;
+  }
+
+  public static void writeDocument(Document document, IFile file) throws IOException {
+    if(!file.getParent().exists()) {
+      file.getParent().mkdirs();
+    }
+
+    if (!file.exists()) {
+      file.createNewFile();
+    }
+
+    OutputStream stream = new BufferedOutputStream(file.openOutputStream());
+    try {
+      writeDocument(document, stream);
+    }
+    finally {
+      stream.close();
+    }
   }
 
   public static void writeDocument(Document document, File file) throws IOException {

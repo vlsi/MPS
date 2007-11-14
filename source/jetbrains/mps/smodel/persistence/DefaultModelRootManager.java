@@ -61,7 +61,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       return new SModel(modelDescriptor.getModelUID());
     }
 
-    SModel model = ModelPersistence.readModel(file);
+    SModel model = ModelPersistence.readModel(FileSystem.getFile(file));
     LOG.assertLog(model.getUID().equals(modelDescriptor.getModelUID()),
             "\nError loading model from file: \"" + file + "\"\n" +
                     "expected model UID     : \"" + modelDescriptor.getModelUID() + "\"\n" +
@@ -102,7 +102,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
 
   public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
-    ModelPersistence.saveModel(modelDescriptor.getSModel(), FileSystem.toFile(modelDescriptor.getModelFile()));
+    ModelPersistence.saveModel(modelDescriptor.getSModel(), modelDescriptor.getModelFile());
   }
 
   private void readModelDescriptors(Set<SModelDescriptor> modelDescriptors, File dir, ModelRoot modelRoot, ModelOwner owner) {
@@ -188,7 +188,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   }
 
   public int getVersion(@NotNull SModelDescriptor modelDescriptor) {
-    return ModelPersistence.readVersionFromFile(FileSystem.toFile(modelDescriptor.getModelFile()));
+    return ModelPersistence.readVersionFromFile(modelDescriptor.getModelFile());
   }
 
 

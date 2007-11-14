@@ -1,12 +1,15 @@
 package jetbrains.mps.vfs;
 
-import java.io.IOException;
-import java.io.Reader;
-import java.io.Writer;
+import java.io.*;
 import java.util.List;
 
 public interface IFile {
   String getName();
+
+
+  IFile getParent();
+  List<IFile> list();
+
 
   boolean isDirectory();
   boolean isFile();
@@ -18,10 +21,13 @@ public interface IFile {
   long lastModified();
 
   boolean exists();
+  boolean createNewFile();
+  boolean mkdirs();
   boolean delete();
 
   Reader openReader() throws IOException;
   Writer openWriter() throws IOException;
 
-  List<IFile> list();
+  InputStream openInputStream() throws IOException;
+  OutputStream openOutputStream() throws IOException;
 }

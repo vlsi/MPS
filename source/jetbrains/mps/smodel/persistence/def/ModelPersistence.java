@@ -6,10 +6,10 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
-import jetbrains.mps.smodel.persistence.def.v0.ModelWriter0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
 import jetbrains.mps.smodel.persistence.def.v1.ModelWriter1;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.vfs.*;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
@@ -71,7 +71,7 @@ public class ModelPersistence {
   }
 
   @NotNull
-  private static Document loadModelDocument(@NotNull File file) {
+  private static Document loadModelDocument(@NotNull IFile file) {
     Document document;
     try {
       document = JDOMUtil.loadDocument(file);
@@ -84,7 +84,7 @@ public class ModelPersistence {
   }
 
   @NotNull
-  public static SModel readModel(@NotNull File file) {
+  public static SModel readModel(@NotNull IFile file) {
     LOG.debug("ModelPersistence readModel from :" + file.getAbsolutePath());
 
     // the model FQ name ...
@@ -156,7 +156,7 @@ public class ModelPersistence {
   }
 
 
-  public static void saveModel(@NotNull SModel model, @NotNull File file) {
+  public static void saveModel(@NotNull SModel model, @NotNull IFile file) {
     LOG.debug("Save model " + model.getUID() + " to file " + file.getAbsolutePath());
     Document document = saveModel(model);
 
@@ -184,22 +184,21 @@ public class ModelPersistence {
   }
 
 
-  private static File getVersionFile(File modelFile) {
+  private static IFile getVersionFile(IFile modelFile) {
     String modelPath = modelFile.getAbsolutePath();
     String versionPath = modelPath.replace(".mps", ".version");
-    File versionFile = new File(versionPath);
-    return versionFile;
+    return FileSystem.getFile(versionPath);
   }
 
-  public static void writeVersionFile(SModel model, File modelFile) {
+  public static void writeVersionFile(SModel model, IFile modelFile) {
     int version = model.getVersion();
     if (version < 0) return;
-    File versionFile = getVersionFile(modelFile);
+    IFile versionFile = getVersionFile(modelFile);
     try {
       if (!versionFile.exists()) {
         versionFile.createNewFile();
       }
-      FileOutputStream fileOutputStream = new FileOutputStream(versionFile);
+      OutputStream fileOutputStream = versionFile.openOutputStream();
       fileOutputStream.write(version);
       fileOutputStream.close();
     } catch (IOException ioe) {
@@ -207,11 +206,11 @@ public class ModelPersistence {
     }
   }
 
-  public static int readVersionFromFile(File modelFile) {
-    File versionFile = getVersionFile(modelFile);
+  public static int readVersionFromFile(IFile modelFile) {
+    IFile versionFile = getVersionFile(modelFile);
     if (versionFile.exists()) {
       try {
-        FileInputStream fileInputStream = new FileInputStream(versionFile);
+        InputStream fileInputStream = versionFile.openInputStream();
         return new InputStreamReader(fileInputStream).read();
       } catch (FileNotFoundException ex) {
         LOG.error(ex);

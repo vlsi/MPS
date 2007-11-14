@@ -11,9 +11,9 @@ import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.ILoggingHandler;
+import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
-import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -377,7 +378,7 @@ public class GenerationSession implements IGenerationSession {
       String modelFqName = descriptor.getModelUID().toString();
       String modelFileName = modelFqName.replace('.', File.separatorChar) + ".mps";
       File modelFile = new File(solutionDir, modelFileName);
-      ModelPersistence.saveModel(descriptor.getSModel(), modelFile);
+      ModelPersistence.saveModel(descriptor.getSModel(), FileSystem.getFile(modelFile));
     }
 
     // create the solution descriptor
