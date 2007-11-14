@@ -18,6 +18,9 @@ class FileSystemFile implements IFile {
   }
 
   public IFile getParent() {
+    if (myFile.getParentFile() == null) {
+      return null;
+    }
     return new FileSystemFile(myFile.getParentFile());
   }
 
