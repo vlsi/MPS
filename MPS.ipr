@@ -1854,15 +1854,6 @@
         <root url="jar://$PROJECT_DIR$/lib/equinox/launcher-src.zip!/" />
       </SOURCES>
     </library>
-    <library name="Commons-VFS">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/commons-vfs/commons-vfs.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/commons-vfs/commons-vfs-src.zip!/" />
-      </SOURCES>
-    </library>
   </component>
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
