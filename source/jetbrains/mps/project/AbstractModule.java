@@ -1,16 +1,18 @@
 package jetbrains.mps.project;
 
+import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.reloading.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.ModelRootsUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.reloading.*;
-import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -29,7 +31,7 @@ public abstract class AbstractModule implements IModule {
 
   private boolean myModelsRead = false;
   private boolean myInitialized = false;
-  protected File myDescriptorFile;
+  protected IFile myDescriptorFile;
 
   private MyScope myScope = new MyScope();
 
@@ -138,19 +140,19 @@ public abstract class AbstractModule implements IModule {
 
   @Nullable
   public File getClassesGen() {
-    File descriptorFile = getDescriptorFile();
+    IFile descriptorFile = getDescriptorFile();
 
     if (descriptorFile == null) {
       return null;
     }
 
-    File current = descriptorFile.getParentFile();
+    IFile current = descriptorFile.getParent();
     while (current != null) {
-      File classesDir = new File(current, "classes");
+      IFile classesDir = current.child("classes");
       if (classesDir.exists()) {
-        return classesDir;
+        return FileSystem.toFile(classesDir);
       }
-      current = current.getParentFile();
+      current = current.getParent();
     }
 
     return null;
@@ -242,8 +244,7 @@ public abstract class AbstractModule implements IModule {
     return manager.createNewModel(root, uid, this);
   }
 
-  @Nullable
-  public File getDescriptorFile() {
+  public IFile getDescriptorFile() {
     return myDescriptorFile;
   }
 
@@ -468,9 +469,9 @@ public abstract class AbstractModule implements IModule {
   }
 
   public File getBundleHome() {
-    File descriptorFile = getDescriptorFile();
+    IFile descriptorFile = getDescriptorFile();
     if (descriptorFile != null) {
-      return descriptorFile.getParentFile().getAbsoluteFile();
+      return FileSystem.toFile(descriptorFile.getParent());
     }
     return null;
   }
@@ -526,12 +527,12 @@ public abstract class AbstractModule implements IModule {
   private String getClassPathString() {
     StringBuilder result = new StringBuilder();
 
-    File descriptor = getDescriptorFile();
+    IFile descriptor = getDescriptorFile();
     if (descriptor == null) {
       return "";
     }
 
-    String basePath = FileUtil.getCanonicalPath(descriptor.getParent());
+    String basePath = descriptor.getParent().getCanonicalPath();
     for (int i = 0; i < getRuntimeClassPathItems().size(); i++) {
       String s = getRuntimeClassPathItems().get(i);
       String relativePath = getPathRelativeTo(s, basePath);

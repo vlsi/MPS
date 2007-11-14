@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vfs.IFile;
 
 import javax.swing.*;
 import java.awt.*;
@@ -107,19 +108,15 @@ public class NewGeneratorDialog extends BaseDialog {
 
   private void updateTemplateModelsDir() {
     String targetLanguageName = (String) myTargetLanguageName.getSelectedItem();
-    try {
-      File descriptorFile = mySourceLanguage.getDescriptorFile();
-      assert descriptorFile != null;
-      String path = descriptorFile.getParentFile().getCanonicalPath();
-      String modelsDir = path +
-              File.separatorChar + "generator" +
-              File.separatorChar + NameUtil.shortNameFromLongName(targetLanguageName) +
-              File.separatorChar + "template";
+    IFile descriptorFile = mySourceLanguage.getDescriptorFile();
+    assert descriptorFile != null;
+    String path = descriptorFile.getParent().getCanonicalPath();
+    String modelsDir = path +
+            File.separatorChar + "generator" +
+            File.separatorChar + NameUtil.shortNameFromLongName(targetLanguageName) +
+            File.separatorChar + "template";
 
-      myTemplateModelsDir.setText(modelsDir);
-    } catch (IOException e) {
-      LOG.error(e);
-    }
+    myTemplateModelsDir.setText(modelsDir);
   }
 
   @Button(position = 0, name = "OK", defaultButton = true)
@@ -182,7 +179,7 @@ public class NewGeneratorDialog extends BaseDialog {
 
     // add 'target language module' to 'module roots'
     ModuleRoot targetLanguageModuleRoot = ModuleRoot.newInstance(model);
-    File descriptorFile = targetLanguage.getDescriptorFile();
+    IFile descriptorFile = targetLanguage.getDescriptorFile();
     assert descriptorFile != null;
     targetLanguageModuleRoot.setPath(descriptorFile/*.getParentFile()*/.getAbsolutePath());
     generatorDescriptor.addModuleRoot(targetLanguageModuleRoot);

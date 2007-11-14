@@ -7,7 +7,10 @@ import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.AbstractProjectFrame;
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.ProjectPathsDialog;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
@@ -33,6 +36,8 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jdom.Document;
@@ -136,7 +141,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
         LOG.error("Solution path is null");
         continue;
       }
-      File descriptorFile = new File(path);
+      IFile descriptorFile = FileSystem.getFile(path);
       if (!descriptorFile.getName().endsWith(".msd")) {
         LOG.error("Couldn't load solution from: " + descriptorFile.getAbsolutePath() + " : '*.msd' file expected");
       } else if (descriptorFile.exists()) {
@@ -149,7 +154,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     // load languages
     myLanguages = new LinkedList<Language>();
     for (LanguagePath languagePath : CollectionUtil.iteratorAsIterable(myProjectDescriptor.projectLanguages())) {
-      File descriptorFile = new File(languagePath.getPath());
+      IFile descriptorFile = FileSystem.getFile(languagePath.getPath());
       if (!descriptorFile.getName().endsWith(".mpl")) {
         LOG.error("Couldn't load language from: " + descriptorFile.getAbsolutePath() + " : '*.mpl' file expected");
       } else if (descriptorFile.exists()) {
@@ -162,7 +167,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     //load devkits
     myDevKits = new LinkedList<DevKit>();
     for (DevKitPath dk : myProjectDescriptor.getProjectDevkits()) {
-      File devKit = new File(dk.getPath());
+      IFile devKit = FileSystem.getFile(dk.getPath());
       if (!devKit.getName().endsWith(".devkit")) {
         LOG.error("Couldn't load devkit from: " + devKit.getAbsolutePath() + " : '*.devkit' file expected");
       } else if (devKit.exists()) {
@@ -177,7 +182,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
       String name = l.getName();
       jetbrains.mps.library.Library lib = ApplicationComponents.getInstance().getComponentSafe(LibraryManager.class).get(name);
       if (lib != null) {
-        MPSModuleRepository.getInstance().readModuleDescriptors(new File(lib.getPath()), this);
+        MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(lib.getPath()), this);
       } else {
         LOG.error("Can't find a global library " + name);
       }
@@ -231,7 +236,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     SModel model = projectDescriptor.getModel();
     model.setLoading(true);
     LanguagePath languagePath = LanguagePath.newInstance(model);
-    File descriptorFile = language.getDescriptorFile();
+    IFile descriptorFile = language.getDescriptorFile();
     assert descriptorFile != null;
     languagePath.setPath(descriptorFile.getAbsolutePath());
     projectDescriptor.addProjectLanguage(languagePath);
@@ -243,7 +248,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     SModel model = projectDescriptor.getModel();
     model.setLoading(true);
-    File descriptorFile = language.getDescriptorFile();
+    IFile descriptorFile = language.getDescriptorFile();
     assert descriptorFile != null;
     String absolutePath = descriptorFile.getAbsolutePath();
     for (LanguagePath languagePath : projectDescriptor.getProjectLanguages()) {
@@ -278,7 +283,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     setProjectDescriptor(projectDescriptor);
 
     for (Solution s : getProjectSolutions()) {
-      File descriptorFile = s.getDescriptorFile();
+      IFile descriptorFile = s.getDescriptorFile();
       assert descriptorFile != null;
       if (descriptorFile.getAbsolutePath().equals(solutionDescriptionFile.getAbsolutePath())) {
         return s;
@@ -355,7 +360,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   }
 
   public String getFolderFor(IModule module) {
-    File file = module.getDescriptorFile();
+    IFile file = module.getDescriptorFile();
     assert file != null;
     String path = FileUtil.getCanonicalPath(file.getAbsolutePath());
     for (SolutionPath sp : myProjectDescriptor.getProjectSolutions()) {
@@ -380,7 +385,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   }
 
   public void setFolderFor(IModule module, String newFolder) {
-    File file = module.getDescriptorFile();
+    IFile file = module.getDescriptorFile();
     assert file != null;
     String path = FileUtil.getCanonicalPath(file.getAbsolutePath());
     for (SolutionPath sp : myProjectDescriptor.getProjectSolutions()) {

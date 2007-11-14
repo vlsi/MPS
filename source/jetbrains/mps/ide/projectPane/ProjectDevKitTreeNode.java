@@ -2,7 +2,6 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.DevKit;
@@ -11,10 +10,10 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.vfs.IFile;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
-import java.io.File;
 
 
 class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
@@ -35,7 +34,7 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   }
 
   public String getNodeIdentifier() {
-    File descriptorFile = myDevKit.getDescriptorFile();
+    IFile descriptorFile = myDevKit.getDescriptorFile();
     assert descriptorFile != null;
     return descriptorFile.getAbsolutePath();
   }

@@ -5,37 +5,38 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.IStatus;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.refactoring.structure.Refactoring;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ConversionUtil;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.languages.RenameModelRefactoring;
 import jetbrains.mps.refactoring.logging.Marshallable;
-import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.smodel.Language.LanguageAspectStatus.AspectKind;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.ModelRootsUtil;
-import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.rmi.RemoteException;
 import java.util.*;
-import java.net.URL;
 
 
 /**
@@ -84,8 +85,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     myLanguageDescriptor.setNamespace(newNamespace);
 
     // rename model roots
-    String oldLanguageModelsRoot = new File(myDescriptorFile.getParentFile(), LANGUAGE_MODELS).getAbsolutePath();
-    String oldLanguageAccesoriesRoot = new File(myDescriptorFile.getParentFile(), LANGUAGE_ACCESSORIES).getAbsolutePath();
+    String oldLanguageModelsRoot = myDescriptorFile.getParent().child(LANGUAGE_MODELS).getAbsolutePath();
+    String oldLanguageAccesoriesRoot = myDescriptorFile.getParent().child(LANGUAGE_ACCESSORIES).getAbsolutePath();
     for (ModelRoot modelRoot : myLanguageDescriptor.getModelRoots()) {
       if (modelRoot.getPath().equals(oldLanguageModelsRoot)) {
         modelRoot.delete();
@@ -99,7 +100,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     IProjectHandler projectHandler = operationContext.getProject().getProjectHandler();
     if (projectHandler != null) {
       try {
-        projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(myDescriptorFile));
+        projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(myDescriptorFile.toFile()));
       } catch (RemoteException e) {
         LOG.error(e);
       }
@@ -107,7 +108,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       myDescriptorFile.delete();
     }
 
-    File descriptorFile = newDescriptorFileByNewName(newNamespace);
+    File descriptorFile = newDescriptorFileByNewName(newNamespace).toFile();
 
     SModel descriptorModel = myLanguageDescriptor.getModel();
     ModelRoot languageModelRoot = ModelRoot.newInstance(descriptorModel);
@@ -141,27 +142,20 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     SModelRepository.getInstance().saveAll();
 
     // save descriptor
-    myDescriptorFile = descriptorFile;
+    myDescriptorFile = FileSystem.getFile(descriptorFile);
     setLanguageDescriptor(myLanguageDescriptor);
     save();
-    /*if (projectHandler != null) {
-      try {
-        projectHandler.refreshFS();
-      } catch(RemoteException e) {
-        LOG.error(e);
-      }
-    }*/
   }
 
-  /*package*/ File newDescriptorFileByNewName(String newNamespace) {
-    File dir = myDescriptorFile.getParentFile();
+  /*package*/ IFile newDescriptorFileByNewName(String newNamespace) {
+    IFile dir = myDescriptorFile.getParent();
     String oldShortFileName = NameUtil.shortNameFromLongName(myDescriptorFile.getAbsolutePath());
     String newPathSuffix = NameUtil.shortNameFromLongName(newNamespace);
     if ((dir.getAbsolutePath() + MPSModuleRepository.LANGUAGE_EXT).endsWith(oldShortFileName)) {
-      dir = dir.getParentFile();
+      dir = dir.getParent();
       newPathSuffix = newPathSuffix + File.separatorChar + newPathSuffix;
     }
-    return new File(dir, newPathSuffix + MPSModuleRepository.LANGUAGE_EXT);
+    return dir.child(newPathSuffix + MPSModuleRepository.LANGUAGE_EXT);
   }
 
   private void renameLanguageModel(String oldNamespace, String newNamespace, Model model, ModelRoot newRoot, IOperationContext operationContext) {
@@ -188,7 +182,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   @NotNull
-  public static Language newInstance(@NotNull File descriptorFile,
+  public static Language newInstance(@NotNull IFile descriptorFile,
                                      @NotNull MPSModuleOwner moduleOwner) {
     Language language = new Language();
     SModel model = ProjectModels.createDescriptorFor(language).getSModel();
@@ -228,7 +222,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     modelRoot.setPrefix(languageNamespace);
     languageDescriptor.addModelRoot(modelRoot);
 
-    language.myDescriptorFile = descriptorFile;
+    language.myDescriptorFile = FileSystem.getFile(descriptorFile);
     language.myLanguageDescriptor = languageDescriptor;
 
     language.updateRuntimeClassPath();
@@ -347,7 +341,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     myEventTranslator.languageChanged();
   }
 
-
   public boolean structureHaveToBeLoadedFromApplicationClassLoader() {
     return BootstrapLanguages.getInstance().getLanguagesUsedInCore().contains(this);
   }
@@ -465,7 +458,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
   @NotNull
   public File getSourceDir() {
-    File sourceDir = new File(myDescriptorFile.getParent(), "source_gen");
+    File sourceDir = new File(myDescriptorFile.getParent().toFile(), "source_gen");
     if (getLanguageDescriptor().getLanguageGenPath() != null) {
       sourceDir = new File(getLanguageDescriptor().getLanguageGenPath());
     }
@@ -479,7 +472,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   public String getGeneratorOutputPath() {
     String generatorOutputPath = myLanguageDescriptor.getLanguageGenPath();
     if (generatorOutputPath == null) {
-      generatorOutputPath = FileUtil.getCanonicalPath(myDescriptorFile.getParentFile()) + File.separatorChar + "source_gen";
+      generatorOutputPath = myDescriptorFile.getParent().getCanonicalPath() + File.separatorChar + "source_gen";
     }
     return generatorOutputPath;
   }

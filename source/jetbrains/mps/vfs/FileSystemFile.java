@@ -79,6 +79,25 @@ class FileSystemFile implements IFile {
     return new FileSystemFile(new File(myFile, suffix));
   }
 
+  public List<IFile> list(IFileNameFilter filter) {
+    List<IFile> result = new ArrayList<IFile>();
+
+    File[] files = myFile.listFiles();
+
+    if (files == null) {
+      return null;
+    }
+
+
+    for (File f : files) {
+      if (filter.accept(this, f.getName())) {
+        result.add(new FileSystemFile(f));
+      }
+    }
+
+    return result;
+  }
+
   public File getFile() {
     return myFile;
   }
@@ -97,6 +116,10 @@ class FileSystemFile implements IFile {
 
   public OutputStream openOutputStream() throws IOException {
     return new FileOutputStream(myFile);
+  }
+
+  public File toFile() {
+    return myFile;
   }
 
   public int hashCode() {

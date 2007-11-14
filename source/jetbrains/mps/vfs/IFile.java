@@ -10,6 +10,7 @@ public interface IFile {
   IFile getParent();
   List<IFile> list();
   IFile child(String suffix);
+  List<IFile> list(IFileNameFilter filter);
 
 
   boolean isDirectory();
@@ -31,4 +32,6 @@ public interface IFile {
 
   InputStream openInputStream() throws IOException;
   OutputStream openOutputStream() throws IOException;
+
+  File toFile();
 }

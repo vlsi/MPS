@@ -18,8 +18,8 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
-import jetbrains.mps.projectLanguage.structure.LanguageRoot;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.projectLanguage.structure.ModuleReference;
 import jetbrains.mps.projectLanguage.structure.ModuleRoot;
 import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -400,11 +401,9 @@ public class GenerationSession implements IGenerationSession {
       for (Language language : languages) {
         if (!usedLang.contains(language)) {
           usedLang.add(language);
-          LanguageRoot languageRoot = LanguageRoot.newInstance(solutionDescriptor.getModel());
-          File descriptorFile = language.getDescriptorFile();
-          assert descriptorFile != null;
-          languageRoot.setPath(descriptorFile.getParentFile().getAbsolutePath());
-          solutionDescriptor.addLanguageRoot(languageRoot);
+          ModuleReference ref = ModuleReference.newInstance(solutionDescriptor.getModel());
+          ref.setName(language.getModuleUID());
+          solutionDescriptor.addDependency(ref);
         }
       }
 
@@ -448,7 +447,7 @@ public class GenerationSession implements IGenerationSession {
 
     // save, add to project and reload all
     File solutionDescriptorFile = new File(solutionDir, "outputModels.msd");
-    DescriptorsPersistence.saveSolutionDescriptor(solutionDescriptorFile, solutionDescriptor);
+    DescriptorsPersistence.saveSolutionDescriptor(FileSystem.getFile(solutionDescriptorFile), solutionDescriptor);
     SModelDescriptor modelDescriptor = solutionDescriptorModel.getModelDescriptor();
     assert modelDescriptor != null;
     SModelRepository.getInstance().unRegisterModelDescriptor(modelDescriptor, tmpOwner);
@@ -462,7 +461,7 @@ public class GenerationSession implements IGenerationSession {
       usedDevKits.add(dk);
 
       ModuleRoot moduleRoot = ModuleRoot.newInstance(solutionDescriptor.getModel());
-      File descriptorFile = dk.getDescriptorFile();
+      IFile descriptorFile = dk.getDescriptorFile();
 
       assert descriptorFile != null;
       moduleRoot.setPath(descriptorFile.getAbsolutePath());

@@ -2,15 +2,14 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
-import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.IModule;
+import jetbrains.mps.vfs.IFile;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
-import java.io.File;
 
 /**
  * Created by IntelliJ IDEA.
@@ -36,7 +35,7 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   }
 
   public String getNodeIdentifier() {
-    File descriptorFile = mySolution.getDescriptorFile();
+    IFile descriptorFile = mySolution.getDescriptorFile();
     assert descriptorFile != null;
     return descriptorFile.getAbsolutePath();
   }

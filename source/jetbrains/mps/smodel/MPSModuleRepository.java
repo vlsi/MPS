@@ -6,13 +6,14 @@ import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.Root;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileNameFilter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.FilenameFilter;
-import java.io.IOException;
 import java.util.*;
 
 /**
@@ -134,7 +135,6 @@ public class MPSModuleRepository {
     return myModuleToOwnersMap.get(module) != null;
   }
 
-  @NotNull
   public Set<MPSModuleOwner> getOwners(@NotNull IModule module) {
     Set<MPSModuleOwner> mpsModuleOwners = myModuleToOwnersMap.get(module);
     if (mpsModuleOwners == null) return null;
@@ -142,17 +142,17 @@ public class MPSModuleRepository {
   }
 
   @NotNull
-  public Language registerLanguage(@NotNull File file, @NotNull MPSModuleOwner owner) {
+  public Language registerLanguage(@NotNull IFile file, @NotNull MPSModuleOwner owner) {
     return registerModule(file, owner, Language.class);
   }
 
   @NotNull
-  public DevKit registerDevKit(@NotNull File file, @NotNull MPSModuleOwner owner) {
+  public DevKit registerDevKit(@NotNull IFile file, @NotNull MPSModuleOwner owner) {
     return registerModule(file, owner, DevKit.class);
   }
 
   @NotNull
-  public Solution registerSolution(@NotNull File file, @NotNull MPSModuleOwner owner) {
+  public Solution registerSolution(@NotNull IFile file, @NotNull MPSModuleOwner owner) {
     return registerModule(file, owner, Solution.class);
   }
 
@@ -167,38 +167,34 @@ public class MPSModuleRepository {
   }
 
   @NotNull
-  public <TM extends IModule> TM registerModule(File file, MPSModuleOwner owner, Class<TM> cls) {
+  public <TM extends IModule> TM registerModule(IFile file, MPSModuleOwner owner, Class<TM> cls) {
     myDirtyFlag = true;
-    try {
-      String canonicalPath = file.getCanonicalPath();
-      IModule module = myFileToModuleMap.get(canonicalPath);
-      if (module == null) {
-        if (cls == Language.class) {
-          module = Language.newInstance(file, owner);
-        } else if (cls == Solution.class) {
-          module = Solution.newInstance(file, owner);
-        } else {
-          module = DevKit.newInstance(file, owner);
-        }
+    String canonicalPath = file.getCanonicalPath();
+    IModule module = myFileToModuleMap.get(canonicalPath);
+    if (module == null) {
+      if (cls == Language.class) {
+        module = Language.newInstance(file, owner);
+      } else if (cls == Solution.class) {
+        module = Solution.newInstance(file, owner);
       } else {
-        if (!cls.isInstance(module)) {
-          LOG.error("can't register module " + module + " : module of another kind with the same name already exists");
-        }
-        Set<MPSModuleOwner> owners = myModuleToOwnersMap.get(module);
-        if (owners == null) {
-          owners = new HashSet<MPSModuleOwner>();
-          myModuleToOwnersMap.put(module, owners);
-          if (owner == module) {
-            LOG.warning("module " + module + " wants to owe itself: will be collected very quickly");
-          }
-        }
-        if (owner != module) owners.add(owner);
+        module = DevKit.newInstance(file, owner);
       }
-      fireRepositoryChanged();
-      return (TM) module;
-    } catch (IOException e) {
-      throw new RuntimeException(e);
+    } else {
+      if (!cls.isInstance(module)) {
+        LOG.error("can't register module " + module + " : module of another kind with the same name already exists");
+      }
+      Set<MPSModuleOwner> owners = myModuleToOwnersMap.get(module);
+      if (owners == null) {
+        owners = new HashSet<MPSModuleOwner>();
+        myModuleToOwnersMap.put(module, owners);
+        if (owner == module) {
+          LOG.warning("module " + module + " wants to owe itself: will be collected very quickly");
+        }
+      }
+      if (owner != module) owners.add(owner);
     }
+    fireRepositoryChanged();
+    return (TM) module;
   }
 
   private void putModuleWithUID(String moduleUID, IModule module) {
@@ -226,8 +222,13 @@ public class MPSModuleRepository {
     if (existsModule(module, owner)) {
       throw new RuntimeException("Couldn't add module \"" + module.getModuleUID() + "\" : this module is already registered with this very owner: " + owner);
     }
-    File descriptorFile = module.getDescriptorFile();
-    String canonicalDescriptorPath = FileUtil.getCanonicalPath(descriptorFile);
+    IFile descriptorFile = module.getDescriptorFile();
+    String canonicalDescriptorPath;
+    if (descriptorFile == null) {
+      canonicalDescriptorPath = null;
+    } else {
+      canonicalDescriptorPath = descriptorFile.getCanonicalPath();
+    }
     if (canonicalDescriptorPath != null && !myFileToModuleMap.containsKey(canonicalDescriptorPath)) {
       myFileToModuleMap.put(canonicalDescriptorPath, module);
     }
@@ -306,11 +307,11 @@ public class MPSModuleRepository {
   }
 
   private void removeModule(@NotNull IModule module) {
-    File descriptorFile = module.getDescriptorFile();
+    IFile descriptorFile = module.getDescriptorFile();
     myModuleToOwnersMap.remove(module);
     removeModuleFromUIDMap(module);
     if (descriptorFile != null) {
-      myFileToModuleMap.remove(FileUtil.getCanonicalPath(descriptorFile));
+      myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
     }
     fireModuleRemoved(module);
   }
@@ -327,7 +328,7 @@ public class MPSModuleRepository {
           @NotNull MPSModuleOwner owner) {
     while (roots.hasNext()) {
       Root root = roots.next();
-      File moduleRoot = new File(root.getPath());
+      IFile moduleRoot = FileSystem.getFile(root.getPath());
 
       if (moduleRoot.exists()) {
         readModuleDescriptors(moduleRoot, owner);
@@ -341,7 +342,7 @@ public class MPSModuleRepository {
 
 
   public void readModuleDescriptors(
-          @NotNull File dir,
+          @NotNull IFile dir,
           @NotNull MPSModuleOwner owner) {
     if (dir.getName().equals(".svn")) { //skip svn
       return;
@@ -352,8 +353,8 @@ public class MPSModuleRepository {
       readModuleDescriptor_internal(dir, owner, getModuleExtension(dirName));
     }
 
-    File[] files = dir.listFiles(new FilenameFilter() {
-      public boolean accept(File d, String name) {
+    List<IFile> files = dir.list(new IFileNameFilter() {
+      public boolean accept(IFile parent, String name) {
         return hasModuleExtension(name);
       }
     });
@@ -362,11 +363,11 @@ public class MPSModuleRepository {
       return;
     }
 
-    for (File file : files) {
+    for (IFile file : files) {
       readModuleDescriptor_internal(file, owner, getModuleExtension(file.getName()));
     }
-    File[] dirs = dir.listFiles();
-    for (File childDir : dirs) {
+    List<IFile> dirs = dir.list();
+    for (IFile childDir : dirs) {
       if (childDir.isDirectory()) {
         readModuleDescriptors(childDir, owner);
       }
@@ -385,7 +386,7 @@ public class MPSModuleRepository {
   }
 
   private void readModuleDescriptor_internal(
-          @NotNull File dir,
+          @NotNull IFile dir,
           @NotNull MPSModuleOwner owner,
           @NotNull String extension) {
     try {
@@ -397,9 +398,9 @@ public class MPSModuleRepository {
   }
 
   /*package*/ void renameUID(Language l, String newUID) {
-    File descriptorFile = l.getDescriptorFile();
+    IFile descriptorFile = l.getDescriptorFile();
     if (descriptorFile != null) {
-      myFileToModuleMap.remove(FileUtil.getCanonicalPath(descriptorFile));
+      myFileToModuleMap.remove(descriptorFile.getCanonicalPath());
     }
     myUIDToModulesMap.get(l.getNamespace()).remove(l);
 
@@ -409,7 +410,7 @@ public class MPSModuleRepository {
       myUIDToModulesMap.put(newUID, modules);
     }
     modules.add(l);
-    myFileToModuleMap.put(FileUtil.getCanonicalPath(l.newDescriptorFileByNewName(newUID)), l);
+    myFileToModuleMap.put(l.newDescriptorFileByNewName(newUID).getCanonicalPath(), l);
   }
 
   @Nullable
@@ -445,7 +446,7 @@ public class MPSModuleRepository {
     if (language != null && modules.size() > 1) {
       LOG.error("more than 1 language registered with the same namespace: " + language.getNamespace());
       for (IModule m : modules) {
-        File descriptorFile = m.getDescriptorFile();
+        IFile descriptorFile = m.getDescriptorFile();
         if (descriptorFile == null) {
           LOG.error("module without descriptor");
         } else {
@@ -518,7 +519,9 @@ public class MPSModuleRepository {
     String path = FileUtil.getCanonicalPath(file);
     List<IModule> result = new ArrayList<IModule>();
     for (IModule m : getAllModules()) {
-      String modulePath = FileUtil.getCanonicalPath(m.getDescriptorFile());
+      IFile descriptorFile = m.getDescriptorFile();
+      assert descriptorFile != null;
+      String modulePath = descriptorFile.getCanonicalPath();
       if (modulePath != null && modulePath.startsWith(path)) {
         result.add(m);
       }

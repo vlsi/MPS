@@ -1,17 +1,17 @@
 package jetbrains.mps.library;
 
+import jetbrains.mps.component.IComponentLifecycle;
 import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
-import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.component.IComponentLifecycle;
+import jetbrains.mps.vfs.FileSystem;
 import org.jdom.Element;
 
 import java.io.File;
@@ -102,7 +102,7 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
     myPredefinedLibrariesOwner = new MPSModuleOwner() { };
     for (Library l : getLibraries()) {
       if (l.isPredefined()) {
-        MPSModuleRepository.getInstance().readModuleDescriptors(new File(l.getPath()), myPredefinedLibrariesOwner);
+        MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(l.getPath()), myPredefinedLibrariesOwner);
       }
     }
     readAndConvert(myPredefinedLibrariesOwner);
@@ -115,7 +115,7 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
     myOwner = new MPSModuleOwner() { };
     for (Library l : getLibraries()) {
       if (!l.isPredefined()) {
-        MPSModuleRepository.getInstance().readModuleDescriptors(new File(l.getPath()), myOwner);
+        MPSModuleRepository.getInstance().readModuleDescriptors(FileSystem.getFile(l.getPath()), myOwner);
       }
     }
     readAndConvert(myOwner);

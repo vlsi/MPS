@@ -2,15 +2,18 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.projectLanguage.structure.*;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
+import jetbrains.mps.projectLanguage.structure.DevKitDescriptor;
+import jetbrains.mps.projectLanguage.structure.Model;
+import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
+import jetbrains.mps.projectLanguage.structure.ModuleReference;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Mapper;
-import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -22,7 +25,7 @@ import java.util.List;
 public class DevKit extends AbstractModule {
   private static Logger LOG = Logger.getLogger(DevKit.class);
 
-  public static DevKit newInstance(@NotNull File descriptorFile, @NotNull MPSModuleOwner moduleOwner) {
+  public static DevKit newInstance(@NotNull IFile descriptorFile, @NotNull MPSModuleOwner moduleOwner) {
     DevKit result = new DevKit();
 
     SModel model = ProjectModels.createDescriptorFor(result).getSModel();
@@ -48,7 +51,7 @@ public class DevKit extends AbstractModule {
   }
 
   private DevKitDescriptor myDescriptor;
-  private File myDescriptorFile;
+  private IFile myDescriptorFile;
   private DevKitEventTranslator myTranslator = new DevKitEventTranslator();
   private List<DevKitCommandListener> myListeners = new ArrayList<DevKitCommandListener>();
   private MPSModuleOwner myGenerationOnlyModelsModelOwner = this;
@@ -57,7 +60,7 @@ public class DevKit extends AbstractModule {
     CommandProcessor.instance().addCommandListener(myTranslator);
   }
 
-  public File getDescriptorFile() {
+  public IFile getDescriptorFile() {
     return myDescriptorFile;
   }
 

@@ -2,8 +2,9 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -43,7 +44,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   @NotNull SModelDescriptor createModel(@NotNull SModelUID uid, @NotNull ModelRoot root);
 
-  @Nullable File getDescriptorFile();
+  IFile getDescriptorFile();
 
   ModuleDescriptor getModuleDescriptor();
 

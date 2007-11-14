@@ -1,14 +1,16 @@
 package jetbrains.mps.project;
 
-import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.ide.command.CommandEventTranslator;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
+import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.logging.Logger;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -34,7 +36,7 @@ public class Solution extends AbstractModule {
   private Solution() {
   }
 
-  public static Solution newInstance(@NotNull File descriptorFile,
+  public static Solution newInstance(@NotNull IFile descriptorFile,
                                      @NotNull MPSModuleOwner moduleOwner) {
     Solution solution = new Solution();
     SModel model = ProjectModels.createDescriptorFor(solution).getSModel();
@@ -192,14 +194,14 @@ public class Solution extends AbstractModule {
   public String getGeneratorOutputPath() {
     String generatorOutputPath = mySolutionDescriptor.getGeneratorOutputPath();
     if (generatorOutputPath == null) {
-      generatorOutputPath = FileUtil.getCanonicalPath(myDescriptorFile.getParentFile()) + File.separatorChar + "source_gen";
+      generatorOutputPath = myDescriptorFile.getParent().getCanonicalPath() + File.separatorChar + "source_gen";
     }
     return generatorOutputPath;
   }
 
   public void reloadFromDisk() {
     SModel model = ProjectModels.createDescriptorFor(this).getSModel();
-    File file = getDescriptorFile();
+    IFile file = getDescriptorFile();
     assert file != null;
     SolutionDescriptor descriptor = DescriptorsPersistence.loadSolutionDescriptor(file, model);
     setSolutionDescriptor(descriptor);
