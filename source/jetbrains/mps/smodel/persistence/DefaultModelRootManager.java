@@ -4,17 +4,17 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.plugin.IProjectHandler;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
-import jetbrains.mps.smodel.event.SModelsMulticaster;
-import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelsMulticaster;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vcs.Merger;
+import jetbrains.mps.vfs.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
@@ -37,7 +37,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
   @NotNull
   public SModel loadModel(final @NotNull SModelDescriptor modelDescriptor) {
-    final File file = modelDescriptor.getModelFile();
+    final File file = FileSystem.toFile(modelDescriptor.getModelFile());
 
     File mineFile = new File(file.getPath() + ".mine");
 
@@ -76,7 +76,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     if (SModelRepository.getInstance().isChanged(modelDescriptor)) return true;
     if (modelDescriptor.getModelFile() == null || !modelDescriptor.getModelFile().exists()) return true;
     try {
-      BufferedReader r = new BufferedReader(new FileReader(modelDescriptor.getModelFile()));
+      BufferedReader r = new BufferedReader(modelDescriptor.getModelFile().openReader());
       String line;
       boolean result = false;
       while ((line = r.readLine()) != null) {
@@ -102,7 +102,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
 
   public void saveModel(@NotNull SModelDescriptor modelDescriptor) {
-    ModelPersistence.saveModel(modelDescriptor.getSModel(), modelDescriptor.getModelFile());
+    ModelPersistence.saveModel(modelDescriptor.getSModel(), FileSystem.toFile(modelDescriptor.getModelFile()));
   }
 
   private void readModelDescriptors(Set<SModelDescriptor> modelDescriptors, File dir, ModelRoot modelRoot, ModelOwner owner) {
@@ -134,15 +134,11 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
   @NotNull
   public SModelDescriptor createNewModel(@NotNull ModelRoot root, @NotNull SModelUID uid, @NotNull ModelOwner owner) {
-    File modelFile = createFileForModelUID(root, uid);
-    try {
-      return DefaultModelRootManager.createModel(this, root, modelFile.getCanonicalPath(), uid, owner);
-    } catch (IOException e) {
-      throw new RuntimeException("Couldn't create new model \"" + uid + "\"", e);
-    }
+    IFile modelFile = createFileForModelUID(root, uid);
+    return DefaultModelRootManager.createModel(this, root, modelFile.getCanonicalPath(), uid, owner);
   }
 
-  private File createFileForModelUID(ModelRoot root, SModelUID uid) {
+  private IFile createFileForModelUID(ModelRoot root, SModelUID uid) {
     String pathPrefix = root.getPrefix();
     String path = root.getPath();
 
@@ -156,7 +152,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       filenameSuffix = filenameSuffix + '@' + uid.getStereotype();
     }
 
-    File modelFile = new File(path, filenameSuffix.replace('.', File.separatorChar) + ".mps");
+    IFile modelFile = FileSystem.getFile(path + File.separator + filenameSuffix.replace('.', File.separatorChar) + ".mps");
     return modelFile;
   }
 
@@ -169,7 +165,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       modelRepository.addOwnerForDescriptor(modelDescriptor, owner);
       return modelDescriptor;
     } else {
-      modelDescriptor = new DefaultSModelDescriptor(manager, new File(fileName), modelUID);
+      modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getFile(fileName), modelUID);
       modelRepository.registerModelDescriptor(modelDescriptor, owner);
       return modelDescriptor;
     }
@@ -183,7 +179,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
       LOG.error("Couldn't create new model \"" + modelUID + "\" because such model exists");
     }
 
-    SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, new File(fileName), modelUID);
+    SModelDescriptor modelDescriptor = new DefaultSModelDescriptor(manager, FileSystem.getFile(fileName), modelUID);
     modelRepository.registerModelDescriptor(modelDescriptor, owner);
     modelRepository.markChanged(modelDescriptor, true);
     SModelsMulticaster.getInstance().fireModelCreatedEvent(modelDescriptor);
@@ -192,7 +188,7 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   }
 
   public int getVersion(@NotNull SModelDescriptor modelDescriptor) {
-    return ModelPersistence.readVersionFromFile(modelDescriptor.getModelFile());
+    return ModelPersistence.readVersionFromFile(FileSystem.toFile(modelDescriptor.getModelFile()));
   }
 
 
@@ -217,14 +213,14 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     assert modelDescriptor instanceof DefaultSModelDescriptor;
     SModelUID newModelUID = new SModelUID(newLongName, modelDescriptor.getStereotype());
     SModelUID oldModelUID = modelDescriptor.getModelUID();
-    File dest = createFileForModelUID(root, newModelUID);
+    IFile dest = createFileForModelUID(root, newModelUID);
 
-    File oldModelFile = modelDescriptor.getModelFile();
+    IFile oldModelFile = modelDescriptor.getModelFile();
     IProjectHandler projectHandler = project.getProjectHandler();
     if (!dest.equals(oldModelFile)) {    // change file
       if (projectHandler != null) {
         try {
-          projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(oldModelFile));
+          projectHandler.deleteFilesAndRemoveFromVCS(CollectionUtil.asList(FileSystem.toFile(oldModelFile)));
         } catch(RemoteException ex) {
           LOG.error(ex);
           return false;

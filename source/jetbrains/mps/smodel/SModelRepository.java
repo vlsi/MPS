@@ -128,7 +128,7 @@ public class SModelRepository extends SModelAdapter {
     for (SModelDescriptor model : getAllModelDescriptors()) {
       if (model.getModelFile() == null) continue;
 
-      String modelCanonicalPath = FileUtil.getCanonicalPath(model.getModelFile());
+      String modelCanonicalPath = model.getModelFile().getCanonicalPath();
       if (canonicalPath.equals(modelCanonicalPath)) return model;
     }
 

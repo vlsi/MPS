@@ -25,6 +25,8 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -48,7 +50,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private Map<String, Object> myUserObjects = new HashMap<String, Object>();
   private long myLastStructuralChange = System.currentTimeMillis();
   private long myLastChange = System.currentTimeMillis();
-  private File myModelFile;
+  private IFile myModelFile;
   private FastNodeFinder myFastNodeFinder;
 
   private IModelRootManager myModelRootManager;
@@ -56,7 +58,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   private long myDiskTimestamp = -1;
 
-  public DefaultSModelDescriptor(IModelRootManager manager, File modelFile, SModelUID modelUID) {
+  public DefaultSModelDescriptor(IModelRootManager manager, IFile modelFile, SModelUID modelUID) {
     myModelUID = modelUID;
     myModelRootManager = manager;
     myModelFile = modelFile;
@@ -116,7 +118,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return stereotype.equals(SModelStereotype.JAVA_STUB);
   }
 
-  public File getModelFile() {
+  public IFile getModelFile() {
     return myModelFile;
   }
 
@@ -125,7 +127,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   public long fileTimestamp() {
-    File file = getModelFile();
+    IFile file = getModelFile();
     if (file == null || !file.exists()) return -1;
     return file.lastModified();
   }
@@ -517,7 +519,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   public final void delete() {
     SModelsMulticaster.getInstance().fireModelWillBeDeletedEvent(this);
     SModelRepository.getInstance().removeModelDescriptor(this);
-    File modelFile = getModelFile();
+    IFile modelFile = getModelFile();
     if (modelFile != null && modelFile.exists()) {
       modelFile.delete();
     }
@@ -628,11 +630,11 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   public Set<ModelRoot> collectModelRoots() {
     Set<ModelRoot> result = new HashSet<ModelRoot>();
-    File sourceFile = this.getModelFile();
+    IFile sourceFile = this.getModelFile();
     Set<IModule> modelOwners = SModelRepository.getInstance().getOwners(this, IModule.class);
     for (IModule module : modelOwners) {
       for (ModelRoot modelRoot : module.getModelRoots()) {
-        if (this.getModelUID().toString().equals(PathManager.getModelUIDString(sourceFile, new File(modelRoot.getPath()), modelRoot.getPrefix()))) {
+        if (this.getModelUID().toString().equals(PathManager.getModelUIDString(FileSystem.toFile(sourceFile), new File(modelRoot.getPath()), modelRoot.getPrefix()))) {
           result.add(modelRoot);
         }
       }
@@ -654,7 +656,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   /*package*/
-  public void setModelFile(File file) {
+  public void setModelFile(IFile file) {
     myModelFile = file;
   }
 

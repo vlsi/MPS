@@ -10,4 +10,13 @@ public class FileSystem {
   public static IFile getFile(File file) {
     return new FileSystemFile(file);
   }
+
+  public static File toFile(IFile file) {
+    if (!(file instanceof FileSystemFile)) {
+      throw new RuntimeException();
+    }
+
+    return ((FileSystemFile) file).getFile();
+  }
+
 }

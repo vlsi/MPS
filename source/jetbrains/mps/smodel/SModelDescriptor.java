@@ -1,13 +1,12 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.event.SModelCommandListener;
-import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelListener;
+import jetbrains.mps.vfs.IFile;
 
-import java.io.File;
 import java.util.Set;
 
 /**
@@ -43,7 +42,7 @@ public interface SModelDescriptor {
   void dispose();
   void replaceModel(SModel newModel);
 
-  File getModelFile();
+  IFile getModelFile();
 
   Set<SReference> findUsages(Set<SNode> node);
   Set<SReference> findUsages(SNode node);

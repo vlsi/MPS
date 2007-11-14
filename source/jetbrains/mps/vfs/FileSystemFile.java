@@ -2,7 +2,7 @@ package jetbrains.mps.vfs;
 
 import jetbrains.mps.util.FileUtil;
 
-import java.io.File;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +37,18 @@ class FileSystemFile implements IFile {
     return FileUtil.getCanonicalPath(myFile);
   }
 
+  public long lastModified() {
+    return myFile.lastModified();
+  }
+
+  public boolean exists() {
+    return myFile.exists();
+  }
+
+  public boolean delete() {
+    return myFile.delete();
+  }
+
   public List<IFile> list() {
     List<IFile> result = new ArrayList<IFile>();
 
@@ -45,6 +57,18 @@ class FileSystemFile implements IFile {
     }
 
     return result;
+  }
+
+  public File getFile() {
+    return myFile;
+  }
+
+  public Reader openReader() throws IOException {
+    return new FileReader(myFile);
+  }
+
+  public Writer openWriter() throws IOException {
+    return new FileWriter(myFile);    
   }
 
   public int hashCode() {
