@@ -168,6 +168,10 @@ public class QueriesGenerated {
     return node.getId();
   }
 
+  public static Object propertyMacro_GetPropertyValue_1195058342956(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return !(SPropertyOperations.getBoolean(node, "skipDependencyOnCurrent"));
+  }
+
   public static Object propertyMacro_GetPropertyValue_1184597094776(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return node.getModel().toString();
   }

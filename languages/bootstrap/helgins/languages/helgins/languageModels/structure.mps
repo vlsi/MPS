@@ -148,6 +148,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1174657487114">
     <property name="name" value="TypeOfExpression" />
     <link role="extends" targetNodeId="2.1068431790191" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1195058053095">
+      <property name="name" value="skipDependencyOnCurrent" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1174657509053">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="1" />

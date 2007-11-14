@@ -14,7 +14,7 @@ public class typeof_AnonymousClassCreator_InferenceRule implements InferenceRule
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguage.helgins", "1194624225363"), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "cls", true), "jetbrains.mps.baseLanguage.helgins", "1194624230979"), argument, null, "jetbrains.mps.baseLanguage.helgins", "1194624228553");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguage.helgins", "1194624225363", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "cls", true), "jetbrains.mps.baseLanguage.helgins", "1194624230979", true), argument, null, "jetbrains.mps.baseLanguage.helgins", "1194624228553");
   }
 
   public String getApplicableConceptFQName() {

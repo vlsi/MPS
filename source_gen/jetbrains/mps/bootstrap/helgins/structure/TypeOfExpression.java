@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class TypeOfExpression extends Expression {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression";
   public static String TERM = "term";
+  public static String SKIP_DEPENDENCY_ON_CURRENT = "skipDependencyOnCurrent";
 
   public  TypeOfExpression(SNode node) {
     super(node);
@@ -31,6 +32,14 @@ public class TypeOfExpression extends Expression {
 
   public void setTerm(Expression node) {
     super.setChild(TypeOfExpression.TERM, node);
+  }
+
+  public boolean getSkipDependencyOnCurrent() {
+    return this.getBooleanProperty(TypeOfExpression.SKIP_DEPENDENCY_ON_CURRENT);
+  }
+
+  public void setSkipDependencyOnCurrent(boolean value) {
+    this.setBooleanProperty(TypeOfExpression.SKIP_DEPENDENCY_ON_CURRENT, value);
   }
 
 }

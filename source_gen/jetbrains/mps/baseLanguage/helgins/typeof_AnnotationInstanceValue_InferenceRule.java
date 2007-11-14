@@ -14,7 +14,7 @@ public class typeof_AnnotationInstanceValue_InferenceRule implements InferenceRu
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true), "jetbrains.mps.baseLanguage.helgins", "1188221904889"), SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "key", false), "returnType", true), SLinkOperations.getTarget(argument, "value", true), null, "jetbrains.mps.baseLanguage.helgins", "1188221827926");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "value", true), "jetbrains.mps.baseLanguage.helgins", "1188221904889", true), SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "key", false), "returnType", true), SLinkOperations.getTarget(argument, "value", true), null, "jetbrains.mps.baseLanguage.helgins", "1188221827926");
   }
 
   public String getApplicableConceptFQName() {

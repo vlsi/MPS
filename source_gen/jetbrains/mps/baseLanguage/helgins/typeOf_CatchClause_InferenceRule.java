@@ -14,7 +14,7 @@ public class typeOf_CatchClause_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "throwable", true), "jetbrains.mps.baseLanguage.helgins", "1176896800008"), new QuotationClass_25().createNode(), SLinkOperations.getTarget(argument, "throwable", true), null, "jetbrains.mps.baseLanguage.helgins", "1176896807264");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "throwable", true), "jetbrains.mps.baseLanguage.helgins", "1176896800008", true), new QuotationClass_25().createNode(), SLinkOperations.getTarget(argument, "throwable", true), null, "jetbrains.mps.baseLanguage.helgins", "1176896807264");
   }
 
   public String getApplicableConceptFQName() {

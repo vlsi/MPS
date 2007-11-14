@@ -43,7 +43,9 @@ public class RuntimeSupport {
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
       currentTypesComponent.addNodeToFrontier(node);
-      currentTypesComponent.addDependcyOnCurrent(node);
+      if (addDependency) {
+        currentTypesComponent.addDependcyOnCurrent(node);
+      }
       //--- for diagnostics:
       if (ruleModel != null && ruleId != null) {
         currentTypesComponent.markNodeAsAffectedByRule(node, ruleModel, ruleId);

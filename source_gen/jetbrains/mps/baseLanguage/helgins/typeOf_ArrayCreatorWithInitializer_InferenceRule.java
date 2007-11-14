@@ -16,7 +16,7 @@ public class typeOf_ArrayCreatorWithInitializer_InferenceRule implements Inferen
 
   public void applyRule(final SNode argument) {
     for(SNode value : SLinkOperations.getTargets(argument, "initValue", true)) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.baseLanguage.helgins", "1175600272400"), SLinkOperations.getTarget(argument, "componentType", true), value, null, "jetbrains.mps.baseLanguage.helgins", "1175600269225");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.baseLanguage.helgins", "1175600272400", true), SLinkOperations.getTarget(argument, "componentType", true), value, null, "jetbrains.mps.baseLanguage.helgins", "1175600269225");
     }
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_9().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(argument, "componentType", true), TypeChecker.getInstance().getRuntimeTypesModel())), argument, "jetbrains.mps.baseLanguage.helgins", "1175600306141");
   }
