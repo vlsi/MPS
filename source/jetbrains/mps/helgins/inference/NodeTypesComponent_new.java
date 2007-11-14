@@ -9,6 +9,7 @@ import jetbrains.mps.util.Mapper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
 import jetbrains.mps.helgins.integration.Highlighter;
 import jetbrains.mps.smodel.CopyUtil;
@@ -21,8 +22,11 @@ import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.InspectorPane;
+import jetbrains.mps.ide.InspectorTool;
 import jetbrains.mps.nodeEditor.IGutterMessageOwner;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
+import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.core.structure.BaseConcept;
 
 import java.util.*;
@@ -178,6 +182,24 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     return component;
   }
 
+  @Nullable
+  private AbstractEditorComponent getInspectorComponent1() {
+    MPSProject project = myTypeChecker.getProject();
+    if (project == null) return null;
+    InspectorPane inspectorPane = project.getComponent(InspectorPane.class);
+    if (inspectorPane == null) return null;
+    return (AbstractEditorComponent) inspectorPane.getInspector();
+  }
+
+  @Nullable
+  private AbstractEditorComponent getInspectorComponent2() {
+    MPSProject project = myTypeChecker.getProject();
+    if (project == null) return null;
+    InspectorTool inspectorTool = project.getComponent(InspectorTool.class);
+    if (inspectorTool == null) return null;
+    return (AbstractEditorComponent) inspectorTool.getInspector();
+  }
+
   public void computeTypes() {
     computeTypes(false);
   }
@@ -196,6 +218,14 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
         AbstractEditorComponent component = getEditorComponent();
         if (component != null) {
           component.getHighlightManager().clearForOwner(this);
+        }
+        AbstractEditorComponent inspector1 = getInspectorComponent1();
+        if (inspector1 != null) {
+          inspector1.getHighlightManager().clearForOwner(this);
+        }
+        AbstractEditorComponent inspector2 = getInspectorComponent2();
+        if (inspector2 != null) {
+          inspector2.getHighlightManager().clearForOwner(this);
         }
 
         doInvalidate();
@@ -228,10 +258,18 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
       if (HelginsPreferencesComponent.getInstance().isUsesDebugHighlighting()) {
         CommandProcessor.instance().invokeLater(new Runnable() {
           public void run() {
-            AbstractEditorComponent component = getEditorComponent();
+            AbstractEditorComponent component = (AbstractEditorComponent) getEditorComponent();
             if (component == null) return;
+            AbstractEditorComponent inspector1 = getInspectorComponent1();
+            AbstractEditorComponent inspector2 = getInspectorComponent2();
             for (SNodePointer skippedNode : skippedNodes) {
-              component.getHighlightManager().mark(skippedNode.getNode(), new Color(255, 127, 0, 50),"", NodeTypesComponent_new.this);
+              markNode(component, skippedNode);
+              if (inspector1 != null) {
+                markNode(inspector1, skippedNode);
+              }
+              if (inspector2 != null) {
+                markNode(inspector2, skippedNode);
+              }
             }
           }
         });
@@ -241,6 +279,10 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
       myNotSkippedNodes.clear();
       clearEquationManager();
     }
+  }
+
+  private void markNode(AbstractEditorComponent component, SNodePointer skippedNode) {
+    component.getHighlightManager().mark(skippedNode.getNode(), new Color(255, 127, 0, 50),"", this);
   }
 
   public void solveInequationsAndExpandTypes() {
