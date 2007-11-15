@@ -293,7 +293,23 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     throw new RuntimeException("it can't happen");
   }
 
-  public void addProjectDevKit(@NotNull File devKitDescriptorFile) {
+  public void removeProjectSolution(@NotNull Solution solution) {
+    ProjectDescriptor projectDescriptor = getProjectDescriptor();
+    SModel model = projectDescriptor.getModel();
+    model.setLoading(true);
+    IFile descriptorFile = solution.getDescriptorFile();
+    assert descriptorFile != null;
+    String absolutePath = descriptorFile.getAbsolutePath();
+    for (SolutionPath solutionPath : projectDescriptor.getProjectSolutions()) {
+      if (solutionPath.getPath().equals(absolutePath)) {
+        solutionPath.delete();
+      }
+    }
+    setProjectDescriptor(projectDescriptor);
+    myEventTranslator.projectChanged();
+  }
+
+  public void addProjectDevKit(@NotNull IFile devKitDescriptorFile) {
     ProjectDescriptor projectDescriptor = getProjectDescriptor();
     SModel model = projectDescriptor.getModel();
     model.setLoading(true);
@@ -304,6 +320,22 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     setProjectDescriptor(projectDescriptor);
 
+    myEventTranslator.projectChanged();
+  }
+
+  public void removeProjectDevKit(@NotNull DevKit devkit) {
+    ProjectDescriptor projectDescriptor = getProjectDescriptor();
+    SModel model = projectDescriptor.getModel();
+    model.setLoading(true);
+    IFile descriptorFile = devkit.getDescriptorFile();
+    assert descriptorFile != null;
+    String absolutePath = descriptorFile.getAbsolutePath();
+    for (DevKitPath devKitPath : projectDescriptor.getProjectDevkits()) {
+      if (devKitPath.getPath().equals(absolutePath)) {
+        devKitPath.delete();
+      }
+    }
+    setProjectDescriptor(projectDescriptor);
     myEventTranslator.projectChanged();
   }
 

@@ -60,7 +60,7 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
 
     TextTreeNode exportedLangs = new TextTreeNode("Exported Languages");
     for (Language l : myDevKit.getExportedLanguages()) {
-      exportedLangs.add(new GenericModuleTreeNode(l, getOperationContext().getProject()));
+      exportedLangs.add(ProjectModuleTreeNode.createFor(getOperationContext().getProject(), l));
     }
     add(exportedLangs);
 
@@ -74,7 +74,7 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     add(generationOnly);
 
     for (IModule l : myDevKit.getGenerationOnlyLanuages()) {
-      generationOnly.add(new GenericModuleTreeNode(l, getOperationContext().getProject()));
+      generationOnly.add(ProjectModuleTreeNode.createFor(getOperationContext().getProject(), l));
     }
   }
 

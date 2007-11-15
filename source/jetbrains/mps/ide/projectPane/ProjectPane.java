@@ -57,7 +57,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   public static final String PROJECT_PANE_GENERATOR_ACTIONS = "project-pane-generator-actions";
   public static final String PROJECT_PANE_MODELS_ACTIONS = "project-pane-models-actions";
   public static final String PROJECT_PANE_STUBS_ACTIONS = "project-pane-stubs-actions";
-  public static final String PROJECT_PANE_GENERIC_MODULE_ACTIONS = "project-pane-generic-module-actions";
   public static final String SHOW_P_AND_R = "show-p-and-r";
   public static final String AUTOSCROLL_TO_SOURCE = "autoscroll-to-source";
   public static final String AUTOSCROLL_FROM_SOURCE = "autoscroll-from-source";

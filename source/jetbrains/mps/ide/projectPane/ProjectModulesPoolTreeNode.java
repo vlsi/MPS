@@ -48,8 +48,11 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
     List<IModule> modules = collectModules();
     ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
     for (IModule module : modules) {
-      GenericModuleTreeNode moduleTreeNode = new GenericModuleTreeNode(module, myProject);
-      builder.addNode(moduleTreeNode);
+      ProjectModuleTreeNode node = ProjectModuleTreeNode.createFor(myProject, module);
+
+      if (node != null) {
+        builder.addNode(node);
+      }
     }
 
     builder.fillNode(this);
@@ -59,18 +62,8 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
     return MPSModuleRepository.getInstance().getAllModules();
   }
 
-  private void collectModules(MPSModuleOwner moduleOwner, Set<IModule> modules) {
-    List<IModule> ownedModules = MPSModuleRepository.getInstance().getModules(moduleOwner);
-    for (IModule ownedModule : ownedModules) {
-      if (!modules.contains(ownedModule)) {
-        modules.add(ownedModule);
-        collectModules(ownedModule, modules);
-      }
-    }
-  }
-
-  private class ModulePoolNamespaceBuilder extends NamespaceTreeBuilder<GenericModuleTreeNode> {
-    protected String getNamespace(GenericModuleTreeNode node) {
+  private class ModulePoolNamespaceBuilder extends NamespaceTreeBuilder<ProjectModuleTreeNode> {
+    protected String getNamespace(ProjectModuleTreeNode node) {
       if (node.getModule() instanceof Generator) {
         Generator generator = (Generator) node.getModule();
         return "Languages." + NameUtil.namespaceFromLongName(generator.getSourceLanguage().getNamespace());

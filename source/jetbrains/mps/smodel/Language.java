@@ -428,11 +428,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public void updateLastGenerationTime() {
-    long lastGenerationTime = FileUtil.getNewestFileTime(
-            new File(getSourceDir().getAbsolutePath() + File.separator + getNamespace().replace('.', File.separatorChar)));
-    long lastChangeTime = getLastChangeTime();
-    myUpToDate = lastGenerationTime >= lastChangeTime;
-    myUpdateLastGenerationTimeCalled = true;
+//    long lastGenerationTime = FileUtil.getNewestFileTime(
+//            new File(getSourceDir().getAbsolutePath() + File.separator + getNamespace().replace('.', File.separatorChar)));
+//    long lastChangeTime = getLastChangeTime();
+//    myUpToDate = lastGenerationTime >= lastChangeTime;
+//    myUpdateLastGenerationTimeCalled = true;
   }
 
   @NotNull
