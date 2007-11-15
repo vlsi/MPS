@@ -82,5 +82,23 @@
       <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1194988824180" />
     </node>
   </node>
+  <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1195150589703">
+    <property name="name" value="test_mappingConfig" />
+    <node role="weavingMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Weaving_MappingRule" id="1195150640889">
+      <link role="applicableConcept" targetNodeId="3.1145552809883" resolveInfo="AbstractCreator" />
+      <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.WeaveEach_RuleConsequence" id="1195150649018">
+        <node role="sourceNodesQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodesQuery" id="1195150649019">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195150649020" />
+        </node>
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.Weaving_MappingRule_ContextNodeQuery" id="1195150640891">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195150640892" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1195150608736">
+      <link role="applicableConcept" targetNodeId="3.1145552809883" resolveInfo="AbstractCreator" />
+      <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.DismissTopMappingRule" id="1195150678661" />
+    </node>
+  </node>
 </model>
 

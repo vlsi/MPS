@@ -23,6 +23,7 @@
   <import index="67" modelUID="jetbrains.mps.transformation.TLBase.structure@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1087903454703">
     <property name="name" value="PropertyMacro_Editor" />
+    <property name="package" value="Macro" />
     <link role="conceptDeclaration" targetNodeId="1.1087833241328" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1087903454708">
       <property name="vertical" value="true" />
@@ -185,6 +186,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1087926271843">
     <property name="name" value="NodeMacro_Editor" />
+    <property name="package" value="Macro" />
     <link role="conceptDeclaration" targetNodeId="1.1087833466690" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1089126084078">
       <property name="selectable" value="false" />
@@ -305,6 +307,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1088762125437">
     <property name="name" value="ReferenceMacro_Editor" />
+    <property name="package" value="Macro" />
     <link role="conceptDeclaration" targetNodeId="1.1088761943574" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1088763040904">
       <property name="selectable" value="false" />
@@ -442,6 +445,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1092060948911">
     <property name="name" value="TemplateDeclaration_Editor" />
+    <property name="package" value="Template" />
     <link role="conceptDeclaration" targetNodeId="1.1092059087312" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1092060948912">
       <property name="drawBorder" value="false" />
@@ -1369,6 +1373,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1095419606578">
     <property name="name" value="MappingRule_Editor" />
+    <property name="package" value="Rule" />
     <link role="conceptDeclaration" targetNodeId="1.1095416572297" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1095419606579">
       <property name="vertical" value="false" />
@@ -1487,6 +1492,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1095420477103">
     <property name="name" value="WeavingRule_Editor" />
+    <property name="package" value="Rule" />
     <link role="conceptDeclaration" targetNodeId="1.1095416624611" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1095420477104">
       <property name="vertical" value="false" />
@@ -1592,6 +1598,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1095672501074">
     <property name="name" value="TemplateFragment_Editor" />
+    <property name="package" value="Template" />
     <link role="conceptDeclaration" targetNodeId="1.1095672379244" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1095672654001">
       <property name="vertical" value="true" />
@@ -1754,6 +1761,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1112731832583">
+    <property name="package" value="Macro" />
     <link role="conceptDeclaration" targetNodeId="1.1112731569622" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1112732002603">
       <property name="selectable" value="false" />
@@ -2190,7 +2198,7 @@
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1168560005632">
               <property name="drawBorder" value="false" />
-              <property name="noTargetText" value="&lt;nothing&gt;" />
+              <property name="noTargetText" value="&lt;default&gt;" />
               <link role="relationDeclaration" targetNodeId="1.1168558750579" />
             </node>
           </node>
@@ -2289,6 +2297,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1114458648191">
+    <property name="package" value="Rule" />
     <link role="conceptDeclaration" targetNodeId="1.1114456532170" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1114461204693">
       <property name="vertical" value="false" />
@@ -2345,6 +2354,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1114707211025">
+    <property name="package" value="Macro" />
     <link role="conceptDeclaration" targetNodeId="1.1118773211870" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1114709712821">
       <property name="selectable" value="false" />
@@ -2530,6 +2540,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1114729546995">
+    <property name="package" value="Macro" />
     <link role="conceptDeclaration" targetNodeId="1.1114729360583" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1114729602403">
       <property name="selectable" value="false" />
@@ -2703,6 +2714,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1118773368750">
+    <property name="package" value="Macro" />
     <link role="conceptDeclaration" targetNodeId="1.1114706874351" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1149866056564">
       <property name="drawBorder" value="false" />
@@ -2790,6 +2802,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1118786597045">
+    <property name="package" value="Macro" />
     <link role="conceptDeclaration" targetNodeId="1.1118786554307" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1118786597047">
       <property name="selectable" value="false" />
@@ -3016,6 +3029,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1131073370410">
+    <property name="package" value="Macro" />
     <link role="conceptDeclaration" targetNodeId="1.1131073187192" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1131073370412">
       <property name="selectable" value="false" />
@@ -3351,6 +3365,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1133037934981">
+    <property name="package" value="Macro" />
     <link role="conceptDeclaration" targetNodeId="1.1133037731736" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1133038004770">
       <property name="selectable" value="false" />
@@ -4248,6 +4263,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1167087589303">
+    <property name="package" value="Rule" />
     <link role="conceptDeclaration" targetNodeId="1.1167087518662" />
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1167087675405">
       <property name="selectable" value="false" />
@@ -4355,6 +4371,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1167088003562">
+    <property name="package" value="Rule" />
     <link role="conceptDeclaration" targetNodeId="1.1167087469898" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1167088005388">
       <property name="vertical" value="false" />
@@ -4457,6 +4474,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1167169732004">
+    <property name="package" value="Rule" />
     <link role="conceptDeclaration" targetNodeId="1.1167168920554" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1167169733593">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167169733594">
@@ -4575,6 +4593,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1167171627113">
+    <property name="package" value="Rule" />
     <link role="conceptDeclaration" targetNodeId="1.1167171569011" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1169580472028">
       <property name="vertical" value="true" />
@@ -4852,6 +4871,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1167328252970">
+    <property name="package" value="Rule" />
     <link role="conceptDeclaration" targetNodeId="1.1167327847730" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1169672948371">
       <property name="vertical" value="true" />
@@ -5000,6 +5020,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1167514442227">
+    <property name="package" value="Rule" />
     <link role="conceptDeclaration" targetNodeId="1.1167514355419" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1167514444706">
       <property name="vertical" value="false" />
@@ -5188,6 +5209,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1168559286756">
+    <property name="package" value="Rule.Consequence" />
     <link role="conceptDeclaration" targetNodeId="1.1168559098955" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Error" id="1168559289383">
       <property name="drawBorder" value="false" />
@@ -5196,6 +5218,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1168559415840">
+    <property name="package" value="Template" />
     <link role="conceptDeclaration" targetNodeId="1.1168559333462" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1168559420280">
       <property name="drawBorder" value="false" />
@@ -5213,6 +5236,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1168559735661">
+    <property name="package" value="Rule.Consequence" />
     <link role="conceptDeclaration" targetNodeId="1.1168559512253" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1169670446867">
       <property name="drawBorder" value="false" />
@@ -5229,6 +5253,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1168619539479">
+    <property name="package" value="Annotation" />
     <link role="conceptDeclaration" targetNodeId="1.1168619357332" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1168619666865">
       <property name="selectable" value="false" />
@@ -5340,6 +5365,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1169570088021">
+    <property name="package" value="Rule.Consequence" />
     <link role="conceptDeclaration" targetNodeId="1.1169569792945" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1169570092914">
       <property name="vertical" value="true" />
@@ -5420,6 +5446,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1169670569544">
+    <property name="package" value="Rule.Consequence" />
     <link role="conceptDeclaration" targetNodeId="1.1169670156577" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1169670581344">
       <property name="drawBorder" value="false" />
@@ -5573,6 +5600,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1177093677607">
+    <property name="package" value="Rule.Consequence" />
     <link role="conceptDeclaration" targetNodeId="1.1177093525992" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177093682624">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177093687720">
@@ -5996,6 +6024,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184217267888" />
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1184617159050">
+    <property name="package" value="Rule" />
     <link role="conceptDeclaration" targetNodeId="1.1184616041890" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1184617173382">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1184617173383">
@@ -6174,6 +6203,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1194566459517">
+    <property name="package" value="Macro" />
     <link role="conceptDeclaration" targetNodeId="1.1194565793557" resolveInfo="IncludeMacro" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1194566483566">
       <property name="drawBorder" value="false" />
