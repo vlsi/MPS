@@ -366,16 +366,16 @@ public class TemplateGenUtil {
     }
   }
 
-  public static void showGeneratorMessage(GeneratorMessage message, SNode sourceNode, SNode rule, ITemplateGenerator generator) {
-    if (message != null) {
-      String text = message.getMessageText();
-      if (message.getMessageType() == GeneratorMessageType.error) {
-        generator.showErrorMessage(sourceNode, null, rule, text);
-      } else if (message.getMessageType() == GeneratorMessageType.warning) {
-        generator.showWarningMessage(sourceNode, text);
-      } else {
-        generator.showInformationMessage(sourceNode, text);
-      }
-    }
-  }
+//  public static void showGeneratorMessage(GeneratorMessage message, SNode sourceNode, SNode rule, ITemplateGenerator generator) {
+//    if (message != null) {
+//      String text = message.getMessageText();
+//      if (message.getMessageType() == GeneratorMessageType.error) {
+//        generator.showErrorMessage(sourceNode, null, rule, text);
+//      } else if (message.getMessageType() == GeneratorMessageType.warning) {
+//        generator.showWarningMessage(sourceNode, text);
+//      } else {
+//        generator.showInformationMessage(sourceNode, text);
+//      }
+//    }
+//  }
 }
