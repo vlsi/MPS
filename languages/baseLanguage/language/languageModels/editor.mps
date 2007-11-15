@@ -2060,7 +2060,6 @@
       <property name="drawBorder" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1075380566830">
         <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
         <link role="relationDeclaration" targetNodeId="17.1068581242865" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1075380566831">
