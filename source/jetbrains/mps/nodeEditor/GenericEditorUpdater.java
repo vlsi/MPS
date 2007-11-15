@@ -29,7 +29,6 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
   }
 
   public void initComponent() {
-    System.err.println("starting highlighter");
     if (myThread != null && myThread.isAlive()) {
       return;
     }
@@ -50,7 +49,6 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
               }
               doUpdate();
               if (myStopThread) {
-                //System.err.println("stopping highlighter");
                 break;
               }
               Thread.sleep(300);
@@ -64,7 +62,6 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
       }
 
     };
-    System.err.println("thread name = " + myThread.getName());
     myThread.start();
   }
 
