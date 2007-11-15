@@ -67,13 +67,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
       final EditorsPane editorsPane = myHierarchyTree.getHierarchyView().myIde.getEditorsPane();
       final IEditor currentEditor = editorsPane.getCurrentEditor();
 
-
-      IOperationContext context = getOperationContext();
-      if (context.getModule() == null) {
-        context = ModuleContext.create(node, context.getComponent(AbstractProjectFrame.class));
-      }
-
-      NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), context);
+      NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), getOperationContext().getProject());
 
     }
 

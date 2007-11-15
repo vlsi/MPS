@@ -62,7 +62,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
             ModuleContext operationContext = ModuleContext.create(node, getProjectWindow());
             EditorsPane pane = frame.getEditorsPane();
             IEditor editor = pane.openEditor(node, operationContext);
-            NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, editor, pane), operationContext);
+            NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, editor, pane), operationContext.getProject());
           }
         }
 
