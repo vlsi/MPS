@@ -590,7 +590,6 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-
   private String getPathRelativeTo(String path, String base) {
     if (path.startsWith(base)) {
       return path.substring(base.length());
@@ -604,7 +603,6 @@ public abstract class AbstractModule implements IModule {
       return ".." + File.separator + relativeToParent;
     }
   }
-
 
   public void createManifest() {
     String manifestContents = generateManifest();
