@@ -15,8 +15,8 @@ public class typeof_ToListOperation_InferenceRule implements InferenceRule_Runti
   public void applyRule(final SNode argument) {
     SNode input = RulesFunctions_Collections.getInput(argument);
     final SNode elementType_typevar_1184850887615 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850938813"), new QuotationClass_11().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184850887615)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850943303");
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850970648"), new QuotationClass_12().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184850887615)), argument, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850973959");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850938813", true), new QuotationClass_11().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184850887615)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850943303");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850970648", true), new QuotationClass_12().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184850887615)), argument, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184850973959");
   }
 
   public String getApplicableConceptFQName() {
