@@ -154,10 +154,6 @@ public class QueriesGenerated {
     return _QueriesUtil.operationHasParm_ConceptExpression(node);
   }
 
-  public static boolean baseMappingRule_Condition_1169074949355(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return !(_QueriesUtil.operationHasParm_Concept(node));
-  }
-
   public static boolean baseMappingRule_Condition_1177031312269(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Expression");
   }
