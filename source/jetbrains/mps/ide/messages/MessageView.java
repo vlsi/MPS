@@ -11,10 +11,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
 
 /**
  * @author Kostik
@@ -34,6 +31,13 @@ public class MessageView extends DefaultTool {
     myToolsPane = toolsPane;
     myComponent.setLayout(new BorderLayout());
     myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
+
+    myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
+    myList.addComponentListener(new ComponentAdapter() {
+      public void componentResized(ComponentEvent e) {
+        myList.setFixedCellWidth(myList.getWidth());
+      }
+    });
 
     myList.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
