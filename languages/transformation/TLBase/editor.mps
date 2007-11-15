@@ -6337,5 +6337,55 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1195158756338">
+    <property name="package" value="Rule.Consequence" />
+    <link role="conceptDeclaration" targetNodeId="1.1195158388553" resolveInfo="InlineSwitch_Case" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195158790422">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195158790423">
+        <property name="vertical" value="false" />
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195158790424">
+          <property name="text" value="case:" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1195158856240">
+          <link role="relationDeclaration" targetNodeId="1.1195158608805" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195158876116">
+          <property name="drawBorder" value="false" />
+          <property name="selectable" value="false" />
+          <property name="text" value="--&gt;" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1195158900368">
+          <link role="relationDeclaration" targetNodeId="1.1195158637244" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195158800051" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1195158926900">
+    <property name="package" value="Rule.Consequence" />
+    <link role="conceptDeclaration" targetNodeId="1.1195158154974" resolveInfo="InlineSwitch_RuleConsequence" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195158950699">
+      <property name="vertical" value="true" />
+      <property name="drawBrackets" value="true" />
+      <property name="bracketsColor" value="gray" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1195158962623">
+        <property name="vertical" value="true" />
+        <property name="gridLayout" value="true" />
+        <link role="relationDeclaration" targetNodeId="1.1195158408710" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195158996813">
+        <property name="selectable" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195159028567">
+          <property name="text" value="default:" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1195159014565">
+          <link role="relationDeclaration" targetNodeId="1.1195158241124" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

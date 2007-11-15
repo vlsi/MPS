@@ -97,7 +97,25 @@
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule" id="1195150608736">
       <link role="applicableConcept" targetNodeId="3.1145552809883" resolveInfo="AbstractCreator" />
-      <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.DismissTopMappingRule" id="1195150678661" />
+      <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineSwitch_RuleConsequence" id="1195159342591">
+        <node role="case" type="jetbrains.mps.transformation.TLBase.structure.InlineSwitch_Case" id="1195159364077">
+          <node role="conditionFunction" type="jetbrains.mps.transformation.TLBase.structure.BaseMappingRule_Condition" id="1195159364078">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195159364079">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195159371362">
+                <node role="expression" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1195159371363" />
+              </node>
+            </node>
+          </node>
+          <node role="caseConsequence" type="jetbrains.mps.transformation.TLBase.structure.RuleConsequence" id="1195159364080" />
+        </node>
+        <node role="case" type="jetbrains.mps.transformation.TLBase.structure.InlineSwitch_Case" id="1195159381505">
+          <node role="conditionFunction" type="jetbrains.mps.transformation.TLBase.structure.BaseMappingRule_Condition" id="1195159381506">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195159381507" />
+          </node>
+          <node role="caseConsequence" type="jetbrains.mps.transformation.TLBase.structure.RuleConsequence" id="1195159381508" />
+        </node>
+        <node role="defaultConsequence" type="jetbrains.mps.transformation.TLBase.structure.RuleConsequence" id="1195159342592" />
+      </node>
     </node>
   </node>
 </model>

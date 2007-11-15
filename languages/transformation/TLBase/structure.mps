@@ -1188,12 +1188,8 @@
       <link role="target" targetNodeId="2.1133920641626" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177093643994">
-      <property name="value" value="&lt;in-line&gt;" />
+      <property name="value" value="&lt;in-line template&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177093666168">
-      <property name="value" value="in-line template" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473914776" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1184373935793">
@@ -1312,6 +1308,44 @@
       <property name="role" value="sourceNodeQuery" />
       <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1168024337012" resolveInfo="SourceSubstituteMacro_SourceNodeQuery" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195158154974">
+    <property name="package" value="Rule.Consequence" />
+    <property name="name" value="InlineSwitch_RuleConsequence" />
+    <link role="extends" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1195159314887">
+      <property name="value" value="&lt;in-line switch&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195158408710">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="case" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1195158388553" resolveInfo="InlineSwitch_Case" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195158241124">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="defaultConsequence" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195158388553">
+    <property name="package" value="Rule.Consequence" />
+    <property name="name" value="InlineSwitch_Case" />
+    <link role="extends" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195158608805">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="conditionFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1167168920554" resolveInfo="BaseMappingRule_Condition" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195158637244">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="caseConsequence" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
     </node>
   </node>
 </model>
