@@ -525,7 +525,11 @@ public class MPSModuleRepository {
     List<IModule> result = new ArrayList<IModule>();
     for (IModule m : getAllModules()) {
       IFile descriptorFile = m.getDescriptorFile();
-      assert descriptorFile != null;
+
+      if (descriptorFile == null) {
+        continue;
+      }
+
       String modulePath = descriptorFile.getCanonicalPath();
       if (modulePath != null && modulePath.startsWith(path)) {
         result.add(m);
