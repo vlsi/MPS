@@ -3,12 +3,18 @@ package jetbrains.mps.ide;
 import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.util.PathManager;
+import jetbrains.mps.vfs.zip.ZipFileSystem;
+import org.eclipse.core.filesystem.EFS;
+import org.eclipse.core.filesystem.IFileSystem;
+import org.eclipse.core.filesystem.IFileStore;
+import org.eclipse.core.runtime.CoreException;
 
 import javax.swing.JOptionPane;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import java.awt.Font;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -51,7 +57,32 @@ public class IdeMain {
     defaults.put("Tree.font", font);
   }
 
+  private static void list(String indent, IFileStore fs) {
+    if (fs.fetchInfo().isDirectory()) {
+      System.out.println(indent + fs.getName() + "/");
+      try {
+        for (String s : fs.childNames(EFS.NONE, null)) {
+          list(indent + "  ", fs.getChild(s));
+        }
+      } catch (CoreException e) {
+        throw new RuntimeException(e);
+      }
+    } else {
+      System.out.println(indent + fs.getName());
+    }
+  }
+
   public static IDEProjectFrame openProjectWindow(boolean loadOldProject) {
+//    try {
+//      ZipFileSystem zfs = new ZipFileSystem();
+//
+//      IFileStore store = zfs.getStore(new URI("zip://C:/MPS/lib/asm/asm.jar!/"));
+//
+//      list("", store);
+//    } catch (Exception e) {
+//      e.printStackTrace();
+//    }
+
     long start = System.currentTimeMillis();
 
     SplashScreen.getInstance().showSplashScreen();
