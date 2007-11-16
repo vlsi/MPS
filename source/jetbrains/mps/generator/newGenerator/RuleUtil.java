@@ -161,7 +161,7 @@ public class RuleUtil {
 
   private static boolean checkBaseMappingRuleCondition(BaseMappingRule_Condition conditionFunction, boolean required, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     if (conditionFunction == null) {
-      if(required) {
+      if (required) {
         generator.showErrorMessage(inputNode, null, ruleNode, "rule condition required");
         return false;
       }
@@ -776,7 +776,9 @@ public class RuleUtil {
 //    return templateNode;
 //  }
 
-  /*package*/ static TemplateFragment getFragmentFromTemplate(TemplateDeclaration template, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
+  /*package*/
+
+  static TemplateFragment getFragmentFromTemplate(TemplateDeclaration template, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     List<TemplateFragment> templateFragments = getTemplateFragments(template);
     if (templateFragments.isEmpty()) {
       generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: no template fragments found");
@@ -791,6 +793,11 @@ public class RuleUtil {
 
   @Nullable
   /*package*/ static Pair<SNode, String> getTemplateNodeFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException {
+    if (ruleConsequence == null) {
+      generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
+      return null;
+    }
+
     if (ruleConsequence instanceof DismissTopMappingRule) {
       GeneratorMessage message = ((DismissTopMappingRule) ruleConsequence).getGeneratorMessage();
       String text = message.getMessageText();
@@ -818,12 +825,18 @@ public class RuleUtil {
         generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "no template node");
       }
 
-    } else if(ruleConsequence instanceof InlineSwitch_RuleConsequence) {
+    } else if (ruleConsequence instanceof InlineSwitch_RuleConsequence) {
       InlineSwitch_RuleConsequence inlineSwitch = (InlineSwitch_RuleConsequence) ruleConsequence;
       for (InlineSwitch_Case switchCase : inlineSwitch.getCases()) {
         if (checkBaseMappingRuleCondition(switchCase.getConditionFunction(), true, inputNode, switchCase.getNode(), generator)) {
-          System.out.println("!!!! condition OK");
+          return getTemplateNodeFromRuleConsequence(switchCase.getCaseConsequence(), inputNode, switchCase.getNode(), generator);
         }
+      }
+      RuleConsequence defaultConsequence = inlineSwitch.getDefaultConsequence();
+      if (defaultConsequence == null) {
+        generator.showErrorMessage(inputNode, null, inlineSwitch.getNode(), "no default consequence in switch");
+      } else {
+        return getTemplateNodeFromRuleConsequence(defaultConsequence, inputNode, defaultConsequence.getNode(), generator);
       }
 
     } else {
