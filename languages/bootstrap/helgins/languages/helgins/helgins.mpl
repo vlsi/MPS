@@ -23,6 +23,9 @@
   <accessoryModels>
     <model modelUID="jetbrains.mps.bootstrap.helgins.dependencies" />
   </accessoryModels>
+  <intentions>
+    <model modelUID="jetbrains.mps.bootstrap.helgins.intentions" />
+  </intentions>
   <generators>
     <generator generatorUID="jetbrains.mps.bootstrap.helgins#1174411220599" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
