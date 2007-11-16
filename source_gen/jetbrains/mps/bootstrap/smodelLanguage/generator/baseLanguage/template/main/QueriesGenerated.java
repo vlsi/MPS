@@ -41,11 +41,7 @@ public class QueriesGenerated {
     return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "creator", true)), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator");
   }
 
-  public static boolean baseMappingRule_Condition_1168976445524(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "property", false), "dataType", false), "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration"));
-  }
-
-  public static boolean baseMappingRule_Condition_1168976854559(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean baseMappingRule_Condition_1195249254987(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "property", false), "dataType", false), "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration");
   }
 
