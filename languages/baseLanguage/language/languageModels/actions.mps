@@ -1322,14 +1322,21 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177334764524">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1179358617126">
                 <node role="expression" type="jetbrains.mps.regexp.structure.MatchRegexpExpression" id="1179358619968">
-                  <node role="regexp" type="jetbrains.mps.regexp.structure.InlineRegexpExpression" id="1179358622511">
-                    <node role="regexp" type="jetbrains.mps.regexp.structure.PlusRegexp" id="1179358628326">
-                      <node role="regexp" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp" id="1179358628327">
-                        <link role="symbolClass" targetNodeId="22.1174554674770" />
+                  <node role="inputExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_pattern" id="1179358617763" />
+                  <node role="regexp" type="jetbrains.mps.regexp.structure.InlineRegexpExpression" id="1195141022544">
+                    <node role="regexp" type="jetbrains.mps.regexp.structure.SeqRegexp" id="1195141051587">
+                      <node role="left" type="jetbrains.mps.regexp.structure.QuestionRegexp" id="1195141040643">
+                        <node role="regexp" type="jetbrains.mps.regexp.structure.StringLiteralRegexp" id="1195141029253">
+                          <property name="text" value="-" />
+                        </node>
+                      </node>
+                      <node role="right" type="jetbrains.mps.regexp.structure.PlusRegexp" id="1195141056935">
+                        <node role="regexp" type="jetbrains.mps.regexp.structure.PredefinedSymbolClassRegexp" id="1195141051590">
+                          <link role="symbolClass" targetNodeId="22.1174554674770" resolveInfo="\d" />
+                        </node>
                       </node>
                     </node>
                   </node>
-                  <node role="inputExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_pattern" id="1179358617763" />
                 </node>
               </node>
             </node>
