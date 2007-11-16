@@ -4,14 +4,15 @@ import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
+import jetbrains.mps.generator.template.DismissTopMappingRuleException;
 import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.DismissTopMappingRuleException;
 import jetbrains.mps.generator.template.TemplateGenUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.*;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.Nullable;
@@ -460,11 +461,13 @@ public class RuleUtil {
           // alternative consequence
           RuleConsequence altConsequence = ((IfMacro) nodeMacro).getAlternativeConsequence();
           if (altConsequence != null) {
-            SNode altTemplateNode = getTemplateNodeFromRuleConsequence(altConsequence, inputNode, nodeMacro.getNode(), myGenerator);
-            if (altTemplateNode == null) {
+            Pair<SNode, String> nodeAndMappingName = getTemplateNodeFromRuleConsequence(altConsequence, inputNode, nodeMacro.getNode(), myGenerator);
+            if (nodeAndMappingName == null) {
               myGenerator.showErrorMessage(inputNode, null, nodeMacro.getNode(), "error processing $IF$/alternative");
               return null;
             }
+            SNode altTemplateNode = nodeAndMappingName.o1;
+            // todo: what about mapping name
             List<SNode> outputChildNodes = createOutputNodesForTemplateNode(mappingName_, altTemplateNode, inputNode, 0, false);
             if (outputChildNodes != null) {
               outputNodes.addAll(outputChildNodes);
@@ -518,11 +521,13 @@ public class RuleUtil {
           RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getConsequenceForSwitchCase(newInputNode, templateSwitch);
           SNode templateNodeForCase = null;
           if (consequenceForCase != null) {
-            templateNodeForCase = getTemplateNodeFromRuleConsequence(consequenceForCase, newInputNode, nodeMacro.getNode(), myGenerator);
-            if (templateNodeForCase == null) {
-              myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $SWITCH$");
+            Pair<SNode, String> nodeAndMappingName = getTemplateNodeFromRuleConsequence(consequenceForCase, newInputNode, nodeMacro.getNode(), myGenerator);
+            if (nodeAndMappingName == null) {
+              myGenerator.showErrorMessage(newInputNode, nodeMacro.getNode(), consequenceForCase.getNode(), "error processing $SWITCH$");
               return null;
             }
+            // todo: what about mapping name?
+            templateNodeForCase = nodeAndMappingName.o1;
           } else {
             // for back compatibility
             TemplateDeclaration templateForSwitchCase = myGenerator.getTemplateForSwitchCase_deprecated(newInputNode, templateSwitch);
@@ -565,7 +570,7 @@ public class RuleUtil {
           boolean inputChanged = (newInputNode != inputNode);
           TemplateDeclaration includeTemplate = includeMacro.getIncludeTemplate();
           if (includeTemplate == null) {
-            myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "failed to process $INCLIDE$ : no 'include template'");
+            myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$ : no 'include template'");
             return null;
           }
 //          SNode templateForInclude = getTemplateNodeFromFragment(includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator);
@@ -575,7 +580,7 @@ public class RuleUtil {
             // todo: fragment can have name (mapping name)
             templateForInclude = fragment.getParent().getNode();
           } else {
-            myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "failed to process $INCLIDE$");
+            myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$");
             return null;
           }
 
@@ -759,7 +764,7 @@ public class RuleUtil {
   }
 
   @Nullable
-  /*package*/ static SNode getTemplateNodeFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException {
+  /*package*/ static Pair<SNode, String> getTemplateNodeFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException {
     if (ruleConsequence instanceof DismissTopMappingRule) {
       GeneratorMessage message = ((DismissTopMappingRule) ruleConsequence).getGeneratorMessage();
       String text = message.getMessageText();
@@ -771,21 +776,26 @@ public class RuleUtil {
         generator.showInformationMessage(inputNode, text);
       }
       throw new DismissTopMappingRuleException();
+
     } else if (ruleConsequence instanceof TemplateDeclarationReference) {
-      TemplateDeclaration templateDecl = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
-//      return getTemplateNodeFromFragment(templateDecl, inputNode, ruleNode, generator);
-      TemplateFragment fragment = getFragmentFromTemplate(templateDecl, inputNode, ruleNode, generator);
+      TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
+      TemplateFragment fragment = getFragmentFromTemplate(template, inputNode, ruleNode, generator);
       if (fragment != null) {
-        // todo: fragment can have name (mapping name)
-        return fragment.getParent().getNode();
+        return new Pair<SNode, String>(fragment.getParent().getNode(), fragment.getName());
       }
-      return null;
 
     } else if (ruleConsequence instanceof InlineTemplate_RuleConsequence) {
-      return BaseAdapter.fromAdapter(((InlineTemplate_RuleConsequence) ruleConsequence).getTemplateNode());
+      BaseConcept templateNode = ((InlineTemplate_RuleConsequence) ruleConsequence).getTemplateNode();
+      if (templateNode != null) {
+        return new Pair<SNode, String>(templateNode.getNode(), null);
+      } else {
+        generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "no template node");
+      }
+
+    } else {
+      generator.showErrorMessage(inputNode, null, ruleNode, "unsupported rule consequence");
     }
 
-    generator.showErrorMessage(inputNode, null, ruleNode, "failed to process $SWITCH$ : unsupported rule consequence");
     return null;
   }
 }
