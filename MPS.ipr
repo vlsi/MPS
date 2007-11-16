@@ -904,7 +904,7 @@
   <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="MPSLauncher" type="Application" factoryName="Application" enabled="false" merge="false">
       <option name="MAIN_CLASS_NAME" value="jetbrains.mps.MPSLauncher" />
-      <option name="VM_PARAMETERS" value="-Xmx380m -ea" />
+      <option name="VM_PARAMETERS" value="-Xmx600m -ea" />
       <option name="PROGRAM_PARAMETERS" value="" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -1853,6 +1853,15 @@
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/equinox/src.zip!/" />
         <root url="jar://$PROJECT_DIR$/lib/equinox/launcher-src.zip!/" />
+      </SOURCES>
+    </library>
+    <library name="Eclipse FS">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.filesystem_1.1.0.v20070606.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.filesystem-src.zip!/" />
       </SOURCES>
     </library>
   </component>
