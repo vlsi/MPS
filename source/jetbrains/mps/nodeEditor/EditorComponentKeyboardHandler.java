@@ -9,8 +9,10 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.helgins.integration.Highlighter;
+import jetbrains.mps.project.MPSProject;
 
 import java.awt.event.KeyEvent;
 import java.util.List;
@@ -31,16 +33,23 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     notEditable = (editorContext.getNodeEditorComponent().isReadOnly() || notEditable);
 
     if (notEditable) return false;
-    Highlighter highlighter = editorContext.getOperationContext().getProject().getComponent(Highlighter.class);
-    if (highlighter != null) {
-      Thread thread = highlighter.getThread();
-      //System.err.println("helgins thread state = " + thread.getState());
-      //System.err.println("name = " + thread.getName());
-     /* if (thread.getState() == State.TIMED_WAITING) {
-        thread.interrupt();
-      }*/
-      thread.interrupt();
+    IOperationContext operationContext = editorContext.getOperationContext();
+    if (operationContext != null) {
+      MPSProject project = operationContext.getProject();
+      if (project != null) {
+        Highlighter highlighter = project.getComponent(Highlighter.class);
+        if (highlighter != null) {
+          Thread thread = highlighter.getThread();
+          //System.err.println("helgins thread state = " + thread.getState());
+          //System.err.println("name = " + thread.getName());
+          /* if (thread.getState() == State.TIMED_WAITING) {
+            thread.interrupt();
+          }*/
+          thread.interrupt();
+        }
+      }
     }
+
     EditorCell selectedCell = editor.getSelectedCell();
 
     // process cell keymaps first
