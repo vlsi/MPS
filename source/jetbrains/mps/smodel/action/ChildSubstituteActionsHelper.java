@@ -526,13 +526,12 @@ public class ChildSubstituteActionsHelper {
     }
 
     public String getDescriptionText(String pattern) {
-     BaseConcept parameterNode = (BaseConcept) BaseAdapter.fromNode((SNode) getParameterObject());
-/*      if (parameterNode.getShortDescription() == null) {
-        return "smart ref :" + NodePresentationUtil.descriptionText(parameterNode, true);
+      BaseConcept parameterNode = (BaseConcept) BaseAdapter.fromNode((SNode) getParameterObject());
+      if (parameterNode.getShortDescription() == null) {
+        return "(smart ref:" + ") " + NodePresentationUtil.descriptionText(parameterNode, true);
       }
 
-      return "smart ref:" + NodePresentationUtil.descriptionText(parameterNode, true) + ")"; */      
-      return "(smart ref)";
+      return "(smart ref:" + NodePresentationUtil.descriptionText(parameterNode, true) + ")";
     }
 
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
