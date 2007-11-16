@@ -4,10 +4,12 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.transformation.TLBase" />
   <language namespace="jetbrains.mps.core" />
-  <maxImportIndex value="3" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="2" modelUID="java.util@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
   <node type="jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration" id="1162432838732">
     <property name="name" value="test_template" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1168475672457">
@@ -84,6 +86,9 @@
   </node>
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1195150589703">
     <property name="name" value="test_mappingConfig" />
+    <node role="rootMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Root_MappingRule" id="1195243941817">
+      <link role="applicableConcept" targetNodeId="3.1145552809883" resolveInfo="AbstractCreator" />
+    </node>
     <node role="weavingMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Weaving_MappingRule" id="1195150640889">
       <link role="applicableConcept" targetNodeId="3.1145552809883" resolveInfo="AbstractCreator" />
       <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.WeaveEach_RuleConsequence" id="1195150649018">
@@ -102,11 +107,18 @@
           <node role="conditionFunction" type="jetbrains.mps.transformation.TLBase.structure.BaseMappingRule_Condition" id="1195159364078">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195159364079">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195159371362">
-                <node role="expression" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1195159371363" />
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195161292088">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1195161294778">
+                    <link role="conceptProperty" targetNodeId="4.1137473854053" resolveInfo="abstract" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1195159371363" />
+                </node>
               </node>
             </node>
           </node>
-          <node role="caseConsequence" type="jetbrains.mps.transformation.TLBase.structure.RuleConsequence" id="1195159364080" />
+          <node role="caseConsequence" type="jetbrains.mps.transformation.TLBase.structure.InlineTemplate_RuleConsequence" id="1195161204075">
+            <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1195161219994" />
+          </node>
         </node>
         <node role="case" type="jetbrains.mps.transformation.TLBase.structure.InlineSwitch_Case" id="1195159381505">
           <node role="conditionFunction" type="jetbrains.mps.transformation.TLBase.structure.BaseMappingRule_Condition" id="1195159381506">
@@ -114,7 +126,12 @@
           </node>
           <node role="caseConsequence" type="jetbrains.mps.transformation.TLBase.structure.RuleConsequence" id="1195159381508" />
         </node>
-        <node role="defaultConsequence" type="jetbrains.mps.transformation.TLBase.structure.RuleConsequence" id="1195159342592" />
+        <node role="defaultConsequence" type="jetbrains.mps.transformation.TLBase.structure.DismissTopMappingRule" id="1195161240855">
+          <node role="generatorMessage" type="jetbrains.mps.transformation.TLBase.structure.GeneratorMessage" id="1195161245668">
+            <property name="messageText" value="aaa" />
+            <property name="messageType" value="error" />
+          </node>
+        </node>
       </node>
     </node>
   </node>

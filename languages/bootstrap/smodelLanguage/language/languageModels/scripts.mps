@@ -5,11 +5,13 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.ide.scriptLanguage" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
+  <import index="6" modelUID="jetbrains.mps.core.structure" version="-1" />
   <node type="jetbrains.mps.ide.scriptLanguage.structure.Script" id="1177432828777">
     <property name="scriptName" value="SearchDepracatedUsages_GetParentOp" />
     <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177432828778">
@@ -216,6 +218,75 @@
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1177554795257">
                     <link role="link" targetNodeId="1.1144104376918" />
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.ide.scriptLanguage.structure.Script" id="1195246463220">
+    <property name="scriptName" value="TestSModelGen" />
+    <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195246463221">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195247206183">
+        <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195247206184">
+          <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1195247210581">
+            <link role="property" targetNodeId="6.1169194664001" resolveInfo="name" />
+          </node>
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1195247206186">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1195247206187">
+              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1195247206188">
+                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1195247206189">
+                  <link role="concept" targetNodeId="5.1073389214265" resolveInfo="EditorCellModel" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195247196550">
+        <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195247196551">
+          <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1195247203104">
+            <link role="property" targetNodeId="5.1130426512759" resolveInfo="fontSize" />
+          </node>
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1195247196553">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1195247196554">
+              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1195247196555">
+                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1195247196556">
+                  <link role="concept" targetNodeId="5.1073389214265" resolveInfo="EditorCellModel" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195246875307">
+        <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195246945207">
+          <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1195247039678">
+            <link role="property" targetNodeId="5.1073389214266" resolveInfo="selectable" />
+          </node>
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1195246940093">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1195246940094">
+              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1195246940095">
+                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1195246940096">
+                  <link role="concept" targetNodeId="5.1073389214265" resolveInfo="EditorCellModel" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195247131805">
+        <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195247131806">
+          <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1195247136593">
+            <link role="property" targetNodeId="5.1130836394969" resolveInfo="underlined" />
+          </node>
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1195247131808">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1195247131809">
+              <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1195247131810">
+                <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1195247131811">
+                  <link role="concept" targetNodeId="5.1073389214265" resolveInfo="EditorCellModel" />
                 </node>
               </node>
             </node>

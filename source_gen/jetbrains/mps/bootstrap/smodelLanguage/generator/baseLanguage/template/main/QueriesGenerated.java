@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.util.QueriesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.baseLanguage.util.QueriesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.constraints.Node_ConceptMethodCall_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -25,6 +25,9 @@ import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
+import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration;
+import jetbrains.mps.smodel.DataTypeUtil;
+import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation;
 
@@ -39,15 +42,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1168976445524(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.isPropertyAccess_simple(node);
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "property", false), "dataType", false), "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration"));
   }
 
   public static boolean baseMappingRule_Condition_1168976854559(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.isPropertyAccess_enum_notNullDefaultValue(node);
-  }
-
-  public static boolean baseMappingRule_Condition_1168977178297(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.isPropertyAccess_enum_nullDefaultValue(node);
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "property", false), "dataType", false), "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration");
   }
 
   public static boolean baseMappingRule_Condition_1168977521292(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -366,10 +365,6 @@ public class QueriesGenerated {
     return _QueriesUtil.get_SPropertyAccess_enum_defaultValue(node);
   }
 
-  public static Object propertyMacro_GetPropertyValue_1170462640580(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "property", false), "name");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1170635425166(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     // <expr>.<property-access>.<operation>
     // <operation> : our input node
@@ -536,10 +531,6 @@ public class QueriesGenerated {
     return _QueriesUtil.get_SPropertyAccess_enum_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(node)), generator.getScope());
   }
 
-  public static SNode referenceMacro_GetReferent_1170462607714(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return _QueriesUtil.get_SPropertyAccess_enum_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(node)), generator.getScope());
-  }
-
   public static SNode referenceMacro_GetReferent_1168984233974(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.get_SConceptPropertyAccess_GetMethod(((SConceptPropertyAccess)SNodeOperations.getAdapter(node)), generator.getScope());
   }
@@ -551,6 +542,14 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1175594466810(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "modelToCopy", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_1195247677817(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    // not NULL internal default value ?
+    SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "property", false), "dataType", false);
+    EnumerationMemberDeclaration defaultMember_ = DataTypeUtil.getDefaultMember(((EnumerationDataTypeDeclaration)SNodeOperations.getAdapter(dataType)));
+    SNode defaultMember = (SNode)defaultMember_.getNode();
+    return SPropertyOperations.getString(defaultMember, "internalValue") != null;
   }
 
   public static boolean ifMacro_Condition_1195001009876(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -807,10 +806,6 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1170461311540(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
-  }
-
-  public static SNode sourceNodeQuery_1170462621492(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
 
