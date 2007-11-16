@@ -120,7 +120,8 @@ public class RuleUtil {
         continue;
       }
 
-      if (checkConditionForBaseMappingRule(inputNode, rule)) {
+//      if (checkConditionForBaseMappingRule(inputNode, rule)) {
+      if (checkBaseMappingRuleCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), myGenerator)) {
         boolean wasChanged = myGenerator.isChanged();
         try {
           myGenerator.setChanged(true);
@@ -137,22 +138,46 @@ public class RuleUtil {
     }
   }
 
-  private boolean checkConditionForBaseMappingRule(SNode inputNode, BaseMappingRule mappingRule) {
-    BaseMappingRule_Condition conditionFunction = mappingRule.getConditionFunction();
+//  private boolean checkConditionForBaseMappingRule(SNode inputNode, BaseMappingRule mappingRule) {
+//    BaseMappingRule_Condition conditionFunction = mappingRule.getConditionFunction();
+//    if (conditionFunction == null) {
+//      return true;
+//    }
+//    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(conditionFunction.getNode());
+//    Object[] args = new Object[]{
+//            inputNode,
+//            myGenerator.getSourceModel(),
+//            myGenerator,
+//            myGenerator.getScope(),
+//            myGenerator.getGeneratorSessionContext()};
+//    try {
+//      return (Boolean) QueryMethodGenerated.invoke(methodName, args, mappingRule.getModel());
+//    } catch (Exception e) {
+//      myGenerator.showErrorMessage(inputNode, null, BaseAdapter.fromAdapter(mappingRule), "couldn't evaluate rule condition");
+//      LOG.error(e);
+//      return false;
+//    }
+//  }
+
+  private static boolean checkBaseMappingRuleCondition(BaseMappingRule_Condition conditionFunction, boolean required, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     if (conditionFunction == null) {
+      if(required) {
+        generator.showErrorMessage(inputNode, null, ruleNode, "rule condition required");
+        return false;
+      }
       return true;
     }
     String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(conditionFunction.getNode());
     Object[] args = new Object[]{
             inputNode,
-            myGenerator.getSourceModel(),
-            myGenerator,
-            myGenerator.getScope(),
-            myGenerator.getGeneratorSessionContext()};
+            generator.getSourceModel(),
+            generator,
+            generator.getScope(),
+            generator.getGeneratorSessionContext()};
     try {
-      return (Boolean) QueryMethodGenerated.invoke(methodName, args, mappingRule.getModel());
+      return (Boolean) QueryMethodGenerated.invoke(methodName, args, ruleNode.getModel());
     } catch (Exception e) {
-      myGenerator.showErrorMessage(inputNode, null, BaseAdapter.fromAdapter(mappingRule), "couldn't evaluate rule condition");
+      generator.showErrorMessage(inputNode, null, ruleNode, "couldn't evaluate rule condition");
       LOG.error(e);
       return false;
     }
@@ -345,7 +370,8 @@ public class RuleUtil {
     boolean includeInheritors = rule.getApplyToConceptInheritors();
     List<SNode> nodes = myGenerator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
     for (SNode applicableNode : nodes) {
-      if (checkConditionForBaseMappingRule(applicableNode, rule)) {
+//      if (checkConditionForBaseMappingRule(applicableNode, rule)) {
+      if (checkBaseMappingRuleCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode(), myGenerator)) {
         SNode outputContextNode = getContextNodeForWeavingingRule(applicableNode, rule.getNode(), rule.getContextProviderAspectId(), rule.getContextNodeQuery());
         if (outputContextNode == null) {
           myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
@@ -792,8 +818,16 @@ public class RuleUtil {
         generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "no template node");
       }
 
+    } else if(ruleConsequence instanceof InlineSwitch_RuleConsequence) {
+      InlineSwitch_RuleConsequence inlineSwitch = (InlineSwitch_RuleConsequence) ruleConsequence;
+      for (InlineSwitch_Case switchCase : inlineSwitch.getCases()) {
+        if (checkBaseMappingRuleCondition(switchCase.getConditionFunction(), true, inputNode, switchCase.getNode(), generator)) {
+          System.out.println("!!!! condition OK");
+        }
+      }
+
     } else {
-      generator.showErrorMessage(inputNode, null, ruleNode, "unsupported rule consequence");
+      generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "unsupported rule consequence");
     }
 
     return null;
