@@ -6,22 +6,65 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
 import jetbrains.mps.project.ApplicationComponents;
-import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.components.IExternalizableComponent;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.*;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.jdom.Element;
 
 /**
  * @author Kostik
  */
-public class MessageView extends DefaultTool {
+public class MessageView extends DefaultTool implements IExternalizableComponent {
+
+  private static final String SHOW_INFORMATION = "showInformation";
+  private static final String SHOW_ERRORS = "showErrors";
+  private static final String SHOW_WARNINGS = "showWarnings";
+
   public static final Icon INFORMATION_ICON = new ImageIcon(MessageView.class.getResource("information.png"));
   public static final Icon ERROR_ICON = new ImageIcon(MessageView.class.getResource("error.png"));
   public static final Icon WARNING_ICON = new ImageIcon(MessageView.class.getResource("warning.png"));
 
   private JPanel myComponent = new JPanel();
+
+  private JCheckBox myErrorsCheckbox = new JCheckBox(new AbstractAction("Errors") {
+    public void actionPerformed(ActionEvent e) {
+      rebuildModel();
+    }
+  }) {
+    {
+      setSelected(true);
+    }
+  };
+
+  private JCheckBox myWarningsCheckbox = new JCheckBox(new AbstractAction("Warnings") {
+    public void actionPerformed(ActionEvent e) {
+      rebuildModel();
+    }
+  }) {
+    {
+      setSelected(true);
+    }
+  };
+
+  private JCheckBox myInfoCheckbox = new JCheckBox(new AbstractAction("Information") {
+    public void actionPerformed(ActionEvent e) {
+      rebuildModel();
+    }
+  }) {
+    {
+      setSelected(true);
+    }
+  };
+
+
+  private List<Message> myMessages = new ArrayList<Message>();
   private DefaultListModel myModel = new DefaultListModel();
   private JList myList = new JList(myModel);
   private ToolsPane myToolsPane;
@@ -30,6 +73,18 @@ public class MessageView extends DefaultTool {
     myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);    
     myToolsPane = toolsPane;
     myComponent.setLayout(new BorderLayout());
+
+    JPanel panel = new JPanel(new BorderLayout());
+    panel.add(new JPanel(), BorderLayout.CENTER);
+
+    JPanel checkboxPanel = new JPanel(new GridLayout(1, 3));
+    checkboxPanel.add(myErrorsCheckbox);
+    checkboxPanel.add(myWarningsCheckbox);
+    checkboxPanel.add(myInfoCheckbox);
+
+    panel.add(checkboxPanel, BorderLayout.WEST);
+
+    myComponent.add(panel, BorderLayout.NORTH);
     myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
 
     myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
@@ -163,11 +218,32 @@ public class MessageView extends DefaultTool {
 
   }
 
+  private boolean isVisible(Message m) {
+    switch (m.getKind()) {
+      case ERROR:
+        return myErrorsCheckbox.isSelected();
+      case WARNING:
+        return myWarningsCheckbox.isSelected();
+      case INFORMATION:
+        return myInfoCheckbox.isSelected();
+    }
+    return true;
+  }
+
+  private void rebuildModel() {
+    myModel.clear();
+    for (Message m : myMessages) {
+      if (isVisible(m)) {
+        myModel.addElement(m);
+      }
+    }
+  }
 
   public void clear() {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
         myModel.clear();
+        myMessages.clear();
       }
     });
   }
@@ -175,7 +251,10 @@ public class MessageView extends DefaultTool {
   public void add(final Message message) {
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
       public void run() {
-        myModel.addElement(message);
+        if (isVisible(message)) {
+          myModel.addElement(message);
+        }
+        myMessages.add(message);
         show(false);
       }
     });
@@ -196,6 +275,18 @@ public class MessageView extends DefaultTool {
         }
       }
     });
+  }
+
+  public void read(Element element, MPSProject project) {
+    myErrorsCheckbox.setSelected("true".equals(element.getAttributeValue(SHOW_ERRORS)));
+    myWarningsCheckbox.setSelected("true".equals(element.getAttributeValue(SHOW_WARNINGS)));
+    myInfoCheckbox.setSelected("true".equals(element.getAttributeValue(SHOW_INFORMATION)));
+  }
+
+  public void write(Element element, MPSProject project) {
+    element.setAttribute(SHOW_ERRORS, "" + myErrorsCheckbox.isSelected());
+    element.setAttribute(SHOW_WARNINGS, "" + myWarningsCheckbox.isSelected());
+    element.setAttribute(SHOW_INFORMATION, "" + myInfoCheckbox.isSelected());
   }
 
   public String getName() {
