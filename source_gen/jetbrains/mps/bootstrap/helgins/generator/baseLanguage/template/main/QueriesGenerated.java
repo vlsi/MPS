@@ -712,7 +712,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1176545874689(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.InferenceRule");
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractCheckingRule");
   }
 
   public static boolean ifMacro_Condition_1175149440226(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

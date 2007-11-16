@@ -15,7 +15,7 @@ public class typeOf_PatternCondition_InferenceRule implements InferenceRule_Runt
 
   public void applyRule(final SNode argument) {
     SNode paternCondition = argument;
-    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(paternCondition, "pattern", true), "jetbrains.mps.bootstrap.helgins.helgins", "1175521901932"), paternCondition, "jetbrains.mps.bootstrap.helgins.helgins", "1175521900492");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(paternCondition, "pattern", true), "jetbrains.mps.bootstrap.helgins.helgins", "1175521901932", true), paternCondition, "jetbrains.mps.bootstrap.helgins.helgins", "1175521900492");
   }
 
   public String getApplicableConceptFQName() {

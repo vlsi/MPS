@@ -14,6 +14,8 @@ import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
 import jetbrains.mps.helgins.integration.Highlighter;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
+import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
+import jetbrains.mps.bootstrap.helgins.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.incremental.INodesReadListener;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
 import jetbrains.mps.bootstrap.helgins.structure.MeetType;
@@ -205,10 +207,10 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
   }
 
   public void computeTypes(boolean refreshTypes) {
-    computeTypes(myRootNode, refreshTypes, true, new ArrayList<SNode>());
+    computeTypes(myRootNode, refreshTypes, true, true, new ArrayList<SNode>());
   }
 
-  public void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes) {
+  private void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, boolean useNonTypesystemRules, List<SNode> additionalNodes) {
     assert nodeToCheck.getContainingRoot() == myRootNode;
     try {
       if (!isIncrementalMode() || refreshTypes) {
@@ -239,7 +241,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
       }
       clearEquationManager();
 
-      computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
+      computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes, useNonTypesystemRules);
       solveInequationsAndExpandTypes();
 
       // setting expanded errors
@@ -318,13 +320,13 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
         if (prevNode != null) {
           additionalNodes.add(prevNode);
         }
-        computeTypes(node, true, false, additionalNodes);
+        computeTypes(node, true, false, false, additionalNodes);
         type = getType(initialNode);
         if (type == null ||
                 type.getAdapter() instanceof RuntimeTypeVariable ||
                 !type.allChildrenByAdaptor(RuntimeTypeVariable.class).isEmpty()) {
           if (node.isRoot()) {
-            computeTypes(node, true, true, new ArrayList<SNode>()); //the last possibility: check the whole root
+            computeTypes(node, true, true, false, new ArrayList<SNode>()); //the last possibility: check the whole root
             type = getType(initialNode);
             continuation.run();
             return type;
@@ -344,11 +346,11 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     return type;
   }
 
-  public void computeTypesForNode(SNode node) {
-    computeTypesForNode(node, true, new ArrayList<SNode>());
+  public void computeOnlyTypesForNode(SNode node) {
+    computeTypesForNode(node, true, new ArrayList<SNode>(), true);
   }
 
-  public void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes) {
+  private void computeTypesForNode(SNode node, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean useNonTypesystemRules) {
     if (node == null) return;
     Set<SNode> frontier = new LinkedHashSet<SNode>();
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
@@ -382,7 +384,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
             } catch(InterruptedException e) {
               Thread.currentThread().interrupt();
             }
-            applyRulesToNode(sNode);
+            applyRulesToNode(sNode, useNonTypesystemRules);
           } finally{
             if (isIncrementalMode()) {
               NodeReadEventsCaster.removeNodesReadListener();
@@ -429,22 +431,36 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     return myNodesToTypesMap;
   }
 
-  /*package*/ void applyRulesToNode(SNode node) {
+  private void applyRulesToNode(SNode node) {
+    applyRulesToNode(node, true);
+  }
+
+  private void applyRulesToNode(SNode node, boolean useNonTypesystemRules) {
     Set<InferenceRule_Runtime> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
+    Set<NonTypesystemRule_Runtime> nonTypesystemRules = myTypeChecker.getRulesManager().getNonTypesystemRules(node);
     if (newRules != null) {
       SNode oldCheckedNode = myCurrentCheckedNode;
       myCurrentCheckedNode = node;
       for (InferenceRule_Runtime rule : newRules) {
-        // long t1 = System.currentTimeMillis();
-        try {
-          rule.applyRule(node);
-        } catch(Throwable t) {
-          LOG.error(t);
-        } finally {
-          //  Statistics.getStatistic(Statistics.HELGINS).add(rule.getClass().getName(), System.currentTimeMillis() - t1, true);
+        applyRuleToNode(node, rule);
+      }
+      if (useNonTypesystemRules) {
+        for (NonTypesystemRule_Runtime rule : nonTypesystemRules) {
+          applyRuleToNode(node, rule);
         }
       }
       myCurrentCheckedNode = oldCheckedNode;
+    }
+  }
+
+  private void applyRuleToNode(SNode node, ICheckingRule_Runtime rule) {
+    // long t1 = System.currentTimeMillis();
+    try {
+      rule.applyRule(node);
+    } catch(Throwable t) {
+      LOG.error(t);
+    } finally {
+      //  Statistics.getStatistic(Statistics.HELGINS).add(rule.getClass().getName(), System.currentTimeMillis() - t1, true);
     }
   }
 

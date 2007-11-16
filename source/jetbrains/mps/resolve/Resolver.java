@@ -113,7 +113,7 @@ public class Resolver {
       return false;
     }
     TypeChecker.getInstance().setCurrentTypesComponent(temporaryComponent);
-    temporaryComponent.computeTypesForNode(sNode); //todo dirty hack
+    temporaryComponent.computeOnlyTypesForNode(sNode); //todo dirty hack
     temporaryComponent.solveInequationsAndExpandTypes();
     TypeChecker.getInstance().clearCurrentTypesComponent();
 

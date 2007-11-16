@@ -14,7 +14,7 @@ public class typeof_ComparisonRule_InferenceRule implements InferenceRule_Runtim
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "body", true), "jetbrains.mps.bootstrap.helgins.helgins", "1188915257236"), new QuotationClass_20().createNode(), SLinkOperations.getTarget(argument, "body", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1188915272415");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "body", true), "jetbrains.mps.bootstrap.helgins.helgins", "1188915257236", true), new QuotationClass_20().createNode(), SLinkOperations.getTarget(argument, "body", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1188915272415");
   }
 
   public String getApplicableConceptFQName() {

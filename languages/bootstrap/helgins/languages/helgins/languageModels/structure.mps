@@ -856,6 +856,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195214364922">
     <property name="name" value="NonTypesystemRule" />
+    <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1195213580585" resolveInfo="AbstractCheckingRule" />
   </node>
 </model>

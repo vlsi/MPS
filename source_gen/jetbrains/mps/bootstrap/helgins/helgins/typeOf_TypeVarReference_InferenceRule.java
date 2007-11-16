@@ -14,7 +14,7 @@ public class typeOf_TypeVarReference_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.bootstrap.helgins.helgins", "1185878055040"), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "typeVarDeclaration", false), "jetbrains.mps.bootstrap.helgins.helgins", "1185878063692"), argument, null, "jetbrains.mps.bootstrap.helgins.helgins", "1185878061141");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.bootstrap.helgins.helgins", "1185878055040", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "typeVarDeclaration", false), "jetbrains.mps.bootstrap.helgins.helgins", "1185878063692", true), argument, null, "jetbrains.mps.bootstrap.helgins.helgins", "1185878061141");
   }
 
   public String getApplicableConceptFQName() {
