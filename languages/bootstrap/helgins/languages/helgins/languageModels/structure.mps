@@ -772,6 +772,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1188811367543">
     <property name="name" value="ComparisonRule" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}\icons\comparison.png" />
     <link role="extends" targetNodeId="1175147569072" resolveInfo="AbstractSubtypingRule" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1188820750135">
       <property name="metaClass" value="aggregation" />
@@ -857,6 +858,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195214364922">
     <property name="name" value="NonTypesystemRule" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}\icons\nontypesystem.png" />
     <link role="extends" targetNodeId="1195213580585" resolveInfo="AbstractCheckingRule" />
   </node>
 </model>
