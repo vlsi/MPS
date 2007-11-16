@@ -196,7 +196,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     if (getPatternEditor().processKeyPressed(keyEvent)) {
       if (myPopupActivated) {
         rebuildMenuEntries();
-        repaintPopupMenu();
+        relayoutPopupMenu();
       }
       return true;
     }
@@ -299,6 +299,13 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   }
 
   private void repaintPopupMenu() {
+    if (myPopupActivated) {
+      getPopupWindow().scrollToSelection();
+      getPopupWindow().repaint();
+    }
+  }
+
+  private void relayoutPopupMenu() {
     if (myPopupActivated) {
       getPopupWindow().relayout();
       getPopupWindow().repaint();
@@ -441,8 +448,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       });
 
       setSelectionIndex(oldIndex);
-      myList.ensureIndexIsVisible(getSelectionIndex());
-
+      scrollToSelection();
 
       setSize(
               Math.max(PREFERRED_WIDTH, myList.getPreferredSize().width + 21),
@@ -468,6 +474,10 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
       validateTree();
       repaint();
+    }
+
+    public void scrollToSelection() {
+      myList.ensureIndexIsVisible(getSelectionIndex());
     }
 
     private int getVerticalScrollerHeight() {
