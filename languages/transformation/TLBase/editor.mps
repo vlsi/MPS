@@ -4354,7 +4354,6 @@
     </node>
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1167087837671">
       <property name="drawBorder" value="false" />
-      <property name="drawBrackets" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167087837672">
         <property name="drawBorder" value="false" />
         <property name="text" value="&gt;" />
@@ -4758,6 +4757,12 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1184616402094">
               <property name="drawBorder" value="false" />
               <property name="text" value="context" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195253451315">
+              <property name="drawBorder" value="false" />
+              <property name="selectable" value="false" />
+              <property name="text" value=":" />
+              <property name="layoutConstraint" value="punctuation" />
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1184616402096">
               <property name="drawBorder" value="false" />

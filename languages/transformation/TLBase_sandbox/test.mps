@@ -86,14 +86,28 @@
   </node>
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1195150589703">
     <property name="name" value="test_mappingConfig" />
+    <node role="createRootRule" type="jetbrains.mps.transformation.TLBase.structure.CreateRootRule" id="1195253332390">
+      <node role="conditionFunction" type="jetbrains.mps.transformation.TLBase.structure.CreateRootRule_Condition" id="1195253334516">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195253334517" />
+      </node>
+    </node>
     <node role="rootMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Root_MappingRule" id="1195243941817">
       <link role="applicableConcept" targetNodeId="3.1145552809883" resolveInfo="AbstractCreator" />
     </node>
     <node role="weavingMappingRule" type="jetbrains.mps.transformation.TLBase.structure.Weaving_MappingRule" id="1195150640889">
       <link role="applicableConcept" targetNodeId="3.1145552809883" resolveInfo="AbstractCreator" />
-      <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.WeaveEach_RuleConsequence" id="1195150649018">
-        <node role="sourceNodesQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodesQuery" id="1195150649019">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195150649020" />
+      <node role="ruleConsequence" type="jetbrains.mps.transformation.TLBase.structure.WeaveEach_RuleConsequence" id="1195253142070">
+        <link role="template" targetNodeId="1194564174880" resolveInfo="test_template2" />
+        <node role="sourceNodesQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodesQuery" id="1195253142071">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195253142072">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195253168589">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1195253168590">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListCreator" id="1195253171654">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1195253171655" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
       <node role="contextNodeQuery" type="jetbrains.mps.transformation.TLBase.structure.Weaving_MappingRule_ContextNodeQuery" id="1195150640891">
