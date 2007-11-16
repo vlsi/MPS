@@ -1096,11 +1096,15 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public static class LanguageAspectStatus implements IStatus {
+
+
     public static enum AspectKind {
-      STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, HELGINS_TYPESYSTEM, ACCESSORY, SCRIPTS, DOCUMENTATION, INTENTIONS, NONE
+      STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, HELGINS_TYPESYSTEM, ACCESSORY, SCRIPTS, DOCUMENTATION, INTENTIONS, NONE;
+
     }
 
     private Language myLanguage;
+
     private AspectKind myAspectKind;
 
     public LanguageAspectStatus(Language language, AspectKind aspectKind) {
@@ -1162,6 +1166,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     public boolean isConstraintsModel() {
       return myAspectKind == LanguageAspectStatus.AspectKind.CONSTRAINTS;
+    }
+
+    public boolean isIntentionsModel() {
+      return myAspectKind == LanguageAspectStatus.AspectKind.INTENTIONS;
     }
 
     public boolean isAccessoryModel() {

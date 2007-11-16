@@ -90,6 +90,8 @@ public class IconManager {
         return Icons.TYPESYSTEM_MODEL_ICON;
       } else if (languageAspectStatus.isConstraintsModel()) {
         return Icons.CONSTRAINTS_MODEL_ICON;
+      } else if (languageAspectStatus.isIntentionsModel()) {
+        return Icons.INTENTIONS_MODEL_ICON;
       }
     } else if (modelDescriptor.getStereotype() != null &&
             modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
