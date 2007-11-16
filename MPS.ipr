@@ -1865,6 +1865,24 @@
         <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.filesystem-src.zip!/" />
       </SOURCES>
     </library>
+    <library name="Eclipse Configurator">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/equinox/org.eclipse.update.configurator_3.2.100.v20070615.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/equinox/org.eclipse.core.update.configurator-src.zip!/" />
+      </SOURCES>
+    </library>
+    <library name="Eclipse Registry">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.equinox.registry_3.3.0.v20070522.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.equinox.registry-src.zip!/" />
+      </SOURCES>
+    </library>
   </component>
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
