@@ -11,7 +11,6 @@ import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
  * Time: 12:36:14
  * To change this template use File | Settings | File Templates.
  */
-public interface InferenceRule_Runtime extends Rule_Runtime {
-  public void applyRule(SNode argument);
-  public boolean overrides();
+public interface InferenceRule_Runtime extends ICheckingRule_Runtime {
+  
 }

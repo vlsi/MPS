@@ -14,20 +14,20 @@ import java.util.HashSet;
  * Time: 15:33:37
  * To change this template use File | Settings | File Templates.
  */
-public class InferenceRuleSet extends RuleSet<InferenceRule_Runtime> {
+public class CheckingRuleSet<T extends ICheckingRule_Runtime> extends RuleSet<T> {
 
   public void makeConsistent() {
     for (AbstractConceptDeclaration conceptDeclaration : myRules.keySet()) {
       if (conceptDeclaration == null) {
         continue;
       }
-      Set<InferenceRule_Runtime> rules = myRules.get(conceptDeclaration);
+      Set<T> rules = myRules.get(conceptDeclaration);
       if (rules == null) continue;
       if(!(conceptDeclaration instanceof ConceptDeclaration)) continue;
       ConceptDeclaration parent = ((ConceptDeclaration)conceptDeclaration).getExtends();
 
       boolean b = false;
-      for (InferenceRule_Runtime rule_runtime : rules) {
+      for (T rule_runtime : rules) {
         if (rule_runtime.overrides()) {
           b = true;
           break;
@@ -37,13 +37,13 @@ public class InferenceRuleSet extends RuleSet<InferenceRule_Runtime> {
 
 
       while (parent != null) {
-        Set<InferenceRule_Runtime> parentRules = myRules.get(parent);
+        Set<T> parentRules = myRules.get(parent);
         if (parentRules != null) {
           rules.addAll(parentRules);
         }
         boolean b1 = false;
         if (parentRules != null) {
-          for (InferenceRule_Runtime rule_runtime : parentRules) {
+          for (T rule_runtime : parentRules) {
             if (rule_runtime.overrides()) {
               b1 = true;
               break;

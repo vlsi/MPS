@@ -21,6 +21,7 @@ import jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.helgins.structure.InferenceRule;
+import jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule;
 import jetbrains.mps.bootstrap.helgins.structure.SubtypingRule;
 import jetbrains.mps.bootstrap.helgins.structure.SupertypingRule;
 import jetbrains.mps.bootstrap.helgins.structure.ComparisonRule;
@@ -152,7 +153,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1176545770677(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.getBoolean(node, "overrides") + "";
+    return SPropertyOperations.getBoolean(node, "overrides");
   }
 
   public static Object propertyMacro_GetPropertyValue_1174643589864(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -441,24 +442,27 @@ public class QueriesGenerated {
     if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.InferenceRule")) {
       return SLinkOperations.getTarget(new QuotationClass_2().createNode(generator.getTargetModel()), "classifier", false);
     }
-    if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule")) {
+    if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule")) {
       return SLinkOperations.getTarget(new QuotationClass_3().createNode(generator.getTargetModel()), "classifier", false);
     }
-    return SLinkOperations.getTarget(new QuotationClass_4().createNode(generator.getTargetModel()), "classifier", false);
+    if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule")) {
+      return SLinkOperations.getTarget(new QuotationClass_4().createNode(generator.getTargetModel()), "classifier", false);
+    }
+    return SLinkOperations.getTarget(new QuotationClass_5().createNode(generator.getTargetModel()), "classifier", false);
   }
 
   public static SNode referenceMacro_GetReferent_1175149443385(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode clt;
     if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.SubtypingRule")) {
-      return SLinkOperations.getTarget(new QuotationClass_5().createNode(), "classifier", false);
-    }
-    if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.SupertypingRule")) {
       return SLinkOperations.getTarget(new QuotationClass_6().createNode(), "classifier", false);
     }
-    if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
+    if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.SupertypingRule")) {
       return SLinkOperations.getTarget(new QuotationClass_7().createNode(), "classifier", false);
     }
-    return SLinkOperations.getTarget(new QuotationClass_8().createNode(), "classifier", false);
+    if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
+      return SLinkOperations.getTarget(new QuotationClass_8().createNode(), "classifier", false);
+    }
+    return SLinkOperations.getTarget(new QuotationClass_9().createNode(), "classifier", false);
   }
 
   public static SNode referenceMacro_GetReferent_1174655195413(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
@@ -512,6 +516,10 @@ public class QueriesGenerated {
   }
 
   public static SNode referenceMacro_GetReferent_1175249167916(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "classForRule").getChild("constructor");
+  }
+
+  public static SNode referenceMacro_GetReferent_1195214710279(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(node, "classForRule").getChild("constructor");
   }
 
@@ -944,6 +952,10 @@ public class QueriesGenerated {
     return BaseAdapter.toNodes(sourceModel.getRootsAdapters(InferenceRule.class));
   }
 
+  public static List sourceNodesQuery_1195214710294(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return BaseAdapter.toNodes(sourceModel.getRootsAdapters(NonTypesystemRule.class));
+  }
+
   public static List sourceNodesQuery_1175440294397(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return BaseAdapter.toNodes(sourceModel.getRootsAdapters(SubtypingRule.class));
   }
@@ -1073,7 +1085,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     SModel targetModel = generator.getTargetModel();
     for(SNode leaf : leaves) {
-      SNode composite = SModelOperations.createNewNode(targetModel, "jetbrains.mps.core.structure.BaseConcept", null);
+      SNode composite = SModelOperations.createNewNode(targetModel, "jetbrains.mps.core.structure.BaseConcept");
       composite.setReferent("leaf", leaf);
       SNode current = leaf;
       while(dependencies.get(current) != null) {

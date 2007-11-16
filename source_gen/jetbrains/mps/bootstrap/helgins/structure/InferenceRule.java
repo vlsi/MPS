@@ -6,15 +6,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.structure.StatementList;
 import java.util.Iterator;
 import java.util.List;
 
-public class InferenceRule extends AbstractRule {
+public class InferenceRule extends AbstractCheckingRule {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.InferenceRule";
-  public static String BODY = "body";
   public static String DEPENDENCY = "dependency";
-  public static String OVERRIDES = "overrides";
 
   public  InferenceRule(SNode node) {
     super(node);
@@ -28,14 +25,6 @@ public class InferenceRule extends AbstractRule {
     return InferenceRule.newInstance(sm, false);
   }
 
-
-  public StatementList getBody() {
-    return (StatementList)this.getChild(InferenceRule.BODY);
-  }
-
-  public void setBody(StatementList node) {
-    super.setChild(InferenceRule.BODY, node);
-  }
 
   public int getDependencysCount() {
     return this.getChildCount(InferenceRule.DEPENDENCY);
@@ -55,14 +44,6 @@ public class InferenceRule extends AbstractRule {
 
   public void insertDependency(Dependency prev, Dependency node) {
     this.insertChild(prev, InferenceRule.DEPENDENCY, node);
-  }
-
-  public boolean getOverrides() {
-    return this.getBooleanProperty(InferenceRule.OVERRIDES);
-  }
-
-  public void setOverrides(boolean value) {
-    this.setBooleanProperty(InferenceRule.OVERRIDES, value);
   }
 
 }

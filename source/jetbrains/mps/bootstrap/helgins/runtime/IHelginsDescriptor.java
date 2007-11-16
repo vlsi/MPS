@@ -14,6 +14,7 @@ import java.util.HashSet;
  */
 public interface IHelginsDescriptor {
   public Set<InferenceRule_Runtime> getInferenceRules();
+  public Set<NonTypesystemRule_Runtime> getNonTypesystemRules();
   public Set<SubtypingRule_Runtime> getSubtypingRules();
   public Set<SupertypingRule_Runtime> getSupertypingRules();
   public Set<ComparisonRule_Runtime> getComparisonRules();

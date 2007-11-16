@@ -14,6 +14,7 @@ import java.util.HashSet;
  */
 public class BaseHelginsDescriptor implements IHelginsDescriptor {
   protected Set<InferenceRule_Runtime> myInferenceRules = new HashSet<InferenceRule_Runtime>();
+  protected Set<NonTypesystemRule_Runtime> myNonTypesystemRules = new HashSet<NonTypesystemRule_Runtime>();
   protected Set<SubtypingRule_Runtime> mySubtypingRules = new HashSet<SubtypingRule_Runtime>();
   protected Set<SupertypingRule_Runtime> mySupertypingRules = new HashSet<SupertypingRule_Runtime>();
   protected Set<ComparisonRule_Runtime> myComparisonRules = new HashSet<ComparisonRule_Runtime>();
@@ -21,6 +22,10 @@ public class BaseHelginsDescriptor implements IHelginsDescriptor {
 
   public Set<InferenceRule_Runtime> getInferenceRules() {
     return new HashSet<InferenceRule_Runtime>(this.myInferenceRules);
+  }
+
+  public Set<NonTypesystemRule_Runtime> getNonTypesystemRules() {
+    return new HashSet<NonTypesystemRule_Runtime>(this.myNonTypesystemRules);
   }
 
   public Set<SubtypingRule_Runtime> getSubtypingRules() {
@@ -34,6 +39,7 @@ public class BaseHelginsDescriptor implements IHelginsDescriptor {
   public Set<ComparisonRule_Runtime> getComparisonRules() {
     return new HashSet<ComparisonRule_Runtime>(this.myComparisonRules);
   }
+
   public Set<IDependency_Runtime> getDependencies() {
     return new HashSet<IDependency_Runtime>(this.myDependencies);
   }

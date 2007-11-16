@@ -5,7 +5,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.helgins.runtime.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 
@@ -22,7 +21,8 @@ import java.util.HashSet;
 public class RulesManager {
   private TypeChecker myTypeChecker;
   private Set<String> myLoadedLanguages = new HashSet<String>();
-  private RuleSet<InferenceRule_Runtime> myInferenceRules = new InferenceRuleSet();
+  private RuleSet<InferenceRule_Runtime> myInferenceRules = new CheckingRuleSet<InferenceRule_Runtime>();
+  private RuleSet<NonTypesystemRule_Runtime> myNonTypesystemRules = new CheckingRuleSet<NonTypesystemRule_Runtime>();
   private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<SubtypingRule_Runtime>();
   private RuleSet<SupertypingRule_Runtime> mySupertypingRules = new RuleSet<SupertypingRule_Runtime>();
   private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
@@ -37,6 +37,7 @@ public class RulesManager {
   public void clear() {
     myLoadedLanguages.clear();
     myInferenceRules.clear();
+    myNonTypesystemRules.clear();
     mySubtypingRules.clear();
     mySupertypingRules.clear();
     myComparisonRules.clear();
@@ -57,11 +58,13 @@ public class RulesManager {
       if (c != null) {
         helginsDescriptor = c.newInstance();
         myInferenceRules.addRuleSetItem(helginsDescriptor.getInferenceRules());
+        myNonTypesystemRules.addRuleSetItem(helginsDescriptor.getNonTypesystemRules());
         mySubtypingRules.addRuleSetItem(helginsDescriptor.getSubtypingRules());
         mySupertypingRules.addRuleSetItem(helginsDescriptor.getSupertypingRules());
         myComparisonRules.addRuleSetItem(helginsDescriptor.getComparisonRules());
         myDependenciesContainer.addDependencies(helginsDescriptor.getDependencies());
         myInferenceRules.makeConsistent();
+        myNonTypesystemRules.makeConsistent();
         mySubtypingRules.makeConsistent();
         mySupertypingRules.makeConsistent();
         myComparisonRules.makeConsistent();
@@ -81,6 +84,14 @@ public class RulesManager {
   public Set<InferenceRule_Runtime> getInferenceRules(final SNode node) {
     return CollectionUtil.filter(myInferenceRules.getRules(node), new Condition<InferenceRule_Runtime>() {
       public boolean met(InferenceRule_Runtime object) {
+        return object.isApplicable(node);
+      }
+    });
+  }
+
+  public Set<NonTypesystemRule_Runtime> getNonTypesystemRules(final SNode node) {
+    return CollectionUtil.filter(myNonTypesystemRules.getRules(node), new Condition<NonTypesystemRule_Runtime>() {
+      public boolean met(NonTypesystemRule_Runtime object) {
         return object.isApplicable(node);
       }
     });

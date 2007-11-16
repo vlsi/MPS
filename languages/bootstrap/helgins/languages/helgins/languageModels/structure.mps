@@ -105,17 +105,7 @@
     <property name="name" value="InferenceRule" />
     <property name="iconPath" value="${language_descriptor}\icons\rule.png" />
     <property name="rootable" value="true" />
-    <link role="extends" targetNodeId="1174648085619" resolveInfo="AbstractRule" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1176545430714">
-      <property name="name" value="overrides" />
-      <link role="dataType" targetNodeId="1.1082983657063" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1174643142782">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="body" />
-      <link role="target" targetNodeId="2.1068580123136" />
-    </node>
+    <link role="extends" targetNodeId="1195213580585" resolveInfo="AbstractCheckingRule" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1193733919555">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="dependency" />
@@ -846,6 +836,27 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
       <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1193733823941" />
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195213580585">
+    <property name="name" value="AbstractCheckingRule" />
+    <link role="extends" targetNodeId="1174648085619" resolveInfo="AbstractRule" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1195213689297">
+      <property name="name" value="overrides" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195213635060">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="body" />
+      <link role="target" targetNodeId="2.1068580123136" resolveInfo="StatementList" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1195214378908">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195214364922">
+    <property name="name" value="NonTypesystemRule" />
+    <link role="extends" targetNodeId="1195213580585" resolveInfo="AbstractCheckingRule" />
   </node>
 </model>
 
