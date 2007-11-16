@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 public class ConceptReference extends ApplicableNodeCondition {
   public static final String concept = "jetbrains.mps.bootstrap.helgins.structure.ConceptReference";
@@ -25,11 +25,11 @@ public class ConceptReference extends ApplicableNodeCondition {
   }
 
 
-  public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptReference.CONCEPT);
+  public AbstractConceptDeclaration getConcept() {
+    return (AbstractConceptDeclaration)this.getReferent(ConceptReference.CONCEPT);
   }
 
-  public void setConcept(ConceptDeclaration node) {
+  public void setConcept(AbstractConceptDeclaration node) {
     super.setReferent(ConceptReference.CONCEPT, node);
   }
 

@@ -62,7 +62,7 @@ public class QueriesGenerated {
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
 
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
-          SNode normalTypeClause = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause", null);
+          SNode normalTypeClause = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
           SLinkOperations.setTarget(normalTypeClause, "normalType", nodeToWrap, true);
           return normalTypeClause;
         }

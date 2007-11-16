@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.actions.nodes;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.helgins.structure.AbstractRule;
 import jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition;
 import jetbrains.mps.bootstrap.helgins.structure.PatternCondition;
@@ -48,14 +49,14 @@ public class GoToRulesAction extends MPSAction {
 
 
   public void update(@NotNull ActionContext context) {
-    boolean enabled = BaseAdapter.fromNode(context.getNode()) instanceof ConceptDeclaration;
+    boolean enabled = BaseAdapter.fromNode(context.getNode()) instanceof AbstractConceptDeclaration;
     setEnabled(enabled);
     setVisible(enabled);
   }
 
 
   public void execute(@NotNull ActionContext context) {
-    final ConceptDeclaration conceptDeclaration = (ConceptDeclaration) BaseAdapter.fromNode(context.getNode());
+    final AbstractConceptDeclaration conceptDeclaration = (AbstractConceptDeclaration) BaseAdapter.fromNode(context.getNode());
     final IOperationContext operationContext = context.getOperationContext();
     List<SNode> rules = getHelginsRules(conceptDeclaration, operationContext);
     EditorsPane editorsPane = operationContext.getComponent(EditorsPane.class);
@@ -84,7 +85,7 @@ public class GoToRulesAction extends MPSAction {
     m.show(invoker, x, y);
   }
 
-  public static List<SNode> getHelginsRules(final ConceptDeclaration conceptDeclaration, final IOperationContext operationContext) {
+  public static List<SNode> getHelginsRules(final AbstractConceptDeclaration conceptDeclaration, final IOperationContext operationContext) {
     Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, operationContext.getScope());
     List<SNode> rules = new ArrayList<SNode>();
     if (language != null && language.getHelginsTypesystemModelDescriptor() != null) {
@@ -105,7 +106,7 @@ public class GoToRulesAction extends MPSAction {
     return rules;
   }
 
-  private static boolean maybeApplicable_new(ConceptDeclaration conceptDeclaration, ApplicableNodeCondition applicableNode, IScope scope) {
+  private static boolean maybeApplicable_new(AbstractConceptDeclaration conceptDeclaration, ApplicableNodeCondition applicableNode, IScope scope) {
     if (applicableNode instanceof jetbrains.mps.bootstrap.helgins.structure.ConceptReference) {
       jetbrains.mps.bootstrap.helgins.structure.ConceptReference conceptReference =
               (jetbrains.mps.bootstrap.helgins.structure.ConceptReference) applicableNode;
