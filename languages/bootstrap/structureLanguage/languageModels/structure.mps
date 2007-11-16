@@ -477,6 +477,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1169125989551">
     <property name="name" value="InterfaceConceptDeclaration" />
     <property name="rootable" value="true" />
+    <property name="iconPath" value="${language_descriptor}\icons\interfaceStructure.png" />
     <link role="extends" targetNodeId="1169125787135" resolveInfo="AbstractConceptDeclaration" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1169127546356">
       <property name="metaClass" value="aggregation" />
