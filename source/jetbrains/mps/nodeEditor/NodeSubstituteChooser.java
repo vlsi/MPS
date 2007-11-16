@@ -1,12 +1,17 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.WindowsUtil;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
 import javax.swing.*;
 import javax.swing.event.ListDataListener;
@@ -165,37 +170,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     }
 
     myLength = Math.max(2 + textLength + descriptionLength, PREFERRED_WIDTH / getPopupWindow().getFontWidth());
-  }
-
-  private String getPresentation(INodeSubstituteAction action, String pattern) {
-    StringBuilder result = new StringBuilder();
-
-    String text = null;
-    String descriptionText = null;
-
-    try {
-      text = action.getMatchingText(pattern);
-      descriptionText = action.getDescriptionText(pattern);
-    } catch(Throwable t) {
-      LOG.error(t, t);
-    }
-
-    if (descriptionText == null) {
-      descriptionText = "";
-    }
-    if (text == null) {
-      text = "";
-    }
-
-    int indentSize = Math.max(0, myLength - text.length() - descriptionText.length());
-
-    char[] indentChars = new char[indentSize];
-    Arrays.fill(indentChars, ' ');
-    result.append(text);
-    result.append(indentChars);
-    result.append(descriptionText);
-
-    return result.toString();
   }
 
   private int getDescriptionLength(INodeSubstituteAction action, String pattern) {
@@ -381,6 +355,16 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         }
       });
 
+      myList.setCellRenderer(new NodeItemCellRenderer());
+
+//      myList.setCellRenderer(new DefaultListCellRenderer() {
+//        public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+//          super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+//          setText(getPresentation(((INodeSubstituteAction) value), getPatternEditor().getPattern()));
+//          return this;
+//        }
+//      });
+
       add(myScroller);
       myList.setFocusable(false);
       setSize(PREFERRED_WIDTH, PREFERRED_HEIGHT);
@@ -439,7 +423,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       Point newLocation = location;
 
       int oldIndex = getSelectionIndex();
-      final String oldPattern = getPatternEditor().getPattern();
 
       myList.setModel(new ListModel() {
         public int getSize() {
@@ -447,7 +430,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         }
 
         public Object getElementAt(int index) {
-          return getPresentation(mySubstituteActions.get(index), oldPattern);
+          return mySubstituteActions.get(index);
         }
 
         public void addListDataListener(ListDataListener l) {
@@ -503,6 +486,48 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     public void setPosition(PopupWindowPosition position) {
       myPosition = position;
+    }
+  }
+
+  private class NodeItemCellRenderer extends JPanel implements ListCellRenderer {
+
+    private JLabel myLeft = new JLabel("", JLabel.LEFT);
+    private JLabel myRight = new JLabel("", JLabel.RIGHT);
+
+    private NodeItemCellRenderer() {
+      setLayout(new BorderLayout());
+
+      myLeft.setFont(new TextLine("", null).getFont());
+      myRight.setFont(new TextLine("", null).getFont());
+      add(myLeft, BorderLayout.WEST);
+      add(myRight, BorderLayout.EAST);
+    }
+
+    public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+      INodeSubstituteAction action = (INodeSubstituteAction) value;
+
+      if (action.getParameterObject() instanceof SNode) {
+        SNode node = (SNode) action.getParameterObject();
+        if (!(node.getAdapter() instanceof AbstractConceptDeclaration)) {
+          myLeft.setIcon(IconManager.getIconFor(node));
+        } else {
+          myLeft.setIcon(null);
+        }
+      } else {
+        myLeft.setIcon(null);
+      }
+
+      myLeft.setText(action.getMatchingText(getPatternEditor().getPattern()));
+      myRight.setText(action.getDescriptionText(getPatternEditor().getPattern()));
+
+      if (isSelected) {
+        setBackground(list.getSelectionBackground());
+        setForeground(list.getSelectionForeground());
+      } else {
+        setBackground(list.getBackground());        
+      }
+
+      return this;
     }
   }
 }
