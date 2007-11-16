@@ -11,6 +11,8 @@
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/structureLanguage/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/helgins/languages/subtyping/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/refactoring/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/languages/transformation/test/inputLang/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/languages/transformation/test/inputModels/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/mf/lair1/languages/config/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/mf/lair1/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
