@@ -71,7 +71,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private HashMap<Pair<SNodePointer, String>, Set<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, Set<EditorCell>>();
   private HashMap<Pair<SNodePointer, String>, Set<EditorCell>> myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, Set<EditorCell>>();
 
-  private IGutterMessageOwner myMessageOwner = new IGutterMessageOwner() { };
+  private IGutterMessageOwner myMessageOwner = new IGutterMessageOwner() {
+  };
 
   private boolean myHasLastCaretX = false;
   private int myLastCaretX;
@@ -113,8 +114,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private List<CellSynchronizationWithModelListener> myCellSynchronizationListeners = new ArrayList<CellSynchronizationWithModelListener>();
   private CellInfo myRecentlySelectedCellInfo = null;
 
-  private List<Intention> myAvailableIntentions = new ArrayList<Intention>();
-
 //  private Color myBackground = Color.white;
 
   private final IGutterMessageOwner myOwner = new IGutterMessageOwner() {
@@ -125,6 +124,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private CellSpeedSearch myCellSpeedSearch;
   private AbstractAction myShowIntentionsAction;
   private boolean myPaintIntentionIcon = true;
+  private LightBulbMenu myLightBulbMenu = null;
+  private AbstractEditorComponent myCurrentEditor = null;
+  private EditorCell myCurrentSelection = null;
+
+  //private List<Intention> myAvailableIntentions = new ArrayList<Intention>();
+
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -227,7 +232,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
     }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
-                                  
+
     registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         EditorCell cell = getSelectedCell();
@@ -335,27 +340,42 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     });
 
+
     addCellSelectionListener(new ICellSelectionListener() {
       public void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
-        try {
-          myAvailableIntentions.clear();
-          if (newSelection == null){
-            return;
-          }
-
-          SNode newNode = newSelection.getSNode();
-          if (newNode != null) {
-            myAvailableIntentions.addAll(IntentionsManager.getInstance().getAvailableIntentions(newNode, editor.getOperationContext()));
-          }
-        } finally {
-          myShowIntentionsAction.setEnabled(!myAvailableIntentions.isEmpty());
-        }
+        myCurrentEditor = editor;
+        myCurrentSelection = newSelection;
+        myShowIntentionsAction.setEnabled(!getAvailableIntentions().isEmpty());
       }
     });
 
     ToolTipManager.sharedInstance().registerComponent(this);
     CaretBlinker.getInstance().registerEditor(this);
     addRebuildListener(UndoManager.instance().rebuildListener());
+  }
+
+  private SNode getCurrentNode(){
+    SNode result = null;
+    if ((myCurrentSelection != null) && (myCurrentEditor != null)) {
+      result = myCurrentSelection.getSNode();
+    }
+    return result;
+  }
+
+  private Set<Intention> getAvailableIntentions() {
+    SNode node = getCurrentNode();
+    if (node!=null){
+      return IntentionsManager.getInstance().getAvailableIntentions(node, myCurrentEditor.getOperationContext());
+    }
+    return new HashSet<Intention>();
+  }
+
+  private Set<Intention> getEnabledIntentions(){
+    SNode node = getCurrentNode();
+    if (node!=null){
+      return IntentionsManager.getInstance().getEnabledAvailableIntentions(node, myCurrentEditor.getOperationContext());
+    }
+    return new HashSet<Intention>();
   }
 
   private void updateMPSActionsWithKeyStrokes() {
@@ -1163,12 +1183,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     for (final ModelCheckerMessage m : res.getMessages()) {
-      if (m.getNode().getContainingRoot() == rootNode) {        
+      if (m.getNode().getContainingRoot() == rootNode) {
         getHighlightManager().mark(new NodeHighlightManager.HighlighterMessage(m.getNode(), Color.PINK, m.getMessage(), myMessageOwner, this) {
           public void paint(Graphics g, EditorCell cell) {
             int x = cell.getX();
             int y = cell.getY();
-            int height = cell. getHeight();
+            int height = cell.getHeight();
             int leftInternalInset = cell.getLeftInternalInset();
             int effectiveWidth = cell.getEffectiveWidth();
             g.setColor(getColor());
@@ -1412,13 +1432,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       width = width + x0 - largestBigCell.getX();
       x0 = largestBigCell.getX();
     }
-        
+
 
     scrollRectToVisible(
             expandRectangleOneLine(
                     new Rectangle(
-                      x0, largestBigCell.getY(),
-                      width, largestBigCell.getHeight()
+                            x0, largestBigCell.getY(),
+                            width, largestBigCell.getHeight()
                     )));
 
 //    if (!getVisibleRect().contains(x, y) || !getVisibleRect().contains(x, y + cell.getHeight())) {
@@ -1445,9 +1465,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
       if (current.getHeight() > thresholdHeight) {
         return result;
-      }      
+      }
     }
- }
+  }
 
   private Rectangle expandRectangleOneLine(Rectangle r) {
     Font defaultFont = ApplicationComponents.getInstance().getComponentSafe(EditorSettings.class).getDefaultEditorFont();
@@ -1497,31 +1517,35 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       myRootCell.paint(g);
     }
 
-    if (!myAvailableIntentions.isEmpty()) {
-      paintLightBulb(g);
+    if (myLightBulbMenu != null) {
+      myLightBulbMenu.setVisible(false);
+      myLightBulbMenu = null;
+    }
+    if (!getEnabledIntentions().isEmpty()) {
+      showLightBulbMenu(g);
     }
   }
 
-  private void paintLightBulb(Graphics g) {
+  private void showLightBulbMenu(Graphics g) {
     if (!myPaintIntentionIcon) return;
 
     EditorCell selectedCell = getSelectedCell();
     selectedCell = getBigCellForNode(selectedCell.getSNode());
     assert selectedCell != null : "selected cell mustn't be null";
 
-    LightBulbMenu menu = new LightBulbMenu(){
+    myLightBulbMenu = new LightBulbMenu() {
       public void activate() {
         showIntentionsMenu();
       }
     };
 
-    int x = selectedCell.getX() - menu.getWidth() - 3;
+    int x = selectedCell.getX() - myLightBulbMenu.getWidth() - 3;
     int y = selectedCell.getY();
-    x=x<0 ? 2 : x;
-    y=y<0 ? 2 : y;
+    x = x < 0 ? 2 : x;
+    y = y < 0 ? 2 : y;
 
-    menu.setFocusable(false);
-    menu.show(this,x,y);
+    myLightBulbMenu.setFocusable(false);
+    myLightBulbMenu.show(this, x, y);
   }
 
   protected void paintChildren(Graphics g) {
@@ -1943,7 +1967,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       if (EventUtil.isDetachedOnlyChange(events)) {
         return;
       }
-            
+
       if (!EventUtil.isDramaticalChange(events)) {
         if (EventUtil.isPropertyChange(events)) {
           String propertyName = ((SModelPropertyEvent) events.get(0)).getPropertyName();
@@ -2129,7 +2153,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     IntentionsMenu menu = new IntentionsMenu();
 
-    menu.init(cell.getSNode(),getEditorContext(),myAvailableIntentions);
+    menu.init(cell.getSNode(), getEditorContext(), getAvailableIntentions());
 
     menu.addPopupMenuListener(new PopupMenuListener() {
       public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
@@ -2151,7 +2175,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     menu.show(this, bigCell.getX(), bigCell.getY());
   }
 
-  private void setPaintIntention(boolean value){
+  private void setPaintIntention(boolean value) {
     myPaintIntentionIcon = value;
     repaint();
   }

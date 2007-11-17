@@ -11,10 +11,11 @@ import jetbrains.mps.util.NameUtil;
 import java.util.*;
 
 public class IntentionsManager {
-  public static final Logger LOG = Logger.getLogger(IntentionsManager.class);
+  private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
 
   private Map<String, Set<Intention>> myIntentions = new HashMap<String, Set<Intention>>();
-  //private Set<Intention> myDisabledIntentions = new HashSet<Intention>();
+
+  private Set<Intention> myDisabledIntentions = new HashSet<Intention>();
 
   public static IntentionsManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(IntentionsManager.class);
@@ -26,15 +27,54 @@ public class IntentionsManager {
   public Set<Intention> getAvailableIntentions(SNode node, IOperationContext context) {
     Set<Intention> result = new HashSet<Intention>();
     String conceptFqName = node.getConceptFqName();
-    if (!myIntentions.containsKey(conceptFqName)){
-      return Collections.unmodifiableSet(new HashSet<Intention>());
-    }
-    for (Intention intention : Collections.unmodifiableSet(myIntentions.get(conceptFqName))) {
-      if (intention.isApplicable(node, context)) {
-        result.add(intention);
+    if (myIntentions.containsKey(conceptFqName)){
+      for (Intention intention : Collections.unmodifiableSet(myIntentions.get(conceptFqName))) {
+        if (intention.isApplicable(node, context)) {
+          result.add(intention);
+        }
       }
     }
+    return Collections.unmodifiableSet(result);
+  }
+
+  public Set<Intention> getEnabledAvailableIntentions(SNode node, IOperationContext context){
+    Set <Intention> result = new HashSet<Intention>(getAvailableIntentions(node,context));
+    result.removeAll(myDisabledIntentions);
     return result;
+  }
+
+  public Set<Intention> getDisabledAvailableIntentions(SNode node, IOperationContext context) {
+    Set <Intention> result = new HashSet<Intention>(getAvailableIntentions(node,context));
+    result.retainAll(myDisabledIntentions);
+    return result;
+  }
+
+  public boolean intentionIsDisabled(Intention intention){
+    return myDisabledIntentions.contains(intention);
+  }
+
+  public void invertIntentionState(Intention intention){
+    if (myDisabledIntentions.contains(intention)){
+      myDisabledIntentions.remove(intention);
+    }else{
+      myDisabledIntentions.add(intention);
+    }
+  }
+
+  public void setIntentionState(Intention intention,boolean disabled){
+    if (disabled){
+      disableIntention(intention);
+    }else{
+      enableIntention(intention);
+    }
+  }
+
+  public void disableIntention(Intention intention){
+    myDisabledIntentions.add(intention);
+  }
+
+  public void enableIntention(Intention intention){
+    myDisabledIntentions.remove(intention);
   }
 
   public void reload() {
