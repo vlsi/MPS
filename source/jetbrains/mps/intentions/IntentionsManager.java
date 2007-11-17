@@ -14,6 +14,7 @@ public class IntentionsManager {
   public static final Logger LOG = Logger.getLogger(IntentionsManager.class);
 
   private Map<String, Set<Intention>> myIntentions = new HashMap<String, Set<Intention>>();
+  //private Set<Intention> myDisabledIntentions = new HashSet<Intention>();
 
   public static IntentionsManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(IntentionsManager.class);

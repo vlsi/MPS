@@ -22,7 +22,7 @@ import jetbrains.mps.ide.ui.JMultiLineToolTip;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.IntentionsMenu;
-import jetbrains.mps.intentions.icons.Icons;
+import jetbrains.mps.intentions.LightBulbMenu;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.folding.CellAction_FoldAll;
@@ -123,7 +123,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
   private CellSpeedSearch myCellSpeedSearch;
-  private AbstractAction myApplyIntentionAction;
+  private AbstractAction myShowIntentionsAction;
   private boolean myPaintIntentionIcon = true;
 
   public AbstractEditorComponent(IOperationContext operationContext) {
@@ -263,12 +263,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
 
-    myApplyIntentionAction = new AbstractAction() {
+    myShowIntentionsAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
         showIntentionsMenu();
       }
     };
-    registerKeyboardAction(myApplyIntentionAction, KeyStroke.getKeyStroke("control alt ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+    registerKeyboardAction(myShowIntentionsAction, KeyStroke.getKeyStroke("control alt ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
     addMouseListener(new MouseAdapter() {
       public void mousePressed(final MouseEvent e) {
@@ -348,7 +348,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             myAvailableIntentions.addAll(IntentionsManager.getInstance().getAvailableIntentions(newNode, editor.getOperationContext()));
           }
         } finally {
-          myApplyIntentionAction.setEnabled(!myAvailableIntentions.isEmpty());
+          myShowIntentionsAction.setEnabled(!myAvailableIntentions.isEmpty());
         }
       }
     });
@@ -1509,13 +1509,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     selectedCell = getBigCellForNode(selectedCell.getSNode());
     assert selectedCell != null : "selected cell mustn't be null";
 
-    g.setColor(new Color(255,0,0,100));
-    Icon icon = Icons.INTENTION_ICON;
-    int x = selectedCell.getX() - icon.getIconWidth() - 3;
+    LightBulbMenu menu = new LightBulbMenu(){
+      public void activate() {
+        showIntentionsMenu();
+      }
+    };
+
+    int x = selectedCell.getX() - menu.getWidth() - 3;
     int y = selectedCell.getY();
     x=x<0 ? 2 : x;
     y=y<0 ? 2 : y;
-    icon.paintIcon(this,g, x, y);
+
+    menu.setFocusable(false);
+    menu.show(this,x,y);
   }
 
   protected void paintChildren(Graphics g) {
