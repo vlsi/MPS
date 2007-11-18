@@ -82,7 +82,6 @@
       <excludeFolder url="file://$MODULE_DIR$/projects/hello/solutions/sandbox/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/projects/lambda/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/projects/lambda/languages/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/projects/lambda/languages/cool/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/projects/stateMachine/languages/guardExpressions/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/projects/stateMachine/languages/stateMachine/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/projects/stateMachine/languages/unimodModel/META-INF" />
