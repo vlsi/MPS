@@ -7,6 +7,10 @@
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/languages/ypath/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/languages/ypath/META-INF" />
+      <excludeFolder url="file://$MODULE_DIR$/solutions/main/META-INF" />
+      <excludeFolder url="file://$MODULE_DIR$/solutions/sandbox/META-INF" />
+      <excludeFolder url="file://$MODULE_DIR$/solutions/test/META-INF" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

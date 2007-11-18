@@ -8,6 +8,9 @@
       <sourceFolder url="file://$MODULE_DIR$/languages/regexp/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.regexp.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/languages/regexp/META-INF" />
+      <excludeFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.regexp.examples/META-INF" />
+      <excludeFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.regexp.sandbox/META-INF" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
