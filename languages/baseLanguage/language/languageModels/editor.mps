@@ -7,7 +7,7 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.patterns" />
-  <maxImportIndex value="63" />
+  <maxImportIndex value="64" />
   <import index="17" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="18" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="20" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -25,6 +25,7 @@
   <import index="61" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
   <import index="62" modelUID="jetbrains.mps.project@java_stub" version="-1" />
   <import index="63" modelUID="jetbrains.mps.core.constraints" version="-1" />
+  <import index="64" modelUID="jetbrains.mps.baseLanguage.actions@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1073416106125">
     <property name="name" value="StatementList_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068580123136" />
@@ -11380,7 +11381,7 @@
                 <link role="classifier" targetNodeId="61.~GoToNodeWindow" resolveInfo="GoToNodeWindow" />
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1194953135665">
-                <link role="baseMethodDeclaration" targetNodeId="61.~GoToNodeWindow.&lt;init&gt;(jetbrains.mps.ide.AbstractProjectFrame,jetbrains.mps.ide.ItemsLoader,java.lang.String,boolean)" resolveInfo="GoToNodeWindow" />
+                <link role="baseMethodDeclaration" targetNodeId="64.~GoToMemberWindow.&lt;init&gt;(jetbrains.mps.ide.AbstractProjectFrame,jetbrains.mps.ide.ItemsLoader,java.lang.String,boolean)" resolveInfo="GoToMemberWindow" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194953398586">
                   <link role="variableDeclaration" targetNodeId="1194953398584" resolveInfo="frame" />
                 </node>
