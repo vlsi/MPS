@@ -3,7 +3,6 @@ package jetbrains.mps.ide;
 import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ApplicationComponents;
-import org.eclipse.team.core.RepositoryProvider;
 
 import javax.swing.JOptionPane;
 import javax.swing.UIDefaults;
@@ -56,7 +55,7 @@ public class IdeMain {
 //    for (String s : RepositoryProvider.getAllProviderTypeIds()) {
 //      System.out.println(s);
 //    }
-//
+
 
     long start = System.currentTimeMillis();
 
