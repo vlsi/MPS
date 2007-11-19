@@ -3,11 +3,19 @@ package jetbrains.mps.ide;
 import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ApplicationComponents;
+import org.eclipse.core.internal.resources.Workspace;
+import org.eclipse.core.resources.IProject;
+import org.eclipse.core.resources.IProjectDescription;
+import org.eclipse.core.resources.IWorkspaceRoot;
+import org.eclipse.core.resources.ResourcesPlugin;
+import org.eclipse.core.runtime.CoreException;
+import org.eclipse.team.core.RepositoryProvider;
 
 import javax.swing.JOptionPane;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import java.awt.Font;
+import java.net.URI;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -52,10 +60,7 @@ public class IdeMain {
 
   public static IDEProjectFrame openProjectWindow(boolean loadOldProject) {
 
-//    for (String s : RepositoryProvider.getAllProviderTypeIds()) {
-//      System.out.println(s);
-//    }
-
+//    doSandboxStuff();
 
     long start = System.currentTimeMillis();
 
@@ -82,6 +87,30 @@ public class IdeMain {
     long end = System.currentTimeMillis();
     System.out.println("MPS Started in " + (end - start) + " ms");
     return projectWindow;
+  }
+
+  private static void doSandboxStuff() {
+    try {
+      Workspace workspace = new Workspace();
+      IProjectDescription pd = workspace.newProjectDescription("MPS");
+      pd.setNatureIds(new String[] { "org.tigris.subversion.subclipse.core.svnnature" });
+      pd.setLocationURI(new URI("file://C:/MPS"));
+      pd.setName("MPS");      
+
+      IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
+      IProject mps = root.getProject("MPS");
+      mps.create(pd, null);
+
+
+
+      
+
+      for (String s : RepositoryProvider.getAllProviderTypeIds()) {
+        System.out.println(s);
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
   public static Date expirationDate() {
