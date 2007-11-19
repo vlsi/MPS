@@ -506,8 +506,8 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     private NodeItemCellRenderer() {
       setLayout(new BorderLayout());
-      myLeft.setFont(new TextLine("", null).getFont().deriveFont(Font.BOLD));
-      myRight.setFont(new TextLine("", null).getFont());
+//      myLeft.setFont(new TextLine("", null).getFont());
+//      myRight.setFont(new TextLine("", null).getFont());
       add(myLeft, BorderLayout.WEST);
       add(myRight, BorderLayout.EAST);
     }
@@ -532,9 +532,20 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       if (isSelected) {
         setBackground(list.getSelectionBackground());
         setForeground(list.getSelectionForeground());
+        myRight.setForeground(null);
       } else {
-        setBackground(list.getBackground());        
+        setBackground(list.getBackground());
+        setForeground(list.getForeground());
+        myRight.setForeground(Color.GRAY);
       }
+
+//      if (isSelected) {
+//        setBackground(list.getSelectionBackground());
+//        setForeground(list.getSelectionForeground());
+//      } else {
+//        setBackground(list.getBackground());
+//
+//      }
 
       return this;
     }
