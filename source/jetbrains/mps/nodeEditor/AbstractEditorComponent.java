@@ -123,13 +123,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
   private CellSpeedSearch myCellSpeedSearch;
   private AbstractAction myShowIntentionsAction;
-  private boolean myPaintIntentionIcon = true;
-  private LightBulbMenu myLightBulbMenu = null;
-  private AbstractEditorComponent myCurrentEditor = null;
-  private EditorCell myCurrentSelection = null;
+  private boolean myPaintIntention = true;
+  private LightBulbMenu myLightBulb;
 
   //private List<Intention> myAvailableIntentions = new ArrayList<Intention>();
-
 
   public AbstractEditorComponent(IOperationContext operationContext) {
     this(operationContext, false);
@@ -267,6 +264,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
 
+    myLightBulb = new LightBulbMenu() {
+      public void activate() {
+        showIntentionsMenu();
+      }
+    };
+    //add(myLightBulb);
 
     myShowIntentionsAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -343,8 +346,12 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     addCellSelectionListener(new ICellSelectionListener() {
       public void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
-        myCurrentEditor = editor;
-        myCurrentSelection = newSelection;
+        if (!getEnabledIntentions().isEmpty()) {
+          showLightBulb();
+        }else{
+          hideLightBulb();
+          //myLightBulb.setVisible(false);
+        }
         myShowIntentionsAction.setEnabled(!getAvailableIntentions().isEmpty());
       }
     });
@@ -354,26 +361,25 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     addRebuildListener(UndoManager.instance().rebuildListener());
   }
 
-  private SNode getCurrentNode(){
-    SNode result = null;
-    if ((myCurrentSelection != null) && (myCurrentEditor != null)) {
-      result = myCurrentSelection.getSNode();
+  private SNode getSelectedNode() {
+    if (getSelectedCell() == null) {
+      return null;
     }
-    return result;
+    return getSelectedCell().getSNode();
   }
 
   private Set<Intention> getAvailableIntentions() {
-    SNode node = getCurrentNode();
-    if (node!=null){
-      return IntentionsManager.getInstance().getAvailableIntentions(node, myCurrentEditor.getOperationContext());
+    SNode node = getSelectedNode();
+    if (node != null) {
+      return IntentionsManager.getInstance().getAvailableIntentions(node, getOperationContext());
     }
     return new HashSet<Intention>();
   }
 
-  private Set<Intention> getEnabledIntentions(){
-    SNode node = getCurrentNode();
-    if (node!=null){
-      return IntentionsManager.getInstance().getEnabledAvailableIntentions(node, myCurrentEditor.getOperationContext());
+  private Set<Intention> getEnabledIntentions() {
+    SNode node = getSelectedNode();
+    if (node != null) {
+      return IntentionsManager.getInstance().getEnabledAvailableIntentions(node, getOperationContext());
     }
     return new HashSet<Intention>();
   }
@@ -1516,36 +1522,27 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (myRootCell != null) {
       myRootCell.paint(g);
     }
-
-    if (myLightBulbMenu != null) {
-      myLightBulbMenu.setVisible(false);
-      myLightBulbMenu = null;
-    }
-    if (!getEnabledIntentions().isEmpty()) {
-      showLightBulbMenu(g);
-    }
   }
 
-  private void showLightBulbMenu(Graphics g) {
-    if (!myPaintIntentionIcon) return;
+  private void showLightBulb() {
+    if (!myPaintIntention) return;
 
     EditorCell selectedCell = getSelectedCell();
     selectedCell = getBigCellForNode(selectedCell.getSNode());
     assert selectedCell != null : "selected cell mustn't be null";
 
-    myLightBulbMenu = new LightBulbMenu() {
-      public void activate() {
-        showIntentionsMenu();
-      }
-    };
-
-    int x = selectedCell.getX() - myLightBulbMenu.getWidth() - 3;
+    int x = selectedCell.getX() - myLightBulb.getWidth() - 3;
     int y = selectedCell.getY();
     x = x < 0 ? 2 : x;
     y = y < 0 ? 2 : y;
 
-    myLightBulbMenu.setFocusable(false);
-    myLightBulbMenu.show(this, x, y);
+    add(myLightBulb);
+    myLightBulb.setLocation(x, y);
+    //myLightBulb.repaint();
+  }
+
+  private void hideLightBulb(){
+    remove(myLightBulb);
   }
 
   protected void paintChildren(Graphics g) {
@@ -2176,8 +2173,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void setPaintIntention(boolean value) {
-    myPaintIntentionIcon = value;
-    repaint();
+    myPaintIntention = value;
+    if (value){
+      if (!getEnabledIntentions().isEmpty()){
+        showLightBulb();
+      }
+    }else{
+      hideLightBulb();
+    }
   }
 
   public static interface RebuildListener {

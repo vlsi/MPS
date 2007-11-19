@@ -2,33 +2,32 @@ package jetbrains.mps.intentions;
 
 import jetbrains.mps.intentions.icons.Icons;
 
+import javax.swing.JComponent;
 import javax.swing.JLabel;
-import javax.swing.JPopupMenu;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import java.awt.Graphics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.List;
-import java.util.ArrayList;
 
-public abstract class LightBulbMenu extends JPopupMenu{
+public abstract class LightBulbMenu extends JLabel {
   public LightBulbMenu() {
-    setBackground(Color.WHITE);
+    super(Icons.INTENTION_ICON);
 
-    JLabel label = new JLabel(Icons.INTENTION_ICON);
-    label.setBorder(new EmptyBorder(0, 2, 1, 2));
-    label.setBackground(Color.LIGHT_GRAY);
-    add(label);
+    setBorder(new EmptyBorder(0, 2, 1, 2));
+    setBackground(Color.LIGHT_GRAY);
 
-    addMouseListener(new MouseAdapter(){
-      public void mouseClicked(MouseEvent e) {
+    setSize(getWidth(), Icons.INTENTION_ICON.getIconHeight());
+
+    addMouseListener(new MouseAdapter() {
+      public void mousePressed(MouseEvent e) {
         activate();
       }
     });
   }
 
   public int getWidth() {
-    return Icons.INTENTION_ICON.getIconWidth()+6;
+    return Icons.INTENTION_ICON.getIconWidth() + 6;
   }
 
   public abstract void activate();
