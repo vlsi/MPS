@@ -113,6 +113,7 @@
     <orderEntry type="library" name="Eclipse Configurator" level="project" />
     <orderEntry type="library" name="Eclipse Registry" level="project" />
     <orderEntry type="library" name="Eclipse Team" level="project" />
+    <orderEntry type="library" name="Eclipse Resources" level="project" />
     <orderEntryProperties />
   </component>
   <component name="copyright">

@@ -3,16 +3,12 @@ package jetbrains.mps.ide;
 import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ApplicationComponents;
-import org.eclipse.core.filesystem.EFS;
-import org.eclipse.core.filesystem.IFileStore;
-import org.eclipse.core.runtime.CoreException;
+import org.eclipse.team.core.RepositoryProvider;
 
 import javax.swing.JOptionPane;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import java.awt.Font;
-import java.io.File;
-import java.net.URI;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -56,6 +52,12 @@ public class IdeMain {
   }
 
   public static IDEProjectFrame openProjectWindow(boolean loadOldProject) {
+
+//    for (String s : RepositoryProvider.getAllProviderTypeIds()) {
+//      System.out.println(s);
+//    }
+//
+
     long start = System.currentTimeMillis();
 
     SplashScreen.getInstance().showSplashScreen();

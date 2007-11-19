@@ -1892,6 +1892,15 @@
         <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.team.core-src.zip!/" />
       </SOURCES>
     </library>
+    <library name="Eclipse Resources">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.resources_3.3.0.v20070604.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.resources-src.zip!/" />
+      </SOURCES>
+    </library>
   </component>
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
