@@ -343,7 +343,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
       myList.setFont(new TextLine("", null).getFont());
-      myList.setBackground(new Color(255, 255, 200));
+      myList.setBackground(new Color(235, 244, 254));
 
       myList.addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
@@ -507,7 +507,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     private NodeItemCellRenderer() {
       setLayout(new BorderLayout());
       myLeft.setFont(new TextLine("", null).getFont().deriveFont(Font.BOLD));
-      myRight.setFont(new TextLine("", null).getFont().deriveFont(Font.ITALIC));
+      myRight.setFont(new TextLine("", null).getFont());
       add(myLeft, BorderLayout.WEST);
       add(myRight, BorderLayout.EAST);
     }
