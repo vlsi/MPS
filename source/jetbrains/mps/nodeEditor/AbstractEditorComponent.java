@@ -123,7 +123,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Map<KeyStroke, MPSActionProxy> myActionProxies = new HashMap<KeyStroke, MPSActionProxy>();
   private CellSpeedSearch myCellSpeedSearch;
   private AbstractAction myShowIntentionsAction;
-  private boolean myPaintIntention = true;
   private LightBulbMenu myLightBulb;
 
   //private List<Intention> myAvailableIntentions = new ArrayList<Intention>();
@@ -1525,8 +1524,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void showLightBulb() {
-    if (!myPaintIntention) return;
-
     EditorCell selectedCell = getSelectedCell();
     selectedCell = getBigCellForNode(selectedCell.getSNode());
     assert selectedCell != null : "selected cell mustn't be null";
@@ -1538,7 +1535,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     add(myLightBulb);
     myLightBulb.setLocation(x, y);
-    //myLightBulb.repaint();
   }
 
   private void hideLightBulb(){
@@ -2148,32 +2144,31 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private void showIntentionsMenu() {
     EditorCell cell = getSelectedCell();
 
-    IntentionsMenu menu = new IntentionsMenu();
+    IntentionsMenu intentionsMenu = new IntentionsMenu();
 
-    menu.init(cell.getSNode(), getEditorContext(), getAvailableIntentions());
+    intentionsMenu.init(cell.getSNode(), getEditorContext(), getAvailableIntentions());
 
-    menu.addPopupMenuListener(new PopupMenuListener() {
+    intentionsMenu.addPopupMenuListener(new PopupMenuListener() {
       public void popupMenuWillBecomeVisible(PopupMenuEvent e) {
-        setPaintIntention(false);
+        setLightBulbVisibility(false);
       }
 
       public void popupMenuWillBecomeInvisible(PopupMenuEvent e) {
-        setPaintIntention(true);
+        setLightBulbVisibility(!getEnabledIntentions().isEmpty());
       }
 
       public void popupMenuCanceled(PopupMenuEvent e) {
-        setPaintIntention(true);
+        setLightBulbVisibility(!getEnabledIntentions().isEmpty());
       }
     });
 
     EditorCell bigCell = getBigCellForNode(cell.getSNode());
     assert bigCell != null : "selected cell mustn't be null";
 
-    menu.show(this, bigCell.getX(), bigCell.getY());
+    intentionsMenu.show(this, bigCell.getX(), bigCell.getY());
   }
 
-  private void setPaintIntention(boolean value) {
-    myPaintIntention = value;
+  private void setLightBulbVisibility(boolean value) {
     if (value){
       if (!getEnabledIntentions().isEmpty()){
         showLightBulb();
