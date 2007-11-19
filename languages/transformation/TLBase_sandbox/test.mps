@@ -88,6 +88,9 @@
   </node>
   <node type="jetbrains.mps.transformation.TLBase.structure.MappingConfiguration" id="1195150589703">
     <property name="name" value="test_mappingConfig" />
+    <node role="preMappingScript" type="jetbrains.mps.transformation.TLBase.structure.MappingScriptReference" id="1195502746285">
+      <link role="mappingScript" targetNodeId="1195501454137" resolveInfo="test_mappingScript" />
+    </node>
     <node role="createRootRule" type="jetbrains.mps.transformation.TLBase.structure.CreateRootRule" id="1195253332390">
       <node role="conditionFunction" type="jetbrains.mps.transformation.TLBase.structure.CreateRootRule_Condition" id="1195253334516">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195253334517" />

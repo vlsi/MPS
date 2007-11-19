@@ -187,6 +187,18 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1114458327664" resolveInfo="ConceptDeclarationReference" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195502100749">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="preMappingScript" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1195502151594" resolveInfo="MappingScriptReference" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195502346405">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="postMappingScript" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1195502151594" resolveInfo="MappingScriptReference" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1163452921864">
       <property name="value" value="mapping configuration" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
@@ -1397,6 +1409,16 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1195501036537">
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195502151594">
+    <property name="package" value="Script" />
+    <property name="name" value="MappingScriptReference" />
+    <link role="extends" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195502167610">
+      <property name="role" value="mappingScript" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1195499912406" resolveInfo="MappingScript" />
     </node>
   </node>
 </model>
