@@ -6073,5 +6073,29 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1195501142572">
+    <property name="package" value="Script" />
+    <link role="conceptDeclaration" targetNodeId="1.1195499912406" resolveInfo="MappingScript" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195501168018">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1195501175723">
+        <property name="selectable" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195501190865">
+          <property name="text" value="mapping script" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1195501209836">
+          <property name="noTargetText" value="&lt;no name&gt;" />
+          <link role="relationDeclaration" targetNodeId="4.1169194664001" resolveInfo="name" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195501234838">
+        <property name="selectable" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1195501248700">
+        <link role="relationDeclaration" targetNodeId="1.1195501105008" />
+      </node>
+    </node>
+  </node>
 </model>
 

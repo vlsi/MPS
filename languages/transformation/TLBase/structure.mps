@@ -1351,5 +1351,53 @@
       <link role="target" targetNodeId="1168559098955" resolveInfo="RuleConsequence" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195499912406">
+    <property name="name" value="MappingScript" />
+    <property name="package" value="Script" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195501105008">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="codeBlock" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1195500722856" resolveInfo="MappingScript_CodeBlock" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1195500585715">
+      <link role="intfc" targetNodeId="2.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1195500793561">
+      <property name="value" value="mapping script" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195500722856">
+    <property name="package" value="Script" />
+    <property name="name" value="MappingScript_CodeBlock" />
+    <link role="extends" targetNodeId="6.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195500885782">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1166748937193" resolveInfo="TemplateFunctionParameter_sourceModel" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195501073804">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1195501036533" resolveInfo="TemplateFunctionParameter_outputModel" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195501036533">
+    <property name="name" value="TemplateFunctionParameter_outputModel" />
+    <property name="package" value="FunctionParameter" />
+    <link role="extends" targetNodeId="6.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1195501036534">
+      <link role="conceptLinkDeclaration" targetNodeId="6.1137545963098" resolveInfo="conceptFunctionParameterType" />
+      <node role="target" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1195501036535" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1195501036536">
+      <property name="value" value="outputModel" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1195501036537">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 
