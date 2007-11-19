@@ -285,7 +285,7 @@ public class GenerationSession implements IGenerationSession {
     // -----------------------
     List<MappingScript> preMappingScripts = generationContext.getPreMappingScripts();
     for (MappingScript preMappingScript : preMappingScripts) {
-      addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getLongName() + "");
+      addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getLongName() + ")");
       TemplateGenUtil.executeMappingScript(preMappingScript, currentInputModel.getSModel(), generator);
     }
 
@@ -337,7 +337,7 @@ public class GenerationSession implements IGenerationSession {
     // -----------------------
     List<MappingScript> postMappingScripts = generationContext.getPostMappingScripts();
     for (MappingScript postMappingScript : postMappingScripts) {
-      addMessage(MessageKind.INFORMATION, "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + "");
+      addMessage(MessageKind.INFORMATION, "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")");
       TemplateGenUtil.executeMappingScript(postMappingScript, currentOutputModel.getSModel(), generator);
     }
 
