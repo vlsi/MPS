@@ -332,7 +332,8 @@ public class TemplateGenUtil {
           sourceNodes.add(parentSourceNode);
         }
         return sourceNodes;
-      } */else if (nodeMacro instanceof LoopMacro) {
+      } */
+      else if (nodeMacro instanceof LoopMacro) {
         return getSourceNodesForMacroWithSourceNodesQuery(parentSourceNode, (SourceSubstituteMacro) nodeMacro, ((LoopMacro) nodeMacro).getSourceNodesQuery(), generator);
       } else if (nodeMacro instanceof CopySrcListMacro) {
         return getSourceNodesForMacroWithSourceNodesQuery(parentSourceNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcListMacro) nodeMacro).getSourceNodesQuery(), generator);
@@ -366,16 +367,25 @@ public class TemplateGenUtil {
     }
   }
 
-//  public static void showGeneratorMessage(GeneratorMessage message, SNode sourceNode, SNode rule, ITemplateGenerator generator) {
-//    if (message != null) {
-//      String text = message.getMessageText();
-//      if (message.getMessageType() == GeneratorMessageType.error) {
-//        generator.showErrorMessage(sourceNode, null, rule, text);
-//      } else if (message.getMessageType() == GeneratorMessageType.warning) {
-//        generator.showWarningMessage(sourceNode, text);
-//      } else {
-//        generator.showInformationMessage(sourceNode, text);
-//      }
-//    }
-//  }
+  public static void executeMappingScript(MappingScript mappingScript, SModel model, ITemplateGenerator generator) {
+    MappingScript_CodeBlock codeBlock = mappingScript.getCodeBlock();
+    if (codeBlock == null) {
+      generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no code-block");
+      return;
+    }
+
+    String methodName = TemplateFunctionMethodName.mappingScript_CodeBlock(codeBlock.getNode());
+    Object[] args = new Object[]{
+            model,
+            generator};
+    long startTime = System.currentTimeMillis();
+    try {
+      QueryMethodGenerated.invoke(methodName, args, mappingScript.getModel());
+    } catch (Exception e) {
+      generator.showErrorMessage(codeBlock.getNode(), "error executing script '" + mappingScript.getName() + "'");
+      LOG.error(e);
+    } finally {
+      Statistics.getStatistic(Statistics.TPL).add(mappingScript.getModel(), methodName, startTime);
+    }
+  }
 }

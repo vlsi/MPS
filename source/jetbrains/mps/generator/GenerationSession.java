@@ -5,6 +5,7 @@ import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationStepController;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.Statistics;
+import jetbrains.mps.generator.template.TemplateGenUtil;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -25,6 +26,7 @@ import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -82,7 +84,7 @@ public class GenerationSession implements IGenerationSession {
       myLoggingHandler = new LoggingHandlerAdapter() {
         public void addLogEntry(LogEntry e) {
           Object o = e.getHintObject();
-          if(o instanceof SNode) {
+          if (o instanceof SNode) {
             myCurrentContext.addTransientModelToKeep(((SNode) o).getModel());
           }
         }
@@ -279,6 +281,15 @@ public class GenerationSession implements IGenerationSession {
     SModelDescriptor currentOutputModel = createTransientModel(inputModel, module);
 
     // -----------------------
+    // run pre-processing scripts
+    // -----------------------
+    List<MappingScript> preMappingScripts = generationContext.getPreMappingScripts();
+    for (MappingScript preMappingScript : preMappingScripts) {
+      addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getLongName() + "");
+      TemplateGenUtil.executeMappingScript(preMappingScript, currentInputModel.getSModel(), generator);
+    }
+
+    // -----------------------
     // primary mapping
     // -----------------------
     boolean somethingHasBeenGenerated = generator.doPrimaryMapping(currentInputModel.getSModel(), currentOutputModel.getSModel());
@@ -320,6 +331,16 @@ public class GenerationSession implements IGenerationSession {
       // next iteration ...
       currentOutputModel = transientModel;
     }
+
+    // -----------------------
+    // run post-processing scripts
+    // -----------------------
+    List<MappingScript> postMappingScripts = generationContext.getPostMappingScripts();
+    for (MappingScript postMappingScript : postMappingScripts) {
+      addMessage(MessageKind.INFORMATION, "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + "");
+      TemplateGenUtil.executeMappingScript(postMappingScript, currentOutputModel.getSModel(), generator);
+    }
+
     return currentOutputModel.getSModel();
   }
 

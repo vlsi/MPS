@@ -5,6 +5,8 @@ import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.transformation.TLBase.structure.MappingScript;
+import jetbrains.mps.transformation.TLBase.structure.MappingScriptReference;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.ide.BootstrapLanguages;
@@ -91,14 +93,6 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
   }
 
-//  public void updateGenerationStepData(GenerationStepController generationStepController) {
-//    myGenerationStepController = generationStepController;
-//    myGeneratorModules = myGenerationStepController.getGenerators();
-//    myTemplateModels = myGenerationStepController.getTemplateModels();
-//    myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(myGenerationStepController.getCurrentMappings());
-//    myTransientModule.addGeneratorModules(myGeneratorModules);
-//  }
-
   private void initTemplateModels() {
     assert myGenerationStepController == null : "method can't be used with 'auto-plan' generation";
 
@@ -120,6 +114,28 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public Set<MappingConfiguration> getMappingConfigurations() {
     return myMappingConfigurations;
+  }
+
+  public List<MappingScript> getPreMappingScripts() {
+    List<MappingScript> result = new ArrayList<MappingScript>();
+    for (MappingConfiguration mappingConfigs : getMappingConfigurations()) {
+      List<MappingScriptReference> scriptRefs = mappingConfigs.getPreMappingScripts();
+      for (MappingScriptReference scriptRef : scriptRefs) {
+        result.add(scriptRef.getMappingScript());
+      }
+    }
+    return result;
+  }
+
+  public List<MappingScript> getPostMappingScripts() {
+    List<MappingScript> result = new ArrayList<MappingScript>();
+    for (MappingConfiguration mappingConfigs : getMappingConfigurations()) {
+      List<MappingScriptReference> scriptRefs = mappingConfigs.getPostMappingScripts();
+      for (MappingScriptReference scriptRef : scriptRefs) {
+        result.add(scriptRef.getMappingScript());
+      }
+    }
+    return result;
   }
 
   public <T> T getComponent(@NotNull Class<T> clazz) {
