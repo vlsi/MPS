@@ -97,11 +97,9 @@ public class NodePresentationUtil {
     }
 
     if (nodeAdapter.isRoot()) {
-      return NameUtil.shortNameFromLongName(nodeAdapter.getClass().getName()) + " (" + nodeAdapter.getModel().getUID() + ")";
+      return NameUtil.shortNameFromLongName(nodeAdapter.getClass().getName()) + " (" + nodeAdapter.getModel().getLongName() + ")";
     }
-    if (nodeAdapter.getContainingRoot() == null) {
-      System.out.println("!!!");
-    }
+
     return nodeAdapter.getRole_() + " (" + NameUtil.nodeFQName(nodeAdapter.getContainingRoot()) + ")";
   }
 

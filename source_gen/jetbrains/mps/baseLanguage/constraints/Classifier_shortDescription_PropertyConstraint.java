@@ -24,7 +24,7 @@ public class Classifier_shortDescription_PropertyConstraint implements IModelCon
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    return NodePresentationUtil.getAliasOrConceptName(node) + " (" + SNodeOperations.getModel(node).getUID() + ")";
+    return NodePresentationUtil.getAliasOrConceptName(node) + " (" + SNodeOperations.getModel(node).getLongName() + ")";
   }
 
 }
