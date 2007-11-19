@@ -1906,7 +1906,9 @@
         <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.runtime_3.3.100.v20070530.jar!/" />
       </CLASSES>
       <JAVADOC />
-      <SOURCES />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.runtime-src.zip!/" />
+      </SOURCES>
     </library>
     <library name="Eclipse Jobs">
       <CLASSES>

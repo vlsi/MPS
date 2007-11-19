@@ -90,7 +90,10 @@ public class IdeMain {
 
   private static void doSandboxStuff() {
     try {
-      Workspace workspace = new Workspace();
+      Workspace workspace = new Workspace();      
+
+
+
       IProjectDescription pd = workspace.newProjectDescription("MPS");
       pd.setNatureIds(new String[] { "org.tigris.subversion.subclipse.core.svnnature" });
       pd.setLocationURI(new URI("file://C:/MPS"));
