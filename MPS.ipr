@@ -1883,6 +1883,15 @@
         <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.equinox.registry-src.zip!/" />
       </SOURCES>
     </library>
+    <library name="Eclipse Team">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.team.core_3.3.0.I20070607.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES>
+        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.team.core-src.zip!/" />
+      </SOURCES>
+    </library>
   </component>
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
