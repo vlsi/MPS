@@ -145,6 +145,10 @@ public class NameUtil {
     return namespace;
   }
 
+  public static String conceptFQNameFromNamespaceAndShortName(String namespace, String shortName) {
+    return namespace+".structure."+shortName;
+  }
+
   public static String longNameFromNamespaceAndShortName(String namespace, String name) {
     if (namespace == null || namespace.length() == 0) {
       return name;
