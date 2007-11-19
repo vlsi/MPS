@@ -2159,6 +2159,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1175517983013">
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;error string&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1175517851849" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175517986109">
@@ -2167,6 +2168,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1175517990173">
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;node to highlight&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1175517865066" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175518052514">
@@ -2195,6 +2197,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1175518108070">
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;error string&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1175517851849" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175518115931">
@@ -2203,6 +2206,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1175518122026">
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;node to highlight&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1175517865066" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175518125090">

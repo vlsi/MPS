@@ -121,7 +121,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
   public EditorCell createErrorStringCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("errorString");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<error string>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createErrorStringCellinternal(context, node, provider);
@@ -150,7 +150,7 @@ public class ReportErrorStatement_Editor extends DefaultNodeEditor {
   public EditorCell createNodeToReportCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("nodeToReport");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<node to highlight>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createNodeToReportCellinternal(context, node, provider);
