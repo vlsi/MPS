@@ -58,6 +58,10 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(node);
   }
 
+  public static Object propertyMacro_GetPropertyValue_1195504684817(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return TemplateFunctionMethodName.mappingScript_CodeBlock(node);
+  }
+
   public static SNode referenceMacro_GetReferent_1167774837569(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     String alias = SConceptPropertyOperations.getString(node, "alias");
     if(alias == null) {
@@ -158,6 +162,10 @@ public class QueriesGenerated {
     return QueriesUtil.getInputNodeTypeForTemplateFunction(node);
   }
 
+  public static SNode sourceNodeQuery_1195504684807(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "body", true);
+  }
+
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619599466(SNode node, ITemplateGenerator generator) {
     return QueriesUtil.getQueriesGeneratedClass(generator);
   }
@@ -195,6 +203,10 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1184619882833(SNode node, ITemplateGenerator generator) {
+    return QueriesUtil.getQueriesGeneratedClass(generator);
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1195503404236(SNode node, ITemplateGenerator generator) {
     return QueriesUtil.getQueriesGeneratedClass(generator);
   }
 
