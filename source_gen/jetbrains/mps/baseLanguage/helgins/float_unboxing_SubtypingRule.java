@@ -14,7 +14,7 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_71().createNode();
+    return new QuotationClass_70().createNode();
   }
 
   public String getApplicableConceptFQName() {

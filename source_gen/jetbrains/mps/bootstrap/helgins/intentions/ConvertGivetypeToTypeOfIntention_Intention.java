@@ -29,7 +29,7 @@ public class ConvertGivetypeToTypeOfIntention_Intention extends BaseIntention im
     return true;
   }
 
-  public void execute(SNode node, EditorContext operationContext) {
+  public void execute(SNode node, EditorContext editorContext) {
     SNode equationStatement = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement");
     SNode typeOfExpression = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
     SNode leftTypeClause = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");

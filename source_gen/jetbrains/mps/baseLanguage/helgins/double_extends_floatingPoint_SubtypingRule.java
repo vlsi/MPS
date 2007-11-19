@@ -14,7 +14,7 @@ public class double_extends_floatingPoint_SubtypingRule extends SubtypingRule_Ru
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return SLinkOperations.getTarget(new QuotationClass_58().createNode(), "descriptor", false);
+    return SLinkOperations.getTarget(new QuotationClass_57().createNode(), "descriptor", false);
   }
 
   public String getApplicableConceptFQName() {
