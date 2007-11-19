@@ -376,14 +376,6 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
             NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
           }
           try {
-            try {
-              if (Thread.interrupted()) {
-                //System.err.println("helgins sleeping");
-                Thread.sleep(Highlighter.CHECK_DELAY);
-              }
-            } catch(InterruptedException e) {
-              Thread.currentThread().interrupt();
-            }
             applyRulesToNode(sNode, useNonTypesystemRules);
           } finally{
             if (isIncrementalMode()) {

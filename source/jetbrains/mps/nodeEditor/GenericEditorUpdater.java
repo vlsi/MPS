@@ -43,7 +43,6 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
         CommandProcessor commandProcessor = CommandProcessor.instance();
         try {
           while (true) {
-            try {
               while (commandProcessor.isInsideCommand()) {
                 Thread.sleep(200);
               }
@@ -52,9 +51,6 @@ public abstract class GenericEditorUpdater implements IComponentLifecycle {
                 break;
               }
               Thread.sleep(300);
-            } catch(InterruptedException e) {
-              //ok
-            }
           }
         } catch (Exception e) {
           LOG.error(e);

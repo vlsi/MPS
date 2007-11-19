@@ -33,22 +33,6 @@ public class EditorComponentKeyboardHandler implements IKeyboardHandler {
     notEditable = (editorContext.getNodeEditorComponent().isReadOnly() || notEditable);
 
     if (notEditable) return false;
-    IOperationContext operationContext = editorContext.getOperationContext();
-    if (operationContext != null) {
-      MPSProject project = operationContext.getProject();
-      if (project != null) {
-        Highlighter highlighter = project.getComponent(Highlighter.class);
-        if (highlighter != null) {
-          Thread thread = highlighter.getThread();
-          //System.err.println("helgins thread state = " + thread.getState());
-          //System.err.println("name = " + thread.getName());
-          /* if (thread.getState() == State.TIMED_WAITING) {
-            thread.interrupt();
-          }*/
-          thread.interrupt();
-        }
-      }
-    }
 
     EditorCell selectedCell = editor.getSelectedCell();
 
