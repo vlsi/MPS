@@ -553,7 +553,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         progress.addText("Invalidate caches");
         ReloadUtils.invalidateCaches();
 
-        progress.addText("Resfresh models");
+        progress.addText("Refresh models");
         SModelRepository.getInstance().refreshModels();
         System.gc();
       }
