@@ -59,7 +59,7 @@ public class IdeMain {
   }
 
   public static IDEProjectFrame openProjectWindow(boolean loadOldProject) {
-    doSandboxStuff();
+//    doSandboxStuff();
 
     long start = System.currentTimeMillis();
 
@@ -72,7 +72,7 @@ public class IdeMain {
       JOptionPane.showMessageDialog(SplashScreen.getInstance(), "Program is expired. You can download latest version from www.jetbrains.com");
       System.exit(0);
     }
-        
+
     LoggerUtil.configureLogger();
 
     ApplicationComponents.getInstance();
