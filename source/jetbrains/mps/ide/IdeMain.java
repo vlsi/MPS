@@ -59,8 +59,7 @@ public class IdeMain {
   }
 
   public static IDEProjectFrame openProjectWindow(boolean loadOldProject) {
-
-//    doSandboxStuff();
+    doSandboxStuff();
 
     long start = System.currentTimeMillis();
 
@@ -100,10 +99,6 @@ public class IdeMain {
       IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
       IProject mps = root.getProject("MPS");
       mps.create(pd, null);
-
-
-
-      
 
       for (String s : RepositoryProvider.getAllProviderTypeIds()) {
         System.out.println(s);

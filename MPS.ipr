@@ -1901,6 +1901,20 @@
         <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.resources-src.zip!/" />
       </SOURCES>
     </library>
+    <library name="Eclipse Runtime">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.runtime_3.3.100.v20070530.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
+    <library name="Eclipse Jobs">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.core.jobs_3.3.0.v20070423.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
