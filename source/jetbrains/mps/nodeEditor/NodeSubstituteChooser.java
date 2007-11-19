@@ -506,9 +506,8 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
     private NodeItemCellRenderer() {
       setLayout(new BorderLayout());
-
-      myLeft.setFont(new TextLine("", null).getFont());
-      myRight.setFont(new TextLine("", null).getFont());
+      myLeft.setFont(new TextLine("", null).getFont().deriveFont(Font.BOLD));
+      myRight.setFont(new TextLine("", null).getFont().deriveFont(Font.ITALIC));
       add(myLeft, BorderLayout.WEST);
       add(myRight, BorderLayout.EAST);
     }

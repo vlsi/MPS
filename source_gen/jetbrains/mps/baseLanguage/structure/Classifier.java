@@ -23,7 +23,7 @@ public class Classifier extends GenericDeclaration implements Annotable, IMember
     super(node);
   }
 
-  public static Classifier newInstance(SModel sm, boolean init) {
+  public static Classifier newInstance(SModel sm, boolean init) {    
     return (Classifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 

@@ -70,6 +70,10 @@ public class SModelUID implements Comparable {
     return myLongName;
   }
 
+  public String getCompactPresentation() {
+    return NameUtil.compactNamespace(getLongName());
+  }
+
   public String getNamespace() {
     return NameUtil.namespaceFromLongName(getLongName());
   }

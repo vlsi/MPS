@@ -75,6 +75,7 @@ public class NodePresentationUtil {
       ConceptDeclaration anExtends = ((ConceptDeclaration) node.getAdapter()).getExtends();
       if (anExtends != null) {
         String namespace = NameUtil.namespaceFromConcept((ConceptDeclaration) node.getAdapter());
+        namespace = NameUtil.compactNamespace(namespace);
         return "(" + anExtends.getName() + " in " + namespace + ")";
       }
       return "";
@@ -97,10 +98,10 @@ public class NodePresentationUtil {
     }
 
     if (nodeAdapter.isRoot()) {
-      return NameUtil.shortNameFromLongName(nodeAdapter.getClass().getName()) + " (" + nodeAdapter.getModel().getLongName() + ")";
+      return NameUtil.shortNameFromLongName(nodeAdapter.getClass().getName()) + " (" + nodeAdapter.getModel().getUID().getCompactPresentation() + ")";
     }
 
-    return nodeAdapter.getRole_() + " (" + NameUtil.nodeFQName(nodeAdapter.getContainingRoot()) + ")";
+    return nodeAdapter.getRole_() + " (" + NameUtil.compactNodeFQName(nodeAdapter.getContainingRoot()) + ")";
   }
 
   public static String getAliasOrConceptName(SNode node) {

@@ -164,6 +164,19 @@ public class NameUtil {
     return nodeFQName(BaseAdapter.fromAdapter(node));
   }
 
+  public static String compactNodeFQName(SNode node) {
+    if (node == null) {
+      return "null";
+    }
+    String name = node.getName();
+    return compactNamespace(node.getModel().getLongName()) + "." + name;
+  }
+
+  public static String compactNodeFQName(INodeAdapter a) {        
+    return compactNodeFQName(BaseAdapter.fromAdapter(a));
+  }
+
+
   public static String conceptFQNameByAdapterClass(Class<? extends BaseAdapter> cls) {
     String className = cls.getName();
     return className;
@@ -238,5 +251,27 @@ public class NameUtil {
       }
     }
     return quotedString;
+  }
+
+  public static String compactNamespace(String namespace) {
+    if (namespace.length() > 10) {
+      String[] parts = namespace.split("\\.");
+      StringBuilder result = new StringBuilder();
+
+      for (int i = 0; i < parts.length; i++) {
+        if (i != 0) {
+          result.append(".");
+        }
+
+        if (i != parts.length - 1 && parts.length > 1) {
+          result.append(parts[i].charAt(0));
+        } else {
+          result.append(parts[i]);
+        }
+      }
+
+      return result.toString();
+    }
+    return namespace;
   }
 }

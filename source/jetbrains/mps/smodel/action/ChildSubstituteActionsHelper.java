@@ -527,11 +527,18 @@ public class ChildSubstituteActionsHelper {
 
     public String getDescriptionText(String pattern) {
       BaseConcept parameterNode = (BaseConcept) BaseAdapter.fromNode((SNode) getParameterObject());
-      if (parameterNode.getShortDescription() == null) {
-        return "^" + NodePresentationUtil.descriptionText(parameterNode, true);
+      String result = NodePresentationUtil.descriptionText(parameterNode, true);
+
+      if (result.contains("jetbrains.charisma")) {
+        NodePresentationUtil.descriptionText(parameterNode, true);        
       }
 
-      return "^" + NodePresentationUtil.descriptionText(parameterNode, true);
+
+      if (parameterNode.getShortDescription() == null) {
+        return "^" + result;
+      }
+
+      return "^" + result;
     }
 
     public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
