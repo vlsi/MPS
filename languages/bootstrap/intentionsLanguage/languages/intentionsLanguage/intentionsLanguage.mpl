@@ -9,6 +9,9 @@
   <constraints>
     <model modelUID="jetbrains.mps.bootstrap.intentionsLanguage.constraints" />
   </constraints>
+  <scripts>
+    <model modelUID="jetbrains.mps.bootstrap.intentionsLanguage.scripts" />
+  </scripts>
   <editor>
     <model modelUID="jetbrains.mps.bootstrap.intentionsLanguage.editor" />
   </editor>
@@ -37,5 +40,9 @@
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
+  <dependencies>
+    <dependency>jetbrains.mpslite</dependency>
+    <dependency>webr.webl</dependency>
+  </dependencies>
 </language>
 
