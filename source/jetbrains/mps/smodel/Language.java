@@ -356,12 +356,12 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     if (!BootstrapLanguages.getInstance().getLanguagesUsedInCore().contains(this)) {
       aspects.add(".structure");
     }
-        
+
     aspects.addAll(CollectionUtil.asList(
-      ".editor", ".actions", ".constraints",
-      ".intentions", ".builder", ".scripts",
-      ".helgins", ".plugin", ".textGen",
-      ".textPresentation", ".design", ".util", ".runtime"
+            ".editor", ".actions", ".constraints",
+            ".intentions", ".builder", ".scripts",
+            ".helgins", ".plugin", ".textGen",
+            ".textPresentation", ".design", ".util", ".runtime"
     ));
     result.add(getModuleUID());
     for (String aspect : aspects) {
@@ -1003,7 +1003,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
         String fqName = packageName + "." + refactoring.getName();
         Class<ILoggableRefactoring> cls = getClass(fqName);
         if (cls == null) {
-          LOG.error("Can't find " + fqName);          
+          LOG.error("Can't find " + fqName);
           continue;
         }
         result.add(cls.getConstructor().newInstance());
@@ -1079,8 +1079,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.DOCUMENTATION);
     }
     if (modelDescriptor == language.getIntentionsModelDescriptor()) {
-         return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.INTENTIONS);
-       }
+      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.INTENTIONS);
+    }
 
 
     List<SModelDescriptor> acccessoryModels = language.getAccessoryModels();
