@@ -19,7 +19,7 @@ public class IntentionsManager implements IExternalizableComponent {
   private static final String VERSION_NUMBER = "0.1";
   private static final String DISABLED_INTENTIONS = "disables_intentions";
   private static final String INTENTION = "intention";
-  private static final String CLASS_NAME = "class_name";  
+  private static final String CLASS_NAME = "class_name";
 
   private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
 
@@ -39,69 +39,73 @@ public class IntentionsManager implements IExternalizableComponent {
   public Set<Intention> getAvailableIntentions(SNode node, IOperationContext context) {
     Set<Intention> result = new HashSet<Intention>();
     String conceptFqName = node.getConceptFqName();
-    if (myIntentions.containsKey(conceptFqName)){
+    if (myIntentions.containsKey(conceptFqName)) {
       for (Intention intention : Collections.unmodifiableSet(myIntentions.get(conceptFqName))) {
-        if (intention.isApplicable(node, context)) {
-          result.add(intention);
+        try {
+          if (intention.isApplicable(node, context)) {
+            result.add(intention);
+          }
+        } catch (Throwable t) {
+          LOG.error("Intention's isApplicable method failed " + t.getMessage(), t);
         }
       }
     }
     return Collections.unmodifiableSet(result);
   }
 
-  public Set<Intention> getEnabledAvailableIntentions(SNode node, IOperationContext context){
-    Set <Intention> result = new HashSet<Intention>(getAvailableIntentions(node,context));
+  public Set<Intention> getEnabledAvailableIntentions(SNode node, IOperationContext context) {
+    Set<Intention> result = new HashSet<Intention>(getAvailableIntentions(node, context));
     result.removeAll(getDisabledIntentions());
     return result;
   }
 
   public Set<Intention> getDisabledAvailableIntentions(SNode node, IOperationContext context) {
-    Set <Intention> result = new HashSet<Intention>(getAvailableIntentions(node,context));
+    Set<Intention> result = new HashSet<Intention>(getAvailableIntentions(node, context));
     result.retainAll(getDisabledIntentions());
     return result;
   }
 
-  protected Set <Intention> getDisabledIntentions(){
-    if (!myCachesAreValid){
+  protected Set<Intention> getDisabledIntentions() {
+    if (!myCachesAreValid) {
       myDisabledIntentionsCache.clear();
-      for (Set<Intention> conceptIntentions:myIntentions.values()){
-        for (Intention intention:conceptIntentions){
-          if (myDisabledIntentionsClassNames.contains(intention.getClass().getName())){
+      for (Set<Intention> conceptIntentions : myIntentions.values()) {
+        for (Intention intention : conceptIntentions) {
+          if (myDisabledIntentionsClassNames.contains(intention.getClass().getName())) {
             myDisabledIntentionsCache.add(intention);
           }
         }
       }
-      myCachesAreValid=true;
+      myCachesAreValid = true;
     }
     return myDisabledIntentionsCache;
   }
 
-  protected void invalidateCaches(){
+  protected void invalidateCaches() {
     myCachesAreValid = false;
   }
 
-  public boolean intentionIsDisabled(Intention intention){
+  public boolean intentionIsDisabled(Intention intention) {
     return getDisabledIntentions().contains(intention);
   }
 
-  public void invertIntentionState(Intention intention){
-    setIntentionState(intention,!intentionIsDisabled(intention));
+  public void invertIntentionState(Intention intention) {
+    setIntentionState(intention, !intentionIsDisabled(intention));
   }
 
-  public void setIntentionState(Intention intention,boolean disabled){
-    if (disabled){
+  public void setIntentionState(Intention intention, boolean disabled) {
+    if (disabled) {
       disableIntention(intention);
-    }else{
+    } else {
       enableIntention(intention);
     }
   }
 
-  public void disableIntention(Intention intention){
+  public void disableIntention(Intention intention) {
     myDisabledIntentionsClassNames.add(intention.getClass().getName());
     myDisabledIntentionsCache.add(intention);
   }
 
-  public void enableIntention(Intention intention){
+  public void enableIntention(Intention intention) {
     myDisabledIntentionsClassNames.remove(intention.getClass().getName());
     myDisabledIntentionsCache.remove(intention);
   }
@@ -112,9 +116,9 @@ public class IntentionsManager implements IExternalizableComponent {
     invalidateCaches();
     for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
       SModelDescriptor intentionsModelDescriptor = l.getIntentionsModelDescriptor();
-      if (intentionsModelDescriptor != null ){
+      if (intentionsModelDescriptor != null) {
         SModel smodel = intentionsModelDescriptor.getSModel();
-        for (IntentionDeclaration intentionDeclaration : smodel.getRootsAdapters(IntentionDeclaration.class)){
+        for (IntentionDeclaration intentionDeclaration : smodel.getRootsAdapters(IntentionDeclaration.class)) {
           String className = smodel.getUID().getLongName() + "." + IntentionDeclaration_Behavior.call_getGeneratedName_1193141280918(intentionDeclaration.getNode());
           String conceptName = IntentionDeclaration_Behavior.call_getConceptName_1193142194523(intentionDeclaration.getNode());
           try {
@@ -122,16 +126,16 @@ public class IntentionsManager implements IExternalizableComponent {
 
             if (cls != null) {
               Object intention = cls.newInstance();
-              Set <Intention> intentions = myIntentions.get(conceptName);
-              if (intentions == null){
+              Set<Intention> intentions = myIntentions.get(conceptName);
+              if (intentions == null) {
                 intentions = new HashSet<Intention>();
               }
-              intentions.add((Intention)intention);
-              myIntentions.put(conceptName,intentions);
+              intentions.add((Intention) intention);
+              myIntentions.put(conceptName, intentions);
             } else {
               LOG.error("Intention is registered but isn't compiled " + NameUtil.nodeFQName(intentionDeclaration), intentionDeclaration);
             }
-          } catch (Exception e){
+          } catch (Exception e) {
             LOG.error(e, intentionDeclaration);
           }
         }
@@ -148,7 +152,7 @@ public class IntentionsManager implements IExternalizableComponent {
     if (!VERSION_NUMBER.equals(version)) return;
 
     Element disabledXML = element.getChild(DISABLED_INTENTIONS);
-    for (Element intentionXML:(List<Element>)disabledXML.getChildren(INTENTION)){
+    for (Element intentionXML : (List<Element>) disabledXML.getChildren(INTENTION)) {
       String className = intentionXML.getAttribute(CLASS_NAME).getValue();
       myDisabledIntentionsClassNames.add(className);
     }
@@ -160,11 +164,11 @@ public class IntentionsManager implements IExternalizableComponent {
     element.addContent(versionXML);
 
     Element disabledXML = new Element(DISABLED_INTENTIONS);
-    for (String intentionName:myDisabledIntentionsClassNames){
+    for (String intentionName : myDisabledIntentionsClassNames) {
       Element intentionXML = new Element(INTENTION);
-      intentionXML.setAttribute(CLASS_NAME,intentionName);
+      intentionXML.setAttribute(CLASS_NAME, intentionName);
       disabledXML.addContent(intentionXML);
     }
-    element. addContent(disabledXML);
+    element.addContent(disabledXML);
   }
 }
