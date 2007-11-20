@@ -3,21 +3,11 @@ package jetbrains.mps.ide;
 import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ApplicationComponents;
-import org.eclipse.core.filesystem.EFS;
-import org.eclipse.core.resources.IProject;
-import org.eclipse.core.resources.IProjectDescription;
-import org.eclipse.core.resources.IWorkspace;
-import org.eclipse.core.resources.ResourcesPlugin;
-import org.eclipse.team.core.RepositoryProvider;
-import org.eclipse.team.core.history.IFileHistory;
-import org.eclipse.team.core.history.IFileRevision;
-import org.eclipse.team.core.history.IFileHistoryProvider;
 
 import javax.swing.JOptionPane;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import java.awt.Font;
-import java.net.URI;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -61,7 +51,7 @@ public class IdeMain {
   }
 
   public static IDEProjectFrame openProjectWindow(boolean loadOldProject) {
-//    doSandboxStuff();
+//    SVNSandbox.doSandboxStuff();
 
     long start = System.currentTimeMillis();
 
@@ -88,41 +78,6 @@ public class IdeMain {
     long end = System.currentTimeMillis();
     System.out.println("MPS Started in " + (end - start) + " ms");
     return projectWindow;
-  }
-
-  private static void doSandboxStuff() {
-    try {
-      IWorkspace workspace = ResourcesPlugin.getWorkspace();
-
-      IProject mpsProject = workspace.getRoot().getProject("MPS");
-      if (!mpsProject.exists()) {
-        IProjectDescription pd = workspace.newProjectDescription("MPS");
-        pd.setNatureIds(new String[] { "org.tigris.subversion.subclipse.core.svnnature" });
-        pd.setLocationURI(new URI("file://C:/MPS/"));
-        pd.setName("MPS");
-        mpsProject.create(pd, null);
-      }
-
-      mpsProject.open(null);
-
-      RepositoryProvider provider = RepositoryProvider.getProvider(mpsProject);
-
-      IFileHistoryProvider historyProvider = provider.getFileHistoryProvider();
-      IFileHistory history = historyProvider.getFileHistoryFor(EFS.getStore(new URI("file://C:/MPS/MPS.ipr")), 0, null);
-
-
-      for (IFileRevision r : history.getFileRevisions()) {
-        System.out.println(r);
-      }
-
-
-
-      System.out.println(provider);
-
-      
-    } catch (Exception e) {                   
-      e.printStackTrace();
-    }
   }
 
   public static Date expirationDate() {

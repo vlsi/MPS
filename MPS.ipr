@@ -1920,10 +1920,12 @@
     <library name="Tigris SVN">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.tigris.subversion.subclipse.core_1.2.4.jar!/" />
+        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/svnClientAdapter.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.tigris.subversion.subclipse.zip-src.zip!/" />
+        <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/svnClientAdapter-src.zip!/" />
       </SOURCES>
     </library>
   </component>
