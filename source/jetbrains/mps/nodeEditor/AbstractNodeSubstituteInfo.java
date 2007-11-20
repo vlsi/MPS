@@ -2,6 +2,8 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.event.SModelCommandListener;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
@@ -14,11 +16,11 @@ import java.util.*;
  */
 public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo {
   private List<INodeSubstituteAction> myCachedActionList;
+  private Map<String, List<INodeSubstituteAction>> myPatternsToActionListsCache = new HashMap<String, List<INodeSubstituteAction>>();
+  private Map<String, List<INodeSubstituteAction>> myStrictPatternsToActionListsCache = new HashMap<String, List<INodeSubstituteAction>>();
   private SNode myOriginalNode;
   private String myOriginalText;
   private EditorContext myEditorContext;
-  private Map<String, List<INodeSubstituteAction>> myPatternsToActionListsCache = new HashMap<String, List<INodeSubstituteAction>>();
-  private Map<String, List<INodeSubstituteAction>> myStrictPatternsToActionListsCache = new HashMap<String, List<INodeSubstituteAction>>();
 
   public AbstractNodeSubstituteInfo(EditorContext editorContext) {
     myEditorContext = editorContext;
@@ -51,7 +53,11 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
   protected abstract List<INodeSubstituteAction> createActions();
 
   public void invalidateActions() {
+    System.out.println("invalidate!");
+
     myCachedActionList = null;
+    myPatternsToActionListsCache.clear();
+    myStrictPatternsToActionListsCache.clear();
   }
 
   public boolean hasNoActionsWithPrefix(String pattern) {
@@ -62,36 +68,6 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
 
   public boolean hasExactlyNActions(String pattern, boolean strictMatching, final int n) {
     return getMatchingActions(pattern, strictMatching).size() == n;
-  }
-
-  private Pair<String, List<INodeSubstituteAction>> getPatternAndActions(String pattern, boolean strictMatching) {
-    String smallPattern = pattern;
-    List<INodeSubstituteAction> result = null;
-    if (!strictMatching) {
-      if (smallPattern != null) {
-        while (smallPattern.length() > 0) {
-          if (myPatternsToActionListsCache.containsKey(smallPattern)) {
-            result = new ArrayList<INodeSubstituteAction>();
-            result.addAll(myPatternsToActionListsCache.get(smallPattern));
-            break;
-          } else {
-            smallPattern = smallPattern.substring(0, smallPattern.length() - 1);
-          }
-        }
-      }
-    } else {
-      if (myStrictPatternsToActionListsCache.containsKey(smallPattern)) {
-        result = new ArrayList<INodeSubstituteAction>();
-        result.addAll(myStrictPatternsToActionListsCache.get(smallPattern));
-      } else if (myPatternsToActionListsCache.containsKey(smallPattern)) {
-        result = new ArrayList<INodeSubstituteAction>();
-        result.addAll(myPatternsToActionListsCache.get(smallPattern));
-      }
-    }
-    if (result == null) {
-      result = new ArrayList<INodeSubstituteAction>(getActions());
-    }
-    return new Pair<String, List<INodeSubstituteAction>>(smallPattern, result);
   }
 
   public List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
@@ -131,7 +107,33 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
     return Collections.unmodifiableList(myCachedActionList);
   }
 
-  public SNode handleSubstituteAction(SNode node, Object substituteObject) {
-    return null;
+  private Pair<String, List<INodeSubstituteAction>> getPatternAndActions(String pattern, boolean strictMatching) {
+    String smallPattern = pattern;
+    List<INodeSubstituteAction> result = null;
+    if (!strictMatching) {
+      if (smallPattern != null) {
+        while (smallPattern.length() > 0) {
+          if (myPatternsToActionListsCache.containsKey(smallPattern)) {
+            result = new ArrayList<INodeSubstituteAction>();
+            result.addAll(myPatternsToActionListsCache.get(smallPattern));
+            break;
+          } else {
+            smallPattern = smallPattern.substring(0, smallPattern.length() - 1);
+          }
+        }
+      }
+    } else {
+      if (myStrictPatternsToActionListsCache.containsKey(smallPattern)) {
+        result = new ArrayList<INodeSubstituteAction>();
+        result.addAll(myStrictPatternsToActionListsCache.get(smallPattern));
+      } else if (myPatternsToActionListsCache.containsKey(smallPattern)) {
+        result = new ArrayList<INodeSubstituteAction>();
+        result.addAll(myPatternsToActionListsCache.get(smallPattern));
+      }
+    }
+    if (result == null) {
+      result = new ArrayList<INodeSubstituteAction>(getActions());
+    }
+    return new Pair<String, List<INodeSubstituteAction>>(smallPattern, result);
   }
 }
