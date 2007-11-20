@@ -316,6 +316,7 @@ public class GenerationSession implements IGenerationSession {
     // -----------------------
     // primary mapping
     // -----------------------
+    currentInputModel.getSModel().setLoading(false);
     boolean somethingHasBeenGenerated = generator.doPrimaryMapping(currentInputModel.getSModel(), currentOutputModel.getSModel());
     if (!somethingHasBeenGenerated) {
       SModel model = currentOutputModel.getSModel();
@@ -340,6 +341,7 @@ public class GenerationSession implements IGenerationSession {
         SModelRepository.getInstance().removeModelDescriptor(currentInputModel);
       }
       currentInputModel = currentOutputModel;
+      currentInputModel.getSModel().setLoading(false);
       if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel())) {
         addMessage(MessageKind.INFORMATION, "remove model (2) '" + transientModel.getModelUID() + "'");
         SModelRepository.getInstance().removeModelDescriptor(transientModel);
@@ -355,6 +357,7 @@ public class GenerationSession implements IGenerationSession {
       // next iteration ...
       currentOutputModel = transientModel;
     }
+    currentOutputModel.getSModel().setLoading(true);
 
     // -----------------------
     // run post-processing scripts
