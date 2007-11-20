@@ -74,7 +74,7 @@ public class QueryMethodGenerated {
     }
 
     method.setAccessible(true);
-    
+
     QueryMethodGenerated.ourMethods.put(pair, method);
     return method;
   }
@@ -88,6 +88,9 @@ public class QueryMethodGenerated {
     } catch (IllegalAccessException e) {
       throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     } catch (InvocationTargetException e) {
+      if (e.getCause() instanceof IllegalModelChangeError) {
+        throw (IllegalModelChangeError) e.getCause();
+      }
       LOG.error(e.getCause());
       throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     }

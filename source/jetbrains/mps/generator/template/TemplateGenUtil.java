@@ -381,10 +381,19 @@ public class TemplateGenUtil {
     long startTime = System.currentTimeMillis();
     try {
       QueryMethodGenerated.invoke(methodName, args, mappingScript.getModel());
-    } catch (Exception e) {
+    } catch (GenerationFailedException gfe) {
       generator.showErrorMessage(codeBlock.getNode(), "error executing script '" + mappingScript.getName() + "'");
-      LOG.error(e);
-    } finally {
+      throw gfe;
+    } catch (IllegalModelChangeError imce) {
+      generator.showErrorMessage(codeBlock.getNode(), "error executing script '" + mappingScript.getName() + "'");
+      throw imce;
+    } catch (Throwable t) {
+      generator.showErrorMessage(codeBlock.getNode(), "error executing script '" + mappingScript.getName() + "'");
+      GenerationFailueInfo failueInfo = new GenerationFailueInfo("?", null, null, mappingScript.getNode(), generator.getGeneratorSessionContext());
+      throw new GenerationFailedException(failueInfo, t);
+    }
+
+    finally {
       Statistics.getStatistic(Statistics.TPL).add(mappingScript.getModel(), methodName, startTime);
     }
   }

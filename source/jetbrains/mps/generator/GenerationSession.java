@@ -253,9 +253,8 @@ public class GenerationSession implements IGenerationSession {
       }
       addMessage(MessageKind.ERROR, "model \"" + sourceModel.getUID() + "\" generation failed : " + gfe);
       status = new GenerationStatus.ERROR(sourceModel);
-    } catch (Exception e) {
+    } catch (Throwable e) {
       LOG.error(e);
-      e.printStackTrace();
       myProgressMonitor.addText(e.toString());
       addMessage(MessageKind.ERROR, "model \"" + sourceModel.getUID() + "\" generation failed : " + e);
       status = new GenerationStatus.ERROR(sourceModel);

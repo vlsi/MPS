@@ -134,11 +134,12 @@ public class Logger {
   }
 
   public void error(Throwable t, Object hintObject) {
-    if (t.getMessage() != null) {
-      error("Exception : " + t.getMessage(), t, hintObject);
-    } else {
-      error("Exception : " + t.getClass().getName(), t, hintObject);
-    }
+    error(t.getClass().getName() + (t.getMessage() != null ? " : " + t.getMessage() : ""), t, hintObject);
+//    if (t.getMessage() != null) {
+//      error("Exception : " + t.getMessage(), t, hintObject);
+//    } else {
+//      error("Exception : " + t.getClass().getName(), t, hintObject);
+//    }
   }
 
   public void error(String message, Throwable t) {
