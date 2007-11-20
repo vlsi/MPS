@@ -52,4 +52,11 @@ public class CloneUtil {
     }
     return result;
   }
+
+  public static void cloneModel(SModel inputModel, SModel outputModel, IScope scope) {
+    for (SNode node : inputModel.getRoots()) {
+      SNode outputNode = clone(node, outputModel, scope);
+      outputModel.addRoot(outputNode);
+    }
+  }
 }

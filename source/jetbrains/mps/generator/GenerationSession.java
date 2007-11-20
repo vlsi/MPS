@@ -1,5 +1,6 @@
 package jetbrains.mps.generator;
 
+import jetbrains.mps.generator.newGenerator.CloneUtil;
 import jetbrains.mps.generator.newGenerator.TemplateModelGenerator_New;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationStepController;
@@ -27,6 +28,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TLBase.structure.MappingScript;
+import jetbrains.mps.transformation.TLBase.structure.MappingScriptKind;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -276,17 +278,40 @@ public class GenerationSession implements IGenerationSession {
 
   private SModel generateModel(SModel inputModel, ITemplateGenerator generator, GenerationSessionContext generationContext) {
     IModule module = generationContext.getModule();
+    String modelsLongName = inputModel.getLongName();
     SModelDescriptor currentInputModel = inputModel.getModelDescriptor();
-    SModelDescriptor currentOutputModel = createTransientModel(inputModel, module);
 
     // -----------------------
     // run pre-processing scripts
     // -----------------------
     List<MappingScript> preMappingScripts = generationContext.getPreMappingScripts();
+    // need to clone input model?
     for (MappingScript preMappingScript : preMappingScripts) {
-      addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getLongName() + ")");
+      if (preMappingScript.getScriptKind() == MappingScriptKind.pre_process_input_model) {
+        if (preMappingScript.getModifiesModel()) {
+          SModelDescriptor currentInputModel_clone = createTransientModel(modelsLongName, module);
+          addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getModelUID() + "' --> '" + currentInputModel_clone.getModelUID() + "'");
+          CloneUtil.cloneModel(currentInputModel.getSModel(), currentInputModel_clone.getSModel(), generator.getScope());
+          // probably we can forget about former input model here
+          if (myDiscardTransients && currentInputModel.isTransient() && !myCurrentContext.isTransientModelToKeep(currentInputModel.getSModel())) {
+            addMessage(MessageKind.INFORMATION, "remove model (0) '" + currentInputModel.getModelUID() + "'");
+            SModelRepository.getInstance().removeModelDescriptor(currentInputModel);
+          }
+          currentInputModel = currentInputModel_clone;
+          break;
+        }
+      }
+    }
+    for (MappingScript preMappingScript : preMappingScripts) {
+      if (preMappingScript.getScriptKind() != MappingScriptKind.pre_process_input_model) {
+        addMessage(MessageKind.WARNING, "skip script '" + preMappingScript + "' (" + preMappingScript.getModel().getUID() + ") - wrong script kind");
+        continue;
+      }
+      addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getUID() + ")");
       TemplateGenUtil.executeMappingScript(preMappingScript, currentInputModel.getSModel(), generator);
     }
+
+    SModelDescriptor currentOutputModel = createTransientModel(modelsLongName, module);
 
     // -----------------------
     // primary mapping
@@ -306,17 +331,17 @@ public class GenerationSession implements IGenerationSession {
       currentOutputModel.getSModel().validateLanguagesAndImports();
 
       // apply mapping to the output model
-      addMessage(MessageKind.INFORMATION, "generating model \"" + currentOutputModel.getModelUID() + "\"");
+      addMessage(MessageKind.INFORMATION, "generating model '" + currentOutputModel.getModelUID() + "'");
       generationContext.replaceInputModel(currentOutputModel);
-      SModelDescriptor transientModel = createTransientModel(currentInputModel.getSModel(), module);
+      SModelDescriptor transientModel = createTransientModel(modelsLongName, module);
       // probably we can forget about former input model here
       if (myDiscardTransients && currentInputModel.isTransient() && !myCurrentContext.isTransientModelToKeep(currentInputModel.getSModel())) {
-        addMessage(MessageKind.INFORMATION, "remove model (1) \"" + currentInputModel.getModelUID() + "\"");
+        addMessage(MessageKind.INFORMATION, "remove model (1) '" + currentInputModel.getModelUID() + "'");
         SModelRepository.getInstance().removeModelDescriptor(currentInputModel);
       }
       currentInputModel = currentOutputModel;
       if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel())) {
-        addMessage(MessageKind.INFORMATION, "remove model (2) \"" + transientModel.getModelUID() + "\"");
+        addMessage(MessageKind.INFORMATION, "remove model (2) '" + transientModel.getModelUID() + "'");
         SModelRepository.getInstance().removeModelDescriptor(transientModel);
         myTransientModelsCount--;
         break;
@@ -336,6 +361,10 @@ public class GenerationSession implements IGenerationSession {
     // -----------------------
     List<MappingScript> postMappingScripts = generationContext.getPostMappingScripts();
     for (MappingScript postMappingScript : postMappingScripts) {
+      if (postMappingScript.getScriptKind() != MappingScriptKind.post_process_output_model) {
+        addMessage(MessageKind.WARNING, "skip script '" + postMappingScript + "' (" + postMappingScript.getModel().getUID() + ") - wrong script kind");
+        continue;
+      }
       addMessage(MessageKind.INFORMATION, "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")");
       TemplateGenUtil.executeMappingScript(postMappingScript, currentOutputModel.getSModel(), generator);
     }
@@ -343,8 +372,8 @@ public class GenerationSession implements IGenerationSession {
     return currentOutputModel.getSModel();
   }
 
-  private SModelDescriptor createTransientModel(SModel sourceModel, ModelOwner modelOwner) {
-    SModelDescriptor transientModel = TransientModels.createTransientModel(modelOwner, sourceModel.getLongName(), "" + myInvocationCount + "_" + myTransientModelsCount + "_" + getSessionId());
+  private SModelDescriptor createTransientModel(String longName, ModelOwner modelOwner) {
+    SModelDescriptor transientModel = TransientModels.createTransientModel(modelOwner, longName, "" + myInvocationCount + "_" + myTransientModelsCount + "_" + getSessionId());
     myTransientModelsCount++;
     transientModel.getSModel().setLoading(true); // we dont need any events to be casted
     return transientModel;
