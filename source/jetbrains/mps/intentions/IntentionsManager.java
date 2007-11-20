@@ -6,7 +6,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.components.IExternalizableComponent;
 
@@ -25,8 +24,9 @@ public class IntentionsManager implements IExternalizableComponent {
   private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
 
   private Map<String, Set<Intention>> myIntentions = new HashMap<String, Set<Intention>>();
-
   private Set<String> myDisabledIntentionsClassNames = new HashSet<String>();
+  private Set<Intention> myDisabledIntentionsCache = new HashSet<Intention>();
+  private boolean myCachesAreValid = false;
 
   public static IntentionsManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(IntentionsManager.class);
@@ -61,21 +61,27 @@ public class IntentionsManager implements IExternalizableComponent {
     return result;
   }
 
-  //TODO: make it faasteer - make caches
   protected Set <Intention> getDisabledIntentions(){
-    Set<Intention> disabledIntentions = new HashSet<Intention>();
-    for (Set<Intention> conceptIntentions:myIntentions.values()){
-      for (Intention intention:conceptIntentions){
-        if (myDisabledIntentionsClassNames.contains(intention.getClass().getName())){
-          disabledIntentions.add(intention);
+    if (!myCachesAreValid){
+      myDisabledIntentionsCache.clear();
+      for (Set<Intention> conceptIntentions:myIntentions.values()){
+        for (Intention intention:conceptIntentions){
+          if (myDisabledIntentionsClassNames.contains(intention.getClass().getName())){
+            myDisabledIntentionsCache.add(intention);
+          }
         }
       }
+      myCachesAreValid=true;
     }
-    return disabledIntentions;
+    return myDisabledIntentionsCache;
+  }
+
+  protected void invalidateCaches(){
+    myCachesAreValid = false;
   }
 
   public boolean intentionIsDisabled(Intention intention){
-    return myDisabledIntentionsClassNames.contains(intention.getClass().getName());
+    return getDisabledIntentions().contains(intention);
   }
 
   public void invertIntentionState(Intention intention){
@@ -92,14 +98,18 @@ public class IntentionsManager implements IExternalizableComponent {
 
   public void disableIntention(Intention intention){
     myDisabledIntentionsClassNames.add(intention.getClass().getName());
+    myDisabledIntentionsCache.add(intention);
   }
 
   public void enableIntention(Intention intention){
     myDisabledIntentionsClassNames.remove(intention.getClass().getName());
+    myDisabledIntentionsCache.remove(intention);
   }
 
   public void reload() {
     myIntentions.clear();
+    myDisabledIntentionsClassNames.clear();
+    invalidateCaches();
     for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
       SModelDescriptor intentionsModelDescriptor = l.getIntentionsModelDescriptor();
       if (intentionsModelDescriptor != null ){
@@ -130,6 +140,8 @@ public class IntentionsManager implements IExternalizableComponent {
   }
 
   public void read(Element element, MPSProject project) {
+    myDisabledIntentionsClassNames.clear();
+    invalidateCaches();
     Element versionXML = element.getChild(VERSION);
     if (versionXML == null) return;
     String version = versionXML.getAttribute(ID).getValue();
