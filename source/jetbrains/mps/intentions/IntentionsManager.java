@@ -4,24 +4,36 @@ import jetbrains.mps.bootstrap.intentionsLanguage.constraints.IntentionDeclarati
 import jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.components.IExternalizableComponent;
 
 import java.util.*;
 
-public class IntentionsManager {
+import org.jdom.Element;
+
+public class IntentionsManager implements IExternalizableComponent {
+  private static final String VERSION = "version";
+  private static final String ID = "id";
+  private static final String VERSION_NUMBER = "0.1";
+  private static final String DISABLED_INTENTIONS = "disables_intentions";
+  private static final String INTENTION = "intention";
+  private static final String CLASS_NAME = "class_name";  
+
   private static final Logger LOG = Logger.getLogger(IntentionsManager.class);
 
   private Map<String, Set<Intention>> myIntentions = new HashMap<String, Set<Intention>>();
 
-  private Set<Intention> myDisabledIntentions = new HashSet<Intention>();
+  private Set<String> myDisabledIntentionsClassNames = new HashSet<String>();
 
   public static IntentionsManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(IntentionsManager.class);
   }
 
   public IntentionsManager() {
+
   }
 
   public Set<Intention> getAvailableIntentions(SNode node, IOperationContext context) {
@@ -39,26 +51,35 @@ public class IntentionsManager {
 
   public Set<Intention> getEnabledAvailableIntentions(SNode node, IOperationContext context){
     Set <Intention> result = new HashSet<Intention>(getAvailableIntentions(node,context));
-    result.removeAll(myDisabledIntentions);
+    result.removeAll(getDisabledIntentions());
     return result;
   }
 
   public Set<Intention> getDisabledAvailableIntentions(SNode node, IOperationContext context) {
     Set <Intention> result = new HashSet<Intention>(getAvailableIntentions(node,context));
-    result.retainAll(myDisabledIntentions);
+    result.retainAll(getDisabledIntentions());
     return result;
   }
 
+  //TODO: make it faasteer - make caches
+  protected Set <Intention> getDisabledIntentions(){
+    Set<Intention> disabledIntentions = new HashSet<Intention>();
+    for (Set<Intention> conceptIntentions:myIntentions.values()){
+      for (Intention intention:conceptIntentions){
+        if (myDisabledIntentionsClassNames.contains(intention.getClass().getName())){
+          disabledIntentions.add(intention);
+        }
+      }
+    }
+    return disabledIntentions;
+  }
+
   public boolean intentionIsDisabled(Intention intention){
-    return myDisabledIntentions.contains(intention);
+    return myDisabledIntentionsClassNames.contains(intention.getClass().getName());
   }
 
   public void invertIntentionState(Intention intention){
-    if (myDisabledIntentions.contains(intention)){
-      myDisabledIntentions.remove(intention);
-    }else{
-      myDisabledIntentions.add(intention);
-    }
+    setIntentionState(intention,!intentionIsDisabled(intention));
   }
 
   public void setIntentionState(Intention intention,boolean disabled){
@@ -70,11 +91,11 @@ public class IntentionsManager {
   }
 
   public void disableIntention(Intention intention){
-    myDisabledIntentions.add(intention);
+    myDisabledIntentionsClassNames.add(intention.getClass().getName());
   }
 
   public void enableIntention(Intention intention){
-    myDisabledIntentions.remove(intention);
+    myDisabledIntentionsClassNames.remove(intention.getClass().getName());
   }
 
   public void reload() {
@@ -106,5 +127,32 @@ public class IntentionsManager {
         }
       }
     }
+  }
+
+  public void read(Element element, MPSProject project) {
+    Element versionXML = element.getChild(VERSION);
+    if (versionXML == null) return;
+    String version = versionXML.getAttribute(ID).getValue();
+    if (!VERSION_NUMBER.equals(version)) return;
+
+    Element disabledXML = element.getChild(DISABLED_INTENTIONS);
+    for (Element intentionXML:(List<Element>)disabledXML.getChildren(INTENTION)){
+      String className = intentionXML.getAttribute(CLASS_NAME).getValue();
+      myDisabledIntentionsClassNames.add(className);
+    }
+  }
+
+  public void write(Element element, MPSProject project) {
+    Element versionXML = new Element(VERSION);
+    versionXML.setAttribute(ID, VERSION_NUMBER);
+    element.addContent(versionXML);
+
+    Element disabledXML = new Element(DISABLED_INTENTIONS);
+    for (String intentionName:myDisabledIntentionsClassNames){
+      Element intentionXML = new Element(INTENTION);
+      intentionXML.setAttribute(CLASS_NAME,intentionName);
+      disabledXML.addContent(intentionXML);
+    }
+    element. addContent(disabledXML);
   }
 }
