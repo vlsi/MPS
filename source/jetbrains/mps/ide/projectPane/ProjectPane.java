@@ -333,6 +333,19 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     }
   }
 
+  public void selectLanguage(Language language) {
+    DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
+    MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
+    MPSTreeNode languageTreeNode = findModuleTreeNode(language);
+    if (languageTreeNode != null) {
+      TreePath treePath = new TreePath(languageTreeNode.getPath());
+      myTree.setSelectionPath(treePath);
+      myTree.scrollPathToVisible(treePath);
+    } else {
+      LOG.warning("Couldn't select language \"" + language + "\" : tree node not found.");
+    }
+  }
+
   public SModelDescriptor getSelectedModel() {
     TreeNode selectedTreeNode = getSelectedModelTreeNode();
     if (selectedTreeNode == null) return null;
