@@ -1368,6 +1368,14 @@
     <property name="package" value="Script" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="2.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1195595592106">
+      <property name="name" value="scriptKind" />
+      <link role="dataType" targetNodeId="1195595264961" resolveInfo="MappingScriptKind" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1195595611951">
+      <property name="name" value="modifiesModel" />
+      <link role="dataType" targetNodeId="2.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195501105008">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="codeBlock" />
@@ -1403,6 +1411,20 @@
       <property name="role" value="mappingScript" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1195499912406" resolveInfo="MappingScript" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1195595264961">
+    <property name="package" value="Script" />
+    <property name="name" value="MappingScriptKind" />
+    <link role="memberDataType" targetNodeId="2.1082983041843" resolveInfo="string" />
+    <link role="defaultMember" targetNodeId="1195595382324" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1195595264962">
+      <property name="externalValue" value="pre-process input model" />
+      <property name="internalValue" value="pre_processing" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1195595382324">
+      <property name="internalValue" value="post_processing" />
+      <property name="externalValue" value="post-process output model" />
     </node>
   </node>
 </model>
