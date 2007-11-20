@@ -1355,7 +1355,7 @@
         <property name="drawBorder" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502537136">
           <property name="drawBorder" value="false" />
-          <property name="text" value="pre-processing scripts: (don't work!)" />
+          <property name="text" value="pre-processing scripts:" />
           <property name="fontStyle" value="BOLD_ITALIC" />
           <property name="selectable" value="false" />
           <property name="underlined" value="2" />
@@ -1391,7 +1391,7 @@
         <property name="drawBorder" value="false" />
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1195502593674">
           <property name="drawBorder" value="false" />
-          <property name="text" value="post-processing scripts: (don't work!)" />
+          <property name="text" value="post-processing scripts:" />
           <property name="fontStyle" value="BOLD_ITALIC" />
           <property name="selectable" value="false" />
           <property name="underlined" value="2" />
