@@ -46,7 +46,7 @@ public class IntentionsManager implements IExternalizableComponent {
             result.add(intention);
           }
         } catch (Throwable t) {
-          LOG.error("Intention's isApplicable method failed " + t.getMessage(), t);
+          LOG.warning("Intention's isApplicable method failed " + t.getMessage(), t);
         }
       }
     }
@@ -133,7 +133,7 @@ public class IntentionsManager implements IExternalizableComponent {
               intentions.add((Intention) intention);
               myIntentions.put(conceptName, intentions);
             } else {
-              LOG.error("Intention is registered but isn't compiled " + NameUtil.nodeFQName(intentionDeclaration), intentionDeclaration);
+              LOG.warning("Intention is registered but isn't compiled " + NameUtil.nodeFQName(intentionDeclaration), intentionDeclaration);
             }
           } catch (Exception e) {
             LOG.error(e, intentionDeclaration);

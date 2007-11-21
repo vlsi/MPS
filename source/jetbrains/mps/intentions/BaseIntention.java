@@ -5,17 +5,17 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
 
-public class BaseIntention implements Intention{
+public class BaseIntention implements Intention {
   public String getConcept() {
     return null;
   }
 
   public String getDescription(SNode node, IOperationContext context) {
-    return null;
+    return "";
   }
 
   public boolean isApplicable(SNode node, IOperationContext context) {
-    return false;
+    return true;
   }
 
   public void execute(SNode node, EditorContext context) {
@@ -23,6 +23,6 @@ public class BaseIntention implements Intention{
   }
 
   public boolean isErrorIntention() {
-    return false; 
+    return false;
   }
 }

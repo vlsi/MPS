@@ -15,15 +15,17 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
-import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
-import java.util.List;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.bootstrap.editorLanguage.generator.internal.PrimaryReferentMenuCellMenuPart;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceNode_Group;
+
+import java.util.List;
+
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.PrimaryReferentMenuCellMenuPart;
 
 public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
@@ -88,8 +90,8 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new StaticFieldReference_Editor._Inline9());
     EditorCell editorCell = provider.createEditorCell(context);
     StaticFieldReference_Editor.setupBasic_ClassifierReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      StaticFieldReference_Editor.setupLabel_ClassifierReferenceCell((EditorCell_Label)editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      StaticFieldReference_Editor.setupLabel_ClassifierReferenceCell((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -104,12 +106,12 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createClassifierReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createStaticFieldDeclarationReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -117,11 +119,11 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(new StaticFieldReference_Editor._Inline10());
     EditorCell editorCell = provider.createEditorCell(context);
     StaticFieldReference_Editor.setupBasic_StaticFieldDeclarationReferenceCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      StaticFieldReference_Editor.setupLabel_StaticFieldDeclarationReferenceCell((EditorCell_Label)editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      StaticFieldReference_Editor.setupLabel_StaticFieldDeclarationReferenceCell((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu(),new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu(), new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu()}));
     return editorCell;
   }
 
@@ -134,44 +136,17 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createStaticFieldDeclarationReferenceCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
-  public static class StaticFieldReference_customReplace_cellMenu extends AbstractCellMenuPart_ReplaceNode_Group {
-
-    public  StaticFieldReference_customReplace_cellMenu() {
-    }
-
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return QueriesUtil.replaceNodeMenu_StaticFieldReference_getParameterObjects(node);
-    }
-
-    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return this.createReplacementNode_impl((SNode)parameterObject, node, model, scope, operationContext);
-    }
-
-    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return QueriesUtil.replaceNodeMenu_StaticFieldReference_createReplacementNode(node, parameterObject);
-    }
-
-    public boolean isReferentPresentation() {
-      return true;
-    }
-
-}
-  public static class StaticFieldReference_staticFieldDeclaration_cellMenu extends PrimaryReferentMenuCellMenuPart {
-
-    public  StaticFieldReference_staticFieldDeclaration_cellMenu() {
-    }
-}
   public static class _Inline9 extends AbstractCellProvider {
 
-    public  _Inline9() {
+    public _Inline9() {
       super();
     }
 
@@ -197,8 +172,8 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       StaticFieldReference_Editor._Inline9.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
-        StaticFieldReference_Editor._Inline9.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      if (editorCell instanceof EditorCell_Label) {
+        StaticFieldReference_Editor._Inline9.setupLabel_NameCell((EditorCell_Label) editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -213,18 +188,19 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
-      return cellWithRole;
+        return cellWithRole;
     }
 
-}
+  }
+
   public static class _Inline10 extends AbstractCellProvider {
 
-    public  _Inline10() {
+    public _Inline10() {
       super();
     }
 
@@ -252,8 +228,8 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
       StaticFieldReference_Editor._Inline10.setupBasic_NameCell(editorCell, node, context);
-      if(editorCell instanceof EditorCell_Label) {
-        StaticFieldReference_Editor._Inline10.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+      if (editorCell instanceof EditorCell_Label) {
+        StaticFieldReference_Editor._Inline10.setupLabel_NameCell((EditorCell_Label) editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
@@ -268,14 +244,43 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       EditorCell cellWithRole = this.createNameCellinternal(context, node, provider);
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();
-      if(attributeConcept != null) {
+      if (attributeConcept != null) {
         IOperationContext opContext = context.getOperationContext();
         EditorManager manager = EditorManager.getInstanceFromContext(opContext);
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
-      return cellWithRole;
+        return cellWithRole;
     }
 
-}
+  }
+
+  public static class StaticFieldReference_customReplace_cellMenu extends AbstractCellMenuPart_ReplaceNode_Group {
+
+    public StaticFieldReference_customReplace_cellMenu() {
+    }
+
+    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      return QueriesUtil.replaceNodeMenu_StaticFieldReference_getParameterObjects(node);
+    }
+
+    public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext);
+    }
+
+    public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      return QueriesUtil.replaceNodeMenu_StaticFieldReference_createReplacementNode(node, parameterObject);
+    }
+
+    public boolean isReferentPresentation() {
+      return true;
+    }
+
+  }
+
+  public static class StaticFieldReference_staticFieldDeclaration_cellMenu extends PrimaryReferentMenuCellMenuPart {
+
+    public StaticFieldReference_staticFieldDeclaration_cellMenu() {
+    }
+  }
 
 }

@@ -15,6 +15,9 @@
   </models>
   <module />
   <accessoryModels />
+  <intentions>
+    <model modelUID="webr.logging.intentions" />
+  </intentions>
   <generators>
     <generator generatorUID="webr.logging#1167240554582" targetLanguage="jetbrains.mps.baseLanguage">
       <models>

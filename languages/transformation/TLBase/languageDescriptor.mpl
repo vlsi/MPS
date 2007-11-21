@@ -23,6 +23,9 @@
   </models>
   <module />
   <accessoryModels />
+  <intentions>
+    <model modelUID="jetbrains.mps.transformation.TLBase.intentions" />
+  </intentions>
   <generators>
     <generator name="default" generatorUID="jetbrains.mps.transformation.TLBase#1167163152317" targetLanguage="jetbrains.mps.baseLanguage">
       <models>

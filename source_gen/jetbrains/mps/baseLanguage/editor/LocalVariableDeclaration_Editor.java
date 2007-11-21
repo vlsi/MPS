@@ -30,9 +30,9 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
 
-  /* package */AbstractCellProvider myVariableDeclaration_NameCellComponent2;
-  /* package */AbstractCellListHandler myAnnotationListHandler_annotationList_;
-  /* package */AbstractCellListHandler myAnnotationListHandler_annotationList1_;
+  /* package */ AbstractCellProvider myVariableDeclaration_NameCellComponent2;
+  /* package */ AbstractCellListHandler myAnnotationListHandler_annotationList_;
+  /* package */ AbstractCellListHandler myAnnotationListHandler_annotationList1_;
 
   public static boolean _QueryFunction_NodeCondition_1188220842772(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getCount(node, "annotation") > 0;
@@ -89,7 +89,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188212207004");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
-    editorCell.addKeyMap(new LocalVariableDeclaration_KeyMap());
   }
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -190,15 +189,15 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if(LocalVariableDeclaration_Editor._QueryFunction_NodeCondition_1188220842772(node, context, context.getOperationContext().getScope())) {
+    if (LocalVariableDeclaration_Editor._QueryFunction_NodeCondition_1188220842772(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRowCell(context, node));
     }
-    if(LocalVariableDeclaration_Editor._QueryFunction_NodeCondition_1188212207006(node, context, context.getOperationContext().getScope())) {
+    if (LocalVariableDeclaration_Editor._QueryFunction_NodeCondition_1188212207006(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell(context, node, "final"));
     }
     editorCell.addEditorCell(this.createTypeCell(context, node));
     editorCell.addEditorCell(this.createVariableDeclaration_NameCellComponentCell(context, node));
-    if(LocalVariableDeclaration_Editor._QueryFunction_NodeCondition_1188212207017(node, context, context.getOperationContext().getScope())) {
+    if (LocalVariableDeclaration_Editor._QueryFunction_NodeCondition_1188212207017(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createInitializerArea(context, node));
     }
     return editorCell;
@@ -248,7 +247,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createVariableDeclaration_NameCellComponentCell(EditorContext context, SNode node) {
-    if(this.myVariableDeclaration_NameCellComponent2 == null) {
+    if (this.myVariableDeclaration_NameCellComponent2 == null) {
       this.myVariableDeclaration_NameCellComponent2 = new VariableDeclaration_NameCellComponent(node);
     }
     EditorCell componentCell = this.myVariableDeclaration_NameCellComponent2.createEditorCell(context);
@@ -291,7 +290,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createAnnotationList(EditorContext context, SNode node) {
-    if(this.myAnnotationListHandler_annotationList_ == null) {
+    if (this.myAnnotationListHandler_annotationList_ == null) {
       this.myAnnotationListHandler_annotationList_ = new LocalVariableDeclaration_Editor._RefNodeListHandler26(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList_.createCells(context, new CellLayout_Vertical(), false);
@@ -304,7 +303,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   }
 
   public EditorCell createAnnotationList1(EditorContext context, SNode node) {
-    if(this.myAnnotationListHandler_annotationList1_ == null) {
+    if (this.myAnnotationListHandler_annotationList1_ == null) {
       this.myAnnotationListHandler_annotationList1_ = new LocalVariableDeclaration_Editor._RefNodeListHandler27(node, "annotation", context);
     }
     EditorCell_Collection editorCell = this.myAnnotationListHandler_annotationList1_.createCells(context, new CellLayout_Vertical(), false);
@@ -321,8 +320,8 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     LocalVariableDeclaration_Editor.setupBasic_TypeCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      LocalVariableDeclaration_Editor.setupLabel_TypeCell((EditorCell_Label)editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      LocalVariableDeclaration_Editor.setupLabel_TypeCell((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -337,12 +336,12 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createTypeCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createInitializerCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -350,8 +349,8 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     LocalVariableDeclaration_Editor.setupBasic_InitializerCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      LocalVariableDeclaration_Editor.setupLabel_InitializerCell((EditorCell_Label)editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      LocalVariableDeclaration_Editor.setupLabel_InitializerCell((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -366,12 +365,12 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createInitializerCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public EditorCell createIsFinalCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -379,8 +378,8 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     LocalVariableDeclaration_Editor.setupBasic_IsFinalCell(editorCell, node, context);
-    if(editorCell instanceof EditorCell_Label) {
-      LocalVariableDeclaration_Editor.setupLabel_IsFinalCell((EditorCell_Label)editorCell, node, context);
+    if (editorCell instanceof EditorCell_Label) {
+      LocalVariableDeclaration_Editor.setupLabel_IsFinalCell((EditorCell_Label) editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -395,17 +394,17 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createIsFinalCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if(attributeConcept != null) {
+    if (attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-    return cellWithRole;
+      return cellWithRole;
   }
 
   public static class _RefNodeListHandler26 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler26(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler26(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -428,14 +427,14 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }
@@ -445,10 +444,11 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-}
+  }
+
   public static class _RefNodeListHandler27 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler27(SNode ownerNode, String childRole, EditorContext context) {
+    public _RefNodeListHandler27(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -471,14 +471,14 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext context) {
-      if(elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
+      if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         SNode substituteInfoNode = listOwner;
-        if(elementNode != null) {
+        if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(elementNode));
         }
-        if(elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
+        if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), context));
         }
       }
@@ -488,6 +488,6 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
       return super.createSeparatorCell(context);
     }
 
-}
+  }
 
 }
