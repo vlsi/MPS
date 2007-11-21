@@ -835,6 +835,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
 
+  public static SNode sourceNodeQuery_1195665133611(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "prototypeNode", true);
+  }
+
   public static SNode sourceNodeQuery_1168985092391(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
@@ -1025,8 +1029,16 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
   }
 
+  public static SNode sourceNodeQuery_1195664793985(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "creator", true), "prototypeNode", true);
+  }
+
   public static SNode sourceNodeQuery_1181951360017(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1195664966794(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "prototypeNode", true);
   }
 
   public static SNode sourceNodeQuery_1182511526041(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
