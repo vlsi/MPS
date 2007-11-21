@@ -2165,7 +2165,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     EditorCell bigCell = getBigCellForNode(cell.getSNode());
     assert bigCell != null : "selected cell mustn't be null";
 
-    intentionsMenu.show(this, getRootCell().getX(), bigCell.getY());
+    intentionsMenu.show(this, getRootCell().getX(), bigCell.getY() + myLightBulb.getHeight());
   }
 
   private void setLightBulbVisibility(boolean value) {
