@@ -54,7 +54,7 @@ public class TextGenManager {
 
     SNodeTextGen nodeTextGen = loadNodeTextGen(context, messages, node);
     LOG.assertLog(nodeTextGen != null, "Couldn't find text generator for " + node.getDebugText());
-    
+
     assert nodeTextGen != null;
 
     nodeTextGen.setBuffer(buffer);
@@ -69,6 +69,7 @@ public class TextGenManager {
 
   private SNodeTextGen loadNodeTextGen(IOperationContext context, IMessageHandler messages, SNode node) {
     ConceptDeclaration cd = (ConceptDeclaration) node.getConceptDeclarationAdapter();
+
     while (cd != SModelUtil_new.getBaseConcept()) {
       Language l = SModelUtil_new.getDeclaringLanguage(cd, GlobalScope.getInstance());
 
@@ -88,7 +89,11 @@ public class TextGenManager {
       } catch (IllegalAccessException e) {
         LOG.error(e, node);
       }
+
       cd = cd.getExtends();
+      if (cd == null) {
+        cd = SModelUtil_new.getBaseConcept();
+      }
     }
     DefaultTextGen result = new DefaultTextGen();
     result.setContext(context);
