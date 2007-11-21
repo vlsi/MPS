@@ -557,6 +557,19 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return null;
   }
 
+   @Nullable
+  public SModelDescriptor getCFAModelDescriptor() {
+    if (getLanguageDescriptor().getCfaModel() != null) {
+      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getCfaModel().getName());
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      if (modelDescriptor == null) {
+        LOG.error("Couldn't get cfa model \"" + modelUID + "\"");
+      }
+      return modelDescriptor;
+    }
+    return null;
+  }
+
   @Nullable
   public SModelDescriptor getActionsModelDescriptor() {
     if (getLanguageDescriptor().getActionsModel() != null) {
@@ -642,6 +655,12 @@ public class Language extends AbstractModule implements Marshallable<Language> {
         break;
       case DOCUMENTATION:
         modelDescriptor = getDocumentationModelDescriptor();
+        break;
+      case INTENTIONS:
+        modelDescriptor = getIntentionsModelDescriptor();
+        break;
+      case CFA:
+        modelDescriptor = getCFAModelDescriptor();
         break;
       case STRUCTURE:
         modelDescriptor = getStructureModelDescriptor();
@@ -1081,6 +1100,9 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     if (modelDescriptor == language.getIntentionsModelDescriptor()) {
       return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.INTENTIONS);
     }
+    if (modelDescriptor == language.getCFAModelDescriptor()) {
+      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.CFA);
+    }
 
 
     List<SModelDescriptor> acccessoryModels = language.getAccessoryModels();
@@ -1099,7 +1121,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
 
     public static enum AspectKind {
-      STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, HELGINS_TYPESYSTEM, ACCESSORY, SCRIPTS, DOCUMENTATION, INTENTIONS, NONE;
+      STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, HELGINS_TYPESYSTEM, ACCESSORY, SCRIPTS, DOCUMENTATION, INTENTIONS, CFA, NONE;
 
     }
 
@@ -1170,6 +1192,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     public boolean isIntentionsModel() {
       return myAspectKind == LanguageAspectStatus.AspectKind.INTENTIONS;
+    }
+
+    public boolean isCFAModel() {
+      return myAspectKind == LanguageAspectStatus.AspectKind.CFA;
     }
 
     public boolean isAccessoryModel() {

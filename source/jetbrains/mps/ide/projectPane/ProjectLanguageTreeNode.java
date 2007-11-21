@@ -114,6 +114,10 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       this.add(new SModelTreeNode(documentationModelDescriptor, "documentation", operationContext));      
     }
 
+    SModelDescriptor cfaModelDescriptor = myLanguage.getCFAModelDescriptor();
+    if (cfaModelDescriptor != null) {
+      this.add(new SModelTreeNode(cfaModelDescriptor, "cfa", operationContext));
+    }
 
     // language accessory models
 

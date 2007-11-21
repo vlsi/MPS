@@ -15,6 +15,9 @@
   <scripts>
     <model modelUID="jetbrains.mps.baseLanguage.scripts" />
   </scripts>
+  <cfa>
+    <model modelUID="jetbrains.mps.baseLanguage.cfa" />
+  </cfa>
   <editor>
     <model modelUID="jetbrains.mps.baseLanguage.editor" />
   </editor>
