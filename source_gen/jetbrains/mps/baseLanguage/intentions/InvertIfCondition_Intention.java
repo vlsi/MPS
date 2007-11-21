@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -22,11 +21,11 @@ public class InvertIfCondition_Intention extends BaseIntention implements Intent
     return false;
   }
 
-  public String getDescription(SNode node, IOperationContext operationContext) {
+  public String getDescription(SNode node, EditorContext editorContext) {
     return "Invert If condition";
   }
 
-  public boolean isApplicable(SNode node, IOperationContext operationContext) {
+  public boolean isApplicable(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "ifFalseStatement", true) != null);
   }
 

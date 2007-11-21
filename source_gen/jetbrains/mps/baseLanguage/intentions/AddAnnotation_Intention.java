@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -20,11 +19,11 @@ public class AddAnnotation_Intention extends BaseIntention implements Intention 
     return false;
   }
 
-  public String getDescription(SNode node, IOperationContext operationContext) {
+  public String getDescription(SNode node, EditorContext editorContext) {
     return "Add annotation";
   }
 
-  public boolean isApplicable(SNode node, IOperationContext operationContext) {
+  public boolean isApplicable(SNode node, EditorContext editorContext) {
     return SequenceOperations.isEmpty(SLinkOperations.getTargets(node, "annotation", true));
   }
 

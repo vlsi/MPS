@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Property;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
@@ -22,11 +21,11 @@ public class SplitStringIntoConcatenation_Intention extends BaseIntention implem
     return false;
   }
 
-  public String getDescription(SNode node, IOperationContext operationContext) {
+  public String getDescription(SNode node, EditorContext editorContext) {
     return "Split string into concatenation";
   }
 
-  public boolean isApplicable(SNode node, IOperationContext operationContext) {
+  public boolean isApplicable(SNode node, EditorContext editorContext) {
     return true;
   }
 

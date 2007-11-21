@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
@@ -21,11 +20,11 @@ public class SplitIntoDeclarationAndAssignment_Intention extends BaseIntention i
     return false;
   }
 
-  public String getDescription(SNode node, IOperationContext operationContext) {
+  public String getDescription(SNode node, EditorContext editorContext) {
     return "Split into declaration and assignment";
   }
 
-  public boolean isApplicable(SNode node, IOperationContext operationContext) {
+  public boolean isApplicable(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "initializer", true) != null);
   }
 

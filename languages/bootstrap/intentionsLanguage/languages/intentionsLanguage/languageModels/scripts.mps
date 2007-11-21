@@ -9,7 +9,7 @@
   <language namespace="jetbrains.mps.bootstrap.helgins"/>
   <language namespace="jetbrains.mps.core"/>
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage"/>
-  <maxImportIndex value="12"/>
+  <maxImportIndex value="14"/>
   <import index="1" modelUID="jetbrains.mps.bootstrap.intentionsLanguage.structure" version="-1"/>
   <import index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1"/>
   <import index="3" modelUID="java.lang@java_stub" version="-1"/>
@@ -21,6 +21,8 @@
   <import index="10" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>
   <import index="11" modelUID="jetbrains.mps.baseLanguage.structure" version="-1"/>
   <import index="12" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1"/>
+  <import index="13" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1"/>
+  <import index="14" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1"/>
   <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1195563712320">
     <property name="name" value="ConvertActionToIntention"/>
     <property name="title" value="Action-&gt;Intention"/>
@@ -1537,108 +1539,6 @@
             </node>
           </node>
         </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1195644063045">
-    <property name="name" value="ApplicableConceptEqualsNull"/>
-    <property name="title" value="appCon == null"/>
-    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1195644070328">
-      <property name="description" value="find keymap items for which applicableConcept == null"/>
-      <link role="affectedInstanceConcept" targetNodeId="2.1136916919141" resolveInfo="CellKeyMapItem"/>
-      <node role="affectedInstancePredicate"
-            type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1195644070329">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195644070330">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1195644490236">
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195644490237">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195644490238">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1195644490239">
-                  <property name="value" value="false"/>
-                </node>
-              </node>
-            </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1195644490240">
-              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression"
-                    id="1195644490241">
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess"
-                      id="1195644490242">
-                  <link role="property" targetNodeId="2.1163507208434" resolveInfo="showInPopup"/>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node"
-                      id="1195644490243"/>
-              </node>
-            </node>
-            <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1195644490244">
-              <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195644490245">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
-                      id="1195644490246">
-                  <node role="localVariableDeclaration"
-                        type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1195644490247">
-                    <property name="name" value="keyMapDecl"/>
-                    <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"
-                          id="1195644490248">
-                      <link role="concept" targetNodeId="2.1081293058843" resolveInfo="CellKeyMapDeclaration"/>
-                    </node>
-                    <node role="initializer"
-                          type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression"
-                          id="1195644490249">
-                      <node role="nodeOperation"
-                            type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation"
-                            id="1195644490250">
-                        <node role="parameter"
-                              type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept"
-                              id="1195644490251">
-                          <link role="concept" targetNodeId="2.1081293058843" resolveInfo="CellKeyMapDeclaration"/>
-                        </node>
-                      </node>
-                      <node role="leftExpression"
-                            type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node"
-                            id="1195644490252"/>
-                    </node>
-                  </node>
-                </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"
-                      id="1195644490253">
-                  <node role="localVariableDeclaration"
-                        type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1195644490254">
-                    <property name="name" value="forConcept"/>
-                    <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"
-                          id="1195644490255">
-                      <link role="concept" targetNodeId="10.1169125787135" resolveInfo="AbstractConceptDeclaration"/>
-                    </node>
-                    <node role="initializer"
-                          type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression"
-                          id="1195644490256">
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess"
-                            id="1195644490257">
-                        <link role="link" targetNodeId="2.1139445935125"/>
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                            id="1195644490258">
-                        <link role="variableDeclaration" targetNodeId="1195644490247" resolveInfo="keyMapDecl"/>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195644534650">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression"
-                        id="1195644535246">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral"
-                          id="1195644535247"/>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                          id="1195644535248">
-                      <link role="variableDeclaration" targetNodeId="1195644490254" resolveInfo="forConcept"/>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="affectedInstanceUpdater"
-            type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1195644070331">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195644070332"/>
       </node>
     </node>
   </node>

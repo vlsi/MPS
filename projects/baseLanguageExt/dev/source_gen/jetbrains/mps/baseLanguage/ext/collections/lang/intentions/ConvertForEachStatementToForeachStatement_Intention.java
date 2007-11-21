@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.ext.collections.lang.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -25,15 +24,15 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
     return false;
   }
 
-  public String getDescription(SNode node, IOperationContext operationContext) {
+  public String getDescription(SNode node, EditorContext editorContext) {
     return "Convert to \"for (Type var: iterable)\"";
   }
 
-  public boolean isApplicable(SNode node, IOperationContext operationContext) {
+  public boolean isApplicable(SNode node, EditorContext editorContext) {
     return true;
   }
 
-  public void execute(SNode node, EditorContext operationContext) {
+  public void execute(SNode node, EditorContext editorContext) {
     final zClosureContext _zClosureContext = new zClosureContext();
     _zClosureContext.oldVariable = SLinkOperations.getTarget(node, "variable", true);
     SNode variableType = SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(_zClosureContext.oldVariable));
@@ -46,7 +45,7 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
     {
       ICursor<SNode> _zCursor = CursorFactory.createCursor(SequenceOperations.where(SNodeOperations.getDescendants(SLinkOperations.getTarget(foreachStatement, "body", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference", false), new zPredicate(null, _zClosureContext)));
       try {
-        while(_zCursor.moveToNext()) {
+        while (_zCursor.moveToNext()) {
           SNode oldRef = _zCursor.getCurrent();
           SLinkOperations.setTarget(SNodeOperations.replaceWithNewChild(oldRef, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", newVariable, false);
         }

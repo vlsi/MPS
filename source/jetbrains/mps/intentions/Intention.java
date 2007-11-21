@@ -9,11 +9,11 @@ import org.jdom.Element;
 public interface Intention {
   String getConcept();
 
-  String getDescription(SNode node, IOperationContext context);
+  String getDescription(SNode node, EditorContext editorContext);
 
-  boolean isApplicable(SNode node, IOperationContext context);
+  boolean isApplicable(SNode node, EditorContext editorContext);
 
-  void execute(SNode node, EditorContext context);
+  void execute(SNode node, EditorContext editorContext);
 
   boolean isErrorIntention();
 }

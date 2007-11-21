@@ -5,8 +5,9 @@ package jetbrains.mps.bootstrap.helgins.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
+
 import java.util.List;
+
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -25,12 +26,12 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
     return false;
   }
 
-  public String getDescription(SNode node, IOperationContext operationContext) {
+  public String getDescription(SNode node, EditorContext editorContext) {
     return "convert to non-typesystem rule";
   }
 
-  public boolean isApplicable(SNode node, IOperationContext operationContext) {
-    List<SNode> descendants = SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement","jetbrains.mps.bootstrap.helgins.structure.GivetypeStatement","jetbrains.mps.bootstrap.helgins.structure.TypeVarDeclaration","jetbrains.mps.bootstrap.helgins.structure.TypeVarReference","jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression","jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement"}, false);
+  public boolean isApplicable(SNode node, EditorContext editorContext) {
+    List<SNode> descendants = SNodeOperations.getDescendantsWhereConceptInList(node, new String[]{"jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement", "jetbrains.mps.bootstrap.helgins.structure.GivetypeStatement", "jetbrains.mps.bootstrap.helgins.structure.TypeVarDeclaration", "jetbrains.mps.bootstrap.helgins.structure.TypeVarReference", "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression", "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement"}, false);
     return SequenceOperations.isEmpty(descendants);
   }
 
@@ -40,13 +41,13 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention extends BaseInten
     SPropertyOperations.set(nonTypesystemRule, "name", SPropertyOperations.getString(node, "name"));
     SLinkOperations.setTarget(nonTypesystemRule, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "body", true)), true);
     SLinkOperations.setTarget(nonTypesystemRule, "applicableNode", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "applicableNode", true)), true);
-    for(SNode applicableNodeReference : SNodeOperations.getDescendants(SLinkOperations.getTarget(nonTypesystemRule, "body", true), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference", false)) {
-      if(SLinkOperations.getTarget(applicableNodeReference, "applicableNode", false) == SLinkOperations.getTarget(node, "applicableNode", true)) {
+    for (SNode applicableNodeReference : SNodeOperations.getDescendants(SLinkOperations.getTarget(nonTypesystemRule, "body", true), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeReference", false)) {
+      if (SLinkOperations.getTarget(applicableNodeReference, "applicableNode", false) == SLinkOperations.getTarget(node, "applicableNode", true)) {
         SLinkOperations.setTarget(applicableNodeReference, "applicableNode", SLinkOperations.getTarget(nonTypesystemRule, "applicableNode", true), false);
       }
     }
     SNodeOperations.deleteNode(node);
-    EditorsPane editorsPane = ((EditorsPane)editorContext.getOperationContext().getComponent(EditorsPane.class));
+    EditorsPane editorsPane = ((EditorsPane) editorContext.getOperationContext().getComponent(EditorsPane.class));
     editorsPane.openEditor(nonTypesystemRule, editorContext.getOperationContext());
   }
 

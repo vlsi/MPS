@@ -370,7 +370,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Set<Intention> getAvailableIntentions() {
     SNode node = getSelectedNode();
     if (node != null) {
-      return IntentionsManager.getInstance().getAvailableIntentions(node, getOperationContext());
+      return IntentionsManager.getInstance().getAvailableIntentions(node, getEditorContext());
     }
     return new HashSet<Intention>();
   }
@@ -378,7 +378,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Set<Intention> getEnabledIntentions() {
     SNode node = getSelectedNode();
     if (node != null) {
-      return IntentionsManager.getInstance().getEnabledAvailableIntentions(node, getOperationContext());
+      return IntentionsManager.getInstance().getEnabledAvailableIntentions(node, getEditorContext());
     }
     return new HashSet<Intention>();
   }

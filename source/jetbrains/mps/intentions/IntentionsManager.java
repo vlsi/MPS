@@ -2,16 +2,16 @@ package jetbrains.mps.intentions;
 
 import jetbrains.mps.bootstrap.intentionsLanguage.constraints.IntentionDeclaration_Behavior;
 import jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration;
+import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.components.IExternalizableComponent;
+import org.jdom.Element;
 
 import java.util.*;
-
-import org.jdom.Element;
 
 public class IntentionsManager implements IExternalizableComponent {
   private static final String VERSION = "version";
@@ -36,7 +36,7 @@ public class IntentionsManager implements IExternalizableComponent {
 
   }
 
-  public Set<Intention> getAvailableIntentions(SNode node, IOperationContext context) {
+  public Set<Intention> getAvailableIntentions(SNode node, EditorContext context) {
     Set<Intention> result = new HashSet<Intention>();
     String conceptFqName = node.getConceptFqName();
     if (myIntentions.containsKey(conceptFqName)) {
@@ -53,13 +53,13 @@ public class IntentionsManager implements IExternalizableComponent {
     return Collections.unmodifiableSet(result);
   }
 
-  public Set<Intention> getEnabledAvailableIntentions(SNode node, IOperationContext context) {
+  public Set<Intention> getEnabledAvailableIntentions(SNode node, EditorContext context) {
     Set<Intention> result = new HashSet<Intention>(getAvailableIntentions(node, context));
     result.removeAll(getDisabledIntentions());
     return result;
   }
 
-  public Set<Intention> getDisabledAvailableIntentions(SNode node, IOperationContext context) {
+  public Set<Intention> getDisabledAvailableIntentions(SNode node, EditorContext context) {
     Set<Intention> result = new HashSet<Intention>(getAvailableIntentions(node, context));
     result.retainAll(getDisabledIntentions());
     return result;
