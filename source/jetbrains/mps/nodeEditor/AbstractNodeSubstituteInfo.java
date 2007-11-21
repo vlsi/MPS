@@ -53,8 +53,6 @@ public abstract class AbstractNodeSubstituteInfo implements INodeSubstituteInfo 
   protected abstract List<INodeSubstituteAction> createActions();
 
   public void invalidateActions() {
-    System.out.println("invalidate!");
-
     myCachedActionList = null;
     myPatternsToActionListsCache.clear();
     myStrictPatternsToActionListsCache.clear();
