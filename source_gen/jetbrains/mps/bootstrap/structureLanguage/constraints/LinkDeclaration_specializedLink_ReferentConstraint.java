@@ -10,12 +10,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.search.EmptySearchScope;
 import java.util.List;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import java.util.Iterator;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
+import jetbrains.mps.smodel.BaseAdapter;
 
 public class LinkDeclaration_specializedLink_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -36,12 +37,15 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
 
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
     SNode enclosingConcept = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", true, false);
-    SNode extendedConcept = SLinkOperations.getTarget(enclosingConcept, "extends", false);
-    if(extendedConcept == null) {
-      return new EmptySearchScope();
+    List<LinkDeclaration> links = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(enclosingConcept)));
+    Iterator<LinkDeclaration> it = links.iterator();
+    while(it.hasNext()) {
+      SNode ld = it.next().getNode();
+      if(SNodeOperations.getParent(ld, null, false, false) == enclosingConcept) {
+        it.remove();
+      }
     }
-    List links = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((ConceptDeclaration)SNodeOperations.getAdapter(extendedConcept)));
-    return new SimpleSearchScope(links);
+    return new SimpleSearchScope(BaseAdapter.toNodes(links));
   }
 
   public String getNodeReferentSearchScopeDescription() {

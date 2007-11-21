@@ -90,8 +90,9 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1188217840288" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1188217840289">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1189675817426">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1189675817427">
-            <link role="classifier" targetNodeId="1189675806458" resolveInfo="Test" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1195636052716">
+            <link role="enumConstantDeclaration" targetNodeId="1189675811586" resolveInfo="B" />
+            <link role="enumClass" targetNodeId="1189675806458" resolveInfo="Test" />
           </node>
         </node>
       </node>
