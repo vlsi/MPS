@@ -81,13 +81,13 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     }
   }
 
-  public void replaceInputModel(SModelDescriptor inputModel) {
+  public void replaceInputModel(SModel inputModel) {
     myTransientObjects.clear();
     if (myGenerationStepController != null) {
       // auto-plan - nothing
     } else {
       // old
-      myGeneratorModules = getUsedGenerators(inputModel.getSModel());
+      myGeneratorModules = getUsedGenerators(inputModel);
       initTemplateModels();
       myTransientModule.addGeneratorModules(myGeneratorModules);
     }

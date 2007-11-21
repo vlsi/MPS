@@ -130,7 +130,7 @@ public class GenerationSession implements IGenerationSession {
                                          Set<MappingConfiguration> confs) throws Exception {
         if (targetLanguage != null) {
           // old
-          return generateModel_internal(inputModel, targetLanguage, confs, null);
+          return generateModel_internal(inputModel.getSModel(), targetLanguage, confs, null);
         }
 
         // auto-plan
@@ -141,7 +141,7 @@ public class GenerationSession implements IGenerationSession {
         int stepCount = 1;
         while (true) {
           addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount++)));
-          status = generateModel_internal(inputModel, targetLanguage, confs, generationStepController);
+          status = generateModel_internal(inputModel.getSModel(), targetLanguage, confs, generationStepController);
           wasErrors |= status.isError();
           wasWarnings |= status.hasWarnings();
           if (status.isCanceled()) {
@@ -192,7 +192,7 @@ public class GenerationSession implements IGenerationSession {
   }
 
 
-  private GenerationStatus generateModel_internal(SModelDescriptor sourceModelDescriptor,
+  private GenerationStatus generateModel_internal(SModel inputModel,
                                                   Language targetLanguage,
                                                   Set<MappingConfiguration> mappings,
                                                   GenerationStepController generationStepController)
@@ -204,28 +204,27 @@ public class GenerationSession implements IGenerationSession {
 
     myInvocationCount++;
     myTransientModelsCount = 0;
-    SModel sourceModel = sourceModelDescriptor.getSModel();
-    addProgressMessage(MessageKind.INFORMATION, "generating model \"" + sourceModel.getUID() + "\"");
+    addProgressMessage(MessageKind.INFORMATION, "generating model \"" + inputModel.getUID() + "\"");
 
     // -- replace context
-    GenerationSessionContext context = new GenerationSessionContext(targetLanguage, sourceModel, myInvocationContext, mappings, generationStepController, myCurrentContext);
+    GenerationSessionContext context = new GenerationSessionContext(targetLanguage, inputModel, myInvocationContext, mappings, generationStepController, myCurrentContext);
     if (generationStepController != null) {
       // auto-plan
       if (!checkGenerationStep(generationStepController)) {
         throw new GenerationCanceledException();
       }
       if (generationStepController.getCurrentMappings().isEmpty()) {
-        addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
-        return new GenerationStatus(sourceModel, null, null, false, false, false);
+        addProgressMessage(MessageKind.WARNING, "skip model \"" + inputModel.getUID() + "\" : no generator avalable");
+        return new GenerationStatus(inputModel, null, null, false, false, false);
       }
-      printGenerationStepData(generationStepController, sourceModel);
+      printGenerationStepData(generationStepController, inputModel);
 
     } else {
       // old
       List<Generator> generators = context.getGeneratorModules();
       if (generators.isEmpty()) {
-        addProgressMessage(MessageKind.WARNING, "skip model \"" + sourceModel.getUID() + "\" : no generator avalable");
-        return new GenerationStatus(sourceModel, null, null, false, false, false);
+        addProgressMessage(MessageKind.WARNING, "skip model \"" + inputModel.getUID() + "\" : no generator avalable");
+        return new GenerationStatus(inputModel, null, null, false, false, false);
       }
     }
 
@@ -235,11 +234,11 @@ public class GenerationSession implements IGenerationSession {
     ITemplateGenerator generator = new TemplateModelGenerator_New(context, myProgressMonitor, myMessagesHandler);
     GenerationStatus status;
     try {
-      SModel outputModel = generateModel(sourceModel, generator);
+      SModel outputModel = generateModel(inputModel, generator);
       boolean wasErrors = generator.getErrorCount() > 0;
       boolean wasWarnigns = generator.getWarningCount() > 0;
-      status = new GenerationStatus(sourceModel, outputModel, context.getTraceMap(), wasErrors, wasWarnigns, false);
-      addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + sourceModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
+      status = new GenerationStatus(inputModel, outputModel, context.getTraceMap(), wasErrors, wasWarnigns, false);
+      addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + inputModel.getUID() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
       generator.clearErrorsAndWarnings();
       generator.reset();
     } catch (GenerationCanceledException gce) {
@@ -253,13 +252,13 @@ public class GenerationSession implements IGenerationSession {
           addMessage(message);
         }
       }
-      addMessage(MessageKind.ERROR, "model \"" + sourceModel.getUID() + "\" generation failed : " + gfe);
-      status = new GenerationStatus.ERROR(sourceModel);
+      addMessage(MessageKind.ERROR, "model \"" + inputModel.getUID() + "\" generation failed : " + gfe);
+      status = new GenerationStatus.ERROR(inputModel);
     } catch (Throwable e) {
       LOG.error(e);
       myProgressMonitor.addText(e.toString());
-      addMessage(MessageKind.ERROR, "model \"" + sourceModel.getUID() + "\" generation failed : " + e);
-      status = new GenerationStatus.ERROR(sourceModel);
+      addMessage(MessageKind.ERROR, "model \"" + inputModel.getUID() + "\" generation failed : " + e);
+      status = new GenerationStatus.ERROR(inputModel);
     }
 
     return status;
@@ -279,7 +278,7 @@ public class GenerationSession implements IGenerationSession {
   private SModel generateModel(SModel inputModel, ITemplateGenerator generator, GenerationSessionContext generationContext) {
     IModule module = generationContext.getModule();
     String modelsLongName = inputModel.getLongName();
-    SModelDescriptor currentInputModel = inputModel.getModelDescriptor();
+    SModel currentInputModel = inputModel;
 
     // -----------------------
     // run pre-processing scripts
@@ -289,13 +288,13 @@ public class GenerationSession implements IGenerationSession {
     for (MappingScript preMappingScript : preMappingScripts) {
       if (preMappingScript.getScriptKind() == MappingScriptKind.pre_process_input_model) {
         if (preMappingScript.getModifiesModel()) {
-          SModelDescriptor currentInputModel_clone = createTransientModel(modelsLongName, module);
-          addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getModelUID() + "' --> '" + currentInputModel_clone.getModelUID() + "'");
-          CloneUtil.cloneModel(currentInputModel.getSModel(), currentInputModel_clone.getSModel(), generator.getScope());
+          SModel currentInputModel_clone = createTransientModel(modelsLongName, module);
+          addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getUID() + "' --> '" + currentInputModel_clone.getUID() + "'");
+          CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, generator.getScope());
           // probably we can forget about former input model here
-          if (myDiscardTransients && currentInputModel.isTransient() && !myCurrentContext.isTransientModelToKeep(currentInputModel.getSModel())) {
-            addMessage(MessageKind.INFORMATION, "remove model (0) '" + currentInputModel.getModelUID() + "'");
-            SModelRepository.getInstance().removeModelDescriptor(currentInputModel);
+          if (myDiscardTransients && currentInputModel.getModelDescriptor().isTransient() && !myCurrentContext.isTransientModelToKeep(currentInputModel)) {
+            addMessage(MessageKind.INFORMATION, "remove model (0) '" + currentInputModel.getUID() + "'");
+            SModelRepository.getInstance().removeModelDescriptor(currentInputModel.getModelDescriptor());
           }
           currentInputModel = currentInputModel_clone;
           break;
@@ -308,18 +307,18 @@ public class GenerationSession implements IGenerationSession {
         continue;
       }
       addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getUID() + ")");
-      TemplateGenUtil.executeMappingScript(preMappingScript, currentInputModel.getSModel(), generator);
+      TemplateGenUtil.executeMappingScript(preMappingScript, currentInputModel, generator);
     }
 
-    SModelDescriptor currentOutputModel = createTransientModel(modelsLongName, module);
+    SModel currentOutputModel = createTransientModel(modelsLongName, module);
 
     // -----------------------
     // primary mapping
     // -----------------------
-    currentInputModel.getSModel().setLoading(false);
-    boolean somethingHasBeenGenerated = generator.doPrimaryMapping(currentInputModel.getSModel(), currentOutputModel.getSModel());
+    currentInputModel.setLoading(false);
+    boolean somethingHasBeenGenerated = generator.doPrimaryMapping(currentInputModel, currentOutputModel);
     if (!somethingHasBeenGenerated) {
-      SModel model = currentOutputModel.getSModel();
+      SModel model = currentOutputModel;
       model.validateLanguagesAndImports();
       return model;
     }
@@ -329,22 +328,22 @@ public class GenerationSession implements IGenerationSession {
     // -----------------------
     int secondaryMappingRepeatCount = 1;
     while (true) {
-      currentOutputModel.getSModel().validateLanguagesAndImports();
+      currentOutputModel.validateLanguagesAndImports();
 
       // apply mapping to the output model
-      addMessage(MessageKind.INFORMATION, "generating model '" + currentOutputModel.getModelUID() + "'");
+      addMessage(MessageKind.INFORMATION, "generating model '" + currentOutputModel.getUID() + "'");
       generationContext.replaceInputModel(currentOutputModel);
-      SModelDescriptor transientModel = createTransientModel(modelsLongName, module);
+      SModel transientModel = createTransientModel(modelsLongName, module);
       // probably we can forget about former input model here
-      if (myDiscardTransients && currentInputModel.isTransient() && !myCurrentContext.isTransientModelToKeep(currentInputModel.getSModel())) {
-        addMessage(MessageKind.INFORMATION, "remove model (1) '" + currentInputModel.getModelUID() + "'");
-        SModelRepository.getInstance().removeModelDescriptor(currentInputModel);
+      if (myDiscardTransients && currentInputModel.getModelDescriptor().isTransient() && !myCurrentContext.isTransientModelToKeep(currentInputModel)) {
+        addMessage(MessageKind.INFORMATION, "remove model (1) '" + currentInputModel.getUID() + "'");
+        SModelRepository.getInstance().removeModelDescriptor(currentInputModel.getModelDescriptor());
       }
       currentInputModel = currentOutputModel;
-      currentInputModel.getSModel().setLoading(false);
-      if (!generator.doSecondaryMapping(currentInputModel.getSModel(), transientModel.getSModel())) {
-        addMessage(MessageKind.INFORMATION, "remove model (2) '" + transientModel.getModelUID() + "'");
-        SModelRepository.getInstance().removeModelDescriptor(transientModel);
+      currentInputModel.setLoading(false);
+      if (!generator.doSecondaryMapping(currentInputModel, transientModel)) {
+        addMessage(MessageKind.INFORMATION, "remove model (2) '" + transientModel.getUID() + "'");
+        SModelRepository.getInstance().removeModelDescriptor(transientModel.getModelDescriptor());
         myTransientModelsCount--;
         break;
       }
@@ -357,7 +356,7 @@ public class GenerationSession implements IGenerationSession {
       // next iteration ...
       currentOutputModel = transientModel;
     }
-    currentOutputModel.getSModel().setLoading(true);
+    currentOutputModel.setLoading(true);
 
     // -----------------------
     // run post-processing scripts
@@ -369,17 +368,17 @@ public class GenerationSession implements IGenerationSession {
         continue;
       }
       addMessage(MessageKind.INFORMATION, "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")");
-      TemplateGenUtil.executeMappingScript(postMappingScript, currentOutputModel.getSModel(), generator);
+      TemplateGenUtil.executeMappingScript(postMappingScript, currentOutputModel, generator);
     }
 
-    return currentOutputModel.getSModel();
+    return currentOutputModel;
   }
 
-  private SModelDescriptor createTransientModel(String longName, ModelOwner modelOwner) {
+  private SModel createTransientModel(String longName, ModelOwner modelOwner) {
     SModelDescriptor transientModel = TransientModels.createTransientModel(modelOwner, longName, "" + myInvocationCount + "_" + myTransientModelsCount + "_" + getSessionId());
     myTransientModelsCount++;
     transientModel.getSModel().setLoading(true); // we dont need any events to be casted
-    return transientModel;
+    return transientModel.getSModel();
   }
 
   private void addMessage(final Message message) {
