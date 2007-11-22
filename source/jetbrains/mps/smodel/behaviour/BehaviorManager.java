@@ -161,7 +161,7 @@ public final class BehaviorManager {
       }
     }
 
-    throw new RuntimeException("Can't invoke_old a method " + methodName + " on node " + node + " " + node.getConceptFqName());
+    throw new RuntimeException("Can't find a method " + methodName + " in a concept " + node.getConceptFqName());
   }
 
   private static class MethodInfo {
