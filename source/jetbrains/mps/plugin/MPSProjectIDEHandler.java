@@ -22,6 +22,7 @@ import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 
+import javax.swing.SwingUtilities;
 import java.awt.Frame;
 import java.rmi.RemoteException;
 import java.rmi.NoSuchObjectException;
@@ -71,20 +72,24 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
     });
   }
 
-  public void showAspectMethodUsages(String namespace, String name) throws RemoteException {
+  public void showAspectMethodUsages(String namespace, final String name) throws RemoteException {
     List<SModelDescriptor> modelDescriptors = myProject.getScope().getModelDescriptors(namespace);
-    for (SModelDescriptor descriptor : modelDescriptors) {
+    for (final SModelDescriptor descriptor : modelDescriptors) {
       if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
 
-      try {
-        UsagesModel_AspectMethods usagesModel = new UsagesModel_AspectMethods(descriptor.getSModel(), name);
-        if (getProjectWindow() == null) return;
-        getProjectWindow().showUsagesView(usagesModel);
-        FrameUtil.activateFrame(getMainFrame());
-        if (usagesModel.getSNodes().size() > 0) return;
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          try {
+            UsagesModel_AspectMethods usagesModel = new UsagesModel_AspectMethods(descriptor.getSModel(), name);
+            if (getProjectWindow() == null) return;
+            getProjectWindow().showUsagesView(usagesModel);
+            FrameUtil.activateFrame(getMainFrame());
+            if (usagesModel.getSNodes().size() > 0) return;
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
+        }
+      });
     }
   }
 
