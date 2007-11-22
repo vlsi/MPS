@@ -52,7 +52,7 @@ public class IdeMain {
 
   public static IDEProjectFrame openProjectWindow(boolean loadOldProject) {
 //    SVNSandbox.doSandboxStuff();
-    JDTSadnbox.doSandboxStuff();
+//    JDTSadnbox.doSandboxStuff();
 
     long start = System.currentTimeMillis();
 
