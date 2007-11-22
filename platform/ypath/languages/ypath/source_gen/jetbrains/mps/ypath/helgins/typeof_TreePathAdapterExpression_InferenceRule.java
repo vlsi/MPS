@@ -15,7 +15,7 @@ public class typeof_TreePathAdapterExpression_InferenceRule implements Inference
 
   public void applyRule(final SNode argument) {
     final SNode ExpType_typevar_1190288659521 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true), "jetbrains.mps.ypath.helgins", "1190288685890"), SLinkOperations.getTarget(argument, "expression", true), null, "jetbrains.mps.ypath.helgins", "1190288669877");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true), "jetbrains.mps.ypath.helgins", "1190288685890", true), SLinkOperations.getTarget(argument, "expression", true), null, "jetbrains.mps.ypath.helgins", "1190288669877");
     TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521), new Runnable() {
 
       public void run() {

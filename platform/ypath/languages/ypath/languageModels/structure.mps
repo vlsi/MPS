@@ -8,6 +8,81 @@
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="5" modelUID="java.lang@java_stub" version="-1" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  <visible index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.scripts" />
+  <refactoringLog type="jetbrains.mps.logging.refactoring.structure.RuntimeLogStack" id="1195419179057">
+    <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1195419179058">
+      <property name="modelVersion" value="0" />
+      <link role="updateModelClause" targetNodeId="2v.1191583490898" />
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1195419179059">
+        <property name="value" value="GenericFeatureSetterFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1195419179060">
+          <property name="name" value="oldConceptName" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1195419179061" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1195419179062">
+        <property name="value" value="GenericFeatureReplaceFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1195419179063">
+          <property name="name" value="newConceptName" />
+          <property name="presentation" value="enter new concept name" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1195419179064" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1195419179065">
+        <property name="value" value="jetbrains.mps.ypath.structure" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1195419179066">
+          <property name="name" value="conceptModel" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.SModelArgumentType" id="1195419179067" />
+        </node>
+      </node>
+    </node>
+    <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1195420185719">
+      <property name="modelVersion" value="3" />
+      <link role="updateModelClause" targetNodeId="2v.1192720065267" />
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1195420185720">
+        <property name="value" value="replaceFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1195420185721">
+          <property name="name" value="newLinkRole" />
+          <property name="presentation" value="enter new link role" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1195420185722" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1195420185723">
+        <property name="value" value="jetbrains.mps.ypath.structure.IGenericFeature" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1195420185724">
+          <property name="name" value="conceptFQName" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1195420185725" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1195420185726">
+        <property name="value" value="false" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1195420185727">
+          <property name="name" value="isReference" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1195420185728" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1195420185729">
+        <property name="value" value="setter" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1195420185730">
+          <property name="name" value="oldLinkRole" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1195420185731" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1195420185732">
+        <property name="value" value="jetbrains.mps.ypath.structure" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1195420185733">
+          <property name="name" value="conceptModel" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.SModelArgumentType" id="1195420185734" />
+        </node>
+      </node>
+    </node>
+  </refactoringLog>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1168428529658">
     <property name="name" value="TreePathType" />
     <link role="extends" targetNodeId="2.1068431790189" />
@@ -1248,9 +1323,19 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194545216305">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="setter" />
+      <property name="role" value="replaceFun" />
       <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="1194545263074" resolveInfo="GenericFeatureSetterFun" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195420706523">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="removeFun" />
+      <link role="target" targetNodeId="1195420807526" resolveInfo="GenericFeatureRemoveFun" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195420712830">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="insertFun" />
+      <link role="target" targetNodeId="1195420956439" resolveInfo="GenericFeatureInsertFun" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1193057911192">
       <property name="metaClass" value="aggregation" />
@@ -1473,7 +1558,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194545263074">
     <property name="package" value="treePath.features.functions" />
-    <property name="name" value="GenericFeatureSetterFun" />
+    <property name="name" value="GenericFeatureReplaceFun" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194545289778">
       <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
@@ -1640,6 +1725,68 @@
       <property name="role" value="element" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195420807526">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="GenericFeatureRemoveFun" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420822402">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420830253">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420837108">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1194610572276" resolveInfo="RangeFunctionParam" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195420956439">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="GenericFeatureInsertFun" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420970173">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420976368">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420979945">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1194610572276" resolveInfo="RangeFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195421106771">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1195421010025" resolveInfo="InsertExpressionFunctionParam" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195421010025">
+    <property name="package" value="treePath.features.functions.params" />
+    <property name="name" value="InsertExpressionFunctionParam" />
+    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1195421032459">
+      <property name="value" value="insertExpression" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1195421036819">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195686097730">
+    <property name="package" value="writePath" />
+    <property name="name" value="EmptySequenceExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1195686132138">
+      <property name="value" value="NOTHING" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1195686935578">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
 </model>

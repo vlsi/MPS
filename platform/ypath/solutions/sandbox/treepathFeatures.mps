@@ -17,7 +17,7 @@
   <import index="7" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="9" modelUID="jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter@java_stub" version="-1" />
   <import index="12" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
-  <import index="13" modelUID="jetbrains.mps.ypath.structure" version="-1" />
+  <import index="13" modelUID="jetbrains.mps.ypath.structure" version="3" />
   <import index="14" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <node type="jetbrains.mps.ypath.structure.TreePathAspect" id="1183980545104">

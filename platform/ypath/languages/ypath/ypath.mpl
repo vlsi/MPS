@@ -42,6 +42,22 @@
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1191841379233" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1195732300474" />
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1195732300474" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1190373998785" />
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1190373998785" />
           </greater-priority-mapping>
           <lesser-priority-mapping>

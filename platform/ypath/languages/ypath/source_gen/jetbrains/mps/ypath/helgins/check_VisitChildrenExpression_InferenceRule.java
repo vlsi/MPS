@@ -42,7 +42,7 @@ public class check_VisitChildrenExpression_InferenceRule implements InferenceRul
         }
         arg = arg_iterator.next();
         param = param_iterator.next();
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg, "jetbrains.mps.ypath.helgins", "1180014730654"), TypeChecker.getInstance().getRuntimeSupport().typeOf(param, "jetbrains.mps.ypath.helgins", "1180014739452"), arg, null, "jetbrains.mps.ypath.helgins", "1180014737422");
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg, "jetbrains.mps.ypath.helgins", "1180014730654", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(param, "jetbrains.mps.ypath.helgins", "1180014739452", true), arg, null, "jetbrains.mps.ypath.helgins", "1180014737422");
       }
     }
   }

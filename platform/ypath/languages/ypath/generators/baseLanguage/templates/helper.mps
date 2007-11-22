@@ -5,12 +5,14 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.ypath" />
+  <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <language namespace="jetbrains.mps.core" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.ypath.structure" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.ypath.structure" version="3" />
   <import index="6" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="7" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1180382275013">
@@ -444,6 +446,72 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1180382275194" />
+  </node>
+  <node type="jetbrains.mps.ypath.structure.TreePathAspect" id="1195500199903">
+    <property name="name" value="Stubby" />
+    <node role="treePathType" type="jetbrains.mps.ypath.structure.TreePathType" id="1195500199904">
+      <node role="nodeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195500433466">
+        <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
+      </node>
+    </node>
+    <node role="features" type="jetbrains.mps.ypath.structure.GenericParamFeature" id="1195500199906">
+      <property name="name" value="stub" />
+      <node role="toStringFunction" type="jetbrains.mps.ypath.structure.ToStringFun" id="1195500199907">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195500199908">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195500543874">
+            <node role="expression" type="jetbrains.mps.ypath.structure.ParamFunctionParam" id="1195500543875" />
+          </node>
+        </node>
+      </node>
+      <node role="cardinal" type="jetbrains.mps.ypath.structure.GenericFeatureCardinalFun" id="1195500199909">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195500199910">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195500549362">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1195500549363">
+              <property name="value" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="getter" type="jetbrains.mps.ypath.structure.GenericFeatureGetterFun" id="1195500199911">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195500199912">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195500656208">
+            <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1195500656209">
+              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ArrayLiteral" id="1195500658604" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameterQueryFunction" type="jetbrains.mps.ypath.structure.ParameterQueryFun" id="1195500199913">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195500199914">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195500445698">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1195500445699">
+              <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1195500446875">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195500453057">
+                  <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+                </node>
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1195500455497">
+                  <property name="value" value="default" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameterType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195500437030">
+        <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+      </node>
+      <node role="targetTypeFunction" type="jetbrains.mps.ypath.structure.TargetTypeFun" id="1195500199919">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195500199920">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195500500931">
+            <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1195500500932">
+              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195500537988">
+                <link role="classifier" targetNodeId="4.~Object" resolveInfo="Object" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
