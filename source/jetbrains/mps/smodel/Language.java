@@ -361,7 +361,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
             ".editor", ".actions", ".constraints",
             ".intentions", ".builder", ".scripts",
             ".helgins", ".plugin", ".textGen",
-            ".textPresentation", ".design", ".util", ".runtime"
+            ".textPresentation", ".design", ".util", ".runtime", ".cfa"
     ));
     result.add(getModuleUID());
     for (String aspect : aspects) {
@@ -1118,11 +1118,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   public static class LanguageAspectStatus implements IStatus {
-
-
     public static enum AspectKind {
       STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, HELGINS_TYPESYSTEM, ACCESSORY, SCRIPTS, DOCUMENTATION, INTENTIONS, CFA, NONE;
-
     }
 
     private Language myLanguage;
