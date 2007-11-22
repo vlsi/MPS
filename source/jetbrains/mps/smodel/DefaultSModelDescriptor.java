@@ -259,10 +259,13 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
             generationType.handleOutput(invocationContext, status, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, null, messages);
 
             String className = status.getOutputModel().getLongName() + "." + "LogRunner";
-            Class aClass = scriptslanguage.getClass(className);
+            Class aClass = Class.forName(className, true, generationType.getClassLoader(getClass().getClassLoader()));
+
             Method method = aClass.getDeclaredMethod("updateModel", SModel.class, Map.class);
             method.invoke(null, mySModel, arguments);
             save();
+          } catch (ClassNotFoundException e) {
+            LOG.error("Can't play a refactoring for model " + modelDescriptor.getModelUID());
           } catch(Throwable t) {
             LOG.error(t);
             continue;
