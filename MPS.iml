@@ -117,6 +117,7 @@
     <orderEntry type="library" name="Eclipse Runtime" level="project" />
     <orderEntry type="library" name="Eclipse Jobs" level="project" />
     <orderEntry type="library" name="Tigris SVN" level="project" />
+    <orderEntry type="library" name="Eclipse JDT" level="project" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
