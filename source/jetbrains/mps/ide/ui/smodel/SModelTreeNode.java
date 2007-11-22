@@ -293,12 +293,12 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return myInitialized;
   }
 
-  public void update() {
+  protected void doUpdate() {
     myInitialized = false;
     this.removeAllChildren();
   }
 
-  public void init() {
+  protected void doInit() {
     try {
       myInitializing = true;
       removeAllChildren();
@@ -459,7 +459,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         MPSTreeNodeEx refsNode = (MPSTreeNodeEx) nodeTreeNode.getChildAt(1);
         refsNode.update();
         refsNode.init();
-        treeModel.nodeStructureChanged(refsNode);
       }
     }
 
@@ -504,9 +503,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           MPSTreeNodeEx propsNode = (MPSTreeNodeEx) treeNode.getChildAt(0);
           propsNode.update();
           propsNode.init();
-          treeModel.nodeStructureChanged(propsNode);
         }
-
 
         treeModel.nodeChanged(treeNode);
       }

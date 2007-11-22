@@ -140,7 +140,7 @@ public class NodeExplorerView extends DefaultTool {
       return string + helginsTypeInfo;
     }
 
-    public void init() {
+    protected void doInit() {
       this.removeAllChildren();
       if (getSNode() == null) return;
       for (SNode childNode : getSNode().getChildren()) {
@@ -161,7 +161,7 @@ public class NodeExplorerView extends DefaultTool {
       myNode = new SNodePointer(node);
     }
 
-    public void init() {
+    protected void doInit() {
       for (SReference reference : myNode.getNode().getReferences()) {
         SNode referent = reference.getTargetNode();
         if (referent != null) {
@@ -185,7 +185,7 @@ public class NodeExplorerView extends DefaultTool {
       myNode = new SNodePointer(node);
     }
 
-    public void init() {
+    protected void doInit() {
       SNode node = myNode.getNode();
       for (String propertyName : node.getProperties().keySet()) {
         String value = node.getProperty(propertyName);

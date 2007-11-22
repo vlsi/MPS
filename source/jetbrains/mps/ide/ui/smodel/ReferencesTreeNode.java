@@ -3,7 +3,6 @@ package jetbrains.mps.ide.ui.smodel;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -27,8 +26,8 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
   }
 
 
-  public void init() {
-    super.init();
+  protected void doInit() {
+    super.doInit();
 
     for (final SReference ref : myNode.getReferences()) {
       add(new TextTreeNode(ref.getRole() + ": " +  ref.getTargetNode(), getOperationContext()) {
@@ -54,8 +53,8 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
     myInitialized = true;
   }
 
-  public void update() {
-    super.update();
+  protected void doUpdate() {
+    super.doUpdate();
     this.removeAllChildren();
     myInitialized = false;
   }

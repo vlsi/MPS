@@ -96,7 +96,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     return getSNode().getId();
   }
 
-  public void update() {
+  protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;
   }
@@ -105,7 +105,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     return myInitialized;
   }
 
-  public void init() {
+  protected void doInit() {
     this.removeAllChildren();
     SNode n = getSNode();
     if (n == null) return;

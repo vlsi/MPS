@@ -25,7 +25,7 @@ public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTre
       return myInitialized;
     }
 
-    public void init() {
+    protected void doInit() {
       List<T> descendants = new ArrayList<T>(myHierarchyTree.getAbstractChildren((T) this.getUserObject()));
       Collections.sort(descendants, new Comparator<T>() {
         public int compare(T o1, T o2) {
@@ -41,7 +41,7 @@ public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTre
       myInitialized = true;
     }
 
-    public void update() {
+    protected void doUpdate() {
       this.removeAllChildren();
       myInitialized = false;
     }

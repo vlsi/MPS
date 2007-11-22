@@ -237,7 +237,7 @@ public class CellExplorerView extends DefaultTool {
       showCell();
     }
 
-    public void init() {
+    protected void doInit() {
       removeAllChildren();
       if (myCell.getSNode() != null) {
         final SNode node = myCell.getSNode();

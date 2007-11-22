@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeModel;
 import java.awt.event.KeyEvent;
 import java.awt.Color;
 import java.util.ArrayList;
@@ -76,9 +77,23 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public void init() {
+    if (isInitialized()) {
+      return;
+    }
+
+    doInit();
+    ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);
+  }
+
+  protected void doInit() {
   }
 
   public void update() {
+    doUpdate();
+    ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);
+  }
+
+  protected void doUpdate() {
   }
 
   public void remove(int childIndex) {

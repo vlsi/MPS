@@ -24,8 +24,8 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
     return myInitialized;
   }
 
-  public void init() {
-    super.init();
+  protected void doInit() {
+    super.doInit();
 
     List<String> props = new ArrayList<String>(myNode.getPropertyNames());
 
@@ -50,7 +50,7 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
     ((DefaultTreeModel) getTree().getModel()).nodeStructureChanged(this);
   }
 
-  public void update() {
+  protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;
   }

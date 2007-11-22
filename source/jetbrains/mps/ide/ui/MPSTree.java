@@ -464,6 +464,7 @@ public abstract class MPSTree extends JTree {
             if (getModel().getRoot() instanceof MPSTreeNode) {
               (getRootNode()).disposeThisAndChildren();
             }
+
             MPSTreeNode root = rebuild();
             root.setTree(MPSTree.this);
             DefaultTreeModel model = new DefaultTreeModel(root);

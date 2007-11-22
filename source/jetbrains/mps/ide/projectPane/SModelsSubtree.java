@@ -87,7 +87,7 @@ public class SModelsSubtree {
       return myInitialized;
     }
 
-    public void init() {
+    protected void doInit() {
       if (myInitialized) return;
 
       NamespaceTreeBuilder builder = new SModelNamespaceTreeBuilder();
