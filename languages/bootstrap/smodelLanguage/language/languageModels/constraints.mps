@@ -165,6 +165,22 @@
         <link role="concept" targetNodeId="18.1145552809883" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1195721949128">
+      <property name="name" value="getClassExpression" />
+      <link role="overridenMethod" targetNodeId="15.1194035415601" resolveInfo="getClassExpression" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195721949130">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195721970098">
+          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1195721970099">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1195721972425">
+              <link role="classifier" targetNodeId="3.~List" resolveInfo="List" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1195721955739">
+        <link role="concept" targetNodeId="18.1068431790191" resolveInfo="Expression" />
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181704882">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181704883" />
     </node>
