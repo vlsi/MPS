@@ -306,12 +306,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                              final IMessageHandler messages) {
     CommandProcessor.instance().executeGenerationCommand(new Runnable() {
       public void run() {
-        progress.startTask("Generating...");
-        try {
-          generateModels_internal(inputModels, targetLanguage, invocationContext, generationType, script, progress, messages);
-        } finally {
-          progress.finishAnyway();
-        }
+        generateModels_internal(inputModels, targetLanguage, invocationContext, generationType, script, progress, messages);
       }
     });
   }
@@ -324,16 +319,24 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                                        IAdaptiveProgressMonitor progress,
                                        IMessageHandler messages) {
 
+    List<SModelDescriptor> sourceModels = new ArrayList<SModelDescriptor>();
+    for (SModel model : _sourceModels) {
+      sourceModels.add(model.getModelDescriptor());
+    }
+
+    boolean compile = (
+            (myCompileOnGeneration && generationType.requiresCompilationInIDEAfterGeneration())
+                    || (myCompileBeforeGeneration && generationType.requiresCompilationInIDEABeforeGeneration()));
+
+    long totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, sourceModels);
+    progress.startTaskAnyway("generating", null, totalJob);
+
     MPSModuleRepository.getInstance().removeTransientModules();
     MPSProject project = invocationContext.getProject();
     IProjectHandler projectHandler = project.getProjectHandler();
     showMessageView(project);
 
     project.saveModels();
-    List<SModelDescriptor> sourceModels = new ArrayList<SModelDescriptor>();
-    for (SModel model : _sourceModels) {
-      sourceModels.add(model.getModelDescriptor());
-    }
 
     clearMessageVew(project);
     messages.handle(new Message(MessageKind.INFORMATION, generationType.getStartText()));
@@ -352,12 +355,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     messages.handle(new Message(MessageKind.INFORMATION, "    target root folder: \"" + outputFolder + "\""));
 
     boolean ideaPresent = projectHandler != null;
-    boolean compile = ideaPresent && (
-            (myCompileOnGeneration && generationType.requiresCompilationInIDEAfterGeneration())
-                    || (myCompileBeforeGeneration && generationType.requiresCompilationInIDEABeforeGeneration()));
-
-    long totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, sourceModels);
-    progress.startTaskAnyway("generating", null, totalJob);
 
     try {
       boolean reloadClasses = true;
