@@ -286,12 +286,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
     Thread generationThread = new Thread("Generation") {
       public void run() {
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            progress.show();
-            progress.clear();
-          }
-        });
         generateModels(sourceModels, targetLanguage, invocationContext, generationType, script, progress, messages);
         progress.finishAnyway();
       }
