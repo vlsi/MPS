@@ -306,7 +306,12 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                              final IMessageHandler messages) {
     CommandProcessor.instance().executeGenerationCommand(new Runnable() {
       public void run() {
-        generateModels_internal(inputModels, targetLanguage, invocationContext, generationType, script, progress, messages);
+        progress.startTask("Generating...");
+        try {
+          generateModels_internal(inputModels, targetLanguage, invocationContext, generationType, script, progress, messages);
+        } finally {
+          progress.finishAnyway();
+        }
       }
     });
   }
