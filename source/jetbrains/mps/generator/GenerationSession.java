@@ -445,49 +445,33 @@ public class GenerationSession implements IGenerationSession {
     addModelRoot("", solutionDir, solutionDescriptor);
 
     // for all languages that really used add the LanguageRoot to the solution descriptor
-    Set<Language> usedLang = new HashSet<Language>();
-    Set<DevKit> usedDevKits = new HashSet<DevKit>();
-    for (SModelDescriptor descriptor : transientModels) {
-      List<Language> languages = descriptor.getSModel().getLanguages(GlobalScope.getInstance());
-      for (Language language : languages) {
-        if (!usedLang.contains(language)) {
-          usedLang.add(language);
-          ModuleReference ref = ModuleReference.newInstance(solutionDescriptor.getModel());
-          ref.setName(language.getModuleUID());
-          solutionDescriptor.addDependency(ref);
-        }
-      }
 
-      for (String namespace : descriptor.getSModel().getDevKitNamespaces()) {
-        addDevKit(solutionDescriptor, namespace, usedDevKits);
-      }
+    Set<String> uidsToAdd = new LinkedHashSet<String>();
+
+    SModel sm = solutionDescriptor.getModel();
+    for (SModelDescriptor descriptor : transientModels) {
+      uidsToAdd.addAll(descriptor.getSModel().getLanguageNamespaces(GlobalScope.getInstance()));
+      uidsToAdd.addAll(descriptor.getSModel().getDevKitNamespaces());
     }
 
     // add models accessible from used generators should be accessible from our solution - add all model roots
     for (GenerationSessionContext context : mySavedContexts) {
       List<Generator> generatorModules = context.getGeneratorModules();
       for (Generator generator : generatorModules) {
-        List<ModelRoot> modelRoots = generator.getNonDefaultModelRoots();
-        for (ModelRoot modelRoot : modelRoots) {
-          addModelRoot(modelRoot.getPrefix(), modelRoot.getPath(), solutionDescriptor);
-        }
-
-        for (DevKit dk : generator.getScope().getVisibleDevkits()) {
-          addDevKit(solutionDescriptor, dk.getName(), usedDevKits);
-        }
+        uidsToAdd.add(generator.getModuleUID());
       }
     }
 
+
     // add models accessible from the invokation contextshould be accessible from our solution - add all model roots
     IModule invocationModule = myInvocationContext.getModule();
-    assert invocationModule != null;
-    List<ModelRoot> modelRoots = invocationModule.getNonDefaultModelRoots();
-    for (ModelRoot modelRoot : modelRoots) {
-      addModelRoot(modelRoot.getPrefix(), modelRoot.getPath(), solutionDescriptor);
-    }
+    uidsToAdd.add(invocationModule.getModuleUID());
 
-    for (DevKit dk : invocationModule.getScope().getVisibleDevkits()) {
-      addDevKit(solutionDescriptor, dk.getName(), usedDevKits);
+
+    for (String uid : uidsToAdd) {
+      ModuleReference mr = ModuleReference.newInstance(sm);
+      mr.setName(uid);
+      solutionDescriptor.addDependency(mr);
     }
 
     // discard all transient modules (and models)
@@ -504,20 +488,6 @@ public class GenerationSession implements IGenerationSession {
     SModelRepository.getInstance().unRegisterModelDescriptor(modelDescriptor, tmpOwner);
 
     return solutionDescriptorFile;
-  }
-
-  private void addDevKit(SolutionDescriptor solutionDescriptor, String namespace, Set<DevKit> usedDevKits) {
-    DevKit dk = myInvocationContext.getScope().getDevKit(namespace);
-    if (dk != null && !usedDevKits.contains(dk)) {
-      usedDevKits.add(dk);
-
-      ModuleRoot moduleRoot = ModuleRoot.newInstance(solutionDescriptor.getModel());
-      IFile descriptorFile = dk.getDescriptorFile();
-
-      assert descriptorFile != null;
-      moduleRoot.setPath(descriptorFile.getAbsolutePath());
-      solutionDescriptor.addModuleRoot(moduleRoot);
-    }
   }
 
   private void addModelRoot(String prefix, String path, SolutionDescriptor descriptor) {
