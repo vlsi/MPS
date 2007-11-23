@@ -263,6 +263,10 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     }
   }
 
+  public void openModule(IModule m) {    
+    selectModule(m);
+  }
+
   public void selectNode(SNode node) {
     DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
@@ -333,16 +337,16 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     }
   }
 
-  public void selectLanguage(Language language) {
+  public void selectModule(IModule module) {
     DefaultTreeModel model = (DefaultTreeModel) myTree.getModel();
     MPSTreeNode rootNode = (MPSTreeNode) model.getRoot();
-    MPSTreeNode languageTreeNode = findModuleTreeNode(language);
+    MPSTreeNode languageTreeNode = findModuleTreeNode(module);
     if (languageTreeNode != null) {
       TreePath treePath = new TreePath(languageTreeNode.getPath());
       myTree.setSelectionPath(treePath);
       myTree.scrollPathToVisible(treePath);
     } else {
-      LOG.warning("Couldn't select language \"" + language + "\" : tree node not found.");
+      LOG.warning("Couldn't select module \"" + module + "\" : tree node not found.");
     }
   }
 
