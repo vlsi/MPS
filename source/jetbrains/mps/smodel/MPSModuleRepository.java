@@ -182,14 +182,14 @@ public class MPSModuleRepository {
       }
     } else {
       if (!cls.isInstance(module)) {
-        LOG.error("can't register module " + module + " : module of another kind with the same name already exists");
+        LOG.error("can't register module " + module + " : module of another kind with the same name already exists", module);
       }
       Set<MPSModuleOwner> owners = myModuleToOwnersMap.get(module);
       if (owners == null) {
         owners = new HashSet<MPSModuleOwner>();
         myModuleToOwnersMap.put(module, owners);
         if (owner == module) {
-          LOG.warning("module " + module + " wants to owe itself: will be collected very quickly");
+          LOG.warning("module " + module + " wants to owe itself: will be collected very quickly", module);
         }
       }
       if (owner != module) owners.add(owner);
@@ -205,10 +205,10 @@ public class MPSModuleRepository {
       myUIDToModulesMap.put(moduleUID, modulesWithUID);
     }
     if (modulesWithUID.size() > 1) {
-      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + modulesWithUID.get(0).getDescriptorFile() + " and " + module.getDescriptorFile());
+      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + modulesWithUID.get(0).getDescriptorFile() + " and " + module.getDescriptorFile(), modulesWithUID.get(0));
     }
     if (modulesWithUID.size() == 1 && modulesWithUID.get(0) != module) {
-      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + modulesWithUID.get(0).getDescriptorFile() + " and " + module.getDescriptorFile());       
+      LOG.error("can't add module " + moduleUID + " : module with the same UID exists at " + modulesWithUID.get(0).getDescriptorFile() + " and " + module.getDescriptorFile(), modulesWithUID.get(0));
     }
     modulesWithUID.add(module);
   }
