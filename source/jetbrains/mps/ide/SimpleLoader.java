@@ -18,4 +18,7 @@ public class SimpleLoader<Item> implements ItemsLoader<Item> {
   public int getProgress() {
     throw new RuntimeException();
   }
+
+  public void interrupt() {    
+  }
 }
