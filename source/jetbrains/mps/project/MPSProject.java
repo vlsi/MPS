@@ -562,7 +562,6 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
 
           Class cls = null;
-
           if (module != null) {
             cls = module.getClass(className);
           } else {
@@ -615,11 +614,10 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
             if (component.getClass().getClassLoader() instanceof DefaultClassLoader) {
               DefaultClassLoader bcl = (DefaultClassLoader) component.getClass().getClassLoader();
 
-
               //todo this is definitely a hack but I found no other way to
               //todo find a name of a bundle by its class loader
               String repr = bcl.getDelegate().toString();
-              int indexOfUnderscore = repr.indexOf('_');
+              int indexOfUnderscore = repr.lastIndexOf('_');
               assert indexOfUnderscore != -1;
               String name = repr.substring(0, indexOfUnderscore);
               componentElement.setAttribute(BUNDLE, name);
