@@ -1,17 +1,16 @@
 package jetbrains.mps.patterns.util;
 
-import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.patterns.structure.*;
+import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.EqualUtil;
 
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
-import java.util.Stack;
 
 /**
  * Created by IntelliJ IDEA.
@@ -37,7 +36,11 @@ public class MatchingUtil {
     Set<String> propertyNames = node1.getPropertyNames();
     propertyNames.addAll(node2.getPropertyNames());
     for (String propertyName : propertyNames) {
-       if (!EqualUtil.equals(node1.getProperty(propertyName), node2.getProperty(propertyName))) return false;
+      AbstractConceptDeclaration typeDeclaration = node1.getConceptDeclarationAdapter();
+      PropertyDeclaration propertyDeclaration = SModelSearchUtil_new.findPropertyDeclaration(typeDeclaration, propertyName);
+      PropertySupport propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
+      if (!EqualUtil.equals(propertySupport.fromInternalValue(node1.getProperty(propertyName)),
+              propertySupport.fromInternalValue(node2.getProperty(propertyName)))) return false;
     }
 
     //-- matching references
