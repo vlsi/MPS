@@ -28,7 +28,6 @@ import javax.swing.Icon;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.Color;
 import java.awt.Frame;
@@ -647,21 +646,43 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       return menu;
     }
 
-    private List<SNode> getNodesUnderPackage() {
-      List<SNode> result = new ArrayList<SNode>();
-      for (int i = 0; i < getChildCount(); i++) {
-        TreeNode tn = getChildAt(i);
-        if (tn instanceof SNodeTreeNode) {
-          SNode node = ((SNodeTreeNode) tn).getSNode();
-          assert node.isRoot();
-          result.add(node);
-        }
+    public IOperationContext getOperationContext() {
+      return SModelTreeNode.this.getOperationContext();
+    }
 
-        if (tn instanceof PackageNode) {
-          result.addAll(((PackageNode) tn).getNodesUnderPackage());
+    private Set<SNode> getNodesUnderPackage() {
+      Set<SNode> result = new LinkedHashSet<SNode>();
+
+      if (getOperationContext().getModule() instanceof Language) {
+        Language l = (Language) getOperationContext().getModule();
+
+        for (SModelDescriptor sm : l.getAspectModelDescriptors()) {
+          result.addAll(getNodesUnderPackage(sm));
         }
       }
+
+      result.addAll(getNodesUnderPackage(SModelTreeNode.this.getSModelDescriptor()));
+
       return result;
+    }
+
+    private Set<SNode> getNodesUnderPackage(SModelDescriptor sm) {
+      Set<SNode> nodes = new LinkedHashSet<SNode>();
+      for (SNode root : sm.getSModel().getRoots()) {
+        String rootPack = root.getProperty(PACK);
+        if (rootPack != null && rootPack.startsWith(getFullPackage())) {
+          nodes.add(root);   
+        }
+      }
+      return nodes;
+    }
+
+    private String getFullPackage() {      
+      if (getParent() instanceof SModelTreeNode) {
+        return getPackage();
+      }
+
+      return ((PackageNode) getParent()).getFullPackage() + "." + getPackage();
     }
 
     private String getPackage() {
