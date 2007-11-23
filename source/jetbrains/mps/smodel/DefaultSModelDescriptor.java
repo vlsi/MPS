@@ -269,7 +269,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
           } catch(Throwable t) {
             LOG.error(t);
             continue;
-          } finally{
+          } finally {
             SModelRepository.getInstance().removeModelDescriptor(fakeModelDescriptor);
           }
         }

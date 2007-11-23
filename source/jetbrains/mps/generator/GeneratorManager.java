@@ -30,6 +30,7 @@ import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import org.jdom.Element;
 
 import javax.swing.JOptionPane;
+import javax.swing.SwingUtilities;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -280,10 +281,17 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                                                boolean closeOnExit) {
 
     final AdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), closeOnExit);
+
     final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
 
     Thread generationThread = new Thread("Generation") {
       public void run() {
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            progress.show();
+            progress.clear();
+          }
+        });
         generateModels(sourceModels, targetLanguage, invocationContext, generationType, script, progress, messages);
         progress.finishAnyway();
       }
