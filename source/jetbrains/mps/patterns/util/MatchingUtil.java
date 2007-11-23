@@ -46,6 +46,10 @@ public class MatchingUtil {
     for (String role : referenceRoles) {
       SNode target1 = node1.getReferent(role);
       SNode target2 = node2.getReferent(role);
+       if (matchModifier.accept(target1, target2)) {
+          matchModifier.performAction(target1, target2);
+          continue;
+        }
       if (target2 != target1) return false;
     }
 

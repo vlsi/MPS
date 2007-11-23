@@ -593,6 +593,27 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
       childReplacement = CopyUtil.copy(childReplacement, parent.getModel());
       parent.addChild(roleInParent, childReplacement);
     }
+    Map<SReference, SNode> referenceReplacement = new HashMap<SReference, SNode>();
+    List<SReference> references = new ArrayList<SReference>(wrapper.getNode().getReferences());
+    for (SReference reference : references) {
+      SNode oldNode = reference.getTargetNode();
+      if (BaseAdapter.isInstance(oldNode, RuntimeTypeVariable.class)) {
+      SNode newNode = expandNode(new NodeWrapper(oldNode), representator, depth, variablesMet, typesModel).getNode();
+        referenceReplacement.put(reference, newNode);
+      }
+    }
+    for (SReference reference : new ArrayList<SReference>(references)) {
+      if (!referenceReplacement.keySet().contains(reference)) continue;
+
+
+      String role = reference.getRole();
+      assert role != null;
+      SNode replacement = referenceReplacement.get(reference);
+      SNode sourceNode = reference.getSourceNode();
+      sourceNode.removeReference(reference);
+      sourceNode.setReferent(role, replacement);
+    }
+
     return (NodeWrapper) wrapper;
   }
 
