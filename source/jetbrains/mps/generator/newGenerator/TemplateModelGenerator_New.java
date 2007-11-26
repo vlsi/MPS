@@ -115,6 +115,12 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       myOutputModel.addRoot(copiedOutputRoot);
     }
 
+    // reductions in copied roots
+    for (SNode outputRootNode : copiedOutputRoots) {
+      checkMonitorCanceled();
+      ruleManager.getReductionRuleManager().applyReductionRules(findInputNodeByOutputNodeWithSameId(outputRootNode));
+    }
+
     // weaving
     for (WeavingRule weavingRule : ruleManager.getWeavingRules()) {
       checkMonitorCanceled();
@@ -123,12 +129,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     for (Weaving_MappingRule weavingMappingRule : ruleManager.getWeaving_MappingRules()) {
       checkMonitorCanceled();
       ruleUtil.applyWeavingMappingRule(weavingMappingRule);
-    }
-
-    // reductions in copied roots (why here?)
-    for (SNode outputRootNode : copiedOutputRoots) {
-      checkMonitorCanceled();
-      ruleManager.getReductionRuleManager().applyReductionRules(findInputNodeByOutputNodeWithSameId(outputRootNode));
     }
 
     checkMonitorCanceled();
