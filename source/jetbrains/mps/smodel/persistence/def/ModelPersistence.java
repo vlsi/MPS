@@ -198,9 +198,9 @@ public class ModelPersistence {
       if (!versionFile.exists()) {
         versionFile.createNewFile();
       }
-      OutputStream fileOutputStream = versionFile.openOutputStream();
-      fileOutputStream.write(version);
-      fileOutputStream.close();
+
+      Document doc = new Document(new Element("version").setText("" + version));
+      JDOMUtil.writeDocument(doc, versionFile);
     } catch (IOException ioe) {
       LOG.error(ioe);
     }
@@ -210,9 +210,9 @@ public class ModelPersistence {
     IFile versionFile = getVersionFile(modelFile);
     if (versionFile.exists()) {
       try {
-        InputStream fileInputStream = versionFile.openInputStream();
-        return new InputStreamReader(fileInputStream).read();
-      } catch (FileNotFoundException ex) {
+        Document versionDoc = JDOMUtil.loadDocument(versionFile);
+        return Integer.parseInt(versionDoc.getRootElement().getText());        
+      } catch (JDOMException ex) {
         LOG.error(ex);
       } catch (IOException ex) {
         LOG.error(ex);
@@ -220,4 +220,5 @@ public class ModelPersistence {
     }
     return -1;
   }
+
 }
