@@ -220,5 +220,4 @@ public class ModelPersistence {
     }
     return -1;
   }
-
 }
