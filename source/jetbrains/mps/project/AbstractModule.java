@@ -322,6 +322,14 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
+  public List<String> getSourcePaths() {
+    List<String> result = new ArrayList<String>();
+    for (SourcePath p : getModuleDescriptor().getSourcePaths()) {
+      result.add(p.getPath());
+    }
+    return result;
+  }
+
   protected void collectPackages(List<String> result, String current) {    
     if (!"".equals(current)) {
       result.add(current);

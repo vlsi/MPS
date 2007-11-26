@@ -26,6 +26,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   @NotNull List<IModule> getOwnModules();
 
+  <T extends IModule> Set<T> getAllDependOnModules(@NotNull Class<T> cls);
+
   @NotNull List<SModelDescriptor> getOwnModelDescriptors();
 
   @NotNull List<ModelRoot> getModelRoots();
@@ -67,6 +69,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   void reloadStubs();
 
   List<String> getRuntimePackages();
+
+  List<String> getSourcePaths();
 
   Class getClass(String fqName);
 
