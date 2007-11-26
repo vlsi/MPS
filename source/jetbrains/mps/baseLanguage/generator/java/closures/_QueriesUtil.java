@@ -126,6 +126,9 @@ public class _QueriesUtil {
             generator);
   }
 
+  /**
+   * method should be invoked in $MAP-SRC$ because it relay weaved members (MAP-SRC is processed after all other mappings)
+   */
   public static SNode create_closureContextObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
     // find enclosing closure or closure context owner
     INodeAdapter enclosingClosureOrContextOwner = nodeInsideClosure.getAdapter().findParent(new Condition<INodeAdapter>() {

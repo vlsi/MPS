@@ -172,15 +172,15 @@ public class QueriesGenerated {
     return _QueriesUtil.create_enclosingClassObject(node, generator);
   }
 
-  public static SNode sourceNodeQuery_1185920331764(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return _QueriesUtil.create_closureContextObject(node, generator);
-  }
-
   public static SNode mapSrcMacro_mapper_1170898169592(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return _QueriesUtil.create_closureContextObject(node, generator);
   }
 
   public static SNode mapSrcMacro_mapper_1170899386077(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
+    return _QueriesUtil.create_closureContextObject(node, generator);
+  }
+
+  public static SNode mapSrcMacro_mapper_1196117121002(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
     return _QueriesUtil.create_closureContextObject(node, generator);
   }
 
