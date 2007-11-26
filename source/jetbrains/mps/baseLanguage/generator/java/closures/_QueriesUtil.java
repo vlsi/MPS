@@ -168,6 +168,9 @@ public class _QueriesUtil {
     return BaseAdapter.fromAdapter(NullLiteral.newInstance(model));
   }
 
+  /**
+   * method should be invoked in $COPY-SRC$ because use ref on class in 'input model'
+   */
   public static SNode create_enclosingClassObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
     SNode enclosingClass = SNodeOperations.getAncestor(nodeInsideClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (enclosingClass != null) {
@@ -176,23 +179,19 @@ public class _QueriesUtil {
       if (enclosingNode instanceof InstanceMethodDeclaration ||
               enclosingNode instanceof ConstructorDeclaration) {
         ThisExpression thisExpr = ThisExpression.newInstance(generator.getTargetModel());
-//      SNode enclosingClass = SNodeOperations.getAncestor(nodeInsideClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-//      if (enclosingClass == null) {
-//        // closure is not in class
-//        ClassConcept adapter = (ClassConcept) SModelUtil_new.findNodeByFQName("java.lang.Object", ClassConcept.class, generator.getScope());
-//        enclosingClass = adapter.getNode();
-//      }
         thisExpr.setClassConcept((ClassConcept) enclosingClass.getAdapter());
         return thisExpr.getNode();
       }
+
       if (enclosingNode instanceof Closure) {
-//      SNode closureAdapterClass_output = generator.findOutputNodeByInputNodeAndMappingName(enclosingNode.getNode(), ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
-//      ClassConcept closureAdapterClass_output_ = (ClassConcept) closureAdapterClass_output.getAdapter();
-//      FieldDeclaration field = JavaModelUtil_new.findField(closureAdapterClass_output_, ClosuresMappingId.NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD);
-//      FieldReference fieldRef = FieldReference.newInstance(generator.getTargetModel());
-//      fieldRef.setInstance(ThisExpression.newInstance(generator.getTargetModel()));
-//      fieldRef.setFieldDeclaration(field);
-//      return BaseAdapter.fromAdapter(fieldRef);
+//        SNode closureAdapterClass_output = generator.findOutputNodeByInputNodeAndMappingName(enclosingNode.getNode(), ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
+//        ClassConcept closureAdapterClass_output_ = (ClassConcept) closureAdapterClass_output.getAdapter();
+//        FieldDeclaration field = JavaModelUtil_new.findField(closureAdapterClass_output_, ClosuresMappingId.NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD);
+//        FieldReference fieldRef = FieldReference.newInstance(generator.getTargetModel());
+//        fieldRef.setInstance(ThisExpression.newInstance(generator.getTargetModel()));
+//        fieldRef.setFieldDeclaration(field);
+//        return BaseAdapter.fromAdapter(fieldRef);
+
         InternalPartialFieldReference fieldRef_intern = InternalPartialFieldReference.newInstance(null);
         fieldRef_intern.setInstance(ThisExpression.newInstance(null));
         fieldRef_intern.setFieldName(ClosuresMappingId.NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD);
