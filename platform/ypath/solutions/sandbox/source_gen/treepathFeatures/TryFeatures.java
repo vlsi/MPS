@@ -106,7 +106,7 @@ public class TryFeatures extends TreePath<Node> {
     }
 
     public Iterable<Node> sequence() {
-      final zClosureContext1 _zClosureContext = new zClosureContext1();
+      final zClosureContext _zClosureContext = new zClosureContext();
       _zClosureContext._node = this.thisNode;
       return new SequenceWithSupplier<Node>(new zValueSupplier(null, _zClosureContext));
     }

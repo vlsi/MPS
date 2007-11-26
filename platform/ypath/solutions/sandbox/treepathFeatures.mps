@@ -1128,32 +1128,12 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1191847360363">
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1191847330727">
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1191847319084">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1191847325672">
-                  <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceCreatorWithSupplier" id="1191847325673">
-                    <node role="supplier" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock" id="1191847325674">
-                      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1191847325675">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement" id="1191847325676">
-                          <node role="variable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable" id="1191847325677">
-                            <property name="name" value="z" />
-                          </node>
-                          <node role="inputSequence" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1191847325678">
-                            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1191847325679">
-                              <link role="link" targetNodeId="6.1169129564478" />
-                            </node>
-                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191847325680">
-                              <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
-                            </node>
-                          </node>
-                          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1191847325681">
-                            <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.TraversalYieldStatement" id="1191847325682">
-                              <node role="value" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1191847325683">
-                                <link role="variable" targetNodeId="1191847325677" resolveInfo="z" />
-                              </node>
-                            </node>
-                          </node>
-                        </node>
-                      </node>
-                    </node>
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196097008411">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1196097010908">
+                    <link role="link" targetNodeId="6.1169129564478" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196097007134">
+                    <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
                   </node>
                 </node>
               </node>
@@ -1185,7 +1165,7 @@
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1191847361647">
                   <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement" id="1191847375011">
                     <node role="variable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable" id="1191847375012">
-                      <property name="name" value="z" />
+                      <property name="name" value="_zzz_" />
                     </node>
                     <node role="inputSequence" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1191847380443">
                       <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1191847383167">
