@@ -254,7 +254,13 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
       //write access listeners
       removeOurListener();
       for (SNode nodeToDependOn : myNodesToDependentNodes.keySet()) {
-        addOurListener(nodeToDependOn.getModel().getModelDescriptor());
+        final SModel sModel = nodeToDependOn.getModel();
+        final SModelDescriptor sm = sModel.getModelDescriptor();
+        if (sm != null) {
+          addOurListener(sm);
+        } else {
+          LOG.error("model descriptor is null: " + sModel);
+        }
       }
       final Set<SNodePointer> skippedNodes = new HashSet<SNodePointer>(myNotSkippedNodes);
       if (HelginsPreferencesComponent.getInstance().isUsesDebugHighlighting()) {
@@ -276,7 +282,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
           }
         });
       }
-    } finally{
+    } finally {
       myTypeChecker.clearCurrentTypesComponent();
       myNotSkippedNodes.clear();
       clearEquationManager();
@@ -284,7 +290,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
   }
 
   private void markNode(AbstractEditorComponent component, SNodePointer skippedNode) {
-    component.getHighlightManager().mark(skippedNode.getNode(), new Color(255, 127, 0, 50),"", this);
+    component.getHighlightManager().mark(skippedNode.getNode(), new Color(255, 127, 0, 50), "", this);
   }
 
   public void solveInequationsAndExpandTypes() {
@@ -377,14 +383,14 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
           }
           try {
             applyRulesToNode(sNode, useNonTypesystemRules);
-          } finally{
+          } finally {
             if (isIncrementalMode()) {
               NodeReadEventsCaster.removeNodesReadListener();
             }
             myCurrentFrontier = null;
           }
           if (isIncrementalMode()) {
-            synchronized(ACCESS_LOCK) {
+            synchronized (ACCESS_LOCK) {
               myNodesReadListener.setAccessReport(true);
               addDepedentNodes(sNode, new HashSet<SNode>(myNodesReadListener.myAcessedNodes));
               myNodesReadListener.setAccessReport(false);
@@ -449,7 +455,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     // long t1 = System.currentTimeMillis();
     try {
       rule.applyRule(node);
-    } catch(Throwable t) {
+    } catch (Throwable t) {
       LOG.error(t);
     } finally {
       //  Statistics.getStatistic(Statistics.HELGINS).add(rule.getClass().getName(), System.currentTimeMillis() - t1, true);
@@ -572,7 +578,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
     List<SNode> children = new ArrayList<SNode>(wrapper.getNode().getChildren());
     for (SNode child : children) {
-      SNode newChild = expandNode(new NodeWrapper(child), representator, depth+1, variablesMet, typesModel).getNode();
+      SNode newChild = expandNode(new NodeWrapper(child), representator, depth + 1, variablesMet, typesModel).getNode();
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }
@@ -598,7 +604,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     for (SReference reference : references) {
       SNode oldNode = reference.getTargetNode();
       if (BaseAdapter.isInstance(oldNode, RuntimeTypeVariable.class)) {
-      SNode newNode = expandNode(new NodeWrapper(oldNode), representator, depth, variablesMet, typesModel).getNode();
+        SNode newNode = expandNode(new NodeWrapper(oldNode), representator, depth, variablesMet, typesModel).getNode();
         referenceReplacement.put(reference, newNode);
       }
     }
@@ -630,7 +636,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
   }
 
   public String getNewVarName() {
-    String result = myVariableChar + (myVariableIndex == 0 ? "" : ""+ myVariableIndex);
+    String result = myVariableChar + (myVariableIndex == 0 ? "" : "" + myVariableIndex);
     if (myVariableChar == Z_CHAR) {
       myVariableIndex++;
       myVariableChar = A_CHAR;
@@ -717,7 +723,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     }
 
     public void nodeChildReadAccess(SNode node, String childRole, SNode child) {
-      synchronized(ACCESS_LOCK) {
+      synchronized (ACCESS_LOCK) {
         reportAccess();
         myAcessedNodes.add(node);
         myAcessedNodes.add(child);
@@ -725,14 +731,14 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     }
 
     public void nodePropertyReadAccess(SNode node, String propertyName, String value) {
-      synchronized(ACCESS_LOCK) {
+      synchronized (ACCESS_LOCK) {
         reportAccess();
         myAcessedNodes.add(node);
       }
     }
 
     public void nodeReferentReadAccess(SNode node, String referentRole, SNode referent) {
-      synchronized(ACCESS_LOCK) {
+      synchronized (ACCESS_LOCK) {
         reportAccess();
         myAcessedNodes.add(node);
         myAcessedNodes.add(referent);
@@ -740,14 +746,14 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     }
 
     public void nodeUnclassifiedReadAccess(SNode node) {
-      synchronized(ACCESS_LOCK) {
+      synchronized (ACCESS_LOCK) {
         reportAccess();
         myAcessedNodes.add(node);
       }
     }
 
     public void clear() {
-      synchronized(ACCESS_LOCK) {
+      synchronized (ACCESS_LOCK) {
         reportAccess();
         myAcessedNodes.clear();
       }
