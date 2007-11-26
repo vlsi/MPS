@@ -62,6 +62,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   public static final String AUTOSCROLL_FROM_SOURCE = "autoscroll-from-source";
 
   private MyTree myTree = new MyTree();
+  private ProjectModulesPoolTreeNode myModulesPool;
   private IDEProjectFrame myIDE;
 
   private boolean myShowProperties;
@@ -236,22 +237,38 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   public MPSTreeNode findModuleTreeNode(final IModule module) {
     DefaultTreeModel treeModel = (DefaultTreeModel) myTree.getModel();
     MPSTreeNode rootTreeNode = (MPSTreeNode) treeModel.getRoot();
-    return findTreeNode(rootTreeNode, new Condition<MPSTreeNode>() {
-      public boolean met(MPSTreeNode treeNode) {
-        IOperationContext nodeContext = treeNode.getOperationContext();
-        return (nodeContext != null && nodeContext.getModule() == module);
-      }
-    });
+
+    if (!myModulesPool.isInitialized()) {
+      myModulesPool.init();
+    }
+
+    return findTreeNode(rootTreeNode,
+      new Condition<MPSTreeNode>() {
+        public boolean met(MPSTreeNode object) {
+          return !(object instanceof ProjectModuleTreeNode); 
+        }
+      },
+      new Condition<MPSTreeNode>() {
+        public boolean met(MPSTreeNode treeNode) {
+          IOperationContext nodeContext = treeNode.getOperationContext();
+          return (nodeContext != null && nodeContext.getModule() == module);
+        }
+      });
   }
 
-  private MPSTreeNode findTreeNode(MPSTreeNode root, Condition<MPSTreeNode> condition) {
-    if (condition.met(root)) {
+  private MPSTreeNode findTreeNode(MPSTreeNode root,
+                                   Condition<MPSTreeNode> descendCondition,
+                                   Condition<MPSTreeNode> resultCondition) {
+    if (resultCondition.met(root)) {
       return root;
     }
-    for (MPSTreeNode node : root) {
-      MPSTreeNode result = findTreeNode(node, condition);
-      if (result != null) {
-        return result;
+
+    if (descendCondition.met(root)) {    
+      for (MPSTreeNode node : root) {
+        MPSTreeNode result = findTreeNode(node, descendCondition, resultCondition);
+        if (result != null) {
+          return result;
+        }
       }
     }
     return null;
@@ -496,7 +513,6 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   }
 
   public class MyTree extends MPSTree {
-
     public MyTree() {
       super();
       scrollsOnExpand = false;
@@ -560,7 +576,8 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
       builder.fillNode(root);
 
       if (languages.size() + solutions.size() > 0) {
-        root.add(new ProjectModulesPoolTreeNode(getProject()));
+        myModulesPool = new ProjectModulesPoolTreeNode(getProject());
+        root.add(myModulesPool);
       }
       return root;
     }
