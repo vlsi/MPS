@@ -198,84 +198,84 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private void playUsedModelDescriptorsRefactoring(SModelDescriptor modelDescriptor) {
     int currentVersion = modelDescriptor.getVersion();
     int usedVersion = mySModel.getUsedVersion(modelDescriptor.getModelUID());
-    if (currentVersion > usedVersion) {
-      IOperationContext invocationContext = null;
-      outer : for (IModule module : SModelRepository.getInstance().getOwners(this, IModule.class)) {
-        if (module instanceof Generator) {
-          module = ((Generator)module).getSourceLanguage();
-        }
-        Set<MPSModuleOwner> mpsModuleOwners = MPSModuleRepository.getInstance().getOwners(module);
-        if (mpsModuleOwners == null) continue;
-        for (MPSModuleOwner owner : mpsModuleOwners) {
-          if (owner instanceof MPSProject) {
-            invocationContext = new ModuleContext(module, (MPSProject) owner);
-            break outer;
-          }
-        }
-      }
-      if (invocationContext == null) {
-        LOG.error("can't find a context for updating model " + getModelUID());
-        return;
-      }
-
-      SModel importedModel = modelDescriptor.getSModel();
-      SNode logstack = importedModel.getLog();
-      if (logstack != null) {
-        RuntimeLogStack runtimeLogStack = (RuntimeLogStack) logstack.getAdapter();
-        for (RuntimeLog runtimeLog : runtimeLogStack.getLogs()) {
-          if (runtimeLog.getModelVersion() <= usedVersion) continue;
-          Map<String, String> arguments = new HashMap<String, String>();
-          for (RequiredAdditionalArgumentValue value : runtimeLog.getArgumentValues()) {
-            arguments.put(value.getArgument().getName(), value.getValue());
-          }
-
-          SModel scriptsModel = runtimeLog.getUpdateModelClause().getModel();
-          LanguageAspectStatus aspectStatus = Language.getLanguageAspectStatus(scriptsModel.getModelDescriptor());
-          assert aspectStatus.getAspectKind() == AspectKind.SCRIPTS;
-          Language scriptslanguage = aspectStatus.getLanguage();
-
-          ModelOwner modelOwner = new ModelOwner() {};
-          final SModelDescriptor fakeModelDescriptor = TransientModels.createTransientModel(modelOwner, "temp", "$logplaying$");
-          try {
-            fakeModelDescriptor.getSModel().setLoading(true);
-            fakeModelDescriptor.getSModel().addRoot(CopyUtil.copy(runtimeLog, fakeModelDescriptor.getSModel()));
-            IGenerationScript script = new IGenerationScript() {
-              public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
-                return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
-              }
-            };
-            DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
-            GenerationSession generationSession = new GenerationSession(invocationContext, false, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, messages);
-            GenerationStatus status = generationSession.generateModel(fakeModelDescriptor, BootstrapLanguages.getInstance().getBaseLanguage(), script);
-            if (!status.isOk()) {
-              LOG.error(status.getMessage());
-              continue;
-            }
-            GenerateClassesGenerationType generationType = new GenerateClassesGenerationType() {
-              protected boolean isPutClassesOnTheDisk() {
-                return false;
-              }
-            };
-            generationType.handleOutput(invocationContext, status, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, null, messages);
-
-            String className = status.getOutputModel().getLongName() + "." + "LogRunner";
-            Class aClass = Class.forName(className, true, generationType.getClassLoader(getClass().getClassLoader()));
-
-            Method method = aClass.getDeclaredMethod("updateModel", SModel.class, Map.class);
-            method.invoke(null, mySModel, arguments);
-            save();
-          } catch (ClassNotFoundException e) {
-            LOG.error("Can't play a refactoring for model " + modelDescriptor.getModelUID());
-          } catch(Throwable t) {
-            LOG.error(t);
-            continue;
-          } finally {
-            SModelRepository.getInstance().removeModelDescriptor(fakeModelDescriptor);
-          }
-        }
-      }
-      mySModel.updateImportedModelUsedVersion(modelDescriptor.getModelUID(), currentVersion);
-    }
+//    if (currentVersion > usedVersion) {
+//      IOperationContext invocationContext = null;
+//      outer : for (IModule module : SModelRepository.getInstance().getOwners(this, IModule.class)) {
+//        if (module instanceof Generator) {
+//          module = ((Generator)module).getSourceLanguage();
+//        }
+//        Set<MPSModuleOwner> mpsModuleOwners = MPSModuleRepository.getInstance().getOwners(module);
+//        if (mpsModuleOwners == null) continue;
+//        for (MPSModuleOwner owner : mpsModuleOwners) {
+//          if (owner instanceof MPSProject) {
+//            invocationContext = new ModuleContext(module, (MPSProject) owner);
+//            break outer;
+//          }
+//        }
+//      }
+//      if (invocationContext == null) {
+//        LOG.error("can't find a context for updating model " + getModelUID());
+//        return;
+//      }
+//
+//      SModel importedModel = modelDescriptor.getSModel();
+//      SNode logstack = importedModel.getLog();
+//      if (logstack != null) {
+//        RuntimeLogStack runtimeLogStack = (RuntimeLogStack) logstack.getAdapter();
+//        for (RuntimeLog runtimeLog : runtimeLogStack.getLogs()) {
+//          if (runtimeLog.getModelVersion() <= usedVersion) continue;
+//          Map<String, String> arguments = new HashMap<String, String>();
+//          for (RequiredAdditionalArgumentValue value : runtimeLog.getArgumentValues()) {
+//            arguments.put(value.getArgument().getName(), value.getValue());
+//          }
+//
+//          SModel scriptsModel = runtimeLog.getUpdateModelClause().getModel();
+//          LanguageAspectStatus aspectStatus = Language.getLanguageAspectStatus(scriptsModel.getModelDescriptor());
+//          assert aspectStatus.getAspectKind() == AspectKind.SCRIPTS;
+//          Language scriptslanguage = aspectStatus.getLanguage();
+//
+//          ModelOwner modelOwner = new ModelOwner() {};
+//          final SModelDescriptor fakeModelDescriptor = TransientModels.createTransientModel(modelOwner, "temp", "$logplaying$");
+//          try {
+//            fakeModelDescriptor.getSModel().setLoading(true);
+//            fakeModelDescriptor.getSModel().addRoot(CopyUtil.copy(runtimeLog, fakeModelDescriptor.getSModel()));
+//            IGenerationScript script = new IGenerationScript() {
+//              public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
+//                return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
+//              }
+//            };
+//            DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
+//            GenerationSession generationSession = new GenerationSession(invocationContext, false, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, messages);
+//            GenerationStatus status = generationSession.generateModel(fakeModelDescriptor, BootstrapLanguages.getInstance().getBaseLanguage(), script);
+//            if (!status.isOk()) {
+//              LOG.error(status.getMessage());
+//              continue;
+//            }
+//            GenerateClassesGenerationType generationType = new GenerateClassesGenerationType() {
+//              protected boolean isPutClassesOnTheDisk() {
+//                return false;
+//              }
+//            };
+//            generationType.handleOutput(invocationContext, status, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, null, messages);
+//
+//            String className = status.getOutputModel().getLongName() + "." + "LogRunner";
+//            Class aClass = Class.forName(className, true, generationType.getClassLoader(getClass().getClassLoader()));
+//
+//            Method method = aClass.getDeclaredMethod("updateModel", SModel.class, Map.class);
+//            method.invoke(null, mySModel, arguments);
+//            save();
+//          } catch (ClassNotFoundException e) {
+//            LOG.error("Can't play a refactoring for model " + modelDescriptor.getModelUID());
+//          } catch(Throwable t) {
+//            LOG.error(t);
+//            continue;
+//          } finally {
+//            SModelRepository.getInstance().removeModelDescriptor(fakeModelDescriptor);
+//          }
+//        }
+//      }
+//      mySModel.updateImportedModelUsedVersion(modelDescriptor.getModelUID(), currentVersion);
+//    }
     return;
   }
 
