@@ -12,6 +12,7 @@
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/structureLanguage/solutions/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/helgins/languages/subtyping/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/refactoring/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/languages/transformation/TLBase_sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/transformation/test/inputLang/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/transformation/test/inputModels/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/projects/mf/lair1/languages/config/source_gen" isTestSource="false" />
@@ -118,6 +119,7 @@
     <orderEntry type="library" name="Eclipse Jobs" level="project" />
     <orderEntry type="library" name="Tigris SVN" level="project" />
     <orderEntry type="library" name="Eclipse JDT" level="project" />
+    <orderEntry type="module" module-name="baseLanguageInternal" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
