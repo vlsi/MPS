@@ -112,8 +112,8 @@ public final class BehaviorManager {
 
     if (method != null) {
       method.setAccessible(true);
-      myMethods.put(mi, method);
     }
+    myMethods.put(mi, method);
 
     return method;
   }
