@@ -2,6 +2,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.conversion.classpath.ClassPathModelRootManager;
 import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.projectLanguage.structure.*;
 import jetbrains.mps.reloading.*;
@@ -602,6 +603,26 @@ public abstract class AbstractModule implements IModule {
     } else {
       return ".." + File.separator + relativeToParent;
     }
+  }
+
+  public void addModuleImprot(final String moduleUID) {
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        ModuleDescriptor md = getModuleDescriptor();
+
+        for (ModuleReference r : md.getDependencys()) {
+          if (moduleUID.equals(r.getName())) {
+            return;
+          }
+        }
+
+        ModuleReference ref = ModuleReference.newInstance(md.getModel());
+        ref.setName(moduleUID);
+        md.addDependency(ref);
+
+        setModuleDescriptor(md);
+      }
+    });
   }
 
   public void createManifest() {
