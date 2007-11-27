@@ -372,13 +372,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         checkMonitorCanceled(progress);
 
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
-        progress.addText("compiling output module...");
         CompilationResult compilationResult;
         IModule module = invocationContext.getModule();
         if (module.getModuleDescriptor().getCompileInMPS()) {          
+          progress.addText("compiling output module in JetBrains MPS...");
           new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
           compilationResult =  new CompilationResult(0, 0, false);
         } else {
+          progress.addText("compiling output module in IntelliJ IDEA...");
           compilationResult = projectHandler.buildModule(outputFolder);
         }
         progress.addText("" + compilationResult);
@@ -498,7 +499,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           progress.addText("compilation in IntelliJ IDEA after generation is turned off or not needed");
         } else {
           // -- compile after generation
-          progress.addText("compiling in IntelliJ IDEA...");
 
           progress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
           projectHandler.refreshFS();
@@ -508,8 +508,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           IModule module = invocationContext.getModule();
           CompilationResult compilationResult;
           if (!module.getModuleDescriptor().getCompileInMPS()) {
+            progress.addText("compiling in IntelliJ IDEA...");
             compilationResult = projectHandler.buildModule(outputFolder);
           } else {
+            progress.addText("compiling in JetBrains MPS..");
             compilationResult = new CompilationResult(0, 0, false);
             new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
           }
