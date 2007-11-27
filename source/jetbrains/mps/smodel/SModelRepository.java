@@ -482,7 +482,7 @@ public class SModelRepository extends SModelAdapter {
   public Set<ModelOwner> getOwners(@NotNull SModelDescriptor modelDescriptor) {
     HashSet<ModelOwner> set = myModelToOwnerMap.get(modelDescriptor);
     if (set == null) return new HashSet<ModelOwner>();
-    return Collections.unmodifiableSet(set);
+    return new HashSet<ModelOwner>(set);
   }
 
   @NotNull
