@@ -33,7 +33,6 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
     myDumpQueriesStatisticsCheckBox.setSelected(myGeneratorManager.isDumpStatistics());
     myCompileSourceLanguagesModules.setSelected(myGeneratorManager.isCompileSourceLanguageModules());
     myCheckBeforeGeneration.setSelected(myGeneratorManager.isCheckBeforeCompilation());
-    myCompileInMPS.setSelected(myGeneratorManager.isCompileInMps());
 
     JPanel optionsPanel = new JPanel(new GridLayout(6, 1));
     optionsPanel.add(myCompileInIdeaBeforeGeneration);
@@ -72,6 +71,5 @@ class GeneratorManagerPreferencesPage implements IPreferencesPage {
     myGeneratorManager.setDumpStatistics(myDumpQueriesStatisticsCheckBox.isSelected());
     myGeneratorManager.setCompileSourceLanguageModules(myCompileSourceLanguagesModules.isSelected());
     myGeneratorManager.setCheckBeforeCompilation(myCheckBeforeGeneration.isSelected());
-    myGeneratorManager.setCompileInMps(myCompileInMPS.isSelected());
   }
 }

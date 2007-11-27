@@ -53,13 +53,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   private static final String COMPILE_ON_GENERATION = "compile-on-generation";
   private static final String COMPILE_SOURCE_LANGUAGES_MODULES = "compile-source-languages-modules";
   private static final String CHECK_BEFORE_COMPILATION = "check-before-compilation";
-  private static final String COMPILE_IN_MPS = "mps-in-mps";
 
   private boolean myCompileBeforeGeneration = false;
   private boolean myCompileOnGeneration = true;
   private boolean mySaveTransientModels;
   private boolean myDumpStatistics = false;
-  private boolean myCompileInMps = false;
   private boolean myCompileSourceLanguageModules = false;
   private boolean myCheckBeforeCompilation = false;
   private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
@@ -95,9 +93,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     if (element.getAttribute(CHECK_BEFORE_COMPILATION) != null) {
       myCheckBeforeCompilation = Boolean.parseBoolean(element.getAttributeValue(CHECK_BEFORE_COMPILATION));
     }
-    if (element.getAttribute(COMPILE_IN_MPS) != null) {
-      myCompileInMps = Boolean.parseBoolean(element.getAttributeValue(COMPILE_IN_MPS));
-    }
   }
 
   public void write(Element element, MPSProject project) {
@@ -107,7 +102,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     element.setAttribute(DUMP_STATISTICS, "" + myDumpStatistics);
     element.setAttribute(COMPILE_SOURCE_LANGUAGES_MODULES, "" + myCompileSourceLanguageModules);
     element.setAttribute(CHECK_BEFORE_COMPILATION, "" + myCheckBeforeCompilation);
-    element.setAttribute(COMPILE_IN_MPS, "" + myCompileInMps);
   }
 
   public boolean isCompileBeforeGeneration() {
@@ -132,14 +126,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
   public void setSaveTransientModels(boolean saveTransientModels) {
     mySaveTransientModels = saveTransientModels;
-  }
-
-  public boolean isCompileInMps() {
-    return myCompileInMps;
-  }
-
-  public void setCompileInMps(boolean compileInMps) {
-    myCompileInMps = compileInMps;
   }
 
   public boolean isDumpStatistics() {
@@ -171,11 +157,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   }
 
   public IGenerationType getDefaultModuleGenerationType() {
-    if (isCompileInMps()) {
-      return new GenerateClassesGenerationType(true, true);
-    } else {
-      return IGenerationType.FILES;
-    }
+    return IGenerationType.FILES;
   }
 
   /**
