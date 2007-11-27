@@ -120,7 +120,6 @@ public class RuleUtil {
         continue;
       }
 
-//      if (checkConditionForBaseMappingRule(inputNode, rule)) {
       if (checkBaseMappingRuleCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), myGenerator)) {
         boolean wasChanged = myGenerator.isChanged();
         try {
@@ -141,27 +140,6 @@ public class RuleUtil {
       }
     }
   }
-
-//  private boolean checkConditionForBaseMappingRule(SNode inputNode, BaseMappingRule mappingRule) {
-//    BaseMappingRule_Condition conditionFunction = mappingRule.getConditionFunction();
-//    if (conditionFunction == null) {
-//      return true;
-//    }
-//    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(conditionFunction.getNode());
-//    Object[] args = new Object[]{
-//            inputNode,
-//            myGenerator.getSourceModel(),
-//            myGenerator,
-//            myGenerator.getScope(),
-//            myGenerator.getGeneratorSessionContext()};
-//    try {
-//      return (Boolean) QueryMethodGenerated.invoke(methodName, args, mappingRule.getModel());
-//    } catch (Exception e) {
-//      myGenerator.showErrorMessage(inputNode, null, BaseAdapter.fromAdapter(mappingRule), "couldn't evaluate rule condition");
-//      LOG.error(e);
-//      return false;
-//    }
-//  }
 
   private static boolean checkBaseMappingRuleCondition(BaseMappingRule_Condition conditionFunction, boolean required, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     if (conditionFunction == null) {
@@ -363,8 +341,6 @@ public class RuleUtil {
 //----------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------
 
-  //
-
   public void applyWeavingMappingRule(Weaving_MappingRule rule) {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
@@ -374,7 +350,6 @@ public class RuleUtil {
     boolean includeInheritors = rule.getApplyToConceptInheritors();
     List<SNode> nodes = myGenerator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
     for (SNode applicableNode : nodes) {
-//      if (checkConditionForBaseMappingRule(applicableNode, rule)) {
       if (checkBaseMappingRuleCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode(), myGenerator)) {
         SNode outputContextNode = getContextNodeForWeavingingRule(applicableNode, rule.getNode(), rule.getContextProviderAspectId(), rule.getContextNodeQuery());
         if (outputContextNode == null) {
@@ -567,8 +542,6 @@ public class RuleUtil {
                 // todo: fragment can have name (mapping name)
                 templateNodeForCase = fragment.getParent().getNode();
               }
-//              
-//              templateNodeForCase = getTemplateNodeFromFragment(templateForSwitchCase, newInputNode, nodeMacro.getNode(), myGenerator);
             }
           }
 
@@ -603,7 +576,6 @@ public class RuleUtil {
             myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$ : no 'include template'");
             return null;
           }
-//          SNode templateForInclude = getTemplateNodeFromFragment(includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator);
           SNode templateForInclude;
           TemplateFragment fragment = getFragmentFromTemplate(includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator);
           if (fragment != null) {
@@ -763,25 +735,7 @@ public class RuleUtil {
     return outputNodes;
   }
 
-//  public static SNode getTemplateNodeFromFragment(TemplateDeclaration template, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
-//    List<TemplateFragment> templateFragments = getTemplateFragments(template);
-//    if (templateFragments.isEmpty()) {
-//      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: no template fragments found");
-//      return null;
-//    }
-//    if (templateFragments.size() > 1) {
-//      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: more than one (" + templateFragments.size() + ") fragments found");
-//      return null;
-//    }
-//
-//    // todo: fragment can have name (mapping name)
-//    TemplateFragment templateFragment = templateFragments.get(0);
-//    SNode templateNode = BaseAdapter.fromAdapter(templateFragment.getParent());
-//    return templateNode;
-//  }
-
   /*package*/
-
   static TemplateFragment getFragmentFromTemplate(TemplateDeclaration template, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     List<TemplateFragment> templateFragments = getTemplateFragments(template);
     if (templateFragments.isEmpty()) {
