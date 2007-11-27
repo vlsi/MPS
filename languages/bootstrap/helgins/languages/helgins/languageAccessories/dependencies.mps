@@ -953,5 +953,9 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1194533670613" />
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Annotation" id="1196177069451">
+    <property name="name" value="InferenceMethod" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196177069452" />
+  </node>
 </model>
 

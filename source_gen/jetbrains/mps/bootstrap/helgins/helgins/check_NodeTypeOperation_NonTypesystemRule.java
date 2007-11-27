@@ -4,7 +4,6 @@ package jetbrains.mps.bootstrap.helgins.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -14,7 +13,7 @@ public class check_NodeTypeOperation_NonTypesystemRule implements NonTypesystemR
   }
 
   public void applyRule(final SNode argument) {
-    if(!((SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.helgins.structure.InferenceRule", false, false) == null))) {
+    if(!(!(RulesUtil.withinInferenceItem(argument)))) {
       TypeChecker.getInstance().reportTypeError(argument, "don't use typeOperation within inference rules", "jetbrains.mps.bootstrap.helgins.helgins", "1196099140505");
     }
   }
