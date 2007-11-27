@@ -46,7 +46,7 @@ public class IntentionsManager implements IExternalizableComponent {
             result.add(intention);
           }
         } catch (Throwable t) {
-          LOG.warning("Intention's isApplicable method failed " + t.getMessage(), t);
+          LOG.error("Intention's isApplicable method failed " + t.getMessage(), t);
         }
       }
     }
