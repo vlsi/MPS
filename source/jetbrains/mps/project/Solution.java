@@ -86,8 +86,7 @@ public class Solution extends AbstractModule {
 
   @Nullable
   public File getClassesGen() {
-    //solution doesn't have auto classes gen discovery
-    return null;
+    return new File(getDescriptorFile().getParent().toFile(), "classes_gen");
   }
 
   public void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
