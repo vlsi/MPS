@@ -26,13 +26,13 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.ypath.structure.TraversalAxis;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class IterateOperation_Editor extends DefaultNodeEditor {
 
@@ -278,6 +278,44 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public static class IterateOperation_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
+
+    public  IterateOperation_generic_cellMenu() {
+    }
+
+    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      return TraversalAxis.getConstants();
+    }
+
+    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      this.handleAction_impl((jetbrains.mps.ypath.runtime.TraversalAxis)parameterObject, node, model, scope, operationContext);
+    }
+
+    public void handleAction_impl(jetbrains.mps.ypath.runtime.TraversalAxis parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SPropertyOperations.set(node, "axis", parameterObject.getValue());
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+    public String getMatchingText(Object parameterObject) {
+      return this.getMatchingText_internal((jetbrains.mps.ypath.runtime.TraversalAxis)parameterObject);
+    }
+
+    public String getMatchingText_internal(jetbrains.mps.ypath.runtime.TraversalAxis parameterObject) {
+      return TraversalAxisUtil.getOperationSign(parameterObject);
+    }
+
+    public String getDescriptionText(Object parameterObject) {
+      return this.getDescriptionText_internal((jetbrains.mps.ypath.runtime.TraversalAxis)parameterObject);
+    }
+
+    public String getDescriptionText_internal(jetbrains.mps.ypath.runtime.TraversalAxis parameterObject) {
+      return parameterObject.getName();
+    }
+
+}
   public static class _Inline extends AbstractCellProvider {
 
     public  _Inline() {
@@ -327,44 +365,6 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
-    }
-
-}
-  public static class IterateOperation_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
-
-    public  IterateOperation_generic_cellMenu() {
-    }
-
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return TraversalAxis.getConstants();
-    }
-
-    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((jetbrains.mps.ypath.runtime.TraversalAxis)parameterObject, node, model, scope, operationContext);
-    }
-
-    public void handleAction_impl(jetbrains.mps.ypath.runtime.TraversalAxis parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SPropertyOperations.set(node, "axis", parameterObject.getValue());
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
-
-    public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((jetbrains.mps.ypath.runtime.TraversalAxis)parameterObject);
-    }
-
-    public String getMatchingText_internal(jetbrains.mps.ypath.runtime.TraversalAxis parameterObject) {
-      return TraversalAxisUtil.getOperationSign(parameterObject);
-    }
-
-    public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((jetbrains.mps.ypath.runtime.TraversalAxis)parameterObject);
-    }
-
-    public String getDescriptionText_internal(jetbrains.mps.ypath.runtime.TraversalAxis parameterObject) {
-      return parameterObject.getName();
     }
 
 }
