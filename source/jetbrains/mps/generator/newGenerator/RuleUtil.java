@@ -126,7 +126,11 @@ public class RuleUtil {
         try {
           myGenerator.setChanged(true);
           SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
-          createRootNodeFromTemplate(rule.getName(), templateNode, inputNode);
+          if (templateNode != null) {
+            createRootNodeFromTemplate(rule.getName(), templateNode, inputNode);
+          } else {
+            myGenerator.showErrorMessage(BaseAdapter.fromAdapter(rule), "No template is defined for the rule");
+          }
           if (inputNode.isRoot() && rule.getKeepSourceRoot() == Options_DefaultTrue.default_) {
             myGenerator.addRootNotToCopy(inputNode);
           }
