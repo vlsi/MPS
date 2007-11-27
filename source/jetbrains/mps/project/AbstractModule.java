@@ -143,6 +143,9 @@ public abstract class AbstractModule implements IModule {
 
 
   public File getClassesGen() {
+    if (getDescriptorFile() == null) {
+      return null;
+    }
     return new File(getDescriptorFile().getParent().toFile(), "classes_gen");
   }
 
@@ -298,7 +301,9 @@ public abstract class AbstractModule implements IModule {
       result.add(ClassLoaderManager.getInstance().getBaseMPSPath());
     }
 
-    result.add(getClassesGen().getPath());
+    if (getClassesGen() != null) {
+      result.add(getClassesGen().getPath());
+    }
 
     return result;
   }

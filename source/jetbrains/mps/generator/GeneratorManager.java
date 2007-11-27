@@ -477,23 +477,24 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       checkMonitorCanceled(progress);
       progress.addText("");
       if (status.isOk()) {
-        if (!myCompileOnGeneration || !ideaPresent || !generationType.requiresCompilationInIDEAfterGeneration()) {
+        IModule module = invocationContext.getModule();
+        if (!myCompileOnGeneration || !(ideaPresent || module.getModuleDescriptor().getCompileInMPS())
+                || !generationType.requiresCompilationInIDEAfterGeneration()) {
           progress.addText("compilation in IntelliJ IDEA after generation is turned off or not needed");
         } else {
           // -- compile after generation
 
-          progress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
-          projectHandler.refreshFS();
-          progress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
           checkMonitorCanceled(progress);
           progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
-          IModule module = invocationContext.getModule();
           CompilationResult compilationResult;
           if (!module.getModuleDescriptor().getCompileInMPS()) {
+            progress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
+            projectHandler.refreshFS();
+            progress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
             progress.addText("compiling in IntelliJ IDEA...");
             compilationResult = projectHandler.buildModule(outputFolder);
           } else {
-            progress.addText("compiling in JetBrains MPS..");
+            progress.addText("compiling in JetBrains MPS...");
             compilationResult = new CompilationResult(0, 0, false);
             new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
           }
