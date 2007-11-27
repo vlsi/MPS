@@ -10,9 +10,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPr
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule_Runtime {
@@ -42,7 +42,6 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
     }
     // =============
     Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(argument, "body", true));
-    boolean somethingReturned = !(SequenceOperations.isEmpty(returnStatements));
     if(expectedRetType == null) {
       // shouldn't return any values
       {
@@ -86,10 +85,6 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
       if(SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStatement, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1178765601477", true);
         TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, SLinkOperations.getTarget(lastStatement, "expression", true), expectedRetType + " is expected", "jetbrains.mps.baseLanguage.helgins", "1185363855090");
-        somethingReturned = true;
-      }
-      if(!(somethingReturned)) {
-        TypeChecker.getInstance().reportTypeError(argument, "function should return " + expectedRetType, "jetbrains.mps.baseLanguage.helgins", "1178765536915");
       }
     }
   }

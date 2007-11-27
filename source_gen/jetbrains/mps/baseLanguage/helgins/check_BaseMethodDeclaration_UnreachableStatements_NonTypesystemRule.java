@@ -7,6 +7,10 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.cfg.CFGBuilder;
 import jetbrains.mps.cfg.BasicBlock;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.cfg.IControlFlowGraph;
+import java.util.Set;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule implements NonTypesystemRule_Runtime {
@@ -19,6 +23,16 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
     for(BasicBlock basicBlock : cfgBuilder.getUnreachableBasicBlocks()) {
       if(!(basicBlock.isFake())) {
         TypeChecker.getInstance().reportTypeError(basicBlock.getSourceNode(), "unreachable statement", "jetbrains.mps.baseLanguage.helgins", "1196169269696");
+      }
+    }
+    if(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(argument, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+      IControlFlowGraph controlFlowGraph = cfgBuilder.getControlFlowGraph();
+      Set<BasicBlock> lastBlocks = RulesFunctions_BaseLanguage.findLastBlocks(controlFlowGraph);
+      for(BasicBlock basicBlock : lastBlocks) {
+        SNode node = basicBlock.getSourceNode();
+        if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ReturnStatement")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
+          TypeChecker.getInstance().reportTypeError(basicBlock.getSourceNode(), "function should return a value", "jetbrains.mps.baseLanguage.helgins", "1196175172960");
+        }
       }
     }
   }
