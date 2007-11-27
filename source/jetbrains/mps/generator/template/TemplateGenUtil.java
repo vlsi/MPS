@@ -28,7 +28,7 @@ public class TemplateGenUtil {
   private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
 
   private static boolean checkResolvedReference(SNode sourceNode, SNode targetNode, SNode templateNode, String role, SNode targetReferentNode, ITemplateGenerator generator) {
-    if (!targetNode.isAcceptableReferent(role, targetReferentNode, generator.getScope())) {
+    if (!targetNode.isAcceptableReferent(role, targetReferentNode)) {
       generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent: " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
       return false;
     }

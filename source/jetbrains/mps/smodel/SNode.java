@@ -1592,10 +1592,10 @@ public final class SNode {
     return sb.toString();
   }
 
-  public boolean isReferentRequired(String role, IScope scope) {
+  public boolean isReferentRequired(String role) {
     AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
     LinkDeclaration linkDeclaration = SModelUtil_new.findLinkDeclaration(conceptDeclaration, role);
-    LOG.assertLog(linkDeclaration != null, "Couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
+    LOG.assertLog(linkDeclaration != null, "couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
     Cardinality cardinality = SModelUtil_new.getGenuineLinkSourceCardinality(linkDeclaration);
     if (cardinality == Cardinality._1 || cardinality == Cardinality._1__n) {
       return true;
@@ -1603,10 +1603,10 @@ public final class SNode {
     return false;
   }
 
-  public boolean isAcceptableReferent(String role, SNode referentNode, IScope scope) {
+  public boolean isAcceptableReferent(String role, SNode referentNode) {
     AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
     LinkDeclaration linkDeclaration = SModelUtil_new.findSpecializingLink((ConceptDeclaration) conceptDeclaration, role);
-    LOG.assertLog(linkDeclaration != null, "Couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
+    LOG.assertLog(linkDeclaration != null, "couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
     return SModelUtil_new.isAcceptableReferent(linkDeclaration, referentNode);
   }
 

@@ -1,8 +1,6 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
@@ -93,7 +91,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     }
 
     if (referentNode == null) {
-      if (getOutputNode().isReferentRequired(linkRole, generator.getScope())) {
+      if (getOutputNode().isReferentRequired(linkRole)) {
         generator.showErrorMessage(getInputNode(), myTemplateReferenceNode, "unresolved reference for role \"" + linkRole + "\" in " + getOutputNode().getDebugText());
       }
       return;
