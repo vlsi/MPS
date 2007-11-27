@@ -16,8 +16,10 @@ import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
 import jetbrains.mps.ide.progress.AdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.NullAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
@@ -27,15 +29,12 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.util.CollectionUtil;
 import org.jdom.Element;
 
 import javax.swing.JOptionPane;
-import javax.swing.SwingUtilities;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 
 /**
@@ -374,7 +373,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
         progress.addText("compiling output module...");
-        CompilationResult compilationResult = projectHandler.buildModule(outputFolder);
+        CompilationResult compilationResult;
+        IModule module = invocationContext.getModule();
+        if (module.getModuleDescriptor().getCompileInMPS()) {          
+          new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
+          compilationResult =  new CompilationResult(0, 0, false);
+        } else {
+          compilationResult = projectHandler.buildModule(outputFolder);
+        }
         progress.addText("" + compilationResult);
         if (!compilationResult.isOk()) {
           reloadClasses = false;
@@ -389,6 +395,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         }
 
         if (myCompileSourceLanguageModules && needCompileSourceLanguageModules) {
+          //todo get rid of
           for (Language l : getPossibleSourceLanguages(_sourceModels, invocationContext.getScope())) {
             progress.addText("compiling " + l + "'s  module...");
             compilationResult = projectHandler.buildModule(l.getSourceDir().getPath());
@@ -498,7 +505,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           progress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
           checkMonitorCanceled(progress);
           progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
-          CompilationResult compilationResult = projectHandler.buildModule(outputFolder);
+          IModule module = invocationContext.getModule();
+          CompilationResult compilationResult;
+          if (!module.getModuleDescriptor().getCompileInMPS()) {
+            compilationResult = projectHandler.buildModule(outputFolder);
+          } else {
+            compilationResult = new CompilationResult(0, 0, false);
+            new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
+          }
           progress.addText("" + compilationResult);
           progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
           checkMonitorCanceled(progress);

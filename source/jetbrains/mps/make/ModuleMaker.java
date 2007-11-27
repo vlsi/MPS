@@ -85,11 +85,18 @@ public class ModuleMaker {
     }
 
     compiler.compile();
-    for (CompilationResult cr : compiler.getCompilationResults()) {
+
+    //todo handle compilation errors 
+    for (CompilationResult cr : compiler.getCompilationResults()) {                  
       for (ClassFile cf : cr.getClassFiles()) {
         String name = getName(cf.getCompoundName());
-        if (myContainingModules.containsKey(name)) {
-          IModule m = myContainingModules.get(name);
+        String containerClassName = name;
+        if (containerClassName.contains("$")) {
+          int index = containerClassName.indexOf('$');
+          containerClassName = containerClassName.substring(0, index);
+        }
+        if (myContainingModules.containsKey(containerClassName)) {
+          IModule m = myContainingModules.get(containerClassName);
           File classesGen = m.getClassesGen();
           String packageName = NameUtil.namespaceFromLongName(name);
           File outputDir = new File(classesGen + File.separator + packageName.replace('.', File.separatorChar));

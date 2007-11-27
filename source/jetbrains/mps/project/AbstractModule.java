@@ -327,6 +327,7 @@ public abstract class AbstractModule implements IModule {
     for (SourcePath p : getModuleDescriptor().getSourcePaths()) {
       result.add(p.getPath());
     }
+    result.add(getGeneratorOutputPath());
     return result;
   }
 
