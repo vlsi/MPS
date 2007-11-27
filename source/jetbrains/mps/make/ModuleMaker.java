@@ -2,7 +2,7 @@ package jetbrains.mps.make;
 
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.ide.actions.make.MakeScheduleBuilder;
+import jetbrains.mps.make.MakeScheduleBuilder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
