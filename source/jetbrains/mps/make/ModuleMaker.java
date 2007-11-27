@@ -179,9 +179,8 @@ public class ModuleMaker {
       return myClassesUpToDateStatus.get(m);
     }
 
-    if (m instanceof Language && BootstrapLanguages.getInstance().getLanguagesUsedInCore().contains(m)) {
-      myClassesUpToDateStatus.put(m, true);
-      //bootstrap languages are compiled by IDE
+    if (!m.getModuleDescriptor().getCompileInMPS()) {
+      myClassesUpToDateStatus.put(m, true);      
       return true;
     }
 
