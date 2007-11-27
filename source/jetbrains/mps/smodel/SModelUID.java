@@ -71,7 +71,7 @@ public class SModelUID implements Comparable {
   }
 
   public String getCompactPresentation() {
-    return NameUtil.compactNamespace(getLongName());
+    return NameUtil.compactNamespace(getLongName()) + (myStereotype.length() == 0 ? "" : "@" + myStereotype.charAt(0));
   }
 
   public String getNamespace() {

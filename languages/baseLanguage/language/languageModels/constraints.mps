@@ -5158,6 +5158,21 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196166566965">
+      <property name="name" value="isLValue" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1196166602307" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196166566967">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196166615309">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196166615668">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1196166616990">
+              <link role="conceptProperty" targetNodeId="1.1146528679895" resolveInfo="lvalue" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1196166615310" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1184884307361">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184884307362" />
     </node>
