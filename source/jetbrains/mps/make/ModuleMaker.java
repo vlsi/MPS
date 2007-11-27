@@ -198,7 +198,7 @@ public class ModuleMaker {
       return myClassesUpToDateStatus.get(m);
     }
 
-    if (!m.getModuleDescriptor().getCompileInMPS()) {
+    if (!m.isCompileInMPS()) {
       myClassesUpToDateStatus.put(m, true);      
       return true;
     }

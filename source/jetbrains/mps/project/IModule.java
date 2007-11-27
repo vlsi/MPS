@@ -82,6 +82,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   String generateManifest();
 
+  boolean isCompileInMPS();
+
   void createManifest();  
 
   void invalidateCaches();

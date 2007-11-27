@@ -510,6 +510,10 @@ public abstract class AbstractModule implements IModule {
     return result.toString();
   }
 
+  public boolean isCompileInMPS() {
+    return getModuleDescriptor().getCompileInMPS();
+  }
+
   protected String getRequiredBundlesString() {
     StringBuilder result = new StringBuilder();
     List<String> requiredBundles = getRequiredBundles();

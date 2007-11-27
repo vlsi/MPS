@@ -183,6 +183,10 @@ public class Generator extends AbstractModule {
     return result;
   }
 
+  public boolean isCompileInMPS() {
+    return mySourceLanguage.isCompileInMPS();
+  }
+
   public File getBundleHome() {
     //eclipse's OSGi implementation doesn't allow directories with #. Probably #s are
     //forbidden inside urls
