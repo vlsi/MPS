@@ -96,7 +96,9 @@ public class ModuleMaker {
     int errorCount = 0;
 
     for (CompilationResult cr : compiler.getCompilationResults()) {
-      errorCount += cr.getErrors().length;
+      if (cr.getErrors() != null) {      
+        errorCount += cr.getErrors().length;
+      }
 
       for (ClassFile cf : cr.getClassFiles()) {
         String name = getName(cf.getCompoundName());
