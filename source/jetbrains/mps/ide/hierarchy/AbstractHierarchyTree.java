@@ -7,13 +7,14 @@ import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
 
-import javax.swing.tree.DefaultTreeModel;
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import java.util.Set;
 import java.util.ArrayList;
+import java.util.HashSet;
 
 /**
  * Created by IntelliJ IDEA.
@@ -29,6 +30,7 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
   protected T myHierarchyNode;
   protected Class<T> myClass;
   protected boolean myIsParentHierarchy;
+  protected boolean myOnlyInOneModel;
 
   public AbstractHierarchyTree(AbstractHierarchyView<T> hierarchyView, Class<T> aClass, boolean isParentHierarchy) {
     myHierarchyView = hierarchyView;
@@ -42,6 +44,18 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
 
   public boolean isParentHierarchy() {
     return myIsParentHierarchy;
+  }
+
+  public boolean isOnlyInOneModel() {
+    return myOnlyInOneModel;
+  }
+
+  /*package*/ void setIsOnlyInOneModel(boolean isOnlyInOneModel) {
+    boolean oldOnlyInOneModel = myOnlyInOneModel;
+    myOnlyInOneModel = isOnlyInOneModel;
+    if (oldOnlyInOneModel != myOnlyInOneModel) {
+      rebuildTree();
+    }
   }
 
   /*package*/ void setParentHierarchy(boolean isParentHierarchy) {
@@ -62,7 +76,7 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
 
   protected abstract String noNodeString();
 
- /* public void rebuildTree() {
+  /* public void rebuildTree() {
      DefaultTreeModel model = new DefaultTreeModel(rebuild());
      setModel(model);
   }*/
@@ -73,61 +87,60 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
 
   protected abstract Set<T> getDescendants(T node);
 
-  protected Set<T> getAbstractChildren(T node) {
+  protected Set<T> getAbstractChildren(final T node) {
+    Set<T> result;
     if (myIsParentHierarchy) {
-      return getParents(node);
+      result = getParents(node);
     } else {
-      return getDescendants(node);
+      result = getDescendants(node);
     }
+    if (myOnlyInOneModel) {
+      result = CollectionUtil.filter(result, new Condition<T>() {
+        public boolean met(T object) {
+          return object.getModel() == node.getModel();
+        }
+      });
+    }
+    return result;
   }
 
   protected T getAbstractParent(T node) {
-    if (myIsParentHierarchy) {
-      return null;
-    } else {
-      return getParent(node);
+    T result = null;
+    if (!myIsParentHierarchy) {
+      result = getParent(node);
+      if (result != null && myOnlyInOneModel && (result.getModel() != node.getModel())) {
+        result = null;
+      }
     }
+    return result;
   }
 
-    protected void rebuildChildrenHierarchy_internal(HierarchyTreeNode<T> hierarchyTreeNode) {
-      Set<T> descendants = getAbstractChildren((T) hierarchyTreeNode.getUserObject());
-      for (T descendant : descendants) {
-        HierarchyTreeNode childHierarchyTreeNode = new HierarchyTreeNode(descendant, myOperationContext, this);
-        hierarchyTreeNode.add(childHierarchyTreeNode);
-        rebuildChildrenHierarchy_internal(childHierarchyTreeNode);
-      }
-    }
-
-    protected void rebuildChildrenHierarchy() {
-      rebuildChildrenHierarchy_internal(myHierarchyView.myTreeNode);
-    }
-
   protected MPSTreeNode rebuildParentHierarchy() {
-      ArrayList<T> parentHierarchy = new ArrayList<T>();
-      T parentDeclaration = myHierarchyNode;
-      while (parentDeclaration != null ) {
-        parentHierarchy.add(parentDeclaration);
-        parentDeclaration = getAbstractParent(parentDeclaration);
-      }
-
-      HierarchyTreeNode parentTreeNode = null;
-      HierarchyTreeNode hierarchyTreeNode = null;
-      HierarchyTreeNode rootNode = null;
-      for (int i = parentHierarchy.size()-1 ; i >= 0; i--) {
-        hierarchyTreeNode = i>0?( new HierarchyTreeNode<T>(parentHierarchy.get(i), myOperationContext, this))
-                : new ChildHierarchyTreeNode<T>(parentHierarchy.get(i), myOperationContext, this);
-        if (i == parentHierarchy.size()-1) rootNode = hierarchyTreeNode;
-        if (parentTreeNode != null) {
-          parentTreeNode.add(hierarchyTreeNode);
-        }
-        parentTreeNode = hierarchyTreeNode;
-      }
-      myHierarchyView.myTreeNode = hierarchyTreeNode;
-      assert myHierarchyView.myTreeNode != null;
-      TextTreeNode textRootNode = new RootTextTreeNode("<html>Hierarchy for <font color=\"#400090\"><b>" + TreeTextUtil.toHtml(((T) myHierarchyView.myTreeNode.getUserObject()).getName()) + "</b></font>");
-      textRootNode.add(rootNode);
-      return textRootNode;
+    ArrayList<T> parentHierarchy = new ArrayList<T>();
+    T parentDeclaration = myHierarchyNode;
+    while (parentDeclaration != null && (!myOnlyInOneModel || parentDeclaration.getModel() == myHierarchyNode.getModel())) {
+      parentHierarchy.add(parentDeclaration);
+      parentDeclaration = getAbstractParent(parentDeclaration);
     }
+
+    HierarchyTreeNode parentTreeNode = null;
+    HierarchyTreeNode hierarchyTreeNode = null;
+    HierarchyTreeNode rootNode = null;
+    for (int i = parentHierarchy.size()-1 ; i >= 0; i--) {
+      hierarchyTreeNode = i>0?( new HierarchyTreeNode<T>(parentHierarchy.get(i), myOperationContext, this))
+              : new ChildHierarchyTreeNode<T>(parentHierarchy.get(i), myOperationContext, this);
+      if (i == parentHierarchy.size()-1) rootNode = hierarchyTreeNode;
+      if (parentTreeNode != null) {
+        parentTreeNode.add(hierarchyTreeNode);
+      }
+      parentTreeNode = hierarchyTreeNode;
+    }
+    myHierarchyView.myTreeNode = hierarchyTreeNode;
+    assert myHierarchyView.myTreeNode != null;
+    TextTreeNode textRootNode = new RootTextTreeNode("<html>Hierarchy for <font color=\"#400090\"><b>" + TreeTextUtil.toHtml(((T) myHierarchyView.myTreeNode.getUserObject()).getName()) + "</b></font>");
+    textRootNode.add(rootNode);
+    return textRootNode;
+  }
 
   protected class RootTextTreeNode extends TextTreeNode {
 

@@ -17,7 +17,9 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
   public void applyRule(final SNode argument) {
     CFGBuilder cfgBuilder = new CFGBuilder(argument);
     for(BasicBlock basicBlock : cfgBuilder.getUnreachableBasicBlocks()) {
-      TypeChecker.getInstance().reportTypeError(basicBlock.getSourceNode(), "unreachable statement", "jetbrains.mps.baseLanguage.helgins", "1196159513464");
+      if(!(basicBlock.isFake())) {
+        TypeChecker.getInstance().reportTypeError(basicBlock.getSourceNode(), "unreachable statement", "jetbrains.mps.baseLanguage.helgins", "1196169269696");
+      }
     }
   }
 

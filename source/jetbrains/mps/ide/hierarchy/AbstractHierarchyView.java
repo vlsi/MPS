@@ -27,10 +27,11 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
   protected AbstractHierarchyTree<T> myHierarchyTree;
   protected HierarchyTreeNode<T> myTreeNode;
   protected JPanel myComponent = new JPanel(new BorderLayout());
-  protected JPanel myButtonsPanel = new JPanel(new GridLayout(1,2));
+  protected JPanel myButtonsPanel = new JPanel(new GridLayout(1,3));
   protected ButtonGroup myButtonGroup = new ButtonGroup();
   protected JRadioButton myChildrenHierarchyButton;
   protected JRadioButton myParentsHierarchyButton;
+  protected JCheckBox myOnlyInOneModelCheckBox;
   protected IOperationContext myContext;
   protected IDEProjectFrame myIde;
   public JScrollPane myScrollPane;
@@ -60,11 +61,18 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
       }
     });
 
+    myOnlyInOneModelCheckBox = new JCheckBox(new AbstractAction("Only This Model") {
+      public void actionPerformed(ActionEvent e) {
+        myHierarchyTree.setIsOnlyInOneModel(myOnlyInOneModelCheckBox.isSelected());
+      }
+    });
+
     myButtonGroup.add(myChildrenHierarchyButton);
     myButtonGroup.add(myParentsHierarchyButton);
     myChildrenHierarchyButton.setSelected(true);
     myButtonsPanel.add(myChildrenHierarchyButton);
     myButtonsPanel.add(myParentsHierarchyButton);
+    myButtonsPanel.add(myOnlyInOneModelCheckBox);
     JPanel panel = new JPanel(new BorderLayout());
     panel.add(myButtonsPanel, BorderLayout.WEST);
     myComponent.add(panel, BorderLayout.NORTH);
