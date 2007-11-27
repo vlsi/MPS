@@ -24,9 +24,16 @@ public class ModuleMaker {
   private static final String JAVA_SUFFIX = ".java";
 
   private Map<String, IModule> myContainingModules = new HashMap<String, IModule>();
+  private Map<IModule, Boolean> myUpToDateStatus = new HashMap<IModule, Boolean>();
 
-  public boolean isUpToDate(IModule m) {
+  private boolean isUpToDate(IModule m) {
+
+    if (myUpToDateStatus.containsKey(m)) {
+      return myUpToDateStatus.get(m);
+    }
+
     if (m instanceof Language && BootstrapLanguages.getInstance().getLanguagesUsedInCore().contains(m)) {
+      myUpToDateStatus.put(m, true);
       //bootstrap languages are compiled by IDE
       return true;
     }
@@ -40,10 +47,42 @@ public class ModuleMaker {
       sourcesTimeStamp = Math.max(sourcesTimeStamp, FileUtil.getNewestFileTime(new File(s)));
     }
 
-    return classesTimeStamp >= sourcesTimeStamp;
+    boolean result = classesTimeStamp >= sourcesTimeStamp;
+    myUpToDateStatus.put(m, result);
+    return result;
   }
 
-  public void compile(List<IModule> modules) {
+
+  public void make(Set<IModule> modules) {
+    Set<IModule> toCompile = new HashSet<IModule>();
+    for (IModule m : modules) {
+      boolean isUpToDate = isUpToDate(m);
+      if (isUpToDate) {
+        for (IModule dep : m.getAllDependOnModules(IModule.class)) {
+          if (!isUpToDate(dep)) {
+            toCompile.add(dep);
+            isUpToDate = false;
+          }
+        }
+      }
+
+      if (!isUpToDate) {
+        toCompile.add(m);
+      }
+    }
+
+    System.out.println("have to compile: " + toCompile);
+
+    compile(toCompile);
+  }
+
+
+
+  private void compile(Set<IModule> modules) {
+    if (modules.isEmpty()) {
+      return;
+    }
+
     IClassPathItem classPathItems = computeDependenciesClassPath(modules);
     JavaCompiler compiler = new JavaCompiler(classPathItems);
 
@@ -112,7 +151,7 @@ public class ModuleMaker {
     }
   }
 
-  private IClassPathItem computeDependenciesClassPath(List<IModule> modules) {
+  private IClassPathItem computeDependenciesClassPath(Set<IModule> modules) {
     Set<IModule> dependOnModules = new LinkedHashSet<IModule>();
     for (IModule m : modules) {
       dependOnModules.addAll(m.getAllDependOnModules(IModule.class));
