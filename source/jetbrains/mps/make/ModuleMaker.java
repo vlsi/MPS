@@ -14,6 +14,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -41,7 +42,7 @@ public class ModuleMaker {
     }
   }
 
-  public void make(Set<IModule> modules, final IAdaptiveProgressMonitor monitor) {
+  public jetbrains.mps.plugin.CompilationResult make(Set<IModule> modules, final IAdaptiveProgressMonitor monitor) {
     try {
       monitor.start("Compiling...", 1000 * modules.size());
 
@@ -59,18 +60,24 @@ public class ModuleMaker {
         }
       }
 
+      int errorCount = 0;
       for (Set<IModule> cycle : new MakeScheduleBuilder().buildSchedule(toCompile)) {
         monitor.addText("Compiling module cycle: " + cycle + "...");
-        compile(cycle);
+        errorCount += compile(cycle).getErrors();
+        if (errorCount != 0) {
+          break;
+        }
       }
+
+      return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
     } finally {    
       monitor.finish();
     }
   }
 
-  private void compile(Set<IModule> modules) {
+  private jetbrains.mps.plugin.CompilationResult compile(Set<IModule> modules) {
     if (modules.isEmpty()) {
-      return;
+      return new jetbrains.mps.plugin.CompilationResult(0, 0, false);
     }
 
     IClassPathItem classPathItems = computeDependenciesClassPath(modules);
@@ -86,8 +93,11 @@ public class ModuleMaker {
 
     compiler.compile();
 
-    //todo handle compilation errors 
-    for (CompilationResult cr : compiler.getCompilationResults()) {                  
+    int errorCount = 0;
+
+    for (CompilationResult cr : compiler.getCompilationResults()) {
+      errorCount += cr.getErrors().length;
+
       for (ClassFile cf : cr.getClassFiles()) {
         String name = getName(cf.getCompoundName());
         String containerClassName = name;
@@ -115,6 +125,8 @@ public class ModuleMaker {
         }
       }
     }
+
+    return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
   }
 
   private String getName(char[][] compoundName) {

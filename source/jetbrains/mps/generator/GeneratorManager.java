@@ -358,8 +358,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         IModule module = invocationContext.getModule();
         if (module.getModuleDescriptor().getCompileInMPS()) {          
           progress.addText("compiling output module in JetBrains MPS...");
-          new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
-          compilationResult =  new CompilationResult(0, 0, false);
+          compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
         } else {
           progress.addText("compiling output module in IntelliJ IDEA...");
           compilationResult = projectHandler.buildModule(outputFolder);
@@ -495,8 +494,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             compilationResult = projectHandler.buildModule(outputFolder);
           } else {
             progress.addText("compiling in JetBrains MPS...");
-            compilationResult = new CompilationResult(0, 0, false);
-            new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
+            compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
           }
           progress.addText("" + compilationResult);
           progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
