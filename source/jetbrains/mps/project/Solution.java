@@ -84,11 +84,6 @@ public class Solution extends AbstractModule {
     }
   }
 
-  @Nullable
-  public File getClassesGen() {
-    return new File(getDescriptorFile().getParent().toFile(), "classes_gen");
-  }
-
   public void setModuleDescriptor(@NotNull ModuleDescriptor moduleDescriptor) {
     if (moduleDescriptor instanceof SolutionDescriptor) {
       setSolutionDescriptor((SolutionDescriptor) moduleDescriptor);

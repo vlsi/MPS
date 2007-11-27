@@ -141,24 +141,9 @@ public abstract class AbstractModule implements IModule {
     return modelDescriptors;
   }
 
-  @Nullable
+
   public File getClassesGen() {
-    IFile descriptorFile = getDescriptorFile();
-
-    if (descriptorFile == null) {
-      return null;
-    }
-
-    IFile current = descriptorFile.getParent();
-    while (current != null) {
-      IFile classesDir = current.child("classes");
-      if (classesDir.exists()) {
-        return FileSystem.toFile(classesDir);
-      }
-      current = current.getParent();
-    }
-
-    return null;
+    return new File(getDescriptorFile().getParent().toFile(), "classes_gen");
   }
 
   //
@@ -313,6 +298,8 @@ public abstract class AbstractModule implements IModule {
       result.add(ClassLoaderManager.getInstance().getBaseMPSPath());
     }
 
+    result.add(getClassesGen().getPath());
+
     return result;
   }
 
@@ -365,7 +352,9 @@ public abstract class AbstractModule implements IModule {
     CompositeClassPathItem result = new CompositeClassPathItem();
     for (String s : getRuntimeClassPathItems()) {
       if (!new File(s).exists()) {
-        LOG.error("Classpath item doesn't exist " + s);
+        if (!s.equals(getClassesGen().getPath())) {
+          LOG.error("Classpath item doesn't exist " + s);
+        }
         continue;
       }
 
