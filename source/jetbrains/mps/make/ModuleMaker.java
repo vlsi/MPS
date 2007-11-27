@@ -2,6 +2,7 @@ package jetbrains.mps.make;
 
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.make.MakeScheduleBuilder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -25,36 +26,45 @@ public class ModuleMaker {
   private static final String JAVA_SUFFIX = ".java";
 
   private Map<String, IModule> myContainingModules = new HashMap<String, IModule>();
-  private Map<IModule, Boolean> myUpToDateStatus = new HashMap<IModule, Boolean>();
+  private Map<IModule, Boolean> myClassesUpToDateStatus = new HashMap<IModule, Boolean>();
 
-  public void clean(Set<IModule> modules) {
-    for (IModule m : modules) {
-      FileUtil.delete(m.getClassesGen());
+  public void clean(final Set<IModule> modules, final IAdaptiveProgressMonitor monitor) {
+    try {
+      monitor.start("Clean", 2000);
+      for (IModule m : modules) {
+        monitor.addText("Cleaning " + m.getModuleUID() + "...");
+        FileUtil.delete(m.getClassesGen());
+      }
+      monitor.addText("Done");
+    } finally {
+      monitor.finish();
     }
   }
 
-  public void make(Set<IModule> modules) {
-    Set<IModule> toCompile = new HashSet<IModule>();
-    for (IModule m : modules) {
-      boolean isUpToDate = isUpToDate(m);
-      
-      for (IModule dep : m.getAllDependOnModules(IModule.class)) {
-        if (!isUpToDate(dep)) {
-          toCompile.add(dep);
-          isUpToDate = false;
+  public void make(Set<IModule> modules, final IAdaptiveProgressMonitor monitor) {
+    try {
+      monitor.start("Compiling...", 1000 * modules.size());
+
+      Set<IModule> toCompile = new LinkedHashSet<IModule>();
+      Set<IModule> candidates = new HashSet<IModule>();
+      candidates.addAll(modules);
+
+      for (IModule m : modules) {
+        candidates.addAll(m.getAllDependOnModules(IModule.class));
+      }
+
+      for (IModule c : candidates) {
+        if (!isUpToDate(c)) {
+          toCompile.add(c);
         }
       }
 
-      if (!isUpToDate) {
-        toCompile.add(m);
+      for (Set<IModule> cycle : new MakeScheduleBuilder().buildSchedule(toCompile)) {
+        monitor.addText("Compiling module cycle: " + cycle + "...");
+        compile(cycle);
       }
-    }
-
-    for (Set<IModule> cycle : new MakeScheduleBuilder().buildSchedule(toCompile)) {
-
-      System.out.println("compiling cycle: " + cycle);
-
-      compile(cycle);
+    } finally {    
+      monitor.finish();
     }
   }
 
@@ -151,12 +161,26 @@ public class ModuleMaker {
   }
 
   private boolean isUpToDate(IModule m) {
-    if (myUpToDateStatus.containsKey(m)) {
-      return myUpToDateStatus.get(m);
+    if (!isClassesUpToDate(m)) {
+      return false;
+    }
+
+    for (IModule dep : m.getAllDependOnModules(IModule.class)) {
+      if (!isClassesUpToDate(dep)) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+
+  private boolean isClassesUpToDate(IModule m) {
+    if (myClassesUpToDateStatus.containsKey(m)) {
+      return myClassesUpToDateStatus.get(m);
     }
 
     if (m instanceof Language && BootstrapLanguages.getInstance().getLanguagesUsedInCore().contains(m)) {
-      myUpToDateStatus.put(m, true);
+      myClassesUpToDateStatus.put(m, true);
       //bootstrap languages are compiled by IDE
       return true;
     }
@@ -171,7 +195,7 @@ public class ModuleMaker {
     }
 
     boolean result = classesTimeStamp >= sourcesTimeStamp;
-    myUpToDateStatus.put(m, result);
+    myClassesUpToDateStatus.put(m, result);
     return result;
   }
 }
