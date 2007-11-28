@@ -209,11 +209,15 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     while (true) {
       checkMonitorCanceled();
       for (ReferenceInfo referenceInfo : referenceInfos) {
-        referenceInfo.executeDependentResolve(this);
-        if (!referenceInfo.isSuccess()) {
+        SNode outputTargetNode = referenceInfo.executeDependentResolve(this);
+//        if (!referenceInfo.isSuccess()) {
+        if (outputTargetNode == null) {
           newReferenceInfos.add(referenceInfo);
+        } else {
+          referenceInfo.getOutputNode().setReferent(referenceInfo.getReferenceRole(), outputTargetNode);
         }
       }
+
       if (newReferenceInfos.size() == 0 || newReferenceInfos.size() == referenceInfos.size()) {
         break;
       }
@@ -224,9 +228,12 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     for (ReferenceInfo unresolvedReferenceInfo : newReferenceInfos) {
       checkMonitorCanceled();
       // hack
-      unresolvedReferenceInfo.resolveAnyhow(this);
-      if (!unresolvedReferenceInfo.isSuccess()) {
+      SNode outputTargetNode = unresolvedReferenceInfo.resolveAnyhow(this);
+//      if (!unresolvedReferenceInfo.isSuccess()) {
+      if (outputTargetNode == null) {
         unresolvedReferenceInfo.showErrorMessage(this);
+      } else {
+        unresolvedReferenceInfo.getOutputNode().setReferent(unresolvedReferenceInfo.getReferenceRole(), outputTargetNode);
       }
     }
   }

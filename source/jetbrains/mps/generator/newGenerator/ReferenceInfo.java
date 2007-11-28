@@ -17,7 +17,7 @@ public abstract class ReferenceInfo {
   private SNode myOutputNode;
   private String myReferenceRole;
   private SNode myInputNode;
-  private boolean mySuccess = false;
+//  private boolean mySuccess = false;
 
   protected ReferenceInfo(SNode outputNode, String referenceRole, SNode inputNode) {
     myOutputNode = outputNode;
@@ -39,19 +39,19 @@ public abstract class ReferenceInfo {
 
   public abstract SNode executeIndependentResolve(TemplateModelGenerator_New generator);
 
-  public abstract void executeDependentResolve(TemplateModelGenerator_New generator);
+  public abstract SNode executeDependentResolve(TemplateModelGenerator_New generator);
 
-  public abstract void resolveAnyhow(TemplateModelGenerator_New generator);
+  public abstract SNode resolveAnyhow(TemplateModelGenerator_New generator);
 
   public abstract void showErrorMessage(TemplateModelGenerator_New generator);
 
-  protected void setSuccess(boolean value) {
-    mySuccess = value;
-  }
+//  protected void setSuccess(boolean value) {
+//    mySuccess = value;
+//  }
 
-  public boolean isSuccess() {
-    return mySuccess;
-  }
+//  public boolean isSuccess() {
+//    return mySuccess;
+//  }
 
   protected static IReferenceResolver loadReferenceResolver(SNode node) {
     ConceptDeclaration conceptDeclaration = (ConceptDeclaration) node.getConceptDeclarationAdapter();

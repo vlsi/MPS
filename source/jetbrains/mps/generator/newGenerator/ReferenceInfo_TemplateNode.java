@@ -65,16 +65,17 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     return null;
   }
 
-  public void executeDependentResolve(TemplateModelGenerator_New generator) {
+  public SNode executeDependentResolve(TemplateModelGenerator_New generator) {
 
     // try to resolve using custom referense resolver for source node concept
     IReferenceResolver referenceResolver = loadReferenceResolver(myTemplateSourceNode);
     if (referenceResolver != null) {
       SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myTemplateReference);
       if (outputTargetNode != null) {
-        getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
-        setSuccess(true);
-        return;
+//        getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
+//        setSuccess(true);
+//        return;
+        return outputTargetNode;
       }
     }
 
@@ -90,20 +91,24 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       if (leastCommonParent_output != null) {
         SNode outputTargetNode = findOutputSubnodeByTemplateNode(generator, leastCommonParent_output, myTemplateTargetNode);
         if (outputTargetNode != null) {
-          getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
-          setSuccess(true);
-          return;
+//          getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
+//          setSuccess(true);
+//          return;
+          return outputTargetNode;
         }
       }
     }
+
+    return null;
   }
 
-  public void resolveAnyhow(TemplateModelGenerator_New generator) {
+  public SNode resolveAnyhow(TemplateModelGenerator_New generator) {
     SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, false);
-    if (outputTargetNode != null) {
-      getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
-      setSuccess(true);
-    }
+//    if (outputTargetNode != null) {
+//      getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
+//      setSuccess(true);
+//    }
+    return outputTargetNode;
   }
 
   private static SNode findOutputSubnodeByTemplateNode(TemplateModelGenerator_New generator, SNode outputNode, SNode templateNode) {

@@ -28,24 +28,24 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return null;
   }
 
-  public void executeDependentResolve(TemplateModelGenerator_New generator) {
+  public SNode executeDependentResolve(TemplateModelGenerator_New generator) {
     //todo it should be removed after going to new generator
     generator.setCurrentBuilder(getOutputNode());
-
-    expandReferenceMacro(generator);
-    setSuccess(true);
-
+    SNode outputTargetNode = expandReferenceMacro(generator);
+//    setSuccess(true);
     generator.setCurrentBuilder(null);
+    return outputTargetNode;
   }
 
-  public void resolveAnyhow(TemplateModelGenerator_New generator) {
+  public SNode resolveAnyhow(TemplateModelGenerator_New generator) {
     // nothing
+    return null;
   }
 
-  public void expandReferenceMacro(ITemplateGenerator generator) {
+  public SNode expandReferenceMacro(ITemplateGenerator generator) {
     SNode referentNode;
-
     String linkRole = myReferenceMacro.getLink().getRole();
+    
     // try new query
     ReferenceMacro_GetReferent function = myReferenceMacro.getReferentFunction();
     if (function != null) {
@@ -71,7 +71,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
         referentNode = (SNode) QueryMethodGenerated.invoke_GetReferent(methodName, args_old, args_new, myReferenceMacro.getModel());
       } catch (Exception e) {
         generator.showErrorMessage(getInputNode(), myReferenceMacro.getNode(), "couldn't evaluate reference macro");
-        return;
+        return null;
       }
 
     } else {
@@ -87,7 +87,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       } catch (Throwable t) {
         String message = NameUtil.shortNameFromLongName(t.getClass().getName()) + " occured while expanding reference macro with query: \"referenceMacro_" + myReferenceMacro.getAspectMethodName();
         generator.showErrorMessage(getInputNode(), myTemplateReferenceNode, message);
-        return;
+        return null;
       }
     }
 
@@ -95,10 +95,10 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       if (getOutputNode().isReferentRequired(linkRole)) {
         generator.showErrorMessage(getInputNode(), myTemplateReferenceNode, "unresolved reference for role \"" + linkRole + "\" in " + getOutputNode().getDebugText());
       }
-      return;
+      return null;
     }
 
-    getOutputNode().setReferent(linkRole, referentNode);
+//    getOutputNode().setReferent(linkRole, referentNode);
 
 //todo <Sergey Dmitriev> There should be different diagnostic that reference target to the node that will be deleted
 /*
@@ -113,6 +113,8 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node (click here)");
       generator.getGeneratorSessionContext().addTransientModelToKeep(generator.getSourceModel());
     }
+
+    return referentNode;
   }
 
   public void showErrorMessage(TemplateModelGenerator_New generator) {

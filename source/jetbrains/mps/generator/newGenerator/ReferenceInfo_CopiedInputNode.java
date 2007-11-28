@@ -65,23 +65,26 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     return null;
   }
 
-  public void executeDependentResolve(TemplateModelGenerator_New generator) {
+  public SNode executeDependentResolve(TemplateModelGenerator_New generator) {
 
     // try to resolve using custom referense resolver for source node concept
     // todo: some reference-resolvers can be executed on the 'executeIndependentResolve' step
     IReferenceResolver referenceResolver = loadReferenceResolver(myInputSourceNode);
     if (referenceResolver != null) {
       SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myInputReference);
-      if (outputTargetNode != null) {
-        getOutputNode().setReferent(myInputReference.getRole(), outputTargetNode);
-        setSuccess(true);
-        return;
-      }
+//      if (outputTargetNode != null) {
+//        getOutputNode().setReferent(myInputReference.getRole(), outputTargetNode);
+//        setSuccess(true);
+//        return;
+//      }
+      return outputTargetNode;
     }
+    return null;
   }
 
-  public void resolveAnyhow(TemplateModelGenerator_New generator) {
+  public SNode resolveAnyhow(TemplateModelGenerator_New generator) {
     // nothing
+    return null;
   }
 
   public void showErrorMessage(TemplateModelGenerator_New generator) {
