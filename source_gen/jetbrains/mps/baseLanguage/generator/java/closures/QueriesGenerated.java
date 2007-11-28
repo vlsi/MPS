@@ -169,7 +169,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1196118817337(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return _QueriesUtil.create_enclosingClassObject(node, generator);
+    return QueriesUtil.create_enclosingClassObject(node);
   }
 
   public static SNode mapSrcMacro_mapper_1170898169592(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {

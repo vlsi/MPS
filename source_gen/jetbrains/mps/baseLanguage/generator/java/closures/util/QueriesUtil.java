@@ -14,6 +14,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import java.util.List;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 
 public class QueriesUtil {
 
@@ -52,6 +53,33 @@ public class QueriesUtil {
       enclosingClass = adapter.getNode();
     }
     return SLinkOperations.getTargets(enclosingClass, "typeVariableDeclaration", true);
+  }
+
+  public static SNode create_enclosingClassObject(SNode nodeInsideClosure) {
+    // null
+    // must be invoked in $COPY-SRC$ because use ref on class in 'input model'
+    // null
+    SNode enclosingClass = SNodeOperations.getAncestor(nodeInsideClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+    if(enclosingClass == null) {
+      return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
+    }
+    SNode enclosingMethodOrClosure = SNodeOperations.getAncestorWhereConceptInList(nodeInsideClosure, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration","jetbrains.mps.baseLanguage.structure.Closure"}, false, false);
+    // --- in closure
+    if(SNodeOperations.isInstanceOf(enclosingMethodOrClosure, "jetbrains.mps.baseLanguage.structure.Closure")) {
+      SNode fieldRef = new QuotationClass_().createNode();
+      SNode typeOfField = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+      SLinkOperations.setTarget(typeOfField, "classifier", enclosingClass, false);
+      SLinkOperations.setTarget(fieldRef, "fieldType", typeOfField, true);
+      return fieldRef;
+    }
+    // --- in instance method
+    if(SNodeOperations.isInstanceOf(enclosingMethodOrClosure, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SNodeOperations.isInstanceOf(enclosingMethodOrClosure, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
+      SNode thisExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
+      SLinkOperations.setTarget(thisExpr, "classConcept", enclosingClass, false);
+      return thisExpr;
+    }
+    // --- none of above
+    return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
   }
 
 }

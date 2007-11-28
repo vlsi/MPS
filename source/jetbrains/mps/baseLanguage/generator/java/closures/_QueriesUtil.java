@@ -1,8 +1,6 @@
 package jetbrains.mps.baseLanguage.generator.java.closures;
 
 import jetbrains.mps.baseLanguage.structure.*;
-import jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.*;
@@ -171,38 +169,38 @@ public class _QueriesUtil {
   /**
    * method should be invoked in $COPY-SRC$ because use ref on class in 'input model'
    */
-  public static SNode create_enclosingClassObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
-    SNode enclosingClass = SNodeOperations.getAncestor(nodeInsideClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    if (enclosingClass != null) {
-      Class[] classes = new Class[]{BaseMethodDeclaration.class, Closure.class};
-      INodeAdapter enclosingNode = nodeInsideClosure.getAdapter().findFirstParent(classes);
-      if (enclosingNode instanceof InstanceMethodDeclaration ||
-              enclosingNode instanceof ConstructorDeclaration) {
-        ThisExpression thisExpr = ThisExpression.newInstance(generator.getTargetModel());
-        thisExpr.setClassConcept((ClassConcept) enclosingClass.getAdapter());
-        return thisExpr.getNode();
-      }
-
-      if (enclosingNode instanceof Closure) {
-//        SNode closureAdapterClass_output = generator.findOutputNodeByInputNodeAndMappingName(enclosingNode.getNode(), ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
-//        ClassConcept closureAdapterClass_output_ = (ClassConcept) closureAdapterClass_output.getAdapter();
-//        FieldDeclaration field = JavaModelUtil_new.findField(closureAdapterClass_output_, ClosuresMappingId.NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD);
-//        FieldReference fieldRef = FieldReference.newInstance(generator.getTargetModel());
-//        fieldRef.setInstance(ThisExpression.newInstance(generator.getTargetModel()));
-//        fieldRef.setFieldDeclaration(field);
-//        return BaseAdapter.fromAdapter(fieldRef);
-
-        InternalPartialFieldReference fieldRef_intern = InternalPartialFieldReference.newInstance(null);
-        fieldRef_intern.setInstance(ThisExpression.newInstance(null));
-        fieldRef_intern.setFieldName(ClosuresMappingId.NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD);
-
-        // type of field
-        ClassifierType typeOfField = ClassifierType.newInstance(null);
-        typeOfField.setClassifier((Classifier) enclosingClass.getAdapter());
-        fieldRef_intern.setFieldType(typeOfField);
-        return fieldRef_intern.getNode();
-      }
-    }
-    return NullLiteral.newInstance(generator.getTargetModel()).getNode();
-  }
+//  public static SNode create_enclosingClassObject(SNode nodeInsideClosure, ITemplateGenerator generator) {
+//    SNode enclosingClass = SNodeOperations.getAncestor(nodeInsideClosure, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+//    if (enclosingClass != null) {
+//      Class[] classes = new Class[]{BaseMethodDeclaration.class, Closure.class};
+//      INodeAdapter enclosingNode = nodeInsideClosure.getAdapter().findFirstParent(classes);
+//      if (enclosingNode instanceof InstanceMethodDeclaration ||
+//              enclosingNode instanceof ConstructorDeclaration) {
+//        ThisExpression thisExpr = ThisExpression.newInstance(generator.getTargetModel());
+//        thisExpr.setClassConcept((ClassConcept) enclosingClass.getAdapter());
+//        return thisExpr.getNode();
+//      }
+//
+//      if (enclosingNode instanceof Closure) {
+////        SNode closureAdapterClass_output = generator.findOutputNodeByInputNodeAndMappingName(enclosingNode.getNode(), ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
+////        ClassConcept closureAdapterClass_output_ = (ClassConcept) closureAdapterClass_output.getAdapter();
+////        FieldDeclaration field = JavaModelUtil_new.findField(closureAdapterClass_output_, ClosuresMappingId.NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD);
+////        FieldReference fieldRef = FieldReference.newInstance(generator.getTargetModel());
+////        fieldRef.setInstance(ThisExpression.newInstance(generator.getTargetModel()));
+////        fieldRef.setFieldDeclaration(field);
+////        return BaseAdapter.fromAdapter(fieldRef);
+//
+//        InternalPartialFieldReference fieldRef_intern = InternalPartialFieldReference.newInstance(null);
+//        fieldRef_intern.setInstance(ThisExpression.newInstance(null));
+//        fieldRef_intern.setFieldName(ClosuresMappingId.NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD);
+//
+//        // type of field
+//        ClassifierType typeOfField = ClassifierType.newInstance(null);
+//        typeOfField.setClassifier((Classifier) enclosingClass.getAdapter());
+//        fieldRef_intern.setFieldType(typeOfField);
+//        return fieldRef_intern.getNode();
+//      }
+//    }
+//    return NullLiteral.newInstance(generator.getTargetModel()).getNode();
+//  }
 }

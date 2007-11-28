@@ -10,6 +10,6 @@ public interface ClosuresMappingId {
   static String CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT = "contextOwner_closureContext_variable";
   static String VARIABLE__CLOSURE_CONTEXT__CLASS_FIELD = "variable_closureContext_classField";
 
-  static String NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD = "_enclosingClass";
+//  static String NAME__CLOSURE_ADAPTER__ENCLOSING_CLASS_FIELD = "_enclosingClass";
   static String NAME__CLOSURE_ADAPTER__CLOSURE_CONTEXT_FIELD = "_closureContext";
 }
