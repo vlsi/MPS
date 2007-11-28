@@ -426,7 +426,14 @@ public class SModel implements Iterable<SNode> {
 
   @NotNull
   List<SModelListener> getWeakModelListeners() {
-    List<SModelListener> result = new ArrayList<SModelListener>(myWeakListeners);
+    List<SModelListener> result = new ArrayList<SModelListener>();
+
+    for (SModelListener l : myWeakListeners) {
+      if (l != null) {
+        result.add(l);
+      }
+    }
+
     result.remove(myEventTranslator);
     return result;
   }
