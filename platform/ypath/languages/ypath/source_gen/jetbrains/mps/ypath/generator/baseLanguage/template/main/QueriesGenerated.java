@@ -449,8 +449,22 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(node, "writable");
   }
 
+  public static boolean ifMacro_Condition_1196268544958(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "replaceFun", true), "jetbrains.mps.baseLanguage.structure.ConceptFunction");
+  }
+
+  public static boolean ifMacro_Condition_1196268648655(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fun = SLinkOperations.getTarget(node, "replaceFun", true);
+    return SNodeOperations.isInstanceOf(fun, "jetbrains.mps.ypath.structure.GenericFeatureReplaceDemux") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fun, "removeFun", true), "jetbrains.mps.baseLanguage.structure.ConceptFunction");
+  }
+
   public static boolean ifMacro_Condition_1195424433852(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(node, "writable");
+  }
+
+  public static boolean ifMacro_Condition_1196268720240(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fun = SLinkOperations.getTarget(node, "replaceFun", true);
+    return SNodeOperations.isInstanceOf(fun, "jetbrains.mps.ypath.structure.GenericFeatureReplaceDemux") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fun, "insertFun", true), "jetbrains.mps.baseLanguage.structure.ConceptFunction");
   }
 
   public static boolean ifMacro_Condition_1195424511234(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -1000,20 +1014,20 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "parameterType", true);
   }
 
-  public static SNode sourceNodeQuery_1194811212752(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode sourceNodeQuery_1196268550580(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "replaceFun", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1195424828391(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "removeFun", true), "body", true);
+  public static SNode sourceNodeQuery_1196268653710(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "replaceFun", true), "removeFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1195424413398(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "parameterType", true);
   }
 
-  public static SNode sourceNodeQuery_1195424858297(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "insertFun", true), "body", true);
+  public static SNode sourceNodeQuery_1196268724040(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "replaceFun", true), "insertFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1195424497113(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

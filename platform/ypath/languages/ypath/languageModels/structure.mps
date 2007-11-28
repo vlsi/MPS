@@ -1324,18 +1324,8 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194545216305">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="replaceFun" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="1194545263074" resolveInfo="GenericFeatureSetterFun" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195420706523">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="removeFun" />
-      <link role="target" targetNodeId="1195420807526" resolveInfo="GenericFeatureRemoveFun" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1195420712830">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="insertFun" />
-      <link role="target" targetNodeId="1195420956439" resolveInfo="GenericFeatureInsertFun" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1196261217802" resolveInfo="IGenericFeatureReplaceFun" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1193057911192">
       <property name="metaClass" value="aggregation" />
@@ -1566,6 +1556,9 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194545290314">
       <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196261261388">
+      <link role="intfc" targetNodeId="1196261217802" resolveInfo="IGenericFeatureFun" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1194545345035">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
@@ -1581,6 +1574,17 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1194610815477">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1194610690988" resolveInfo="ReplaceExpressionFunctionParam" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196263944975">
+      <property name="value" value="replace" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196263976087">
+      <property name="value" value="implements replace function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196263988945">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1194568341931">
@@ -1731,6 +1735,9 @@
     <property name="package" value="treePath.features.functions" />
     <property name="name" value="GenericFeatureRemoveFun" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196267240519">
+      <link role="intfc" targetNodeId="1196267225093" resolveInfo="IGenericFeatureRemoveFun" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420822402">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
@@ -1742,6 +1749,17 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420837108">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1194610572276" resolveInfo="RangeFunctionParam" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196267249954">
+      <property name="value" value="remove" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196267256432">
+      <property name="value" value="implements remove function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196267395518">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195420956439">
@@ -1763,6 +1781,20 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195421106771">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1195421010025" resolveInfo="InsertExpressionFunctionParam" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196267434170">
+      <link role="intfc" targetNodeId="1196267419283" resolveInfo="IGenericFeatureInsertFun" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196267438447">
+      <property name="value" value="insert" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196267441555">
+      <property name="value" value="implements insert function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196267450358">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195421010025">
@@ -1788,6 +1820,48 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1195686935578">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196261217802">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="IGenericFeatureReplaceFun" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196263863763">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="GenericFeatureReplaceDemux" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196264051447">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="removeFun" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1196267225093" resolveInfo="IGenericFeatureRemoveFun" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196264055626">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="insertFun" />
+      <link role="target" targetNodeId="1196267419283" resolveInfo="IGenericFeatureInsertFun" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196263892725">
+      <property name="value" value="remove_insert" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196264011462">
+      <property name="value" value="implements remove and insert functions" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196264043851">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196263885337">
+      <link role="intfc" targetNodeId="1196261217802" resolveInfo="IGenericFeatureReplaceFun" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196267225093">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="IGenericFeatureRemoveFun" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196267419283">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="IGenericFeatureInsertFun" />
   </node>
 </model>
 

@@ -1910,5 +1910,38 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1196261283769">
+    <property name="name" value="subs_GenericFeatureReplaceFun" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1196261294042">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="1.1196261217802" resolveInfo="IGenericFeatureFun" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1196264087790">
+        <link role="concept" targetNodeId="1.1194545263074" resolveInfo="GenericFeatureReplaceFun" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1196264103560">
+        <link role="concept" targetNodeId="1.1196263863763" resolveInfo="GenericFeatureReplaceDemux" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1196267311141">
+    <property name="name" value="subs_GenericFeatureRemoveFun" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1196267335160">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="1.1196267225093" resolveInfo="IGenericFeatureRemoveFun" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1196267351156">
+        <link role="concept" targetNodeId="1.1195420807526" resolveInfo="GenericFeatureRemoveFun" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1196267467131">
+    <property name="name" value="subs_GenericFeatureInsertFun" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1196267475625">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="1.1196267419283" resolveInfo="IGenericFeatureInsertFun" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1196267482580">
+        <link role="concept" targetNodeId="1.1195420956439" resolveInfo="GenericFeatureInsertFun" />
+      </node>
+    </node>
+  </node>
 </model>
 

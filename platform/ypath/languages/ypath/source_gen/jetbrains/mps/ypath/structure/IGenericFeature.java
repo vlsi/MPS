@@ -8,25 +8,15 @@ public interface IGenericFeature extends INodeAdapter {
   public static final String concept = "jetbrains.mps.ypath.structure.IGenericFeature";
   public static String GETTER = "getter";
   public static String REPLACE_FUN = "replaceFun";
-  public static String REMOVE_FUN = "removeFun";
-  public static String INSERT_FUN = "insertFun";
   public static String CARDINAL = "cardinal";
 
   public GenericFeatureGetterFun getGetter();
 
   public void setGetter(GenericFeatureGetterFun node);
 
-  public GenericFeatureReplaceFun getReplaceFun();
+  public IGenericFeatureReplaceFun getReplaceFun();
 
-  public void setReplaceFun(GenericFeatureReplaceFun node);
-
-  public GenericFeatureRemoveFun getRemoveFun();
-
-  public void setRemoveFun(GenericFeatureRemoveFun node);
-
-  public GenericFeatureInsertFun getInsertFun();
-
-  public void setInsertFun(GenericFeatureInsertFun node);
+  public void setReplaceFun(IGenericFeatureReplaceFun node);
 
   public GenericFeatureCardinalFun getCardinal();
 

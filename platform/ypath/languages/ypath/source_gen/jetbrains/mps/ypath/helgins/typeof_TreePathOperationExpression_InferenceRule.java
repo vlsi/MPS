@@ -28,7 +28,12 @@ public class typeof_TreePathOperationExpression_InferenceRule implements Inferen
 
             public void run() {
               SNode targetType = FeatureTargetTypeUtil.getTargetType(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(TypeChecker.getInstance().getEquationManager().getRepresentator(SourceType_typevar_1186145333005), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1194378161915(SLinkOperations.getTarget(op, "paramObject", true)));
-              TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_1().createNode(targetType), argument, "jetbrains.mps.ypath.helgins", "1186145368564");
+              if(!((targetType != null))) {
+                TypeChecker.getInstance().reportTypeError(argument, "Received null target type", "jetbrains.mps.ypath.helgins", "1196269826366");
+              }
+              if((targetType != null)) {
+                TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_1().createNode(targetType), argument, "jetbrains.mps.ypath.helgins", "1196269933858");
+              }
             }
 
           }, "jetbrains.mps.ypath.helgins", "1186145326892");
