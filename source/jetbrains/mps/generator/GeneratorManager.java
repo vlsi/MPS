@@ -309,7 +309,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             (myCompileOnGeneration && generationType.requiresCompilationInIDEAfterGeneration())
                     || (myCompileBeforeGeneration && generationType.requiresCompilationInIDEABeforeGeneration()));
 
-    long totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, sourceModels);
+    long totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, !invocationContext.getModule().isCompileInMPS(), sourceModels);
     progress.startTaskAnyway("generating", null, totalJob);
 
     MPSModuleRepository.getInstance().removeTransientModules();
@@ -484,17 +484,21 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           // -- compile after generation
 
           checkMonitorCanceled(progress);
-          progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
+          progress.startTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
           CompilationResult compilationResult;
           if (!module.isCompileInMPS()) {
             progress.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
             projectHandler.refreshFS();
             progress.finishTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
             progress.addText("compiling in IntelliJ IDEA...");
+            progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
             compilationResult = projectHandler.buildModule(outputFolder);
+            progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
           } else {
+            progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
             progress.addText("compiling in JetBrains MPS...");
             compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
+            progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
           }
           progress.addText("" + compilationResult);
           progress.finishTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);

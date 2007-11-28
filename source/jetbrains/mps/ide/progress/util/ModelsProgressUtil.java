@@ -28,6 +28,8 @@ public class ModelsProgressUtil {
   public static final String TASK_NAME_RELOAD_ALL = "tn_reloadAll";
   public static final String TASK_NAME_REFRESH_FS = "tn_refreshFs";
   public static final String TASK_KIND_CHECK_MODELS = "tk_checkModels";
+  public static final String TASK_NAME_COMPILE_IN_IDEA = "tn_compileInIDEA";
+  public static final String TASK_NAME_COMPILE_IN_MPS = "tn_compileInMPS";
 
   //generic utilities:
 
@@ -80,13 +82,18 @@ public class ModelsProgressUtil {
     return getInstance().getModelsProgressHelper(TASK_KIND_CHECK_MODELS).estimateModelsTaskTimeMillis(models);
   }
 
-  public static long estimateTotalGenerationJobMillis(boolean compile, Collection<SModelDescriptor> models) {
+  public static long estimateTotalGenerationJobMillis(boolean compile, boolean inIDEA, Collection<SModelDescriptor> models) {
     long generationTime = estimateGenerationTimeMillis(models);
-    long compilationTime = estimateCompileOnGenerationTimeMillis();
     long reloadingTime = estimateReloadAllTimeMillis();
     long refreshingFSTime = estimateRefreshIDEAFileSystemTimeMillis();
-    long totalCompilationTime = compilationTime + refreshingFSTime + reloadingTime;
     if (compile) {
+      long compilationInIDEATime = 0;
+      if (inIDEA) {
+        compilationInIDEATime = estimateCompileInIDEATimeMillis();
+      } else {
+        compilationInIDEATime = estimateCompileInMPSTimeMillis();
+      }
+      long totalCompilationTime = compilationInIDEATime + refreshingFSTime + reloadingTime;
       generationTime = generationTime + totalCompilationTime;
     } else {
       generationTime = generationTime + reloadingTime; // only re-load classes
@@ -94,9 +101,14 @@ public class ModelsProgressUtil {
     return generationTime;
   }
 
-  public static long estimateCompileOnGenerationTimeMillis() {
+  public static long estimateCompileInIDEATimeMillis() {
     TaskProgressSettings settings = TaskProgressSettings.getInstance();
-    return settings.getEstimatedTimeMillis(TASK_NAME_COMPILE_ON_GENERATION);
+    return settings.getEstimatedTimeMillis(TASK_NAME_COMPILE_IN_IDEA);
+  }
+
+  public static long estimateCompileInMPSTimeMillis() {
+    TaskProgressSettings settings = TaskProgressSettings.getInstance();
+    return settings.getEstimatedTimeMillis(TASK_NAME_COMPILE_IN_MPS);
   }
 
   public static long estimateReloadAllTimeMillis() {
