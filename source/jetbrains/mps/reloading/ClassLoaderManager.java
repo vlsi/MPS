@@ -142,7 +142,7 @@ public class ClassLoaderManager implements IComponentLifecycle {
         String[] reloadList = toReload.toArray(new String[0]);
         Bundle[] bundles = new Bundle[reloadList.length];
         for (int i = 0; i < reloadList.length; i++) {
-          bundles[i] = myOSGIBundles.get(i);
+          bundles[i] = myOSGIBundles.get(reloadList[i]);
         }
         refreshBundles(bundles);
       }
