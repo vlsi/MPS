@@ -2,6 +2,7 @@ package jetbrains.mps.intentions;
 
 import jetbrains.mps.bootstrap.intentionsLanguage.constraints.IntentionDeclaration_Behavior;
 import jetbrains.mps.bootstrap.intentionsLanguage.structure.IntentionDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorContext;
@@ -38,15 +39,17 @@ public class IntentionsManager implements IExternalizableComponent {
 
   public Set<Intention> getAvailableIntentions(SNode node, EditorContext context) {
     Set<Intention> result = new HashSet<Intention>();
-    String conceptFqName = node.getConceptFqName();
-    if (myIntentions.containsKey(conceptFqName)) {
-      for (Intention intention : Collections.unmodifiableSet(myIntentions.get(conceptFqName))) {
-        try {
-          if (intention.isApplicable(node, context)) {
-            result.add(intention);
+
+    for (String conceptFQName : myIntentions.keySet()) {
+      if (node.isInstanceOfConcept(conceptFQName)) {
+        for (Intention intention : Collections.unmodifiableSet(myIntentions.get(conceptFQName))) {
+          try {
+            if (intention.isApplicable(node, context)) {
+              result.add(intention);
+            }
+          } catch (Throwable t) {
+            LOG.error("Intention's isApplicable method failed " + t.getMessage(), t);
           }
-        } catch (Throwable t) {
-          LOG.error("Intention's isApplicable method failed " + t.getMessage(), t);
         }
       }
     }
