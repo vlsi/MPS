@@ -628,6 +628,8 @@ public abstract class AbstractModule implements IModule {
         md.addDependency(ref);
 
         setModuleDescriptor(md);
+
+        save();
       }
     });
   }
