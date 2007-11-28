@@ -84,15 +84,13 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 
 
   protected void error(GetTargetNodeErrorState errorState) {
+    LOG.error("\ncouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), getSourceNode());
     if (errorState == GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR) {
-      LOG.error("\nCouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), getSourceNode());
-      LOG.error("Path to the target model " + getTargetModelUID() + " is not specified");
+      LOG.error("path to the target model " + getTargetModelUID() + " is not specified");
     } else if (errorState == GetTargetNodeErrorState.NO_MODEL) {
-      LOG.error("\nCouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), getSourceNode());
-      LOG.error("The modelDescriptor.getSModel() failed to load model");
+      LOG.error("the modelDescriptor.getSModel() failed to load model");
     } else if (errorState == GetTargetNodeErrorState.CANT_RESOLVE_BY_ID) {
-      LOG.error("\nCouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), getSourceNode());
-      LOG.error("The target model " + getTargetModelUID() + " doesn't contain node with id=" + getTargetNodeId());
+      LOG.error("the target model " + getTargetModelUID() + " doesn't contain node with id=" + getTargetNodeId());
     }
   }
 }

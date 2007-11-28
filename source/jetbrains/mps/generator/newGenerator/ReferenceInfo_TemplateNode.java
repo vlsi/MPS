@@ -17,19 +17,20 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
 
 
   public ReferenceInfo_TemplateNode(SNode outputNode, SReference templateReference, SNode inputNode) {
-    super(outputNode, inputNode);
+    super(outputNode, templateReference.getRole(), inputNode);
     myTemplateReference = templateReference;
     myTemplateSourceNode = templateReference.getSourceNode();
     myTemplateTargetNode = templateReference.getTargetNode();
   }
 
-  public void executeIndependentResolve(TemplateModelGenerator_New generator) {
+  public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
     {
       SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
       if (outputTargetNode != null) {
-        getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
-        setSuccess(true);
-        return;
+//        getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
+//        setSuccess(true);
+//        return;
+        return outputTargetNode;
       }
     }
 
@@ -37,9 +38,10 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       // if template has been applied exactly once, then we have unique output node for each template node
       SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, true);
       if (outputTargetNode != null) {
-        getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
-        setSuccess(true);
-        return;
+//        getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
+//        setSuccess(true);
+//        return;
+        return outputTargetNode;
       }
     }
 
@@ -50,14 +52,17 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       SNode outputParentNode = getOutputNode().getParent();
       while (templateParentNode != null && outputParentNode != null) {
         if (templateParentNode.equals(myTemplateTargetNode)) {
-          getOutputNode().setReferent(myTemplateReference.getRole(), outputParentNode);
-          setSuccess(true);
-          return;
+//          getOutputNode().setReferent(myTemplateReference.getRole(), outputParentNode);
+//          setSuccess(true);
+//          return;
+          return outputParentNode;
         }
         templateParentNode = templateParentNode.getParent();
         outputParentNode = outputParentNode.getParent();
       }
     }
+
+    return null;
   }
 
   public void executeDependentResolve(TemplateModelGenerator_New generator) {

@@ -17,20 +17,21 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
 
   public ReferenceInfo_CopiedInputNode(SNode outputNode, SReference inputReference) {
-    super(outputNode, inputReference.getSourceNode());
+    super(outputNode, inputReference.getRole(), inputReference.getSourceNode());
     myInputReference = inputReference;
     myInputSourceNode = inputReference.getSourceNode();
     myInputTargetNode = inputReference.getTargetNode();
   }
 
-  public void executeIndependentResolve(TemplateModelGenerator_New generator) {
+  public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
     {
       // output target node might has been copied (reduced) from the input target node
       SNode outputTargetNode = generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
       if (outputTargetNode != null) {
-        getOutputNode().setReferent(myInputReference.getRole(), outputTargetNode);
-        setSuccess(true);
-        return;
+//        getOutputNode().setReferent(myInputReference.getRole(), outputTargetNode);
+//        setSuccess(true);
+//        return;
+        return outputTargetNode;
       }
     }
 
@@ -53,12 +54,15 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
         }
 
         if (outputTargetNode != null) {
-          getOutputNode().setReferent(myInputReference.getRole(), outputTargetNode);
-          setSuccess(true);
-          return;
+//          getOutputNode().setReferent(myInputReference.getRole(), outputTargetNode);
+//          setSuccess(true);
+//          return;
+          return outputTargetNode;
         }
       }
     }
+
+    return null;
   }
 
   public void executeDependentResolve(TemplateModelGenerator_New generator) {

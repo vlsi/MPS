@@ -15,11 +15,13 @@ import jetbrains.mps.project.GlobalScope;
  */
 public abstract class ReferenceInfo {
   private SNode myOutputNode;
+  private String myReferenceRole;
   private SNode myInputNode;
   private boolean mySuccess = false;
 
-  protected ReferenceInfo(SNode outputNode, SNode inputNode) {
+  protected ReferenceInfo(SNode outputNode, String referenceRole, SNode inputNode) {
     myOutputNode = outputNode;
+    myReferenceRole = referenceRole;
     myInputNode = inputNode;
   }
 
@@ -27,11 +29,15 @@ public abstract class ReferenceInfo {
     return myOutputNode;
   }
 
+  public String getReferenceRole() {
+    return myReferenceRole;
+  }
+
   public SNode getInputNode() {
     return myInputNode;
   }
 
-  public abstract void executeIndependentResolve(TemplateModelGenerator_New generator);
+  public abstract SNode executeIndependentResolve(TemplateModelGenerator_New generator);
 
   public abstract void executeDependentResolve(TemplateModelGenerator_New generator);
 

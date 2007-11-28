@@ -18,13 +18,14 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private ReferenceMacro myReferenceMacro;
 
   public ReferenceInfo_Macro(ReferenceMacro refMacro, SNode inputNode, SNode templateReferenceNode, SNode outputNode) {
-    super(outputNode, inputNode);
+    super(outputNode, refMacro.getLink().getRole(), inputNode);
     myTemplateReferenceNode = templateReferenceNode;
     myReferenceMacro = refMacro;
   }
 
-  public void executeIndependentResolve(TemplateModelGenerator_New generator) {
+  public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
     // nothing
+    return null;
   }
 
   public void executeDependentResolve(TemplateModelGenerator_New generator) {
@@ -105,7 +106,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       getOutputNode().setReferent(linkRole, referentNode);
     }
 */
-    // check child because it's manual and thus error prone mapping
+    // check referent because it's manual and thus error prone mapping
     if (referentNode.getModel() == generator.getSourceModel()) {
       generator.showWarningMessage(getOutputNode(), "reference '" + linkRole + "' to input model in output node " + getOutputNode().getDebugText());
       generator.showInformationMessage(referentNode, " -- referent node: " + referentNode.getDebugText());
