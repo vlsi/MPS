@@ -41,7 +41,7 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
 
   public void startTaskProgressAndMeasurement() {
     if (myMeasurementInProgress) {
-      LOG.warning("trying to start task progress measurement started already");
+      LOG.warning("trying to start task progress measurement started already", new Throwable());
       return;
     }
     myTransientTaskKindsToEstimatedTime.clear();
@@ -51,7 +51,7 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
 
   public void finishTaskProgressAndCommitMeasurements() {
     if (!myMeasurementInProgress) {
-      LOG.warning("trying to finish task progress measurement which hasn't been started yet or has been already finished");
+      LOG.warning("trying to finish task progress measurement which hasn't been started yet or has been already finished", new Throwable());
       return;
     }
     myTasksToEstimatedTime.putAll(myTransientTasksToEstimatedTime);
@@ -89,7 +89,7 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
 
   public void addEstimatedTimeMillis(String taskName, long estimatedTimeMillis) {
     if (!myMeasurementInProgress) {
-      LOG.error("task measurement is not in progress. Can't add any measurement results");
+      LOG.error("task measurement is not in progress. Can't add any measurement results", new Throwable());
       return;
     }
 
