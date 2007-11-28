@@ -27,7 +27,7 @@
       <external-templates />
       <dependencies>
         <dependency>jetbrains.mps.baseLanguage</dependency>
-        <dependency>C:\Documents and Settings\Julia.Beliaeva\MPSProjects\Complex\solutions\jetbrains.mps.complex.runtime\jetbrains.mps.complex.runtime.msd</dependency>
+        <dependency>jetbrains.mps.complex.runtime</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>

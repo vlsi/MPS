@@ -24,9 +24,12 @@
             <node role="type" type="jetbrains.mps.complex.structure.ComplexType" id="1196271532812" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196275396285">
-          <node role="expression" type="jetbrains.mps.complex.structure.ImExpression" id="1196275398459">
-            <node role="complexExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196275396286">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196279590457">
+          <node role="expression" type="jetbrains.mps.complex.structure.ProductComplexExpression" id="1196279593178">
+            <node role="left" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196279590458">
+              <link role="variableDeclaration" targetNodeId="1196260140125" resolveInfo="c1" />
+            </node>
+            <node role="right" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196279594007">
               <link role="variableDeclaration" targetNodeId="1196271532811" resolveInfo="c2" />
             </node>
           </node>
