@@ -372,10 +372,13 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       result.add(m.getName());
     }
 
+    //todo tmp fix
+    result.add(getModuleUID() + ".generator.baseLanguage.template.main");
+
     result.addAll(getGeneratorsPacks());
 
     return result;
-  }
+  }                                                 
 
   private List<String> getGeneratorsPacks() {
     List<String> result = new ArrayList<String>();
