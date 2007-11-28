@@ -40,20 +40,20 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
   }
 
   public void startTaskProgressAndMeasurement() {
-//    if (myMeasurementInProgress) {
+    if (myMeasurementInProgress) {
 //      LOG.warning("trying to start task progress measurement started already", new Throwable());
-//      return;
-//    }
+      return;
+    }
     myTransientTaskKindsToEstimatedTime.clear();
     myTransientTasksToEstimatedTime.clear();
     myMeasurementInProgress = true;
   }
 
   public void finishTaskProgressAndCommitMeasurements() {
-//    if (!myMeasurementInProgress) {
+    if (!myMeasurementInProgress) {
 //      LOG.warning("trying to finish task progress measurement which hasn't been started yet or has been already finished", new Throwable());
-//      return;
-//    }
+      return;
+    }
     myTasksToEstimatedTime.putAll(myTransientTasksToEstimatedTime);
     myTaskKindsToEstimatedTime.putAll(myTransientTaskKindsToEstimatedTime);
     myTransientTaskKindsToEstimatedTime.clear();
