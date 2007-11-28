@@ -15,6 +15,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.generator_new.util.QueriesUtil;
 import java.util.List;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
@@ -318,27 +319,35 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1169582607427(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    final zClosureContext _zClosureContext = new zClosureContext();
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(node);
     // all string-type-properties from implemented interfaces
-    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper(null, null)));
+    _zClosureContext.names = ListOperations.createList(new String[]{});
+    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper(null, _zClosureContext)));
   }
 
   public static List sourceNodesQuery_1169582607484(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    final zClosureContext1 _zClosureContext1 = new zClosureContext1();
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(node);
     // all boolean-type-properties from implemented interfaces
-    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper1(null, null)));
+    _zClosureContext1.names = ListOperations.createList(new String[]{});
+    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper1(null, _zClosureContext1)));
   }
 
   public static List sourceNodesQuery_1169582607556(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    final zClosureContext2 _zClosureContext2 = new zClosureContext2();
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(node);
     // all integer-type-properties from implemented interfaces
-    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper2(null, null)));
+    _zClosureContext2.names = ListOperations.createList(new String[]{});
+    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper2(null, _zClosureContext2)));
   }
 
   public static List sourceNodesQuery_1169582607613(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    final zClosureContext3 _zClosureContext3 = new zClosureContext3();
     List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(node);
     // all enum-type-properties from implemented interfaces
-    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper3(null, null)));
+    _zClosureContext3.names = ListOperations.createList(new String[]{});
+    return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper3(null, _zClosureContext3)));
   }
 
   public static List sourceNodesQuery_1169582939001(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

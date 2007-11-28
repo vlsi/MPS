@@ -160,7 +160,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068431790189">
     <property name="name" value="Type" />
-    <link role="extends" targetNodeId="4.1078489098625" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1107217894746">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
@@ -168,10 +168,13 @@
       <property name="value" value="a type" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196208231455">
+      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068431474542">
     <property name="name" value="VariableDeclaration" />
-    <link role="extends" targetNodeId="4.1078489098625" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1083152972671">
       <property name="name" value="name" />
       <property name="propertyType" value="string" />
@@ -194,6 +197,9 @@
       <property name="role" value="initializer" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196208197093">
+      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1188211976433">
       <link role="intfc" targetNodeId="1188208481402" resolveInfo="Annotable" />
@@ -219,7 +225,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123132">
     <property name="iconPath" value="${mps_home}\languages\baseLanguage\icons\method.png" />
     <property name="name" value="BaseMethodDeclaration" />
-    <link role="extends" targetNodeId="4.1078489098625" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1109283235663">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
     </node>
@@ -258,6 +264,9 @@
       <property name="sourceCardinality" value="0..n" />
       <property name="role" value="throwsItem" />
       <link role="target" targetNodeId="1107535904670" resolveInfo="ClassifierType" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196208242738">
+      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1188210442792">
       <link role="intfc" targetNodeId="1188208481402" resolveInfo="Annotable" />
@@ -1134,7 +1143,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1083245299891">
     <property name="name" value="EnumConstantDeclaration" />
-    <link role="extends" targetNodeId="4.1078489098625" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1095257688468">
       <property name="name" value="name" />
       <link role="dataType" targetNodeId="1083065718921" resolveInfo="_Identifier_String" />
@@ -1145,6 +1154,9 @@
       <property name="role" value="actualArgument" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196208207703">
+      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1189675724652">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
@@ -1297,15 +1309,18 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1109279763828">
     <property name="name" value="TypeVariableDeclaration" />
-    <link role="extends" targetNodeId="4.1078489098625" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1109279783704">
       <property name="name" value="name" />
       <link role="dataType" targetNodeId="1083065718921" resolveInfo="_Identifier_String" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196208151107">
+      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1109279851642">
     <property name="name" value="GenericDeclaration" />
-    <link role="extends" targetNodeId="4.1078489098625" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1109279881614">
       <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="0..n" />
@@ -1315,6 +1330,9 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1109279873910">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196208219970">
+      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1109283449304">
@@ -1531,9 +1549,12 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1153179527848">
     <property name="name" value="ClosureParameter" />
-    <link role="extends" targetNodeId="4.1078489098625" />
+    <link role="extends" targetNodeId="4.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1153248228121">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196208180764">
+      <link role="intfc" targetNodeId="4.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1153179560115">
