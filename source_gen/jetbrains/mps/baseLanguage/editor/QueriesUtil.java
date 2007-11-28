@@ -33,13 +33,13 @@ public class QueriesUtil {
 
   public static SNode replaceNodeMenu_StaticFieldReference_createReplacementNode(SNode node, SNode parameterObject) {
     if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(newNode, "baseMethodDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "classConcept", SLinkOperations.getTarget(node, "classifier", false), false);
       return newNode;
     }
     if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
-      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.EnumConstantReference");
+      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
       SLinkOperations.setTarget(newNode, "enumConstantDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "enumClass", SLinkOperations.getTarget(node, "classifier", false), false);
       return newNode;
@@ -61,13 +61,13 @@ public class QueriesUtil {
 
   public static SNode replaceNodeMenu_StaticMethodCall_createReplacementNode(SNode node, SNode parameterObject) {
     if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
-      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticFieldReference");
+      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
       SLinkOperations.setTarget(newNode, "variableDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "classifier", SLinkOperations.getTarget(node, "classConcept", false), false);
       return newNode;
     }
     if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration")) {
-      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.EnumConstantReference");
+      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
       SLinkOperations.setTarget(newNode, "enumConstantDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "enumClass", SLinkOperations.getTarget(node, "classConcept", false), false);
       return newNode;
@@ -89,13 +89,13 @@ public class QueriesUtil {
 
   public static SNode replaceNodeMenu_EnumConstantReference_createReplacementNode(SNode node, SNode parameterObject) {
     if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
-      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticFieldReference");
+      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
       SLinkOperations.setTarget(newNode, "variableDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "classifier", SLinkOperations.getTarget(node, "enumClass", false), false);
       return newNode;
     }
     if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
-      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(newNode, "baseMethodDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "classConcept", SLinkOperations.getTarget(node, "enumClass", false), false);
       return newNode;
@@ -115,7 +115,7 @@ public class QueriesUtil {
 
   public static SNode replaceNodeMenu_FieldReference_createReplacementNode(SNode node, SNode parameterObject) {
     if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.InstanceMethodCall");
+      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.InstanceMethodCall", null);
       SLinkOperations.setTarget(newNode, "baseMethodDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "instance", SLinkOperations.getTarget(node, "instance", true), true);
       return newNode;
@@ -135,7 +135,7 @@ public class QueriesUtil {
 
   public static SNode replaceNodeMenu_InstanceMethodCall_createReplacementNode(SNode node, SNode parameterObject) {
     if(SNodeOperations.isInstanceOf(parameterObject, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.FieldReference");
+      SNode newNode = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.FieldReference", null);
       SLinkOperations.setTarget(newNode, "variableDeclaration", parameterObject, false);
       SLinkOperations.setTarget(newNode, "instance", SLinkOperations.getTarget(node, "instance", true), true);
       return newNode;

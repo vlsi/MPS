@@ -242,9 +242,10 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     boolean alternationCondition = true;
     alternationCondition = IfStatement_Editor._QueryFunction_NodeCondition_1177555034689(node, context, context.getOperationContext().getScope());
     EditorCell editorCell = null;
-    if (alternationCondition) {
+    if(alternationCondition) {
       editorCell = this.createIfFalseStatementCell1(context, node);
-    } else {
+    } else
+    {
       editorCell = this.createColumnCell(context, node);
     }
     IfStatement_Editor.setupBasic_CellAlternation(editorCell, node, context);
@@ -268,7 +269,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (IfStatement_Editor._QueryFunction_NodeCondition_1177555034652(node, context, context.getOperationContext().getScope())) {
+    if(IfStatement_Editor._QueryFunction_NodeCondition_1177555034652(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRowCell(context, node));
     }
     editorCell.addEditorCell(this.createConstantCell2(context, node, "if"));
@@ -297,7 +298,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell6(context, node, "}"));
     editorCell.addEditorCell(this.createConstantCell7(context, node, "else"));
-    if (IfStatement_Editor._QueryFunction_NodeCondition_1177555034711(node, context, context.getOperationContext().getScope())) {
+    if(IfStatement_Editor._QueryFunction_NodeCondition_1177555034711(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell8(context, node, "{"));
     }
     return editorCell;
@@ -320,7 +321,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    if (IfStatement_Editor._QueryFunction_NodeCondition_1177555034725(node, context, context.getOperationContext().getScope())) {
+    if(IfStatement_Editor._QueryFunction_NodeCondition_1177555034725(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell10(context, node, "}"));
     }
     return editorCell;
@@ -346,10 +347,10 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createHeaderRow(context, node));
     editorCell.addEditorCell(this.createIfTrueBox(context, node));
-    if (IfStatement_Editor._QueryFunction_NodeCondition_1177555034680(node, context, context.getOperationContext().getScope())) {
+    if(IfStatement_Editor._QueryFunction_NodeCondition_1177555034680(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstantCell5(context, node, "}"));
     }
-    if (IfStatement_Editor._QueryFunction_NodeCondition_1177555034698(node, context, context.getOperationContext().getScope())) {
+    if(IfStatement_Editor._QueryFunction_NodeCondition_1177555034698(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCellAlternation(context, node));
     }
     return editorCell;
@@ -456,8 +457,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     IfStatement_Editor.setupBasic_ConditionCell(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      IfStatement_Editor.setupLabel_ConditionCell((EditorCell_Label) editorCell, node, context);
+    if(editorCell instanceof EditorCell_Label) {
+      IfStatement_Editor.setupLabel_ConditionCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -472,12 +473,12 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createConditionCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
+    if(attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createIfTrueCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -485,8 +486,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     IfStatement_Editor.setupBasic_IfTrueCell(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      IfStatement_Editor.setupLabel_IfTrueCell((EditorCell_Label) editorCell, node, context);
+    if(editorCell instanceof EditorCell_Label) {
+      IfStatement_Editor.setupLabel_IfTrueCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -501,12 +502,12 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createIfTrueCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
+    if(attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createIfFalseStatementCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -514,8 +515,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     IfStatement_Editor.setupBasic_IfFalseStatementCell(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      IfStatement_Editor.setupLabel_IfFalseStatementCell((EditorCell_Label) editorCell, node, context);
+    if(editorCell instanceof EditorCell_Label) {
+      IfStatement_Editor.setupLabel_IfFalseStatementCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -530,12 +531,12 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createIfFalseStatementCellinternal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
+    if(attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
   public EditorCell createIfFalseStatementCell1internal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -543,8 +544,8 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     provider.setAuxiliaryCellProvider(null);
     EditorCell editorCell = provider.createEditorCell(context);
     IfStatement_Editor.setupBasic_IfFalseStatementCell1(editorCell, node, context);
-    if (editorCell instanceof EditorCell_Label) {
-      IfStatement_Editor.setupLabel_IfFalseStatementCell1((EditorCell_Label) editorCell, node, context);
+    if(editorCell instanceof EditorCell_Label) {
+      IfStatement_Editor.setupLabel_IfFalseStatementCell1((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     return editorCell;
@@ -559,12 +560,12 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     EditorCell cellWithRole = this.createIfFalseStatementCell1internal(context, node, provider);
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
+    if(attributeConcept != null) {
       IOperationContext opContext = context.getOperationContext();
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
     } else
-      return cellWithRole;
+    return cellWithRole;
   }
 
 }

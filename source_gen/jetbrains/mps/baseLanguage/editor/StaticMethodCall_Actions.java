@@ -19,9 +19,9 @@ public class StaticMethodCall_Actions {
 
   public static class StaticMethodCall_Actions_DELETE extends EditorCellAction {
 
-    /* package */ SNode myNode;
+    /* package */SNode myNode;
 
-    public StaticMethodCall_Actions_DELETE(SNode node) {
+    public  StaticMethodCall_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
 
@@ -32,13 +32,13 @@ public class StaticMethodCall_Actions {
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode classConcept1 = SLinkOperations.getTarget(node, "classConcept", false);
       SNode classConcept2 = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-      if (classConcept1 == classConcept2) {
+      if(classConcept1 == classConcept2) {
         SNode localStaticMethodCall = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall");
         SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
         {
           ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(node, "actualArgument", true));
           try {
-            while (_zCursor.moveToNext()) {
+            while(_zCursor.moveToNext()) {
               SNode actualArgument = _zCursor.getCurrent();
               SLinkOperations.addChild(localStaticMethodCall, "actualArgument", actualArgument);
             }
@@ -49,6 +49,6 @@ public class StaticMethodCall_Actions {
       }
     }
 
-  }
+}
 
 }

@@ -35,7 +35,7 @@ public class IfStatement_elseBlockStatement_delete {
       SNode ifFalseStatement = SLinkOperations.getTarget(node, "ifFalseStatement", true);
       List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(ifFalseStatement, "statements", true), "statement", true);
       if(SequenceOperations.isEmpty(statements)) {
-        statement = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.Statement");
+        statement = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.baseLanguage.structure.Statement", null);
       } else
       {
         statement = SequenceOperations.getFirst(statements);
