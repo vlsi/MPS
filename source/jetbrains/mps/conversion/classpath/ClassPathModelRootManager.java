@@ -92,20 +92,8 @@ public abstract class ClassPathModelRootManager extends AbstractModelRootManager
   private void addPackageModelDescriptors(Set<SModelDescriptor> descriptors, ModelRoot root, String pack) {
     Set<String> subpackages = getClassPathItem().getSubpackages(pack);
     if (pack.equals("")) {
-
-      SModelUID defaultPackage = new SModelUID("", "java_stub");
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(defaultPackage);
-
-      if (modelDescriptor == null) {
-        modelDescriptor =
-                new DefaultSModelDescriptor(this,
-                        null,
-                        defaultPackage);
-        SModelRepository.getInstance().registerModelDescriptor(modelDescriptor, myOwner);
-      } else {
-        SModelRepository.getInstance().addOwnerForDescriptor(modelDescriptor, myOwner);        
-      }
-      descriptors.add(modelDescriptor);
+      //we ignore everything in the default package because usage of it is a bad style and many libraries
+      //use it for some purposes. Also it's impossible to import classes from it.
     }
 
     for (String subpackage : subpackages) {

@@ -56,7 +56,7 @@ public class IdeMain {
       System.loadLibrary("focuskiller");
     }
   }
-
+                                                                          
   public static IDEProjectFrame openProjectWindow(boolean loadOldProject) {
     installFocusKiller();
 
