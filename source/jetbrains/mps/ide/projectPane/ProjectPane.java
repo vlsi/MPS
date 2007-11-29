@@ -59,6 +59,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
   public static final String SOLUTION_NEW = "solution-new";
   public static final String LANGUAGE_NEW = "language-new";
+  public static final String GENERATOR_NEW = "generator-new";
 
   public static final String SHOW_P_AND_R = "show-p-and-r";
   public static final String AUTOSCROLL_TO_SOURCE = "autoscroll-to-source";
