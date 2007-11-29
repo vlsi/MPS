@@ -1,6 +1,10 @@
 package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.ide.SystemInfo;
+import jetbrains.mps.ide.actions.model.CreateRootNodeGroup;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.*;
@@ -8,6 +12,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.event.KeyEvent;
 import java.awt.Color;
+import java.awt.Rectangle;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -67,10 +72,25 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return null;
   }
 
+  public JPopupMenu getQuickCreatePopupMenu() {
+    return null;
+  }
+
   public void doubleClick() {
   }
 
-  public void keyPressed(KeyEvent keyEvent) {
+  public void keyPressed(KeyEvent keyEvent) {    
+    if (keyEvent.isAltDown() && (
+            (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
+            (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP))) {
+      JPopupMenu popupMenu = getQuickCreatePopupMenu();
+      if (popupMenu != null) {
+        MPSTree mpsTree = getTree();
+        if (mpsTree == null) return;
+        Rectangle rectangle = mpsTree.getPathBounds(mpsTree.getSelectionPath());
+        popupMenu.show(mpsTree, rectangle.x + rectangle.width/2, rectangle.y);
+      }
+    }
   }
 
   protected void dispose() {

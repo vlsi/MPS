@@ -227,20 +227,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
 
-  public void keyPressed(KeyEvent keyEvent) {
-    if (keyEvent.isAltDown() && (
-            (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
-            (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP))) {
-      ActionContext context = getActionContext();
-      JPopupMenu popupMenu = new JPopupMenu();
-      ActionGroup group = new CreateRootNodeGroup();
-      group.update(context);
-      group.add(popupMenu, context);
-      MPSTree mpsTree = getTree();
-      if (mpsTree == null) return;
-      Rectangle rectangle = mpsTree.getPathBounds(mpsTree.getSelectionPath());
-      popupMenu.show(mpsTree, rectangle.x + rectangle.width/2, rectangle.y);
-    }
+  public JPopupMenu getQuickCreatePopupMenu() {
+    JPopupMenu popupMenu = new JPopupMenu();
+    ActionGroup group = new CreateRootNodeGroup();
+    ActionContext context = getActionContext();
+    group.update(context);
+    group.add(popupMenu, context);
+    return popupMenu;
   }
 
   public String getNodeIdentifier() {

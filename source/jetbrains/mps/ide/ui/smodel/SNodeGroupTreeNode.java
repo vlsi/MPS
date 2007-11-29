@@ -31,17 +31,8 @@ public class SNodeGroupTreeNode extends TextTreeNode {
     myAutoDelete = autoDelete;
   }
 
-  public void keyPressed(KeyEvent keyEvent) {
-    if (keyEvent.isAltDown() && (
-            (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
-            (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP))) {
-      JPopupMenu popupMenu = getPopupMenu();
-      if (popupMenu == null) return;
-      MPSTree mpsTree = getTree();
-      if (mpsTree == null) return;
-      Rectangle rectangle = mpsTree.getPathBounds(mpsTree.getSelectionPath());
-      popupMenu.show(mpsTree, rectangle.x + rectangle.width / 2, rectangle.y);
-    }
+  public JPopupMenu getQuickCreatePopupMenu() {
+    return getPopupMenu();
   }
 
   public boolean hasErrors() {

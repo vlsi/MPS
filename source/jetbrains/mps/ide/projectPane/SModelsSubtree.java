@@ -101,23 +101,19 @@ public class SModelsSubtree {
       myInitialized = true;
     }
 
-
-    public void keyPressed(KeyEvent keyEvent) {
-      if (keyEvent.isAltDown() && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) {
-        IModule module = getOperationContext().getModule();
-        if (module instanceof Solution && !toString().equals("<" + SModelStereotype.JAVA_STUB + ">")) {
-          Solution solution = (Solution) module;
-          ActionContext context = new ActionContext(getOperationContext());
-          context.put(Solution.class, solution);
-          JPopupMenu popupMenu = new JPopupMenu();
-          MPSAction action = new NewModelAction();
-          action.update(context);
-          action.add(popupMenu, context);
-          MPSTree mpsTree = getTree();
-          Rectangle rect = mpsTree.getPathBounds(mpsTree.getSelectionPath());
-          popupMenu.show(mpsTree, rect.x + rect.width/2, rect.y);
-        }
+    public JPopupMenu getQuickCreatePopupMenu() {
+      IModule module = getOperationContext().getModule();
+      if (module instanceof Solution && !toString().equals("<" + SModelStereotype.JAVA_STUB + ">")) {
+        Solution solution = (Solution) module;
+        ActionContext context = new ActionContext(getOperationContext());
+        context.put(Solution.class, solution);
+        JPopupMenu popupMenu = new JPopupMenu();
+        MPSAction action = new NewModelAction();
+        action.update(context);
+        action.add(popupMenu, context);
+        return popupMenu;
       }
+      return null;
     }
 
     public JPopupMenu getPopupMenu() {
