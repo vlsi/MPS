@@ -135,25 +135,10 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       this.add(accessories);
     }
 
-    // language myGeneratorsTreeNode
-    TextTreeNode generatorsTreeNode = new TextTreeNode("generators", operationContext) {
-      public Icon getIcon(boolean expanded) {
-        return Icons.GENERATORS_ICON;
-      }
-
-      public JPopupMenu getPopupMenu() {
-        JPopupMenu result = new JPopupMenu();
-        ActionContext context = new ActionContext(getOperationContext());
-        ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_GENERATORS_ACTIONS).add(result, context);
-        return result;
-      }
-    };
-    this.add(generatorsTreeNode);
-
 
     for (Generator generator : myLanguage.getGenerators()) {
       MPSTreeNode generatorNode = new GeneratorTreeNode(generator, myProject);
-      generatorsTreeNode.add(generatorNode);
+      this.add(generatorNode);
     }
   }
 }
