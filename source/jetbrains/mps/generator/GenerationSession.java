@@ -87,7 +87,11 @@ public class GenerationSession implements IGenerationSession {
         public void addLogEntry(LogEntry e) {
           Object o = e.getHintObject();
           if (o instanceof SNode) {
-            myCurrentContext.addTransientModelToKeep(((SNode) o).getModel());
+            if  (myCurrentContext != null) {
+              myCurrentContext.addTransientModelToKeep(((SNode) o).getModel());
+            } else {
+              LOG.error("current context is null");
+            }
           }
         }
       };
