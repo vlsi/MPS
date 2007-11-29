@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.quotation" generatorOutputPath="${mps_home}\source_gen">
+<language namespace="jetbrains.mps.quotation" generatorOutputPath="${mps_home}\source_gen" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.quotation.structure" />
   </structure>
+  <helginsTypeSystem>
+    <model modelUID="jetbrains.mps.quotation.helgins" />
+  </helginsTypeSystem>
   <editor>
     <model modelUID="jetbrains.mps.quotation.editor" />
   </editor>
@@ -12,16 +15,29 @@
   </models>
   <module />
   <accessoryModels />
-  <generators />
+  <generators>
+    <generator generatorUID="jetbrains.mps.quotation#1196351859310" targetLanguage="jetbrains.mps.baseLanguage">
+      <models>
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.quotation.generator.baseLanguage.template" />
+      </models>
+      <module />
+      <external-templates />
+      <dependencies>
+        <dependency>jetbrains.mps.baseLanguage</dependency>
+      </dependencies>
+      <mapping-priorities />
+    </generator>
+  </generators>
   <classPath />
   <runtimeClassPath />
+  <sourcePath />
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
   <dependencies>
-    <dependency>jetbrains.mps.formulaLanguage</dependency>
     <dependency>jetbrains.mps.annotations</dependency>
+    <dependency>jetbrains.mps.bootstrap.helgins</dependency>
   </dependencies>
 </language>
 
