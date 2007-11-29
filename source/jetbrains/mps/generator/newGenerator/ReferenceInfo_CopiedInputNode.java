@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.generator.template.IReferenceResolver;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 
@@ -23,7 +24,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     myInputTargetNode = inputReference.getTargetNode();
   }
 
-  public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
+  public SNode executeIndependentResolve(ITemplateGenerator generator) {
     {
       // output target node might has been copied (reduced) from the input target node
       SNode outputTargetNode = generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
@@ -65,7 +66,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     return null;
   }
 
-  public SNode executeDependentResolve(TemplateModelGenerator_New generator) {
+  public SNode executeDependentResolve(ITemplateGenerator generator) {
 
     // try to resolve using custom referense resolver for source node concept
     // todo: some reference-resolvers can be executed on the 'executeIndependentResolve' step
@@ -82,7 +83,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     return null;
   }
 
-  public SNode resolveAnyhow(TemplateModelGenerator_New generator) {
+  public SNode resolveAnyhow(ITemplateGenerator generator) {
     // nothing
     return null;
   }

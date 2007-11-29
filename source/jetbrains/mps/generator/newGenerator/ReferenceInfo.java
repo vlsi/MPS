@@ -3,6 +3,7 @@ package jetbrains.mps.generator.newGenerator;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.template.IReferenceResolver;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
@@ -37,11 +38,11 @@ public abstract class ReferenceInfo {
     return myInputNode;
   }
 
-  public abstract SNode executeIndependentResolve(TemplateModelGenerator_New generator);
+  public abstract SNode executeIndependentResolve(ITemplateGenerator generator);
 
-  public abstract SNode executeDependentResolve(TemplateModelGenerator_New generator);
+  public abstract SNode executeDependentResolve(ITemplateGenerator generator);
 
-  public abstract SNode resolveAnyhow(TemplateModelGenerator_New generator);
+  public abstract SNode resolveAnyhow(ITemplateGenerator generator);
 
   public abstract boolean isRequired();
 

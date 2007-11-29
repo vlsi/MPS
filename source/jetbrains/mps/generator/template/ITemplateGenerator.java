@@ -39,12 +39,14 @@ public interface ITemplateGenerator {
    * @deprecated
    */
   INodeBuilder findNodeBuilderForSource(SNode sourceNode, String mappingName);
+
   SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName);
 
   /**
    * @deprecated
    */
   INodeBuilder findCopyingNodeBuilderForSource(SNode sourceNode);
+
   SNode findCopiedOutputNodeForInputNode(SNode inputNode);
 
 
@@ -52,11 +54,24 @@ public interface ITemplateGenerator {
    * @deprecated
    */
   INodeBuilder findNodeBuilderForSourceAndTemplate(SNode source, SNode template);
+
   SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode);
 
 
   List<SNode> getTopOutputNodesForInputNode(SNode inputNode);
 
+  SNode findOutputNodeByTemplateNode(SNode templateNode, boolean unique);
+
+  SNode findTemplateNodeByOutputNode(SNode outputNode);
+
+  /**
+   * @deprecated
+   */
+  void setCurrentBuilder(SNode outputNode);
+
+  /**
+   * @deprecated
+   */
   INodeBuilder getCurrentBuilder();
 
   /**

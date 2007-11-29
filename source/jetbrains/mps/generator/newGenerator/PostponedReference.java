@@ -1,10 +1,11 @@
 package jetbrains.mps.generator.newGenerator;
 
-import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.SReference;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -48,6 +49,7 @@ public class PostponedReference extends SReference {
       return null;
     }
 
+//    myReferenceInfo.executeIndependentResolve()
     return null;  //To change body of implemented methods use File | Settings | File Templates.
   }
 
