@@ -62,6 +62,10 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     return null;
   }
 
+  public boolean isAutoExpandable() {
+    return !myNode.isRoot();
+  }
+
   public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     ProjectPane pane = getOperationContext().getComponent(ProjectPane.class);

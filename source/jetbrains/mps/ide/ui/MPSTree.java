@@ -66,8 +66,12 @@ public abstract class MPSTree extends JTree {
           for (Object item : eventPath.getPath()) {
             path.add((MPSTreeNode) item);
           }
-          path.add((MPSTreeNode) node.getChildAt(0));
-          expandPath(new TreePath(path.toArray()));
+          MPSTreeNode onlyChild = (MPSTreeNode) node.getChildAt(0);
+
+          if (onlyChild.isAutoExpandable()) {          
+            path.add(onlyChild);
+            expandPath(new TreePath(path.toArray()));
+          }
         }
       }
 

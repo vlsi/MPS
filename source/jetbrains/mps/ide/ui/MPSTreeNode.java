@@ -39,6 +39,10 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return myOperationContext;
   }
 
+  public boolean isAutoExpandable() {
+    return true;
+  }
+
   public abstract String getNodeIdentifier();
 
   public Iterator<MPSTreeNode> iterator() {
