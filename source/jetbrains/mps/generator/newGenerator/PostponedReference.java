@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Igor Alshannikov
  * Nov 28, 2007
- *
+ * <p/>
  * These references are created in transient models.
  * They are allways internal.
  */
@@ -20,10 +20,13 @@ public class PostponedReference extends SReference {
   private ReferenceInfo myReferenceInfo;
   private SNode myTargetNode;
   private boolean myFailed;
+  private GeneratorMappingData myGeneratorMappingData;
 
-  public PostponedReference(String role, SNode sourceNode, ReferenceInfo referenceInfo) {
+
+  public PostponedReference(String role, SNode sourceNode, ReferenceInfo referenceInfo, TemplateModelGenerator_New generator) {
     super(role, sourceNode);
     myReferenceInfo = referenceInfo;
+    myGeneratorMappingData = new GeneratorMappingData(generator);
   }
 
   public boolean isExternal() {
@@ -43,19 +46,33 @@ public class PostponedReference extends SReference {
   }
 
   public SNode getTargetNode() {
-    if(myTargetNode != null) {
+    if (myTargetNode != null) {
       return myTargetNode;
-    } else if( myFailed) {
+    } else if (myFailed) {
       return null;
     }
 
-//    myReferenceInfo.executeIndependentResolve()
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    myTargetNode = myReferenceInfo.executeIndependentResolve(myGeneratorMappingData);
+    if (myTargetNode != null) {
+      return myTargetNode;
+    }
+
+    myTargetNode = myReferenceInfo.executeDependentResolve(myGeneratorMappingData);
+    if (myTargetNode != null) {
+      return myTargetNode;
+    }
+
+    myTargetNode = myReferenceInfo.resolveAnyhow(myGeneratorMappingData);
+    if (myTargetNode == null) {
+      myFailed = true;
+      error(GetTargetNodeErrorState.UNIDENTIFIED_ERROR);
+    }
+    return myTargetNode;
   }
 
   public SNodeId getTargetNodeId() {
     SNode targetNode = getTargetNode();
-    if(targetNode == null) return null;
+    if (targetNode == null) return null;
     return targetNode.getSNodeId();
   }
 

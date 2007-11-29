@@ -112,7 +112,8 @@ public abstract class SReference {
     OK,
     NO_MODEL_DESCRIPTOR,
     NO_MODEL,
-    CANT_RESOLVE_BY_ID
+    CANT_RESOLVE_BY_ID,
+    UNIDENTIFIED_ERROR
   }
 
   public void replaceSourceReferent(SNode newReferent) {
