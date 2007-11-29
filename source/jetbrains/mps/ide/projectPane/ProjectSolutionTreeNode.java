@@ -7,6 +7,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.smodel.Language;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
@@ -38,6 +39,15 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
     IFile descriptorFile = mySolution.getDescriptorFile();
     assert descriptorFile != null;
     return descriptorFile.getAbsolutePath();
+  }
+
+  public JPopupMenu getQuickCreatePopupMenu() {
+    JPopupMenu result = new JPopupMenu();
+    Solution solution = getSolution();
+    ActionContext context = new ActionContext(getOperationContext());
+    context.put(Solution.class, solution);
+    ActionManager.instance().getGroup(ProjectPane.SOLUTION_NEW).add(result, context);
+    return result;
   }
 
   public JPopupMenu getPopupMenu() {

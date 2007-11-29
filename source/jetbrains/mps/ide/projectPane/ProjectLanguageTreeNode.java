@@ -54,6 +54,16 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     return myLanguage.getModuleUID();
   }
 
+
+  public JPopupMenu getQuickCreatePopupMenu() {
+    JPopupMenu result = new JPopupMenu();
+    final Language language = getLanguage();
+    ActionContext context = new ActionContext(getOperationContext());
+    context.put(Language.class, language);
+    ActionManager.instance().getGroup(ProjectPane.LANGUAGE_NEW).add(result, context);
+    return result;
+  }
+
   public JPopupMenu getPopupMenu() {
     JPopupMenu result = new JPopupMenu();
     final Language language = getLanguage();
