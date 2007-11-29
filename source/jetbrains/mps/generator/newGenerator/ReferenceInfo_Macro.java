@@ -42,6 +42,10 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return null;
   }
 
+  public boolean isRequired() {
+    return getOutputNode().isReferentRequired(getReferenceRole());
+  }
+
   public SNode expandReferenceMacro(ITemplateGenerator generator) {
     SNode referentNode;
     String linkRole = myReferenceMacro.getLink().getRole();
@@ -92,9 +96,9 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     }
 
     if (referentNode == null) {
-      if (getOutputNode().isReferentRequired(linkRole)) {
-        generator.showErrorMessage(getInputNode(), myTemplateReferenceNode, "unresolved reference for role \"" + linkRole + "\" in " + getOutputNode().getDebugText());
-      }
+//      if (getOutputNode().isReferentRequired(linkRole)) {
+//        generator.showErrorMessage(getInputNode(), myTemplateReferenceNode, "unresolved reference for role \"" + linkRole + "\" in " + getOutputNode().getDebugText());
+//      }
       return null;
     }
 
@@ -110,7 +114,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     if (referentNode.getModel() == generator.getSourceModel()) {
       generator.showWarningMessage(getOutputNode(), "reference '" + linkRole + "' to input model in output node " + getOutputNode().getDebugText());
       generator.showInformationMessage(referentNode, " -- referent node: " + referentNode.getDebugText());
-      generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node (click here)");
+      generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node: " + myReferenceMacro.getNode().getDebugText());
       generator.getGeneratorSessionContext().addTransientModelToKeep(generator.getSourceModel());
     }
 
@@ -118,7 +122,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   }
 
   public void showErrorMessage(TemplateModelGenerator_New generator) {
-    generator.showErrorMessage(getOutputNode(), "couldn't resolve reference in output node " + getOutputNode().getDebugText());
+    generator.showErrorMessage(getOutputNode(), "couldn't resolve reference '"+getReferenceRole()+"' in output node " + getOutputNode().getDebugText());
     generator.showErrorMessage(myReferenceMacro.getParent().getNode(), "-- original reference was " + myReferenceMacro.getParent().getNode().getDebugText());
     generator.showErrorMessage(getInputNode(), "-- input node was " + getInputNode().getDebugText());
   }

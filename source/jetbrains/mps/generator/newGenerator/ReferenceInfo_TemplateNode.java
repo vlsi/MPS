@@ -111,6 +111,10 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     return outputTargetNode;
   }
 
+  public boolean isRequired() {
+    return true;
+  }
+
   private static SNode findOutputSubnodeByTemplateNode(TemplateModelGenerator_New generator, SNode outputNode, SNode templateNode) {
     if (generator.findTemplateNodeByOutputNode(outputNode) == templateNode) return outputNode;
     List<SNode> children = outputNode.getChildren();

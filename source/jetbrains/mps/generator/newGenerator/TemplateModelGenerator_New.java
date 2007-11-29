@@ -212,7 +212,9 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
         SNode outputTargetNode = referenceInfo.executeDependentResolve(this);
 //        if (!referenceInfo.isSuccess()) {
         if (outputTargetNode == null) {
-          newReferenceInfos.add(referenceInfo);
+          if (referenceInfo.isRequired()) {
+            newReferenceInfos.add(referenceInfo);
+          }
         } else {
           referenceInfo.getOutputNode().setReferent(referenceInfo.getReferenceRole(), outputTargetNode);
         }

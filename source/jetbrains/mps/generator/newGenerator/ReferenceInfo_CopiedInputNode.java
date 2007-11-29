@@ -87,6 +87,10 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     return null;
   }
 
+  public boolean isRequired() {
+    return true;
+  }
+
   public void showErrorMessage(TemplateModelGenerator_New generator) {
     generator.showErrorMessage(getOutputNode(), "couldn't resolve reference '" + myInputReference.getRole() + "' in output node " + getOutputNode().getDebugText());
     generator.showErrorMessage(myInputSourceNode, "-- original reference was " + myInputSourceNode.getDebugText());

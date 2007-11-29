@@ -43,6 +43,8 @@ public abstract class ReferenceInfo {
 
   public abstract SNode resolveAnyhow(TemplateModelGenerator_New generator);
 
+  public abstract boolean isRequired();
+
   public abstract void showErrorMessage(TemplateModelGenerator_New generator);
 
 //  protected void setSuccess(boolean value) {
