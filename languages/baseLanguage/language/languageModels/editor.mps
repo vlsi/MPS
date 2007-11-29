@@ -1171,6 +1171,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1188210576816">
           <link role="editorComponent" targetNodeId="1181823106174" resolveInfo="VariableDeclaration_NameCellComponent" />
+          <link role="styleClass" targetNodeId="1196337283737" resolveInfo="field" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1188210576817">
           <property name="name" value="initializerArea" />
@@ -8858,6 +8859,15 @@
         <property name="color" value="DARK_BLUE" />
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1186415560222">
+        <property name="style" value="BOLD" />
+      </node>
+    </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1196337283737">
+      <property name="name" value="field" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1196337289157">
+        <property name="color" value="DARK_MAGENTA" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1196337297008">
         <property name="style" value="BOLD" />
       </node>
     </node>

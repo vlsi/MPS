@@ -797,6 +797,13 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1122983374125">
     <property name="name" value="TestJavaStub" />
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1196337702129">
+      <property name="name" value="aqwsqwd" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1196337702130" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196337711135">
+        <link role="classifier" targetNodeId="233.~AbstractCollection" resolveInfo="AbstractCollection" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1122983385064">
       <property name="name" value="test1" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1122983385144">
