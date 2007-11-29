@@ -3,6 +3,7 @@ package jetbrains.mps.ide;
 import jetbrains.mps.logging.LoggerUtil;
 import jetbrains.mps.plugin.MPSPlugin;
 import jetbrains.mps.project.ApplicationComponents;
+import jetbrains.mps.util.PathManager;
 
 import javax.swing.JOptionPane;
 import javax.swing.UIDefaults;
@@ -50,9 +51,14 @@ public class IdeMain {
     defaults.put("Tree.font", font);
   }
 
+  private static void installFocusKiller() {
+    if (SystemInfo.isWindows) {
+      System.loadLibrary("focuskiller");
+    }
+  }
+
   public static IDEProjectFrame openProjectWindow(boolean loadOldProject) {
-//    SVNSandbox.doSandboxStuff();
-//    JDTSadnbox.doSandboxStuff();
+    installFocusKiller();
 
     long start = System.currentTimeMillis();
 
