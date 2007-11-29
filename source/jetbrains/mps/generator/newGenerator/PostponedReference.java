@@ -23,10 +23,10 @@ public class PostponedReference extends SReference {
   private GeneratorMappingData myGeneratorMappingData;
 
 
-  public PostponedReference(String role, SNode sourceNode, ReferenceInfo referenceInfo, TemplateModelGenerator_New generator) {
+  public PostponedReference(String role, SNode sourceNode, ReferenceInfo referenceInfo, GeneratorMappingData mappingData) {
     super(role, sourceNode);
     myReferenceInfo = referenceInfo;
-    myGeneratorMappingData = new GeneratorMappingData(generator);
+    myGeneratorMappingData = mappingData;
   }
 
   public boolean isExternal() {
@@ -52,17 +52,7 @@ public class PostponedReference extends SReference {
       return null;
     }
 
-    myTargetNode = myReferenceInfo.executeIndependentResolve(myGeneratorMappingData);
-    if (myTargetNode != null) {
-      return myTargetNode;
-    }
-
-    myTargetNode = myReferenceInfo.executeDependentResolve(myGeneratorMappingData);
-    if (myTargetNode != null) {
-      return myTargetNode;
-    }
-
-    myTargetNode = myReferenceInfo.resolveAnyhow(myGeneratorMappingData);
+    myTargetNode = myReferenceInfo.doResolve(myGeneratorMappingData);
     if (myTargetNode == null) {
       myFailed = true;
       error(GetTargetNodeErrorState.UNIDENTIFIED_ERROR);

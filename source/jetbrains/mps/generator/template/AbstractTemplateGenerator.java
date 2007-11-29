@@ -112,8 +112,8 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myWarningsCount;
   }
 
-  public void clearErrorsAndWarnings() {
-    myErrorsCount = 0;
-    myWarningsCount = 0;
-  }
+//  public void clearErrorsAndWarnings() {
+//    myErrorsCount = 0;
+//    myWarningsCount = 0;
+//  }
 }

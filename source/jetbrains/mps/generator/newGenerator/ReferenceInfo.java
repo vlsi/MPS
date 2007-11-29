@@ -18,7 +18,6 @@ public abstract class ReferenceInfo {
   private SNode myOutputNode;
   private String myReferenceRole;
   private SNode myInputNode;
-//  private boolean mySuccess = false;
 
   protected ReferenceInfo(SNode outputNode, String referenceRole, SNode inputNode) {
     myOutputNode = outputNode;
@@ -44,17 +43,14 @@ public abstract class ReferenceInfo {
 
   public abstract SNode resolveAnyhow(ITemplateGenerator generator);
 
+  /**
+   * test
+   */
+  public abstract SNode doResolve(GeneratorMappingData generatorMappingData);
+
   public abstract boolean isRequired();
 
   public abstract void showErrorMessage(TemplateModelGenerator_New generator);
-
-//  protected void setSuccess(boolean value) {
-//    mySuccess = value;
-//  }
-
-//  public boolean isSuccess() {
-//    return mySuccess;
-//  }
 
   protected static IReferenceResolver loadReferenceResolver(SNode node) {
     ConceptDeclaration conceptDeclaration = (ConceptDeclaration) node.getConceptDeclarationAdapter();

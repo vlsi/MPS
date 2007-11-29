@@ -99,7 +99,7 @@ public interface ITemplateGenerator {
 
   int getWarningCount();
 
-  void clearErrorsAndWarnings();
-
-  void reset();
+//  void clearErrorsAndWarnings();
+//
+//  void reset();
 }

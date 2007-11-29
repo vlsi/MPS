@@ -28,9 +28,6 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     {
       SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
       if (outputTargetNode != null) {
-//        getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
-//        setSuccess(true);
-//        return;
         return outputTargetNode;
       }
     }
@@ -39,9 +36,6 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       // if template has been applied exactly once, then we have unique output node for each template node
       SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, true);
       if (outputTargetNode != null) {
-//        getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
-//        setSuccess(true);
-//        return;
         return outputTargetNode;
       }
     }
@@ -53,9 +47,6 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       SNode outputParentNode = getOutputNode().getParent();
       while (templateParentNode != null && outputParentNode != null) {
         if (templateParentNode.equals(myTemplateTargetNode)) {
-//          getOutputNode().setReferent(myTemplateReference.getRole(), outputParentNode);
-//          setSuccess(true);
-//          return;
           return outputParentNode;
         }
         templateParentNode = templateParentNode.getParent();
@@ -73,9 +64,6 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     if (referenceResolver != null) {
       SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myTemplateReference);
       if (outputTargetNode != null) {
-//        getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
-//        setSuccess(true);
-//        return;
         return outputTargetNode;
       }
     }
@@ -92,9 +80,6 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       if (leastCommonParent_output != null) {
         SNode outputTargetNode = findOutputSubnodeByTemplateNode(generator, leastCommonParent_output, myTemplateTargetNode);
         if (outputTargetNode != null) {
-//          getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
-//          setSuccess(true);
-//          return;
           return outputTargetNode;
         }
       }
@@ -105,11 +90,11 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
 
   public SNode resolveAnyhow(ITemplateGenerator generator) {
     SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, false);
-//    if (outputTargetNode != null) {
-//      getOutputNode().setReferent(myTemplateReference.getRole(), outputTargetNode);
-//      setSuccess(true);
-//    }
     return outputTargetNode;
+  }
+
+  public SNode doResolve(GeneratorMappingData generatorMappingData) {
+    throw new RuntimeException("not supported");
   }
 
   public boolean isRequired() {

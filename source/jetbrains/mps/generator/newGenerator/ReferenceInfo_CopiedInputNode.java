@@ -2,6 +2,7 @@ package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.generator.template.IReferenceResolver;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.AbstractTemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 
@@ -25,13 +26,34 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   }
 
   public SNode executeIndependentResolve(ITemplateGenerator generator) {
+    return findInMaps(((TemplateModelGenerator_New) generator).getMappingData());
+  }
+
+  public SNode executeDependentResolve(ITemplateGenerator generator) {
+    return executeCustomResolver();
+  }
+
+  public SNode resolveAnyhow(ITemplateGenerator generator) {
+    // nothing
+    return null;
+  }
+
+  /**
+   * test postponed references
+   */
+  public SNode doResolve(GeneratorMappingData mappingData) {
+    SNode node = findInMaps(mappingData);
+    if(node != null) {
+      return node;
+    }
+    return executeCustomResolver();
+  }
+
+  private SNode findInMaps(GeneratorMappingData generator) {
     {
       // output target node might has been copied (reduced) from the input target node
       SNode outputTargetNode = generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
       if (outputTargetNode != null) {
-//        getOutputNode().setReferent(myInputReference.getRole(), outputTargetNode);
-//        setSuccess(true);
-//        return;
         return outputTargetNode;
       }
     }
@@ -55,9 +77,6 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
         }
 
         if (outputTargetNode != null) {
-//          getOutputNode().setReferent(myInputReference.getRole(), outputTargetNode);
-//          setSuccess(true);
-//          return;
           return outputTargetNode;
         }
       }
@@ -65,26 +84,14 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
     return null;
   }
-
-  public SNode executeDependentResolve(ITemplateGenerator generator) {
-
+  private SNode executeCustomResolver() {
     // try to resolve using custom referense resolver for source node concept
     // todo: some reference-resolvers can be executed on the 'executeIndependentResolve' step
     IReferenceResolver referenceResolver = loadReferenceResolver(myInputSourceNode);
     if (referenceResolver != null) {
       SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myInputReference);
-//      if (outputTargetNode != null) {
-//        getOutputNode().setReferent(myInputReference.getRole(), outputTargetNode);
-//        setSuccess(true);
-//        return;
-//      }
       return outputTargetNode;
     }
-    return null;
-  }
-
-  public SNode resolveAnyhow(ITemplateGenerator generator) {
-    // nothing
     return null;
   }
 

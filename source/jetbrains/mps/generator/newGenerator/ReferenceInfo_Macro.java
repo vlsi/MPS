@@ -42,6 +42,10 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return null;
   }
 
+  public SNode doResolve(GeneratorMappingData generatorMappingData) {
+    throw new RuntimeException("not supported");
+  }
+
   public boolean isRequired() {
     return getOutputNode().isReferentRequired(getReferenceRole());
   }
