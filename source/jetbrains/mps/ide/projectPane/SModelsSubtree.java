@@ -3,23 +3,17 @@ package jetbrains.mps.ide.projectPane;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.action.MPSAction;
+import jetbrains.mps.ide.actions.model.NewModelAction;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.actions.model.NewModelAction;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.ProjectModels;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import java.util.*;
-import java.awt.event.KeyEvent;
-import java.awt.Rectangle;
 
 /**
  * Created by IntelliJ IDEA.
@@ -103,10 +97,10 @@ public class SModelsSubtree {
 
     public JPopupMenu getQuickCreatePopupMenu() {
       IModule module = getOperationContext().getModule();
-      if (module instanceof Solution && !toString().equals("<" + SModelStereotype.JAVA_STUB + ">")) {
-        Solution solution = (Solution) module;
+      if ((module instanceof Solution || module instanceof Generator) &&
+              !toString().equals("<" + SModelStereotype.JAVA_STUB + ">")) {
         ActionContext context = new ActionContext(getOperationContext());
-        context.put(Solution.class, solution);
+        context.put(IModule.class, module);
         JPopupMenu popupMenu = new JPopupMenu();
         MPSAction action = new NewModelAction();
         action.update(context);
