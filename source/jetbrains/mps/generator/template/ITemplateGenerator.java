@@ -35,28 +35,11 @@ public interface ITemplateGenerator {
 
   boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException;
 
-  /**
-   * @deprecated
-   */
-  INodeBuilder findNodeBuilderForSource(SNode sourceNode, String mappingName);
-
   SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName);
-
-  /**
-   * @deprecated
-   */
-  INodeBuilder findCopyingNodeBuilderForSource(SNode sourceNode);
 
   SNode findCopiedOutputNodeForInputNode(SNode inputNode);
 
-
-  /**
-   * @deprecated
-   */
-  INodeBuilder findNodeBuilderForSourceAndTemplate(SNode source, SNode template);
-
   SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode);
-
 
   List<SNode> getTopOutputNodesForInputNode(SNode inputNode);
 

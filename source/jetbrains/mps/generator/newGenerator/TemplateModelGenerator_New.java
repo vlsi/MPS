@@ -290,13 +290,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return myDelayedChanges;
   }
 
-  /**
-   * @deprecated
-   */
-  public INodeBuilder findNodeBuilderForSource(SNode inputNode, String mappingName) {
-    throw new RuntimeException("method is not supported. Use method 'findOutputNodeByInputNodeAndMappingName'");
-  }
-
   public SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName) {
     // todo: combination (mappingName, inputN) -> outputN is not unique (in some rare cases)
     // todo: generator should report error on attempt to access not unique outputN
@@ -320,23 +313,9 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
 
-  /**
-   * @deprecated
-   */
-  public INodeBuilder findCopyingNodeBuilderForSource(SNode inputNode) {
-    throw new RuntimeException("method is not supported. Use method 'findCopiedOutputNodeForInputNode'");
-  }
-
   public SNode findCopiedOutputNodeForInputNode(SNode inputNode) {
 //    return findOutputNodeByInputAndTemplateNode(inputNode, inputNode);
     return myMappingData.findCopiedOutputNodeForInputNode(inputNode);
-  }
-
-  /**
-   * @deprecated
-   */
-  public INodeBuilder findNodeBuilderForSourceAndTemplate(SNode inputNode, SNode templateNode) {
-    throw new RuntimeException("method is not supported. Use method 'findOutputNodeByInputAndTemplateNode'");
   }
 
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
