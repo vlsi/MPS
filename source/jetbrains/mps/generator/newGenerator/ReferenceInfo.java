@@ -37,11 +37,11 @@ public abstract class ReferenceInfo {
     return myInputNode;
   }
 
-  public abstract SNode executeIndependentResolve(ITemplateGenerator generator);
+  public abstract SNode executeIndependentResolve(TemplateModelGenerator_New generator);
 
-  public abstract SNode executeDependentResolve(ITemplateGenerator generator);
+  public abstract SNode executeDependentResolve(TemplateModelGenerator_New generator);
 
-  public abstract SNode resolveAnyhow(ITemplateGenerator generator);
+  public abstract SNode resolveAnyhow(TemplateModelGenerator_New generator);
 
   /**
    * test

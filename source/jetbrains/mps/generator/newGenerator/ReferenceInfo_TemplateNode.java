@@ -24,7 +24,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     myTemplateTargetNode = templateReference.getTargetNode();
   }
 
-  public SNode executeIndependentResolve(ITemplateGenerator generator) {
+  public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
     {
       SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
       if (outputTargetNode != null) {
@@ -57,7 +57,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     return null;
   }
 
-  public SNode executeDependentResolve(ITemplateGenerator generator) {
+  public SNode executeDependentResolve(TemplateModelGenerator_New generator) {
 
     // try to resolve using custom referense resolver for source node concept
     IReferenceResolver referenceResolver = loadReferenceResolver(myTemplateSourceNode);
@@ -88,7 +88,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     return null;
   }
 
-  public SNode resolveAnyhow(ITemplateGenerator generator) {
+  public SNode resolveAnyhow(TemplateModelGenerator_New generator) {
     SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, false);
     return outputTargetNode;
   }
@@ -101,7 +101,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     return true;
   }
 
-  private static SNode findOutputSubnodeByTemplateNode(ITemplateGenerator generator, SNode outputNode, SNode templateNode) {
+  private static SNode findOutputSubnodeByTemplateNode(TemplateModelGenerator_New generator, SNode outputNode, SNode templateNode) {
     if (generator.findTemplateNodeByOutputNode(outputNode) == templateNode) return outputNode;
     List<SNode> children = outputNode.getChildren();
     for (SNode childNode : children) {

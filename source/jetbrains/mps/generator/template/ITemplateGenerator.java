@@ -60,15 +60,6 @@ public interface ITemplateGenerator {
 
   List<SNode> getTopOutputNodesForInputNode(SNode inputNode);
 
-  SNode findOutputNodeByTemplateNode(SNode templateNode, boolean unique);
-
-  SNode findTemplateNodeByOutputNode(SNode outputNode);
-
-  /**
-   * @deprecated
-   */
-  void setCurrentBuilder(SNode outputNode);
-
   /**
    * @deprecated
    */

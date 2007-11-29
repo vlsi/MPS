@@ -1,8 +1,6 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.generator.template.IReferenceResolver;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.AbstractTemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 
@@ -25,15 +23,15 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     myInputTargetNode = inputReference.getTargetNode();
   }
 
-  public SNode executeIndependentResolve(ITemplateGenerator generator) {
+  public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
     return findInMaps(((TemplateModelGenerator_New) generator).getMappingData());
   }
 
-  public SNode executeDependentResolve(ITemplateGenerator generator) {
+  public SNode executeDependentResolve(TemplateModelGenerator_New generator) {
     return executeCustomResolver();
   }
 
-  public SNode resolveAnyhow(ITemplateGenerator generator) {
+  public SNode resolveAnyhow(TemplateModelGenerator_New generator) {
     // nothing
     return null;
   }
