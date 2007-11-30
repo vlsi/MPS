@@ -27,21 +27,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196268700622">
-    <link role="conceptDeclaration" targetNodeId="1.1196268613800" resolveInfo="ComplexOperation" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196269133330">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1196269138910">
-        <link role="relationDeclaration" targetNodeId="1.1196268643600" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1196269267821">
-        <link role="relationDeclaration" targetNodeId="1.1196271123739" resolveInfo="operation" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1196269275901">
-        <link role="relationDeclaration" targetNodeId="1.1196268662556" />
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196422134243">
     <link role="conceptDeclaration" targetNodeId="1.1196421957108" resolveInfo="DegreeComplexExpression" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196422138808">
