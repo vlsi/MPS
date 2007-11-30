@@ -1,6 +1,5 @@
 package jetbrains.mps.generator.newGenerator;
 
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
@@ -21,14 +20,14 @@ public class PostponedReference extends SReference {
   private SNode myTargetNode;
   private boolean myFailed;
   private GeneratorMappingData myGeneratorMappingData;
-  private GeneratorLogger myLogger;
+  private GeneratorLogger myGeneratorLogger;
 
 
-  public PostponedReference(String role, SNode sourceNode, ReferenceInfo referenceInfo, GeneratorMappingData mappingData, GeneratorLogger logger) {
+  public PostponedReference(String role, SNode sourceNode, ReferenceInfo referenceInfo, GeneratorMappingData mappingData, GeneratorLogger generatorLogger) {
     super(role, sourceNode);
     myReferenceInfo = referenceInfo;
     myGeneratorMappingData = mappingData;
-    myLogger = logger;
+    myGeneratorLogger = generatorLogger;
   }
 
   public boolean isExternal() {
@@ -57,8 +56,12 @@ public class PostponedReference extends SReference {
     myTargetNode = myReferenceInfo.doResolve(myGeneratorMappingData);
     if (myTargetNode == null) {
       myFailed = true;
-      myReferenceInfo.showErrorMessage(myLogger);
+      myReferenceInfo.showErrorMessage(myGeneratorLogger);
     }
+    // release resources
+    myReferenceInfo = null;
+    myGeneratorMappingData = null;
+    myGeneratorLogger = null;
     return myTargetNode;
   }
 
