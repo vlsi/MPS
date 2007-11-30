@@ -13,11 +13,11 @@ import java.util.List;
 
 public class NodeSubstituteActions extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions";
-  public static String ACTIONS_BUILDER = "actionsBuilder";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String ACTIONS_BUILDER = "actionsBuilder";
 
   public  NodeSubstituteActions(SNode node) {
     super(node);
@@ -31,26 +31,6 @@ public class NodeSubstituteActions extends BaseConcept implements INamedConcept 
     return NodeSubstituteActions.newInstance(sm, false);
   }
 
-
-  public int getActionsBuildersCount() {
-    return this.getChildCount(NodeSubstituteActions.ACTIONS_BUILDER);
-  }
-
-  public Iterator<NodeSubstituteActionsBuilder> actionsBuilders() {
-    return this.children(NodeSubstituteActions.ACTIONS_BUILDER);
-  }
-
-  public List<NodeSubstituteActionsBuilder> getActionsBuilders() {
-    return this.getChildren(NodeSubstituteActions.ACTIONS_BUILDER);
-  }
-
-  public void addActionsBuilder(NodeSubstituteActionsBuilder node) {
-    this.addChild(NodeSubstituteActions.ACTIONS_BUILDER, node);
-  }
-
-  public void insertActionsBuilder(NodeSubstituteActionsBuilder prev, NodeSubstituteActionsBuilder node) {
-    this.insertChild(prev, NodeSubstituteActions.ACTIONS_BUILDER, node);
-  }
 
   public String getName() {
     return this.getProperty(NodeSubstituteActions.NAME);
@@ -82,6 +62,26 @@ public class NodeSubstituteActions extends BaseConcept implements INamedConcept 
 
   public void setVirtualPackage(String value) {
     this.setProperty(NodeSubstituteActions.VIRTUAL_PACKAGE, value);
+  }
+
+  public int getActionsBuildersCount() {
+    return this.getChildCount(NodeSubstituteActions.ACTIONS_BUILDER);
+  }
+
+  public Iterator<NodeSubstituteActionsBuilder> actionsBuilders() {
+    return this.children(NodeSubstituteActions.ACTIONS_BUILDER);
+  }
+
+  public List<NodeSubstituteActionsBuilder> getActionsBuilders() {
+    return this.getChildren(NodeSubstituteActions.ACTIONS_BUILDER);
+  }
+
+  public void addActionsBuilder(NodeSubstituteActionsBuilder node) {
+    this.addChild(NodeSubstituteActions.ACTIONS_BUILDER, node);
+  }
+
+  public void insertActionsBuilder(NodeSubstituteActionsBuilder prev, NodeSubstituteActionsBuilder node) {
+    this.insertChild(prev, NodeSubstituteActions.ACTIONS_BUILDER, node);
   }
 
 }

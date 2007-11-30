@@ -45,16 +45,16 @@ public class ExpectedType_FactoryUtil {
     SNode originalExpression = null;
     SNode expressionConcept = SNodeOperations.getConceptDeclaration(copiedExpression);
     {
-      ICursor<SNode> _zCursor2 = CursorFactory.createCursor(SNodeOperations.getChildren(enclosingNode));
+      ICursor<SNode> _zCursor = CursorFactory.createCursor(SNodeOperations.getChildren(enclosingNode));
       try {
-        while(_zCursor2.moveToNext()) {
-          SNode child = _zCursor2.getCurrent();
+        while(_zCursor.moveToNext()) {
+          SNode child = _zCursor.getCurrent();
           if(MatchingUtil.matchNodes(copiedExpression, child)) {
             originalExpression = child;
           }
         }
       } finally {
-        _zCursor2.release();
+        _zCursor.release();
       }
     }
     return originalExpression;

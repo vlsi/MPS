@@ -469,12 +469,12 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177336013307">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="matchingText" />
-      <link role="target" targetNodeId="1177335944525" resolveInfo="QueryFunction_SubstituteString" />
+      <link role="target" targetNodeId="1196434661488" resolveInfo="ISubstitute_String" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177336018902">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="descriptionText" />
-      <link role="target" targetNodeId="1177335944525" resolveInfo="QueryFunction_SubstituteString" />
+      <link role="target" targetNodeId="1196434661488" resolveInfo="ISubstitute_String" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177327698839">
       <property name="metaClass" value="aggregation" />
@@ -533,6 +533,9 @@
       <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1177335996071">
         <link role="classifier" targetNodeId="6.~String" resolveInfo="String" />
       </node>
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196434704818">
+      <link role="intfc" targetNodeId="1196434661488" resolveInfo="ISubstitute_String" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177337641126">
@@ -1314,7 +1317,7 @@
     <property name="name" value="IRightTransform_String" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196433923911">
-    <property name="package" value="QueryFunctions" />
+    <property name="package" value="Sugar" />
     <property name="name" value="RightTransform_SimpleString" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196434014050">
@@ -1328,6 +1331,22 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196433940146">
       <link role="intfc" targetNodeId="1196433731217" resolveInfo="IRightTransform_String" />
     </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196434649611">
+    <property name="package" value="Sugar" />
+    <property name="name" value="Substitute_SimpleString" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1196434851095">
+      <property name="name" value="text" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196434824322">
+      <link role="intfc" targetNodeId="1196434661488" resolveInfo="ISubstitute_String" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196434661488">
+    <property name="package" value="QueryFunctions" />
+    <property name="name" value="ISubstitute_String" />
   </node>
 </model>
 

@@ -11,9 +11,9 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class NodeFactory extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory";
-  public static String SETUP_FUNCTION = "setupFunction";
-  public static String DESCRIPTION = "description";
   public static String APPLICABLE_CONCEPT = "applicableConcept";
+  public static String DESCRIPTION = "description";
+  public static String SETUP_FUNCTION = "setupFunction";
 
   public  NodeFactory(SNode node) {
     super(node);
@@ -28,12 +28,12 @@ public class NodeFactory extends BaseConcept {
   }
 
 
-  public NodeSetupFunction getSetupFunction() {
-    return (NodeSetupFunction)this.getChild(NodeFactory.SETUP_FUNCTION);
+  public ConceptDeclaration getApplicableConcept() {
+    return (ConceptDeclaration)this.getReferent(NodeFactory.APPLICABLE_CONCEPT);
   }
 
-  public void setSetupFunction(NodeSetupFunction node) {
-    super.setChild(NodeFactory.SETUP_FUNCTION, node);
+  public void setApplicableConcept(ConceptDeclaration node) {
+    super.setReferent(NodeFactory.APPLICABLE_CONCEPT, node);
   }
 
   public String getDescription() {
@@ -44,12 +44,12 @@ public class NodeFactory extends BaseConcept {
     this.setProperty(NodeFactory.DESCRIPTION, value);
   }
 
-  public ConceptDeclaration getApplicableConcept() {
-    return (ConceptDeclaration)this.getReferent(NodeFactory.APPLICABLE_CONCEPT);
+  public NodeSetupFunction getSetupFunction() {
+    return (NodeSetupFunction)this.getChild(NodeFactory.SETUP_FUNCTION);
   }
 
-  public void setApplicableConcept(ConceptDeclaration node) {
-    super.setReferent(NodeFactory.APPLICABLE_CONCEPT, node);
+  public void setSetupFunction(NodeSetupFunction node) {
+    super.setChild(NodeFactory.SETUP_FUNCTION, node);
   }
 
 }

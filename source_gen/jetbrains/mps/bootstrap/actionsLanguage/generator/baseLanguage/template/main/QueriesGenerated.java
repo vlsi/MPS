@@ -129,6 +129,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(node, "text");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1196435166148(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getString(node, "text");
+  }
+
   public static SNode referenceMacro_GetReferent_1179457640879(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(node, "variable");
   }

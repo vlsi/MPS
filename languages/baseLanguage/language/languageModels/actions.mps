@@ -2773,23 +2773,11 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177499027031">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177499027032">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177499027033">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177499027034">
-                  <property name="value" value="." />
-                </node>
-              </node>
-            </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435361294">
+            <property name="text" value="." />
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177499027035">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177499027036">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177499027037">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177499027038">
-                  <property name="value" value="instance member access" />
-                </node>
-              </node>
-            </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435363577">
+            <property name="text" value="instance member access" />
           </node>
         </node>
       </node>
@@ -2854,22 +2842,10 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177502425479">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177502425480">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177502426721">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177502427916">
-                  <property name="value" value="instanceof" />
-                </node>
-              </node>
-            </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435354714">
+            <property name="text" value="instanceof" />
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177502431495">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177502431496">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177502432863">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177502434434" />
-              </node>
-            </node>
-          </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435357402" />
         </node>
       </node>
     </node>
@@ -2932,23 +2908,11 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177503348459">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177503348460">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177503349730">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177503351125">
-                  <property name="value" value="=" />
-                </node>
-              </node>
-            </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435346055">
+            <property name="text" value="=" />
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177503353005">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177503353006">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177503354306">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177503356343">
-                  <property name="value" value="assignment" />
-                </node>
-              </node>
-            </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435348822">
+            <property name="text" value="assignment" />
           </node>
         </node>
       </node>
@@ -3049,23 +3013,11 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177503899831">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177503899832">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177503902585">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177503905435">
-                  <property name="value" value="[" />
-                </node>
-              </node>
-            </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435328020">
+            <property name="text" value="[" />
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177503908937">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177503908938">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177503911019">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177504250057">
-                  <property name="value" value="array access" />
-                </node>
-              </node>
-            </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435331114">
+            <property name="text" value="array access" />
           </node>
         </node>
       </node>
@@ -3129,23 +3081,11 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177504647187">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177504647188">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177504648544">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177504650705">
-                  <property name="value" value=".length" />
-                </node>
-              </node>
-            </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435336803">
+            <property name="text" value=".length" />
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177504654193">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177504654194">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177504656385">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177504657684">
-                  <property name="value" value="array length expression" />
-                </node>
-              </node>
-            </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435339523">
+            <property name="text" value="array length expression" />
           </node>
         </node>
       </node>
@@ -3234,23 +3174,11 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177505129461">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177505129462">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177505130619">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177505132363">
-                  <property name="value" value="=" />
-                </node>
-              </node>
-            </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435319279">
+            <property name="text" value="=" />
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177505134728">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177505134729">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177505137155">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177505138345">
-                  <property name="value" value="initializer" />
-                </node>
-              </node>
-            </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435321843">
+            <property name="text" value="initializer" />
           </node>
         </node>
       </node>
@@ -3417,23 +3345,11 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177505398503">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177505398504">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177505401459">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177505402602">
-                  <property name="value" value="[]" />
-                </node>
-              </node>
-            </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435278588">
+            <property name="text" value="[]" />
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177505406354">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177505406355">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177505407747">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177505409358">
-                  <property name="value" value="to array type" />
-                </node>
-              </node>
-            </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435280871">
+            <property name="text" value="to array type" />
           </node>
         </node>
       </node>
@@ -3475,23 +3391,11 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177505762085">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177505762086">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177505763681">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177505765121">
-                  <property name="value" value="&lt;" />
-                </node>
-              </node>
-            </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435270289">
+            <property name="text" value="&lt;" />
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177505767013">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177505767014">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177505768296">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177505769861">
-                  <property name="value" value="add type parameter" />
-                </node>
-              </node>
-            </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435272650">
+            <property name="text" value="add type parameter" />
           </node>
         </node>
       </node>
@@ -3573,23 +3477,11 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177506160792">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177506160793">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177506162101">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177506164244">
-                  <property name="value" value="&lt;" />
-                </node>
-              </node>
-            </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435296617">
+            <property name="text" value="&lt;" />
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177506166089">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177506166090">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177506167434">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177506169186">
-                  <property name="value" value="add type variable" />
-                </node>
-              </node>
-            </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435298603">
+            <property name="text" value="add type variable" />
           </node>
         </node>
       </node>
@@ -3652,23 +3544,11 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177506359825">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177506359826">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177506362125">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177506363127">
-                  <property name="value" value="&lt;" />
-                </node>
-              </node>
-            </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435305151">
+            <property name="text" value="&lt;" />
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177506364878">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177506364879">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177506366411">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177506368992">
-                  <property name="value" value="add type parameter" />
-                </node>
-              </node>
-            </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435307636">
+            <property name="text" value="add type parameter" />
           </node>
         </node>
       </node>
@@ -3710,14 +3590,8 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177508003690">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177508003691">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177508006020">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177508007585">
-                  <property name="value" value="catch" />
-                </node>
-              </node>
-            </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435312887">
+            <property name="text" value="catch" />
           </node>
         </node>
       </node>
@@ -3862,14 +3736,8 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177508141719">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177508141720">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177508142877">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177508145363">
-                  <property name="value" value="finally" />
-                </node>
-              </node>
-            </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435291601">
+            <property name="text" value="finally" />
           </node>
         </node>
       </node>
@@ -3933,23 +3801,11 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177508544103">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177508544104">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177508545543">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177508546998">
-                  <property name="value" value="?" />
-                </node>
-              </node>
-            </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435370687">
+            <property name="text" value="?" />
           </node>
-          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1177508548608">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177508548609">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1177508549688">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1177508550690">
-                  <property name="value" value="ternary operator" />
-                </node>
-              </node>
-            </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435372376">
+            <property name="text" value="ternary operator" />
           </node>
         </node>
       </node>
@@ -4542,14 +4398,8 @@
               </node>
             </node>
           </node>
-          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_String" id="1187946532281">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1187946532282">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1187946533815">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1187946533816">
-                  <property name="value" value="{" />
-                </node>
-              </node>
-            </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196435285981">
+            <property name="text" value="{" />
           </node>
         </node>
       </node>

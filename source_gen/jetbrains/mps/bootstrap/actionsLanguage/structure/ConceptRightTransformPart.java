@@ -10,8 +10,8 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class ConceptRightTransformPart extends MenuBuilderPart {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart";
-  public static String HANDLER = "handler";
   public static String CONCEPT = "concept";
+  public static String HANDLER = "handler";
 
   public  ConceptRightTransformPart(SNode node) {
     super(node);
@@ -26,20 +26,20 @@ public class ConceptRightTransformPart extends MenuBuilderPart {
   }
 
 
-  public QueryFunction_RightTransform_ConceptHandler getHandler() {
-    return (QueryFunction_RightTransform_ConceptHandler)this.getChild(ConceptRightTransformPart.HANDLER);
-  }
-
-  public void setHandler(QueryFunction_RightTransform_ConceptHandler node) {
-    super.setChild(ConceptRightTransformPart.HANDLER, node);
-  }
-
   public ConceptDeclaration getConcept() {
     return (ConceptDeclaration)this.getReferent(ConceptRightTransformPart.CONCEPT);
   }
 
   public void setConcept(ConceptDeclaration node) {
     super.setReferent(ConceptRightTransformPart.CONCEPT, node);
+  }
+
+  public QueryFunction_RightTransform_ConceptHandler getHandler() {
+    return (QueryFunction_RightTransform_ConceptHandler)this.getChild(ConceptRightTransformPart.HANDLER);
+  }
+
+  public void setHandler(QueryFunction_RightTransform_ConceptHandler node) {
+    super.setChild(ConceptRightTransformPart.HANDLER, node);
   }
 
 }

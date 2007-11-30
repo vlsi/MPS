@@ -27,19 +27,19 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
   }
 
 
-  public QueryFunction_SubstituteString getMatchingText() {
-    return (QueryFunction_SubstituteString)this.getChild(SimpleItemSubstitutePart.MATCHING_TEXT);
+  public ISubstitute_String getMatchingText() {
+    return (ISubstitute_String)this.getChild(SimpleItemSubstitutePart.MATCHING_TEXT);
   }
 
-  public void setMatchingText(QueryFunction_SubstituteString node) {
+  public void setMatchingText(ISubstitute_String node) {
     super.setChild(SimpleItemSubstitutePart.MATCHING_TEXT, node);
   }
 
-  public QueryFunction_SubstituteString getDescriptionText() {
-    return (QueryFunction_SubstituteString)this.getChild(SimpleItemSubstitutePart.DESCRIPTION_TEXT);
+  public ISubstitute_String getDescriptionText() {
+    return (ISubstitute_String)this.getChild(SimpleItemSubstitutePart.DESCRIPTION_TEXT);
   }
 
-  public void setDescriptionText(QueryFunction_SubstituteString node) {
+  public void setDescriptionText(ISubstitute_String node) {
     super.setChild(SimpleItemSubstitutePart.DESCRIPTION_TEXT, node);
   }
 
