@@ -24,8 +24,12 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   }
 
   public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
+    return executeIndependentResolve_internal(generator.getMappingData());
+  }
+
+  private SNode executeIndependentResolve_internal(GeneratorMappingData mappingData) {
     {
-      SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
+      SNode outputTargetNode = mappingData.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
       if (outputTargetNode != null) {
         return outputTargetNode;
       }
@@ -33,7 +37,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
 
     {
       // if template has been applied exactly once, then we have unique output node for each template node
-      SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, true);
+      SNode outputTargetNode = mappingData.findOutputNodeByTemplateNode(myTemplateTargetNode, true);
       if (outputTargetNode != null) {
         return outputTargetNode;
       }

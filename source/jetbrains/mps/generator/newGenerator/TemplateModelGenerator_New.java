@@ -32,7 +32,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private HashMap<Pair<String, SNode>, SNode> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<Pair<String, SNode>, SNode> myMappingNameAndOutputNodeToInputNode = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
-  private HashMap<SNode, Pair<SNode, Boolean>> myTemplateNodeToOutputNodeMap = new HashMap<SNode, Pair<SNode, Boolean>>();
+//  private HashMap<SNode, Pair<SNode, Boolean>> myTemplateNodeToOutputNodeMap = new HashMap<SNode, Pair<SNode, Boolean>>();
 //  private HashMap<SNode, List<SNode>> myInputeNodeToTopOutputNodesMap = new HashMap<SNode, List<SNode>>();
   private DelayedChanges myDelayedChanges = new DelayedChanges();
   private TemplateSwitchGraph myTemplateSwitchGraph;
@@ -69,7 +69,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     myMappingNameAndInputNodeToOutputNodeMap.clear();
     myMappingNameAndOutputNodeToInputNode.clear();
     myOutputNodeToTemplateNodeMap.clear();
-    myTemplateNodeToOutputNodeMap.clear();
+//    myTemplateNodeToOutputNodeMap.clear();
 //    myInputeNodeToTopOutputNodesMap.clear();
     myDelayedChanges = new DelayedChanges();
     myTemplateSwitchGraph = null;
@@ -268,27 +268,29 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public void addOutputNodeByTemplateNode(SNode templateNode, SNode outputNode) {
-    Pair<SNode, Boolean> pair = myTemplateNodeToOutputNodeMap.get(templateNode);
-    if (pair == null) {
-      myTemplateNodeToOutputNodeMap.put(templateNode, new Pair<SNode, Boolean>(outputNode, true));
-      return;
-    }
-
-    // that means that there were more than one output node for given template node
-    if (!pair.o2) {
-      return;
-    }
-    myTemplateNodeToOutputNodeMap.put(templateNode, new Pair<SNode, Boolean>(pair.o1, false));
+//    Pair<SNode, Boolean> pair = myTemplateNodeToOutputNodeMap.get(templateNode);
+//    if (pair == null) {
+//      myTemplateNodeToOutputNodeMap.put(templateNode, new Pair<SNode, Boolean>(outputNode, true));
+//      return;
+//    }
+//
+//    // that means that there were more than one output node for given template node
+//    if (!pair.o2) {
+//      return;
+//    }
+//    myTemplateNodeToOutputNodeMap.put(templateNode, new Pair<SNode, Boolean>(pair.o1, false));
+    myMappingData.addOutputNodeByTemplateNode(templateNode, outputNode);
   }
 
   public SNode findOutputNodeByTemplateNode(SNode templateNode, boolean unique) {
-    Pair<SNode, Boolean> pair = myTemplateNodeToOutputNodeMap.get(templateNode);
-    if (pair != null) {
-      if (pair.o2 || !unique) {
-        return pair.o1;
-      }
-    }
-    return null;
+//    Pair<SNode, Boolean> pair = myTemplateNodeToOutputNodeMap.get(templateNode);
+//    if (pair != null) {
+//      if (pair.o2 || !unique) {
+//        return pair.o1;
+//      }
+//    }
+//    return null;
+    return myMappingData.findOutputNodeByTemplateNode(templateNode, unique);
   }
 
   public void addReferenceInfo(ReferenceInfo referenceInfo) {
