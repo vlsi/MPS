@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SimpleItemSubstitutePart extends SubstituteMenuPart {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleItemSubstitutePart";
   public static String MATCHING_TEXT = "matchingText";
   public static String DESCRIPTION_TEXT = "descriptionText";
   public static String CAN_SUBSTITUTE = "canSubstitute";

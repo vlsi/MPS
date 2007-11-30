@@ -10,8 +10,12 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class NodeFactories extends BaseConcept implements INamedConcept {
-  public static String NAME = "name";
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactories";
   public static String NODE_FACTORY = "nodeFactory";
+  public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  NodeFactories(SNode node) {
     super(node);
@@ -26,6 +30,14 @@ public class NodeFactories extends BaseConcept implements INamedConcept {
   }
 
 
+  public NodeFactory getNodeFactory() {
+    return (NodeFactory)this.getChild(NodeFactories.NODE_FACTORY);
+  }
+
+  public void setNodeFactory(NodeFactory node) {
+    super.setChild(NodeFactories.NODE_FACTORY, node);
+  }
+
   public String getName() {
     return this.getProperty(NodeFactories.NAME);
   }
@@ -34,12 +46,28 @@ public class NodeFactories extends BaseConcept implements INamedConcept {
     this.setProperty(NodeFactories.NAME, value);
   }
 
-  public NodeFactory getNodeFactory() {
-    return (NodeFactory)this.getChild(NodeFactories.NODE_FACTORY);
+  public String getShortDescription() {
+    return this.getProperty(NodeFactories.SHORT_DESCRIPTION);
   }
 
-  public void setNodeFactory(NodeFactory node) {
-    super.setChild(NodeFactories.NODE_FACTORY, node);
+  public void setShortDescription(String value) {
+    this.setProperty(NodeFactories.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(NodeFactories.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(NodeFactories.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(NodeFactories.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(NodeFactories.VIRTUAL_PACKAGE, value);
   }
 
 }

@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptsSubstituteMenuPart extends SubstituteMenuPart {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptsSubstituteMenuPart";
   public static String QUERY = "query";
 
   public  ConceptsSubstituteMenuPart(SNode node) {

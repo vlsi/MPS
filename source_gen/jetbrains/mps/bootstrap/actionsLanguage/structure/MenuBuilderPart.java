@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class MenuBuilderPart extends BaseConcept {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.MenuBuilderPart";
 
   public  MenuBuilderPart(SNode node) {
     super(node);

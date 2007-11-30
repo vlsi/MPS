@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class ConceptRightTransformPart extends MenuBuilderPart {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart";
   public static String HANDLER = "handler";
   public static String CONCEPT = "concept";
 

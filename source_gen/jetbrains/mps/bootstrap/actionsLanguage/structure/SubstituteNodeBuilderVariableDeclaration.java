@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class SubstituteNodeBuilderVariableDeclaration extends VariableDeclaration {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.SubstituteNodeBuilderVariableDeclaration";
   public static String INITIALIZER_BLOCK = "initializerBlock";
 
   public  SubstituteNodeBuilderVariableDeclaration(SNode node) {

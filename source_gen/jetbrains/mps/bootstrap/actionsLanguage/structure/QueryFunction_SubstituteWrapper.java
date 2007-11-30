@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class QueryFunction_SubstituteWrapper extends ConceptFunction {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SubstituteWrapper";
 
   public  QueryFunction_SubstituteWrapper(SNode node) {
     super(node);

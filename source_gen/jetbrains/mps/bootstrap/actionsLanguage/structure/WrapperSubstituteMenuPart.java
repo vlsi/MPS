@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.WrapperSubstituteMenuPart";
   public static String WRAPPER_BLOCK = "wrapperBlock";
   public static String WRAPPED_CONCEPT = "wrappedConcept";
 

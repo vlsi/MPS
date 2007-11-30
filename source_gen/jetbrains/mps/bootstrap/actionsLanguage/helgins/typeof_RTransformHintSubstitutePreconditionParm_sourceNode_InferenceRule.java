@@ -14,18 +14,22 @@ public class typeof_RTransformHintSubstitutePreconditionParm_sourceNode_Inferenc
   public  typeof_RTransformHintSubstitutePreconditionParm_sourceNode_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     SNode hostBuilder = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder", false, false);
     SNode applicableConcept = SLinkOperations.getTarget(hostBuilder, "applicableConcept", false);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_3().createNode(applicableConcept), argument);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_3().createNode(applicableConcept), argument, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046610346");
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return false;
   }
+
 }

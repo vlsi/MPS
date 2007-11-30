@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class QueryFunction_SubstituteString extends ConceptFunction {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SubstituteString";
 
   public  QueryFunction_SubstituteString(SNode node) {
     super(node);

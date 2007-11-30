@@ -14,23 +14,27 @@ public class typeof_ConceptFunctionParameter_parameterObject_InferenceRule imple
   public  typeof_ConceptFunctionParameter_parameterObject_InferenceRule() {
   }
 
-  public void applyRule(SNode argument) {
+  public void applyRule(final SNode argument) {
     if(SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSubstituteMenuPart", false, false), "type", true) != null) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSubstituteMenuPart", false, false), "type", true), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSubstituteMenuPart", false, false), "type", true), argument, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046146642");
       return;
     }
     if(SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart", false, false), "type", true) != null) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart", false, false), "type", true), argument);
+      TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart", false, false), "type", true), argument, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046146661");
       return;
     }
   }
+
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject";
   }
+
   public boolean isApplicable(SNode argument) {
     return SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
   }
+
   public boolean overrides() {
     return true;
   }
+
 }

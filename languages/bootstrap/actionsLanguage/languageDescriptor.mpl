@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bootstrap.actionsLanguage" generatorOutputPath="${mps_home}\source_gen">
+<language namespace="jetbrains.mps.bootstrap.actionsLanguage" generatorOutputPath="${mps_home}\source_gen" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" />
   </structure>
@@ -35,11 +35,21 @@
       <dependencies>
         <dependency>jetbrains.mps.baseLanguageInternal</dependency>
       </dependencies>
-      <mapping-priorities />
+      <mapping-priorities>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@templates" nodeID="1196434407478" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.main@templates" nodeID="1154466410557" />
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+      </mapping-priorities>
     </generator>
   </generators>
   <classPath />
   <runtimeClassPath />
+  <sourcePath />
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />

@@ -1942,5 +1942,16 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196433946727">
+    <property name="package" value="QueryFunctions" />
+    <link role="conceptDeclaration" targetNodeId="1.1196433923911" resolveInfo="RightTransform_SimpleString" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196433948729">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1196433955262">
+        <property name="textFgColor" value="DARK_BLUE" />
+        <link role="relationDeclaration" targetNodeId="1.1196433942569" resolveInfo="text" />
+      </node>
+    </node>
+  </node>
 </model>
 

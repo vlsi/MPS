@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class QueryFunction_ParameterizedSubstitute_Handler extends ConceptFunction {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_ParameterizedSubstitute_Handler";
 
   public  QueryFunction_ParameterizedSubstitute_Handler(SNode node) {
     super(node);

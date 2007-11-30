@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class IncludeRightTransformForNodePart extends MenuBuilderPart {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart";
   public static String NODE_BLOCK = "nodeBlock";
 
   public  IncludeRightTransformForNodePart(SNode node) {

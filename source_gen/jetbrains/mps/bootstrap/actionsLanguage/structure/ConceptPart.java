@@ -11,6 +11,7 @@ import java.util.List;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class ConceptPart extends MenuBuilderPart {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptPart";
   public static String PART = "part";
   public static String CONCEPT = "concept";
 

@@ -12,8 +12,12 @@ import java.util.Iterator;
 import java.util.List;
 
 public class NodeSubstituteActions extends BaseConcept implements INamedConcept {
-  public static String NAME = "name";
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions";
   public static String ACTIONS_BUILDER = "actionsBuilder";
+  public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  NodeSubstituteActions(SNode node) {
     super(node);
@@ -27,14 +31,6 @@ public class NodeSubstituteActions extends BaseConcept implements INamedConcept 
     return NodeSubstituteActions.newInstance(sm, false);
   }
 
-
-  public String getName() {
-    return this.getProperty(NodeSubstituteActions.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(NodeSubstituteActions.NAME, value);
-  }
 
   public int getActionsBuildersCount() {
     return this.getChildCount(NodeSubstituteActions.ACTIONS_BUILDER);
@@ -54,6 +50,38 @@ public class NodeSubstituteActions extends BaseConcept implements INamedConcept 
 
   public void insertActionsBuilder(NodeSubstituteActionsBuilder prev, NodeSubstituteActionsBuilder node) {
     this.insertChild(prev, NodeSubstituteActions.ACTIONS_BUILDER, node);
+  }
+
+  public String getName() {
+    return this.getProperty(NodeSubstituteActions.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(NodeSubstituteActions.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(NodeSubstituteActions.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(NodeSubstituteActions.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(NodeSubstituteActions.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(NodeSubstituteActions.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(NodeSubstituteActions.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(NodeSubstituteActions.VIRTUAL_PACKAGE, value);
   }
 
 }

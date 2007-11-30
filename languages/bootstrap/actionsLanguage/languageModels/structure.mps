@@ -841,12 +841,13 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177498166690">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="matchingText" />
-      <link role="target" targetNodeId="1177498071304" resolveInfo="QueryFunction_RightTransform_String" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1196433731217" resolveInfo="IRightTransform_String" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177498182537">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="descriptionText" />
-      <link role="target" targetNodeId="1177498071304" resolveInfo="QueryFunction_RightTransform_String" />
+      <link role="target" targetNodeId="1196433731217" resolveInfo="IRightTransform_String" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177498207384">
       <property name="metaClass" value="aggregation" />
@@ -888,6 +889,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1179445963047">
       <property name="value" value="get text" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196433762288">
+      <link role="intfc" targetNodeId="1196433731217" resolveInfo="IRightTransform_String" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177498227294">
@@ -938,12 +942,12 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177508933220">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="matchingText" />
-      <link role="target" targetNodeId="1177498071304" resolveInfo="QueryFunction_RightTransform_String" />
+      <link role="target" targetNodeId="1196433731217" resolveInfo="IRightTransform_String" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177508955159">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="descriptionText" />
-      <link role="target" targetNodeId="1177498071304" resolveInfo="QueryFunction_RightTransform_String" />
+      <link role="target" targetNodeId="1196433731217" resolveInfo="IRightTransform_String" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1177508966300">
       <property name="metaClass" value="aggregation" />
@@ -1303,6 +1307,26 @@
       <property name="role" value="handler" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1177526592562" resolveInfo="QueryFunction_RightTransform_ConceptHandler" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196433731217">
+    <property name="package" value="QueryFunctions" />
+    <property name="name" value="IRightTransform_String" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196433923911">
+    <property name="package" value="QueryFunctions" />
+    <property name="name" value="RightTransform_SimpleString" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196434014050">
+      <property name="value" value="simple string" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1196433942569">
+      <property name="name" value="text" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196433940146">
+      <link role="intfc" targetNodeId="1196433731217" resolveInfo="IRightTransform_String" />
     </node>
   </node>
 </model>

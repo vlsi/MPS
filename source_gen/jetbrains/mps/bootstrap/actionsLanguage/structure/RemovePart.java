@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class RemovePart extends MenuBuilderPart {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart";
   public static String CONCEPT_TO_REMOVE = "conceptToRemove";
 
   public  RemovePart(SNode node) {

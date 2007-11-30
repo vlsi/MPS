@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class NodeSetupFunction_EnclosingNode extends ConceptFunctionParameter {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSetupFunction_EnclosingNode";
 
   public  NodeSetupFunction_EnclosingNode(SNode node) {
     super(node);

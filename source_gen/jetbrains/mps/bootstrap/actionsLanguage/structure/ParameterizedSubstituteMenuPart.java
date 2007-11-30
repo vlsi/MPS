@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Type;
 
 public class ParameterizedSubstituteMenuPart extends SubstituteMenuPart {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSubstituteMenuPart";
   public static String TYPE = "type";
   public static String QUERY = "query";
   public static String MATCHING_TEXT = "matchingText";

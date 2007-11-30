@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class QueryFunction_Substitute_CommonInitializer extends ConceptFunction {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_Substitute_CommonInitializer";
 
   public  QueryFunction_Substitute_CommonInitializer(SNode node) {
     super(node);

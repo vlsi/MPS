@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class RemoveByConditionPart extends MenuBuilderPart {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.RemoveByConditionPart";
   public static String CONDITION = "condition";
 
   public  RemoveByConditionPart(SNode node) {

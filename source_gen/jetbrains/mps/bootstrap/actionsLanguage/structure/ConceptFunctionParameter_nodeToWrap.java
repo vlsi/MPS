@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunctionParameter_nodeToWrap extends ConceptFunctionParameter {
+  public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_nodeToWrap";
 
   public  ConceptFunctionParameter_nodeToWrap(SNode node) {
     super(node);
