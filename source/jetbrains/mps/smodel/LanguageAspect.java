@@ -159,32 +159,36 @@ public enum LanguageAspect {
 
   public abstract SModelDescriptor get(Language l);
 
-  protected abstract void registerInLanguageDescriptor(LanguageDescriptor ld, Model m);
+  protected abstract void registerInLanguageDescriptor(LanguageDescriptor ld, Model m);      
 
   public String getName() {
     return myName;
   }
 
-  public void createNew(Language l) {
+  public SModelDescriptor createNew(Language l) {
     assert get(l) == null;
     
     SModel sm = l.getLanguageDescriptor().getModel();
 
-    for (String lang : getLanguagesToImport(l)) {
-      sm.addLanguage(lang);
-    }
-
-    for (String model : getModelsToImport(l)) {
-      sm.addImportedModel(SModelUID.fromString(model));
-    }
-
     SModelDescriptor model = l.createModel(getModuleUID(l), l.getModelRoots().get(0));
+
+    for (String lang : getLanguagesToImport(l)) {
+      model.getSModel().addLanguage(lang);
+    }
+
+    for (String modelUID : getModelsToImport(l)) {
+      model.getSModel().addImportedModel(SModelUID.fromString(modelUID));
+    }
+
+    model.save();
 
     Model m = Model.newInstance(sm);
     m.setName(model.getModelUID().toString());
 
     registerInLanguageDescriptor(l.getLanguageDescriptor(), m);
     l.setLanguageDescriptor(l.getLanguageDescriptor());
+
+    return model;
   }
 
   protected List<String> getLanguagesToImport(Language l) {
