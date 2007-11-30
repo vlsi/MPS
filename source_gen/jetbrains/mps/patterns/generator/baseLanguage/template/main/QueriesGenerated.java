@@ -119,6 +119,11 @@ public class QueriesGenerated {
     return generator.findOutputNodeByInputNodeAndMappingName(antiquotation.getNode(), "antiquotations");
   }
 
+  public static SNode referenceMacro_GetReferent_1196420324015(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    jetbrains.mps.quotation.structure.Antiquotation antiquotation = jetbrains.mps.quotation.structure.Antiquotation_AnnotationLink.getAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)));
+    return generator.findOutputNodeByInputNodeAndMappingName(antiquotation.getNode(), "antiquotations");
+  }
+
   public static SNode referenceMacro_GetReferent_1190931377055(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return SModelUtil_new.getAdapterClassConceptForConceptDeclaration((ConceptDeclaration)BaseAdapter.fromNode(SNodeOperations.getConceptDeclaration(node)), GlobalScope.getInstance()).getNode();
   }
@@ -134,6 +139,13 @@ public class QueriesGenerated {
     String refRole = node.getProperty("referentRole");
     SNode mainNode = node.getReferent("mainNode");
     ReferenceAntiquotation refAntiq = ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(mainNode)), refRole);
+    return generator.findOutputNodeByInputNodeAndMappingName(refAntiq.getExpression().getNode(), "antiquotations");
+  }
+
+  public static SNode referenceMacro_GetReferent_1196420388452(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    String refRole = node.getProperty("referentRole");
+    SNode mainNode = node.getReferent("mainNode");
+    jetbrains.mps.quotation.structure.ReferenceAntiquotation refAntiq = jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(mainNode)), refRole);
     return generator.findOutputNodeByInputNodeAndMappingName(refAntiq.getExpression().getNode(), "antiquotations");
   }
 
@@ -214,16 +226,28 @@ public class QueriesGenerated {
     return Antiquotation_AnnotationLink.getAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node))) != null;
   }
 
+  public static boolean ifMacro_Condition_1196420324035(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return Antiquotation_AnnotationLink.getAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node))) != null;
+  }
+
   public static boolean ifMacro_Condition_1190931671231(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     String refRole = node.getProperty("referentRole");
     SNode mainNode = node.getReferent("mainNode");
-    return ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(mainNode)), refRole) == null;
+    boolean b1 = ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(mainNode)), refRole) == null;
+    boolean b2 = jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(mainNode)), refRole) == null;
+    return b1 && b2;
   }
 
   public static boolean ifMacro_Condition_1190931377347(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     String refRole = node.getProperty("referentRole");
     SNode mainNode = node.getReferent("mainNode");
     return ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(mainNode)), refRole) != null;
+  }
+
+  public static boolean ifMacro_Condition_1196420388484(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    String refRole = node.getProperty("referentRole");
+    SNode mainNode = node.getReferent("mainNode");
+    return jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(mainNode)), refRole) != null;
   }
 
   public static boolean ifMacro_Condition_1190931377679(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -273,9 +297,12 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1176737411271(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> result = new ArrayList();
+    List<SNode> result = new ArrayList<SNode>();
     for(SNode child : SNodeOperations.getDescendants(node, null, false)) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.AbstractAntiquotation")) {
+        result.add(SLinkOperations.getTarget(child, "expression", true));
+      }
+      if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation")) {
         result.add(SLinkOperations.getTarget(child, "expression", true));
       }
     }
@@ -283,9 +310,12 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1176737399740(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> result = new ArrayList();
+    List<SNode> result = new ArrayList<SNode>();
     for(SNode child : SNodeOperations.getDescendants(node, null, false)) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.AbstractAntiquotation")) {
+        result.add(SLinkOperations.getTarget(child, "expression", true));
+      }
+      if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation")) {
         result.add(SLinkOperations.getTarget(child, "expression", true));
       }
     }
@@ -302,9 +332,12 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1176737298135(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> result = new ArrayList();
+    List<SNode> result = new ArrayList<SNode>();
     for(SNode child : SNodeOperations.getDescendants(node, null, false)) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.AbstractAntiquotation")) {
+        result.add(SLinkOperations.getTarget(child, "expression", true));
+      }
+      if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation")) {
         result.add(SLinkOperations.getTarget(child, "expression", true));
       }
     }

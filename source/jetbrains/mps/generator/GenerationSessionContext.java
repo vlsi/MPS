@@ -1,5 +1,7 @@
 package jetbrains.mps.generator;
 
+import jetbrains.mps.generator.plan.AbstractGenerationStepController;
+import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.project.*;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModuleDescriptor;
@@ -9,8 +11,6 @@ import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 import jetbrains.mps.transformation.TLBase.structure.MappingScriptReference;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.ide.BootstrapLanguages;
-import jetbrains.mps.generator.plan.GenerationStepController;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -28,7 +28,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private IOperationContext myInvocationContext;
   private TransientModule myTransientModule;
   private Language myTargetLanguage;
-  private GenerationStepController myGenerationStepController;
+  private AbstractGenerationStepController myGenerationStepController;
 
   private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
   // object survive between transient models but not between generation steps 
@@ -48,7 +48,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
                                   SModel inputModel,
                                   IOperationContext invocationContext,
                                   Set<MappingConfiguration> configs,
-                                  GenerationStepController generationStepController,
+                                  AbstractGenerationStepController generationStepController,
                                   GenerationSessionContext prevContext) {
 
 
@@ -258,7 +258,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
 
-  public GenerationStepController getGenerationStepController() {
+  public AbstractGenerationStepController getGenerationStepController() {
     return myGenerationStepController;
   }
 

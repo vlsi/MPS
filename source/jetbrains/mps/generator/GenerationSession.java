@@ -2,6 +2,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.newGenerator.CloneUtil;
 import jetbrains.mps.generator.newGenerator.TemplateModelGenerator_New;
+import jetbrains.mps.generator.plan.AbstractGenerationStepController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationStepController;
 import jetbrains.mps.generator.template.ITemplateGenerator;
@@ -16,13 +17,11 @@ import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.logging.LoggingHandlerAdapter;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.projectLanguage.DescriptorsPersistence;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.projectLanguage.structure.ModuleReference;
-import jetbrains.mps.projectLanguage.structure.ModuleRoot;
 import jetbrains.mps.projectLanguage.structure.SolutionDescriptor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -31,7 +30,6 @@ import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 import jetbrains.mps.transformation.TLBase.structure.MappingScriptKind;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
@@ -130,6 +128,13 @@ public class GenerationSession implements IGenerationSession {
   public GenerationStatus generateModel(final SModelDescriptor inputModel,
                                         final Language targetLanguage,
                                         final IGenerationScript script) throws Exception {
+    return generateModel(inputModel, targetLanguage, script, new GenerationStepController(inputModel.getSModel()));
+  }
+
+  public GenerationStatus generateModel(final SModelDescriptor inputModel,
+                                        final Language targetLanguage,
+                                        final IGenerationScript script,
+                                        final AbstractGenerationStepController generationStepController) throws Exception {
     Statistics.clearAll();
     GenerationStatus status = script.doGenerate(new IGenerationScriptContext() {
       public GenerationStatus doGenerate(@NotNull SModelDescriptor inputModel,
@@ -141,17 +146,17 @@ public class GenerationSession implements IGenerationSession {
         }
 
         // auto-plan
-        GenerationStepController generationStepController = new GenerationStepController(inputModel.getSModel());
-        GenerationStatus status;
+        SModelDescriptor inputModel1 = inputModel;
+        GenerationStatus status1;
         boolean wasErrors = false;
         boolean wasWarnings = false;
         int stepCount = 1;
         while (true) {
           addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount++)));
-          status = generateModel_internal(inputModel.getSModel(), targetLanguage, confs, generationStepController);
-          wasErrors |= status.isError();
-          wasWarnings |= status.hasWarnings();
-          if (status.isCanceled()) {
+          status1 = generateModel_internal(inputModel1.getSModel(), targetLanguage, confs, generationStepController);
+          wasErrors |= status1.isError();
+          wasWarnings |= status1.hasWarnings();
+          if (status1.isCanceled()) {
             break;
           }
 
@@ -163,13 +168,13 @@ public class GenerationSession implements IGenerationSession {
           if (generationStepController.getCurrentMappings().isEmpty()) {
             break;
           }
-          if (status.getOutputModel() == null) {
+          if (status1.getOutputModel() == null) {
             break;
           }
-          inputModel = status.getOutputModel().getModelDescriptor();
+          inputModel1 = status1.getOutputModel().getModelDescriptor();
         }
 
-        return new GenerationStatus(status.getSourceModel(), status.getOutputModel(), status.getTraceMap(), wasErrors, wasWarnings, status.isCanceled());
+        return new GenerationStatus(status1.getSourceModel(), status1.getOutputModel(), status1.getTraceMap(), wasErrors, wasWarnings, status1.isCanceled());
       }
 
       public SModelDescriptor getSourceModelDescriptor() {
@@ -202,7 +207,7 @@ public class GenerationSession implements IGenerationSession {
   private GenerationStatus generateModel_internal(SModel inputModel,
                                                   Language targetLanguage,
                                                   Set<MappingConfiguration> mappings,
-                                                  GenerationStepController generationStepController)
+                                                  AbstractGenerationStepController generationStepController)
           throws ClassNotFoundException,
           NoSuchMethodException,
           IllegalAccessException,
@@ -534,7 +539,7 @@ public class GenerationSession implements IGenerationSession {
     return "generationSession_" + getSessionId();
   }
 
-  private boolean checkGenerationStep(GenerationStepController stepController) {
+  private boolean checkGenerationStep(AbstractGenerationStepController stepController) {
     if (stepController.hasConflictingPriorityRules()) {
       List<String> errors = stepController.getConflictingPriorityRulesAsStrings();
       for (String error : errors) {
@@ -549,7 +554,7 @@ public class GenerationSession implements IGenerationSession {
     return true;
   }
 
-  private void printGenerationStepData(GenerationStepController stepController, SModel inputModel) {
+  private void printGenerationStepData(AbstractGenerationStepController stepController, SModel inputModel) {
     List<String> namespaces = GenerationPartitioningUtil.getUsedLanguageNamespaces(inputModel, false);
     Collections.sort(namespaces);
     addMessage(new Message(MessageKind.INFORMATION, "languages used:"));
