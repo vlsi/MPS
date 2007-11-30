@@ -50,7 +50,7 @@ public abstract class ReferenceInfo {
 
   public abstract boolean isRequired();
 
-  public abstract void showErrorMessage(TemplateModelGenerator_New generator);
+  public abstract void showErrorMessage(GeneratorLogger logger);
 
   protected static IReferenceResolver loadReferenceResolver(SNode node) {
     ConceptDeclaration conceptDeclaration = (ConceptDeclaration) node.getConceptDeclarationAdapter();

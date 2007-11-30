@@ -1,6 +1,7 @@
 package jetbrains.mps.generator;
 
 import jetbrains.mps.generator.newGenerator.CloneUtil;
+import jetbrains.mps.generator.newGenerator.GeneratorLogger;
 import jetbrains.mps.generator.newGenerator.TemplateModelGenerator_New;
 import jetbrains.mps.generator.plan.AbstractGenerationStepController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
@@ -48,6 +49,7 @@ public class GenerationSession implements IGenerationSession {
   private boolean myDiscardTransients;
   private IAdaptiveProgressMonitor myProgressMonitor;
   private IMessageHandler myMessagesHandler;
+  private GeneratorLogger myGeneratorLogger;
   private ILoggingHandler myLoggingHandler;
 
   private String mySessionId;
@@ -74,11 +76,10 @@ public class GenerationSession implements IGenerationSession {
           if (node != null) {
             myCurrentContext.addTransientModelToKeep(node.getModel());
           }
-          //uncomment to disable 'smart' transient removal
-//            myDiscardTransients = false;
         }
       }
     };
+    myGeneratorLogger = new GeneratorLogger(myMessagesHandler);
   }
 
   public ILoggingHandler getLoggingHandler() {
@@ -243,7 +244,8 @@ public class GenerationSession implements IGenerationSession {
     setGenerationSessionContext(context);
 
     // -- replace generator
-    ITemplateGenerator generator = new TemplateModelGenerator_New(context, myProgressMonitor, myMessagesHandler);
+    myGeneratorLogger.setOperationContext(context);
+    ITemplateGenerator generator = new TemplateModelGenerator_New(context, myProgressMonitor, myGeneratorLogger);
     GenerationStatus status;
     try {
       SModel outputModel = generateModel(inputModel, generator);

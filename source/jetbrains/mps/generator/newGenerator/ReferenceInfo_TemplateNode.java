@@ -3,7 +3,6 @@ package jetbrains.mps.generator.newGenerator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.generator.template.IReferenceResolver;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 
 import java.util.List;
 
@@ -113,9 +112,9 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     return null;
   }
 
-  public void showErrorMessage(TemplateModelGenerator_New generator) {
-    generator.showErrorMessage(getOutputNode(), "couldn't resolve reference '" + myTemplateReference.getRole() + "' in output node " + getOutputNode().getDebugText());
-    generator.showErrorMessage(myTemplateSourceNode, "-- original reference was " + myTemplateSourceNode.getDebugText());
-    generator.showErrorMessage(getInputNode(), "-- input node was " + getInputNode().getDebugText());
+  public void showErrorMessage(GeneratorLogger logger) {
+    logger.showErrorMessage(getOutputNode(), "couldn't resolve reference '" + myTemplateReference.getRole() + "' in output node " + getOutputNode().getDebugText());
+    logger.showErrorMessage(myTemplateSourceNode, "-- original reference was " + myTemplateSourceNode.getDebugText());
+    logger.showErrorMessage(getInputNode(), "-- input node was " + getInputNode().getDebugText());
   }
 }

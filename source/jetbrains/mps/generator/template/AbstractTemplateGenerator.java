@@ -7,30 +7,34 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.newGenerator.GeneratorLogger;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.NodeWithContext;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SNode;
 
 import java.util.HashSet;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private IOperationContext myOperationContext;
   private IAdaptiveProgressMonitor myProgressMonitor;
-  private IMessageHandler myMessageHandler;
+//  private IMessageHandler myMessageHandler;
+  private GeneratorLogger myLogger;
 
-  private int myErrorsCount;
-  private int myWarningsCount;
-  private HashSet<SNode> myFailedRules = new HashSet<SNode>();
+//  private int myErrorsCount;
+//  private int myWarningsCount;
+//  private HashSet<SNode> myFailedRules = new HashSet<SNode>();
 
   protected AbstractTemplateGenerator(IOperationContext operationContext,
                                       IAdaptiveProgressMonitor progressMonitor,
-                                      IMessageHandler messageHandler) {
+                                      GeneratorLogger generatorLogger) {
     myOperationContext = operationContext;
     myProgressMonitor = progressMonitor;
-    myMessageHandler = messageHandler;
+    myLogger = generatorLogger;
   }
 
   public IOperationContext getOperationContext() {
@@ -48,64 +52,75 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myProgressMonitor;
   }
 
+  public GeneratorLogger getLogger() {
+    return myLogger;
+  }
+
   protected void checkMonitorCanceled() {
     if (myProgressMonitor.isCanceled()) throw new GenerationCanceledException();
   }
 
   public void showInformationMessage(SNode node, String message) {
-    addMessage(new Message(MessageKind.INFORMATION, message, new NodeWithContext(node, getOperationContext())));
+//    addMessage(new Message(MessageKind.INFORMATION, message, new NodeWithContext(node, getOperationContext())));
+    myLogger.showInformationMessage(node, message);
   }
 
   public void showWarningMessage(SNode node, String message) {
-    myWarningsCount++;
-    addMessage(new Message(MessageKind.WARNING, message, new NodeWithContext(node, getOperationContext())));
+//    myWarningsCount++;
+//    addMessage(new Message(MessageKind.WARNING, message, new NodeWithContext(node, getOperationContext())));
+    myLogger.showWarningMessage(node, message);
   }
 
   public void showErrorMessage(SNode node, String message) {
-    myErrorsCount++;
-    addMessage(new Message(MessageKind.ERROR, message, new NodeWithContext(node, getOperationContext())));
+//    myErrorsCount++;
+//    addMessage(new Message(MessageKind.ERROR, message, new NodeWithContext(node, getOperationContext())));
+    myLogger.showErrorMessage(node, message);
   }
 
   public void showErrorMessage(SNode sourceNode, SNode templateNode, String message) {
-    myErrorsCount++;
-    showErrorMessage(sourceNode, templateNode, null, message);
+//    myErrorsCount++;
+//    showErrorMessage(sourceNode, templateNode, null, message);
+    myLogger.showErrorMessage(sourceNode, templateNode, message);
   }
 
   public void showErrorMessage(SNode sourceNode, SNode templateNode, SNode ruleNode, String message) {
-    myErrorsCount++;
-    if (ruleNode != null) {
-      if (myFailedRules.contains(ruleNode)) {
-        // do not show duplicating messages
-        return;
-      }
-      myFailedRules.add(ruleNode);
-    }
-
-    showErrorMessage((templateNode != null ? templateNode : ruleNode), message);
-    if (sourceNode != null) {
-      addMessage(new Message(MessageKind.ERROR, "-- was source node: " + sourceNode.getDebugText(),
-              new NodeWithContext(sourceNode, getOperationContext())));
-    }
-    if (ruleNode != null) {
-      addMessage(new Message(MessageKind.ERROR, "-- was rule: " + ruleNode.getDebugText(),
-              new NodeWithContext(ruleNode, getOperationContext())));
-    }
-    if (templateNode != null) {
-      addMessage(new Message(MessageKind.ERROR, "-- was template: " + templateNode.getDebugText(),
-              new NodeWithContext(templateNode, getOperationContext())));
-    }
+//    myErrorsCount++;
+//    if (ruleNode != null) {
+//      if (myFailedRules.contains(ruleNode)) {
+//        // do not show duplicating messages
+//        return;
+//      }
+//      myFailedRules.add(ruleNode);
+//    }
+//
+//    showErrorMessage((templateNode != null ? templateNode : ruleNode), message);
+//    if (sourceNode != null) {
+//      addMessage(new Message(MessageKind.ERROR, "-- was source node: " + sourceNode.getDebugText(),
+//              new NodeWithContext(sourceNode, getOperationContext())));
+//    }
+//    if (ruleNode != null) {
+//      addMessage(new Message(MessageKind.ERROR, "-- was rule: " + ruleNode.getDebugText(),
+//              new NodeWithContext(ruleNode, getOperationContext())));
+//    }
+//    if (templateNode != null) {
+//      addMessage(new Message(MessageKind.ERROR, "-- was template: " + templateNode.getDebugText(),
+//              new NodeWithContext(templateNode, getOperationContext())));
+//    }
+    myLogger.showErrorMessage(sourceNode, templateNode, ruleNode, message);
   }
 
-  private void addMessage(final Message msg) {
-    myMessageHandler.handle(msg);
-  }
+//  private void addMessage(final Message msg) {
+//    myMessageHandler.handle(msg);
+//  }
 
   public int getErrorCount() {
-    return myErrorsCount;
+//    return myErrorsCount;
+    return myLogger.getErrorCount();
   }
 
   public int getWarningCount() {
-    return myWarningsCount;
+//    return myWarningsCount;
+    return myLogger.getWarningCount();
   }
 
 //  public void clearErrorsAndWarnings() {

@@ -8,11 +8,12 @@ import jetbrains.mps.generator.template.AbstractTemplateGenerator;
 import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.TemplateGenUtil;
 import jetbrains.mps.generator.template.TemplateSwitchGraph;
-import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.transformation.TLBase.structure.*;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethod;
 
@@ -41,8 +42,8 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public TemplateModelGenerator_New(GenerationSessionContext operationContext,
                                     IAdaptiveProgressMonitor progressMonitor,
-                                    IMessageHandler handler) {
-    super(operationContext, progressMonitor, handler);
+                                    GeneratorLogger generatorLogger) {
+    super(operationContext, progressMonitor, generatorLogger);
   }
 
   public GenerationSessionContext getGeneratorSessionContext() {
@@ -225,7 +226,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       // hack
       SNode outputTargetNode = unresolvedReferenceInfo.resolveAnyhow(this);
       if (outputTargetNode == null) {
-        unresolvedReferenceInfo.showErrorMessage(this);
+        unresolvedReferenceInfo.showErrorMessage(this.getLogger());
       } else {
         unresolvedReferenceInfo.getOutputNode().setReferent(unresolvedReferenceInfo.getReferenceRole(), outputTargetNode);
       }

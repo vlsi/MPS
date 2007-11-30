@@ -125,9 +125,9 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return referentNode;
   }
 
-  public void showErrorMessage(TemplateModelGenerator_New generator) {
-    generator.showErrorMessage(getOutputNode(), "couldn't resolve reference '"+getReferenceRole()+"' in output node " + getOutputNode().getDebugText());
-    generator.showErrorMessage(myReferenceMacro.getParent().getNode(), "-- original reference was " + myReferenceMacro.getParent().getNode().getDebugText());
-    generator.showErrorMessage(getInputNode(), "-- input node was " + getInputNode().getDebugText());
+  public void showErrorMessage(GeneratorLogger logger) {
+    logger.showErrorMessage(getOutputNode(), "couldn't resolve reference '"+getReferenceRole()+"' in output node " + getOutputNode().getDebugText());
+    logger.showErrorMessage(myReferenceMacro.getParent().getNode(), "-- original reference was " + myReferenceMacro.getParent().getNode().getDebugText());
+    logger.showErrorMessage(getInputNode(), "-- input node was " + getInputNode().getDebugText());
   }
 }

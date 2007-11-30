@@ -21,12 +21,14 @@ public class PostponedReference extends SReference {
   private SNode myTargetNode;
   private boolean myFailed;
   private GeneratorMappingData myGeneratorMappingData;
+  private GeneratorLogger myLogger;
 
 
-  public PostponedReference(String role, SNode sourceNode, ReferenceInfo referenceInfo, GeneratorMappingData mappingData) {
+  public PostponedReference(String role, SNode sourceNode, ReferenceInfo referenceInfo, GeneratorMappingData mappingData, GeneratorLogger logger) {
     super(role, sourceNode);
     myReferenceInfo = referenceInfo;
     myGeneratorMappingData = mappingData;
+    myLogger = logger;
   }
 
   public boolean isExternal() {
@@ -45,7 +47,7 @@ public class PostponedReference extends SReference {
     throw new RuntimeException("not supported method");
   }
 
-  static boolean ourTestLogShown;
+//  static boolean ourTestLogShown;
 
   public SNode getTargetNode() {
     if (myTargetNode != null) {
@@ -57,13 +59,12 @@ public class PostponedReference extends SReference {
     myTargetNode = myReferenceInfo.doResolve(myGeneratorMappingData);
     if (myTargetNode == null) {
       myFailed = true;
-//      error(GetTargetNodeErrorState.UNIDENTIFIED_ERROR);
-      myReferenceInfo.showErrorMessage(null);
+      myReferenceInfo.showErrorMessage(myLogger);
     }
-    if(!ourTestLogShown && myReferenceInfo.getInputNode().getModel().getStereotype().length() > 0) {
-      ourTestLogShown = true;
-      myReferenceInfo.showErrorMessage(null);
-    }
+//    if(!ourTestLogShown && myReferenceInfo.getInputNode().getModel().getStereotype().length() > 0) {
+//      ourTestLogShown = true;
+//      myReferenceInfo.showErrorMessage(myLogger);
+//    }
     return myTargetNode;
   }
 

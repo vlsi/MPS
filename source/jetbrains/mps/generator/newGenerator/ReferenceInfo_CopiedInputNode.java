@@ -101,10 +101,8 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     return true;
   }
 
-  public void showErrorMessage(TemplateModelGenerator_New generator) {
-    generator.showErrorMessage(getOutputNode(), "couldn't resolve reference '" + myInputReference.getRole() + "' in output node " + getOutputNode().getDebugText());
-    generator.showErrorMessage(myInputSourceNode, "-- original reference was " + myInputSourceNode.getDebugText());
-//    LOG.error("couldn't resolve reference '" + myInputReference.getRole() + "' in output node " + getOutputNode().getDebugText(), getOutputNode());
-//    LOG.error("-- original reference was " + myInputSourceNode.getDebugText(), myInputSourceNode);
+  public void showErrorMessage(GeneratorLogger logger) {
+    logger.showErrorMessage(getOutputNode(), "couldn't resolve reference '" + myInputReference.getRole() + "' in output node " + getOutputNode().getDebugText());
+    logger.showErrorMessage(myInputSourceNode, "-- original reference was " + myInputSourceNode.getDebugText());
   }
 }
