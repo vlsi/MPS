@@ -426,17 +426,14 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1192796770721">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1192796782796">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1192796807855">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1192796866780">
-                <link role="enumConstantDeclaration" targetNodeId="5.~Language$LanguageAspectStatus$AspectKind.STRUCTURE" resolveInfo="STRUCTURE" />
-                <link role="enumClass" targetNodeId="5.~Language$LanguageAspectStatus$AspectKind" resolveInfo="Language.LanguageAspectStatus.AspectKind" />
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1196419395831">
+                <link role="enumConstantDeclaration" targetNodeId="5.~LanguageAspect.STRUCTURE" resolveInfo="STRUCTURE" />
+                <link role="enumClass" targetNodeId="5.~LanguageAspect" resolveInfo="LanguageAspect" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1192796803916">
-                <link role="baseMethodDeclaration" targetNodeId="5.~Language$LanguageAspectStatus.getAspectKind():jetbrains.mps.smodel.Language$LanguageAspectStatus$AspectKind" resolveInfo="getAspectKind" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1192796785683">
-                  <link role="baseMethodDeclaration" targetNodeId="5.~Language.getLanguageAspectStatus(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.Language$LanguageAspectStatus" resolveInfo="getLanguageAspectStatus" />
-                  <link role="classConcept" targetNodeId="5.~Language" resolveInfo="Language" />
-                  <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_UserArgument" id="1192796789679" />
-                </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1196419444490">
+                <link role="baseMethodDeclaration" targetNodeId="5.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+                <link role="classConcept" targetNodeId="5.~Language" resolveInfo="Language" />
+                <node role="actualArgument" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_UserArgument" id="1196419447304" />
               </node>
             </node>
           </node>
@@ -519,36 +516,33 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1191832310310">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1191832310311">
-            <property name="name" value="languageAspectStatus" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1191832310312">
-              <link role="classifier" targetNodeId="5.~Language$LanguageAspectStatus" resolveInfo="Language$LanguageAspectStatus" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196418893954">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196418893955">
+            <property name="name" value="targetModelDescriptor" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196418893956">
+              <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1191831341394">
-              <link role="baseMethodDeclaration" targetNodeId="5.~Language.getLanguageAspectStatus(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.Language$LanguageAspectStatus" resolveInfo="getLanguageAspectStatus" />
-              <link role="classConcept" targetNodeId="5.~Language" resolveInfo="Language" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1191831368806">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
-                <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1191831362037">
-                  <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1192797368581">
-                    <link role="argument" targetNodeId="1192796745248" resolveInfo="targetModel" />
-                  </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1196418792891">
+              <link role="baseMethodDeclaration" targetNodeId="5.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1196418792892">
+                <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1196418792893">
+                  <link role="argument" targetNodeId="1192796745248" resolveInfo="targetModel" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1191831383170">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1191831383171">
-            <property name="name" value="aspectKind" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1191831383172">
-              <link role="classifier" targetNodeId="5.~Language$LanguageAspectStatus$AspectKind" resolveInfo="Language$LanguageAspectStatus$AspectKind" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196418800691">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196418800692">
+            <property name="name" value="aspect" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196418800693">
+              <link role="classifier" targetNodeId="5.~LanguageAspect" resolveInfo="LanguageAspect" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1191831376059">
-              <link role="baseMethodDeclaration" targetNodeId="5.~Language$LanguageAspectStatus.getAspectKind():jetbrains.mps.smodel.Language$LanguageAspectStatus$AspectKind" resolveInfo="getAspectKind" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191832310313">
-                <link role="variableDeclaration" targetNodeId="1191832310311" resolveInfo="languageAspectStatus" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1196418785421">
+              <link role="baseMethodDeclaration" targetNodeId="5.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+              <link role="classConcept" targetNodeId="5.~Language" resolveInfo="Language" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196418893957">
+                <link role="variableDeclaration" targetNodeId="1196418893955" resolveInfo="targetModelDescriptor" />
               </node>
             </node>
           </node>
@@ -562,45 +556,42 @@
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1191838325017">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191838325018">
-              <link role="variableDeclaration" targetNodeId="1191831383171" resolveInfo="aspectKind" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196418809322">
+              <link role="variableDeclaration" targetNodeId="1196418800692" resolveInfo="aspect" />
             </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1191838325019">
-              <link role="enumClass" targetNodeId="5.~Language$LanguageAspectStatus$AspectKind" resolveInfo="Language$LanguageAspectStatus$AspectKind" />
-              <link role="enumConstantDeclaration" targetNodeId="5.~Language$LanguageAspectStatus$AspectKind.STRUCTURE" resolveInfo="STRUCTURE" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1196418813889">
+              <link role="enumConstantDeclaration" targetNodeId="5.~LanguageAspect.STRUCTURE" resolveInfo="STRUCTURE" />
+              <link role="enumClass" targetNodeId="5.~LanguageAspect" resolveInfo="LanguageAspect" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196419029295">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196419029296">
+            <property name="name" value="sourceModelDescriptor" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196419029297">
+              <link role="classifier" targetNodeId="5.~SModelDescriptor" resolveInfo="SModelDescriptor" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1191837881749">
+              <link role="baseMethodDeclaration" targetNodeId="5.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
+              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1191837877355">
+                <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1191837874791">
+                  <link role="argument" targetNodeId="1191835907054" resolveInfo="sourceModel" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1191837860410">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1191837860411">
             <property name="name" value="sourceLanguageAspectStatus" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1191837860412">
-              <link role="classifier" targetNodeId="5.~Language$LanguageAspectStatus" resolveInfo="Language$LanguageAspectStatus" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196419001259">
+              <link role="classifier" targetNodeId="5.~LanguageAspect" resolveInfo="LanguageAspect" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1191837871243">
               <link role="classConcept" targetNodeId="5.~Language" resolveInfo="Language" />
-              <link role="baseMethodDeclaration" targetNodeId="5.~Language.getLanguageAspectStatus(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.Language$LanguageAspectStatus" resolveInfo="getLanguageAspectStatus" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1191837881749">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModel.getModelDescriptor():jetbrains.mps.smodel.SModelDescriptor" resolveInfo="getModelDescriptor" />
-                <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1191837877355">
-                  <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1191837874791">
-                    <link role="argument" targetNodeId="1191835907054" resolveInfo="sourceModel" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1191838351461">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1191838351462">
-            <property name="name" value="sourceAspectKind" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1191838351463">
-              <link role="classifier" targetNodeId="5.~Language$LanguageAspectStatus$AspectKind" resolveInfo="Language$LanguageAspectStatus$AspectKind" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1191838366249">
-              <link role="baseMethodDeclaration" targetNodeId="5.~Language$LanguageAspectStatus.getAspectKind():jetbrains.mps.smodel.Language$LanguageAspectStatus$AspectKind" resolveInfo="getAspectKind" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191838361230">
-                <link role="variableDeclaration" targetNodeId="1191837860411" resolveInfo="sourceLanguageAspectStatus" />
+              <link role="baseMethodDeclaration" targetNodeId="5.~Language.getModelAspect(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.LanguageAspect" resolveInfo="getModelAspect" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196419029298">
+                <link role="variableDeclaration" targetNodeId="1196419029296" resolveInfo="sourceModelDescriptor" />
               </node>
             </node>
           </node>
@@ -614,23 +605,24 @@
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1191838376726">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1191838384026">
-              <link role="enumConstantDeclaration" targetNodeId="5.~Language$LanguageAspectStatus$AspectKind.STRUCTURE" resolveInfo="STRUCTURE" />
-              <link role="enumClass" targetNodeId="5.~Language$LanguageAspectStatus$AspectKind" resolveInfo="Language$LanguageAspectStatus$AspectKind" />
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1196419017257">
+              <link role="enumConstantDeclaration" targetNodeId="5.~LanguageAspect.STRUCTURE" resolveInfo="STRUCTURE" />
+              <link role="enumClass" targetNodeId="5.~LanguageAspect" resolveInfo="LanguageAspect" />
             </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191838375756">
-              <link role="variableDeclaration" targetNodeId="1191838351462" resolveInfo="sourceAspectKind" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196419012391">
+              <link role="variableDeclaration" targetNodeId="1191837860411" resolveInfo="sourceLanguageAspectStatus" />
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1191832318486">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1191833032703">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1191833055196">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1196418932451">
               <link role="baseMethodDeclaration" targetNodeId="5.~Language.getNamespace():java.lang.String" resolveInfo="getNamespace" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1191833050099">
-                <link role="baseMethodDeclaration" targetNodeId="5.~Language$LanguageAspectStatus.getLanguage():jetbrains.mps.smodel.Language" resolveInfo="getLanguage" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191833040471">
-                  <link role="variableDeclaration" targetNodeId="1191832310311" resolveInfo="languageAspectStatus" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1196418900349">
+                <link role="baseMethodDeclaration" targetNodeId="5.~Language.getLanguageFor(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.Language" resolveInfo="getLanguageFor" />
+                <link role="classConcept" targetNodeId="5.~Language" resolveInfo="Language" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196418904883">
+                  <link role="variableDeclaration" targetNodeId="1196418893955" resolveInfo="targetModelDescriptor" />
                 </node>
               </node>
             </node>
@@ -643,10 +635,11 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1191838250235">
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1191838260041">
               <link role="baseMethodDeclaration" targetNodeId="5.~Language.getNamespace():java.lang.String" resolveInfo="getNamespace" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1191838256210">
-                <link role="baseMethodDeclaration" targetNodeId="5.~Language$LanguageAspectStatus.getLanguage():jetbrains.mps.smodel.Language" resolveInfo="getLanguage" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1191838252176">
-                  <link role="variableDeclaration" targetNodeId="1191837860411" resolveInfo="sourceLanguageAspectStatus" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1196419052748">
+                <link role="baseMethodDeclaration" targetNodeId="5.~Language.getLanguageFor(jetbrains.mps.smodel.SModelDescriptor):jetbrains.mps.smodel.Language" resolveInfo="getLanguageFor" />
+                <link role="classConcept" targetNodeId="5.~Language" resolveInfo="Language" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196419055563">
+                  <link role="variableDeclaration" targetNodeId="1196419029296" resolveInfo="sourceModelDescriptor" />
                 </node>
               </node>
             </node>

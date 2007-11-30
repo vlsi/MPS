@@ -21,7 +21,6 @@ import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.languages.RenameModelRefactoring;
 import jetbrains.mps.refactoring.logging.Marshallable;
 import jetbrains.mps.reloading.ReloadUtils;
-import jetbrains.mps.smodel.Language.LanguageAspectStatus.AspectKind;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
@@ -638,40 +637,6 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return null;
   }
 
-  public SModelDescriptor getModelDescriptor(AspectKind aspectKind) {
-    SModelDescriptor modelDescriptor = null;
-    switch (aspectKind) {
-      case ACTIONS:
-        modelDescriptor = getActionsModelDescriptor();
-        break;
-      case CONSTRAINTS:
-        modelDescriptor = getConstraintsModelDescriptor();
-        break;
-      case EDITOR:
-        modelDescriptor = getEditorModelDescriptor();
-        break;
-      case HELGINS_TYPESYSTEM:
-        modelDescriptor = getHelginsTypesystemModelDescriptor();
-        break;
-      case SCRIPTS:
-        modelDescriptor = getScriptsModelDescriptor();
-        break;
-      case DOCUMENTATION:
-        modelDescriptor = getDocumentationModelDescriptor();
-        break;
-      case INTENTIONS:
-        modelDescriptor = getIntentionsModelDescriptor();
-        break;
-      case CFA:
-        modelDescriptor = getCFAModelDescriptor();
-        break;
-      case STRUCTURE:
-        modelDescriptor = getStructureModelDescriptor();
-        break;
-    }
-    return modelDescriptor;
-  }
-
   @Nullable
   public SModelDescriptor getEditorModelDescriptor() {
     return getEditorModelDescriptor(null);
@@ -1036,185 +1001,67 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return result;
   }
 
-  // ----------------------------
-  // language - related utilities
-  // ----------------------------
   public static Language getLanguageForLanguageAspect(SModelDescriptor modelDescriptor) {
-    LanguageAspectStatus status = getLanguageAspectStatus(modelDescriptor);
-    if (status.isError()) {
-      LOG.errorWithTrace("getLanguageForLanguageAspect failed. model was: " + modelDescriptor);
-      return null;
-    }
-    return status.getLanguage();
+    return getLanguageFor(modelDescriptor);
   }
 
-  public static LanguageAspectStatus getLanguageAspectStatus(SModelDescriptor modelDescriptor) {
-    Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(modelDescriptor);
-    LanguageAspectStatus accessoryStatus = null;
-    try {
-      for (ModelOwner modelOwner : owners) {
-        if (modelOwner instanceof Language) {
-          LanguageAspectStatus languageAspectStatus = getLanguageAspectStatus((Language) modelOwner, modelDescriptor);
-          if (languageAspectStatus.isLanguageAspect()) return languageAspectStatus;
-          if (languageAspectStatus.isAccessoryModel()) accessoryStatus = languageAspectStatus;
-        }
-        if (modelOwner instanceof Generator) {
-          LanguageAspectStatus languageAspectStatus = getLanguageAspectStatus(((Generator) modelOwner).getSourceLanguage(), modelDescriptor);
-          if (languageAspectStatus.isLanguageAspect()) return languageAspectStatus;
-          if (languageAspectStatus.isAccessoryModel()) accessoryStatus = languageAspectStatus;
-        }
-      }
-    } catch (ConcurrentModificationException e) {
-      LOG.error(e);
-    }
-    if (accessoryStatus != null) return accessoryStatus;
-    return new LanguageAspectStatus(null, LanguageAspectStatus.AspectKind.NONE);
-  }
-
-  public SModelDescriptor getAspectModelDescriptor(AspectKind aspectKind) {
-    for (SModelDescriptor modelDescriptor : getAspectModelDescriptors()) {
-      if (getLanguageAspectStatus(this, modelDescriptor).getAspectKind() == aspectKind) {
-        return modelDescriptor;
+  public LanguageAspect getAspectForModel(SModelDescriptor sm) {
+    for (LanguageAspect la : LanguageAspect.values()) {
+      if (la.get(this) == sm) {
+        return la;
       }
     }
     return null;
   }
 
-  public static LanguageAspectStatus getLanguageAspectStatus(Language language, SModelDescriptor modelDescriptor) {
-    if (modelDescriptor == language.getStructureModelDescriptor()) {
-      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.STRUCTURE);
-    }
-    if (modelDescriptor == language.getHelginsTypesystemModelDescriptor()) {
-      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.HELGINS_TYPESYSTEM);
-    }
-    if (modelDescriptor == language.getActionsModelDescriptor()) {
-      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACTIONS);
-    }
-    if (modelDescriptor == language.getConstraintsModelDescriptor()) {
-      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.CONSTRAINTS);
-    }
-    if (modelDescriptor == language.getScriptsModelDescriptor()) {
-      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.SCRIPTS);
-    }
 
-    if (modelDescriptor == language.getDocumentationModelDescriptor()) {
-      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.DOCUMENTATION);
+  public static LanguageAspect getModelAspect(SModelDescriptor sm) { 
+    Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(sm);
+    for (ModelOwner modelOwner : owners) {
+      if (modelOwner instanceof Language) {
+        Language l = (Language) modelOwner;
+        if (l.getAspectForModel(sm) != null) {
+          return l.getAspectForModel(sm);
+        }
+      }
     }
-    if (modelDescriptor == language.getIntentionsModelDescriptor()) {
-      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.INTENTIONS);
-    }
-    if (modelDescriptor == language.getCFAModelDescriptor()) {
-      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.CFA);
-    }
-
-
-    List<SModelDescriptor> acccessoryModels = language.getAccessoryModels();
-    if (acccessoryModels.contains(modelDescriptor)) {
-      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.ACCESSORY);
-    }
-    Set<SModelDescriptor> editorDescriptors = language.getEditorDescriptors();
-    if (editorDescriptors.contains(modelDescriptor)) {
-      return new LanguageAspectStatus(language, LanguageAspectStatus.AspectKind.EDITOR);
-    }
-
-    return new LanguageAspectStatus(null, LanguageAspectStatus.AspectKind.NONE);
+    return null;
   }
 
-  public static class LanguageAspectStatus implements IStatus {
-    public static enum AspectKind {
-      STRUCTURE, EDITOR, ACTIONS, CONSTRAINTS, HELGINS_TYPESYSTEM, ACCESSORY, SCRIPTS, DOCUMENTATION, INTENTIONS, CFA, NONE;
+  public static boolean isAccessoryModel(SModelDescriptor sm) {
+    Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(sm);
+    for (ModelOwner modelOwner : owners) {
+      if (modelOwner instanceof Language) {
+        Language l = (Language) modelOwner;
+        if (l.isAccessoryModel(sm.getModelUID())) {
+          return true;
+        }
+      }
     }
+    return false;
+  }
 
-    private Language myLanguage;
-
-    private AspectKind myAspectKind;
-
-    public LanguageAspectStatus(Language language, AspectKind aspectKind) {
-      myLanguage = language;
-      myAspectKind = aspectKind;
+  public static Language getLanguageFor(SModelDescriptor sm) {
+    Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(sm);
+    for (ModelOwner modelOwner : owners) {
+      if (modelOwner instanceof Language) {
+        return (Language) modelOwner;
+      }
     }
-
-    public boolean isOk() {
-      return true;
-    }
-
-    public boolean isError() {
-      return false;
-    }
-
-    public Code getCode() {
-      return Code.OK;
-    }
-
-    public String getMessage() {
-      return "";
-    }
-
-    public Object getUserObject() {
-      return null;
-    }
-
-    public Language getLanguage() {
-      return myLanguage;
-    }
-
-    public AspectKind getAspectKind() {
-      return myAspectKind;
-    }
-
-    public boolean isLanguageAspect() {
-      return myAspectKind != LanguageAspectStatus.AspectKind.NONE && myAspectKind != LanguageAspectStatus.AspectKind.ACCESSORY;
-    }
-
-    public boolean isNone() {
-      return myAspectKind == AspectKind.NONE;
-    }
-
-    public boolean isStructure() {
-      return myAspectKind == LanguageAspectStatus.AspectKind.STRUCTURE;
-    }
-
-    public boolean isEditor() {
-      return myAspectKind == LanguageAspectStatus.AspectKind.EDITOR;
-    }
-
-    public boolean isHelginsTypesystem() {
-      return myAspectKind == LanguageAspectStatus.AspectKind.HELGINS_TYPESYSTEM;
-    }
-
-    public boolean isActions() {
-      return myAspectKind == LanguageAspectStatus.AspectKind.ACTIONS;
-    }
-
-    public boolean isConstraintsModel() {
-      return myAspectKind == LanguageAspectStatus.AspectKind.CONSTRAINTS;
-    }
-
-    public boolean isIntentionsModel() {
-      return myAspectKind == LanguageAspectStatus.AspectKind.INTENTIONS;
-    }
-
-    public boolean isCFAModel() {
-      return myAspectKind == LanguageAspectStatus.AspectKind.CFA;
-    }
-
-    public boolean isAccessoryModel() {
-      return myAspectKind == LanguageAspectStatus.AspectKind.ACCESSORY;
-    }
-
-    public String name() {
-      return myAspectKind.name();
-    }
+    return null;
   }
 
   private class LanguageModelsAdapter extends SModelsAdapter {
     public void modelWillBeDeleted(SModelDescriptor modelDescriptor) {
-      LanguageAspectStatus status = getLanguageAspectStatus(Language.this, modelDescriptor);
-      if (status.isLanguageAspect()) {
+
+      LanguageAspect aspect = getModelAspect(modelDescriptor);
+      Language language = getLanguageFor(modelDescriptor);
+
+      if (aspect != null && language != null) {
         LanguageDescriptor languageDescriptor = getLanguageDescriptor();
-        if (status.isStructure()) {
+        if (aspect == LanguageAspect.STRUCTURE) {
           languageDescriptor.removeChild(languageDescriptor.getStructureModel());
-        } else if (status.isEditor()) {
+        } else if (aspect == LanguageAspect.EDITOR) {
           Iterator<Editor> iterator = languageDescriptor.editors();
           while (iterator.hasNext()) {
             Editor editor = iterator.next();
@@ -1224,11 +1071,11 @@ public class Language extends AbstractModule implements Marshallable<Language> {
               break;
             }
           }
-        } else if (status.isHelginsTypesystem()) {
+        } else if (aspect == LanguageAspect.HELGINS_TYPESYSTEM) {
           languageDescriptor.removeChild(languageDescriptor.getHelginsTypesystemModel());
-        } else if (status.isActions()) {
+        } else if (aspect == LanguageAspect.ACTIONS) {
           languageDescriptor.removeChild(languageDescriptor.getActionsModel());
-        } else if (status.isConstraintsModel()) {
+        } else if (aspect == LanguageAspect.CONSTRAINTS) {
           languageDescriptor.removeChild(languageDescriptor.getConstraintsModel());
         }
       }

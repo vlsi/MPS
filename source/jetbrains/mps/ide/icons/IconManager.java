@@ -66,9 +66,16 @@ public class IconManager {
     String className = namespace + ".icons.Icons";
     try {
       Language language = MPSModuleRepository.getInstance().getLanguage(namespace);
-      Class icons = language.getClass(className);
-      Icon icon = (Icon) icons.getMethod("getLanguageIcon").invoke(null);
-      if (icon != null) return icon;
+
+      if (language == null) {
+        LOG.error("Can't find a language " + namespace);
+      } else {
+        Class icons = language.getClass(className);
+        if (icons != null) {
+          Icon icon = (Icon) icons.getMethod("getLanguageIcon").invoke(null);
+          if (icon != null) return icon;
+        }
+      }
     } catch (Exception e) {
       LOG.error(e);
     }
@@ -78,25 +85,25 @@ public class IconManager {
   }
 
   public static Icon getIconFor(SModelDescriptor modelDescriptor) {
-    Language.LanguageAspectStatus languageAspectStatus = Language.getLanguageAspectStatus(modelDescriptor);
-    if (languageAspectStatus.isLanguageAspect()) {
-      if (languageAspectStatus.isEditor()) {
+    LanguageAspect aspect = Language.getModelAspect(modelDescriptor);
+    if (aspect != null) {
+      if (aspect == LanguageAspect.EDITOR) {
         return Icons.EDITOR_MODEL_ICON;
-      } else if (languageAspectStatus.isStructure()) {
+      } else if (aspect == LanguageAspect.STRUCTURE) {
         return Icons.STRUCTURE_MODEL_ICON;
-      } else if (languageAspectStatus.isActions()) {
+      } else if (aspect == LanguageAspect.ACTIONS) {
         return Icons.ACTIONS_MODEL_ICON;
-      } else if (languageAspectStatus.isHelginsTypesystem()) {
+      } else if (aspect == LanguageAspect.HELGINS_TYPESYSTEM) {
         return Icons.TYPESYSTEM_MODEL_ICON;
-      } else if (languageAspectStatus.isConstraintsModel()) {
+      } else if (aspect == LanguageAspect.CONSTRAINTS) {
         return Icons.CONSTRAINTS_MODEL_ICON;
-      } else if (languageAspectStatus.isIntentionsModel()) {
+      } else if (aspect == LanguageAspect.INTENTIONS) {
         return Icons.INTENTIONS_MODEL_ICON;
       }
     } else if (modelDescriptor.getStereotype() != null &&
             modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
       return Icons.TEMPLATES_MODEL_ICON;
-    } else if (languageAspectStatus.isAccessoryModel()) {
+    } else if (Language.isAccessoryModel(modelDescriptor)) {
       return Icons.ACCESSORY_MODEL_ICON;
     }
     return Icons.MODEL_ICON;
