@@ -9,6 +9,9 @@
   <actions>
     <model modelUID="jetbrains.mps.complex.actions" />
   </actions>
+  <constraints>
+    <model modelUID="jetbrains.mps.complex.constraints" />
+  </constraints>
   <editor>
     <model modelUID="jetbrains.mps.complex.editor" />
   </editor>
