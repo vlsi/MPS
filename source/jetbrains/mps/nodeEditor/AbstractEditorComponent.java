@@ -1524,7 +1524,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     selectedCell = getBigCellForNode(selectedCell.getSNode());
     assert selectedCell != null : "selected cell mustn't be null";
 
-    int x = getRootCell().getX() - ADDITIONAL_SHIFT_X; //- myLightBulb.getWidth() - 3;
+    int x = getRootCell().getX();//- ADDITIONAL_SHIFT_X; //- myLightBulb.getWidth() - 3;
     int y = selectedCell.getY();
     x = x < 0 ? 2 : x;
     y = y < 0 ? 2 : y;
