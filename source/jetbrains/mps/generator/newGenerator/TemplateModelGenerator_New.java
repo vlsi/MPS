@@ -28,12 +28,12 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private SModel myOutputModel;
   private ArrayList<SNode> myRootsNotToCopy = new ArrayList<SNode>();
   private ArrayList<ReferenceInfo> myReferenceInfos = new ArrayList<ReferenceInfo>();
-//  private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
+  //  private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
   private HashMap<Pair<String, SNode>, SNode> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<Pair<String, SNode>, SNode> myMappingNameAndOutputNodeToInputNode = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
 //  private HashMap<SNode, Pair<SNode, Boolean>> myTemplateNodeToOutputNodeMap = new HashMap<SNode, Pair<SNode, Boolean>>();
-//  private HashMap<SNode, List<SNode>> myInputeNodeToTopOutputNodesMap = new HashMap<SNode, List<SNode>>();
+  //  private HashMap<SNode, List<SNode>> myInputeNodeToTopOutputNodesMap = new HashMap<SNode, List<SNode>>();
   private DelayedChanges myDelayedChanges = new DelayedChanges();
   private TemplateSwitchGraph myTemplateSwitchGraph;
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
@@ -241,6 +241,26 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       } else {
         unresolvedReferenceInfo.getOutputNode().setReferent(unresolvedReferenceInfo.getReferenceRole(), outputTargetNode);
       }
+    }
+
+    // replace all postponed references
+    List<SNode> roots = getTargetModel().getRoots();
+    for (SNode root : roots) {
+      replacePostponedReferences(root);
+    }
+  }
+
+  private void replacePostponedReferences(SNode node) {
+    List<SReference> references = node.getReferences();
+    for (SReference reference : references) {
+      if (reference instanceof PostponedReference) {
+        ((PostponedReference) reference).validateAndReplace();
+      }
+    }
+
+    List<SNode> children = node.getChildren();
+    for (SNode child : children) {
+      replacePostponedReferences(child);
     }
   }
 

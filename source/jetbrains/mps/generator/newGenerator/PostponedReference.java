@@ -74,4 +74,17 @@ public class PostponedReference extends SReference {
   protected void error(GetTargetNodeErrorState errorState) {
     LOG.error("\ncouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), getSourceNode());
   }
+
+  /**
+   * replaces this instance with ether StaticReference or with DynamicReference. (only static so far)
+   * removes reference in case of error.
+   */
+  public void validateAndReplace() {
+    SNode targetNode = getTargetNode();
+    if (targetNode != null) {
+      getSourceNode().setReferent(getRole(), targetNode);
+    } else {
+      getSourceNode().removeReference(this);
+    }
+  }
 }
