@@ -165,7 +165,10 @@ public class IntelligentInputUtil {
     if ("".equals(tail)) {
       return info.hasExactlyNActions(smallPattern, true, 1) && info.hasExactlyNActions(smallPattern, false, 1);
     }
-    return info.hasExactlyNActions(smallPattern, true, 1) && info.hasExactlyNActions(smallPattern+tail, false, 0);
+
+    // * has special meaning in completion patterns but we often want to complete multiplication
+    // operations
+    return info.hasExactlyNActions(smallPattern, true, 1) && (tail.equals("*") || info.hasExactlyNActions(smallPattern+tail, false, 0));
   }
 
   
