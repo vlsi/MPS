@@ -23,8 +23,6 @@ import java.util.List;
 
 public interface ITemplateGenerator {
 
-  IMessageHandler getMessageHandler();
-
   IAdaptiveProgressMonitor getProgressMonitor();
 
   SModel getSourceModel();

@@ -19,18 +19,18 @@ import java.util.HashSet;
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private IOperationContext myOperationContext;
   private IAdaptiveProgressMonitor myProgressMonitor;
-  private IMessageHandler myHandler;
+  private IMessageHandler myMessageHandler;
 
   private int myErrorsCount;
   private int myWarningsCount;
   private HashSet<SNode> myFailedRules = new HashSet<SNode>();
 
   protected AbstractTemplateGenerator(IOperationContext operationContext,
-                                   IAdaptiveProgressMonitor progressMonitor,
-                                   IMessageHandler handler) {
+                                      IAdaptiveProgressMonitor progressMonitor,
+                                      IMessageHandler messageHandler) {
     myOperationContext = operationContext;
     myProgressMonitor = progressMonitor;
-    myHandler = handler;
+    myMessageHandler = messageHandler;
   }
 
   public IOperationContext getOperationContext() {
@@ -38,14 +38,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   public IScope getScope() {
-    if(myOperationContext != null) {
+    if (myOperationContext != null) {
       return myOperationContext.getScope();
     }
     return null;
-  }
-
-  public IMessageHandler getMessageHandler() {
-    return myHandler;
   }
 
   public IAdaptiveProgressMonitor getProgressMonitor() {
@@ -76,7 +72,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   public void showErrorMessage(SNode sourceNode, SNode templateNode, SNode ruleNode, String message) {
-    myErrorsCount++;    
+    myErrorsCount++;
     if (ruleNode != null) {
       if (myFailedRules.contains(ruleNode)) {
         // do not show duplicating messages
@@ -101,7 +97,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   }
 
   private void addMessage(final Message msg) {
-    getMessageHandler().handle(msg);
+    myMessageHandler.handle(msg);
   }
 
   public int getErrorCount() {
