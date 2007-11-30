@@ -28,7 +28,7 @@ abstract class AbstractModelScanner {
       if (generators.size() == 0) continue;
       Generator generator = generators.get(0);
       if (generators.size() > 1) {
-        LOG.error("LANG '" + language.getNamespace() + "' has " + generators.size() + ". use 1st: '" + generator.getName() + "'");
+        LOG.warning("LANG '" + language.getNamespace() + "' has " + generators.size() + " generators. use 1st: '" + generator.getName() + "'");
       }
 //      collectGenerators(generator, scanTemplates, collectedGenerators, processedLanguages);
     }

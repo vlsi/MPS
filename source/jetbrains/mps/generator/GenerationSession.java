@@ -325,6 +325,7 @@ public class GenerationSession implements IGenerationSession {
       SModel model = currentOutputModel;
       model.validateLanguagesAndImports();
       return model;
+      // todo: if currentInputModel - transient, then remove?
     }
 
     // -----------------------

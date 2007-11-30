@@ -719,7 +719,7 @@ public class RuleUtil {
 //                inputReference.getRole(),
 //                outputNode,
 //                new ReferenceInfo_CopiedInputNode(outputNode, inputReference),
-//                myGenerator);
+//                myGenerator.getMappingData());
 //        outputNode.addReference(reference);
         // test--
       } else {

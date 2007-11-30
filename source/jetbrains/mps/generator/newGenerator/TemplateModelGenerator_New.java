@@ -191,7 +191,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     for (ReferenceInfo referenceInfo : referenceInfos) {
       checkMonitorCanceled();
       SNode outputTargetNode = referenceInfo.executeIndependentResolve(this);
-//      if (!referenceInfo.isSuccess()) {
       if (outputTargetNode == null) {
         newReferenceInfos.add(referenceInfo);
       } else {
@@ -205,7 +204,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       checkMonitorCanceled();
       for (ReferenceInfo referenceInfo : referenceInfos) {
         SNode outputTargetNode = referenceInfo.executeDependentResolve(this);
-//        if (!referenceInfo.isSuccess()) {
         if (outputTargetNode == null) {
           if (referenceInfo.isRequired()) {
             newReferenceInfos.add(referenceInfo);
@@ -226,7 +224,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       checkMonitorCanceled();
       // hack
       SNode outputTargetNode = unresolvedReferenceInfo.resolveAnyhow(this);
-//      if (!unresolvedReferenceInfo.isSuccess()) {
       if (outputTargetNode == null) {
         unresolvedReferenceInfo.showErrorMessage(this);
       } else {

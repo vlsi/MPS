@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.generator.template.IReferenceResolver;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 
@@ -11,6 +12,8 @@ import java.util.List;
  * Date: Jan 25, 2007
  */
 public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
+  private static Logger LOG = Logger.getLogger(ReferenceInfo_CopiedInputNode.class);
+
   private SReference myInputReference;
   private SNode myInputSourceNode;
   private SNode myInputTargetNode;
@@ -41,7 +44,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
    */
   public SNode doResolve(GeneratorMappingData mappingData) {
     SNode node = findInMaps(mappingData);
-    if(node != null) {
+    if (node != null) {
       return node;
     }
     return executeCustomResolver();
@@ -82,6 +85,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
     return null;
   }
+
   private SNode executeCustomResolver() {
     // try to resolve using custom referense resolver for source node concept
     // todo: some reference-resolvers can be executed on the 'executeIndependentResolve' step
@@ -100,5 +104,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   public void showErrorMessage(TemplateModelGenerator_New generator) {
     generator.showErrorMessage(getOutputNode(), "couldn't resolve reference '" + myInputReference.getRole() + "' in output node " + getOutputNode().getDebugText());
     generator.showErrorMessage(myInputSourceNode, "-- original reference was " + myInputSourceNode.getDebugText());
+//    LOG.error("couldn't resolve reference '" + myInputReference.getRole() + "' in output node " + getOutputNode().getDebugText(), getOutputNode());
+//    LOG.error("-- original reference was " + myInputSourceNode.getDebugText(), myInputSourceNode);
   }
 }
