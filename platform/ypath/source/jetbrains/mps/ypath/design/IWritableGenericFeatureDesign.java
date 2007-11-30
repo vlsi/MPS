@@ -10,9 +10,9 @@ import jetbrains.mps.smodel.SNode;
  */
 public interface IWritableGenericFeatureDesign<T> extends IGenericFeatureDesign<T>{
 
-    SNode replaceExpression(SNode srcExpr, T param, SNode range, SNode replaceExpr);
+    SNode replaceStatement(SNode srcExpr, T param, SNode range, SNode replaceExpr);
 
-    SNode removeExpression(SNode srcExpr, T param, SNode range);
+    SNode removeStatement(SNode srcExpr, T param, SNode range);
 
-    SNode insertExpression(SNode srcExpr, T param, SNode range, SNode insertExpr);
+    SNode insertStatement(SNode srcExpr, T param, SNode range, SNode insertExpr);
 }

@@ -1160,7 +1160,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1184658241359">
-    <property name="package" value="treePath.features" />
+    <property name="package" value="treePath.features.functions" />
     <property name="name" value="IParamFeatureFun" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1184658874084">
@@ -1332,6 +1332,12 @@
       <property name="role" value="cardinal" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1193057943814" resolveInfo="GenericFeatureCardinalFun" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196434554868">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="funHolders" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1196414630662" resolveInfo="GenericFeatureFunHolder" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1192620437851">
@@ -1556,9 +1562,6 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194545290314">
       <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
     </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196261261388">
-      <link role="intfc" targetNodeId="1196261217802" resolveInfo="IGenericFeatureFun" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1194545345035">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
@@ -1735,9 +1738,6 @@
     <property name="package" value="treePath.features.functions" />
     <property name="name" value="GenericFeatureRemoveFun" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196267240519">
-      <link role="intfc" targetNodeId="1196267225093" resolveInfo="IGenericFeatureRemoveFun" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420822402">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
@@ -1782,9 +1782,6 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1195421010025" resolveInfo="InsertExpressionFunctionParam" />
     </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196267434170">
-      <link role="intfc" targetNodeId="1196267419283" resolveInfo="IGenericFeatureInsertFun" />
-    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196267438447">
       <property name="value" value="insert" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -1824,6 +1821,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196261217802">
     <property name="package" value="treePath.features.functions" />
     <property name="name" value="IGenericFeatureReplaceFun" />
+    <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196418192301">
+      <link role="intfc" targetNodeId="1196418137410" resolveInfo="IGenericFeatureFun" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196263863763">
     <property name="package" value="treePath.features.functions" />
@@ -1851,17 +1851,230 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196264043851">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196263885337">
-      <link role="intfc" targetNodeId="1196261217802" resolveInfo="IGenericFeatureReplaceFun" />
-    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196267225093">
     <property name="package" value="treePath.features.functions" />
     <property name="name" value="IGenericFeatureRemoveFun" />
+    <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196418199257">
+      <link role="intfc" targetNodeId="1196418137410" resolveInfo="IGenericFeatureFun" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196267419283">
     <property name="package" value="treePath.features.functions" />
     <property name="name" value="IGenericFeatureInsertFun" />
+    <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196418180607">
+      <link role="intfc" targetNodeId="1196418137410" resolveInfo="IGenericFeatureFun" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196414630662">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="GenericFeatureFunHolder" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196418208994">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="functions" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1196418137410" resolveInfo="IGenericFeatureFun" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1196414881164">
+      <property name="name" value="byIndex" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196424942868">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196418137410">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="IGenericFeatureFun" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196419083973">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="GFReplaceFunFragment" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196419152721">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fun" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1194545263074" resolveInfo="GenericFeatureReplaceFun" />
+      <link role="specializedLink" targetNodeId="1196436493719" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196419147361">
+      <link role="intfc" targetNodeId="1196261217802" resolveInfo="IGenericFeatureReplaceFun" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196421655880">
+      <link role="intfc" targetNodeId="1196421500925" resolveInfo="IGenericFeatureFunFragment" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1196419521949">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="FragmentTypeEnum" />
+    <link role="memberDataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1196419521950">
+      <property name="internalValue" value="REPLACE_SINGLE" />
+      <property name="externalValue" value="replace single" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1196419564011">
+      <property name="internalValue" value="REPLACE_SELECTION" />
+      <property name="externalValue" value="replace selection" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1196419568550">
+      <property name="internalValue" value="REPLACE_ALL" />
+      <property name="externalValue" value="replace all" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1196420251775">
+      <property name="internalValue" value="REMOVE_SINGLE" />
+      <property name="externalValue" value="remove single" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1196420259670">
+      <property name="internalValue" value="REMOVE_SELECTION" />
+      <property name="externalValue" value="remove selection" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1196420267949">
+      <property name="internalValue" value="REMOVE_ALL" />
+      <property name="externalValue" value="remove all" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1196419570737">
+      <property name="internalValue" value="INSERT_AT_START" />
+      <property name="externalValue" value="insert at start" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1196419579750">
+      <property name="internalValue" value="INSERT_AT_END" />
+      <property name="externalValue" value="insert at end" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1196419581755">
+      <property name="internalValue" value="INSERT_BEFORE" />
+      <property name="externalValue" value="insert before" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1196419585696">
+      <property name="internalValue" value="INSERT_AFTER" />
+      <property name="externalValue" value="insert after" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196419740573">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="GFRemoveFunFragment" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196419777893">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fun" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1195420807526" resolveInfo="GenericFeatureRemoveFun" />
+      <link role="specializedLink" targetNodeId="1196436493719" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196419754317">
+      <link role="intfc" targetNodeId="1196267225093" resolveInfo="IGenericFeatureRemoveFun" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196421649396">
+      <link role="intfc" targetNodeId="1196421500925" resolveInfo="IGenericFeatureFunFragment" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196419817888">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="GFInsertFunFragment" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196419921832">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fun" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1195420956439" resolveInfo="GenericFeatureInsertFun" />
+      <link role="specializedLink" targetNodeId="1196436493719" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196419899824">
+      <link role="intfc" targetNodeId="1196267419283" resolveInfo="IGenericFeatureInsertFun" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196421525524">
+      <link role="intfc" targetNodeId="1196421500925" resolveInfo="IGenericFeatureFunFragment" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196421500925">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="IGenericFeatureFunFragment" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196436493719">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fragmentFun" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1196421564830">
+      <property name="name" value="fragmentType" />
+      <link role="dataType" targetNodeId="1196419521949" resolveInfo="FragmentTypeEnum" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196428984361">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="GFInsertFunWrapper" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196429060366">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fun" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1195420956439" resolveInfo="GenericFeatureInsertFun" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196429008113">
+      <link role="intfc" targetNodeId="1196267419283" resolveInfo="IGenericFeatureInsertFun" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196429024640">
+      <property name="value" value="insert" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196429029634">
+      <property name="value" value="implements the insert functionality" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196429049807">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196429147746">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="GFReplaceFunWrapper" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196429206726">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fun" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1194545263074" resolveInfo="GenericFeatureReplaceFun" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196429158900">
+      <link role="intfc" targetNodeId="1196261217802" resolveInfo="IGenericFeatureReplaceFun" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196429162799">
+      <property name="value" value="replace" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196429166226">
+      <property name="value" value="implements the replace functionality" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196429180371">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196429244438">
+    <property name="package" value="treePath.features.functions" />
+    <property name="name" value="GFRemoveFunWrapper" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196429285514">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="fun" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1195420807526" resolveInfo="GenericFeatureRemoveFun" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196429259147">
+      <link role="intfc" targetNodeId="1196267225093" resolveInfo="IGenericFeatureRemoveFun" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196429264040">
+      <property name="value" value="remove" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196429267872">
+      <property name="value" value="implements the remove functionality" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196429275007">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
   </node>
 </model>
 

@@ -27,8 +27,12 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.ypath.structure.FragmentTypeEnum;
+import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
@@ -251,37 +255,151 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IGenericFeatureReplaceFun_1196261294042(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IGenericFeatureFun_1196420410543(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeatureReplaceFun", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
-      result.addAll(defaultActions);
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          List<SNode> res = ListOperations.createList(new SNode[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFReplaceFunWrapper"),SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFRemoveFunWrapper"),SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFInsertFunWrapper")});
+          if(SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.ypath.structure.GenericFeatureFunHolder")) {
+            {
+              ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(parentNode, "functions", true));
+              try {
+                while(_zCursor.moveToNext()) {
+                  SNode foo = _zCursor.getCurrent();
+                  if(SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureReplaceFun")) {
+                    ListOperations.removeElement(res, SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFReplaceFunWrapper"));
+                  } else
+                  if(SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureRemoveFun")) {
+                    ListOperations.removeElement(res, SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFRemoveFunWrapper"));
+                  } else
+                  if(SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureInsertFun")) {
+                    ListOperations.removeElement(res, SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFInsertFunWrapper"));
+                  }
+                }
+              } finally {
+                _zCursor.release();
+              }
+            }
+          }
+          return res;
+        }
+
+      };
+      Iterable queryResult = (Iterable)calc.calculate();
+      for(Object item : queryResult) {
+        List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), parentNode, currentTargetNode, childSetter, operationContext.getScope());
+        result.addAll(defaultActions);
+      }
     }
     {
-      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeatureReplaceDemux", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
-      result.addAll(defaultActions);
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          List<FragmentTypeEnum> types = ListOperations.createList(new FragmentTypeEnum[]{FragmentTypeEnum.replace_single,FragmentTypeEnum.replace_selection,FragmentTypeEnum.replace_all,FragmentTypeEnum.remove_single,FragmentTypeEnum.remove_selection,FragmentTypeEnum.remove_all,FragmentTypeEnum.insert_at_start,FragmentTypeEnum.insert_at_end,FragmentTypeEnum.insert_before,FragmentTypeEnum.insert_after});
+          if(SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.ypath.structure.GenericFeatureFunHolder")) {
+            {
+              ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(parentNode, "functions", true));
+              try {
+                while(_zCursor1.moveToNext()) {
+                  SNode foo = _zCursor1.getCurrent();
+                  if(SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureFunFragment")) {
+                    ListOperations.removeElement(types, FragmentTypeEnum.parseValue(SPropertyOperations.getString_def(foo, "fragmentType", "REPLACE_SINGLE")));
+                  } else
+                  if(SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureReplaceFun")) {
+                    ListOperations.removeElement(types, FragmentTypeEnum.replace_single);
+                    ListOperations.removeElement(types, FragmentTypeEnum.replace_selection);
+                    ListOperations.removeElement(types, FragmentTypeEnum.replace_all);
+                  } else
+                  if(SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureRemoveFun")) {
+                    ListOperations.removeElement(types, FragmentTypeEnum.remove_single);
+                    ListOperations.removeElement(types, FragmentTypeEnum.remove_selection);
+                    ListOperations.removeElement(types, FragmentTypeEnum.remove_all);
+                  } else
+                  if(SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IGenericFeatureInsertFun")) {
+                    ListOperations.removeElement(types, FragmentTypeEnum.insert_at_start);
+                    ListOperations.removeElement(types, FragmentTypeEnum.insert_at_end);
+                    ListOperations.removeElement(types, FragmentTypeEnum.insert_before);
+                    ListOperations.removeElement(types, FragmentTypeEnum.insert_after);
+                  }
+                }
+              } finally {
+                _zCursor1.release();
+              }
+            }
+          }
+          return types;
+        }
+
+      };
+      Iterable<FragmentTypeEnum> queryResult = (Iterable)calc.calculate();
+      for(FragmentTypeEnum item : queryResult) {
+        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            FragmentTypeEnum type = ((FragmentTypeEnum)this.getParameterObject());
+            SNode fragment = null;
+            if(type == FragmentTypeEnum.replace_single || type == FragmentTypeEnum.replace_selection || type == FragmentTypeEnum.replace_all) {
+              fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFReplaceFunFragment", null);
+              SPropertyOperations.set(fragment, "fragmentType", type.getValue());
+            } else
+            if(type == FragmentTypeEnum.remove_single || type == FragmentTypeEnum.remove_selection || type == FragmentTypeEnum.remove_all) {
+              fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFRemoveFunFragment", null);
+              SPropertyOperations.set(fragment, "fragmentType", type.getValue());
+            } else
+            if(type == FragmentTypeEnum.insert_at_start || type == FragmentTypeEnum.insert_at_end || type == FragmentTypeEnum.insert_before || type == FragmentTypeEnum.insert_after) {
+              fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFInsertFunFragment", null);
+              SPropertyOperations.set(fragment, "fragmentType", type.getValue());
+            }
+            return fragment;
+          }
+
+          public String getMatchingText(String pattern) {
+            return ((FragmentTypeEnum)this.getParameterObject()).getName();
+          }
+
+        });
+      }
     }
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IGenericFeatureRemoveFun_1196267335160(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_GenericFeatureFunHolder_1196424373003(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeatureRemoveFun", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
-      result.addAll(defaultActions);
-    }
-    return result;
-  }
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IGenericFeatureInsertFun_1196267475625(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
-    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+          SNode hld = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GenericFeatureFunHolder", null);
+          SPropertyOperations.set(hld, "byIndex", "" + (true));
+          return hld;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "by index";
+        }
+
+      });
+    }
     {
-      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeatureInsertFun", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
-      result.addAll(defaultActions);
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+          SNode hld = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GenericFeatureFunHolder", null);
+          SPropertyOperations.set(hld, "byIndex", "" + (false));
+          return hld;
+        }
+
+        public String getMatchingText(String pattern) {
+          return "byelement";
+        }
+
+      });
     }
     return result;
   }

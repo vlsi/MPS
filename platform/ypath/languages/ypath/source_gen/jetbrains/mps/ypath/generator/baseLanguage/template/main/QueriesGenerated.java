@@ -445,30 +445,146 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature");
   }
 
-  public static boolean ifMacro_Condition_1194810996821(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1196434617040(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(node, "writable");
   }
 
-  public static boolean ifMacro_Condition_1196268544958(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "replaceFun", true), "jetbrains.mps.baseLanguage.structure.ConceptFunction");
+  public static boolean ifMacro_Condition_1196442565655(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate10(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate11(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196268648655(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fun = SLinkOperations.getTarget(node, "replaceFun", true);
-    return SNodeOperations.isInstanceOf(fun, "jetbrains.mps.ypath.structure.GenericFeatureReplaceDemux") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fun, "removeFun", true), "jetbrains.mps.baseLanguage.structure.ConceptFunction");
+  public static boolean ifMacro_Condition_1196442565756(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate12(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate13(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196442565872(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate14(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate15(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196442565981(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate16(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate17(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196435508014(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate18(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate19(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196436037113(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate20(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate21(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196441959084(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate22(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate23(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196442175260(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate24(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate25(null, null))));
   }
 
   public static boolean ifMacro_Condition_1195424433852(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(node, "writable");
   }
 
-  public static boolean ifMacro_Condition_1196268720240(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fun = SLinkOperations.getTarget(node, "replaceFun", true);
-    return SNodeOperations.isInstanceOf(fun, "jetbrains.mps.ypath.structure.GenericFeatureReplaceDemux") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(fun, "insertFun", true), "jetbrains.mps.baseLanguage.structure.ConceptFunction");
+  public static boolean ifMacro_Condition_1196462910322(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate26(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate27(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196462910425(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate28(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate29(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196462910543(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate30(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate31(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196462910653(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate32(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate33(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196462910753(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate34(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate35(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196462910853(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate36(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate37(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196462910969(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate38(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate39(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196462911078(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate40(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate41(null, null))));
   }
 
   public static boolean ifMacro_Condition_1195424511234(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(node, "writable");
+  }
+
+  public static boolean ifMacro_Condition_1196463629409(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate42(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate43(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196463773120(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate44(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate45(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196463934763(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate46(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate47(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196463986584(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate48(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate49(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196464033298(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate50(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate51(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196464276234(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate52(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate53(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196464276338(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate54(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate55(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196464276451(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate56(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate57(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196464276563(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate58(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate59(null, null))));
+  }
+
+  public static boolean ifMacro_Condition_1196464276675(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate60(null, null)));
+    return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate61(null, null))));
   }
 
   public static boolean ifMacro_Condition_1193058147469(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -476,11 +592,11 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1184679753545(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate10(null, null)));
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate62(null, null)));
   }
 
   public static List sourceNodesQuery_1184237003214(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate11(null, null)));
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate63(null, null)));
   }
 
   public static List sourceNodesQuery_1179331802560(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -542,7 +658,7 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1184762104927(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate12(null, null)));
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate64(null, null)));
   }
 
   public static SNode sourceNodeQuery_1172656490871(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -683,13 +799,13 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1184849691168(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate13(null, null)));
+    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate65(null, null)));
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
   }
 
   public static SNode sourceNodeQuery_1172650748986(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate14(null, null)));
+    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate66(null, null)));
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
   }
 
@@ -722,7 +838,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1179334580327(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate15(null, null)));
+    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate67(null, null)));
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
   }
 
@@ -1010,28 +1126,172 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "parameterType", true);
   }
 
-  public static SNode sourceNodeQuery_1194810971977(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode sourceNodeQuery_1196434617028(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "parameterType", true);
   }
 
-  public static SNode sourceNodeQuery_1196268550580(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "replaceFun", true), "body", true);
+  public static SNode sourceNodeQuery_1196442565609(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate68(null, null)));
+    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate69(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1196268653710(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "replaceFun", true), "removeFun", true), "body", true);
+  public static SNode sourceNodeQuery_1196442565702(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate70(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate71(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196442565807(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate72(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate73(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196442565927(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate74(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate75(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196435366125(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate76(null, null)));
+    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate77(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196436349439(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate78(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate79(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196442030564(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate80(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate81(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196442175205(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate82(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate83(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1195424413398(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "parameterType", true);
   }
 
-  public static SNode sourceNodeQuery_1196268724040(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "replaceFun", true), "insertFun", true), "body", true);
+  public static SNode sourceNodeQuery_1196462910275(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate84(null, null)));
+    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate85(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462910370(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate86(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate87(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462910477(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate88(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate89(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462910598(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate90(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate91(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462910707(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate92(null, null)));
+    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate93(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462910799(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate94(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate95(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462910904(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate96(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate97(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462911024(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate98(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate99(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1195424497113(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1196463629363(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate100(null, null)));
+    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate101(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196463773066(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate102(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate103(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196463934709(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate104(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate105(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196463986530(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate106(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate107(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196464033244(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate108(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate109(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196464276188(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate110(null, null)));
+    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate111(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196464276284(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate112(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate113(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196464276396(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate114(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate115(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196464276509(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate116(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate117(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196464276621(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate118(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate119(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1193058124500(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
