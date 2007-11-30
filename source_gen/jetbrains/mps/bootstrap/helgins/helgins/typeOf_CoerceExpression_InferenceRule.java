@@ -23,7 +23,7 @@ public class typeOf_CoerceExpression_InferenceRule implements InferenceRule_Runt
     {
       concept = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(pattern, "pattern", true), "patternNode", true));
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.bootstrap.helgins.helgins", "1195223916497", true), new QuotationClass_13().createNode(concept), argument, null, "jetbrains.mps.bootstrap.helgins.helgins", "1195223916495");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.bootstrap.helgins.helgins", "1195223916497", true), new QuotationClass_11().createNode(concept), argument, null, "jetbrains.mps.bootstrap.helgins.helgins", "1195223916495");
   }
 
   public String getApplicableConceptFQName() {
