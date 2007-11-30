@@ -714,14 +714,14 @@ public class RuleUtil {
       }
       if (inputTargetNode.getModel().equals(inputModel)) {
         // test++
-        myGenerator.addReferenceInfo(new ReferenceInfo_CopiedInputNode(outputNode, inputReference));
-//        PostponedReference reference = new PostponedReference(
-//                inputReference.getRole(),
-//                outputNode,
-//                new ReferenceInfo_CopiedInputNode(outputNode, inputReference),
-//                myGenerator.getMappingData(),
-//                myGenerator.getLogger());
-//        outputNode.addReference(reference);
+//        myGenerator.addReferenceInfo(new ReferenceInfo_CopiedInputNode(outputNode, inputReference));
+        PostponedReference reference = new PostponedReference(
+                inputReference.getRole(),
+                outputNode,
+                new ReferenceInfo_CopiedInputNode(outputNode, inputReference),
+                myGenerator.getMappingData(),
+                myGenerator.getLogger());
+        outputNode.addReference(reference);
         // test--
       } else {
         outputNode.setReferent(inputReference.getRole(), inputTargetNode);

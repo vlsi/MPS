@@ -181,8 +181,10 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     SReference inputReference = inputNode.getReference(reference.getRole());
     if (inputReference == null) return;
     ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(outputNode, inputReference);
+    //test++
     outputNode.removeReference(reference);
     addReferenceInfo(refInfo);
+    //test--
   }
 
   private void updateAllReferences() {

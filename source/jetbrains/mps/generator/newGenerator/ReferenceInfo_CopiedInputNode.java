@@ -12,7 +12,6 @@ import java.util.List;
  * Date: Jan 25, 2007
  */
 public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
-  private static Logger LOG = Logger.getLogger(ReferenceInfo_CopiedInputNode.class);
 
   private SReference myInputReference;
   private SNode myInputSourceNode;
