@@ -13,7 +13,7 @@ public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime imple
   }
 
   public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_8().createNode();
+    return new QuotationClass_11().createNode();
   }
 
   public String getApplicableConceptFQName() {

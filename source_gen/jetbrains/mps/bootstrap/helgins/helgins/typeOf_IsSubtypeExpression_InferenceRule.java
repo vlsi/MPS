@@ -13,7 +13,7 @@ public class typeOf_IsSubtypeExpression_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_10().createNode(), argument, "jetbrains.mps.bootstrap.helgins.helgins", "1178819919789");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_12().createNode(), argument, "jetbrains.mps.bootstrap.helgins.helgins", "1178819919789");
   }
 
   public String getApplicableConceptFQName() {

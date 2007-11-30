@@ -14,8 +14,8 @@ public class typeOf_ReportErrorStatement_InferenceRule implements InferenceRule_
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "errorString", true), "jetbrains.mps.bootstrap.helgins.helgins", "1185805422170", true), new QuotationClass_12().createNode(), SLinkOperations.getTarget(argument, "errorString", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805429689");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "nodeToReport", true), "jetbrains.mps.bootstrap.helgins.helgins", "1185805452077", true), new QuotationClass_13().createNode(), SLinkOperations.getTarget(argument, "nodeToReport", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805461349");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "errorString", true), "jetbrains.mps.bootstrap.helgins.helgins", "1185805422170", true), new QuotationClass_14().createNode(), SLinkOperations.getTarget(argument, "errorString", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805429689");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "nodeToReport", true), "jetbrains.mps.bootstrap.helgins.helgins", "1185805452077", true), new QuotationClass_15().createNode(), SLinkOperations.getTarget(argument, "nodeToReport", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1185805461349");
   }
 
   public String getApplicableConceptFQName() {
