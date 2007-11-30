@@ -8,17 +8,16 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.helgins.structure.Antiquotation;
 import jetbrains.mps.bootstrap.helgins.structure.Antiquotation_AnnotationLink;
-import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.bootstrap.helgins.structure.ReferenceAntiquotation;
-import jetbrains.mps.bootstrap.helgins.structure.ReferenceAntiquotation_AnnotationLink;
-import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink;
+import jetbrains.mps.quotation.structure.AbstractAntiquotation;
 import jetbrains.mps.patterns.structure.AsPattern_AnnotationLink;
+import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.patterns.structure.AsPattern;
 import jetbrains.mps.patterns.structure.Pattern;
 import jetbrains.mps.patterns.structure.PatternVariableDeclaration;
@@ -115,13 +114,8 @@ public class QueriesGenerated {
   }
 
   public static SNode referenceMacro_GetReferent_1190931377016(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    Antiquotation antiquotation = Antiquotation_AnnotationLink.getAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)));
-    return generator.findOutputNodeByInputNodeAndMappingName(antiquotation.getNode(), "antiquotations");
-  }
-
-  public static SNode referenceMacro_GetReferent_1196420324015(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    jetbrains.mps.quotation.structure.Antiquotation antiquotation = jetbrains.mps.quotation.structure.Antiquotation_AnnotationLink.getAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)));
-    return generator.findOutputNodeByInputNodeAndMappingName(antiquotation.getNode(), "antiquotations");
+    SNode antiquotation = node.getAttribute(Antiquotation_AnnotationLink.ANTIQUOTATION);
+    return generator.findOutputNodeByInputNodeAndMappingName(antiquotation, "antiquotations");
   }
 
   public static SNode referenceMacro_GetReferent_1190931377055(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
@@ -138,15 +132,8 @@ public class QueriesGenerated {
   public static SNode referenceMacro_GetReferent_1190931377315(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     String refRole = node.getProperty("referentRole");
     SNode mainNode = node.getReferent("mainNode");
-    ReferenceAntiquotation refAntiq = ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(mainNode)), refRole);
-    return generator.findOutputNodeByInputNodeAndMappingName(refAntiq.getExpression().getNode(), "antiquotations");
-  }
-
-  public static SNode referenceMacro_GetReferent_1196420388452(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    String refRole = node.getProperty("referentRole");
-    SNode mainNode = node.getReferent("mainNode");
-    jetbrains.mps.quotation.structure.ReferenceAntiquotation refAntiq = jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(mainNode)), refRole);
-    return generator.findOutputNodeByInputNodeAndMappingName(refAntiq.getExpression().getNode(), "antiquotations");
+    SNode refAntiq = mainNode.getLinkAttribute(ReferenceAntiquotation_AnnotationLink.REFERENCE_ANTIQUOTATION, refRole);
+    return generator.findOutputNodeByInputNodeAndMappingName(refAntiq.getChild(AbstractAntiquotation.EXPRESSION), "antiquotations");
   }
 
   public static SNode referenceMacro_GetReferent_1190931377499(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
@@ -223,31 +210,19 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1190931377036(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return Antiquotation_AnnotationLink.getAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node))) != null;
-  }
-
-  public static boolean ifMacro_Condition_1196420324035(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return Antiquotation_AnnotationLink.getAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node))) != null;
+    return node.getAttribute(Antiquotation_AnnotationLink.ANTIQUOTATION) != null;
   }
 
   public static boolean ifMacro_Condition_1190931671231(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     String refRole = node.getProperty("referentRole");
     SNode mainNode = node.getReferent("mainNode");
-    boolean b1 = ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(mainNode)), refRole) == null;
-    boolean b2 = jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(mainNode)), refRole) == null;
-    return b1 && b2;
+    return mainNode.getLinkAttribute(ReferenceAntiquotation_AnnotationLink.REFERENCE_ANTIQUOTATION, refRole) == null;
   }
 
   public static boolean ifMacro_Condition_1190931377347(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     String refRole = node.getProperty("referentRole");
     SNode mainNode = node.getReferent("mainNode");
-    return ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(mainNode)), refRole) != null;
-  }
-
-  public static boolean ifMacro_Condition_1196420388484(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    String refRole = node.getProperty("referentRole");
-    SNode mainNode = node.getReferent("mainNode");
-    return jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(mainNode)), refRole) != null;
+    return mainNode.getLinkAttribute(ReferenceAntiquotation_AnnotationLink.REFERENCE_ANTIQUOTATION, refRole) != null;
   }
 
   public static boolean ifMacro_Condition_1190931377679(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -293,7 +268,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1190931378075(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return Antiquotation_AnnotationLink.getAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node))) == null;
+    return node.getAttribute(jetbrains.mps.quotation.structure.Antiquotation_AnnotationLink.ANTIQUOTATION) == null;
   }
 
   public static List sourceNodesQuery_1176737411271(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
