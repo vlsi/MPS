@@ -96,7 +96,19 @@ public class ModuleMaker {
     int errorCount = 0;
 
     for (CompilationResult cr : compiler.getCompilationResults()) {
-      if (cr.getErrors() != null) {      
+      if (cr.getErrors() != null) {              
+        for (CategorizedProblem cp : cr.getErrors()) {
+
+
+          String messageStirng = new String(cp.getOriginatingFileName()) + " : " + cp.getMessage();
+
+          if (cp.isWarning()) {
+            LOG.warning(messageStirng);            
+          } else {
+            LOG.error(messageStirng);
+          }
+        }
+        
         errorCount += cr.getErrors().length;
       }
 
