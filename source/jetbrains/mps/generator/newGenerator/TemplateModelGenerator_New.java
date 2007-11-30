@@ -180,10 +180,19 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     if (inputNode == null) return;
     SReference inputReference = inputNode.getReference(reference.getRole());
     if (inputReference == null) return;
+    outputNode.removeReference(reference);
     ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(outputNode, inputReference);
     //test++
-    outputNode.removeReference(reference);
-    addReferenceInfo(refInfo);
+//    addReferenceInfo(refInfo);
+    PostponedReference postponedReference = new PostponedReference(
+            inputReference.getRole(),
+            outputNode,
+            refInfo,
+            getMappingData(),
+            getLogger());
+    outputNode.addReference(postponedReference);
+    // todo: probably, we can do it without checking if same Id can be found in output model.
+    // todo: probably, we can eliminate this method at all and create postponed refs while copiing model
     //test--
   }
 
