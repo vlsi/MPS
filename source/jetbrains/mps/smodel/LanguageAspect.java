@@ -3,11 +3,24 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.projectLanguage.structure.Editor;
 import jetbrains.mps.projectLanguage.structure.LanguageDescriptor;
 import jetbrains.mps.projectLanguage.structure.Model;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.ide.BootstrapLanguages;
+
+import java.util.Collections;
+import java.util.List;
 
 public enum LanguageAspect {
   STRUCTURE("structure") {
     protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
       ld.setStructureModel(m);
+    }
+
+    protected List<String> getModelsToImport(Language l) {
+      return CollectionUtil.asList();
+    }
+
+    protected List<String> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapLanguages.getInstance().getStructureLanguage().getNamespace());
     }
 
     public SModelDescriptor get(Language l) {
@@ -27,6 +40,10 @@ public enum LanguageAspect {
       ld.addEditor(e);
     }
 
+    protected List<String> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapLanguages.getInstance().getEditorLanguage().getNamespace());
+    }
+
     public SModelDescriptor get(Language l) {
       return l.getEditorModelDescriptor();
     }
@@ -35,6 +52,10 @@ public enum LanguageAspect {
   ACTIONS("actions") {
     protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
       ld.setActionsModel(m);
+    }
+
+    protected List<String> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapLanguages.getInstance().getActionsLanguage().getNamespace());
     }
 
     public SModelDescriptor get(Language l) {
@@ -47,6 +68,10 @@ public enum LanguageAspect {
       ld.setConstraintsModel(m);
     }
 
+    protected List<String> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapLanguages.getInstance().getConstraintsLanguage().getNamespace());
+    }
+
     public SModelDescriptor get(Language l) {
       return l.getConstraintsModelDescriptor();
     }
@@ -57,12 +82,23 @@ public enum LanguageAspect {
       ld.setHelginsTypesystemModel(m);
     }
 
+    protected List<String> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapLanguages.getInstance().getHelginsLanguage().getNamespace());
+    }
+
+
     public SModelDescriptor get(Language l) {
       return l.getHelginsTypesystemModelDescriptor();
     }
   },
 
   SCRIPTS("scripts") {
+
+    protected List<String> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapLanguages.getInstance().getIdeScriptsLanguage().getNamespace());
+    }
+
+
     protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
       ld.setScriptsModel(m);
     }
@@ -73,6 +109,10 @@ public enum LanguageAspect {
   },
 
   DOCUMENTATION("documentation") {
+    protected List<String> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapLanguages.getInstance().getBookLanguage().getNamespace());
+    }
+
     protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
       ld.setDocumentationModel(m);
     }
@@ -83,6 +123,10 @@ public enum LanguageAspect {
   },
 
   INTENTIONS("intentions") {
+    protected List<String> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapLanguages.getInstance().getIntentionsLanguage().getNamespace());
+    }
+
     protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
       ld.setIntentionsModel(m);
     }
@@ -93,6 +137,10 @@ public enum LanguageAspect {
   },
 
   CFA("cfa") {
+    protected List<String> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapLanguages.getInstance().getCFALanguage().getNamespace());
+    }
+
     protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
       ld.setCfaModel(m);
     }
@@ -121,6 +169,15 @@ public enum LanguageAspect {
     assert get(l) == null;
     
     SModel sm = l.getLanguageDescriptor().getModel();
+
+    for (String lang : getLanguagesToImport(l)) {
+      sm.addLanguage(lang);
+    }
+
+    for (String model : getModelsToImport(l)) {
+      sm.addImportedModel(SModelUID.fromString(model));
+    }
+
     SModelDescriptor model = l.createModel(getModuleUID(l), l.getModelRoots().get(0));
 
     Model m = Model.newInstance(sm);
@@ -128,6 +185,16 @@ public enum LanguageAspect {
 
     registerInLanguageDescriptor(l.getLanguageDescriptor(), m);
     l.setLanguageDescriptor(l.getLanguageDescriptor());
+  }
+
+  protected List<String> getLanguagesToImport(Language l) {
+    return CollectionUtil.asList();
+  }
+
+  protected List<String> getModelsToImport(Language l) {
+    return CollectionUtil.asList(
+      l.getStructureModelDescriptor().getModelUID().toString()
+    );
   }
 
   private SModelUID getModuleUID(Language l) {
