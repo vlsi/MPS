@@ -56,6 +56,8 @@ public class GenerationSession implements IGenerationSession {
   private GenerationSessionContext myCurrentContext;
   private List<GenerationSessionContext> mySavedContexts = new LinkedList<GenerationSessionContext>();
 
+  private static List<SModelDescriptor> myWasteModels = new ArrayList<SModelDescriptor>();
+
   private int myInvocationCount = 0;
   private int myTransientModelsCount = 0;
 
@@ -87,7 +89,7 @@ public class GenerationSession implements IGenerationSession {
         public void addLogEntry(LogEntry e) {
           Object o = e.getHintObject();
           if (o instanceof SNode) {
-            if  (myCurrentContext != null) {
+            if (myCurrentContext != null) {
               myCurrentContext.addTransientModelToKeep(((SNode) o).getModel());
             } else {
               LOG.error("current context is null");
@@ -104,6 +106,7 @@ public class GenerationSession implements IGenerationSession {
   }
 
   public void discardTransients() {
+    myWasteModels.clear();
     GenerationSessionContext lastContext = myCurrentContext;
     setGenerationSessionContext(null);
     if (myDiscardTransients) {
@@ -296,10 +299,11 @@ public class GenerationSession implements IGenerationSession {
           addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getUID() + "' --> '" + currentInputModel_clone.getUID() + "'");
           CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, generator.getScope());
           // probably we can forget about former input model here
-          if (myDiscardTransients && currentInputModel.getModelDescriptor().isTransient() && !myCurrentContext.isTransientModelToKeep(currentInputModel)) {
-            addMessage(MessageKind.INFORMATION, "remove model (0) '" + currentInputModel.getUID() + "'");
-            SModelRepository.getInstance().removeModelDescriptor(currentInputModel.getModelDescriptor());
-          }
+//          if (myDiscardTransients && currentInputModel.getModelDescriptor().isTransient() && !myCurrentContext.isTransientModelToKeep(currentInputModel)) {
+//            addMessage(MessageKind.INFORMATION, "remove model (0) '" + currentInputModel.getUID() + "'");
+//            SModelRepository.getInstance().removeModelDescriptor(currentInputModel.getModelDescriptor());
+//          }
+          addWasteModel(currentInputModel.getModelDescriptor());
           currentInputModel = currentInputModel_clone;
           break;
         }
@@ -322,10 +326,9 @@ public class GenerationSession implements IGenerationSession {
     currentInputModel.setLoading(false);
     boolean somethingHasBeenGenerated = generator.doPrimaryMapping(currentInputModel, currentOutputModel);
     if (!somethingHasBeenGenerated) {
-      SModel model = currentOutputModel;
-      model.validateLanguagesAndImports();
-      return model;
-      // todo: if currentInputModel - transient, then remove?
+      currentOutputModel.validateLanguagesAndImports();
+      addWasteModel(currentInputModel.getModelDescriptor());
+      return currentOutputModel;
     }
 
     // -----------------------
@@ -340,14 +343,15 @@ public class GenerationSession implements IGenerationSession {
       generationContext.replaceInputModel(currentOutputModel);
       SModel transientModel = createTransientModel(modelsLongName, module);
       // probably we can forget about former input model here
-      if (myDiscardTransients && currentInputModel.getModelDescriptor().isTransient() && !myCurrentContext.isTransientModelToKeep(currentInputModel)) {
-        addMessage(MessageKind.INFORMATION, "remove model (1) '" + currentInputModel.getUID() + "'");
-        SModelRepository.getInstance().removeModelDescriptor(currentInputModel.getModelDescriptor());
-      }
+//      if (myDiscardTransients && currentInputModel.getModelDescriptor().isTransient() && !myCurrentContext.isTransientModelToKeep(currentInputModel)) {
+//        addMessage(MessageKind.INFORMATION, "remove model (1) '" + currentInputModel.getUID() + "'");
+//        SModelRepository.getInstance().removeModelDescriptor(currentInputModel.getModelDescriptor());
+//      }
+      addWasteModel(currentInputModel.getModelDescriptor());
       currentInputModel = currentOutputModel;
       currentInputModel.setLoading(false);
       if (!generator.doSecondaryMapping(currentInputModel, transientModel)) {
-        addMessage(MessageKind.INFORMATION, "remove model (2) '" + transientModel.getUID() + "'");
+        addMessage(MessageKind.INFORMATION, "remove empty model '" + transientModel.getUID() + "'");
         SModelRepository.getInstance().removeModelDescriptor(transientModel.getModelDescriptor());
         myTransientModelsCount--;
         break;
@@ -376,6 +380,7 @@ public class GenerationSession implements IGenerationSession {
       TemplateGenUtil.executeMappingScript(postMappingScript, currentOutputModel, generator);
     }
 
+    cleanupWasteModels();
     return currentOutputModel;
   }
 
@@ -384,6 +389,23 @@ public class GenerationSession implements IGenerationSession {
     myTransientModelsCount++;
     transientModel.getSModel().setLoading(true); // we dont need any events to be casted
     return transientModel.getSModel();
+  }
+
+  private void addWasteModel(SModelDescriptor model) {
+    myWasteModels.add(model);
+    cleanupWasteModels();
+  }
+
+  private void cleanupWasteModels() {
+    // we need previous model (for postponed references resolving. precisely, for navigation from error messages)
+    while (myWasteModels.size() > 1) {
+      SModelDescriptor wasteModel = myWasteModels.get(0);
+      if (myDiscardTransients && wasteModel.isTransient() && !myCurrentContext.isTransientModelToKeep(wasteModel.getSModel())) {
+        addMessage(MessageKind.INFORMATION, "remove waste model '" + wasteModel.getModelUID() + "'");
+        SModelRepository.getInstance().removeModelDescriptor(wasteModel);
+      }
+      myWasteModels.remove(0);
+    }
   }
 
   private void addMessage(final Message message) {
@@ -466,7 +488,6 @@ public class GenerationSession implements IGenerationSession {
         uidsToAdd.add(generator.getModuleUID());
       }
     }
-
 
     // add models accessible from the invokation contextshould be accessible from our solution - add all model roots
     IModule invocationModule = myInvocationContext.getModule();
