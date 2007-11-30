@@ -29,6 +29,11 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1174385644139">
       <property name="drawBorder" value="false" />
       <link role="keyMap" targetNodeId="1174386640467" resolveInfo="_CreateAntiquotationKeyMap" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196426111735">
+        <property name="selectable" value="false" />
+        <property name="text" value="!" />
+        <property name="textFgColor" value="red" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1174385644140">
         <property name="textBgColor" value="cyan" />
         <property name="text" value="&lt;" />
@@ -83,6 +88,11 @@
     <link role="conceptDeclaration" targetNodeId="1.1174385773334" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1174386256289">
       <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196426169796">
+        <property name="text" value="!" />
+        <property name="selectable" value="false" />
+        <property name="textFgColor" value="red" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1174386256290">
         <property name="textFgColor" value="query" />
         <property name="drawBorder" value="false" />
@@ -277,6 +287,11 @@
     <link role="conceptDeclaration" targetNodeId="1.1174386285668" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1174386439036">
       <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196426144731">
+        <property name="text" value="!" />
+        <property name="selectable" value="false" />
+        <property name="textFgColor" value="red" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1174386439037">
         <property name="textFgColor" value="query" />
         <property name="drawBorder" value="false" />
@@ -437,6 +452,11 @@
     <link role="conceptDeclaration" targetNodeId="1.1174386518649" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1174386589840">
       <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196426228096">
+        <property name="text" value="!" />
+        <property name="selectable" value="false" />
+        <property name="textFgColor" value="red" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1174386589841">
         <property name="textFgColor" value="query" />
         <property name="drawBorder" value="false" />

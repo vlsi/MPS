@@ -29,10 +29,10 @@ public class ConvertGivetypeToTypeOfIntention_Intention extends BaseIntention im
   }
 
   public void execute(SNode node, EditorContext editorContext) {
-    SNode equationStatement = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement");
-    SNode typeOfExpression = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
-    SNode leftTypeClause = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
-    SNode rightTypeClause = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause");
+    SNode equationStatement = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement", null);
+    SNode typeOfExpression = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression", null);
+    SNode leftTypeClause = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause", null);
+    SNode rightTypeClause = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause", null);
     SLinkOperations.setTarget(equationStatement, "leftExpression", leftTypeClause, true);
     SLinkOperations.setTarget(equationStatement, "rightExpression", rightTypeClause, true);
     SLinkOperations.setTarget(leftTypeClause, "normalType", typeOfExpression, true);
