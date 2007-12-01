@@ -48,26 +48,10 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196423160007">
-    <link role="conceptDeclaration" targetNodeId="1.1196422876351" resolveInfo="ComplexConstant" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196423164649">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1196423169620">
-        <link role="relationDeclaration" targetNodeId="1.1196423069800" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196423181607">
-        <property name="text" value="+" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1196423201265">
-        <link role="relationDeclaration" targetNodeId="1.1196423085582" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196423211377">
-        <property name="text" value="*" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196423218723">
-        <property name="text" value="i" />
-        <link role="styleClass" targetNodeId="3.1186415544875" resolveInfo="keyword" />
-      </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196434294865">
+    <link role="conceptDeclaration" targetNodeId="1.1196434001121" resolveInfo="ImagineI" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196434300883">
+      <property name="text" value="i" />
     </node>
   </node>
 </model>

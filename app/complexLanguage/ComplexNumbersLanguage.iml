@@ -6,10 +6,12 @@
       <sourceFolder url="file://$MODULE_DIR$/languages/complex/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.complex.runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/sandbox/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/sources" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
+    <orderEntry type="library" name="JUnit4" level="project" />
     <orderEntryProperties />
   </component>
 </module>

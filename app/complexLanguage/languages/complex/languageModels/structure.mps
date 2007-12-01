@@ -11,7 +11,7 @@
   <import index="3" modelUID="jetbrains.mps.complex.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196259557930">
     <property name="name" value="ComplexType" />
-    <link role="extends" targetNodeId="2.1070534513062" resolveInfo="DoubleType" />
+    <link role="extends" targetNodeId="2.1164118113764" resolveInfo="PrimitiveType" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196259984903">
       <property name="value" value="complex" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -111,20 +111,16 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196422876351">
-    <property name="name" value="ComplexConstant" />
-    <link role="extends" targetNodeId="1196259557930" resolveInfo="ComplexType" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196423069800">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="re" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196434001121">
+    <property name="name" value="ImaginaryUnit" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196434710307">
+      <property name="value" value="i" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196423085582">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="im" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196436438637">
+      <property name="value" value="complex imaginary unit" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
     </node>
   </node>
 </model>
