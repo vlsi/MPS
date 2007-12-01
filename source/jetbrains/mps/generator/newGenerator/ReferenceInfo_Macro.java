@@ -42,7 +42,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return null;
   }
 
-  public SNode doResolve(GeneratorMappingData generatorMappingData) {
+  public SNode doResolve(TemplateModelGenerator_New generator) {
     throw new RuntimeException("not supported");
   }
 

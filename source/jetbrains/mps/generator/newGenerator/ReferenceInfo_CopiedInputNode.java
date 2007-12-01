@@ -1,7 +1,6 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.generator.template.IReferenceResolver;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 
@@ -26,7 +25,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   }
 
   public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
-    return findInMaps(((TemplateModelGenerator_New) generator).getMappingData());
+    return findInMaps(generator);
   }
 
   public SNode executeDependentResolve(TemplateModelGenerator_New generator) {
@@ -40,16 +39,17 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
   /**
    * test postponed references
+   * @param generator
    */
-  public SNode doResolve(GeneratorMappingData mappingData) {
-    SNode node = findInMaps(mappingData);
+  public SNode doResolve(TemplateModelGenerator_New generator) {
+    SNode node = findInMaps(generator);
     if (node != null) {
       return node;
     }
     return executeCustomResolver();
   }
 
-  private SNode findInMaps(GeneratorMappingData generator) {
+  private SNode findInMaps(TemplateModelGenerator_New generator) {
     {
       // output target node might has been copied (reduced) from the input target node
       SNode outputTargetNode = generator.findCopiedOutputNodeForInputNode(myInputTargetNode);

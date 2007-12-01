@@ -19,14 +19,14 @@ public class PostponedReference extends SReference {
   private ReferenceInfo myReferenceInfo;
   private SNode myTargetNode;
   private boolean myFailed;
-  private GeneratorMappingData myGeneratorMappingData;
+  private TemplateModelGenerator_New myGenerator;
   private GeneratorLogger myGeneratorLogger;
 
 
-  public PostponedReference(String role, SNode sourceNode, ReferenceInfo referenceInfo, GeneratorMappingData mappingData, GeneratorLogger generatorLogger) {
+  public PostponedReference(String role, SNode sourceNode, ReferenceInfo referenceInfo, TemplateModelGenerator_New generator, GeneratorLogger generatorLogger) {
     super(role, sourceNode);
     myReferenceInfo = referenceInfo;
-    myGeneratorMappingData = mappingData;
+    myGenerator = generator;
     myGeneratorLogger = generatorLogger;
   }
 
@@ -55,7 +55,7 @@ public class PostponedReference extends SReference {
       return null;
     }
 
-    myTargetNode = myReferenceInfo.doResolve(myGeneratorMappingData);
+    myTargetNode = myReferenceInfo.doResolve(myGenerator);
     if (myTargetNode == null) {
       myFailed = true;
       myReferenceInfo.showErrorMessage(myGeneratorLogger);
@@ -67,7 +67,7 @@ public class PostponedReference extends SReference {
 
     // release resources
     myReferenceInfo = null;
-    myGeneratorMappingData = null;
+    myGenerator = null;
     myGeneratorLogger = null;
     return myTargetNode;
   }

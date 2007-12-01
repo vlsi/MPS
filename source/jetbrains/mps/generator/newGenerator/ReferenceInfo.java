@@ -45,8 +45,9 @@ public abstract class ReferenceInfo {
 
   /**
    * test
+   * @param generator
    */
-  public abstract SNode doResolve(GeneratorMappingData generatorMappingData);
+  public abstract SNode doResolve(TemplateModelGenerator_New generator);
 
   public abstract boolean isRequired();
 

@@ -96,7 +96,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     return outputTargetNode;
   }
 
-  public SNode doResolve(GeneratorMappingData generatorMappingData) {
+  public SNode doResolve(TemplateModelGenerator_New generator) {
     throw new RuntimeException("not supported");
   }
 

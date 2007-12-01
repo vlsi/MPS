@@ -188,7 +188,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
             inputReference.getRole(),
             outputNode,
             refInfo,
-            getMappingData(),
+            this,
             getLogger());
     outputNode.addReference(postponedReference);
     // todo: probably, we can do it without checking if same Id can be found in output model.
