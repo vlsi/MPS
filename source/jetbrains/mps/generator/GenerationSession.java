@@ -56,8 +56,6 @@ public class GenerationSession implements IGenerationSession {
   private GenerationSessionContext myCurrentContext;
   private List<GenerationSessionContext> mySavedContexts = new LinkedList<GenerationSessionContext>();
 
-  private static List<SModelDescriptor> myWasteModels = new ArrayList<SModelDescriptor>();
-
   private int myInvocationCount = 0;
   private int myTransientModelsCount = 0;
 
@@ -105,7 +103,6 @@ public class GenerationSession implements IGenerationSession {
   }
 
   public void discardTransients() {
-    myWasteModels.clear();
     GenerationSessionContext lastContext = myCurrentContext;
     setGenerationSessionContext(null);
     if (myDiscardTransients) {
@@ -306,11 +303,7 @@ public class GenerationSession implements IGenerationSession {
           addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getUID() + "' --> '" + currentInputModel_clone.getUID() + "'");
           CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, generator.getScope());
           // probably we can forget about former input model here
-//          if (myDiscardTransients && currentInputModel.getModelDescriptor().isTransient() && !myCurrentContext.isTransientModelToKeep(currentInputModel)) {
-//            addMessage(MessageKind.INFORMATION, "remove model (0) '" + currentInputModel.getUID() + "'");
-//            SModelRepository.getInstance().removeModelDescriptor(currentInputModel.getModelDescriptor());
-//          }
-          addWasteModel(currentInputModel.getModelDescriptor());
+          recycleWasteModel(currentInputModel);
           currentInputModel = currentInputModel_clone;
           break;
         }
@@ -334,7 +327,7 @@ public class GenerationSession implements IGenerationSession {
     boolean somethingHasBeenGenerated = generator.doPrimaryMapping(currentInputModel, currentOutputModel);
     if (!somethingHasBeenGenerated) {
       currentOutputModel.validateLanguagesAndImports();
-      addWasteModel(currentInputModel.getModelDescriptor());
+      recycleWasteModel(currentInputModel);
       return currentOutputModel;
     }
 
@@ -350,11 +343,7 @@ public class GenerationSession implements IGenerationSession {
       generationContext.replaceInputModel(currentOutputModel);
       SModel transientModel = createTransientModel(modelsLongName, module);
       // probably we can forget about former input model here
-//      if (myDiscardTransients && currentInputModel.getModelDescriptor().isTransient() && !myCurrentContext.isTransientModelToKeep(currentInputModel)) {
-//        addMessage(MessageKind.INFORMATION, "remove model (1) '" + currentInputModel.getUID() + "'");
-//        SModelRepository.getInstance().removeModelDescriptor(currentInputModel.getModelDescriptor());
-//      }
-      addWasteModel(currentInputModel.getModelDescriptor());
+      recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
       currentInputModel.setLoading(false);
       if (!generator.doSecondaryMapping(currentInputModel, transientModel)) {
@@ -387,7 +376,6 @@ public class GenerationSession implements IGenerationSession {
       TemplateGenUtil.executeMappingScript(postMappingScript, currentOutputModel, generator);
     }
 
-    cleanupWasteModels();
     return currentOutputModel;
   }
 
@@ -398,20 +386,13 @@ public class GenerationSession implements IGenerationSession {
     return transientModel.getSModel();
   }
 
-  private void addWasteModel(SModelDescriptor model) {
-    myWasteModels.add(model);
-    cleanupWasteModels();
-  }
-
-  private void cleanupWasteModels() {
-    // we need previous model (for postponed references resolving. precisely, for navigation from error messages)
-    while (myWasteModels.size() > 1) {
-      SModelDescriptor wasteModel = myWasteModels.get(0);
-      if (myDiscardTransients && wasteModel.isTransient() && !myCurrentContext.isTransientModelToKeep(wasteModel.getSModel())) {
-        addMessage(MessageKind.INFORMATION, "remove waste model '" + wasteModel.getModelUID() + "'");
-        SModelRepository.getInstance().removeModelDescriptor(wasteModel);
+  private void recycleWasteModel(SModel model) {
+    SModelDescriptor md = model.getModelDescriptor();
+    if (md != null) {
+      if (myDiscardTransients && md.isTransient() && !myCurrentContext.isTransientModelToKeep(model)) {
+        addMessage(MessageKind.INFORMATION, "remove waste model '" + model.getUID() + "'");
+        SModelRepository.getInstance().removeModelDescriptor(md);
       }
-      myWasteModels.remove(0);
     }
   }
 

@@ -46,6 +46,8 @@ public class PostponedReference extends SReference {
     throw new RuntimeException("not supported method");
   }
 
+//  static boolean tested;
+
   public SNode getTargetNode() {
     if (myTargetNode != null) {
       return myTargetNode;
@@ -58,6 +60,11 @@ public class PostponedReference extends SReference {
       myFailed = true;
       myReferenceInfo.showErrorMessage(myGeneratorLogger);
     }
+//    if(!tested && myReferenceInfo.getInputNode().getModel().getStereotype().length() > 0) {
+//      tested = true;
+//      myReferenceInfo.showErrorMessage(myGeneratorLogger);
+//    }
+
     // release resources
     myReferenceInfo = null;
     myGeneratorMappingData = null;
