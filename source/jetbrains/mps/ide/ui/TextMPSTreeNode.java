@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
  * @author Kostik
  */
 public class TextMPSTreeNode extends MPSTreeNode {
-  private String myText;
+  protected String myText;
 
   public TextMPSTreeNode(String text, IOperationContext operationContext) {
     super(operationContext);
