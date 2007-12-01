@@ -28,17 +28,16 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private SModel myOutputModel;
   private ArrayList<SNode> myRootsNotToCopy = new ArrayList<SNode>();
   private ArrayList<ReferenceInfo> myReferenceInfos = new ArrayList<ReferenceInfo>();
-  //  private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
+  private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
   private HashMap<Pair<String, SNode>, SNode> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<Pair<String, SNode>, SNode> myMappingNameAndOutputNodeToInputNode = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<SNode, SNode> myOutputNodeToTemplateNodeMap = new HashMap<SNode, SNode>();
-//  private HashMap<SNode, Pair<SNode, Boolean>> myTemplateNodeToOutputNodeMap = new HashMap<SNode, Pair<SNode, Boolean>>();
-  //  private HashMap<SNode, List<SNode>> myInputeNodeToTopOutputNodesMap = new HashMap<SNode, List<SNode>>();
+  private HashMap<SNode, Pair<SNode, Boolean>> myTemplateNodeToOutputNodeMap = new HashMap<SNode, Pair<SNode, Boolean>>();
+  private HashMap<SNode, List<SNode>> myInputeNodeToTopOutputNodesMap = new HashMap<SNode, List<SNode>>();
   private DelayedChanges myDelayedChanges = new DelayedChanges();
   private TemplateSwitchGraph myTemplateSwitchGraph;
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
   private boolean myChanged = false;
-  private GeneratorMappingData myMappingData;
 
   public TemplateModelGenerator_New(GenerationSessionContext operationContext,
                                     IAdaptiveProgressMonitor progressMonitor,
@@ -65,19 +64,18 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   public void reset(SModel inputModel, SModel outputModel) {
     myRootsNotToCopy.clear();
     myReferenceInfos.clear();
-//    myTemplateNodeAndInputNodeToOutputNodeMap.clear();
+    myTemplateNodeAndInputNodeToOutputNodeMap.clear();
     myMappingNameAndInputNodeToOutputNodeMap.clear();
     myMappingNameAndOutputNodeToInputNode.clear();
     myOutputNodeToTemplateNodeMap.clear();
-//    myTemplateNodeToOutputNodeMap.clear();
-//    myInputeNodeToTopOutputNodesMap.clear();
+    myTemplateNodeToOutputNodeMap.clear();
+    myInputeNodeToTopOutputNodesMap.clear();
     myDelayedChanges = new DelayedChanges();
     myTemplateSwitchGraph = null;
     myTemplateSwitchToListCache = null;
     myChanged = false;
     myInputModel = inputModel;
     myOutputModel = outputModel;
-    myMappingData = new GeneratorMappingData(inputModel, outputModel);
   }
 
   private void doMapping(boolean isPrimary) {
@@ -288,29 +286,27 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   }
 
   public void addOutputNodeByTemplateNode(SNode templateNode, SNode outputNode) {
-//    Pair<SNode, Boolean> pair = myTemplateNodeToOutputNodeMap.get(templateNode);
-//    if (pair == null) {
-//      myTemplateNodeToOutputNodeMap.put(templateNode, new Pair<SNode, Boolean>(outputNode, true));
-//      return;
-//    }
-//
-//    // that means that there were more than one output node for given template node
-//    if (!pair.o2) {
-//      return;
-//    }
-//    myTemplateNodeToOutputNodeMap.put(templateNode, new Pair<SNode, Boolean>(pair.o1, false));
-    myMappingData.addOutputNodeByTemplateNode(templateNode, outputNode);
+    Pair<SNode, Boolean> pair = myTemplateNodeToOutputNodeMap.get(templateNode);
+    if (pair == null) {
+      myTemplateNodeToOutputNodeMap.put(templateNode, new Pair<SNode, Boolean>(outputNode, true));
+      return;
+    }
+
+    // that means that there were more than one output node for given template node
+    if (!pair.o2) {
+      return;
+    }
+    myTemplateNodeToOutputNodeMap.put(templateNode, new Pair<SNode, Boolean>(pair.o1, false));
   }
 
   public SNode findOutputNodeByTemplateNode(SNode templateNode, boolean unique) {
-//    Pair<SNode, Boolean> pair = myTemplateNodeToOutputNodeMap.get(templateNode);
-//    if (pair != null) {
-//      if (pair.o2 || !unique) {
-//        return pair.o1;
-//      }
-//    }
-//    return null;
-    return myMappingData.findOutputNodeByTemplateNode(templateNode, unique);
+    Pair<SNode, Boolean> pair = myTemplateNodeToOutputNodeMap.get(templateNode);
+    if (pair != null) {
+      if (pair.o2 || !unique) {
+        return pair.o1;
+      }
+    }
+    return null;
   }
 
   public void addReferenceInfo(ReferenceInfo referenceInfo) {
@@ -345,57 +341,51 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
 
   public SNode findCopiedOutputNodeForInputNode(SNode inputNode) {
-//    return findOutputNodeByInputAndTemplateNode(inputNode, inputNode);
-    return myMappingData.findCopiedOutputNodeForInputNode(inputNode);
+    return findOutputNodeByInputAndTemplateNode(inputNode, inputNode);
   }
 
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
-//    SNode outputNode = myTemplateNodeAndInputNodeToOutputNodeMap.get(new Pair(templateNode, inputNode));
-//    if (outputNode == null) {
-//      // input node has been copied?
-//      if (inputNode == templateNode) {
-//        outputNode = findOutputNodeByInputNodeWithSameId(inputNode);
-//      }
-//    }
-//    return outputNode;
-    return myMappingData.findOutputNodeByInputAndTemplateNode(inputNode, templateNode);
+    SNode outputNode = myTemplateNodeAndInputNodeToOutputNodeMap.get(new Pair(templateNode, inputNode));
+    if (outputNode == null) {
+      // input node has been copied?
+      if (inputNode == templateNode) {
+        outputNode = findOutputNodeByInputNodeWithSameId(inputNode);
+      }
+    }
+    return outputNode;
   }
 
   /*package*/ void addOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode, SNode outputNode) {
-//    // todo: combination of (templateN, inputN) -> outputN
-//    // todo: is not unique
-//    // todo: generator should repotr error on attempt to obtain not unique output-node
-//    myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(templateNode, inputNode), outputNode);
-    myMappingData.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
+    // todo: combination of (templateN, inputN) -> outputN
+    // todo: is not unique
+    // todo: generator should repotr error on attempt to obtain not unique output-node
+    myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(templateNode, inputNode), outputNode);
   }
 
   public List<SNode> getTopOutputNodesForInputNode(SNode inputNode) {
-//    List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
-//    if (list != null) {
-//      return new ArrayList(list);
-//    }
-//    return Collections.emptyList();
-    return myMappingData.getTopOutputNodesForInputNode(inputNode);
+    List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
+    if (list != null) {
+      return new ArrayList(list);
+    }
+    return Collections.emptyList();
   }
 
   /*package*/ void addTopOutputNodeByInputNode(SNode inputNode, SNode outputNode) {
-//    List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
-//    if (list == null) {
-//      list = new ArrayList<SNode>();
-//      myInputeNodeToTopOutputNodesMap.put(inputNode, list);
-//    }
-//    list.add(outputNode);
-    myMappingData.addTopOutputNodeByInputNode(inputNode, outputNode);
+    List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
+    if (list == null) {
+      list = new ArrayList<SNode>();
+      myInputeNodeToTopOutputNodesMap.put(inputNode, list);
+    }
+    list.add(outputNode);
   }
 
   /*package*/ void addTopOutputNodesByInputNode(SNode inputNode, List<SNode> outputNodes) {
-//    List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
-//    if (list == null) {
-//      list = new ArrayList<SNode>();
-//      myInputeNodeToTopOutputNodesMap.put(inputNode, list);
-//    }
-//    list.addAll(outputNodes);
-    myMappingData.addTopOutputNodesByInputNode(inputNode, outputNodes);
+    List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
+    if (list == null) {
+      list = new ArrayList<SNode>();
+      myInputeNodeToTopOutputNodesMap.put(inputNode, list);
+    }
+    list.addAll(outputNodes);
   }
 
 
@@ -523,9 +513,5 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     if (errorCount > 0) {
       addProgressMessage(errorCount + " errors encountered. Look at messages for details.");
     }
-  }
-
-  /*package*/ GeneratorMappingData getMappingData() {
-    return myMappingData;
   }
 }

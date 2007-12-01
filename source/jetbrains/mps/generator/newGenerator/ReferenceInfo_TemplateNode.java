@@ -24,10 +24,10 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   }
 
   public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
-    return executeIndependentResolve_internal(generator.getMappingData());
+    return executeIndependentResolve_internal(generator);
   }
 
-  private SNode executeIndependentResolve_internal(GeneratorMappingData mappingData) {
+  private SNode executeIndependentResolve_internal(TemplateModelGenerator_New mappingData) {
     {
       SNode outputTargetNode = mappingData.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
       if (outputTargetNode != null) {
