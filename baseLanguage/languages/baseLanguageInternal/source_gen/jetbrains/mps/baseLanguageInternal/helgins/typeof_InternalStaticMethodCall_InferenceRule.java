@@ -14,7 +14,7 @@ public class typeof_InternalStaticMethodCall_InferenceRule implements InferenceR
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguageInternal.helgins", "1179333045923"), SLinkOperations.getTarget(argument, "returnType", true), argument, null, "jetbrains.mps.baseLanguageInternal.helgins", "1179333045922");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371930", true), SLinkOperations.getTarget(argument, "returnType", true), argument, null, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371928");
   }
 
   public String getApplicableConceptFQName() {

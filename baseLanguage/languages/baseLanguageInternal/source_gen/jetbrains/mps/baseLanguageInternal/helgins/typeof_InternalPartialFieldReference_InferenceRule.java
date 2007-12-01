@@ -14,7 +14,7 @@ public class typeof_InternalPartialFieldReference_InferenceRule implements Infer
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguageInternal.helgins", "1179333045939"), SLinkOperations.getTarget(argument, "fieldType", true), argument, null, "jetbrains.mps.baseLanguageInternal.helgins", "1179333045938");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371952", true), SLinkOperations.getTarget(argument, "fieldType", true), argument, null, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371950");
   }
 
   public String getApplicableConceptFQName() {

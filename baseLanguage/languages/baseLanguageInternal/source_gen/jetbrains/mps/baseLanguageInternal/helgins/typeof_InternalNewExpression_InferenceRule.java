@@ -21,7 +21,7 @@ public class typeof_InternalNewExpression_InferenceRule implements InferenceRule
     {
       type = new QuotationClass_().createNode();
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguageInternal.helgins", "1181300754742"), type, argument, null, "jetbrains.mps.baseLanguageInternal.helgins", "1181300754740");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371898", true), type, argument, null, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371896");
   }
 
   public String getApplicableConceptFQName() {

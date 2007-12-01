@@ -14,7 +14,7 @@ public class typeof_InternalVariableReference_InferenceRule implements Inference
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguageInternal.helgins", "1179333045931"), SLinkOperations.getTarget(argument, "type", true), argument, null, "jetbrains.mps.baseLanguageInternal.helgins", "1179333045930");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371941", true), SLinkOperations.getTarget(argument, "type", true), argument, null, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371939");
   }
 
   public String getApplicableConceptFQName() {
