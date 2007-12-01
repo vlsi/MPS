@@ -931,8 +931,13 @@ public final class SNode {
     return new ArrayList<SReference>(myReferences);
   }
 
-  @Nullable
+   @Nullable
   public SReference setReferent(@NotNull String role, SNode newReferent) {
+    return setReferent(role, newReferent, true); 
+  }
+
+  @Nullable
+  public SReference setReferent(@NotNull String role, SNode newReferent, boolean useHandler) {
     // remove old references
     List<SReference> toDelete = new ArrayList<SReference>();
     if (myReferences != null) {
@@ -960,7 +965,7 @@ public final class SNode {
       insertReferenceAt(myReferences == null ? 0 : myReferences.size(), resultReference);
     }
 
-    if (!getModel().isLoading()) {
+    if (useHandler && !getModel().isLoading()) {
       // invoke custom referent set event handler
       if (mySetReferentEventHandlersInProgress == null || !mySetReferentEventHandlersInProgress.contains(role)) {
         INodeReferentSetEventHandler handler = ModelConstraintsManager.getInstance().getNodeReferentSetEventHandler(this, role);

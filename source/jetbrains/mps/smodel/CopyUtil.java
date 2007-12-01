@@ -98,9 +98,9 @@ public class CopyUtil {
         if (targetNode == null) {
 //          LOG.warning("broken reference '" + ref.getRole() + "' in " + node.getDebugText(), node);
         } else if (mapping.containsKey(targetNode)) {
-          target.setReferent(ref.getRole(), mapping.get(targetNode));
+          target.setReferent(ref.getRole(), mapping.get(targetNode), false);
         } else {
-          target.setReferent(ref.getRole(), targetNode);
+          target.setReferent(ref.getRole(), targetNode, false);
         }
       }
 
