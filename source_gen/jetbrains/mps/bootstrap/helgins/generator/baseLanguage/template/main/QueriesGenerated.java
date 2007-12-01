@@ -994,6 +994,9 @@ public class QueriesGenerated {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.AbstractAntiquotation")) {
         result.add(SLinkOperations.getTarget(child, "expression", true));
       }
+      if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation")) {
+        result.add(SLinkOperations.getTarget(child, "expression", true));
+      }
     }
     return result;
   }
@@ -1085,7 +1088,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     SModel targetModel = generator.getTargetModel();
     for(SNode leaf : leaves) {
-      SNode composite = SModelOperations.createNewNode(targetModel, "jetbrains.mps.core.structure.BaseConcept");
+      SNode composite = SModelOperations.createNewNode(targetModel, "jetbrains.mps.core.structure.BaseConcept", null);
       composite.setReferent("leaf", leaf);
       SNode current = leaf;
       while(dependencies.get(current) != null) {
