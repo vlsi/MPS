@@ -160,7 +160,7 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1148687201775">
       <property name="role" value="applicableConcept" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="2.1071489090640" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1148687202698">
@@ -185,7 +185,7 @@
       <link role="target" targetNodeId="1163200368514" resolveInfo="ConstraintFunction_ReferentSetHandler" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1158954542247">
-      <property name="value" value="referent search scope" />
+      <property name="value" value="link {&lt;{applicableLink}&gt;}" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1188502091893">
