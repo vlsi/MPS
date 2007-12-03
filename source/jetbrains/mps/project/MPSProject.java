@@ -38,6 +38,7 @@ import jetbrains.mps.util.IDisposable;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.make.ModuleMaker;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.osgi.framework.internal.core.BundleLoader;
@@ -739,6 +740,18 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     for (IMPSProjectCommandListener listener : new ArrayList<IMPSProjectCommandListener>(myProjectCommandListeners)) {
       listener.projectChangedInCommand(this);
     }
+  }
+
+  public void make(IAdaptiveProgressMonitor monitor) {
+    final Set<IModule> modulesToBuild = new LinkedHashSet<IModule>();
+
+    modulesToBuild.addAll(getProjectSolutions());
+    modulesToBuild.addAll(getProjectLanguages());
+    modulesToBuild.addAll(getProjectDevKits());
+
+    new ModuleMaker().make(modulesToBuild, monitor);    
+    
+    ReloadUtils.reloadAll(true);
   }
 
   public static class TestResult {
