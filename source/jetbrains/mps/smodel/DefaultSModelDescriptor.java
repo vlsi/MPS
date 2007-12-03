@@ -4,16 +4,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
-import jetbrains.mps.generator.*;
-import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
-import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.helgins.uiActions.ConvertQuotationsAction;
+import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.ide.messages.DefaultMessageHandler;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue;
-import jetbrains.mps.logging.refactoring.structure.RuntimeLog;
-import jetbrains.mps.logging.refactoring.structure.RuntimeLogStack;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -24,14 +18,11 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.helgins.uiActions.ConvertQuotationsAction;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
-import java.io.File;
-import java.lang.reflect.Method;
 import java.util.*;
 
 /**
@@ -85,7 +76,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
             LOG.warning("no op.context found for conversion");
             return;
           }
-          if (needsRefactoring) {
+          if (needsRefactoring && !IdeMain.isTestMode()) {
             Runnable command = new Runnable() {
               public void run() {
                 int answer = JOptionPane.showConfirmDialog(null, "Quotations in model " + descriptor + " are legacy.\nDo you want to convert " +
