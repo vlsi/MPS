@@ -32,7 +32,6 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     //todo it should be removed after going to new generator
     generator.setCurrentBuilder(getOutputNode());
     SNode outputTargetNode = expandReferenceMacro(generator);
-//    setSuccess(true);
     generator.setCurrentBuilder(null);
     return outputTargetNode;
   }
@@ -42,10 +41,6 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return null;
   }
 
-  public SNode doResolve(TemplateModelGenerator_New generator) {
-    throw new RuntimeException("not supported");
-  }
-
   public boolean isRequired() {
     return getOutputNode().isReferentRequired(getReferenceRole());
   }
@@ -53,7 +48,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   public SNode expandReferenceMacro(ITemplateGenerator generator) {
     SNode referentNode;
     String linkRole = myReferenceMacro.getLink().getRole();
-    
+
     // try new query
     ReferenceMacro_GetReferent function = myReferenceMacro.getReferentFunction();
     if (function != null) {
@@ -100,13 +95,8 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     }
 
     if (referentNode == null) {
-//      if (getOutputNode().isReferentRequired(linkRole)) {
-//        generator.showErrorMessage(getInputNode(), myTemplateReferenceNode, "unresolved reference for role \"" + linkRole + "\" in " + getOutputNode().getDebugText());
-//      }
       return null;
     }
-
-//    getOutputNode().setReferent(linkRole, referentNode);
 
 //todo <Sergey Dmitriev> There should be different diagnostic that reference target to the node that will be deleted
 /*
@@ -126,7 +116,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   }
 
   public void showErrorMessage(GeneratorLogger logger) {
-    logger.showErrorMessage(getOutputNode(), "couldn't resolve reference '"+getReferenceRole()+"' in output node " + getOutputNode().getDebugText());
+    logger.showErrorMessage(getOutputNode(), "couldn't resolve reference '" + getReferenceRole() + "' in output node " + getOutputNode().getDebugText());
     logger.showErrorMessage(myReferenceMacro.getParent().getNode(), "-- original reference was " + myReferenceMacro.getParent().getNode().getDebugText());
     logger.showErrorMessage(getInputNode(), "-- input node was " + getInputNode().getDebugText());
   }

@@ -44,10 +44,15 @@ public abstract class ReferenceInfo {
   public abstract SNode resolveAnyhow(TemplateModelGenerator_New generator);
 
   /**
-   * test
-   * @param generator
+   * test postponed references
    */
-  public abstract SNode doResolve(TemplateModelGenerator_New generator);
+  public SNode doResolve(TemplateModelGenerator_New generator) {
+    SNode outputTargetNode = executeIndependentResolve(generator);
+    if (outputTargetNode != null) return outputTargetNode;
+    outputTargetNode = executeDependentResolve(generator);
+    if (outputTargetNode != null) return outputTargetNode;
+    return resolveAnyhow(generator);
+  }
 
   public abstract boolean isRequired();
 

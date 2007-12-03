@@ -25,67 +25,37 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   }
 
   public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
-    return findInMaps(generator);
-  }
-
-  public SNode executeDependentResolve(TemplateModelGenerator_New generator) {
-    return executeCustomResolver();
-  }
-
-  public SNode resolveAnyhow(TemplateModelGenerator_New generator) {
-    // nothing
-    return null;
-  }
-
-  /**
-   * test postponed references
-   * @param generator
-   */
-  public SNode doResolve(TemplateModelGenerator_New generator) {
-    SNode node = findInMaps(generator);
-    if (node != null) {
-      return node;
+    // output target node might has been copied (reduced) from the input target node
+    SNode outputTargetNode = generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
+    if (outputTargetNode != null) {
+      return outputTargetNode;
     }
-    return executeCustomResolver();
-  }
 
-  private SNode findInMaps(TemplateModelGenerator_New generator) {
-    {
-      // output target node might has been copied (reduced) from the input target node
-      SNode outputTargetNode = generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
+    // todo: hack
+    List<SNode> topOutputNodes = generator.getTopOutputNodesForInputNode(myInputTargetNode);
+    if (!topOutputNodes.isEmpty()) {
+      String wasConcept = myInputTargetNode.getConceptFqName();
+      for (SNode _outputNode : topOutputNodes) {
+        // same concept?
+        if (_outputNode.getConceptFqName().equals(wasConcept)) {
+          if (outputTargetNode != null) {
+            // no uniquess
+            outputTargetNode = null;
+            break;
+          }
+          outputTargetNode = _outputNode;
+        }
+      }
+
       if (outputTargetNode != null) {
         return outputTargetNode;
       }
     }
 
-    {
-      // todo: hack
-      List<SNode> topOutputNodes = generator.getTopOutputNodesForInputNode(myInputTargetNode);
-      if (!topOutputNodes.isEmpty()) {
-        String wasConcept = myInputTargetNode.getConceptFqName();
-        SNode outputTargetNode = null;
-        for (SNode _outputNode : topOutputNodes) {
-          // same concept?
-          if (_outputNode.getConceptFqName().equals(wasConcept)) {
-            if (outputTargetNode != null) {
-              // no uniquess
-              outputTargetNode = null;
-              break;
-            }
-            outputTargetNode = _outputNode;
-          }
-        }
-
-        if (outputTargetNode != null) {
-          return outputTargetNode;
-        }
-      }
-    }
-
     return null;
   }
 
-  private SNode executeCustomResolver() {
+  public SNode executeDependentResolve(TemplateModelGenerator_New generator) {
     // try to resolve using custom referense resolver for source node concept
     // todo: some reference-resolvers can be executed on the 'executeIndependentResolve' step
     IReferenceResolver referenceResolver = loadReferenceResolver(myInputSourceNode);
@@ -93,6 +63,11 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
       SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myInputReference);
       return outputTargetNode;
     }
+    return null;
+  }
+
+  public SNode resolveAnyhow(TemplateModelGenerator_New generator) {
+    // nothing
     return null;
   }
 

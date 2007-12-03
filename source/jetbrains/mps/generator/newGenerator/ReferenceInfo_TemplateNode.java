@@ -24,37 +24,27 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   }
 
   public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
-    return executeIndependentResolve_internal(generator);
-  }
-
-  private SNode executeIndependentResolve_internal(TemplateModelGenerator_New mappingData) {
-    {
-      SNode outputTargetNode = mappingData.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
-      if (outputTargetNode != null) {
-        return outputTargetNode;
-      }
+    SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
+    if (outputTargetNode != null) {
+      return outputTargetNode;
     }
 
-    {
-      // if template has been applied exactly once, then we have unique output node for each template node
-      SNode outputTargetNode = mappingData.findOutputNodeByTemplateNode(myTemplateTargetNode, true);
-      if (outputTargetNode != null) {
-        return outputTargetNode;
-      }
+    // if template has been applied exactly once, then we have unique output node for each template node
+    outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, true);
+    if (outputTargetNode != null) {
+      return outputTargetNode;
     }
 
-    {
-      // try to resolve if referent node is parent of source node.
-      // this solves situation when reference node inside 'template fragment' refers to 'context node' (ancestor outside 'template fragment')
-      SNode templateParentNode = myTemplateSourceNode.getParent();
-      SNode outputParentNode = getOutputNode().getParent();
-      while (templateParentNode != null && outputParentNode != null) {
-        if (templateParentNode.equals(myTemplateTargetNode)) {
-          return outputParentNode;
-        }
-        templateParentNode = templateParentNode.getParent();
-        outputParentNode = outputParentNode.getParent();
+    // try to resolve if referent node is parent of source node.
+    // this solves situation when reference node inside 'template fragment' refers to 'context node' (ancestor outside 'template fragment')
+    SNode templateParentNode = myTemplateSourceNode.getParent();
+    SNode outputParentNode = getOutputNode().getParent();
+    while (templateParentNode != null && outputParentNode != null) {
+      if (templateParentNode.equals(myTemplateTargetNode)) {
+        return outputParentNode;
       }
+      templateParentNode = templateParentNode.getParent();
+      outputParentNode = outputParentNode.getParent();
     }
 
     return null;
@@ -94,10 +84,6 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   public SNode resolveAnyhow(TemplateModelGenerator_New generator) {
     SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, false);
     return outputTargetNode;
-  }
-
-  public SNode doResolve(TemplateModelGenerator_New generator) {
-    throw new RuntimeException("not supported");
   }
 
   public boolean isRequired() {
