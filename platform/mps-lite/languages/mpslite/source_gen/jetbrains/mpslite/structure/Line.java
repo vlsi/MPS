@@ -11,6 +11,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Line extends BaseConcept {
+  public static final String concept = "jetbrains.mpslite.structure.Line";
   public static String LINE_PART = "linePart";
 
   public  Line(SNode node) {

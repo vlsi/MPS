@@ -8,6 +8,7 @@ import java.awt.event.KeyEvent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
@@ -18,7 +19,8 @@ public class _Line_Actions extends EditorCellKeyMap {
   public  _Line_Actions() {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
-    this.putAction("ctrl", "VK_ENTER", new _Line_Actions._Line_Actions_Action0());
+    action = new _Line_Actions._Line_Actions_Action0();
+    this.putAction("ctrl", "VK_ENTER", action);
   }
   public static class _Line_Actions_Action0 extends EditorCellKeyMapAction {
 
@@ -47,10 +49,10 @@ public class _Line_Actions extends EditorCellKeyMap {
 
     public void execute(KeyEvent keyEvent, EditorContext editorContext) {
       EditorCell contextCell = editorContext.getContextCell();
-      this.execute_internal(keyEvent, editorContext, contextCell.getSNode());
+      this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
     }
 
-    public void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node) {
+    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       SNode selectedNode = editorContext.getSelectedNode();
       if(selectedNode == null) {
         return;

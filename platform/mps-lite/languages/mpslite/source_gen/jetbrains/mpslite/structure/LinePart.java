@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class LinePart extends BaseConcept {
+  public static final String concept = "jetbrains.mpslite.structure.LinePart";
 
   public  LinePart(SNode node) {
     super(node);

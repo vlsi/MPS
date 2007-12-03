@@ -947,5 +947,31 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196683140166">
+    <link role="conceptDeclaration" targetNodeId="1.1196683107273" resolveInfo="NodeType" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196683143465">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196683144139">
+        <property name="text" value="node" />
+        <property name="textFgColor" value="DARK_BLUE" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196683152625">
+        <property name="text" value="&lt;" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1196683155940">
+        <link role="relationDeclaration" targetNodeId="1.1196683118212" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1196683155941">
+          <link role="conceptDeclaration" targetNodeId="1.1182510906722" resolveInfo="ConceptDeclaration" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1196683157896">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="1.1183028098253" resolveInfo="abstract" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196683160226">
+        <property name="text" value="&gt;" />
+      </node>
+    </node>
+  </node>
 </model>
 

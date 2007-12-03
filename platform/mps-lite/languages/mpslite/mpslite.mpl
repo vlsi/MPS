@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mpslite" pluginClass="jetbrains.mpslite.MPSLitePlugin">
+<language namespace="jetbrains.mpslite" pluginClass="jetbrains.mpslite.MPSLitePlugin" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mpslite.structure" />
   </structure>
@@ -19,6 +19,7 @@
   <module />
   <accessoryModels>
     <model modelUID="jetbrains.mpslite.common" />
+    <model modelUID="jetbrains.mpslite.treeAspect" />
   </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mpslite#1182846582475" targetLanguage="jetbrains.mps.baseLanguage">
@@ -65,12 +66,14 @@
   <runtimeClassPath>
     <entry path="${mps_home}\platform\mps-lite\classes" />
   </runtimeClassPath>
+  <sourcePath />
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
   <dependencies>
     <dependency>jetbrains.mps.quotation</dependency>
+    <dependency>jetbrains.mps.ypath</dependency>
   </dependencies>
 </language>
 

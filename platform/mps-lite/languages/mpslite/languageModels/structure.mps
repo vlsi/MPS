@@ -2,9 +2,10 @@
 <model name="jetbrains.mpslite.structure">
   <persistence version="1" />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1182510906722">
     <property name="name" value="ConceptDeclaration" />
     <property name="rootable" value="false" />
@@ -254,6 +255,23 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1183015797303">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196683107273">
+    <property name="name" value="NodeType" />
+    <link role="extends" targetNodeId="3.1068431790189" resolveInfo="Type" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196683118212">
+      <property name="role" value="concept" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1182510906722" resolveInfo="ConceptDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196683316587">
+      <property name="value" value="node&lt;...&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196683322527">
+      <property name="value" value="mpslite's node type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
     </node>
   </node>
 </model>
