@@ -7,6 +7,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptRefer
 import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.generationTypes.GenerateClassesGenerationType;
 import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
@@ -25,8 +26,10 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.helgins.uiActions.ConvertQuotationsAction;
 import org.jetbrains.annotations.NotNull;
 
+import javax.swing.JOptionPane;
 import java.io.File;
 import java.lang.reflect.Method;
 import java.util.*;
@@ -50,6 +53,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private long myLastChange = System.currentTimeMillis();
   private IFile myModelFile;
   private FastNodeFinder myFastNodeFinder;
+  private List<IPostLoadRunnable> myPostLoadRunnables = new ArrayList<IPostLoadRunnable>(2);
 
   private IModelRootManager myModelRootManager;
   private boolean myTransient;
@@ -62,6 +66,50 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     myModelFile = modelFile;
 
     checkModelDuplication();
+    addPostLoadRunnable(new IPostLoadRunnable() {
+      public void doPostLoadStuff(final SModelDescriptor descriptor) {
+        if (descriptor.getSModel().hasLanguage("jetbrains.mps.bootstrap.helgins")) {
+          boolean needsRefactoring = false;
+          for (SNode node : descriptor.getSModel().allNodes()) {
+            String conceptFqName = node.getConceptFqName();
+            if (conceptFqName.equals("jetbrains.mps.bootstrap.helgins.structure.Quotation")
+                    || conceptFqName.equals("jetbrains.mps.bootstrap.helgins.structure.Antiquotation")
+                    || conceptFqName.equals("jetbrains.mps.bootstrap.helgins.structure.ListAntiquotation")
+                    || conceptFqName.equals("jetbrains.mps.bootstrap.helgins.structure.ReferenceAntiquotation")) {
+              needsRefactoring = true;
+              break;
+            }
+          }
+          final IOperationContext operationContext = findOperationContext();
+          if (operationContext == null) {
+            LOG.warning("no op.context found for conversion");
+            return;
+          }
+          if (needsRefactoring) {
+            Runnable command = new Runnable() {
+              public void run() {
+                int answer = JOptionPane.showConfirmDialog(null, "Quotations in model " + descriptor + " are legacy.\nDo you want to convert " +
+                        "the model?");
+                if (answer == JOptionPane.YES_OPTION) {
+                  ConvertQuotationsAction.doConvertQuotations(descriptor, operationContext);
+                  save();
+                }
+              }
+            };
+
+            if (CommandProcessor.instance().isInsideUndoableCommand()) {
+              command.run();
+            } else {
+              if (CommandProcessor.instance().isInsideCommand()) {
+                LOG.error("error: can't execute undoable command inside a lightweight command");
+              } else {
+                CommandProcessor.instance().executeCommand(command);
+              }
+            }
+          }
+        }
+      }
+    });
   }
 
   {
@@ -162,9 +210,20 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     mySModel.setVersion(myModelRootManager.getVersion(this));
 
     updateModelWithRefactorings();
+    doAdditionalPostLoadStuff();
 
     myDiskTimestamp = fileTimestamp();
     addListenersToNewModel();
+  }
+
+  private void doAdditionalPostLoadStuff() {
+    for (IPostLoadRunnable runnable : myPostLoadRunnables) {
+      runnable.doPostLoadStuff(this);
+    }
+  }
+
+  public void addPostLoadRunnable(IPostLoadRunnable runnable) {
+    myPostLoadRunnables.add(runnable);
   }
 
   private void updateModelWithRefactorings() {
@@ -194,23 +253,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   private void playUsedModelDescriptorsRefactoring(SModelDescriptor modelDescriptor) {
-    int currentVersion = modelDescriptor.getVersion();
-    int usedVersion = mySModel.getUsedVersion(modelDescriptor.getModelUID());
+//    int currentVersion = modelDescriptor.getVersion();
+//    int usedVersion = mySModel.getUsedVersion(modelDescriptor.getModelUID());
 //    if (currentVersion > usedVersion) {
-//      IOperationContext invocationContext = null;
-//      outer : for (IModule module : SModelRepository.getInstance().getOwners(this, IModule.class)) {
-//        if (module instanceof Generator) {
-//          module = ((Generator)module).getSourceLanguage();
-//        }
-//        Set<MPSModuleOwner> mpsModuleOwners = MPSModuleRepository.getInstance().getOwners(module);
-//        if (mpsModuleOwners == null) continue;
-//        for (MPSModuleOwner owner : mpsModuleOwners) {
-//          if (owner instanceof MPSProject) {
-//            invocationContext = new ModuleContext(module, (MPSProject) owner);
-//            break outer;
-//          }
-//        }
-//      }
+//      IOperationContext invocationContext = findOperationContext();
 //      if (invocationContext == null) {
 //        LOG.error("can't find a context for updating model " + getModelUID());
 //        return;
@@ -275,6 +321,24 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 //      mySModel.updateImportedModelUsedVersion(modelDescriptor.getModelUID(), currentVersion);
 //    }
     return;
+  }
+
+  private IOperationContext findOperationContext() {
+    IOperationContext invocationContext = null;
+    outer : for (IModule module : SModelRepository.getInstance().getOwners(this, IModule.class)) {
+      if (module instanceof Generator) {
+        module = ((Generator)module).getSourceLanguage();
+      }
+      Set<MPSModuleOwner> mpsModuleOwners = MPSModuleRepository.getInstance().getOwners(module);
+      if (mpsModuleOwners == null) continue;
+      for (MPSModuleOwner owner : mpsModuleOwners) {
+        if (owner instanceof MPSProject) {
+          invocationContext = new ModuleContext(module, (MPSProject) owner);
+          break outer;
+        }
+      }
+    }
+    return invocationContext;
   }
 
   private void addListenersToNewModel() {
@@ -393,7 +457,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   public void refresh() {
-    if (isInitialized()) {                  
+    if (isInitialized()) {
       long start = System.currentTimeMillis();
       myFastNodeFinder = null;
       myWeakModelListeners.addAll(mySModel.getWeakModelListeners());
