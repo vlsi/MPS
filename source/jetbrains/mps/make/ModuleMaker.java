@@ -84,10 +84,15 @@ public class ModuleMaker {
     JavaCompiler compiler = new JavaCompiler(classPathItems);
 
     for (IModule m : modules) {
+      if (!m.isCompileInMPS()) {
+        LOG.error("Module which isn't compiled in MPS depend on module which has to be compiled in MPS:", m);
+        continue;
+      }
+      
       for (String sp : m.getSourcePaths()) {
         addSource(compiler, new File(sp), "", m);
       }
-      
+
       FileUtil.delete(m.getClassesGen());
     }
 
