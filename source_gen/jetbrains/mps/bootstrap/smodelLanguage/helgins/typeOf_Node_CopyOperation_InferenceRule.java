@@ -14,8 +14,8 @@ public class typeOf_Node_CopyOperation_InferenceRule implements InferenceRule_Ru
 
   public void applyRule(final SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(RulesUtil.leftExpression(argument), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057852494"), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057852493");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057865109"), new QuotationClass_54().createNode(), argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057869956");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(RulesUtil.leftExpression(argument), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057852494", true), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057852493");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057865109", true), new QuotationClass_54().createNode(), argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057869956");
   }
 
   public String getApplicableConceptFQName() {

@@ -34,7 +34,7 @@ public class RulesUtil {
     }
     final SNode leftExpression = RulesUtil.leftExpression(op);
     final SNode LeftType_typevar_1186058295229 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186058318393"), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186058309840");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186058318393", true), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186058309840");
     TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186058295229), new Runnable() {
 
       public void run() {
@@ -173,7 +173,7 @@ public class RulesUtil {
     }
     final SNode Result_typevar_1186062019004 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     final SNode LeftType_typevar_1186062031569 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062039118"), TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), leftExpr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062045965");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062039118", true), TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), leftExpr, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062045965");
     TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186062031569), new Runnable() {
 
       public void run() {

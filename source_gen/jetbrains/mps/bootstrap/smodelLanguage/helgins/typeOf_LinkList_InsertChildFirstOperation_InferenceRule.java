@@ -19,7 +19,7 @@ public class typeOf_LinkList_InsertChildFirstOperation_InferenceRule implements 
       SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
       if((parameter != null)) {
         SNode expectedType = RulesUtil.get_inputNodeType(argument);
-        SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061879161");
+        SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061879161", true);
         TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, expectedType, argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061883539");
       }
     }

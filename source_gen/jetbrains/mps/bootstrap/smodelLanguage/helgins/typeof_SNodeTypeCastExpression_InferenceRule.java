@@ -15,7 +15,7 @@ public class typeof_SNodeTypeCastExpression_InferenceRule implements InferenceRu
 
   public void applyRule(final SNode argument) {
     final SNode LeftType_typevar_1186061665928 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186061665928), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061683045"), SLinkOperations.getTarget(argument, "leftExpression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061673586");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186061665928), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061683045", true), SLinkOperations.getTarget(argument, "leftExpression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061673586");
     TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186061665928), new Runnable() {
 
       public void run() {

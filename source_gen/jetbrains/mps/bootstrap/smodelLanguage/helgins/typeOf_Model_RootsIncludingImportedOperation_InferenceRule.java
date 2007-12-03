@@ -16,7 +16,7 @@ public class typeOf_Model_RootsIncludingImportedOperation_InferenceRule implemen
   public void applyRule(final SNode argument) {
     RulesUtil.checkAppliedCorrectly_generic(argument);
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_51().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492186");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "scope", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492197"), new QuotationClass_52().createNode(), SLinkOperations.getTarget(argument, "scope", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492194");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "scope", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492197", true), new QuotationClass_52().createNode(), SLinkOperations.getTarget(argument, "scope", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492194");
   }
 
   public String getApplicableConceptFQName() {

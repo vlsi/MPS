@@ -13,7 +13,7 @@ public class typeof_Node_GetIndexInParentOperation_InferenceRule implements Infe
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179168299104"), new QuotationClass_56().createNode(), argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179168304422");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179168299104", true), new QuotationClass_56().createNode(), argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179168304422");
   }
 
   public String getApplicableConceptFQName() {
