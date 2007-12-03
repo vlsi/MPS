@@ -24,7 +24,9 @@ public class typeof_TreePathAdapterExpression_InferenceRule implements Inference
         if(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521), SLinkOperations.getTarget(treePathType, "nodeType", true)))) {
           TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "expression", true), "Incompatible type", "jetbrains.mps.ypath.helgins", "1196166858319");
         }
-        TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(treePathType, "nodeType", true))), argument, "jetbrains.mps.ypath.helgins", "1190288701293");
+        if((SLinkOperations.getTarget(treePathType, "nodeType", true) != null)) {
+          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(treePathType, "nodeType", true))), argument, "jetbrains.mps.ypath.helgins", "1196715484404");
+        }
       }
 
     }, "jetbrains.mps.ypath.helgins", "1190288695814");
