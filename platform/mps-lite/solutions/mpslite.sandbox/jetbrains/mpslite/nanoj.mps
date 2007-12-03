@@ -302,6 +302,7 @@
       </node>
     </node>
   </node>
+  <visible index="2" modelUID="jetbrains.mpslite.treeAspect" />
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182966282304">
     <property name="name" value="Expressions" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182966285571">
@@ -524,8 +525,17 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196698632478">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196698632479">
-                  <link role="variableDeclaration" targetNodeId="1196697035549" resolveInfo="abcdef" />
+                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196701487632">
+                  <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196701482928">
+                    <link role="treepathAspect" targetNodeId="2v.1196682965759" resolveInfo="MPSLite_Nodes" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196698632479">
+                      <link role="variableDeclaration" targetNodeId="1196697035549" resolveInfo="abcdef" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1196701487638">
+                    <property name="axis" value="CHILDREN" />
+                    <link role="usedFeature" targetNodeId="2v.1196691896258" resolveInfo="child" />
+                  </node>
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196698151505">
