@@ -4,9 +4,9 @@ package jetbrains.mps.ypath.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_NodeTypeFunctionParam_InferenceRule implements InferenceRule_Runtime {
@@ -15,7 +15,8 @@ public class typeof_NodeTypeFunctionParam_InferenceRule implements InferenceRule
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true), argument, "jetbrains.mps.ypath.helgins", "1184606116539");
+    SNode nodeType = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_9().createNode(SNodeOperations.getConceptDeclaration(nodeType)), nodeType, "jetbrains.mps.ypath.helgins", "1196721449847");
   }
 
   public String getApplicableConceptFQName() {
