@@ -9,7 +9,7 @@
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.ypath" />
-  <maxImportIndex value="18" />
+  <maxImportIndex value="19" />
   <import index="1" modelUID="jetbrains.mps.ypath.structure" version="3" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
@@ -27,6 +27,7 @@
   <import index="16" modelUID="jetbrains.mps.ypath.constraints" version="-1" />
   <import index="17" modelUID="jetbrains.mps.ypath.runtime@java_stub" version="-1" />
   <import index="18" modelUID="jetbrains.mps.ypath.plugin@java_stub" version="-1" />
+  <import index="19" modelUID="jetbrains.mps.logging@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178187486791">
     <link role="concept" targetNodeId="1.1168428529658" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1184345381945">
@@ -1525,6 +1526,20 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1184790036011">
     <property name="name" value="FeatureTargetTypeUtil" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1196713229013">
+      <property name="name" value="LOG" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1196713229014" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196713290968">
+        <link role="classifier" targetNodeId="19.~Logger" resolveInfo="Logger" />
+      </node>
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1196713309001">
+        <link role="baseMethodDeclaration" targetNodeId="19.~Logger.getLogger(java.lang.String):jetbrains.mps.logging.Logger" resolveInfo="getLogger" />
+        <link role="classConcept" targetNodeId="19.~Logger" resolveInfo="Logger" />
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1196713316518">
+          <property name="value" value="jetbrains.mps.ypath" />
+        </node>
+      </node>
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1192792093233">
       <property name="name" value="getterExpression" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1192792111785">
@@ -2468,22 +2483,62 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193221836921">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1193221849347">
-            <link role="baseMethodDeclaration" targetNodeId="18.~DesignPartLoader.getFeatureDesign(java.lang.String,jetbrains.mps.smodel.SModel):jetbrains.mps.ypath.design.IFeatureDesign" resolveInfo="getFeatureDesign" />
-            <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193221841234">
-              <link role="baseMethodDeclaration" targetNodeId="18.~DesignPartLoader.getInstance():jetbrains.mps.ypath.plugin.DesignPartLoader" resolveInfo="getInstance" />
-              <link role="classConcept" targetNodeId="18.~DesignPartLoader" resolveInfo="DesignPartLoader" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193221853973">
-              <link role="variableDeclaration" targetNodeId="1184840364158" resolveInfo="fqClassName" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1193312824455">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" id="1193312831255" />
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193312822800">
-                <link role="variableDeclaration" targetNodeId="1184840326518" resolveInfo="feature" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196713158049">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196713158050">
+            <property name="name" value="featureDesign" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196713158051">
+              <link role="classifier" targetNodeId="14.~IFeatureDesign" resolveInfo="IFeatureDesign" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196713158052">
+                <link role="classifier" targetNodeId="3.~Object" resolveInfo="Object" />
               </node>
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1193221849347">
+              <link role="baseMethodDeclaration" targetNodeId="18.~DesignPartLoader.getFeatureDesign(java.lang.String,jetbrains.mps.smodel.SModel):jetbrains.mps.ypath.design.IFeatureDesign" resolveInfo="getFeatureDesign" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193221841234">
+                <link role="baseMethodDeclaration" targetNodeId="18.~DesignPartLoader.getInstance():jetbrains.mps.ypath.plugin.DesignPartLoader" resolveInfo="getInstance" />
+                <link role="classConcept" targetNodeId="18.~DesignPartLoader" resolveInfo="DesignPartLoader" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193221853973">
+                <link role="variableDeclaration" targetNodeId="1184840364158" resolveInfo="fqClassName" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1193312824455">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" id="1193312831255" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1193312822800">
+                  <link role="variableDeclaration" targetNodeId="1184840326518" resolveInfo="feature" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1196713164314">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196713164315">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196713332844">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1196713337425">
+                <link role="baseMethodDeclaration" targetNodeId="19.~Logger.error(java.lang.String):void" resolveInfo="error" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1196713332845">
+                  <link role="variableDeclaration" targetNodeId="1196713229013" resolveInfo="LOG" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1196713357392">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196713367146">
+                    <link role="variableDeclaration" targetNodeId="1184840364158" resolveInfo="fqClassName" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1196713338753">
+                    <property name="value" value="Cannot load feature design: " />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1196713173099">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1196713174751" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196713171882">
+              <link role="variableDeclaration" targetNodeId="1196713158050" resolveInfo="featureDesign" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193221836921">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196713158054">
+            <link role="variableDeclaration" targetNodeId="1196713158050" resolveInfo="featureDesign" />
           </node>
         </node>
       </node>
