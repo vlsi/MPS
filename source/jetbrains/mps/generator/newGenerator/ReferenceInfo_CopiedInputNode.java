@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.generator.template.IReferenceResolver;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 
@@ -71,12 +72,8 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     return null;
   }
 
-  public boolean isRequired() {
-    return true;
-  }
-
-  public void showErrorMessage(GeneratorLogger logger) {
-    logger.showErrorMessage(getOutputNode(), "couldn't resolve reference '" + myInputReference.getRole() + "' in output node " + getOutputNode().getDebugText());
-    logger.showErrorMessage(myInputSourceNode, "-- original reference was " + myInputSourceNode.getDebugText());
+  public void showErrorMessage(ITemplateGenerator generator) {
+    generator.showErrorMessage(getOutputNode(), "couldn't resolve reference '" + myInputReference.getRole() + "' in output node " + getOutputNode().getDebugText());
+    generator.showErrorMessage(myInputSourceNode, "-- original reference was " + myInputSourceNode.getDebugText());
   }
 }

@@ -52,9 +52,9 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myProgressMonitor;
   }
 
-  public GeneratorLogger getLogger() {
-    return myLogger;
-  }
+//  public GeneratorLogger getLogger() {
+//    return myLogger;
+//  }
 
   protected void checkMonitorCanceled() {
     if (myProgressMonitor.isCanceled()) throw new GenerationCanceledException();

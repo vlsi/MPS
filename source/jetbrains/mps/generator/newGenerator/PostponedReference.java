@@ -20,14 +20,12 @@ public class PostponedReference extends SReference {
   private SNode myTargetNode;
   private boolean myFailed;
   private TemplateModelGenerator_New myGenerator;
-  private GeneratorLogger myGeneratorLogger;
 
 
-  public PostponedReference(String role, SNode sourceNode, ReferenceInfo referenceInfo, TemplateModelGenerator_New generator, GeneratorLogger generatorLogger) {
+  public PostponedReference(String role, SNode sourceNode, ReferenceInfo referenceInfo, TemplateModelGenerator_New generator) {
     super(role, sourceNode);
     myReferenceInfo = referenceInfo;
     myGenerator = generator;
-    myGeneratorLogger = generatorLogger;
   }
 
   public boolean isExternal() {
@@ -46,8 +44,6 @@ public class PostponedReference extends SReference {
     throw new RuntimeException("not supported method");
   }
 
-//  static boolean tested;
-
   public SNode getTargetNode() {
     if (myTargetNode != null) {
       return myTargetNode;
@@ -58,17 +54,14 @@ public class PostponedReference extends SReference {
     myTargetNode = myReferenceInfo.doResolve(myGenerator);
     if (myTargetNode == null) {
       myFailed = true;
-      myReferenceInfo.showErrorMessage(myGeneratorLogger);
+      if (myReferenceInfo.isRequired()) {
+        myReferenceInfo.showErrorMessage(myGenerator);
+      }
     }
-//    if(!tested && myReferenceInfo.getInputNode().getModel().getStereotype().length() > 0) {
-//      tested = true;
-//      myReferenceInfo.showErrorMessage(myGeneratorLogger);
-//    }
 
     // release resources
     myReferenceInfo = null;
     myGenerator = null;
-    myGeneratorLogger = null;
     return myTargetNode;
   }
 

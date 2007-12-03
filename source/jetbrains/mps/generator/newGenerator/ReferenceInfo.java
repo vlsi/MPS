@@ -54,9 +54,11 @@ public abstract class ReferenceInfo {
     return resolveAnyhow(generator);
   }
 
-  public abstract boolean isRequired();
+  public boolean isRequired() {
+    return true;
+  }
 
-  public abstract void showErrorMessage(GeneratorLogger logger);
+  public abstract void showErrorMessage(ITemplateGenerator generator);
 
   protected static IReferenceResolver loadReferenceResolver(SNode node) {
     ConceptDeclaration conceptDeclaration = (ConceptDeclaration) node.getConceptDeclarationAdapter();

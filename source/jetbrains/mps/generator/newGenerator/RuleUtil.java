@@ -640,8 +640,19 @@ public class RuleUtil {
         myGenerator.showErrorMessage(null, templateNode, "'createOutputNodesForTemplateNode()' referent '" + reference.getRole() + "' is null in template model");
         continue;
       }
-      if (templateReferentNode.getModel().equals(templateModel)) {
-        myGenerator.addReferenceInfo(new ReferenceInfo_TemplateNode(outputNode, reference, inputNode));
+      if (templateReferentNode.getModel().equals(templateModel)) { // internal reference
+        ReferenceInfo_TemplateNode refInfo = new ReferenceInfo_TemplateNode(outputNode, reference, inputNode);
+        if (TemplateModelGenerator_New.USE_POSTPONED_REFERENCES) {
+          PostponedReference postponedReference = new PostponedReference(
+                  reference.getRole(),
+                  outputNode,
+                  refInfo,
+                  myGenerator
+          );
+          outputNode.addReference(postponedReference);
+        } else {
+          myGenerator.addReferenceInfo(refInfo);
+        }
       } else {
         outputNode.setReferent(reference.getRole(), templateReferentNode);
       }
@@ -653,7 +664,18 @@ public class RuleUtil {
       if (templateChildNode instanceof PropertyMacro) {
         MacroUtil.expandPropertyMacro(myGenerator, (PropertyMacro) templateChildNode, inputNode, templateNode, outputNode);
       } else if (templateChildNode instanceof ReferenceMacro) {
-        myGenerator.addReferenceInfo(new ReferenceInfo_Macro((ReferenceMacro) templateChildNode, inputNode, templateNode, outputNode));
+        ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro((ReferenceMacro) templateChildNode, inputNode, templateNode, outputNode);
+        if (TemplateModelGenerator_New.USE_POSTPONED_REFERENCES) {
+          PostponedReference postponedReference = new PostponedReference(
+                  refInfo.getReferenceRole(),
+                  outputNode,
+                  refInfo,
+                  myGenerator
+          );
+          outputNode.addReference(postponedReference);
+        } else {
+          myGenerator.addReferenceInfo(refInfo);
+        }
       } else if (!TemplateGenUtil.isTemplateLanguageElement(templateChildNode)) {
         templateChildNodes.add(templateChildNode);
       }
@@ -713,16 +735,18 @@ public class RuleUtil {
         continue;
       }
       if (inputTargetNode.getModel().equals(inputModel)) {
-        // test++
-//        myGenerator.addReferenceInfo(new ReferenceInfo_CopiedInputNode(outputNode, inputReference));
-        PostponedReference reference = new PostponedReference(
-                inputReference.getRole(),
-                outputNode,
-                new ReferenceInfo_CopiedInputNode(outputNode, inputReference),
-                myGenerator,
-                myGenerator.getLogger());
-        outputNode.addReference(reference);
-        // test--
+        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(outputNode, inputReference);
+        if (TemplateModelGenerator_New.USE_POSTPONED_REFERENCES) {
+          PostponedReference reference = new PostponedReference(
+                  inputReference.getRole(),
+                  outputNode,
+                  refInfo,
+                  myGenerator
+          );
+          outputNode.addReference(reference);
+        } else {
+          myGenerator.addReferenceInfo(refInfo);
+        }
       } else {
         outputNode.setReferent(inputReference.getRole(), inputTargetNode);
       }
