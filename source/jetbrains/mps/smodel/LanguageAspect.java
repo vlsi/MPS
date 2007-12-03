@@ -188,6 +188,8 @@ public enum LanguageAspect {
     registerInLanguageDescriptor(l.getLanguageDescriptor(), m);
     l.setLanguageDescriptor(l.getLanguageDescriptor());
 
+    l.save();
+
     return model;
   }
 
