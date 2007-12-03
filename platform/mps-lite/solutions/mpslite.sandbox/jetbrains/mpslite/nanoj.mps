@@ -4,6 +4,7 @@
   <language namespace="jetbrains.mpslite" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.ypath" />
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mpslite.common" version="-1" />
   <import index="2" modelUID="jetbrains.mpslite.nanoj" version="-1" />
@@ -522,8 +523,24 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196695742648">
-                <node role="expression" type="jetbrains.mpslite.structure.Node_ConceptFunctionParameter" id="1196695742649" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196698632478">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196698632479">
+                  <link role="variableDeclaration" targetNodeId="1196697035549" resolveInfo="abcdef" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196698151505">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196698151506">
+                  <property name="name" value="i" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1196698151507" />
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1196698152494">
+                    <property name="value" value="0" />
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196698156972">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196698156973">
+                  <link role="variableDeclaration" targetNodeId="1196698151506" resolveInfo="i" />
+                </node>
               </node>
             </node>
           </node>
