@@ -1864,5 +1864,61 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1183016033415" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1196699813676">
+    <property name="package" value="ConceptFunctions" />
+    <link role="concept" targetNodeId="1.1196693342280" resolveInfo="Node_ConceptFunctionParameter" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1196699813677">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196699813678" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1196699869478">
+    <link role="concept" targetNodeId="1.1196683107273" resolveInfo="NodeType" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196699874184">
+      <property name="name" value="getPresentation" />
+      <link role="overridenMethod" targetNodeId="5.1180102203531" resolveInfo="getPresentation" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196699874186">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196699932813">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196699932814">
+            <property name="name" value="conceptPresentation" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196699951259">
+              <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196699943005">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1196699945961">
+                <link role="conceptMethodDeclaration" targetNodeId="5.1180102203531" resolveInfo="getPresentation" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196699903259">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1196699919933">
+                  <link role="link" targetNodeId="1.1196683118212" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1196699902508" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196699884610">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1196699892458">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1196699923028">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1196699925125">
+                <property name="value" value="&gt;" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196699932816">
+                <link role="variableDeclaration" targetNodeId="1196699932814" resolveInfo="concept" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1196699886378">
+              <property name="value" value="node&lt;" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196699881515">
+        <link role="classifier" targetNodeId="4.~String" resolveInfo="String" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1196699869479">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196699869480" />
+    </node>
+  </node>
 </model>
 
