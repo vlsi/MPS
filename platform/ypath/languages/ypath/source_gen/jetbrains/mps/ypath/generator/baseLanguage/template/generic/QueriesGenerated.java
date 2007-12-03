@@ -421,10 +421,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1196088141332(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     {
-      IMatchingPattern pattern_1196697039741 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1196697039740 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196697039741);
-      if(coercedNode_1196697039740 != null) {
-        return SLinkOperations.getTarget(coercedNode_1196697039740, "elementType", true);
+      IMatchingPattern pattern_1196702777682 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1196702777681 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196702777682);
+      if(coercedNode_1196702777681 != null) {
+        return SLinkOperations.getTarget(coercedNode_1196702777681, "elementType", true);
       }
     }
     return null;
@@ -432,10 +432,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1196097920623(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     {
-      IMatchingPattern pattern_1196697039772 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1196697039771 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196697039772);
-      if(coercedNode_1196697039771 != null) {
-        return SLinkOperations.getTarget(coercedNode_1196697039771, "elementType", true);
+      IMatchingPattern pattern_1196702777712 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1196702777711 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196702777712);
+      if(coercedNode_1196702777711 != null) {
+        return SLinkOperations.getTarget(coercedNode_1196702777711, "elementType", true);
       }
     }
     return null;
@@ -443,10 +443,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1195515931100(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     {
-      IMatchingPattern pattern_1196697039802 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1196697039801 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), pattern_1196697039802);
-      if(coercedNode_1196697039801 != null) {
-        return SLinkOperations.getTarget(coercedNode_1196697039801, "elementType", true);
+      IMatchingPattern pattern_1196702777743 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1196702777742 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), pattern_1196702777743);
+      if(coercedNode_1196702777742 != null) {
+        return SLinkOperations.getTarget(coercedNode_1196702777742, "elementType", true);
       }
     }
     return null;
@@ -462,10 +462,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1196615148475(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     {
-      IMatchingPattern pattern_1196697039872 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1196697039871 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196697039872);
-      if(coercedNode_1196697039871 != null) {
-        return SLinkOperations.getTarget(coercedNode_1196697039871, "elementType", true);
+      IMatchingPattern pattern_1196702777813 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1196702777812 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196702777813);
+      if(coercedNode_1196702777812 != null) {
+        return SLinkOperations.getTarget(coercedNode_1196702777812, "elementType", true);
       }
     }
     return null;
@@ -485,10 +485,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1196615148554(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     {
-      IMatchingPattern pattern_1196697039972 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1196697039971 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196697039972);
-      if(coercedNode_1196697039971 != null) {
-        return SLinkOperations.getTarget(coercedNode_1196697039971, "elementType", true);
+      IMatchingPattern pattern_1196702777905 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1196702777904 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196702777905);
+      if(coercedNode_1196702777904 != null) {
+        return SLinkOperations.getTarget(coercedNode_1196702777904, "elementType", true);
       }
     }
     return null;
@@ -524,10 +524,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1196614436718(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     {
-      IMatchingPattern pattern_1196697040138 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1196697040137 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196697040138);
-      if(coercedNode_1196697040137 != null) {
-        return SLinkOperations.getTarget(coercedNode_1196697040137, "elementType", true);
+      IMatchingPattern pattern_1196702778070 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1196702778069 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196702778070);
+      if(coercedNode_1196702778069 != null) {
+        return SLinkOperations.getTarget(coercedNode_1196702778069, "elementType", true);
       }
     }
     return null;
@@ -547,10 +547,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1196614445366(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     {
-      IMatchingPattern pattern_1196697040231 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1196697040230 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196697040231);
-      if(coercedNode_1196697040230 != null) {
-        return SLinkOperations.getTarget(coercedNode_1196697040230, "elementType", true);
+      IMatchingPattern pattern_1196702778162 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1196702778161 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196702778162);
+      if(coercedNode_1196702778161 != null) {
+        return SLinkOperations.getTarget(coercedNode_1196702778161, "elementType", true);
       }
     }
     return null;
@@ -602,10 +602,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1196621584740(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     {
-      IMatchingPattern pattern_1196697040471 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1196697040470 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196697040471);
-      if(coercedNode_1196697040470 != null) {
-        return SLinkOperations.getTarget(coercedNode_1196697040470, "elementType", true);
+      IMatchingPattern pattern_1196702778400 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1196702778399 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196702778400);
+      if(coercedNode_1196702778399 != null) {
+        return SLinkOperations.getTarget(coercedNode_1196702778399, "elementType", true);
       }
     }
     return null;
@@ -625,10 +625,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1196621584820(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     {
-      IMatchingPattern pattern_1196697040651 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1196697040650 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196697040651);
-      if(coercedNode_1196697040650 != null) {
-        return SLinkOperations.getTarget(coercedNode_1196697040650, "elementType", true);
+      IMatchingPattern pattern_1196702778492 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1196702778491 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196702778492);
+      if(coercedNode_1196702778491 != null) {
+        return SLinkOperations.getTarget(coercedNode_1196702778491, "elementType", true);
       }
     }
     return null;
@@ -668,10 +668,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1196621026768(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     {
-      IMatchingPattern pattern_1196697041374 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1196697041373 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196697041374);
-      if(coercedNode_1196697041373 != null) {
-        return SLinkOperations.getTarget(coercedNode_1196697041373, "elementType", true);
+      IMatchingPattern pattern_1196702778672 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1196702778671 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1196702778672);
+      if(coercedNode_1196702778671 != null) {
+        return SLinkOperations.getTarget(coercedNode_1196702778671, "elementType", true);
       }
     }
     return null;
