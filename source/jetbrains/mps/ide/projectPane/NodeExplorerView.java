@@ -142,6 +142,9 @@ public class NodeExplorerView extends DefaultTool {
 
     protected void doInit() {
       this.removeAllChildren();
+
+      add(new TextTreeNode("Concept = " +getSNode().getConceptFqName()));      
+
       if (getSNode() == null) return;
       for (SNode childNode : getSNode().getChildren()) {
         add(new MySNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));
