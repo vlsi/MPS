@@ -3,6 +3,7 @@
   <persistence version="1" />
   <language namespace="jetbrains.mpslite" />
   <language namespace="jetbrains.mps.baseLanguage" />
+  <language namespace="jetbrains.mps.ypath" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mpslite.common" version="-1" />
   <import index="2" modelUID="jetbrains.mpslite.nanoj" version="-1" />
@@ -513,6 +514,14 @@
           <link role="type" targetNodeId="1183027574668" resolveInfo="LocalVariableDeclaration" />
           <node role="scope" type="jetbrains.mpslite.structure.Scope_ConceptFunction" id="1196695529021">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196695529022">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196697035548">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196697035549">
+                  <property name="name" value="abcdef" />
+                  <node role="type" type="jetbrains.mpslite.structure.NodeType" id="1196697035550">
+                    <link role="concept" targetNodeId="1182966285571" resolveInfo="Expression" />
+                  </node>
+                </node>
+              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196695742648">
                 <node role="expression" type="jetbrains.mpslite.structure.Node_ConceptFunctionParameter" id="1196695742649" />
               </node>

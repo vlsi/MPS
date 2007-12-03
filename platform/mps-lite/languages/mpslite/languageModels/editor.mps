@@ -975,7 +975,7 @@
           <link role="conceptDeclaration" targetNodeId="1.1182510906722" resolveInfo="ConceptDeclaration" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1196683157896">
             <property name="readOnly" value="true" />
-            <link role="relationDeclaration" targetNodeId="1.1183028098253" resolveInfo="abstract" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
           </node>
         </node>
       </node>
