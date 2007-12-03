@@ -3,20 +3,17 @@
  */
 package jetbrains.mps.ypath.plugin;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IReloadHandler;
-import jetbrains.mps.smodel.ModelOwner;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.ypath.design.IFeatureDesign;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author fyodor
@@ -50,10 +47,11 @@ public class DesignPartLoader {
         IModule module = null;
         
         for (ModelOwner owner : SModelRepository.getInstance().getOwners(smd)) {
-            if (owner instanceof Solution) {
+            if (owner instanceof Solution || owner instanceof Language) {
                 module = (IModule) owner;
                 break;
             }
+
             else if (module == null && owner instanceof GenerationSessionContext.TransientModule) {
                 module = (IModule) owner;
             }
