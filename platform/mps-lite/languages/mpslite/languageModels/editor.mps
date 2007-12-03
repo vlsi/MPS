@@ -799,16 +799,27 @@
         <property name="drawBorder" value="false" />
       </node>
     </node>
-    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1182849992403">
-      <property name="vertical" value="false" />
-      <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182849995690">
-        <property name="text" value="optional" />
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196695027964">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196695027965">
+        <property name="vertical" value="false" />
         <property name="drawBorder" value="false" />
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196695027966">
+          <property name="text" value="optional" />
+          <property name="drawBorder" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1196695027967">
+          <property name="drawBorder" value="false" />
+          <link role="relationDeclaration" targetNodeId="1.1182849973412" resolveInfo="optional" />
+        </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1182849998399">
-        <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="1.1182849973412" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196695030016">
+        <property name="text" value="scope:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1196695033752">
+        <property name="noTargetText" value="&lt;no scope&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1196694896254" />
       </node>
     </node>
   </node>

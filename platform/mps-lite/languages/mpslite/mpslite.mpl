@@ -3,6 +3,9 @@
   <structure>
     <model modelUID="jetbrains.mpslite.structure" />
   </structure>
+  <helginsTypeSystem>
+    <model modelUID="jetbrains.mpslite.helgins" />
+  </helginsTypeSystem>
   <actions>
     <model modelUID="jetbrains.mpslite.actions" />
   </actions>

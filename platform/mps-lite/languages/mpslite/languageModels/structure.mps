@@ -208,6 +208,11 @@
     <property name="name" value="ReferenceDeclarationPart" />
     <property name="package" value="Parts" />
     <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196694896254">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="scope" />
+      <link role="target" targetNodeId="1196693306571" resolveInfo="Scope_ConceptFunction" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1182849973412">
       <property name="name" value="optional" />
       <link role="dataType" targetNodeId="1.1082983657063" />
@@ -291,6 +296,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196693406478">
       <property name="value" value="node" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196695127754">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
 </model>
