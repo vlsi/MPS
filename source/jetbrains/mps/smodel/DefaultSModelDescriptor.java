@@ -79,12 +79,12 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
           if (needsRefactoring && !IdeMain.isTestMode()) {
             Runnable command = new Runnable() {
               public void run() {
-                int answer = JOptionPane.showConfirmDialog(null, "Quotations in model " + descriptor + " are legacy.\nDo you want to convert " +
-                        "the model?");
-                if (answer == JOptionPane.YES_OPTION) {
-                  ConvertQuotationsAction.doConvertQuotations(descriptor, operationContext);
-                  save();
-                }
+//                int answer = JOptionPane.showConfirmDialog(null, "Quotations in model " + descriptor + " are legacy.\nDo you want to convert " +
+//                        "the model?");
+//                if (answer == JOptionPane.YES_OPTION) {
+//                  ConvertQuotationsAction.doConvertQuotations(descriptor, operationContext);
+//                  save();
+//                }
               }
             };
 
