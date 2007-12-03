@@ -18,7 +18,7 @@
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1147467194506">
       <property name="role" value="applicableConcept" />
-      <property name="sourceCardinality" value="1" />
+      <property name="sourceCardinality" value="0..1" />
       <link role="target" targetNodeId="2.1169125787135" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1147467295099">
@@ -37,7 +37,7 @@
       <link role="target" targetNodeId="1152959968041" resolveInfo="ConstraintFunction_PropertySetter" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1159284283582">
-      <property name="value" value="property getter/setter" />
+      <property name="value" value="property {&lt;{applicableProperty}&gt;}" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1188501940580">
