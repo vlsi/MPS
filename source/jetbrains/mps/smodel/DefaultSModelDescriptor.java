@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDecla
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.helgins.uiActions.ConvertQuotationsAction;
 import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.command.CommandKind;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -22,7 +23,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JOptionPane;
 import java.util.*;
 
 /**
@@ -59,6 +59,12 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     checkModelDuplication();
     addPostLoadRunnable(new IPostLoadRunnable() {
       public void doPostLoadStuff(final SModelDescriptor descriptor) {
+       /* if (CommandProcessor.instance().getCurrentCommandKind() == CommandKind.GENERATION) {
+          return;
+        }*/
+      /*  if (getStereotype().equals(SModelStereotype.TEMPLATES)) {
+          return;
+        }*/
         if (descriptor.getSModel().hasLanguage("jetbrains.mps.bootstrap.helgins")) {
           boolean needsRefactoring = false;
           for (SNode node : descriptor.getSModel().allNodes()) {
@@ -79,12 +85,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
           if (needsRefactoring && !IdeMain.isTestMode()) {
             Runnable command = new Runnable() {
               public void run() {
-//                int answer = JOptionPane.showConfirmDialog(null, "Quotations in model " + descriptor + " are legacy.\nDo you want to convert " +
-//                        "the model?");
-//                if (answer == JOptionPane.YES_OPTION) {
-//                  ConvertQuotationsAction.doConvertQuotations(descriptor, operationContext);
-//                  save();
-//                }
+                ConvertQuotationsAction.doConvertQuotations(descriptor, operationContext);
               }
             };
 

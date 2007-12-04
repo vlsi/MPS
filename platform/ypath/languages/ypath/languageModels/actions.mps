@@ -8,6 +8,7 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.core" />
+  <language namespace="jetbrains.mps.quotation" />
   <maxImportIndex value="46" />
   <import index="1" modelUID="jetbrains.mps.ypath.structure" version="5" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
@@ -1719,8 +1720,8 @@
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.helgins.structure.Node_TypeOperation" id="1194795815382" />
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1194795812772" />
               </node>
-              <node role="supertypeExpression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1194795819057">
-                <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1194795820929">
+              <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1196777968659">
+                <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196777968660">
                   <link role="concept" targetNodeId="1.1194568341931" resolveInfo="IRange" />
                 </node>
               </node>

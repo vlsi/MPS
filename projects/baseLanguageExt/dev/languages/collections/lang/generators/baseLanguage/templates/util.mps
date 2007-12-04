@@ -4,6 +4,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <language namespace="jetbrains.mps.quotation" />
   <maxImportIndex value="15" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -90,8 +91,8 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178821802352">
-          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1178821802353">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178821802354">
+          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196777956722">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196777956723">
               <link role="classifier" targetNodeId="12.~Object" resolveInfo="Object" />
             </node>
           </node>
@@ -220,8 +221,8 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178833659013">
-          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1178833673533">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178833677608">
+          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196777956724">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196777956725">
               <link role="classifier" targetNodeId="12.~Object" resolveInfo="Object" />
             </node>
           </node>
@@ -329,8 +330,8 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178827402338">
-          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1178827405820">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178827409134">
+          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196777956726">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196777956727">
               <link role="classifier" targetNodeId="12.~Object" resolveInfo="Object" />
             </node>
           </node>

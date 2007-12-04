@@ -6,6 +6,7 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.baseLanguageInternal" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
+  <language namespace="jetbrains.mps.quotation" />
   <maxImportIndex value="10" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -391,11 +392,11 @@
                 <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196275352613">
                   <link role="concept" targetNodeId="10.1177590007607" resolveInfo="InternalPartialFieldReference" />
                 </node>
-                <node role="initializer" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1196275583433">
-                  <node role="quotedNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1196275748243">
+                <node role="initializer" type="jetbrains.mps.quotation.structure.Quotation" id="1196777970339">
+                  <node role="quotedNode" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference" id="1196777970340">
                     <property name="fieldName" value="_enclosingClass" />
-                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1196275748244" />
-                    <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1196275810652" />
+                    <node role="instance" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1196777970341" />
+                    <node role="fieldType" type="jetbrains.mps.baseLanguage.structure.Type" id="1196777970342" />
                   </node>
                 </node>
               </node>
