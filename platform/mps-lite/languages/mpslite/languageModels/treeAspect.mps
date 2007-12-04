@@ -8,19 +8,54 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.core" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="6" />
   <import index="1" modelUID="jetbrains.mpslite.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mpslite.constraints" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  <import index="6" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <node type="jetbrains.mps.ypath.structure.TreePathAspect" id="1196682965759">
     <property name="name" value="MPSLite_Nodes" />
     <node role="features" type="jetbrains.mps.ypath.structure.GenericParamFeature" id="1196691896258">
       <property name="name" value="child" />
       <node role="getter" type="jetbrains.mps.ypath.structure.GenericFeatureGetterFun" id="1196691896259">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196691896260">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196762323356">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1196762323357" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196784794644">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196784794645">
+              <property name="name" value="ld" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196784794646">
+                <link role="concept" targetNodeId="5.1071489288298" resolveInfo="LinkDeclaration" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1196784812130">
+                <link role="baseMethodDeclaration" targetNodeId="6.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
+                <node role="instance" type="jetbrains.mps.ypath.structure.GeneratorFunctionParam" id="1196784807729" />
+                <node role="actualArgument" type="jetbrains.mps.ypath.structure.ParamFunctionParam" id="1196784841920" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1196784842937">
+                  <property name="value" value="child" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196784620009">
+            <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196784620010">
+              <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196784620731">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1196784620732">
+                  <link role="link" targetNodeId="1.1182840264652" />
+                  <node role="referenceAntiquotation$link_attribute$link" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1196784713493">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196784959132">
+                      <link role="variableDeclaration" targetNodeId="1196784794645" resolveInfo="ld" />
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196784620733">
+                  <link role="variableDeclaration" targetNodeId="1196784579830" resolveInfo="part" />
+                  <node role="_attr_$attribute" type="jetbrains.mps.quotation.structure.Antiquotation" id="1196784726076">
+                    <node role="expression" type="jetbrains.mps.ypath.structure.ExpressionFunctionParam" id="1196784728297" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
