@@ -6,7 +6,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_TreePathAdapterExpression_InferenceRule implements InferenceRule_Runtime {
@@ -25,7 +24,7 @@ public class typeof_TreePathAdapterExpression_InferenceRule implements Inference
           TypeChecker.getInstance().reportTypeError(SLinkOperations.getTarget(argument, "expression", true), "Incompatible type", "jetbrains.mps.ypath.helgins", "1196166858319");
         }
         if((SLinkOperations.getTarget(treePathType, "nodeType", true) != null)) {
-          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SNodeOperations.copyNode(SLinkOperations.getTarget(treePathType, "nodeType", true))), argument, "jetbrains.mps.ypath.helgins", "1196715484404");
+          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(ExpType_typevar_1190288659521)), argument, "jetbrains.mps.ypath.helgins", "1196715484404");
         }
       }
 
