@@ -19,12 +19,8 @@
       <property name="name" value="child" />
       <node role="getter" type="jetbrains.mps.ypath.structure.GenericFeatureGetterFun" id="1196691896259">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196691896260">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196692063395">
-            <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196692063396">
-              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1196692077560">
-                <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1196692077561" />
-              </node>
-            </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196762323356">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1196762323357" />
           </node>
         </node>
       </node>
@@ -42,9 +38,11 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196691913854">
             <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1196691913855">
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196691913856">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1196691913857">
-                  <link role="concept" targetNodeId="1.1182510906722" resolveInfo="ConceptDeclaration" />
-                  <node role="leftExpression" type="jetbrains.mps.ypath.structure.NodeTypeFunctionParam" id="1196691913858" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196762437728">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1196762443434">
+                    <link role="link" targetNodeId="1.1196683118212" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.ypath.structure.NodeTypeFunctionParam" id="1196762452278" />
                 </node>
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1196691913859">
                   <link role="conceptMethodDeclaration" targetNodeId="2.1182844609628" resolveInfo="getChildDeclarations" />

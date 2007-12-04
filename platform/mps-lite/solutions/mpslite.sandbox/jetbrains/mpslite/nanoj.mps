@@ -520,7 +520,7 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196697035549">
                   <property name="name" value="abcdef" />
                   <node role="type" type="jetbrains.mpslite.structure.NodeType" id="1196697035550">
-                    <link role="concept" targetNodeId="1182966285571" resolveInfo="Expression" />
+                    <link role="concept" targetNodeId="1182969317058" resolveInfo="BinaryExpression" />
                   </node>
                 </node>
               </node>
