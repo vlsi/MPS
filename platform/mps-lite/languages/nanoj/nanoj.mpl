@@ -6,6 +6,9 @@
   <actions>
     <model modelUID="jetbrains.mps.nanoj.actions" />
   </actions>
+  <constraints>
+    <model modelUID="jetbrains.mps.nanoj.constraints" />
+  </constraints>
   <editor>
     <model modelUID="jetbrains.mps.nanoj.editor" />
   </editor>
