@@ -5,13 +5,14 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <maxImportIndex value="11" />
+  <maxImportIndex value="12" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="-1" />
   <import index="5" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="11" modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
+  <import index="12" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1147467427805">
     <link role="conceptDeclaration" targetNodeId="1.1147467351491" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1147467448495">
@@ -270,18 +271,14 @@
           <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1178190908950">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178190908951">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178190909747">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1178190910833">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1178190917202">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1178190913964">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1178190912238" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetContainingRootOperation" id="1178190915499" />
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1178190918709">
-                      <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1178190924712">
-                        <link role="conceptDeclaration" targetNodeId="1.1177670533743" />
-                      </node>
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1196775549098">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196775549099">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1196775549100" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1196775549101">
+                      <link role="conceptMethodDeclaration" targetNodeId="12.1178190078587" resolveInfo="getApplicableConcept" />
                     </node>
                   </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1196775549102" />
                 </node>
               </node>
             </node>
@@ -294,18 +291,14 @@
           <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1178190939522">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178190939523">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178190939815">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1178190939816">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1178190939817">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1178190939818">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1178190939819" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetContainingRootOperation" id="1178190939820" />
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1178190939821">
-                      <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1178190939822">
-                        <link role="conceptDeclaration" targetNodeId="1.1177670533743" />
-                      </node>
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1196775562573">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196775562574">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1196775562575" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1196775562576">
+                      <link role="conceptMethodDeclaration" targetNodeId="12.1178190078587" resolveInfo="getApplicableConcept" />
                     </node>
                   </node>
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1196775562577" />
                 </node>
               </node>
             </node>
