@@ -1399,6 +1399,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
       <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196768473662">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1196768299101" resolveInfo="GeneratorFunctionParam" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1191843944385">
     <property name="package" value="treePath.features" />
@@ -1666,6 +1670,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1194610690988" resolveInfo="ReplaceExpressionFunctionParam" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196768551100">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1196768299101" resolveInfo="GeneratorFunctionParam" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196263944975">
       <property name="value" value="replace" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -1838,6 +1846,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1194610572276" resolveInfo="RangeFunctionParam" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196768565426">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1196768299101" resolveInfo="GeneratorFunctionParam" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196267249954">
       <property name="value" value="remove" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -1869,6 +1881,10 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195421106771">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1195421010025" resolveInfo="InsertExpressionFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196768574762">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1196768299101" resolveInfo="GeneratorFunctionParam" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196267438447">
       <property name="value" value="insert" />
@@ -2194,6 +2210,21 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196714113254">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196768299101">
+    <property name="package" value="treePath.features.functions.params" />
+    <property name="name" value="GeneratorFunctionParam" />
+    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196768322802">
+      <property name="value" value="generator" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196768344913">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196768501012">
+      <link role="intfc" targetNodeId="1192805568452" resolveInfo="IFunctionParam" />
     </node>
   </node>
 </model>

@@ -3,6 +3,7 @@
  */
 package jetbrains.mps.ypath.design;
 
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 
 /**
@@ -10,9 +11,9 @@ import jetbrains.mps.smodel.SNode;
  */
 public interface IWritableGenericFeatureDesign<T> extends IGenericFeatureDesign<T>{
 
-    SNode replaceStatement(SNode srcExpr, T param, SNode range, SNode replaceExpr);
+    SNode replaceStatement(SNode srcExpr, T param, SNode range, SNode replaceExpr, ITemplateGenerator generator);
 
-    SNode removeStatement(SNode srcExpr, T param, SNode range);
+    SNode removeStatement(SNode srcExpr, T param, SNode range, ITemplateGenerator generator);
 
-    SNode insertStatement(SNode srcExpr, T param, SNode range, SNode insertExpr);
+    SNode insertStatement(SNode srcExpr, T param, SNode range, SNode insertExpr, ITemplateGenerator generator);
 }

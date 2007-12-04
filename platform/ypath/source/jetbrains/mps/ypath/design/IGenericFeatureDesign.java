@@ -3,6 +3,7 @@
  */
 package jetbrains.mps.ypath.design;
 
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
 
 
@@ -11,7 +12,7 @@ import jetbrains.mps.smodel.SNode;
  */
 public interface IGenericFeatureDesign<T> extends IFeatureDesign<T> {
 
-    SNode getterExpression (SNode srcExpr, T param);
+    SNode getterExpression (SNode srcExpr, T param, ITemplateGenerator generator);
     
     boolean isSingleTargetCardinality (T param);
 }

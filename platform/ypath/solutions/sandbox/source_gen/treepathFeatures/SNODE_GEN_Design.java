@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 
@@ -27,7 +28,7 @@ public class SNODE_GEN_Design {
       return SPropertyOperations.getString(param, "role");
     }
 
-    public SNode getterExpression(SNode expression, SNode param) {
+    public SNode getterExpression(SNode expression, SNode param, ITemplateGenerator generator) {
       SNode opExpr = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression", null);
       SNode op = null;
       SLinkOperations.setTarget(opExpr, "leftExpression", expression, true);
@@ -66,7 +67,7 @@ public class SNODE_GEN_Design {
       return SPropertyOperations.getString(param, "role");
     }
 
-    public SNode getterExpression(SNode expression, SNode param) {
+    public SNode getterExpression(SNode expression, SNode param, ITemplateGenerator generator) {
       SNode opExpr = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression", null);
       SNode op = null;
       SLinkOperations.setTarget(opExpr, "leftExpression", expression, true);
