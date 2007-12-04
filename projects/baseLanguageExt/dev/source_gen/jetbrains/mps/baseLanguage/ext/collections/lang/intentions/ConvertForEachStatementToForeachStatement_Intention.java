@@ -45,7 +45,7 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
     {
       ICursor<SNode> _zCursor = CursorFactory.createCursor(SequenceOperations.where(SNodeOperations.getDescendants(SLinkOperations.getTarget(foreachStatement, "body", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference", false), new zPredicate(null, _zClosureContext)));
       try {
-        while (_zCursor.moveToNext()) {
+        while(_zCursor.moveToNext()) {
           SNode oldRef = _zCursor.getCurrent();
           SLinkOperations.setTarget(SNodeOperations.replaceWithNewChild(oldRef, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), "variableDeclaration", newVariable, false);
         }
