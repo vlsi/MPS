@@ -84,7 +84,7 @@ public class ConditionWrapper implements IWrapper {
           myVariables.remove(var);
           continue;
         }
-        if (equationManager.getRepresentatorWrapper(new NodeWrapper(var.getNode())).isConcrete()) {
+        if (equationManager.getRepresentatorWrapper(NodeWrapper.createNodeWrapper(var.getNode())).isConcrete()) {
           myVariables.remove(var);
           for (RuntimeTypeVariable varChild : type.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
             myVariables.add(new SNodePointer(varChild.getNode()));

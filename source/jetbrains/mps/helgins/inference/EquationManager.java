@@ -723,7 +723,7 @@ public class EquationManager {
   }
 
   public Set getEffects(SNode type) {
-    return getEffects(new NodeWrapper(type));
+    return getEffects(NodeWrapper.createNodeWrapper(type));
   }
 
   public Set getEffects(IWrapper type) {

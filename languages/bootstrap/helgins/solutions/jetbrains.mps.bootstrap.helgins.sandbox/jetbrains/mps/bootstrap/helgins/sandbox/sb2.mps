@@ -8,6 +8,7 @@
   <language namespace="jetbrains.mps.patterns" />
   <language namespace="jetbrains.mps.baseLanguage.blTypes" />
   <language namespace="jetbrains.mps.core" />
+  <language namespace="jetbrains.mps.quotation" />
   <maxImportIndex value="8" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
@@ -38,8 +39,8 @@
       </node>
       <node role="statement" type="jetbrains.mps.bootstrap.helgins.structure.CreateEquationStatement" id="1194962407096">
         <node role="rightExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1194962483116">
-          <node role="normalType" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1194962483117">
-            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1194962489760" />
+          <node role="normalType" type="jetbrains.mps.quotation.structure.Quotation" id="1196785395219">
+            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196785395220" />
           </node>
         </node>
         <node role="leftExpression" type="jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause" id="1194962407098">

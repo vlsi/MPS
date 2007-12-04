@@ -494,7 +494,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
   }
 
   public void addEffect(SNode type, Object effect) {
-    myEquationManager.addEffect(new NodeWrapper(type), effect);
+    myEquationManager.addEffect(NodeWrapper.createNodeWrapper(type), effect);
   }
 
   public void clearListeners() {
@@ -523,7 +523,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
 
   private SNode expandType(SNode node, SModel typesModel) {
     if (node == null) return null;
-    IWrapper representator = myEquationManager.getRepresentatorWrapper(new NodeWrapper(node));
+    IWrapper representator = myEquationManager.getRepresentatorWrapper(NodeWrapper.createNodeWrapper(node));
     return expandWrapper(representator, typesModel).getNode();
   }
 
@@ -534,7 +534,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
       for (IWrapper wrapper : meetWrapper.getArguments()) {
         meetType.addArgument((BaseConcept) expandWrapper(wrapper, typesModel).getNode().getAdapter());
       }
-      return new NodeWrapper(meetType.getNode());
+      return NodeWrapper.createNodeWrapper(meetType.getNode());
     }
     if (representator instanceof JoinWrapper) {
       JoinWrapper joinWrapper = (JoinWrapper) representator;
@@ -542,7 +542,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
       for (IWrapper wrapper : joinWrapper.getArguments()) {
         joinType.addArgument((BaseConcept) expandWrapper(wrapper, typesModel).getNode().getAdapter());
       }
-      return new NodeWrapper(joinType.getNode());
+      return NodeWrapper.createNodeWrapper(joinType.getNode());
     }
     return expandNode(representator, representator, 0, new HashSet<IWrapper>(), typesModel);
   }
@@ -559,7 +559,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
           //recursion!!
           RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
           error.setErrorText("recursion types not allowed");
-          return new NodeWrapper(error.getNode());
+          return NodeWrapper.createNodeWrapper(error.getNode());
         }
         variablesMet.add(wrapper);
         wrapper1 = expandNode(type, type, 0, variablesMet, typesModel);
@@ -573,12 +573,12 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
       ConditionWrapper conditionWrapper = (ConditionWrapper) wrapper;
       error.setNodeModel(conditionWrapper.getNodeModel());
       error.setNodeId(conditionWrapper.getNodeId());
-      return new NodeWrapper(error.getNode());
+      return NodeWrapper.createNodeWrapper(error.getNode());
     }
     Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
     List<SNode> children = new ArrayList<SNode>(wrapper.getNode().getChildren());
     for (SNode child : children) {
-      SNode newChild = expandNode(new NodeWrapper(child), representator, depth + 1, variablesMet, typesModel).getNode();
+      SNode newChild = expandNode(NodeWrapper.createNodeWrapper(child), representator, depth + 1, variablesMet, typesModel).getNode();
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }
@@ -588,7 +588,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
       if (child.getParent() == null) {
         RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
         error.setErrorText("recursion types not allowed");
-        return new NodeWrapper(error.getNode());
+        return NodeWrapper.createNodeWrapper(error.getNode());
       }
       SNode parent = child.getParent();
       assert parent != null;
@@ -604,7 +604,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     for (SReference reference : references) {
       SNode oldNode = reference.getTargetNode();
       if (BaseAdapter.isInstance(oldNode, RuntimeTypeVariable.class)) {
-        SNode newNode = expandNode(new NodeWrapper(oldNode), representator, depth, variablesMet, typesModel).getNode();
+        SNode newNode = expandNode(NodeWrapper.createNodeWrapper(oldNode), representator, depth, variablesMet, typesModel).getNode();
         referenceReplacement.put(reference, newNode);
       }
     }

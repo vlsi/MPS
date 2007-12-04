@@ -229,7 +229,7 @@ public class RuntimeSupport {
 
   public void whenConcrete(SNode argument, final Runnable r, String nodeModel, String nodeId) {
     if (argument == null) return;
-    myTypeChecker.getEquationManager().addEquation(new NodeWrapper(argument),
+    myTypeChecker.getEquationManager().addEquation(NodeWrapper.createNodeWrapper(argument),
             new ConditionWrapper(new Condition<SNode>() {
               public boolean met(SNode object) {
                 r.run();

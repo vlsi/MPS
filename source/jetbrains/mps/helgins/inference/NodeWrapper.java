@@ -23,9 +23,19 @@ import org.jetbrains.annotations.Nullable;
 * To change this template use File | Settings | File Templates.
 */
 public class NodeWrapper implements IWrapper {
+  private static final boolean USE_NEW_WRAPPERS = false;
   private static Logger LOG = Logger.getLogger(NodeWrapper.class);
 
   private SNode myNode;
+
+
+  public static NodeWrapper createNodeWrapper(SNode node) {
+    if (USE_NEW_WRAPPERS) {
+      return new NodeWrapper_new(node);
+    } else {
+      return new NodeWrapper(node);
+    }
+  }
 
   public NodeWrapper(SNode node) {
     if (node == null) {
@@ -111,6 +121,6 @@ public class NodeWrapper implements IWrapper {
 
   public static NodeWrapper fromNode(SNode node) {
     if (node == null) return null;
-    return new NodeWrapper(node);
+    return NodeWrapper.createNodeWrapper(node);
   }
 }

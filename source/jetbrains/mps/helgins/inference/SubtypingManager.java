@@ -51,7 +51,7 @@ public class SubtypingManager {
   public boolean isSubtype(SNode subtype, SNode supertype, boolean isWeak) {
     if (subtype == supertype) return true;
     if (subtype == null || supertype == null) return false;
-    return isSubtype(new NodeWrapper(subtype), new NodeWrapper(supertype), null, null, isWeak);
+    return isSubtype(NodeWrapper.createNodeWrapper(subtype), NodeWrapper.createNodeWrapper(supertype), null, null, isWeak);
   }
 
   public boolean isSubtype(IWrapper subtype, IWrapper supertype, EquationManager equationManager, ErrorInfo errorInfo) {
@@ -130,7 +130,7 @@ public class SubtypingManager {
     if (descendants == null) return false;
     descendants.removeStructurally(superRepresentator.getNode());
     for (SNode descendant : descendants) {
-      if (subRepresentator.matchesWith(new NodeWrapper(descendant), equationManager, errorInfo)) {
+      if (subRepresentator.matchesWith(NodeWrapper.createNodeWrapper(descendant), equationManager, errorInfo)) {
         return true;
       }
     }
@@ -158,7 +158,7 @@ public class SubtypingManager {
         }
       });
       for (SNode ancestor : ancestorsSorted) {
-        if (superRepresentator.matchesWith(new NodeWrapper(ancestor), equationManager, errorInfo)) {
+        if (superRepresentator.matchesWith(NodeWrapper.createNodeWrapper(ancestor), equationManager, errorInfo)) {
           return true;
         }
       }
@@ -428,7 +428,7 @@ public class SubtypingManager {
     if (pattern.match(subtype)) return subtype;
     if (subtype == null) return null;
     CoersionMatcher coersionMatcher = new CoersionMatcher(pattern);
-    boolean success = searchInSupertypes(new NodeWrapper(subtype), coersionMatcher, null, null, isWeak);
+    boolean success = searchInSupertypes(NodeWrapper.createNodeWrapper(subtype), coersionMatcher, null, null, isWeak);
     if (!success) return null;
     return coersionMatcher.getResult();
   }
