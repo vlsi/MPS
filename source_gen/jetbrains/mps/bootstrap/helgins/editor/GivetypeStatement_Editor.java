@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -18,11 +19,16 @@ import jetbrains.mps.nodeEditor.EditorManager;
 public class GivetypeStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196780008705");
+    editorCell.setSelectable(false);
+  }
+
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175496216836");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175519380362");
     editorCell.setDrawBorder(false);
   }
@@ -32,12 +38,12 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175519384020");
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175496245699");
     editorCell.setDrawBorder(false);
   }
@@ -47,7 +53,7 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175496799986");
     editorCell.setDrawBorder(false);
   }
@@ -58,26 +64,30 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
+    editorCell.getTextLine().setTextColor(Color.red);
   }
 
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_TypeExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
+  private static void setupLabel_TypeExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
   private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
   }
 
   private static void setupLabel_TermExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell5(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -91,13 +101,14 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "GIVETYPE"));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "("));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "!"));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "GIVETYPE"));
+    editorCell.addEditorCell(this.createConstantCell2(context, node, "("));
     editorCell.addEditorCell(this.createTypeExpressionCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell2(context, node, ")"));
-    editorCell.addEditorCell(this.createConstantCell3(context, node, "TO"));
+    editorCell.addEditorCell(this.createConstantCell3(context, node, ")"));
+    editorCell.addEditorCell(this.createConstantCell4(context, node, "TO"));
     editorCell.addEditorCell(this.createTermExpressionCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell4(context, node, ";"));
+    editorCell.addEditorCell(this.createConstantCell5(context, node, ";"));
     return editorCell;
   }
 
@@ -137,6 +148,14 @@ public class GivetypeStatement_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     GivetypeStatement_Editor.setupBasic_ConstantCell4(editorCell, node, context);
     GivetypeStatement_Editor.setupLabel_ConstantCell4(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    GivetypeStatement_Editor.setupBasic_ConstantCell5(editorCell, node, context);
+    GivetypeStatement_Editor.setupLabel_ConstantCell5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

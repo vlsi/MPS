@@ -2136,6 +2136,11 @@
     <link role="conceptDeclaration" targetNodeId="1.1175496148685" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1175496213287">
       <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196780008705">
+        <property name="text" value="!" />
+        <property name="selectable" value="false" />
+        <property name="textFgColor" value="red" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1175496216836">
         <property name="textFgColor" value="DARK_GREEN" />
         <property name="text" value="GIVETYPE" />
