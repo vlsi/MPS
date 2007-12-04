@@ -106,7 +106,7 @@ public abstract class BaseDialog extends JDialog {
     for (JButton button : buttons) {
       innerButtonsPanel.add(button);
     }
-    buttonsPanel.add(myErrorLabel, BorderLayout.WEST);
+    buttonsPanel.add(myErrorLabel, BorderLayout.NORTH);
     buttonsPanel.add(innerButtonsPanel, getButtonsPosition());
     panel1.add(buttonsPanel, BorderLayout.SOUTH);
 
