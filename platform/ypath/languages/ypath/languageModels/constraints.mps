@@ -10,7 +10,7 @@
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.ypath" />
   <maxImportIndex value="19" />
-  <import index="1" modelUID="jetbrains.mps.ypath.structure" version="3" />
+  <import index="1" modelUID="jetbrains.mps.ypath.structure" version="5" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.ypath.structure@java_stub" version="-1" />

@@ -6,7 +6,7 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
   <maxImportIndex value="37" />
-  <import index="1" modelUID="jetbrains.mps.ypath.structure" version="3" />
+  <import index="1" modelUID="jetbrains.mps.ypath.structure" version="5" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="5" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="29" modelUID="jetbrains.mps.ypath.structure@java_stub" version="-1" />
@@ -4329,6 +4329,67 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1196429308426">
           <link role="relationDeclaration" targetNodeId="1.1196429285514" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196710974663">
+    <property name="package" value="writePath" />
+    <link role="conceptDeclaration" targetNodeId="1.1196710919834" resolveInfo="StatementAggregator" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196711027133">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196711053528">
+        <property name="text" value="AGGREGATED STATEMENTS (there can be the only one!) {" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196711030518">
+        <property name="selectable" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196711030519">
+          <property name="text" value="  " />
+          <property name="selectable" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1196711041093">
+          <property name="vertical" value="true" />
+          <link role="relationDeclaration" targetNodeId="1.1196710954620" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196711070433">
+        <property name="text" value="}" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196713698852">
+    <property name="package" value="writePath" />
+    <link role="conceptDeclaration" targetNodeId="1.1196713639232" resolveInfo="StatementWrapper" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196713701792">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196713705582">
+        <property name="text" value="[" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1196713709619">
+        <link role="relationDeclaration" targetNodeId="1.1196713684869" resolveInfo="priority" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196713711991">
+        <property name="text" value="]" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1196713717967">
+        <link role="relationDeclaration" targetNodeId="1.1196713671088" />
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1196713735424">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196713735425">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196713736601">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression" id="1196713739383">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1196713740207">
+                  <property name="value" value="0" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196713737042">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1196713738059">
+                    <link role="property" targetNodeId="1.1196713684869" resolveInfo="priority" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1196713736602" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

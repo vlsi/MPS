@@ -10,7 +10,7 @@ public class DOMF_Design {
   public static class Design_Feature_child implements IFeatureDesign<String> {
 
     public Iterable<String> getParameters(SNode nodeType) {
-      return new SequenceWithSupplier<String>(new zValueSupplier3(null, null));
+      return new SequenceWithSupplier<String>(new zValueSupplier2(null, null));
     }
 
     public SNode getTargetType(String param, SNode nodeType) {

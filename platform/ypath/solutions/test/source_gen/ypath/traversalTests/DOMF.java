@@ -61,9 +61,9 @@ public class DOMF extends TreePath<Node> {
     }
 
     public Iterable<Node> sequence() {
-      final zClosureContext _zClosureContext = new zClosureContext();
+      final zClosureContext1 _zClosureContext = new zClosureContext1();
       _zClosureContext.cns = this.thisNode.getChildNodes();
-      return new SequenceWithSupplier<Node>(new zValueSupplier(null, _zClosureContext));
+      return new SequenceWithSupplier<Node>(new zValueSupplier1(null, _zClosureContext));
     }
 
     public Iterator<Node> iterator() {
@@ -71,9 +71,9 @@ public class DOMF extends TreePath<Node> {
     }
 
     public int size() {
-      final zClosureContext1 _zClosureContext1 = new zClosureContext1();
+      final zClosureContext _zClosureContext1 = new zClosureContext();
       _zClosureContext1.cns = this.thisNode.getChildNodes();
-      Iterable<Node> seq = new SequenceWithSupplier<Node>(new zValueSupplier1(null, _zClosureContext1));
+      Iterable<Node> seq = new SequenceWithSupplier<Node>(new zValueSupplier(null, _zClosureContext1));
       return SequenceOperations.getSize(seq);
     }
 
@@ -91,7 +91,7 @@ public class DOMF extends TreePath<Node> {
     public Iterable<Node> sequence() {
       final zClosureContext2 _zClosureContext2 = new zClosureContext2();
       _zClosureContext2.els = ((Element)this.thisNode).getElementsByTagName(this.param);
-      return new SequenceWithSupplier<Node>(new zValueSupplier2(null, _zClosureContext2));
+      return new SequenceWithSupplier<Node>(new zValueSupplier3(null, _zClosureContext2));
     }
 
     public Iterator<Node> iterator() {

@@ -82,6 +82,94 @@
         </node>
       </node>
     </node>
+    <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1196727243764">
+      <property name="modelVersion" value="4" />
+      <link role="updateModelClause" targetNodeId="2v.1192720065267" />
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196727243765">
+        <property name="value" value="wrappers" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1196727243766">
+          <property name="name" value="newLinkRole" />
+          <property name="presentation" value="enter new link role" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196727243767" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196727243768">
+        <property name="value" value="jetbrains.mps.ypath.structure.StatementAggregator" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196727243769">
+          <property name="name" value="conceptFQName" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196727243770" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196727243771">
+        <property name="value" value="false" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196727243772">
+          <property name="name" value="isReference" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196727243773" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196727243774">
+        <property name="value" value="statements" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196727243775">
+          <property name="name" value="oldLinkRole" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196727243776" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196727243777">
+        <property name="value" value="jetbrains.mps.ypath.structure" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196727243778">
+          <property name="name" value="conceptModel" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.SModelArgumentType" id="1196727243779" />
+        </node>
+      </node>
+    </node>
+    <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1196728191114">
+      <property name="modelVersion" value="5" />
+      <link role="updateModelClause" targetNodeId="2v.1192720065267" />
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196728191115">
+        <property name="value" value="candidates" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1196728191116">
+          <property name="name" value="newLinkRole" />
+          <property name="presentation" value="enter new link role" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196728191117" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196728191118">
+        <property name="value" value="jetbrains.mps.ypath.structure.StatementAggregator" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196728191119">
+          <property name="name" value="conceptFQName" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196728191120" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196728191121">
+        <property name="value" value="false" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196728191122">
+          <property name="name" value="isReference" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196728191123" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196728191124">
+        <property name="value" value="wrappers" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196728191125">
+          <property name="name" value="oldLinkRole" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196728191126" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196728191127">
+        <property name="value" value="jetbrains.mps.ypath.structure" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196728191128">
+          <property name="name" value="conceptModel" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.SModelArgumentType" id="1196728191129" />
+        </node>
+      </node>
+    </node>
   </refactoringLog>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1168428529658">
     <property name="name" value="TreePathType" />
@@ -2073,6 +2161,38 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196429275007">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196710919834">
+    <property name="package" value="writePath" />
+    <property name="name" value="StatementAggregator" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196710954620">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="candidates" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1196713639232" resolveInfo="StatementWrapper" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196714123770">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196713639232">
+    <property name="package" value="writePath" />
+    <property name="name" value="StatementWrapper" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1196713684869">
+      <property name="name" value="priority" />
+      <link role="dataType" targetNodeId="1.1082983657062" resolveInfo="integer" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196713671088">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="statement" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196714113254">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>

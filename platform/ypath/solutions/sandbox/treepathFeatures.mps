@@ -1432,10 +1432,7 @@
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1192878399677">
                     <link role="link" targetNodeId="12.1138405853777" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1192878399678">
-                    <link role="concept" targetNodeId="12.1138055754698" resolveInfo="SNodeType" />
-                    <node role="leftExpression" type="jetbrains.mps.ypath.structure.NodeTypeFunctionParam" id="1192878399679" />
-                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.ypath.structure.NodeTypeFunctionParam" id="1192878399679" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperation" id="1192878399680">
@@ -1756,10 +1753,7 @@
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1192878498769">
                     <link role="link" targetNodeId="12.1138405853777" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1192878498770">
-                    <link role="concept" targetNodeId="12.1138055754698" resolveInfo="SNodeType" />
-                    <node role="leftExpression" type="jetbrains.mps.ypath.structure.NodeTypeFunctionParam" id="1192878498771" />
-                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.ypath.structure.NodeTypeFunctionParam" id="1192878498771" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.WhereOperation" id="1192878498772">

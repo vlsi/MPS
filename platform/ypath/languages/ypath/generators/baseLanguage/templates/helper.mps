@@ -13,7 +13,7 @@
   <import index="2" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.ypath.structure" version="3" />
+  <import index="5" modelUID="jetbrains.mps.ypath.structure" version="5" />
   <import index="6" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="7" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.helper" version="-1" />
