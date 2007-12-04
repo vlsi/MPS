@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.ypath" pluginClass="jetbrains.mps.ypath.plugin.YpathPlugin">
+<language namespace="jetbrains.mps.ypath" pluginClass="jetbrains.mps.ypath.plugin.YpathPlugin" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.ypath.structure" />
   </structure>
@@ -45,12 +45,52 @@
             <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1191841379233" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1196718471537" />
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1196718471537" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1196790291936" />
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1196790291936" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1196800262470" />
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1196800262470" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1196803914629" />
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1196803914629" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1195732300474" />
           </lesser-priority-mapping>
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_before">
           <greater-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1195732300474" />
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1196711340877" />
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+        <mapping-priority-rule kind="strictly_before">
+          <greater-priority-mapping>
+            <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1196711340877" />
           </greater-priority-mapping>
           <lesser-priority-mapping>
             <mapping-node modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.generic@templates" nodeID="1190373998785" />
@@ -86,6 +126,7 @@
     <entry path="${mps_home}\platform\ypath\runtime\classes" />
     <entry path="${mps_home}\platform\ypath\classes" />
   </runtimeClassPath>
+  <sourcePath />
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />

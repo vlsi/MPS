@@ -4795,7 +4795,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1194716995764">
-      <property name="name" value="isSingleselection" />
+      <property name="name" value="isSingle" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1194717003055" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194716995766">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196698681647">

@@ -404,6 +404,33 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1196791152384(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+        public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+          return SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.EmptySequenceExpression", null);
+        }
+
+        public boolean hasSubstitute() {
+          return true;
+        }
+
+        public boolean canSubstitute_internal(String pattern) {
+          return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.ypath.structure.ReplaceWritePathStatement");
+        }
+
+        public String getMatchingText(String pattern) {
+          return "NOTHING";
+        }
+
+      });
+    }
+    return result;
+  }
+
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1168893677147(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
