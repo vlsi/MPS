@@ -791,13 +791,18 @@ public class RuleUtil {
 
     if (ruleConsequence instanceof DismissTopMappingRule) {
       GeneratorMessage message = ((DismissTopMappingRule) ruleConsequence).getGeneratorMessage();
-      String text = message.getMessageText();
-      if (message.getMessageType() == GeneratorMessageType.error) {
-        generator.showErrorMessage(inputNode, null, ruleNode, text);
-      } else if (message.getMessageType() == GeneratorMessageType.warning) {
-        generator.showWarningMessage(inputNode, text);
-      } else {
-        generator.showInformationMessage(inputNode, text);
+      if (message != null) {
+          String text = message.getMessageText();
+          if (message.getMessageType() == GeneratorMessageType.error) {
+              generator.showErrorMessage(inputNode, null, ruleNode, text);
+          } else if (message.getMessageType() == GeneratorMessageType.warning) {
+              generator.showWarningMessage(inputNode, text);
+          } else {
+              generator.showInformationMessage(inputNode, text);
+          }
+      }
+      else {          
+          generator.showInformationMessage(inputNode, "Top rule dismissed with no message");
       }
       throw new DismissTopMappingRuleException();
 
