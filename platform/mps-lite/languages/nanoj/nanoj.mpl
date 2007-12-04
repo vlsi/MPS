@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.nanoj">
+<language namespace="jetbrains.mps.nanoj" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.nanoj.structure" />
   </structure>
@@ -17,7 +17,10 @@
   <accessoryModels />
   <generators />
   <classPath />
-  <runtimeClassPath />
+  <runtimeClassPath>
+    <entry path="${mps_home}\platform\mps-lite\classes" />
+  </runtimeClassPath>
+  <sourcePath />
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />
