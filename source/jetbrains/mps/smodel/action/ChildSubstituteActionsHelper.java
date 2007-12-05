@@ -65,11 +65,27 @@ public class ChildSubstituteActionsHelper {
       return resultActions;
     }
 
-    // exception
+    // special case
     if (childConcept == SModelUtil_new.getBaseConcept()) {
       if ((currentChild == null || currentChild.getConceptFqName().equals(BaseConcept.concept))) {
-        return createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context);
+        resultActions = createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, TRUE_CONDITION, context);
+        // also show all concepts (to provide ability to choose an arbitrary concept)
+        ISearchScope conceptsSearchScope = SModelSearchUtil_new.createConceptsFromModelLanguagesScope(parentNode.getModel(), true, context.getScope());
+        List<SNode> allVisibleConcepts = conceptsSearchScope.getNodes();
+        for (SNode visibleConcept : allVisibleConcepts) {
+          resultActions.add(new DefaultChildNodeSubstituteAction(visibleConcept, parentNode, currentChild, childSetter, context.getScope()) {
+            public String getMatchingText(String pattern) {
+              return getMatchingText(pattern, true);
+            }
+
+            public String getDescriptionText(String pattern) {
+              return getDescriptionText(pattern, true);
+            }
+          });
+        }
+        return resultActions;
       }
+
       // pretend we are going to substitute more concrete concept
       childConcept = currentChild.getConceptDeclarationAdapter();
       if (childConcept instanceof ConceptDeclaration) {
@@ -110,7 +126,6 @@ public class ChildSubstituteActionsHelper {
       // add those actions to result and
       // exculde those sub-concept from 'applicable concepts' to avoid duplication
       List<NodeSubstituteActionsBuilder> buildersFromSubconcepts = new ArrayList<NodeSubstituteActionsBuilder>();
-//      final Set<AbstractConceptDeclaration> excludedConcepts = new HashSet<AbstractConceptDeclaration>();
       List<Language> languages = parentNode.getModel().getLanguages(scope);
       for (NodeSubstituteActionsBuilder actionsBuilder : getAllActionsBuilders(languages)) {
         AbstractConceptDeclaration applicableConcept = actionsBuilder.getApplicableConcept();
@@ -118,7 +133,6 @@ public class ChildSubstituteActionsHelper {
         if (applicableConcept == childConcept) continue;
         // applicable, if builder's applicable-concept is sub-concept of the childConcept
         if (SModelUtil_new.isAssignableConcept(applicableConcept, childConcept)) {
-//          excludedConcepts.add(applicableConcept);
           // check precondition tricking builder by passing builder's own applicable-concept as child-concept
           if (satisfiesPrecondition(actionsBuilder, parentNode, applicableConcept, context)) {
             buildersFromSubconcepts.add(actionsBuilder);
@@ -133,19 +147,6 @@ public class ChildSubstituteActionsHelper {
       }
 
       Condition<SNode> filter = TRUE_CONDITION;
-//      if (excludedConcepts.size() > 0) {
-//        filter = new Condition<SNode>() {
-//          public boolean met(SNode node) {
-//            for (AbstractConceptDeclaration excluded : excludedConcepts) {
-//              if (SModelUtil_new.isAssignableConcept((AbstractConceptDeclaration) BaseAdapter.fromNode(node), excluded)) {
-//                return false;
-//              }
-//            }
-//            return true;
-//          }
-//        };
-//      }
-
       // create default action 2
       resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, filter, context));
     }
@@ -199,7 +200,8 @@ public class ChildSubstituteActionsHelper {
     return false;
   }
 
-  public static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(
+  /*package*/
+  static List<INodeSubstituteAction> createPrimaryChildSubstituteActions(
           SNode parentNode,
           SNode currentChild,
           final AbstractConceptDeclaration childConcept,
@@ -528,12 +530,6 @@ public class ChildSubstituteActionsHelper {
     public String getDescriptionText(String pattern) {
       BaseConcept parameterNode = (BaseConcept) BaseAdapter.fromNode((SNode) getParameterObject());
       String result = NodePresentationUtil.descriptionText(parameterNode, true);
-
-      if (result.contains("jetbrains.charisma")) {
-        NodePresentationUtil.descriptionText(parameterNode, true);        
-      }
-
-
       if (parameterNode.getShortDescription() == null) {
         return "^" + result;
       }
