@@ -63,7 +63,7 @@ public class QueriesGenerated {
     return node.getRole_();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196351887287(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static Object propertyMacro_GetPropertyValue_1196860193017(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return node.getRole_();
   }
 
@@ -123,18 +123,18 @@ public class QueriesGenerated {
     return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
   }
 
-  public static SNode referenceMacro_GetReferent_1196351887254(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode parentTargetNode = generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "nodeCreatorForQuotedNode");
-    StatementList statementList = (StatementList)BaseAdapter.fromNode(parentTargetNode);
-    LocalVariableDeclarationStatement lvs = (LocalVariableDeclarationStatement)statementList.getStatements().get(0);
-    return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
-  }
-
-  public static SNode referenceMacro_GetReferent_1196351887320(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static SNode referenceMacro_GetReferent_1196860200838(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode parentTargetNode = generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "quotationClass");
     ClassConcept quotationClass = (ClassConcept)BaseAdapter.fromNode(parentTargetNode);
     InstanceMethodDeclaration methodDecl = quotationClass.getMethods().get(0);
     StatementList statementList = methodDecl.getBody();
+    LocalVariableDeclarationStatement lvs = (LocalVariableDeclarationStatement)statementList.getStatements().get(0);
+    return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
+  }
+
+  public static SNode referenceMacro_GetReferent_1196860192984(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    SNode parentTargetNode = generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "nodeCreatorForQuotedNode");
+    StatementList statementList = (StatementList)BaseAdapter.fromNode(parentTargetNode);
     LocalVariableDeclarationStatement lvs = (LocalVariableDeclarationStatement)statementList.getStatements().get(0);
     return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
   }
@@ -187,12 +187,12 @@ public class QueriesGenerated {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1196351887305(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false) != SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
+  public static boolean ifMacro_Condition_1196860200883(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.getParent(node, null, false, false) == SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
   }
 
-  public static boolean ifMacro_Condition_1196351887365(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false) == SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
+  public static boolean ifMacro_Condition_1196860193035(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.getParent(node, null, false, false) != SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
   }
 
   public static boolean ifMacro_Condition_1196351887377(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -303,7 +303,7 @@ public class QueriesGenerated {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
   }
 
-  public static SNode sourceNodeQuery_1196351887297(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode sourceNodeQuery_1196860193027(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
   }
 
