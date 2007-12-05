@@ -9,14 +9,16 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.search.ISearchScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.smodel.search.SModelSearchUtil_new;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import java.util.Iterator;
+import java.util.ArrayList;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.smodel.BaseAdapter;
 
 public class LinkDeclaration_specializedLink_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -32,20 +34,30 @@ public class LinkDeclaration_specializedLink_ReferentConstraint implements IMode
   }
 
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
-    return true;
+    return referenceNode != null;
   }
 
   public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+    final zClosureContext _zClosureContext = new zClosureContext();
+    _zClosureContext.aggregation = SPropertyOperations.hasValue(referenceNode, "metaClass", "aggregation", null);
+    List<SNode> result = new ArrayList<SNode>();
     SNode enclosingConcept = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration", true, false);
-    List<LinkDeclaration> links = SModelSearchUtil_new.getLinkDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(enclosingConcept)));
-    Iterator<LinkDeclaration> it = links.iterator();
-    while(it.hasNext()) {
-      SNode ld = it.next().getNode();
-      if(SNodeOperations.getParent(ld, null, false, false) == enclosingConcept) {
-        it.remove();
+    List<SNode> directSupers = SConceptOperations.getDirectSuperConcepts(enclosingConcept);
+    {
+      ICursor<SNode> _zCursor = CursorFactory.createCursor(directSupers);
+      try {
+        while(_zCursor.moveToNext()) {
+          SNode concept = _zCursor.getCurrent();
+          {
+            List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarationsExcludingOverridden_1196820678380(concept);
+            ListOperations.addAllElements(result, SequenceOperations.where(links, new zPredicate(null, _zClosureContext)));
+          }
+        }
+      } finally {
+        _zCursor.release();
       }
     }
-    return new SimpleSearchScope(BaseAdapter.toNodes(links));
+    return new SimpleSearchScope(result);
   }
 
   public String getNodeReferentSearchScopeDescription() {
