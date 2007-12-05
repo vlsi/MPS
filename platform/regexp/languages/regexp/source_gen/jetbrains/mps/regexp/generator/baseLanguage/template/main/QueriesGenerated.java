@@ -129,7 +129,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1194610650675(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return "REGEXP_" + node.getId();
+    return generator.getGeneratorSessionContext().createUniqueName("REGEXP");
   }
 
   public static SNode referenceMacro_GetReferent_1194610323562(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
