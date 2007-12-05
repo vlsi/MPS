@@ -45,10 +45,9 @@ public class EditorManager {
     return operationContext.getComponent(EditorManager.class);
   }
 
-  /*package*/ EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
+  public EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events) {
     return createRootCell(context, node, events, false);
   }
-
 
   private EditorCell createRootCell(EditorContext context, SNode node, List<SModelEvent> events, boolean isInspectorCell) {
     try {
@@ -63,7 +62,6 @@ public class EditorManager {
       myMap.clear();
     }
   }
-
 
   private static Map<ReferencedNodeContext, EditorCell> findBigDescendantCellsAndTheirNodes(EditorCell cell) {
     Map<ReferencedNodeContext, EditorCell> result = new HashMap<ReferencedNodeContext, EditorCell>();
