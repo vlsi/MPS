@@ -203,6 +203,14 @@ public final class SNode {
     return isAncestorOf(parentOfChild);
   }
 
+  public SNode getTopmostAncestor() {
+    SNode current = this;
+    while (current.getParent() != null) {
+      current = current.getParent();
+    }
+    return current;
+  }
+
   public SNode getContainingRoot() {
     fireNodeReadAccess();
     if (myParent == null) {
