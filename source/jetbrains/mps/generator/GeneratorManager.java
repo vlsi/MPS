@@ -265,9 +265,36 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
     final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
 
+    // confirm saving transient models
+    final boolean saveTransientModels;
+    if (isSaveTransientModels()) {
+      Object[] options = {"Yes",
+              "Not this time",
+              "No, and cancel saving"};
+      int option = JOptionPane.showOptionDialog(invocationContext.getMainFrame(),
+              "Would you like to save transient models?",
+              "",
+              JOptionPane.YES_NO_CANCEL_OPTION,
+              JOptionPane.QUESTION_MESSAGE,
+              null,
+              options,
+              options[0]);
+
+      if (option == JOptionPane.YES_OPTION) {
+        saveTransientModels = true;
+      } else {
+        saveTransientModels = false;
+        if (option == JOptionPane.CANCEL_OPTION) {
+          setSaveTransientModels(false);
+        }
+      }
+    } else {
+      saveTransientModels = false;
+    }
+
     Thread generationThread = new Thread("Generation") {
       public void run() {
-        generateModels(sourceModels, targetLanguage, invocationContext, generationType, script, progress, messages);
+        generateModels(sourceModels, targetLanguage, invocationContext, generationType, script, progress, messages, saveTransientModels);
         progress.finishAnyway();
       }
     };
@@ -284,10 +311,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                              final IGenerationType generationType,
                              final IGenerationScript script,
                              final IAdaptiveProgressMonitor progress,
-                             final IMessageHandler messages) {
+                             final IMessageHandler messages,
+                             final boolean saveTransientModels) {
     CommandProcessor.instance().executeGenerationCommand(new Runnable() {
       public void run() {
-        generateModels_internal(inputModels, targetLanguage, invocationContext, generationType, script, progress, messages);
+        generateModels_internal(inputModels, targetLanguage, invocationContext, generationType, script, progress, messages, saveTransientModels);
       }
     });
   }
@@ -298,7 +326,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                                        IGenerationType generationType,
                                        IGenerationScript script,
                                        IAdaptiveProgressMonitor progress,
-                                       IMessageHandler messages) {
+                                       IMessageHandler messages,
+                                       boolean saveTransientModels) {
 
     List<SModelDescriptor> sourceModels = new ArrayList<SModelDescriptor>();
     for (SModel model : _sourceModels) {
@@ -405,7 +434,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       //++ generation
       GenerationStatus status = null;
       Statistics.setEnabled(Statistics.TPL, isDumpStatistics());
-      IGenerationSession generationSession = new GenerationSession(invocationContext, isSaveTransientModels(), progress, messages);
+      IGenerationSession generationSession = new GenerationSession(invocationContext, saveTransientModels, progress, messages);
       try {
         Logger.addLoggingHandler(generationSession.getLoggingHandler());
         TypeChecker.getInstance().setIncrementalMode(false);
@@ -450,7 +479,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         }
         //-- generation
 
-        if (isSaveTransientModels()) {
+        if (saveTransientModels) {
           File solutionDescriptorFile = generationSession.saveTransientModels();
 
           progress.addText("update output models solution");
@@ -515,7 +544,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
         if (generationType.forceReload()) {
           ReloadUtils.reloadAll(true, true, true, new HashSet<SModelDescriptor>(), invocationContext.getModule(), new Runnable() {
-            public void run() {              
+            public void run() {
             }
           });
         }

@@ -69,16 +69,17 @@ public class GenericRefactoring {
     for (IModule sourceModule : sourceModels.keySet()) {
       IOperationContext operationContext = new ModuleContext(sourceModule, context.getOperationContext().getProject());
       new GeneratorManager().generateModels(sourceModels.get(sourceModule),
-            BootstrapLanguages.getInstance().getBaseLanguage(),
-            operationContext,
-            IGenerationType.FILES,
-            new IGenerationScript() {
-              public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
-                return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
-              }
-            },
-            IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
-            new DefaultMessageHandler(operationContext.getProject()));
+              BootstrapLanguages.getInstance().getBaseLanguage(),
+              operationContext,
+              IGenerationType.FILES,
+              new IGenerationScript() {
+                public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
+                  return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
+                }
+              },
+              IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
+              new DefaultMessageHandler(operationContext.getProject()),
+              false);
     }
 
 
@@ -97,15 +98,15 @@ public class GenericRefactoring {
 
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(modelUID));
     if (modelDescriptor == null) {
-      throw new RefactoringLoggingFailedException("refactoring source model could not be found, UID="+modelUID);
+      throw new RefactoringLoggingFailedException("refactoring source model could not be found, UID=" + modelUID);
     }
 
     SNode refactoringSourceNode = modelDescriptor.getSModel().getNodeById(nodeId);
     if (refactoringSourceNode == null) {
-      throw new RefactoringLoggingFailedException("refactoring source node could not be found, id="+nodeId);
+      throw new RefactoringLoggingFailedException("refactoring source node could not be found, id=" + nodeId);
     }
     if (!BaseAdapter.isInstance(refactoringSourceNode, Refactoring.class)) {
-      throw new RefactoringLoggingFailedException("refactoring source node is not a refactoring source, id="+nodeId);
+      throw new RefactoringLoggingFailedException("refactoring source node is not a refactoring source, id=" + nodeId);
     }
 
     Refactoring refactoring = (Refactoring) refactoringSourceNode.getAdapter();

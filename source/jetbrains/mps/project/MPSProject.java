@@ -749,8 +749,8 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     modulesToBuild.addAll(getProjectLanguages());
     modulesToBuild.addAll(getProjectDevKits());
 
-    new ModuleMaker().make(modulesToBuild, monitor);    
-    
+    new ModuleMaker().make(modulesToBuild, monitor);
+
     ReloadUtils.reloadAll(true);
   }
 
@@ -884,16 +884,16 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
             return;
           }
 
-          getComponentSafe(GeneratorManager.class)
-                  .generateModels(
-                          parms.getModels(),
-                          parms.getTarget(),
-                          new ModuleContext(parms.getModule(), MPSProject.this),
-                          generationType,
-                          parms.getScript(),
-                          IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
-                          handler
-                  );
+          GeneratorManager gm = getComponentSafe(GeneratorManager.class);
+          gm.generateModels(
+                  parms.getModels(),
+                  parms.getTarget(),
+                  new ModuleContext(parms.getModule(), MPSProject.this),
+                  generationType,
+                  parms.getScript(),
+                  IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR,
+                  handler,
+                  gm.isSaveTransientModels());
 
           // during generation all source files was collected, now we may compile them all together
           generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
