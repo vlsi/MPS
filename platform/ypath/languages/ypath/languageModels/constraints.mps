@@ -11,7 +11,7 @@
   <language namespace="jetbrains.mps.ypath" />
   <language namespace="jetbrains.mps.quotation" />
   <maxImportIndex value="20" />
-  <import index="1" modelUID="jetbrains.mps.ypath.structure" version="5" />
+  <import index="1" modelUID="jetbrains.mps.ypath.structure" version="12" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
   <import index="4" modelUID="jetbrains.mps.ypath.structure@java_stub" version="-1" />
@@ -2647,7 +2647,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1190800282750">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <link role="concept" targetNodeId="1.1190800051916" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1190800284555">
       <property name="name" value="getExpectedReturnType" />
@@ -4203,8 +4203,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1193058010304">
-    <property name="package" value="treePath.features.functions" />
-    <link role="concept" targetNodeId="1.1193057943814" resolveInfo="GenericFeatureCardinalFun" />
+    <property name="package" value="treePath.features.functions.generic" />
+    <link role="concept" targetNodeId="1.1193057943814" resolveInfo="GFCardinalParamFun" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1193058012086">
       <property name="name" value="getExpectedReturnType" />
       <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
@@ -4547,7 +4547,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1194545311052">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <link role="concept" targetNodeId="1.1194545263074" resolveInfo="GenericFeatureSetterFun" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1194545312865">
       <property name="name" value="getExpectedReturnType" />
@@ -4994,8 +4994,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1195420921520">
-    <property name="package" value="treePath.features.functions" />
-    <link role="concept" targetNodeId="1.1195420807526" resolveInfo="GenericFeatureRemoveFun" />
+    <property name="package" value="treePath.features.functions.generic" />
+    <link role="concept" targetNodeId="1.1195420807526" resolveInfo="GFRemoveParamFun" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1195420927102">
       <property name="name" value="getExpectedReturnType" />
       <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
@@ -5017,8 +5017,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1195421124470">
-    <property name="package" value="treePath.features.functions" />
-    <link role="concept" targetNodeId="1.1195420956439" resolveInfo="GenericFeatureInsertFun" />
+    <property name="package" value="treePath.features.functions.generic" />
+    <link role="concept" targetNodeId="1.1195420956439" resolveInfo="GFInserterParamFun" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1195421137249">
       <property name="name" value="getExpectedReturnType" />
       <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
@@ -5073,7 +5073,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1196426622175">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <link role="concept" targetNodeId="1.1196421500925" resolveInfo="IGenericFeatureFunFragment" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196426624569">
       <property name="name" value="getRangePresentation" />

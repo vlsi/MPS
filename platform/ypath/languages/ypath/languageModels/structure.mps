@@ -170,6 +170,202 @@
         </node>
       </node>
     </node>
+    <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1196856724705">
+      <property name="modelVersion" value="6" />
+      <link role="updateModelClause" targetNodeId="2v.1191583490898" />
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196856724706">
+        <property name="value" value="GenericFeatureCardinalFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196856724707">
+          <property name="name" value="oldConceptName" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196856724708" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196856724709">
+        <property name="value" value="GFCardinalParamFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1196856724710">
+          <property name="name" value="newConceptName" />
+          <property name="presentation" value="enter new concept name" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196856724711" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196856724712">
+        <property name="value" value="jetbrains.mps.ypath.structure" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196856724713">
+          <property name="name" value="conceptModel" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.SModelArgumentType" id="1196856724714" />
+        </node>
+      </node>
+    </node>
+    <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1196856952353">
+      <property name="modelVersion" value="7" />
+      <link role="updateModelClause" targetNodeId="2v.1191583490898" />
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196856952355">
+        <property name="value" value="GenericFeatureGetterFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196856952356">
+          <property name="name" value="oldConceptName" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196856952357" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196856952358">
+        <property name="value" value="GFGetterParamFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1196856952359">
+          <property name="name" value="newConceptName" />
+          <property name="presentation" value="enter new concept name" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196856952360" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196856952361">
+        <property name="value" value="jetbrains.mps.ypath.structure" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196856952362">
+          <property name="name" value="conceptModel" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.SModelArgumentType" id="1196856952363" />
+        </node>
+      </node>
+    </node>
+    <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1196857917514">
+      <property name="modelVersion" value="8" />
+      <link role="updateModelClause" targetNodeId="2v.1191583490898" />
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196857917515">
+        <property name="value" value="GenericFeatureInsertFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196857917516">
+          <property name="name" value="oldConceptName" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196857917517" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196857917518">
+        <property name="value" value="GFInserterParamFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1196857917519">
+          <property name="name" value="newConceptName" />
+          <property name="presentation" value="enter new concept name" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196857917520" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196857917521">
+        <property name="value" value="jetbrains.mps.ypath.structure" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196857917522">
+          <property name="name" value="conceptModel" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.SModelArgumentType" id="1196857917523" />
+        </node>
+      </node>
+    </node>
+    <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1196858196882">
+      <property name="modelVersion" value="9" />
+      <link role="updateModelClause" targetNodeId="2v.1191583490898" />
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196858196883">
+        <property name="value" value="GenericFeatureRemoveFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196858196884">
+          <property name="name" value="oldConceptName" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196858196885" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196858196886">
+        <property name="value" value="GFRemoverFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1196858196887">
+          <property name="name" value="newConceptName" />
+          <property name="presentation" value="enter new concept name" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196858196888" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196858196889">
+        <property name="value" value="jetbrains.mps.ypath.structure" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196858196890">
+          <property name="name" value="conceptModel" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.SModelArgumentType" id="1196858196891" />
+        </node>
+      </node>
+    </node>
+    <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1196858313989">
+      <property name="modelVersion" value="10" />
+      <link role="updateModelClause" targetNodeId="2v.1191583490898" />
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196858313991">
+        <property name="value" value="GFRemoverFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196858313992">
+          <property name="name" value="oldConceptName" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196858313993" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196858313994">
+        <property name="value" value="GFRemoverParamFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1196858313995">
+          <property name="name" value="newConceptName" />
+          <property name="presentation" value="enter new concept name" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196858313996" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196858313997">
+        <property name="value" value="jetbrains.mps.ypath.structure" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196858313998">
+          <property name="name" value="conceptModel" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.SModelArgumentType" id="1196858313999" />
+        </node>
+      </node>
+    </node>
+    <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1196858473280">
+      <property name="modelVersion" value="11" />
+      <link role="updateModelClause" targetNodeId="2v.1191583490898" />
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196858473281">
+        <property name="value" value="GFREmoverFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196858473282">
+          <property name="name" value="oldConceptName" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196858473283" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196858473284">
+        <property name="value" value="GFRemoverFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1196858473285">
+          <property name="name" value="newConceptName" />
+          <property name="presentation" value="enter new concept name" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196858473286" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196858473287">
+        <property name="value" value="jetbrains.mps.ypath.structure" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196858473288">
+          <property name="name" value="conceptModel" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.SModelArgumentType" id="1196858473289" />
+        </node>
+      </node>
+    </node>
+    <node role="log" type="jetbrains.mps.logging.refactoring.structure.RuntimeLog" id="1196858626389">
+      <property name="modelVersion" value="12" />
+      <link role="updateModelClause" targetNodeId="2v.1191583490898" />
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196858626390">
+        <property name="value" value="GenericFeatureReplaceFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196858626391">
+          <property name="name" value="oldConceptName" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196858626392" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196858626393">
+        <property name="value" value="GFReplacerParamFun" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1196858626394">
+          <property name="name" value="newConceptName" />
+          <property name="presentation" value="enter new concept name" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.StringArgumentType" id="1196858626395" />
+        </node>
+      </node>
+      <node role="argumentValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentValue" id="1196858626396">
+        <property name="value" value="jetbrains.mps.ypath.structure" />
+        <node role="argument" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1196858626397">
+          <property name="name" value="conceptModel" />
+          <property name="presentation" value="_" />
+          <node role="argumentType" type="jetbrains.mps.logging.refactoring.structure.SModelArgumentType" id="1196858626398" />
+        </node>
+      </node>
+    </node>
   </refactoringLog>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1168428529658">
     <property name="name" value="TreePathType" />
@@ -1382,26 +1578,18 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1190800051916">
-    <property name="package" value="treePath.features.functions" />
-    <property name="name" value="GenericFeatureGetterFun" />
-    <link role="extends" targetNodeId="2.1137021947720" />
+    <property name="package" value="treePath.features.functions.generic" />
+    <property name="name" value="GFGetterParamFun" />
+    <link role="extends" targetNodeId="1196857052853" resolveInfo="GFGetterFun" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1190800080009">
       <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1193048480544">
       <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1192619896201">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1190800137510">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" />
       <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196768473662">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1196768299101" resolveInfo="GeneratorFunctionParam" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1191843944385">
@@ -1452,9 +1640,9 @@
     <property name="name" value="IFunctionParam" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1193057943814">
-    <property name="package" value="treePath.features.functions" />
-    <property name="name" value="GenericFeatureCardinalFun" />
-    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <property name="package" value="treePath.features.functions.generic" />
+    <property name="name" value="GFCardinalParamFun" />
+    <link role="extends" targetNodeId="1196856873176" resolveInfo="GFCardinalFun" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1193057981642">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
@@ -1645,8 +1833,8 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194545263074">
-    <property name="package" value="treePath.features.functions" />
-    <property name="name" value="GenericFeatureReplaceFun" />
+    <property name="package" value="treePath.features.functions.generic" />
+    <property name="name" value="GFReplacerParamFun" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194545289778">
       <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
@@ -1654,25 +1842,9 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194545290314">
       <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1194545345035">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
-    </node>
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1194545354632">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1194610811419">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1194610572276" resolveInfo="RangeFunctionParam" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1194610815477">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1194610690988" resolveInfo="ReplaceExpressionFunctionParam" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196768551100">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1196768299101" resolveInfo="GeneratorFunctionParam" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196263944975">
       <property name="value" value="replace" />
@@ -1831,24 +2003,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195420807526">
-    <property name="package" value="treePath.features.functions" />
-    <property name="name" value="GenericFeatureRemoveFun" />
-    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420822402">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
-    </node>
+    <property name="package" value="treePath.features.functions.generic" />
+    <property name="name" value="GFRemoverParamFun" />
+    <link role="extends" targetNodeId="1196858411075" resolveInfo="GFRemoverFun" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420830253">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420837108">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1194610572276" resolveInfo="RangeFunctionParam" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196768565426">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1196768299101" resolveInfo="GeneratorFunctionParam" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196267249954">
       <property name="value" value="remove" />
@@ -1861,30 +2021,20 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196267395518">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196858423943">
+      <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196858424556">
+      <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195420956439">
-    <property name="package" value="treePath.features.functions" />
-    <property name="name" value="GenericFeatureInsertFun" />
-    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420970173">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
-    </node>
+    <property name="package" value="treePath.features.functions.generic" />
+    <property name="name" value="GFInserterParamFun" />
+    <link role="extends" targetNodeId="1196858018384" resolveInfo="GFInserterFun" />
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420976368">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1184501940146" resolveInfo="ParamFunctionParam" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195420979945">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1194610572276" resolveInfo="RangeFunctionParam" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1195421106771">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1195421010025" resolveInfo="InsertExpressionFunctionParam" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196768574762">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" targetNodeId="1196768299101" resolveInfo="GeneratorFunctionParam" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196267438447">
       <property name="value" value="insert" />
@@ -1896,6 +2046,12 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196267450358">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196858124464">
+      <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196858124960">
+      <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1195421010025">
@@ -1923,14 +2079,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196261217802">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <property name="name" value="IGenericFeatureReplaceFun" />
     <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196418192301">
       <link role="intfc" targetNodeId="1196418137410" resolveInfo="IGenericFeatureFun" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196263863763">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <property name="name" value="GenericFeatureReplaceDemux" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196264051447">
@@ -1957,21 +2113,21 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196267225093">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <property name="name" value="IGenericFeatureRemoveFun" />
     <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196418199257">
       <link role="intfc" targetNodeId="1196418137410" resolveInfo="IGenericFeatureFun" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196267419283">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <property name="name" value="IGenericFeatureInsertFun" />
     <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196418180607">
       <link role="intfc" targetNodeId="1196418137410" resolveInfo="IGenericFeatureFun" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196414630662">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <property name="name" value="GenericFeatureFunHolder" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196418208994">
@@ -1989,11 +2145,11 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196418137410">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <property name="name" value="IGenericFeatureFun" />
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196419083973">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <property name="name" value="GFReplaceFunFragment" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196419152721">
@@ -2056,7 +2212,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196419740573">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <property name="name" value="GFRemoveFunFragment" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196419777893">
@@ -2074,7 +2230,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196419817888">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <property name="name" value="GFInsertFunFragment" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196419921832">
@@ -2092,7 +2248,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196421500925">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <property name="name" value="IGenericFeatureFunFragment" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196436493719">
       <property name="metaClass" value="aggregation" />
@@ -2106,7 +2262,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196428984361">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <property name="name" value="GFInsertFunWrapper" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196429060366">
@@ -2131,7 +2287,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196429147746">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <property name="name" value="GFReplaceFunWrapper" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196429206726">
@@ -2156,7 +2312,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196429244438">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <property name="name" value="GFRemoveFunWrapper" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196429285514">
@@ -2237,6 +2393,131 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196801872730">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196856873176">
+    <property name="package" value="treePath.features.functions.generic" />
+    <property name="name" value="GFCardinalFun" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196856886768">
+      <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196857052853">
+    <property name="package" value="treePath.features.functions.generic" />
+    <property name="name" value="GFGetterFun" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196857105087">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196857123959">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1196768299101" resolveInfo="GeneratorFunctionParam" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196857063989">
+      <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196858018384">
+    <property name="package" value="treePath.features.functions.generic" />
+    <property name="name" value="GFInserterFun" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196858083327">
+      <property name="value" value="insert" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196858083328">
+      <property name="value" value="implements insert function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196858083329">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196858047942">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196858057492">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1194610572276" resolveInfo="RangeFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196858057493">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1195421010025" resolveInfo="InsertExpressionFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196858057495">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1196768299101" resolveInfo="GeneratorFunctionParam" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196858136580">
+      <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196858411075">
+    <property name="package" value="treePath.features.functions.generic" />
+    <property name="name" value="GFRemoverFun" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196858440939">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196858440942">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1194610572276" resolveInfo="RangeFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196858440943">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1196768299101" resolveInfo="GeneratorFunctionParam" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196858434017">
+      <property name="value" value="remove" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196858434018">
+      <property name="value" value="implements remove function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196858434019">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196858570359">
+      <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196858724203">
+    <property name="package" value="treePath.features.functions.generic" />
+    <property name="name" value="GFReplacerFun" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196858750642">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1192620437851" resolveInfo="ExpressionFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196858750645">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1194610572276" resolveInfo="RangeFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196858750646">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1194610690988" resolveInfo="ReplaceExpressionFunctionParam" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1196858750647">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1196768299101" resolveInfo="GeneratorFunctionParam" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196858741901">
+      <property name="value" value="replace" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196858741902">
+      <property name="value" value="implements replace function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196858741903">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196858734969">
+      <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
     </node>
   </node>
 </model>

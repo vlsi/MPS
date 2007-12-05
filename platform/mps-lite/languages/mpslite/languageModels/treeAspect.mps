@@ -19,7 +19,7 @@
     <property name="name" value="MPSLite_Nodes" />
     <node role="features" type="jetbrains.mps.ypath.structure.GenericParamFeature" id="1196691896258">
       <property name="name" value="child" />
-      <node role="getter" type="jetbrains.mps.ypath.structure.GenericFeatureGetterFun" id="1196691896259">
+      <node role="getter" type="jetbrains.mps.ypath.structure.GFGetterParamFun" id="1196691896259">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196691896260">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196784794644">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196784794645">
@@ -59,7 +59,7 @@
           </node>
         </node>
       </node>
-      <node role="cardinal" type="jetbrains.mps.ypath.structure.GenericFeatureCardinalFun" id="1196691896261">
+      <node role="cardinal" type="jetbrains.mps.ypath.structure.GFCardinalParamFun" id="1196691896261">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196691896262">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196691994951">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1196691994952">
@@ -119,7 +119,7 @@
     </node>
     <node role="features" type="jetbrains.mps.ypath.structure.GenericParamFeature" id="1196696793183">
       <property name="name" value="property" />
-      <node role="getter" type="jetbrains.mps.ypath.structure.GenericFeatureGetterFun" id="1196696793184">
+      <node role="getter" type="jetbrains.mps.ypath.structure.GFGetterParamFun" id="1196696793184">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196696793185">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196851905567">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196851905568">
@@ -159,7 +159,7 @@
           </node>
         </node>
       </node>
-      <node role="cardinal" type="jetbrains.mps.ypath.structure.GenericFeatureCardinalFun" id="1196696793186">
+      <node role="cardinal" type="jetbrains.mps.ypath.structure.GFCardinalParamFun" id="1196696793186">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196696793187">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196696858245">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1196852011610">
@@ -217,7 +217,7 @@
     </node>
     <node role="features" type="jetbrains.mps.ypath.structure.GenericParamFeature" id="1196763170990">
       <property name="name" value="reference" />
-      <node role="getter" type="jetbrains.mps.ypath.structure.GenericFeatureGetterFun" id="1196763170991">
+      <node role="getter" type="jetbrains.mps.ypath.structure.GFGetterParamFun" id="1196763170991">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196763170992">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196852118168">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196852118169">
@@ -257,7 +257,7 @@
           </node>
         </node>
       </node>
-      <node role="cardinal" type="jetbrains.mps.ypath.structure.GenericFeatureCardinalFun" id="1196763170993">
+      <node role="cardinal" type="jetbrains.mps.ypath.structure.GFCardinalParamFun" id="1196763170993">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196763170994">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196763260465">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1196852073439">

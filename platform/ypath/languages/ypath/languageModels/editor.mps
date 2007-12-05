@@ -6,7 +6,7 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
   <maxImportIndex value="37" />
-  <import index="1" modelUID="jetbrains.mps.ypath.structure" version="5" />
+  <import index="1" modelUID="jetbrains.mps.ypath.structure" version="12" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="5" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="29" modelUID="jetbrains.mps.ypath.structure@java_stub" version="-1" />
@@ -3966,7 +3966,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196264186414">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <link role="conceptDeclaration" targetNodeId="1.1196263863763" resolveInfo="GenericFeatureReplaceDemux" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196264190150">
       <property name="vertical" value="true" />
@@ -4018,7 +4018,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196414896569">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <link role="conceptDeclaration" targetNodeId="1.1196414630662" resolveInfo="GenericFeatureFunHolder" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196414904977">
       <property name="vertical" value="true" />
@@ -4074,7 +4074,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196419180793">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <link role="conceptDeclaration" targetNodeId="1.1196419083973" resolveInfo="GFReplaceSingleFunFragment" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196419326330">
       <property name="vertical" value="true" />
@@ -4137,7 +4137,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196419801692">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <link role="conceptDeclaration" targetNodeId="1.1196419740573" resolveInfo="GFRemoveFunFragment" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196419803161">
       <property name="vertical" value="true" />
@@ -4200,7 +4200,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196419936589">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <link role="conceptDeclaration" targetNodeId="1.1196419817888" resolveInfo="GFInsertFunFragment" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196419938146">
       <property name="vertical" value="true" />
@@ -4263,7 +4263,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196429095727">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <link role="conceptDeclaration" targetNodeId="1.1196428984361" resolveInfo="GFInsertFunWrapper" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196429097360">
       <property name="vertical" value="true" />
@@ -4292,7 +4292,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196429195146">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <link role="conceptDeclaration" targetNodeId="1.1196429147746" resolveInfo="GFReplaceFunWrapper" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196429197937">
       <property name="vertical" value="true" />
@@ -4321,7 +4321,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196429302624">
-    <property name="package" value="treePath.features.functions" />
+    <property name="package" value="treePath.features.functions.generic" />
     <link role="conceptDeclaration" targetNodeId="1.1196429244438" resolveInfo="GFRemoveFunWrapper" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196429304076">
       <property name="vertical" value="true" />

@@ -13,7 +13,7 @@
   <import index="2" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.ypath.structure" version="5" />
+  <import index="5" modelUID="jetbrains.mps.ypath.structure" version="12" />
   <import index="6" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="7" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.helper" version="-1" />
@@ -465,7 +465,7 @@
           </node>
         </node>
       </node>
-      <node role="cardinal" type="jetbrains.mps.ypath.structure.GenericFeatureCardinalFun" id="1196702340492">
+      <node role="cardinal" type="jetbrains.mps.ypath.structure.GFCardinalParamFun" id="1196702340492">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196702340493">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196702340494">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1196702340495">
@@ -474,7 +474,7 @@
           </node>
         </node>
       </node>
-      <node role="getter" type="jetbrains.mps.ypath.structure.GenericFeatureGetterFun" id="1196702340496">
+      <node role="getter" type="jetbrains.mps.ypath.structure.GFGetterParamFun" id="1196702340496">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196702340497">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196702340498">
             <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196702340499">

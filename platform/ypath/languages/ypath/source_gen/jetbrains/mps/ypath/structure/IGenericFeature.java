@@ -13,17 +13,17 @@ public interface IGenericFeature extends INodeAdapter {
   public static String CARDINAL = "cardinal";
   public static String FUN_HOLDERS = "funHolders";
 
-  public GenericFeatureGetterFun getGetter();
+  public GFGetterParamFun getGetter();
 
-  public void setGetter(GenericFeatureGetterFun node);
+  public void setGetter(GFGetterParamFun node);
 
   public IGenericFeatureReplaceFun getReplaceFun();
 
   public void setReplaceFun(IGenericFeatureReplaceFun node);
 
-  public GenericFeatureCardinalFun getCardinal();
+  public GFCardinalParamFun getCardinal();
 
-  public void setCardinal(GenericFeatureCardinalFun node);
+  public void setCardinal(GFCardinalParamFun node);
 
   public int getFunHoldersesCount();
 
