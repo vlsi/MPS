@@ -1521,7 +1521,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="cardinal" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1196856873176" resolveInfo="GFCardinalFun" />
+      <link role="target" targetNodeId="1193057943814" resolveInfo="GFCardinalParamFun" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1184659771596">

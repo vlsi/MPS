@@ -88,11 +88,11 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
     super.setChild(ParamListFeature.TO_STRING_FUNCTION, node);
   }
 
-  public GFCardinalFun getCardinal() {
-    return (GFCardinalFun)this.getChild(ParamListFeature.CARDINAL);
+  public GFCardinalParamFun getCardinal() {
+    return (GFCardinalParamFun)this.getChild(ParamListFeature.CARDINAL);
   }
 
-  public void setCardinal(GFCardinalFun node) {
+  public void setCardinal(GFCardinalParamFun node) {
     super.setChild(ParamListFeature.CARDINAL, node);
   }
 

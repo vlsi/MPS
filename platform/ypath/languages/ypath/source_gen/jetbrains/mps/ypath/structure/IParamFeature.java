@@ -29,8 +29,8 @@ public interface IParamFeature extends INodeAdapter {
 
   public void setToStringFunction(ToStringFun node);
 
-  public GFCardinalFun getCardinal();
+  public GFCardinalParamFun getCardinal();
 
-  public void setCardinal(GFCardinalFun node);
+  public void setCardinal(GFCardinalParamFun node);
 
 }
