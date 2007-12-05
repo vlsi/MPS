@@ -158,7 +158,7 @@ public class Solution extends AbstractModule {
     }
 
     protected void fireCommandEvent() {
-      for (SolutionCommandListener l : myCommandListeners) {
+      for (SolutionCommandListener l : new ArrayList<SolutionCommandListener>(myCommandListeners)) {
         l.solutionChangedInCommand(Solution.this);
       }
     }
