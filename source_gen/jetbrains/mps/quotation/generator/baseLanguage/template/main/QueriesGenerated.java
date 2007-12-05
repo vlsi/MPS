@@ -17,6 +17,7 @@ import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.quotation.structure.PropertyAntiquotation_AnnotationLink;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink;
@@ -41,6 +42,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1196351886795(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return node.getProperty("propertyValue");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1196871487518(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(node.getRole_());
   }
 
   public static Object propertyMacro_GetPropertyValue_1196351886850(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -81,6 +86,15 @@ public class QueriesGenerated {
 
   public static SNode referenceMacro_GetReferent_1196351886638(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "modelToCreate", true), "parametersFromExpressions");
+  }
+
+  public static SNode referenceMacro_GetReferent_1196871551132(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    SNode quotation = SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
+    SNode antiquotation = node;
+    if(antiquotation == null) {
+      return null;
+    }
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
   }
 
   public static SNode referenceMacro_GetReferent_1196351886954(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
@@ -235,12 +249,27 @@ public class QueriesGenerated {
 
   public static List sourceNodesQuery_1196351886802(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     SModel model = generator.getTargetModel();
-    List<SNode> result = new ArrayList();
+    List<SNode> result = new ArrayList<SNode>();
     for(String property : node.getPropertyNames()) {
+      if(PropertyAntiquotation_AnnotationLink.getPropertyAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), property) != null) {
+        continue;
+      }
       SNode propertyNode = BaseConcept.newInstance(model).getNode();
       propertyNode.setProperty("propertyName", property);
       propertyNode.setProperty("propertyValue", node.getProperty(property));
       result.add(propertyNode);
+    }
+    return result;
+  }
+
+  public static List sourceNodesQuery_1196871487533(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SModel model = generator.getTargetModel();
+    List<SNode> result = new ArrayList<SNode>();
+    for(String property : node.getPropertyNames()) {
+      BaseAdapter attribute = PropertyAntiquotation_AnnotationLink.getPropertyAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), property);
+      if(attribute != null) {
+        result.add(attribute.getNode());
+      }
     }
     return result;
   }

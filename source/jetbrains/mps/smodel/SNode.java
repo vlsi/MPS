@@ -500,9 +500,10 @@ public final class SNode {
   @NotNull
   public Set<String> getPropertyNames() {
     fireNodeReadAccess();
-    if (myProperties == null) return new HashSet<String>(0);
     Set<String> result = getPropertyNamesFromAttributes();
-    result.addAll(myProperties.keySet());
+    if (myProperties != null) {
+      result.addAll(myProperties.keySet());
+    }
     return result;
   }
 
