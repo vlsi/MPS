@@ -458,8 +458,8 @@ public class ChildSubstituteActionsHelper {
         Object[] args = {actions.iterator(), parentNode, currentChild, childConcept, context};
         try {
           QueryMethodGenerated.invoke(methodName, args, substituteActionsBuilder.getModel());
-        } catch (Exception e) {
-          LOG.error(e);
+        } catch (Throwable t) {
+          LOG.error(t);
         }
       }
 
@@ -497,8 +497,8 @@ public class ChildSubstituteActionsHelper {
       String methodName = ActionQueryMethodName.nodeFactory_SubstituteActionBuilder(builder);
       try {
         return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, args1, builder.getModel());
-      } catch (Exception e) {
-        LOG.error(e);
+      } catch (Throwable t) {
+        LOG.error(t);
         return Collections.emptyList();
       }
     }
