@@ -1,5 +1,5 @@
 /*
- * Created Oct 19, 2007 at 12:59:00 PM
+ * Created Dec 5, 2007 at 6:57:59 PM
  */
 package jetbrains.mps.ypath.design;
 
@@ -10,9 +10,8 @@ import jetbrains.mps.smodel.SNode;
 /**
  * @author fyodor
  */
-public interface IGenericFeatureDesign<T> extends IFeatureDesign<T> {
+public interface IGenericFeatureDesign {
 
-    SNode getterExpression (SNode srcExpr, T param, ITemplateGenerator generator);
-    
-    boolean isSingleTargetCardinality (T param);
+    SNode getterExpression (SNode srcExpr, ITemplateGenerator generator);
+
 }

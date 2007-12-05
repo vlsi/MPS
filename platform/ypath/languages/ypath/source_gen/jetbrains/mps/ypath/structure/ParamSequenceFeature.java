@@ -17,6 +17,7 @@ public class ParamSequenceFeature extends SequenceFeature implements IParamFeatu
   public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
   public static String TO_STRING_FUNCTION = "toStringFunction";
+  public static String CARDINAL = "cardinal";
 
   public  ParamSequenceFeature(SNode node) {
     super(node);
@@ -85,6 +86,14 @@ public class ParamSequenceFeature extends SequenceFeature implements IParamFeatu
 
   public void setToStringFunction(ToStringFun node) {
     super.setChild(ParamSequenceFeature.TO_STRING_FUNCTION, node);
+  }
+
+  public GFCardinalFun getCardinal() {
+    return (GFCardinalFun)this.getChild(ParamSequenceFeature.CARDINAL);
+  }
+
+  public void setCardinal(GFCardinalFun node) {
+    super.setChild(ParamSequenceFeature.CARDINAL, node);
   }
 
   public ParamFeatureSequenceFun getParamSequenceFunction() {

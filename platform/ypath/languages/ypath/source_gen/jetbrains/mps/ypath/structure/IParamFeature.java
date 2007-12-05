@@ -11,6 +11,7 @@ public interface IParamFeature extends INodeAdapter {
   public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
   public static String TO_STRING_FUNCTION = "toStringFunction";
+  public static String CARDINAL = "cardinal";
 
   public Type getParameterType();
 
@@ -27,5 +28,9 @@ public interface IParamFeature extends INodeAdapter {
   public ToStringFun getToStringFunction();
 
   public void setToStringFunction(ToStringFun node);
+
+  public GFCardinalFun getCardinal();
+
+  public void setCardinal(GFCardinalFun node);
 
 }

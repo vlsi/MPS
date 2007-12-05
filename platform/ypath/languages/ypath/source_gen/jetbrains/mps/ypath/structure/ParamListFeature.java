@@ -17,6 +17,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
   public static String TO_STRING_FUNCTION = "toStringFunction";
+  public static String CARDINAL = "cardinal";
 
   public  ParamListFeature(SNode node) {
     super(node);
@@ -85,6 +86,14 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
 
   public void setToStringFunction(ToStringFun node) {
     super.setChild(ParamListFeature.TO_STRING_FUNCTION, node);
+  }
+
+  public GFCardinalFun getCardinal() {
+    return (GFCardinalFun)this.getChild(ParamListFeature.CARDINAL);
+  }
+
+  public void setCardinal(GFCardinalFun node) {
+    super.setChild(ParamListFeature.CARDINAL, node);
   }
 
   public ParamFeatureGetFun getParamGetFunction() {

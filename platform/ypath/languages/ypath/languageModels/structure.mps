@@ -1517,6 +1517,12 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1184659771596" resolveInfo="NameFunction" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196872079679">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="cardinal" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1196856873176" resolveInfo="GFCardinalFun" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1184659771596">
     <property name="package" value="treePath.features.functions" />
@@ -1599,19 +1605,13 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="getter" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1190800051916" resolveInfo="GenericFeatureSingleValueFun" />
+      <link role="target" targetNodeId="1196857052853" resolveInfo="GFGetterFun" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194545216305">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="replaceFun" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1196261217802" resolveInfo="IGenericFeatureReplaceFun" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1193057911192">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="cardinal" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1193057943814" resolveInfo="GenericFeatureCardinalFun" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196434554868">
       <property name="metaClass" value="aggregation" />
@@ -1835,7 +1835,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1194545263074">
     <property name="package" value="treePath.features.functions.generic" />
     <property name="name" value="GFReplacerParamFun" />
-    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <link role="extends" targetNodeId="1196858724203" resolveInfo="GFReplacerFun" />
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1194545289778">
       <link role="intfc" targetNodeId="1184658241359" resolveInfo="IParamFeatureFun" />
     </node>
@@ -2156,8 +2156,8 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="fun" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1194545263074" resolveInfo="GenericFeatureReplaceFun" />
       <link role="specializedLink" targetNodeId="1196436493719" />
+      <link role="target" targetNodeId="1196858724203" resolveInfo="GFReplacerFun" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196419147361">
       <link role="intfc" targetNodeId="1196261217802" resolveInfo="IGenericFeatureReplaceFun" />
@@ -2219,8 +2219,8 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="fun" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1195420807526" resolveInfo="GenericFeatureRemoveFun" />
       <link role="specializedLink" targetNodeId="1196436493719" />
+      <link role="target" targetNodeId="1196858411075" resolveInfo="GFRemoverFun" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196419754317">
       <link role="intfc" targetNodeId="1196267225093" resolveInfo="IGenericFeatureRemoveFun" />
@@ -2237,8 +2237,8 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="fun" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1195420956439" resolveInfo="GenericFeatureInsertFun" />
       <link role="specializedLink" targetNodeId="1196436493719" />
+      <link role="target" targetNodeId="1196858018384" resolveInfo="GFInserterFun" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196419899824">
       <link role="intfc" targetNodeId="1196267419283" resolveInfo="IGenericFeatureInsertFun" />
@@ -2518,6 +2518,27 @@
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196858734969">
       <link role="intfc" targetNodeId="1184771264860" resolveInfo="IDesignFunction" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196865276807">
+    <property name="package" value="treePath.features" />
+    <property name="name" value="GenericFeature" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196865601939">
+      <property name="value" value="generic feature" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196865605490">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196865291968">
+      <link role="intfc" targetNodeId="1191843944385" resolveInfo="IGenericFeature" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196865291970">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196865291971">
+      <link role="intfc" targetNodeId="1184066209434" resolveInfo="IFeature" />
     </node>
   </node>
 </model>

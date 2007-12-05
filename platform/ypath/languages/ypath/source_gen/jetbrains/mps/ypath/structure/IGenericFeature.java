@@ -10,20 +10,15 @@ public interface IGenericFeature extends INodeAdapter {
   public static final String concept = "jetbrains.mps.ypath.structure.IGenericFeature";
   public static String GETTER = "getter";
   public static String REPLACE_FUN = "replaceFun";
-  public static String CARDINAL = "cardinal";
   public static String FUN_HOLDERS = "funHolders";
 
-  public GFGetterParamFun getGetter();
+  public GFGetterFun getGetter();
 
-  public void setGetter(GFGetterParamFun node);
+  public void setGetter(GFGetterFun node);
 
   public IGenericFeatureReplaceFun getReplaceFun();
 
   public void setReplaceFun(IGenericFeatureReplaceFun node);
-
-  public GFCardinalParamFun getCardinal();
-
-  public void setCardinal(GFCardinalParamFun node);
 
   public int getFunHoldersesCount();
 

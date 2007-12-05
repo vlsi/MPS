@@ -1552,12 +1552,12 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1192792179305">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1192792179306">
             <property name="name" value="gfd" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1192792179307">
-              <link role="classifier" targetNodeId="14.~IGenericFeatureDesign" resolveInfo="IGenericFeatureDesign" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196877999490">
+              <link role="classifier" targetNodeId="14.~IGenericParameterizedFeatureDesign" resolveInfo="IGenericParameterizedFeatureDesign" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1192792192043">
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1192792192044">
-                <link role="classifier" targetNodeId="14.~IGenericFeatureDesign" resolveInfo="IGenericFeatureDesign" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196877868674">
+                <link role="classifier" targetNodeId="14.~IGenericParameterizedFeatureDesign" resolveInfo="IGenericParameterizedFeatureDesign" />
               </node>
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1192792196139">
                 <link role="baseMethodDeclaration" targetNodeId="1184840289279" resolveInfo="getFeatureDesign" />
@@ -1579,7 +1579,7 @@
                       <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1193060314850">
-                      <link role="baseMethodDeclaration" targetNodeId="14.~IGenericFeatureDesign.getterExpression(jetbrains.mps.smodel.SNode,java.lang.Object,jetbrains.mps.generator.template.ITemplateGenerator):jetbrains.mps.smodel.SNode" resolveInfo="getterExpression" />
+                      <link role="baseMethodDeclaration" targetNodeId="14.~IGenericParameterizedFeatureDesign.getterExpression(jetbrains.mps.smodel.SNode,java.lang.Object,jetbrains.mps.generator.template.ITemplateGenerator):jetbrains.mps.smodel.SNode" resolveInfo="getterExpression" />
                       <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193060314851">
                         <link role="variableDeclaration" targetNodeId="1192792179306" resolveInfo="gfd" />
                       </node>
@@ -1703,12 +1703,12 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1194809673823">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1194809673824">
             <property name="name" value="gfd" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194812059151">
-              <link role="classifier" targetNodeId="14.~IWritableGenericFeatureDesign" resolveInfo="IWritableGenericFeatureDesign" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196877988884">
+              <link role="classifier" targetNodeId="14.~IWritableGenericParameterizedFeatureDesign" resolveInfo="IWritableGenericParameterizedFeatureDesign" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1194809673826">
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194812063156">
-                <link role="classifier" targetNodeId="14.~IWritableGenericFeatureDesign" resolveInfo="IWritableGenericFeatureDesign" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196877992163">
+                <link role="classifier" targetNodeId="14.~IWritableGenericParameterizedFeatureDesign" resolveInfo="IWritableGenericParameterizedFeatureDesign" />
               </node>
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1194809673828">
                 <link role="baseMethodDeclaration" targetNodeId="1184840289279" resolveInfo="getFeatureDesign" />
@@ -1730,7 +1730,7 @@
                       <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1194809673837">
-                      <link role="baseMethodDeclaration" targetNodeId="14.~IWritableGenericFeatureDesign.replaceStatement(jetbrains.mps.smodel.SNode,java.lang.Object,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.generator.template.ITemplateGenerator):jetbrains.mps.smodel.SNode" resolveInfo="replaceStatement" />
+                      <link role="baseMethodDeclaration" targetNodeId="14.~IWritableGenericParameterizedFeatureDesign.replaceStatement(jetbrains.mps.smodel.SNode,java.lang.Object,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.generator.template.ITemplateGenerator):jetbrains.mps.smodel.SNode" resolveInfo="replaceStatement" />
                       <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1194809673838">
                         <link role="variableDeclaration" targetNodeId="1194809673824" resolveInfo="gfd" />
                       </node>
@@ -1830,12 +1830,12 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1195432417527">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1195432417528">
             <property name="name" value="gfd" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195432417529">
-              <link role="classifier" targetNodeId="14.~IWritableGenericFeatureDesign" resolveInfo="IWritableGenericFeatureDesign" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196878010822">
+              <link role="classifier" targetNodeId="14.~IWritableGenericParameterizedFeatureDesign" resolveInfo="IWritableGenericParameterizedFeatureDesign" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1195432417530">
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195432417531">
-                <link role="classifier" targetNodeId="14.~IWritableGenericFeatureDesign" resolveInfo="IWritableGenericFeatureDesign" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196878016632">
+                <link role="classifier" targetNodeId="14.~IWritableGenericParameterizedFeatureDesign" resolveInfo="IWritableGenericParameterizedFeatureDesign" />
               </node>
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1195432417532">
                 <link role="baseMethodDeclaration" targetNodeId="1184840289279" resolveInfo="getFeatureDesign" />
@@ -1857,7 +1857,7 @@
                       <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1195432417541">
-                      <link role="baseMethodDeclaration" targetNodeId="14.~IWritableGenericFeatureDesign.removeStatement(jetbrains.mps.smodel.SNode,java.lang.Object,jetbrains.mps.smodel.SNode,jetbrains.mps.generator.template.ITemplateGenerator):jetbrains.mps.smodel.SNode" resolveInfo="removeStatement" />
+                      <link role="baseMethodDeclaration" targetNodeId="14.~IWritableGenericParameterizedFeatureDesign.removeStatement(jetbrains.mps.smodel.SNode,java.lang.Object,jetbrains.mps.smodel.SNode,jetbrains.mps.generator.template.ITemplateGenerator):jetbrains.mps.smodel.SNode" resolveInfo="removeStatement" />
                       <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1195432417542">
                         <link role="variableDeclaration" targetNodeId="1195432417528" resolveInfo="gfd" />
                       </node>
@@ -1960,12 +1960,12 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1195432453431">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1195432453432">
             <property name="name" value="gfd" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195432453433">
-              <link role="classifier" targetNodeId="14.~IWritableGenericFeatureDesign" resolveInfo="IWritableGenericFeatureDesign" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196878035319">
+              <link role="classifier" targetNodeId="14.~IWritableGenericParameterizedFeatureDesign" resolveInfo="IWritableGenericParameterizedFeatureDesign" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1195432453434">
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195432453435">
-                <link role="classifier" targetNodeId="14.~IWritableGenericFeatureDesign" resolveInfo="IWritableGenericFeatureDesign" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196878038385">
+                <link role="classifier" targetNodeId="14.~IWritableGenericParameterizedFeatureDesign" resolveInfo="IWritableGenericParameterizedFeatureDesign" />
               </node>
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1195432453436">
                 <link role="baseMethodDeclaration" targetNodeId="1184840289279" resolveInfo="getFeatureDesign" />
@@ -1987,7 +1987,7 @@
                       <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
                     </node>
                     <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1195432453445">
-                      <link role="baseMethodDeclaration" targetNodeId="14.~IWritableGenericFeatureDesign.insertStatement(jetbrains.mps.smodel.SNode,java.lang.Object,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.generator.template.ITemplateGenerator):jetbrains.mps.smodel.SNode" resolveInfo="insertStatement" />
+                      <link role="baseMethodDeclaration" targetNodeId="14.~IWritableGenericParameterizedFeatureDesign.insertStatement(jetbrains.mps.smodel.SNode,java.lang.Object,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,jetbrains.mps.generator.template.ITemplateGenerator):jetbrains.mps.smodel.SNode" resolveInfo="insertStatement" />
                       <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1195432453446">
                         <link role="variableDeclaration" targetNodeId="1195432453432" resolveInfo="gfd" />
                       </node>
@@ -2067,12 +2067,12 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1193057722905">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1193057722906">
             <property name="name" value="gfd" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193057722907">
-              <link role="classifier" targetNodeId="14.~IGenericFeatureDesign" resolveInfo="IGenericFeatureDesign" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196878045228">
+              <link role="classifier" targetNodeId="14.~IGenericParameterizedFeatureDesign" resolveInfo="IGenericParameterizedFeatureDesign" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1193057722908">
-              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193057722909">
-                <link role="classifier" targetNodeId="14.~IGenericFeatureDesign" resolveInfo="IGenericFeatureDesign" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196878048815">
+                <link role="classifier" targetNodeId="14.~IGenericParameterizedFeatureDesign" resolveInfo="IGenericParameterizedFeatureDesign" />
               </node>
               <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1193057722910">
                 <link role="baseMethodDeclaration" targetNodeId="1184840289279" resolveInfo="getFeatureDesign" />
@@ -2089,7 +2089,7 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193060329384">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193060333862">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1193060333863">
-                    <link role="baseMethodDeclaration" targetNodeId="14.~IGenericFeatureDesign.isSingleTargetCardinality(java.lang.Object):boolean" resolveInfo="isSingleTargetCardinality" />
+                    <link role="baseMethodDeclaration" targetNodeId="14.~IGenericParameterizedFeatureDesign.isSingleTargetCardinality(java.lang.Object):boolean" resolveInfo="isSingleTargetCardinality" />
                     <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193060333864">
                       <link role="variableDeclaration" targetNodeId="1193057722906" resolveInfo="gfd" />
                     </node>
@@ -2159,8 +2159,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1184840404985">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1184840404986">
             <property name="name" value="fd" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184840404987">
-              <link role="classifier" targetNodeId="14.~IFeatureDesign" resolveInfo="IFeatureDesign" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196878060936">
+              <link role="classifier" targetNodeId="14.~IParameterizedFeatureDesign" resolveInfo="IParameterizedFeatureDesign" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1184840408276">
               <link role="baseMethodDeclaration" targetNodeId="1184840289279" resolveInfo="getFeatureDesign" />
@@ -2176,7 +2176,7 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193060356681">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193060362004">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1193060362005">
-                    <link role="baseMethodDeclaration" targetNodeId="14.~IFeatureDesign.getTargetType(java.lang.Object,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getTargetType" />
+                    <link role="baseMethodDeclaration" targetNodeId="14.~IParameterizedFeatureDesign.getTargetType(java.lang.Object,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getTargetType" />
                     <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1193060362006">
                       <link role="variableDeclaration" targetNodeId="1184840404986" resolveInfo="fd" />
                     </node>
@@ -2233,8 +2233,8 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1190198436910">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1190198436911">
             <property name="name" value="fd" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190198436912">
-              <link role="classifier" targetNodeId="14.~IFeatureDesign" resolveInfo="IFeatureDesign" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196878070903">
+              <link role="classifier" targetNodeId="14.~IParameterizedFeatureDesign" resolveInfo="IParameterizedFeatureDesign" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1190198436913">
               <link role="baseMethodDeclaration" targetNodeId="1184840289279" resolveInfo="getFeatureDesign" />
@@ -2255,7 +2255,7 @@
                   </node>
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1190198436922">
-                  <link role="baseMethodDeclaration" targetNodeId="14.~IFeatureDesign.getParameters(jetbrains.mps.smodel.SNode):java.lang.Iterable" resolveInfo="getParameters" />
+                  <link role="baseMethodDeclaration" targetNodeId="14.~IParameterizedFeatureDesign.getParameters(jetbrains.mps.smodel.SNode):java.lang.Iterable" resolveInfo="getParameters" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1190198436923">
                     <link role="variableDeclaration" targetNodeId="1190198436911" resolveInfo="fd" />
                   </node>
@@ -2364,7 +2364,7 @@
                               <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196702324797">
                                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1196702324798">
                                   <node role="value" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1196702324799">
-                                    <link role="baseMethodDeclaration" targetNodeId="14.~IFeatureDesign.parameterToString(java.lang.Object):java.lang.String" resolveInfo="parameterToString" />
+                                    <link role="baseMethodDeclaration" targetNodeId="14.~IParameterizedFeatureDesign.parameterToString(java.lang.Object):java.lang.String" resolveInfo="parameterToString" />
                                     <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196702324800">
                                       <link role="variableDeclaration" targetNodeId="1190198436911" resolveInfo="fd" />
                                     </node>
@@ -2436,8 +2436,8 @@
     </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1184840289279">
       <property name="name" value="getFeatureDesign" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1184840313445">
-        <link role="classifier" targetNodeId="14.~IFeatureDesign" resolveInfo="IFeatureDesign" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196878086029">
+        <link role="classifier" targetNodeId="14.~IParameterizedFeatureDesign" resolveInfo="IParameterizedFeatureDesign" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1184840289281" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184840289282">
@@ -2525,13 +2525,13 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196713158050">
             <property name="name" value="featureDesign" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196713158051">
-              <link role="classifier" targetNodeId="14.~IFeatureDesign" resolveInfo="IFeatureDesign" />
+              <link role="classifier" targetNodeId="14.~IParameterizedFeatureDesign" resolveInfo="IParameterizedFeatureDesign" />
               <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196713158052">
                 <link role="classifier" targetNodeId="3.~Object" resolveInfo="Object" />
               </node>
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1193221849347">
-              <link role="baseMethodDeclaration" targetNodeId="18.~DesignPartLoader.getFeatureDesign(java.lang.String,jetbrains.mps.smodel.SModel):jetbrains.mps.ypath.design.IFeatureDesign" resolveInfo="getFeatureDesign" />
+              <link role="baseMethodDeclaration" targetNodeId="18.~DesignPartLoader.getParameterizedFeatureDesign(java.lang.String,jetbrains.mps.smodel.SModel):jetbrains.mps.ypath.design.IParameterizedFeatureDesign" resolveInfo="getParameterizedFeatureDesign" />
               <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1193221841234">
                 <link role="baseMethodDeclaration" targetNodeId="18.~DesignPartLoader.getInstance():jetbrains.mps.ypath.plugin.DesignPartLoader" resolveInfo="getInstance" />
                 <link role="classConcept" targetNodeId="18.~DesignPartLoader" resolveInfo="DesignPartLoader" />
@@ -2649,22 +2649,6 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1190800282750">
     <property name="package" value="treePath.features.functions.generic" />
     <link role="concept" targetNodeId="1.1190800051916" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1190800284555">
-      <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1190800284557">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1192556043328">
-          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196779275897">
-            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196779275898">
-              <link role="concept" targetNodeId="6.1068431790191" resolveInfo="Expression" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1190800291328">
-        <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
-      </node>
-    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1190800282751">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1190800282752" />
     </node>
@@ -4205,20 +4189,6 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1193058010304">
     <property name="package" value="treePath.features.functions.generic" />
     <link role="concept" targetNodeId="1.1193057943814" resolveInfo="GFCardinalParamFun" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1193058012086">
-      <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193058012088">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1193058018175">
-          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196779275914">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1196779275915" />
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1193058015915">
-        <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
-      </node>
-    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1193058010305">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1193058010306" />
     </node>
@@ -4549,22 +4519,6 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1194545311052">
     <property name="package" value="treePath.features.functions.generic" />
     <link role="concept" targetNodeId="1.1194545263074" resolveInfo="GenericFeatureSetterFun" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1194545312865">
-      <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194545312866">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1194545312867">
-          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196779275932">
-            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196779275933">
-              <link role="concept" targetNodeId="6.1068580123157" resolveInfo="Statement" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194545319636">
-        <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
-      </node>
-    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1194545311053">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194545311054" />
     </node>
@@ -4996,22 +4950,6 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1195420921520">
     <property name="package" value="treePath.features.functions.generic" />
     <link role="concept" targetNodeId="1.1195420807526" resolveInfo="GFRemoveParamFun" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1195420927102">
-      <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195420927103">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195420927104">
-          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196779275934">
-            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196779275935">
-              <link role="concept" targetNodeId="6.1068580123157" resolveInfo="Statement" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195420931947">
-        <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
-      </node>
-    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1195420921521">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195420921522" />
     </node>
@@ -5019,22 +4957,6 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1195421124470">
     <property name="package" value="treePath.features.functions.generic" />
     <link role="concept" targetNodeId="1.1195420956439" resolveInfo="GFInserterParamFun" />
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1195421137249">
-      <property name="name" value="getExpectedReturnType" />
-      <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195421137250">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1195421137251">
-          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196779275936">
-            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196779275937">
-              <link role="concept" targetNodeId="6.1068580123157" resolveInfo="Statement" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1195421137407">
-        <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
-      </node>
-    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1195421124471">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195421124472" />
     </node>
@@ -5467,6 +5389,119 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1196426622176">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196426622177" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1196866057843">
+    <property name="package" value="treePath.features.functions.generic" />
+    <link role="concept" targetNodeId="1.1196857052853" resolveInfo="GFGetterFun" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196866059469">
+      <property name="name" value="getExpectedReturnType" />
+      <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866059470">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196866059471">
+          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196866059472">
+            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196866059473">
+              <link role="concept" targetNodeId="6.1068431790191" resolveInfo="Expression" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196866061337">
+        <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1196866057844">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866057845" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1196866084817">
+    <property name="package" value="treePath.features.functions.generic" />
+    <link role="concept" targetNodeId="1.1196856873176" resolveInfo="GFCardinalFun" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196866086572">
+      <property name="name" value="getExpectedReturnType" />
+      <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866086573">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1196866086574">
+          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196866086575">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1196866086576" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196866086592">
+        <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1196866084818">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866084819" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1196866106224">
+    <property name="package" value="treePath.features.functions.generic" />
+    <link role="concept" targetNodeId="1.1196858018384" resolveInfo="GFInserterFun" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196866107698">
+      <property name="name" value="getExpectedReturnType" />
+      <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866107699">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196866107700">
+          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196866107701">
+            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196866107702">
+              <link role="concept" targetNodeId="6.1068580123157" resolveInfo="Statement" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196866107785">
+        <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1196866106225">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866106226" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1196866129826">
+    <property name="package" value="treePath.features.functions.generic" />
+    <link role="concept" targetNodeId="1.1196858411075" resolveInfo="GFRemoverFun" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196866131107">
+      <property name="name" value="getExpectedReturnType" />
+      <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866131108">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196866131109">
+          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196866131110">
+            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196866131111">
+              <link role="concept" targetNodeId="6.1068580123157" resolveInfo="Statement" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196866131166">
+        <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1196866129827">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866129828" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1196866148087">
+    <property name="package" value="treePath.features.functions.generic" />
+    <link role="concept" targetNodeId="1.1196858724203" resolveInfo="GFReplacerFun" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1196866149965">
+      <property name="name" value="getExpectedReturnType" />
+      <link role="overridenMethod" targetNodeId="10.1178571276073" resolveInfo="getExpectedReturnType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866149966">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196866149967">
+          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196866149968">
+            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196866149969">
+              <link role="concept" targetNodeId="6.1068580123157" resolveInfo="Statement" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1196866150051">
+        <link role="classifier" targetNodeId="8.~SNode" resolveInfo="SNode" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1196866148088">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196866148089" />
     </node>
   </node>
 </model>

@@ -588,7 +588,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1193058147469(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature");
+    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IParamFeature");
   }
 
   public static List sourceNodesQuery_1184679753545(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

@@ -10,6 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
@@ -18,7 +19,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.util.Calculable;
@@ -92,6 +92,29 @@ public class QueriesGenerated {
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1194616749686(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(sourceNode), new QuotationClass_().createNode(), false, false);
+  }
+
+  public static void nodeFactory_NodeSetup_GFReplaceFunFragment_1196866340867(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if((SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+      SLinkOperations.setNewChild(newNode, "fragmentFun", "jetbrains.mps.ypath.structure.GFReplacerParamFun");
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_GFRemoveFunFragment_1196866356272(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if((SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+      SLinkOperations.setNewChild(newNode, "fragmentFun", "jetbrains.mps.ypath.structure.GFRemoverParamFun");
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_GFInsertFunFragment_1196866361203(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if((SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+      SLinkOperations.setNewChild(newNode, "fragmentFun", "jetbrains.mps.ypath.structure.GFInserterParamFun");
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_GenericParamFeature_1196870541068(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    SLinkOperations.setNewChild(newNode, "getter", "jetbrains.mps.ypath.structure.GFGetterParamFun");
+    SLinkOperations.setNewChild(newNode, "cardinal", "jetbrains.mps.ypath.structure.GFCardinalParamFun");
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TreePathOperation_1169037620751(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
@@ -175,6 +198,11 @@ public class QueriesGenerated {
       result.addAll(defaultActions);
     }
     {
+      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeature", operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
+      result.addAll(defaultActions);
+    }
+    {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.GenericParamFeature", operationContext.getScope());
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
       result.addAll(defaultActions);
@@ -196,6 +224,7 @@ public class QueriesGenerated {
 
       };
       Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      assert queryResult != null;
       for(SNode item : queryResult) {
         result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
@@ -289,6 +318,7 @@ public class QueriesGenerated {
 
       };
       Iterable queryResult = (Iterable)calc.calculate();
+      assert queryResult != null;
       for(Object item : queryResult) {
         List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), parentNode, currentTargetNode, childSetter, operationContext.getScope());
         result.addAll(defaultActions);
@@ -336,6 +366,7 @@ public class QueriesGenerated {
 
       };
       Iterable<FragmentTypeEnum> queryResult = (Iterable)calc.calculate();
+      assert queryResult != null;
       for(FragmentTypeEnum item : queryResult) {
         result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
@@ -468,6 +499,7 @@ public class QueriesGenerated {
 
       };
       Iterable<TraversalAxis> parameterObjects = (Iterable<TraversalAxis>)calculable.calculate();
+      assert parameterObjects != null;
       for(TraversalAxis parameter : parameterObjects) {
         result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
 

@@ -10,7 +10,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IReloadHandler;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.ypath.design.IFeatureDesign;
+import jetbrains.mps.ypath.design.IParameterizedFeatureDesign;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -34,7 +34,7 @@ public class DesignPartLoader {
         return INSTANCE;
     }
 
-    public <T> IFeatureDesign<T> getFeatureDesign (String fqClassName, SModel smodel) {
+    public <T> IParameterizedFeatureDesign<T> getParameterizedFeatureDesign (String fqClassName, SModel smodel) {
         IModule module = getModuleFor(smodel);
         if (module != null) {
             return getFeatureDesign(fqClassName, module);
@@ -61,7 +61,7 @@ public class DesignPartLoader {
     }
 
     @SuppressWarnings("unchecked")
-    private <T> IFeatureDesign<T> getFeatureDesign(String fqClassName, IModule module) {
+    private <T> IParameterizedFeatureDesign<T> getFeatureDesign(String fqClassName, IModule module) {
         try {
             Class<?> klass = classes.get(fqClassName); 
             if (klass == null) {
@@ -74,8 +74,8 @@ public class DesignPartLoader {
             }
             // TODO: optimize instances? 
             Object o = klass.newInstance();
-            Class IFD_class = IFeatureDesign.class;
-            IFeatureDesign<T> newInstance = (IFeatureDesign<T>) o;
+            Class IFD_class = IParameterizedFeatureDesign.class;
+            IParameterizedFeatureDesign<T> newInstance = (IParameterizedFeatureDesign<T>) o;
             return newInstance;
         }
         catch (InstantiationException e) {
