@@ -10,7 +10,6 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.quotation.structure.Antiquotation_AnnotationLink;
 import jetbrains.mps.core.structure.BaseConcept;
@@ -23,6 +22,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.quotation.structure.ReferenceAntiquotation_AnnotationLink;
 import jetbrains.mps.quotation.structure.ReferenceAntiquotation;
+import jetbrains.mps.nodeEditor.EditorCell_Property;
+import jetbrains.mps.nodeEditor.PropertyAccessor;
+import jetbrains.mps.quotation.structure.PropertyAntiquotation_AnnotationLink;
+import jetbrains.mps.quotation.structure.PropertyAntiquotation;
 
 public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
 
@@ -35,6 +38,8 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
     this.putAction("any", "*", action);
     action = new _CreateAntiquotationKeyMap._CreateAntiquotationKeyMap_Action2();
     this.putAction("any", "^", action);
+    action = new _CreateAntiquotationKeyMap._CreateAntiquotationKeyMap_Action3();
+    this.putAction("any", "$", action);
   }
   public static class _CreateAntiquotationKeyMap_Action0 extends EditorCellKeyMapAction {
 
@@ -80,7 +85,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
         return;
       }
       if(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.quotation.structure.Antiquotation")) {
-        SNode attributedNode = SLinkOperations.getTarget((contextNode), "attributedNode", false);
+        SNode attributedNode = SNodeOperations.getParent((contextNode), null, false, false);
         attributedNode.setAttribute(null);
         return;
       }
@@ -197,7 +202,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
 
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
       EditorCell selectedCell = editorContext.getSelectedCell();
-      SNode contextNode = selectedCell.getSNode();
+      SNode contextNode = (SNode)selectedCell.getSNode();
       SNode linkNode = (SNode)selectedCell.getUserObject(EditorCell_Component.METAINFO_LINK_DECLARATION);
       if(!(BaseAdapter.isInstance(linkNode, LinkDeclaration.class))) {
         return;
@@ -205,7 +210,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       if(contextNode == null) {
         return;
       }
-      SNode link = linkNode;
+      SNode link = (SNode)linkNode;
       if(SPropertyOperations.hasValue(link, "metaClass", "aggregation", null)) {
         return;
       }
@@ -228,6 +233,76 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
 
     public String getKeyStroke() {
       return " ^";
+    }
+
+}
+  public static class _CreateAntiquotationKeyMap_Action3 extends EditorCellKeyMapAction {
+
+    public  _CreateAntiquotationKeyMap_Action3() {
+      this.setShownInPopupMenu(false);
+    }
+
+    public String getDescriptionText() {
+      return "property antiquotation";
+    }
+
+    public boolean isMenuAlwaysShown() {
+      return false;
+    }
+
+    public boolean canExecute(KeyEvent keyEvent, EditorContext editorContext) {
+      EditorCell contextCell = editorContext.getContextCell();
+      if((contextCell == null)) {
+        return false;
+      }
+      SNode contextNode = contextCell.getSNode();
+      if(contextNode == null) {
+        return false;
+      }
+      if(contextNode.isInstanceOfConcept("jetbrains.mps.quotation.structure.Quotation")) {
+        return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
+      }
+      return false;
+    }
+
+    public void execute(KeyEvent keyEvent, EditorContext editorContext) {
+      EditorCell contextCell = editorContext.getContextCell();
+      this.execute_internal(keyEvent, editorContext, contextCell.getSNode(), this.getSelectedNodes(editorContext));
+    }
+
+    private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+      return true;
+    }
+
+    private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
+      EditorCell selectedCell = editorContext.getSelectedCell();
+      SNode contextNode = (SNode)selectedCell.getSNode();
+      if(contextNode == null) {
+        return;
+      }
+      if(!(selectedCell instanceof EditorCell_Property)) {
+        return;
+      }
+      EditorCell_Property editorCell_Property = (EditorCell_Property)selectedCell;
+      String propertyName = ((PropertyAccessor)editorCell_Property.getModelAccessor()).getPropertyName();
+      if(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.quotation.structure.PropertyAntiquotation")) {
+        SNode attributedNode = SNodeOperations.getParent(contextNode, null, false, false);
+        assert attributedNode != null;
+        PropertyAntiquotation_AnnotationLink.setPropertyAntiquotation(((BaseConcept)SNodeOperations.getAdapter(attributedNode)), propertyName, null);
+        attributedNode.setAttribute(null);
+        return;
+      }
+      SModel model = SNodeOperations.getModel(contextNode);
+      if(PropertyAntiquotation_AnnotationLink.getPropertyAntiquotation(((BaseConcept)SNodeOperations.getAdapter(contextNode)), propertyName) != null) {
+        PropertyAntiquotation_AnnotationLink.setPropertyAntiquotation(((BaseConcept)SNodeOperations.getAdapter(contextNode)), propertyName, null);
+      } else
+      {
+        PropertyAntiquotation_AnnotationLink.setPropertyAntiquotation(((BaseConcept)SNodeOperations.getAdapter(contextNode)), propertyName, ((PropertyAntiquotation)SNodeOperations.getAdapter(SModelOperations.createNewNode(model, "jetbrains.mps.quotation.structure.PropertyAntiquotation", null))));
+      }
+    }
+
+    public String getKeyStroke() {
+      return " $";
     }
 
 }

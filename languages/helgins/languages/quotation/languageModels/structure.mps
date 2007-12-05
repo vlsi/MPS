@@ -5,8 +5,6 @@
   <maxImportIndex value="7" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.annotations.structure" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.formulaLanguage.structure" version="-1" />
-  <import index="4" modelUID="jetbrains.mps.helgins.structure" version="-1" />
   <import index="5" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="6" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="7" />
   <import index="7" modelUID="jetbrains.mps.quotation.structure" version="-1" />
@@ -66,6 +64,16 @@
     <property name="role" value="referenceAntiquotation" />
     <link role="target" targetNodeId="1196350785117" resolveInfo="ReferenceAntiquotation" />
     <link role="source" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196866233735">
+    <property name="name" value="PropertyAntiquotation" />
+    <link role="extends" targetNodeId="1196350785110" resolveInfo="AbstractAntiquotation" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.AnnotationLinkDeclaration" id="1196866560540">
+    <property name="role" value="propertyAntiquotation" />
+    <property name="stereotype" value="property" />
+    <link role="source" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <link role="target" targetNodeId="1196866233735" resolveInfo="PropertyAntiquotation" />
   </node>
 </model>
 
