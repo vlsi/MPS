@@ -16,7 +16,7 @@ public class typeof_Quotation_InferenceRule implements InferenceRule_Runtime {
 
   public void applyRule(final SNode argument) {
     SNode quotation = argument;
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(quotation, "quotedNode", true))), quotation, "jetbrains.mps.quotation.helgins", "1196352592952");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(quotation, "jetbrains.mps.quotation.helgins", "1196858483112", true), new QuotationClass_().createNode(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(quotation, "quotedNode", true))), quotation, null, "jetbrains.mps.quotation.helgins", "1196858483110");
   }
 
   public String getApplicableConceptFQName() {
