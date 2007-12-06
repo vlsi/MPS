@@ -1598,12 +1598,11 @@
             <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196899383320">
               <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1196899387126">
                 <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1196899388498">
-                  <node role="initValue" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196899463822">
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1196899463823" />
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196899463824">
-                      <link role="variableDeclaration" targetNodeId="1196899443338" resolveInfo="foo" />
-                      <node role="_attr_$attribute" type="jetbrains.mps.quotation.structure.Antiquotation" id="1196899466204">
-                        <node role="expression" type="jetbrains.mps.ypath.structure.ExpressionFunctionParam" id="1196899469887" />
+                  <node role="initValue" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196952870239">
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1196952870240" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1196952870241">
+                      <node role="_attr_$attribute" type="jetbrains.mps.quotation.structure.Antiquotation" id="1196952872002">
+                        <node role="expression" type="jetbrains.mps.ypath.structure.ExpressionFunctionParam" id="1196952873601" />
                       </node>
                     </node>
                   </node>

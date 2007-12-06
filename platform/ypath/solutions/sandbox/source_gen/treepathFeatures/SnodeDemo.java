@@ -18,7 +18,7 @@ public class SnodeDemo {
     SequenceOperations.map(SequenceOperations.map((SLinkOperations.getTargets(foo, "implements", true)), new zMapper(null, null)), new zMapper1(null, null));
     // The following ypath construct should result in the same expression as above
     SequenceOperations.map(SequenceOperations.map(SLinkOperations.getTargets(foo, "implements", true), new zMapper2(null, null)), new zMapper3(null, null));
-    ListOperations.createList(new SNode[]{SNodeOperations.getParent(foo, null, false, false)});
+    SequenceOperations.map(ListOperations.createList(new SNode[]{SNodeOperations.getParent(foo, null, false, false)}), new zMapper4(null, null));
   }
 
 }
