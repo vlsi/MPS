@@ -102,7 +102,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActions" id="1196942306955">
-    <property name="name" value="RT_IsInstnanceOfExpression" />
+    <property name="name" value="RT_Expression_ToMPSLiteOperation" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" id="1196942335235">
       <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
@@ -171,6 +171,25 @@
               </node>
               <node role="supertypeExpression" type="jetbrains.mps.quotation.structure.Quotation" id="1196942352288">
                 <node role="quotedNode" type="jetbrains.mpslite.structure.NodeType" id="1196942354290" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActions" id="1196956028836">
+    <property name="name" value="RT_MPSOperation" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" id="1196956053923">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="1.1196943099028" resolveInfo="MPSLiteOperation" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart" id="1196956108727">
+        <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_NodeQuery" id="1196956108728">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196956108729">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196956112712">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196956113183">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1196956114139" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1196956112713" />
               </node>
             </node>
           </node>

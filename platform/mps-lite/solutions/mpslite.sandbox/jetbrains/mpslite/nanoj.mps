@@ -583,5 +583,34 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1196955920659">
+    <property name="name" value="ABCDEF" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1196956440922">
+      <property name="name" value="simpleClass" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1196956440923" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196956440924" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196956440925">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196956444924">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196956444925">
+            <property name="name" value="concept" />
+            <node role="type" type="jetbrains.mpslite.structure.NodeType" id="1196956444926">
+              <link role="concept" targetNodeId="1182956307043" resolveInfo="ClassConcept" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196956450269">
+          <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1196956451036">
+            <node role="operation" type="jetbrains.mpslite.structure.CastOperation" id="1196956452507">
+              <link role="castTo" targetNodeId="1182969474844" resolveInfo="AssignmentExpression" />
+            </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196956450270">
+              <link role="variableDeclaration" targetNodeId="1196956444925" resolveInfo="concept" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196955920660" />
+  </node>
 </model>
 
