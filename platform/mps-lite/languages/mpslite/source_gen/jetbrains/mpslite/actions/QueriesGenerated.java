@@ -68,14 +68,14 @@ public class QueriesGenerated {
       result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
-          SNode expr = SModelOperations.createNewNode(model, "jetbrains.mpslite.structure.IsInstanceOfExpression", null);
+          SNode expr = SModelOperations.createNewNode(model, "jetbrains.mpslite.structure.MPSLiteOperationExpression", null);
           SNodeOperations.replaceWithAnother(sourceNode, expr);
-          SLinkOperations.setTarget(expr, "left", sourceNode, true);
+          SLinkOperations.setTarget(expr, "expression", sourceNode, true);
           return expr;
         }
 
         public String getMatchingText(String pattern) {
-          return ".isInstanceOf";
+          return ".mps lite operation";
         }
 
       });

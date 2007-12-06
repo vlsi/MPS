@@ -114,11 +114,11 @@
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196942374367">
                   <property name="name" value="expr" />
                   <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196942374368">
-                    <link role="concept" targetNodeId="1.1196942255498" resolveInfo="IsInstanceOfExpression" />
+                    <link role="concept" targetNodeId="1.1196943067963" resolveInfo="MPSLiteOperationExpression" />
                   </node>
                   <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196942413098">
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewNodeOperation" id="1196942419195">
-                      <link role="concept" targetNodeId="1.1196942255498" resolveInfo="IsInstanceOfExpression" />
+                      <link role="concept" targetNodeId="1.1196943067963" resolveInfo="MPSLiteOperationExpression" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.bootstrap.sharedConcepts.structure.ConceptFunctionParameter_model" id="1196942412863" />
                   </node>
@@ -140,8 +140,8 @@
                     <node role="parameter" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1196942441023" />
                   </node>
                   <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196942433012">
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1196942436845">
-                      <link role="link" targetNodeId="1.1196942398766" />
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1196943399876">
+                      <link role="link" targetNodeId="1.1196943076792" />
                     </node>
                     <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196942432746">
                       <link role="variableDeclaration" targetNodeId="1196942374367" resolveInfo="expr" />
@@ -157,7 +157,7 @@
             </node>
           </node>
           <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1196942371615">
-            <property name="text" value=".isInstanceOf" />
+            <property name="text" value=".mps lite operation" />
           </node>
         </node>
       </node>
