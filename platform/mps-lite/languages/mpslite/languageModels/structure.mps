@@ -377,5 +377,15 @@
       <link role="target" targetNodeId="1182510906722" resolveInfo="ConceptDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196960323808">
+    <property name="package" value="QL" />
+    <property name="name" value="PropertyAccessOperation" />
+    <link role="extends" targetNodeId="1196943099028" resolveInfo="MPSLiteOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196960343278">
+      <property name="role" value="propertyDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1182511940438" resolveInfo="PropertyDeclarationPart" />
+    </node>
+  </node>
 </model>
 

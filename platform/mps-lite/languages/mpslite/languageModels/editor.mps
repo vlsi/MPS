@@ -192,11 +192,10 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1182511458824">
-        <property name="fontStyle" value="BOLD" />
-        <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="2.1169194664001" />
         <link role="actionMap" targetNodeId="1182849790242" resolveInfo="_ChildDeclaration_RT" />
+        <link role="styleClass" targetNodeId="1196960726948" resolveInfo="MPSLiteChild" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182512252875">
         <property name="text" value="*" />
@@ -379,10 +378,9 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1182511982494">
-        <property name="fontStyle" value="BOLD" />
-        <property name="textFgColor" value="DARK_GREEN" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+        <link role="styleClass" targetNodeId="1196960621499" resolveInfo="MPSLiteProperty" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182511991404">
         <property name="text" value=":" />
@@ -436,10 +434,9 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1182513106534">
           <link role="conceptDeclaration" targetNodeId="1.1182511424766" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1182513108411">
-            <property name="fontStyle" value="BOLD" />
-            <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="drawBorder" value="false" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+            <link role="styleClass" targetNodeId="1196960621499" resolveInfo="MPSLiteProperty" />
           </node>
         </node>
       </node>
@@ -497,10 +494,9 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1182513152799">
           <link role="conceptDeclaration" targetNodeId="1.1182511940438" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1182513155052">
-            <property name="fontStyle" value="BOLD" />
-            <property name="textFgColor" value="DARK_GREEN" />
             <property name="drawBorder" value="false" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+            <link role="styleClass" targetNodeId="1196960621499" resolveInfo="MPSLiteProperty" />
           </node>
         </node>
       </node>
@@ -758,11 +754,10 @@
         <property name="drawBorder" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1182845727211">
-        <property name="fontStyle" value="BOLD_ITALIC" />
-        <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="2.1169194664001" />
         <link role="actionMap" targetNodeId="1182850012857" resolveInfo="_ReferenceDeclaration_RT" />
+        <link role="styleClass" targetNodeId="1196960817991" resolveInfo="MPSLiteReference" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182849981008">
         <property name="text" value="?" />
@@ -841,10 +836,9 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1182846233054">
           <link role="conceptDeclaration" targetNodeId="1.1182845659293" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1182846323792">
-            <property name="fontStyle" value="BOLD_ITALIC" />
-            <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="drawBorder" value="false" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+            <link role="styleClass" targetNodeId="1196960817991" resolveInfo="MPSLiteReference" />
           </node>
         </node>
       </node>
@@ -1121,7 +1115,34 @@
         <property name="color" value="DARK_BLUE" />
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1196956360688">
-        <property name="style" value="ITALIC" />
+        <property name="style" value="BOLD" />
+      </node>
+    </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1196960621499">
+      <property name="name" value="MPSLiteProperty" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1196960626437">
+        <property name="color" value="DARK_GREEN" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1196960631049">
+        <property name="style" value="BOLD" />
+      </node>
+    </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1196960726948">
+      <property name="name" value="MPSLiteChild" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1196960730871">
+        <property name="color" value="DARK_MAGENTA" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1196960743328">
+        <property name="style" value="BOLD" />
+      </node>
+    </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1196960817991">
+      <property name="name" value="MPSLiteReference" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1196960821742">
+        <property name="color" value="DARK_MAGENTA" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1196960829386">
+        <property name="style" value="BOLD_ITALIC" />
       </node>
     </node>
   </node>
@@ -1145,6 +1166,24 @@
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1196957330984" />
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196960354826">
+    <property name="package" value="QL" />
+    <link role="conceptDeclaration" targetNodeId="1.1196960323808" resolveInfo="PropertyAccessOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196960357110">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1196960360549">
+        <link role="relationDeclaration" targetNodeId="1.1196960343278" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1196960360550">
+          <link role="conceptDeclaration" targetNodeId="1.1182511940438" resolveInfo="PropertyDeclarationPart" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1196960362568">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+            <link role="styleClass" targetNodeId="1196960621499" resolveInfo="MPSLiteProperty" />
           </node>
         </node>
       </node>

@@ -19,7 +19,61 @@ public class MPSLite_Style_StyleSheet {
         Color color = MPSLite_Style_StyleSheet.calculateColor(cell);
         labelCell.getTextLine().setTextColorIfNotSet(color);
       }
-      cell.setFontType(MPSFonts.ITALIC);
+      cell.setFontType(MPSFonts.BOLD);
+      if(cell instanceof EditorCell_Collection) {
+        EditorCell_Collection collection = (EditorCell_Collection)cell;
+        for(EditorCell child : collection) {
+          this.apply(child);
+        }
+      }
+    }
+
+  };
+  public static final IStyle M_P_S_LITE_PROPERTY = new IStyle() {
+
+    public void apply(EditorCell cell) {
+      if(cell instanceof EditorCell_Label) {
+        EditorCell_Label labelCell = (EditorCell_Label)cell;
+        Color color = MPSLite_Style_StyleSheet.calculateColor1(cell);
+        labelCell.getTextLine().setTextColorIfNotSet(color);
+      }
+      cell.setFontType(MPSFonts.BOLD);
+      if(cell instanceof EditorCell_Collection) {
+        EditorCell_Collection collection = (EditorCell_Collection)cell;
+        for(EditorCell child : collection) {
+          this.apply(child);
+        }
+      }
+    }
+
+  };
+  public static final IStyle M_P_S_LITE_CHILD = new IStyle() {
+
+    public void apply(EditorCell cell) {
+      if(cell instanceof EditorCell_Label) {
+        EditorCell_Label labelCell = (EditorCell_Label)cell;
+        Color color = MPSLite_Style_StyleSheet.calculateColor2(cell);
+        labelCell.getTextLine().setTextColorIfNotSet(color);
+      }
+      cell.setFontType(MPSFonts.BOLD);
+      if(cell instanceof EditorCell_Collection) {
+        EditorCell_Collection collection = (EditorCell_Collection)cell;
+        for(EditorCell child : collection) {
+          this.apply(child);
+        }
+      }
+    }
+
+  };
+  public static final IStyle M_P_S_LITE_REFERENCE = new IStyle() {
+
+    public void apply(EditorCell cell) {
+      if(cell instanceof EditorCell_Label) {
+        EditorCell_Label labelCell = (EditorCell_Label)cell;
+        Color color = MPSLite_Style_StyleSheet.calculateColor3(cell);
+        labelCell.getTextLine().setTextColorIfNotSet(color);
+      }
+      cell.setFontType(MPSFonts.BOLD_ITALIC);
       if(cell instanceof EditorCell_Collection) {
         EditorCell_Collection collection = (EditorCell_Collection)cell;
         for(EditorCell child : collection) {
@@ -33,6 +87,24 @@ public class MPSLite_Style_StyleSheet {
   private static Color calculateColor(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_BLUE;
+    return result;
+  }
+
+  private static Color calculateColor1(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_GREEN;
+    return result;
+  }
+
+  private static Color calculateColor2(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor3(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
     return result;
   }
 

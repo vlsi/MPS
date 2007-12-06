@@ -608,6 +608,16 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196960532132">
+          <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1196960533181">
+            <node role="operation" type="jetbrains.mpslite.structure.PropertyAccessOperation" id="1196960536965">
+              <link role="propertyDeclaration" targetNodeId="1182956319063" resolveInfo="name" />
+            </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196960532133">
+              <link role="variableDeclaration" targetNodeId="1196956444925" resolveInfo="concept" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196957562047">
           <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1196959751758">
             <node role="operation" type="jetbrains.mpslite.structure.PrevSiblingOperation" id="1196959753401" />
