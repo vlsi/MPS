@@ -58,6 +58,11 @@ public class QueriesGenerated {
     return nodeType != null;
   }
 
+  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1196936366507(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
+    SNode expression = parentNode;
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expression, "leftExpression", true)), new QuotationClass_().createNode());
+  }
+
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_SNodeOperation_1154637518825(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     boolean alreadyHasParms = SLinkOperations.getCount(sourceNode, "parameter") > 0;
     if(alreadyHasParms) {
@@ -447,7 +452,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(parentNode), operationContext.getScope(), "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration");
+          return SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(parentNode), operationContext.getScope(), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
         }
 
       };
@@ -468,6 +473,38 @@ public class QueriesGenerated {
 
           public String getDescriptionText(String pattern) {
             return SNodeOperations.getModel(((SNode)this.getParameterObject())).getUID().getCompactPresentation();
+          }
+
+        });
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SNodeOperation_1196936340075(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(parentNode), operationContext.getScope(), "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration");
+        }
+
+      };
+      Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      assert queryResult != null;
+      for(SNode item : queryResult) {
+        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewNodeOperation", null);
+            SLinkOperations.setTarget(result, "concept", ((SNode)this.getParameterObject()), false);
+            return result;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "new node(" + SPropertyOperations.getString(((SNode)this.getParameterObject()), "name");
           }
 
         });
