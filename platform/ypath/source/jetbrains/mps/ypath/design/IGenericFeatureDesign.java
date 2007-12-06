@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SNode;
 /**
  * @author fyodor
  */
-public interface IGenericFeatureDesign {
+public interface IGenericFeatureDesign extends IFeatureDesign {
 
     SNode getterExpression (SNode srcExpr, ITemplateGenerator generator);
 

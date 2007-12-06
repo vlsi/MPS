@@ -18,7 +18,7 @@
   <import index="7" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="9" modelUID="jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter@java_stub" version="-1" />
   <import index="12" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
-  <import index="13" modelUID="jetbrains.mps.ypath.structure" version="5" />
+  <import index="13" modelUID="jetbrains.mps.ypath.structure" version="12" />
   <import index="14" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <import index="16" modelUID="treepathFeatures" version="-1" />
@@ -1231,6 +1231,20 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196899340746">
+          <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196899349230">
+            <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196899344411">
+              <link role="treepathAspect" targetNodeId="1191934136657" resolveInfo="SNODE_GEN" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196899340747">
+                <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1196899349236">
+              <property name="axis" value="CHILDREN" />
+              <link role="usedFeature" targetNodeId="1196897359118" resolveInfo="parent" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1184773021187">
         <property name="name" value="args" />
@@ -1559,6 +1573,31 @@
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1193060831481">
                   <link role="enumConstantDeclaration" targetNodeId="15.~Cardinality._0__1" resolveInfo="_0__1" />
                   <link role="enumClass" targetNodeId="15.~Cardinality" resolveInfo="Cardinality" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="features" type="jetbrains.mps.ypath.structure.GenericFeature" id="1196897359118">
+      <property name="name" value="parent" />
+      <node role="getter" type="jetbrains.mps.ypath.structure.GFGetterFun" id="1196897359119">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196897359120">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196899383319">
+            <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196899383320">
+              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1196899387126">
+                <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1196899388498">
+                  <node role="initValue" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196899463822">
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1196899463823" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196899463824">
+                      <link role="variableDeclaration" targetNodeId="1196899443338" resolveInfo="foo" />
+                      <node role="_attr_$attribute" type="jetbrains.mps.quotation.structure.Antiquotation" id="1196899466204">
+                        <node role="expression" type="jetbrains.mps.ypath.structure.ExpressionFunctionParam" id="1196899469887" />
+                      </node>
+                    </node>
+                  </node>
+                  <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196899391661" />
                 </node>
               </node>
             </node>

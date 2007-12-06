@@ -10,6 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
+import jetbrains.mps.ypath.design.IGenericFeatureDesign;
 
 public class SNODE_GEN_Design {
   public static class Design_Feature_child implements IGenericParameterizedFeatureDesign<SNode> {
@@ -60,7 +61,7 @@ public class SNODE_GEN_Design {
     public SNode getTargetType(SNode param, SNode nodeType) {
       SNode ld = param;
       SNode trg = SLinkOperations.getTarget(ld, "target", false);
-      return new QuotationClass_4().createNode(trg);
+      return new QuotationClass_5().createNode(trg);
     }
 
     public String parameterToString(SNode param) {
@@ -87,6 +88,13 @@ public class SNODE_GEN_Design {
     public boolean isSingleTargetCardinality(SNode param) {
       Cardinality card = Cardinality.parseValue(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"));
       return card == Cardinality._0__1 || card == Cardinality._1;
+    }
+
+}
+  public static class Design_Feature_parent implements IGenericFeatureDesign {
+
+    public SNode getterExpression(SNode expression, ITemplateGenerator generator) {
+      return new QuotationClass_4().createNode(expression);
     }
 
 }

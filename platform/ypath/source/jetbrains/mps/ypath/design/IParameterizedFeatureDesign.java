@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
 /**
  * @author fyodor
  */
-public interface IParameterizedFeatureDesign<T> {
+public interface IParameterizedFeatureDesign<T> extends IFeatureDesign {
     
     Iterable<T> getParameters (SNode nodeType);
     

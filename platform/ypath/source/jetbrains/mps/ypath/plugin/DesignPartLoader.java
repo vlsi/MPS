@@ -3,17 +3,21 @@
  */
 package jetbrains.mps.ypath.plugin;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.IReloadHandler;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.ypath.design.IParameterizedFeatureDesign;
-
-import java.util.HashMap;
-import java.util.Map;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModelOwner;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.ypath.design.IFeatureDesign;
 
 /**
  * @author fyodor
@@ -34,7 +38,7 @@ public class DesignPartLoader {
         return INSTANCE;
     }
 
-    public <T> IParameterizedFeatureDesign<T> getParameterizedFeatureDesign (String fqClassName, SModel smodel) {
+    public IFeatureDesign getFeatureDesign (String fqClassName, SModel smodel) {
         IModule module = getModuleFor(smodel);
         if (module != null) {
             return getFeatureDesign(fqClassName, module);
@@ -42,26 +46,8 @@ public class DesignPartLoader {
         return null;
     }
 
-    private IModule getModuleFor(SModel smodel) {
-        SModelDescriptor smd = smodel.getModelDescriptor();
-        IModule module = null;
-        
-        for (ModelOwner owner : SModelRepository.getInstance().getOwners(smd)) {
-            if (owner instanceof Solution || owner instanceof Language) {
-                module = (IModule) owner;
-                break;
-            }
-
-            else if (module == null && owner instanceof GenerationSessionContext.TransientModule) {
-                module = (IModule) owner;
-            }
-        }
-
-        return module;
-    }
-
     @SuppressWarnings("unchecked")
-    private <T> IParameterizedFeatureDesign<T> getFeatureDesign(String fqClassName, IModule module) {
+    private IFeatureDesign getFeatureDesign(String fqClassName, IModule module) {
         try {
             Class<?> klass = classes.get(fqClassName); 
             if (klass == null) {
@@ -74,8 +60,7 @@ public class DesignPartLoader {
             }
             // TODO: optimize instances? 
             Object o = klass.newInstance();
-            Class IFD_class = IParameterizedFeatureDesign.class;
-            IParameterizedFeatureDesign<T> newInstance = (IParameterizedFeatureDesign<T>) o;
+            IFeatureDesign newInstance = (IFeatureDesign) o;
             return newInstance;
         }
         catch (InstantiationException e) {
@@ -104,6 +89,24 @@ public class DesignPartLoader {
         }
     }
 
+    private IModule getModuleFor(SModel smodel) {
+        SModelDescriptor smd = smodel.getModelDescriptor();
+        IModule module = null;
+        
+        for (ModelOwner owner : SModelRepository.getInstance().getOwners(smd)) {
+            if (owner instanceof Solution || owner instanceof Language) {
+                module = (IModule) owner;
+                break;
+            }
+
+            else if (module == null && owner instanceof GenerationSessionContext.TransientModule) {
+                module = (IModule) owner;
+            }
+        }
+
+        return module;
+    }
+    
     private void clearCache () {
         classes.clear();
     }
