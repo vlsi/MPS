@@ -175,6 +175,7 @@ public class QueriesGenerated {
 
       };
       Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      assert queryResult != null;
       for(SNode item : queryResult) {
         result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
@@ -252,6 +253,7 @@ public class QueriesGenerated {
 
       };
       Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      assert queryResult != null;
       for(SNode item : queryResult) {
         result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
@@ -274,6 +276,7 @@ public class QueriesGenerated {
 
       };
       Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      assert queryResult != null;
       for(SNode item : queryResult) {
         result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
@@ -300,6 +303,7 @@ public class QueriesGenerated {
 
       };
       Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      assert queryResult != null;
       for(SNode item : queryResult) {
         result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
@@ -322,6 +326,7 @@ public class QueriesGenerated {
 
       };
       Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      assert queryResult != null;
       for(SNode item : queryResult) {
         result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
@@ -395,6 +400,7 @@ public class QueriesGenerated {
 
       };
       Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      assert queryResult != null;
       for(SNode item : queryResult) {
         result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
@@ -418,6 +424,7 @@ public class QueriesGenerated {
 
       };
       Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      assert queryResult != null;
       for(SNode item : queryResult) {
         result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
 
@@ -425,6 +432,42 @@ public class QueriesGenerated {
             SNode newNode = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptLinkAccess", null);
             SLinkOperations.setTarget(newNode, "conceptLinkDeclaration", ((SNode)this.getParameterObject()), false);
             return newNode;
+          }
+
+        });
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Type_1196933387032(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(parentNode), operationContext.getScope(), "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration");
+        }
+
+      };
+      Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      assert queryResult != null;
+      for(SNode item : queryResult) {
+        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType", null);
+            SLinkOperations.setTarget(result, "concept", ((SNode)this.getParameterObject()), false);
+            return result;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "snode<" + SPropertyOperations.getString(((SNode)this.getParameterObject()), "name") + ">";
+          }
+
+          public String getDescriptionText(String pattern) {
+            return SNodeOperations.getModel(((SNode)this.getParameterObject())).getUID().getCompactPresentation();
           }
 
         });

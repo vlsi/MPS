@@ -79,7 +79,7 @@ public class SModelsSubtree {
 
     public boolean isInitialized() {
       return myInitialized;
-    }
+    }              
 
     protected void doInit() {
       if (myInitialized) return;
