@@ -95,7 +95,7 @@ public class SModelsSubtree {
       myInitialized = true;
     }
 
-    public JPopupMenu getQuickCreatePopupMenu() {
+    public JPopupMenu getQuickCreatePopupbMenu() {
       IModule module = getOperationContext().getModule();
       if ((module instanceof Solution || module instanceof Generator) &&
               !toString().equals("<" + SModelStereotype.JAVA_STUB + ">")) {
