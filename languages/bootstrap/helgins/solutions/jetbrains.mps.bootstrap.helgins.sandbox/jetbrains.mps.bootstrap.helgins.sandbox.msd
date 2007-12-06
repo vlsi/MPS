@@ -12,6 +12,7 @@
     <dependency>jetbrains.mps.bootstrap.helgins</dependency>
     <dependency>jetbrains.mps.bootstrap.helgins.test</dependency>
     <dependency>jetbrains.mps.quotation</dependency>
+    <dependency>jetbrains.mps.bootstrap.helgins.sandbox</dependency>
   </dependencies>
 </solution>
 

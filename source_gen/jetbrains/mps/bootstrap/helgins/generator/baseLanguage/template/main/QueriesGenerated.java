@@ -687,6 +687,18 @@ public class QueriesGenerated {
     return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
   }
 
+  public static SNode referenceMacro_GetReferent_1196959476452(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    SNode matchStatement = SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.MatchStatement", false, false);
+    if(matchStatement != null) {
+      return generator.findOutputNodeByInputNodeAndMappingName(matchStatement, "matchingPattern");
+    }
+    return null;
+  }
+
+  public static SNode referenceMacro_GetReferent_1196959476477(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "patternVarDecl", false), "patternVarField");
+  }
+
   public static boolean ifMacro_Condition_1174998351525(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
@@ -773,6 +785,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1177668739667(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
+  }
+
+  public static boolean ifMacro_Condition_1196960125833(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return true;
   }
 
   public static boolean ifMacro_Condition_1177668739705(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
