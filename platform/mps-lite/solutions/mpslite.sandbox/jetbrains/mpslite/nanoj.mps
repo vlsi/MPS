@@ -608,6 +608,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196957562047">
+          <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1196959751758">
+            <node role="operation" type="jetbrains.mpslite.structure.PrevSiblingOperation" id="1196959753401" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196959828024">
+              <link role="variableDeclaration" targetNodeId="1196956444925" resolveInfo="concept" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196955920660" />

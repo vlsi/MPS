@@ -6,6 +6,9 @@
   <helginsTypeSystem>
     <model modelUID="jetbrains.mps.quotation.helgins" />
   </helginsTypeSystem>
+  <actions>
+    <model modelUID="jetbrains.mps.quotation.actions" />
+  </actions>
   <editor>
     <model modelUID="jetbrains.mps.quotation.editor" />
   </editor>

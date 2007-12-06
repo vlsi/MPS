@@ -1024,6 +1024,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196943125663">
         <property name="text" value="." />
+        <property name="selectable" value="false" />
         <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1196956549993">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196956549994">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1196956551744">
@@ -1062,6 +1063,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1196943127868">
         <link role="relationDeclaration" targetNodeId="1.1196943109625" />
+        <link role="actionMap" targetNodeId="1196957310122" resolveInfo="MPSLiteOperationExpression_Delete" />
       </node>
     </node>
   </node>
@@ -1072,6 +1074,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196944504088">
         <property name="text" value="prevSibling" />
+        <property name="editable" value="true" />
         <link role="styleClass" targetNodeId="1196956324294" resolveInfo="MPSLiteOperation" />
       </node>
     </node>
@@ -1083,6 +1086,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196944514671">
         <property name="text" value="nextSibling" />
+        <property name="editable" value="true" />
         <link role="styleClass" targetNodeId="1196956324294" resolveInfo="MPSLiteOperation" />
       </node>
     </node>
@@ -1118,6 +1122,31 @@
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1196956360688">
         <property name="style" value="ITALIC" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1196957310122">
+    <property name="package" value="QL" />
+    <property name="name" value="MPSLiteOperationExpression_Delete" />
+    <link role="applicableConcept" targetNodeId="1.1196943067963" resolveInfo="MPSLiteOperationExpression" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapItem" id="1196957325043">
+      <property name="actionId" value="delete_action_id" />
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_ExecuteFunction" id="1196957325044">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196957325045">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196957330983">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196957331344">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1196957332441">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196957333678">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1196957334790">
+                    <link role="link" targetNodeId="1.1196943076792" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1196957333443" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMap_FunctionParm_selectedNode" id="1196957330984" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
