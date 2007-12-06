@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.EditorCell;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
@@ -19,8 +19,9 @@ import jetbrains.mps.nodeEditor.CellAction_Empty;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -30,6 +31,14 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   public  ConceptFunction_Component(SNode node) {
     super(node);
+  }
+
+  public static Color _QueryFunction_Color_1196975453900(SNode node, EditorContext editorContext) {
+    return Color.white;
+  }
+
+  public static Color _QueryFunction_Color_1196975453904(SNode node, EditorContext editorContext) {
+    return new Color(238, 238, 238);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -84,14 +93,6 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   }
 
   private static void setupLabel_BodyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static Color _QueryFunction_Color_1196975453900(SNode node, EditorContext editorContext) {
-    return Color.white;
-  }
-
-  public static Color _QueryFunction_Color_1196975453904(SNode node, EditorContext editorContext) {
-    return new Color(238, 238, 238);
   }
 
 
@@ -187,7 +188,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
             result.append(", ");
           }
           isFirst = false;
-          result.append(SPropertyOperations.getString(cfp, "alias"));
+          result.append(SConceptPropertyOperations.getString(cfp, "alias"));
         }
         result.append(")->");
         SNode expectedReturnType = (SNode)ConceptFunction_Behavior.call_getExpectedReturnType_1178571276073(node);

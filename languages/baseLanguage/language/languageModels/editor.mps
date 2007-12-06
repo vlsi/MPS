@@ -10280,8 +10280,8 @@
                               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196975453858">
                                 <link role="variableDeclaration" targetNodeId="1196975453839" resolveInfo="cfp" />
                               </node>
-                              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1196975471099">
-                                <link role="property" targetNodeId="18.1156235010670" resolveInfo="alias" />
+                              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptPropertyAccess" id="1196976224126">
+                                <link role="conceptProperty" targetNodeId="18.1137473891462" resolveInfo="alias" />
                               </node>
                             </node>
                           </node>
