@@ -77,5 +77,12 @@
       <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196978630214">
+    <property name="name" value="IRefInfo" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1196978656277">
+      <property name="name" value="refInfo" />
+      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+    </node>
+  </node>
 </model>
 
