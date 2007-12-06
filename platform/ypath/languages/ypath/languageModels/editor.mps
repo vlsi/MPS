@@ -192,8 +192,8 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179163334886">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1179163334887">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1179163334888">
-                    <link role="classConcept" targetNodeId="29.~TraversalAxis" resolveInfo="TraversalAxis" />
-                    <link role="baseMethodDeclaration" targetNodeId="29.~TraversalAxis.getConstants():java.util.List" resolveInfo="getConstants" />
+                    <link role="classConcept" targetNodeId="37.~TraversalAxis" resolveInfo="TraversalAxis" />
+                    <link role="baseMethodDeclaration" targetNodeId="37.~TraversalAxis.getConstants():java.util.List" resolveInfo="getConstants" />
                   </node>
                 </node>
               </node>
@@ -210,7 +210,7 @@
                     </node>
                     <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1179163334896">
                       <node role="value" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1179163334897">
-                        <link role="baseMethodDeclaration" targetNodeId="29.~TraversalAxis.getValue():java.lang.String" resolveInfo="getValue" />
+                        <link role="baseMethodDeclaration" targetNodeId="37.~TraversalAxis.getValue():java.lang.String" resolveInfo="getValue" />
                         <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_AbstractGroup_parameterObject" id="1179163334898" />
                       </node>
                     </node>
@@ -236,7 +236,7 @@
               <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1179163334906">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1179163334907">
                   <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1179163334908">
-                    <link role="baseMethodDeclaration" targetNodeId="29.~TraversalAxis.getName():java.lang.String" resolveInfo="getName" />
+                    <link role="baseMethodDeclaration" targetNodeId="37.~TraversalAxis.getName():java.lang.String" resolveInfo="getName" />
                     <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_AbstractGroup_parameterObject" id="1179163334909" />
                   </node>
                 </node>

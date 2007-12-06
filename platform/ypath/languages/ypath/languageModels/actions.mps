@@ -208,7 +208,7 @@
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178629631874">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1179155635092">
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1179155657005">
-                  <link role="baseMethodDeclaration" targetNodeId="31.~TraversalAxis.getConstants():java.util.List" resolveInfo="getConstants" />
+                  <link role="baseMethodDeclaration" targetNodeId="46.~TraversalAxis.getConstants():java.util.List" resolveInfo="getConstants" />
                   <link role="classConcept" targetNodeId="46.~TraversalAxis" resolveInfo="TraversalAxis" />
                 </node>
               </node>
@@ -281,7 +281,7 @@
                   </node>
                   <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1179156806329">
                     <node role="value" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1179162577984">
-                      <link role="baseMethodDeclaration" targetNodeId="31.~TraversalAxis.getValue():java.lang.String" resolveInfo="getValue" />
+                      <link role="baseMethodDeclaration" targetNodeId="46.~TraversalAxis.getValue():java.lang.String" resolveInfo="getValue" />
                       <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1179162564440" />
                     </node>
                   </node>
@@ -316,7 +316,7 @@
                     <property name="value" value="find " />
                   </node>
                   <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1179156604847">
-                    <link role="baseMethodDeclaration" targetNodeId="31.~TraversalAxis.getName():java.lang.String" resolveInfo="getName" />
+                    <link role="baseMethodDeclaration" targetNodeId="46.~TraversalAxis.getName():java.lang.String" resolveInfo="getName" />
                     <node role="instance" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parameterObject" id="1179156604848" />
                   </node>
                 </node>

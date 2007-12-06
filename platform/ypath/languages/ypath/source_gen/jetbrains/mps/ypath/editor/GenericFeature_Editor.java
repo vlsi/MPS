@@ -4,12 +4,12 @@ package jetbrains.mps.ypath.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -28,6 +28,14 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 public class GenericFeature_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myFunHoldersListHandler_funHoldersList_;
+
+  public static boolean _QueryFunction_NodeCondition_1196865646770(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "default");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1196865646821(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "writable");
+  }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196865646769");
@@ -239,14 +247,6 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_GetterCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1196865646770(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "default");
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1196865646821(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.getBoolean(node, "writable");
   }
 
 
