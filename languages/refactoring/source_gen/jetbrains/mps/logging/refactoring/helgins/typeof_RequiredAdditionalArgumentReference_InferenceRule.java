@@ -14,7 +14,7 @@ public class typeof_RequiredAdditionalArgumentReference_InferenceRule implements
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.logging.refactoring.helgins", "1190728598662"), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "argument", false), "jetbrains.mps.logging.refactoring.helgins", "1190728606544"), argument, null, "jetbrains.mps.logging.refactoring.helgins", "1190728604337");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.logging.refactoring.helgins", "1190728598662", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "argument", false), "jetbrains.mps.logging.refactoring.helgins", "1190728606544", true), argument, null, "jetbrains.mps.logging.refactoring.helgins", "1190728604337");
   }
 
   public String getApplicableConceptFQName() {

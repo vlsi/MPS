@@ -11,11 +11,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class RequiredAdditionalArgument extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument";
+  public static String ARGUMENT_TYPE = "argumentType";
   public static String PRESENTATION = "presentation";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
-  public static String ARGUMENT_TYPE = "argumentType";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  RequiredAdditionalArgument(SNode node) {
     super(node);
@@ -29,6 +30,14 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
     return RequiredAdditionalArgument.newInstance(sm, false);
   }
 
+
+  public ArgumentType getArgumentType() {
+    return (ArgumentType)this.getChild(RequiredAdditionalArgument.ARGUMENT_TYPE);
+  }
+
+  public void setArgumentType(ArgumentType node) {
+    super.setChild(RequiredAdditionalArgument.ARGUMENT_TYPE, node);
+  }
 
   public String getPresentation() {
     return this.getProperty(RequiredAdditionalArgument.PRESENTATION);
@@ -62,12 +71,12 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
     this.setProperty(RequiredAdditionalArgument.ALIAS, value);
   }
 
-  public ArgumentType getArgumentType() {
-    return (ArgumentType)this.getChild(RequiredAdditionalArgument.ARGUMENT_TYPE);
+  public String getVirtualPackage() {
+    return this.getProperty(RequiredAdditionalArgument.VIRTUAL_PACKAGE);
   }
 
-  public void setArgumentType(ArgumentType node) {
-    super.setChild(RequiredAdditionalArgument.ARGUMENT_TYPE, node);
+  public void setVirtualPackage(String value) {
+    this.setProperty(RequiredAdditionalArgument.VIRTUAL_PACKAGE, value);
   }
 
 }

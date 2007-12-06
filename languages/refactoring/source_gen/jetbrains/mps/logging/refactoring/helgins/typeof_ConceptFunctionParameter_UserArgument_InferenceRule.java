@@ -18,7 +18,7 @@ public class typeof_ConceptFunctionParameter_UserArgument_InferenceRule implemen
   public void applyRule(final SNode argument) {
     SNode filterArgumentClause = SNodeOperations.getAncestor(argument, "jetbrains.mps.logging.refactoring.structure.FilterArgumentClause", false, false);
     SNode requiredUserEnteredArgument = SNodeOperations.getParent(filterArgumentClause, null, false, false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(ArgumentType_Behavior.call_convertIntoTypeForInput_1192804777821(SLinkOperations.getTarget(requiredUserEnteredArgument, "argumentType", true)), "jetbrains.mps.logging.refactoring.helgins", "1192795189001"), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.logging.refactoring.helgins", "1192795196477"), argument, null, "jetbrains.mps.logging.refactoring.helgins", "1192795194145");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(ArgumentType_Behavior.call_convertIntoTypeForInput_1192804777821(SLinkOperations.getTarget(requiredUserEnteredArgument, "argumentType", true)), "jetbrains.mps.logging.refactoring.helgins", "1192795189001", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.logging.refactoring.helgins", "1192795196477", true), argument, null, "jetbrains.mps.logging.refactoring.helgins", "1192795194145");
   }
 
   public String getApplicableConceptFQName() {
