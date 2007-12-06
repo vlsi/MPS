@@ -30,21 +30,6 @@ public abstract class SReference {
     myResolveInfo = InternUtil.intern(info);
   }
 
-  /**
-   * todo: remove. It makes no sence for dynamic references
-   */
-  public abstract SModelUID getTargetModelUID();
-
-  /**
-   * todo: remove. It makes no sence for dynamic references
-   */
-  public abstract void setTargetModelUID(@NotNull SModelUID modelUID);
-
-  /**
-   * todo: remove. It makes no sence for dynamic references
-   */
-  public abstract void setTargetNodeId(SNodeId targetNodeId);
-
   public String getRole() {
     return myRole;
   }
@@ -55,10 +40,16 @@ public abstract class SReference {
 
   public abstract SNode getTargetNode();
 
+  public abstract SModelUID getTargetModelUID();
+
+  public abstract void setTargetModelUID(@NotNull SModelUID modelUID);
+
+  public abstract boolean isExternal();
+
   /**
    * todo: remove. It makes no sence for dynamic references
    */
-  public abstract boolean isExternal();
+  public abstract void setTargetNodeId(SNodeId targetNodeId);
 
   /**
    * todo: remove. It makes no sence for dynamic references
@@ -114,10 +105,6 @@ public abstract class SReference {
     NO_MODEL,
     CANT_RESOLVE_BY_ID,
     UNIDENTIFIED_ERROR
-  }
-
-  public void replaceSourceReferent(SNode newReferent) {
-    mySourceNode.setReferent(myRole, newReferent);
   }
 
   public void setRole(String newRole) { // todo add undo
