@@ -10,6 +10,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ypath.constraints.FeatureTargetTypeUtil;
 import jetbrains.mps.ypath.constraints.ParameterWrapper_Behavior;
+import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_TreePathOperationExpression_InferenceRule implements InferenceRule_Runtime {
@@ -40,7 +41,13 @@ public class typeof_TreePathOperationExpression_InferenceRule implements Inferen
         }
       } else
       {
-        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.ypath.helgins", "1184841160982", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true), "jetbrains.mps.ypath.helgins", "1184841160984", true), argument, null, "jetbrains.mps.ypath.helgins", "1184841160981");
+        SNode treePath = ITreePathExpression_Behavior.call_getTreePath_1194366873089(argument);
+        if(treePath != null) {
+          TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(treePath, "treePathType", true), argument, "jetbrains.mps.ypath.helgins", "1196942474384");
+        } else
+        if(!(false)) {
+          TypeChecker.getInstance().reportTypeError(argument, "No treepath found", "jetbrains.mps.ypath.helgins", "1196942498551");
+        }
       }
     } else
     {
