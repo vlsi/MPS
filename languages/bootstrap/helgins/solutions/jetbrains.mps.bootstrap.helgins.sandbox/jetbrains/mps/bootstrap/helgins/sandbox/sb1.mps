@@ -63,7 +63,9 @@
                   <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1196960593000">
                     <link role="concept" targetNodeId="4.1107461130800" resolveInfo="Classifier" />
                   </node>
-                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.Expression" id="1196960607782" />
+                  <node role="initializer" type="jetbrains.mps.bootstrap.helgins.structure.LinkPatternVariableReference" id="1196962075247">
+                    <link role="patternVarDecl" targetNodeId="1196960578871" resolveInfo="#class" />
+                  </node>
                 </node>
               </node>
             </node>
