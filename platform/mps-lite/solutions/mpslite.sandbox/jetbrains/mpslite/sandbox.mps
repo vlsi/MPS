@@ -298,6 +298,28 @@
         <node role="type" type="jetbrains.mps.nanoj.structure.IntType" id="1183128868065" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.nanoj.structure.InstanceMethod" id="1196939219560">
+      <property name="name" value="xcxcxc" />
+      <node role="type" type="jetbrains.mps.nanoj.structure.ClassifierType" id="1196939336670">
+        <link role="classifier" targetNodeId="1182965040933" resolveInfo="ABCDEF" />
+      </node>
+      <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1196939219562" />
+      <node role="parameter" type="jetbrains.mps.nanoj.structure.ParameterDeclaration" id="1196939343722">
+        <property name="name" value="xcvx" />
+        <node role="type" type="jetbrains.mps.nanoj.structure.ByteType" id="1196939348006" />
+        <node role="initializer" type="jetbrains.mps.nanoj.structure.Expression" id="1196939343724" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.nanoj.structure.ParameterDeclaration" id="1196939352007">
+        <property name="name" value="fbfg" />
+        <node role="type" type="jetbrains.mps.nanoj.structure.CharType" id="1196939360605" />
+        <node role="initializer" type="jetbrains.mps.nanoj.structure.Expression" id="1196939352009" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.nanoj.structure.ParameterDeclaration" id="1196939355777">
+        <property name="name" value="cvcv" />
+        <node role="type" type="jetbrains.mps.nanoj.structure.CharType" id="1196939364062" />
+        <node role="initializer" type="jetbrains.mps.nanoj.structure.Expression" id="1196939355779" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.nanoj.structure.ClassConcept" id="1183028555504">
     <property name="name" value="ZZZ" />

@@ -3,10 +3,12 @@
   <persistence version="1" />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.core" />
-  <maxImportIndex value="3" />
+  <language namespace="jetbrains.mps.ypath" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="4" modelUID="jetbrains.mps.ypath.structure" version="12" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1182510906722">
     <property name="name" value="ConceptDeclaration" />
     <property name="rootable" value="false" />
@@ -299,6 +301,15 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196695127754">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196940394193">
+    <property name="name" value="ConceptWhereOperation" />
+    <link role="extends" targetNodeId="4.1168527701993" resolveInfo="WhereOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196940435687">
+      <property name="role" value="concept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1182510906722" resolveInfo="ConceptDeclaration" />
     </node>
   </node>
 </model>

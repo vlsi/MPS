@@ -149,7 +149,6 @@
                   </node>
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196851887654">
-                  <link role="variableDeclaration" resolveInfo="nc" />
                   <node role="_attr_$attribute" type="jetbrains.mps.quotation.structure.Antiquotation" id="1196851892719">
                     <node role="expression" type="jetbrains.mps.ypath.structure.ExpressionFunctionParam" id="1196851894111" />
                   </node>
@@ -315,6 +314,25 @@
                 <link role="property" targetNodeId="3.1169194664001" resolveInfo="name" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.ypath.structure.ParamFunctionParam" id="1196763256132" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="features" type="jetbrains.mps.ypath.structure.GenericFeature" id="1196939542417">
+      <property name="name" value="parent" />
+      <node role="getter" type="jetbrains.mps.ypath.structure.GFGetterFun" id="1196939542418">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196939542419">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196939564596">
+            <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1196939564597">
+              <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1196939565270">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1196939565271" />
+                <node role="leftExpression" type="jetbrains.mps.ypath.structure.ExpressionFunctionParam" id="1196939565272">
+                  <node role="_attr_$attribute" type="jetbrains.mps.quotation.structure.Antiquotation" id="1196939567755">
+                    <node role="expression" type="jetbrains.mps.ypath.structure.ExpressionFunctionParam" id="1196939569162" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

@@ -8,15 +8,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class MinusExpression extends BinaryExpression {
+  public static final String concept = "jetbrains.mps.nanoj.structure.MinusExpression";
 
   public  MinusExpression(SNode node) {
     super(node);
   }
 
   public static MinusExpression newInstance(SModel sm, boolean init) {
-    return (MinusExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.nanoj.MinusExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MinusExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.nanoj.structure.MinusExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static MinusExpression newInstance(SModel sm) {
     return MinusExpression.newInstance(sm, false);
   }
+
 }

@@ -503,7 +503,7 @@ public class QueriesGenerated {
             return result;
           }
 
-          public String getMatchingText(String pattern) {
+          public String getMatchingText(String pattern) {                        
             return "new node(" + SPropertyOperations.getString(((SNode)this.getParameterObject()), "name");
           }
 

@@ -516,21 +516,37 @@
           <link role="type" targetNodeId="1183027574668" resolveInfo="LocalVariableDeclaration" />
           <node role="scope" type="jetbrains.mpslite.structure.Scope_ConceptFunction" id="1196853942654">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196853942655">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196853944319">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196853950094">
-                  <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196853946061">
-                    <link role="treepathAspect" targetNodeId="2v.1196682965759" resolveInfo="MPSLite_Nodes" />
-                    <node role="expression" type="jetbrains.mpslite.structure.Node_ConceptFunctionParameter" id="1196853944320" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1196939610042">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1196939610043">
+                  <property name="name" value="currentStatement" />
+                  <node role="type" type="jetbrains.mpslite.structure.NodeType" id="1196939610044">
+                    <link role="concept" targetNodeId="1182966087965" resolveInfo="Statement" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1196853950097">
-                    <property name="axis" value="CHILDREN" />
-                    <link role="usedFeature" targetNodeId="2v.1196763170990" resolveInfo="reference" />
-                    <node role="paramObject" type="jetbrains.mps.ypath.structure.ParameterWrapper" id="1196853954066">
-                      <property name="name" value="variable" />
-                      <link role="paramRef" targetNodeId="1183028664818" resolveInfo="variable" />
+                  <node role="initializer" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196941299054">
+                    <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196939643679">
+                      <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196939624206">
+                        <link role="treepathAspect" targetNodeId="2v.1196682965759" resolveInfo="MPSLite_Nodes" />
+                        <node role="expression" type="jetbrains.mpslite.structure.Node_ConceptFunctionParameter" id="1196939618070" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1196939643682">
+                        <property name="axis" value="DESCENDANTS" />
+                        <link role="usedFeature" targetNodeId="2v.1196939542417" resolveInfo="parent" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mpslite.structure.ConceptWhereOperation" id="1196941299057">
+                      <link role="concept" targetNodeId="1182956481186" resolveInfo="BaseMethod" />
+                      <node role="whereBlock" type="jetbrains.mps.ypath.structure.WhereBlock" id="1196941299058">
+                        <node role="parameter" type="jetbrains.mps.ypath.structure.LambdaMethodParameter" id="1196941299059">
+                          <property name="name" value="node" />
+                        </node>
+                        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196941299060" />
+                      </node>
                     </node>
                   </node>
                 </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196940042445">
+                <node role="expression" type="jetbrains.mpslite.structure.Node_ConceptFunctionParameter" id="1196940042446" />
               </node>
             </node>
           </node>
@@ -695,6 +711,30 @@
               <node role="paramObject" type="jetbrains.mps.ypath.structure.ParameterWrapper" id="1196854725251">
                 <property name="name" value="name" />
                 <link role="paramRef" targetNodeId="1183027558523" resolveInfo="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196941707751">
+          <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196941748597">
+            <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1196941712051">
+              <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1196941709362">
+                <link role="treepathAspect" targetNodeId="2v.1196682965759" resolveInfo="MPSLite_Nodes" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196941707752">
+                  <link role="variableDeclaration" targetNodeId="1196852198399" resolveInfo="ref" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1196941712054">
+                <property name="axis" value="CHILDREN" />
+                <link role="usedFeature" targetNodeId="2v.1196939542417" resolveInfo="parent" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mpslite.structure.ConceptWhereOperation" id="1196941748600">
+              <node role="whereBlock" type="jetbrains.mps.ypath.structure.WhereBlock" id="1196941748601">
+                <node role="parameter" type="jetbrains.mps.ypath.structure.LambdaMethodParameter" id="1196941748602">
+                  <property name="name" value="node" />
+                </node>
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196941748603" />
               </node>
             </node>
           </node>
