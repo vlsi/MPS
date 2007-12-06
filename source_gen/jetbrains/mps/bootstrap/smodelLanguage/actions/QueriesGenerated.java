@@ -510,6 +510,34 @@ public class QueriesGenerated {
         });
       }
     }
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          List<SNode> concepts = SModelOperations.getNodesIncludingImported(SNodeOperations.getModel(parentNode), operationContext.getScope(), "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration");
+          return SequenceOperations.where(concepts, new zPredicate2(null, null));
+        }
+
+      };
+      Iterable<SNode> queryResult = (Iterable)calc.calculate();
+      assert queryResult != null;
+      for(SNode item : queryResult) {
+        result.add(new DefaultChildNodeSubstituteAction(item, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+
+          public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+            SNode result = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewRootNodeOperation", null);
+            SLinkOperations.setTarget(result, "concept", ((SNode)this.getParameterObject()), false);
+            return result;
+          }
+
+          public String getMatchingText(String pattern) {
+            return "new root node(" + SPropertyOperations.getString(((SNode)this.getParameterObject()), "name");
+          }
+
+        });
+      }
+    }
     return result;
   }
 
