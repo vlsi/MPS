@@ -78,9 +78,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1196978630214">
-    <property name="name" value="IRefInfo" />
+    <property name="name" value="IResolveInfo" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1196978656277">
-      <property name="name" value="refInfo" />
+      <property name="name" value="resolveInfo" />
       <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
     </node>
   </node>

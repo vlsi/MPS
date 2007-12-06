@@ -13,7 +13,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public  ConstraintsDescriptor() {
     this.myConstraints.add(new BaseConcept_virtualPackage_PropertyConstraint());
-    this.myConstraints.add(new IRefInfo_refInfo_PropertyConstraint());
+    this.myConstraints.add(new IResolveInfo_resolveInfo_PropertyConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

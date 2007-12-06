@@ -157,6 +157,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068498886292">
     <property name="name" value="ParameterDeclaration" />
     <link role="extends" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196979381892">
+      <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IRefInfo" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068431790189">
     <property name="name" value="Type" />

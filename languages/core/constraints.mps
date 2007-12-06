@@ -185,7 +185,7 @@
       <node role="propertySetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertySetter" id="1196979238661">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196979238662">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1196979246084">
-            <property name="value" value="nothing - refInfo is read-only" />
+            <property name="value" value="nothing - resolveInfo is read-only" />
           </node>
         </node>
       </node>
