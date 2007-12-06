@@ -303,10 +303,16 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196940394193">
-    <property name="name" value="ConceptWhereOperation" />
-    <link role="extends" targetNodeId="4.1168527701993" resolveInfo="WhereOperation" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196940435687">
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196942255498">
+    <property name="name" value="IsInstanceOfExpression" />
+    <link role="extends" targetNodeId="3.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196942398766">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="left" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196942262186">
       <property name="role" value="concept" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1182510906722" resolveInfo="ConceptDeclaration" />

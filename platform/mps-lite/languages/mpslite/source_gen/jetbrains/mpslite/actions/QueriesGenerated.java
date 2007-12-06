@@ -5,6 +5,7 @@ package jetbrains.mpslite.actions;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
@@ -23,8 +24,8 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class QueriesGenerated {
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1196940650379(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    return true;
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1196942343253(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(sourceNode), new QuotationClass_().createNode());
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LinePart_1182843946099(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
@@ -60,18 +61,16 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1196940632150(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1196942335235(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
       result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
 
         public SNode doSubstitute(String pattern) {
-          SNode result = SModelOperations.createNewNode(model, "jetbrains.mpslite.structure.ConceptWhereOperation", null);
-          SNode expr = SModelOperations.createNewNode(model, "jetbrains.mps.ypath.structure.TreePathOperationExpression", null);
+          SNode expr = SModelOperations.createNewNode(model, "jetbrains.mpslite.structure.IsInstanceOfExpression", null);
           SNodeOperations.replaceWithAnother(sourceNode, expr);
-          SLinkOperations.setTarget(expr, "expression", sourceNode, true);
-          SLinkOperations.setTarget(expr, "operation", result, true);
+          SLinkOperations.setTarget(expr, "left", sourceNode, true);
           return expr;
         }
 
