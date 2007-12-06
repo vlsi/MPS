@@ -526,8 +526,19 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         myLeft.setIcon(null);
       }
 
-      myLeft.setText(action.getMatchingText(getPatternEditor().getPattern()));
-      myRight.setText(action.getDescriptionText(getPatternEditor().getPattern()));
+      try {
+        myLeft.setText(action.getMatchingText(getPatternEditor().getPattern()));
+      } catch (Throwable t) {
+        myLeft.setText("!Exception was thrown!");
+        LOG.error(t);
+      }
+
+      try {
+        myRight.setText(action.getDescriptionText(getPatternEditor().getPattern()));
+      } catch (Throwable t) {
+        myRight.setText("!Exception was thrown!");
+        LOG.error(t);
+      }
 
       if (isSelected) {
         setBackground(list.getSelectionBackground());
