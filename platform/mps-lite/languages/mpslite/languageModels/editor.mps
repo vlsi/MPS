@@ -986,11 +986,8 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196942271564">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196942274302">
-        <property name="text" value="isInstanceOf" />
+        <property name="text" value="is" />
         <link role="styleClass" targetNodeId="1196956324294" resolveInfo="MPSLiteOperation" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196942277679">
-        <property name="text" value="(" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1196942279431">
         <property name="noTargetText" value="&lt;no concept&gt;" />
@@ -1002,9 +999,6 @@
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
           </node>
         </node>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196942283264">
-        <property name="text" value=")" />
       </node>
     </node>
   </node>

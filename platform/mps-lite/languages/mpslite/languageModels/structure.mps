@@ -308,7 +308,7 @@
     <property name="package" value="QL" />
     <link role="extends" targetNodeId="1196943099028" resolveInfo="MPSLiteOperation" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196943520786">
-      <property name="value" value="isInstanceOf(" />
+      <property name="value" value="is" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196942262186">

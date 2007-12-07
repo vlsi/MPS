@@ -2588,5 +2588,24 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197040747165" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1197045473585">
+    <property name="package" value="QL" />
+    <link role="concept" targetNodeId="1.1196942255498" resolveInfo="IsInstanceOfOperation" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197045476213">
+      <property name="name" value="isDotNeeded" />
+      <link role="overridenMethod" targetNodeId="1196956526290" resolveInfo="isDotNeeded" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197045476215">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197045484662">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1197045484663">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1197045481185" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1197045473586">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197045473587" />
+    </node>
+  </node>
 </model>
 
