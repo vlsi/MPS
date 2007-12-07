@@ -34,16 +34,22 @@ public class CloneUtil {
     }
     result.putProperties(node);
     for (SReference reference : node.getReferences()) {
-      SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : outputModel.getUID();
-      if (targetModelUID == null) {
-        LOG.warning("broken reference '" + reference.getRole() + "' in " + node.getDebugText(), node);
-      } else {
-        result.addReference(SReference.create(reference.getRole(),
-                result,
-                targetModelUID,
-                reference.getTargetNodeId(),
-                reference.getResolveInfo()));
+      SReference referenceClone = reference.clone();
+      if(!reference.isExternal()) {
+        referenceClone.setTargetModelUID(outputModel.getUID());
       }
+      result.addReference(referenceClone);
+
+//      SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : outputModel.getUID();
+//      if (targetModelUID == null) {
+//        LOG.warning("broken reference '" + reference.getRole() + "' in " + node.getDebugText(), node);
+//      } else {
+//        result.addReference(SReference.create(reference.getRole(),
+//                result,
+//                targetModelUID,
+//                reference.getTargetNodeId(),
+//                reference.getResolveInfo()));
+//      }
     }
     for (SNode child : node.getChildren()) {
       String role = child.getRole_();
