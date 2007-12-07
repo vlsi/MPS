@@ -47,9 +47,11 @@ public abstract class SReference {
 
   public abstract SModelUID getTargetModelUID();
 
-  public abstract void setTargetModelUID(@NotNull SModelUID modelUID);
+  public abstract void setTargetModelUID(@NotNull SModelUID targetModelUID);
 
   public abstract boolean isExternal();
+
+  public abstract SReference duplicate(SNode sourceNode, SModelUID targetModelUID);
 
   /**
    * todo: remove. It makes no sence for dynamic references

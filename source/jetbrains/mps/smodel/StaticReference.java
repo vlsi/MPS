@@ -3,9 +3,8 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -44,12 +43,32 @@ import org.jetbrains.annotations.NotNull;
     }
   }
 
-  StaticReference(String role, SNode sourceNode, SModelUID modelUID, SNodeId nodeId, String resolveInfo) {
+  StaticReference(String role, SNode sourceNode, SModelUID targetModelUID, SNodeId nodeId, String resolveInfo) {
     // 'mature' reference
-    super(role, sourceNode, modelUID);
-    setResolveInfo(resolveInfo);
+    super(role, sourceNode, targetModelUID);
     myMature = true;
+    setResolveInfo(resolveInfo);
     myTargetNodeId = nodeId;
+  }
+
+  private StaticReference(String role, SNode sourceNode) {
+    super(role, sourceNode);
+  }
+
+  public SReference duplicate(SNode sourceNode, SModelUID targetModelUID) {
+    StaticReference duplicate = new StaticReference(getRole(), sourceNode);
+    duplicate.myMature = myMature;
+    if (myMature) {
+      duplicate.setTargetModelUID(targetModelUID);
+      duplicate.setResolveInfo(getResolveInfo());
+      duplicate.myTargetNodeId = myTargetNodeId;
+    } else {
+      duplicate.myTargetNode = myTargetNode;
+      synchronized (ourImmatureReferences) {
+        ourImmatureReferences.add(duplicate);
+      }
+    }
+    return duplicate;
   }
 
   public SModelUID getTargetModelUID() {

@@ -27,6 +27,10 @@ public class PostponedReference extends SReference {
     myGenerator = generator;
   }
 
+  public SReference duplicate(SNode sourceNode, SModelUID targetModelUID) {
+    throw new RuntimeException("not supported");
+  }
+
   public boolean isExternal() {
     return false;
   }
@@ -36,7 +40,7 @@ public class PostponedReference extends SReference {
   }
 
   public void setTargetModelUID(@NotNull SModelUID modelUID) {
-    throw new RuntimeException("not supported method");
+    throw new RuntimeException("not supported");
   }
 
   public SNode getTargetNode() {
