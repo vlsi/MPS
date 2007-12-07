@@ -6,11 +6,10 @@ import jetbrains.mps.ide.scriptLanguage.structure.MigrationScript;
 import jetbrains.mps.ide.scriptLanguage.util.ScriptNameUtil;
 import jetbrains.mps.refactoring.CompositeRefactoring;
 import jetbrains.mps.refactoring.IRefactoring;
-import jetbrains.mps.refactoring.RefactoringContext;
+import jetbrains.mps.refactoring.ObsoleteRefactoringContext;
 import jetbrains.mps.refactoring.common.RefactoringAction;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelUID;
 
 import org.jetbrains.annotations.NotNull;
@@ -61,7 +60,7 @@ private MigrationScript myScript;
   }
   
   protected IRefactoring createRefactoring(ActionContext context) {
-    RefactoringContext refactoringContext = new RefactoringContext(context.getOperationContext());
+    ObsoleteRefactoringContext refactoringContext = new ObsoleteRefactoringContext(context.getOperationContext());
 
     List selection = context.get(List.class);
     if (selection != null && !selection.isEmpty()) {

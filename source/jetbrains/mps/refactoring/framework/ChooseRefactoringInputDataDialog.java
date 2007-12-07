@@ -58,12 +58,12 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
       for (IChooseComponent component : myComponents) {
         myResult.put(component.getPropertyName(), component.submit());
       }
-      if (myRefactoring.isApplicable(myActionContext, myResult)) {
+    /*  if (myRefactoring.isApplicable(myActionContext, myResult)) {
         dispose();
-      } else {
+      } else {*/
         myResult = null;
         JOptionPane.showMessageDialog(this, "refactoring is not applicable");
-      }
+   //   }
     } catch (InvalidInputValueException ex) {
       JOptionPane.showMessageDialog(this, ex.getMessage());
     }

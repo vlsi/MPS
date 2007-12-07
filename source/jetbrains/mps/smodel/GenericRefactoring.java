@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringLoggingFailedException;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.logging.refactoring.structure.*;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.project.IModule;
@@ -36,14 +37,16 @@ public class GenericRefactoring {
   }
 
   public void execute(@NotNull ActionContext context) {
-    Map<String, String> args = myRefactoring.askForInfo(context);
+    RefactoringContext refactoringContext = new RefactoringContext();
+    Map<String, Object> args = myRefactoring.askForInfo(context);
     if (args == null) return;
-    myRefactoring.doRefactor(context, args);
+    refactoringContext.addAdditionalParameters(args);
+    myRefactoring.doRefactor(context, refactoringContext);
     SModelDescriptor modelDescriptor = context.getModel();
     if (modelDescriptor == null) return;
     SModel model = modelDescriptor.getSModel();
 
-    writeIntoLog(model, args);
+    writeIntoLog(model, refactoringContext);
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
       String stereotype = anotherDescriptor.getStereotype();
       if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
@@ -54,10 +57,10 @@ public class GenericRefactoring {
       if (model != anotherModel
               && !anotherModel.getImportedModelUIDs().contains(model.getUID())
               && !anotherModel.getLanguageAspectModelsUIDs().contains(model.getUID())) continue;
-      processModel(anotherModel, model, args);
+      processModel(anotherModel, model, refactoringContext);
     }
 
-    Map<IModule, List<SModel>> sourceModels = myRefactoring.getModelsToGenerate(context, args);
+    Map<IModule, List<SModel>> sourceModels = myRefactoring.getModelsToGenerate(context, refactoringContext);
     if (!sourceModels.isEmpty()) {
       generateModels(context, sourceModels);
     }
@@ -84,13 +87,13 @@ public class GenericRefactoring {
 
   }
 
-  private void processModel(SModel model, SModel usedModel, Map<String, String> args) {
-    myRefactoring.updateModel(model, args);
+  private void processModel(SModel model, SModel usedModel, RefactoringContext refactoringContext) {
+    myRefactoring.updateModel(model, refactoringContext);
     model.updateImportedModelUsedVersion(usedModel.getUID(), usedModel.getVersion());
     SModelRepository.getInstance().markChanged(model, true);
   }
 
-  private void writeIntoLog(SModel model, Map<String, String> args) {
+  private void writeIntoLog(SModel model, RefactoringContext refactoringContext) {
    /* String nodeIdString = myRefactoring.getSourceId();
     String modelUID = MarshallUtil.getModelUID(nodeIdString);
     String nodeId = MarshallUtil.getNodeId(nodeIdString);

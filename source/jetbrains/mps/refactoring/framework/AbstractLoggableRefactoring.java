@@ -16,18 +16,18 @@ import java.util.HashMap;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class AbstractLoggableRefactoring implements ILoggableRefactoring  {
-  public boolean isApplicable(ActionContext actionContext, Map<String, String> args) {
+  public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
     return false;
   }
 
-  public void doRefactor(ActionContext actionContext, Map<String, String> args) {
+  public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
   }
 
-  public void updateModel(SModel model, Map<String, String> args) {
+  public void updateModel(SModel model, RefactoringContext refactoringContext) {
   }
 
-  public Map<String, String> askForInfo(ActionContext actionContext) {
-    return new HashMap<String, String>();
+  public Map<String, Object> askForInfo(ActionContext actionContext) {
+    return new HashMap<String, Object>();
   }
 
   public String getUserFriendlyName() {
@@ -38,7 +38,7 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
     return null;
   }
 
-  public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, Map<String, String> args) {
+  public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
     return new HashMap<IModule, List<SModel>>();
   }
 }

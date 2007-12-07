@@ -18,6 +18,14 @@ public class RefactoringContext {
   private Map<FullNodeId, FullNodeId> myMoveMap = new HashMap<FullNodeId, FullNodeId>();
   private Map<ConceptFeature, ConceptFeature> myConceptFeatureMap = new HashMap<ConceptFeature, ConceptFeature>();
 
+  public void addAdditionalParameters(Map<String, Object> parameters) {
+    myAdditionalParametersMap.putAll(parameters);
+  }
+
+  public Map<String, Object> getAdditionalParameters() {
+    return new HashMap<String, Object>(myAdditionalParametersMap);
+  }
+
   public void moveNodesToNode(List<SNode> sourceNodes, String role, SNode targetNode) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> targetNodes = CopyUtil.copy(sourceNodes, targetNode.getModel(), mapping);

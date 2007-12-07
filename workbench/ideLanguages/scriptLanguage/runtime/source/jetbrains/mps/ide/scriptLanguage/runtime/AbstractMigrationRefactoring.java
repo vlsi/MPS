@@ -7,7 +7,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.refactoring.DefaultRefactoring;
-import jetbrains.mps.refactoring.RefactoringContext;
+import jetbrains.mps.refactoring.ObsoleteRefactoringContext;
 import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
@@ -25,7 +25,7 @@ public abstract class AbstractMigrationRefactoring extends DefaultRefactoring {
   private static final String SMODEL_UID = "SMODEL_UID";
 
   public AbstractMigrationRefactoring(IOperationContext context) {
-    super(new RefactoringContext(context));
+    super(new ObsoleteRefactoringContext(context));
   }
 
 
