@@ -171,7 +171,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   private void invalidateReferenceInCopiedNode(SReference reference) {
     if (reference.isExternal()) return;
-    if (myOutputModel.getNodeById(reference.getTargetNodeId()) != null) return;
+//    if (myOutputModel.getNodeById(reference.getTargetNodeId()) != null) return;
     SNode outputNode = reference.getSourceNode();
     SNode inputNode = findInputNodeById(outputNode.getSNodeId());
     if (inputNode == null) return;
