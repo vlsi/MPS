@@ -12,7 +12,7 @@ import java.util.Set;
  * User: Sergey Dmitriev
  * Date: Aug 2, 2003
  */
-public abstract class SReference implements Cloneable {
+public abstract class SReference {
   private String myRole;
   private SNode mySourceNode;
 
@@ -21,14 +21,6 @@ public abstract class SReference implements Cloneable {
   protected SReference(String role, SNode sourceNode) {
     myRole = InternUtil.intern(role);
     mySourceNode = sourceNode;
-  }
-
-  public SReference clone() {
-    try {
-      return (SReference) super.clone();
-    } catch (CloneNotSupportedException e) {
-      throw new RuntimeException(e);
-    }
   }
 
   public String getResolveInfo() {
