@@ -1242,5 +1242,13 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197037767317">
+    <property name="package" value="QL" />
+    <link role="conceptDeclaration" targetNodeId="1.1197037750547" resolveInfo="ParentOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197037771916">
+      <property name="text" value="parent" />
+      <link role="styleClass" targetNodeId="1196956324294" resolveInfo="MPSLiteOperation" />
+    </node>
+  </node>
 </model>
 

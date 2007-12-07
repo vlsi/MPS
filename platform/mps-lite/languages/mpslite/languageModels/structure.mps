@@ -424,5 +424,14 @@
       <link role="target" targetNodeId="1182511424766" resolveInfo="ChildDeclarationPart" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197037750547">
+    <property name="package" value="QL" />
+    <property name="name" value="ParentOperation" />
+    <link role="extends" targetNodeId="1196943099028" resolveInfo="MPSLiteOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197037762456">
+      <property name="value" value="parent" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
