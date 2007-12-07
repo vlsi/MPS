@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.logging.refactoring" pluginClass="jetbrains.mps.refactoring.plugin.LoggingRefactoringLanguagePlugin">
+<language namespace="jetbrains.mps.logging.refactoring" pluginClass="jetbrains.mps.refactoring.plugin.LoggingRefactoringLanguagePlugin" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.logging.refactoring.structure" />
   </structure>
@@ -20,7 +20,9 @@
     <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.logging.refactoring" />
   </models>
   <module />
-  <accessoryModels />
+  <accessoryModels>
+    <model modelUID="jetbrains.mps.logging.refactoring.samples" />
+  </accessoryModels>
   <generators>
     <generator generatorUID="jetbrains.mps.logging.refactoring#1189697379687" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
@@ -36,6 +38,7 @@
   </generators>
   <classPath />
   <runtimeClassPath />
+  <sourcePath />
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />

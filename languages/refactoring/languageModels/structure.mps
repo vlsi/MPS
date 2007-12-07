@@ -67,7 +67,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="argumentType" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1190636333995" resolveInfo="ArgumentType" />
+      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1189768565365">
       <property name="name" value="presentation" />
@@ -151,82 +151,11 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1190636333995">
-    <property name="name" value="ArgumentType" />
-    <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1190636355668">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1190636362747">
-    <property name="name" value="SModelArgumentType" />
-    <link role="extends" targetNodeId="1190636333995" resolveInfo="ArgumentType" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1190636395143">
-      <property name="value" value="smodel" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1190636474412">
-    <property name="name" value="SNodeArgumentType" />
-    <link role="extends" targetNodeId="1190636333995" resolveInfo="ArgumentType" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1190636512592">
-      <property name="role" value="nodeConcept" />
-      <link role="target" targetNodeId="5.1071489090640" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1190639341882">
-      <property name="value" value="snode&lt; &gt;" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1190636830793">
-    <property name="name" value="StringArgumentType" />
-    <link role="extends" targetNodeId="1190636333995" resolveInfo="ArgumentType" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1190639373524">
-      <property name="value" value="string" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1190639244566">
-    <property name="name" value="SNodeOrModelArgumentType" />
-    <link role="extends" targetNodeId="1190636333995" resolveInfo="ArgumentType" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1190639260723">
-      <property name="value" value="snodeOrModel" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1190811076950">
-    <property name="name" value="DowncastOperation" />
-    <link role="extends" targetNodeId="2.1068431790191" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1190811143877">
-      <property name="value" value="downcast to lower semantic level" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1190811102680">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="argument" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1189694084608" resolveInfo="RequiredAdditionalArgumentReference" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1190811209119">
     <property name="name" value="NodeIdentifierType" />
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1190811281873">
       <property name="value" value="nodeId" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1190811301530">
-    <property name="name" value="GetModelUIDOperation" />
-    <link role="extends" targetNodeId="2.1068431790191" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1190811338093">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="argument" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790191" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1190811416410">
-      <property name="value" value=".getModelUID" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>

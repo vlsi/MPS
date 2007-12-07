@@ -13,7 +13,10 @@ public class CopyUtil {
   private static final Logger LOG = Logger.getLogger(CopyUtil.class);
 
   public static List<SNode> copy(List<SNode> nodes, SModel targetModel) {
-    HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
+    return copy(nodes, targetModel, new HashMap<SNode, SNode>());
+  }
+
+  public static List<SNode> copy(List<SNode> nodes, SModel targetModel, Map<SNode, SNode> mapping) {
     List<SNode> result = clone(nodes, targetModel, mapping);
     addReferences(nodes, mapping, true);
     return result;
@@ -27,14 +30,6 @@ public class CopyUtil {
     }
     addReferences(nodes, mapping, true);
     return result;
-  }
-
-  public static SNode copyAndGetMapping(SNode node, SModel targetModel, Map<SNode, SNode> mapping) {
-    List<SNode> nodes = new ArrayList<SNode>();
-    nodes.add(node);
-    List<SNode> result = clone(nodes, targetModel, mapping);
-    addReferences(nodes, mapping, true);
-    return result.get(0);
   }
 
   public static <BA extends BaseAdapter> BA copy(BA node, SModel targetModel) {

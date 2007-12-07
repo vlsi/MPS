@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
-import jetbrains.mps.refactoring.framework.MarshallUtil;
 import jetbrains.mps.refactoring.framework.RefactoringLoggingFailedException;
 import jetbrains.mps.logging.refactoring.structure.*;
 import jetbrains.mps.generator.*;
@@ -92,7 +91,7 @@ public class GenericRefactoring {
   }
 
   private void writeIntoLog(SModel model, Map<String, String> args) {
-    String nodeIdString = myRefactoring.getSourceId();
+   /* String nodeIdString = myRefactoring.getSourceId();
     String modelUID = MarshallUtil.getModelUID(nodeIdString);
     String nodeId = MarshallUtil.getNodeId(nodeIdString);
 
@@ -134,7 +133,7 @@ public class GenericRefactoring {
 
     runtimeLogStack.addLog(refactoringLog);
     model.increaseVersion();
-    refactoringLog.setModelVersion(model.getVersion());
+    refactoringLog.setModelVersion(model.getVersion());*/
   }
 
   private RequiredAdditionalArgument findArgumentByName(Refactoring refactoring, String name) {
