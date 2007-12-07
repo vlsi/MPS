@@ -342,9 +342,6 @@
           <option name="DONT_REPORT_TRUE_ASSERT_STATEMENTS" value="false" />
         </inspection_tool>
         <inspection_tool class="UNUSED_IMPORT" level="WARNING" enabled="false" />
-        <inspection_tool class="SerializableHasSerialVersionUIDField" level="WARNING" enabled="true">
-          <option name="superClassString" value="java.awt.Component" />
-        </inspection_tool>
       </profile>
       <profile version="1.0" is_locked="false">
         <option name="myName" value="For Generated Code" />
@@ -1938,6 +1935,13 @@
       <SOURCES>
         <root url="jar://$PROJECT_DIR$/lib/equinox/plugins/org.eclipse.team.core-src.zip!/" />
       </SOURCES>
+    </library>
+    <library name="commons-lang">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/lib/commons-lang/commons-lang-2.1.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
     </library>
   </component>
   <component name="uidesigner-configuration">
