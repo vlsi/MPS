@@ -387,5 +387,32 @@
       <link role="target" targetNodeId="1182511940438" resolveInfo="PropertyDeclarationPart" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197019840396">
+    <property name="package" value="QL" />
+    <property name="name" value="ReferenceAccessOperation" />
+    <link role="extends" targetNodeId="1196943099028" resolveInfo="MPSLiteOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197033580235">
+      <property name="role" value="referenceDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1182845659293" resolveInfo="ReferenceDeclarationPart" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197033195235">
+    <property name="name" value="NodesType" />
+    <link role="extends" targetNodeId="3.1068431790189" resolveInfo="Type" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197033209703">
+      <property name="value" value="nodes&lt;...&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197033209704">
+      <property name="value" value="mpslite's nodes type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197033204849">
+      <property name="role" value="concept" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1182510906722" resolveInfo="ConceptDeclaration" />
+    </node>
+  </node>
 </model>
 
