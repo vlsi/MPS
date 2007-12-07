@@ -293,10 +293,10 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196693342280">
     <property name="package" value="ConceptFunctions" />
-    <property name="name" value="Node_ConceptFunctionParameter" />
+    <property name="name" value="EnclosingNode_ConceptFunctionParameter" />
     <link role="extends" targetNodeId="3.1107135704075" resolveInfo="ConceptFunctionParameter" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196693406478">
-      <property name="value" value="node" />
+      <property name="value" value="enclosingNode" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1196695127754">
@@ -431,6 +431,23 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197037762456">
       <property name="value" value="parent" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197038476611">
+    <property name="package" value="QL" />
+    <property name="name" value="AncestorOperation" />
+    <link role="extends" targetNodeId="1196943099028" resolveInfo="MPSLiteOperation" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197044098891">
+      <property name="name" value="includeSelf" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197038595167">
+      <property name="value" value="ancestor" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197038528147">
+      <property name="role" value="type" />
+      <link role="target" targetNodeId="1182510906722" resolveInfo="ConceptDeclaration" />
     </node>
   </node>
 </model>

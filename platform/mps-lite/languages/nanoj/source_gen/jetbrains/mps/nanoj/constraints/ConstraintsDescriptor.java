@@ -13,6 +13,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public  ConstraintsDescriptor() {
     this.myConstraints.add(new LocalVariableReference_variable_ReferentConstraint());
+    this.myConstraints.add(new ParameterReference_parameter_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
