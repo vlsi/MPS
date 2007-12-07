@@ -5,8 +5,8 @@ package jetbrains.mps.baseLanguage.intentions;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -32,10 +32,11 @@ public class InvertIfCondition_Intention extends BaseIntention implements Intent
   public void execute(SNode node, EditorContext editorContext) {
     // Invert condition
     SNode condition = SLinkOperations.getTarget(node, "condition", true);
-    if ((condition != null)) {
-      if (SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.NotExpression")) {
+    if((condition != null)) {
+      if(SNodeOperations.isInstanceOf(condition, "jetbrains.mps.baseLanguage.structure.NotExpression")) {
         condition = SLinkOperations.getTarget(condition, "expression", true);
-      } else {
+      } else
+      {
         SNode notExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NotExpression", null);
         SLinkOperations.setTarget(notExpression, "expression", condition, true);
         condition = notExpression;
@@ -46,17 +47,20 @@ public class InvertIfCondition_Intention extends BaseIntention implements Intent
     SNode ifTrue = SLinkOperations.getTarget(node, "ifTrue", true);
     SNode ifFalse = SLinkOperations.getTarget(node, "ifFalseStatement", true);
     // Set new ifFalseStatement
-    if (SLinkOperations.getCount(ifTrue, "statement") == 0) {
+    if(SLinkOperations.getCount(ifTrue, "statement") == 0) {
       SLinkOperations.setTarget(node, "ifFalseStatement", null, true);
-    } else if (SLinkOperations.getCount(ifTrue, "statement") == 1) {
+    } else
+    if(SLinkOperations.getCount(ifTrue, "statement") == 1) {
       SLinkOperations.setTarget(node, "ifFalseStatement", SequenceOperations.getFirst(SLinkOperations.getTargets(ifTrue, "statement", true)), true);
-    } else {
+    } else
+    {
       SLinkOperations.setNewChild(node, "ifFalseStatement", "jetbrains.mps.baseLanguage.structure.BlockStatement");
     }
     // Set new ifTrue
-    if (SNodeOperations.isInstanceOf(ifFalse, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
+    if(SNodeOperations.isInstanceOf(ifFalse, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
       SLinkOperations.setTarget(node, "ifTrue", SLinkOperations.getTarget(ifFalse, "statements", true), true);
-    } else {
+    } else
+    {
       SLinkOperations.addChild(SLinkOperations.setNewChild(node, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", ifFalse);
     }
   }

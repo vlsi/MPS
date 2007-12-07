@@ -11,8 +11,6 @@ import java.util.List;
 
 public class ClassConcept extends Classifier {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ClassConcept";
-  public static String NAME = "name";
-  public static String ABSTRACT_CLASS = "abstractClass";
   public static String EXTENDED_CLASS = "extendedClass";
   public static String SUPERCLASS = "superclass";
   public static String STATIC_INITIALIZER = "staticInitializer";
@@ -21,6 +19,8 @@ public class ClassConcept extends Classifier {
   public static String STATIC_METHOD = "staticMethod";
   public static String IMPLEMENTED_INTERFACE = "implementedInterface";
   public static String STATIC_INNER_CLASSIFIERS = "staticInnerClassifiers";
+  public static String NAME = "name";
+  public static String ABSTRACT_CLASS = "abstractClass";
 
   public  ClassConcept(SNode node) {
     super(node);
@@ -34,22 +34,6 @@ public class ClassConcept extends Classifier {
     return ClassConcept.newInstance(sm, false);
   }
 
-
-  public String getName() {
-    return this.getProperty(ClassConcept.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(ClassConcept.NAME, value);
-  }
-
-  public boolean getAbstractClass() {
-    return this.getBooleanProperty(ClassConcept.ABSTRACT_CLASS);
-  }
-
-  public void setAbstractClass(boolean value) {
-    this.setBooleanProperty(ClassConcept.ABSTRACT_CLASS, value);
-  }
 
   public ClassConcept getExtendedClass() {
     return (ClassConcept)this.getReferent(ClassConcept.EXTENDED_CLASS);
@@ -173,6 +157,22 @@ public class ClassConcept extends Classifier {
 
   public void insertStaticInnerClassifiers(Classifier prev, Classifier node) {
     this.insertChild(prev, ClassConcept.STATIC_INNER_CLASSIFIERS, node);
+  }
+
+  public String getName() {
+    return this.getProperty(ClassConcept.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ClassConcept.NAME, value);
+  }
+
+  public boolean getAbstractClass() {
+    return this.getBooleanProperty(ClassConcept.ABSTRACT_CLASS);
+  }
+
+  public void setAbstractClass(boolean value) {
+    this.setBooleanProperty(ClassConcept.ABSTRACT_CLASS, value);
   }
 
 }

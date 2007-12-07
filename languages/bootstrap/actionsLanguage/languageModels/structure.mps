@@ -130,7 +130,7 @@
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="applicableConcept" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1071489090640" />
+      <link role="target" targetNodeId="2.1169125787135" resolveInfo="AbstractConceptDeclaration" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1154622757656">
       <property name="metaClass" value="aggregation" />

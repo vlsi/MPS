@@ -64,14 +64,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
-      SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-      SNode getterMethod = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      SPropertyOperations.set(getterMethod, "name", FieldDeclaration_Behavior.call_getGetterName_1184160785366(node));
-      SLinkOperations.setTarget(getterMethod, "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), true);
-      SNode rs = SLinkOperations.addNewChild(SLinkOperations.getTarget(getterMethod, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");
-      SNode fr = SLinkOperations.setNewChild(rs, "expression", "jetbrains.mps.baseLanguage.structure.FieldReference");
-      SLinkOperations.setNewChild(fr, "instance", "jetbrains.mps.baseLanguage.structure.ThisExpression");
-      SLinkOperations.setTarget(fr, "variableDeclaration", node, false);
+      new QuotationClass_().createNode(FieldDeclaration_Behavior.call_getGetterName_1184160785366(node), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), node);
     }
 
     public String getKeyStroke() {
@@ -119,19 +112,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
-      SNode classConcept = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-      SNode setterMethod = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      SPropertyOperations.set(setterMethod, "name", FieldDeclaration_Behavior.call_getSetterName_1184160800181(node));
-      SLinkOperations.setNewChild(setterMethod, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
-      SNode parameter = SLinkOperations.addNewChild(setterMethod, "parameter", "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
-      SPropertyOperations.set(parameter, "name", SPropertyOperations.getString(node, "name"));
-      SLinkOperations.setTarget(parameter, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), true);
-      SNode rs = SLinkOperations.addNewChild(SLinkOperations.getTarget(setterMethod, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
-      SNode assignment = SLinkOperations.setNewChild(rs, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
-      SNode fr = SLinkOperations.setNewChild(assignment, "lValue", "jetbrains.mps.baseLanguage.structure.FieldReference");
-      SLinkOperations.setNewChild(fr, "instance", "jetbrains.mps.baseLanguage.structure.ThisExpression");
-      SLinkOperations.setTarget(fr, "variableDeclaration", node, false);
-      SLinkOperations.setTarget(SLinkOperations.setNewChild(assignment, "rValue", "jetbrains.mps.baseLanguage.structure.ParameterReference"), "variableDeclaration", parameter, false);
+      new QuotationClass_1().createNode(FieldDeclaration_Behavior.call_getSetterName_1184160800181(node), node, SPropertyOperations.getString(node, "name"), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)));
     }
 
     public String getKeyStroke() {

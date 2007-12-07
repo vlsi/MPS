@@ -357,6 +357,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123158">
     <property name="name" value="FieldReference" />
+    <property name="package" value="oldOperationExpression" />
     <link role="extends" targetNodeId="1068498886296" resolveInfo="VariableReference" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107216539974">
       <property name="value" value=".&lt;field&gt;" />
@@ -415,6 +416,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068580123163">
     <property name="name" value="InstanceMethodCall" />
+    <property name="package" value="oldOperationExpression" />
     <link role="extends" targetNodeId="1068499141036" resolveInfo="BaseMethodCall" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107216670785">
       <property name="value" value=".&lt;method&gt;" />
@@ -2023,6 +2025,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1173176849460">
     <property name="name" value="ArrayLengthExpression" />
+    <property name="package" value="oldOperationExpression" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1173176867072">
       <property name="metaClass" value="aggregation" />
@@ -2275,6 +2278,53 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1194952169813">
     <property name="name" value="IMemberContainer" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197027756228">
+    <property name="name" value="OperationExpression" />
+    <property name="package" value="operationExpression" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197027771414">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="operand" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197027833540">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="operation" />
+      <link role="target" targetNodeId="1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197028107093">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1197027803184">
+    <property name="package" value="operationExpression" />
+    <property name="name" value="IOperation" />
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration" id="1197029536315">
+      <property name="name" value="lvalue" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197029447546">
+    <property name="package" value="operationExpression" />
+    <property name="name" value="FieldReferenceOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197029500499">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="fieldDeclaration" />
+      <link role="target" targetNodeId="1068390468200" resolveInfo="FieldDeclaration" />
+      <link role="specializedLink" targetNodeId="1068581517664" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1197029470288">
+      <link role="intfc" targetNodeId="1197027803184" resolveInfo="IOperation" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197029516250">
+      <property name="value" value="instance field reference" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197029545846">
+      <link role="conceptPropertyDeclaration" targetNodeId="1197029536315" resolveInfo="lvalue" />
+    </node>
   </node>
 </model>
 
