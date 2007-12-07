@@ -56,7 +56,7 @@ public class QueryMethodGenerated {
         LOG.error("couldn't find class 'QueriesGenerated' for model '" + sourceModel.getUID() + "' : TRY TO GENERATE");
       }      
       queriesClass = module.getClass(queriesClassName);
-      throw new ClassNotFoundException(queriesClassName);
+      throw new ClassNotFoundException("Can't find " + queriesClassName + " in module " + module.getModuleUID());
     }
 
     Method method = null;
