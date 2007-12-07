@@ -66,10 +66,13 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
     } else {
       SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(getTargetModelUID());
       if (modelDescriptor == null) {
-        SReference.error(this, GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR);
+        error("path to the target model '" + getTargetModelUID() + "' is not specified");
         model = getSourceNode().getModel();
       } else {
         model = modelDescriptor.getSModel();
+        if(model == null) {
+          error("failed to get model '" + getTargetModelUID() + "' from model desctiptor");
+        }
       }
     }
     return model;
@@ -81,16 +84,4 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
   }
 
   protected abstract SNode getTargetNode_impl();
-
-
-  protected void error(GetTargetNodeErrorState errorState) {
-    LOG.error("\ncouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), getSourceNode());
-    if (errorState == GetTargetNodeErrorState.NO_MODEL_DESCRIPTOR) {
-      LOG.error("path to the target model " + getTargetModelUID() + " is not specified");
-    } else if (errorState == GetTargetNodeErrorState.NO_MODEL) {
-      LOG.error("the modelDescriptor.getSModel() failed to load model");
-    } else if (errorState == GetTargetNodeErrorState.CANT_RESOLVE_BY_ID) {
-      LOG.error("the target model " + getTargetModelUID() + " doesn't contain node with id=" + getTargetNodeId());
-    }
-  }
 }

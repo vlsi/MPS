@@ -1,5 +1,6 @@
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
@@ -15,7 +16,6 @@ public abstract class SReference {
   private SNode mySourceNode;
 
   private String myResolveInfo;
-  private static boolean ourLoggingOff = false;
 
   protected SReference(String role, SNode sourceNode) {
     myRole = InternUtil.intern(role);
@@ -32,6 +32,10 @@ public abstract class SReference {
 
   public String getRole() {
     return myRole;
+  }
+
+  public void setRole(String newRole) {
+    myRole = InternUtil.intern(newRole);
   }
 
   public SNode getSourceNode() {
@@ -75,6 +79,13 @@ public abstract class SReference {
     return new UnresolvedStaticReference(role, sourceNode, resolveInfo);
   }
 
+
+  //
+  // error logging
+  //
+  private static boolean ourLoggingOff = false;
+  private static final Set<SReference> ourErrorReportedRefs = new WeakSet<SReference>();
+
   public static void disableLogging() {
     ourLoggingOff = true;
   }
@@ -83,31 +94,18 @@ public abstract class SReference {
     ourLoggingOff = false;
   }
 
-  private static final Set<SReference> ourErrorReportedRefs = new WeakSet<SReference>();
-
-  protected static void error(SReference reference, GetTargetNodeErrorState errorState) {
+  protected final void error(String message) {
     if (ourLoggingOff) return;
     //skip errors in java stubs because they can have reference to classes that doesn't present
     //in class path
-    if (reference.getSourceNode().getModel().getStereotype().endsWith(SModelStereotype.JAVA_STUB)) return;
-    if (reference.getSourceNode().getModel().getUserObject(SModel.TMP_MODEL) != null) return;
+    if (getSourceNode().getModel().getStereotype().endsWith(SModelStereotype.JAVA_STUB)) return;
+    if (getSourceNode().getModel().getUserObject(SModel.TMP_MODEL) != null) return;
 
-    if (ourErrorReportedRefs.contains(reference)) return;
-    ourErrorReportedRefs.add(reference);
-    reference.error(errorState);
-  }
+    if (ourErrorReportedRefs.contains(this)) return;
+    ourErrorReportedRefs.add(this);
 
-  protected abstract void error(GetTargetNodeErrorState errorState);
-
-  protected enum GetTargetNodeErrorState {
-    OK,
-    NO_MODEL_DESCRIPTOR,
-    NO_MODEL,
-    CANT_RESOLVE_BY_ID,
-    UNIDENTIFIED_ERROR
-  }
-
-  public void setRole(String newRole) { // todo add undo
-    myRole = InternUtil.intern(newRole);
+    Logger log = Logger.getLogger(this.getClass());
+    log.error("\ncouldn't resolve reference '" + getRole() + "' from " + getSourceNode().getDebugText(), getSourceNode());
+    if (message != null) log.error(message);
   }
 }

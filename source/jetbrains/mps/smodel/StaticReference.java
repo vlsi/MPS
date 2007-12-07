@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 
@@ -77,23 +78,21 @@ import org.jetbrains.annotations.NotNull;
   }
 
   public SNode getTargetNode_impl() {
+    SNode targetNode = myTargetNode;
     if (mature()) {
       SModel targetModel = getTargetModel();
-      if (targetModel == null) {
-        SReference.error(this, GetTargetNodeErrorState.NO_MODEL);
-        return null;
-      }
-      SNode node = targetModel.getNodeById(getTargetNodeId());
-      if (node == null) {
-        node = UnregisteredNodes.instance().get(getTargetModelUID(), getTargetNodeId().toString());
-        if (node == null) {
-          SReference.error(this, GetTargetNodeErrorState.CANT_RESOLVE_BY_ID);
+      if (targetModel != null) {
+        targetNode = targetModel.getNodeById(getTargetNodeId());
+        if (targetNode == null) {
+          targetNode = UnregisteredNodes.instance().get(getTargetModelUID(), getTargetNodeId().toString());
+          if (targetNode == null) {
+            error("target model '" + getTargetModelUID() + "' doesn't contain node with id=" + getTargetNodeId());
+          }
         }
       }
-      return node;
     }
 
-    return myTargetNode;
+    return targetNode;
   }
 
   private boolean mature() {
@@ -115,4 +114,5 @@ import org.jetbrains.annotations.NotNull;
     setTargetNodeId(targetNode.getSNodeId());
     setResolveInfo(targetNode.getName());
   }
+
 }
