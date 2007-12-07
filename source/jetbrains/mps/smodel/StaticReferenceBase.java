@@ -1,8 +1,6 @@
 package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 
 /**
@@ -66,11 +64,4 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
     }
     return model;
   }
-
-  public final SNode getTargetNode() {
-    NodeReadAccessCaster.fireReferenceTargetReadAccessed(this);
-    return getTargetNode_impl();
-  }
-
-  protected abstract SNode getTargetNode_impl();
 }

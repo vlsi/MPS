@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
@@ -42,7 +43,13 @@ public abstract class SReference {
     return mySourceNode;
   }
 
-  public abstract SNode getTargetNode();
+  public final SNode getTargetNode() {
+    NodeReadAccessCaster.fireReferenceTargetReadAccessed(this);
+    return getTargetNode_internal();
+  }
+
+  protected abstract SNode getTargetNode_internal();
+
 
   public abstract SModelUID getTargetModelUID();
 

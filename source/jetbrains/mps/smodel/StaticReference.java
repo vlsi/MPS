@@ -79,7 +79,7 @@ import org.jetbrains.annotations.NotNull;
     myTargetNodeId = nodeId;
   }
 
-  public SNode getTargetNode_impl() {
+  protected SNode getTargetNode_internal() {
     SNode targetNode = myTargetNode;
     if (mature()) {
       SModel targetModel = getTargetModel();

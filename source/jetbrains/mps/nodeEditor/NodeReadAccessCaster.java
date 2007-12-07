@@ -24,7 +24,7 @@ public class NodeReadAccessCaster {
   private static PropertyAccessor ourPropertyAccessor;
 
   private static boolean ourCanFirePropertyReadAccessedEvent = true;
-  private static boolean myEventsBlocked = false;
+  private static boolean ourEventsBlocked = false;
 
   public static void setCellBuildNodeReadAccessListener(CellBuildNodeAccessListener listener) {
     if (ourReadAccessListener != null) {
@@ -78,7 +78,7 @@ public class NodeReadAccessCaster {
   }
 
   public static void fireNodeReadAccessed(SNode node) {    
-    if (myEventsBlocked) return;
+    if (ourEventsBlocked) return;
     if(!node.isRegistered()) return;
     if (ourReadAccessListener != null) ourReadAccessListener.readAccess(node);
     if (ourAbstractReadAccessListener != null) ourAbstractReadAccessListener.readAccess(node);
@@ -95,7 +95,7 @@ public class NodeReadAccessCaster {
   }
 
   public static void firePropertyReadAccessed(SNode node, String propertyName, boolean propertyExistenceCheck) {
-    if (myEventsBlocked) return;
+    if (ourEventsBlocked) return;
     if(!node.isRegistered()) return;
     if (!ourCanFirePropertyReadAccessedEvent) return;
     if (ourPropertyAccessor != null) {
@@ -121,18 +121,17 @@ public class NodeReadAccessCaster {
 
 
   public static void fireReferenceTargetReadAccessed(SReference reference) {
-    if (myEventsBlocked) return;
+    if (ourEventsBlocked) return;
     if(!reference.getSourceNode().isRegistered()) return;
-    if(reference.getTargetNodeId() == null) return; // tmp: old refs to java_stub has no id
     if (ourReadAccessListener != null) ourReadAccessListener.addRefTargetToDependOn(new SNodePointer(reference.getTargetModelUID(), reference.getTargetNodeId()));
   }
 
 
   public static void blockEvents() {
-    myEventsBlocked = true;
+    ourEventsBlocked = true;
   }
 
   public static void unblockEvents() {
-    myEventsBlocked = false;
+    ourEventsBlocked = false;
   }
 }

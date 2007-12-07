@@ -15,7 +15,6 @@ import org.jetbrains.annotations.NotNull;
  * They are allways internal.
  */
 public class PostponedReference extends SReference {
-  private static final Logger LOG = Logger.getLogger(PostponedReference.class);
   private ReferenceInfo myReferenceInfo;
   private SNode myTargetNode;
   private boolean myFailed;
@@ -44,7 +43,7 @@ public class PostponedReference extends SReference {
     throw new RuntimeException("not supported method");
   }
 
-  public SNode getTargetNode() {
+  protected SNode getTargetNode_internal() {
     if (myTargetNode != null) {
       return myTargetNode;
     } else if (myFailed) {
