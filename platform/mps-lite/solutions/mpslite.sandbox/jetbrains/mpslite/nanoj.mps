@@ -636,6 +636,22 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197037460564">
+          <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197037462629">
+            <node role="operation" type="jetbrains.mpslite.structure.PrevSiblingOperation" id="1197037463663" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197037460565">
+              <link role="variableDeclaration" targetNodeId="1197037202997" resolveInfo="ref" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197037678267">
+          <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197037680332">
+            <node role="operation" type="jetbrains.mpslite.structure.NextSiblingOperation" id="1197037680976" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197037678268">
+              <link role="variableDeclaration" targetNodeId="1197037202997" resolveInfo="ref" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196955920660" />
