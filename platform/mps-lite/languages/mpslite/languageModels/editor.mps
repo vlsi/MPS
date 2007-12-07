@@ -1191,7 +1191,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197033221918">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197033222640">
-        <property name="text" value="snodes" />
+        <property name="text" value="nodes" />
         <link role="styleClass" targetNodeId="6.1186415544875" resolveInfo="keyword" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197033225037">
@@ -1223,6 +1223,21 @@
           <property name="readOnly" value="true" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
           <link role="styleClass" targetNodeId="1196960817991" resolveInfo="MPSLiteReference" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197035001209">
+    <property name="package" value="QL" />
+    <link role="conceptDeclaration" targetNodeId="1.1197034864798" resolveInfo="ChildAccessOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1197035009756">
+      <link role="relationDeclaration" targetNodeId="1.1197034873665" />
+      <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1197035009757">
+        <link role="conceptDeclaration" targetNodeId="1.1182511424766" resolveInfo="ChildDeclarationPart" />
+        <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197035011505">
+          <property name="readOnly" value="true" />
+          <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+          <link role="styleClass" targetNodeId="1196960726948" resolveInfo="MPSLiteChild" />
         </node>
       </node>
     </node>
