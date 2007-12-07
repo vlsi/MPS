@@ -24,7 +24,7 @@ import javax.swing.JComponent;
 import javax.swing.event.ChangeListener;
 import java.util.List;
 
-final class InspectorEditorComponent extends AbstractEditorComponent implements IInspectorEditorComponent, IEditor {
+final public class InspectorEditorComponent extends AbstractEditorComponent implements IInspectorEditorComponent, IEditor {
 
   InspectorEditorComponent() {
     super(null);
