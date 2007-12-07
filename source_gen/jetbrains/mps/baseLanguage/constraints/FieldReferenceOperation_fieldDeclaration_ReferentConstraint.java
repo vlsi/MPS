@@ -23,11 +23,11 @@ public class FieldReferenceOperation_fieldDeclaration_ReferentConstraint impleme
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
-    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "variableDeclaration", this);
+    manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "fieldDeclaration", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
-    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "variableDeclaration");
+    manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "fieldDeclaration");
   }
 
   public boolean canCreateNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {

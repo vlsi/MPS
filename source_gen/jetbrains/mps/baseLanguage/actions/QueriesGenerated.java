@@ -390,7 +390,7 @@ public class QueriesGenerated {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode operationExpression = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.OperationExpression", currentTargetNode);
-            SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "variableDeclaration", ((SNode)this.getParameterObject()), false);
+            SLinkOperations.setTarget(SLinkOperations.setNewChild(operationExpression, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", ((SNode)this.getParameterObject()), false);
             SLinkOperations.setTarget(operationExpression, "operand", SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ThisExpression", null), true);
             return operationExpression;
           }

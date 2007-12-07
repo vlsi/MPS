@@ -16,7 +16,7 @@ public class typeof_FieldReferenceOperation_InferenceRule implements InferenceRu
   }
 
   public void applyRule(final SNode argument) {
-    SNode fieldDeclaration = SLinkOperations.getTarget(argument, "variableDeclaration", false);
+    SNode fieldDeclaration = SLinkOperations.getTarget(argument, "fieldDeclaration", false);
     if((fieldDeclaration != null)) {
       TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguage.helgins", "1197036343060", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(fieldDeclaration, "jetbrains.mps.baseLanguage.helgins", "1197036351707", true), argument, null, "jetbrains.mps.baseLanguage.helgins", "1197036348646");
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(IOperation_Behavior.call_getOperand_1197028596169(argument), "jetbrains.mps.baseLanguage.helgins", "1197030122319", true), new QuotationClass_80().createNode(SNodeOperations.getAncestor(fieldDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)), IOperation_Behavior.call_getOperand_1197028596169(argument), null, "jetbrains.mps.baseLanguage.helgins", "1197030157476");

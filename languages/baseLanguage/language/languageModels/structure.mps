@@ -2313,7 +2313,6 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="fieldDeclaration" />
       <link role="target" targetNodeId="1068390468200" resolveInfo="FieldDeclaration" />
-      <link role="specializedLink" targetNodeId="1068581517664" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1197029470288">
       <link role="intfc" targetNodeId="1197027803184" resolveInfo="IOperation" />
