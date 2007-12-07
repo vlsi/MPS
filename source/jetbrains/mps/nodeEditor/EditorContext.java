@@ -3,6 +3,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 
 import java.util.*;
 
@@ -29,6 +30,10 @@ public class EditorContext {
 
   public AbstractEditorComponent getNodeEditorComponent() {
     return myNodeEditorComponent;
+  }
+
+  public boolean isInspector() {
+    return myNodeEditorComponent instanceof InspectorEditorComponent;
   }
 
   public EditorCell getSelectedCell() {
