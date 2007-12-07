@@ -358,7 +358,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
 
     aspects.addAll(CollectionUtil.asList(
             ".editor", ".actions", ".constraints",
-            ".intentions", ".builder", ".scripts",
+            ".intentions", ".findUsages", ".builder", ".scripts",
             ".helgins", ".plugin", ".textGen",
             ".textPresentation", ".design", ".util", ".runtime", ".cfa"
     ));
@@ -377,7 +377,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     result.addAll(getGeneratorsPacks());
 
     return result;
-  }                                                 
+  }
 
   private List<String> getGeneratorsPacks() {
     List<String> result = new ArrayList<String>();
@@ -559,7 +559,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return null;
   }
 
-   @Nullable
+  @Nullable
   public SModelDescriptor getCFAModelDescriptor() {
     if (getLanguageDescriptor().getCfaModel() != null) {
       SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getCfaModel().getName());
@@ -605,6 +605,19 @@ public class Language extends AbstractModule implements Marshallable<Language> {
       SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
       if (modelDescriptor == null) {
         LOG.error("Couldn't get intentions model \"" + modelUID + "\"");
+      }
+      return modelDescriptor;
+    }
+    return null;
+  }
+
+  @Nullable
+  public SModelDescriptor getFindUsagesModelDescriptor() {
+    if (getLanguageDescriptor().getFindUsagesModel() != null) {
+      SModelUID modelUID = SModelUID.fromString(getLanguageDescriptor().getFindUsagesModel().getName());
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID, this);
+      if (modelDescriptor == null) {
+        LOG.error("Couldn't get find usages model \"" + modelUID + "\"");
       }
       return modelDescriptor;
     }
@@ -691,6 +704,8 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     if (documentationModelDescriptor != null) result.add(documentationModelDescriptor);
     SModelDescriptor intentionsModelDescriptor = getIntentionsModelDescriptor();
     if (intentionsModelDescriptor != null) result.add(intentionsModelDescriptor);
+    SModelDescriptor findUsagesModelDescriptor = getFindUsagesModelDescriptor();
+    if (findUsagesModelDescriptor != null) result.add(findUsagesModelDescriptor);
     return result;
   }
 
@@ -955,6 +970,36 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     return intentionsModelDescriptor;
   }
 
+  public SModelDescriptor createFindUsagesModel() {
+    ModelRoot modelRoot = null;
+    List<ModelRoot> modelRoots = this.getModelRoots();
+    for (ModelRoot mRoot : modelRoots) {
+      IModelRootManager rootManager = ModelRootsUtil.getManagerFor(mRoot);
+      if (rootManager instanceof DefaultModelRootManager) {
+        modelRoot = mRoot;
+        break;
+      }
+    }
+
+    assert modelRoot != null;
+
+    SModelDescriptor findUsagesModelDescriptor = this.createModel(new SModelUID(this.getModuleUID(), "findUsages", ""), modelRoot);
+    SModel findUsagesModel = findUsagesModelDescriptor.getSModel();
+    findUsagesModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getBaseLanguage());
+    findUsagesModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getSModelLanguage());
+    findUsagesModel.addNewlyImportedLanguage(BootstrapLanguages.getInstance().getFindUsagesLanguage());
+    findUsagesModelDescriptor.save();
+
+    LanguageDescriptor languageDescriptor = this.getLanguageDescriptor();
+    Model _model = Model.newInstance(languageDescriptor.getModel());
+    _model.setName(findUsagesModel.getUID().toString());
+    languageDescriptor.setFindUsagesModel(_model);
+    this.setLanguageDescriptor(languageDescriptor);
+    this.save();
+
+    return findUsagesModelDescriptor;
+  }
+
   private class LanguageEventTranslator extends CommandEventTranslator {
     public void languageChanged() {
       markCurrentCommandsDirty();
@@ -1015,7 +1060,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
 
-  public static LanguageAspect getModelAspect(SModelDescriptor sm) { 
+  public static LanguageAspect getModelAspect(SModelDescriptor sm) {
     Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(sm);
     for (ModelOwner modelOwner : owners) {
       if (modelOwner instanceof Language) {

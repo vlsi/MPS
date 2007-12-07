@@ -136,6 +136,20 @@ public enum LanguageAspect {
     }
   },
 
+  FIND_USAGES("findUsages") {
+    protected List<String> getLanguagesToImport(Language l) {
+      return CollectionUtil.asList(BootstrapLanguages.getInstance().getFindUsagesLanguage().getNamespace());
+    }
+
+    protected void registerInLanguageDescriptor(LanguageDescriptor ld, Model m) {
+      ld.setFindUsagesModel(m);
+    }
+
+    public SModelDescriptor get(Language l) {
+      return l.getFindUsagesModelDescriptor();
+    }
+  },
+
   CFA("cfa") {
     protected List<String> getLanguagesToImport(Language l) {
       return CollectionUtil.asList(BootstrapLanguages.getInstance().getCFALanguage().getNamespace());
@@ -159,7 +173,7 @@ public enum LanguageAspect {
 
   public abstract SModelDescriptor get(Language l);
 
-  protected abstract void registerInLanguageDescriptor(LanguageDescriptor ld, Model m);      
+  protected abstract void registerInLanguageDescriptor(LanguageDescriptor ld, Model m);
 
   public String getName() {
     return myName;
@@ -167,7 +181,7 @@ public enum LanguageAspect {
 
   public SModelDescriptor createNew(Language l) {
     assert get(l) == null;
-    
+
     SModel sm = l.getLanguageDescriptor().getModel();
 
     SModelDescriptor model = l.createModel(getModuleUID(l), l.getModelRoots().get(0));
@@ -199,7 +213,7 @@ public enum LanguageAspect {
 
   protected List<String> getModelsToImport(Language l) {
     return CollectionUtil.asList(
-      l.getStructureModelDescriptor().getModelUID().toString()
+            l.getStructureModelDescriptor().getModelUID().toString()
     );
   }
 

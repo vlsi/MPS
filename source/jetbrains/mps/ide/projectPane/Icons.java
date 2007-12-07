@@ -14,27 +14,27 @@ public class Icons {
   public static final Icon JAVA_ICON = new ImageIcon(Icons.class.getResource("nodes/java.png"));
   public static final Icon LIB_ICON = new ImageIcon(Icons.class.getResource("nodes/libraryModels.png"));
   public static final Icon PROJECT_ICON = new ImageIcon(Icons.class.getResource("nodes/project.png"));
-  public static final Icon PROJECT_LANGUAGES_ICON =  new ImageIcon(Icons.class.getResource("nodes/projectLanguages.png"));
+  public static final Icon PROJECT_LANGUAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/projectLanguages.png"));
   public static final Icon PROJECT_MODELS_ICON = new ImageIcon(Icons.class.getResource("nodes/projectModels.png"));
   public static final Icon LANGUAGES_ICON = new ImageIcon(Icons.class.getResource("nodes/languages.png"));
-  public static final Icon EDITORS_ICON =  new ImageIcon(Icons.class.getResource("nodes/editors.png"));
-  public static final Icon GENERATORS_ICON =  new ImageIcon(Icons.class.getResource("nodes/generators.png"));
+  public static final Icon EDITORS_ICON = new ImageIcon(Icons.class.getResource("nodes/editors.png"));
+  public static final Icon GENERATORS_ICON = new ImageIcon(Icons.class.getResource("nodes/generators.png"));
   public static final Icon GENERATOR_ICON = new ImageIcon(Icons.class.getResource("nodes/generator.png"));
 
   public static final Icon PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/properties.png"));
   public static final Icon LANGUAGE_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/languageProperties.png"));
   public static final Icon MODEL_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/modelProperties.png"));
-  public static final Icon PROJECT_PROPERTIES_ICON =  new ImageIcon(Icons.class.getResource("nodes/projectProperties.png"));
+  public static final Icon PROJECT_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/projectProperties.png"));
   public static final Icon GENERATOR_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/generatorProperties.png"));
 
   public static final Icon SVN_PROPERTIES_ICON = new ImageIcon(Icons.class.getResource("nodes/svn.png"));
 
   public static final Icon DELETE_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/deleteModel.png"));
-  public static final Icon CREATE_NODE_ICON =  new ImageIcon(Icons.class.getResource("nodes/createNode.png"));
+  public static final Icon CREATE_NODE_ICON = new ImageIcon(Icons.class.getResource("nodes/createNode.png"));
   public static final Icon DELETE_NODE_ICON = new ImageIcon(Icons.class.getResource("nodes/deleteNode.png"));
 
   public static final Icon OUTPUT_VIEW_ICON = new ImageIcon(Icons.class.getResource("nodes/outputView.png"));
-  public static final Icon MESSAGE_VIEW_ICON = new ImageIcon(Icons.class.getResource("nodes/messageView.png")); 
+  public static final Icon MESSAGE_VIEW_ICON = new ImageIcon(Icons.class.getResource("nodes/messageView.png"));
   public static final Icon HISTORY_VIEW_ICON = new ImageIcon(Icons.class.getResource("nodes/historyView.png"));
 
   public static final Icon STRUCTURE_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/structureModel.png"));
@@ -43,6 +43,7 @@ public class Icons {
   public static final Icon TEMPLATES_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/templatesModel.png"));
   public static final Icon TYPESYSTEM_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/typesystemModel.png"));
   public static final Icon INTENTIONS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/intentionsModel.png"));
+  public static final Icon FIND_USAGES_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/intentionsModel.png"));
   public static final Icon CONSTRAINTS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/constraintsModel.png"));
   public static final Icon ACCESSORY_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/accessoryModel.png"));
 
@@ -71,7 +72,7 @@ public class Icons {
   public static final Icon INSPECTOR_ICON = new ImageIcon(Icons.class.getResource("inspector.png"));
 
   public static final Icon DELETE_ICON = new ImageIcon(Icons.class.getResource("other/cancel.png"));
-  public static final Icon FIND_ICON = new ImageIcon(Icons.class.getResource("other/find.png")); 
+  public static final Icon FIND_ICON = new ImageIcon(Icons.class.getResource("other/find.png"));
 
   public static final Icon HIERARCHY_ICON = new ImageIcon(Icons.class.getResource("nodes/hierarchyView.png"));
 

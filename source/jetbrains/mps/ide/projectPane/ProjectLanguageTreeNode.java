@@ -114,14 +114,19 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       this.add(new SModelTreeNode(intentionsModelDescriptor, "intentions", operationContext));
     }
 
-      SModelDescriptor scriptsModelDescriptor = myLanguage.getScriptsModelDescriptor();
+    SModelDescriptor findUsagesModelDescriptor = myLanguage.getFindUsagesModelDescriptor();
+    if (findUsagesModelDescriptor != null) {
+      this.add(new SModelTreeNode(findUsagesModelDescriptor, "findUsages", operationContext));
+    }
+
+    SModelDescriptor scriptsModelDescriptor = myLanguage.getScriptsModelDescriptor();
     if (scriptsModelDescriptor != null) {
       this.add(new SModelTreeNode(scriptsModelDescriptor, "scripts", operationContext));
     }
 
     SModelDescriptor documentationModelDescriptor = myLanguage.getDocumentationModelDescriptor();
     if (documentationModelDescriptor != null) {
-      this.add(new SModelTreeNode(documentationModelDescriptor, "documentation", operationContext));      
+      this.add(new SModelTreeNode(documentationModelDescriptor, "documentation", operationContext));
     }
 
     SModelDescriptor cfaModelDescriptor = myLanguage.getCFAModelDescriptor();

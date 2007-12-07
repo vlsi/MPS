@@ -99,6 +99,8 @@ public class IconManager {
         return Icons.CONSTRAINTS_MODEL_ICON;
       } else if (aspect == LanguageAspect.INTENTIONS) {
         return Icons.INTENTIONS_MODEL_ICON;
+      } else if (aspect == LanguageAspect.FIND_USAGES) {
+        return Icons.FIND_USAGES_MODEL_ICON;
       }
     } else if (modelDescriptor.getStereotype() != null &&
             modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
