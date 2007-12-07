@@ -88,7 +88,7 @@ public class QueriesGenerated {
     return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "modelToCreate", true), "parametersFromExpressions");
   }
 
-  public static SNode referenceMacro_GetReferent_1196871551132(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static SNode referenceMacro_GetReferent_1197034040799(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode quotation = SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
     SNode antiquotation = node;
     if(antiquotation == null) {
