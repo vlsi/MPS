@@ -4,6 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NameUtil;
 
 /**
  * User: Dmitriev.
@@ -59,8 +60,7 @@ public final class JavaNameUtil {
   }
 
   public static String className(AbstractConceptDeclaration conceptDeclaration) {
-    SModel languageModel = conceptDeclaration.getModel();
-    String packageName = withoutStructure(JavaNameUtil.packageNameForModelUID(languageModel.getUID()));
-    return packageName + "." + conceptDeclaration.getName();
+    return NameUtil.nodeFQName(conceptDeclaration);
   }
+
 }
