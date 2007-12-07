@@ -9,7 +9,7 @@ import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.usageView.UsagesModel_AspectMethods;
+import jetbrains.mps.ide.oldUsageView.UsagesModel_AspectMethods;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.util.IDisposable;
-import jetbrains.mps.nodeEditor.AbstractEditorComponent;
 
 import javax.swing.SwingUtilities;
 import java.awt.Frame;
