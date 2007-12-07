@@ -83,6 +83,24 @@ public class MPSLite_Style_StyleSheet {
     }
 
   };
+  public static final IStyle M_P_S_LITE_OPTION = new IStyle() {
+
+    public void apply(EditorCell cell) {
+      if(cell instanceof EditorCell_Label) {
+        EditorCell_Label labelCell = (EditorCell_Label)cell;
+        Color color = MPSLite_Style_StyleSheet.calculateColor4(cell);
+        labelCell.getTextLine().setTextColorIfNotSet(color);
+      }
+      cell.setFontType(MPSFonts.ITALIC);
+      if(cell instanceof EditorCell_Collection) {
+        EditorCell_Collection collection = (EditorCell_Collection)cell;
+        for(EditorCell child : collection) {
+          this.apply(child);
+        }
+      }
+    }
+
+  };
 
   private static Color calculateColor(EditorCell cell) {
     Color result;
@@ -103,6 +121,12 @@ public class MPSLite_Style_StyleSheet {
   }
 
   private static Color calculateColor3(EditorCell cell) {
+    Color result;
+    result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor4(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
     return result;

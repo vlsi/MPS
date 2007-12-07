@@ -196,6 +196,14 @@
     <property name="name" value="ConceptDeclarations" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1.1133920641626" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197065569270">
+      <property name="name" value="showStructure" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197065585287">
+      <property name="name" value="showTypes" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1182840278091">
       <link role="intfc" targetNodeId="1.1169194658468" />
     </node>
