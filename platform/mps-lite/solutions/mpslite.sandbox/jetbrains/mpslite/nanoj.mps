@@ -598,16 +598,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196956450269">
-          <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1196956451036">
-            <node role="operation" type="jetbrains.mpslite.structure.CastOperation" id="1196956452507">
-              <link role="castTo" targetNodeId="1182969474844" resolveInfo="AssignmentExpression" />
-            </node>
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196956450270">
-              <link role="variableDeclaration" targetNodeId="1196956444925" resolveInfo="concept" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197033587266">
           <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197033588473">
             <node role="operation" type="jetbrains.mpslite.structure.PropertyAccessOperation" id="1197033589071">
@@ -618,67 +608,31 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197035984148">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197035984149">
-            <link role="variableDeclaration" targetNodeId="1196956444925" resolveInfo="concept" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1197036010528">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197036010529">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197036031491">
-              <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197036032493">
-                <node role="operation" type="jetbrains.mpslite.structure.PropertyAccessOperation" id="1197036033231">
-                  <link role="propertyDeclaration" targetNodeId="1182956481189" resolveInfo="name" />
-                </node>
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197036031492">
-                  <link role="variableDeclaration" targetNodeId="1197036010532" resolveInfo="m" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197036010532">
-            <property name="name" value="m" />
-            <node role="type" type="jetbrains.mpslite.structure.NodeType" id="1197036013597">
-              <link role="concept" targetNodeId="1182956481679" resolveInfo="InstanceMethod" />
-            </node>
-          </node>
-          <node role="iterable" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197036023597">
-            <node role="operation" type="jetbrains.mpslite.structure.ChildAccessOperation" id="1197036023598">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197036930244">
+          <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197036931496">
+            <node role="operation" type="jetbrains.mpslite.structure.ChildAccessOperation" id="1197036933608">
               <link role="childDeclaration" targetNodeId="1182956342684" resolveInfo="method" />
             </node>
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197036023599">
-              <link role="variableDeclaration" targetNodeId="1196956444925" resolveInfo="concept" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197036930245">
+              <link role="variableDeclaration" targetNodeId="1196956444925" resolveInfo="classConcept" />
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196957562047">
-          <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1196959751758">
-            <node role="operation" type="jetbrains.mpslite.structure.PrevSiblingOperation" id="1196959753401" />
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1196959828024">
-              <link role="variableDeclaration" targetNodeId="1196956444925" resolveInfo="concept" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197033807774">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197033807775">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197037202996">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197037202997">
             <property name="name" value="ref" />
-            <node role="type" type="jetbrains.mpslite.structure.NodeType" id="1197033807776">
+            <node role="type" type="jetbrains.mpslite.structure.NodeType" id="1197037202998">
               <link role="concept" targetNodeId="1183028652393" resolveInfo="LocalVariableReference" />
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197033822625">
-          <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197034544700">
-            <node role="operation" type="jetbrains.mpslite.structure.PropertyAccessOperation" id="1197034546703">
-              <link role="propertyDeclaration" targetNodeId="1183027558523" resolveInfo="name" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197037213314">
+          <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197037215082">
+            <node role="operation" type="jetbrains.mpslite.structure.ReferenceAccessOperation" id="1197037217164">
+              <link role="referenceDeclaration" targetNodeId="1183028664818" resolveInfo="variable" />
             </node>
-            <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197033824061">
-              <node role="operation" type="jetbrains.mpslite.structure.ReferenceAccessOperation" id="1197034368512">
-                <link role="referenceDeclaration" targetNodeId="1183028664818" resolveInfo="variable" />
-              </node>
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197033822626">
-                <link role="variableDeclaration" targetNodeId="1197033807775" resolveInfo="ref" />
-              </node>
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197037213315">
+              <link role="variableDeclaration" targetNodeId="1197037202997" resolveInfo="ref" />
             </node>
           </node>
         </node>
