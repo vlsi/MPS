@@ -10,15 +10,12 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
  * Sep 28, 2007
  */
 /*package*/ abstract class StaticReferenceBase extends SReference {
-  private static final Logger LOG = Logger.getLogger(StaticReferenceBase.class);
 
   private SModelUID myTargetModelUID;
   private boolean myLocal;
-  private SNodeId myTargetNodeId;
 
-  protected StaticReferenceBase(String role, SNode sourceNode, SModelUID targetModelUID, SNodeId targetNodeId) {
+  protected StaticReferenceBase(String role, SNode sourceNode, SModelUID targetModelUID) {
     super(role, sourceNode);
-    myTargetNodeId = targetNodeId;
     if (sourceNode.getModel().getUID().equals(targetModelUID)) {
       myLocal = true;
     } else {
@@ -35,14 +32,6 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 
   public boolean isExternal() {
     return !myLocal;
-  }
-
-  public SNodeId getTargetNodeId() {
-    return myTargetNodeId;
-  }
-
-  public void setTargetNodeId(SNodeId nodeId) {
-    myTargetNodeId = nodeId;
   }
 
   public SModelUID getTargetModelUID() {

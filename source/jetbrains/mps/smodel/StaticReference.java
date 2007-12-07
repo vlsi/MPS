@@ -29,8 +29,9 @@ import org.jetbrains.annotations.NotNull;
     });
   }
 
-  private SNode myTargetNode;
   private boolean myMature;
+  private SNode myTargetNode;        // immature
+  private SNodeId myTargetNodeId;    // mature
 
   StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
     // 'young' reference
@@ -44,9 +45,10 @@ import org.jetbrains.annotations.NotNull;
 
   StaticReference(String role, SNode sourceNode, SModelUID modelUID, SNodeId nodeId, String resolveInfo) {
     // 'mature' reference
-    super(role, sourceNode, modelUID, nodeId);
+    super(role, sourceNode, modelUID);
     setResolveInfo(resolveInfo);
     myMature = true;
+    myTargetNodeId = nodeId;
   }
 
   public SModelUID getTargetModelUID() {
@@ -65,7 +67,7 @@ import org.jetbrains.annotations.NotNull;
 
   public SNodeId getTargetNodeId() {
     if (mature()) {
-      return super.getTargetNodeId();
+      return myTargetNodeId;
     } else if (myTargetNode != null) {
       return myTargetNode.getSNodeId();
     }
@@ -74,7 +76,7 @@ import org.jetbrains.annotations.NotNull;
 
   public void setTargetNodeId(SNodeId nodeId) {
     if (!mature()) makeMature();
-    super.setTargetNodeId(nodeId);
+    myTargetNodeId = nodeId;
   }
 
   public SNode getTargetNode_impl() {
