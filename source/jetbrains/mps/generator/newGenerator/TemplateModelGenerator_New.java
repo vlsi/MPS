@@ -9,10 +9,7 @@ import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.TemplateGenUtil;
 import jetbrains.mps.generator.template.TemplateSwitchGraph;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethod;
@@ -114,7 +111,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     // reductions in copied roots
     for (SNode outputRootNode : copiedOutputRoots) {
       checkMonitorCanceled();
-      ruleManager.getReductionRuleManager().applyReductionRules(findInputNodeByOutputNodeWithSameId(outputRootNode));
+      ruleManager.getReductionRuleManager().applyReductionRules(findInputNodeById(outputRootNode.getSNodeId()));
     }
 
     // weaving
@@ -176,7 +173,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     if (reference.isExternal()) return;
     if (myOutputModel.getNodeById(reference.getTargetNodeId()) != null) return;
     SNode outputNode = reference.getSourceNode();
-    SNode inputNode = findInputNodeByOutputNodeWithSameId(outputNode);
+    SNode inputNode = findInputNodeById(outputNode.getSNodeId());
     if (inputNode == null) return;
     SReference inputReference = inputNode.getReference(reference.getRole());
     if (inputReference == null) return;
@@ -361,7 +358,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     if (outputNode == null) {
       // input node has been copied?
       if (inputNode == templateNode) {
-        outputNode = findOutputNodeByInputNodeWithSameId(inputNode);
+        outputNode = findOutputNodeById(inputNode.getSNodeId());
       }
     }
     return outputNode;
@@ -499,14 +496,12 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     return null;
   }
 
-  public SNode findOutputNodeByInputNodeWithSameId(SNode inputNode) {
-    if (inputNode == null) return null;
-    return myOutputModel.getNodeById(inputNode.getId());
+  public SNode findOutputNodeById(SNodeId nodeId) {
+    return myOutputModel.getNodeById(nodeId);
   }
 
-  public SNode findInputNodeByOutputNodeWithSameId(SNode outputNode) {
-    if (outputNode == null) return null;
-    return myInputModel.getNodeById(outputNode.getId());
+  public SNode findInputNodeById(SNodeId nodeId) {
+    return myInputModel.getNodeById(nodeId);
   }
 
   public boolean isChanged() {
