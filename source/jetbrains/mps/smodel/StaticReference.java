@@ -81,7 +81,7 @@ import org.jetbrains.annotations.NotNull;
   }
 
   public SNode getTargetNode() {
-    NodeReadAccessCaster.fireReferenceTargetReadAccessed(this);
+    NodeReadAccessCaster.fireReferenceTargetReadAccessed(getSourceNode(), new SNodePointer(getTargetModelUID(), getTargetNodeId()));
     return getTargetNode_internal();
   }
 
