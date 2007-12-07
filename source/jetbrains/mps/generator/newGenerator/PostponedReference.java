@@ -39,10 +39,6 @@ public class PostponedReference extends SReference {
     throw new RuntimeException("not supported method");
   }
 
-  public void setTargetNodeId(SNodeId targetNodeId) {
-    throw new RuntimeException("not supported method");
-  }
-
   protected SNode getTargetNode_internal() {
     if (myTargetNode != null) {
       return myTargetNode;

@@ -112,8 +112,8 @@ import org.jetbrains.annotations.NotNull;
     SNode targetNode = myTargetNode;
     myMature = true;
     myTargetNode = null;
+    myTargetNodeId = targetNode.getSNodeId();
     setTargetModelUID(targetNode.getModel().getUID());
-    setTargetNodeId(targetNode.getSNodeId());
     setResolveInfo(targetNode.getName());
   }
 

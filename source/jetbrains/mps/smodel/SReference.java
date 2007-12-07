@@ -60,11 +60,6 @@ public abstract class SReference {
   /**
    * todo: remove. It makes no sence for dynamic references
    */
-  public abstract void setTargetNodeId(SNodeId targetNodeId);
-
-  /**
-   * todo: remove. It makes no sence for dynamic references
-   */
   public abstract SNodeId getTargetNodeId();
 
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
