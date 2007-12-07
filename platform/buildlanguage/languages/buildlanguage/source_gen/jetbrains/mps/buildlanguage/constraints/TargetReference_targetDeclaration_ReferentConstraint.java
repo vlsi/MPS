@@ -33,7 +33,7 @@ public class TargetReference_targetDeclaration_ReferentConstraint implements IMo
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     List<SNode> result = new ArrayList<SNode>();
     SNode project = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.buildlanguage.structure.Project", true, false);
     ListOperations.addAllElements(result, SLinkOperations.getTargets(project, "targetlist", true));

@@ -17,7 +17,7 @@ public class TargetDeclaration extends BaseConcept implements INamedConcept, IPr
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String STATEMENT_LIST = "statementList";
+  public static String TASK_CALLS_LIST = "taskCallsList";
   public static String DEPENDS_LIST = "dependsList";
   public static String PROPERTY_LIST = "propertyList";
 
@@ -66,24 +66,24 @@ public class TargetDeclaration extends BaseConcept implements INamedConcept, IPr
     this.setProperty(TargetDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-  public int getStatementListsCount() {
-    return this.getChildCount(TargetDeclaration.STATEMENT_LIST);
+  public int getTaskCallsListsCount() {
+    return this.getChildCount(TargetDeclaration.TASK_CALLS_LIST);
   }
 
-  public Iterator<SimpleStatement> statementLists() {
-    return this.children(TargetDeclaration.STATEMENT_LIST);
+  public Iterator<TaskCall> taskCallsLists() {
+    return this.children(TargetDeclaration.TASK_CALLS_LIST);
   }
 
-  public List<SimpleStatement> getStatementLists() {
-    return this.getChildren(TargetDeclaration.STATEMENT_LIST);
+  public List<TaskCall> getTaskCallsLists() {
+    return this.getChildren(TargetDeclaration.TASK_CALLS_LIST);
   }
 
-  public void addStatementList(SimpleStatement node) {
-    this.addChild(TargetDeclaration.STATEMENT_LIST, node);
+  public void addTaskCallsList(TaskCall node) {
+    this.addChild(TargetDeclaration.TASK_CALLS_LIST, node);
   }
 
-  public void insertStatementList(SimpleStatement prev, SimpleStatement node) {
-    this.insertChild(prev, TargetDeclaration.STATEMENT_LIST, node);
+  public void insertTaskCallsList(TaskCall prev, TaskCall node) {
+    this.insertChild(prev, TargetDeclaration.TASK_CALLS_LIST, node);
   }
 
   public int getDependsListsCount() {
