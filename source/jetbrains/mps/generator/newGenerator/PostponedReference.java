@@ -39,7 +39,7 @@ public class PostponedReference extends SReference {
     throw new RuntimeException("not supported method");
   }
 
-  protected SNode getTargetNode_internal() {
+  public SNode getTargetNode() {
     if (myTargetNode != null) {
       return myTargetNode;
     } else if (myFailed) {

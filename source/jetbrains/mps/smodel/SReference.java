@@ -43,13 +43,7 @@ public abstract class SReference {
     return mySourceNode;
   }
 
-  public final SNode getTargetNode() {
-    NodeReadAccessCaster.fireReferenceTargetReadAccessed(this);
-    return getTargetNode_internal();
-  }
-
-  protected abstract SNode getTargetNode_internal();
-
+  public abstract SNode getTargetNode();
 
   public abstract SModelUID getTargetModelUID();
 

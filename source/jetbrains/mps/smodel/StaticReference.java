@@ -5,6 +5,7 @@ import jetbrains.mps.ide.command.CommandEvent;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.WeakSet;
+import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -77,6 +78,11 @@ import org.jetbrains.annotations.NotNull;
   public void setTargetNodeId(SNodeId nodeId) {
     if (!mature()) makeMature();
     myTargetNodeId = nodeId;
+  }
+
+  public SNode getTargetNode() {
+    NodeReadAccessCaster.fireReferenceTargetReadAccessed(this);
+    return getTargetNode_internal();
   }
 
   protected SNode getTargetNode_internal() {
