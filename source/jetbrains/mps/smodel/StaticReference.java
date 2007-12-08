@@ -35,7 +35,7 @@ public class StaticReference extends StaticReferenceBase {
 
   StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
     // 'young' reference
-    super(role, sourceNode);
+    super(role, sourceNode, null);
     myMature = false;
     myTargetNode = targetNode;
     synchronized (ourImmatureReferences) {
@@ -52,7 +52,7 @@ public class StaticReference extends StaticReferenceBase {
   }
 
   private StaticReference(String role, SNode sourceNode) {
-    super(role, sourceNode);
+    super(role, sourceNode, null);
   }
 
   public SReference duplicate(SNode sourceNode, SModelUID targetModelUID) {

@@ -1,7 +1,7 @@
 package jetbrains.mps.smodel;
 
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Igor Alshannikov
@@ -12,20 +12,13 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
   private SModelUID myTargetModelUID;
   private boolean myLocal;
 
-  protected StaticReferenceBase(String role, SNode sourceNode, SModelUID targetModelUID) {
+  protected StaticReferenceBase(String role, SNode sourceNode, @Nullable SModelUID targetModelUID) {
     super(role, sourceNode);
     if (sourceNode.getModel().getUID().equals(targetModelUID)) {
       myLocal = true;
     } else {
       myTargetModelUID = targetModelUID;
     }
-  }
-
-  /**
-   * TMP
-   */
-  protected StaticReferenceBase(String role, SNode sourceNode) {
-    super(role, sourceNode);
   }
 
   public boolean isExternal() {
