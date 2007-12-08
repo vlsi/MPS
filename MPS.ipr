@@ -192,6 +192,30 @@
           </module>
         </modules>
       </facet-type>
+      <facet-type id="Spring">
+        <modules>
+          <module name="MForum" />
+          <module name="MPS" />
+          <module name="PubMedDB" />
+          <module name="accounting" />
+          <module name="baseLanguageExt" />
+          <module name="blogs" />
+          <module name="businessRules" />
+          <module name="charisma-app" />
+          <module name="core" />
+          <module name="dnq" />
+          <module name="dnq-runtime" />
+          <module name="search-watch" />
+          <module name="stwiki-webapp" />
+          <module name="webr" />
+          <module name="webrRuntime" />
+          <module name="webrRuntime_notifications" />
+          <module name="webrSamples_depot" />
+          <module name="webrSamples_hello" />
+          <module name="webrSamples_sandbox" />
+          <module name="webr_userManagement" />
+        </modules>
+      </facet-type>
     </autodetection-disabled>
   </component>
   <component name="IdProvider" IDEtalkID="13400C80EA822F0B5CAF10171834B2C5" />
@@ -834,6 +858,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/dnq.iml" filepath="$PROJECT_DIR$/platform/dnq/dnq.iml" group="platform/dnq/language" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/dnq-runtime.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/dnq-runtime.iml" group="platform/dnq/runtime" />
+      <module fileurl="file://$PROJECT_DIR$/app/dslbook_example/dslbook_example.iml" filepath="$PROJECT_DIR$/app/dslbook_example/dslbook_example.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/entityBrowser/entityBrowser.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/entityBrowser/entityBrowser.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/projects/mf/gothic/gothic.iml" filepath="$PROJECT_DIR$/projects/mf/gothic/gothic.iml" group="Projects/mf" />
@@ -912,6 +937,7 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="MPS" />
+      <envs />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="4051" />
         <option name="TRANSPORT" value="0" />
