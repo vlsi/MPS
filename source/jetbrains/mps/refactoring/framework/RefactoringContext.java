@@ -1,10 +1,14 @@
 package jetbrains.mps.refactoring.framework;
 
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
+import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.Nullable;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -14,9 +18,42 @@ import java.util.Map;
  * To change this template use File | Settings | File Templates.
  */
 public class RefactoringContext {
+  //persistent fields
   private Map<String, Object> myAdditionalParametersMap = new HashMap<String, Object>();
   private Map<FullNodeId, FullNodeId> myMoveMap = new HashMap<FullNodeId, FullNodeId>();
   private Map<ConceptFeature, ConceptFeature> myConceptFeatureMap = new HashMap<ConceptFeature, ConceptFeature>();
+  //-----------------
+
+  //transient caches
+  private Map<String, Set<ConceptFeature>> myFQNamesToConceptFeaturesCache = new HashMap<String, Set<ConceptFeature>>();
+  private Map<SNodeId, Set<FullNodeId>> myNodeIdsToFullNodeIdsCache = new HashMap<SNodeId, Set<FullNodeId>>();
+
+  public void computeCaches() {
+    myFQNamesToConceptFeaturesCache.clear();
+    myNodeIdsToFullNodeIdsCache.clear();
+
+    //nodeId -> fullNodeId
+    for (FullNodeId fullNodeId : myMoveMap.keySet()) {
+      SNodeId nodeId = fullNodeId.getNodeId();
+      Set<FullNodeId> ids = myNodeIdsToFullNodeIdsCache.get(nodeId);
+      if (ids == null) {
+        ids = new HashSet<FullNodeId>();
+        myNodeIdsToFullNodeIdsCache.put(nodeId, ids);
+      }
+      ids.add(fullNodeId);
+    }
+
+    //concept fq name -> concept feature
+    for (ConceptFeature conceptFeature : myConceptFeatureMap.keySet()) {
+      String conceptFQName = conceptFeature.getConceptFQName();
+      Set<ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
+      if (conceptFeatures == null) {
+        conceptFeatures = new HashSet<ConceptFeature>();
+        myFQNamesToConceptFeaturesCache.put(conceptFQName, conceptFeatures);
+      }
+      conceptFeatures.add(conceptFeature);
+    }
+  }
 
   public void addAdditionalParameters(Map<String, Object> parameters) {
     myAdditionalParametersMap.putAll(parameters);
@@ -24,6 +61,10 @@ public class RefactoringContext {
 
   public Map<String, Object> getAdditionalParameters() {
     return new HashMap<String, Object>(myAdditionalParametersMap);
+  }
+
+  public Object getParameter(String parameterName) {
+    return myAdditionalParametersMap.get(parameterName);
   }
 
   public void moveNodesToNode(List<SNode> sourceNodes, String role, SNode targetNode) {
@@ -56,6 +97,60 @@ public class RefactoringContext {
     }
   }
 
+  public void changeFeatureName(SNode feature, @Nullable String newConceptFQName, @Nullable String newFeatureName) {
+    BaseAdapter adapter = feature.getAdapter();
+    String oldConceptFQName = "";
+    String oldFeatureName = "";
+    ConceptFeatureKind kind = ConceptFeatureKind.NONE;
+    if (adapter instanceof LinkDeclaration) {
+      LinkDeclaration linkDeclaration = (LinkDeclaration) adapter;
+      oldConceptFQName = NameUtil.nodeFQName(linkDeclaration.getParent());
+      oldFeatureName = linkDeclaration.getRole();
+      if (linkDeclaration.getMetaClass() == LinkMetaclass.aggregation) {
+        kind = ConceptFeatureKind.CHILD;
+      } else {
+        kind = ConceptFeatureKind.REFERENCE;
+      }
+      if (newFeatureName != null && !newFeatureName.equals(oldFeatureName)) {
+        linkDeclaration.setRole(newFeatureName);
+      }
+    }
+    if (adapter instanceof PropertyDeclaration) {
+      oldConceptFQName = NameUtil.nodeFQName(adapter.getParent());
+      oldFeatureName = adapter.getName();
+      kind = ConceptFeatureKind.PROPERTY;
+      if (newFeatureName != null && !newFeatureName.equals(oldFeatureName)) {
+        feature.setName(newFeatureName);
+      }
+    }
+    if (adapter instanceof AbstractConceptDeclaration) {
+      oldConceptFQName = NameUtil.nodeFQName(adapter);
+      oldFeatureName = adapter.getName();
+      kind = ConceptFeatureKind.CONCEPT;
+      if (newFeatureName != null && !newFeatureName.equals(oldFeatureName)) {
+        feature.setName(newFeatureName);
+      }
+    }
+    if (kind != ConceptFeatureKind.NONE) {
+      ConceptFeature oldConceptFeature = new ConceptFeature(oldConceptFQName, kind, oldFeatureName);
+      ConceptFeature newConceptFeature = new ConceptFeature(newConceptFQName, kind, newFeatureName);
+      myConceptFeatureMap.put(oldConceptFeature, newConceptFeature);
+    }
+  }
+
+  public void updateModelWithMaps(SModel model) {
+    for (SNode node : model.allNodes()) {
+      String conceptFQName = node.getConceptFqName();
+      Set<ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
+      for (ConceptFeature conceptFeature : conceptFeatures) {
+        //todo
+      }
+      for (SReference reference : node.getReferences()) {
+        //       if (reference.get)   todo
+      }
+    }
+  }
+
   private class FullNodeId {
     private SNodeId myNodeId;
     private SModelUID myModelUID;
@@ -79,12 +174,30 @@ public class RefactoringContext {
   }
 
   private enum ConceptFeatureKind {
-    NONE, PROPERTY, CHILD, REFERENCE
+    NONE, CONCEPT, PROPERTY, CHILD, REFERENCE
   }
 
   private class ConceptFeature {
-    private String myConceptFQName;
     private ConceptFeatureKind myConceptFeatureKind;
     private String myFeatureName;
+    private String myConceptFQName;
+
+    public ConceptFeature(String conceptFQName, ConceptFeatureKind kind, String featureName) {
+      myConceptFeatureKind = kind;
+      myFeatureName = featureName;
+      myConceptFQName = conceptFQName;
+    }
+
+    public ConceptFeatureKind getConceptFeatureKind() {
+      return myConceptFeatureKind;
+    }
+
+    public String getFeatureName() {
+      return myFeatureName;
+    }
+
+    public String getConceptFQName() {
+      return myConceptFQName;
+    }
   }
 }

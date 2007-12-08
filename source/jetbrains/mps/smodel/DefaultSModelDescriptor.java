@@ -79,7 +79,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
           }
           final IOperationContext operationContext = findOperationContext();
           if (operationContext == null) {
-            LOG.warning("no op.context found for conversion");
+          //  LOG.warning("no op.context found for conversion");
             return;
           }
           if (needsRefactoring && !IdeMain.isTestMode()) {
@@ -93,7 +93,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
               command.run();
             } else {
               if (CommandProcessor.instance().isInsideCommand()) {
-                LOG.error("error: can't execute undoable command inside a lightweight command");
+         //       LOG.error("error: can't execute undoable command inside a lightweight command");
               } else {
                 CommandProcessor.instance().executeCommand(command);
               }
