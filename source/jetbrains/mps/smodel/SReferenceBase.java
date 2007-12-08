@@ -1,11 +1,11 @@
 package jetbrains.mps.smodel;
 
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.command.CommandAdapter;
 import jetbrains.mps.ide.command.CommandEvent;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.util.WeakSet;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Igor Alshannikov
@@ -33,13 +33,12 @@ import jetbrains.mps.ide.command.CommandEvent;
 
   private boolean myMature;
   private SModelUID myTargetModelUID;
-  private boolean myLocal;
+  private boolean myExternal;
 
   protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelUID targetModelUID, boolean mature) {
     super(role, sourceNode);
-    if (sourceNode.getModel().getUID().equals(targetModelUID)) {
-      myLocal = true;
-    } else {
+    if (!sourceNode.getModel().getUID().equals(targetModelUID)) {
+      myExternal = true;
       myTargetModelUID = targetModelUID;
     }
 
@@ -54,38 +53,38 @@ import jetbrains.mps.ide.command.CommandEvent;
   }
 
   public boolean isExternal() {
-    return !myLocal;
+    return myExternal;
   }
 
   public SModelUID getTargetModelUID() {
-    return myLocal ? getSourceNode().getModel().getUID() : myTargetModelUID;
+    return myExternal ? myTargetModelUID : getSourceNode().getModel().getUID();
   }
 
   public void setTargetModelUID(@NotNull SModelUID modelUID) {
     if (getSourceNode().getModel().getUID().equals(modelUID)) {
-      myLocal = true;
+      myExternal = false;
       myTargetModelUID = null;
     } else {
-      myLocal = false;
+      myExternal = true;
       myTargetModelUID = modelUID;
     }
   }
 
   protected SModel getTargetModel() {
-    SModel model;
-    if (myLocal) {
-      model = getSourceNode().getModel();
-    } else {
-      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(getTargetModelUID());
-      if (modelDescriptor == null) {
-        error("path to the target model '" + getTargetModelUID() + "' is not specified");
-        model = getSourceNode().getModel();
-      } else {
-        model = modelDescriptor.getSModel();
-        if (model == null) {
-          error("failed to get model '" + getTargetModelUID() + "' from model desctiptor");
-        }
-      }
+    if (!myExternal) {
+      return getSourceNode().getModel();
+    }
+
+    // external
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(getTargetModelUID());
+    if (modelDescriptor == null) {
+      error("path to the target model '" + getTargetModelUID() + "' is not specified");
+      return null;
+    }
+
+    SModel model = modelDescriptor.getSModel();
+    if (model == null) {
+      error("failed to get model '" + getTargetModelUID() + "' from model desctiptor");
     }
     return model;
   }
