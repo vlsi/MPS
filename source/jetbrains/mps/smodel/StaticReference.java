@@ -1,10 +1,6 @@
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.ide.command.CommandAdapter;
-import jetbrains.mps.ide.command.CommandEvent;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
-import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -12,61 +8,34 @@ import org.jetbrains.annotations.NotNull;
  * Sep 26, 2007
  */
 public class StaticReference extends SReferenceBase {
-  private static final WeakSet<StaticReference> ourImmatureReferences = new WeakSet<StaticReference>();
-
-  static {
-    CommandProcessor.instance().addCommandListener(new CommandAdapter() {
-      public void commandFinished(@NotNull CommandEvent event) {
-        synchronized (ourImmatureReferences) {
-          for (StaticReference sr : ourImmatureReferences) {
-            if (sr != null) {
-              sr.mature();
-            }
-          }
-          ourImmatureReferences.clear();
-        }
-      }
-    });
-  }
-
-  private boolean myMature;
-  private SNode myTargetNode;        // immature
+  private SNode myTargetNode;        // young
   private SNodeId myTargetNodeId;    // mature
 
   StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
     // 'young' reference
-    super(role, sourceNode, null);
-    myMature = false;
+    super(role, sourceNode, null, false);
     myTargetNode = targetNode;
-    synchronized (ourImmatureReferences) {
-      ourImmatureReferences.add(this);
-    }
   }
 
   StaticReference(String role, SNode sourceNode, SModelUID targetModelUID, SNodeId nodeId, String resolveInfo) {
     // 'mature' reference
-    super(role, sourceNode, targetModelUID);
-    myMature = true;
+    super(role, sourceNode, targetModelUID, true);
     setResolveInfo(resolveInfo);
     myTargetNodeId = nodeId;
   }
 
-  private StaticReference(String role, SNode sourceNode) {
-    super(role, sourceNode, null);
+  private StaticReference(String role, SNode sourceNode, boolean mature) {
+    super(role, sourceNode, null, mature);
   }
 
   public SReference duplicate(SNode sourceNode, SModelUID targetModelUID) {
-    StaticReference duplicate = new StaticReference(getRole(), sourceNode);
-    duplicate.myMature = myMature;
-    if (myMature) {
+    StaticReference duplicate = new StaticReference(getRole(), sourceNode, isMature());
+    if (isMature()) {
       duplicate.setTargetModelUID(targetModelUID);
       duplicate.setResolveInfo(getResolveInfo());
       duplicate.myTargetNodeId = myTargetNodeId;
     } else {
       duplicate.myTargetNode = myTargetNode;
-      synchronized (ourImmatureReferences) {
-        ourImmatureReferences.add(duplicate);
-      }
     }
     return duplicate;
   }
@@ -122,24 +91,16 @@ public class StaticReference extends SReferenceBase {
     return targetNode;
   }
 
-  private boolean mature() {
-    if (myMature) return true;
+  protected boolean canMakeMature() {
     // both source and target should be registered
-    if (!getSourceNode().isRegistered()) return false;
-    if (!myTargetNode.isRegistered()) return false;
-
-    // convert 'young' reference to 'mature'
-    makeMature();
-    return true;
+    return getSourceNode().isRegistered() && myTargetNode.isRegistered();
   }
 
-  private void makeMature() {
+  protected void makeMature() {
     SNode targetNode = myTargetNode;
-    myMature = true;
     myTargetNode = null;
     myTargetNodeId = targetNode.getSNodeId();
     setTargetModelUID(targetNode.getModel().getUID());
     setResolveInfo(targetNode.getName());
   }
-
 }
