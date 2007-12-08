@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * Igor Alshannikov
  * Sep 26, 2007
  */
-public class StaticReference extends StaticReferenceBase {
+public class StaticReference extends SReferenceBase {
   private static final WeakSet<StaticReference> ourImmatureReferences = new WeakSet<StaticReference>();
 
   static {

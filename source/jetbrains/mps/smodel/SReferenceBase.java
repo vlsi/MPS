@@ -7,12 +7,12 @@ import org.jetbrains.annotations.Nullable;
  * Igor Alshannikov
  * Sep 28, 2007
  */
-/*package*/ abstract class StaticReferenceBase extends SReference {
+/*package*/ abstract class SReferenceBase extends SReference {
 
   private SModelUID myTargetModelUID;
   private boolean myLocal;
 
-  protected StaticReferenceBase(String role, SNode sourceNode, @Nullable SModelUID targetModelUID) {
+  protected SReferenceBase(String role, SNode sourceNode, @Nullable SModelUID targetModelUID) {
     super(role, sourceNode);
     if (sourceNode.getModel().getUID().equals(targetModelUID)) {
       myLocal = true;
