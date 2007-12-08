@@ -143,10 +143,12 @@ import org.jdom.Element;
     parentElement.addContent(linkElement);
     linkElement.setAttribute(ModelPersistence.ROLE, reference.getRole());
 
-    if (reference.isExternal()) {//external reference
-      SModelUID targetModelUID = reference.getTargetModelUID();
-      String targetModelInfo = "";
-      if (!useUIDs) {
+    String targetModelInfo = "";
+    if (reference.isExternal()) {
+      if (useUIDs) {
+        targetModelInfo = reference.getTargetModelUID().toString() + "#";
+      } else {
+        SModelUID targetModelUID = reference.getTargetModelUID();
         SModel.ImportElement importElement = node.getModel().getImportElement(targetModelUID);
         if (importElement != null) {
           int importIndex = importElement.getReferenceID();
@@ -155,19 +157,14 @@ import org.jdom.Element;
           int visibleIndex = visibleModelElements.getVisibleModelIndex(targetModelUID);
           targetModelInfo = visibleIndex + "v.";
         }
-      } else {
-        targetModelInfo = targetModelUID.toString() + "#";
       }
-      linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetModelInfo + reference.getTargetNodeId());
-      String resolveInfo = reference.getResolveInfo();
-      if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
-
-    } else {//internal reference
-      SNodeId targetNodeId = reference.getTargetNodeId();
-      if (targetNodeId != null) linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId.toString());
-      String resolveInfo = reference.getResolveInfo();
-      if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
     }
+
+    String targetNodeId = (reference instanceof StaticReference) ? ((StaticReference) reference).getTargetNodeId().toString() : "";
+    targetNodeId = targetModelInfo + targetNodeId;
+    linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
+    String resolveInfo = reference.getResolveInfo();
+    if (resolveInfo != null) linkElement.setAttribute(ModelPersistence.RESOLVE_INFO, resolveInfo);
   }
 
   public int getImportIndex() {

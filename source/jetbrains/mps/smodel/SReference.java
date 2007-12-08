@@ -53,11 +53,6 @@ public abstract class SReference {
 
   public abstract SReference duplicate(SNode sourceNode, SModelUID targetModelUID);
 
-  /**
-   * todo: remove. It makes no sence for dynamic references
-   */
-  public abstract SNodeId getTargetNodeId();
-
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.isRegistered() && targetNode.isRegistered()) {
       // 'mature' reference

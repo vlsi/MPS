@@ -64,12 +64,6 @@ public class PostponedReference extends SReference {
     return myTargetNode;
   }
 
-  public SNodeId getTargetNodeId() {
-    SNode targetNode = getTargetNode();
-    if (targetNode == null) return null;
-    return targetNode.getSNodeId();
-  }
-
   /**
    * replaces this instance with ether StaticReference or with DynamicReference. (only static so far)
    * removes reference in case of error.
