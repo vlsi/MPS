@@ -36,14 +36,21 @@ public class SearchResult implements IExternalizableComponent {
     attributesXML.setAttribute(CATEGORY, myCategory);
     element.addContent(attributesXML);
 
-    Element nodeXML = new Element(NODE);
-    nodeXML.addContent(ComponentsUtil.nodeToElement(myNode));
-    element.addContent(nodeXML);
+    if (myNode != null) {
+      Element nodeXML = new Element(NODE);
+      nodeXML.addContent(ComponentsUtil.nodeToElement(myNode));
+      element.addContent(nodeXML);
+    }
   }
 
   public void read(Element element, MPSProject project) {
     Element attributesXML = element.getChild(ATTRIBUTES);
     myCategory = attributesXML.getAttribute(CATEGORY).getValue();
-    myNode = ComponentsUtil.nodeFromElement((Element) element.getChild(NODE).getChildren().get(0));
+    Element nodeXML = element.getChild(NODE);
+    if (nodeXML == null) {
+      myNode = null;
+    } else {
+      myNode = ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0));
+    }
   }
 }

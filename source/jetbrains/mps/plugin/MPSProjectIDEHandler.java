@@ -7,6 +7,12 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.usageView.UseNewUsagesViewFlag;
+import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treebuilders.TreeBuilder;
+import jetbrains.mps.ide.usageView.findalgorithm.finders.NodeUsagesFinder;
+import jetbrains.mps.ide.usageView.findalgorithm.finders.AspectMethodsFinder;
+import jetbrains.mps.ide.usageView.view.NewUsagesView;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.oldUsageView.UsagesModel_AspectMethods;
@@ -79,11 +85,21 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           try {
-            UsagesModel_AspectMethods usagesModel = new UsagesModel_AspectMethods(descriptor.getSModel(), name);
-            if (getProjectWindow() == null) return;
-            getProjectWindow().showUsagesView(usagesModel);
-            FrameUtil.activateFrame(getMainFrame());
-            if (usagesModel.getSNodes().size() > 0) return;
+            if (UseNewUsagesViewFlag.get()) {
+              NewUsagesView usagesView = getProjectWindow().getUsagesView();
+              jetbrains.mps.ide.usageView.view.UsageView usageView = usagesView.createUsageView();
+
+              usageView.setResultProvider(TreeBuilder.forFinder(new AspectMethodsFinder(descriptor.getSModel(), name)));
+              usageView.run(new SearchQuery(null, null));
+
+              usagesView.showTool();
+            } else {
+              UsagesModel_AspectMethods usagesModel = new UsagesModel_AspectMethods(descriptor.getSModel(), name);
+              if (getProjectWindow() == null) return;
+              getProjectWindow().showUsagesView(usagesModel);
+              FrameUtil.activateFrame(getMainFrame());
+              if (usagesModel.getSNodes().size() > 0) return;
+            }
           } catch (Throwable t) {
             LOG.error(t);
           }

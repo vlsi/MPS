@@ -28,9 +28,31 @@ public class SearchResults implements IExternalizableComponent {
     return mySearchResults;
   }
 
+
+  public List<SearchResult> getAliveResults() {
+    List<SearchResult> alive = new ArrayList<SearchResult>();
+    for (SearchResult result : mySearchResults) {
+      if (result.getNode() != null) {
+        alive.add(result);
+      }
+    }
+    return alive;
+  }
+
+  public Set<SNode> getAliveNodes() {
+    Set<SNode> alive = new HashSet<SNode>();
+    for (SNode node : mySearchedNodes) {
+      if (node != null) {
+        alive.add(node);
+      }
+    }
+    return alive;
+  }
+
   public void write(Element element, MPSProject project) {
     Element resultsXML = new Element(RESULTS);
-    for (SearchResult result : mySearchResults) {
+
+    for (SearchResult result : getAliveResults()) {
       Element resultXML = new Element(RESULT);
       result.write(resultXML, project);
       resultsXML.addContent(resultXML);
@@ -38,7 +60,7 @@ public class SearchResults implements IExternalizableComponent {
     element.addContent(resultsXML);
 
     Element searchedNodesXML = new Element(SEARCHED_NODES);
-    for (SNode node : mySearchedNodes) {
+    for (SNode node : getAliveNodes()) {
       Element nodeXML = new Element(NODE);
       nodeXML.addContent(ComponentsUtil.nodeToElement(node));
       searchedNodesXML.addContent(nodeXML);
@@ -55,11 +77,15 @@ public class SearchResults implements IExternalizableComponent {
       mySearchResults.add(searchResult);
     }
 
+    mySearchResults = getAliveResults();
+
     mySearchedNodes.clear();
     Element searchedNodesXML = element.getChild(SEARCHED_NODES);
     for (Element nodeXML : (List<Element>) searchedNodesXML.getChildren(NODE)) {
       SNode node = ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0));
       mySearchedNodes.add(node);
     }
+
+    mySearchedNodes = getAliveNodes();
   }
 }

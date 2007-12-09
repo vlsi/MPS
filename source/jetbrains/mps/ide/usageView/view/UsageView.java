@@ -232,7 +232,6 @@ public abstract class UsageView implements IExternalizableComponent {
     } catch (Exception e) {
       LOG.error("Can't find result provider " + resultProviderName);
     }
-    myResultProvider.read(resultProviderXML, project);
 
     Element searchQueryXML = element.getChild(SEARCH_QUERY);
     mySearchQuery.read(searchQueryXML, project);
