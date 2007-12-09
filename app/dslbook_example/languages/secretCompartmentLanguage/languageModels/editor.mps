@@ -23,5 +23,17 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197169421748">
+    <link role="conceptDeclaration" targetNodeId="1.1197169363230" resolveInfo="Event" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197169424516">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197169427033">
+        <link role="relationDeclaration" targetNodeId="1.1197169389356" resolveInfo="eventName" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197169429473">
+        <link role="relationDeclaration" targetNodeId="1.1197169394841" resolveInfo="code" />
+      </node>
+    </node>
+  </node>
 </model>
 
