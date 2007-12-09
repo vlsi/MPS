@@ -15,7 +15,19 @@
   </models>
   <module />
   <accessoryModels />
-  <generators />
+  <generators>
+    <generator generatorUID="secretCompartmentLanguage#1197167152697" targetLanguage="jetbrains.mps.baseLanguage">
+      <models>
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="secretCompartmentLanguage.generator.baseLanguage.template" />
+      </models>
+      <module />
+      <external-templates />
+      <dependencies>
+        <dependency>jetbrains.mps.baseLanguage</dependency>
+      </dependencies>
+      <mapping-priorities />
+    </generator>
+  </generators>
   <classPath />
   <runtimeClassPath>
     <entry path="${mps_home}\app\dslbook_example\classes" />
