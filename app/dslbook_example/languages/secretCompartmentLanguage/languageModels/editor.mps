@@ -37,6 +37,11 @@
           <link role="relationDeclaration" targetNodeId="1.1197169554182" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197223580537" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1197223128173">
+        <property name="vertical" value="true" />
+        <link role="relationDeclaration" targetNodeId="1.1197223095983" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197169421748">

@@ -14,6 +14,12 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1197169363230" resolveInfo="Event" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197223095983">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="state" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1197170590231" resolveInfo="State" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1197166618707">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
