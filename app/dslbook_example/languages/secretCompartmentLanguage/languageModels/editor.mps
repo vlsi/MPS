@@ -17,6 +17,9 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197149595873">
           <property name="text" value="Machine" />
         </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197166579514">
+          <link role="relationDeclaration" targetNodeId="1.1197166557152" resolveInfo="stateMachineName" />
+        </node>
       </node>
     </node>
   </node>

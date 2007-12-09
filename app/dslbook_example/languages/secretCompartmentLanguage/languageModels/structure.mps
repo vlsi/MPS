@@ -8,6 +8,13 @@
     <property name="name" value="StateMachine" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1197166618707">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197166557152">
+      <property name="name" value="stateMachineName" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
   </node>
 </model>
 

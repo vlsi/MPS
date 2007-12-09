@@ -3,6 +3,9 @@
   <structure>
     <model modelUID="secretCompartmentLanguage.structure" />
   </structure>
+  <constraints>
+    <model modelUID="secretCompartmentLanguage.constraints" />
+  </constraints>
   <editor>
     <model modelUID="secretCompartmentLanguage.editor" />
   </editor>
@@ -18,5 +21,9 @@
     <entry path="${mps_home}\app\dslbook_example\classes" />
   </runtimeClassPath>
   <sourcePath />
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
 </language>
 
