@@ -8,6 +8,11 @@
     <property name="name" value="StateMachine" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197239402593">
+      <property name="role" value="startState" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1197170590231" resolveInfo="State" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197169554182">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="event" />
@@ -17,7 +22,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197223095983">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="state" />
-      <property name="sourceCardinality" value="0..n" />
+      <property name="sourceCardinality" value="1..n" />
       <link role="target" targetNodeId="1197170590231" resolveInfo="State" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1197166618707">
@@ -46,6 +51,9 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197170631630">
       <property name="name" value="stateName" />
       <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1197239522298">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>

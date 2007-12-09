@@ -33,5 +33,26 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197166592846" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1197239526049">
+    <link role="concept" targetNodeId="1.1197170590231" resolveInfo="State" />
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1197239527739">
+      <link role="applicableProperty" targetNodeId="2.1169194664001" resolveInfo="name" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1197239530975">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197239530976">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197239532445">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197239532963">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197239534544">
+                <link role="property" targetNodeId="1.1197170631630" resolveInfo="stateName" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertyGetter_FunctionParm_node" id="1197239532446" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1197239526050">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197239526051" />
+    </node>
+  </node>
 </model>
 

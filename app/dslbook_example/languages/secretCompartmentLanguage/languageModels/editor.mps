@@ -38,6 +38,24 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197223580537" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197239429142">
+        <property name="selectable" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197239432644">
+          <property name="text" value="Start state:" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1197239442208">
+          <link role="relationDeclaration" targetNodeId="1.1197239402593" />
+          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1197239442209">
+            <link role="conceptDeclaration" targetNodeId="1.1197170590231" resolveInfo="State" />
+            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197239451383">
+              <property name="readOnly" value="true" />
+              <link role="relationDeclaration" targetNodeId="1.1197170631630" resolveInfo="stateName" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197239456947" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1197223128173">
         <property name="vertical" value="true" />
         <link role="relationDeclaration" targetNodeId="1.1197223095983" />
