@@ -88,6 +88,19 @@
           <link role="relationDeclaration" targetNodeId="1.1197170631630" resolveInfo="stateName" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197240500476">
+        <property name="selectable" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197240500477">
+          <property name="text" value="  " />
+          <property name="selectable" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1197240509135">
+          <property name="vertical" value="true" />
+          <link role="relationDeclaration" targetNodeId="1.1197240451739" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197240922534" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197240201006">
@@ -105,7 +118,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197240221421">
-        <property name="text" value="to" />
+        <property name="text" value="=&gt;" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1197240235673">
         <link role="relationDeclaration" targetNodeId="1.1197240188973" />
