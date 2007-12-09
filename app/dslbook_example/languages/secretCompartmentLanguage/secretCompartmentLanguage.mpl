@@ -28,7 +28,9 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}\app\dslbook_example\classes" />
+  </classPath>
   <runtimeClassPath>
     <entry path="${mps_home}\app\dslbook_example\classes" />
   </runtimeClassPath>
