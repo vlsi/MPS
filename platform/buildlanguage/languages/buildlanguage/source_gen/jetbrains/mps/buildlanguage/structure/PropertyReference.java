@@ -10,11 +10,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PropertyReference extends PropertyValueExpression implements INamedConcept {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.PropertyReference";
-  public static String PROPERTY_DECLARATION = "propertyDeclaration";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String PROPERTY_DECLARATION = "propertyDeclaration";
 
   public  PropertyReference(SNode node) {
     super(node);
@@ -28,14 +28,6 @@ public class PropertyReference extends PropertyValueExpression implements INamed
     return PropertyReference.newInstance(sm, false);
   }
 
-
-  public PropertyDeclaration getPropertyDeclaration() {
-    return (PropertyDeclaration)this.getReferent(PropertyReference.PROPERTY_DECLARATION);
-  }
-
-  public void setPropertyDeclaration(PropertyDeclaration node) {
-    super.setReferent(PropertyReference.PROPERTY_DECLARATION, node);
-  }
 
   public String getName() {
     return this.getProperty(PropertyReference.NAME);
@@ -67,6 +59,14 @@ public class PropertyReference extends PropertyValueExpression implements INamed
 
   public void setVirtualPackage(String value) {
     this.setProperty(PropertyReference.VIRTUAL_PACKAGE, value);
+  }
+
+  public PropertyDeclaration getPropertyDeclaration() {
+    return (PropertyDeclaration)this.getReferent(PropertyReference.PROPERTY_DECLARATION);
+  }
+
+  public void setPropertyDeclaration(PropertyDeclaration node) {
+    super.setReferent(PropertyReference.PROPERTY_DECLARATION, node);
   }
 
 }

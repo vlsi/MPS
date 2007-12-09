@@ -13,13 +13,13 @@ import java.util.List;
 
 public class Project extends BaseConcept implements INamedConcept, IPropertyHolder {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.Project";
-  public static String DEFAULT = "default";
-  public static String TARGETLIST = "targetlist";
-  public static String PROPERTY_LIST = "propertyList";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String DEFAULT = "default";
+  public static String TARGETLIST = "targetlist";
+  public static String PROPERTY_LIST = "propertyList";
 
   public  Project(SNode node) {
     super(node);
@@ -33,6 +33,38 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
     return Project.newInstance(sm, false);
   }
 
+
+  public String getName() {
+    return this.getProperty(Project.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(Project.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(Project.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(Project.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(Project.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(Project.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(Project.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(Project.VIRTUAL_PACKAGE, value);
+  }
 
   public TargetReference getDefault() {
     return (TargetReference)this.getChild(Project.DEFAULT);
@@ -80,38 +112,6 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
 
   public void insertPropertyList(PropertyDeclaration prev, PropertyDeclaration node) {
     this.insertChild(prev, Project.PROPERTY_LIST, node);
-  }
-
-  public String getName() {
-    return this.getProperty(Project.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(Project.NAME, value);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(Project.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(Project.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(Project.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(Project.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(Project.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(Project.VIRTUAL_PACKAGE, value);
   }
 
 }
