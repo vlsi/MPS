@@ -56,5 +56,19 @@
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197240155690">
+    <property name="name" value="Transition" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197240182332">
+      <property name="role" value="trigger" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1197169363230" resolveInfo="Event" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197240188973">
+      <property name="role" value="target" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1197170590231" resolveInfo="State" />
+    </node>
+  </node>
 </model>
 

@@ -90,5 +90,34 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197240201006">
+    <link role="conceptDeclaration" targetNodeId="1.1197240155690" resolveInfo="Transition" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197240203273">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1197240213353">
+        <link role="relationDeclaration" targetNodeId="1.1197240182332" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1197240213354">
+          <link role="conceptDeclaration" targetNodeId="1.1197169363230" resolveInfo="Event" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197240219325">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="1.1197169389356" resolveInfo="eventName" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197240221421">
+        <property name="text" value="to" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1197240235673">
+        <link role="relationDeclaration" targetNodeId="1.1197240188973" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1197240235674">
+          <link role="conceptDeclaration" targetNodeId="1.1197170590231" resolveInfo="State" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197240239176">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="1.1197170631630" resolveInfo="stateName" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
