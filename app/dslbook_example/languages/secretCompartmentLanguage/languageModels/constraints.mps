@@ -14,11 +14,16 @@
       <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1197166627786">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197166627787">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197166630820">
-            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197166632072">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197166635028">
-                <link role="property" targetNodeId="1.1197166557152" resolveInfo="stateMachineName" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1197167054245">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197167055544">
+                <property name="value" value="_StateMachine" />
               </node>
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertyGetter_FunctionParm_node" id="1197166630821" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197166632072">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197166635028">
+                  <link role="property" targetNodeId="1.1197166557152" resolveInfo="stateMachineName" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertyGetter_FunctionParm_node" id="1197166630821" />
+              </node>
             </node>
           </node>
         </node>
