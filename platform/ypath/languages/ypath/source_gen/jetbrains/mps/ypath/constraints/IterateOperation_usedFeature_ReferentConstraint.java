@@ -32,7 +32,7 @@ public class IterateOperation_usedFeature_ReferentConstraint implements IModelCo
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     SNode tpoe;
     if(SNodeOperations.isInstanceOf(enclosingNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
       tpoe = enclosingNode;

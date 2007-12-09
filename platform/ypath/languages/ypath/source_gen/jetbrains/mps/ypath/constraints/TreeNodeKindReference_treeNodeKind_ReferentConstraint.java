@@ -30,7 +30,7 @@ public class TreeNodeKindReference_treeNodeKind_ReferentConstraint implements IM
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     ISearchScope searchScope;
     if((referenceNode != null) && (SLinkOperations.getTarget(referenceNode, "treePathAspect", false) != null)) {
       searchScope = new SimpleSearchScope(SLinkOperations.getTargets(SLinkOperations.getTarget(referenceNode, "treePathAspect", false), "nodeKinds", true));

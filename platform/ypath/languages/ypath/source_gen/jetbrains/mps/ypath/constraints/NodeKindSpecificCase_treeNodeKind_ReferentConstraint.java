@@ -29,7 +29,7 @@ public class NodeKindSpecificCase_treeNodeKind_ReferentConstraint implements IMo
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     return new SimpleSearchScope(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(enclosingNode, "nodeExpression", true), "treepathAspect", false), "nodeKinds", true));
   }
 

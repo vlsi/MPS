@@ -30,7 +30,7 @@ public class TreePathAdapterExpression_treepathAspect_ReferentConstraint impleme
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     SNode tpae = referenceNode;
     return new SimpleSearchScope(TreePathAspectUtil.getTreePathAspects(SLinkOperations.getTarget(tpae, "expression", true), scope));
   }
