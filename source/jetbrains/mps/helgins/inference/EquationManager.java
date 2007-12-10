@@ -244,8 +244,8 @@ public class EquationManager {
     if (rhsRepresentator == null || lhsRepresentator == null) return;
 
     // add var to type's multieq
-    RuntimeTypeVariable varRhs = rhsRepresentator == null ? null : rhsRepresentator.getVariable();
-    RuntimeTypeVariable varLhs = lhsRepresentator == null ? null : lhsRepresentator.getVariable();
+    RuntimeTypeVariable varRhs = rhsRepresentator.getVariable();
+    RuntimeTypeVariable varLhs = lhsRepresentator.getVariable();
     if (varRhs != null) {
       processEquation(rhsRepresentator, lhsRepresentator, errorInfo);
       return;
@@ -256,7 +256,7 @@ public class EquationManager {
       }
     }
 
-    if (rhsRepresentator != null && rhsRepresentator.isCondition() && lhsRepresentator != null && lhsRepresentator.isCondition()) {
+    if (rhsRepresentator.isCondition() && lhsRepresentator.isCondition()) {
       ConditionWrapper leftConditionWrapper = (ConditionWrapper) lhsRepresentator;
       ConditionWrapper rightConditionWrapper = (ConditionWrapper) rhsRepresentator;
       ConditionWrapper andWrapper = new ConditionWrapper(
@@ -268,9 +268,9 @@ public class EquationManager {
       return;
     }
 
-    if (rhsRepresentator != null && rhsRepresentator.isCondition() && lhsRepresentator != null) {
+    if (rhsRepresentator.isCondition()) {
       processEquation(rhsRepresentator, lhsRepresentator, errorInfo);
-    } else if (lhsRepresentator != null && lhsRepresentator.isCondition() && rhsRepresentator != null) {
+    } else if (lhsRepresentator.isCondition()) {
       processEquation(lhsRepresentator, rhsRepresentator, errorInfo);
     }
 

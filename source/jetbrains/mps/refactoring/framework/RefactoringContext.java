@@ -27,6 +27,7 @@ public class RefactoringContext {
   //transient caches
   private Map<String, Set<ConceptFeature>> myFQNamesToConceptFeaturesCache = new HashMap<String, Set<ConceptFeature>>();
   private Map<SNodeId, Set<FullNodeId>> myNodeIdsToFullNodeIdsCache = new HashMap<SNodeId, Set<FullNodeId>>();
+  //-----------------
 
   public void computeCaches() {
     myFQNamesToConceptFeaturesCache.clear();
@@ -139,12 +140,58 @@ public class RefactoringContext {
   }
 
   public void updateModelWithMaps(SModel model) {
+
     for (SNode node : model.allNodes()) {
+
+      //updating concept features' names
       String conceptFQName = node.getConceptFqName();
       Set<ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
       for (ConceptFeature conceptFeature : conceptFeatures) {
-        //todo
+        ConceptFeature newConceptFeature = myConceptFeatureMap.get(conceptFeature);
+        ConceptFeatureKind kind = conceptFeature.getConceptFeatureKind();
+
+        if (kind == ConceptFeatureKind.CONCEPT) {
+          String newConceptFQName = newConceptFeature.getConceptFQName();
+          node.setConceptFqName(newConceptFQName);
+        }
+
+        if (kind == ConceptFeatureKind.REFERENCE) {
+          String oldRole = conceptFeature.getFeatureName();
+          String newRole = newConceptFeature.getFeatureName();
+          for (SReference reference : node.getReferences()) {
+            if (reference.getRole().equals(oldRole)) {
+              reference.setRole(newRole);
+            }
+          }
+          for (SNode linkAttribute : node.getLinkAttributesForLinkRole(oldRole)) {
+            String linkAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(linkAttribute.getRole_());
+            linkAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromLinkAttributeRole(linkAttributeRole, newRole));
+          }
+        }
+
+        if (kind == ConceptFeatureKind.CHILD) {
+          String oldRole = conceptFeature.getFeatureName();
+          String newRole = newConceptFeature.getFeatureName();
+          for (SNode child : node.getChildren()) {
+            String childRole = child.getRole_();
+            if (childRole != null && childRole.equals(oldRole)) {
+              child.setRoleInParent(newRole);
+            }
+          }
+        }
+
+        if (kind == ConceptFeatureKind.PROPERTY) {
+          String oldName = conceptFeature.getFeatureName();
+          String newName = newConceptFeature.getFeatureName();
+          node.changePropertyName(oldName, newName);
+          for (SNode propertyAttribute : node.getPropertyAttributesForPropertyName(oldName)) {
+            String propertyAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(propertyAttribute.getRole_());
+            propertyAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromPropertyAttributeRole(propertyAttributeRole, newName));
+          }
+        }
       }
+
+      //updating references' targets
       for (SReference reference : node.getReferences()) {
         //       if (reference.get)   todo
       }

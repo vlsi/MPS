@@ -93,4 +93,16 @@ public class AttributesRolesUtil {
       return null;
     }
   }
+
+  public static String getFeatureAttributeRoleFromChildRole(String attributeRole) {
+    int index = attributeRole.indexOf(STEREOTYPE_DELIM);
+    if (index < 0) return null;
+    String tail = attributeRole.substring(0, index);
+    return tail;
+  }
+
+  public static void main(String[] args) {
+    String childRole = "declaration$link_attribute$macro";
+    System.err.println(getFeatureAttributeRoleFromChildRole(childRole));
+  }
 }

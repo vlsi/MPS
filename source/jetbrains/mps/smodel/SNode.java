@@ -408,6 +408,18 @@ public final class SNode {
     return getChildren(AttributesRolesUtil.childRoleFromPropertyAttributeRole(role, propertyName));
   }
 
+  @NotNull
+  public Set<SNode> getPropertyAttributesForPropertyName(String propertyName) {
+    Set<SNode> result = new HashSet<SNode>();
+    for (String role : getChildRoles(true)) {
+      String attributePropertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
+      if (attributePropertyName.equals(propertyName)) {
+        result.add(getChild(role));
+      }
+    }
+    return result;
+  }
+
   @Nullable
   public SNode getPropertyAttribute_new(String propertyName) {
     SNode propertyAttribute = getPropertyAttribute(null, propertyName);
@@ -461,6 +473,18 @@ public final class SNode {
   @NotNull
   public List<SNode> getLinkAttributes(String role, String linkRole) {
     return getChildren(AttributesRolesUtil.childRoleFromLinkAttributeRole(role, linkRole));
+  }
+
+  @NotNull
+  public Set<SNode> getLinkAttributesForLinkRole(String linkRole) {
+    Set<SNode> result = new HashSet<SNode>();
+    for (String role : getChildRoles(true)) {
+      String attributelinkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(role);
+      if (attributelinkRole.equals(linkRole)) {
+        result.add(getChild(role));
+      }
+    }
+    return result;
   }
 
   @Nullable
@@ -590,6 +614,13 @@ public final class SNode {
   public String getPersistentProperty(@NotNull String propertyName) {
     if (myProperties == null) return null;
     return myProperties.get(propertyName);
+  }
+
+  //todo make undo?
+  public void changePropertyName(@NotNull String oldPropertyName, @NotNull String newPropertyName) {
+    if (myProperties == null) return;
+    String value = myProperties.remove(oldPropertyName);
+    myProperties.put(newPropertyName, value);
   }
 
   public void setProperty(@NotNull final String propertyName, String propertyValue) {
