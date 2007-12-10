@@ -252,6 +252,12 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.nanoj.structure.IfStatement" id="1197293602339">
+          <node role="condition" type="jetbrains.mps.nanoj.structure.ParameterReference" id="1197293611420">
+            <link role="parameter" targetNodeId="1183128854539" resolveInfo="aa" />
+          </node>
+          <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1197293602341" />
+        </node>
         <node role="statement" type="jetbrains.mps.nanoj.structure.LocalVariableDeclarationStatement" id="1183463951080">
           <node role="declaration" type="jetbrains.mps.nanoj.structure.LocalVariableDeclaration" id="1183463951081">
             <property name="name" value="abc" />
@@ -324,7 +330,14 @@
       <node role="type" type="jetbrains.mps.nanoj.structure.ClassifierType" id="1196939336670">
         <link role="classifier" targetNodeId="1182965040933" resolveInfo="ABCDEF" />
       </node>
-      <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1196939219562" />
+      <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1196939219562">
+        <node role="statement" type="jetbrains.mps.nanoj.structure.WhileStatement" id="1197293560286">
+          <node role="condition" type="jetbrains.mps.nanoj.structure.ParameterReference" id="1197293563539">
+            <link role="parameter" targetNodeId="1196939343722" resolveInfo="xcvx" />
+          </node>
+          <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1197293560288" />
+        </node>
+      </node>
       <node role="parameter" type="jetbrains.mps.nanoj.structure.ParameterDeclaration" id="1196939343722">
         <property name="name" value="xcvx" />
         <node role="type" type="jetbrains.mps.nanoj.structure.ByteType" id="1196939348006" />

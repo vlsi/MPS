@@ -5,6 +5,9 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.ypath" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
+  <language namespace="jetbrains.mps.transformation.TLBase" />
+  <language namespace="jetbrains.mps.bootstrap.helgins" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mpslite.common" version="-1" />
   <import index="2" modelUID="jetbrains.mpslite.nanoj" version="-1" />
@@ -43,18 +46,7 @@
         </node>
       </node>
       <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197283725727">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197283725728">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197285623737">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1197285624771">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197285626258">
-                <property name="value" value="2" />
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197285623738">
-                <property name="value" value="2" />
-              </node>
-            </node>
-          </node>
-        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197283725728" />
       </node>
     </node>
   </node>
@@ -143,11 +135,7 @@
       <property name="role" value="true" />
       <property name="abstract" value="true" />
       <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284246273">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284246274">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197284248713">
-            <node role="expression" type="jetbrains.mpslite.structure.ThisNodeExpression" id="1197284248714" />
-          </node>
-        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284246274" />
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182958613287">
@@ -267,6 +255,18 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284619855" />
       </node>
     </node>
+    <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1197288761671">
+      <property name="name" value="BooleanType" />
+      <link role="extends" targetNodeId="1182958625632" resolveInfo="PrimitiveType" />
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197288761672">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197288761673" />
+      </node>
+      <node role="line" type="jetbrains.mpslite.structure.Line" id="1197293676454">
+        <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1197293678816">
+          <property name="text" value="boolean" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182966085292">
     <property name="name" value="Statements" />
@@ -315,7 +315,24 @@
         </node>
       </node>
       <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284591039">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284591040" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284591040">
+          <node role="statement" type="jetbrains.mpslite.structure.AddEquationStatement" id="1197288742243">
+            <node role="left" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197288775195">
+              <node role="operation" type="jetbrains.mpslite.structure.TypeOperation" id="1197288776588" />
+              <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197288772363">
+                <node role="operation" type="jetbrains.mpslite.structure.ChildAccessOperation" id="1197288773694">
+                  <link role="childDeclaration" targetNodeId="1182966335616" resolveInfo="condition" />
+                </node>
+                <node role="expression" type="jetbrains.mpslite.structure.ThisNodeExpression" id="1197288771299" />
+              </node>
+            </node>
+            <node role="right" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1197288746183">
+              <node role="creator" type="jetbrains.mpslite.structure.NodeCreator" id="1197288751201">
+                <link role="concept" targetNodeId="1197288761671" resolveInfo="BooleanType" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182966366176">
@@ -351,8 +368,25 @@
           <property name="text" value="}" />
         </node>
       </node>
-      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284592401">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284592402" />
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197292984626">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197292984627">
+          <node role="statement" type="jetbrains.mpslite.structure.AddEquationStatement" id="1197293334822">
+            <node role="left" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197293342721">
+              <node role="operation" type="jetbrains.mpslite.structure.TypeOperation" id="1197293343536" />
+              <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197293338638">
+                <node role="operation" type="jetbrains.mpslite.structure.ChildAccessOperation" id="1197293341704">
+                  <link role="childDeclaration" targetNodeId="1182966379199" resolveInfo="condition" />
+                </node>
+                <node role="expression" type="jetbrains.mpslite.structure.ThisNodeExpression" id="1197293337247" />
+              </node>
+            </node>
+            <node role="right" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1197293346381">
+              <node role="creator" type="jetbrains.mpslite.structure.NodeCreator" id="1197293347430">
+                <link role="concept" targetNodeId="1197288761671" resolveInfo="BooleanType" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1183027955959">
