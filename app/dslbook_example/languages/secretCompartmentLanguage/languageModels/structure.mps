@@ -101,6 +101,12 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197252718474">
     <property name="name" value="StateMachineTestMethod" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197255818559">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="handleEvent" />
+      <link role="target" targetNodeId="1197255776563" resolveInfo="HandleEvent" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197255224363">
       <property name="role" value="finalState" />
       <property name="sourceCardinality" value="1" />
@@ -109,6 +115,15 @@
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197252760325">
       <property name="name" value="methodName" />
       <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197255776563">
+    <property name="name" value="HandleEvent" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197255783048">
+      <property name="role" value="event" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1197169363230" resolveInfo="Event" />
     </node>
   </node>
 </model>

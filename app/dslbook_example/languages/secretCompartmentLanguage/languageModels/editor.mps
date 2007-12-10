@@ -184,6 +184,10 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197255247430">
           <property name="selectable" value="false" />
           <property name="vertical" value="true" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1197255836498">
+            <property name="vertical" value="true" />
+            <link role="relationDeclaration" targetNodeId="1.1197255818559" />
+          </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197255254588">
             <property name="selectable" value="false" />
             <property name="vertical" value="false" />
@@ -200,6 +204,25 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197255791393">
+    <link role="conceptDeclaration" targetNodeId="1.1197255776563" resolveInfo="HandleEvent" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197255795910">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197255798303">
+        <property name="text" value="handle" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1197255802946">
+        <link role="relationDeclaration" targetNodeId="1.1197255783048" />
+        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1197255802947">
+          <link role="conceptDeclaration" targetNodeId="1.1197169363230" resolveInfo="Event" />
+          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197255805558">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="1.1197169389356" resolveInfo="eventName" />
           </node>
         </node>
       </node>
