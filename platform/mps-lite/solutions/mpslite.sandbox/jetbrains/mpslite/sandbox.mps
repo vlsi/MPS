@@ -291,7 +291,12 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.nanoj.structure.Statement" id="1197044892028" />
+        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197045747199">
+          <node role="expr" type="jetbrains.mps.nanoj.structure.LocalVariableReference" id="1197045747200">
+            <link role="variable" targetNodeId="1183463951081" resolveInfo="abc" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.nanoj.structure.Statement" id="1197045748404" />
       </node>
       <node role="parameter" type="jetbrains.mps.nanoj.structure.ParameterDeclaration" id="1183128854539">
         <property name="name" value="aa" />
