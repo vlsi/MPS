@@ -3,6 +3,9 @@
   <structure>
     <model modelUID="jetbrains.mps.nanoj.structure" />
   </structure>
+  <helginsTypeSystem>
+    <model modelUID="jetbrains.mps.nanoj.helgins" />
+  </helginsTypeSystem>
   <actions>
     <model modelUID="jetbrains.mps.nanoj.actions" />
   </actions>
