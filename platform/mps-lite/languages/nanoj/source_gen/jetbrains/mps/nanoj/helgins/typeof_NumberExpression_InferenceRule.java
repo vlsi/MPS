@@ -14,7 +14,7 @@ public class typeof_NumberExpression_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197299831731", true), SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.IntType", null), argument, null, "jetbrains.mps.nanoj.helgins", "1197299831730");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197301384882", true), SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.IntType", null), argument, null, "jetbrains.mps.nanoj.helgins", "1197301384881");
   }
 
   public String getApplicableConceptFQName() {
