@@ -5,6 +5,7 @@ package jetbrains.mpslite.actions;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -17,14 +18,18 @@ import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.action.ModelActions;
 
 public class QueriesGenerated {
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1197284175669(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.getAncestor(parentNode, "jetbrains.mpslite.structure.ConceptDeclaration", true, false) != null;
+  }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1196942343253(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(sourceNode), new QuotationClass_().createNode());
@@ -59,6 +64,16 @@ public class QueriesGenerated {
         }
 
       });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1197284173199(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mpslite.structure.ThisNodeExpression", operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
+      result.addAll(defaultActions);
     }
     return result;
   }

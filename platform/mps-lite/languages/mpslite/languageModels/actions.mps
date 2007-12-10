@@ -197,5 +197,36 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1197284156587">
+    <property name="name" value="ExpressionsInsideConceptDeclarations" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1197284173199">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="4.1068431790191" resolveInfo="Expression" />
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1197284175669">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284175670">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197284177499">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1197284187776">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197284188670" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197284178001">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1197284179458">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1197284181054" />
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1197284182399">
+                    <link role="concept" targetNodeId="1.1182510906722" resolveInfo="ConceptDeclaration" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1197284177500" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart" id="1197284192499">
+        <link role="conceptToRemove" targetNodeId="4.1070475354124" resolveInfo="ThisExpression" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1197284196111">
+        <link role="concept" targetNodeId="1.1197283906949" resolveInfo="ThisNodeExpression" />
+      </node>
+    </node>
+  </node>
 </model>
 

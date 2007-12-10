@@ -12,6 +12,7 @@
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182956263706">
     <property name="name" value="Classes" />
     <property name="showStructure" value="true" />
+    <property name="showTypes" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956307043">
       <property name="name" value="ClassConcept" />
       <property name="root" value="true" />
@@ -41,11 +42,19 @@
           <property name="text" value="}" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197283725727">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197283725728">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197283922031">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1197283922032" />
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182956458075">
     <property name="name" value="Methods" />
     <property name="showStructure" value="true" />
+    <property name="showTypes" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956481186">
       <property name="name" value="BaseMethod" />
       <property name="abstract" value="true" />
@@ -86,16 +95,23 @@
           <property name="text" value="}" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284585689">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284585690" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956481679">
       <property name="name" value="InstanceMethod" />
       <property name="role" value="true" />
       <link role="extends" targetNodeId="1182956481186" resolveInfo="BaseMethod" />
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284586707">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284586708" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182956491665">
     <property name="name" value="Common" />
     <property name="showStructure" value="true" />
+    <property name="showTypes" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956498103">
       <property name="name" value="StatementList" />
       <node role="line" type="jetbrains.mpslite.structure.Line" id="1182966257787">
@@ -106,15 +122,26 @@
           <link role="type" targetNodeId="1182966087965" resolveInfo="Statement" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284577218">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284577219" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182956596487">
     <property name="name" value="Types" />
     <property name="showStructure" value="true" />
+    <property name="showTypes" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956598488">
       <property name="name" value="Type" />
       <property name="role" value="true" />
       <property name="abstract" value="true" />
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284246273">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284246274">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197284248713">
+            <node role="expression" type="jetbrains.mpslite.structure.ThisNodeExpression" id="1197284248714" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182958613287">
       <property name="name" value="ClassifierType" />
@@ -125,11 +152,17 @@
           <link role="type" targetNodeId="1182956307043" resolveInfo="Classifier" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284606632">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284606633" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182958625632">
       <property name="name" value="PrimitiveType" />
       <property name="abstract" value="true" />
       <link role="extends" targetNodeId="1182956598488" resolveInfo="Type" />
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284608150">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284608151" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956613900">
       <property name="name" value="VoidType" />
@@ -138,6 +171,9 @@
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1182956619449">
           <property name="text" value="void" />
         </node>
+      </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284612543">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284612544" />
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956624544">
@@ -148,6 +184,9 @@
           <property name="text" value="byte" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284613607">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284613608" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956634986">
       <property name="name" value="CharType" />
@@ -156,6 +195,9 @@
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1182956641957">
           <property name="text" value="char" />
         </node>
+      </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284614641">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284614642" />
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956670944">
@@ -166,6 +208,9 @@
           <property name="text" value="short" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284615721">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284615722" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956600677">
       <property name="name" value="IntType" />
@@ -174,6 +219,9 @@
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1182956612164">
           <property name="text" value="int" />
         </node>
+      </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284616770">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284616771" />
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956620950">
@@ -184,6 +232,9 @@
           <property name="text" value="long" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284617819">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284617820" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956682010">
       <property name="name" value="FloatType" />
@@ -192,6 +243,9 @@
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1182956692871">
           <property name="text" value="float" />
         </node>
+      </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284618852">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284618853" />
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956695013">
@@ -202,16 +256,23 @@
           <property name="text" value="double" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284619854">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284619855" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182966085292">
     <property name="name" value="Statements" />
+    <property name="showTypes" value="true" />
     <property name="showStructure" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182966087965">
       <property name="name" value="Statement" />
       <property name="abstract" value="true" />
       <property name="role" value="true" />
       <node role="line" type="jetbrains.mpslite.structure.Line" id="1182966298619" />
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284589568">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284589569" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182966322282">
       <property name="name" value="IfStatement" />
@@ -245,6 +306,9 @@
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1182966361706">
           <property name="text" value="}" />
         </node>
+      </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284591039">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284591040" />
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182966366176">
@@ -280,6 +344,9 @@
           <property name="text" value="}" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284592401">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284592402" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1183027955959">
       <property name="name" value="LocalVariableDeclarationStatement" />
@@ -292,6 +359,9 @@
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1183028618610">
           <property name="text" value=";" />
         </node>
+      </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284593481">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284593482" />
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1183120785728">
@@ -306,15 +376,22 @@
           <property name="text" value=";" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284594514">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284594515" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182966282304">
     <property name="name" value="Expressions" />
     <property name="showStructure" value="true" />
+    <property name="showTypes" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182966285571">
       <property name="name" value="Expression" />
       <property name="abstract" value="true" />
       <property name="role" value="true" />
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284326262">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284326263" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182969317058">
       <property name="name" value="BinaryExpression" />
@@ -334,6 +411,9 @@
           <link role="type" targetNodeId="1182966285571" resolveInfo="Expression" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284547500">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284547501" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182969334533">
       <property name="name" value="PlusExpression" />
@@ -349,6 +429,9 @@
         <node role="linePart" type="jetbrains.mpslite.structure.ChildReferencePart" id="1182969451480">
           <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
         </node>
+      </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284549049">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284549050" />
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182969456013">
@@ -366,6 +449,9 @@
           <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284550302">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284550303" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182969465559">
       <property name="name" value="MulExpression" />
@@ -381,6 +467,9 @@
         <node role="linePart" type="jetbrains.mpslite.structure.ChildReferencePart" id="1182969465563">
           <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
         </node>
+      </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284551444">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284551445" />
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182969470407">
@@ -398,6 +487,9 @@
           <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284553056">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284553057" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182969474844">
       <property name="name" value="AssignmentExpression" />
@@ -413,6 +505,9 @@
         <node role="linePart" type="jetbrains.mpslite.structure.ChildReferencePart" id="1182969474848">
           <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
         </node>
+      </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284554058">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284554059" />
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182969485238">
@@ -430,6 +525,9 @@
           <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284555654">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284555655" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182969490290">
       <property name="name" value="NotEqualsExpression" />
@@ -446,6 +544,9 @@
           <link role="declaration" targetNodeId="1182969330673" resolveInfo="right" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284557281">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284557282" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1183460721462">
       <property name="name" value="ParensExpression" />
@@ -461,6 +562,9 @@
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1183460745296">
           <property name="text" value=")" />
         </node>
+      </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284558658">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284558659" />
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182969716964">
@@ -486,6 +590,9 @@
           <property name="text" value=")" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284559847">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284559848" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182969841552">
       <property name="name" value="NumberExpression" />
@@ -495,6 +602,9 @@
           <property name="name" value="number" />
           <link role="type" targetNodeId="1.1182511916107" />
         </node>
+      </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284560959">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284560960" />
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182969854711">
@@ -511,6 +621,9 @@
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1182969878640">
           <property name="text" value="&quot;" />
         </node>
+      </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284562070">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284562071" />
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1183028652393">
@@ -651,6 +764,9 @@
           </node>
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284563369">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284563370" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1183028672226">
       <property name="name" value="ParameterReference" />
@@ -689,11 +805,15 @@
           </node>
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284564559">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284564560" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1183027540955">
     <property name="name" value="Variables" />
     <property name="showStructure" value="true" />
+    <property name="showTypes" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1183027543503">
       <property name="name" value="VariableDeclaration" />
       <property name="abstract" value="true" />
@@ -714,6 +834,9 @@
           <link role="type" targetNodeId="1182966285571" resolveInfo="Expression" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284601017">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284601018" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1183027574668">
       <property name="name" value="LocalVariableDeclaration" />
@@ -733,6 +856,9 @@
           <link role="declaration" targetNodeId="1183027566667" resolveInfo="initializer" />
         </node>
       </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284602472">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284602473" />
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1183027852869">
       <property name="name" value="ParameterDeclaration" />
@@ -745,6 +871,9 @@
         <node role="linePart" type="jetbrains.mpslite.structure.PropertyReferencePart" id="1183027924130">
           <link role="declaration" targetNodeId="1183027558523" resolveInfo="name" />
         </node>
+      </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284603677">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284603678" />
       </node>
     </node>
   </node>
