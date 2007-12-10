@@ -795,7 +795,11 @@
             <node role="type" type="jetbrains.mpslite.structure.NodeType" id="1197281675191">
               <link role="concept" targetNodeId="1182958613287" resolveInfo="ClassifierType" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197281679975" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1197282692021">
+              <node role="creator" type="jetbrains.mpslite.structure.NodeCreator" id="1197282693804">
+                <link role="concept" targetNodeId="1182958613287" resolveInfo="ClassifierType" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197281689810">

@@ -458,5 +458,19 @@
       <link role="target" targetNodeId="1182510906722" resolveInfo="ConceptDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197282473931">
+    <property name="package" value="QL" />
+    <property name="name" value="NodeCreator" />
+    <link role="extends" targetNodeId="3.1145552809883" resolveInfo="AbstractCreator" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197282555747">
+      <property name="role" value="concept" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1182510906722" resolveInfo="ConceptDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197282607842">
+      <property name="value" value="node&lt;...&gt;" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
