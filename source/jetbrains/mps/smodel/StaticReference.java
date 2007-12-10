@@ -97,6 +97,7 @@ public class StaticReference extends SReferenceBase {
   }
 
   protected void makeMature() {
+    super.makeMature();
     myTargetNodeId = myTargetNode.getSNodeId();
     setTargetModelUID(myTargetNode.getModel().getUID());
     setResolveInfo(myTargetNode.getName());

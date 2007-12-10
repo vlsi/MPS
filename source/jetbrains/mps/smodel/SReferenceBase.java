@@ -92,7 +92,6 @@ import org.jetbrains.annotations.Nullable;
   protected final boolean mature() {
     if (!myMature && canMakeMature()) {
       // convert 'young' reference to 'mature'
-      myMature = true;
       makeMature();
     }
     return myMature;
@@ -100,7 +99,9 @@ import org.jetbrains.annotations.Nullable;
 
   protected abstract boolean canMakeMature();
 
-  protected abstract void makeMature();
+  protected void makeMature() {
+    myMature = true;
+  }
 
   protected boolean isMature() {
     return myMature;

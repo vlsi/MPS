@@ -82,6 +82,7 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
   }
 
   protected void makeMature() {
+    super.makeMature();
     setTargetModelUID(myTargetNode.getModel().getUID());
     setResolveInfo(myTargetNode.getName());
     myTargetNode = null;
