@@ -153,6 +153,11 @@
           <property name="text" value="State Machine Test" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197252967903" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1197252973061">
+        <property name="vertical" value="true" />
+        <link role="relationDeclaration" targetNodeId="1.1197252952541" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197252730365">

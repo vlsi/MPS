@@ -83,6 +83,12 @@
     <property name="name" value="StateMachineTest" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197252952541">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="testMethod" />
+      <link role="target" targetNodeId="1197252718474" resolveInfo="StateMachineTestMethod" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197247793411">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="stateMachine" />
