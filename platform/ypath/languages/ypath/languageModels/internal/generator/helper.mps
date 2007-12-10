@@ -3,7 +3,6 @@
   <persistence version="1" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <language namespace="jetbrains.mps.transformation.TLBase" />
   <maxImportIndex value="7" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -53,7 +52,9 @@
               <link role="baseMethodDeclaration" targetNodeId="6.~GenerationSessionContext.getTransientObject(java.lang.Object):java.lang.Object" resolveInfo="getTransientObject" />
               <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197301260351">
                 <link role="baseMethodDeclaration" targetNodeId="4.~ITemplateGenerator.getGeneratorSessionContext():jetbrains.mps.generator.GenerationSessionContext" resolveInfo="getGeneratorSessionContext" />
-                <node role="instance" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_generator" id="1197301260352" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197309823576">
+                  <link role="variableDeclaration" targetNodeId="1197301260399" resolveInfo="generator" />
+                </node>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197301260353">
                 <link role="variableDeclaration" targetNodeId="1197301260338" resolveInfo="tokenKey" />
