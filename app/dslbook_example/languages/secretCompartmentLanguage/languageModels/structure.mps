@@ -79,5 +79,13 @@
       <link role="target" targetNodeId="1197170590231" resolveInfo="State" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197246912613">
+    <property name="name" value="StateMachineTest" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197246960543">
+      <property name="name" value="testName" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+  </node>
 </model>
 
