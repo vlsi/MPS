@@ -51,7 +51,7 @@ public class QueryMethodGenerated {
     assert module != null;
 
     //todo bug workaround
-    //for unknown reason, OSGi sometimes returns correct class only on the second or other calls
+    //todo for unknown reason, OSGi sometimes returns correct class only on the second or other calls
     for (int i = 0; i < 5; i++) {
       queriesClass = module.getClass(queriesClassName);
       if (queriesClass != null) {
