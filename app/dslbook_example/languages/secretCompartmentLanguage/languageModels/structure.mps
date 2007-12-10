@@ -92,5 +92,13 @@
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197252718474">
+    <property name="name" value="StateMachineTestMethod" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197252760325">
+      <property name="name" value="methodName" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+  </node>
 </model>
 

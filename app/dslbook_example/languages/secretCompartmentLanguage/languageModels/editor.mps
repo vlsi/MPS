@@ -155,5 +155,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197252730365">
+    <link role="conceptDeclaration" targetNodeId="1.1197252718474" resolveInfo="StateMachineTestMethod" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197252733008">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197252751182">
+        <property name="selectable" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197252754699">
+          <property name="text" value="test" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197252776280">
+          <link role="relationDeclaration" targetNodeId="1.1197252760325" resolveInfo="methodName" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
