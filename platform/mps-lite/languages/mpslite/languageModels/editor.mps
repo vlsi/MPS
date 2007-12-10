@@ -1428,5 +1428,13 @@
       <link role="styleClass" targetNodeId="6.1186415544875" resolveInfo="keyword" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197284810243">
+    <property name="package" value="QL" />
+    <link role="conceptDeclaration" targetNodeId="1.1197284787975" resolveInfo="TypeOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197284812276">
+      <property name="text" value="type" />
+      <link role="styleClass" targetNodeId="1196956324294" resolveInfo="MPSLiteOperation" />
+    </node>
+  </node>
 </model>
 

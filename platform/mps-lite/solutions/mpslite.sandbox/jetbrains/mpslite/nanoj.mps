@@ -954,6 +954,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197284985998">
+          <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197284986984">
+            <node role="operation" type="jetbrains.mpslite.structure.TypeOperation" id="1197284988237" />
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197284985999">
+              <link role="variableDeclaration" targetNodeId="1197281675190" resolveInfo="ct" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1197279620853" />
