@@ -139,8 +139,15 @@
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197246935790">
         <property name="selectable" value="false" />
         <property name="vertical" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197246976639">
-          <link role="relationDeclaration" targetNodeId="1.1197246960543" resolveInfo="testName" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1197247831194">
+          <link role="relationDeclaration" targetNodeId="1.1197247793411" />
+          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1197247831195">
+            <link role="conceptDeclaration" targetNodeId="1.1197149564476" resolveInfo="StateMachine" />
+            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197247836963">
+              <property name="readOnly" value="true" />
+              <link role="relationDeclaration" targetNodeId="1.1197166557152" resolveInfo="stateMachineName" />
+            </node>
+          </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197246937386">
           <property name="text" value="State Machine Test" />

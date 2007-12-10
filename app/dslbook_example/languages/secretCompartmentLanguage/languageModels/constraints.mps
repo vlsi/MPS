@@ -16,7 +16,7 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197166630820">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1197167054245">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197167055544">
-                <property name="value" value="_StateMachine" />
+                <property name="value" value=" State Machine" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197166632072">
                 <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197166635028">
@@ -73,6 +73,37 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1197240876770">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197240876771" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1197248069433">
+    <link role="concept" targetNodeId="1.1197246912613" resolveInfo="StateMachineTest" />
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1197248076062">
+      <link role="applicableProperty" targetNodeId="2.1169194664001" resolveInfo="name" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1197248078297">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197248078298">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197248083393">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1197248099465">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197248100484">
+                <property name="value" value=" State Machine Test" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197248092289">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197248095636">
+                  <link role="property" targetNodeId="1.1197166557152" resolveInfo="stateMachineName" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197248086223">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1197248091429">
+                    <link role="link" targetNodeId="1.1197247793411" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertyGetter_FunctionParm_node" id="1197248083394" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1197248069434">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197248069435" />
     </node>
   </node>
 </model>

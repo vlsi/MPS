@@ -81,10 +81,15 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197246912613">
     <property name="name" value="StateMachineTest" />
+    <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197246960543">
-      <property name="name" value="testName" />
-      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197247793411">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="stateMachine" />
+      <link role="target" targetNodeId="1197149564476" resolveInfo="StateMachine" />
+    </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1197248073061">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
     </node>
   </node>
 </model>
