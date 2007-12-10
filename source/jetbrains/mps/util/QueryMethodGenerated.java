@@ -46,16 +46,22 @@ public class QueryMethodGenerated {
 
     String packageName = JavaNameUtil.packageNameForModelUID(sourceModel.getUID());
     String queriesClassName = packageName + ".QueriesGenerated";
-    Class queriesClass;
+    Class queriesClass = null;
     IModule module = findModuleForModel(sourceModel);
     assert module != null;
-    queriesClass = module.getClass(queriesClassName);
+
+    //for unknown reason, OSGi sometimes returns correct class only on the second or other calls
+    for (int i = 0; i < 5; i++) {
+      queriesClass = module.getClass(queriesClassName);
+      if (queriesClass != null) {
+        break;
+      }
+    }
 
     if (queriesClass == null) {
       if (!suppressErrorLogging) {
         LOG.error("couldn't find class 'QueriesGenerated' for model '" + sourceModel.getUID() + "' : TRY TO GENERATE");
-      }      
-      queriesClass = module.getClass(queriesClassName);
+      }
       throw new ClassNotFoundException("Can't find " + queriesClassName + " in module " + module.getModuleUID());
     }
 
