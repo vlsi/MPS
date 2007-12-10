@@ -174,6 +174,35 @@
           <link role="relationDeclaration" targetNodeId="1.1197252760325" resolveInfo="methodName" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197255237349">
+        <property name="selectable" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197255237350">
+          <property name="text" value="  " />
+          <property name="selectable" value="false" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197255247430">
+          <property name="selectable" value="false" />
+          <property name="vertical" value="true" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197255254588">
+            <property name="selectable" value="false" />
+            <property name="vertical" value="false" />
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197255256200">
+              <property name="text" value="final state:" />
+            </node>
+            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1197255262342">
+              <link role="relationDeclaration" targetNodeId="1.1197255224363" />
+              <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1197255262343">
+                <link role="conceptDeclaration" targetNodeId="1.1197170590231" resolveInfo="State" />
+                <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197255269330">
+                  <property name="readOnly" value="true" />
+                  <link role="relationDeclaration" targetNodeId="1.1197170631630" resolveInfo="stateName" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
