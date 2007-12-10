@@ -50,7 +50,7 @@ public class CloneUtil {
     for (SNode child : node.getChildren()) {
       String role = child.getRole_();
       assert role != null;
-      result.addChild(role, clone(child, outputModel, scope));
+      result.addChild(role, cloneInt(child, outputModel, scope, keepOldId));
     }
     return result;
   }
