@@ -25,6 +25,7 @@
   <module />
   <accessoryModels>
     <model modelUID="jetbrains.mps.ypath.treepaths" />
+    <model modelUID="jetbrains.mps.ypath.internal.generator.helper" />
   </accessoryModels>
   <generators>
     <generator generatorUID="ypath#1168438160182" targetLanguage="jetbrains.mps.baseLanguage">

@@ -8,7 +8,8 @@
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.quotation" />
-  <maxImportIndex value="8" />
+  <language namespace="jetbrains.mps.transformation.TLBase" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="2" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
@@ -17,6 +18,7 @@
   <import index="6" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="7" modelUID="jetbrains.mps.generator@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.ypath.generator.baseLanguage.template.helper" version="-1" />
+  <import index="9" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1196702340300">
     <property name="name" value="NodeBuilderUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1196702340301">
