@@ -5,11 +5,13 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.ypath" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="2" />
+  <maxImportIndex value="3" />
   <import index="1" modelUID="jetbrains.mpslite.common" version="-1" />
   <import index="2" modelUID="jetbrains.mpslite.nanoj" version="-1" />
+  <import index="3" modelUID="java.lang@java_stub" version="-1" />
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182956263706">
     <property name="name" value="Classes" />
+    <property name="showStructure" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956307043">
       <property name="name" value="ClassConcept" />
       <property name="root" value="true" />
@@ -43,6 +45,7 @@
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182956458075">
     <property name="name" value="Methods" />
+    <property name="showStructure" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956481186">
       <property name="name" value="BaseMethod" />
       <property name="abstract" value="true" />
@@ -92,6 +95,7 @@
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182956491665">
     <property name="name" value="Common" />
+    <property name="showStructure" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956498103">
       <property name="name" value="StatementList" />
       <node role="line" type="jetbrains.mpslite.structure.Line" id="1182966257787">
@@ -106,6 +110,7 @@
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182956596487">
     <property name="name" value="Types" />
+    <property name="showStructure" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956598488">
       <property name="name" value="Type" />
       <property name="role" value="true" />
@@ -201,6 +206,7 @@
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182966085292">
     <property name="name" value="Statements" />
+    <property name="showStructure" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182966087965">
       <property name="name" value="Statement" />
       <property name="abstract" value="true" />
@@ -304,6 +310,7 @@
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182966282304">
     <property name="name" value="Expressions" />
+    <property name="showStructure" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182966285571">
       <property name="name" value="Expression" />
       <property name="abstract" value="true" />
@@ -686,6 +693,7 @@
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1183027540955">
     <property name="name" value="Variables" />
+    <property name="showStructure" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1183027543503">
       <property name="name" value="VariableDeclaration" />
       <property name="abstract" value="true" />
@@ -739,6 +747,41 @@
         </node>
       </node>
     </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1197279620852">
+    <property name="name" value="ABC" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1197279623932">
+      <property name="name" value="void" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1197279623933" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1197279623934" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197279623935">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197279730200">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197279730201">
+            <property name="name" value="cc" />
+            <node role="type" type="jetbrains.mpslite.structure.NodeType" id="1197279730202">
+              <link role="concept" targetNodeId="1182956307043" resolveInfo="ClassConcept" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197279734720" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197279737050">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1197279741134">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197279742512">
+              <property name="value" value="239" />
+            </node>
+            <node role="lValue" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197279738208">
+              <node role="operation" type="jetbrains.mpslite.structure.PropertyAccessOperation" id="1197279740680">
+                <link role="propertyDeclaration" targetNodeId="1182956319063" resolveInfo="name" />
+              </node>
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197279737051">
+                <link role="variableDeclaration" targetNodeId="1197279730201" resolveInfo="cc" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1197279620853" />
   </node>
 </model>
 
