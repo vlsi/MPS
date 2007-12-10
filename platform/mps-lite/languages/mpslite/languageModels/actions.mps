@@ -260,6 +260,9 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1197298251266">
         <link role="concept" targetNodeId="1.1197297607065" resolveInfo="AddComparableEquationStatement" />
       </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1197301841001">
+        <link role="concept" targetNodeId="1.1197301549590" resolveInfo="ReportErrorStatement" />
+      </node>
     </node>
   </node>
 </model>
