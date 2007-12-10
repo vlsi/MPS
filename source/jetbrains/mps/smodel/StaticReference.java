@@ -11,13 +11,13 @@ public class StaticReference extends SReferenceBase {
   private SNode myTargetNode;        // young
   private SNodeId myTargetNodeId;    // mature
 
-  StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
+  /*package*/ StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
     // 'young' reference
     super(role, sourceNode, null, false);
     myTargetNode = targetNode;
   }
 
-  StaticReference(String role, SNode sourceNode, SModelUID targetModelUID, SNodeId nodeId, String resolveInfo) {
+  /*package*/ StaticReference(String role, SNode sourceNode, SModelUID targetModelUID, SNodeId nodeId, String resolveInfo) {
     // 'mature' reference
     super(role, sourceNode, targetModelUID, true);
     setResolveInfo(resolveInfo);
@@ -32,11 +32,11 @@ public class StaticReference extends SReferenceBase {
     StaticReference duplicate = new StaticReference(getRole(), sourceNode, isMature());
     if (isMature()) {
       duplicate.setTargetModelUID(targetModelUID);
-      duplicate.setResolveInfo(getResolveInfo());
       duplicate.myTargetNodeId = myTargetNodeId;
     } else {
       duplicate.myTargetNode = myTargetNode;
     }
+    duplicate.setResolveInfo(getResolveInfo());
     return duplicate;
   }
 
@@ -97,10 +97,9 @@ public class StaticReference extends SReferenceBase {
   }
 
   protected void makeMature() {
-    SNode targetNode = myTargetNode;
+    myTargetNodeId = myTargetNode.getSNodeId();
+    setTargetModelUID(myTargetNode.getModel().getUID());
+    setResolveInfo(myTargetNode.getName());
     myTargetNode = null;
-    myTargetNodeId = targetNode.getSNodeId();
-    setTargetModelUID(targetNode.getModel().getUID());
-    setResolveInfo(targetNode.getName());
   }
 }
