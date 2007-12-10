@@ -24,6 +24,7 @@
       <external-templates />
       <dependencies>
         <dependency>jetbrains.mps.baseLanguage</dependency>
+        <dependency>jetbrains.mps.baseLanguage.unitTest</dependency>
       </dependencies>
       <mapping-priorities />
     </generator>
