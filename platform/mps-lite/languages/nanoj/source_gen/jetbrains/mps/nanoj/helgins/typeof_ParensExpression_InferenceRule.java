@@ -4,6 +4,8 @@ package jetbrains.mps.nanoj.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_ParensExpression_InferenceRule implements InferenceRule_Runtime {
@@ -12,6 +14,7 @@ public class typeof_ParensExpression_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(final SNode argument) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197298706730", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expr", true), "jetbrains.mps.nanoj.helgins", "1197298706732", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197298706729");
   }
 
   public String getApplicableConceptFQName() {

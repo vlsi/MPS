@@ -254,6 +254,12 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1197293130298">
         <link role="concept" targetNodeId="1.1197288271304" resolveInfo="AddEquationStatement" />
       </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1197295437132">
+        <link role="concept" targetNodeId="1.1197295381879" resolveInfo="AddInequationStatement" />
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1197298251266">
+        <link role="concept" targetNodeId="1.1197297607065" resolveInfo="AddComparableEquationStatement" />
+      </node>
     </node>
   </node>
 </model>

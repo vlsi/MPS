@@ -73,6 +73,10 @@ public class HelginsDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_StringType_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_Statement_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }

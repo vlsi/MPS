@@ -4,6 +4,8 @@ package jetbrains.mps.nanoj.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_StringLiteralExpression_InferenceRule implements InferenceRule_Runtime {
@@ -12,6 +14,7 @@ public class typeof_StringLiteralExpression_InferenceRule implements InferenceRu
   }
 
   public void applyRule(final SNode argument) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197298706752", true), SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.StringType", null), argument, null, "jetbrains.mps.nanoj.helgins", "1197298706751");
   }
 
   public String getApplicableConceptFQName() {
