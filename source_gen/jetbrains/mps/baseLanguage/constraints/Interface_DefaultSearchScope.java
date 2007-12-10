@@ -28,7 +28,7 @@ public class Interface_DefaultSearchScope implements INodeReferentSearchScopePro
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     return new VisibleClassifiersScope(model, IClassifiersSearchScope.INTERFACE, scope);
   }
 

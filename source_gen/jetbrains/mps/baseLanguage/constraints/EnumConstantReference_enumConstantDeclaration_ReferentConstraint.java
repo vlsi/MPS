@@ -29,7 +29,7 @@ public class EnumConstantReference_enumConstantDeclaration_ReferentConstraint im
     return SLinkOperations.getTarget(referenceNode, "enumClass", false) != null;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     return Classifier_Behavior.call_getVisibleMembersSearchScope_1189552517057(SLinkOperations.getTarget(referenceNode, "enumClass", false), referenceNode, IClassifiersSearchScope.ENUM_CONSTANT);
   }
 

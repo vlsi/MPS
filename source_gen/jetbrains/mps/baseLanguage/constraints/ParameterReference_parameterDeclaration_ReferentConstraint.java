@@ -32,7 +32,7 @@ public class ParameterReference_parameterDeclaration_ReferentConstraint implemen
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     List<SNode> methods = SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", true);
     List<SNode> params = ListOperations.createList(new SNode[]{});
     for(SNode bmd : methods) {

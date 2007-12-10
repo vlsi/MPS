@@ -30,7 +30,7 @@ public class ClosureParameterReference_closureParameter_ReferentConstraint imple
     return enclosingClosure != null;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     SNode enclosingClosure = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.Closure", true, false);
     return new SimpleSearchScope(SNodeOperations.getChildren(enclosingClosure));
   }

@@ -32,7 +32,7 @@ public class AnnotationInstanceValue_key_ReferentConstraint implements IModelCon
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     List<SNode> result = new ArrayList<SNode>();
     SNode parent = enclosingNode;
     if(SLinkOperations.getTarget(parent, "annotation", false) != null) {

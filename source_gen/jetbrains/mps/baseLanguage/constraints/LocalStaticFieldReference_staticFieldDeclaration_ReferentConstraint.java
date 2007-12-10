@@ -29,7 +29,7 @@ public class LocalStaticFieldReference_staticFieldDeclaration_ReferentConstraint
     return (SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null);
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     SNode classifier = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     return Classifier_Behavior.call_getVisibleMembersSearchScope_1189552517057(classifier, enclosingNode, IClassifiersSearchScope.STATIC_FIELD);
   }

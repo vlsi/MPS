@@ -30,7 +30,7 @@ public class LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint im
     return (SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null);
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     SNode clazz = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     return new StaticMethodCall_StaticMethodScope(((ClassConcept)SNodeOperations.getAdapter(clazz)), ((LocalStaticMethodCall)SNodeOperations.getAdapter(referenceNode)));
   }

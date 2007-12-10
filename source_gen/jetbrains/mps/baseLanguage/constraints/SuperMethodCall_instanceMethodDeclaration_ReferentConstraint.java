@@ -32,7 +32,7 @@ public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint implem
     return SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     SNode enclosingClass = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
     SNode superclass = SLinkOperations.getTarget(SLinkOperations.getTarget(enclosingClass, "superclass", true), "classifier", false);
     if(superclass == null) {

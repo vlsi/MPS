@@ -3626,12 +3626,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1137022694554">
+    <property name="package" value="conceptFunction" />
     <link role="conceptDeclaration" targetNodeId="17.1137021947720" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1196975582231">
       <link role="editorComponent" targetNodeId="1196975362614" resolveInfo="ConceptFunction_Component" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1139533461943">
+    <property name="package" value="conceptFunction" />
     <link role="conceptDeclaration" targetNodeId="17.1107135704075" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1139533905854">
       <property name="textFgColor" value="DARK_BLUE" />

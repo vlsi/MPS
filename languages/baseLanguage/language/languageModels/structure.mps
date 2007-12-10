@@ -1224,6 +1224,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1107135704075">
     <property name="name" value="ConceptFunctionParameter" />
+    <property name="package" value="conceptFunction" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1121268908095">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
@@ -1402,6 +1403,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1137021947720">
     <property name="name" value="ConceptFunction" />
+    <property name="package" value="conceptFunction" />
     <link role="extends" targetNodeId="4.1133920641626" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1137022507850">
       <property name="targetCardinality" value="1" />
@@ -1512,7 +1514,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1146644584814">
     <property name="name" value="Visibility" />
-    <property name="package" value="Visibility" />
+    <property name="package" value="visibility" />
     <link role="extends" targetNodeId="4.1133920641626" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1146644597145">
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473854053" />
@@ -1520,7 +1522,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1146644602865">
     <property name="name" value="PublicVisibility" />
-    <property name="package" value="Visibility" />
+    <property name="package" value="visibility" />
     <link role="extends" targetNodeId="1146644584814" resolveInfo="Visibility" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1146645164085">
       <property name="value" value="public" />
@@ -1529,7 +1531,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1146644623116">
     <property name="name" value="PrivateVisibility" />
-    <property name="package" value="Visibility" />
+    <property name="package" value="visibility" />
     <link role="extends" targetNodeId="1146644584814" resolveInfo="Visibility" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1146645140955">
       <property name="value" value="private" />
@@ -1538,7 +1540,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1146644641414">
     <property name="name" value="ProtectedVisibility" />
-    <property name="package" value="Visibility" />
+    <property name="package" value="visibility" />
     <link role="extends" targetNodeId="1146644584814" resolveInfo="Visibility" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1146645176275">
       <property name="value" value="protected" />

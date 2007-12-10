@@ -33,6 +33,7 @@ import jetbrains.mps.baseLanguage.constraints.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
@@ -493,13 +494,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           SNode parentFunction = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
-          List<SNode> result = new ArrayList<SNode>();
-          if(parentFunction == null) {
-            return result;
-          }
-          ListOperations.addAllElements(result, SLinkOperations.getConceptLinkTargets(parentFunction, "conceptFunctionParameter"));
-          ListOperations.addAllElements(result, SLinkOperations.getConceptLinkTargets(parentFunction, "applicableConceptFunctionParameter"));
-          return result;
+          return ConceptFunction_Behavior.call_getParameters_1197312191473(parentFunction);
         }
 
       };

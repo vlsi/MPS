@@ -31,7 +31,7 @@ public class TypeVariableReference_typeVariableDeclaration_ReferentConstraint im
     return genericDeclaration != null;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     SNode genericDeclaration = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", true, false);
     return new SimpleSearchScope(SLinkOperations.getTargets(genericDeclaration, "typeVariableDeclaration", true));
   }

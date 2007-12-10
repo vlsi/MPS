@@ -39,7 +39,7 @@ public class FieldReferenceOperation_fieldDeclaration_ReferentConstraint impleme
     return classifierType != null;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     SNode instance = SLinkOperations.getTarget(enclosingNode, "operand", true);
     SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(instance), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     return new VisibleClassifierMembersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(classifierType, "classifier", false))), enclosingNode, IClassifiersSearchScope.INSTANCE_FIELD);
