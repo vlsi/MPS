@@ -146,6 +146,7 @@ public class RefactoringContext {
       //updating concept features' names
       String conceptFQName = node.getConceptFqName();
       Set<ConceptFeature> conceptFeatures = myFQNamesToConceptFeaturesCache.get(conceptFQName);
+      if (conceptFeatures != null) {
       for (ConceptFeature conceptFeature : conceptFeatures) {
         ConceptFeature newConceptFeature = myConceptFeatureMap.get(conceptFeature);
         ConceptFeatureKind kind = conceptFeature.getConceptFeatureKind();
@@ -190,10 +191,24 @@ public class RefactoringContext {
           }
         }
       }
+      }
 
       //updating references' targets
       for (SReference reference : node.getReferences()) {
-        //       if (reference.get)   todo
+        if (reference instanceof StaticReference) {
+          StaticReference staticReference = (StaticReference) reference;
+          SNodeId id = staticReference.getTargetNodeId();
+          Set<FullNodeId> ids = myNodeIdsToFullNodeIdsCache.get(id);
+          if (ids != null) {
+            for (FullNodeId fullNodeId : ids) {
+              FullNodeId newFullNodeId = myMoveMap.get(fullNodeId);
+              if (fullNodeId.getModelUID().equals(staticReference.getTargetModelUID())) {
+                staticReference.setTargetModelUID(newFullNodeId.getModelUID());
+                staticReference.setTargetNodeId(newFullNodeId.getNodeId());
+              }
+            }
+          }
+        }
       }
     }
   }
