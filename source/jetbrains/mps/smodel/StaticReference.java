@@ -29,13 +29,17 @@ public class StaticReference extends SReferenceBase {
   }
 
   public SReference duplicate(SNode sourceNode, SModelUID targetModelUID) {
-    StaticReference duplicate = new StaticReference(getRole(), sourceNode, isMature());
-    if (isMature()) {
-      duplicate.setTargetModelUID(targetModelUID);
-      duplicate.myTargetNodeId = myTargetNodeId;
-    } else {
-      duplicate.myTargetNode = myTargetNode;
-    }
+    // allway makes 'mature' reference
+    StaticReference duplicate = new StaticReference(getRole(), sourceNode, true);
+//    if (isMature()) {
+//      duplicate.setTargetModelUID(targetModelUID);
+//      duplicate.myTargetNodeId = myTargetNodeId;
+//    } else {
+//      duplicate.myTargetNode = myTargetNode;
+//    }
+
+    duplicate.setTargetModelUID(targetModelUID);
+    duplicate.setTargetNodeId(getTargetNodeId());
     duplicate.setResolveInfo(getResolveInfo());
     return duplicate;
   }
