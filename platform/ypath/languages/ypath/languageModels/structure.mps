@@ -2269,7 +2269,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="fun" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1195420956439" resolveInfo="GenericFeatureInsertFun" />
+      <link role="target" targetNodeId="1196858018384" resolveInfo="GFInserterFun" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196429008113">
       <link role="intfc" targetNodeId="1196267419283" resolveInfo="IGenericFeatureInsertFun" />

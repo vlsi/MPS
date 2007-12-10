@@ -10,8 +10,8 @@ import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class MatchPropertyOperation extends MatchKindOperation {
   public static final String concept = "jetbrains.mps.ypath.structure.MatchPropertyOperation";
-  public static String MATCH_EXPRESSION = "matchExpression";
   public static String PROPERTY = "property";
+  public static String MATCH_EXPRESSION = "matchExpression";
 
   public  MatchPropertyOperation(SNode node) {
     super(node);
@@ -26,20 +26,20 @@ public class MatchPropertyOperation extends MatchKindOperation {
   }
 
 
-  public Expression getMatchExpression() {
-    return (Expression)this.getChild(MatchPropertyOperation.MATCH_EXPRESSION);
-  }
-
-  public void setMatchExpression(Expression node) {
-    super.setChild(MatchPropertyOperation.MATCH_EXPRESSION, node);
-  }
-
   public TreeNodeKindProperty getProperty() {
     return (TreeNodeKindProperty)this.getReferent(MatchPropertyOperation.PROPERTY);
   }
 
   public void setProperty(TreeNodeKindProperty node) {
     super.setReferent(MatchPropertyOperation.PROPERTY, node);
+  }
+
+  public Expression getMatchExpression() {
+    return (Expression)this.getChild(MatchPropertyOperation.MATCH_EXPRESSION);
+  }
+
+  public void setMatchExpression(Expression node) {
+    super.setChild(MatchPropertyOperation.MATCH_EXPRESSION, node);
   }
 
 }

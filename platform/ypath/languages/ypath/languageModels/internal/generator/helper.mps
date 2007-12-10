@@ -103,35 +103,50 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1197301260369">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1197301260370">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1197301260371">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1197301260378">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197301260379">
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197301260380">
-                      <link role="property" targetNodeId="7.1196713684869" resolveInfo="priority" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1197323334837">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LessThanExpression" id="1197323343487">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197323344708">
+                      <property name="value" value="100" />
                     </node>
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197301260381">
-                      <link role="variableDeclaration" targetNodeId="1197301260362" resolveInfo="wrp" />
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197323337958">
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197323341548">
+                        <link role="property" targetNodeId="7.1196713684869" resolveInfo="priority" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197323337335">
+                        <link role="variableDeclaration" targetNodeId="1197301260362" resolveInfo="wrp" />
+                      </node>
                     </node>
                   </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197301260382">
-                    <property name="value" value="0" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1197301260378">
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197301260379">
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197301260380">
+                        <link role="property" targetNodeId="7.1196713684869" resolveInfo="priority" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197301260381">
+                        <link role="variableDeclaration" targetNodeId="1197301260362" resolveInfo="wrp" />
+                      </node>
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197301260382">
+                      <property name="value" value="0" />
+                    </node>
                   </node>
                 </node>
               </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LessThanExpression" id="1197301260383">
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197301260384">
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197301260385">
-                    <link role="property" targetNodeId="7.1196713684869" resolveInfo="priority" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197301260386">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.GreaterThanExpression" id="1197323313924">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197323313925">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197323313926">
                     <link role="variableDeclaration" targetNodeId="1197301260362" resolveInfo="wrp" />
                   </node>
-                </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1197301260387">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197301260388">
-                    <link role="variableDeclaration" targetNodeId="1197301260397" resolveInfo="priority" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197323313927">
+                    <link role="property" targetNodeId="7.1196713684869" resolveInfo="priority" />
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197301260389">
-                    <property name="value" value="0" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MulExpression" id="1197323321146">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1197323322525">
+                    <property name="value" value="10" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197323321104">
+                    <link role="variableDeclaration" targetNodeId="1197301260397" resolveInfo="priority" />
                   </node>
                 </node>
               </node>

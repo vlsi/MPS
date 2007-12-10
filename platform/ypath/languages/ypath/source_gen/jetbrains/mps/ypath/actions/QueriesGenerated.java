@@ -94,27 +94,27 @@ public class QueriesGenerated {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(sourceNode), new QuotationClass_().createNode(), false, false);
   }
 
-  public static void nodeFactory_NodeSetup_GFReplaceFunFragment_1196866340867(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if((SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-      SLinkOperations.setNewChild(newNode, "fragmentFun", "jetbrains.mps.ypath.structure.GFReplacerParamFun");
-    }
-  }
-
-  public static void nodeFactory_NodeSetup_GFRemoveFunFragment_1196866356272(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if((SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-      SLinkOperations.setNewChild(newNode, "fragmentFun", "jetbrains.mps.ypath.structure.GFRemoverParamFun");
-    }
-  }
-
-  public static void nodeFactory_NodeSetup_GFInsertFunFragment_1196866361203(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if((SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-      SLinkOperations.setNewChild(newNode, "fragmentFun", "jetbrains.mps.ypath.structure.GFInserterParamFun");
-    }
-  }
-
   public static void nodeFactory_NodeSetup_GenericParamFeature_1196870541068(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     SLinkOperations.setNewChild(newNode, "getter", "jetbrains.mps.ypath.structure.GFGetterParamFun");
     SLinkOperations.setNewChild(newNode, "cardinal", "jetbrains.mps.ypath.structure.GFCardinalParamFun");
+  }
+
+  public static void nodeFactory_NodeSetup_GFReplaceFunWrapper_1197319789956(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if((SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+      SLinkOperations.setNewChild(newNode, "fun", "jetbrains.mps.ypath.structure.GFReplacerParamFun");
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_GFRemoveFunWrapper_1197319781736(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if((SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+      SLinkOperations.setNewChild(newNode, "fun", "jetbrains.mps.ypath.structure.GFRemoverParamFun");
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_GFInsertFunWrapper_1197319762200(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if((SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+      SLinkOperations.setNewChild(newNode, "fun", "jetbrains.mps.ypath.structure.GFInserterParamFun");
+    }
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_TreePathOperation_1169037620751(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
@@ -376,14 +376,23 @@ public class QueriesGenerated {
             if(type == FragmentTypeEnum.replace_single || type == FragmentTypeEnum.replace_selection || type == FragmentTypeEnum.replace_all) {
               fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFReplaceFunFragment", null);
               SPropertyOperations.set(fragment, "fragmentType", type.getValue());
+              if((SNodeOperations.getAncestor(parentNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+                SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFReplacerParamFun");
+              }
             } else
             if(type == FragmentTypeEnum.remove_single || type == FragmentTypeEnum.remove_selection || type == FragmentTypeEnum.remove_all) {
               fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFRemoveFunFragment", null);
               SPropertyOperations.set(fragment, "fragmentType", type.getValue());
+              if((SNodeOperations.getAncestor(parentNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+                SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFRemoverParamFun");
+              }
             } else
             if(type == FragmentTypeEnum.insert_at_start || type == FragmentTypeEnum.insert_at_end || type == FragmentTypeEnum.insert_before || type == FragmentTypeEnum.insert_after) {
               fragment = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.GFInsertFunFragment", null);
               SPropertyOperations.set(fragment, "fragmentType", type.getValue());
+              if((SNodeOperations.getAncestor(parentNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+                SLinkOperations.setNewChild(fragment, "fragmentFun", "jetbrains.mps.ypath.structure.GFInserterParamFun");
+              }
             }
             return fragment;
           }
