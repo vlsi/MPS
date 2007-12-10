@@ -12,14 +12,14 @@ import java.util.List;
 
 public class TreePathCreator extends AbstractCreator implements TreePath {
   public static final String concept = "jetbrains.mps.ypath.structure.TreePathCreator";
-  public static String DEFAULT_FEATURE = "defaultFeature";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String TREE_PATH_TYPE = "treePathType";
   public static String PARENT_BLOCK = "parentBlock";
   public static String CHILDREN_BLOCK = "childrenBlock";
   public static String FEATURES = "features";
+  public static String DEFAULT_FEATURE = "defaultFeature";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  TreePathCreator(SNode node) {
     super(node);
@@ -33,38 +33,6 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
     return TreePathCreator.newInstance(sm, false);
   }
 
-
-  public IFeature getDefaultFeature() {
-    return (IFeature)this.getReferent(TreePathCreator.DEFAULT_FEATURE);
-  }
-
-  public void setDefaultFeature(IFeature node) {
-    super.setReferent(TreePathCreator.DEFAULT_FEATURE, node);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(TreePathCreator.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(TreePathCreator.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(TreePathCreator.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(TreePathCreator.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(TreePathCreator.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(TreePathCreator.VIRTUAL_PACKAGE, value);
-  }
 
   public TreePathType getTreePathType() {
     return (TreePathType)this.getChild(TreePathCreator.TREE_PATH_TYPE);
@@ -108,6 +76,38 @@ public class TreePathCreator extends AbstractCreator implements TreePath {
 
   public void insertFeatures(IFeature prev, IFeature node) {
     this.insertChild(prev, TreePathCreator.FEATURES, node);
+  }
+
+  public IFeature getDefaultFeature() {
+    return (IFeature)this.getReferent(TreePathCreator.DEFAULT_FEATURE);
+  }
+
+  public void setDefaultFeature(IFeature node) {
+    super.setReferent(TreePathCreator.DEFAULT_FEATURE, node);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(TreePathCreator.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(TreePathCreator.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(TreePathCreator.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(TreePathCreator.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(TreePathCreator.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(TreePathCreator.VIRTUAL_PACKAGE, value);
   }
 
 }

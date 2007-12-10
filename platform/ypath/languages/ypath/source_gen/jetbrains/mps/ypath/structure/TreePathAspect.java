@@ -15,17 +15,17 @@ import java.util.List;
 
 public class TreePathAspect extends BaseConcept implements INamedConcept, Visible, TreePath {
   public static final String concept = "jetbrains.mps.ypath.structure.TreePathAspect";
-  public static String DEFAULT_FEATURE = "defaultFeature";
-  public static String NAME = "name";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String VISIBILITY = "visibility";
   public static String TREE_PATH_TYPE = "treePathType";
   public static String PARENT_BLOCK = "parentBlock";
   public static String CHILDREN_BLOCK = "childrenBlock";
   public static String NODE_KINDS = "nodeKinds";
   public static String FEATURES = "features";
+  public static String DEFAULT_FEATURE = "defaultFeature";
+  public static String NAME = "name";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  TreePathAspect(SNode node) {
     super(node);
@@ -39,46 +39,6 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, Visibl
     return TreePathAspect.newInstance(sm, false);
   }
 
-
-  public IFeature getDefaultFeature() {
-    return (IFeature)this.getReferent(TreePathAspect.DEFAULT_FEATURE);
-  }
-
-  public void setDefaultFeature(IFeature node) {
-    super.setReferent(TreePathAspect.DEFAULT_FEATURE, node);
-  }
-
-  public String getName() {
-    return this.getProperty(TreePathAspect.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(TreePathAspect.NAME, value);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(TreePathAspect.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(TreePathAspect.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(TreePathAspect.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(TreePathAspect.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(TreePathAspect.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(TreePathAspect.VIRTUAL_PACKAGE, value);
-  }
 
   public Visibility getVisibility() {
     return (Visibility)this.getChild(TreePathAspect.VISIBILITY);
@@ -150,6 +110,46 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, Visibl
 
   public void insertFeatures(IFeature prev, IFeature node) {
     this.insertChild(prev, TreePathAspect.FEATURES, node);
+  }
+
+  public IFeature getDefaultFeature() {
+    return (IFeature)this.getReferent(TreePathAspect.DEFAULT_FEATURE);
+  }
+
+  public void setDefaultFeature(IFeature node) {
+    super.setReferent(TreePathAspect.DEFAULT_FEATURE, node);
+  }
+
+  public String getName() {
+    return this.getProperty(TreePathAspect.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(TreePathAspect.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(TreePathAspect.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(TreePathAspect.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(TreePathAspect.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(TreePathAspect.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(TreePathAspect.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(TreePathAspect.VIRTUAL_PACKAGE, value);
   }
 
 }
