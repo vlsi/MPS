@@ -6,7 +6,8 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <maxImportIndex value="10" />
+  <language namespace="jetbrains.mps.quotation" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.transformation.TLBase.constraints@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
@@ -16,6 +17,7 @@
   <import index="8" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="9" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
   <import index="10" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
+  <import index="11" modelUID="jetbrains.mps.transformation.TLBase.constraints" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178192141140">
     <property name="package" value="Rule" />
     <link role="concept" targetNodeId="1.1095416572297" />
@@ -224,8 +226,8 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1182453172951">
-          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1182453237036">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1182453249038">
+          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1197310839155">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197310839156">
               <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
             </node>
           </node>
@@ -367,10 +369,10 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1182460954010">
-          <node role="expression" type="jetbrains.mps.bootstrap.helgins.structure.Quotation" id="1182460959278">
-            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1182460973998">
-              <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.bootstrap.helgins.structure.ReferenceAntiquotation" id="1182460978062">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1182460983173">
+          <node role="expression" type="jetbrains.mps.quotation.structure.Quotation" id="1197310839157">
+            <node role="quotedNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197310839158">
+              <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.quotation.structure.ReferenceAntiquotation" id="1197310839161">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197310839162">
                   <link role="variableDeclaration" targetNodeId="1182460876765" resolveInfo="targetConcept" />
                 </node>
               </node>
