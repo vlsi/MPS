@@ -944,12 +944,13 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
     }
   }
 
-  private class ProjectScope extends BaseScope {
-    protected ModelOwner getModelOwner() {
+  //TODO: make private (was made visible for usages view to save view scope by Mihail Muhin)
+  public class ProjectScope extends BaseScope {
+    public ModelOwner getModelOwner() {
       return MPSProject.this;
     }
 
-    protected Set<IModule> doGetVisibleModules() {
+    public Set<IModule> doGetVisibleModules() {
       return getAllVisibleModules();
     }
   }

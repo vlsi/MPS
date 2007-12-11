@@ -4,6 +4,8 @@ import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.components.IExternalizableComponent;
+import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.IOperationContext;
 import org.jdom.Element;
 
 public abstract class BaseFinder implements IExternalizableComponent {
@@ -19,5 +21,5 @@ public abstract class BaseFinder implements IExternalizableComponent {
 
   }
 
-  public abstract SearchResults find(SearchQuery query);
+  public abstract SearchResults find(SearchQuery query, IOperationContext context);
 }

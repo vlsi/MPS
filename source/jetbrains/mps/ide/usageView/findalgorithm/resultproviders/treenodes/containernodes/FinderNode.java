@@ -6,6 +6,7 @@ import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.IOperationContext;
 import org.jdom.Element;
 
 public class FinderNode extends BaseLeaf {
@@ -24,8 +25,8 @@ public class FinderNode extends BaseLeaf {
     myFinder = finder;
   }
 
-  public SearchResults getResults(SearchQuery query) {
-    return myFinder.find(query);
+  public SearchResults getResults(SearchQuery query, IOperationContext context) {
+    return myFinder.find(query, context);
   }
 
   public void write(Element element, MPSProject project) {

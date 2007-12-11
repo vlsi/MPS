@@ -5,6 +5,7 @@ import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import org.jdom.Element;
 
 import java.util.Collection;
@@ -20,7 +21,7 @@ public class NodesFinder extends BaseFinder {
     }
   }
 
-  public SearchResults find(SearchQuery query) {
+  public SearchResults find(SearchQuery query, IOperationContext context) {
     return myResults;
   }
 

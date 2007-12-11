@@ -8,29 +8,31 @@ import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treebuilders.TreeBuilder;
 import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basenodes.BaseNode;
 import jetbrains.mps.ide.usageView.model.IResultProvider;
 import jetbrains.mps.ide.usageView.model.result.SearchResult;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.usageView.view.icons.Icons;
 import jetbrains.mps.ide.usageView.view.usagesTree.UsagesTree;
 import jetbrains.mps.ide.usageView.view.usagesTree.path.IPathProvider;
 import jetbrains.mps.ide.usageView.view.usagesTree.path.concretepathproviders.*;
-import jetbrains.mps.ide.usageView.view.icons.Icons;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IOperationContext;
 import org.jdom.Element;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.tree.TreeNode;
-import java.util.*;
-import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.util.*;
 
 public abstract class UsageView implements IExternalizableComponent {
   private static Logger LOG = Logger.getLogger(UsageView.class);
@@ -58,6 +60,7 @@ public abstract class UsageView implements IExternalizableComponent {
 
   //model components
   private SearchQuery mySearchQuery = new SearchQuery(null, null);
+  private IOperationContext myContext = null;
   private IResultProvider myResultProvider = null;
 
   public UsageView(IDEProjectFrame projectFrame) {
@@ -159,7 +162,7 @@ public abstract class UsageView implements IExternalizableComponent {
     }
 
     Set<SModel> models = new HashSet<SModel>();
-    collectModels(myResultProvider.getResults(mySearchQuery).getSearchResults(), models);
+    collectModels(myResultProvider.getResults(mySearchQuery, myContext).getSearchResults(), models);
 
     GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
 
@@ -198,11 +201,12 @@ public abstract class UsageView implements IExternalizableComponent {
     myTree.expandAll(myTree.getRootNode());
   }
 
-  public void run(SearchQuery query) {
+  public void run(SearchQuery query, IOperationContext context) {
     mySearchQuery = query;
+    myContext = context;
     Thread t = new Thread() {
       public void run() {
-        myTree.setContents(myResultProvider.getResults(mySearchQuery));
+        myTree.setContents(myResultProvider.getResults(mySearchQuery, myContext));
       }
     };
     t.start();
@@ -210,9 +214,9 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public void rerun() {
-    if ((mySearchQuery.getContext() == null) && (mySearchQuery.getNode() == null)) return;
+    if ((mySearchQuery.getScope() == null) && (mySearchQuery.getNode() == null)) return;
     TreeBuilder.invalidateAll((BaseNode) myResultProvider);
-    run(mySearchQuery);
+    run(mySearchQuery, myContext);
   }
 
   public void setResultProvider(IResultProvider resultProvider) {
@@ -235,14 +239,13 @@ public abstract class UsageView implements IExternalizableComponent {
 
     Element searchQueryXML = element.getChild(SEARCH_QUERY);
     mySearchQuery.read(searchQueryXML, project);
-
     Element toggleToolbarXML = element.getChild(TOOLBAR);
     myOptionsToolbar.read(toggleToolbarXML, project);
 
     Element treeXML = element.getChild(TREE);
     myTree.read(treeXML, project);
 
-    myTree.setAll(myResultProvider.getResults(mySearchQuery), myPathProvider);
+    myTree.setAll(myResultProvider.getResults(mySearchQuery, myContext), myPathProvider);
 
     updateUI();
   }

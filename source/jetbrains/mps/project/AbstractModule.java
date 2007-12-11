@@ -46,7 +46,7 @@ public abstract class AbstractModule implements IModule {
   //
 
   public void convert() {
-    
+
   }
 
   @NotNull
@@ -178,8 +178,8 @@ public abstract class AbstractModule implements IModule {
   }
 
   /**
-   *g @return all modules which this explicitly and immediately depends on,
-   *         i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
+   * g @return all modules which this explicitly and immediately depends on,
+   * i.e. without bootstrap languages, if such a dependency is not explicitly set in module roots
    */
   @NotNull
   public List<IModule> getExplicitlyDependOnModules() {
@@ -323,7 +323,7 @@ public abstract class AbstractModule implements IModule {
     return result;
   }
 
-  protected void collectPackages(List<String> result, String current) {    
+  protected void collectPackages(List<String> result, String current) {
     if (!"".equals(current)) {
       result.add(current);
     }
@@ -420,7 +420,7 @@ public abstract class AbstractModule implements IModule {
 
   private void loadNewStubs() {
     loadJavaStubModelRoots();
-    
+
     ClassPathModelRootManager manager = new ClassPathModelRootManager() {
       protected IClassPathItem getClassPathItem() {
         return myJavaStubsClassPathItem;
@@ -506,7 +506,7 @@ public abstract class AbstractModule implements IModule {
     if (getDescriptorFile() != null) {
       result.append("MPS-Module-File:").append(getDescriptorFile().getName()).append("\n");
     }
-    
+
     return result.toString();
   }
 
@@ -585,7 +585,7 @@ public abstract class AbstractModule implements IModule {
       result.append("\n");
     }
     return result.toString();
-  }    
+  }
 
   protected List<String> getExportedPackages() {
     List<String> result = new ArrayList<String>();
@@ -659,12 +659,13 @@ public abstract class AbstractModule implements IModule {
     myScope.invalidateCaches();
   }
 
-  private class MyScope extends BaseScope {
-    protected ModelOwner getModelOwner() {
+  //TODO: make private (was made visible for usages view to save view scope by Mihail Muhin)
+  public class MyScope extends BaseScope {
+    public ModelOwner getModelOwner() {
       return AbstractModule.this;
     }
 
-    protected Set<IModule> doGetVisibleModules() {
+    public Set<IModule> doGetVisibleModules() {
       Set<IModule> result = AbstractModule.this.getVisibleModules();
       result.add(AbstractModule.this);
       return result;
@@ -673,5 +674,5 @@ public abstract class AbstractModule implements IModule {
     public String toString() {
       return "Scope of module " + AbstractModule.this;
     }
-  }    
+  }
 }

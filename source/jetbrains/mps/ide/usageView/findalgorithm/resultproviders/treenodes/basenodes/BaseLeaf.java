@@ -4,6 +4,7 @@ import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.usageView.model.IResultProvider;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.IOperationContext;
 import org.jdom.Element;
 
 public abstract class BaseLeaf implements IResultProvider {
@@ -13,7 +14,7 @@ public abstract class BaseLeaf implements IResultProvider {
 
   }
 
-  public abstract SearchResults getResults(SearchQuery query);
+  public abstract SearchResults getResults(SearchQuery query, IOperationContext context);
 
   public void setParent(BaseNode parent) {
     myParent = parent;

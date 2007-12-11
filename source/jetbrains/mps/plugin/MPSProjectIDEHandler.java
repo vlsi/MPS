@@ -90,7 +90,8 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
               jetbrains.mps.ide.usageView.view.UsageView usageView = usagesView.createUsageView();
 
               usageView.setResultProvider(TreeBuilder.forFinder(new AspectMethodsFinder(descriptor.getSModel(), name)));
-              usageView.run(new SearchQuery(null, null));
+              LOG.error("Not implemented");
+              //usageView.run(new SearchQuery(null, null),);
 
               usagesView.showTool();
             } else {
