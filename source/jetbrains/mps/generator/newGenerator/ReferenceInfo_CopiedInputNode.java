@@ -68,7 +68,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     // todo: some reference-resolvers can be executed on the 'executeIndependentResolve' step
     IReferenceResolver referenceResolver = loadReferenceResolver(getOutputSourceNode());
     if (referenceResolver != null) {
-      SNode outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), myReferenceRole, myInputSourceNode, myInputTargetNode);
+      SNode outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), myReferenceRole, myInputTargetNode);
       return outputTargetNode;
     }
     return null;
