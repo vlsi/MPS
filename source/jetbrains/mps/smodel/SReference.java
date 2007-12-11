@@ -3,7 +3,6 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
@@ -51,8 +50,6 @@ public abstract class SReference {
 
   public abstract boolean isExternal();
 
-  public abstract SReference duplicate(SNode sourceNode, SModelUID targetModelUID);
-
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.isRegistered() && targetNode.isRegistered()) {
       // 'mature' reference
@@ -66,10 +63,7 @@ public abstract class SReference {
   }
 
   public static SReference create(String role, SNode sourceNode, SModelUID targetModelUID, SNodeId targetNodeId, String resolveInfo) {
-    if (targetModelUID != null && targetNodeId != null) {
-      return new StaticReference(role, sourceNode, targetModelUID, targetNodeId, resolveInfo);
-    }
-    return new UnresolvedStaticReference(role, sourceNode, resolveInfo);
+    return new StaticReference(role, sourceNode, targetModelUID, targetNodeId, resolveInfo);
   }
 
 

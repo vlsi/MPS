@@ -38,12 +38,17 @@ public class CloneUtil {
       if (targetModelUID == null) {
         LOG.warning("broken reference '" + reference.getRole() + "' in " + node.getDebugText(), node);
       } else {
-//        result.addReference(SReference.create(reference.getRole(),
-//                result,
-//                targetModelUID,
-//                reference.getTargetNodeId(),
-//                reference.getResolveInfo()));
-        result.addReference(reference.duplicate(result, targetModelUID));
+        if (reference instanceof StaticReference) {
+          StaticReference reference1 = new StaticReference(reference.getRole(),
+                  result,
+                  targetModelUID,
+                  ((StaticReference) reference).getTargetNodeId(),
+                  reference.getResolveInfo());
+          result.addReference(reference1);
+        } else {
+          LOG.error("internal error: can't clone non-static reference '" + reference.getRole() + "' in " + node.getDebugText(), node);
+          LOG.error(" -- was refernce class : " + reference.getClass().getName());
+        }
       }
     }
 

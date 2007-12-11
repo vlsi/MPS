@@ -27,17 +27,6 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
     super(role, sourceNode, null, mature);
   }
 
-  public SReference duplicate(SNode sourceNode, SModelUID targetModelUID) {
-    DynamicReference duplicate = new DynamicReference(getRole(), sourceNode, isMature());
-    if (isMature()) {
-      duplicate.setTargetModelUID(targetModelUID);
-    } else {
-      duplicate.myTargetNode = myTargetNode;
-    }
-    duplicate.setResolveInfo(getResolveInfo());
-    return duplicate;
-  }
-
   public SModelUID getTargetModelUID() {
     if (mature()) {
       return super.getTargetModelUID();

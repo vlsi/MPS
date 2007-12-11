@@ -2,6 +2,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Igor Alshannikov
@@ -17,31 +18,11 @@ public class StaticReference extends SReferenceBase {
     myTargetNode = targetNode;
   }
 
-  /*package*/ StaticReference(String role, SNode sourceNode, SModelUID targetModelUID, SNodeId nodeId, String resolveInfo) {
+  public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @Nullable SModelUID targetModelUID, @Nullable SNodeId nodeId, @Nullable String resolveInfo) {
     // 'mature' reference
     super(role, sourceNode, targetModelUID, true);
     setResolveInfo(resolveInfo);
     myTargetNodeId = nodeId;
-  }
-
-  private StaticReference(String role, SNode sourceNode, boolean mature) {
-    super(role, sourceNode, null, mature);
-  }
-
-  public SReference duplicate(SNode sourceNode, SModelUID targetModelUID) {
-    // allway makes 'mature' reference
-    StaticReference duplicate = new StaticReference(getRole(), sourceNode, true);
-//    if (isMature()) {
-//      duplicate.setTargetModelUID(targetModelUID);
-//      duplicate.myTargetNodeId = myTargetNodeId;
-//    } else {
-//      duplicate.myTargetNode = myTargetNode;
-//    }
-
-    duplicate.setTargetModelUID(targetModelUID);
-    duplicate.setTargetNodeId(getTargetNodeId());
-    duplicate.setResolveInfo(getResolveInfo());
-    return duplicate;
   }
 
   public SModelUID getTargetModelUID() {
