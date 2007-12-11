@@ -29,12 +29,14 @@
           <property name="name" value="name" />
           <link role="type" targetNodeId="1.1197382692601" />
         </node>
-        <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1197301174036">
-          <property name="text" value="extends" />
-        </node>
-        <node role="linePart" type="jetbrains.mpslite.structure.ReferenceDeclarationPart" id="1197301177679">
-          <property name="name" value="superClass" />
-          <link role="type" targetNodeId="1182956307043" resolveInfo="ClassConcept" />
+        <node role="linePart" type="jetbrains.mpslite.structure.OptionalPart" id="1197391745943">
+          <node role="part" type="jetbrains.mpslite.structure.ConstantLinePart" id="1197391771134">
+            <property name="text" value="extends" />
+          </node>
+          <node role="part" type="jetbrains.mpslite.structure.ChildDeclarationPart" id="1197391748054">
+            <property name="name" value="extends" />
+            <link role="type" targetNodeId="1197391708272" resolveInfo="ClassReference" />
+          </node>
         </node>
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1182956324987">
           <property name="text" value="{" />
@@ -60,6 +62,24 @@
       <node role="behavior" type="jetbrains.mpslite.structure.Behavior" id="1197371431362">
         <node role="constructor" type="jetbrains.mpslite.structure.ConstructorBlock" id="1197371431363">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197371431364" />
+        </node>
+      </node>
+    </node>
+    <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1197391708272">
+      <property name="name" value="ClassReference" />
+      <property name="role" value="true" />
+      <node role="line" type="jetbrains.mpslite.structure.Line" id="1197391714518">
+        <node role="linePart" type="jetbrains.mpslite.structure.ReferenceDeclarationPart" id="1197391717894">
+          <property name="name" value="classifier" />
+          <link role="type" targetNodeId="1182956307043" resolveInfo="ClassConcept" />
+        </node>
+      </node>
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197391708273">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197391708274" />
+      </node>
+      <node role="behavior" type="jetbrains.mpslite.structure.Behavior" id="1197391708275">
+        <node role="constructor" type="jetbrains.mpslite.structure.ConstructorBlock" id="1197391708276">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197391708277" />
         </node>
       </node>
     </node>
@@ -1135,12 +1155,17 @@
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197301148492">
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1197301149072">
-                          <node role="rValue" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197301158471">
-                            <node role="operation" type="jetbrains.mpslite.structure.ReferenceAccessOperation" id="1197301201913">
-                              <link role="referenceDeclaration" targetNodeId="1197301177679" resolveInfo="superClass" />
+                          <node role="rValue" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197391839163">
+                            <node role="operation" type="jetbrains.mpslite.structure.ReferenceAccessOperation" id="1197391840197">
+                              <link role="referenceDeclaration" targetNodeId="1197391717894" resolveInfo="classifier" />
                             </node>
-                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197301151091">
-                              <link role="variableDeclaration" targetNodeId="1197301119138" resolveInfo="cls" />
+                            <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197301158471">
+                              <node role="operation" type="jetbrains.mpslite.structure.ChildAccessOperation" id="1197391836881">
+                                <link role="childDeclaration" targetNodeId="1197391748054" resolveInfo="extends" />
+                              </node>
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197301151091">
+                                <link role="variableDeclaration" targetNodeId="1197301119138" resolveInfo="cls" />
+                              </node>
                             </node>
                           </node>
                           <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197301148493">
