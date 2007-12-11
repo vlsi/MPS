@@ -6,6 +6,9 @@
   <helginsTypeSystem>
     <model modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.helgins"/>
   </helginsTypeSystem>
+  <constraints>
+    <model modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.constraints"/>
+  </constraints>
   <editor>
     <model modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.editor"/>
   </editor>

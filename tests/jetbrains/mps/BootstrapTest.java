@@ -81,6 +81,10 @@ public class BootstrapTest extends BaseMPSTest {
     assertTrue(res, res == null);
   }
 
+  public void testFindUsagesLanguage() {
+    //String res = testProject(new File("languages/bootstrap/findUsagesLanguage/findUsagesLanguage.mpr"));
+    //assertTrue(res, res == null);
+  }
 
   public void testXML() {
     String res = testProject(new File("languages/xml/xml.mpr"));
