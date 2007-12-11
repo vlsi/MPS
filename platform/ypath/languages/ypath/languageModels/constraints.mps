@@ -10,7 +10,7 @@
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.ypath" />
   <language namespace="jetbrains.mps.quotation" />
-  <maxImportIndex value="20" />
+  <maxImportIndex value="21" />
   <import index="1" modelUID="jetbrains.mps.ypath.structure" version="12" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="java.lang@java_stub" version="-1" />
@@ -30,6 +30,7 @@
   <import index="18" modelUID="jetbrains.mps.ypath.plugin@java_stub" version="-1" />
   <import index="19" modelUID="jetbrains.mps.logging@java_stub" version="-1" />
   <import index="20" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
+  <import index="21" modelUID="jetbrains.mps.generator.newGenerator@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178187486791">
     <link role="concept" targetNodeId="1.1168428529658" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1184345381945">
@@ -3978,13 +3979,40 @@
       <property name="name" value="getterExpression" />
       <link role="overridenMethod" targetNodeId="1191865774161" resolveInfo="getterExpression" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1191868340721">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197403196649">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197403196650">
+            <property name="name" value="sexp" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197403196651">
+              <link role="concept" targetNodeId="6.1068431790191" resolveInfo="Expression" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197403200677">
+              <link role="classConcept" targetNodeId="21.~CloneUtil" resolveInfo="CloneUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="21.~CloneUtil.cloneNotPreservingId(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="cloneNotPreservingId" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403204139">
+                <link role="variableDeclaration" targetNodeId="1191868345486" resolveInfo="srcExpr" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197403200679">
+                <link role="baseMethodDeclaration" targetNodeId="20.~ITemplateGenerator.getTargetModel():jetbrains.mps.smodel.SModel" resolveInfo="getTargetModel" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403200680">
+                  <link role="variableDeclaration" targetNodeId="1196767687544" resolveInfo="generator" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197403200681">
+                <link role="baseMethodDeclaration" targetNodeId="20.~ITemplateGenerator.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403200682">
+                  <link role="variableDeclaration" targetNodeId="1196767687544" resolveInfo="generator" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1192792266676">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1192792276191">
             <link role="baseMethodDeclaration" targetNodeId="1192792093233" resolveInfo="getterExpression" />
             <link role="classConcept" targetNodeId="1184790036011" resolveInfo="FeatureTargetTypeUtil" />
             <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1192806263012" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1192792278389">
-              <link role="variableDeclaration" targetNodeId="1191868345486" resolveInfo="srcExpr" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197403196652">
+              <link role="variableDeclaration" targetNodeId="1197403196650" resolveInfo="sexp" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1195433182584">
               <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195433189897">
@@ -4047,13 +4075,67 @@
       <property name="name" value="replaceStatement" />
       <link role="overridenMethod" targetNodeId="1194808495467" resolveInfo="replaceExpression" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194808638284">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197402954436">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197402954437">
+            <property name="name" value="sexp" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197402954438">
+              <link role="concept" targetNodeId="6.1068431790191" resolveInfo="Expression" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197403009106">
+              <link role="baseMethodDeclaration" targetNodeId="21.~CloneUtil.cloneNotPreservingId(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="cloneNotPreservingId" />
+              <link role="classConcept" targetNodeId="21.~CloneUtil" resolveInfo="CloneUtil" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403022915">
+                <link role="variableDeclaration" targetNodeId="1194808647097" resolveInfo="srcExp" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197403032522">
+                <link role="baseMethodDeclaration" targetNodeId="20.~ITemplateGenerator.getTargetModel():jetbrains.mps.smodel.SModel" resolveInfo="getTargetModel" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403025477">
+                  <link role="variableDeclaration" targetNodeId="1196767785571" resolveInfo="generator" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197403040414">
+                <link role="baseMethodDeclaration" targetNodeId="20.~ITemplateGenerator.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403036094">
+                  <link role="variableDeclaration" targetNodeId="1196767785571" resolveInfo="generator" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197403112172">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197403112173">
+            <property name="name" value="rexp" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197403112174">
+              <link role="concept" targetNodeId="6.1068431790191" resolveInfo="Expression" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197403123488">
+              <link role="classConcept" targetNodeId="21.~CloneUtil" resolveInfo="CloneUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="21.~CloneUtil.cloneNotPreservingId(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="cloneNotPreservingId" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403126067">
+                <link role="variableDeclaration" targetNodeId="1194808647104" resolveInfo="replaceExp" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197403123490">
+                <link role="baseMethodDeclaration" targetNodeId="20.~ITemplateGenerator.getTargetModel():jetbrains.mps.smodel.SModel" resolveInfo="getTargetModel" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403123491">
+                  <link role="variableDeclaration" targetNodeId="1196767785571" resolveInfo="generator" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197403123492">
+                <link role="baseMethodDeclaration" targetNodeId="20.~ITemplateGenerator.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403123493">
+                  <link role="variableDeclaration" targetNodeId="1196767785571" resolveInfo="generator" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1194810683795">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1194810690533">
             <link role="baseMethodDeclaration" targetNodeId="1194809617722" resolveInfo="replaceExpression" />
             <link role="classConcept" targetNodeId="1184790036011" resolveInfo="FeatureTargetTypeUtil" />
             <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1194810714931" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194810693233">
-              <link role="variableDeclaration" targetNodeId="1194808647097" resolveInfo="srcExp" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197402954440">
+              <link role="variableDeclaration" targetNodeId="1197402954437" resolveInfo="sexp" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1195433297689">
               <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195433297690">
@@ -4087,8 +4169,8 @@
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194810697196">
               <link role="variableDeclaration" targetNodeId="1194808647101" resolveInfo="range" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1194810700304">
-              <link role="variableDeclaration" targetNodeId="1194808647104" resolveInfo="replaceExp" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197403112175">
+              <link role="variableDeclaration" targetNodeId="1197403112173" resolveInfo="rexp" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1196767831409">
               <link role="variableDeclaration" targetNodeId="1196767785571" resolveInfo="generator" />
@@ -4134,13 +4216,40 @@
       <property name="name" value="removeStatement" />
       <link role="overridenMethod" targetNodeId="1195432050864" resolveInfo="removeExpression" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195432387692">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197403136682">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197403136683">
+            <property name="name" value="sexp" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197403136684">
+              <link role="concept" targetNodeId="6.1068431790191" resolveInfo="Expression" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197403140885">
+              <link role="classConcept" targetNodeId="21.~CloneUtil" resolveInfo="CloneUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="21.~CloneUtil.cloneNotPreservingId(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="cloneNotPreservingId" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403140886">
+                <link role="variableDeclaration" targetNodeId="1195432391881" resolveInfo="srcExp" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197403140887">
+                <link role="baseMethodDeclaration" targetNodeId="20.~ITemplateGenerator.getTargetModel():jetbrains.mps.smodel.SModel" resolveInfo="getTargetModel" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403140888">
+                  <link role="variableDeclaration" targetNodeId="1196767894328" resolveInfo="generator" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197403140889">
+                <link role="baseMethodDeclaration" targetNodeId="20.~ITemplateGenerator.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403140890">
+                  <link role="variableDeclaration" targetNodeId="1196767894328" resolveInfo="generator" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195432485909">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1195432491836">
             <link role="baseMethodDeclaration" targetNodeId="1195432417513" resolveInfo="removeExpression" />
             <link role="classConcept" targetNodeId="1184790036011" resolveInfo="FeatureTargetTypeUtil" />
             <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1195432536106" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1195432494455">
-              <link role="variableDeclaration" targetNodeId="1195432391881" resolveInfo="srcExp" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197403136685">
+              <link role="variableDeclaration" targetNodeId="1197403136683" resolveInfo="sexp" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1195433331333">
               <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195433331334">
@@ -4212,13 +4321,67 @@
       <property name="name" value="insertStatement" />
       <link role="overridenMethod" targetNodeId="1195432326179" resolveInfo="insertExpression" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1195432394154">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197403153756">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197403153757">
+            <property name="name" value="sexp" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197403153758">
+              <link role="concept" targetNodeId="6.1068431790191" resolveInfo="Expression" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197403158429">
+              <link role="classConcept" targetNodeId="21.~CloneUtil" resolveInfo="CloneUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="21.~CloneUtil.cloneNotPreservingId(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="cloneNotPreservingId" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403158430">
+                <link role="variableDeclaration" targetNodeId="1195432398817" resolveInfo="srcExp" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197403158431">
+                <link role="baseMethodDeclaration" targetNodeId="20.~ITemplateGenerator.getTargetModel():jetbrains.mps.smodel.SModel" resolveInfo="getTargetModel" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403158432">
+                  <link role="variableDeclaration" targetNodeId="1196767966446" resolveInfo="generator" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197403158433">
+                <link role="baseMethodDeclaration" targetNodeId="20.~ITemplateGenerator.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403158434">
+                  <link role="variableDeclaration" targetNodeId="1196767966446" resolveInfo="generator" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197403170293">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197403170295">
+            <property name="name" value="iexp" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197403170296">
+              <link role="concept" targetNodeId="6.1068431790191" resolveInfo="Expression" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197403175227">
+              <link role="classConcept" targetNodeId="21.~CloneUtil" resolveInfo="CloneUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="21.~CloneUtil.cloneNotPreservingId(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SModel,jetbrains.mps.smodel.IScope):jetbrains.mps.smodel.SNode" resolveInfo="cloneNotPreservingId" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403178711">
+                <link role="variableDeclaration" targetNodeId="1195432398823" resolveInfo="insertExp" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197403175229">
+                <link role="baseMethodDeclaration" targetNodeId="20.~ITemplateGenerator.getTargetModel():jetbrains.mps.smodel.SModel" resolveInfo="getTargetModel" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403175230">
+                  <link role="variableDeclaration" targetNodeId="1196767966446" resolveInfo="generator" />
+                </node>
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197403175231">
+                <link role="baseMethodDeclaration" targetNodeId="20.~ITemplateGenerator.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197403175232">
+                  <link role="variableDeclaration" targetNodeId="1196767966446" resolveInfo="generator" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1195432541476">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1195432546252">
             <link role="baseMethodDeclaration" targetNodeId="1195432453417" resolveInfo="insertExpression" />
             <link role="classConcept" targetNodeId="1184790036011" resolveInfo="FeatureTargetTypeUtil" />
             <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1195432547482" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1195432551026">
-              <link role="variableDeclaration" targetNodeId="1195432398817" resolveInfo="srcExp" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197403153759">
+              <link role="variableDeclaration" targetNodeId="1197403153757" resolveInfo="sexp" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1195433354768">
               <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1195433354769">
@@ -4252,8 +4415,8 @@
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1195432568331">
               <link role="variableDeclaration" targetNodeId="1195432398821" resolveInfo="range" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1195432554969">
-              <link role="variableDeclaration" targetNodeId="1195432398823" resolveInfo="insertExp" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197403170297">
+              <link role="variableDeclaration" targetNodeId="1197403170295" resolveInfo="iexp" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1196768133511">
               <link role="variableDeclaration" targetNodeId="1196767966446" resolveInfo="generator" />
