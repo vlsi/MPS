@@ -10,7 +10,9 @@ public class UnionNode extends BaseNode {
   public SearchResults getResults(SearchQuery query, IOperationContext context) {
     SearchResults results = new SearchResults();
     for (BaseLeaf child : myChildren) {
-      results.getSearchResults().addAll(child.getResults(query, context).getSearchResults());
+      SearchResults childResults = child.getResults(query, context);
+      results.getSearchResults().addAll(childResults.getSearchResults());
+      results.getSearchedNodes().addAll(childResults.getSearchedNodes());
     }
     return results;
   }
