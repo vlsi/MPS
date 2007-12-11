@@ -14,12 +14,12 @@ import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basen
 import jetbrains.mps.ide.usageView.model.IResultProvider;
 import jetbrains.mps.ide.usageView.model.result.SearchResult;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.usageView.model.searchquery.ScopeNotFoundException;
 import jetbrains.mps.ide.usageView.view.icons.Icons;
 import jetbrains.mps.ide.usageView.view.usagesTree.UsagesTree;
 import jetbrains.mps.ide.usageView.view.usagesTree.path.IPathProvider;
 import jetbrains.mps.ide.usageView.view.usagesTree.path.concretepathproviders.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.SModel;
@@ -238,14 +238,20 @@ public abstract class UsageView implements IExternalizableComponent {
     }
 
     Element searchQueryXML = element.getChild(SEARCH_QUERY);
-    mySearchQuery.read(searchQueryXML, project);
-    Element toggleToolbarXML = element.getChild(TOOLBAR);
-    myOptionsToolbar.read(toggleToolbarXML, project);
+    try {
+      mySearchQuery.read(searchQueryXML, project);
 
-    Element treeXML = element.getChild(TREE);
-    myTree.read(treeXML, project);
+      Element toggleToolbarXML = element.getChild(TOOLBAR);
+      myOptionsToolbar.read(toggleToolbarXML, project);
 
-    myTree.setAll(myResultProvider.getResults(mySearchQuery, myContext), myPathProvider);
+      Element treeXML = element.getChild(TREE);
+      myTree.read(treeXML, project);
+
+      myTree.setAll(myResultProvider.getResults(mySearchQuery, myContext), myPathProvider);
+
+    } catch (ScopeNotFoundException e) {
+      myTree.setEmptyContents();
+    }
 
     updateUI();
   }

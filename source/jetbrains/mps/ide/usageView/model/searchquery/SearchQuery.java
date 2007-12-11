@@ -8,7 +8,6 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProject.ProjectScope;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
@@ -71,7 +70,7 @@ public class SearchQuery implements IExternalizableComponent {
         }
       }
       if (myScope == null) {
-        throw new RuntimeException("module deleted!");
+        throw new ScopeNotFoundException();
       }
     }
   }
