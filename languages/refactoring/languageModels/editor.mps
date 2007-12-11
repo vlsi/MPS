@@ -175,8 +175,12 @@
     <link role="conceptDeclaration" targetNodeId="1.1196955131180" resolveInfo="MoveNodeOperation" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196955337728">
       <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1197382344369">
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1196955342996">
-        <property name="text" value="moveNode(" />
+        <property name="text" value="(" />
+        <property name="layoutConstraint" value="punctuation" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1196955351529">
         <link role="relationDeclaration" targetNodeId="1.1196955147603" />
@@ -221,6 +225,18 @@
         <property name="text" value=")" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197374504728">
+        <property name="text" value=";" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197382614940">
+    <link role="conceptDeclaration" targetNodeId="1.1197382578687" resolveInfo="UpdateModelByDefaultOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197382618067">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197382629053">
+        <property name="text" value="updateModelByDefault" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197382637587">
         <property name="text" value=";" />
       </node>
     </node>

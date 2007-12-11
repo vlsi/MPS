@@ -5,7 +5,6 @@ import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.logging.refactoring.structure.RuntimeLog;
 import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.constraints.INodePropertyGetter;
