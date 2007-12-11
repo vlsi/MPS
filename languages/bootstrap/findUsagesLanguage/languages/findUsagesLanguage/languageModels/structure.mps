@@ -51,7 +51,7 @@
           id="1197044488843">
       <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665"
             resolveInfo="applicableConceptFunctionParameter"/>
-      <link role="target" targetNodeId="4.1194033889146" resolveInfo="ConceptFunctionParameter_editorContext"/>
+      <link role="target" targetNodeId="4.1161622753914" resolveInfo="ConceptFunctionParameter_operationContext"/>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197044488845">
