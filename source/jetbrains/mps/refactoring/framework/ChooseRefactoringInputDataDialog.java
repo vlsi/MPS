@@ -14,7 +14,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
 
   private JPanel myPanel = new JPanel(new BorderLayout());
   private JPanel myInnerPanel;
-  private Map<String, String> myResult;
+  private Map<String, Object> myResult;
   private List<IChooseComponent> myComponents;
   private ILoggableRefactoring myRefactoring;
   private ActionContext myActionContext;
@@ -42,7 +42,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     return myPanel;
   }
 
-  public Map<String, String> getResult() {
+  public Map<String, Object> getResult() {
     return myResult;
   }
 
@@ -54,7 +54,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   @Button(position = 0, name = "OK", defaultButton = true)
   public void onOk() {
     try {
-      myResult = new HashMap<String, String>();
+      myResult = new HashMap<String, Object>();
       for (IChooseComponent component : myComponents) {
         myResult.put(component.getPropertyName(), component.submit());
       }
