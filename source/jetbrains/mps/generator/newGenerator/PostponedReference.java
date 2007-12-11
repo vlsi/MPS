@@ -1,9 +1,7 @@
 package jetbrains.mps.generator.newGenerator;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.annotations.NotNull;
 
@@ -32,7 +30,7 @@ public class PostponedReference extends SReference {
   }
 
   public SModelUID getTargetModelUID() {
-    return myReferenceInfo.getOutputNode().getModel().getUID();
+    return myReferenceInfo.getOutputSourceNode().getModel().getUID();
   }
 
   public void setTargetModelUID(@NotNull SModelUID modelUID) {

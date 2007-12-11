@@ -39,7 +39,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     // try to resolve if referent node is parent of source node.
     // this solves situation when reference node inside 'template fragment' refers to 'context node' (ancestor outside 'template fragment')
     SNode templateParentNode = myTemplateSourceNode.getParent();
-    SNode outputParentNode = getOutputNode().getParent();
+    SNode outputParentNode = getOutputSourceNode().getParent();
     while (templateParentNode != null && outputParentNode != null) {
       if (templateParentNode.equals(myTemplateTargetNode)) {
         return outputParentNode;
@@ -56,7 +56,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     // try to resolve using custom referense resolver for source node concept
     IReferenceResolver referenceResolver = loadReferenceResolver(myTemplateSourceNode);
     if (referenceResolver != null) {
-      SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myTemplateReference.getRole(), myTemplateReference.getSourceNode(), myTemplateReference.getTargetNode());
+      SNode outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), myTemplateReference.getRole(), myTemplateReference.getSourceNode(), myTemplateReference.getTargetNode());
       if (outputTargetNode != null) {
         return outputTargetNode;
       }
@@ -67,7 +67,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     SNode leastCommonParent_template = myTemplateSourceNode.findLeastCommonParent(myTemplateTargetNode);
     if (leastCommonParent_template != null) {
       // find output node for the least common parent template node
-      SNode leastCommonParent_output = getOutputNode();
+      SNode leastCommonParent_output = getOutputSourceNode();
       while (leastCommonParent_output != null && generator.findTemplateNodeByOutputNode(leastCommonParent_output) != leastCommonParent_template) {
         leastCommonParent_output = leastCommonParent_output.getParent();
       }
@@ -100,7 +100,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   }
 
   public void showErrorMessage(ITemplateGenerator generator) {
-    generator.showErrorMessage(getOutputNode(), "couldn't resolve reference '" + myTemplateReference.getRole() + "' in output node " + getOutputNode().getDebugText());
+    generator.showErrorMessage(getOutputSourceNode(), "couldn't resolve reference '" + myTemplateReference.getRole() + "' in output node " + getOutputSourceNode().getDebugText());
     generator.showErrorMessage(myTemplateSourceNode, "-- original reference was " + myTemplateSourceNode.getDebugText());
     generator.showErrorMessage(getInputNode(), "-- input node was " + getInputNode().getDebugText());
   }

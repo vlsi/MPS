@@ -13,7 +13,6 @@ import java.util.List;
  */
 public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
-  //  private SReference myInputReference;
   private String myReferenceRole;
   private SNode myInputSourceNode;
   private SNode myInputTargetNode;
@@ -21,7 +20,6 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
   public ReferenceInfo_CopiedInputNode(SNode outputSourceNode, SReference inputReference) {
     super(outputSourceNode, inputReference.getRole(), inputReference.getSourceNode());
-//    myInputReference = inputReference;
     myReferenceRole = inputReference.getRole();
     myInputSourceNode = inputReference.getSourceNode();
     myInputTargetNode = inputReference.getTargetNode();
@@ -70,7 +68,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     // todo: some reference-resolvers can be executed on the 'executeIndependentResolve' step
     IReferenceResolver referenceResolver = loadReferenceResolver(myInputSourceNode);
     if (referenceResolver != null) {
-      SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myReferenceRole, myInputSourceNode, myInputTargetNode);
+      SNode outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), myReferenceRole, myInputSourceNode, myInputTargetNode);
       return outputTargetNode;
     }
     return null;
@@ -82,7 +80,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   }
 
   public void showErrorMessage(ITemplateGenerator generator) {
-    generator.showErrorMessage(getOutputNode(), "couldn't resolve reference '" + myReferenceRole + "' in output node " + getOutputNode().getDebugText());
+    generator.showErrorMessage(getOutputSourceNode(), "couldn't resolve reference '" + myReferenceRole + "' in output node " + getOutputSourceNode().getDebugText());
     generator.showErrorMessage(myInputSourceNode, "-- original reference was " + myInputSourceNode.getDebugText());
   }
 }

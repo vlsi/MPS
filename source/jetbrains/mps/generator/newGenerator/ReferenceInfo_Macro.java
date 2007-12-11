@@ -17,8 +17,8 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private SNode myTemplateReferenceNode;
   private ReferenceMacro myReferenceMacro;
 
-  public ReferenceInfo_Macro(ReferenceMacro refMacro, SNode inputNode, SNode templateReferenceNode, SNode outputNode) {
-    super(outputNode, refMacro.getLink().getRole(), inputNode);
+  public ReferenceInfo_Macro(ReferenceMacro refMacro, SNode inputNode, SNode templateReferenceNode, SNode outputSourceNode) {
+    super(outputSourceNode, refMacro.getLink().getRole(), inputNode);
     myTemplateReferenceNode = templateReferenceNode;
     myReferenceMacro = refMacro;
   }
@@ -30,7 +30,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
 
   public SNode executeDependentResolve(TemplateModelGenerator_New generator) {
     //todo it should be removed after going to new generator
-    generator.setCurrentBuilder(getOutputNode());
+    generator.setCurrentBuilder(getOutputSourceNode());
     SNode outputTargetNode = expandReferenceMacro(generator);
     generator.setCurrentBuilder(null);
     return outputTargetNode;
@@ -42,7 +42,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   }
 
   public boolean isRequired() {
-    return getOutputNode().isReferentRequired(getReferenceRole());
+    return getOutputSourceNode().isReferentRequired(getReferenceRole());
   }
 
   public SNode expandReferenceMacro(ITemplateGenerator generator) {
@@ -66,7 +66,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       Object[] args_new = new Object[]{
               getInputNode(),
               myTemplateReferenceNode,
-              getOutputNode(),
+              getOutputSourceNode(),
               generator.getSourceModel(),
               generator};
 
@@ -100,13 +100,13 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
 
 //todo <Sergey Dmitriev> There should be different diagnostic that reference target to the node that will be deleted
 /*
-    if (TemplateGenUtil.checkResolvedReference(mySourceNode, getOutputNode(), myTemplateReferenceNode, linkRole, myReferentNode, generator)) {
-      getOutputNode().setReferent(linkRole, referentNode);
+    if (TemplateGenUtil.checkResolvedReference(mySourceNode, getOutputSourceNode(), myTemplateReferenceNode, linkRole, myReferentNode, generator)) {
+      getOutputSourceNode().setReferent(linkRole, referentNode);
     }
 */
     // check referent because it's manual and thus error prone mapping
     if (referentNode.getModel() == generator.getSourceModel()) {
-      generator.showWarningMessage(getOutputNode(), "reference '" + linkRole + "' to input model in output node " + getOutputNode().getDebugText());
+      generator.showWarningMessage(getOutputSourceNode(), "reference '" + linkRole + "' to input model in output node " + getOutputSourceNode().getDebugText());
       generator.showInformationMessage(referentNode, " -- referent node: " + referentNode.getDebugText());
       generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node: " + myReferenceMacro.getNode().getDebugText());
       generator.getGeneratorSessionContext().addTransientModelToKeep(generator.getSourceModel());
@@ -116,7 +116,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   }
 
   public void showErrorMessage(ITemplateGenerator generator) {
-    generator.showErrorMessage(getOutputNode(), "couldn't resolve reference '" + getReferenceRole() + "' in output node " + getOutputNode().getDebugText());
+    generator.showErrorMessage(getOutputSourceNode(), "couldn't resolve reference '" + getReferenceRole() + "' in output node " + getOutputSourceNode().getDebugText());
     generator.showErrorMessage(myReferenceMacro.getParent().getNode(), "-- original reference was " + myReferenceMacro.getParent().getNode().getDebugText());
     generator.showErrorMessage(getInputNode(), "-- input node was " + getInputNode().getDebugText());
   }

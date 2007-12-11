@@ -130,7 +130,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       checkMonitorCanceled();
       invalidateReferencesInCopiedNode(copiedRoot);
     }
-    updateAllReferences();
+    revalidateAllReferences();
 
     checkMonitorCanceled();
     reportWasErrors(getErrorCount() - oldErrorCount);
@@ -190,17 +190,16 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     outputNode.addReference(postponedReference);
   }
 
-  private void updateAllReferences() {
-
+  private void revalidateAllReferences() {
     // replace all postponed references
     List<SNode> roots = getTargetModel().getRoots();
     for (SNode root : roots) {
       checkMonitorCanceled();
-      replacePostponedReferences(root);
+      revalidateAllReferences(root);
     }
   }
 
-  private void replacePostponedReferences(SNode node) {
+  private void revalidateAllReferences(SNode node) {
     List<SReference> references = node.getReferences();
     for (SReference reference : references) {
       checkMonitorCanceled();
@@ -212,7 +211,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     List<SNode> children = node.getChildren();
     for (SNode child : children) {
       checkMonitorCanceled();
-      replacePostponedReferences(child);
+      revalidateAllReferences(child);
     }
   }
 

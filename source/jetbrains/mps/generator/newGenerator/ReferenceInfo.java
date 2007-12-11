@@ -19,13 +19,13 @@ public abstract class ReferenceInfo {
   private String myReferenceRole;
   private SNode myInputNode;
 
-  protected ReferenceInfo(SNode outputNode, String referenceRole, SNode inputNode) {
-    myOutputNode = outputNode;
+  protected ReferenceInfo(SNode outputSourceNode, String referenceRole, SNode inputNode) {
+    myOutputNode = outputSourceNode;
     myReferenceRole = referenceRole;
     myInputNode = inputNode;
   }
 
-  public SNode getOutputNode() {
+  public SNode getOutputSourceNode() {
     return myOutputNode;
   }
 
