@@ -14,7 +14,7 @@ public class typeof_ParameterReference_InferenceRule implements InferenceRule_Ru
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197302689354", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "parameter", false), "jetbrains.mps.nanoj.helgins", "1197302689356", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197302689353");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197377786086", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "parameter", false), "jetbrains.mps.nanoj.helgins", "1197377786088", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197377786085");
   }
 
   public String getApplicableConceptFQName() {

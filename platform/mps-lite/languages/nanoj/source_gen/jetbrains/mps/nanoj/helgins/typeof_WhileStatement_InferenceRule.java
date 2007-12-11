@@ -15,7 +15,7 @@ public class typeof_WhileStatement_InferenceRule implements InferenceRule_Runtim
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true), "jetbrains.mps.nanoj.helgins", "1197302689102", true), SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.BooleanType", null), argument, null, "jetbrains.mps.nanoj.helgins", "1197302689101");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true), "jetbrains.mps.nanoj.helgins", "1197377785849", true), SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.BooleanType", null), argument, null, "jetbrains.mps.nanoj.helgins", "1197377785848");
   }
 
   public String getApplicableConceptFQName() {

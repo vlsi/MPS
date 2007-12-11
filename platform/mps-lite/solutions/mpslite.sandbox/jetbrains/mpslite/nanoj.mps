@@ -114,7 +114,23 @@
       </node>
       <node role="behavior" type="jetbrains.mpslite.structure.Behavior" id="1197371236940">
         <node role="constructor" type="jetbrains.mpslite.structure.ConstructorBlock" id="1197371236941">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197371236942" />
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197371236942">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197372607295">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1197372613429">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1197372615057">
+                  <node role="creator" type="jetbrains.mpslite.structure.NodeCreator" id="1197372616215">
+                    <link role="concept" targetNodeId="1182956613900" resolveInfo="VoidType" />
+                  </node>
+                </node>
+                <node role="lValue" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197372608766">
+                  <node role="operation" type="jetbrains.mpslite.structure.ChildAccessOperation" id="1197372610206">
+                    <link role="childDeclaration" targetNodeId="1182956481188" resolveInfo="type" />
+                  </node>
+                  <node role="expression" type="jetbrains.mpslite.structure.ThisNodeExpression" id="1197372607296" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
@@ -161,7 +177,7 @@
     <property name="name" value="Types" />
     <property name="showStructure" value="true" />
     <property name="showTypes" value="true" />
-    <property name="showBehavior" value="true" />
+    <property name="showBehavior" value="false" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956598488">
       <property name="name" value="Type" />
       <property name="role" value="true" />

@@ -14,7 +14,7 @@ public class typeof_LocalVariableReference_InferenceRule implements InferenceRul
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197302689344", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "variable", false), "jetbrains.mps.nanoj.helgins", "1197302689346", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197302689343");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197377786076", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "variable", false), "jetbrains.mps.nanoj.helgins", "1197377786078", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197377786075");
   }
 
   public String getApplicableConceptFQName() {
