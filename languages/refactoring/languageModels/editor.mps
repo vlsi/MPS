@@ -241,5 +241,35 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197386917368">
+    <link role="conceptDeclaration" targetNodeId="1.1197386846879" resolveInfo="ChangeFeatureNameOperation" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197386920073">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197386928544">
+        <property name="text" value="changeFeatureName(" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1197386967657">
+        <link role="relationDeclaration" targetNodeId="1.1197386861552" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197386970331">
+        <property name="text" value="-&gt;" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1197386980458">
+        <link role="relationDeclaration" targetNodeId="1.1197386874459" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197386984273">
+        <property name="text" value=":" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1197386988400">
+        <link role="relationDeclaration" targetNodeId="1.1197386900758" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197386993699">
+        <property name="text" value=")" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197386996716">
+        <property name="text" value=";" />
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -329,5 +329,31 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197386846879">
+    <property name="name" value="ChangeFeatureNameOperation" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197386861552">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="feature" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197386874459">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="newConceptFQName" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197386900758">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="newFeatureName" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197386937717">
+      <property name="value" value="changeFeatureName" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

@@ -191,4 +191,16 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "destination", true);
   }
 
+  public static SNode sourceNodeQuery_1197387263078(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "feature", true);
+  }
+
+  public static SNode sourceNodeQuery_1197387243573(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "newConceptFQName", true);
+  }
+
+  public static SNode sourceNodeQuery_1197387243581(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "newFeatureName", true);
+  }
+
 }
