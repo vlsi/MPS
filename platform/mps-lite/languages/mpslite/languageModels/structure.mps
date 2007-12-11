@@ -645,5 +645,20 @@
       <link role="target" targetNodeId="1197370801712" resolveInfo="ConstructorBlock" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197379421676">
+    <property name="package" value="Parts" />
+    <property name="name" value="OptionalPart" />
+    <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197379442834">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="part" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197379437724">
+      <property name="value" value="optional" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

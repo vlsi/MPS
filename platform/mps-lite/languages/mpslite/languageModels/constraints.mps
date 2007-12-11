@@ -1575,6 +1575,25 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197380680417">
+      <property name="name" value="isOptional" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1197380682435" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197380680419">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197380688702">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1197380701664">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197380702698" />
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197380690627">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1197380695475">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1197380697647">
+                  <link role="concept" targetNodeId="1.1197379421676" resolveInfo="OptionalPart" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197380690298" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197036577276">
       <property name="name" value="getCorrespondingLink" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197036578748">

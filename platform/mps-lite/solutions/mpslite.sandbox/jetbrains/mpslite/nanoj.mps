@@ -1561,12 +1561,14 @@
           <property name="name" value="name" />
           <link role="type" targetNodeId="1.1182511871037" />
         </node>
-        <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1183027564447">
-          <property name="text" value="=" />
-        </node>
-        <node role="linePart" type="jetbrains.mpslite.structure.ChildDeclarationPart" id="1183027566667">
-          <property name="name" value="initializer" />
-          <link role="type" targetNodeId="1182966285571" resolveInfo="Expression" />
+        <node role="linePart" type="jetbrains.mpslite.structure.OptionalPart" id="1197380538412">
+          <node role="part" type="jetbrains.mpslite.structure.ConstantLinePart" id="1197380553994">
+            <property name="text" value="=" />
+          </node>
+          <node role="part" type="jetbrains.mpslite.structure.ChildDeclarationPart" id="1197380538960">
+            <property name="name" value="initializer" />
+            <link role="type" targetNodeId="1182966285571" resolveInfo="Expression" />
+          </node>
         </node>
       </node>
       <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284601017">
@@ -1587,8 +1589,8 @@
             <node role="left" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197299260535">
               <node role="operation" type="jetbrains.mpslite.structure.TypeOperation" id="1197299261851" />
               <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197299081990">
-                <node role="operation" type="jetbrains.mpslite.structure.ChildAccessOperation" id="1197299083540">
-                  <link role="childDeclaration" targetNodeId="1183027566667" resolveInfo="initializer" />
+                <node role="operation" type="jetbrains.mpslite.structure.ChildAccessOperation" id="1197380542898">
+                  <link role="childDeclaration" targetNodeId="1197380538960" resolveInfo="initializer" />
                 </node>
                 <node role="expression" type="jetbrains.mpslite.structure.ThisNodeExpression" id="1197299077880" />
               </node>
@@ -1617,7 +1619,7 @@
             <property name="text" value="=" />
           </node>
           <node role="part" type="jetbrains.mpslite.structure.ChildReferencePart" id="1197380413797">
-            <link role="declaration" targetNodeId="1183027566667" resolveInfo="initializer" />
+            <link role="declaration" targetNodeId="1197380538960" resolveInfo="initializer" />
           </node>
         </node>
       </node>
