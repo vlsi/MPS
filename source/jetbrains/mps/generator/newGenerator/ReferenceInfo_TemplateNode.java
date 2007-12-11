@@ -56,7 +56,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     // try to resolve using custom referense resolver for source node concept
     IReferenceResolver referenceResolver = loadReferenceResolver(myTemplateSourceNode);
     if (referenceResolver != null) {
-      SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myTemplateReference);
+      SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myTemplateReference.getRole(), myTemplateReference.getSourceNode(), myTemplateReference.getTargetNode());
       if (outputTargetNode != null) {
         return outputTargetNode;
       }

@@ -18,12 +18,19 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   private SNode myInputTargetNode;
 
 
-  public ReferenceInfo_CopiedInputNode(SNode outputNode, SReference inputReference) {
-    super(outputNode, inputReference.getRole(), inputReference.getSourceNode());
+  public ReferenceInfo_CopiedInputNode(SNode outputSourceNode, SReference inputReference) {
+    super(outputSourceNode, inputReference.getRole(), inputReference.getSourceNode());
     myInputReference = inputReference;
     myInputSourceNode = inputReference.getSourceNode();
     myInputTargetNode = inputReference.getTargetNode();
   }
+
+//  public ReferenceInfo_CopiedInputNode(SNode outputSourceNode, String role, SNode inputSourceNode, SNode inputTargetNode) {
+//    super(outputSourceNode, role, inputSourceNode);
+////    myInputReference = inputReference;
+//    myInputSourceNode = inputSourceNode;
+//    myInputTargetNode = inputTargetNode;
+//  }
 
   public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
     // output target node might has been copied (reduced) from the input target node
@@ -61,7 +68,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     // todo: some reference-resolvers can be executed on the 'executeIndependentResolve' step
     IReferenceResolver referenceResolver = loadReferenceResolver(myInputSourceNode);
     if (referenceResolver != null) {
-      SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myInputReference);
+      SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myInputReference.getRole(), myInputReference.getSourceNode(), myInputReference.getTargetNode());
       return outputTargetNode;
     }
     return null;

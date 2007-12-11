@@ -121,9 +121,11 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     }
 
     checkMonitorCanceled();
+
+    // execute mapper in all $MAP_SRC$/$MAP_SRCL$
     myDelayedChanges.doAllChanges();
 
-    // There could new unresolved references appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
+    // new unresolved references could appear after applying reduction rules (all delayed changes should be done before this, like replacing children)
     for (SNode copiedRoot : copiedOutputRoots) {
       checkMonitorCanceled();
       invalidateReferencesInCopiedNode(copiedRoot);
@@ -167,7 +169,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   private void invalidateReferenceInCopiedNode(SReference reference) {
     if (reference.isExternal()) return;
-//    if (myOutputModel.getNodeById(reference.getTargetNodeId()) != null) return;
     SNode outputNode = reference.getSourceNode();
     SNode inputNode = findInputNodeById(outputNode.getSNodeId());
     if (inputNode == null) return;

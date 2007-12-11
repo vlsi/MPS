@@ -26,38 +26,38 @@ public class CloneUtil {
     return cloneInt(node, outputModel, scope, false);
   }
 
-  private static SNode cloneInt(SNode node, SModel outputModel, IScope scope, boolean keepOldId) {
-    SNode result = SModelUtil_new.instantiateConceptDeclaration(node.getConceptFqName(), outputModel, scope, false);
-    assert result != null;
+  private static SNode cloneInt(SNode inputNode, SModel outputModel, IScope scope, boolean keepOldId) {
+    SNode outputNode = SModelUtil_new.instantiateConceptDeclaration(inputNode.getConceptFqName(), outputModel, scope, false);
+    assert outputNode != null;
     if (keepOldId) {
-      result.setId(node.getSNodeId());
+      outputNode.setId(inputNode.getSNodeId());
     }
-    result.putProperties(node);
-    for (SReference reference : node.getReferences()) {
+    outputNode.putProperties(inputNode);
+    for (SReference reference : inputNode.getReferences()) {
       SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : outputModel.getUID();
       if (targetModelUID == null) {
-        LOG.warning("broken reference '" + reference.getRole() + "' in " + node.getDebugText(), node);
+        LOG.warning("broken reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
       } else {
         if (reference instanceof StaticReference) {
           StaticReference reference1 = new StaticReference(reference.getRole(),
-                  result,
+                  outputNode,
                   targetModelUID,
                   ((StaticReference) reference).getTargetNodeId(),
                   reference.getResolveInfo());
-          result.addReference(reference1);
+          outputNode.addReference(reference1);
         } else {
-          LOG.error("internal error: can't clone non-static reference '" + reference.getRole() + "' in " + node.getDebugText(), node);
+          LOG.error("internal error: can't clone non-static reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
           LOG.error(" -- was refernce class : " + reference.getClass().getName());
         }
       }
     }
 
-    for (SNode child : node.getChildren()) {
+    for (SNode child : inputNode.getChildren()) {
       String role = child.getRole_();
       assert role != null;
-      result.addChild(role, cloneInt(child, outputModel, scope, keepOldId));
+      outputNode.addChild(role, cloneInt(child, outputModel, scope, keepOldId));
     }
-    return result;
+    return outputNode;
   }
 
   public static void cloneModel(SModel inputModel, SModel outputModel, IScope scope) {
