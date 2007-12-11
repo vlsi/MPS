@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.baseLanguage.structure.Type;
 
 public class RequiredAdditionalArgument extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument";
@@ -31,11 +32,11 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
   }
 
 
-  public ArgumentType getArgumentType() {
-    return (ArgumentType)this.getChild(RequiredAdditionalArgument.ARGUMENT_TYPE);
+  public Type getArgumentType() {
+    return (Type)this.getChild(RequiredAdditionalArgument.ARGUMENT_TYPE);
   }
 
-  public void setArgumentType(ArgumentType node) {
+  public void setArgumentType(Type node) {
     super.setChild(RequiredAdditionalArgument.ARGUMENT_TYPE, node);
   }
 

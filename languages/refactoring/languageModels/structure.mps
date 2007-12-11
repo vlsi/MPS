@@ -173,49 +173,6 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1191242246174">
-    <property name="name" value="RuntimeLog" />
-    <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1191408707547">
-      <property name="role" value="updateModelClause" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1189694434958" resolveInfo="UpdateModelClause" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1191248266761">
-      <property name="name" value="modelVersion" />
-      <link role="dataType" targetNodeId="1.1082983657062" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1191242471544">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="argumentValue" />
-      <link role="target" targetNodeId="1191242504560" resolveInfo="RequiredAdditionalArgumentValue" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1191242504560">
-    <property name="name" value="RequiredAdditionalArgumentValue" />
-    <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1191242535007">
-      <property name="name" value="value" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1191242515202">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="argument" />
-      <link role="target" targetNodeId="1189693830529" resolveInfo="RequiredAdditionalArgument" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1191242766616">
-    <property name="name" value="RuntimeLogStack" />
-    <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1191242781477">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="log" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1191242246174" resolveInfo="RuntimeLog" />
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1191591349007">
     <property name="name" value="GetModelsToGenerateClause" />
     <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
@@ -275,31 +232,93 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196955131180">
-    <property name="name" value="MoveNodeOperation" />
-    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <property name="name" value="AbstractMoveOperation" />
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196955147603">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="nodeToMove" />
+      <property name="role" value="whatToMove" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196955577848">
-      <property name="value" value="moveNode" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197374205587">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="destination" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197374254362">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1196955204151">
-    <property name="name" value="MoveNodesOperation" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196955241168">
+    <property name="name" value="AbstractMoveNodesOperation" />
+    <link role="extends" targetNodeId="1196955131180" resolveInfo="AbstractMoveOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197374665396">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197374276302">
+    <property name="name" value="MoveNodeToModelOperation" />
+    <link role="extends" targetNodeId="1197374603970" resolveInfo="AbstractMoveNodeOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197374297694">
+      <property name="value" value="moveNode" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197374306853">
+      <property name="value" value="move node to model" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197374370000">
+    <property name="name" value="MoveNodeToNodeOperation" />
+    <link role="extends" targetNodeId="1197374603970" resolveInfo="AbstractMoveNodeOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197374439870">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="nodesToMove" />
+      <property name="role" value="roleInTarget" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1196955591427">
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197374415834">
+      <property name="value" value="moveNode" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197374419727">
+      <property name="value" value="move node to another node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197374603970">
+    <property name="name" value="AbstractMoveNodeOperation" />
+    <link role="extends" targetNodeId="1196955131180" resolveInfo="AbstractMoveOperation" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197375042796">
+    <property name="name" value="MoveNodesToModelOperation" />
+    <link role="extends" targetNodeId="1196955204151" resolveInfo="AbstractMoveNodesOperation" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197375042797">
       <property name="value" value="moveNodes" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197375042798">
+      <property name="value" value="move nodes to model" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197375042799">
+    <property name="name" value="MoveNodesToNodeOperation" />
+    <link role="extends" targetNodeId="1196955204151" resolveInfo="AbstractMoveNodesOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197375042800">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="roleInTarget" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197375042801">
+      <property name="value" value="moveNodes" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197375042802">
+      <property name="value" value="move nodes to another node" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
     </node>
   </node>
 </model>

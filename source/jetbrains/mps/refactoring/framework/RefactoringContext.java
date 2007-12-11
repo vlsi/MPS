@@ -68,6 +68,10 @@ public class RefactoringContext {
     return myAdditionalParametersMap.get(parameterName);
   }
 
+  public void setParameter(String parameterName, Object parameter) {
+    myAdditionalParametersMap.put(parameterName, parameter);
+  }
+
   public void moveNodesToNode(List<SNode> sourceNodes, String role, SNode targetNode) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> targetNodes = CopyUtil.copy(sourceNodes, targetNode.getModel(), mapping);

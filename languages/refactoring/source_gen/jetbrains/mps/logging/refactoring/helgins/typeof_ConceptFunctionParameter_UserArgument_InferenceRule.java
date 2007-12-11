@@ -6,7 +6,6 @@ import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.logging.refactoring.constraints.ArgumentType_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -18,7 +17,7 @@ public class typeof_ConceptFunctionParameter_UserArgument_InferenceRule implemen
   public void applyRule(final SNode argument) {
     SNode filterArgumentClause = SNodeOperations.getAncestor(argument, "jetbrains.mps.logging.refactoring.structure.FilterArgumentClause", false, false);
     SNode requiredUserEnteredArgument = SNodeOperations.getParent(filterArgumentClause, null, false, false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(ArgumentType_Behavior.call_convertIntoTypeForInput_1192804777821(SLinkOperations.getTarget(requiredUserEnteredArgument, "argumentType", true)), "jetbrains.mps.logging.refactoring.helgins", "1192795189001", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.logging.refactoring.helgins", "1192795196477", true), argument, null, "jetbrains.mps.logging.refactoring.helgins", "1192795194145");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(requiredUserEnteredArgument, "argumentType", true), "jetbrains.mps.logging.refactoring.helgins", "1192795189001", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.logging.refactoring.helgins", "1192795196477", true), argument, null, "jetbrains.mps.logging.refactoring.helgins", "1192795194145");
   }
 
   public String getApplicableConceptFQName() {
