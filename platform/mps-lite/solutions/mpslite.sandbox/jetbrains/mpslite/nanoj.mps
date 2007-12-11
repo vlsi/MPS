@@ -27,7 +27,7 @@
         </node>
         <node role="linePart" type="jetbrains.mpslite.structure.PropertyDeclarationPart" id="1182956319063">
           <property name="name" value="name" />
-          <link role="type" targetNodeId="1.1182511871037" />
+          <link role="type" targetNodeId="1.1197382692601" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1197301174036">
           <property name="text" value="extends" />
@@ -79,7 +79,7 @@
         </node>
         <node role="linePart" type="jetbrains.mpslite.structure.PropertyDeclarationPart" id="1182956481189">
           <property name="name" value="name" />
-          <link role="type" targetNodeId="1.1182511871037" />
+          <link role="type" targetNodeId="1.1197382692601" resolveInfo="id" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1182956481190">
           <property name="text" value="(" />
@@ -643,7 +643,7 @@
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182966282304">
     <property name="name" value="Expressions" />
-    <property name="showTypes" value="true" />
+    <property name="showStructure" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182966285571">
       <property name="name" value="Expression" />
       <property name="abstract" value="true" />
@@ -1559,7 +1559,7 @@
         </node>
         <node role="linePart" type="jetbrains.mpslite.structure.PropertyDeclarationPart" id="1183027558523">
           <property name="name" value="name" />
-          <link role="type" targetNodeId="1.1182511871037" />
+          <link role="type" targetNodeId="1.1197382692601" resolveInfo="id" />
         </node>
         <node role="linePart" type="jetbrains.mpslite.structure.OptionalPart" id="1197380538412">
           <node role="part" type="jetbrains.mpslite.structure.ConstantLinePart" id="1197380553994">

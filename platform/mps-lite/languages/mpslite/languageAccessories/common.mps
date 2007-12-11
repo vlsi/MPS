@@ -19,6 +19,9 @@
       <property name="name" value="boolean" />
       <link role="mapTo" targetNodeId="1.1082983657063" />
     </node>
+    <node role="propertyType" type="jetbrains.mpslite.structure.IdentifierPropertyTypeDeclaration" id="1197382692601">
+      <property name="name" value="id" />
+    </node>
   </node>
 </model>
 
