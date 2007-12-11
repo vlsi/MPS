@@ -66,7 +66,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   public SNode executeDependentResolve(TemplateModelGenerator_New generator) {
     // try to resolve using custom referense resolver for source node concept
     // todo: some reference-resolvers can be executed on the 'executeIndependentResolve' step
-    IReferenceResolver referenceResolver = loadReferenceResolver(myInputSourceNode);
+    IReferenceResolver referenceResolver = loadReferenceResolver(getOutputSourceNode());
     if (referenceResolver != null) {
       SNode outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), myReferenceRole, myInputSourceNode, myInputTargetNode);
       return outputTargetNode;
