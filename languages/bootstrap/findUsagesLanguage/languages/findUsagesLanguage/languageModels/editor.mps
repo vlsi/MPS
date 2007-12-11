@@ -50,13 +50,18 @@
             id="1197044918395">
         <property name="selectable" value="false"/>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
-            id="1197044918400">
-        <property name="text" value="Description block"/>
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode"
-            id="1197044918401">
-        <link role="relationDeclaration" targetNodeId="4.1192795926648"/>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection"
+            id="1197386306919">
+        <property name="selectable" value="false"/>
+        <property name="vertical" value="false"/>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
+              id="1197386309781">
+          <property name="text" value="Description:"/>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property"
+              id="1197386320126">
+          <link role="relationDeclaration" targetNodeId="1.1197385993272" resolveInfo="description"/>
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant"
             id="1197044918402">

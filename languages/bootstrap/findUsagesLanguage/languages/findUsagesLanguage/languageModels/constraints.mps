@@ -40,7 +40,7 @@
               </node>
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197207361397">
-              <property name="value" value="_SimpleFinder"/>
+              <property name="value" value="_Finder"/>
             </node>
           </node>
         </node>
