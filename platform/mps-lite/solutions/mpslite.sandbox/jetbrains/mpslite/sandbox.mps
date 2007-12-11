@@ -23,6 +23,9 @@
           <node role="declaration" type="jetbrains.mps.nanoj.structure.LocalVariableDeclaration" id="1197383598478">
             <property name="name" value="i" />
             <node role="type" type="jetbrains.mps.nanoj.structure.IntType" id="1197383598479" />
+            <node role="initializer" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197389289149">
+              <property name="number" value="23" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.nanoj.structure.ReturnStatement" id="1197301292932">
