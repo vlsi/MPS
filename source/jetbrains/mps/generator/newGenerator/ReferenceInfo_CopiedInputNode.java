@@ -13,24 +13,26 @@ import java.util.List;
  */
 public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
-  private SReference myInputReference;
+  //  private SReference myInputReference;
+  private String myReferenceRole;
   private SNode myInputSourceNode;
   private SNode myInputTargetNode;
 
 
   public ReferenceInfo_CopiedInputNode(SNode outputSourceNode, SReference inputReference) {
     super(outputSourceNode, inputReference.getRole(), inputReference.getSourceNode());
-    myInputReference = inputReference;
+//    myInputReference = inputReference;
+    myReferenceRole = inputReference.getRole();
     myInputSourceNode = inputReference.getSourceNode();
     myInputTargetNode = inputReference.getTargetNode();
   }
 
-//  public ReferenceInfo_CopiedInputNode(SNode outputSourceNode, String role, SNode inputSourceNode, SNode inputTargetNode) {
-//    super(outputSourceNode, role, inputSourceNode);
-////    myInputReference = inputReference;
-//    myInputSourceNode = inputSourceNode;
-//    myInputTargetNode = inputTargetNode;
-//  }
+  public ReferenceInfo_CopiedInputNode(SNode outputSourceNode, String role, SNode inputSourceNode, SNode inputTargetNode) {
+    super(outputSourceNode, role, inputSourceNode);
+    myReferenceRole = role;
+    myInputSourceNode = inputSourceNode;
+    myInputTargetNode = inputTargetNode;
+  }
 
   public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
     // output target node might has been copied (reduced) from the input target node
@@ -68,7 +70,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     // todo: some reference-resolvers can be executed on the 'executeIndependentResolve' step
     IReferenceResolver referenceResolver = loadReferenceResolver(myInputSourceNode);
     if (referenceResolver != null) {
-      SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myInputReference.getRole(), myInputReference.getSourceNode(), myInputReference.getTargetNode());
+      SNode outputTargetNode = referenceResolver.resolve(getOutputNode(), myReferenceRole, myInputSourceNode, myInputTargetNode);
       return outputTargetNode;
     }
     return null;
@@ -80,7 +82,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   }
 
   public void showErrorMessage(ITemplateGenerator generator) {
-    generator.showErrorMessage(getOutputNode(), "couldn't resolve reference '" + myInputReference.getRole() + "' in output node " + getOutputNode().getDebugText());
+    generator.showErrorMessage(getOutputNode(), "couldn't resolve reference '" + myReferenceRole + "' in output node " + getOutputNode().getDebugText());
     generator.showErrorMessage(myInputSourceNode, "-- original reference was " + myInputSourceNode.getDebugText());
   }
 }
