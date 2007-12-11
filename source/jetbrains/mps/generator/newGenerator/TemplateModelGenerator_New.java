@@ -21,12 +21,9 @@ import java.util.*;
  * Date: Jan 23, 2007
  */
 public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
-  public static final boolean USE_POSTPONED_REFERENCES = true;
-
   private SModel myInputModel;
   private SModel myOutputModel;
   private ArrayList<SNode> myRootsNotToCopy = new ArrayList<SNode>();
-  private ArrayList<ReferenceInfo> myReferenceInfos = new ArrayList<ReferenceInfo>();
   private HashMap<Pair<SNode, SNode>, SNode> myTemplateNodeAndInputNodeToOutputNodeMap = new HashMap<Pair<SNode, SNode>, SNode>();
   private HashMap<Pair<String, SNode>, SNode> myMappingNameAndInputNodeToOutputNodeMap = new HashMap<Pair<String, SNode>, SNode>();
   private HashMap<Pair<String, SNode>, SNode> myMappingNameAndOutputNodeToInputNode = new HashMap<Pair<String, SNode>, SNode>();
@@ -62,7 +59,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
   public void reset(SModel inputModel, SModel outputModel) {
     myRootsNotToCopy.clear();
-    myReferenceInfos.clear();
     myTemplateNodeAndInputNodeToOutputNodeMap.clear();
     myMappingNameAndInputNodeToOutputNodeMap.clear();
     myMappingNameAndOutputNodeToInputNode.clear();
@@ -179,84 +175,28 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     if (inputReference == null) return;
     outputNode.removeReference(reference);
     ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(outputNode, inputReference);
-    if (USE_POSTPONED_REFERENCES) {
-      // todo: probably, we can do it without checking if same Id can be found in output model.
-      // todo: probably, we can eliminate this method at all and create postponed refs while copiing model
-      PostponedReference postponedReference = new PostponedReference(
-              inputReference.getRole(),
-              outputNode,
-              refInfo,
-              this
-      );
-      outputNode.addReference(postponedReference);
-    } else {
-      addReferenceInfo(refInfo);
-    }
+    // todo: probably, we can do it without checking if same Id can be found in output model.
+    // todo: probably, we can eliminate this method at all and create postponed refs while copiing model
+    PostponedReference postponedReference = new PostponedReference(
+            inputReference.getRole(),
+            outputNode,
+            refInfo,
+            this
+    );
+    outputNode.addReference(postponedReference);
   }
 
   private void updateAllReferences() {
 
-    //noinspection ConstantConditions
-    if (!USE_POSTPONED_REFERENCES) {
-
-      ArrayList<ReferenceInfo> referenceInfos = myReferenceInfos;
-      ArrayList<ReferenceInfo> newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
-
-      for (ReferenceInfo referenceInfo : referenceInfos) {
-        checkMonitorCanceled();
-        SNode outputTargetNode = referenceInfo.executeIndependentResolve(this);
-        if (outputTargetNode == null) {
-          newReferenceInfos.add(referenceInfo);
-        } else {
-          referenceInfo.getOutputNode().setReferent(referenceInfo.getReferenceRole(), outputTargetNode);
-        }
-      }
-
-      referenceInfos = newReferenceInfos;
-      newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
-      while (true) {
-        checkMonitorCanceled();
-        for (ReferenceInfo referenceInfo : referenceInfos) {
-          SNode outputTargetNode = referenceInfo.executeDependentResolve(this);
-          if (outputTargetNode == null) {
-            if (referenceInfo.isRequired()) {
-              newReferenceInfos.add(referenceInfo);
-            }
-          } else {
-            referenceInfo.getOutputNode().setReferent(referenceInfo.getReferenceRole(), outputTargetNode);
-          }
-        }
-
-        if (newReferenceInfos.size() == 0 || newReferenceInfos.size() == referenceInfos.size()) {
-          break;
-        }
-        referenceInfos = newReferenceInfos;
-        newReferenceInfos = new ArrayList<ReferenceInfo>(referenceInfos.size());
-      }
-
-      for (ReferenceInfo unresolvedReferenceInfo : newReferenceInfos) {
-        checkMonitorCanceled();
-        // hack
-        SNode outputTargetNode = unresolvedReferenceInfo.resolveAnyhow(this);
-        if (outputTargetNode == null) {
-          unresolvedReferenceInfo.showErrorMessage(this);
-        } else {
-          unresolvedReferenceInfo.getOutputNode().setReferent(unresolvedReferenceInfo.getReferenceRole(), outputTargetNode);
-        }
-      }
-    }
-
-    if (USE_POSTPONED_REFERENCES) {
-      // replace all postponed references
-      List<SNode> roots = getTargetModel().getRoots();
-      for (SNode root : roots) {
-        replacePostponedReferences(root);
-      }
+    // replace all postponed references
+    List<SNode> roots = getTargetModel().getRoots();
+    for (SNode root : roots) {
+      checkMonitorCanceled();
+      replacePostponedReferences(root);
     }
   }
 
   private void replacePostponedReferences(SNode node) {
-    checkMonitorCanceled();
     List<SReference> references = node.getReferences();
     for (SReference reference : references) {
       checkMonitorCanceled();
@@ -267,6 +207,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
 
     List<SNode> children = node.getChildren();
     for (SNode child : children) {
+      checkMonitorCanceled();
       replacePostponedReferences(child);
     }
   }
@@ -316,10 +257,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       }
     }
     return null;
-  }
-
-  public void addReferenceInfo(ReferenceInfo referenceInfo) {
-    myReferenceInfos.add(referenceInfo);
   }
 
   public DelayedChanges getDelayedChanges() {

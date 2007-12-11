@@ -642,17 +642,13 @@ public class RuleUtil {
       }
       if (templateReferentNode.getModel().equals(templateModel)) { // internal reference
         ReferenceInfo_TemplateNode refInfo = new ReferenceInfo_TemplateNode(outputNode, reference, inputNode);
-        if (TemplateModelGenerator_New.USE_POSTPONED_REFERENCES) {
-          PostponedReference postponedReference = new PostponedReference(
-                  reference.getRole(),
-                  outputNode,
-                  refInfo,
-                  myGenerator
-          );
-          outputNode.addReference(postponedReference);
-        } else {
-          myGenerator.addReferenceInfo(refInfo);
-        }
+        PostponedReference postponedReference = new PostponedReference(
+                reference.getRole(),
+                outputNode,
+                refInfo,
+                myGenerator
+        );
+        outputNode.addReference(postponedReference);
       } else {
         outputNode.setReferent(reference.getRole(), templateReferentNode);
       }
@@ -665,17 +661,13 @@ public class RuleUtil {
         MacroUtil.expandPropertyMacro(myGenerator, (PropertyMacro) templateChildNode, inputNode, templateNode, outputNode);
       } else if (templateChildNode instanceof ReferenceMacro) {
         ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro((ReferenceMacro) templateChildNode, inputNode, templateNode, outputNode);
-        if (TemplateModelGenerator_New.USE_POSTPONED_REFERENCES) {
-          PostponedReference postponedReference = new PostponedReference(
-                  refInfo.getReferenceRole(),
-                  outputNode,
-                  refInfo,
-                  myGenerator
-          );
-          outputNode.addReference(postponedReference);
-        } else {
-          myGenerator.addReferenceInfo(refInfo);
-        }
+        PostponedReference postponedReference = new PostponedReference(
+                refInfo.getReferenceRole(),
+                outputNode,
+                refInfo,
+                myGenerator
+        );
+        outputNode.addReference(postponedReference);
       } else if (!TemplateGenUtil.isTemplateLanguageElement(templateChildNode)) {
         templateChildNodes.add(templateChildNode);
       }
@@ -736,17 +728,13 @@ public class RuleUtil {
       }
       if (inputTargetNode.getModel().equals(inputModel)) {
         ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(outputNode, inputReference);
-        if (TemplateModelGenerator_New.USE_POSTPONED_REFERENCES) {
-          PostponedReference reference = new PostponedReference(
-                  inputReference.getRole(),
-                  outputNode,
-                  refInfo,
-                  myGenerator
-          );
-          outputNode.addReference(reference);
-        } else {
-          myGenerator.addReferenceInfo(refInfo);
-        }
+        PostponedReference reference = new PostponedReference(
+                inputReference.getRole(),
+                outputNode,
+                refInfo,
+                myGenerator
+        );
+        outputNode.addReference(reference);
       } else {
         outputNode.setReferent(inputReference.getRole(), inputTargetNode);
       }
@@ -792,17 +780,16 @@ public class RuleUtil {
     if (ruleConsequence instanceof DismissTopMappingRule) {
       GeneratorMessage message = ((DismissTopMappingRule) ruleConsequence).getGeneratorMessage();
       if (message != null) {
-          String text = message.getMessageText();
-          if (message.getMessageType() == GeneratorMessageType.error) {
-              generator.showErrorMessage(inputNode, null, ruleNode, text);
-          } else if (message.getMessageType() == GeneratorMessageType.warning) {
-              generator.showWarningMessage(inputNode, text);
-          } else {
-              generator.showInformationMessage(inputNode, text);
-          }
-      }
-      else {          
-          generator.showInformationMessage(inputNode, "Top rule dismissed with no message");
+        String text = message.getMessageText();
+        if (message.getMessageType() == GeneratorMessageType.error) {
+          generator.showErrorMessage(inputNode, null, ruleNode, text);
+        } else if (message.getMessageType() == GeneratorMessageType.warning) {
+          generator.showWarningMessage(inputNode, text);
+        } else {
+          generator.showInformationMessage(inputNode, text);
+        }
+      } else {
+        generator.showInformationMessage(inputNode, "Top rule dismissed with no message");
       }
       throw new DismissTopMappingRuleException();
 
