@@ -1329,6 +1329,12 @@
         <property name="style" value="ITALIC" />
       </node>
     </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1197379475799">
+      <property name="name" value="MPSLiteOptionalPart" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1197379482941">
+        <property name="color" value="gray" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellActionMapDeclaration" id="1196957310122">
     <property name="package" value="QL" />
@@ -1731,6 +1737,25 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197371044316">
         <property name="text" value="}" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197379448585">
+    <property name="package" value="Parts" />
+    <link role="conceptDeclaration" targetNodeId="1.1197379421676" resolveInfo="OptionalPart" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197379451915">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197379452667">
+        <property name="text" value="(" />
+        <link role="styleClass" targetNodeId="1197379475799" resolveInfo="MPSLiteOptionalPartColor" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNodeList" id="1197379457060">
+        <property name="vertical" value="false" />
+        <link role="relationDeclaration" targetNodeId="1.1197379442834" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197379459421">
+        <property name="text" value=")?" />
+        <link role="styleClass" targetNodeId="1197379475799" resolveInfo="MPSLiteOptionalPartColor" />
       </node>
     </node>
   </node>

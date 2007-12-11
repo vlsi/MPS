@@ -101,6 +101,23 @@ public class MPSLite_Style_StyleSheet {
     }
 
   };
+  public static final IStyle M_P_S_LITE_OPTIONAL_PART = new IStyle() {
+
+    public void apply(EditorCell cell) {
+      if(cell instanceof EditorCell_Label) {
+        EditorCell_Label labelCell = (EditorCell_Label)cell;
+        Color color = MPSLite_Style_StyleSheet.calculateColor5(cell);
+        labelCell.getTextLine().setTextColorIfNotSet(color);
+      }
+      if(cell instanceof EditorCell_Collection) {
+        EditorCell_Collection collection = (EditorCell_Collection)cell;
+        for(EditorCell child : collection) {
+          this.apply(child);
+        }
+      }
+    }
+
+  };
 
   private static Color calculateColor(EditorCell cell) {
     Color result;
@@ -129,6 +146,12 @@ public class MPSLite_Style_StyleSheet {
   private static Color calculateColor4(EditorCell cell) {
     Color result;
     result = MPSColors.DARK_MAGENTA;
+    return result;
+  }
+
+  private static Color calculateColor5(EditorCell cell) {
+    Color result;
+    result = Color.gray;
     return result;
   }
 

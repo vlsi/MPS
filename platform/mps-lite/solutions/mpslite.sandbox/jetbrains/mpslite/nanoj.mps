@@ -1612,11 +1612,13 @@
         <node role="linePart" type="jetbrains.mpslite.structure.PropertyReferencePart" id="1183027770091">
           <link role="declaration" targetNodeId="1183027558523" resolveInfo="name" />
         </node>
-        <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1183027612287">
-          <property name="text" value="=" />
-        </node>
-        <node role="linePart" type="jetbrains.mpslite.structure.ChildReferencePart" id="1183027614242">
-          <link role="declaration" targetNodeId="1183027566667" resolveInfo="initializer" />
+        <node role="linePart" type="jetbrains.mpslite.structure.OptionalPart" id="1197380408732">
+          <node role="part" type="jetbrains.mpslite.structure.ConstantLinePart" id="1197380411014">
+            <property name="text" value="=" />
+          </node>
+          <node role="part" type="jetbrains.mpslite.structure.ChildReferencePart" id="1197380413797">
+            <link role="declaration" targetNodeId="1183027566667" resolveInfo="initializer" />
+          </node>
         </node>
       </node>
       <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284602472">
