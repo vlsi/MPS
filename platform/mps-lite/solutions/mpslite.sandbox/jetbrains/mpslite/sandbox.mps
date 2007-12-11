@@ -61,7 +61,7 @@
         </node>
         <node role="statement" type="jetbrains.mps.nanoj.structure.LocalVariableDeclarationStatement" id="1197384631586">
           <node role="declaration" type="jetbrains.mps.nanoj.structure.LocalVariableDeclaration" id="1197384631587">
-            <property name="name" value="i" />
+            <property name="name" value="idqw" />
             <node role="type" type="jetbrains.mps.nanoj.structure.IntType" id="1197384631588" />
           </node>
         </node>
@@ -95,6 +95,12 @@
             <node role="type" type="jetbrains.mps.nanoj.structure.ClassifierType" id="1197301335822">
               <link role="classifier" targetNodeId="1197301285396" resolveInfo="A" />
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.nanoj.structure.LocalVariableDeclarationStatement" id="1197388877749">
+          <node role="declaration" type="jetbrains.mps.nanoj.structure.LocalVariableDeclaration" id="1197388877750">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.nanoj.structure.IntType" id="1197388877751" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197301340011">

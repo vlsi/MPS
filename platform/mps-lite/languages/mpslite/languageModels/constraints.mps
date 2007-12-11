@@ -1547,8 +1547,12 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1197384918859" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197384914233">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197384927391">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1197384935492">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197384936260" />
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197388408451">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1197388410422">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1197388413190">
+                <link role="conceptDeclaration" targetNodeId="1.1197379421676" resolveInfo="OptionalPart" />
+              </node>
+            </node>
             <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197384931363">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1197384932710">
                 <link role="conceptMethodDeclaration" targetNodeId="1197384720788" resolveInfo="getNextPart" />
