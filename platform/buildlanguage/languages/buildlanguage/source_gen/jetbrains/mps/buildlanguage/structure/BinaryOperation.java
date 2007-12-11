@@ -10,7 +10,6 @@ import jetbrains.mps.project.GlobalScope;
 public class BinaryOperation extends PropertyValueExpression {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.BinaryOperation";
   public static String CPR_Operation = "operation";
-  public static String CLNK_ReturnType = "returnType";
   public static String LEFT = "left";
   public static String RIGHT = "right";
 

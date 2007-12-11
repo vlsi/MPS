@@ -14,7 +14,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
   public  ConstraintsDescriptor() {
     this.myConstraints.add(new TargetReference_targetDeclaration_ReferentConstraint());
     this.myConstraints.add(new PropertyReference_propertyDeclaration_ReferentConstraint());
-    this.myConstraints.add(new GenericTask_declaration_ReferentConstraint());
+    this.myConstraints.add(new GenericTaskCall_declaration_ReferentConstraint());
+    this.myConstraints.add(new GenericAttribute_attributeDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
