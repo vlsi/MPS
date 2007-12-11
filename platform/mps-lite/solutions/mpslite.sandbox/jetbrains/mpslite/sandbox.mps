@@ -19,6 +19,12 @@
       </node>
       <node role="type" type="jetbrains.mps.nanoj.structure.IntType" id="1197301290493" />
       <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1197301287946">
+        <node role="statement" type="jetbrains.mps.nanoj.structure.LocalVariableDeclarationStatement" id="1197383598477">
+          <node role="declaration" type="jetbrains.mps.nanoj.structure.LocalVariableDeclaration" id="1197383598478">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.nanoj.structure.IntType" id="1197383598479" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.nanoj.structure.ReturnStatement" id="1197301292932">
           <node role="expression" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197301293778">
             <property name="number" value="1" />
@@ -51,6 +57,12 @@
               </node>
             </node>
             <node role="type" type="jetbrains.mps.nanoj.structure.IntType" id="1197377943581" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.nanoj.structure.LocalVariableDeclarationStatement" id="1197384631586">
+          <node role="declaration" type="jetbrains.mps.nanoj.structure.LocalVariableDeclaration" id="1197384631587">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.nanoj.structure.IntType" id="1197384631588" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.nanoj.structure.LocalVariableDeclarationStatement" id="1197377951010">
