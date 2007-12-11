@@ -41,6 +41,12 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1197283519038" resolveInfo="TypesBlock" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197370934607">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="behavior" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1197370853948" resolveInfo="Behavior" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1182510947692">
       <property name="role" value="extends" />
       <link role="target" targetNodeId="1182510906722" resolveInfo="NodeTypeDeclaration" />
@@ -212,6 +218,10 @@
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197065585287">
       <property name="name" value="showTypes" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197370504902">
+      <property name="name" value="showBehavior" />
       <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
     </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1182840278091">
@@ -611,6 +621,28 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197301625982">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197370801712">
+    <property name="name" value="ConstructorBlock" />
+    <property name="package" value="Behavior" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197370819697">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="body" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1068580123136" resolveInfo="StatementList" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197370853948">
+    <property name="name" value="Behavior" />
+    <property name="package" value="Behavior" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197370861199">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="constructor" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1197370801712" resolveInfo="ConstructorBlock" />
     </node>
   </node>
 </model>

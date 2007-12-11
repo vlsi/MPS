@@ -219,6 +219,38 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197370669924">
+      <property name="name" value="showBehavior" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1197370671662" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197370669926">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197370744366">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197370744367">
+            <property name="name" value="container" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197370744368">
+              <link role="concept" targetNodeId="1.1182840239135" resolveInfo="ConceptDeclarations" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197370748590">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1197370749983">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1197370752031">
+                  <link role="concept" targetNodeId="1.1182840239135" resolveInfo="ConceptDeclarations" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197370748261" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197370759080">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197370762380">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197370766180">
+              <link role="property" targetNodeId="1.1197370504902" resolveInfo="showConstructors" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197370761707">
+              <link role="variableDeclaration" targetNodeId="1197370744367" resolveInfo="container" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182844484263">
       <property name="name" value="getPropertyDeclarations" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1182844489611">
@@ -2750,6 +2782,21 @@
                 <link role="property" targetNodeId="1.1197065585287" resolveInfo="showTypes" />
               </node>
               <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197278834192" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197370565522">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197370570075">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1197370571203">
+              <node role="value" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1197370572048">
+                <property name="value" value="true" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197370565930">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197370569308">
+                <link role="property" targetNodeId="1.1197370504902" resolveInfo="showConstructors" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197370565523" />
             </node>
           </node>
         </node>
