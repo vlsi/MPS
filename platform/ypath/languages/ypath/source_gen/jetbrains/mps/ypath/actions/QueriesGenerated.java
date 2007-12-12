@@ -74,8 +74,8 @@ public class QueriesGenerated {
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1168893690367(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    SNode block = SNodeOperations.getAncestorWhereConceptInList(sourceNode, new String[]{"jetbrains.mps.ypath.structure.ParentBlock","jetbrains.mps.ypath.structure.ChildrenBlock","jetbrains.mps.ypath.structure.WhereBlock"}, false, false);
-    if(block != null) {
+    SNode nono = SNodeOperations.getAncestorWhereConceptInList(sourceNode, new String[]{"jetbrains.mps.ypath.structure.ParentBlock","jetbrains.mps.ypath.structure.ChildrenBlock","jetbrains.mps.ypath.structure.WhereBlock","jetbrains.mps.ypath.structure.TreePathAdapterExpression","jetbrains.mps.ypath.structure.TreePathOperationExpression"}, true, false);
+    if(nono != null) {
       return false;
     }
     List<SNode> aspects = TreePathAspectUtil.getTreePathAspects(sourceNode, scope);
@@ -84,6 +84,10 @@ public class QueriesGenerated {
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1168469425594(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(sourceNode), "jetbrains.mps.ypath.structure.TreePathType");
+  }
+
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1197453900875(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(sourceNode, null, false, false), "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_TreeNodeKindOccurrence_1175170178382(SNode sourceNode, IScope scope, IOperationContext operationContext) {
@@ -474,24 +478,71 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1168893677147(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
-      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAdapterExpression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      Calculable calculable = new Calculable() {
 
-        public SNode doSubstitute(String pattern) {
-          SNode tpaExp = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
-          SLinkOperations.setTarget(tpaExp, "expression", sourceNode, true);
-          return tpaExp;
+        public Object calculate() {
+          return TreePathAspectUtil.getTreePathAspects(sourceNode, operationContext.getScope());
         }
 
-        public String getMatchingText(String pattern) {
-          return ":";
+      };
+      Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
+      assert parameterObjects != null;
+      for(SNode parameter : parameterObjects) {
+        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
+
+          public SNode doSubstitute(String pattern) {
+            SNode tpaExp = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
+            SLinkOperations.setTarget(tpaExp, "expression", sourceNode, true);
+            SLinkOperations.setTarget(tpaExp, "treepathAspect", ((SNode)this.getParameterObject()), false);
+            return tpaExp;
+          }
+
+          public String getMatchingText(String text) {
+            return ":" + SPropertyOperations.getString(((SNode)this.getParameterObject()), "name");
+          }
+
+          public String getDescriptionText(String text) {
+            return "cast to treepath expression";
+          }
+
+        });
+      }
+    }
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      Calculable calculable = new Calculable() {
+
+        public Object calculate() {
+          return TreePathAspectUtil.getTreePathAspects(sourceNode, operationContext.getScope());
         }
 
-        public String getDescriptionText(String pattern) {
-          return "Cast to treepath expression";
-        }
+      };
+      Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
+      assert parameterObjects != null;
+      for(SNode parameter : parameterObjects) {
+        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
 
-      });
+          public SNode doSubstitute(String pattern) {
+            SNode tpoExp = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+            SLinkOperations.setNewChild(tpoExp, "expression", "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
+            SLinkOperations.setTarget(SLinkOperations.getTarget(tpoExp, "expression", true), "expression", sourceNode, true);
+            SLinkOperations.setTarget(SLinkOperations.getTarget(tpoExp, "expression", true), "treepathAspect", ((SNode)this.getParameterObject()), false);
+            SNode op = SModelOperations.createNewNode(model, "jetbrains.mps.ypath.structure.IterateOperation", null);
+            SPropertyOperations.set(SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.IterateOperation"), "axis", TraversalAxis.CHILDREN.getValue());
+            return tpoExp;
+          }
+
+          public String getMatchingText(String text) {
+            return "->";
+          }
+
+          public String getDescriptionText(String text) {
+            return "iterate using " + SPropertyOperations.getString(((SNode)this.getParameterObject()), "name");
+          }
+
+        });
+      }
     }
     return result;
   }
@@ -593,6 +644,22 @@ public class QueriesGenerated {
         }
 
       });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1197453867596(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return SNodeOperations.getParent(sourceNode, null, false, false);
+        }
+
+      };
+      SNode node = (SNode)calc.calculate();
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, transformationTag, operationContext));
     }
     return result;
   }
@@ -704,6 +771,26 @@ public class QueriesGenerated {
       });
     }
     return result;
+  }
+
+  public static void removeActionsByCondition_1197451890790(Iterator<INodeSubstituteAction> actions, final SNode parentNode, final SNode currentChild, final SNode childConcept, final IOperationContext operationContext) {
+    while(actions.hasNext()) {
+      INodeSubstituteAction current = actions.next();
+      if(!(current.getParameterObject() instanceof SNode)) {
+        continue;
+      }
+      final SNode concept = (SNode)current.getParameterObject();
+      Condition cond = new Condition() {
+
+        public boolean met(Object object) {
+          return !(SNodeOperations.isInstanceOf(childConcept, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation") || SNodeOperations.isInstanceOf(childConcept, "jetbrains.mps.ypath.structure.TreePathOperationExpression"));
+        }
+
+      };
+      if(cond.met(null)) {
+        actions.remove();
+      }
+    }
   }
 
   public static void removeActionsByCondition_1178108596882(Iterator<INodeSubstituteAction> actions, final SNode parentNode, final SNode currentChild, final SNode childConcept, final IOperationContext operationContext) {

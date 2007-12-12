@@ -542,22 +542,49 @@
     <link role="conceptDeclaration" targetNodeId="1.1168890168054" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1168890312650">
       <property name="drawBorder" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197451169341">
+        <property name="text" value="!" />
+        <property name="textFgColor" value="red" />
+        <link role="actionMap" targetNodeId="1179164666211" resolveInfo="TreePathAdapterExpression_DELETE" />
+        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197451179808">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197451179809">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197451179810">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197451179811">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNullOperation" id="1197451179812" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197451179813">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1197451179814">
+                    <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1197451179815">
+                      <link role="concept" targetNodeId="1.1168468602533" resolveInfo="TreePathOperationExpression" />
+                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1197451179816" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1168890321048">
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1168890213786" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1179154436783">
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197449048612">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197449053304">
+        <property name="vertical" value="false" />
         <property name="selectable" value="false" />
-        <property name="text" value=":" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1179154439722">
-        <link role="relationDeclaration" targetNodeId="1.1168890235188" />
-        <link role="actionMap" targetNodeId="1179164666211" resolveInfo="TreePathAdapterExpression_DELETE" />
-        <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1179154439723">
-          <link role="conceptDeclaration" targetNodeId="1.1168879975004" />
-          <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1179154457900">
-            <property name="editable" value="false" />
-            <link role="relationDeclaration" targetNodeId="2.1169194664001" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197449054282">
+          <property name="text" value="treepath aspect:" />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1197449068841">
+          <link role="relationDeclaration" targetNodeId="1.1168890235188" />
+          <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1197449068842">
+            <link role="conceptDeclaration" targetNodeId="1.1168879975004" resolveInfo="TreePathAspect" />
+            <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197449072761">
+              <property name="readOnly" value="true" />
+              <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+            </node>
           </node>
         </node>
       </node>

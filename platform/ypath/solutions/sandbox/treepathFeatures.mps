@@ -1255,6 +1255,24 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197450761298">
+          <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1197450766390">
+            <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1197450766398">
+              <link role="treepathAspect" targetNodeId="1184685688047" resolveInfo="SNODE" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197450761299">
+                <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1197450766404">
+              <property name="axis" value="CHILDREN" />
+              <link role="usedFeature" targetNodeId="1184685792724" resolveInfo="child" />
+              <node role="paramObject" type="jetbrains.mps.ypath.structure.ParameterWrapper" id="1197450772046">
+                <property name="paramValue" value="implements" />
+                <property name="name" value="implements" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1184773021187">
         <property name="name" value="args" />
