@@ -176,7 +176,8 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     if (inputReference == null) return;
     outputNode.removeReference(reference);
     ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-            inputReference.getRole(), outputNode,
+            inputReference.getRole(),
+            outputNode,
             inputReference.getSourceNode(),
             inputReference.getTargetNode());
     // todo: probably, we can do it without checking if same Id can be found in output model.

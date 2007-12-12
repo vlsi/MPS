@@ -641,7 +641,10 @@ public class RuleUtil {
         continue;
       }
       if (templateReferentNode.getModel().equals(templateModel)) { // internal reference
-        ReferenceInfo_TemplateNode refInfo = new ReferenceInfo_TemplateNode(outputNode, reference, inputNode);
+        ReferenceInfo_TemplateNode refInfo = new ReferenceInfo_TemplateNode(
+                outputNode,
+                reference,
+                inputNode);
         PostponedReference postponedReference = new PostponedReference(
                 refInfo,
                 myGenerator
@@ -658,7 +661,11 @@ public class RuleUtil {
       if (templateChildNode instanceof PropertyMacro) {
         MacroUtil.expandPropertyMacro(myGenerator, (PropertyMacro) templateChildNode, inputNode, templateNode, outputNode);
       } else if (templateChildNode instanceof ReferenceMacro) {
-        ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro((ReferenceMacro) templateChildNode, inputNode, templateNode, outputNode);
+        ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(
+                (ReferenceMacro) templateChildNode,
+                inputNode,
+                templateNode,
+                outputNode);
         PostponedReference postponedReference = new PostponedReference(
                 refInfo,
                 myGenerator
@@ -723,7 +730,11 @@ public class RuleUtil {
         continue;
       }
       if (inputTargetNode.getModel().equals(inputModel)) {
-        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(outputNode, inputReference);
+        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
+                inputReference.getRole(),
+                outputNode,
+                inputReference.getSourceNode(),
+                inputReference.getTargetNode());
         PostponedReference reference = new PostponedReference(
                 refInfo,
                 myGenerator

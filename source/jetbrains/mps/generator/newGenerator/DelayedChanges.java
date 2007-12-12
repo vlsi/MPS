@@ -75,7 +75,8 @@ public class DelayedChanges {
           // replace
           reference.getSourceNode().removeReference(reference);
           ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-                  reference.getRole(), reference.getSourceNode(),
+                  reference.getRole(),
+                  reference.getSourceNode(),
                   myInputNode,
                   reference.getTargetNode());
           PostponedReference postponedReference = new PostponedReference(

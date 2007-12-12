@@ -18,13 +18,6 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   private SNode myInputTargetNode;
 
 
-  public ReferenceInfo_CopiedInputNode(SNode outputSourceNode, SReference inputReference) {
-    super(outputSourceNode, inputReference.getRole(), inputReference.getSourceNode());
-    myReferenceRole = inputReference.getRole();
-    myInputNode = inputReference.getSourceNode();
-    myInputTargetNode = inputReference.getTargetNode();
-  }
-
   /**
    * @param role
    * @param outputSourceNode  reference source in output model
