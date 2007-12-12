@@ -52,6 +52,7 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CellModel_ModelAccess(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178981885129");
+    IterateOperation_DELETE.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -60,10 +61,12 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_UsedFeatureReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197457403328");
+    IterateOperation_DELETE.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_ParamObjectCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1184776090885");
+    IterateOperation_DELETE.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {

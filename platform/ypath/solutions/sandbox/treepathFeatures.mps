@@ -1118,10 +1118,10 @@
               </node>
               <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1197466830301">
                 <property name="axis" value="CHILDREN" />
-                <link role="usedFeature" targetNodeId="1184685792724" resolveInfo="child" />
-                <node role="paramObject" type="jetbrains.mps.ypath.structure.ParameterWrapper" id="1197466997413">
-                  <property name="paramValue" value="implements" />
-                  <property name="name" value="implements" />
+                <link role="usedFeature" targetNodeId="1184688224775" resolveInfo="link" />
+                <node role="paramObject" type="jetbrains.mps.ypath.structure.ParameterWrapper" id="1197479713632">
+                  <property name="paramValue" value="extends" />
+                  <property name="name" value="extends" />
                 </node>
               </node>
             </node>
@@ -1136,36 +1136,30 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197466841683">
-          <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1197466855590">
-            <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1197466849567">
-              <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1197466844968">
-                <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1197466844974">
-                  <link role="treepathAspect" targetNodeId="1191934136657" resolveInfo="SNODE_GEN" />
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197466841684">
-                    <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1197466844979">
-                  <property name="axis" value="CHILDREN" />
-                  <link role="usedFeature" targetNodeId="1192878365674" resolveInfo="child" />
-                  <node role="paramObject" type="jetbrains.mps.ypath.structure.ParameterWrapper" id="1197466847899">
-                    <property name="name" value="implements" />
-                    <link role="paramRef" targetNodeId="6.1169129564478" />
-                  </node>
+          <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1197466849567">
+            <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1197466844968">
+              <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1197466844974">
+                <link role="treepathAspect" targetNodeId="1191934136657" resolveInfo="SNODE_GEN" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197466841684">
+                  <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1197466849571">
+              <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1197466844979">
                 <property name="axis" value="CHILDREN" />
-                <link role="usedFeature" targetNodeId="1192878435111" resolveInfo="link" />
-                <node role="paramObject" type="jetbrains.mps.ypath.structure.ParameterWrapper" id="1197466853197">
-                  <property name="name" value="intfc" />
-                  <link role="paramRef" targetNodeId="6.1169127628841" />
+                <link role="usedFeature" targetNodeId="1192878365674" resolveInfo="child" />
+                <node role="paramObject" type="jetbrains.mps.ypath.structure.ParameterWrapper" id="1197466847899">
+                  <property name="name" value="implements" />
+                  <link role="paramRef" targetNodeId="6.1169129564478" />
                 </node>
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1197466855596">
+            <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1197466849571">
               <property name="axis" value="CHILDREN" />
-              <link role="usedFeature" targetNodeId="1196897359118" resolveInfo="parent" />
+              <link role="usedFeature" targetNodeId="1192878435111" resolveInfo="link" />
+              <node role="paramObject" type="jetbrains.mps.ypath.structure.ParameterWrapper" id="1197466853197">
+                <property name="name" value="intfc" />
+                <link role="paramRef" targetNodeId="6.1169127628841" />
+              </node>
             </node>
           </node>
         </node>
@@ -1179,7 +1173,11 @@
             </node>
             <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1197470996327">
               <property name="axis" value="CHILDREN" />
-              <link role="usedFeature" targetNodeId="1196897359118" resolveInfo="parent" />
+              <link role="usedFeature" targetNodeId="1192878435111" resolveInfo="link" />
+              <node role="paramObject" type="jetbrains.mps.ypath.structure.ParameterWrapper" id="1197478813993">
+                <property name="name" value="extends" />
+                <link role="paramRef" targetNodeId="6.1071489389519" />
+              </node>
             </node>
           </node>
         </node>

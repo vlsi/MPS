@@ -33,7 +33,8 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<Pair<SNode, SNode>> res = ListOperations.createList(new Pair[]{});
+      List<Pair> res = ListOperations.createList(new Pair[]{});
+      ListOperations.addElement(res, new Pair(null, null));
       SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
       if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
         SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "nodeType", true);
@@ -41,14 +42,14 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
           ICursor<SNode> _zCursor = CursorFactory.createCursor(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType));
           try {
             while(_zCursor.moveToNext()) {
-              SNode foo = _zCursor.getCurrent();
-              if(SNodeOperations.isInstanceOf(foo, "jetbrains.mps.ypath.structure.IParamFeature")) {
+              SNode fe = _zCursor.getCurrent();
+              if(SNodeOperations.isInstanceOf(fe, "jetbrains.mps.ypath.structure.IParamFeature")) {
                 {
-                  ICursor<SNode> _zCursor1 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(foo, nodeType));
+                  ICursor<SNode> _zCursor1 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(fe, nodeType));
                   try {
                     while(_zCursor1.moveToNext()) {
-                      SNode bar = _zCursor1.getCurrent();
-                      ListOperations.addElement(res, new Pair<SNode, SNode>(foo, bar));
+                      SNode pw = _zCursor1.getCurrent();
+                      ListOperations.addElement(res, new Pair(fe, pw));
                     }
                   } finally {
                     _zCursor1.release();
@@ -56,7 +57,7 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
                 }
               } else
               {
-                ListOperations.addElement(res, new Pair<SNode, SNode>(foo, null));
+                ListOperations.addElement(res, new Pair(fe, null));
               }
             }
           } finally {
@@ -68,10 +69,10 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((Pair<SNode, SNode>)parameterObject, node, model, scope, operationContext);
+      this.handleAction_impl((Pair)parameterObject, node, model, scope, operationContext);
     }
 
-    public void handleAction_impl(Pair<SNode, SNode> parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+    public void handleAction_impl(Pair parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       SNode fe = (SNode)parameterObject.o1;
       SNode pw = (SNode)parameterObject.o2;
       SLinkOperations.setTarget(node, "paramObject", pw, true);
@@ -83,12 +84,15 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
     }
 
     public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((Pair<SNode, SNode>)parameterObject);
+      return this.getMatchingText_internal((Pair)parameterObject);
     }
 
-    public String getMatchingText_internal(Pair<SNode, SNode> parameterObject) {
+    public String getMatchingText_internal(Pair parameterObject) {
       SNode fe = (SNode)parameterObject.o1;
       SNode pw = (SNode)parameterObject.o2;
+      if((fe == null)) {
+        return "*";
+      } else
       if((pw != null)) {
         return SPropertyOperations.getString(pw, "name") + " | " + SPropertyOperations.getString(fe, "name");
       } else
@@ -98,11 +102,14 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
     }
 
     public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((Pair<SNode, SNode>)parameterObject);
+      return this.getDescriptionText_internal((Pair)parameterObject);
     }
 
-    public String getDescriptionText_internal(Pair<SNode, SNode> parameterObject) {
+    public String getDescriptionText_internal(Pair parameterObject) {
       SNode fe = (SNode)parameterObject.o1;
+      if((fe == null)) {
+        return "all features";
+      } else
       if(SNodeOperations.isInstanceOf(fe, "jetbrains.mps.ypath.structure.IParamFeature")) {
         return "parameterized feature in " + SPropertyOperations.getString(SNodeOperations.getParent(fe, null, false, false), "name");
       } else
