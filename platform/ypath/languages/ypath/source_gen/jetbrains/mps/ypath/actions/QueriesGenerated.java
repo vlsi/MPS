@@ -710,6 +710,22 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_ParameterWrapper_1197475290183(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return SNodeOperations.getParent(sourceNode, null, false, false);
+        }
+
+      };
+      SNode node = (SNode)calc.calculate();
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, transformationTag, operationContext));
+    }
+    return result;
+  }
+
   public static List<INodeSubstituteAction> rightTransform_ActionsFactory_TreeNodeKindOccurrence_1175164446140(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
