@@ -19,8 +19,8 @@ public class PostponedReference extends SReference {
   private TemplateModelGenerator_New myGenerator;
 
 
-  public PostponedReference(String role, SNode sourceNode, ReferenceInfo referenceInfo, TemplateModelGenerator_New generator) {
-    super(role, sourceNode);
+  public PostponedReference(ReferenceInfo referenceInfo, TemplateModelGenerator_New generator) {
+    super(referenceInfo.getReferenceRole(), referenceInfo.getOutputSourceNode());
     myReferenceInfo = referenceInfo;
     myGenerator = generator;
   }

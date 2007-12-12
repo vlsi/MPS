@@ -182,8 +182,6 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     // todo: probably, we can do it without checking if same Id can be found in output model.
     // todo: probably, we can eliminate this method at all and create postponed refs while copiing model
     PostponedReference postponedReference = new PostponedReference(
-            inputReference.getRole(),
-            outputNode,
             refInfo,
             this);
     outputNode.addReference(postponedReference);

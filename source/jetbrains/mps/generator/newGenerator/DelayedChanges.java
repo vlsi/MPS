@@ -79,8 +79,6 @@ public class DelayedChanges {
                   myInputNode,
                   reference.getTargetNode());
           PostponedReference postponedReference = new PostponedReference(
-                  reference.getRole(),
-                  reference.getSourceNode(),
                   refInfo,
                   myGenerator);
           reference.getSourceNode().addReference(postponedReference);
