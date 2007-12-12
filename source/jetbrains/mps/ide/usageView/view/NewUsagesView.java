@@ -121,9 +121,11 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     if (!VERSION_NUMBER.equals(version)) return;
 
     Element tabsXML = element.getChild(TABS);
-    for (Element tabXML : (List<Element>) tabsXML.getChildren()) {
-      UsageView usageView = createUsageView();
-      usageView.read(tabXML, project);
+    if (tabsXML != null) {
+      for (Element tabXML : (List<Element>) tabsXML.getChildren()) {
+        UsageView usageView = createUsageView();
+        usageView.read(tabXML, project);
+      }
     }
   }
 
