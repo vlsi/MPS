@@ -4,11 +4,13 @@
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.ypath" />
-  <maxImportIndex value="4" />
+  <language namespace="jetbrains.mps.baseLanguage" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.ypath.structure" version="12" />
+  <import index="5" modelUID="java.lang@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1182510906722">
     <property name="name" value="ConceptDeclaration" />
     <property name="rootable" value="false" />
@@ -687,6 +689,32 @@
       <property name="role" value="body" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="3.1068580123136" resolveInfo="StatementList" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197469545212">
+    <property name="package" value="Parts" />
+    <property name="name" value="AccessorPart" />
+    <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197469877946">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="accessorFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1197469763825" resolveInfo="AccessorText_ConceptFunction" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197469627304">
+      <property name="value" value="accessor" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197469763825">
+    <property name="package" value="ConceptFunctions" />
+    <property name="name" value="AccessorText_ConceptFunction" />
+    <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1197469815394">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197469834829">
+        <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
+      </node>
     </node>
   </node>
 </model>

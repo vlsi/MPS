@@ -176,8 +176,24 @@
         </node>
       </node>
       <node role="line" type="jetbrains.mpslite.structure.Line" id="1197469093072">
-        <node role="linePart" type="jetbrains.mpslite.structure.PropertyReferencePart" id="1197469094902">
-          <link role="declaration" targetNodeId="1182956481189" resolveInfo="name" />
+        <node role="linePart" type="jetbrains.mpslite.structure.AccessorPart" id="1197469755748">
+          <node role="accessorFunction" type="jetbrains.mpslite.structure.AccessorText_ConceptFunction" id="1197470054591">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197470054592">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197470058046">
+                <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197470065270">
+                  <node role="operation" type="jetbrains.mpslite.structure.PropertyAccessOperation" id="1197470065961">
+                    <link role="propertyDeclaration" targetNodeId="1182956319063" resolveInfo="name" />
+                  </node>
+                  <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197470058954">
+                    <node role="operation" type="jetbrains.mpslite.structure.AncestorOperation" id="1197470060238">
+                      <link role="type" targetNodeId="1182956307043" resolveInfo="ClassConcept" />
+                    </node>
+                    <node role="expression" type="jetbrains.mpslite.structure.ThisNodeExpression" id="1197470058047" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1197469099591">
           <property name="text" value="(" />

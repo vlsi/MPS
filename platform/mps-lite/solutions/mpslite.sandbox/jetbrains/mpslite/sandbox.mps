@@ -5,6 +5,11 @@
   <maxImportIndex value="1" />
   <node type="jetbrains.mps.nanoj.structure.ClassConcept" id="1197301285396">
     <property name="name" value="A" />
+    <node role="constructor" type="jetbrains.mps.nanoj.structure.Constructor" id="1197469470840">
+      <property name="name" value="ABCDE" />
+      <node role="type" type="jetbrains.mps.nanoj.structure.VoidType" id="1197469470841" />
+      <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1197469470842" />
+    </node>
     <node role="method" type="jetbrains.mps.nanoj.structure.InstanceMethod" id="1197301287944">
       <property name="name" value="a" />
       <node role="parameter" type="jetbrains.mps.nanoj.structure.ParameterDeclaration" id="1197302858048">
