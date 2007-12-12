@@ -1183,6 +1183,19 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197473271350">
+          <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1197473273462">
+            <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1197473273465">
+              <link role="treepathAspect" targetNodeId="1184685688047" resolveInfo="SNODE" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197473271351">
+                <link role="variableDeclaration" targetNodeId="1184773532714" resolveInfo="foo" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1197473273467">
+              <property name="axis" value="CHILDREN" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1184773021187">
         <property name="name" value="args" />

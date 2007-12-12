@@ -250,5 +250,12 @@
   <node type="jetbrains.mps.nanoj.structure.ClassConcept" id="1197466355515">
     <property name="name" value="C" />
   </node>
+  <node type="jetbrains.mps.nanoj.structure.ClassConcept" id="1197474274499">
+    <property name="name" value="abcdef" />
+    <node role="constructor" type="jetbrains.mps.nanoj.structure.Constructor" id="1197474274500">
+      <node role="type" type="jetbrains.mps.nanoj.structure.VoidType" id="1197474274501" />
+      <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1197474274502" />
+    </node>
+  </node>
 </model>
 
