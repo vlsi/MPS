@@ -267,10 +267,8 @@
         </node>
         <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1184097790446">
           <property name="vertical" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1184097796290">
-            <property name="text" value="(" />
-          </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1197457403328">
+            <property name="noTargetText" value="*" />
             <link role="relationDeclaration" targetNodeId="1.1184147586245" />
             <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1197457403329">
               <link role="conceptDeclaration" targetNodeId="1.1184066209434" resolveInfo="IFeature" />
@@ -332,9 +330,6 @@
                 <link role="cellMenuComponent" targetNodeId="1197460698446" resolveInfo="menu_SubstituteFeatureAndParameter" />
               </node>
             </node>
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1184097827075">
-            <property name="text" value=")" />
           </node>
         </node>
       </node>
@@ -2779,10 +2774,6 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1184776130290">
     <property name="package" value="treeOperation.traverse" />
     <link role="conceptDeclaration" targetNodeId="1.1184768155075" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1184776135508">
-      <property name="editable" value="false" />
-      <link role="relationDeclaration" targetNodeId="2.1169194664001" />
-    </node>
     <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197465898367">
       <property name="vertical" value="true" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197465942604">
@@ -2853,6 +2844,13 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197470530929">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197470533800">
+        <property name="readOnly" value="true" />
+        <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
       </node>
     </node>
   </node>

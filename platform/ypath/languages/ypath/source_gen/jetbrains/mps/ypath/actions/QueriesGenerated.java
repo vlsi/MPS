@@ -33,6 +33,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.ypath.structure.FragmentTypeEnum;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
@@ -518,31 +519,56 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          return TreePathAspectUtil.getTreePathAspects(sourceNode, operationContext.getScope());
+          List<Pair> res = ListOperations.createList(new Pair[]{});
+          {
+            ICursor<SNode> _zCursor2 = CursorFactory.createCursor(TreePathAspectUtil.getTreePathAspects(sourceNode, operationContext.getScope()));
+            try {
+              while(_zCursor2.moveToNext()) {
+                SNode foo = _zCursor2.getCurrent();
+                ListOperations.addElement(res, new Pair(TraversalAxis.ANCESTORS, foo));
+                ListOperations.addElement(res, new Pair(TraversalAxis.CHILDREN, foo));
+                ListOperations.addElement(res, new Pair(TraversalAxis.DESCENDANTS, foo));
+                ListOperations.addElement(res, new Pair(TraversalAxis.FOLLOWING_SIBLINGS, foo));
+                ListOperations.addElement(res, new Pair(TraversalAxis.PRECEDING_SIBLINGS, foo));
+                ListOperations.addElement(res, new Pair(TraversalAxis.PRECEDING_SIBLINGS_SELF, foo));
+                ListOperations.addElement(res, new Pair(TraversalAxis.SELF_ANCESTORS, foo));
+                ListOperations.addElement(res, new Pair(TraversalAxis.SELF_DESCENDANTS, foo));
+                ListOperations.addElement(res, new Pair(TraversalAxis.SELF_FOLLOWING_SIBLINGS, foo));
+              }
+            } finally {
+              _zCursor2.release();
+            }
+          }
+          return res;
         }
 
       };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
+      Iterable<Pair> parameterObjects = (Iterable<Pair>)calculable.calculate();
       assert parameterObjects != null;
-      for(SNode parameter : parameterObjects) {
+      for(Pair parameter : parameterObjects) {
         result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
 
           public SNode doSubstitute(String pattern) {
+            TraversalAxis axis = (TraversalAxis)((Pair)this.getParameterObject()).o1;
+            SNode tpa = (SNode)((Pair)this.getParameterObject()).o2;
             SNode tpoExp = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression");
             SLinkOperations.setNewChild(tpoExp, "expression", "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
             SLinkOperations.setTarget(SLinkOperations.getTarget(tpoExp, "expression", true), "expression", sourceNode, true);
-            SLinkOperations.setTarget(SLinkOperations.getTarget(tpoExp, "expression", true), "treepathAspect", ((SNode)this.getParameterObject()), false);
+            SLinkOperations.setTarget(SLinkOperations.getTarget(tpoExp, "expression", true), "treepathAspect", tpa, false);
             SNode op = SModelOperations.createNewNode(model, "jetbrains.mps.ypath.structure.IterateOperation", null);
-            SPropertyOperations.set(SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.IterateOperation"), "axis", TraversalAxis.CHILDREN.getValue());
+            SPropertyOperations.set(SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.IterateOperation"), "axis", axis.getValue());
             return tpoExp;
           }
 
           public String getMatchingText(String text) {
-            return "->";
+            TraversalAxis axis = (TraversalAxis)((Pair)this.getParameterObject()).o1;
+            return TraversalAxisUtil.getOperationSign(axis);
           }
 
           public String getDescriptionText(String text) {
-            return "iterate using " + SPropertyOperations.getString(((SNode)this.getParameterObject()), "name");
+            TraversalAxis axis = (TraversalAxis)((Pair)this.getParameterObject()).o1;
+            SNode tpa = (SNode)((Pair)this.getParameterObject()).o2;
+            return "iterate " + axis.getName() + " using " + SPropertyOperations.getString(tpa, "name");
           }
 
         });

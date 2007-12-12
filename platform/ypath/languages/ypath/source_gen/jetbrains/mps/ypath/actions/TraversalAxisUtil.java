@@ -8,31 +8,31 @@ public class TraversalAxisUtil {
 
   public static String getOperationSign(TraversalAxis axis) {
     if(axis == TraversalAxis.ANCESTORS) {
-      return "<<-";
+      return "^^";
     } else
     if(axis == TraversalAxis.CHILDREN) {
-      return "->";
+      return "\\";
     } else
     if(axis == TraversalAxis.DESCENDANTS) {
-      return "->>";
+      return "\\\\";
     } else
     if(axis == TraversalAxis.SELF_DESCENDANTS) {
-      return "=>>";
+      return "\\\\.";
     } else
     if(axis == TraversalAxis.PRECEDING_SIBLINGS) {
-      return "^-";
+      return "<<";
     } else
     if(axis == TraversalAxis.PRECEDING_SIBLINGS_SELF) {
-      return "^=";
+      return "<<.";
     } else
     if(axis == TraversalAxis.FOLLOWING_SIBLINGS) {
-      return "-v";
+      return ">>";
     } else
     if(axis == TraversalAxis.SELF_FOLLOWING_SIBLINGS) {
-      return "=v";
+      return ">>.";
     } else
     if(axis == TraversalAxis.SELF_ANCESTORS) {
-      return "<<=";
+      return "^^.";
     } else
     {
       return "???";

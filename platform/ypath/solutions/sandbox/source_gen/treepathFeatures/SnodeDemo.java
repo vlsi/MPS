@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ypath.runtime.TreeTraversalFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class SnodeDemo {
 
@@ -19,6 +21,7 @@ public class SnodeDemo {
     // Following is just a test
     TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new SNODE().startTraversal(foo), TreeTraversalFactory.Axis("CHILDREN"), SNODE.child("implements")), TreeTraversalFactory.Axis("CHILDREN"), SNODE.link("intfc"));
     SequenceOperations.map(SequenceOperations.map(SLinkOperations.getTargets(foo, "implements", true), new zMapper4(null, null)), new zMapper5(null, null));
+    ListOperations.createList(new SNode[]{SNodeOperations.getParent(foo, null, false, false)});
   }
 
 }
