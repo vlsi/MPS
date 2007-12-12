@@ -214,6 +214,12 @@ public class QueriesGenerated {
     return _QueriesUtil.extendedConcept_generatedClass(node, templateNode, generator);
   }
 
+  public static SNode referenceMacro_GetReferent_1197500159012(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
+    SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
+    return (SNode)generatedClassifier;
+  }
+
   public static SNode referenceMacro_GetReferent_1169128252878(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.extendedInterfaceConcept_generatedInterface(node, templateNode, generator);
   }
