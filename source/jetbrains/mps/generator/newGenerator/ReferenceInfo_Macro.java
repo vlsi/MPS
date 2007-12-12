@@ -17,7 +17,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   private SNode myTemplateReferenceNode;
   private ReferenceMacro myReferenceMacro;
 
-  public ReferenceInfo_Macro(ReferenceMacro refMacro, SNode inputNode, SNode templateReferenceNode, SNode outputSourceNode) {
+  public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro refMacro, SNode inputNode, SNode templateReferenceNode) {
     super(outputSourceNode, refMacro.getLink().getRole(), inputNode);
     myTemplateReferenceNode = templateReferenceNode;
     myReferenceMacro = refMacro;

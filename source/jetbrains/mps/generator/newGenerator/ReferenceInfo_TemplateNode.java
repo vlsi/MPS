@@ -12,14 +12,12 @@ import java.util.List;
  * Date: Jan 25, 2007
  */
 public class ReferenceInfo_TemplateNode extends ReferenceInfo {
-  private SReference myTemplateReference;
   private SNode myTemplateSourceNode;
   private SNode myTemplateTargetNode;
 
 
-  public ReferenceInfo_TemplateNode(SNode outputNode, SReference templateReference, SNode inputNode) {
-    super(outputNode, templateReference.getRole(), inputNode);
-    myTemplateReference = templateReference;
+  public ReferenceInfo_TemplateNode(SNode outputSourceNode, SReference templateReference, SNode inputNode) {
+    super(outputSourceNode, templateReference.getRole(), inputNode);
     myTemplateSourceNode = templateReference.getSourceNode();
     myTemplateTargetNode = templateReference.getTargetNode();
   }
@@ -56,7 +54,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     // try to resolve using custom referense resolver for source node concept
     IReferenceResolver referenceResolver = loadReferenceResolver(getOutputSourceNode());
     if (referenceResolver != null) {
-      SNode outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), myTemplateReference.getRole(), myTemplateReference.getTargetNode());
+      SNode outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), getReferenceRole(), myTemplateTargetNode);
       if (outputTargetNode != null) {
         return outputTargetNode;
       }
@@ -100,7 +98,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   }
 
   public void showErrorMessage(ITemplateGenerator generator) {
-    generator.showErrorMessage(getOutputSourceNode(), "couldn't resolve reference '" + myTemplateReference.getRole() + "' in output node " + getOutputSourceNode().getDebugText());
+    generator.showErrorMessage(getOutputSourceNode(), "couldn't resolve reference '" + getReferenceRole() + "' in output node " + getOutputSourceNode().getDebugText());
     generator.showErrorMessage(myTemplateSourceNode, "-- original reference was " + myTemplateSourceNode.getDebugText());
     generator.showErrorMessage(getInputNode(), "-- input node was " + getInputNode().getDebugText());
   }

@@ -662,10 +662,10 @@ public class RuleUtil {
         MacroUtil.expandPropertyMacro(myGenerator, (PropertyMacro) templateChildNode, inputNode, templateNode, outputNode);
       } else if (templateChildNode instanceof ReferenceMacro) {
         ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(
-                (ReferenceMacro) templateChildNode,
+                outputNode, (ReferenceMacro) templateChildNode,
                 inputNode,
-                templateNode,
-                outputNode);
+                templateNode
+        );
         PostponedReference postponedReference = new PostponedReference(
                 refInfo,
                 myGenerator
