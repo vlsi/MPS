@@ -1,14 +1,12 @@
 package jetbrains.mps.generator.newGenerator;
 
-import jetbrains.mps.generator.template.INodeBuilder;
+import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.transformation.TLBase.structure.NodeMacro;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by: Sergey Dmitriev
@@ -47,15 +45,49 @@ public class DelayedChanges {
         myChildToReplace.getParent().replaceChild(myChildToReplace, child);
 
         // check child because it's manual and thus error prone mapping
-        SModelUID inputModelUID = myGenerator.getSourceModel().getUID();
-        for (SReference reference : child.getReferences()) {
-          if (inputModelUID.equals(reference.getTargetModelUID())) {
-            myGenerator.showWarningMessage(child, "reference '" + reference.getRole() + "' to input model in output node " + child.getDebugText());
-            SNode targetNode = reference.getTargetNode();
-            myGenerator.showInformationMessage(targetNode, " -- referent node: " + targetNode.getDebugText());
-            myGenerator.showInformationMessage(myMapSrcMacro.getNode(), " -- template node (click here)");
-            myGenerator.getGeneratorSessionContext().addTransientModelToKeep(myGenerator.getSourceModel());
-          }
+        validateReferences(child);
+
+//        SModelUID inputModelUID = myGenerator.getSourceModel().getUID();
+//        for (SReference reference : child.getReferences()) {
+//          if (inputModelUID.equals(reference.getTargetModelUID())) {
+//            myGenerator.showWarningMessage(child, "reference '" + reference.getRole() + "' to input model in output node " + child.getDebugText());
+//            SNode targetNode = reference.getTargetNode();
+//            myGenerator.showInformationMessage(targetNode, " -- referent node: " + targetNode.getDebugText());
+//            myGenerator.showInformationMessage(myMapSrcMacro.getNode(), " -- template node (click here)");
+//            myGenerator.getGeneratorSessionContext().addTransientModelToKeep(myGenerator.getSourceModel());
+//          }
+//        }
+      }
+    }
+
+    private void validateReferences(SNode node) {
+      for (SReference reference : node.getReferences()) {
+        validateReference(reference);
+      }
+      for (SNode child : node.getChildren()) {
+        validateReferences(child);
+      }
+    }
+
+    private void validateReference(SReference reference) {
+      // reference to input model - illegal
+      if (myGenerator.getSourceModel().getUID().equals(reference.getTargetModelUID())) {
+        if (reference instanceof StaticReference) {
+          // replace
+          reference.getSourceNode().removeReference(reference);
+          ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
+                  reference.getSourceNode(),
+                  reference.getRole(),
+                  myInputNode,
+                  reference.getTargetNode());
+          PostponedReference postponedReference = new PostponedReference(
+                  reference.getRole(),
+                  reference.getSourceNode(),
+                  refInfo,
+                  myGenerator);
+          reference.getSourceNode().addReference(postponedReference);
+        } else {
+          // ???
         }
       }
     }

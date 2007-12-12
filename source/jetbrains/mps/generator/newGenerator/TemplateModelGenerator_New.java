@@ -185,8 +185,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
             inputReference.getRole(),
             outputNode,
             refInfo,
-            this
-    );
+            this);
     outputNode.addReference(postponedReference);
   }
 
