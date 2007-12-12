@@ -29,6 +29,10 @@
       <property name="name" value="overrideTypes" />
       <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197458578086">
+      <property name="name" value="type" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1182511234181">
       <property name="metaClass" value="aggregation" />
       <property name="sourceCardinality" value="0..n" />
@@ -40,6 +44,12 @@
       <property name="role" value="types" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1197283519038" resolveInfo="TypesBlock" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197459802001">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="supertypes" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1197459516108" resolveInfo="SubtypesBlock" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197370934607">
       <property name="metaClass" value="aggregation" />
@@ -666,6 +676,17 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197382553122">
       <property name="value" value="id" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197459516108">
+    <property name="package" value="Types" />
+    <property name="name" value="SupertypesBlock" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197459541609">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="body" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1068580123136" resolveInfo="StatementList" />
     </node>
   </node>
 </model>

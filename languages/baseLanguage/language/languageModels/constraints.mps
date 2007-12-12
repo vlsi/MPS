@@ -8,7 +8,7 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.quotation" />
-  <maxImportIndex value="39" />
+  <maxImportIndex value="41" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.util@java_stub" version="-1" />
@@ -28,6 +28,8 @@
   <import index="37" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="38" modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
   <import index="39" modelUID="jetbrains.mps.baseLanguage.structure@java_stub" version="-1" />
+  <import index="40" modelUID="jetbrains.mps.cfg@java_stub" version="-1" />
+  <import index="41" modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1156246260769">
     <property name="name" value="QueriesUtil" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1156246279317">
@@ -6658,6 +6660,72 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1197462236379">
+    <link role="concept" targetNodeId="1.1068580123136" resolveInfo="StatementList" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197462575714">
+      <property name="name" value="returnsSomething" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1197462588577" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197462575716">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197462706484">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197462706485">
+            <property name="name" value="cfgBuilder" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197462713630">
+              <link role="classifier" targetNodeId="40.~CFGBuilder" resolveInfo="CFGBuilder" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1197462706487">
+              <link role="baseMethodDeclaration" targetNodeId="40.~CFGBuilder.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="CFGBuilder" />
+              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197462730006" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197462654721">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197462654722">
+            <property name="name" value="controlFlowGraph" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197462687951">
+              <link role="classifier" targetNodeId="40.~IControlFlowGraph" resolveInfo="IControlFlowGraph" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197462654724">
+              <link role="baseMethodDeclaration" targetNodeId="40.~CFGBuilder.getControlFlowGraph():jetbrains.mps.cfg.IControlFlowGraph" resolveInfo="getControlFlowGraph" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197462738679">
+                <link role="variableDeclaration" targetNodeId="1197462706485" resolveInfo="cfgBuilder" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197462654726">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197462654727">
+            <property name="name" value="lastBlocks" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197462789087">
+              <link role="classifier" targetNodeId="6.~Set" resolveInfo="Set" />
+              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197462792058">
+                <link role="classifier" targetNodeId="40.~BasicBlock" resolveInfo="BasicBlock" />
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197462654730">
+              <link role="classConcept" targetNodeId="41.1176897069499" resolveInfo="RulesFunctions_BaseLanguage" />
+              <link role="baseMethodDeclaration" targetNodeId="41.1196174976851" resolveInfo="findLastBlocks" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197462654731">
+                <link role="variableDeclaration" targetNodeId="1197462654722" resolveInfo="controlFlowGraph" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197462803466">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1197462827754">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197462827755">
+              <link role="baseMethodDeclaration" targetNodeId="6.~Set.isEmpty():boolean" resolveInfo="isEmpty" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197462827756">
+                <link role="variableDeclaration" targetNodeId="1197462654727" resolveInfo="lastBlocks" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1197462236380">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197462236381" />
     </node>
   </node>
 </model>

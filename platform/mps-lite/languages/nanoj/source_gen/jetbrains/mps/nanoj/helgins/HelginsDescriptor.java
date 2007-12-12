@@ -4,6 +4,7 @@ package jetbrains.mps.nanoj.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
+import jetbrains.mps.bootstrap.helgins.runtime.SubtypingRule_Runtime;
 
 public class HelginsDescriptor extends BaseHelginsDescriptor {
 
@@ -175,6 +176,10 @@ public class HelginsDescriptor extends BaseHelginsDescriptor {
     {
       InferenceRule_Runtime inferenceRule = new typeof_ParameterDeclaration_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new subtype_FloatType_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
     }
   }
 }

@@ -195,13 +195,12 @@
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1182956596487">
     <property name="name" value="Types" />
-    <property name="showStructure" value="true" />
     <property name="showTypes" value="true" />
-    <property name="showBehavior" value="false" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182956598488">
       <property name="name" value="Type" />
       <property name="role" value="true" />
       <property name="abstract" value="true" />
+      <property name="type" value="true" />
       <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284246273">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284246274" />
       </node>
@@ -358,6 +357,22 @@
       <node role="behavior" type="jetbrains.mpslite.structure.Behavior" id="1197371509478">
         <node role="constructor" type="jetbrains.mpslite.structure.ConstructorBlock" id="1197371509479">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197371509480" />
+        </node>
+      </node>
+      <node role="supertypes" type="jetbrains.mpslite.structure.SupertypesBlock" id="1197465111032">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197465111033">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197465117534">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1197465117535">
+              <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1197465118850">
+                <node role="elementType" type="jetbrains.mpslite.structure.NodeType" id="1197465124852" />
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1197465156681">
+                  <node role="creator" type="jetbrains.mpslite.structure.NodeCreator" id="1197465158980">
+                    <link role="concept" targetNodeId="1182956695013" resolveInfo="DoubleType" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
@@ -1532,14 +1547,6 @@
                       </node>
                     </node>
                   </node>
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197456916222">
-                    <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197457037218">
-                      <node role="operation" type="jetbrains.mpslite.structure.MPSLiteOperation" id="1197457037220" />
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197456916223">
-                        <link role="variableDeclaration" targetNodeId="1197042733341" resolveInfo="current" />
-                      </node>
-                    </node>
-                  </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197045648612">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1197045649192">
                       <node role="rValue" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197045652930">
@@ -1656,7 +1663,7 @@
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1183027540955">
     <property name="name" value="Variables" />
-    <property name="showBehavior" value="true" />
+    <property name="showStructure" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1183027543503">
       <property name="name" value="VariableDeclaration" />
       <property name="abstract" value="true" />

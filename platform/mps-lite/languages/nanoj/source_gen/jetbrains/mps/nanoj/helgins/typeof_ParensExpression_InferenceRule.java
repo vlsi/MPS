@@ -14,7 +14,7 @@ public class typeof_ParensExpression_InferenceRule implements InferenceRule_Runt
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197452470922", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expr", true), "jetbrains.mps.nanoj.helgins", "1197452470924", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197452470921");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197465185267", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expr", true), "jetbrains.mps.nanoj.helgins", "1197465185269", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197465185266");
   }
 
   public String getApplicableConceptFQName() {
