@@ -651,7 +651,7 @@
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1182513108411">
             <property name="drawBorder" value="false" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
-            <link role="styleClass" targetNodeId="1196960621499" resolveInfo="MPSLiteProperty" />
+            <link role="styleClass" targetNodeId="1196960726948" resolveInfo="MPSLiteChild" />
           </node>
         </node>
       </node>

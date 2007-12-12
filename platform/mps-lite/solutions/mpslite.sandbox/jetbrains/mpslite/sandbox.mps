@@ -142,14 +142,28 @@
           <node role="declaration" type="jetbrains.mps.nanoj.structure.LocalVariableDeclaration" id="1197377951011">
             <property name="name" value="a" />
             <node role="initializer" type="jetbrains.mps.nanoj.structure.MinusExpression" id="1197377954546">
-              <node role="right" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197377960846">
-                <property name="number" value="1" />
+              <node role="right" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197468536204">
+                <node role="right" type="jetbrains.mps.nanoj.structure.InstanceMethodCallExpression" id="1197468542596">
+                  <link role="method" targetNodeId="1197301287944" resolveInfo="a" />
+                  <node role="parameter" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197468549034">
+                    <property name="number" value="2" />
+                  </node>
+                  <node role="parameter" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197468550129">
+                    <property name="number" value="3" />
+                  </node>
+                  <node role="instance" type="jetbrains.mps.nanoj.structure.NewExpression" id="1197468537613">
+                    <link role="classifier" targetNodeId="1197301285396" resolveInfo="A" />
+                  </node>
+                </node>
+                <node role="left" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197377960846">
+                  <property name="number" value="1" />
+                </node>
               </node>
               <node role="left" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197377953545">
                 <property name="number" value="23" />
               </node>
             </node>
-            <node role="type" type="jetbrains.mps.nanoj.structure.StringType" id="1197377951013" />
+            <node role="type" type="jetbrains.mps.nanoj.structure.IntType" id="1197468557347" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.nanoj.structure.LocalVariableDeclarationStatement" id="1197463731821">
