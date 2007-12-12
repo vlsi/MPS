@@ -161,6 +161,9 @@
           </node>
         </node>
       </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RemovePart" id="1197453702736">
+        <link role="conceptToRemove" targetNodeId="4.1145552809883" resolveInfo="AbstractCreator" />
+      </node>
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstitutePreconditionFunction" id="1196942343253">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196942343254">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1196942349174">

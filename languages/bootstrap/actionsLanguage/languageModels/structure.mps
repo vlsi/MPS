@@ -763,6 +763,9 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1177413954598" resolveInfo="QueryFunction_RemoveBy_Condition" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197453785524">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177413946564">
       <property name="value" value="remove by condition" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />

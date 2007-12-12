@@ -42,27 +42,36 @@ import java.util.*;
   }
 
   public static List<INodeSubstituteAction> createActions_internal(SNode sourceNode, String transformTag, IOperationContext context) {
-//    SModel model = sourceNode.getModel();
-//
-//    boolean wasLoading = model.isLoading();
-//    model.setLoading(true);
-//    model.setRegistrationsForbidden(true);
-//
-//    try {
-      List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
-      List<RTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders(sourceNode, transformTag, context);
+    List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
+    List<RTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders(sourceNode, transformTag, context);
 
-      // for each builder create actions and apply all filters
-      for (RTransformHintSubstituteActionsBuilder builder : actionsBuilders) {
-        List<INodeSubstituteAction> addActions = invokeActionFactory(builder, sourceNode, context);
-        addActions = applyActionFilters(addActions, actionsBuilders, builder, context);
-        resultActions.addAll(addActions);
+    Set<SNode> conceptsToRemove = new HashSet<SNode>();
+    // for each builder create actions and apply all filters
+    for (RTransformHintSubstituteActionsBuilder builder : actionsBuilders) {
+      for (RemovePart rp : builder.getSubnodes(RemovePart.class)) {
+        conceptsToRemove.add(rp.getConceptToRemove().getNode());
       }
-      return resultActions;
-//    } finally {
-//      model.setLoading(wasLoading);
-//      model.setRegistrationsForbidden(false);
-//    }
+
+      List<INodeSubstituteAction> addActions = invokeActionFactory(builder, sourceNode, context);
+      resultActions.addAll(addActions);
+    }
+
+    //remove with remove concept
+    for (Iterator<INodeSubstituteAction> it = resultActions.iterator(); it.hasNext();) {
+      INodeSubstituteAction action = it.next();
+      Object parameterObject = action.getParameterObject();
+      if (parameterObject instanceof SNode && ((SNode) parameterObject).getAdapter() instanceof AbstractConceptDeclaration) {
+        if (conceptsToRemove.contains(((SNode) parameterObject))) {
+          it.remove();
+        }
+      } else if (parameterObject instanceof AbstractConceptDeclaration) {
+        if (conceptsToRemove.contains(((AbstractConceptDeclaration) parameterObject).getNode())) {
+          it.remove();
+        }
+      }
+    }
+
+    return resultActions;
   }
 
   private static List<RTransformHintSubstituteActionsBuilder> getActionBuilders(final SNode sourceNode, String transformTag, final IOperationContext context) {
@@ -94,15 +103,6 @@ import java.util.*;
       }
     }
     return actionsBuilders;
-  }
-
-  private static List<INodeSubstituteAction> applyActionFilters(List<INodeSubstituteAction> actions, List<RTransformHintSubstituteActionsBuilder> substituteActionsBuilders, RTransformHintSubstituteActionsBuilder excludeBuilder, IOperationContext context) {
-    for (RTransformHintSubstituteActionsBuilder substituteActionsBuilder : substituteActionsBuilders) {
-      if (substituteActionsBuilder != excludeBuilder) {
-        actions = applyActionFilter(substituteActionsBuilder, actions, context);
-      }
-    }
-    return actions;
   }
 
   // --------------------------------
@@ -137,39 +137,6 @@ import java.util.*;
     String methodName = "rightTransformHintSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
     SModel model = actionsBuilder.getModel();
     return (Boolean) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
-  }
-
-  private static List<INodeSubstituteAction> applyActionFilter(RTransformHintSubstituteActionsBuilder substituteActionsBuilder, List<INodeSubstituteAction> actions, IOperationContext context) {
-    if (!substituteActionsBuilder.getUseNewActions()) {
-      String filterQueryMethodId = substituteActionsBuilder.getActionsFilterAspectId();
-      // filter is optional
-      if (filterQueryMethodId == null) {
-        return actions;
-      }
-
-      Object[] args1 = new Object[]{actions, context};
-      Object[] args2 = new Object[]{actions, context.getScope()};
-      String methodName = "rightTransformHintSubstituteActionsBuilder_ActionsFilter_" + filterQueryMethodId;
-      SModel model = substituteActionsBuilder.getModel();
-      return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
-    } else {
-      Set<SNode> conceptsToRemove = new HashSet<SNode>();
-      for (RemovePart rp : substituteActionsBuilder.getSubnodes(RemovePart.class)) {
-        conceptsToRemove.add(rp.getConceptToRemove().getNode());
-      }
-
-      Iterator<INodeSubstituteAction> it = actions.iterator();
-      while (it.hasNext()) {
-        INodeSubstituteAction action = it.next();
-        if (action.getParameterObject() instanceof SNode && ((SNode) action.getParameterObject()).getAdapter() instanceof ConceptDeclaration) {
-          if (conceptsToRemove.contains(action.getParameterObject())) {
-            it.remove();
-          }
-        }
-      }
-
-      return actions;
-    }
   }
 
   private static List<INodeSubstituteAction> invokeActionFactory(RTransformHintSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, IOperationContext context) {

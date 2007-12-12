@@ -125,6 +125,9 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1180137769605">
         <link role="concept" targetNodeId="1.1180134965967" />
       </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1197453803590">
+        <link role="concept" targetNodeId="1.1177413882405" resolveInfo="RemoveByConditionPart" />
+      </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1180112212391">
       <property name="description" value="builder parts available for right-transform (apart from defaults)" />
