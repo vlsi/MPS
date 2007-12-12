@@ -161,7 +161,7 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
 
   public EditorCell createTreepathAspectReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new TreePathAdapterExpression_Editor._Inline1());
+    provider.setAuxiliaryCellProvider(new TreePathAdapterExpression_Editor._Inline2());
     EditorCell editorCell = provider.createEditorCell(context);
     TreePathAdapterExpression_Editor.setupBasic_TreepathAspectReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -188,9 +188,9 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline1 extends AbstractCellProvider {
+  public static class _Inline2 extends AbstractCellProvider {
 
-    public  _Inline1() {
+    public  _Inline2() {
       super();
     }
 
@@ -214,9 +214,9 @@ public class TreePathAdapterExpression_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      TreePathAdapterExpression_Editor._Inline1.setupBasic_NameCell(editorCell, node, context);
+      TreePathAdapterExpression_Editor._Inline2.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        TreePathAdapterExpression_Editor._Inline1.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        TreePathAdapterExpression_Editor._Inline2.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

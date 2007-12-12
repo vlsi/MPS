@@ -16,13 +16,13 @@ public class SNODE_GEN_Design {
   public static class Design_Feature_child implements IGenericParameterizedFeatureDesign<SNode> {
 
     public Iterable<SNode> getParameters(SNode nodeType) {
-      return SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate5(null, null));
+      return SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate4(null, null));
     }
 
     public SNode getTargetType(SNode param, SNode nodeType) {
       SNode ld = param;
       SNode trg = SLinkOperations.getTarget(ld, "target", false);
-      return new QuotationClass_3().createNode(trg);
+      return new QuotationClass_2().createNode(trg);
     }
 
     public String parameterToString(SNode param) {
@@ -55,13 +55,13 @@ public class SNODE_GEN_Design {
   public static class Design_Feature_link implements IGenericParameterizedFeatureDesign<SNode> {
 
     public Iterable<SNode> getParameters(SNode nodeType) {
-      return SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate6(null, null));
+      return SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate5(null, null));
     }
 
     public SNode getTargetType(SNode param, SNode nodeType) {
       SNode ld = param;
       SNode trg = SLinkOperations.getTarget(ld, "target", false);
-      return new QuotationClass_5().createNode(trg);
+      return new QuotationClass_4().createNode(trg);
     }
 
     public String parameterToString(SNode param) {
@@ -94,7 +94,7 @@ public class SNODE_GEN_Design {
   public static class Design_Feature_parent implements IGenericFeatureDesign {
 
     public SNode getterExpression(SNode expression, ITemplateGenerator generator) {
-      return new QuotationClass_4().createNode(expression);
+      return new QuotationClass_3().createNode(expression);
     }
 
 }

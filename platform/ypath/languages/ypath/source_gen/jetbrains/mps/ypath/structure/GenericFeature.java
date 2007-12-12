@@ -13,10 +13,10 @@ import java.util.List;
 
 public class GenericFeature extends BaseConcept implements IGenericFeature, INamedConcept, IFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.GenericFeature";
+  public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String NAME = "name";
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
   public static String GETTER = "getter";
@@ -35,6 +35,14 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
     return GenericFeature.newInstance(sm, false);
   }
 
+
+  public String getName() {
+    return this.getProperty(GenericFeature.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(GenericFeature.NAME, value);
+  }
 
   public String getShortDescription() {
     return this.getProperty(GenericFeature.SHORT_DESCRIPTION);
@@ -58,14 +66,6 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
 
   public void setVirtualPackage(String value) {
     this.setProperty(GenericFeature.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getName() {
-    return this.getProperty(GenericFeature.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(GenericFeature.NAME, value);
   }
 
   public boolean getWritable() {

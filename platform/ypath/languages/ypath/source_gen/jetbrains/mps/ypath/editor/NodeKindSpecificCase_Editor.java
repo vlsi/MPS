@@ -198,7 +198,7 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
 
   public EditorCell createTreeNodeKindReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new NodeKindSpecificCase_Editor._Inline7());
+    provider.setAuxiliaryCellProvider(new NodeKindSpecificCase_Editor._Inline8());
     EditorCell editorCell = provider.createEditorCell(context);
     NodeKindSpecificCase_Editor.setupBasic_TreeNodeKindReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -254,9 +254,9 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline7 extends AbstractCellProvider {
+  public static class _Inline8 extends AbstractCellProvider {
 
-    public  _Inline7() {
+    public  _Inline8() {
       super();
     }
 
@@ -280,9 +280,9 @@ public class NodeKindSpecificCase_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      NodeKindSpecificCase_Editor._Inline7.setupBasic_NameCell(editorCell, node, context);
+      NodeKindSpecificCase_Editor._Inline8.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        NodeKindSpecificCase_Editor._Inline7.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        NodeKindSpecificCase_Editor._Inline8.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

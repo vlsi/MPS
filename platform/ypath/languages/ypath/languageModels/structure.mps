@@ -1523,6 +1523,9 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1193057943814" resolveInfo="GFCardinalParamFun" />
     </node>
+    <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1197462180969">
+      <link role="intfc" targetNodeId="1184066209434" resolveInfo="IFeature" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1184659771596">
     <property name="package" value="treePath.features.functions" />
@@ -1618,6 +1621,9 @@
       <property name="role" value="funHolders" />
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1196414630662" resolveInfo="GenericFeatureFunHolder" />
+    </node>
+    <node role="extends" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1197462189639">
+      <link role="intfc" targetNodeId="1184066209434" resolveInfo="IFeature" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1192620437851">

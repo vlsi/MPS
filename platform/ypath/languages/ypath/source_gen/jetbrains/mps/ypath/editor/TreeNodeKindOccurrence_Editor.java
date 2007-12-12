@@ -49,7 +49,7 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
 
   public EditorCell createNodeKindReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new TreeNodeKindOccurrence_Editor._Inline3());
+    provider.setAuxiliaryCellProvider(new TreeNodeKindOccurrence_Editor._Inline4());
     EditorCell editorCell = provider.createEditorCell(context);
     TreeNodeKindOccurrence_Editor.setupBasic_NodeKindReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -76,9 +76,9 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline3 extends AbstractCellProvider {
+  public static class _Inline4 extends AbstractCellProvider {
 
-    public  _Inline3() {
+    public  _Inline4() {
       super();
     }
 
@@ -102,9 +102,9 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      TreeNodeKindOccurrence_Editor._Inline3.setupBasic_NameCell(editorCell, node, context);
+      TreeNodeKindOccurrence_Editor._Inline4.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        TreeNodeKindOccurrence_Editor._Inline3.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        TreeNodeKindOccurrence_Editor._Inline4.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

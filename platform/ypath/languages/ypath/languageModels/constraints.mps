@@ -4472,6 +4472,32 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1193753566677">
     <property name="package" value="treePath.features" />
     <link role="concept" targetNodeId="1.1184659060758" resolveInfo="IParamFeature" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197461148674">
+      <property name="name" value="getParameterObjects" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197461148676">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197461198572">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197461200123">
+            <link role="baseMethodDeclaration" targetNodeId="1190198377893" resolveInfo="getParameterObjects" />
+            <link role="classConcept" targetNodeId="1184790036011" resolveInfo="FeatureTargetTypeUtil" />
+            <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197461201529" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197461204428">
+              <link role="variableDeclaration" targetNodeId="1197461183916" resolveInfo="nodeType" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType" id="1197461162110">
+        <node role="elementType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197461162111">
+          <link role="concept" targetNodeId="1.1184768155075" resolveInfo="ParameterWrapper" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1197461183916">
+        <property name="name" value="nodeType" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197461183917">
+          <link role="concept" targetNodeId="6.1068431790189" resolveInfo="Type" />
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1193753568538">
       <property name="name" value="getTargetType" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1193753607561">

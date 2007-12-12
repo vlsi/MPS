@@ -10,9 +10,12 @@ import jetbrains.mps.baseLanguage.structure.Type;
 
 public class ParamListFeature extends ListFeature implements IParamFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.ParamListFeature";
+  public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String WRITABLE = "writable";
+  public static String DEFAULT = "default";
   public static String PARAMETER_TYPE = "parameterType";
   public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
@@ -31,6 +34,14 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
     return ParamListFeature.newInstance(sm, false);
   }
 
+
+  public String getName() {
+    return this.getProperty(ParamListFeature.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(ParamListFeature.NAME, value);
+  }
 
   public String getShortDescription() {
     return this.getProperty(ParamListFeature.SHORT_DESCRIPTION);
@@ -54,6 +65,22 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
 
   public void setVirtualPackage(String value) {
     this.setProperty(ParamListFeature.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getWritable() {
+    return this.getBooleanProperty(ParamListFeature.WRITABLE);
+  }
+
+  public void setWritable(boolean value) {
+    this.setBooleanProperty(ParamListFeature.WRITABLE, value);
+  }
+
+  public boolean getDefault() {
+    return this.getBooleanProperty(ParamListFeature.DEFAULT);
+  }
+
+  public void setDefault(boolean value) {
+    this.setBooleanProperty(ParamListFeature.DEFAULT, value);
   }
 
   public Type getParameterType() {

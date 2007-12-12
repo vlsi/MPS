@@ -154,7 +154,7 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createNodeKindReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new MatchKindOperation_Editor._Inline2());
+    provider.setAuxiliaryCellProvider(new MatchKindOperation_Editor._Inline3());
     EditorCell editorCell = provider.createEditorCell(context);
     MatchKindOperation_Editor.setupBasic_NodeKindReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -210,9 +210,9 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline2 extends AbstractCellProvider {
+  public static class _Inline3 extends AbstractCellProvider {
 
-    public  _Inline2() {
+    public  _Inline3() {
       super();
     }
 
@@ -236,9 +236,9 @@ public class MatchKindOperation_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      MatchKindOperation_Editor._Inline2.setupBasic_NameCell(editorCell, node, context);
+      MatchKindOperation_Editor._Inline3.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        MatchKindOperation_Editor._Inline2.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        MatchKindOperation_Editor._Inline3.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;

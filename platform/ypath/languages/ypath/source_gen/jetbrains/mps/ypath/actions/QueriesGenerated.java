@@ -73,6 +73,10 @@ public class QueriesGenerated {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.ypath.structure.VisitNodesStatement", true, false) != null);
   }
 
+  public static boolean nodeSubstituteActionsBuilder_Precondition_ParameterWrapper_1197462321701(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
+    return false;
+  }
+
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1168893690367(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     SNode nono = SNodeOperations.getAncestorWhereConceptInList(sourceNode, new String[]{"jetbrains.mps.ypath.structure.ParentBlock","jetbrains.mps.ypath.structure.ChildrenBlock","jetbrains.mps.ypath.structure.WhereBlock","jetbrains.mps.ypath.structure.TreePathAdapterExpression","jetbrains.mps.ypath.structure.TreePathOperationExpression"}, true, false);
     if(nono != null) {
@@ -503,7 +507,7 @@ public class QueriesGenerated {
           }
 
           public String getDescriptionText(String text) {
-            return "cast to treepath expression";
+            return "[OBSOLETE] cast to treepath expression";
           }
 
         });
@@ -773,26 +777,6 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static void removeActionsByCondition_1197451890790(Iterator<INodeSubstituteAction> actions, final SNode parentNode, final SNode currentChild, final SNode childConcept, final IOperationContext operationContext) {
-    while(actions.hasNext()) {
-      INodeSubstituteAction current = actions.next();
-      if(!(current.getParameterObject() instanceof SNode)) {
-        continue;
-      }
-      final SNode concept = (SNode)current.getParameterObject();
-      Condition cond = new Condition() {
-
-        public boolean met(Object object) {
-          return !(SNodeOperations.isInstanceOf(childConcept, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation") || SNodeOperations.isInstanceOf(childConcept, "jetbrains.mps.ypath.structure.TreePathOperationExpression"));
-        }
-
-      };
-      if(cond.met(null)) {
-        actions.remove();
-      }
-    }
-  }
-
   public static void removeActionsByCondition_1178108596882(Iterator<INodeSubstituteAction> actions, final SNode parentNode, final SNode currentChild, final SNode childConcept, final IOperationContext operationContext) {
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
@@ -828,6 +812,26 @@ public class QueriesGenerated {
 
       };
       if(cond.met(null)) {
+        actions.remove();
+      }
+    }
+  }
+
+  public static void removeRTActionsByCondition_1197459086085(final Iterator<INodeSubstituteAction> actions, final SNode sourceNode, final IOperationContext operationContext) {
+    while(actions.hasNext()) {
+      INodeSubstituteAction current = actions.next();
+      if(!(current.getParameterObject() instanceof SNode)) {
+        continue;
+      }
+      final SNode concept = (SNode)current.getParameterObject();
+      Condition condition = new Condition() {
+
+        public boolean met(Object p0) {
+          return !(SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperation") || SConceptOperations.isSubConceptOf(concept, "jetbrains.mps.ypath.structure.TreePathOperationExpression"));
+        }
+
+      };
+      if(condition.met(null)) {
         actions.remove();
       }
     }

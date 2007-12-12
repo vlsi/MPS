@@ -170,7 +170,7 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createPropertyReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
     CellProviderWithRole provider = aProvider;
-    provider.setAuxiliaryCellProvider(new MatchPropertyOperation_Editor._Inline4());
+    provider.setAuxiliaryCellProvider(new MatchPropertyOperation_Editor._Inline5());
     EditorCell editorCell = provider.createEditorCell(context);
     MatchPropertyOperation_Editor.setupBasic_PropertyReferenceCell(editorCell, node, context);
     if(editorCell instanceof EditorCell_Label) {
@@ -226,9 +226,9 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class _Inline4 extends AbstractCellProvider {
+  public static class _Inline5 extends AbstractCellProvider {
 
-    public  _Inline4() {
+    public  _Inline5() {
       super();
     }
 
@@ -252,9 +252,9 @@ public class MatchPropertyOperation_Editor extends DefaultNodeEditor {
       CellProviderWithRole provider = aProvider;
       provider.setAuxiliaryCellProvider(null);
       EditorCell editorCell = provider.createEditorCell(context);
-      MatchPropertyOperation_Editor._Inline4.setupBasic_NameCell(editorCell, node, context);
+      MatchPropertyOperation_Editor._Inline5.setupBasic_NameCell(editorCell, node, context);
       if(editorCell instanceof EditorCell_Label) {
-        MatchPropertyOperation_Editor._Inline4.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
+        MatchPropertyOperation_Editor._Inline5.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
       }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       return editorCell;
