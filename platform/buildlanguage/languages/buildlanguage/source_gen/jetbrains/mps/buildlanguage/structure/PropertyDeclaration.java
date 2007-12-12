@@ -11,12 +11,12 @@ import jetbrains.mps.project.GlobalScope;
 
 public class PropertyDeclaration extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.PropertyDeclaration";
+  public static String TYPE = "type";
+  public static String PROPERTY_VALUE = "propertyValue";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String TYPE = "type";
-  public static String PROPERTY_VALUE = "propertyValue";
 
   public  PropertyDeclaration(SNode node) {
     super(node);
@@ -30,6 +30,22 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept {
     return PropertyDeclaration.newInstance(sm, false);
   }
 
+
+  public Type getType() {
+    return (Type)this.getChild(PropertyDeclaration.TYPE);
+  }
+
+  public void setType(Type node) {
+    super.setChild(PropertyDeclaration.TYPE, node);
+  }
+
+  public PropertyValueExpression getPropertyValue() {
+    return (PropertyValueExpression)this.getChild(PropertyDeclaration.PROPERTY_VALUE);
+  }
+
+  public void setPropertyValue(PropertyValueExpression node) {
+    super.setChild(PropertyDeclaration.PROPERTY_VALUE, node);
+  }
 
   public String getName() {
     return this.getProperty(PropertyDeclaration.NAME);
@@ -61,22 +77,6 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(PropertyDeclaration.VIRTUAL_PACKAGE, value);
-  }
-
-  public Type getType() {
-    return (Type)this.getChild(PropertyDeclaration.TYPE);
-  }
-
-  public void setType(Type node) {
-    super.setChild(PropertyDeclaration.TYPE, node);
-  }
-
-  public PropertyValueExpression getPropertyValue() {
-    return (PropertyValueExpression)this.getChild(PropertyDeclaration.PROPERTY_VALUE);
-  }
-
-  public void setPropertyValue(PropertyValueExpression node) {
-    super.setChild(PropertyDeclaration.PROPERTY_VALUE, node);
   }
 
 }
