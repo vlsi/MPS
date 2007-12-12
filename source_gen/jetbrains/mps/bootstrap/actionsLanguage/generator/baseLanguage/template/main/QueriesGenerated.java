@@ -133,6 +133,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(node, "text");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1197457082670(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return "removeRTActionsByCondition_" + node.getId();
+  }
+
   public static SNode referenceMacro_GetReferent_1179457640879(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(node, "variable");
   }
@@ -379,6 +383,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "handler", true), "body", true);
   }
 
+  public static SNode sourceNodeQuery_1197457249775(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "condition", true), "body", true);
+  }
+
   public static SNode weaving_MappingRule_ContextNodeQuery_1186794781128(SNode node, ITemplateGenerator generator) {
     return QueriesUtil.get_QueriesGenerated_class(generator);
   }
@@ -400,6 +408,10 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1186795071822(SNode node, ITemplateGenerator generator) {
+    return QueriesUtil.get_QueriesGenerated_class(generator);
+  }
+
+  public static SNode weaving_MappingRule_ContextNodeQuery_1197455643098(SNode node, ITemplateGenerator generator) {
     return QueriesUtil.get_QueriesGenerated_class(generator);
   }
 

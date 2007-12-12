@@ -45,6 +45,8 @@ import java.util.*;
     List<INodeSubstituteAction> resultActions = new LinkedList<INodeSubstituteAction>();
     List<RTransformHintSubstituteActionsBuilder> actionsBuilders = getActionBuilders(sourceNode, transformTag, context);
 
+    List<RemoveRTByConditionPart> removesByCondition = new ArrayList<RemoveRTByConditionPart>();
+
     Set<SNode> conceptsToRemove = new HashSet<SNode>();
     // for each builder create actions and apply all filters
     for (RTransformHintSubstituteActionsBuilder builder : actionsBuilders) {
@@ -52,8 +54,17 @@ import java.util.*;
         conceptsToRemove.add(rp.getConceptToRemove().getNode());
       }
 
+      for (RemoveRTByConditionPart rp : builder.getSubnodes(RemoveRTByConditionPart.class)) {
+        removesByCondition.add(rp);
+      }
+
       List<INodeSubstituteAction> addActions = invokeActionFactory(builder, sourceNode, context);
       resultActions.addAll(addActions);
+    }
+
+    //remove with conditions
+    for (RemoveRTByConditionPart rbc : removesByCondition) {
+      invokeRemoveByCondition(rbc, resultActions.iterator(), sourceNode, context);
     }
 
     //remove with remove concept
@@ -108,6 +119,16 @@ import java.util.*;
   // --------------------------------
   // Query methods invocation...
   // --------------------------------
+
+
+  private static void invokeRemoveByCondition(RemoveRTByConditionPart removeByCondition, Iterator<INodeSubstituteAction> actions, SNode sourceNode, IOperationContext context) {
+    String methodName = "removeRTActionsByCondition_" + removeByCondition.getId();
+    try {
+      QueryMethodGenerated.invoke(methodName, new Object[] { actions, sourceNode, context }, removeByCondition.getModel());
+    } catch (Throwable t) {
+      LOG.error(t);
+    }
+  }
 
   private static boolean satisfiesPrecondition(RTransformHintSubstituteActionsBuilder actionsBuilder, SNode sourceNode, IOperationContext context) {
     // try generatred query method

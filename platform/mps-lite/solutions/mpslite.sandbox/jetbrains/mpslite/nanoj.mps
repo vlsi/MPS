@@ -1532,6 +1532,14 @@
                       </node>
                     </node>
                   </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197456916222">
+                    <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197457037218">
+                      <node role="operation" type="jetbrains.mpslite.structure.MPSLiteOperation" id="1197457037220" />
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197456916223">
+                        <link role="variableDeclaration" targetNodeId="1197042733341" resolveInfo="current" />
+                      </node>
+                    </node>
+                  </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197045648612">
                     <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1197045649192">
                       <node role="rValue" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197045652930">
