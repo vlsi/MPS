@@ -87,8 +87,12 @@
     </node>
   </node>
   <node type="jetbrains.mps.nanoj.structure.ClassConcept" id="1197301300856">
-    <property name="name" value="B" />
+    <property name="name" value="K" />
     <link role="superClass" targetNodeId="1197301285396" resolveInfo="A" />
+    <node role="constructor" type="jetbrains.mps.nanoj.structure.Constructor" id="1197470593332">
+      <node role="type" type="jetbrains.mps.nanoj.structure.VoidType" id="1197470593333" />
+      <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1197470593334" />
+    </node>
     <node role="method" type="jetbrains.mps.nanoj.structure.InstanceMethod" id="1197301306263">
       <property name="name" value="bsmethod" />
       <node role="type" type="jetbrains.mps.nanoj.structure.VoidType" id="1197301311469" />

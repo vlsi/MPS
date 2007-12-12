@@ -31,7 +31,7 @@ public class ForEachVariableReference_variable_ReferentConstraint implements IMo
     return SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", true, false) != null;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     List<SNode> forEachStatements = SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement", false);
     return new SubnodesSearchScope(SequenceOperations.getLast(forEachStatements));
   }

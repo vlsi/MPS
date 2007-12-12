@@ -17,7 +17,7 @@ public class typeof_NewExpression_InferenceRule implements InferenceRule_Runtime
   public void applyRule(final SNode argument) {
     SNode ct = SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.ClassifierType", null);
     SLinkOperations.setTarget(ct, "classifier", SLinkOperations.getTarget(argument, "classifier", false), false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197470518990", true), ct, argument, null, "jetbrains.mps.nanoj.helgins", "1197470518989");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197472676473", true), ct, argument, null, "jetbrains.mps.nanoj.helgins", "1197472676472");
   }
 
   public String getApplicableConceptFQName() {
