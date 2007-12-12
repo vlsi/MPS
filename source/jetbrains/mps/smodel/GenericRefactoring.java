@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringLoggingFailedException;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.logging.refactoring.structure.*;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.project.IModule;
@@ -41,6 +42,7 @@ public class GenericRefactoring {
     Map<String, Object> args = myRefactoring.askForInfo(context);
     if (args == null) return;
     refactoringContext.addAdditionalParameters(args);
+    refactoringContext.setRefactoring(myRefactoring);
     myRefactoring.doRefactor(context, refactoringContext);
     SModelDescriptor modelDescriptor = context.getModel();
     if (modelDescriptor == null) return;
@@ -94,62 +96,10 @@ public class GenericRefactoring {
   }
 
   private void writeIntoLog(SModel model, RefactoringContext refactoringContext) {
-   /* String nodeIdString = myRefactoring.getSourceId();
-    String modelUID = MarshallUtil.getModelUID(nodeIdString);
-    String nodeId = MarshallUtil.getNodeId(nodeIdString);
-
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(modelUID));
-    if (modelDescriptor == null) {
-      throw new RefactoringLoggingFailedException("refactoring source model could not be found, UID=" + modelUID);
-    }
-
-    SNode refactoringSourceNode = modelDescriptor.getSModel().getNodeById(nodeId);
-    if (refactoringSourceNode == null) {
-      throw new RefactoringLoggingFailedException("refactoring source node could not be found, id=" + nodeId);
-    }
-    if (!BaseAdapter.isInstance(refactoringSourceNode, Refactoring.class)) {
-      throw new RefactoringLoggingFailedException("refactoring source node is not a refactoring source, id=" + nodeId);
-    }
-
-    Refactoring refactoring = (Refactoring) refactoringSourceNode.getAdapter();
-    RuntimeLog refactoringLog = RuntimeLog.newInstance(model);
-    UpdateModelClause updateModelClause = refactoring.getUpdateModelClause();
-    refactoringLog.setUpdateModelClause(updateModelClause);
-    for (String name : args.keySet()) {
-      RequiredAdditionalArgument argument = findArgumentByName(refactoring, name);
-      if (argument == null) continue;
-      RequiredAdditionalArgumentValue value = RequiredAdditionalArgumentValue.newInstance(model);
-      refactoringLog.addArgumentValue(value);
-      value.setValue(args.get(name));
-      RequiredAdditionalArgument argumentCopy = CopyUtil.copy(argument, model);
-      value.setArgument(argumentCopy);
-    }
-
-    SNode log = model.getLog();
-    RuntimeLogStack runtimeLogStack;
-    if (log == null) {
-      runtimeLogStack = RuntimeLogStack.newInstance(model);
-      model.setLog(runtimeLogStack.getNode());
-    } else {
-      runtimeLogStack = (RuntimeLogStack) log.getAdapter();
-    }
-
-    runtimeLogStack.addLog(refactoringLog);
+    RefactoringHistory refactoringHistory = model.getRefactoringHistory();
+    refactoringHistory.addRefactoringContext(refactoringContext);
     model.increaseVersion();
-    refactoringLog.setModelVersion(model.getVersion());*/
+    refactoringContext.setModelVersion(model.getVersion());
   }
 
-  private RequiredAdditionalArgument findArgumentByName(Refactoring refactoring, String name) {
-    for (RequiredAdditionalArgument argument : refactoring.getArgumentses()) {
-      if (name.equals(argument.getName())) {
-        return argument;
-      }
-    }
-    for (RequiredAdditionalArgument argument : refactoring.getInternalArgumentses()) {
-      if (name.equals(argument.getName())) {
-        return argument;
-      }
-    }
-    return null;
-  }
 }

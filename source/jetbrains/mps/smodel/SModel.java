@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -55,6 +56,7 @@ public class SModel implements Iterable<SNode> {
 
   private HashMap<Object, Object> myUserObjects = new HashMap<Object, Object>();
   private SNode myLog;
+  private RefactoringHistory myRefactoringHistory = new RefactoringHistory();
   private boolean myUsesLog;
   private boolean myRegistrationsForbidden = false;
   private int myVersion = -1;
@@ -105,6 +107,7 @@ public class SModel implements Iterable<SNode> {
     return myUID.getLongName();
   }
 
+  @Deprecated
   public boolean usesLog() {
     return myUsesLog;
   }
@@ -113,11 +116,13 @@ public class SModel implements Iterable<SNode> {
     return myVersion;
   }
 
+  @Deprecated
   public void setLog(SNode log) {
     myLog = log;
   }
 
   @Nullable
+  @Deprecated
   public SNode getLog() {
     return myLog;
   }
@@ -995,6 +1000,9 @@ public class SModel implements Iterable<SNode> {
     myVersion++;
   }
 
+  public RefactoringHistory getRefactoringHistory() {
+    return myRefactoringHistory;
+  }
 
   /*package*/
   public static class ImportElement {

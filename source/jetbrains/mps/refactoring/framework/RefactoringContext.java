@@ -4,11 +4,13 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkMetaclass;
 import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
 
+import java.lang.reflect.Constructor;
 import java.util.*;
 import java.util.Map.Entry;
 
@@ -20,6 +22,8 @@ import java.util.Map.Entry;
  * To change this template use File | Settings | File Templates.
  */
 public class RefactoringContext {
+  private static final Logger LOG = Logger.getLogger(RefactoringContext.class);
+
   //elements names
   public static final String REFACTORING_CONTEXT = "refactoringContext";
   public static final String MOVE_MAP = "moveMap";
@@ -28,19 +32,32 @@ public class RefactoringContext {
   public static final String ENTRY = "entry";
   public static final String KEY = "key";
   public static final String VALUE = "value";
-  private static final String PARAMETER_NAME = "parameterName";
+  public static final String PARAMETER_NAME = "parameterName";
+  public static final String MODEL_VERSION = "modelVersion";
+  public static final String REFACTORING = "refactoring";
+  public static final String REFACTORING_CLASS = "refactoringClass";
 
   //persistent fields
   private Map<String, Object> myAdditionalParametersMap = new HashMap<String, Object>();
   private Map<FullNodeId, FullNodeId> myMoveMap = new HashMap<FullNodeId, FullNodeId>();
   private Map<ConceptFeature, ConceptFeature> myConceptFeatureMap = new HashMap<ConceptFeature, ConceptFeature>();
-
+  private int myModelVersion = -1;
+  private ILoggableRefactoring myRefactoring;
   //-----------------
+
   //transient caches
   private Map<String, Set<ConceptFeature>> myFQNamesToConceptFeaturesCache = new HashMap<String, Set<ConceptFeature>>();
   private Map<SNodeId, Set<FullNodeId>> myNodeIdsToFullNodeIdsCache = new HashMap<SNodeId, Set<FullNodeId>>();
   private boolean myCachesAreUpToDate = false;
   //-----------------
+
+  public RefactoringContext() {
+
+  }
+
+  public RefactoringContext(Element e) {
+    fromElement(e);
+  }
 
   public void computeCaches() {
     myFQNamesToConceptFeaturesCache.clear();
@@ -236,95 +253,35 @@ public class RefactoringContext {
     }
   }
 
-  private class FullNodeId {
-    private SNodeId myNodeId;
-    private SModelUID myModelUID;
-
-    public static final String MODEL_UID = "modelUID";
-    public static final String NODE_ID = "nodeId";
-
-    public FullNodeId(SNodeId nodeId, SModelUID modelUID) {
-      myNodeId = nodeId;
-      myModelUID = modelUID;
-    }
-
-    public FullNodeId(SNode node) {
-      this(node.getSNodeId(), node.getModel().getUID());
-    }
-
-    public FullNodeId(Element element) {
-      fromElement(element);
-    }
-
-    public SNodeId getNodeId() {
-      return myNodeId;
-    }
-
-    public SModelUID getModelUID() {
-      return myModelUID;
-    }
-
-    public void toElement(Element element) {
-      element.setAttribute(MODEL_UID, myModelUID.toString());
-      element.setAttribute(NODE_ID, myNodeId.toString());
-    }
-
-    public void fromElement(Element element) {
-      myModelUID = SModelUID.fromString(element.getAttributeValue(MODEL_UID));
-      myNodeId = SNodeId.fromString(element.getAttributeValue(NODE_ID));
-    }
+  public void setModelVersion(int version) {
+    myModelVersion = version;
   }
 
-  private enum ConceptFeatureKind {
-    NONE, CONCEPT, PROPERTY, CHILD, REFERENCE
+  public int getModelVersion() {
+    return myModelVersion;
   }
 
-  private class ConceptFeature {
-    public static final String FEATURE_NAME = "featureName";
-    public static final String FEATURE_KIND = "featureKind";
-    public static final String CONCEPT_FQ_NAME = "conceptFQName";
-
-    private ConceptFeatureKind myConceptFeatureKind;
-    private String myFeatureName;
-    private String myConceptFQName;
-
-    public ConceptFeature(String conceptFQName, ConceptFeatureKind kind, String featureName) {
-      myConceptFeatureKind = kind;
-      myFeatureName = featureName;
-      myConceptFQName = conceptFQName;
-    }
-
-    public ConceptFeature(Element element) {
-      fromElement(element);
-    }
-
-    public ConceptFeatureKind getConceptFeatureKind() {
-      return myConceptFeatureKind;
-    }
-
-    public String getFeatureName() {
-      return myFeatureName;
-    }
-
-    public String getConceptFQName() {
-      return myConceptFQName;
-    }
-
-    public void toElement(Element element) {
-      element.setAttribute(FEATURE_NAME, myFeatureName);
-      element.setAttribute(CONCEPT_FQ_NAME, myConceptFQName);
-      element.setAttribute(FEATURE_KIND, myConceptFeatureKind.toString());
-    }
-
-    public void fromElement(Element element) {
-      myFeatureName = element.getAttributeValue(FEATURE_NAME);
-      myConceptFQName = element.getAttributeValue(CONCEPT_FQ_NAME);
-      myConceptFeatureKind = ConceptFeatureKind.valueOf(element.getAttributeValue(FEATURE_KIND));
-    }
+  public void setRefactoring(ILoggableRefactoring refactoring) {
+    myRefactoring = refactoring;
   }
+
+  public ILoggableRefactoring getRefactoring() {
+    return myRefactoring;
+  }
+
+
+  //serialization:
 
   public Element toElement() {
     Element refactoringContextElement = new Element(REFACTORING_CONTEXT);
+    if (myModelVersion != -1) {
+      refactoringContextElement.setAttribute(MODEL_VERSION, myModelVersion + "");
+    }
+    {
+      Element refactoringElement = new Element(REFACTORING);
+      refactoringElement.setAttribute(REFACTORING_CLASS, myRefactoring.getClass().getName());
+      refactoringContextElement.addContent(refactoringElement);
+    }
     {
       Element moveMapElement = new Element(MOVE_MAP);
       for (Entry<FullNodeId, FullNodeId> entry : myMoveMap.entrySet()) {
@@ -370,6 +327,36 @@ public class RefactoringContext {
   }
 
   public void fromElement(Element element) {
+    try {
+      String versionString = element.getAttributeValue(MODEL_VERSION);
+      if (versionString != null) {
+        myModelVersion = Integer.parseInt(versionString);
+      } else {
+        myModelVersion = -1;
+      }
+    } catch (Throwable t) {
+      myModelVersion = -1;
+      LOG.error(t);
+    }
+    {
+      myRefactoring = null;
+      Element refactoringElement = element.getChild(REFACTORING);
+      String className = refactoringElement.getAttributeValue(REFACTORING_CLASS);
+      try {
+        String namespace = NameUtil.namespaceFromLongName(
+                NameUtil.namespaceFromLongName(className));//remove ".scripts.%ClassName%"
+        Language l = MPSModuleRepository.getInstance().getLanguage(namespace);
+        if (l == null) {
+          LOG.errorWithTrace("can't find a language " + namespace);
+        } else {
+          Class<ILoggableRefactoring> refactoringClass = (Class<ILoggableRefactoring>) l.getClass(className);
+          Constructor<ILoggableRefactoring> constructor = refactoringClass.getConstructor();
+          myRefactoring = constructor.newInstance();
+        }
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
     {
       Element moveMapElement = element.getChild(MOVE_MAP);
       for (Element entryElement : (List<Element>) moveMapElement.getChildren(ENTRY)) {
@@ -405,5 +392,97 @@ public class RefactoringContext {
   private Object deserialize(Element element) {
     //todo
     return null;
+  }
+
+  private class FullNodeId {
+
+    private SNodeId myNodeId;
+
+    private SModelUID myModelUID;
+
+    public static final String MODEL_UID = "modelUID";
+
+    public static final String NODE_ID = "nodeId";
+
+    public FullNodeId(SNodeId nodeId, SModelUID modelUID) {
+      myNodeId = nodeId;
+      myModelUID = modelUID;
+    }
+
+    public FullNodeId(SNode node) {
+      this(node.getSNodeId(), node.getModel().getUID());
+    }
+
+    public FullNodeId(Element element) {
+      fromElement(element);
+    }
+
+    public SNodeId getNodeId() {
+      return myNodeId;
+    }
+
+    public SModelUID getModelUID() {
+      return myModelUID;
+    }
+
+    public void toElement(Element element) {
+      element.setAttribute(MODEL_UID, myModelUID.toString());
+      element.setAttribute(NODE_ID, myNodeId.toString());
+    }
+
+    public void fromElement(Element element) {
+      myModelUID = SModelUID.fromString(element.getAttributeValue(MODEL_UID));
+      myNodeId = SNodeId.fromString(element.getAttributeValue(NODE_ID));
+    }
+
+  }
+
+  private enum ConceptFeatureKind {
+    NONE, CONCEPT, PROPERTY, CHILD, REFERENCE
+
+  }
+
+  private class ConceptFeature {
+    public static final String FEATURE_NAME = "featureName";
+    public static final String FEATURE_KIND = "featureKind";
+    public static final String CONCEPT_FQ_NAME = "conceptFQName";
+
+    private ConceptFeatureKind myConceptFeatureKind;
+    private String myFeatureName;
+    private String myConceptFQName;
+
+    public ConceptFeature(String conceptFQName, ConceptFeatureKind kind, String featureName) {
+      myConceptFeatureKind = kind;
+      myFeatureName = featureName;
+      myConceptFQName = conceptFQName;
+    }
+
+    public ConceptFeature(Element element) {
+      fromElement(element);
+    }
+
+    public ConceptFeatureKind getConceptFeatureKind() {
+      return myConceptFeatureKind;
+    }
+
+    public String getFeatureName() {
+      return myFeatureName;
+    }
+
+    public String getConceptFQName() {
+      return myConceptFQName;
+    }
+
+    public void toElement(Element element) {
+      element.setAttribute(FEATURE_NAME, myFeatureName);
+      element.setAttribute(CONCEPT_FQ_NAME, myConceptFQName);
+      element.setAttribute(FEATURE_KIND, myConceptFeatureKind.toString());
+    }
+
+    public void fromElement(Element element) {
+      myFeatureName = element.getAttributeValue(FEATURE_NAME);
+      myConceptFQName = element.getAttributeValue(CONCEPT_FQ_NAME);
+      myConceptFeatureKind = ConceptFeatureKind.valueOf(element.getAttributeValue(FEATURE_KIND));
+    }
   }
 }
