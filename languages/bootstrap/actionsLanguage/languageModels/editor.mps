@@ -1964,5 +1964,29 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197454664800">
+    <property name="package" value="MenuBuilderParts" />
+    <link role="conceptDeclaration" targetNodeId="1.1197454626277" resolveInfo="RemoveRTByConditionPart" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197454671021">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197454671022">
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197454671023">
+          <property name="text" value="remove by condition" />
+          <property name="textFgColor" value="DARK_BLUE" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197454671024">
+        <property name="selectable" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197454671025">
+          <property name="selectable" value="false" />
+          <property name="text" value="  " />
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1197454671026">
+          <link role="relationDeclaration" targetNodeId="1.1197454635481" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

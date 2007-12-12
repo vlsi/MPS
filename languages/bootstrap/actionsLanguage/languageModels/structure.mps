@@ -1354,5 +1354,44 @@
     <property name="package" value="QueryFunctions" />
     <property name="name" value="ISubstitute_String" />
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197454418909">
+    <property name="package" value="QueryFunctions" />
+    <property name="name" value="QueryFunction_RT_RemoveBy_Condition" />
+    <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1197454519422">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1177497140107" resolveInfo="ConceptFunctionParameter_sourceNode" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1197454499013">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1177414026667" resolveInfo="ConceptFunctionParameter_concept" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1197454557956">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="5.1161622753914" resolveInfo="ConceptFunctionParameter_operationContext" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1197454568521">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1197454569586" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197454626277">
+    <property name="package" value="MenuBuilderParts" />
+    <property name="name" value="RemoveRTByConditionPart" />
+    <link role="extends" targetNodeId="1177323240852" resolveInfo="MenuBuilderPart" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197454658375">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197454659220">
+      <property name="value" value="remove by condition" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197454635481">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="condition" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1197454418909" resolveInfo="QueryFunction_RT_RemoveBy_Condition" />
+    </node>
+  </node>
 </model>
 

@@ -157,6 +157,9 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1182819558622">
         <link role="concept" targetNodeId="1.1182819125053" />
       </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1197454842467">
+        <link role="concept" targetNodeId="1.1197454626277" resolveInfo="RemoveRTByConditionPart" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1196932695369">
