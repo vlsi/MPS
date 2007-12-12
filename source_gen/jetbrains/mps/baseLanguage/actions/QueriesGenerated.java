@@ -772,7 +772,7 @@ public class QueriesGenerated {
           continue;
         }
         final ConceptDeclaration currentConcept = (ConceptDeclaration)abstractConcept;
-        result.add(new AbstractRTransformHintSubstituteAction(currentConcept, sourceNode) {
+        result.add(new AbstractRTransformHintSubstituteAction(currentConcept.getNode(), sourceNode) {
 
           public SNode doSubstitute(String pattern) {
             SNode result = SModelUtil_new.instantiateConceptDeclaration(currentConcept, model).getNode();
