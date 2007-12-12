@@ -76,7 +76,13 @@ import org.jetbrains.annotations.Nullable;
     }
 
     // external
-    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(getTargetModelUID());
+    SModelUID targetModelUID = getTargetModelUID();
+    if (targetModelUID == null) {
+      // 'unresolved' actually
+      return null;
+    }
+
+    SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(targetModelUID);
     if (modelDescriptor == null) {
       error("path to the target model '" + getTargetModelUID() + "' is not specified");
       return null;
