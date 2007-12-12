@@ -4,7 +4,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.template.IReferenceResolver;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -15,18 +14,18 @@ import jetbrains.mps.project.GlobalScope;
  * Date: Jan 25, 2007
  */
 public abstract class ReferenceInfo {
-  private SNode myOutputNode;
+  private SNode myOutputSourceNode;
   private String myReferenceRole;
   private SNode myInputNode;
 
   protected ReferenceInfo(SNode outputSourceNode, String referenceRole, SNode inputNode) {
-    myOutputNode = outputSourceNode;
+    myOutputSourceNode = outputSourceNode;
     myReferenceRole = referenceRole;
     myInputNode = inputNode;
   }
 
   public SNode getOutputSourceNode() {
-    return myOutputNode;
+    return myOutputSourceNode;
   }
 
   public String getReferenceRole() {

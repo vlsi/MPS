@@ -1,6 +1,5 @@
 package jetbrains.mps.generator.newGenerator;
 
-import jetbrains.mps.smodel.SModelUID;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.StaticReference;
@@ -76,8 +75,7 @@ public class DelayedChanges {
           // replace
           reference.getSourceNode().removeReference(reference);
           ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-                  reference.getSourceNode(),
-                  reference.getRole(),
+                  reference.getRole(), reference.getSourceNode(),
                   myInputNode,
                   reference.getTargetNode());
           PostponedReference postponedReference = new PostponedReference(

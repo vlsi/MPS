@@ -26,12 +26,12 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   }
 
   /**
-   * @param outputSourceNode  reference source in output model
    * @param role
+   * @param outputSourceNode  reference source in output model
    * @param inputNode         node from input mode (ofter refernce source in input model)
    * @param inputTargetNode   reference target in input model
    */
-  public ReferenceInfo_CopiedInputNode(SNode outputSourceNode, String role, SNode inputNode, SNode inputTargetNode) {
+  public ReferenceInfo_CopiedInputNode(String role, SNode outputSourceNode, SNode inputNode, SNode inputTargetNode) {
     super(outputSourceNode, role, inputNode);
     myReferenceRole = role;
     myInputNode = inputNode;
