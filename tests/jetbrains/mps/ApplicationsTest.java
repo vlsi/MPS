@@ -51,4 +51,9 @@ public class ApplicationsTest extends BaseMPSTest {
     String res = testProject(new File("app/accounting/web-app/accounting-webapp.mpr"));
     assertTrue(res, res == null);
   }
+
+  public void testBuildLanguage(){
+    String res = testProject(new File("platform/buildlanguage/BuildLanguage.mpr"));
+    assertTrue(res, res == null);
+  }
 }
