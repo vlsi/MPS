@@ -54,8 +54,18 @@
                   <property name="number" value="23" />
                 </node>
               </node>
-              <node role="left" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197389289149">
-                <property name="number" value="23" />
+              <node role="left" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197452407204">
+                <node role="right" type="jetbrains.mps.nanoj.structure.MinusExpression" id="1197452408911">
+                  <node role="right" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197452409945">
+                    <property name="number" value="2" />
+                  </node>
+                  <node role="left" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197452407972">
+                    <property name="number" value="23" />
+                  </node>
+                </node>
+                <node role="left" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197389289149">
+                  <property name="number" value="23" />
+                </node>
               </node>
             </node>
           </node>
@@ -67,7 +77,7 @@
         </node>
       </node>
     </node>
-    <node role="extends" type="jetbrains.mps.nanoj.structure.ClassReference" id="1197391947656">
+    <node role="extends" type="jetbrains.mps.nanoj.structure.ClassReference" id="1197452400610">
       <link role="classifier" targetNodeId="1197301300856" resolveInfo="B" />
     </node>
   </node>

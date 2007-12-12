@@ -1648,8 +1648,7 @@
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1183027540955">
     <property name="name" value="Variables" />
-    <property name="showStructure" value="true" />
-    <property name="showTypes" value="true" />
+    <property name="showBehavior" value="true" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1183027543503">
       <property name="name" value="VariableDeclaration" />
       <property name="abstract" value="true" />
@@ -1703,6 +1702,11 @@
           </node>
         </node>
       </node>
+      <node role="behavior" type="jetbrains.mpslite.structure.Behavior" id="1197452448651">
+        <node role="constructor" type="jetbrains.mpslite.structure.ConstructorBlock" id="1197452448652">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197452448653" />
+        </node>
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1183027574668">
       <property name="name" value="LocalVariableDeclaration" />
@@ -1727,6 +1731,11 @@
       <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284602472">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284602473" />
       </node>
+      <node role="behavior" type="jetbrains.mpslite.structure.Behavior" id="1197452449591">
+        <node role="constructor" type="jetbrains.mpslite.structure.ConstructorBlock" id="1197452449592">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197452449593" />
+        </node>
+      </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1183027852869">
       <property name="name" value="ParameterDeclaration" />
@@ -1742,6 +1751,11 @@
       </node>
       <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197284603677">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197284603678" />
+      </node>
+      <node role="behavior" type="jetbrains.mpslite.structure.Behavior" id="1197452450735">
+        <node role="constructor" type="jetbrains.mpslite.structure.ConstructorBlock" id="1197452450736">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197452450737" />
+        </node>
       </node>
     </node>
   </node>
