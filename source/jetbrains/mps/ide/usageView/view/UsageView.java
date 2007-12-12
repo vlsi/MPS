@@ -148,6 +148,7 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public Icon getIcon() {
+    if(mySearchQuery == null) return null;
     SNode node = mySearchQuery.getNode();
     if (node == null) {
       return null;
