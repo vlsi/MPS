@@ -14,21 +14,27 @@ import java.util.List;
 public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
   private String myReferenceRole;
-  private SNode myInputSourceNode;
+  private SNode myInputNode;
   private SNode myInputTargetNode;
 
 
   public ReferenceInfo_CopiedInputNode(SNode outputSourceNode, SReference inputReference) {
     super(outputSourceNode, inputReference.getRole(), inputReference.getSourceNode());
     myReferenceRole = inputReference.getRole();
-    myInputSourceNode = inputReference.getSourceNode();
+    myInputNode = inputReference.getSourceNode();
     myInputTargetNode = inputReference.getTargetNode();
   }
 
-  public ReferenceInfo_CopiedInputNode(SNode outputSourceNode, String role, SNode inputSourceNode, SNode inputTargetNode) {
-    super(outputSourceNode, role, inputSourceNode);
+  /**
+   * @param outputSourceNode  reference source in output model
+   * @param role
+   * @param inputNode         node from input mode (ofter refernce source in input model)
+   * @param inputTargetNode   reference target in input model
+   */
+  public ReferenceInfo_CopiedInputNode(SNode outputSourceNode, String role, SNode inputNode, SNode inputTargetNode) {
+    super(outputSourceNode, role, inputNode);
     myReferenceRole = role;
-    myInputSourceNode = inputSourceNode;
+    myInputNode = inputNode;
     myInputTargetNode = inputTargetNode;
   }
 
@@ -81,6 +87,6 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
   public void showErrorMessage(ITemplateGenerator generator) {
     generator.showErrorMessage(getOutputSourceNode(), "couldn't resolve reference '" + myReferenceRole + "' in output node " + getOutputSourceNode().getDebugText());
-    generator.showErrorMessage(myInputSourceNode, "-- original reference was " + myInputSourceNode.getDebugText());
+    generator.showErrorMessage(myInputNode, "-- input node was " + myInputNode.getDebugText());
   }
 }
