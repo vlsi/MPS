@@ -606,8 +606,22 @@
             </node>
           </node>
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182967280137">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1182967305054">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1182967306026" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1197468407245">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197468407246">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197468413842">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197468413843" />
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1197468412024">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197468412025">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197468412026">
+                    <link role="variableDeclaration" targetNodeId="1182967280135" resolveInfo="part" />
+                  </node>
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197468412027">
+                    <link role="property" targetNodeId="1.1182849973412" resolveInfo="optional" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>

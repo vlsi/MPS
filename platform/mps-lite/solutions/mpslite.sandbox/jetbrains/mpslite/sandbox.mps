@@ -213,11 +213,11 @@
         <node role="statement" type="jetbrains.mps.nanoj.structure.LocalVariableDeclarationStatement" id="1197301457920">
           <node role="declaration" type="jetbrains.mps.nanoj.structure.LocalVariableDeclaration" id="1197301457921">
             <property name="name" value="b" />
-            <node role="initializer" type="jetbrains.mps.nanoj.structure.LocalVariableReference" id="1197466377330">
-              <link role="variable" targetNodeId="1197301335820" resolveInfo="a" />
-            </node>
             <node role="type" type="jetbrains.mps.nanoj.structure.ClassifierType" id="1197301457923">
               <link role="classifier" targetNodeId="1197301300856" resolveInfo="B" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.nanoj.structure.NewExpression" id="1197468335776">
+              <link role="classifier" targetNodeId="1197301285396" resolveInfo="A" />
             </node>
           </node>
         </node>
