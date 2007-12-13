@@ -14,7 +14,7 @@ public class typeof_FieldAccess_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197555558504", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "declaration", false), "jetbrains.mps.nanoj.helgins", "1197555558506", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197555558503");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197558238124", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "declaration", false), "jetbrains.mps.nanoj.helgins", "1197558238126", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197558238123");
   }
 
   public String getApplicableConceptFQName() {
