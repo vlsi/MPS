@@ -15,8 +15,8 @@ public class typeof_NotEqualsExpression_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "left", true), "jetbrains.mps.nanoj.helgins", "1197555135105", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "right", true), "jetbrains.mps.nanoj.helgins", "1197555135110", true), SLinkOperations.getTarget(argument, "left", true), null, "jetbrains.mps.nanoj.helgins", "1197555135103");
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197555135115", true), SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.BooleanType", null), argument, null, "jetbrains.mps.nanoj.helgins", "1197555135114");
+    TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "left", true), "jetbrains.mps.nanoj.helgins", "1197555612472", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "right", true), "jetbrains.mps.nanoj.helgins", "1197555612477", true), SLinkOperations.getTarget(argument, "left", true), null, "jetbrains.mps.nanoj.helgins", "1197555612470");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197555612482", true), SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.BooleanType", null), argument, null, "jetbrains.mps.nanoj.helgins", "1197555612481");
   }
 
   public String getApplicableConceptFQName() {

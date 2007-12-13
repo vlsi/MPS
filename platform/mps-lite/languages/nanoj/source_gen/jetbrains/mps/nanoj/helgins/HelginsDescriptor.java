@@ -150,10 +150,6 @@ public class HelginsDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_InstanceMethodCallExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_NumberExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -178,7 +174,7 @@ public class HelginsDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ToString_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_InstanceMethodCallExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
