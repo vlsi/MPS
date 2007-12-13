@@ -68,7 +68,7 @@ public abstract class MPSTree extends JTree {
           }
           MPSTreeNode onlyChild = (MPSTreeNode) node.getChildAt(0);
 
-          if (onlyChild.isAutoExpandable()) {          
+          if (onlyChild.isAutoExpandable()) {
             path.add(onlyChild);
             expandPath(new TreePath(path.toArray()));
           }
@@ -185,7 +185,7 @@ public abstract class MPSTree extends JTree {
         for (int i = 0; i < menu.getItemCount(); i++) {
           JMenuItem item = (JMenuItem) menu.getItem(i);
 
-          if (item == null) {            
+          if (item == null) {
             continue;
           }
 
@@ -245,7 +245,7 @@ public abstract class MPSTree extends JTree {
     if (path == null) return;
 
     if (path.getLastPathComponent() instanceof MPSTreeNode && (e.getClickCount() == 2 ||
-                                                              (e.getClickCount() == 1 && myAutoOpen))) {
+            (e.getClickCount() == 1 && myAutoOpen))) {
       setSelectionPath(path);
       MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
       node.doubleClick();
@@ -395,7 +395,7 @@ public abstract class MPSTree extends JTree {
     expandAll(node);
   }
 
-  public void collapseAll(){
+  public void collapseAll() {
     MPSTreeNode node = getRootNode();
     collapseAll(node);
   }
@@ -414,10 +414,10 @@ public abstract class MPSTree extends JTree {
   }
 
   public void expandRoot() {
-    expandPath(new TreePath(new Object[] { getRootNode() }));
+    expandPath(new TreePath(new Object[]{getRootNode()}));
     if (!getRootNode().isInitialized()) {
       getRootNode().init();
-    }    
+    }
   }
 
   public void expandAll(MPSTreeNode node) {
@@ -427,7 +427,7 @@ public abstract class MPSTree extends JTree {
     }
   }
 
-  public void collapseAll(MPSTreeNode node){
+  public void collapseAll(MPSTreeNode node) {
     for (int i = 0; i < node.getChildCount(); i++) {
       collapseAll((MPSTreeNode) node.getChildAt(i));
     }
@@ -439,7 +439,7 @@ public abstract class MPSTree extends JTree {
     while (node != null) {
       nodes.add(0, node);
       node = node.getParent();
-    }    
+    }
     if (nodes.size() == 0) return;
     TreePath path = new TreePath(nodes.toArray());
     setSelectionPath(path);
@@ -652,7 +652,7 @@ public abstract class MPSTree extends JTree {
   }
 
 
-  private static class MPSTreeCellRenderer extends DefaultTreeCellRenderer {
+  protected static class MPSTreeCellRenderer extends DefaultTreeCellRenderer {
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
       String text = value.toString();
       if (value instanceof MPSTreeNode) {
