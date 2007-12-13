@@ -390,7 +390,7 @@ public class GenerationSession implements IGenerationSession {
     SModelDescriptor md = model.getModelDescriptor();
     if (md != null) {
       if (myDiscardTransients && md.isTransient() && !myCurrentContext.isTransientModelToKeep(model)) {
-        addMessage(MessageKind.INFORMATION, "remove waste model '" + model.getUID() + "'");
+        addMessage(MessageKind.INFORMATION, "remove spent model '" + model.getUID() + "'");
         SModelRepository.getInstance().removeModelDescriptor(md);
       }
     }
