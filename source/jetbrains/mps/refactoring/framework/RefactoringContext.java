@@ -49,6 +49,7 @@ public class RefactoringContext {
   private Map<String, Set<ConceptFeature>> myFQNamesToConceptFeaturesCache = new HashMap<String, Set<ConceptFeature>>();
   private Map<SNodeId, Set<FullNodeId>> myNodeIdsToFullNodeIdsCache = new HashMap<SNodeId, Set<FullNodeId>>();
   private boolean myCachesAreUpToDate = false;
+  private Serializer mySerializer = new Serializer();
   //-----------------
 
   public RefactoringContext() {
@@ -386,12 +387,11 @@ public class RefactoringContext {
   }
 
   private void serialize(Element element, Object value) {
-    //todo
+    mySerializer.serialize(element, value);
   }
 
   private Object deserialize(Element element) {
-    //todo
-    return null;
+    return mySerializer.deserialize(element);
   }
 
   private class FullNodeId {
