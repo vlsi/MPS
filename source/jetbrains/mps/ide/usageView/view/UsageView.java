@@ -77,7 +77,7 @@ public abstract class UsageView implements IExternalizableComponent {
 
     myToolbarPanel = new JPanel(new BorderLayout());
     myToolbarPanel.add(createActionsToolbar(), BorderLayout.WEST);
-    myOptionsToolbar = new JToggleButtonToolbar(true, true, false, true, true, false);
+    myOptionsToolbar = new JToggleButtonToolbar(true, true, false, true, true, true, false);
     myToolbarPanel.add(myOptionsToolbar, BorderLayout.CENTER);
     myPanel.add(myToolbarPanel, BorderLayout.WEST);
 
@@ -148,7 +148,7 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public Icon getIcon() {
-    if(mySearchQuery == null) return null;
+    if (mySearchQuery == null) return null;
     SNode node = mySearchQuery.getNode();
     if (node == null) {
       return null;
@@ -321,6 +321,7 @@ public abstract class UsageView implements IExternalizableComponent {
     private static final String COUNT_OPTION = "count_option";
     private static final String INFO_OPTION = "info_option";
     private static final String CATEGORY_OPTION = "category_option";
+    private static final String MODULE_OPTION = "module_option";
     private static final String MODEL_OPTION = "model_option";
     private static final String ROOT_OPTION = "root_option";
     private static final String PATH_OPTION = "path_option";
@@ -328,11 +329,12 @@ public abstract class UsageView implements IExternalizableComponent {
     private JToggleButton myCountNeededButton;
     private JToggleButton myAdditionalInfoNeededButton;
     private JToggleButton myCategoryPathButton;
+    private JToggleButton myModulePathButton;
     private JToggleButton myModelPathButton;
     private JToggleButton myRootPathButton;
     private JToggleButton myNamedConceptPathButton;
 
-    JToggleButtonToolbar(boolean count, boolean info, boolean category, boolean model, boolean root, boolean namedPath) {
+    JToggleButtonToolbar(boolean count, boolean info, boolean category, boolean module, boolean model, boolean root, boolean namedPath) {
       super(JToolBar.VERTICAL);
 
       myCountNeededButton = new AnonymToggleButton(Icons.NUM_ICON, "Counters") {
@@ -367,6 +369,17 @@ public abstract class UsageView implements IExternalizableComponent {
         }
       };
       add(myCategoryPathButton);
+
+      myModulePathButton = new AnonymToggleButton(jetbrains.mps.ide.projectPane.Icons.CLOSED_FOLDER, "Group by module") {
+        public void actionSelected() {
+          addPathComponent(ModulePath.class);
+        }
+
+        public void actionDeselected() {
+          removePathComponent(ModulePath.class);
+        }
+      };
+      add(myModulePathButton);
 
       myModelPathButton = new AnonymToggleButton(jetbrains.mps.ide.projectPane.Icons.MODEL_ICON, "Group by model") {
         public void actionSelected() {
@@ -410,14 +423,14 @@ public abstract class UsageView implements IExternalizableComponent {
       };
       add(myNamedConceptPathButton);
 
-      setViewOptions(count, info, category, model, root, namedPath);
+      setViewOptions(count, info, category, module, model, root, namedPath);
     }
 
     protected EmptyBorder createBorder() {
       return new EmptyBorder(2, 1, 2, 1);
     }
 
-    private void setViewOptions(boolean count, boolean info, boolean category, boolean model, boolean root, boolean namedPath) {
+    private void setViewOptions(boolean count, boolean info, boolean category, boolean module, boolean model, boolean root, boolean namedPath) {
       myTree.startAdjusting();
       if (myCountNeededButton.getModel().isSelected() != count) {
         myCountNeededButton.doClick();
@@ -427,6 +440,9 @@ public abstract class UsageView implements IExternalizableComponent {
       }
       if (myCategoryPathButton.getModel().isSelected() != category) {
         myCategoryPathButton.doClick();
+      }
+      if (myModulePathButton.getModel().isSelected() != module) {
+        myModulePathButton.doClick();
       }
       if (myModelPathButton.getModel().isSelected() != model) {
         myModelPathButton.doClick();
@@ -445,10 +461,11 @@ public abstract class UsageView implements IExternalizableComponent {
       boolean count = Boolean.valueOf(viewOptionsXML.getAttribute(COUNT_OPTION).getValue());
       boolean info = Boolean.valueOf(viewOptionsXML.getAttribute(INFO_OPTION).getValue());
       boolean category = Boolean.valueOf(viewOptionsXML.getAttribute(CATEGORY_OPTION).getValue());
+      boolean module = Boolean.valueOf(viewOptionsXML.getAttribute(MODULE_OPTION).getValue());
       boolean model = Boolean.valueOf(viewOptionsXML.getAttribute(MODEL_OPTION).getValue());
       boolean root = Boolean.valueOf(viewOptionsXML.getAttribute(ROOT_OPTION).getValue());
       boolean namedPath = Boolean.valueOf(viewOptionsXML.getAttribute(PATH_OPTION).getValue());
-      setViewOptions(count, info, category, model, root, namedPath);
+      setViewOptions(count, info, category, module, model, root, namedPath);
     }
 
     public void write(Element element, MPSProject project) {
@@ -456,6 +473,7 @@ public abstract class UsageView implements IExternalizableComponent {
       viewOptionsXML.setAttribute(COUNT_OPTION, Boolean.toString(myCountNeededButton.getModel().isSelected()));
       viewOptionsXML.setAttribute(INFO_OPTION, Boolean.toString(myAdditionalInfoNeededButton.getModel().isSelected()));
       viewOptionsXML.setAttribute(CATEGORY_OPTION, Boolean.toString(myCategoryPathButton.getModel().isSelected()));
+      viewOptionsXML.setAttribute(MODULE_OPTION, Boolean.toString(myModulePathButton.getModel().isSelected()));
       viewOptionsXML.setAttribute(MODEL_OPTION, Boolean.toString(myModelPathButton.getModel().isSelected()));
       viewOptionsXML.setAttribute(ROOT_OPTION, Boolean.toString(myRootPathButton.getModel().isSelected()));
       viewOptionsXML.setAttribute(PATH_OPTION, Boolean.toString(myNamedConceptPathButton.getModel().isSelected()));

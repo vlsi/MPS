@@ -116,7 +116,7 @@ public class IconManager {
       return Icons.GENERATOR_ICON;
     }
     if (owner instanceof Language) {
-      return Icons.LANGUAGE_ICON;
+      return Icons.PROJECT_LANGUAGE_ICON;
     }
     if (owner instanceof MPSProject) {
       return Icons.PROJECT_ICON;
