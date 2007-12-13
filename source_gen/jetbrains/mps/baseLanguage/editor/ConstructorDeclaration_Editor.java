@@ -76,6 +76,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1165410808123");
     editorCell.setDrawBorder(false);
+    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
@@ -91,6 +92,7 @@ public class ConstructorDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1165410808127");
     editorCell.setDrawBorder(false);
+    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {

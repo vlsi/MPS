@@ -85,6 +85,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164890632759");
     editorCell.setDrawBorder(false);
+    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
@@ -100,6 +101,7 @@ public class StaticMethodDeclaration_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1164891084597");
     editorCell.setDrawBorder(false);
+    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {

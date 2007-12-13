@@ -23,6 +23,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177555034650");
+    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -52,6 +53,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177555034675");
     editorCell.setDrawBorder(false);
+    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupBasic_HeaderRow(EditorCell editorCell, SNode node, EditorContext context) {
@@ -100,6 +102,7 @@ public class IfStatement_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1177555034710");
     editorCell.setDrawBorder(false);
     IfStatement_elseBlockStatement_delete.setCellActions(editorCell, node, context);
+    editorCell.addKeyMap(new InsertFirstStatement_KeyMap());
   }
 
   private static void setupBasic_IfFalseBranch(EditorCell editorCell, SNode node, EditorContext context) {
