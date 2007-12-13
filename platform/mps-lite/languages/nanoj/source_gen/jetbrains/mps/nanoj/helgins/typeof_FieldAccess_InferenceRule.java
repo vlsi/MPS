@@ -8,17 +8,17 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class typeof_ParensExpression_InferenceRule implements InferenceRule_Runtime {
+public class typeof_FieldAccess_InferenceRule implements InferenceRule_Runtime {
 
-  public  typeof_ParensExpression_InferenceRule() {
+  public  typeof_FieldAccess_InferenceRule() {
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197555135124", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expr", true), "jetbrains.mps.nanoj.helgins", "1197555135126", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197555135123");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(argument, TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "declaration", false), "jetbrains.mps.nanoj.helgins", "1197555135331", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197555135329");
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.nanoj.structure.ParensExpression";
+    return "jetbrains.mps.nanoj.structure.FieldAccess";
   }
 
   public boolean isApplicable(SNode argument) {

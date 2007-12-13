@@ -2092,5 +2092,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197554021116">
+    <link role="conceptDeclaration" targetNodeId="1.1197553987381" resolveInfo="LeftPartExpression" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197554022883">
+      <property name="text" value="leftPart" />
+      <link role="styleClass" targetNodeId="6.1186415544875" resolveInfo="keyword" />
+    </node>
+  </node>
 </model>
 

@@ -16,6 +16,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new InstanceMethodCallExpression_method_ReferentConstraint());
     this.myConstraints.add(new LocalVariableReference_variable_ReferentConstraint());
     this.myConstraints.add(new ParameterReference_parameter_ReferentConstraint());
+    this.myConstraints.add(new FieldAccess_declaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
