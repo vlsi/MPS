@@ -4476,8 +4476,8 @@
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1178571276073">
       <property name="isVirtual" value="true" />
       <property name="name" value="getExpectedReturnType" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1178587070052">
-        <link role="classifier" targetNodeId="7.~SNode" resolveInfo="SNode" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197576063831">
+        <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178571276075">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1178571550000">

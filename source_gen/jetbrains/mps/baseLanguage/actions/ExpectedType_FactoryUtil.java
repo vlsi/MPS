@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
@@ -32,7 +33,13 @@ public class ExpectedType_FactoryUtil {
       castType = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.getParent(contextNode, null, false, false), "type", true));
     } else
     if(SNodeOperations.hasRole(contextNode, "jetbrains.mps.baseLanguage.structure.ReturnStatement", "expression")) {
-      castType = SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false), "returnType", true));
+      SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(contextNode, new String[]{"jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration","jetbrains.mps.baseLanguage.structure.ConceptFunction"}, false, false);
+      if(SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
+        castType = SNodeOperations.copyNode(SLinkOperations.getTarget(ancestor, "returnType", true));
+      } else
+      {
+        castType = SNodeOperations.copyNode(ConceptFunction_Behavior.call_getExpectedReturnType_1178571276073(ancestor));
+      }
     } else
     if(SNodeOperations.hasRole(contextNode, "jetbrains.mps.baseLanguage.structure.AssignmentExpression", "rValue")) {
       SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(contextNode, null, false, false), "lValue", true));
