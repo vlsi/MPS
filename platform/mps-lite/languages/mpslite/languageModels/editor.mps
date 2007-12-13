@@ -364,6 +364,17 @@
           <link role="relationDeclaration" targetNodeId="1.1197296563912" resolveInfo="overrideTypes" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197558564563">
+        <property name="selectable" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197558567659">
+        <property name="text" value="is applicable:" />
+        <link role="styleClass" targetNodeId="6.1186415544875" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1197558572005">
+        <property name="noTargetText" value="&lt;no is applicable block&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1197558523529" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1182511253905">
@@ -2092,6 +2103,17 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197550566186">
           <link role="relationDeclaration" targetNodeId="1.1197296563912" resolveInfo="overrideTypes" />
         </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197558630141">
+        <property name="selectable" value="false" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197558630142">
+        <property name="text" value="is applicable:" />
+        <link role="styleClass" targetNodeId="6.1186415544875" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1197558630143">
+        <property name="noTargetText" value="&lt;no is applicable block&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1197558523529" />
       </node>
     </node>
   </node>

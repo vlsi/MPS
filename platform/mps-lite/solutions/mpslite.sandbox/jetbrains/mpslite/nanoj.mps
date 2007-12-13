@@ -2266,6 +2266,38 @@
         </node>
       </node>
     </node>
+    <node role="conceptDeclaration" type="jetbrains.mpslite.structure.DotConceptDeclaration" id="1197558743349">
+      <property name="name" value="ClassAccess" />
+      <link role="dotFor" targetNodeId="1182966285571" resolveInfo="Expression" />
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197558743350">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197558743351" />
+      </node>
+      <node role="behavior" type="jetbrains.mpslite.structure.Behavior" id="1197558743352">
+        <node role="constructor" type="jetbrains.mpslite.structure.ConstructorBlock" id="1197558743353">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197558743354" />
+        </node>
+      </node>
+      <node role="line" type="jetbrains.mpslite.structure.Line" id="1197558750574">
+        <node role="linePart" type="jetbrains.mpslite.structure.ConstantLinePart" id="1197558751622">
+          <property name="text" value="class" />
+        </node>
+      </node>
+      <node role="isApplicable" type="jetbrains.mpslite.structure.IsApplicable_ConceptFunction" id="1197558756404">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197558756405">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197558796799">
+            <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197558800462">
+              <node role="operation" type="jetbrains.mpslite.structure.IsInstanceOfOperation" id="1197558801059">
+                <link role="concept" targetNodeId="1182958613287" resolveInfo="ClassifierType" />
+              </node>
+              <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197558798474">
+                <node role="operation" type="jetbrains.mpslite.structure.TypeOperation" id="1197558799461" />
+                <node role="expression" type="jetbrains.mpslite.structure.LeftPartExpression" id="1197558797520" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1183027540955">
     <property name="name" value="Variables" />

@@ -59,6 +59,12 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1197370853948" resolveInfo="Behavior" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197558523529">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="isApplicable" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="1197558470599" resolveInfo="IsApplicable_ConceptFunction" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1182510947692">
       <property name="role" value="extends" />
       <link role="target" targetNodeId="1182510906722" resolveInfo="NodeTypeDeclaration" />
@@ -764,6 +770,19 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197553996834">
       <property name="value" value="leftPart" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197558470599">
+    <property name="package" value="ConceptFunctions" />
+    <property name="name" value="IsApplicable_ConceptFunction" />
+    <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1197558490586">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1196693342280" resolveInfo="EnclosingNode_ConceptFunctionParameter" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1197558497338">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1197558498278" />
     </node>
   </node>
 </model>

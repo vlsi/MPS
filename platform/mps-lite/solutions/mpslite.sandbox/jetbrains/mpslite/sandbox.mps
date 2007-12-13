@@ -390,6 +390,24 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197560365736">
+          <node role="expr" type="jetbrains.mps.nanoj.structure.DotExpression" id="1197560503089">
+            <node role="operation" type="jetbrains.mps.nanoj.structure.ClassAccess" id="1197560688150" />
+            <node role="leftPart" type="jetbrains.mps.nanoj.structure.LocalVariableReference" id="1197560365737">
+              <link role="variable" targetNodeId="1197301457921" resolveInfo="b" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197560689433">
+          <node role="expr" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197560693204">
+            <node role="right" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197560693942">
+              <property name="number" value="23" />
+            </node>
+            <node role="left" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197560689434">
+              <property name="number" value="3" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
