@@ -27,7 +27,7 @@ public class ConceptDeclaration_extends_ReferentConstraint implements IModelCons
     return referenceNode != null;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     return new ConceptDeclarationExtendedConceptSearchScope(referenceNode, scope);
   }
 

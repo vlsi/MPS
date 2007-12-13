@@ -17,6 +17,7 @@ public class EnumerationMemberDeclaration extends BaseConcept implements INamedC
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  EnumerationMemberDeclaration(SNode node) {
     super(node);
@@ -77,6 +78,14 @@ public class EnumerationMemberDeclaration extends BaseConcept implements INamedC
 
   public void setAlias(String value) {
     this.setProperty(EnumerationMemberDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(EnumerationMemberDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(EnumerationMemberDeclaration.VIRTUAL_PACKAGE, value);
   }
 
 }

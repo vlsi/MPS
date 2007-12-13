@@ -22,6 +22,7 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  AbstractConceptDeclaration(SNode node) {
     super(node);
@@ -178,6 +179,14 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
 
   public void setAlias(String value) {
     this.setProperty(AbstractConceptDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(AbstractConceptDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(AbstractConceptDeclaration.VIRTUAL_PACKAGE, value);
   }
 
 }

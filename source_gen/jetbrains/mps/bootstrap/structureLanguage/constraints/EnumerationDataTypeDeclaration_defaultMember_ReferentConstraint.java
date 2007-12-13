@@ -28,7 +28,7 @@ public class EnumerationDataTypeDeclaration_defaultMember_ReferentConstraint imp
     return referenceNode != null;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     return new SubnodesSearchScope(referenceNode);
   }
 

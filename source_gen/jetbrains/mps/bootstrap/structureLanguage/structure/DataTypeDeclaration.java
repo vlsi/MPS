@@ -14,6 +14,7 @@ public class DataTypeDeclaration extends BaseConcept implements INamedConcept {
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  DataTypeDeclaration(SNode node) {
     super(node);
@@ -50,6 +51,14 @@ public class DataTypeDeclaration extends BaseConcept implements INamedConcept {
 
   public void setAlias(String value) {
     this.setProperty(DataTypeDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(DataTypeDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(DataTypeDeclaration.VIRTUAL_PACKAGE, value);
   }
 
 }

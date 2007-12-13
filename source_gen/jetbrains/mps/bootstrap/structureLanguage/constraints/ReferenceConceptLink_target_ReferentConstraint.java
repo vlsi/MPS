@@ -28,7 +28,7 @@ public class ReferenceConceptLink_target_ReferentConstraint implements IModelCon
     return SLinkOperations.getTarget(SLinkOperations.getTarget(referenceNode, "conceptLinkDeclaration", false), "targetType", false) != null;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     return new ReferenceConceptLinkTargetSearchScope(referenceNode, scope);
   }
 

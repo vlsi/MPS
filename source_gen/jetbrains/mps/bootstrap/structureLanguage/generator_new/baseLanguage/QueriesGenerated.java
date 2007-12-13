@@ -14,6 +14,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.generator_new.util.QueriesUtil;
+import jetbrains.mps.bootstrap.structureLanguage.constraints.EnumerationDataTypeDeclaration_Behavior;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -212,6 +213,12 @@ public class QueriesGenerated {
 
   public static SNode referenceMacro_GetReferent_1168020518409(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.extendedConcept_generatedClass(node, templateNode, generator);
+  }
+
+  public static SNode referenceMacro_GetReferent_1197509802062(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1197509213196(node);
+    SNode outputEnumConstant = generator.findOutputNodeByInputNodeAndMappingName(defaultMember, "outputEnumConstant");
+    return (SNode)outputEnumConstant;
   }
 
   public static SNode referenceMacro_GetReferent_1197508914510(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {

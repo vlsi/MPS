@@ -14,6 +14,7 @@ public class AnnotationLinkDeclaration extends LinkDeclaration implements INamed
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String STEREOTYPE = "stereotype";
 
   public  AnnotationLinkDeclaration(SNode node) {
@@ -59,6 +60,14 @@ public class AnnotationLinkDeclaration extends LinkDeclaration implements INamed
 
   public void setAlias(String value) {
     this.setProperty(AnnotationLinkDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(AnnotationLinkDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(AnnotationLinkDeclaration.VIRTUAL_PACKAGE, value);
   }
 
   public AnnotationLinkStereotype getStereotype() {

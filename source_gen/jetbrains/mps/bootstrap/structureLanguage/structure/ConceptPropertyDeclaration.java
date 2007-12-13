@@ -14,6 +14,7 @@ public class ConceptPropertyDeclaration extends BaseConcept implements INamedCon
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  ConceptPropertyDeclaration(SNode node) {
     super(node);
@@ -50,6 +51,14 @@ public class ConceptPropertyDeclaration extends BaseConcept implements INamedCon
 
   public void setAlias(String value) {
     this.setProperty(ConceptPropertyDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ConceptPropertyDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ConceptPropertyDeclaration.VIRTUAL_PACKAGE, value);
   }
 
 }
