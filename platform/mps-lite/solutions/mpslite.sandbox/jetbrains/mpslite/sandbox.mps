@@ -6,7 +6,7 @@
   <node type="jetbrains.mps.nanoj.structure.ClassConcept" id="1197301285396">
     <property name="name" value="A" />
     <node role="constructor" type="jetbrains.mps.nanoj.structure.Constructor" id="1197469470840">
-      <property name="name" value="ABCDE" />
+      <property name="name" value="Ad" />
       <node role="parameter" type="jetbrains.mps.nanoj.structure.ParameterDeclaration" id="1197545026749">
         <property name="name" value="a" />
         <node role="type" type="jetbrains.mps.nanoj.structure.IntType" id="1197545028596" />
@@ -18,8 +18,18 @@
             <property name="name" value="a" />
             <node role="type" type="jetbrains.mps.nanoj.structure.IntType" id="1197545032180" />
             <node role="initializer" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197545035983">
-              <node role="right" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197545036642">
-                <property name="number" value="23" />
+              <node role="right" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197549449838">
+                <node role="right" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197549451858">
+                  <node role="right" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197549452580">
+                    <property name="number" value="23" />
+                  </node>
+                  <node role="left" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197549450654">
+                    <property name="number" value="23" />
+                  </node>
+                </node>
+                <node role="left" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197545036642">
+                  <property name="number" value="23" />
+                </node>
               </node>
               <node role="left" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197545034652">
                 <property name="number" value="23" />
@@ -195,6 +205,10 @@
                   </node>
                   <node role="instance" type="jetbrains.mps.nanoj.structure.NewExpression" id="1197468537613">
                     <link role="classifier" targetNodeId="1197301285396" resolveInfo="A" />
+                    <link role="constructor" targetNodeId="1197469470840" resolveInfo="A" />
+                    <node role="parameter" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197549435444">
+                      <property name="number" value="21" />
+                    </node>
                   </node>
                 </node>
                 <node role="left" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197377960846">

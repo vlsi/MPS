@@ -742,5 +742,18 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197550112159">
+    <property name="name" value="DotConceptDeclaration" />
+    <link role="extends" targetNodeId="1182510906722" resolveInfo="ConceptDeclaration" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197550386754">
+      <property name="role" value="dotFor" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1182510906722" resolveInfo="ConceptDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197550515623">
+      <property name="value" value="dot concept" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
