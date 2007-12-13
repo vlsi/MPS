@@ -115,7 +115,6 @@ public class IntentionsManager implements IExternalizableComponent {
 
   public void reload() {
     myIntentions.clear();
-    myDisabledIntentionsClassNames.clear();
     invalidateCaches();
     for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
       SModelDescriptor intentionsModelDescriptor = l.getIntentionsModelDescriptor();
