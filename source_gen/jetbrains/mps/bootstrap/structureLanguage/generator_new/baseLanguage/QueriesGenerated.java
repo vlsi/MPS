@@ -322,6 +322,11 @@ public class QueriesGenerated {
     return (SNode)generatedClassifier;
   }
 
+  public static SNode referenceMacro_GetReferent_1197567857382(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    SNode generatedMethod = _QueriesUtil.linkDeclaration_generatedSetterMethod(SLinkOperations.getTarget(node, "specializedLink", false), generator);
+    return (SNode)generatedMethod;
+  }
+
   public static SNode referenceMacro_GetReferent_1197510980829(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
@@ -343,6 +348,11 @@ public class QueriesGenerated {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
+  }
+
+  public static SNode referenceMacro_GetReferent_1197567821842(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    SNode generatedMethod = _QueriesUtil.linkDeclaration_generatedSetterMethod(SLinkOperations.getTarget(node, "specializedLink", false), generator);
+    return (SNode)generatedMethod;
   }
 
   public static SNode referenceMacro_GetReferent_1197510751303(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
