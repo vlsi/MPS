@@ -12,6 +12,8 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.ide.command.CommandProcessor;
+import jetbrains.mps.ide.command.CommandKind;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -498,12 +500,12 @@ public class SModelRepository extends SModelAdapter {
     return result;
   }
 
-  public void tryToReloadModelsFromDisk(JFrame frame) {
+  public void tryToReloadModelsFromDisk(final JFrame frame) {
     if (myInChangedModelsReloading) {
       return;
     }
 
-    Set<SModelDescriptor> toReload = new HashSet<SModelDescriptor>();
+    final Set<SModelDescriptor> toReload = new HashSet<SModelDescriptor>();
     for (SModelDescriptor sm : getAllModelDescriptors()) {
       if (sm.needsReloading()) {
         toReload.add(sm);
@@ -511,33 +513,38 @@ public class SModelRepository extends SModelAdapter {
     }
 
     if (!toReload.isEmpty()) {
-      myInChangedModelsReloading = true;
-      try {
-        boolean needReloadAll = false;
-        for (SModelDescriptor sm : toReload) {
-          if (isChanged(sm)) {
-            int result = JOptionPane.showConfirmDialog(frame,
-                    "Model " + sm.getModelUID() + " changed on a disk. Do you want to discard memory changes?",
-                    "Model Changed " + sm.getModelUID(), JOptionPane.YES_NO_OPTION);
+      Runnable command = new Runnable() {
+        public void run() {
+          myInChangedModelsReloading = true;
+          try {
+            boolean needReloadAll = false;
+            for (SModelDescriptor sm : toReload) {
+              if (isChanged(sm)) {
+                int result = JOptionPane.showConfirmDialog(frame,
+                        "Model " + sm.getModelUID() + " changed on a disk. Do you want to discard memory changes?",
+                        "Model Changed " + sm.getModelUID(), JOptionPane.YES_NO_OPTION);
 
-            if (result == JOptionPane.YES_OPTION) {
-              sm.reloadFromDisk();
-              needReloadAll = true;
-            } else {
-              sm.save();
+                if (result == JOptionPane.YES_OPTION) {
+                  sm.reloadFromDisk();
+                  needReloadAll = true;
+                } else {
+                  sm.save();
+                }
+              } else {
+                sm.reloadFromDisk();
+                needReloadAll = true;
+              }
             }
-          } else {
-            sm.reloadFromDisk();
-            needReloadAll = true;
+
+            if (needReloadAll) {
+              ReloadUtils.reloadAll(false);
+            }
+          } finally {
+            myInChangedModelsReloading = false;
           }
         }
-
-        if (needReloadAll) {
-          ReloadUtils.reloadAll(false);
-        }
-      } finally {
-        myInChangedModelsReloading = false;
-      }
+      };
+      CommandProcessor.instance().invokeNowOrLater(command);
     }
   }
 
