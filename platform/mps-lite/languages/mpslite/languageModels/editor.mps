@@ -618,6 +618,17 @@
         <link role="actionMap" targetNodeId="1182843155485" resolveInfo="_LinePart_RT" />
       </node>
     </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197547637598">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197547637599">
+        <property name="text" value="getter:" />
+        <link role="styleClass" targetNodeId="6.1186415544875" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1197547637600">
+        <property name="noTargetText" value="&lt;no getter&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1197546238121" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1182512716649">
     <property name="package" value="Parts" />
@@ -719,6 +730,17 @@
         <property name="text" value="}" />
         <property name="drawBorder" value="false" />
         <link role="actionMap" targetNodeId="1182843155485" resolveInfo="_LinePart_RT" />
+      </node>
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197547569031">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197547573330">
+        <property name="text" value="getter:" />
+        <link role="styleClass" targetNodeId="6.1186415544875" resolveInfo="keyword" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1197547579396">
+        <property name="noTargetText" value="&lt;no getter&gt;" />
+        <link role="relationDeclaration" targetNodeId="1.1197546238121" />
       </node>
     </node>
   </node>

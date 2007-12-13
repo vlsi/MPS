@@ -157,7 +157,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1182511940438">
     <property name="name" value="PropertyDeclarationPart" />
     <property name="package" value="Parts" />
-    <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <link role="extends" targetNodeId="1197546210852" resolveInfo="PropertyPart" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1182844248058">
       <property name="value" value="{" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
@@ -205,7 +205,7 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1182513114802">
     <property name="name" value="PropertyReferencePart" />
     <property name="package" value="Parts" />
-    <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <link role="extends" targetNodeId="1197546210852" resolveInfo="PropertyPart" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1182513125929">
       <property name="sourceCardinality" value="1" />
       <property name="role" value="declaration" />
@@ -715,6 +715,31 @@
       <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197469834829">
         <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197546047018">
+    <property name="package" value="ConceptFunctions" />
+    <property name="name" value="Getter_ConceptFunction" />
+    <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1197546075362">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197546078332">
+        <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197546210852">
+    <property name="package" value="Parts" />
+    <property name="name" value="PropertyPart" />
+    <link role="extends" targetNodeId="1182511214735" resolveInfo="LinePart" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197546238121">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="getterFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1197546047018" resolveInfo="Getter_ConceptFunction" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197546220791">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
     </node>
   </node>
 </model>

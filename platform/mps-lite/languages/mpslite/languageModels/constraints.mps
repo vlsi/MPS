@@ -1321,6 +1321,23 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182845204950">
     <property name="package" value="Parts" />
     <link role="concept" targetNodeId="1.1182513114802" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197547678991">
+      <property name="name" value="getDeclaration" />
+      <link role="overridenMethod" targetNodeId="1197547655013" resolveInfo="getDeclaration" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197547678993">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197547687388">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197547689063">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1197547691629">
+              <link role="link" targetNodeId="1.1182513125929" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197547688296" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197547682698">
+        <link role="concept" targetNodeId="7.1071489288299" resolveInfo="PropertyDeclaration" />
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182966781936">
       <property name="name" value="toString" />
       <link role="overridenMethod" targetNodeId="1182966580931" resolveInfo="toString" />
@@ -1873,6 +1890,18 @@
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197036668274">
           <link role="classifier" targetNodeId="8.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
         </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197547699209">
+      <property name="name" value="getDeclaration" />
+      <link role="overridenMethod" targetNodeId="1197547655013" resolveInfo="getDeclaration" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197547699211">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197547705465">
+          <node role="expression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197547706139" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197547702354">
+        <link role="concept" targetNodeId="7.1071489288299" resolveInfo="PropertyDeclaration" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182966762182">
@@ -3076,6 +3105,22 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1197383633110">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197383633111" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1197547653400">
+    <property name="package" value="Parts" />
+    <link role="concept" targetNodeId="1.1197546210852" resolveInfo="PropertyPart" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197547655013">
+      <property name="name" value="getDeclaration" />
+      <property name="isVirtual" value="true" />
+      <property name="isAbstract" value="true" />
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197547659752">
+        <link role="concept" targetNodeId="7.1071489288299" resolveInfo="PropertyDeclaration" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197547655015" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1197547653401">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197547653402" />
     </node>
   </node>
 </model>

@@ -12,6 +12,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
   public  ConstraintsDescriptor() {
+    this.myConstraints.add(new Constructor_name_PropertyConstraint());
     this.myConstraints.add(new InstanceMethodCallExpression_method_ReferentConstraint());
     this.myConstraints.add(new LocalVariableReference_variable_ReferentConstraint());
     this.myConstraints.add(new ParameterReference_parameter_ReferentConstraint());
