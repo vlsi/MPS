@@ -186,6 +186,10 @@ public class HelginsDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_FieldDeclaration_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new subtype_ClassifierType_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }

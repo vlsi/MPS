@@ -14,7 +14,7 @@ public class typeof_StringLiteralExpression_InferenceRule implements InferenceRu
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197549282249", true), SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.StringType", null), argument, null, "jetbrains.mps.nanoj.helgins", "1197549282248");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197552633981", true), SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.StringType", null), argument, null, "jetbrains.mps.nanoj.helgins", "1197552633980");
   }
 
   public String getApplicableConceptFQName() {
