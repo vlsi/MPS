@@ -155,6 +155,56 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182844481182">
     <link role="concept" targetNodeId="1.1182510906722" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197551164666">
+      <property name="name" value="isDotted" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1197551171389" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197551164668">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1197551176079">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197551176080">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1197551204412">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197551204413">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197551211879">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1197551212553">
+                    <property name="value" value="true" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1197551209796">
+                <node role="rightExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197551210674" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197551206979">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1197551209076">
+                    <link role="link" targetNodeId="1.1197550386754" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197551206213">
+                    <link role="variableDeclaration" targetNodeId="1197551176083" resolveInfo="dotted" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="iterable" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197551185499">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_NodesOperation" id="1197551189190">
+              <link role="concept" targetNodeId="1.1197550112159" resolveInfo="DotConceptDeclaration" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197551183369">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" id="1197551185892" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197551182837" />
+            </node>
+          </node>
+          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197551176083">
+            <property name="name" value="dotted" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197551179414">
+              <link role="concept" targetNodeId="1.1197550112159" resolveInfo="DotConceptDeclaration" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197551214242">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1197551215057">
+            <property name="value" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197458725071">
       <property name="name" value="isType" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1197458726913" />
