@@ -1809,7 +1809,10 @@
       <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197550836399">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197550836400">
           <node role="statement" type="jetbrains.mpslite.structure.AddEquationStatement" id="1197554193445">
-            <node role="left" type="jetbrains.mpslite.structure.ThisNodeExpression" id="1197554203572" />
+            <node role="left" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197555322762">
+              <node role="operation" type="jetbrains.mpslite.structure.TypeOperation" id="1197555323812" />
+              <node role="expression" type="jetbrains.mpslite.structure.ThisNodeExpression" id="1197554203572" />
+            </node>
             <node role="right" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197554211233">
               <node role="operation" type="jetbrains.mpslite.structure.TypeOperation" id="1197554213330" />
               <node role="expression" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197554209558">

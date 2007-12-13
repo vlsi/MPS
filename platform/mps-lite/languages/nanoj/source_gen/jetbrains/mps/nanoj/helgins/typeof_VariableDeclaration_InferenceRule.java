@@ -14,8 +14,8 @@ public class typeof_VariableDeclaration_InferenceRule implements InferenceRule_R
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197555612706", true), SLinkOperations.getTarget(argument, "type", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197555612705");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "initializer", true), "jetbrains.mps.nanoj.helgins", "1197555612713", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197555612718", true), SLinkOperations.getTarget(argument, "initializer", true), null, "jetbrains.mps.nanoj.helgins", "1197555612711");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197555558581", true), SLinkOperations.getTarget(argument, "type", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197555558580");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "initializer", true), "jetbrains.mps.nanoj.helgins", "1197555558588", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197555558593", true), SLinkOperations.getTarget(argument, "initializer", true), null, "jetbrains.mps.nanoj.helgins", "1197555558586");
   }
 
   public String getApplicableConceptFQName() {
