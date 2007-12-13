@@ -370,7 +370,7 @@ public abstract class UsageView implements IExternalizableComponent {
       };
       add(myCategoryPathButton);
 
-      myModulePathButton = new AnonymToggleButton(jetbrains.mps.ide.projectPane.Icons.CLOSED_FOLDER, "Group by module") {
+      myModulePathButton = new AnonymToggleButton(Icons.MODULE_ICON, "Group by module") {
         public void actionSelected() {
           addPathComponent(ModulePath.class);
         }

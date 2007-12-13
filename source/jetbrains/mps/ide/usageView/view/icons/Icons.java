@@ -13,4 +13,5 @@ public class Icons {
   public static final Icon PATH_ICON = new ImageIcon(Icons.class.getResource("path.png"));
   public static final Icon NUM_ICON = new ImageIcon(Icons.class.getResource("usagesNum.png"));
   public static final Icon INFO_ICON = new ImageIcon(Icons.class.getResource("info.png"));
+  public static final Icon MODULE_ICON = new ImageIcon(Icons.class.getResource("module.png"));
 }
