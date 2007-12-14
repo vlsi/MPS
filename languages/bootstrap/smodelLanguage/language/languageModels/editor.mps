@@ -2229,12 +2229,14 @@
         <property name="text" value="(" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1182506841743">
+        <property name="noTargetText" value="&lt;smodel&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1182506816063" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182506973657">
         <property name="text" value="," />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1182506978425">
+        <property name="noTargetText" value="&lt;scope&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1182506966389" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1182506832959">

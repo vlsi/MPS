@@ -4,6 +4,8 @@ package jetbrains.mps.nanoj.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_DivExpression_InferenceRule implements InferenceRule_Runtime {
@@ -12,6 +14,8 @@ public class typeof_DivExpression_InferenceRule implements InferenceRule_Runtime
   }
 
   public void applyRule(final SNode argument) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftPart", true), "jetbrains.mps.nanoj.helgins", "1197634364253", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197634364258", true), SLinkOperations.getTarget(argument, "leftPart", true), null, "jetbrains.mps.nanoj.helgins", "1197634364251");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "rightPart", true), "jetbrains.mps.nanoj.helgins", "1197634364262", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197634364267", true), SLinkOperations.getTarget(argument, "rightPart", true), null, "jetbrains.mps.nanoj.helgins", "1197634364260");
   }
 
   public String getApplicableConceptFQName() {

@@ -2371,5 +2371,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197631074219">
+    <link role="conceptDeclaration" targetNodeId="1.1197631055746" resolveInfo="RightPartExpression" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197631075986">
+      <property name="text" value="rightPart" />
+      <link role="styleClass" targetNodeId="6.1186415544875" resolveInfo="keyword" />
+    </node>
+  </node>
 </model>
 

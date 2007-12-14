@@ -130,7 +130,7 @@ public class Concept_GetAllSubConcepts_Editor extends DefaultNodeEditor {
   public EditorCell createSmodelCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("smodel");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<smodel>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createSmodelCellinternal(context, node, provider);
@@ -159,7 +159,7 @@ public class Concept_GetAllSubConcepts_Editor extends DefaultNodeEditor {
   public EditorCell createScopeCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, context);
     provider.setRole("scope");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<scope>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createScopeCellinternal(context, node, provider);

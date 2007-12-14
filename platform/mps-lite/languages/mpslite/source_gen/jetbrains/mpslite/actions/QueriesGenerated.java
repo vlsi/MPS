@@ -35,6 +35,10 @@ public class QueriesGenerated {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mpslite.structure.DotConceptDeclaration", true, false) != null;
   }
 
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1197631213003(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.getAncestor(parentNode, "jetbrains.mpslite.structure.BinaryOperationConceptDeclaration", true, false) != null;
+  }
+
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1197293111675(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mpslite.structure.TypesBlock", true, false) != null;
   }
@@ -90,6 +94,21 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mpslite.structure.LeftPartExpression", operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
+      result.addAll(defaultActions);
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1197631213002(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mpslite.structure.LeftPartExpression", operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
+      result.addAll(defaultActions);
+    }
+    {
+      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mpslite.structure.RightPartExpression", operationContext.getScope());
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
       result.addAll(defaultActions);
     }

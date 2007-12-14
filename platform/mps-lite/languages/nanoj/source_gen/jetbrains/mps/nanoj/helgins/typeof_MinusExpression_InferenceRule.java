@@ -4,6 +4,8 @@ package jetbrains.mps.nanoj.helgins;
 
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeof_MinusExpression_InferenceRule implements InferenceRule_Runtime {
@@ -12,6 +14,8 @@ public class typeof_MinusExpression_InferenceRule implements InferenceRule_Runti
   }
 
   public void applyRule(final SNode argument) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftPart", true), "jetbrains.mps.nanoj.helgins", "1197634364211", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197634364216", true), SLinkOperations.getTarget(argument, "leftPart", true), null, "jetbrains.mps.nanoj.helgins", "1197634364209");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "rightPart", true), "jetbrains.mps.nanoj.helgins", "1197634364220", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197634364225", true), SLinkOperations.getTarget(argument, "rightPart", true), null, "jetbrains.mps.nanoj.helgins", "1197634364218");
   }
 
   public String getApplicableConceptFQName() {

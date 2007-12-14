@@ -1604,7 +1604,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197626558025">
-      <property name="name" value="getCorrespondingLefPartLink" />
+      <property name="name" value="getCorrespondingLeftPartLink" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197626558026">
         <link role="concept" targetNodeId="7.1071489288298" resolveInfo="LinkDeclaration" />
       </node>
@@ -1642,7 +1642,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197626577350">
-      <property name="name" value="getCorrespondingLefPartLink" />
+      <property name="name" value="getCorrespondingRightPartLink" />
       <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197626577351">
         <link role="concept" targetNodeId="7.1071489288298" resolveInfo="LinkDeclaration" />
       </node>
@@ -1713,44 +1713,6 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1197626640798">
         <property name="name" value="gen" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197626640799">
-          <link role="classifier" targetNodeId="8.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
-        </node>
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1197626670117">
-      <property name="name" value="getCorrespondingPriorityProperty" />
-      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197626670118">
-        <link role="concept" targetNodeId="7.1105725006687" resolveInfo="ConceptPropertyDeclaration" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197626670119">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197626670120">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197626670121">
-            <property name="name" value="targetNode" />
-            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1197626670122" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197626670123">
-              <link role="baseMethodDeclaration" targetNodeId="8.~ITemplateGenerator.findOutputNodeByInputNodeAndMappingName(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="findOutputNodeByInputNodeAndMappingName" />
-              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1197626670124">
-                <link role="variableDeclaration" targetNodeId="1197626670130" resolveInfo="gen" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1197626670125" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197626670126">
-                <property name="value" value="priority" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1197626670127">
-          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1197626670128">
-            <link role="concept" targetNodeId="7.1105725006687" resolveInfo="ConceptPropertyDeclaration" />
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197626670129">
-              <link role="variableDeclaration" targetNodeId="1197626670121" resolveInfo="targetNode" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1197626670130">
-        <property name="name" value="gen" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197626670131">
           <link role="classifier" targetNodeId="8.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
         </node>
       </node>
