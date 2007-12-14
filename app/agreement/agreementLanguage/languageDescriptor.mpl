@@ -34,7 +34,9 @@
   <classPath>
     <entry path="${mps_home}\app\agreement\classes" />
   </classPath>
-  <runtimeClassPath />
+  <runtimeClassPath>
+    <entry path="${mps_home}\app\agreement\classes" />
+  </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
     <requiredBundles />
