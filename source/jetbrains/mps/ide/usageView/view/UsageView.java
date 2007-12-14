@@ -22,10 +22,7 @@ import jetbrains.mps.ide.usageView.view.usagesTree.path.concretepathproviders.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -164,20 +161,16 @@ public abstract class UsageView implements IExternalizableComponent {
 
     Set<SModel> models = new HashSet<SModel>();
     collectModels(myResultProvider.getResults(mySearchQuery, myContext).getSearchResults(), models);
-
+    
     GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
 
-    for (SModel model : models) {
-      List<SModel> m = new ArrayList<SModel>();
-      m.add(model);
+    List<SModelDescriptor> modelDescriptors = new ArrayList<SModelDescriptor>();
 
-      manager.generateModelsWithProgressWindow(m,
-              BootstrapLanguages.getInstance().getBaseLanguage(),
-              ModuleContext.create(model, myProjectFrame, false),
-              IGenerationType.FILES,
-              IGenerationScript.DEFAULT,
-              false);
+    for (SModel m : models) {
+      modelDescriptors.add(m.getModelDescriptor());
     }
+
+    manager.generateModelsFromDifferentModules(myContext, modelDescriptors, IGenerationType.FILES);
   }
 
   private void collectModels(List<SearchResult> results, Set<SModel> models) {
