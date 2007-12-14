@@ -253,8 +253,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   protected Object clone() throws CloneNotSupportedException {
     return super.clone();
   }
-
-  public void generateModelsWithProgressWindow(final List<SModel> sourceModels,
+   
+  public Thread generateModelsWithProgressWindow(final List<SModel> sourceModels,
                                                final Language targetLanguage,
                                                final IOperationContext invocationContext,
                                                final IGenerationType generationType,
@@ -303,6 +303,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     //do not change priority! With other priority it's impossible to listen to music
     generationThread.setPriority(Thread.MIN_PRIORITY);
     generationThread.start();
+
+    return generationThread;
   }
 
   public void generateModels(final List<SModel> inputModels,
