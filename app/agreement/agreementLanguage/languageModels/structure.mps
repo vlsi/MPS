@@ -152,6 +152,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1111793238658">
     <property name="name" value="Unit" />
+    <property name="memberIdentifierPolicy" value="derive_from_internal_value" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1111793245330" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1111793245330">
@@ -264,17 +265,20 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1116367977407">
     <property name="name" value="Taxable" />
+    <property name="memberIdentifierPolicy" value="custom" />
     <link role="memberDataType" targetNodeId="1.1082983657063" />
     <link role="defaultMember" targetNodeId="1116367977408" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1116367977408">
       <property name="externalValue" value="taxable" />
       <property name="internalValue" value="true" />
       <property name="name" value="TAXABLE" />
+      <property name="javaIdentifier" value="taxable" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1116368030878">
       <property name="externalValue" value="tax-free" />
       <property name="internalValue" value="false" />
       <property name="name" value="TAXFREE" />
+      <property name="javaIdentifier" value="tax_free" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1116445695828">
