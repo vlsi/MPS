@@ -12,7 +12,6 @@ import jetbrains.mps.vfs.IFileNameFilter;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.awt.Color;
 import java.io.File;
 import java.util.*;
 
@@ -26,6 +25,7 @@ public class MPSModuleRepository {
   private Map<String, IModule> myFileToModuleMap = new HashMap<String, IModule>();
   private Map<String, List<IModule>> myUIDToModulesMap = new HashMap<String, List<IModule>>();
   private Map<IModule, Set<MPSModuleOwner>> myModuleToOwnersMap = new HashMap<IModule, Set<MPSModuleOwner>>();
+  private Map<MPSModuleOwner, Set<IModule>> myOwnerToModules = new HashMap<MPSModuleOwner, Set<IModule>>();
 
   private List<ModuleRepositoryListener> myModuleListeners = new ArrayList<ModuleRepositoryListener>();
   private List<RepositoryListener> myListeners = new ArrayList<RepositoryListener>();
@@ -193,6 +193,13 @@ public class MPSModuleRepository {
         }
       }
       if (owner != module) owners.add(owner);
+
+      Set<IModule> modules = myOwnerToModules.get(owner);
+      if (modules == null) {
+        modules = new HashSet<IModule>();
+        myOwnerToModules.put(owner, modules);
+      }
+      modules.add(module);
     }
     fireRepositoryChanged();
     return (TM) module;
@@ -239,6 +246,14 @@ public class MPSModuleRepository {
     if (owners == null) owners = new HashSet<MPSModuleOwner>();
     owners.add(owner);
     myModuleToOwnersMap.put(module, owners);
+
+    Set<IModule> modules = myOwnerToModules.get(owner);
+    if (modules == null) {
+      modules = new HashSet<IModule>();
+      myOwnerToModules.put(owner, modules);
+    }
+    modules.add(module);
+
     fireModuleAdded(module);
   }
 
@@ -309,6 +324,22 @@ public class MPSModuleRepository {
 
   private void removeModule(@NotNull IModule module) {
     IFile descriptorFile = module.getDescriptorFile();
+
+    Set<MPSModuleOwner> toRemove = new HashSet<MPSModuleOwner>();
+    for (MPSModuleOwner owner : myModuleToOwnersMap.get(module)) {
+      Set<IModule> modules = myOwnerToModules.get(owner);
+      if (modules != null) {
+        modules.remove(module);
+        if (modules.isEmpty()) {
+          toRemove.add(owner);
+        }
+      }
+    }
+
+    for (MPSModuleOwner tr : toRemove) {
+      myOwnerToModules.remove(tr);
+    }
+
     myModuleToOwnersMap.remove(module);
     removeModuleFromUIDMap(module);
     if (descriptorFile != null) {
