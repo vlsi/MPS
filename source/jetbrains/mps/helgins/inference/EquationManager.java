@@ -115,8 +115,15 @@ public class EquationManager {
     if (NodeWrapper.fromWrapper(subtypeRepresentator) == NodeWrapper.fromWrapper(supertypeRepresentator)) return;
 
     // if one of them is a var
-    RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
+
+
+    // if big problems with helgins replace this with the code like below:
+     RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
+    //boolean subtypeContainsVars = subtypeRepresentator != null && subtypeRepresentator.containsVariables(this);
+    // new! but works bad. for MPS-490
+
     RuntimeTypeVariable varSupertype = supertypeRepresentator == null ? null : supertypeRepresentator.getVariable();
+
     if (varSubtype != null || varSupertype != null) {
       if (isWeak) {
         addSubtyping(subtypeRepresentator, supertypeRepresentator, errorInfo);
@@ -150,9 +157,6 @@ public class EquationManager {
             new EquationErrorReporter(this, "type ", subtypeRepresentator,
                     " is not" + strongString + " a subtype of ", supertypeRepresentator, "", errorInfo.myRuleModel, errorInfo.myRuleId);
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
-
-    //4debug
-    myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, errorInfo, isWeak);
   }
 
   public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck) {

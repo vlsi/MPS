@@ -16,12 +16,12 @@ public class typeOf_Concept_NewInstance_InferenceRule implements InferenceRule_R
 
   public void applyRule(final SNode argument) {
     if(SLinkOperations.getTarget(argument, "prototypeNode", true) != null) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "prototypeNode", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061176339", true), new QuotationClass_68().createNode(), SLinkOperations.getTarget(argument, "prototypeNode", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181950211367");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "prototypeNode", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061176339", true), new QuotationClass_67().createNode(), SLinkOperations.getTarget(argument, "prototypeNode", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181950211367");
     }
     SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.getParent(argument, null, false, false), "leftExpression", true);
     final SNode C_typevar_1186061226356 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061195876", true), new QuotationClass_69().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186061226356)), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061200676");
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_70().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186061226356)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061252126");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(leftExpression, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061195876", true), new QuotationClass_68().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186061226356)), leftExpression, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061200676");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_69().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186061226356)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061252126");
   }
 
   public String getApplicableConceptFQName() {

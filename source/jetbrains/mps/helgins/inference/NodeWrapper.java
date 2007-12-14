@@ -1,32 +1,35 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType;
+import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.patterns.util.MatchingUtil;
 import jetbrains.mps.patterns.util.IMatchModifier;
-import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
-
-import java.util.Set;
-import java.util.HashSet;
-
+import jetbrains.mps.patterns.util.MatchingUtil;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
-* User: Cyril.Konopko
-* Date: 20.07.2007
-* Time: 14:15:19
-* To change this template use File | Settings | File Templates.
-*/
+ * User: Cyril.Konopko
+ * Date: 20.07.2007
+ * Time: 14:15:19
+ * To change this template use File | Settings | File Templates.
+ */
 public class NodeWrapper implements IWrapper {
   private static final boolean USE_NEW_WRAPPERS = false;
   private static Logger LOG = Logger.getLogger(NodeWrapper.class);
 
   private SNode myNode;
+
+  private Set<SNodePointer> myVariables;
+  private boolean myMayHaveVariables = true;
 
 
   public static NodeWrapper createNodeWrapper(SNode node) {
@@ -81,6 +84,48 @@ public class NodeWrapper implements IWrapper {
       return b;
     }
     return wrapper.matchesWith(this, equationManager, errorInfo);
+  }
+
+  public boolean containsVariables(EquationManager equationManager) {
+    if (!myMayHaveVariables) {
+      return false;
+    }
+
+    if (isVariable()) {
+      return true;
+    }
+
+    //first check
+    for (RuntimeTypeVariable var : this.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
+      if (myVariables == null) {
+        myVariables = new HashSet<SNodePointer>(1);
+      }
+      myVariables.add(new SNodePointer(var.getNode()));
+    }
+
+    //processing additional variables
+    if (myVariables != null) {
+      for (SNodePointer var : new HashSet<SNodePointer>(myVariables)) {
+        SNode node = var.getNodeMaybeUnregistered();
+        if (node == null) {
+          myVariables.remove(var);
+          continue;
+        }
+        if (equationManager.getRepresentatorWrapper(NodeWrapper.createNodeWrapper(node)).isConcrete()) {
+          myVariables.remove(var);
+          for (RuntimeTypeVariable varChild : this.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
+            myVariables.add(new SNodePointer(varChild.getNode()));
+          }
+        }
+      }
+    }
+
+    if (myVariables != null && !(myVariables.isEmpty())) {
+      return true;
+    } else {
+      myMayHaveVariables = false;
+      return false;
+    }
   }
 
   public RuntimeTypeVariable getVariable() {

@@ -45,6 +45,10 @@ public class ConditionWrapper implements IWrapper {
     return false;                           
   }
 
+  public boolean containsVariables(EquationManager equationManager) {
+    return false;  //To change body of implemented methods use File | Settings | File Templates.
+  }
+
   public boolean isConcrete() {
     return false;
   }
