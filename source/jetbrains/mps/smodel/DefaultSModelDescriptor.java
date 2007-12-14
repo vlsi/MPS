@@ -21,6 +21,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -59,10 +61,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     checkModelDuplication();
     addPostLoadRunnable(new IPostLoadRunnable() {
       public void doPostLoadStuff(final SModelDescriptor descriptor) {
-       /* if (CommandProcessor.instance().getCurrentCommandKind() == CommandKind.GENERATION) {
+        /* if (CommandProcessor.instance().getCurrentCommandKind() == CommandKind.GENERATION) {
           return;
         }*/
-      /*  if (getStereotype().equals(SModelStereotype.TEMPLATES)) {
+        /*  if (getStereotype().equals(SModelStereotype.TEMPLATES)) {
           return;
         }*/
         if (descriptor.getSModel().hasLanguage("jetbrains.mps.bootstrap.helgins")) {
@@ -79,7 +81,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
           }
           final IOperationContext operationContext = findOperationContext();
           if (operationContext == null) {
-          //  LOG.warning("no op.context found for conversion");
+            //  LOG.warning("no op.context found for conversion");
             return;
           }
           if (needsRefactoring && !IdeMain.isTestMode()) {
@@ -93,7 +95,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
               command.run();
             } else {
               if (CommandProcessor.instance().isInsideCommand()) {
-         //       LOG.error("error: can't execute undoable command inside a lightweight command");
+                //       LOG.error("error: can't execute undoable command inside a lightweight command");
               } else {
                 CommandProcessor.instance().executeCommand(command);
               }
@@ -237,7 +239,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
         modelDescriptors.add(modelDescriptor);
       }
       for (SModelDescriptor modelDescriptor : modelDescriptors) {
-        playUsedModelDescriptorsRefactoring(modelDescriptor);
+    //    playUsedModelDescriptorsRefactoring(modelDescriptor);
       }
     } finally {
       mySModel.setLoading(false);
@@ -245,73 +247,18 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   private void playUsedModelDescriptorsRefactoring(SModelDescriptor modelDescriptor) {
-//    int currentVersion = modelDescriptor.getVersion();
-//    int usedVersion = mySModel.getUsedVersion(modelDescriptor.getModelUID());
-//    if (currentVersion > usedVersion) {
-//      IOperationContext invocationContext = findOperationContext();
-//      if (invocationContext == null) {
-//        LOG.error("can't find a context for updating model " + getModelUID());
-//        return;
-//      }
-//
-//      SModel importedModel = modelDescriptor.getSModel();
-//      SNode logstack = importedModel.getLog();
-//      if (logstack != null) {
-//        RuntimeLogStack runtimeLogStack = (RuntimeLogStack) logstack.getAdapter();
-//        for (RuntimeLog runtimeLog : runtimeLogStack.getLogs()) {
-//          if (runtimeLog.getModelVersion() <= usedVersion) continue;
-//          Map<String, String> arguments = new HashMap<String, String>();
-//          for (RequiredAdditionalArgumentValue value : runtimeLog.getArgumentValues()) {
-//            arguments.put(value.getArgument().getName(), value.getValue());
-//          }
-//
-//          SModel scriptsModel = runtimeLog.getUpdateModelClause().getModel();
-//          LanguageAspectStatus aspectStatus = Language.getLanguageAspectStatus(scriptsModel.getModelDescriptor());
-//          assert aspectStatus.getAspectKind() == AspectKind.SCRIPTS;
-//          Language scriptslanguage = aspectStatus.getLanguage();
-//
-//          ModelOwner modelOwner = new ModelOwner() {};
-//          final SModelDescriptor fakeModelDescriptor = TransientModels.createTransientModel(modelOwner, "temp", "$logplaying$");
-//          try {
-//            fakeModelDescriptor.getSModel().setLoading(true);
-//            fakeModelDescriptor.getSModel().addRoot(CopyUtil.copy(runtimeLog, fakeModelDescriptor.getSModel()));
-//            IGenerationScript script = new IGenerationScript() {
-//              public GenerationStatus doGenerate(IGenerationScriptContext context) throws Exception {
-//                return context.doGenerate(context.getSourceModelDescriptor(), context.getTargetLanguage(), null);
-//              }
-//            };
-//            DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
-//            GenerationSession generationSession = new GenerationSession(invocationContext, false, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, messages);
-//            GenerationStatus status = generationSession.generateModel(fakeModelDescriptor, BootstrapLanguages.getInstance().getBaseLanguage(), script);
-//            if (!status.isOk()) {
-//              LOG.error(status.getMessage());
-//              continue;
-//            }
-//            GenerateClassesGenerationType generationType = new GenerateClassesGenerationType() {
-//              protected boolean isPutClassesOnTheDisk() {
-//                return false;
-//              }
-//            };
-//            generationType.handleOutput(invocationContext, status, IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR, null, messages);
-//
-//            String className = status.getOutputModel().getLongName() + "." + "LogRunner";
-//            Class aClass = Class.forName(className, true, generationType.getClassLoader(getClass().getClassLoader()));
-//
-//            Method method = aClass.getDeclaredMethod("updateModel", SModel.class, Map.class);
-//            method.invoke(null, mySModel, arguments);
-//            save();
-//          } catch (ClassNotFoundException e) {
-//            LOG.error("Can't play a refactoring for model " + modelDescriptor.getModelUID());
-//          } catch(Throwable t) {
-//            LOG.error(t);
-//            continue;
-//          } finally {
-//            SModelRepository.getInstance().removeModelDescriptor(fakeModelDescriptor);
-//          }
-//        }
-//      }
-//      mySModel.updateImportedModelUsedVersion(modelDescriptor.getModelUID(), currentVersion);
-//    }
+    int currentVersion = modelDescriptor.getVersion();
+    int usedVersion = mySModel.getUsedVersion(modelDescriptor.getModelUID());
+    if (currentVersion > usedVersion) {
+      SModel importedModel = modelDescriptor.getSModel();
+      RefactoringHistory refactoringHistory = importedModel.getRefactoringHistory();
+      for (RefactoringContext refactoringContext : refactoringHistory.getRefactoringContexts()) {
+        if (refactoringContext.getModelVersion() <= usedVersion) continue;
+        refactoringContext.getRefactoring().updateModel(mySModel, refactoringContext);
+        save();
+      }
+      mySModel.updateImportedModelUsedVersion(modelDescriptor.getModelUID(), currentVersion);
+    }
     return;
   }
 

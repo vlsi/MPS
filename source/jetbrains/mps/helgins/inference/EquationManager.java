@@ -150,6 +150,9 @@ public class EquationManager {
             new EquationErrorReporter(this, "type ", subtypeRepresentator,
                     " is not" + strongString + " a subtype of ", supertypeRepresentator, "", errorInfo.myRuleModel, errorInfo.myRuleId);
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
+
+    //4debug
+    myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, errorInfo, isWeak);
   }
 
   public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck) {

@@ -225,6 +225,11 @@ public class QueriesGenerated {
     return mainNode.getLinkAttribute(ReferenceAntiquotation_AnnotationLink.REFERENCE_ANTIQUOTATION, refRole) != null;
   }
 
+  public static boolean ifMacro_Condition_1197652523288(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode attribute = node.getAttribute();
+    return attribute != null;
+  }
+
   public static boolean ifMacro_Condition_1190931377679(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return true;
   }
