@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.editor">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
@@ -6420,11 +6421,89 @@
         <property name="text" value="//" />
         <property name="drawBorder" value="false" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1168623099813">
-        <property name="textFgColor" value="gray" />
-        <property name="allowEmptyText" value="true" />
-        <property name="drawBorder" value="false" />
-        <link role="relationDeclaration" targetNodeId="17.1168623065899" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1197651363305">
+        <property name="vertical" value="true" />
+        <node role="ifTrueCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197651363306">
+          <property name="textFgColor" value="gray" />
+          <property name="allowEmptyText" value="true" />
+          <property name="drawBorder" value="false" />
+          <link role="relationDeclaration" targetNodeId="17.1168623065899" resolveInfo="value" />
+        </node>
+        <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197651363307">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197651363308">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197651484654">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197651484655">
+                <property name="name" value="v" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197651484656">
+                  <link role="classifier" targetNodeId="24.~String" resolveInfo="String" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197651479066">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1197651480737">
+                    <link role="property" targetNodeId="17.1168623065899" resolveInfo="value" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1197651478561" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197651897480">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197651897481">
+                <property name="name" value="isToDo" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1197651897482" />
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1197651916025">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1197651930406">
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1197651935061">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197651936896" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197651933583">
+                  <link role="variableDeclaration" targetNodeId="1197651484655" resolveInfo="v" />
+                </node>
+              </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197651930408">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197652010741">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1197652016128">
+                    <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197652010742">
+                      <link role="variableDeclaration" targetNodeId="1197651897481" resolveInfo="isToDo" />
+                    </node>
+                    <node role="rValue" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1197652016892">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197652016893">
+                        <link role="baseMethodDeclaration" targetNodeId="24.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
+                        <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197652016894">
+                          <link role="variableDeclaration" targetNodeId="1197651484655" resolveInfo="v" />
+                        </node>
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197652016895">
+                          <property name="value" value="FIX:" />
+                        </node>
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197652016896">
+                        <link role="baseMethodDeclaration" targetNodeId="24.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
+                        <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197652016897">
+                          <link role="variableDeclaration" targetNodeId="1197651484655" resolveInfo="v" />
+                        </node>
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197652016898">
+                          <property name="value" value="TODO:" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197651923338">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1197651941331">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197651941332">
+                  <link role="variableDeclaration" targetNodeId="1197651897481" resolveInfo="isToDo" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197651366849">
+          <property name="textFgColor" value="blue" />
+          <link role="relationDeclaration" targetNodeId="17.1168623065899" resolveInfo="value" />
+        </node>
       </node>
     </node>
   </node>
