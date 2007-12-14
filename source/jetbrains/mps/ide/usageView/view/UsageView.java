@@ -144,7 +144,7 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public String getCaption() {
-    if (mySearchQuery == null || mySearchQuery.getNodePointer() == null) return "<null>";
+    if (mySearchQuery.getNodePointer().getNode() == null) return "<null>";
     return mySearchQuery.getNodePointer().getNode().toString();
   }
 
