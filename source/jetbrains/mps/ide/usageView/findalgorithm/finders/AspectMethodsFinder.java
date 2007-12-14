@@ -6,6 +6,7 @@ import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class AspectMethodsFinder extends BaseFinder {
   private SModel myModel;
@@ -27,7 +28,7 @@ public class AspectMethodsFinder extends BaseFinder {
   private void findNodes(SearchResults res, SNode node, String methodName) {
     for (String value : node.getProperties().values()) {
       if (methodName.endsWith(value)) {
-        res.getSearchResults().add(new SearchResult(node, "Aspect methods"));
+        res.getSearchResults().add(new SearchResult(new SNodePointer(node), "Aspect methods"));
         break;
       }
     }

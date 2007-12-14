@@ -10,7 +10,9 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProject.ProjectScope;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 public class SearchQuery implements IExternalizableComponent {
   private static final String NODE = "node";
@@ -23,23 +25,15 @@ public class SearchQuery implements IExternalizableComponent {
 
   private static final String MODULE_ID = "module_id";
 
-  private SNode myNode;
+  private SNodePointer myNodePointer;
   private IScope myScope;
 
-  public SearchQuery(SNode node, IScope scope) {
-    myNode = node;
+  public SearchQuery(SNodePointer nodePointer, IScope scope) {
+    myNodePointer = nodePointer;
     myScope = scope;
   }
 
   public void write(Element element, MPSProject project) {
-    if (getNode() == null) {
-      return;
-    }
-
-    Element nodeXML = new Element(NODE);
-    nodeXML.addContent(ComponentsUtil.nodeToElement(getNode()));
-    element.addContent(nodeXML);
-
     Element scopeXML = new Element(SCOPE);
     if (myScope instanceof GlobalScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_GLOBAL);
@@ -50,39 +44,46 @@ public class SearchQuery implements IExternalizableComponent {
       scopeXML.setAttribute(MODULE_ID, ((AbstractModule) ((MyScope) myScope).getModelOwner()).getModuleUID());
     }
     element.addContent(scopeXML);
-  }
 
-  public void read(Element element, MPSProject project) {
-    //TODO: CRITICAL: rewrite using SNodePointer
-    try {
-      myNode = ComponentsUtil.nodeFromElement((Element) element.getChild(NODE).getChildren().get(0));
-
-      Element scopeXML = element.getChild(SCOPE);
-      String scopeType = scopeXML.getAttribute(SCOPE_TYPE).getValue();
-      if (scopeType.equals(SCOPE_TYPE_GLOBAL)) {
-        myScope = GlobalScope.getInstance();
-      } else if (scopeType.equals(SCOPE_TYPE_PROJECT)) {
-        myScope = project.getScope();
-      } else if (scopeType.equals(SCOPE_TYPE_MODULE)) {
-        String moduleUID = scopeXML.getAttribute(MODULE_ID).getValue();
-        myScope = null;
-        for (IModule module : project.getModules()) {
-          if (module.getModuleUID().equals(moduleUID)) {
-            myScope = module.getScope();
-          }
-        }
-        if (myScope == null) {
-          throw new ScopeNotFoundException();
-        }
-      }
-    } catch (NullPointerException e) {
-      myNode = null;
-      myScope = null;
+    if (myNodePointer.getNode() != null) {
+      Element nodeXML = new Element(NODE);
+      nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.getNode()));
+      element.addContent(nodeXML);
     }
   }
 
-  public SNode getNode() {
-    return myNode;
+  public void read(Element element, MPSProject project) {
+    Element scopeXML = element.getChild(SCOPE);
+    String scopeType = scopeXML.getAttribute(SCOPE_TYPE).getValue();
+    if (scopeType.equals(SCOPE_TYPE_GLOBAL)) {
+      myScope = GlobalScope.getInstance();
+    } else if (scopeType.equals(SCOPE_TYPE_PROJECT)) {
+      myScope = project.getScope();
+    } else if (scopeType.equals(SCOPE_TYPE_MODULE)) {
+      String moduleUID = scopeXML.getAttribute(MODULE_ID).getValue();
+      myScope = null;
+      for (IModule module : project.getModules()) {
+        if (module.getModuleUID().equals(moduleUID)) {
+          myScope = module.getScope();
+        }
+      }
+      if (myScope == null) {
+        throw new ScopeNotFoundException();
+      }
+    }
+
+    Element nodeXML = element.getChild(NODE);
+    SNode node;
+    if (nodeXML == null) {
+      node = null;
+    } else {
+      node = ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0));
+    }
+    myNodePointer = new SNodePointer(node);
+  }
+
+  public SNodePointer getNodePointer() {
+    return myNodePointer;
   }
 
   public IScope getScope() {

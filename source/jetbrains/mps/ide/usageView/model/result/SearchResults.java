@@ -4,6 +4,7 @@ import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 
 import java.util.ArrayList;
@@ -17,33 +18,32 @@ public class SearchResults implements IExternalizableComponent {
   private static final String RESULT = "result";
   private static final String NODE = "node";
 
-  private Set<SNode> mySearchedNodes = new HashSet<SNode>();
+  private Set<SNodePointer> mySearchedNodePointers = new HashSet<SNodePointer>();
   private List<SearchResult> mySearchResults = new ArrayList<SearchResult>();
 
-  public Set<SNode> getSearchedNodes() {
-    return mySearchedNodes;
+  public Set<SNodePointer> getSearchedNodePointers() {
+    return mySearchedNodePointers;
   }
 
   public List<SearchResult> getSearchResults() {
     return mySearchResults;
   }
 
-
   public List<SearchResult> getAliveResults() {
     List<SearchResult> alive = new ArrayList<SearchResult>();
     for (SearchResult result : mySearchResults) {
-      if (result.getNode() != null) {
+      if (result.getNodePointer().getNode() != null) {
         alive.add(result);
       }
     }
     return alive;
   }
 
-  public Set<SNode> getAliveNodes() {
-    Set<SNode> alive = new HashSet<SNode>();
-    for (SNode node : mySearchedNodes) {
-      if (node != null) {
-        alive.add(node);
+  public Set<SNodePointer> getAliveNodePointers() {
+    Set<SNodePointer> alive = new HashSet<SNodePointer>();
+    for (SNodePointer nodePointer : mySearchedNodePointers) {
+      if (nodePointer.getNode() != null) {
+        alive.add(nodePointer);
       }
     }
     return alive;
@@ -60,9 +60,9 @@ public class SearchResults implements IExternalizableComponent {
     element.addContent(resultsXML);
 
     Element searchedNodesXML = new Element(SEARCHED_NODES);
-    for (SNode node : getAliveNodes()) {
+    for (SNodePointer nodePointer : getAliveNodePointers()) {
       Element nodeXML = new Element(NODE);
-      nodeXML.addContent(ComponentsUtil.nodeToElement(node));
+      nodeXML.addContent(ComponentsUtil.nodeToElement(nodePointer.getNode()));
       searchedNodesXML.addContent(nodeXML);
     }
     element.addContent(searchedNodesXML);
@@ -79,13 +79,13 @@ public class SearchResults implements IExternalizableComponent {
 
     mySearchResults = getAliveResults();
 
-    mySearchedNodes.clear();
+    mySearchedNodePointers.clear();
     Element searchedNodesXML = element.getChild(SEARCHED_NODES);
     for (Element nodeXML : (List<Element>) searchedNodesXML.getChildren(NODE)) {
-      SNode node = ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0));
-      mySearchedNodes.add(node);
+      SNodePointer nodePointer = new SNodePointer(ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0)));
+      mySearchedNodePointers.add(nodePointer);
     }
 
-    mySearchedNodes = getAliveNodes();
+    mySearchedNodePointers = getAliveNodePointers();
   }
 }

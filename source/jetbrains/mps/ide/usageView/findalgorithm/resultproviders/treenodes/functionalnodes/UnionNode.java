@@ -12,7 +12,7 @@ public class UnionNode extends BaseNode {
     for (BaseLeaf child : myChildren) {
       SearchResults childResults = child.getResults(query, context);
       results.getSearchResults().addAll(childResults.getSearchResults());
-      results.getSearchedNodes().addAll(childResults.getSearchedNodes());
+      results.getSearchedNodePointers().addAll(childResults.getSearchedNodePointers());
     }
     return results;
   }

@@ -4,27 +4,29 @@ import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 public class SearchResult implements IExternalizableComponent {
   private static final String CATEGORY = "category";
   private static final String ATTRIBUTES = "attributes";
   private static final String NODE = "node";
 
-  protected SNode myNode;
+  protected SNodePointer myNodePointer;
   protected String myCategory;
 
   public SearchResult() {
 
   }
 
-  public SearchResult(SNode node, String category) {
-    myNode = node;
+  public SearchResult(SNodePointer nodePointer, String category) {
+    myNodePointer = nodePointer;
     myCategory = category;
   }
 
-  public SNode getNode() {
-    return myNode;
+  public SNodePointer getNodePointer() {
+    return myNodePointer;
   }
 
   public String getCategory() {
@@ -36,9 +38,9 @@ public class SearchResult implements IExternalizableComponent {
     attributesXML.setAttribute(CATEGORY, myCategory);
     element.addContent(attributesXML);
 
-    if (myNode != null) {
+    if (myNodePointer.getNode() != null) {
       Element nodeXML = new Element(NODE);
-      nodeXML.addContent(ComponentsUtil.nodeToElement(myNode));
+      nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.getNode()));
       element.addContent(nodeXML);
     }
   }
@@ -46,11 +48,12 @@ public class SearchResult implements IExternalizableComponent {
   public void read(Element element, MPSProject project) {
     Element attributesXML = element.getChild(ATTRIBUTES);
     myCategory = attributesXML.getAttribute(CATEGORY).getValue();
+
     Element nodeXML = element.getChild(NODE);
     if (nodeXML == null) {
-      myNode = null;
+      myNodePointer = new SNodePointer((SNode) null);
     } else {
-      myNode = ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0));
+      myNodePointer = new SNodePointer(ComponentsUtil.nodeFromElement((Element) nodeXML.getChildren().get(0)));
     }
   }
 }

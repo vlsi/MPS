@@ -143,13 +143,13 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public String getCaption() {
-    if (mySearchQuery == null || mySearchQuery.getNode() == null) return "<null>";
-    return mySearchQuery.getNode().toString();
+    if (mySearchQuery == null || mySearchQuery.getNodePointer() == null) return "<null>";
+    return mySearchQuery.getNodePointer().toString();
   }
 
   public Icon getIcon() {
     if (mySearchQuery == null) return null;
-    SNode node = mySearchQuery.getNode();
+    SNode node = mySearchQuery.getNodePointer().getNode();
     if (node == null) {
       return null;
     }
@@ -182,7 +182,10 @@ public abstract class UsageView implements IExternalizableComponent {
 
   private void collectModels(List<SearchResult> results, Set<SModel> models) {
     for (SearchResult res : results) {
-      models.add(res.getNode().getModel());
+      SNode node = res.getNodePointer().getNode();
+      if (node != null) {
+        models.add(node.getModel());
+      }
     }
   }
 
@@ -215,7 +218,7 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public void rerun() {
-    if ((mySearchQuery.getScope() == null) && (mySearchQuery.getNode() == null)) return;
+    if ((mySearchQuery.getScope() == null) && (mySearchQuery.getNodePointer() == null)) return;
     TreeBuilder.invalidateAll((BaseNode) myResultProvider);
     run(mySearchQuery, myContext);
   }

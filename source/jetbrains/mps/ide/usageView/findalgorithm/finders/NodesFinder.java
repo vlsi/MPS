@@ -6,6 +6,7 @@ import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 
 import java.util.Collection;
@@ -17,7 +18,7 @@ public class NodesFinder extends BaseFinder {
 
   public NodesFinder(Collection<SNode> nodes, String categoryName) {
     for (SNode node : nodes) {
-      myResults.getSearchResults().add(new SearchResult(node, categoryName));
+      myResults.getSearchResults().add(new SearchResult(new SNodePointer(node), categoryName));
     }
   }
 
