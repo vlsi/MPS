@@ -963,7 +963,7 @@
       </node>
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182969317058">
-      <property name="name" value="BinaryExpression" />
+      <property name="name" value="BinaryExpressionOld" />
       <property name="abstract" value="true" />
       <link role="extends" targetNodeId="1182966285571" resolveInfo="Expression" />
       <node role="line" type="jetbrains.mpslite.structure.Line" id="1182969322965">
