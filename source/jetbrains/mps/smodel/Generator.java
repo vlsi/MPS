@@ -31,7 +31,7 @@ public class Generator extends AbstractModule {
     // read modules and models
     readDependOnModules();
   }
-                                  
+
   public void readModels() {
     if (!isInitialized()) {
       super.readModels();
@@ -136,10 +136,7 @@ public class Generator extends AbstractModule {
 
   @NotNull
   public String toString() {
-    StringBuffer sb = new StringBuffer(this.getClass().getName());
-    sb.append('(').append(mySourceLanguage.getModuleUID()).append(')');
-    sb.append("->").append(getTargetLanguageName());
-    return sb.toString();
+    return getAlias();
   }
 
   @NotNull
@@ -210,5 +207,5 @@ public class Generator extends AbstractModule {
   @Nullable
   public File getClassesGen() {
     return mySourceLanguage.getClassesGen();
-  }    
+  }
 }
