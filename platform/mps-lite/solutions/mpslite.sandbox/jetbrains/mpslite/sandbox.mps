@@ -57,10 +57,50 @@
         </node>
         <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197634923791">
           <node role="expr" type="jetbrains.mps.nanoj.structure.EqualsExpression" id="1197634929108">
-            <node role="rightPart" type="jetbrains.mps.nanoj.structure.StringLiteralExpression" id="1197634934067">
-              <property name="text" value="AAA" />
+            <node role="rightPart" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197635968649">
+              <node role="rightPart" type="jetbrains.mps.nanoj.structure.AssignmentExpression" id="1197635970903">
+                <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197635971687">
+                  <property name="number" value="23" />
+                </node>
+                <node role="leftPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197635969511">
+                  <property name="number" value="23" />
+                </node>
+              </node>
+              <node role="leftPart" type="jetbrains.mps.nanoj.structure.StringLiteralExpression" id="1197634934067">
+                <property name="text" value="AAA" />
+              </node>
             </node>
             <node role="leftPart" type="jetbrains.mps.nanoj.structure.LocalVariableReference" id="1197634923792">
+              <link role="variable" targetNodeId="1197634686154" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197635628538">
+          <node role="expr" type="jetbrains.mps.nanoj.structure.AssignmentExpression" id="1197635629962">
+            <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197635631044">
+              <property name="number" value="239" />
+            </node>
+            <node role="leftPart" type="jetbrains.mps.nanoj.structure.LocalVariableReference" id="1197635628539">
+              <link role="variable" targetNodeId="1197634686154" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197635633030">
+          <node role="expr" type="jetbrains.mps.nanoj.structure.AssignmentExpression" id="1197635635407">
+            <node role="rightPart" type="jetbrains.mps.nanoj.structure.StringLiteralExpression" id="1197635656303">
+              <property name="text" value="aaa" />
+            </node>
+            <node role="leftPart" type="jetbrains.mps.nanoj.structure.LocalVariableReference" id="1197635633031">
+              <link role="variable" targetNodeId="1197634686154" resolveInfo="i" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197635660727">
+          <node role="expr" type="jetbrains.mps.nanoj.structure.AssignmentExpression" id="1197635662667">
+            <node role="rightPart" type="jetbrains.mps.nanoj.structure.StringLiteralExpression" id="1197635664467">
+              <property name="text" value="zzzz" />
+            </node>
+            <node role="leftPart" type="jetbrains.mps.nanoj.structure.LocalVariableReference" id="1197635660728">
               <link role="variable" targetNodeId="1197634686154" resolveInfo="i" />
             </node>
           </node>

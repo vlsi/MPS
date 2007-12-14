@@ -1638,8 +1638,6 @@
   </node>
   <node type="jetbrains.mpslite.structure.ConceptDeclarations" id="1197630753046">
     <property name="showStructure" value="true" />
-    <property name="showTypes" value="true" />
-    <property name="showBehavior" value="true" />
     <property name="name" value="DotExpressions" />
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.DotConceptDeclaration" id="1197630772169">
       <property name="name" value="FieldAccess" />
