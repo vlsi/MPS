@@ -5,9 +5,7 @@
   </models>
   <module />
   <languages />
-  <classPath>
-    <entry path="${mps_home}\app\agreement\classes" />
-  </classPath>
+  <classPath />
   <runtimeClassPath />
   <sourcePath />
   <dependencies>

@@ -25,8 +25,18 @@ public interface ITemplateGenerator {
 
   IAdaptiveProgressMonitor getProgressMonitor();
 
+  SModel getInputModel();
+
+  SModel getOutputModel();
+
+  /**
+   * @deprecated
+   */
   SModel getSourceModel();
 
+  /**
+   * @deprecated
+   */
   SModel getTargetModel();
 
   boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException;

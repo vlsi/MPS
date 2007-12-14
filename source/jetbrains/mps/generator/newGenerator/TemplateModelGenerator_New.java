@@ -213,8 +213,16 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     }
   }
 
+  public SModel getInputModel() {
+    return myInputModel;
+  }
+
   public SModel getSourceModel() {
     return myInputModel;
+  }
+
+  public SModel getOutputModel() {
+    return myOutputModel;
   }
 
   public SModel getTargetModel() {
