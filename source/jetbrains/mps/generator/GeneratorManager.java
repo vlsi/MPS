@@ -8,6 +8,8 @@ import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.AbstractProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.ide.modelchecker.ModelCheckResult;
@@ -35,6 +37,7 @@ import org.jdom.Element;
 import javax.swing.JOptionPane;
 import java.io.File;
 import java.util.*;
+import java.util.concurrent.*;
 
 
 /**
@@ -62,6 +65,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   private boolean myCheckBeforeCompilation = false;
   private List<IFileGenerator> myFileGenerators = new LinkedList<IFileGenerator>();
 
+  private ExecutorService myExecutorService = Executors.newCachedThreadPool();
 
   public GeneratorManager() {
   }
@@ -253,8 +257,53 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
   protected Object clone() throws CloneNotSupportedException {
     return super.clone();
   }
+
+  public void generateModelsFromDifferentModules(final IOperationContext operationContext, final List<SModelDescriptor> modelDescriptors, final IGenerationType generationType) {
+    new Thread() {
+      public void run() {
+        try {
+          GeneratorManager generatorManager = operationContext.getComponent(GeneratorManager.class);
+          List<SModel> models = toModels(modelDescriptors);
+
+          for (int i = 0; i < models.size(); i++) {
+            SModel model = models.get(i);
+            final boolean last = i == models.size() - 1;
+
+            Future<Boolean> f = generatorManager.generateModelsWithProgressWindow(
+                    CollectionUtil.asList(model),
+                    BootstrapLanguages.getInstance().getBaseLanguage(),
+                    models.size() == 1 ? operationContext : ModuleContext.create(model, operationContext.getComponent(AbstractProjectFrame.class), false),
+                    new GenerationTypeWrapper(generationType) {
+                      public boolean requiresCompilationInIDEAfterGeneration() {
+                        return super.requiresCompilationInIDEAfterGeneration() && last;
+                      }
+                    },
+                    IGenerationScript.DEFAULT,
+                    false);
+
+            Boolean result = f.get();
+            if (!result) {
+              return;
+            }
+          }
+        } catch (InterruptedException e) {
+          LOG.error(e);
+        } catch (ExecutionException e) {
+          e.printStackTrace();
+        }
+      }
+    }.start();
+  }
+
+  private List<SModel> toModels(List<SModelDescriptor> models) {
+    List<SModel> result = new ArrayList<SModel>();
+    for (SModelDescriptor sm : models) {
+      result.add(sm.getSModel());
+    }
+    return result;
+  }
    
-  public Thread generateModelsWithProgressWindow(final List<SModel> sourceModels,
+  public Future<Boolean> generateModelsWithProgressWindow(final List<SModel> sourceModels,
                                                final Language targetLanguage,
                                                final IOperationContext invocationContext,
                                                final IGenerationType generationType,
@@ -292,22 +341,19 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       saveTransientModels = false;
     }
 
-    Thread generationThread = new Thread("Generation") {
-      public void run() {
-        generateModels(sourceModels, targetLanguage, invocationContext, generationType, script, progress, messages, saveTransientModels);
+    return myExecutorService.submit(new Callable<Boolean>() {
+      public Boolean call() throws Exception {
+        boolean result = generateModels(sourceModels, targetLanguage, invocationContext, generationType, script, progress, messages, saveTransientModels);
         progress.finishAnyway();
+        return result;
       }
-    };
-
-    //we are in the event dispatch thread
-    //do not change priority! With other priority it's impossible to listen to music
-    generationThread.setPriority(Thread.MIN_PRIORITY);
-    generationThread.start();
-
-    return generationThread;
+    });
   }
 
-  public void generateModels(final List<SModel> inputModels,
+  /**
+   * @return false if canceled
+   */
+  public boolean generateModels(final List<SModel> inputModels,
                              final Language targetLanguage,
                              final IOperationContext invocationContext,
                              final IGenerationType generationType,
@@ -315,14 +361,19 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                              final IAdaptiveProgressMonitor progress,
                              final IMessageHandler messages,
                              final boolean saveTransientModels) {
+    final boolean[] result = new boolean[1];
     CommandProcessor.instance().executeGenerationCommand(new Runnable() {
       public void run() {
-        generateModels_internal(inputModels, targetLanguage, invocationContext, generationType, script, progress, messages, saveTransientModels);
+        result[0] = generateModels_internal(inputModels, targetLanguage, invocationContext, generationType, script, progress, messages, saveTransientModels);
       }
     });
+    return result[0];
   }
 
-  private void generateModels_internal(List<SModel> _sourceModels,
+  /**
+   * @return false if canceled
+   */
+  private boolean generateModels_internal(List<SModel> _sourceModels,
                                        Language targetLanguage,
                                        IOperationContext invocationContext,
                                        IGenerationType generationType,
@@ -573,6 +624,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
       progress.finishAnyway();
       showMessageView(project);
+
+      return false;
     } catch (Throwable t) {
       LOG.error(t);
       final String text = t.toString();
@@ -594,6 +647,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         System.gc();
       }
     }
+
+    return true;
   }
 
   private void checkMonitorCanceled(IAdaptiveProgressMonitor progressMonitor) {
