@@ -25,6 +25,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -59,7 +60,7 @@ public abstract class UsageView implements IExternalizableComponent {
   private Map<Class, IPathProvider> myPathProviderComponents = new HashMap<Class, IPathProvider>();
 
   //model components
-  private SearchQuery mySearchQuery = new SearchQuery(null, null);
+  private SearchQuery mySearchQuery = new SearchQuery(new SNodePointer((SNode) null), null);
   private IOperationContext myContext = null;
   private IResultProvider myResultProvider = null;
 
@@ -144,11 +145,10 @@ public abstract class UsageView implements IExternalizableComponent {
 
   public String getCaption() {
     if (mySearchQuery == null || mySearchQuery.getNodePointer() == null) return "<null>";
-    return mySearchQuery.getNodePointer().toString();
+    return mySearchQuery.getNodePointer().getNode().toString();
   }
 
   public Icon getIcon() {
-    if (mySearchQuery == null) return null;
     SNode node = mySearchQuery.getNodePointer().getNode();
     if (node == null) {
       return null;

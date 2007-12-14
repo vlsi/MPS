@@ -24,7 +24,7 @@ public abstract class MPSTree extends JTree {
   public static final String SELECTION = "selection";
   public static final String EXPANSION = "expansion";
 
-  private static Logger LOG = Logger.getLogger(MPSTree.class);
+  protected static Logger LOG = Logger.getLogger(MPSTree.class);
 
   public static final String TREE_PATH_SEPARATOR = "/";
 

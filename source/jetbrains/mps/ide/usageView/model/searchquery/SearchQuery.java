@@ -28,7 +28,7 @@ public class SearchQuery implements IExternalizableComponent {
   private SNodePointer myNodePointer;
   private IScope myScope;
 
-  public SearchQuery(SNodePointer nodePointer, IScope scope) {
+  public SearchQuery(@NotNull SNodePointer nodePointer, IScope scope) {
     myNodePointer = nodePointer;
     myScope = scope;
   }
