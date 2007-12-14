@@ -8,10 +8,12 @@ import java.util.Set;
 public class SearchOptions {
   private Set<GeneratedFinder> myFinders;
   private IScope myScope;
+  private boolean myShowEmptyResults;
 
-  public SearchOptions(Set<GeneratedFinder> finders, IScope scope) {
+  public SearchOptions(Set<GeneratedFinder> finders, IScope scope, boolean showEmptyResults) {
     myFinders = finders;
     myScope = scope;
+    myShowEmptyResults = showEmptyResults;
   }
 
   public Set<GeneratedFinder> getFinders() {
@@ -20,5 +22,9 @@ public class SearchOptions {
 
   public IScope getScope() {
     return myScope;
+  }
+
+  public boolean isShowEmptyResults() {
+    return myShowEmptyResults;
   }
 }

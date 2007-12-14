@@ -14,6 +14,7 @@ public class OptionsDialog extends BaseDialog {
   private JPanel myPanel;
   private ScopeSelection myScopeSelection;
   private FindersSelection myFindersSelection;
+  private ShowEmptySelection myShowEmptySelection;
   private boolean myIsCancelled = true;
 
   public OptionsDialog(SNode node, IOperationContext context) {
@@ -21,9 +22,11 @@ public class OptionsDialog extends BaseDialog {
 
     myScopeSelection = new ScopeSelection(context, ScopeSelection.PROJECT_SCOPE);
     myFindersSelection = new FindersSelection(FindUsagesManager.getInstance().getAvailableFinders(node), context);
+    myShowEmptySelection = new ShowEmptySelection();
 
     myPanel = new JPanel(new BorderLayout());
     myPanel.add(myFindersSelection.getComponent(), BorderLayout.CENTER);
+    myPanel.add(myShowEmptySelection.getComponent(), BorderLayout.EAST);
     myPanel.add(myScopeSelection.getComponent(), BorderLayout.SOUTH);
   }
 
@@ -32,7 +35,7 @@ public class OptionsDialog extends BaseDialog {
   }
 
   public SearchOptions getResult() {
-    SearchOptions options = new SearchOptions(myFindersSelection.getSelectedFinders(), myScopeSelection.getSelectedScope());
+    SearchOptions options = new SearchOptions(myFindersSelection.getSelectedFinders(), myScopeSelection.getSelectedScope(), myShowEmptySelection.getResult());
     return options;
   }
 
