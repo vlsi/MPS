@@ -24,10 +24,12 @@
     <generator name="java" generatorUID="agreementLanguage#1130266708218" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
         <modelRoot path="${language_descriptor}\generator" namespacePrefix="agreementLanguage.generator" />
-        <modelRoot path="${mps_home}\languages\formulaLanguage\language\generator" namespacePrefix="jetbrains.mps.formulaLanguage.generator" />
       </models>
       <module />
       <external-templates />
+      <dependencies>
+        <dependency>jetbrains.mps.formulaLanguage#1130266266255</dependency>
+      </dependencies>
       <mapping-priorities />
     </generator>
   </generators>
