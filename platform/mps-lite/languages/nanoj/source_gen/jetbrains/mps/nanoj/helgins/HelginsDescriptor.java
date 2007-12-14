@@ -114,7 +114,15 @@ public class HelginsDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_BinaryExpression_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_PlusExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MinusExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_BinaryExpressionOld_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
