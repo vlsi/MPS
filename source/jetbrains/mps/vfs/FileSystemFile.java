@@ -129,6 +129,10 @@ public class FileSystemFile implements IFile {
     return myFile;
   }
 
+  public long length() {
+    return myFile.length();
+  }
+
   public int hashCode() {
     return myFile.hashCode();
   }

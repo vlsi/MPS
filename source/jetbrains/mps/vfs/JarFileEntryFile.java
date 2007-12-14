@@ -142,6 +142,10 @@ public class JarFileEntryFile implements IFile {
     throw new UnsupportedOperationException();
   }
 
+  public long length() {
+    return myJarFileData.getLength(myEntryPath);
+  }
+
   public String toString() {
     return myEntryPath;
   }

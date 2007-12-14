@@ -36,4 +36,6 @@ public interface IFile {
   boolean isReadOnly();
 
   File toFile();
+
+  long length();
 }
