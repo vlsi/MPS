@@ -2308,7 +2308,7 @@
     </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.BinaryOperationConceptDeclaration" id="1197634087870">
       <property name="name" value="NotEqualsExpression" />
-      <property name="sign" value="==" />
+      <property name="sign" value="!=" />
       <property name="priority" value="1" />
       <link role="operationFor" targetNodeId="1182966285571" resolveInfo="Expression" />
       <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197634087871">
@@ -2328,6 +2328,31 @@
       <node role="behavior" type="jetbrains.mpslite.structure.Behavior" id="1197634087880">
         <node role="constructor" type="jetbrains.mpslite.structure.ConstructorBlock" id="1197634087881">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197634087882" />
+        </node>
+      </node>
+    </node>
+    <node role="conceptDeclaration" type="jetbrains.mpslite.structure.BinaryOperationConceptDeclaration" id="1197635253825">
+      <property name="name" value="AssignmentExpression" />
+      <property name="sign" value="=" />
+      <property name="priority" value="0" />
+      <link role="operationFor" targetNodeId="1182966285571" resolveInfo="Expression" />
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197635253826">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197635253827">
+          <node role="statement" type="jetbrains.mpslite.structure.AddInequationStatement" id="1197635270242">
+            <node role="right" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197635286301">
+              <node role="operation" type="jetbrains.mpslite.structure.TypeOperation" id="1197635287163" />
+              <node role="expression" type="jetbrains.mpslite.structure.LeftPartExpression" id="1197635285159" />
+            </node>
+            <node role="left" type="jetbrains.mpslite.structure.MPSLiteOperationExpression" id="1197635283389">
+              <node role="operation" type="jetbrains.mpslite.structure.TypeOperation" id="1197635283970" />
+              <node role="expression" type="jetbrains.mpslite.structure.RightPartExpression" id="1197635281872" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="behavior" type="jetbrains.mpslite.structure.Behavior" id="1197635253828">
+        <node role="constructor" type="jetbrains.mpslite.structure.ConstructorBlock" id="1197635253829">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197635253830" />
         </node>
       </node>
     </node>
