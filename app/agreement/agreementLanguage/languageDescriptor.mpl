@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="agreementLanguage">
+<language namespace="agreementLanguage" compileInMPS="false">
   <structure>
     <model modelUID="agreementLanguage.structure" />
   </structure>
@@ -31,7 +31,15 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}\app\agreement\classes" />
+  </classPath>
+  <runtimeClassPath />
+  <sourcePath />
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
   <dependencies>
     <dependency>jetbrains.mps.formulaLanguage</dependency>
   </dependencies>
