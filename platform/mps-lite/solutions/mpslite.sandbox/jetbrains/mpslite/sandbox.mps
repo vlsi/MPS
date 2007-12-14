@@ -105,6 +105,22 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.nanoj.structure.IfStatement" id="1197637013499">
+          <node role="body" type="jetbrains.mps.nanoj.structure.StatementList" id="1197637013501" />
+          <node role="condition" type="jetbrains.mps.nanoj.structure.EqualsExpression" id="1197637353835">
+            <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637354666">
+              <property name="number" value="3" />
+            </node>
+            <node role="leftPart" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197637176503">
+              <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637352771">
+                <property name="number" value="2" />
+              </node>
+              <node role="leftPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637039858">
+                <property name="number" value="2" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
