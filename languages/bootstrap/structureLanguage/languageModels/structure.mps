@@ -505,7 +505,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1197590884613">
     <property name="name" value="EnumerationMemberIdentifierPolicy" />
-    <property name="memberIdentifierPolicy" value="derive_from_presentation" />
+    <property name="memberIdentifierPolicy" value="derive_from_internal_value" />
     <link role="memberDataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     <link role="defaultMember" targetNodeId="1197590884614" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1197590884614">
