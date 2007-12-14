@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.actions.nodes;
+package jetbrains.mps.ide.usageView.view.options;
 
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
