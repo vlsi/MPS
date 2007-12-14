@@ -44,11 +44,11 @@
               <node role="rightPart" type="jetbrains.mps.nanoj.structure.StringLiteralExpression" id="1197634699913">
                 <property name="text" value="zzz" />
               </node>
-              <node role="leftPart" type="jetbrains.mps.nanoj.structure.MinusExpression" id="1197635119106">
-                <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197635119781">
+              <node role="leftPart" type="jetbrains.mps.nanoj.structure.DivExpression" id="1197638536333">
+                <node role="leftPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197634697169">
                   <property name="number" value="3" />
                 </node>
-                <node role="leftPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197634697169">
+                <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197635119781">
                   <property name="number" value="3" />
                 </node>
               </node>
@@ -116,6 +116,41 @@
                 <property name="number" value="2" />
               </node>
               <node role="leftPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637039858">
+                <property name="number" value="2" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197637556897">
+          <node role="expr" type="jetbrains.mps.nanoj.structure.EqualsExpression" id="1197637561876">
+            <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637563441">
+              <property name="number" value="2" />
+            </node>
+            <node role="leftPart" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197637556899">
+              <node role="rightPart" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197637559418">
+                <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637560609">
+                  <property name="number" value="3" />
+                </node>
+                <node role="leftPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637558089">
+                  <property name="number" value="32" />
+                </node>
+              </node>
+              <node role="leftPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637556898">
+                <property name="number" value="2" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.nanoj.structure.ExpressionStatement" id="1197637531603">
+          <node role="expr" type="jetbrains.mps.nanoj.structure.AssignmentExpression" id="1197637533890">
+            <node role="rightPart" type="jetbrains.mps.nanoj.structure.LocalVariableReference" id="1197637541440">
+              <link role="variable" targetNodeId="1197635098231" resolveInfo="a" />
+            </node>
+            <node role="leftPart" type="jetbrains.mps.nanoj.structure.PlusExpression" id="1197637532355">
+              <node role="rightPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637532998">
+                <property name="number" value="2" />
+              </node>
+              <node role="leftPart" type="jetbrains.mps.nanoj.structure.NumberExpression" id="1197637531604">
                 <property name="number" value="2" />
               </node>
             </node>

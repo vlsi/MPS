@@ -18,15 +18,15 @@ public class typeof_InstanceMethodCall_InferenceRule implements InferenceRule_Ru
 
   public void applyRule(final SNode argument) {
     if(SequenceOperations.getSize(SLinkOperations.getTargets(argument, "parameter", true)) != SequenceOperations.getSize(SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "method", false), "parameter", true))) {
-      TypeChecker.getInstance().reportTypeError(argument, "Wrong parameters number", "jetbrains.mps.nanoj.helgins", "1197637187979");
+      TypeChecker.getInstance().reportTypeError(argument, "Wrong parameters number", "jetbrains.mps.nanoj.helgins", "1197638406572");
       return;
     }
     List<SNode> params = SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "method", false), "parameter", true);
     List<SNode> arguments = SLinkOperations.getTargets(argument, "parameter", true);
     for(int i = 0 ; i < SequenceOperations.getSize(params) ; i = i + 1) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(ListOperations.getElement(arguments, i), "jetbrains.mps.nanoj.helgins", "1197637188029", true), SLinkOperations.getTarget(ListOperations.getElement(params, i), "type", true), ListOperations.getElement(arguments, i), null, "jetbrains.mps.nanoj.helgins", "1197637188027");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(ListOperations.getElement(arguments, i), "jetbrains.mps.nanoj.helgins", "1197638406622", true), SLinkOperations.getTarget(ListOperations.getElement(params, i), "type", true), ListOperations.getElement(arguments, i), null, "jetbrains.mps.nanoj.helgins", "1197638406620");
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197637188042", true), SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "method", false), "type", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197637188041");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197638406635", true), SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "method", false), "type", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197638406634");
   }
 
   public String getApplicableConceptFQName() {

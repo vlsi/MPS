@@ -14,7 +14,7 @@ public class typeof_Expression_InferenceRule implements InferenceRule_Runtime {
   }
 
   public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197637188275", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "operation", true), "jetbrains.mps.nanoj.helgins", "1197637188278", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197637188273");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197638406868", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "operation", true), "jetbrains.mps.nanoj.helgins", "1197638406871", true), argument, null, "jetbrains.mps.nanoj.helgins", "1197638406866");
   }
 
   public String getApplicableConceptFQName() {

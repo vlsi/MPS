@@ -21,15 +21,15 @@ public class typeof_NewExpression_InferenceRule implements InferenceRule_Runtime
   public void applyRule(final SNode argument) {
     SNode ct = SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.ClassifierType", null);
     SLinkOperations.setTarget(ct, "classifier", SNodeOperations.getParent(SLinkOperations.getTarget(argument, "constructor", false), null, false, false), false);
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197637187868", true), ct, argument, null, "jetbrains.mps.nanoj.helgins", "1197637187867");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.nanoj.helgins", "1197638406461", true), ct, argument, null, "jetbrains.mps.nanoj.helgins", "1197638406460");
     if(SequenceOperations.getSize(SLinkOperations.getTargets(argument, "parameter", true)) != SequenceOperations.getSize(SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "constructor", false), "parameter", true))) {
-      TypeChecker.getInstance().reportTypeError(argument, "Wrong parameters number", "jetbrains.mps.nanoj.helgins", "1197637187873");
+      TypeChecker.getInstance().reportTypeError(argument, "Wrong parameters number", "jetbrains.mps.nanoj.helgins", "1197638406466");
       return;
     }
     List<SNode> args = SLinkOperations.getTargets(argument, "parameter", true);
     List<SNode> params = SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "constructor", false), "parameter", true);
     for(int i = 0 ; i < SequenceOperations.getSize(SLinkOperations.getTargets(argument, "parameter", true)) ; i = i + 1) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(ListOperations.getElement(args, i), "jetbrains.mps.nanoj.helgins", "1197637187925", true), SLinkOperations.getTarget(ListOperations.getElement(params, i), "type", true), ListOperations.getElement(args, i), null, "jetbrains.mps.nanoj.helgins", "1197637187923");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(ListOperations.getElement(args, i), "jetbrains.mps.nanoj.helgins", "1197638406518", true), SLinkOperations.getTarget(ListOperations.getElement(params, i), "type", true), ListOperations.getElement(args, i), null, "jetbrains.mps.nanoj.helgins", "1197638406516");
     }
   }
 
