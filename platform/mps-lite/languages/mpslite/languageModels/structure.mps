@@ -785,5 +785,25 @@
       <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1197558498278" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197622292463">
+    <property name="name" value="BinaryOperationConceptDeclaration" />
+    <link role="extends" targetNodeId="1182510906722" resolveInfo="ConceptDeclaration" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197622472776">
+      <property name="role" value="operationFor" />
+      <link role="target" targetNodeId="1182510906722" resolveInfo="ConceptDeclaration" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197622561333">
+      <property name="name" value="priority" />
+      <link role="dataType" targetNodeId="1.1082983657062" resolveInfo="integer" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197622348031">
+      <property name="name" value="sign" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197622382035">
+      <property name="value" value="binary operation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

@@ -934,6 +934,34 @@
         </node>
       </node>
     </node>
+    <node role="conceptDeclaration" type="jetbrains.mpslite.structure.BinaryOperationConceptDeclaration" id="1197623188528">
+      <property name="name" value="PlusExpression" />
+      <property name="sign" value="+" />
+      <property name="priority" value="2" />
+      <link role="operationFor" targetNodeId="1182966285571" resolveInfo="Expression" />
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197623188529">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197623188530" />
+      </node>
+      <node role="behavior" type="jetbrains.mpslite.structure.Behavior" id="1197623188531">
+        <node role="constructor" type="jetbrains.mpslite.structure.ConstructorBlock" id="1197623188532">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197623188533" />
+        </node>
+      </node>
+    </node>
+    <node role="conceptDeclaration" type="jetbrains.mpslite.structure.BinaryOperationConceptDeclaration" id="1197623914295">
+      <property name="name" value="MinusExpression" />
+      <property name="sign" value="-" />
+      <property name="priority" value="2" />
+      <link role="operationFor" targetNodeId="1182966285571" resolveInfo="Expression" />
+      <node role="types" type="jetbrains.mpslite.structure.TypesBlock" id="1197623914296">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197623914297" />
+      </node>
+      <node role="behavior" type="jetbrains.mpslite.structure.Behavior" id="1197623914298">
+        <node role="constructor" type="jetbrains.mpslite.structure.ConstructorBlock" id="1197623914299">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197623914300" />
+        </node>
+      </node>
+    </node>
     <node role="conceptDeclaration" type="jetbrains.mpslite.structure.ConceptDeclaration" id="1182969317058">
       <property name="name" value="BinaryExpression" />
       <property name="abstract" value="true" />
