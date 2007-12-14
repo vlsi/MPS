@@ -159,6 +159,10 @@ public class ModuleContext extends StandaloneMPSContext {
         myModule = module;
       }
 
+      public void doubleClick() {
+        okButton();
+      }
+
       public IModule getModule() {
         return myModule;
       }
