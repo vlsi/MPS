@@ -13,8 +13,8 @@ import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treebuilders.Tr
 import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basenodes.BaseNode;
 import jetbrains.mps.ide.usageView.model.IResultProvider;
 import jetbrains.mps.ide.usageView.model.result.SearchResult;
-import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.usageView.model.searchquery.ScopeNotFoundException;
+import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.usageView.view.icons.Icons;
 import jetbrains.mps.ide.usageView.view.usagesTree.UsagesTree;
 import jetbrains.mps.ide.usageView.view.usagesTree.path.IPathProvider;
@@ -22,9 +22,9 @@ import jetbrains.mps.ide.usageView.view.usagesTree.path.concretepathproviders.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 

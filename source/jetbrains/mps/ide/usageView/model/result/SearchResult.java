@@ -6,7 +6,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
-import org.jetbrains.annotations.NotNull;
 
 public class SearchResult implements IExternalizableComponent {
   private static final String CATEGORY = "category";

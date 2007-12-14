@@ -1,8 +1,8 @@
 package jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basenodes;
 
+import jetbrains.mps.ide.usageView.model.IResultProvider;
 import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
-import jetbrains.mps.ide.usageView.model.IResultProvider;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jdom.Element;
@@ -26,7 +26,7 @@ public abstract class BaseLeaf implements IResultProvider {
 
   public void invalidate() {
     if (myParent != null) {
-      ((jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basenodes.BaseNode) myParent).invalidate();
+      ((BaseNode) myParent).invalidate();
     }
   }
 

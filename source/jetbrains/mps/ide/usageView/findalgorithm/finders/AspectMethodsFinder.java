@@ -3,9 +3,9 @@ package jetbrains.mps.ide.usageView.findalgorithm.finders;
 import jetbrains.mps.ide.usageView.model.result.SearchResult;
 import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
 
 public class AspectMethodsFinder extends BaseFinder {

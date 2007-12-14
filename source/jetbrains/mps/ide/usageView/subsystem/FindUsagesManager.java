@@ -4,7 +4,6 @@ import jetbrains.mps.bootstrap.findUsagesLanguage.constraints.FinderDeclaration_
 import jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.usageView.findalgorithm.finders.GeneratedFinder;
-import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
