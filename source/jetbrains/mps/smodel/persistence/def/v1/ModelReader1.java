@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.persistence.def.VisibleModelElements;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -40,6 +41,8 @@ public class ModelReader1 implements IModelReader {
     } catch (Throwable e) {
       LOG.error(e);
     }
+
+    model.getRefactoringHistory().fromElement(rootElement.getChild(RefactoringHistory.REFACTORING_HISTORY));
 
     // languages
     List languages = rootElement.getChildren(ModelPersistence.LANGUAGE);

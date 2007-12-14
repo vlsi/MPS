@@ -26,6 +26,7 @@ public class RefactoringHistory {
   }
 
   public void fromElement(Element e) {
+    if (e == null) return;
     for (Element refactoringContextElement : (List<Element>) e.getChildren(RefactoringContext.REFACTORING_CONTEXT)) {
       myRefactoringContextList.add(new RefactoringContext(refactoringContextElement));
     }

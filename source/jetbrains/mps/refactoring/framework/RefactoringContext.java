@@ -394,7 +394,7 @@ public class RefactoringContext {
     return mySerializer.deserialize(element);
   }
 
-  private class FullNodeId {
+  public static class FullNodeId {
 
     private SNodeId myNodeId;
 
@@ -435,14 +435,26 @@ public class RefactoringContext {
       myNodeId = SNodeId.fromString(element.getAttributeValue(NODE_ID));
     }
 
+    public SNode getNode() {
+      SModelDescriptor model = getModel();
+      if (model == null) {
+        return null;
+      }
+      return model.getSModel().getNodeById(myNodeId);
+    }
+
+    public SModelDescriptor getModel() {
+      if (myModelUID == null) return null;
+      return SModelRepository.getInstance().getModelDescriptor(myModelUID);
+    }
   }
 
-  private enum ConceptFeatureKind {
+  public static enum ConceptFeatureKind {
     NONE, CONCEPT, PROPERTY, CHILD, REFERENCE
 
   }
 
-  private class ConceptFeature {
+  public static class ConceptFeature {
     public static final String FEATURE_NAME = "featureName";
     public static final String FEATURE_KIND = "featureKind";
     public static final String CONCEPT_FQ_NAME = "conceptFQName";

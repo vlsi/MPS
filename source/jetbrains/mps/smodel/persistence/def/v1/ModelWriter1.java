@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import org.jdom.Document;
 import org.jdom.Element;
 
@@ -28,6 +29,9 @@ public class ModelWriter1 implements IModelWriter {
     if (validate) {
       sourceModel.validateLanguagesAndImports();
     }
+
+    RefactoringHistory history = sourceModel.getRefactoringHistory();
+    rootElement.addContent(history.toElement());
 
     // languages
     for (String languageNamespace : sourceModel.getExplicitlyImportedLanguages()) {

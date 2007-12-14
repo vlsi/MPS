@@ -2,6 +2,7 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.generator.TransientModels;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.refactoring.framework.RefactoringContext.FullNodeId;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jdom.Element;
@@ -37,7 +38,8 @@ public class Serializer {
     }
     if (value instanceof SNode) {
       element.setAttribute(OBJECT_TYPE, SNODE);
-      ModelPersistence.saveNode(element, (SNode) value);
+      FullNodeId fullNodeId = new FullNodeId((SNode)value);
+      fullNodeId.toElement(element);
     }
     if (value instanceof SModel) {
       element.setAttribute(OBJECT_TYPE, SMODEL);
@@ -56,10 +58,8 @@ public class Serializer {
       return element.getAttributeValue(STRING_VALUE);
     }
     if (SNODE.equals(OBJECT_TYPE)) {
-      myOwner = new ModelOwner() {
-      };
-      //todo
-      return ModelPersistence.readNode(element, TransientModels.createTransientModel(myOwner, "$refactoring$", "refactoring").getSModel());
+      FullNodeId fullNodeId = new FullNodeId(element);
+      return fullNodeId.getNode();
     }
     if (SMODEL.equals(OBJECT_TYPE)) {
       return SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(element.getAttributeValue(MODEL_UID)));
