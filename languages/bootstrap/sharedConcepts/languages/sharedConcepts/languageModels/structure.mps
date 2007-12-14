@@ -60,6 +60,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1161807239261">
     <property name="name" value="Options_DefaultCustom" />
+    <property name="memberIdentifierPolicy" value="custom" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1161807239262" resolveInfo="default_" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1161807239262">
@@ -76,6 +77,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1165007009656">
     <property name="name" value="NodePresentationOptions" />
+    <property name="memberIdentifierPolicy" value="custom" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1165007009657" resolveInfo="default_" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1165007009657">
@@ -98,6 +100,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1177964585679">
     <property name="name" value="Options_DefaultTrue" />
+    <property name="memberIdentifierPolicy" value="custom" />
     <link role="memberDataType" targetNodeId="1.1082983041843" />
     <link role="defaultMember" targetNodeId="1177964585680" resolveInfo="default_" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1177964585680">

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bootstrap.structureLanguage" generatorOutputPath="${mps_home}\source_gen">
+<language namespace="jetbrains.mps.bootstrap.structureLanguage" generatorOutputPath="${mps_home}\source_gen" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" />
   </structure>
@@ -36,6 +36,7 @@
   </generators>
   <classPath />
   <runtimeClassPath />
+  <sourcePath />
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />

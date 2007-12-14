@@ -789,10 +789,12 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1193662402729">
     <property name="name" value="EquationDirection_Enum" />
+    <property name="memberIdentifierPolicy" value="custom" />
     <link role="memberDataType" targetNodeId="1.1082983041843" resolveInfo="string" />
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1193662402730">
       <property name="internalValue" value="none" />
       <property name="externalValue" value="none" />
+      <property name="javaIdentifier" value="none" />
     </node>
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1193662428543">
       <property name="internalValue" value="left" />

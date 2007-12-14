@@ -95,6 +95,10 @@
     <property name="iconPath" value="${language_descriptor}\icons\enum.png" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="1082978164218" resolveInfo="DataTypeDeclaration" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197591154882">
+      <property name="name" value="memberIdentifierPolicy" />
+      <link role="dataType" targetNodeId="1197590884613" resolveInfo="EnumerationMemberIdentifierPolicy" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1083171729157">
       <property name="targetCardinality" value="0..n" />
       <property name="sourceCardinality" value="1" />
@@ -497,6 +501,24 @@
       <property name="sourceCardinality" value="1" />
       <property name="role" value="intfc" />
       <link role="target" targetNodeId="1169125989551" resolveInfo="InterfaceConceptDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1197590884613">
+    <property name="name" value="EnumerationMemberIdentifierPolicy" />
+    <property name="memberIdentifierPolicy" value="derive_from_presentation" />
+    <link role="memberDataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    <link role="defaultMember" targetNodeId="1197590884614" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1197590884614">
+      <property name="externalValue" value="derive from presentation" />
+      <property name="internalValue" value="derive_from_presentation" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1197591048630">
+      <property name="externalValue" value="derive from internal value" />
+      <property name="internalValue" value="derive_from_internal_value" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1197591075491">
+      <property name="externalValue" value="custom" />
+      <property name="internalValue" value="custom" />
     </node>
   </node>
 </model>
