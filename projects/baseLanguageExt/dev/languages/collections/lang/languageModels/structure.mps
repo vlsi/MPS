@@ -601,6 +601,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197683403723">
     <property name="name" value="MapType" />
+    <property name="package" value="mapType" />
     <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197683466920">
       <property name="metaClass" value="aggregation" />
@@ -617,6 +618,31 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197684040307">
       <property name="value" value="map" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197686869805">
+    <property name="package" value="mapType" />
+    <property name="name" value="MapCreator" />
+    <link role="extends" targetNodeId="2.1145552809883" resolveInfo="AbstractCreator" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197687026896">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="keyType" />
+      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197687035757">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="valueType" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197686889666">
+      <property name="value" value="map" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197687012583">
+      <property name="value" value="hash map" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
     </node>
   </node>
 </model>
