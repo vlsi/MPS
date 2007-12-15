@@ -6,6 +6,7 @@ import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.IOperationContext;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -17,7 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewUsagesView extends DefaultTool implements IExternalizableComponent {
-  private static final String VERSION_NUMBER = "0.925";
+  private static final String VERSION_NUMBER = "0.926";
   private static final String VERSION = "version";
   private static final String ID = "id";
 
@@ -81,8 +82,8 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     }
   }
 
-  public UsageView createUsageView() {
-    UsageView usageView = new UsageView(myProjectFrame) {
+  public UsageView createUsageView(IOperationContext context) {
+    UsageView usageView = new UsageView(myProjectFrame, context) {
       public void updateUI() {
         int index = myUsageViews.indexOf(this);
         myTabbedPane.setIconAt(index, this.getIcon());
@@ -123,7 +124,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     Element tabsXML = element.getChild(TABS);
     if (tabsXML != null) {
       for (Element tabXML : (List<Element>) tabsXML.getChildren()) {
-        UsageView usageView = createUsageView();
+        UsageView usageView = createUsageView(project.createOperationContext());
         usageView.read(tabXML, project);
       }
     }

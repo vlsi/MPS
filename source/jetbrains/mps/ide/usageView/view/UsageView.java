@@ -60,9 +60,11 @@ public abstract class UsageView implements IExternalizableComponent {
   //model components
   private SearchQuery mySearchQuery = new SearchQuery(new SNodePointer((SNode) null), null);
   private IResultProvider myResultProvider = null;
+  private IOperationContext myContext = null;
 
-  public UsageView(IDEProjectFrame projectFrame) {
+  public UsageView(IDEProjectFrame projectFrame, IOperationContext context) {
     myProjectFrame = projectFrame;
+    myContext = context;
 
     myPanel = new JPanel(new BorderLayout());
 
@@ -170,7 +172,7 @@ public abstract class UsageView implements IExternalizableComponent {
       modelDescriptors.add(m.getModelDescriptor());
     }
 
-    //manager.generateModelsFromDifferentModules(, modelDescriptors, IGenerationType.FILES);
+    manager.generateModelsFromDifferentModules(myContext, modelDescriptors, IGenerationType.FILES);
   }
 
   private void collectModels(List<SearchResult> results, Set<SModel> models) {
