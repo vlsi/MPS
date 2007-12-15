@@ -25,11 +25,11 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponent {
 
   public  menu_SubstituteFeatureAndParameter() {
-    super(new ISubstituteInfoPart[]{new menu_SubstituteFeatureAndParameter.IterateOperation_generic_cellMenu1()});
+    super(new ISubstituteInfoPart[]{new menu_SubstituteFeatureAndParameter.IterateOperation_generic_cellMenu()});
   }
-  public static class IterateOperation_generic_cellMenu1 extends AbstractCellMenuPart_Generic_Group {
+  public static class IterateOperation_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
 
-    public  IterateOperation_generic_cellMenu1() {
+    public  IterateOperation_generic_cellMenu() {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {

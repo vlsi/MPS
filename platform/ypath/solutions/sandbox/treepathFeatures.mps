@@ -24,8 +24,55 @@
   <import index="16" modelUID="treepathFeatures" version="-1" />
   <node type="jetbrains.mps.ypath.structure.TreePathAspect" id="1183980545104">
     <property name="name" value="TryFeatures" />
+    <node role="nodeKinds" type="jetbrains.mps.ypath.structure.TreeNodeKind" id="1197705668634">
+      <property name="name" value="foo" />
+      <node role="properties" type="jetbrains.mps.ypath.structure.TreeNodeKindProperty" id="1197705676415">
+        <property name="name" value="BAR" />
+        <property name="default" value="true" />
+        <node role="getter" type="jetbrains.mps.ypath.structure.PropertyGetter" id="1197705676416">
+          <node role="parameter" type="jetbrains.mps.ypath.structure.LambdaMethodParameter" id="1197705676417">
+            <property name="name" value="node" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197705676418">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197705709089">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197705709090">
+                <property name="value" value="" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="properties" type="jetbrains.mps.ypath.structure.TreeNodeKindProperty" id="1197705912407">
+        <property name="name" value="BAZ" />
+        <property name="default" value="false" />
+        <node role="getter" type="jetbrains.mps.ypath.structure.PropertyGetter" id="1197705912408">
+          <node role="parameter" type="jetbrains.mps.ypath.structure.LambdaMethodParameter" id="1197705912409">
+            <property name="name" value="node" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197705912410">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197705937142">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197705937143">
+                <property name="value" value="" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="trigger" type="jetbrains.mps.ypath.structure.KindBlock" id="1197705668635">
+        <node role="parameter" type="jetbrains.mps.ypath.structure.LambdaMethodParameter" id="1197705668636">
+          <property name="name" value="node" />
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197705668637">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197705695677">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1197705695678">
+              <property name="value" value="true" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="features" type="jetbrains.mps.ypath.structure.ListFeature" id="1184067892215">
-      <property name="name" value="nodes" />
+      <property name="name" value="nodes " />
       <property name="writable" value="true" />
       <property name="default" value="false" />
       <property name="parameterized" value="true" />

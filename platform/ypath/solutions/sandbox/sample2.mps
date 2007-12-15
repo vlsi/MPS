@@ -14,6 +14,7 @@
       <property name="name" value="FILE" />
       <node role="properties" type="jetbrains.mps.ypath.structure.TreeNodeKindProperty" id="1175164134728">
         <property name="name" value="name" />
+        <property name="default" value="false" />
         <node role="getter" type="jetbrains.mps.ypath.structure.PropertyGetter" id="1175164134729">
           <node role="parameter" type="jetbrains.mps.ypath.structure.LambdaMethodParameter" id="1175164134730">
             <property name="name" value="f" />

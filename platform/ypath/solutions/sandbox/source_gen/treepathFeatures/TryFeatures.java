@@ -4,6 +4,9 @@ package treepathFeatures;
 
 import jetbrains.mps.ypath.runtime.TreePath;
 import org.w3c.dom.Node;
+import jetbrains.mps.ypath.runtime.IFilter;
+import treepathFeatures.TryFeatures.foo_BAR_Property;
+import treepathFeatures.TryFeatures.foo_BAZ_Property;
 import java.util.AbstractList;
 import java.util.AbstractCollection;
 import jetbrains.mps.baseLanguage.ext.collections.internal.SequenceWithSupplier;
@@ -14,7 +17,7 @@ import java.util.Collection;
 public class TryFeatures extends TreePath<Node> {
 
   public  TryFeatures() {
-    this.registerFeature(new TryFeatures.Desc_Feature_nodes());
+    this.registerFeature(new TryFeatures.Desc_Feature_nodes ());
     this.registerFeature(new TryFeatures.Desc_Feature_attributes());
   }
 
@@ -47,11 +50,129 @@ public class TryFeatures extends TreePath<Node> {
       this._closureContext = (Object)closureContext;
     }
 }
-  private static class Feature_nodes extends AbstractList<Node> {
+  public static class foo_NodeKindTrigger implements IFilter<Node> {
+    public static TryFeatures.foo_NodeKindTrigger instance;
+
+    /* package */Object _enclosingClass;
+    /* package */Object _closureContext;
+
+    private  foo_NodeKindTrigger() {
+    }
+    public  foo_NodeKindTrigger(Object enclosingClass, Object closureContext) {
+      this._enclosingClass = enclosingClass;
+      this._closureContext = (Object)closureContext;
+    }
+
+    public static IFilter<Node> getInstance() {
+      if(instance == null) {
+        instance = new TryFeatures.foo_NodeKindTrigger();
+      }
+      return instance;
+    }
+
+
+    public boolean accept(Node node) {
+      return true;
+    }
+
+}
+  public static class foo_BAR_Property {
+
+    public static IFilter<Node> getMatcher(final String matchValue) {
+      IFilter filter;
+      if(matchValue != null) {
+        filter = new IFilter() {
+
+          public boolean accept(Object n) {
+            Node node = (Node)n;
+            String actualValue = TryFeatures.foo_BAR_Property.Getter.getValue(node);
+            return matchValue.equals(actualValue);
+          }
+
+        };
+      } else
+      {
+        filter = new IFilter() {
+
+          public boolean accept(Object n) {
+            Node node = (Node)n;
+            String actualValue = TryFeatures.foo_BAR_Property.Getter.getValue(node);
+            return actualValue == null;
+          }
+
+        };
+      }
+      return (IFilter<Node>)filter;
+    }
+
+    private static class Getter {
+
+      /* package */Object _enclosingClass;
+      /* package */Object _closureContext;
+
+      public  Getter(Object enclosingClass, Object closureContext) {
+        this._enclosingClass = enclosingClass;
+        this._closureContext = (Object)closureContext;
+      }
+
+      public static String getValue(Node node) {
+        return "";
+      }
+
+}
+
+}
+  public static class foo_BAZ_Property {
+
+    public static IFilter<Node> getMatcher(final String matchValue) {
+      IFilter filter;
+      if(matchValue != null) {
+        filter = new IFilter() {
+
+          public boolean accept(Object n) {
+            Node node = (Node)n;
+            String actualValue = TryFeatures.foo_BAZ_Property.Getter.getValue(node);
+            return matchValue.equals(actualValue);
+          }
+
+        };
+      } else
+      {
+        filter = new IFilter() {
+
+          public boolean accept(Object n) {
+            Node node = (Node)n;
+            String actualValue = TryFeatures.foo_BAZ_Property.Getter.getValue(node);
+            return actualValue == null;
+          }
+
+        };
+      }
+      return (IFilter<Node>)filter;
+    }
+
+    private static class Getter {
+
+      /* package */Object _enclosingClass;
+      /* package */Object _closureContext;
+
+      public  Getter(Object enclosingClass, Object closureContext) {
+        this._enclosingClass = enclosingClass;
+        this._closureContext = (Object)closureContext;
+      }
+
+      public static String getValue(Node node) {
+        return "";
+      }
+
+}
+
+}
+  private static class Feature_nodes  extends AbstractList<Node> {
 
     private Node thisNode;
 
-    public  Feature_nodes(Node thisNode) {
+    public  Feature_nodes (Node thisNode) {
       this.thisNode = thisNode;
     }
 
@@ -126,17 +247,17 @@ public class TryFeatures extends TreePath<Node> {
     }
 
 }
-  public static class Desc_Feature_nodes implements IFeatureDescriptor<Node> {
+  public static class Desc_Feature_nodes  implements IFeatureDescriptor<Node> {
 
-    public  Desc_Feature_nodes() {
+    public  Desc_Feature_nodes () {
     }
 
     public Collection<Node> getFeature(Node node) {
-      return new TryFeatures.Feature_nodes(node);
+      return new TryFeatures.Feature_nodes (node);
     }
 
     public String getName() {
-      return "nodes";
+      return "nodes ";
     }
 
     public IFeatureDescriptor.Type getType() {

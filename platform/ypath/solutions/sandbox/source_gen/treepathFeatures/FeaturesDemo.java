@@ -15,7 +15,7 @@ public class FeaturesDemo {
     try {
       InputStream is = new ByteArrayInputStream(INPUT.getBytes());
       Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
-      TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new TryFeatures().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"), "nodes"), TreeTraversalFactory.Axis("DESCENDANTS"), "attributes"), TreeTraversalFactory.Axis("ANCESTORS")), new WhereFilter(null, null));
+      TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new TryFeatures().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"), "nodes "), TreeTraversalFactory.Axis("DESCENDANTS"), "attributes"), TreeTraversalFactory.Axis("ANCESTORS")), new WhereFilter(null, null));
     } catch (Exception ignored) {
     }
   }
