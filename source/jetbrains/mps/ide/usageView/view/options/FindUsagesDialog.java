@@ -40,7 +40,7 @@ public class FindUsagesDialog extends BaseDialog {
     myPanel.add(centerPanel, BorderLayout.CENTER);
     myPanel.add(myScopeEditor.getComponent(), BorderLayout.SOUTH);
 
-    //setResizable(false);
+    setResizable(false);
   }
 
   public boolean isCancelled() {
