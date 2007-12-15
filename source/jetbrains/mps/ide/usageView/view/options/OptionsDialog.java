@@ -2,8 +2,8 @@ package jetbrains.mps.ide.usageView.view.options;
 
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.usageView.subsystem.FindUsagesManager;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JComponent;
@@ -17,11 +17,11 @@ public class OptionsDialog extends BaseDialog {
   private ShowEmptySelection myShowEmptySelection;
   private boolean myIsCancelled = true;
 
-  public OptionsDialog(SNode node, IOperationContext context) {
-    super(context.getMainFrame(), "Options");
+  public OptionsDialog(SNode node, ActionContext context) {
+    super(context.getOperationContext().getMainFrame(), "Options");
 
     myScopeSelection = new ScopeSelection(context, ScopeSelection.PROJECT_SCOPE);
-    myFindersSelection = new FindersSelection(FindUsagesManager.getInstance().getAvailableFinders(node), context);
+    myFindersSelection = new FindersSelection(FindUsagesManager.getInstance().getAvailableFinders(node), context.getOperationContext());
     myShowEmptySelection = new ShowEmptySelection();
 
     myPanel = new JPanel(new BorderLayout());

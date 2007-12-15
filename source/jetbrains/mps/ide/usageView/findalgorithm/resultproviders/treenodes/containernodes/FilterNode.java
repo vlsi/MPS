@@ -5,6 +5,7 @@ import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basen
 import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basenodes.BaseNode;
 import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
@@ -31,8 +32,8 @@ public class FilterNode extends BaseNode {
     super.addChild(child);
   }
 
-  public SearchResults getResults(SearchQuery query, IOperationContext context) {
-    return myFilter.filter(myChildren.get(0).getResults(query, context));
+  public SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
+    return myFilter.filter(myChildren.get(0).getResults(query, monitor));
   }
 
   public void write(Element element, MPSProject project) {

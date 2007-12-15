@@ -89,7 +89,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
 
             usageView.setResultProvider(TreeBuilder.forFinder(new AspectMethodsFinder(applicableModelDescriptors, name)));
             ModuleContext moduleContext = new ModuleContext(BootstrapLanguages.getInstance().getBaseLanguage(), myProject);
-            usageView.run(new SearchQuery(new SNodePointer((SNode) null), myProject.getScope()), new ProjectOperationContext(myProject));
+            usageView.run(new SearchQuery(new SNodePointer((SNode) null), myProject.getScope()));
 
             usagesView.showTool();
           } catch (Throwable t) {

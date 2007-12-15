@@ -1,6 +1,5 @@
 package jetbrains.mps.smodel;
 
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
@@ -12,25 +11,30 @@ import jetbrains.mps.project.IModule;
 
 public class ModelScope implements IScope {
   private IScope myScope = null;
-  private SModelDescriptor myModel = null;
+  private SModelDescriptor myModelDescriptor = null;
 
-  public ModelScope(IScope scope, SModelDescriptor model) {
+  //scope means nothing, just pass ProjectScope or ModeuleScope
+  public ModelScope(IScope scope, SModelDescriptor modelDescriptor) {
     myScope = scope;
-    myModel = model;
+    myModelDescriptor = modelDescriptor;
+  }
+
+  public SModelDescriptor getModelDescriptor() {
+    return myModelDescriptor;
   }
 
   public SModelDescriptor getModelDescriptor(@NotNull SModelUID modelUID) {
-    if (myScope.getModelDescriptor(modelUID) != myModel) {
+    if (myScope.getModelDescriptor(modelUID) != myModelDescriptor) {
       return null;
     }
-    return myModel;
+    return myModelDescriptor;
   }
 
   @NotNull
   public List<SModelDescriptor> getModelDescriptors(@NotNull String modelName) {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    if (myScope.getModelDescriptors(modelName).contains(myModel)) {
-      result.add(myModel);
+    if (myScope.getModelDescriptors(modelName).contains(myModelDescriptor)) {
+      result.add(myModelDescriptor);
     }
     return result;
   }
@@ -38,8 +42,8 @@ public class ModelScope implements IScope {
   @NotNull
   public List<SModelDescriptor> getModelDescriptors() {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
-    if (myScope.getModelDescriptors().contains(myModel)) {
-      result.add(myModel);
+    if (myScope.getModelDescriptors().contains(myModelDescriptor)) {
+      result.add(myModelDescriptor);
     }
     return result;
   }

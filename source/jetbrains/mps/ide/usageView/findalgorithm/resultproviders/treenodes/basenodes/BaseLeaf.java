@@ -3,6 +3,7 @@ package jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.base
 import jetbrains.mps.ide.usageView.model.IResultProvider;
 import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jdom.Element;
@@ -14,7 +15,7 @@ public abstract class BaseLeaf implements IResultProvider {
 
   }
 
-  public abstract SearchResults getResults(SearchQuery query, IOperationContext context);
+  public abstract SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor);
 
   public void setParent(BaseNode parent) {
     myParent = parent;

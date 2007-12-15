@@ -8,9 +8,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProject.ProjectScope;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -22,8 +20,10 @@ public class SearchQuery implements IExternalizableComponent {
   private static final String SCOPE_TYPE_GLOBAL = "global_scope";
   private static final String SCOPE_TYPE_PROJECT = "project_scope";
   private static final String SCOPE_TYPE_MODULE = "module_scope";
+  private static final String SCOPE_TYPE_MODEL = "model_scope";
 
   private static final String MODULE_ID = "module_id";
+  private static final String MODEL_ID = "model_id";
 
   private SNodePointer myNodePointer;
   private IScope myScope;
@@ -42,6 +42,9 @@ public class SearchQuery implements IExternalizableComponent {
     } else if (myScope instanceof MyScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODULE);
       scopeXML.setAttribute(MODULE_ID, ((AbstractModule) ((MyScope) myScope).getModelOwner()).getModuleUID());
+    } else if (myScope instanceof ModelScope) {
+      scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODEL);
+      scopeXML.setAttribute(MODEL_ID, ((ModelScope) myScope).getModelDescriptor().getModelUID().toString());
     }
     element.addContent(scopeXML);
 
@@ -70,6 +73,9 @@ public class SearchQuery implements IExternalizableComponent {
       if (myScope == null) {
         throw new ScopeNotFoundException();
       }
+    } else if (scopeType.equals(SCOPE_TYPE_MODEL)) {
+      String modelUID = scopeXML.getAttribute(MODEL_ID).getValue();
+      myScope = new ModelScope(project.getScope(), project.getScope().getModelDescriptor(SModelUID.fromString(modelUID)));
     }
 
     Element nodeXML = element.getChild(NODE);

@@ -22,6 +22,7 @@ import jetbrains.mps.ide.usageView.view.usagesTree.path.concretepathproviders.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
@@ -58,7 +59,6 @@ public abstract class UsageView implements IExternalizableComponent {
 
   //model components
   private SearchQuery mySearchQuery = new SearchQuery(new SNodePointer((SNode) null), null);
-  private IOperationContext myContext = null;
   private IResultProvider myResultProvider = null;
 
   public UsageView(IDEProjectFrame projectFrame) {
@@ -160,7 +160,7 @@ public abstract class UsageView implements IExternalizableComponent {
     }
 
     Set<SModel> models = new HashSet<SModel>();
-    collectModels(myResultProvider.getResults(mySearchQuery, myContext).getSearchResults(), models);
+    collectModels(myResultProvider.getResults(mySearchQuery, myProjectFrame.createAdaptiveProgressMonitor()).getSearchResults(), models);
 
     GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
 
@@ -170,7 +170,7 @@ public abstract class UsageView implements IExternalizableComponent {
       modelDescriptors.add(m.getModelDescriptor());
     }
 
-    manager.generateModelsFromDifferentModules(myContext, modelDescriptors, IGenerationType.FILES);
+    //manager.generateModelsFromDifferentModules(, modelDescriptors, IGenerationType.FILES);
   }
 
   private void collectModels(List<SearchResult> results, Set<SModel> models) {
@@ -198,12 +198,11 @@ public abstract class UsageView implements IExternalizableComponent {
     myTree.expandAll(myTree.getRootNode());
   }
 
-  public void run(SearchQuery query, IOperationContext context) {
+  public void run(SearchQuery query) {
     mySearchQuery = query;
-    myContext = context;
     Thread t = new Thread() {
       public void run() {
-        myTree.setContents(myResultProvider.getResults(mySearchQuery, myContext));
+        myTree.setContents(myResultProvider.getResults(mySearchQuery, myProjectFrame.createAdaptiveProgressMonitor()));
       }
     };
     t.start();
@@ -213,7 +212,7 @@ public abstract class UsageView implements IExternalizableComponent {
   public void rerun() {
     if ((mySearchQuery.getScope() == null) && (mySearchQuery.getNodePointer().getNode() == null)) return;
     TreeBuilder.invalidateAll((BaseNode) myResultProvider);
-    run(mySearchQuery, myContext);
+    run(mySearchQuery);
   }
 
   public void setResultProvider(IResultProvider resultProvider) {
@@ -244,7 +243,7 @@ public abstract class UsageView implements IExternalizableComponent {
       Element treeXML = element.getChild(TREE);
       myTree.read(treeXML, project);
 
-      myTree.setAll(myResultProvider.getResults(mySearchQuery, myContext), myPathProvider);
+      myTree.setAll(myResultProvider.getResults(mySearchQuery, myProjectFrame.createAdaptiveProgressMonitor()), myPathProvider);
 
     } catch (ScopeNotFoundException e) {
       myTree.setEmptyContents();

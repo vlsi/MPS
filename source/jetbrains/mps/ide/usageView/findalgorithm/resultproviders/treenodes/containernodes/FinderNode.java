@@ -4,6 +4,7 @@ import jetbrains.mps.ide.usageView.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basenodes.BaseLeaf;
 import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
@@ -25,8 +26,8 @@ public class FinderNode extends BaseLeaf {
     myFinder = finder;
   }
 
-  public SearchResults getResults(SearchQuery query, IOperationContext context) {
-    return myFinder.find(query, context);
+  public SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
+    return myFinder.find(query, monitor);
   }
 
   public void write(Element element, MPSProject project) {

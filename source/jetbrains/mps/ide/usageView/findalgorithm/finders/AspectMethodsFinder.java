@@ -35,7 +35,7 @@ public class AspectMethodsFinder extends BaseFinder {
     myMethodName = methodName;
   }
 
-  public SearchResults find(SearchQuery query, IOperationContext context) {
+  public SearchResults find(SearchQuery query, IAdaptiveProgressMonitor monitor) {
     SearchResults res = new SearchResults();
     for (SModel model : myModels) {
       for (SNode root : model.getRoots()) {

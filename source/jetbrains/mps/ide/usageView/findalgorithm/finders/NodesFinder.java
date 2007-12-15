@@ -3,6 +3,7 @@ package jetbrains.mps.ide.usageView.findalgorithm.finders;
 import jetbrains.mps.ide.usageView.model.result.SearchResult;
 import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -22,7 +23,7 @@ public class NodesFinder extends BaseFinder {
     }
   }
 
-  public SearchResults find(SearchQuery query, IOperationContext context) {
+  public SearchResults find(SearchQuery query, IAdaptiveProgressMonitor monitor) {
     return myResults;
   }
 
