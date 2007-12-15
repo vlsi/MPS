@@ -45,6 +45,8 @@ public class SearchQuery implements IExternalizableComponent {
     } else if (myScope instanceof ModelScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODEL);
       scopeXML.setAttribute(MODEL_ID, ((ModelScope) myScope).getModelDescriptor().getModelUID().toString());
+    } else {
+      throw new ScopeNotFoundException();
     }
     element.addContent(scopeXML);
 
