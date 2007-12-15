@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="readerConfigLanguage">
+<language namespace="readerConfigLanguage" compileInMPS="false">
   <structure>
     <model modelUID="readerConfigLanguage.structure" />
   </structure>
@@ -32,6 +32,16 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}\app\fixedLengthReader\classes" />
+  </classPath>
+  <runtimeClassPath>
+    <entry path="${mps_home}\app\fixedLengthReader\classes" />
+  </runtimeClassPath>
+  <sourcePath />
+  <osgiOptions>
+    <requiredBundles />
+    <exportedPackage />
+  </osgiOptions>
 </language>
 
