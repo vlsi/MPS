@@ -27,6 +27,7 @@ public class IntentionsManager implements IExternalizableComponent {
   private Map<String, Set<Intention>> myIntentions = new HashMap<String, Set<Intention>>();
   private Set<String> myDisabledIntentionsClassNames = new HashSet<String>();
   private Set<Intention> myDisabledIntentionsCache = new HashSet<Intention>();
+  private HashMap<Class, Language> myIntentionsLanguages = new HashMap<Class, Language>();
   private boolean myCachesAreValid = false;
 
   public static IntentionsManager getInstance() {
@@ -113,8 +114,13 @@ public class IntentionsManager implements IExternalizableComponent {
     myDisabledIntentionsCache.remove(intention);
   }
 
+  public Language getIntentionLanguage(Intention intention) {
+    return myIntentionsLanguages.get(intention.getClass());
+  }
+
   public void reload() {
     myIntentions.clear();
+    myIntentionsLanguages.clear();
     invalidateCaches();
     for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {
       SModelDescriptor intentionsModelDescriptor = l.getIntentionsModelDescriptor();
@@ -134,6 +140,7 @@ public class IntentionsManager implements IExternalizableComponent {
               }
               intentions.add((Intention) intention);
               myIntentions.put(conceptName, intentions);
+              myIntentionsLanguages.put(cls, l);
             } else {
               LOG.warning("Intention is registered but isn't compiled " + NameUtil.nodeFQName(intentionDeclaration), intentionDeclaration);
             }
