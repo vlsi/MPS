@@ -29,14 +29,14 @@ public class NodesFinder extends BaseFinder {
 
   public void read(Element element, MPSProject project) {
     super.read(element, project);
-    Element resultsXML = new Element(RESULTS);
-    myResults.write(resultsXML, project);
-    element.addContent(resultsXML);
+    Element resultsXML = element.getChild(RESULTS);
+    myResults.read(resultsXML, project);
   }
 
   public void write(Element element, MPSProject project) {
     super.write(element, project);
-    Element resultsXML = element.getChild(RESULTS);
-    myResults.read(resultsXML, project);
+    Element resultsXML = new Element(RESULTS);
+    myResults.write(resultsXML, project);
+    element.addContent(resultsXML);
   }
 }
