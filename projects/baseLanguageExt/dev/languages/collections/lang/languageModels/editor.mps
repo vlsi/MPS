@@ -929,6 +929,7 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197683431665">
         <property name="text" value="map" />
+        <property name="textFgColor" value="DARK_BLUE" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197683440730">
         <property name="text" value="&lt;" />

@@ -614,6 +614,10 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197684040307">
+      <property name="value" value="map" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
   </node>
 </model>
 
