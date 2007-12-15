@@ -23,7 +23,7 @@ public class NodesFinder extends BaseFinder {
     }
   }
 
-  public SearchResults find(SearchQuery query, IAdaptiveProgressMonitor monitor) {
+  public SearchResults find(SearchQuery query) {
     return myResults;
   }
 
@@ -38,5 +38,9 @@ public class NodesFinder extends BaseFinder {
     Element resultsXML = new Element(RESULTS);
     myResults.write(resultsXML, project);
     element.addContent(resultsXML);
+  }
+
+  public String getDescription() {
+    return "constant finder";
   }
 }

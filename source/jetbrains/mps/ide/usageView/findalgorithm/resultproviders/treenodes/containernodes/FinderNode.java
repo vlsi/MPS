@@ -27,7 +27,16 @@ public class FinderNode extends BaseLeaf {
   }
 
   public SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
-    return myFinder.find(query, monitor);
+    String taskName = myFinder.getDescription();
+    String taskKind = "finder";
+
+    monitor.addText(taskName + " started");
+    monitor.startTask(taskName, taskKind);
+    SearchResults results = myFinder.find(query);
+    monitor.finishTask();
+    monitor.addText(taskName + " finished");
+
+    return results;
   }
 
   public void write(Element element, MPSProject project) {

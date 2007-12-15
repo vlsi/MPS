@@ -6,6 +6,7 @@ import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
 
 public abstract class BaseFinder implements IExternalizableComponent {
@@ -21,5 +22,11 @@ public abstract class BaseFinder implements IExternalizableComponent {
 
   }
 
-  public abstract SearchResults find(SearchQuery query, IAdaptiveProgressMonitor monitor);
+  public abstract String getDescription();
+
+  public boolean isApplicable(SNode node) {
+    return true;
+  }
+
+  public abstract SearchResults find(SearchQuery query);
 }

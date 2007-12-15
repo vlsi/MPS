@@ -35,7 +35,7 @@ public class AspectMethodsFinder extends BaseFinder {
     myMethodName = methodName;
   }
 
-  public SearchResults find(SearchQuery query, IAdaptiveProgressMonitor monitor) {
+  public SearchResults find(SearchQuery query) {
     SearchResults res = new SearchResults();
     for (SModel model : myModels) {
       for (SNode root : model.getRoots()) {
@@ -89,5 +89,9 @@ public class AspectMethodsFinder extends BaseFinder {
     Element methodXML = new Element(METHOD);
     methodXML.setAttribute(METHOD_NAME, myMethodName);
     element.addContent(methodXML);
+  }
+
+  public String getDescription() {
+    return "aspect methods";
   }
 }

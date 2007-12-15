@@ -33,7 +33,16 @@ public class FilterNode extends BaseNode {
   }
 
   public SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
-    return myFilter.filter(myChildren.get(0).getResults(query, monitor));
+    String taskName = myFilter.getDescription();
+    String taskKind = "filter";
+
+    monitor.addText(taskName + " started");
+    monitor.startTask(taskName, taskKind);
+    SearchResults results = myFilter.filter(myChildren.get(0).getResults(query, monitor));
+    monitor.finishTask(taskName);
+    monitor.addText(taskName + " finished");
+
+    return results;
   }
 
   public void write(Element element, MPSProject project) {

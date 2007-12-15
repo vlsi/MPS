@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.structureLanguage.findUsages">
   <persistence version="1"/>
+  <refactoringHistory/>
   <language namespace="jetbrains.mps.bootstrap.findUsagesLanguage"/>
   <language namespace="jetbrains.mps.baseLanguage"/>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage"/>
@@ -14,7 +15,7 @@
   <import index="8" modelUID="jetbrains.mps.ide.usageView.model.searchquery@java_stub" version="-1"/>
   <import index="9" modelUID="jetbrains.mps.ide.usageView.model.result@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1197632773078">
-    <property name="name" value="ConceptInstancesFinder"/>
+    <property name="name" value="ConceptInstances"/>
     <property name="description" value="Concept Instances"/>
     <link role="forConcept" targetNodeId="2.1133920641626" resolveInfo="BaseConcept"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock"
@@ -176,7 +177,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1197636141662">
-    <property name="name" value="FindNodeUsages"/>
+    <property name="name" value="NodeUsages"/>
     <property name="description" value="Node Usages"/>
     <link role="forConcept" targetNodeId="2.1133920641626" resolveInfo="BaseConcept"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock"

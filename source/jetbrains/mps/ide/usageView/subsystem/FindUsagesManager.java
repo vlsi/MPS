@@ -3,7 +3,7 @@ package jetbrains.mps.ide.usageView.subsystem;
 import jetbrains.mps.bootstrap.findUsagesLanguage.constraints.FinderDeclaration_Behavior;
 import jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration;
 import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.ide.usageView.findalgorithm.finders.GeneratedFinder;
+import jetbrains.mps.ide.usageView.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
@@ -20,7 +20,7 @@ public class FindUsagesManager implements IExternalizableComponent {
 
   private static final Logger LOG = Logger.getLogger(FindUsagesManager.class);
 
-  private Map<String, Set<GeneratedFinder>> myFinders = new HashMap<String, Set<GeneratedFinder>>();
+  private Map<String, Set<BaseFinder>> myFinders = new HashMap<String, Set<BaseFinder>>();
 
   public static FindUsagesManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(FindUsagesManager.class);
@@ -30,12 +30,12 @@ public class FindUsagesManager implements IExternalizableComponent {
 
   }
 
-  public Set<GeneratedFinder> getAvailableFinders(SNode node) {
-    Set<GeneratedFinder> result = new HashSet<GeneratedFinder>();
+  public Set<BaseFinder> getAvailableFinders(SNode node) {
+    Set<BaseFinder> result = new HashSet<BaseFinder>();
 
     for (String conceptFQName : myFinders.keySet()) {
       if (node.isInstanceOfConcept(conceptFQName)) {
-        for (GeneratedFinder finder : Collections.unmodifiableSet(myFinders.get(conceptFQName))) {
+        for (BaseFinder finder : Collections.unmodifiableSet(myFinders.get(conceptFQName))) {
           try {
             if (finder.isApplicable(node)) {
               result.add(finder);
@@ -63,11 +63,11 @@ public class FindUsagesManager implements IExternalizableComponent {
 
             if (cls != null) {
               Object finder = cls.newInstance();
-              Set<GeneratedFinder> finders = myFinders.get(conceptName);
+              Set<BaseFinder> finders = myFinders.get(conceptName);
               if (finders == null) {
-                finders = new HashSet<GeneratedFinder>();
+                finders = new HashSet<BaseFinder>();
               }
-              finders.add((GeneratedFinder) finder);
+              finders.add((BaseFinder) finder);
               myFinders.put(conceptName, finders);
             } else {
               LOG.warning("Finder is registered but isn't compiled " + NameUtil.nodeFQName(finderDeclaration), finderDeclaration);

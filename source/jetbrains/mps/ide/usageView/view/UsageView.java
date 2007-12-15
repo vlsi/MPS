@@ -7,6 +7,7 @@ import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treebuilders.TreeBuilder;
@@ -204,7 +205,10 @@ public abstract class UsageView implements IExternalizableComponent {
     mySearchQuery = query;
     Thread t = new Thread() {
       public void run() {
-        myTree.setContents(myResultProvider.getResults(mySearchQuery, myProjectFrame.createAdaptiveProgressMonitor()));
+        IAdaptiveProgressMonitor monitor = myProjectFrame.createAdaptiveProgressMonitor();
+        monitor.start("find usages", 10000);
+        myTree.setContents(myResultProvider.getResults(mySearchQuery, monitor));
+        monitor.finish();
       }
     };
     t.start();

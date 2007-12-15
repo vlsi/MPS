@@ -7,7 +7,6 @@ import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.usageView.UseNewUsagesViewFlag;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treebuilders.TreeBuilder;
-import jetbrains.mps.ide.usageView.findalgorithm.finders.NodeUsagesFinder;
 import jetbrains.mps.ide.usageView.findalgorithm.finders.AspectMethodsFinder;
 import jetbrains.mps.ide.usageView.view.NewUsagesView;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;

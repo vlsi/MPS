@@ -18,5 +18,7 @@ public abstract class BaseFilter implements IExternalizableComponent {
 
   }
 
+  public abstract String getDescription();
+
   public abstract SearchResults filter(SearchResults results);
 }
