@@ -26,7 +26,7 @@ public class OptionsDialog extends BaseDialog {
 
     myPanel = new JPanel(new BorderLayout());
     myPanel.add(myFindersSelection.getComponent(), BorderLayout.CENTER);
-    myPanel.add(myShowEmptySelection.getComponent(), BorderLayout.EAST);
+    //myPanel.add(myShowEmptySelection.getComponent(), BorderLayout.EAST);
     myPanel.add(myScopeSelection.getComponent(), BorderLayout.SOUTH);
   }
 
