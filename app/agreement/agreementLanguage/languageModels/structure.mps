@@ -80,6 +80,9 @@
       <property name="name" value="unit" />
       <link role="dataType" targetNodeId="1111793238658" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197675838931">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1111792355423">
     <property name="name" value="TemporalProperty" />

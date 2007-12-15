@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="postingrules.agreement">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="agreementLanguage" />
   <language namespace="jetbrains.mps.formulaLanguage" />
   <maxImportIndex value="1" />
