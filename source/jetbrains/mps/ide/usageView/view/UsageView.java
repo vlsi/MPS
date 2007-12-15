@@ -190,14 +190,14 @@ public abstract class UsageView implements IExternalizableComponent {
 
   public void collapse() {
     int i;
-    TreeNode root = myTree.getRootNode();
+    TreeNode root = myTree.getResultsNode();
     for (i = 0; i < root.getChildCount(); i++) {
       myTree.collapseAll((MPSTreeNode) root.getChildAt(i));
     }
   }
 
   public void expand() {
-    myTree.expandAll(myTree.getRootNode());
+    myTree.expandAll(myTree.getResultsNode());
   }
 
   public void run(SearchQuery query) {
