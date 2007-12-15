@@ -3,10 +3,7 @@ package jetbrains.mps.plugin;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.IEditor;
-import jetbrains.mps.ide.EditorsPane;
-import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.usageView.UseNewUsagesViewFlag;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treebuilders.TreeBuilder;
@@ -20,10 +17,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.util.IDisposable;
 
@@ -33,6 +27,7 @@ import java.rmi.RemoteException;
 import java.rmi.NoSuchObjectException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.List;
+import java.util.ArrayList;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, IDisposable {
   private static final Logger LOG = Logger.getLogger(MPSProjectIDEHandler.class);
@@ -78,34 +73,49 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showAspectMethodUsages(String namespace, final String name) throws RemoteException {
-    List<SModelDescriptor> modelDescriptors = myProject.getScope().getModelDescriptors(namespace);
-    for (final SModelDescriptor descriptor : modelDescriptors) {
-      if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
-
+    if (UseNewUsagesViewFlag.get()) {
+      List<SModelDescriptor> modelDescriptors = myProject.getScope().getModelDescriptors(namespace);
+      final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
+      for (final SModelDescriptor descriptor : modelDescriptors) {
+        if (!descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+          applicableModelDescriptors.add(descriptor.getSModel());
+        }
+      }
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           try {
-            if (UseNewUsagesViewFlag.get()) {
-              NewUsagesView usagesView = getProjectWindow().getUsagesView();
-              jetbrains.mps.ide.usageView.view.UsageView usageView = usagesView.createUsageView();
+            NewUsagesView usagesView = getProjectWindow().getUsagesView();
+            jetbrains.mps.ide.usageView.view.UsageView usageView = usagesView.createUsageView();
 
-              usageView.setResultProvider(TreeBuilder.forFinder(new AspectMethodsFinder(descriptor.getSModel(), name)));
-              LOG.error("Not implemented");
-              //usageView.run(new SearchQuery(null, null),);
+            usageView.setResultProvider(TreeBuilder.forFinder(new AspectMethodsFinder(applicableModelDescriptors, name)));
+            ModuleContext moduleContext = new ModuleContext(BootstrapLanguages.getInstance().getBaseLanguage(), myProject);
+            usageView.run(new SearchQuery(new SNodePointer((SNode) null), myProject.getScope()), new ProjectOperationContext(myProject));
 
-              usagesView.showTool();
-            } else {
-              UsagesModel_AspectMethods usagesModel = new UsagesModel_AspectMethods(descriptor.getSModel(), name);
-              if (getProjectWindow() == null) return;
-              getProjectWindow().showUsagesView(usagesModel);
-              FrameUtil.activateFrame(getMainFrame());
-              if (usagesModel.getSNodes().size() > 0) return;
-            }
+            usagesView.showTool();
           } catch (Throwable t) {
             LOG.error(t);
           }
         }
       });
+    } else {
+      List<SModelDescriptor> modelDescriptors = myProject.getScope().getModelDescriptors(namespace);
+      final List<SModelDescriptor> applicableModelDescriptors = new ArrayList<SModelDescriptor>();
+      for (final SModelDescriptor descriptor : modelDescriptors) {
+        if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            try {
+              UsagesModel_AspectMethods usagesModel = new UsagesModel_AspectMethods(descriptor.getSModel(), name);
+              if (getProjectWindow() == null) return;
+              getProjectWindow().showUsagesView(usagesModel);
+              FrameUtil.activateFrame(getMainFrame());
+              if (usagesModel.getSNodes().size() > 0) return;
+            } catch (Throwable t) {
+              LOG.error(t);
+            }
+          }
+        });
+      }
     }
   }
 

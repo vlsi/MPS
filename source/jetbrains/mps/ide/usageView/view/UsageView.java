@@ -161,7 +161,7 @@ public abstract class UsageView implements IExternalizableComponent {
 
     Set<SModel> models = new HashSet<SModel>();
     collectModels(myResultProvider.getResults(mySearchQuery, myContext).getSearchResults(), models);
-    
+
     GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
 
     List<SModelDescriptor> modelDescriptors = new ArrayList<SModelDescriptor>();
@@ -211,7 +211,7 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public void rerun() {
-    if ((mySearchQuery.getScope() == null) && (mySearchQuery.getNodePointer() == null)) return;
+    if ((mySearchQuery.getScope() == null) && (mySearchQuery.getNodePointer().getNode() == null)) return;
     TreeBuilder.invalidateAll((BaseNode) myResultProvider);
     run(mySearchQuery, myContext);
   }
