@@ -49,7 +49,7 @@ public class SModelSearchUtil_new {
     return result;
   }
 
-  public static List<LinkDeclaration> getReferenceLinkDeclarationsExcludingOverridden(ConceptDeclaration concept) {
+  public static List<LinkDeclaration> getReferenceLinkDeclarationsExcludingOverridden(AbstractConceptDeclaration concept) {
     List<LinkDeclaration> list = new ConceptAndSuperConceptsScope(concept).getLinkDeclarationsExcludingOverridden();
     List<LinkDeclaration> result = new ArrayList<LinkDeclaration>();
     for (LinkDeclaration link : list) {

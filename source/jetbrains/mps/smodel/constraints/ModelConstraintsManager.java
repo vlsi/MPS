@@ -2,6 +2,8 @@ package jetbrains.mps.smodel.constraints;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.component.Dependency;
 import jetbrains.mps.component.IComponentLifecycle;
@@ -295,19 +297,17 @@ public class ModelConstraintsManager implements IComponentLifecycle {
    * use the ModelConstraintsUtil.getSearchScope()
    */
   /*package*/ INodeReferentSearchScopeProvider getNodeReferentSearchScopeProvider(AbstractConceptDeclaration nodeConcept, String referentRole) {
-    if (nodeConcept instanceof ConceptDeclaration) {
-      while (nodeConcept != null) {
-        Language l = SModelUtil_new.getDeclaringLanguage(nodeConcept, GlobalScope.getInstance());
+      List<AbstractConceptDeclaration> hierarchy = SModelUtil_new.getConceptAndSuperConcepts(nodeConcept);
+      for (AbstractConceptDeclaration concept : hierarchy) {
+        Language l = SModelUtil_new.getDeclaringLanguage(concept, GlobalScope.getInstance());
         if (!myAddedLanguageNamespaces.containsKey(l.getNamespace())) {
           processLanguageAdded(l);
         }
 
-        String conceptFqName = NameUtil.nodeFQName(nodeConcept);
+        String conceptFqName = NameUtil.nodeFQName(concept);
         INodeReferentSearchScopeProvider provider = myNodeReferentSearchScopeProvidersMap.get(conceptFqName + "#" + referentRole);
         if (provider != null) return provider;
-        nodeConcept = ((ConceptDeclaration) nodeConcept).getExtends();
       }
-    }
     return null;
   }
 
