@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.transformation.TLBase.editor">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
@@ -2711,6 +2712,7 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1168278698451">
             <property name="drawBorder" value="false" />
             <property name="noTargetText" value="&lt;none&gt;" />
+            <property name="attractsFocus" value="2" />
             <link role="relationDeclaration" targetNodeId="1.1168278589236" />
           </node>
         </node>
