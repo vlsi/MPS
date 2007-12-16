@@ -103,6 +103,10 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     return usageView;
   }
 
+  public int getNumber() {
+    return 3;
+  }
+
   public String getName() {
     return "Usages View";
   }
