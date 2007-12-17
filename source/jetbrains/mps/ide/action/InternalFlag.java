@@ -3,6 +3,6 @@ package jetbrains.mps.ide.action;
 public class InternalFlag {
 
   public static boolean isInternalModel() {
-    return true;
+    return "true".equals(System.getProperty("mps.internal"));
   }
 }
