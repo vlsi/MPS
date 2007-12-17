@@ -976,5 +976,24 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197932601785">
+    <property name="package" value="mapType" />
+    <link role="conceptDeclaration" targetNodeId="1.1197932370469" resolveInfo="MapElement" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197932604756">
+      <property name="vertical" value="false" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1197932608070">
+        <link role="relationDeclaration" targetNodeId="1.1197932505799" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197932610541">
+        <property name="text" value="[" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1197932614043">
+        <link role="relationDeclaration" targetNodeId="1.1197932525128" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197932616764">
+        <property name="text" value="]" />
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -645,5 +645,25 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197932370469">
+    <property name="package" value="mapType" />
+    <property name="name" value="MapElement" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197932505799">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="map" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197932525128">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="key" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197932438204">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 
