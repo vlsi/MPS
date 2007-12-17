@@ -19,6 +19,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
 import java.util.List;
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
 
 /**
  * Author: Sergey Dmitriev.
@@ -44,7 +46,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
   private INodeSubstituteInfo myNodeSubstituteInfo;
   private List<INodeSubstituteAction> mySubstituteActions = new ArrayList<INodeSubstituteAction>();
   private boolean myMenuEmpty;
-  private int myLength = 2;
 
   public NodeSubstituteChooser(AbstractEditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -156,8 +157,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       });
     }
 
-    myLength = 2;
-
     int textLength = 0;
     int descriptionLength = 0;
     for (INodeSubstituteAction item : mySubstituteActions) {
@@ -168,8 +167,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         LOG.error(t, t);
       }
     }
-
-    myLength = Math.max(2 + textLength + descriptionLength, PREFERRED_WIDTH / getPopupWindow().getFontWidth());
   }
 
   private int getDescriptionLength(INodeSubstituteAction action, String pattern) {
@@ -364,15 +361,11 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
       myList.setCellRenderer(new NodeItemCellRenderer());
 
-//      myList.setCellRenderer(new DefaultListCellRenderer() {
-//        public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-//          super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-//          setText(getPresentation(((INodeSubstituteAction) value), getPatternEditor().getPattern()));
-//          return this;
-//        }
-//      });
-
       add(myScroller);
+
+      myScroller.getHorizontalScrollBar().setFocusable(false);
+      myScroller.getVerticalScrollBar().setFocusable(false);
+
       myList.setFocusable(false);
       setSize(PREFERRED_WIDTH, PREFERRED_HEIGHT);
     }
