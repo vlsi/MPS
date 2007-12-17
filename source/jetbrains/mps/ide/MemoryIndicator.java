@@ -17,7 +17,7 @@ public class MemoryIndicator extends JPanel {
     protected void paintComponent(Graphics g) {
       g.setColor(Color.WHITE);
       g.fillRect(0, 0, getWidth(), getHeight());
-      g.setColor(new Color(200, 220, 250));
+      g.setColor(UIManager.getColor("List.selectionBackground"));
 
       g.fillRect(0, 0, (int) (getWidth() * myUsedMemeory / myTotalMemory), getHeight());
       g.setColor(Color.BLACK);
