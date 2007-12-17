@@ -1991,5 +1991,12 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197933062682">
+    <property name="package" value="MenuBuilderParts" />
+    <link role="conceptDeclaration" targetNodeId="1.1177323240852" resolveInfo="MenuBuilderPart" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Error" id="1197933065153">
+      <property name="text" value="menu builder part" />
+    </node>
+  </node>
 </model>
 
