@@ -65,10 +65,14 @@ public class IdeMain {
   public static IDEProjectFrame openProjectWindow(boolean loadOldProject) {
     System.setProperty("alloy.licenseCode", "2008/01/17#Konstantin.Solomatov@gmail.com#b4yfnq#18f3q7");
 
-    try {
-      UIManager.setLookAndFeel(new AlloyLookAndFeel(new BedouinTheme()));
-    } catch (UnsupportedLookAndFeelException e) {
-      e.printStackTrace();
+    // Install Alloy LaF only if not overridden by the user!
+    String defaultLaF = System.getProperty("swing.defaultlaf");
+    if (defaultLaF == null) {
+        try {
+          UIManager.setLookAndFeel(new AlloyLookAndFeel(new BedouinTheme()));
+        } catch (UnsupportedLookAndFeelException e) {
+            e.printStackTrace();
+        }
     }
 
     installFocusKiller();
