@@ -13,16 +13,16 @@ import java.util.List;
 
 public class GenericFeature extends BaseConcept implements IGenericFeature, INamedConcept, IFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.GenericFeature";
-  public static String OPPOSITE = "opposite";
-  public static String GETTER = "getter";
-  public static String REPLACE_FUN = "replaceFun";
-  public static String FUN_HOLDERS = "funHolders";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
+  public static String GETTER = "getter";
+  public static String REPLACE_FUN = "replaceFun";
+  public static String FUN_HOLDERS = "funHolders";
+  public static String OPPOSITE = "opposite";
 
   public  GenericFeature(SNode node) {
     super(node);
@@ -36,50 +36,6 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
     return GenericFeature.newInstance(sm, false);
   }
 
-
-  public IFeature getOpposite() {
-    return (IFeature)this.getReferent(GenericFeature.OPPOSITE);
-  }
-
-  public void setOpposite(IFeature node) {
-    super.setReferent(GenericFeature.OPPOSITE, node);
-  }
-
-  public GFGetterFun getGetter() {
-    return (GFGetterFun)this.getChild(GenericFeature.GETTER);
-  }
-
-  public void setGetter(GFGetterFun node) {
-    super.setChild(GenericFeature.GETTER, node);
-  }
-
-  public IGenericFeatureReplaceFun getReplaceFun() {
-    return (IGenericFeatureReplaceFun)this.getChild(GenericFeature.REPLACE_FUN);
-  }
-
-  public void setReplaceFun(IGenericFeatureReplaceFun node) {
-    super.setChild(GenericFeature.REPLACE_FUN, node);
-  }
-
-  public int getFunHoldersesCount() {
-    return this.getChildCount(GenericFeature.FUN_HOLDERS);
-  }
-
-  public Iterator<GenericFeatureFunHolder> funHolderses() {
-    return this.children(GenericFeature.FUN_HOLDERS);
-  }
-
-  public List<GenericFeatureFunHolder> getFunHolderses() {
-    return this.getChildren(GenericFeature.FUN_HOLDERS);
-  }
-
-  public void addFunHolders(GenericFeatureFunHolder node) {
-    this.addChild(GenericFeature.FUN_HOLDERS, node);
-  }
-
-  public void insertFunHolders(GenericFeatureFunHolder prev, GenericFeatureFunHolder node) {
-    this.insertChild(prev, GenericFeature.FUN_HOLDERS, node);
-  }
 
   public String getName() {
     return this.getProperty(GenericFeature.NAME);
@@ -127,6 +83,50 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
 
   public void setDefault(boolean value) {
     this.setBooleanProperty(GenericFeature.DEFAULT, value);
+  }
+
+  public GFGetterFun getGetter() {
+    return (GFGetterFun)this.getChild(GenericFeature.GETTER);
+  }
+
+  public void setGetter(GFGetterFun node) {
+    super.setChild(GenericFeature.GETTER, node);
+  }
+
+  public IGenericFeatureReplaceFun getReplaceFun() {
+    return (IGenericFeatureReplaceFun)this.getChild(GenericFeature.REPLACE_FUN);
+  }
+
+  public void setReplaceFun(IGenericFeatureReplaceFun node) {
+    super.setChild(GenericFeature.REPLACE_FUN, node);
+  }
+
+  public int getFunHoldersesCount() {
+    return this.getChildCount(GenericFeature.FUN_HOLDERS);
+  }
+
+  public Iterator<GenericFeatureFunHolder> funHolderses() {
+    return this.children(GenericFeature.FUN_HOLDERS);
+  }
+
+  public List<GenericFeatureFunHolder> getFunHolderses() {
+    return this.getChildren(GenericFeature.FUN_HOLDERS);
+  }
+
+  public void addFunHolders(GenericFeatureFunHolder node) {
+    this.addChild(GenericFeature.FUN_HOLDERS, node);
+  }
+
+  public void insertFunHolders(GenericFeatureFunHolder prev, GenericFeatureFunHolder node) {
+    this.insertChild(prev, GenericFeature.FUN_HOLDERS, node);
+  }
+
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(GenericFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(GenericFeature.OPPOSITE, node);
   }
 
 }
