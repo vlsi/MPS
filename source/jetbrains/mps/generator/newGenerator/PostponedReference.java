@@ -44,7 +44,13 @@ public class PostponedReference extends SReference {
       return null;
     }
 
-    myTargetNode = myReferenceInfo.doResolve(myGenerator);
+    myTargetNode = myReferenceInfo.doResolve_Straightforward(myGenerator);
+    if (myTargetNode == null) {
+      // todo: create dynamic ref here (if possible)
+      // else:
+      myTargetNode = myReferenceInfo.doResolve_Tricky(myGenerator);
+    }
+
     if (myTargetNode == null) {
       myFailed = true;
       if (myReferenceInfo.isRequired()) {

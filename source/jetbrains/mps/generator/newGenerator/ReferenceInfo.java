@@ -4,10 +4,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.template.IReferenceResolver;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Created by: Sergey Dmitriev
@@ -36,22 +36,12 @@ public abstract class ReferenceInfo {
     return myInputNode;
   }
 
-  public abstract SNode executeIndependentResolve(TemplateModelGenerator_New generator);
-
-  public abstract SNode executeDependentResolve(TemplateModelGenerator_New generator);
-
-  public abstract SNode resolveAnyhow(TemplateModelGenerator_New generator);
-
   /**
    * test postponed references
    */
-  public SNode doResolve(TemplateModelGenerator_New generator) {
-    SNode outputTargetNode = executeIndependentResolve(generator);
-    if (outputTargetNode != null) return outputTargetNode;
-    outputTargetNode = executeDependentResolve(generator);
-    if (outputTargetNode != null) return outputTargetNode;
-    return resolveAnyhow(generator);
-  }
+  public abstract SNode doResolve_Straightforward(TemplateModelGenerator_New generator);
+
+  public abstract SNode doResolve_Tricky(TemplateModelGenerator_New generator);
 
   public boolean isRequired() {
     return true;
@@ -83,4 +73,5 @@ public abstract class ReferenceInfo {
     }
     return null;
   }
+
 }

@@ -20,9 +20,9 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
 
   /**
    * @param role
-   * @param outputSourceNode  reference source in output model
-   * @param inputNode         node from input mode (ofter refernce source in input model)
-   * @param inputTargetNode   reference target in input model
+   * @param outputSourceNode reference source in output model
+   * @param inputNode        node from input mode (ofter refernce source in input model)
+   * @param inputTargetNode  reference target in input model
    */
   public ReferenceInfo_CopiedInputNode(String role, SNode outputSourceNode, SNode inputNode, SNode inputTargetNode) {
     super(outputSourceNode, role, inputNode);
@@ -31,7 +31,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     myInputTargetNode = inputTargetNode;
   }
 
-  public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
+  public SNode doResolve_Straightforward(TemplateModelGenerator_New generator) {
     // output target node might has been copied (reduced) from the input target node
     SNode outputTargetNode = generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
     if (outputTargetNode != null) {
@@ -59,22 +59,17 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
       }
     }
 
-    return null;
-  }
-
-  public SNode executeDependentResolve(TemplateModelGenerator_New generator) {
     // try to resolve using custom referense resolver for source node concept
     // todo: some reference-resolvers can be executed on the 'executeIndependentResolve' step
     IReferenceResolver referenceResolver = loadReferenceResolver(getOutputSourceNode());
     if (referenceResolver != null) {
-      SNode outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), myReferenceRole, myInputTargetNode);
+      outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), myReferenceRole, myInputTargetNode);
       return outputTargetNode;
     }
     return null;
   }
 
-  public SNode resolveAnyhow(TemplateModelGenerator_New generator) {
-    // nothing
+  public SNode doResolve_Tricky(TemplateModelGenerator_New generator) {
     return null;
   }
 

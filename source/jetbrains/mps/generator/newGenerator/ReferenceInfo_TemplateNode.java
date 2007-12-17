@@ -22,7 +22,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     myTemplateTargetNode = templateReference.getTargetNode();
   }
 
-  public SNode executeIndependentResolve(TemplateModelGenerator_New generator) {
+  public SNode doResolve_Straightforward(TemplateModelGenerator_New generator) {
     SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
     if (outputTargetNode != null) {
       return outputTargetNode;
@@ -46,21 +46,20 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       outputParentNode = outputParentNode.getParent();
     }
 
-    return null;
-  }
-
-  public SNode executeDependentResolve(TemplateModelGenerator_New generator) {
 
     // try to resolve using custom referense resolver for source node concept
     IReferenceResolver referenceResolver = loadReferenceResolver(getOutputSourceNode());
     if (referenceResolver != null) {
-      SNode outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), getReferenceRole(), myTemplateTargetNode);
+      outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), getReferenceRole(), myTemplateTargetNode);
       if (outputTargetNode != null) {
         return outputTargetNode;
       }
     }
 
-    // ok. try more expensive lookup...
+    return null;
+  }
+
+  public SNode doResolve_Tricky(TemplateModelGenerator_New generator) {
     // find least common parent for the template reference and referent nodes
     SNode leastCommonParent_template = myTemplateSourceNode.findLeastCommonParent(myTemplateTargetNode);
     if (leastCommonParent_template != null) {
@@ -77,10 +76,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       }
     }
 
-    return null;
-  }
-
-  public SNode resolveAnyhow(TemplateModelGenerator_New generator) {
+    // resolve anyhow
     SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, false);
     return outputTargetNode;
   }
