@@ -87,51 +87,51 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     // language aspects
 
     SModelDescriptor structureModelDescriptor = myLanguage.getStructureModelDescriptor();
-    this.add(new SModelTreeNode(structureModelDescriptor, "structure", operationContext));
+    this.add(new SModelTreeNode(structureModelDescriptor, null, operationContext, false));
 
     SModelDescriptor editorModelDescriptor = myLanguage.getEditorModelDescriptor();
     if (editorModelDescriptor != null) {
-      this.add(new SModelTreeNode(editorModelDescriptor, "editor", operationContext));
+      this.add(new SModelTreeNode(editorModelDescriptor, null, operationContext, false));
     }
 
     SModelDescriptor helginsModelDescriptor = myLanguage.getHelginsTypesystemModelDescriptor();
     if (helginsModelDescriptor != null) {
-      this.add(new SModelTreeNode(helginsModelDescriptor, "helgins typesystem", operationContext));
+      this.add(new SModelTreeNode(helginsModelDescriptor, null, operationContext, false));
     }
 
     SModelDescriptor actionsModelDescriptor = myLanguage.getActionsModelDescriptor();
     if (actionsModelDescriptor != null) {
-      this.add(new SModelTreeNode(actionsModelDescriptor, "actions", operationContext));
+      this.add(new SModelTreeNode(actionsModelDescriptor, null, operationContext, false));
     }
 
     SModelDescriptor constraintsModelDescriptor = myLanguage.getConstraintsModelDescriptor();
     if (constraintsModelDescriptor != null) {
-      this.add(new SModelTreeNode(constraintsModelDescriptor, "constraints", operationContext));
+      this.add(new SModelTreeNode(constraintsModelDescriptor, null, operationContext, false));
     }
 
     SModelDescriptor intentionsModelDescriptor = myLanguage.getIntentionsModelDescriptor();
     if (intentionsModelDescriptor != null) {
-      this.add(new SModelTreeNode(intentionsModelDescriptor, "intentions", operationContext));
+      this.add(new SModelTreeNode(intentionsModelDescriptor, null, operationContext, false));
     }
 
     SModelDescriptor findUsagesModelDescriptor = myLanguage.getFindUsagesModelDescriptor();
     if (findUsagesModelDescriptor != null) {
-      this.add(new SModelTreeNode(findUsagesModelDescriptor, "findUsages", operationContext));
+      this.add(new SModelTreeNode(findUsagesModelDescriptor, null, operationContext, false));
     }
 
     SModelDescriptor scriptsModelDescriptor = myLanguage.getScriptsModelDescriptor();
     if (scriptsModelDescriptor != null) {
-      this.add(new SModelTreeNode(scriptsModelDescriptor, "scripts", operationContext));
+      this.add(new SModelTreeNode(scriptsModelDescriptor, null, operationContext, false));
     }
 
     SModelDescriptor documentationModelDescriptor = myLanguage.getDocumentationModelDescriptor();
     if (documentationModelDescriptor != null) {
-      this.add(new SModelTreeNode(documentationModelDescriptor, "documentation", operationContext));
+      this.add(new SModelTreeNode(documentationModelDescriptor, null, operationContext, false));
     }
 
     SModelDescriptor cfaModelDescriptor = myLanguage.getCFAModelDescriptor();
     if (cfaModelDescriptor != null) {
-      this.add(new SModelTreeNode(cfaModelDescriptor, "cfa", operationContext));
+      this.add(new SModelTreeNode(cfaModelDescriptor, null, operationContext, false));
     }
 
     // language accessory models
