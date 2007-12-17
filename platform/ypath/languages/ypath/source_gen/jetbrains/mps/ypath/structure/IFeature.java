@@ -8,6 +8,7 @@ public interface IFeature extends INamedConcept {
   public static final String concept = "jetbrains.mps.ypath.structure.IFeature";
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
+  public static String OPPOSITE = "opposite";
 
   public boolean getWritable();
 
@@ -16,5 +17,9 @@ public interface IFeature extends INamedConcept {
   public boolean getDefault();
 
   public void setDefault(boolean value);
+
+  public IFeature getOpposite();
+
+  public void setOpposite(IFeature node);
 
 }

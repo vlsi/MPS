@@ -860,6 +860,71 @@ public class QueriesGenerated {
     return result;
   }
 
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_IFeature_1197904809758(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      Calculable calculable = new Calculable() {
+
+        public Object calculate() {
+          final zClosureContext1 _zClosureContext1 = new zClosureContext1();
+          List<Pair> res = ListOperations.createList(new Pair[]{});
+          _zClosureContext1.srcNode = sourceNode;
+          {
+            ICursor<SNode> _zCursor4 = CursorFactory.createCursor(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getParent(_zClosureContext1.srcNode, null, false, false), "features", true), new zPredicate4(null, _zClosureContext1)));
+            try {
+              while(_zCursor4.moveToNext()) {
+                SNode fe = _zCursor4.getCurrent();
+                ListOperations.addElement(res, new Pair(fe, Boolean.TRUE));
+                ListOperations.addElement(res, new Pair(fe, Boolean.FALSE));
+              }
+            } finally {
+              _zCursor4.release();
+            }
+          }
+          return res;
+        }
+
+      };
+      Iterable<Pair> parameterObjects = (Iterable<Pair>)calculable.calculate();
+      assert parameterObjects != null;
+      for(Pair parameter : parameterObjects) {
+        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
+
+          public SNode doSubstitute(String pattern) {
+            SNode fe = (SNode)((Pair)this.getParameterObject()).o1;
+            Boolean mu = (Boolean)((Pair)this.getParameterObject()).o2;
+            if(mu) {
+              SLinkOperations.setTarget(fe, "opposite", sourceNode, false);
+            }
+            SLinkOperations.setTarget(sourceNode, "opposite", fe, false);
+            return fe;
+          }
+
+          public String getMatchingText(String text) {
+            SNode fe = (SNode)((Pair)this.getParameterObject()).o1;
+            Boolean mu = (Boolean)((Pair)this.getParameterObject()).o2;
+            return (mu ?
+              "<-> " + SPropertyOperations.getString(fe, "name") :
+              "<-  " + SPropertyOperations.getString(fe, "name")
+            );
+          }
+
+          public String getDescriptionText(String text) {
+            SNode fe = (SNode)((Pair)this.getParameterObject()).o1;
+            Boolean mu = (Boolean)((Pair)this.getParameterObject()).o2;
+            return (mu ?
+              "set mutual opposite feature" :
+              "set opposite feature"
+            );
+          }
+
+        });
+      }
+    }
+    return result;
+  }
+
   public static void removeActionsByCondition_1178108596882(Iterator<INodeSubstituteAction> actions, final SNode parentNode, final SNode currentChild, final SNode childConcept, final IOperationContext operationContext) {
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();

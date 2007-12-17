@@ -22,6 +22,7 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   public static String GETTER = "getter";
   public static String REPLACE_FUN = "replaceFun";
   public static String FUN_HOLDERS = "funHolders";
+  public static String OPPOSITE = "opposite";
 
   public  GenericFeature(SNode node) {
     super(node);
@@ -118,6 +119,14 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
 
   public void insertFunHolders(GenericFeatureFunHolder prev, GenericFeatureFunHolder node) {
     this.insertChild(prev, GenericFeature.FUN_HOLDERS, node);
+  }
+
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(GenericFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(GenericFeature.OPPOSITE, node);
   }
 
 }

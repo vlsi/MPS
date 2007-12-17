@@ -21,6 +21,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   public static String SIZE_FUNCTION = "sizeFunction";
   public static String ADD_FUNCTION = "addFunction";
   public static String REMOVE_FUNCTION = "removeFunction";
+  public static String OPPOSITE = "opposite";
 
   public  SequenceFeature(SNode node) {
     super(node);
@@ -113,6 +114,14 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
 
   public void setRemoveFunction(FeatureRemoveFun node) {
     super.setChild(SequenceFeature.REMOVE_FUNCTION, node);
+  }
+
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(SequenceFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(SequenceFeature.OPPOSITE, node);
   }
 
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="treepathFeatures">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
@@ -72,7 +73,7 @@
       </node>
     </node>
     <node role="features" type="jetbrains.mps.ypath.structure.ListFeature" id="1184067892215">
-      <property name="name" value="nodes " />
+      <property name="name" value="nodes" />
       <property name="writable" value="true" />
       <property name="default" value="false" />
       <property name="parameterized" value="true" />

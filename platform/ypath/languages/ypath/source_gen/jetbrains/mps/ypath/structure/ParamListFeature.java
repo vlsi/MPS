@@ -21,6 +21,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
   public static String TO_STRING_FUNCTION = "toStringFunction";
   public static String CARDINAL = "cardinal";
+  public static String OPPOSITE = "opposite";
 
   public  ParamListFeature(SNode node) {
     super(node);
@@ -161,6 +162,14 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
 
   public void setParamDeleteFunction(ParamFeatureDeleteFun node) {
     this.setDeleteFunction(node);
+  }
+
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(ParamListFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(ParamListFeature.OPPOSITE, node);
   }
 
 }

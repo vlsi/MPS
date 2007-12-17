@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.ypath.structure">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <maxImportIndex value="6" />
@@ -1180,6 +1181,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1184066209434">
     <property name="name" value="IFeature" />
     <property name="package" value="treePath.features" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197826813331">
+      <property name="role" value="opposite" />
+      <link role="target" targetNodeId="1184066209434" resolveInfo="IFeature" />
+    </node>
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1184066216986">
       <property name="name" value="writable" />
       <link role="dataType" targetNodeId="1.1082983657063" />

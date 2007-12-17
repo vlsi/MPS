@@ -21,6 +21,7 @@ public class ParamSequenceFeature extends SequenceFeature implements IParamFeatu
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
   public static String TO_STRING_FUNCTION = "toStringFunction";
   public static String CARDINAL = "cardinal";
+  public static String OPPOSITE = "opposite";
 
   public  ParamSequenceFeature(SNode node) {
     super(node);
@@ -153,6 +154,14 @@ public class ParamSequenceFeature extends SequenceFeature implements IParamFeatu
 
   public void setParamRemoveFunction(ParamFeatureRemoveFun node) {
     this.setRemoveFunction(node);
+  }
+
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(ParamSequenceFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(ParamSequenceFeature.OPPOSITE, node);
   }
 
 }
