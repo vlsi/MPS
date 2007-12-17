@@ -664,6 +664,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197932438204">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197934135501">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1146528679895" resolveInfo="lvalue" />
+    </node>
   </node>
 </model>
 

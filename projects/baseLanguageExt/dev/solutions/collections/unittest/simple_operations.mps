@@ -2820,6 +2820,34 @@
               </node>
             </node>
           </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197934100662">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1197934106933">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197934107999">
+                <property name="value" value="value1" />
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement" id="1197934101507">
+                <node role="key" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197934102807">
+                  <property name="value" value="key1" />
+                </node>
+                <node role="map" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197934100663">
+                  <link role="variableDeclaration" targetNodeId="1197928280896" resolveInfo="map" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="1197935599915">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197935602574">
+              <property name="value" value="value1" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement" id="1197935608810">
+              <node role="key" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197935610907">
+                <property name="value" value="key1" />
+              </node>
+              <node role="map" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197935608059">
+                <link role="variableDeclaration" targetNodeId="1197928280896" resolveInfo="map" />
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>

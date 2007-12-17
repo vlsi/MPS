@@ -46,6 +46,10 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "creator", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapCreator");
   }
 
+  public static boolean baseMappingRule_Condition_1197935213886(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1170958681801(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return generator.getGeneratorSessionContext().createUniqueName("zValueSupplier");
   }
@@ -441,6 +445,18 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197933995488(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "key", true);
+  }
+
+  public static SNode sourceNodeQuery_1197935309655(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "lValue", true), "map", true);
+  }
+
+  public static SNode sourceNodeQuery_1197935481114(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "lValue", true), "key", true);
+  }
+
+  public static SNode sourceNodeQuery_1197935331791(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "rValue", true);
   }
 
   public static SNode mapSrcMacro_mapper_1170976176384(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
