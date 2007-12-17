@@ -22,7 +22,7 @@ public class IdeMain {
   public static void initFonts() {
     UIDefaults defaults = UIManager.getDefaults();
 
-    Font font = new Font("Tahoma", Font.PLAIN, 12);
+    Font font = new Font("Tahoma", Font.PLAIN, 11);
 
     defaults.put("Button.font", font);
     defaults.put("ToggleButton.font", font);
@@ -33,18 +33,18 @@ public class IdeMain {
     defaults.put("Label.font", font);
     defaults.put("List.font", font);
     defaults.put("MenuBar.font", font);
-    defaults.put("MenuItem.font", font.deriveFont(Font.BOLD));
+    defaults.put("MenuItem.font", font);
     defaults.put("MenuItem.acceleratorFont", font);
     defaults.put("RadioButtonMenuItem.font", font);
     defaults.put("CheckBoxMenuItem.font", font);
-    defaults.put("Menu.font", font.deriveFont(Font.BOLD));
-    defaults.put("PopupMenu.font", font.deriveFont(Font.BOLD));
+    defaults.put("Menu.font", font);
+    defaults.put("PopupMenu.font", font);
     defaults.put("OptionPane.font", font);
     defaults.put("Panel.font", font);
     defaults.put("ProgressBar.font", font);
     defaults.put("ScrollPane.font", font);
     defaults.put("Viewport.font", font);
-    defaults.put("TabbedPane.font", font.deriveFont(Font.BOLD));
+    defaults.put("TabbedPane.font", font);
     defaults.put("Table.font", font);
     defaults.put("TableHeader.font", font);
     defaults.put("TextField.font", font);
