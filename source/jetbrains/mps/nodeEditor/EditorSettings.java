@@ -74,11 +74,12 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   }
 
   public Color getSelectionColor() {
-    return mySelectionColor;
+    Color baseColor = UIManager.getColor("List.selectionBackground");
+    return new Color(baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue(), 96);
   }
 
   public Color getRangeSelectionColor() {
-    return myRangeSelectionColor;
+    return getSelectionColor();
   }
 
   public boolean getUseLegacyTypesystem() {
