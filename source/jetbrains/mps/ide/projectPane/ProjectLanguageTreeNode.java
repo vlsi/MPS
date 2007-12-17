@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
 import java.util.List;
@@ -26,9 +27,15 @@ import java.util.List;
 class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   private Language myLanguage;
   private MPSProject myProject;
+  private boolean myShortNameOnly;
 
   public ProjectLanguageTreeNode(Language language, MPSProject project) {
+    this(language, project, false);
+  }
+
+  public ProjectLanguageTreeNode(Language language, MPSProject project, boolean shortNameOnly) {
     super(new ModuleContext(language, project));
+    myShortNameOnly = shortNameOnly;
     myLanguage = language;
     myProject = project;
     populate();
@@ -54,7 +61,6 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     return myLanguage.getModuleUID();
   }
 
-
   public JPopupMenu getQuickCreatePopupMenu() {
     JPopupMenu result = new JPopupMenu();
     final Language language = getLanguage();
@@ -74,10 +80,16 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   }
 
   public String toString() {
+    String languageUID = myLanguage.getModuleUID();
+
+    if (myShortNameOnly) {
+      languageUID = NameUtil.shortNameFromLongName(languageUID);
+    }
+
     if (myLanguage.isUpToDate()) {
-      return myLanguage.getModuleUID() + "  (up-to-date)";
+      return languageUID + "  (up-to-date)";
     } else {
-      return myLanguage.getModuleUID() + "  (generation required)";
+      return languageUID + "  (generation required)";
     }
   }
 

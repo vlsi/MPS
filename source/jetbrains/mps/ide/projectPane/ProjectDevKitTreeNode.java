@@ -11,6 +11,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
@@ -18,9 +19,15 @@ import javax.swing.JPopupMenu;
 
 class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   private DevKit myDevKit;
+  private boolean myShortNameOnly;
 
   public ProjectDevKitTreeNode(DevKit devkit, MPSProject project) {
+    this(devkit, project, false);
+  }
+
+  public ProjectDevKitTreeNode(DevKit devkit, MPSProject project, boolean shortNameOnly) {
     super(new ModuleContext(devkit, project));
+    myShortNameOnly = shortNameOnly;
     myDevKit = devkit;
     populate();
   }
@@ -50,6 +57,11 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
 
   public String toString() {
     String name = myDevKit.getModuleDescriptor().getName();
+
+    if (myShortNameOnly) {
+      name = NameUtil.shortNameFromLongName(name);
+    }
+
     if(name != null) {
       return name;
     }

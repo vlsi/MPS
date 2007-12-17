@@ -48,7 +48,7 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
     List<IModule> modules = collectModules();
     ModulePoolNamespaceBuilder builder = new ModulePoolNamespaceBuilder();
     for (IModule module : modules) {
-      ProjectModuleTreeNode node = ProjectModuleTreeNode.createFor(myProject, module);
+      ProjectModuleTreeNode node = ProjectModuleTreeNode.createFor(myProject, module, true);
 
       if (node != null) {
         builder.addNode(node);

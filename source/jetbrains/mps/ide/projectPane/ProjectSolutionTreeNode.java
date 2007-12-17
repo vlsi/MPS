@@ -8,6 +8,7 @@ import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
@@ -20,9 +21,15 @@ import javax.swing.JPopupMenu;
  */
 class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   private Solution mySolution;
+  private boolean myShortNameOnly;
 
   public ProjectSolutionTreeNode(Solution solution, MPSProject project) {
+    this(solution, project, false);
+  }
+
+  public ProjectSolutionTreeNode(Solution solution, MPSProject project, boolean shortNameOnly) {
     super(new ModuleContext(solution, project));
+    myShortNameOnly = shortNameOnly;
     mySolution = solution;
     populate();
   }
@@ -61,6 +68,11 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
 
   public String toString() {
     String name = mySolution.getSolutionDescriptor().getName();
+
+    if (myShortNameOnly) {
+      name = NameUtil.shortNameFromLongName(name);
+    }
+
     if(name != null) {
       return name;
     }
