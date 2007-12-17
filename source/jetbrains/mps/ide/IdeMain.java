@@ -15,6 +15,8 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import com.incors.plaf.alloy.AlloyLookAndFeel;
+import com.incors.plaf.alloy.themes.glass.GlassTheme;
+import com.incors.plaf.alloy.themes.bedouin.BedouinTheme;
 
 public class IdeMain {
   private static boolean ourTestMode = false;
@@ -64,7 +66,7 @@ public class IdeMain {
     System.setProperty("alloy.licenseCode", "2008/01/17#Konstantin.Solomatov@gmail.com#b4yfnq#18f3q7");
 
     try {
-      UIManager.setLookAndFeel(new AlloyLookAndFeel());
+      UIManager.setLookAndFeel(new AlloyLookAndFeel(new BedouinTheme()));
     } catch (UnsupportedLookAndFeelException e) {
       e.printStackTrace();
     }
