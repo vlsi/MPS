@@ -33,7 +33,7 @@ public class MatchPropertyOperation_property_ReferentConstraint implements IMode
 
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     SNode nk = SLinkOperations.getTarget(SLinkOperations.getTarget(referenceNode, "nodeKindOccurrence", true), "nodeKind", false);
-    return new SimpleSearchScope(SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getDescendants(nk, null, false), new zPredicate21(null, null))));
+    return new SimpleSearchScope(SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getDescendants(nk, null, false), new zPredicate22(null, null))));
   }
 
   public String getNodeReferentSearchScopeDescription() {

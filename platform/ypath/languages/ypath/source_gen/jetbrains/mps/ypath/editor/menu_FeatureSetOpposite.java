@@ -11,11 +11,11 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ypath.constraints.IFeature_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
@@ -34,6 +34,7 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
       final zClosureContext _zClosureContext = new zClosureContext();
       List<Pair> res = ListOperations.createList(new Pair[]{});
       _zClosureContext.srcNode = node;
+      _zClosureContext.isGeneric = SNodeOperations.isInstanceOf(_zClosureContext.srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
       {
         ICursor<SNode> _zCursor3 = CursorFactory.createCursor(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getParent(_zClosureContext.srcNode, null, false, false), "features", true), new zPredicate1(null, _zClosureContext)));
         try {

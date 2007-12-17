@@ -77,6 +77,7 @@
       <property name="writable" value="true" />
       <property name="default" value="false" />
       <property name="parameterized" value="true" />
+      <link role="opposite" targetNodeId="1197912794882" resolveInfo="foo" />
       <node role="getFunction" type="jetbrains.mps.ypath.structure.FeatureGetFun" id="1184067892216">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184067892217">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1184067910293">
@@ -331,7 +332,6 @@
     </node>
     <node role="features" type="jetbrains.mps.ypath.structure.ParamSequenceFeature" id="1197912794882">
       <property name="name" value="foo" />
-      <link role="opposite" targetNodeId="1184068102100" resolveInfo="attributes" />
       <node role="sequenceFunction" type="jetbrains.mps.ypath.structure.ParamFeatureSequenceFun" id="1197912794883">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197912794884" />
       </node>

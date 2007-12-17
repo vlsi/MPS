@@ -9,10 +9,10 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.search.ISearchScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class IFeature_opposite_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
 
@@ -32,9 +32,10 @@ public class IFeature_opposite_ReferentConstraint implements IModelConstraints, 
   }
 
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
-    final zClosureContext4 _zClosureContext4 = new zClosureContext4();
-    _zClosureContext4.feature = referenceNode;
-    return new SimpleSearchScope(SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getParent(_zClosureContext4.feature, null, false, false), "features", true), new zPredicate(null, _zClosureContext4))));
+    final zClosureContext5 _zClosureContext5 = new zClosureContext5();
+    _zClosureContext5.feature = referenceNode;
+    _zClosureContext5.isGeneric = SNodeOperations.isInstanceOf(_zClosureContext5.feature, "jetbrains.mps.ypath.structure.IGenericFeature");
+    return new SimpleSearchScope(SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getParent(_zClosureContext5.feature, null, false, false), "features", true), new zPredicate(null, _zClosureContext5))));
   }
 
   public String getNodeReferentSearchScopeDescription() {

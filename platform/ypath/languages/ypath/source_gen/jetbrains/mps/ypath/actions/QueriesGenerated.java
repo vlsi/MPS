@@ -871,6 +871,7 @@ public class QueriesGenerated {
           final zClosureContext1 _zClosureContext1 = new zClosureContext1();
           List<Pair> res = ListOperations.createList(new Pair[]{});
           _zClosureContext1.srcNode = sourceNode;
+          _zClosureContext1.isGeneric = SNodeOperations.isInstanceOf(_zClosureContext1.srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
           {
             ICursor<SNode> _zCursor4 = CursorFactory.createCursor(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getParent(_zClosureContext1.srcNode, null, false, false), "features", true), new zPredicate4(null, _zClosureContext1)));
             try {
