@@ -321,71 +321,6 @@
         <property name="selectable" value="false" />
         <property name="textFgColor" value="DARK_BLUE" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1167770426882">
-        <property name="vertical" value="false" />
-        <property name="drawBorder" value="false" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167770426883">
-          <property name="drawBorder" value="false" />
-          <property name="text" value="java query (deprecated)" />
-          <property name="textFgColor" value="red" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Custom" id="1167770426884">
-          <property name="drawBorder" value="false" />
-          <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_CellProvider" id="1176803926437">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1176803926438">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1176803935182">
-                <node role="expression" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryMethodIdEditorProviderExpression" id="1176803936074">
-                  <property name="notSetString" value="&lt;no reference macro&gt;" />
-                  <property name="prefix" value="referenceMacro_" />
-                  <link role="queryIdProperty" targetNodeId="1.1088761950280" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1176803943890">
-                    <property name="name" value="sourceNode" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176803945423">
-                      <link role="classifier" targetNodeId="10.~SNode" resolveInfo="SNode" />
-                    </node>
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1176803946987">
-                    <property name="name" value="templateNode" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176803948926">
-                      <link role="classifier" targetNodeId="10.~SNode" resolveInfo="SNode" />
-                    </node>
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1176803952411">
-                    <property name="name" value="link" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176803955304">
-                      <link role="classifier" targetNodeId="61.~LinkDeclaration" resolveInfo="LinkDeclaration" />
-                    </node>
-                  </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1176803957196">
-                    <property name="name" value="generator" />
-                    <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176803958854">
-                      <link role="classifier" targetNodeId="64.~ITemplateGenerator" resolveInfo="ITemplateGenerator" />
-                    </node>
-                  </node>
-                  <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1176803939420">
-                    <link role="classifier" targetNodeId="10.~SNode" resolveInfo="SNode" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1167770426885">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1167770426886">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1167770426887">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1167770426888">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1167770426889" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1167770426890">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1167770426891" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1167770496772">
-                    <link role="property" targetNodeId="1.1088761950280" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1167770426893">
         <property name="drawBorder" value="false" />
         <property name="selectable" value="false" />
@@ -416,27 +351,6 @@
         <property name="textFgColor" value="DARK_BLUE" />
         <link role="keyMap" targetNodeId="1149931179122" resolveInfo="MacroSymbol_KeyMap" />
         <link role="actionMap" targetNodeId="1167859493978" resolveInfo="MacroSymbol_Actions" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168019569397">
-        <property name="drawBorder" value="false" />
-        <property name="text" value="!" />
-        <property name="selectable" value="false" />
-        <property name="textFgColor" value="red" />
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1168019569398">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168019569399">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1168019569400">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1168019569401">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1168019569402" />
-                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1168019569403">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1168019569404" />
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1168019581766">
-                    <link role="property" targetNodeId="1.1088761950280" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_AttributedLinkCell" id="1149858915193">
         <property name="drawBorder" value="false" />
@@ -2103,6 +2017,7 @@
               <property name="noTargetText" value="&lt;no name&gt;" />
               <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="4.1169194664001" />
+              <link role="styleClass" targetNodeId="1194566785068" resolveInfo="reference" />
             </node>
           </node>
         </node>

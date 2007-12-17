@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.transformation.TLBase.structure">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
@@ -71,14 +72,6 @@
     <property name="name" value="ReferenceMacro" />
     <property name="package" value="Macro" />
     <link role="extends" targetNodeId="2.1133920641626" />
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1167770403441">
-      <property name="value" value="aspectMethodName - query method is deprecated" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1088761950280">
-      <property name="name" value="aspectMethodName" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1088761943575">
       <property name="targetCardinality" value="0..n" />
       <property name="role" value="link" />

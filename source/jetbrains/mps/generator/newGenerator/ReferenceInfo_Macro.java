@@ -1,13 +1,11 @@
 package jetbrains.mps.generator.newGenerator;
 
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent;
-import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.util.QueryMethod;
-import jetbrains.mps.util.NameUtil;
 
 /**
  * Created by: Sergey Dmitriev
@@ -46,73 +44,54 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   }
 
   public SNode expandReferenceMacro(ITemplateGenerator generator) {
-    SNode referentNode;
     String linkRole = myReferenceMacro.getLink().getRole();
 
     // try new query
     ReferenceMacro_GetReferent function = myReferenceMacro.getReferentFunction();
-    if (function != null) {
-      SNode templateValue = myTemplateReferenceNode.getReferent(linkRole);
-      String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function.getNode());
-      Object[] args_old = new Object[]{
-              getInputNode(),
-              templateValue,
-              myTemplateReferenceNode,
-              generator.getSourceModel(),
-              generator,
-              generator.getScope(),
-              generator.getGeneratorSessionContext()};
-
-      Object[] args_new = new Object[]{
-              getInputNode(),
-              myTemplateReferenceNode,
-              getOutputSourceNode(),
-              generator.getSourceModel(),
-              generator};
-
-      try {
-        referentNode = (SNode) QueryMethodGenerated.invoke_GetReferent(methodName, args_old, args_new, myReferenceMacro.getModel());
-      } catch (Exception e) {
-        generator.showErrorMessage(getInputNode(), myReferenceMacro.getNode(), "couldn't evaluate reference macro");
-        return null;
-      }
-
-    } else {
-      // try old query
-      Object[] args = new Object[]{
-              getInputNode(),
-              myTemplateReferenceNode,
-              myReferenceMacro.getLink(),
-              generator
-      };
-      try {
-        referentNode = (SNode) QueryMethod.invoke("referenceMacro_" + myReferenceMacro.getAspectMethodName(), args, myReferenceMacro.getModel());
-      } catch (Throwable t) {
-        String message = NameUtil.shortNameFromLongName(t.getClass().getName()) + " occured while expanding reference macro with query: \"referenceMacro_" + myReferenceMacro.getAspectMethodName();
-        generator.showErrorMessage(getInputNode(), myTemplateReferenceNode, message);
-        return null;
-      }
-    }
-
-    if (referentNode == null) {
+    if (function == null) {
+      generator.showErrorMessage(getInputNode(), myReferenceMacro.getNode(), "couldn't evaluate reference macro");
       return null;
     }
 
-//todo <Sergey Dmitriev> There should be different diagnostic that reference target to the node that will be deleted
-/*
-    if (TemplateGenUtil.checkResolvedReference(mySourceNode, getOutputSourceNode(), myTemplateReferenceNode, linkRole, myReferentNode, generator)) {
-      getOutputSourceNode().setReferent(linkRole, referentNode);
-    }
-*/
-    // check referent because it's manual and thus error prone mapping
-    if (referentNode.getModel() == generator.getSourceModel()) {
-      generator.showWarningMessage(getOutputSourceNode(), "reference '" + linkRole + "' to input model in output node " + getOutputSourceNode().getDebugText());
-      generator.showInformationMessage(referentNode, " -- referent node: " + referentNode.getDebugText());
-      generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node: " + myReferenceMacro.getNode().getDebugText());
-      generator.getGeneratorSessionContext().addTransientModelToKeep(generator.getSourceModel());
+    SNode templateValue = myTemplateReferenceNode.getReferent(linkRole);
+    String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function.getNode());
+    Object[] args_old = new Object[]{
+            getInputNode(),
+            templateValue,
+            myTemplateReferenceNode,
+            generator.getInputModel(),
+            generator,
+            generator.getScope(),
+            generator.getGeneratorSessionContext()};
+
+    Object[] args_new = new Object[]{
+            getInputNode(),
+            myTemplateReferenceNode,
+            getOutputSourceNode(),
+            generator.getInputModel(),
+            generator};
+
+    SNode outputTargetNode;
+    try {
+      outputTargetNode = (SNode) QueryMethodGenerated.invoke_GetReferent(methodName, args_old, args_new, myReferenceMacro.getModel());
+    } catch (Exception e) {
+      generator.showErrorMessage(getInputNode(), myReferenceMacro.getNode(), "couldn't evaluate reference macro");
+      return null;
     }
 
-    return referentNode;
+    if (outputTargetNode == null) {
+      return null;
+    }
+
+    // check referent because it's manual and thus error prone mapping
+    if (outputTargetNode.getModel() == generator.getInputModel()) {
+      generator.showWarningMessage(getOutputSourceNode(), "reference '" + linkRole + "' to input model in output node " + getOutputSourceNode().getDebugText());
+      generator.showInformationMessage(outputTargetNode, " -- referent node: " + outputTargetNode.getDebugText());
+      generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node: " + myReferenceMacro.getNode().getDebugText());
+      generator.getGeneratorSessionContext().addTransientModelToKeep(generator.getInputModel());
+    }
+
+    return outputTargetNode;
   }
 
   public void showErrorMessage(ITemplateGenerator generator) {
