@@ -505,47 +505,46 @@ public class SModelRepository extends SModelAdapter {
       return;
     }
 
-    final Set<SModelDescriptor> toReload = new HashSet<SModelDescriptor>();
-    for (SModelDescriptor sm : getAllModelDescriptors()) {
-      if (sm.needsReloading()) {
-        toReload.add(sm);
-      }
-    }
+    Runnable command = new Runnable() {
+      public void run() {
+        myInChangedModelsReloading = true;
+        try {
+          final Set<SModelDescriptor> toReload = new HashSet<SModelDescriptor>();
+          for (SModelDescriptor sm : getAllModelDescriptors()) {
+            if (sm.needsReloading()) {
+              toReload.add(sm);
+            }
+          }
 
-    if (!toReload.isEmpty()) {
-      Runnable command = new Runnable() {
-        public void run() {
-          myInChangedModelsReloading = true;
-          try {
-            boolean needReloadAll = false;
-            for (SModelDescriptor sm : toReload) {
-              if (isChanged(sm)) {
-                int result = JOptionPane.showConfirmDialog(frame,
-                        "Model " + sm.getModelUID() + " changed on a disk. Do you want to discard memory changes?",
-                        "Model Changed " + sm.getModelUID(), JOptionPane.YES_NO_OPTION);
+          boolean needReloadAll = false;
+          for (SModelDescriptor sm : toReload) {
+            if (isChanged(sm)) {
+              int result = JOptionPane.showConfirmDialog(frame,
+                      "Model " + sm.getModelUID() + " changed on a disk. Do you want to discard memory changes?",
+                      "Model Changed " + sm.getModelUID(), JOptionPane.YES_NO_OPTION);
 
-                if (result == JOptionPane.YES_OPTION) {
-                  sm.reloadFromDisk();
-                  needReloadAll = true;
-                } else {
-                  sm.save();
-                }
-              } else {
+              if (result == JOptionPane.YES_OPTION) {
                 sm.reloadFromDisk();
                 needReloadAll = true;
+              } else {
+                sm.save();
               }
+            } else {
+              sm.reloadFromDisk();
+              needReloadAll = true;
             }
-
-            if (needReloadAll) {
-              ReloadUtils.reloadAll(false);
-            }
-          } finally {
-            myInChangedModelsReloading = false;
           }
+
+          if (needReloadAll) {
+            ReloadUtils.reloadAll(false);
+          }
+        } finally {
+          myInChangedModelsReloading = false;
         }
-      };
-      CommandProcessor.instance().invokeNowOrLater(command);
-    }
+      }
+    };
+
+    CommandProcessor.instance().invokeNowOrLater(command);
   }
 
   private void fireRepositoryChanged() {
