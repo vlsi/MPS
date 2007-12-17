@@ -17,6 +17,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperati
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.ypath.constraints.IFeature_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
@@ -55,10 +56,7 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
     public void handleAction_impl(Pair parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       SNode fe = (SNode)parameterObject.o1;
       Boolean mu = (Boolean)parameterObject.o2;
-      SLinkOperations.setTarget(node, "opposite", fe, false);
-      if(mu) {
-        SLinkOperations.setTarget(fe, "opposite", node, false);
-      }
+      IFeature_Behavior.call_setOpposite_1197913839765(node, fe, mu);
     }
 
     public boolean isReferentPresentation() {

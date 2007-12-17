@@ -8,20 +8,20 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Type;
 
-public class ParamSequenceFeature extends SequenceFeature implements IParamFeature {
+public class ParamSequenceFeature extends SequenceFeature implements IFeature, IParamFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.ParamSequenceFeature";
+  public static String OPPOSITE = "opposite";
+  public static String PARAMETER_TYPE = "parameterType";
+  public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
+  public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
+  public static String TO_STRING_FUNCTION = "toStringFunction";
+  public static String CARDINAL = "cardinal";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
-  public static String PARAMETER_TYPE = "parameterType";
-  public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
-  public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
-  public static String TO_STRING_FUNCTION = "toStringFunction";
-  public static String CARDINAL = "cardinal";
-  public static String OPPOSITE = "opposite";
 
   public  ParamSequenceFeature(SNode node) {
     super(node);
@@ -36,52 +36,12 @@ public class ParamSequenceFeature extends SequenceFeature implements IParamFeatu
   }
 
 
-  public String getName() {
-    return this.getProperty(ParamSequenceFeature.NAME);
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(ParamSequenceFeature.OPPOSITE);
   }
 
-  public void setName(String value) {
-    this.setProperty(ParamSequenceFeature.NAME, value);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(ParamSequenceFeature.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(ParamSequenceFeature.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(ParamSequenceFeature.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(ParamSequenceFeature.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(ParamSequenceFeature.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(ParamSequenceFeature.VIRTUAL_PACKAGE, value);
-  }
-
-  public boolean getWritable() {
-    return this.getBooleanProperty(ParamSequenceFeature.WRITABLE);
-  }
-
-  public void setWritable(boolean value) {
-    this.setBooleanProperty(ParamSequenceFeature.WRITABLE, value);
-  }
-
-  public boolean getDefault() {
-    return this.getBooleanProperty(ParamSequenceFeature.DEFAULT);
-  }
-
-  public void setDefault(boolean value) {
-    this.setBooleanProperty(ParamSequenceFeature.DEFAULT, value);
+  public void setOpposite(IFeature node) {
+    super.setReferent(ParamSequenceFeature.OPPOSITE, node);
   }
 
   public Type getParameterType() {
@@ -156,12 +116,52 @@ public class ParamSequenceFeature extends SequenceFeature implements IParamFeatu
     this.setRemoveFunction(node);
   }
 
-  public IFeature getOpposite() {
-    return (IFeature)this.getReferent(ParamSequenceFeature.OPPOSITE);
+  public String getName() {
+    return this.getProperty(ParamSequenceFeature.NAME);
   }
 
-  public void setOpposite(IFeature node) {
-    super.setReferent(ParamSequenceFeature.OPPOSITE, node);
+  public void setName(String value) {
+    this.setProperty(ParamSequenceFeature.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ParamSequenceFeature.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ParamSequenceFeature.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ParamSequenceFeature.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ParamSequenceFeature.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ParamSequenceFeature.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ParamSequenceFeature.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getWritable() {
+    return this.getBooleanProperty(ParamSequenceFeature.WRITABLE);
+  }
+
+  public void setWritable(boolean value) {
+    this.setBooleanProperty(ParamSequenceFeature.WRITABLE, value);
+  }
+
+  public boolean getDefault() {
+    return this.getBooleanProperty(ParamSequenceFeature.DEFAULT);
+  }
+
+  public void setDefault(boolean value) {
+    this.setBooleanProperty(ParamSequenceFeature.DEFAULT, value);
   }
 
 }

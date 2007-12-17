@@ -33,7 +33,7 @@ public class TreeNodeKindOccurrence_nodeKind_ReferentConstraint implements IMode
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     SNode tpoe = SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
     SNode tpa = (SNode)ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe);
-    return new SimpleSearchScope(SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getDescendants(tpa, null, false), new zPredicate18(null, null))));
+    return new SimpleSearchScope(SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getDescendants(tpa, null, false), new zPredicate20(null, null))));
   }
 
   public String getNodeReferentSearchScopeDescription() {

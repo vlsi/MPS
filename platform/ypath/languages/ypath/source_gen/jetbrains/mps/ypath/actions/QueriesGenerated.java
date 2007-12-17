@@ -36,6 +36,7 @@ import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
 import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
+import jetbrains.mps.ypath.constraints.IFeature_Behavior;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
 
@@ -894,11 +895,8 @@ public class QueriesGenerated {
           public SNode doSubstitute(String pattern) {
             SNode fe = (SNode)((Pair)this.getParameterObject()).o1;
             Boolean mu = (Boolean)((Pair)this.getParameterObject()).o2;
-            if(mu) {
-              SLinkOperations.setTarget(fe, "opposite", sourceNode, false);
-            }
-            SLinkOperations.setTarget(sourceNode, "opposite", fe, false);
-            return fe;
+            IFeature_Behavior.call_setOpposite_1197913839765(sourceNode, fe, mu);
+            return sourceNode;
           }
 
           public String getMatchingText(String text) {

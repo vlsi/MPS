@@ -29,16 +29,16 @@ public class IFeature_default_PropertyConstraint implements IModelConstraints, I
   public void execPropertySet(SNode node, String propertyName, String propertyValue, IScope scope) {
     if(Boolean.valueOf(propertyValue)) {
       {
-        ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(SNodeOperations.getParent(node, null, false, false), "features", true));
+        ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(SNodeOperations.getParent(node, null, false, false), "features", true));
         try {
-          while(_zCursor.moveToNext()) {
-            SNode foo = _zCursor.getCurrent();
+          while(_zCursor1.moveToNext()) {
+            SNode foo = _zCursor1.getCurrent();
             if(foo != node) {
               SPropertyOperations.set(foo, "default", "" + (false));
             }
           }
         } finally {
-          _zCursor.release();
+          _zCursor1.release();
         }
       }
     }

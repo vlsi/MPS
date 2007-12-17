@@ -6,7 +6,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCellAction;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.ypath.constraints.IFeature_Behavior;
 
 public class IFeature_opposite_DELETE {
 
@@ -27,10 +27,7 @@ public class IFeature_opposite_DELETE {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      if((SLinkOperations.getTarget(node, "opposite", false) != null) && (SLinkOperations.getTarget(SLinkOperations.getTarget(node, "opposite", false), "opposite", false) != null)) {
-        SLinkOperations.setTarget(SLinkOperations.getTarget(node, "opposite", false), "opposite", null, false);
-      }
-      SLinkOperations.setTarget(node, "opposite", null, false);
+      IFeature_Behavior.call_removeOpposite_1197913935418(node);
     }
 
 }

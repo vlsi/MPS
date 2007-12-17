@@ -1491,6 +1491,9 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1184775707072">
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
     </node>
+    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1197912500034">
+      <link role="intfc" targetNodeId="1184066209434" resolveInfo="IFeature" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1184659104438">
       <link role="intfc" targetNodeId="1184659060758" resolveInfo="IParamFeature" />
     </node>

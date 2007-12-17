@@ -17,7 +17,7 @@ import java.util.Collection;
 public class TryFeatures extends TreePath<Node> {
 
   public  TryFeatures() {
-    this.registerFeature(new TryFeatures.Desc_Feature_nodes ());
+    this.registerFeature(new TryFeatures.Desc_Feature_nodes());
     this.registerFeature(new TryFeatures.Desc_Feature_attributes());
   }
 
@@ -168,11 +168,11 @@ public class TryFeatures extends TreePath<Node> {
 }
 
 }
-  private static class Feature_nodes  extends AbstractList<Node> {
+  private static class Feature_nodes extends AbstractList<Node> {
 
     private Node thisNode;
 
-    public  Feature_nodes (Node thisNode) {
+    public  Feature_nodes(Node thisNode) {
       this.thisNode = thisNode;
     }
 
@@ -247,17 +247,17 @@ public class TryFeatures extends TreePath<Node> {
     }
 
 }
-  public static class Desc_Feature_nodes  implements IFeatureDescriptor<Node> {
+  public static class Desc_Feature_nodes implements IFeatureDescriptor<Node> {
 
-    public  Desc_Feature_nodes () {
+    public  Desc_Feature_nodes() {
     }
 
     public Collection<Node> getFeature(Node node) {
-      return new TryFeatures.Feature_nodes (node);
+      return new TryFeatures.Feature_nodes(node);
     }
 
     public String getName() {
-      return "nodes ";
+      return "nodes";
     }
 
     public IFeatureDescriptor.Type getType() {

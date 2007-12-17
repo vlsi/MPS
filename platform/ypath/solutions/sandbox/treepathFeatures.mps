@@ -199,6 +199,7 @@
       <property name="writable" value="true" />
       <property name="name" value="attributes" />
       <property name="default" value="false" />
+      <link role="opposite" targetNodeId="1197912794882" resolveInfo="foo" />
       <node role="sequenceFunction" type="jetbrains.mps.ypath.structure.FeatureSequenceFun" id="1184068102101">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184068102102">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1184068366994">
@@ -326,6 +327,37 @@
             </node>
           </node>
         </node>
+      </node>
+    </node>
+    <node role="features" type="jetbrains.mps.ypath.structure.ParamSequenceFeature" id="1197912794882">
+      <property name="name" value="foo" />
+      <link role="opposite" targetNodeId="1184068102100" resolveInfo="attributes" />
+      <node role="sequenceFunction" type="jetbrains.mps.ypath.structure.ParamFeatureSequenceFun" id="1197912794883">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197912794884" />
+      </node>
+      <node role="sizeFunction" type="jetbrains.mps.ypath.structure.ParamFeatureSizeFun" id="1197912794885">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197912794886" />
+      </node>
+      <node role="addFunction" type="jetbrains.mps.ypath.structure.ParamFeatureAddFun" id="1197912794887">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197912794888" />
+      </node>
+      <node role="removeFunction" type="jetbrains.mps.ypath.structure.ParamFeatureRemoveFun" id="1197912794889">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197912794890" />
+      </node>
+      <node role="parameterType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197912802510">
+        <link role="classifier" targetNodeId="3.~String" resolveInfo="String" />
+      </node>
+      <node role="parameterQueryFunction" type="jetbrains.mps.ypath.structure.ParameterQueryFun" id="1197912794892">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197912794893" />
+      </node>
+      <node role="targetTypeFunction" type="jetbrains.mps.ypath.structure.TargetTypeFun" id="1197912794894">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197912794895" />
+      </node>
+      <node role="toStringFunction" type="jetbrains.mps.ypath.structure.ToStringFun" id="1197912794896">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197912794897" />
+      </node>
+      <node role="cardinal" type="jetbrains.mps.ypath.structure.GFCardinalParamFun" id="1197912794898">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197912794899" />
       </node>
     </node>
     <node role="nodeType" type="jetbrains.mps.baseLanguage.structure.Type" id="1183980545105" />
