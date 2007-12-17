@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.ext.collections.unittest.simple_operations">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.baseLanguage.unitTest" />
@@ -2780,6 +2781,39 @@
                   <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1181074109999">
                     <property name="value" value="5" />
                   </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1197927649975">
+    <property name="testCaseName" value="Map" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1197927649976" />
+    <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1197927649977">
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1197927658791">
+        <property name="methodName" value="simple" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1197927658792" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197927658793">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197927700861">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1197927700862">
+              <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapCreator" id="1197927702395">
+                <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197927717070">
+                  <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+                </node>
+                <node role="valueType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197927719930">
+                  <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197927746214">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1197927746215">
+              <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1197927747842">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197927751048">
+                  <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
                 </node>
               </node>
             </node>
