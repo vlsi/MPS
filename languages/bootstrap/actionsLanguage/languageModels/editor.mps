@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.actionsLanguage.editor">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
@@ -271,6 +272,8 @@
               <property name="selectable" value="false" />
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177583946143">
                 <property name="text" value="use new actions" />
+                <property name="fontSize" value="12" />
+                <property name="textFgColor" value="red" />
               </node>
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1177583946144">
                 <property name="selectable" value="false" />
