@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.smodelLanguage.editor">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
@@ -909,6 +910,7 @@
           <property name="text" value="no params" />
           <property name="fontStyle" value="ITALIC" />
           <property name="drawBorder" value="false" />
+          <property name="defaultCaretPosition" value="FIRST" />
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1144105389981">

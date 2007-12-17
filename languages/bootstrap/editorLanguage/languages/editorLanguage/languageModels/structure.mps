@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.editorLanguage.structure">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
@@ -412,6 +413,10 @@
       <property name="name" value="textBgColorSelected" />
       <property name="propertyType" value="string" />
       <link role="dataType" targetNodeId="1083952545109" resolveInfo="_Colors_Enum" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1197893615481">
+      <property name="name" value="defaultCaretPosition" />
+      <link role="dataType" targetNodeId="1197893505573" resolveInfo="_DefaultCaretPosition_Enum" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1080736578640">
@@ -2568,6 +2573,22 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1187258725566">
       <property name="value" value="foreground-null-color" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration" id="1197893505573">
+    <property name="name" value="_CaretPosition_Enum" />
+    <link role="memberDataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1197893505574">
+      <property name="internalValue" value="NONE" />
+      <property name="externalValue" value="none" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1197893580900">
+      <property name="internalValue" value="FIRST" />
+      <property name="externalValue" value="first" />
+    </node>
+    <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1197893584870">
+      <property name="internalValue" value="LAST" />
+      <property name="externalValue" value="last" />
     </node>
   </node>
 </model>

@@ -1932,9 +1932,21 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     if (toSelect == null) toSelect = cell;
     changeSelection(toSelect);
-    if (toSelect instanceof EditorCell_Label && !toSelect.isErrorState()) {
-      ((EditorCell_Label) toSelect).getTextLine().end();
+
+    if (toSelect instanceof EditorCell_Label) {
+      EditorCell_Label label = (EditorCell_Label) toSelect;
+      if (label.getDefaultCaretPosition() != null) {
+        if (label.getDefaultCaretPosition() == CaretPosition.FIRST) {
+          label.getTextLine().home();
+        }
+        if (label.getDefaultCaretPosition() == CaretPosition.LAST) {
+          label.getTextLine().end();
+        }
+      } else if (!toSelect.isErrorState()) {
+        label.getTextLine().end();
+      }
     }
+
     return toSelect;
   }
 

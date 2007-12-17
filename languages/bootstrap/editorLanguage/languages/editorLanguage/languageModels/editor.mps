@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.editorLanguage.editor">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
@@ -1546,6 +1547,18 @@
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1145902402284">
             <property name="drawBorder" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1130859485024" />
+          </node>
+        </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197893663812">
+          <property name="selectable" value="false" />
+          <property name="vertical" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197893664720">
+            <property name="text" value="default caret position" />
+            <property name="drawBorder" value="true" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197893670113">
+            <property name="drawBorder" value="true" />
+            <link role="relationDeclaration" targetNodeId="2.1197893615481" resolveInfo="defaultCaretPosition" />
           </node>
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1139313417557">
