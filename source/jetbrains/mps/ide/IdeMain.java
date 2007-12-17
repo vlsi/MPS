@@ -8,10 +8,13 @@ import jetbrains.mps.util.PathManager;
 import javax.swing.JOptionPane;
 import javax.swing.UIDefaults;
 import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 import java.awt.Font;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
+
+import com.incors.plaf.alloy.AlloyLookAndFeel;
 
 public class IdeMain {
   private static boolean ourTestMode = false;
@@ -58,6 +61,14 @@ public class IdeMain {
   }
                                                                           
   public static IDEProjectFrame openProjectWindow(boolean loadOldProject) {
+    System.setProperty("alloy.licenseCode", "2008/01/17#Konstantin.Solomatov@gmail.com#b4yfnq#18f3q7");
+
+    try {
+      UIManager.setLookAndFeel(new AlloyLookAndFeel());
+    } catch (UnsupportedLookAndFeelException e) {
+      e.printStackTrace();
+    }
+
     installFocusKiller();
 
     long start = System.currentTimeMillis();

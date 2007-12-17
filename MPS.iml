@@ -112,6 +112,9 @@
     <orderEntry type="library" name="Eclipse Jobs" level="project" />
     <orderEntry type="library" name="Tigris SVN" level="project" />
     <orderEntry type="library" name="Eclipse JDT" level="project" />
+    <orderEntry type="library" name="SynteticaLAF" level="project" />
+    <orderEntry type="library" name="JGoodies-Looks" level="project" />
+    <orderEntry type="library" name="Alloy" level="project" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
