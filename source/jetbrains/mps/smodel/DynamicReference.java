@@ -23,10 +23,6 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
     setResolveInfo(resolveInfo);
   }
 
-  private DynamicReference(String role, SNode sourceNode, boolean mature) {
-    super(role, sourceNode, null, mature);
-  }
-
   public SModelUID getTargetModelUID() {
     if (mature()) {
       return super.getTargetModelUID();
@@ -42,7 +38,6 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
   }
 
   public SNode getTargetNode() {
-//    NodeReadAccessCaster.fireReferenceTargetReadAccessed(getSourceNode(), new SNodePointer(getTargetModelUID(), getTargetNodeId()));
     return getTargetNode_internal();
   }
 
@@ -73,7 +68,7 @@ import jetbrains.mps.nodeEditor.NodeReadAccessCaster;
   protected void makeMature() {
     super.makeMature();
     setTargetModelUID(myTargetNode.getModel().getUID());
-    setResolveInfo(myTargetNode.getName());
+    setResolveInfo(myTargetNode.getResolveInfo());
     myTargetNode = null;
   }
 }

@@ -1,6 +1,8 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
+import jetbrains.mps.core.structure.INamedConcept;
+import jetbrains.mps.core.structure.IResolveInfo;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
@@ -18,7 +20,6 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.PrintStream;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.*;
@@ -35,7 +36,6 @@ public final class SNode {
   public static final Object LAST_UPDATE = new Object();
   public static final Object ERROR_STATUS = new Object();
 
-  public static final String NAME = "name";
   public static final String RIGHT_TRANSFORM_HINT = "right_transfrom_hint";
 
   private static long ourCounter = 0;
@@ -271,13 +271,18 @@ public final class SNode {
   }
 
   public void setName(@Nullable String name) {
-    setProperty(NAME, name);
+    setProperty(INamedConcept.NAME, name);
   }
 
   @Nullable
   public String getName() {
-    return getProperty(NAME);
+    return getProperty(INamedConcept.NAME);
   }
+
+  public String getResolveInfo() {
+    return getProperty(IResolveInfo.RESOLVE_INFO);
+  }
+
 
   @Nullable
   public String getRole_() {
@@ -970,9 +975,9 @@ public final class SNode {
     return new ArrayList<SReference>(myReferences);
   }
 
-   @Nullable
+  @Nullable
   public SReference setReferent(@NotNull String role, SNode newReferent) {
-    return setReferent(role, newReferent, true); 
+    return setReferent(role, newReferent, true);
   }
 
   @Nullable
