@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.actions">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
@@ -4681,6 +4682,39 @@
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1188219582906" />
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1188219571711" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1197884208514">
+    <property name="package" value="substitute.expression" />
+    <property name="name" value="thisExpression" />
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1197884213577">
+      <property name="useNewActions" value="true" />
+      <link role="applicableConcept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1197884248041">
+        <link role="concept" targetNodeId="1.1070475354124" resolveInfo="ThisExpression" />
+      </node>
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1197884253309">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197884253310">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197884254859">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1197884270261">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1197884271311" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1197884255361">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1197884256536">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_ConceptList" id="1197884260459">
+                    <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference" id="1197884263836">
+                      <link role="concept" targetNodeId="1.1068580123140" resolveInfo="ConstructorDeclaration" />
+                    </node>
+                    <node role="concept" type="jetbrains.mps.bootstrap.smodelLanguage.structure.ConceptReference" id="1197884268197">
+                      <link role="concept" targetNodeId="1.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+                    </node>
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1197884254860" />
               </node>
             </node>
           </node>

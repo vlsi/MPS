@@ -74,6 +74,10 @@ public class QueriesGenerated {
     return SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.AnnotationInstance", true, false) != null;
   }
 
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1197884253309(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.structure.ConstructorDeclaration","jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"}, false, false) != null;
+  }
+
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177499026996(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     SNode ct = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(sourceNode), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     return ct != null;
@@ -756,6 +760,16 @@ public class QueriesGenerated {
 
       };
       result.addAll(ModelActions.createChildSubstituteActions(parentNode, currentTargetNode, wrappedConcept, setter, operationContext));
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1197884213577(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
+      result.addAll(defaultActions);
     }
     return result;
   }

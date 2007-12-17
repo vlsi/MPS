@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.structure">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <maxImportIndex value="38" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -1708,6 +1709,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1070475354124">
     <property name="name" value="ThisExpression" />
     <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1197884178086">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1107217864430">
       <property name="value" value="this" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" />
