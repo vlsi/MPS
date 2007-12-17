@@ -58,6 +58,7 @@ import java.util.List;
 public abstract class AbstractEditorComponent extends JComponent implements Scrollable, IActionDataProvider, IEditorComponent {
   private static final Logger LOG = Logger.getLogger(AbstractEditorComponent.class);
   public static final String EDITOR_POPUP_MENU_ACTIONS = "editor-popup-menu-actions";
+  public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = "editor-popup-menu-actions-internal";
 
   private Set<MPSAction> myMPSActionsWithShortcuts = new HashSet<MPSAction>();
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();

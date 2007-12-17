@@ -47,6 +47,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
 
   public static final String PROJECT_PANE_NODE_ACTIONS = "project-pane-node-actions";
   public static final String PROJECT_PANE_MODEL_ACTIONS = "project-pane-model-actions";
+  public static final String PROJECT_PANE_MODEL_ACTIONS_INTERNAL = "project-pane-model-actions-internal";
   public static final String PROJECT_PANE_MODEL_ACTIONS_GENERATE_OBSOLETE_MENU = "project-pane-model-actions-generate-obsolete-menu";
   public static final String PROJECT_PANE_VCS_ACTIONS = "project-pane-vcs-actions";
   public static final String PROJECT_PANE_LANGUAGE_ACTIONS = "project-pane-language-actions";

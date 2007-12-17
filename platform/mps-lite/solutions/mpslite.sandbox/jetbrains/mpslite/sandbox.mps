@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mpslite.sandbox">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.nanoj" />
   <maxImportIndex value="1" />
   <node type="jetbrains.mps.nanoj.structure.ClassConcept" id="1197634682459">
