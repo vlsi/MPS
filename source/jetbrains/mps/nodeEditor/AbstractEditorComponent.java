@@ -604,6 +604,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       }
       if (!actions.isEmpty()) popupMenu.addSeparator();
+
+      JMenu keyMapActions = new JMenu("KeyMap Actions");
+      keyMapActions.setIcon(MPSAction.EMPTY_ICON);
+
       for (final EditorCellKeyMapAction action : actions) {
         MPSAction mpsAction = new MPSAction("" + action.getDescriptionText()) {
           private EditorCellKeyMapAction myAction = action;
@@ -617,8 +621,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             myAction.execute(null, editorContext);
           }
         };
-        mpsAction.add(popupMenu, context);
+        mpsAction.add(keyMapActions, context);
       }
+
+      popupMenu.add(keyMapActions);
     } // ~keymaps
 
     popupMenu.show(AbstractEditorComponent.this, x, y);
