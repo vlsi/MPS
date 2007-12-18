@@ -15,9 +15,6 @@ import java.beans.PropertyChangeEvent;
  * @author Kostik
  */
 public class HeaderWrapper extends JPanel {
-  public static final Color ACTIVE_COLOR = new Color(120, 150, 180);
-  public static final Color NOT_ACTIVE_COLOR = new Color(150, 150, 150);
-
   private JComponent myComponent;
   private JLabel myLabel  = new JLabel("", JLabel.LEFT) {
     public Dimension getMinimumSize() {
@@ -125,16 +122,34 @@ public class HeaderWrapper extends JPanel {
   private void updateLabel() {
     Component focusOwner = KeyboardFocusManager.getCurrentKeyboardFocusManager().getFocusOwner();
     if (isAncestorOf(focusOwner)) {
-      myLabel.setBackground(ACTIVE_COLOR);
-      if (myButtonsPanel != null) myButtonsPanel.setBackground(ACTIVE_COLOR);
+      myLabel.setBackground(getActiveColor());
+      myLabel.setForeground(getActiveTextColor());
+      if (myButtonsPanel != null) myButtonsPanel.setBackground(getActiveColor());
       if (myMinimizeButton != null) myMinimizeButton.setIcon(Icons.MINIMIZE_ICON);
       if (myCloseButton != null) myCloseButton.setIcon(Icons.CLOSE_ICON);
     } else {
-      myLabel.setBackground(NOT_ACTIVE_COLOR);
-      if (myButtonsPanel != null) myButtonsPanel.setBackground(NOT_ACTIVE_COLOR);
+      myLabel.setBackground(getNotActiveColor());
+      myLabel.setForeground(getNotActiveTextColor());
+      if (myButtonsPanel != null) myButtonsPanel.setBackground(getNotActiveColor());
       if (myMinimizeButton != null) myMinimizeButton.setIcon(Icons.MINIMIZE_DISABLED_ICON);
       if (myCloseButton != null) myCloseButton.setIcon(Icons.CLOSE_DISABLED_ICON);
     }
+  }
+
+  private Color getActiveColor() {
+    return UIManager.getColor("List.selectionBackground");
+  }
+
+  private Color getNotActiveColor() {
+    return Color.LIGHT_GRAY;
+  }
+
+  private Color getActiveTextColor() {
+    return UIManager.getColor("List.selectionForeground");
+  }
+
+  private Color getNotActiveTextColor() {
+    return Color.GRAY;
   }
 
   public static void main(String[] args) {
