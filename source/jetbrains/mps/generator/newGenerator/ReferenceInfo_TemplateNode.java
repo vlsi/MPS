@@ -22,6 +22,10 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     myTemplateTargetNode = templateReference.getTargetNode();
   }
 
+  public SNode getInputTargetNode() {
+    return myTemplateTargetNode;
+  }
+
   public SNode doResolve_Straightforward(TemplateModelGenerator_New generator) {
     SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
     if (outputTargetNode != null) {
@@ -46,15 +50,15 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       outputParentNode = outputParentNode.getParent();
     }
 
-
-    // try to resolve using custom referense resolver for source node concept
-    IReferenceResolver referenceResolver = loadReferenceResolver(getOutputSourceNode());
-    if (referenceResolver != null) {
-      outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), getReferenceRole(), myTemplateTargetNode);
-      if (outputTargetNode != null) {
-        return outputTargetNode;
-      }
-    }
+    //test
+//    // try to resolve using custom referense resolver for source node concept
+//    IReferenceResolver referenceResolver = loadReferenceResolver(getOutputSourceNode());
+//    if (referenceResolver != null) {
+//      outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), getReferenceRole(), myTemplateTargetNode);
+//      if (outputTargetNode != null) {
+//        return outputTargetNode;
+//      }
+//    }
 
     return null;
   }
@@ -91,6 +95,14 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       }
     }
     return null;
+  }
+
+  public String getResolveInfoForDynamicResolve() {
+    return myTemplateTargetNode.getResolveInfo();
+  }
+
+  public String getResolveInfoForNothing() {
+    return myTemplateTargetNode.getResolveInfo();
   }
 
   public void showErrorMessage(ITemplateGenerator generator) {

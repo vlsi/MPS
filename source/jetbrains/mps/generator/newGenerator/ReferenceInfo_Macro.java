@@ -21,6 +21,11 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     myReferenceMacro = refMacro;
   }
 
+  public SNode getInputTargetNode() {
+    String role = myReferenceMacro.getLink().getRole();
+    return myTemplateReferenceNode.getReferent(role);
+  }
+
   public SNode doResolve_Straightforward(TemplateModelGenerator_New generator) {
     //todo it should be removed after going to new generator
     generator.setCurrentBuilder(getOutputSourceNode());
@@ -34,12 +39,25 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return null;
   }
 
+  public String getResolveInfoForDynamicResolve() {
+    // todo: macro can return string
+    return null;
+  }
+
+  public String getResolveInfoForNothing() {
+    SNode templateTargetNode = getInputTargetNode();
+    if (templateTargetNode != null) {
+      return templateTargetNode.getName();
+    }
+    return null;
+  }
+
   public boolean isRequired() {
     return getOutputSourceNode().isReferentRequired(getReferenceRole());
   }
 
   public SNode expandReferenceMacro(ITemplateGenerator generator) {
-    String linkRole = myReferenceMacro.getLink().getRole();
+    String role = myReferenceMacro.getLink().getRole();
 
     // try new query
     ReferenceMacro_GetReferent function = myReferenceMacro.getReferentFunction();
@@ -48,7 +66,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       return null;
     }
 
-    SNode templateValue = myTemplateReferenceNode.getReferent(linkRole);
+    SNode templateValue = myTemplateReferenceNode.getReferent(role);
     String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function.getNode());
     Object[] args_old = new Object[]{
             getInputNode(),
@@ -80,7 +98,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
 
     // check referent because it's manual and thus error prone mapping
     if (outputTargetNode.getModel() == generator.getInputModel()) {
-      generator.showWarningMessage(getOutputSourceNode(), "reference '" + linkRole + "' to input model in output node " + getOutputSourceNode().getDebugText());
+      generator.showWarningMessage(getOutputSourceNode(), "reference '" + role + "' to input model in output node " + getOutputSourceNode().getDebugText());
       generator.showInformationMessage(outputTargetNode, " -- referent node: " + outputTargetNode.getDebugText());
       generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node: " + myReferenceMacro.getNode().getDebugText());
       generator.getGeneratorSessionContext().addTransientModelToKeep(generator.getInputModel());

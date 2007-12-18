@@ -31,6 +31,10 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     myInputTargetNode = inputTargetNode;
   }
 
+  public SNode getInputTargetNode() {
+    return myInputTargetNode;
+  }
+
   public SNode doResolve_Straightforward(TemplateModelGenerator_New generator) {
     // output target node might has been copied (reduced) from the input target node
     SNode outputTargetNode = generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
@@ -59,18 +63,26 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
       }
     }
 
-    // try to resolve using custom referense resolver for source node concept
-    // todo: some reference-resolvers can be executed on the 'executeIndependentResolve' step
-    IReferenceResolver referenceResolver = loadReferenceResolver(getOutputSourceNode());
-    if (referenceResolver != null) {
-      outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), myReferenceRole, myInputTargetNode);
-      return outputTargetNode;
-    }
+// test
+//    // try to resolve using custom referense resolver for source node concept
+//    IReferenceResolver referenceResolver = loadReferenceResolver(getOutputSourceNode());
+//    if (referenceResolver != null) {
+//      outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), myReferenceRole, myInputTargetNode);
+//      return outputTargetNode;
+//    }
     return null;
   }
 
   public SNode doResolve_Tricky(TemplateModelGenerator_New generator) {
     return null;
+  }
+
+  public String getResolveInfoForDynamicResolve() {
+    return myInputTargetNode.getResolveInfo();
+  }
+
+  public String getResolveInfoForNothing() {
+    return myInputTargetNode.getResolveInfo();
   }
 
   public void showErrorMessage(ITemplateGenerator generator) {

@@ -12,7 +12,7 @@ public class StaticReference extends SReferenceBase {
   private SNode myTargetNode;        // young
   private SNodeId myTargetNodeId;    // mature
 
-  /*package*/ StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
+  public StaticReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
     // 'young' reference
     super(role, sourceNode, null, false);
     myTargetNode = targetNode;
@@ -59,18 +59,23 @@ public class StaticReference extends SReferenceBase {
   }
 
   protected SNode getTargetNode_internal() {
-    SNode targetNode = myTargetNode;
-    if (mature()) {
-      SModel targetModel = getTargetModel();
-      if (targetModel != null) {
-        targetNode = targetModel.getNodeById(getTargetNodeId());
-        if (targetNode == null) {
-          targetNode = UnregisteredNodes.instance().get(getTargetModelUID(), getTargetNodeId().toString());
-          if (targetNode == null) {
-            error("target model '" + getTargetModelUID() + "' doesn't contain node with id=" + getTargetNodeId());
-          }
-        }
-      }
+    if (!mature()) {
+      return myTargetNode;
+    }
+
+    SNodeId targetNodeId = getTargetNodeId();
+    if (targetNodeId == null) {
+      error("target node id is NULL");
+      return null;
+    }
+
+    SModel targetModel = getTargetModel();
+    if (targetModel == null) return null;
+    SNode targetNode = targetModel.getNodeById(targetNodeId);
+    if (targetNode != null) return targetNode;
+    targetNode = UnregisteredNodes.instance().get(targetModel.getUID(), targetNodeId.toString());
+    if (targetNode == null) {
+      error("target model '" + getTargetModelUID() + "' doesn't contain node with id=" + getTargetNodeId());
     }
 
     return targetNode;

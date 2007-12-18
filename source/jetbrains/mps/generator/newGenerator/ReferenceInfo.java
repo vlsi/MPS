@@ -36,6 +36,8 @@ public abstract class ReferenceInfo {
     return myInputNode;
   }
 
+  public abstract SNode getInputTargetNode();
+
   /**
    * test postponed references
    */
@@ -43,11 +45,26 @@ public abstract class ReferenceInfo {
 
   public abstract SNode doResolve_Tricky(TemplateModelGenerator_New generator);
 
+  public abstract String getResolveInfoForDynamicResolve();
+
+  public abstract String getResolveInfoForNothing();
+
   public boolean isRequired() {
     return true;
   }
 
   public abstract void showErrorMessage(ITemplateGenerator generator);
+
+  /**
+   * todo: this method will go as soon as dynamic references work
+   */
+  public SNode doResolve_WithCustomReferenceResolver() {
+    IReferenceResolver referenceResolver = loadReferenceResolver(getOutputSourceNode());
+    if (referenceResolver != null) {
+      return referenceResolver.resolve(getOutputSourceNode(), myReferenceRole, getInputTargetNode());
+    }
+    return null;
+  }
 
   protected static IReferenceResolver loadReferenceResolver(SNode node) {
     ConceptDeclaration conceptDeclaration = (ConceptDeclaration) node.getConceptDeclarationAdapter();

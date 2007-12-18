@@ -1,8 +1,7 @@
 package jetbrains.mps.generator.newGenerator;
 
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.generator.template.IReferenceResolver;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -14,9 +13,8 @@ import org.jetbrains.annotations.NotNull;
  */
 public class PostponedReference extends SReference {
   private ReferenceInfo myReferenceInfo;
-  private SNode myTargetNode;
-  private boolean myFailed;
   private TemplateModelGenerator_New myGenerator;
+  private SReference myReplacementReference;
 
 
   public PostponedReference(ReferenceInfo referenceInfo, TemplateModelGenerator_New generator) {
@@ -38,30 +36,52 @@ public class PostponedReference extends SReference {
   }
 
   public SNode getTargetNode() {
-    if (myTargetNode != null) {
-      return myTargetNode;
-    } else if (myFailed) {
-      return null;
+    SReference ref = getReplacementReference();
+    if (ref == null) return null;
+    return ref.getTargetNode();
+  }
+
+  /**
+   * @return null is not resolved and not required.
+   */
+  private SReference getReplacementReference() {
+    if (myReplacementReference != null) {
+      return myReplacementReference;
     }
 
-    myTargetNode = myReferenceInfo.doResolve_Straightforward(myGenerator);
-    if (myTargetNode == null) {
-      // todo: create dynamic ref here (if possible)
-      // else:
-      myTargetNode = myReferenceInfo.doResolve_Tricky(myGenerator);
-    }
+    String role = myReferenceInfo.getReferenceRole();
+    SNode outputSourceNode = myReferenceInfo.getOutputSourceNode();
+    SModelUID targetModelUID = myGenerator.getOutputModel().getUID();
 
-    if (myTargetNode == null) {
-      myFailed = true;
-      if (myReferenceInfo.isRequired()) {
+    SNode targetNode = myReferenceInfo.doResolve_Straightforward(myGenerator);
+    if (targetNode != null) {
+      myReplacementReference = new StaticReference(role, outputSourceNode, targetNode);
+    } else if (SReferenceUtil.isDynamicResolve(role, outputSourceNode)) {
+      myGenerator.showInformationMessage(outputSourceNode, "!!!create dynamic!!!");
+      myReplacementReference = new DynamicReference(
+              role,
+              outputSourceNode,
+              targetModelUID,
+              myReferenceInfo.getResolveInfoForDynamicResolve());
+    } else {
+      targetNode = myReferenceInfo.doResolve_WithCustomReferenceResolver();
+      if (targetNode == null) {
+        targetNode = myReferenceInfo.doResolve_Tricky(myGenerator);
+      }
+      if (targetNode != null) {
+        myReplacementReference = new StaticReference(role, outputSourceNode, targetNode);
+      } else if (myReferenceInfo.isRequired()) {
         myReferenceInfo.showErrorMessage(myGenerator);
+        myReplacementReference = new StaticReference(role, outputSourceNode, targetModelUID, null, myReferenceInfo.getResolveInfoForNothing());
+      } else {
+        // not resolved and not required
       }
     }
 
     // release resources
     myReferenceInfo = null;
     myGenerator = null;
-    return myTargetNode;
+    return myReplacementReference;
   }
 
   /**
@@ -69,11 +89,10 @@ public class PostponedReference extends SReference {
    * removes reference in case of error.
    */
   public void validateAndReplace() {
-    SNode targetNode = getTargetNode();
-    if (targetNode != null) {
-      getSourceNode().setReferent(getRole(), targetNode);
-    } else {
-      getSourceNode().removeReference(this);
+    SReference replacement = getReplacementReference();
+    getSourceNode().removeReference(this);
+    if (replacement != null) {
+      getSourceNode().addReference(replacement);
     }
   }
 }
