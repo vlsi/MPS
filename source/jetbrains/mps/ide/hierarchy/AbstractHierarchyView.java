@@ -47,6 +47,16 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
     myHierarchyTree = createHierarchyTree(false);
     myHierarchyTree.setRootVisible(true);
 
+    initButtons();
+    JPanel panel = new JPanel(new BorderLayout());
+    panel.add(myButtonsPanel, BorderLayout.WEST);
+    myComponent.add(panel, BorderLayout.NORTH);
+    myScrollPane = new JScrollPane(myHierarchyTree);
+    myComponent.add(myScrollPane, BorderLayout.CENTER);
+    showConceptInHierarchy(null, null);
+  }
+
+  protected void initButtons() {
     myChildrenHierarchyButton = new JRadioButton(new AbstractAction("Children Hierarchy") {
       public void actionPerformed(ActionEvent e) {
         myHierarchyTree.setParentHierarchy(false);
@@ -73,12 +83,6 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
     myButtonsPanel.add(myChildrenHierarchyButton);
     myButtonsPanel.add(myParentsHierarchyButton);
     myButtonsPanel.add(myOnlyInOneModelCheckBox);
-    JPanel panel = new JPanel(new BorderLayout());
-    panel.add(myButtonsPanel, BorderLayout.WEST);
-    myComponent.add(panel, BorderLayout.NORTH);
-    myScrollPane = new JScrollPane(myHierarchyTree);
-    myComponent.add(myScrollPane, BorderLayout.CENTER);
-    showConceptInHierarchy(null, null);
   }
 
 

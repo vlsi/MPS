@@ -26,53 +26,74 @@ import org.jetbrains.annotations.NotNull;
  */
 public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 
-    private SNodePointer myNodePointer;
-    protected AbstractHierarchyTree<T> myHierarchyTree;
+  private SNodePointer myNodePointer;
+  protected AbstractHierarchyTree<T> myHierarchyTree;
 
-    public HierarchyTreeNode(@NotNull T declaration, IOperationContext operationContext, AbstractHierarchyTree<T> tree) {
-      super(operationContext);
-      myNodePointer = new SNodePointer(declaration);
-      myHierarchyTree = tree;
-      setUserObject(declaration);
+  public HierarchyTreeNode(@NotNull T declaration, IOperationContext operationContext, AbstractHierarchyTree<T> tree) {
+    super(operationContext);
+    SNode node = declaration.getNode();
+    if (!node.isRegistered()) {
+      SModel sModel = node.getModel();
+      sModel.setLoading(true);
+      sModel.addRoot(node.getTopmostAncestor());
+      sModel.setLoading(false);
     }
+    myNodePointer = new SNodePointer(declaration);
+    myHierarchyTree = tree;
+    setUserObject(declaration);
+  }
 
-    public int getToggleClickCount() {
-      return -1;
+  protected void dispose() {
+    SNode node = myNodePointer.getNode();
+    if (node != null && !node.isRegistered()) {
+      SModel sModel = node.getModel();
+      sModel.setLoading(true);
+      sModel.removeRoot(node.getTopmostAncestor());
+      sModel.setLoading(false);
     }
+  }
 
-    public T getNode() {
-      return (T) BaseAdapter.fromNode(myNodePointer.getNode());
-    }
+  public boolean isAutoExpandable() {
+    return false;
+  }
 
-    public String getNodeIdentifier() {
-      if (getNode() == null) return "null";
-      String namespace = getNode().getModel().toString();
-      return getNode().getName() + "  (" + namespace + ")";
-    }
+  public int getToggleClickCount() {
+    return -1;
+  }
 
-    public JPopupMenu getPopupMenu() {
-      JPopupMenu result = new JPopupMenu();
-      result.add(new AbstractActionWithEmptyIcon("Show Hierarchy For This Concept") {
-        public void actionPerformed(ActionEvent e) {
-          final SNode node = myNodePointer.getNode();
-          myHierarchyTree.getHierarchyView().showConceptInHierarchy((T) node.getAdapter(), getOperationContext());
-        }
-      }).setBorder(null);
-      return result;
-    }
+  public T getNode() {
+    return (T) BaseAdapter.fromNode(myNodePointer.getNode());
+  }
 
-    public void doubleClick() {
-      final SNode node = myNodePointer.getNode();
+  public String getNodeIdentifier() {
+    if (getNode() == null) return "null";
+    String namespace = getNode().getModel().toString();
+    return getNode().getName() + "  (" + namespace + ")";
+  }
 
-      final EditorsPane editorsPane = myHierarchyTree.getHierarchyView().myIde.getEditorsPane();
-      final IEditor currentEditor = editorsPane.getCurrentEditor();
+  public JPopupMenu getPopupMenu() {
+    JPopupMenu result = new JPopupMenu();
+    result.add(new AbstractActionWithEmptyIcon("Show Hierarchy For This Node") {
+      public void actionPerformed(ActionEvent e) {
+        final SNode node = myNodePointer.getNode();
+        myHierarchyTree.getHierarchyView().showConceptInHierarchy((T) node.getAdapter(), getOperationContext());
+      }
+    }).setBorder(null);
+    return result;
+  }
 
-      NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), getOperationContext().getProject());
+  public void doubleClick() {
+    final SNode node = myNodePointer.getNode();
 
-    }
+    final EditorsPane editorsPane = myHierarchyTree.getHierarchyView().myIde.getEditorsPane();
+    final IEditor currentEditor = editorsPane.getCurrentEditor();
 
-    public Icon getIcon(boolean expanded) {
-      return IconManager.getIconFor(myNodePointer.getNode());
-    }
+    NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), getOperationContext().getProject());
 
   }
+
+  public Icon getIcon(boolean expanded) {
+    return IconManager.getIconFor(myNodePointer.getNode());
+  }
+
+}
