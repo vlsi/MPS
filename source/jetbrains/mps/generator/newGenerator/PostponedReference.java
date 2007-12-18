@@ -49,6 +49,10 @@ public class PostponedReference extends SReference {
       return myReplacementReference;
     }
 
+    if (myReferenceInfo == null) {
+      return null; // allready processed
+    }
+
     String role = myReferenceInfo.getReferenceRole();
     SNode outputSourceNode = myReferenceInfo.getOutputSourceNode();
     SModelUID targetModelUID = myGenerator.getOutputModel().getUID();
