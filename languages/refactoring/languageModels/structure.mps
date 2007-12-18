@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.logging.refactoring.structure">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="9" />
+  <maxImportIndex value="10" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
@@ -16,6 +17,7 @@
   <import index="7" modelUID="java.lang@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
   <import index="9" modelUID="jetbrains.mps.project@java_stub" version="-1" />
+  <import index="10" modelUID="jetbrains.mps.refactoring.framework@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1189693812263">
     <property name="name" value="Refactoring" />
     <property name="rootable" value="true" />
@@ -28,7 +30,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="arguments" />
       <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1189693830529" resolveInfo="RequiredAdditionalArgument" />
+      <link role="target" targetNodeId="1192792808079" resolveInfo="RequiredUserEnteredArgument" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1189696093619">
       <property name="metaClass" value="aggregation" />
@@ -204,6 +206,11 @@
       <property name="role" value="filterClause" />
       <link role="target" targetNodeId="1192793302394" resolveInfo="FilterArgumentClause" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197983571375">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="chooseComponentClause" />
+      <link role="target" targetNodeId="1197983858784" resolveInfo="ChooseComponentClause" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1192793302394">
     <property name="name" value="FilterArgumentClause" />
@@ -353,6 +360,16 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197386937717">
       <property name="value" value="changeFeatureName" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197983858784">
+    <property name="name" value="ChooseComponentClause" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1197984794993">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197993235053">
+        <link role="classifier" targetNodeId="10.~IChooseComponentPart" resolveInfo="IChooseComponentPart" />
+      </node>
     </node>
   </node>
 </model>

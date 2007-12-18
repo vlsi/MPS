@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class RequiredUserEnteredArgument extends RequiredAdditionalArgument {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument";
   public static String FILTER_CLAUSE = "filterClause";
+  public static String CHOOSE_COMPONENT_CLAUSE = "chooseComponentClause";
 
   public  RequiredUserEnteredArgument(SNode node) {
     super(node);
@@ -30,6 +31,14 @@ public class RequiredUserEnteredArgument extends RequiredAdditionalArgument {
 
   public void setFilterClause(FilterArgumentClause node) {
     super.setChild(RequiredUserEnteredArgument.FILTER_CLAUSE, node);
+  }
+
+  public ChooseComponentClause getChooseComponentClause() {
+    return (ChooseComponentClause)this.getChild(RequiredUserEnteredArgument.CHOOSE_COMPONENT_CLAUSE);
+  }
+
+  public void setChooseComponentClause(ChooseComponentClause node) {
+    super.setChild(RequiredUserEnteredArgument.CHOOSE_COMPONENT_CLAUSE, node);
   }
 
 }

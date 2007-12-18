@@ -8,7 +8,7 @@ import javax.swing.JLabel;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 
-public class ChooseStringComponent extends JPanel implements IChooseComponent  {
+public class ChooseStringComponent extends JPanel implements IChooseComponent<String>  {
   private JTextField myTextField;
   private String myPropertyName;
   private Condition myCondition = Condition.TRUE_CONDITION;

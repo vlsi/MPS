@@ -1,29 +1,23 @@
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.refactoring.common.move.MoveNodeRefactoring;
+import jetbrains.mps.util.ToStringComparator;
 
-import javax.swing.JPanel;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.JOptionPane;
 import javax.swing.tree.TreePath;
-import java.util.*;
 import java.awt.BorderLayout;
+import java.util.*;
 
-public class ChooseNodeOrModelComponent extends JPanel implements IChooseComponent {
+public class ChooseNodeOrModelComponent extends JPanel implements IChooseComponent<Object> {
   private String myCaption;
   private String myPropertyName;
   private MyTree myTree = new MyTree();
@@ -88,7 +82,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     }
   }
 
-  public String submit() throws InvalidInputValueException {
+  public Object submit() throws InvalidInputValueException {
     if (myTree.getSelectionPath() == null) {
       throw new InvalidInputValueException(myCaption + ": nothing is selected");
     }
@@ -102,14 +96,14 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
       if (myConceptFQName != null && !sNode.isInstanceOfConcept(myConceptFQName)) {
         throw new InvalidInputValueException(myCaption + ": selected node should be an istance of " + myConceptFQName);
       }
-      return sNode.getModel().toString()+"#"+sNode.getId();
+      return sNode;
     }
     if (node instanceof SModelTreeNode) {
       if (!myMayBeModel) {
         throw new InvalidInputValueException(myCaption + ": selected value should not not be a model");
       }
       SModelDescriptor modelDescriptor = ((SModelTreeNode)node).getSModelDescriptor();
-      return modelDescriptor.toString();
+      return modelDescriptor.getSModel();
     }
     throw new InvalidInputValueException(myCaption + ": nothing is selected");
   }

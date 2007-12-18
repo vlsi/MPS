@@ -1,8 +1,9 @@
 package jetbrains.mps.refactoring.framework;
 
-import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.plugins.CurrentProjectMPSAction;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.GenericRefactoring;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -12,11 +13,11 @@ import org.jetbrains.annotations.NotNull;
  * Time: 16:53:20
  * To change this template use File | Settings | File Templates.
  */
-public class GenericRefactoringAction extends MPSAction {
+public class GenericRefactoringAction extends CurrentProjectMPSAction {
   private GenericRefactoring myRefactoring;
 
-  public GenericRefactoringAction(ILoggableRefactoring refactoring) {
-    super("".equals(refactoring.getUserFriendlyName()) ? refactoring.getClass().getName() : refactoring.getUserFriendlyName());
+  public GenericRefactoringAction(ILoggableRefactoring refactoring, MPSProject project) {
+    super(project, "".equals(refactoring.getUserFriendlyName()) ? refactoring.getClass().getName() : refactoring.getUserFriendlyName());
     myRefactoring = new GenericRefactoring(refactoring);
   }
 
