@@ -42,8 +42,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1082979388816">
           <property name="drawBorder" value="false" />
           <property name="noTargetText" value="&lt;no name&gt;" />
-          <property name="textBgColorSelected" value="cyan" />
-          <property name="textBgColor" value="yellow" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
         </node>
       </node>
@@ -63,8 +61,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1083066231722">
           <property name="drawBorder" value="false" />
           <property name="noTargetText" value="&lt;no value&gt;" />
-          <property name="textBgColorSelected" value="cyan" />
-          <property name="textBgColor" value="yellow" />
+          <property name="textFgColor" value="DARK_BLUE" />
           <link role="relationDeclaration" targetNodeId="1.1083066089218" />
         </node>
       </node>

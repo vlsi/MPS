@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import java.awt.Color;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -66,8 +66,6 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
   }
 
   private static void setupLabel_Separator(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -77,8 +75,7 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstraintCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
+    editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
   }
 
 
