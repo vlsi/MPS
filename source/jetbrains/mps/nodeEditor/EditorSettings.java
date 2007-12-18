@@ -181,8 +181,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     private JComboBox myFontsComboBox = createFontsComboBox();
     private JComboBox myFontSizesComboBox = createSizeComboBox();
     private JComboBox myTextWidthComboBox = createTextWidthComboBox();
-    private MyColorComponent mySelectedColorComponent = new MyColorComponent(mySelectionColor);
-    private MyColorComponent myRangeSelColorComponent = new MyColorComponent(myRangeSelectionColor);
+    private MyColorComponent mySelectedColorComponent = new MyColorComponent(getSelectionColor());
+    private MyColorComponent myRangeSelColorComponent = new MyColorComponent(getRangeSelectionColor());
     private JCheckBox myAntialiasingCheckBox = createAntialiasinbCheckBox();
     private JCheckBox myLegacyTypesystemCheckBox = createLegacyTypesystemCheckBox();
     private JSlider myBlinkingRateSlider = createBlinkingRateSlider();
