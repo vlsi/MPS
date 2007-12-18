@@ -79,8 +79,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   }
 
   public Color getRangeSelectionColor() {
-    Color bc = getSelectionColor();
-    return new Color(bc.getRed(), bc.getGreen(), bc.getBlue(), 128);
+    return getSelectionColor();
   }
 
   public boolean getUseLegacyTypesystem() {

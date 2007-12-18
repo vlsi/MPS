@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -215,11 +216,16 @@ public class NodeRangeSelection implements IKeyboardHandler {
   }
 
   public void paint(Graphics g) {
+    myEditorComponent.turnOnAliasingIfPossible((Graphics2D) g);
+
     // g.setColor(new Color(255, 0, 255, 30));
     for (SNode sNode : getNodes()) {
       EditorCell cell = myEditorComponent.findNodeCell(sNode);
       if (cell != null) { // the paint may happen when the editor content is aldeary changed
-        cell.paintSelection(g, EditorCell_Basic.getRangeSelectionColor());
+        boolean wasSelected = cell.isSelected();
+        cell.setSelected(true);
+        cell.paint(g);
+        cell.setSelected(wasSelected);
       }
     }
   }
