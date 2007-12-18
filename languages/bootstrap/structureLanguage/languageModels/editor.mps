@@ -782,8 +782,6 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1087215312707">
           <property name="drawBorder" value="false" />
           <property name="noTargetText" value="&lt;no name&gt;" />
-          <property name="textBgColorSelected" value="cyan" />
-          <property name="textBgColor" value="yellow" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
         </node>
       </node>
