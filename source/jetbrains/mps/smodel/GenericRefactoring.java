@@ -48,6 +48,7 @@ public class GenericRefactoring {
     SModel model = modelDescriptor.getSModel();
 
     writeIntoLog(model, refactoringContext);
+    refactoringContext.computeCaches();
     for (SModelDescriptor anotherDescriptor : SModelRepository.getInstance().getAllModelDescriptors()) {
       String stereotype = anotherDescriptor.getStereotype();
       if (!stereotype.equals(SModelStereotype.NONE) && !stereotype.equals(SModelStereotype.TEMPLATES)) {
