@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.helgins.editor">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
@@ -3216,6 +3217,12 @@
         <property name="text" value="}" />
         <property name="drawBorder" value="false" />
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197936731292">
+    <link role="conceptDeclaration" targetNodeId="1.1185788561607" resolveInfo="TypeClause" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Error" id="1197936734497">
+      <property name="text" value="type clause" />
     </node>
   </node>
 </model>
