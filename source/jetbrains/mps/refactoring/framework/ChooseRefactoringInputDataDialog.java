@@ -14,15 +14,17 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
 
   private JPanel myPanel = new JPanel(new BorderLayout());
   private JPanel myInnerPanel;
-  private Map<String, Object> myResult;
+  private boolean myResult = false;
   private List<IChooseComponent> myComponents;
   private ILoggableRefactoring myRefactoring;
   private ActionContext myActionContext;
+  private RefactoringContext myRefactoringContext;
 
-  public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, ActionContext actionContext, List<IChooseComponent> components) throws HeadlessException {
+  public ChooseRefactoringInputDataDialog(ILoggableRefactoring refactoring, ActionContext actionContext, RefactoringContext refactoringContext, List<IChooseComponent> components) throws HeadlessException {
     super(actionContext.getOperationContext().getMainFrame(), "Input data for refactoring");
     myRefactoring = refactoring;
     myActionContext = actionContext;
+    myRefactoringContext = refactoringContext;
     myComponents = new ArrayList<IChooseComponent>(components);
     myPanel.add(new JLabel("Input data for refactoring"), BorderLayout.NORTH);
     myInnerPanel = new JPanel();
@@ -42,7 +44,7 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     return myPanel;
   }
 
-  public Map<String, Object> getResult() {
+  public boolean getResult() {
     return myResult;
   }
 
@@ -54,16 +56,18 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   @Button(position = 0, name = "OK", defaultButton = true)
   public void onOk() {
     try {
-      myResult = new HashMap<String, Object>();
+      myResult = false;
       for (IChooseComponent component : myComponents) {
-        myResult.put(component.getPropertyName(), component.submit());
+        myRefactoringContext.setParameter(component.getPropertyName(), component.submit());
       }
-    /*  if (myRefactoring.isApplicable(myActionContext, myResult)) {
+      if (myRefactoring.isApplicable(myActionContext, myRefactoringContext)) {
+        myResult = true;
         dispose();
-      } else {*/
-        myResult = null;
+      } else {
+        myResult = false;
+        myRefactoringContext.clearAdditionalParemeters();
         JOptionPane.showMessageDialog(this, "refactoring is not applicable");
-   //   }
+      }
     } catch (InvalidInputValueException ex) {
       JOptionPane.showMessageDialog(this, ex.getMessage());
     }
@@ -73,6 +77,6 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
   @Button(position = 1, name = "Cancel")
   public void onCancel() {
     dispose();
-    myResult = null;
+    myResult = false;
   }
 }

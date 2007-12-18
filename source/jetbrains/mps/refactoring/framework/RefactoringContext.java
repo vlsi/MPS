@@ -106,6 +106,11 @@ public class RefactoringContext {
     myCachesAreUpToDate = false;
   }
 
+  public void clearAdditionalParemeters() {
+    myAdditionalParametersMap.clear();
+    myCachesAreUpToDate = false;
+  }
+
   public void moveNodesToNode(List<SNode> sourceNodes, String role, SNode targetNode) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> targetNodes = CopyUtil.copy(sourceNodes, targetNode.getModel(), mapping);

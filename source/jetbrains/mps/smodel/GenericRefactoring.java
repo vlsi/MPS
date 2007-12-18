@@ -39,9 +39,8 @@ public class GenericRefactoring {
 
   public void execute(@NotNull ActionContext context) {
     RefactoringContext refactoringContext = new RefactoringContext();
-    Map<String, Object> args = myRefactoring.askForInfo(context);
-    if (args == null) return;
-    refactoringContext.addAdditionalParameters(args);
+    boolean success = myRefactoring.askForInfo(context, refactoringContext);
+    if (!success) return;
     refactoringContext.setRefactoring(myRefactoring);
     myRefactoring.doRefactor(context, refactoringContext);
     SModelDescriptor modelDescriptor = context.getModel();
