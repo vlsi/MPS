@@ -1,8 +1,8 @@
 package jetbrains.mps.generator.newGenerator;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.transformation.TLBase.structure.NodeMacro;
 
 import java.util.ArrayList;
@@ -12,6 +12,8 @@ import java.util.ArrayList;
  * Date: Jan 25, 2007
  */
 public class DelayedChanges {
+  private static final Logger LOG = Logger.getLogger(DelayedChanges.class);
+
   private ArrayList<ExecuteMapSrcNodeMacroChange> myExecuteMapSrcNodeMacroChanges = new ArrayList<ExecuteMapSrcNodeMacroChange>();
 
   public void addExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, TemplateModelGenerator_New generator) {
@@ -39,23 +41,17 @@ public class DelayedChanges {
     }
 
     public void doChange() {
-      SNode child = MacroUtil.executeMapSrcNodeMacro(myInputNode, myMapSrcMacro.getNode(), myChildToReplace.getParent(), myGenerator);
-      if (child != null) {
-        myChildToReplace.getParent().replaceChild(myChildToReplace, child);
+      try {
+        SNode child = MacroUtil.executeMapSrcNodeMacro(myInputNode, myMapSrcMacro.getNode(), myChildToReplace.getParent(), myGenerator);
+        if (child != null) {
+          myChildToReplace.getParent().replaceChild(myChildToReplace, child);
 
-        // check child because it's manual and thus error prone mapping
-        validateReferences(child);
-
-//        SModelUID inputModelUID = myGenerator.getSourceModel().getUID();
-//        for (SReference reference : child.getReferences()) {
-//          if (inputModelUID.equals(reference.getTargetModelUID())) {
-//            myGenerator.showWarningMessage(child, "reference '" + reference.getRole() + "' to input model in output node " + child.getDebugText());
-//            SNode targetNode = reference.getTargetNode();
-//            myGenerator.showInformationMessage(targetNode, " -- referent node: " + targetNode.getDebugText());
-//            myGenerator.showInformationMessage(myMapSrcMacro.getNode(), " -- template node (click here)");
-//            myGenerator.getGeneratorSessionContext().addTransientModelToKeep(myGenerator.getSourceModel());
-//          }
-//        }
+          // check child because it's manual and thus error prone mapping
+          validateReferences(child);
+        }
+      } catch (Throwable t) {
+        myGenerator.showErrorMessage(myInputNode, myMapSrcMacro.getNode(), "mapping failed: '" + t.getMessage() + "'");
+        LOG.error(t, myMapSrcMacro.getNode());
       }
     }
 
@@ -71,21 +67,17 @@ public class DelayedChanges {
     private void validateReference(SReference reference) {
       // reference to input model - illegal
       if (myGenerator.getSourceModel().getUID().equals(reference.getTargetModelUID())) {
-        if (reference instanceof StaticReference) {
-          // replace
-          reference.getSourceNode().removeReference(reference);
-          ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
-                  reference.getRole(),
-                  reference.getSourceNode(),
-                  myInputNode,
-                  reference.getTargetNode());
-          PostponedReference postponedReference = new PostponedReference(
-                  refInfo,
-                  myGenerator);
-          reference.getSourceNode().addReference(postponedReference);
-        } else {
-          // ???
-        }
+        // replace
+        reference.getSourceNode().removeReference(reference);
+        ReferenceInfo_CopiedInputNode refInfo = new ReferenceInfo_CopiedInputNode(
+                reference.getRole(),
+                reference.getSourceNode(),
+                myInputNode,
+                reference.getTargetNode());
+        PostponedReference postponedReference = new PostponedReference(
+                refInfo,
+                myGenerator);
+        reference.getSourceNode().addReference(postponedReference);
       }
     }
   }
