@@ -146,10 +146,10 @@ public class SubtypingManager {
       StructuralNodeSet<?> ancestors = new StructuralNodeSet();
       for (SNode node : frontier) {
         ancestors.addAllStructurally(collectImmediateSupertypes(node, isWeak));
-        for (SNode passedNode : yetPassed) {
-          ancestors.removeStructurally(passedNode);
-        }
-        ancestors.removeStructurally(node);
+        yetPassed.add(node);
+      }
+      for (SNode passedNode : yetPassed) {
+        ancestors.removeStructurally(passedNode);
       }
       ArrayList<SNode> ancestorsSorted = new ArrayList<SNode>(ancestors);
       Collections.sort(ancestorsSorted, new Comparator<SNode>() {
