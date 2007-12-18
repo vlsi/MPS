@@ -48,7 +48,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
   public Font getDefaultEditorFont() {
     return new Font(myFontFamily, 0, myFontSize);
-  }
+  } 
 
   public void setDefaultEditorFont(Font newFont) {
     myFontFamily = newFont.getFamily();
@@ -75,11 +75,12 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
   public Color getSelectionColor() {
     Color baseColor = UIManager.getColor("List.selectionBackground");
-    return new Color(baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue(), 96);
+    return baseColor;
   }
 
   public Color getRangeSelectionColor() {
-    return getSelectionColor();
+    Color bc = getSelectionColor();
+    return new Color(bc.getRed(), bc.getGreen(), bc.getBlue(), 128);
   }
 
   public boolean getUseLegacyTypesystem() {
