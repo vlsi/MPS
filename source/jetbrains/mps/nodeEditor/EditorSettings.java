@@ -34,8 +34,8 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
   private @Externalizable int myTextWidth = 500;
   private @Externalizable boolean myUseAntialiasing = true;
-  private @Externalizable Color mySelectionColor = new Color(0, 200, 255, 35);
-  private @Externalizable Color myRangeSelectionColor = new Color(255, 0, 255, 35);
+  private @Externalizable Color mySelectionColor = null;
+  private @Externalizable Color myRangeSelectionColor = null;
   private @Externalizable boolean myUseLegacyTypesystem = true;
 
   private CaretBlinker myCaretBlinker;
@@ -74,11 +74,17 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   }
 
   public Color getSelectionColor() {
+    if (mySelectionColor != null) {
+      return mySelectionColor;
+    }
     Color baseColor = UIManager.getColor("List.selectionBackground");
     return baseColor;
   }
 
   public Color getRangeSelectionColor() {
+    if (myRangeSelectionColor != null) {
+      return myRangeSelectionColor;
+    }
     return getSelectionColor();
   }
 
