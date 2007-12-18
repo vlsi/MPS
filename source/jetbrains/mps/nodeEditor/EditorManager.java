@@ -116,21 +116,6 @@ public class EditorManager {
     EditorCell result = createEditorCell(context, null, ReferencedNodeContext.createNodeContext(roleAttribute));
     EditorCell cellWithRolePopped = stack.pop();
     LOG.assertLog(cellWithRolePopped == cellWithRole);
-    //setting substitute info
-//    AnnotationLinkDeclaration linkDeclaration = (AnnotationLinkDeclaration) roleAttribute.findAnnotationLinkDeclaration(context.getOperationContext().getScope());
-//    if (linkDeclaration != null) {
-//      DefaultAttributeSubstituteInfo substituteInfo = new DefaultAttributeSubstituteInfo(cellWithRole.getSNode(), roleAttribute, linkDeclaration, context);
-//      result.setSubstituteInfo(substituteInfo);
-//      if (result instanceof EditorCell_Collection) {
-//        if (((EditorCell_Collection) result).containsCell(cellWithRole)) {
-//          for (EditorCell cell : ((EditorCell_Collection) result).contentCells()) {
-//            if (cell != cellWithRole && cell.getSubstituteInfo() == null) {
-//              cell.setSubstituteInfo(substituteInfo);
-//            }
-//          }
-//        }
-//      }
-//    }
     return result;
   }
 
@@ -245,9 +230,9 @@ public class EditorManager {
       LOG.error("Failed to create cell for node " + node.getDebugText(), e);
       nodeCell = new EditorCell_Error(context, node, "!exception!:" + node.getDebugText());
     } finally {
-      if (nodeCell != null) {
-        nodeCell.putUserObject(BIG_CELL_CONTEXT, refContext);
-        abstractEditorComponent.registerAsBigCell(nodeCell, refContext, this);
+      if (nodeCell != null) {        
+        nodeCell.putUserObject(BIG_CELL_CONTEXT, refContext.contextWihtNoAttributes());
+        abstractEditorComponent.registerAsBigCell(nodeCell, refContext.contextWihtNoAttributes() , this);
         nodeAccessListener.recordingFinishedForCell(nodeCell);
       }
       NodeReadAccessCaster.removeCellBuildNodeAccessListener();

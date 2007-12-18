@@ -12,6 +12,7 @@ import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;

@@ -53,6 +53,10 @@ public class ReferencedNodeContext {
     return result;
   }
 
+  public ReferencedNodeContext contextWihtNoAttributes() {
+    return new ReferencedNodeContext(getNode());
+  }
+
   public SNode getNode() {
     return myNodePointer.getNode();
   }
