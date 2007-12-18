@@ -227,7 +227,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
     // g.setColor(new Color(255, 0, 255, 30));
     for (SNode sNode : getNodes()) {
       EditorCell cell = myEditorComponent.findNodeCell(sNode);
-      if (cell != null) { // the paint may happen when the editor content is aldeary changed
+      if (cell != null) {
         boolean wasSelected = cell.isSelected();
         cell.setSelected(true);
         cell.paint(g);
