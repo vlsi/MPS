@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.helgins.sandbox.sb2">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
@@ -9,7 +10,7 @@
   <language namespace="jetbrains.mps.baseLanguage.blTypes" />
   <language namespace="jetbrains.mps.core" />
   <language namespace="jetbrains.mps.quotation" />
-  <maxImportIndex value="8" />
+  <maxImportIndex value="9" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
@@ -18,6 +19,7 @@
   <import index="6" modelUID="java.util@java_stub" version="-1" />
   <import index="7" modelUID="java.io@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
+  <import index="9" modelUID="jetbrains.mps.bootstrap.helgins.sandbox.sb1" version="-1" />
   <node type="jetbrains.mps.bootstrap.helgins.structure.InferenceRule" id="1194962178954">
     <property name="name" value="typeof_InferenceRule" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1194962178955">
@@ -60,6 +62,13 @@
     <node role="applicableNode" type="jetbrains.mps.bootstrap.helgins.structure.ConceptReference" id="1194962193426">
       <property name="name" value="inferenceRule" />
       <link role="concept" targetNodeId="8.1174643105530" resolveInfo="InferenceRule" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1198000897975">
+    <property name="name" value="BClass" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1198000897976" />
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198000974198">
+      <link role="classifier" targetNodeId="9.1186475525107" resolveInfo="AClass" />
     </node>
   </node>
 </model>
