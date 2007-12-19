@@ -4,6 +4,7 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
@@ -64,9 +65,9 @@ public abstract class BaseNode implements IResultProvider {
     myIsInvalidated = false;
     SearchResults results;
     if (isRoot()) {
-      monitor.start("find usages", getEstimatedTime(query.getScope()));
+      //monitor.start("find usages", getEstimatedTime(query.getScope()));
       results = doGetResults(query, monitor);
-      monitor.finish();
+      //monitor.finish();
     } else {
       results = doGetResults(query, monitor);
     }

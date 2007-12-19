@@ -15,7 +15,7 @@ public class FinderNode extends BaseLeaf {
   private static final String FINDER = "finder";
   private static final String CLASS_NAME = "class_name";
 
-  private static Logger LOG = Logger.getLogger(FinderNode.class);
+  private static final Logger LOG = Logger.getLogger(FinderNode.class);
 
   private BaseFinder myFinder;
 
@@ -36,17 +36,17 @@ public class FinderNode extends BaseLeaf {
   }
 
   public SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
-    monitor.addText(getTaskName() + " started");
-    monitor.startTask(getTaskName(), getTaskKind());
+    //monitor.addText(getTaskName() + " started");
+    //monitor.startTask(getTaskName(), getTaskKind());
     SearchResults results = myFinder.find(query);
-    monitor.finishTask();
-    monitor.addText(getTaskName() + " finished");
+    //monitor.finishTask();
+    //monitor.addText(getTaskName() + " finished");
 
     return results;
   }
 
   public long getEstimatedTime(IScope scope) {
-    return TaskProgressSettings.getInstance().getEstimatedTimeMillis(getTaskName());
+    return 0;//TaskProgressSettings.getInstance().getEstimatedTimeMillis(getTaskName());
   }
 
   public void write(Element element, MPSProject project) {
@@ -68,5 +68,4 @@ public class FinderNode extends BaseLeaf {
       LOG.error("Can't find finder " + finderName);
     }
   }
-
 }

@@ -42,17 +42,17 @@ public class FilterNode extends BaseNode {
   }
 
   public SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
-    monitor.addText(getTaskName() + " started");
-    monitor.startTask(getTaskName(), getTaskKind());
+    //monitor.addText(getTaskName() + " started");
+    //monitor.startTask(getTaskName(), getTaskKind());
     SearchResults results = myFilter.filter(myChildren.get(0).getResults(query, monitor));
-    monitor.finishTask(getTaskName());
-    monitor.addText(getTaskKind() + " finished");
+    //monitor.finishTask(getTaskName());
+    //monitor.addText(getTaskKind() + " finished");
 
     return results;
   }
 
   public long getEstimatedTime(IScope scope) {
-    return TaskProgressSettings.getInstance().getEstimatedTimeMillis(getTaskName());
+    return 0;//TaskProgressSettings.getInstance().getEstimatedTimeMillis(getTaskName());
   }
 
   public void write(Element element, MPSProject project) {
