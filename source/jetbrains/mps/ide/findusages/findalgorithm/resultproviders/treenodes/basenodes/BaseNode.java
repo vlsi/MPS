@@ -61,7 +61,7 @@ public abstract class BaseNode implements IResultProvider {
   public abstract SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor);
 
   public SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
-    myIsInvalidated = true;
+    myIsInvalidated = false;
     SearchResults results;
     if (isRoot()) {
       monitor.start("find usages", getEstimatedTime(query.getScope()));
@@ -82,12 +82,9 @@ public abstract class BaseNode implements IResultProvider {
   }
 
   public void invalidate() {
-    if (!isRoot()) {
-      if (!myIsInvalidated) {
-        ((BaseNode) myParent).invalidate();
-        myIsInvalidated = true;
-      }
-    }
+    if (myIsInvalidated) return;
+    if (!isRoot()) myParent.invalidate();
+    myIsInvalidated = true;
   }
 
   public void write(Element element, MPSProject project) {
