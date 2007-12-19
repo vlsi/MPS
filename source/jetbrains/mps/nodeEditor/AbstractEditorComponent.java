@@ -606,6 +606,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       if (!actions.isEmpty()) popupMenu.addSeparator();
 
       JMenu keyMapActions = new JMenu("KeyMap Actions");
+      keyMapActions.setBorder(null);
       keyMapActions.setIcon(MPSAction.EMPTY_ICON);
 
       for (final EditorCellKeyMapAction action : actions) {
