@@ -6,7 +6,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDecla
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.helgins.uiActions.ConvertQuotationsAction;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.command.CommandKind;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
@@ -14,6 +13,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
+import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
@@ -21,9 +22,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
-import jetbrains.mps.refactoring.framework.RefactoringContext;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
@@ -262,8 +262,13 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return;
   }
 
+  @Nullable
+  public IOperationContext getOperationContext() {
+    return findOperationContext();
+  }
+
   private IOperationContext findOperationContext() {
-    IOperationContext invocationContext = null;
+    IOperationContext operationContext = null;
     outer : for (IModule module : SModelRepository.getInstance().getOwners(this, IModule.class)) {
       if (module instanceof Generator) {
         module = ((Generator)module).getSourceLanguage();
@@ -272,12 +277,12 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       if (mpsModuleOwners == null) continue;
       for (MPSModuleOwner owner : mpsModuleOwners) {
         if (owner instanceof MPSProject) {
-          invocationContext = new ModuleContext(module, (MPSProject) owner);
+          operationContext = new ModuleContext(module, (MPSProject) owner);
           break outer;
         }
       }
     }
-    return invocationContext;
+    return operationContext;
   }
 
   private void addListenersToNewModel() {

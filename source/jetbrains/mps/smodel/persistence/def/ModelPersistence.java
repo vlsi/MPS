@@ -1,22 +1,23 @@
 package jetbrains.mps.smodel.persistence.def;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.v0.ModelReader0;
 import jetbrains.mps.smodel.persistence.def.v1.ModelReader1;
 import jetbrains.mps.smodel.persistence.def.v1.ModelWriter1;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.vfs.*;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.*;
+import java.io.IOException;
+import java.rmi.RemoteException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -197,8 +198,20 @@ public class ModelPersistence {
     try {
       if (!versionFile.exists()) {
         versionFile.createNewFile();
+        IOperationContext operationContext = model.getModelDescriptor().getOperationContext();
+        if (operationContext != null) {
+          IProjectHandler projectHandler = operationContext.getProject().getProjectHandler();
+          if (projectHandler != null) {
+            try {
+              projectHandler.addFilesToVCS(CollectionUtil.asList(versionFile.toFile()));
+            } catch (RemoteException e) {
+              LOG.error(e);
+            }
+          }
+        } else {
+          LOG.warning("can't find an operation context for a model "+model);
+        }
       }
-
       Document doc = new Document(new Element("version").setText("" + version));
       JDOMUtil.writeDocument(doc, versionFile);
     } catch (IOException ioe) {
@@ -211,7 +224,7 @@ public class ModelPersistence {
     if (versionFile.exists()) {
       try {
         Document versionDoc = JDOMUtil.loadDocument(versionFile);
-        return Integer.parseInt(versionDoc.getRootElement().getText());        
+        return Integer.parseInt(versionDoc.getRootElement().getText());
       } catch (JDOMException ex) {
         LOG.error(ex);
       } catch (IOException ex) {

@@ -6,6 +6,7 @@ import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
 
@@ -84,4 +85,7 @@ public interface SModelDescriptor {
   Object getUserObject(String key);
   void putUserObject(String key, Object value);
   void removeUserObject(String key);
+
+  @Nullable
+  IOperationContext getOperationContext();
 }
