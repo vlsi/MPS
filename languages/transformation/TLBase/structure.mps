@@ -5,7 +5,7 @@
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="9" />
+  <maxImportIndex value="10" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="6" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
@@ -1418,6 +1418,22 @@
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1195595382324">
       <property name="internalValue" value="post_processing" />
       <property name="externalValue" value="post-process output model" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198101033452">
+    <property name="name" value="TypeOrStringType" />
+    <link role="extends" targetNodeId="6.1068431790189" resolveInfo="Type" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1198101504257">
+      <property name="name" value="stringDescription" />
+      <link role="dataType" targetNodeId="2.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1198101462928">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="type" />
+      <link role="target" targetNodeId="6.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1198101169284">
+      <link role="conceptPropertyDeclaration" targetNodeId="2.1137473994950" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
 </model>
