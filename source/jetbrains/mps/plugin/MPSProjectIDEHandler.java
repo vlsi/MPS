@@ -4,11 +4,11 @@ import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.usageView.UseNewUsagesViewFlag;
-import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
-import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treebuilders.TreeBuilder;
-import jetbrains.mps.ide.usageView.findalgorithm.finders.AspectMethodsFinder;
-import jetbrains.mps.ide.usageView.view.NewUsagesView;
+import jetbrains.mps.ide.findusages.UseNewUsagesViewFlag;
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treebuilders.TreeBuilder;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.AspectMethodsFinder;
+import jetbrains.mps.ide.findusages.view.NewUsagesView;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.oldUsageView.UsagesModel_AspectMethods;
@@ -84,7 +84,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         public void run() {
           try {
             NewUsagesView usagesView = getProjectWindow().getUsagesView();
-            jetbrains.mps.ide.usageView.view.UsageView usageView = usagesView.createUsageView(new ProjectOperationContext(myProject));
+            jetbrains.mps.ide.findusages.view.UsageView usageView = usagesView.createUsageView(new ProjectOperationContext(myProject));
 
             usageView.setResultProvider(TreeBuilder.forFinder(new AspectMethodsFinder(applicableModelDescriptors, name)));
             ModuleContext moduleContext = new ModuleContext(BootstrapLanguages.getInstance().getBaseLanguage(), myProject);

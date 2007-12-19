@@ -1,7 +1,7 @@
-package jetbrains.mps.ide.usageView.view.options.components;
+package jetbrains.mps.ide.findusages.options.components;
 
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.usageView.view.options.options.ScopeOptions;
+import jetbrains.mps.ide.findusages.options.options.ScopeOptions;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;

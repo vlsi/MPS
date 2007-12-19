@@ -1,15 +1,16 @@
-package jetbrains.mps.ide.usageView.view.options.options;
+package jetbrains.mps.ide.findusages.options.options;
 
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
-public class ScopeOptions implements IExternalizableComponent {
-  public IScope myScope;
+public class ViewOptions implements IExternalizableComponent {
+  public boolean myShowOneResult;
+  public boolean myNewTab;
 
-  public ScopeOptions(IScope scope) {
-    myScope = scope;
+  public ViewOptions(boolean showOneResult, boolean newTab) {
+    myShowOneResult = showOneResult;
+    myNewTab = newTab;
   }
 
   public void read(Element element, MPSProject project) {

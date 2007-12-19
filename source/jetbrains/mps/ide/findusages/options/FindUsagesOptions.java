@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.usageView.view.options;
+package jetbrains.mps.ide.findusages.options;
 
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.logging.Logger;

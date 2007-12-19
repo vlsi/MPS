@@ -12,8 +12,8 @@
   <import index="5" modelUID="jetbrains.mps.findUsages@java_stub" version="-1"/>
   <import index="6" modelUID="java.util@java_stub" version="-1"/>
   <import index="7" modelUID="jetbrains.mps.smodel@java_stub" version="-1"/>
-  <import index="8" modelUID="jetbrains.mps.ide.usageView.model.searchquery@java_stub" version="-1"/>
-  <import index="9" modelUID="jetbrains.mps.ide.usageView.model.result@java_stub" version="-1"/>
+  <import index="8" modelUID="jetbrains.mps.ide.findusages.model.searchquery@java_stub" version="-1"/>
+  <import index="9" modelUID="jetbrains.mps.ide.findusages.model.result@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1197632773078">
     <property name="name" value="ConceptInstances"/>
     <property name="description" value="Concept Instances"/>

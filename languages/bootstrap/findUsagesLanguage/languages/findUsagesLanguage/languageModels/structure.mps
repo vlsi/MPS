@@ -11,8 +11,8 @@
   <import index="5" modelUID="java.lang@java_stub" version="-1"/>
   <import index="6" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>
   <import index="7" modelUID="jetbrains.mps.ide.newUsageView.model.saver@java_stub" version="-1"/>
-  <import index="8" modelUID="jetbrains.mps.ide.usageView.model.result@java_stub" version="-1"/>
-  <import index="9" modelUID="jetbrains.mps.ide.usageView.model.searchquery@java_stub" version="-1"/>
+  <import index="8" modelUID="jetbrains.mps.ide.findusages.model.result@java_stub" version="-1"/>
+  <import index="9" modelUID="jetbrains.mps.ide.findusages.model.searchquery@java_stub" version="-1"/>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197044478425">
     <property name="name" value="ConceptFunctionParameter_SearchQuery"/>
     <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter"/>
