@@ -28,6 +28,9 @@ public interface SModelDescriptor {
   String getStereotype();
   boolean isInitialized();
 
+  @Nullable
+  public Throwable getInitializationStackTrace();
+
   void addWeakModelListener(SModelListener listener);
   void addModelListener(SModelListener listener);
   void removeModelListener(SModelListener listener);

@@ -237,7 +237,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public String getNodeIdentifier() {
-    return getSModel().getUID().toString();
+    return myModelDescriptor.toString();
   }
 
   public String toString() {

@@ -47,6 +47,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private IFile myModelFile;
   private FastNodeFinder myFastNodeFinder;
   private List<IPostLoadRunnable> myPostLoadRunnables = new ArrayList<IPostLoadRunnable>(2);
+  private Throwable myInitializationStackTrace;
 
   private IModelRootManager myModelRootManager;
   private boolean myTransient;
@@ -131,7 +132,13 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   }
 
   protected SModel loadModel() {
+    myInitializationStackTrace = new Throwable();
     return myModelRootManager.loadModel(this);
+  }
+
+  @Nullable
+  public Throwable getInitializationStackTrace() {
+    return myInitializationStackTrace;
   }
 
   public void reloadFromDisk() {
@@ -239,7 +246,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
         modelDescriptors.add(modelDescriptor);
       }
       for (SModelDescriptor modelDescriptor : modelDescriptors) {
-    //    playUsedModelDescriptorsRefactoring(modelDescriptor);
+        playUsedModelDescriptorsRefactoring(modelDescriptor);
       }
     } finally {
       mySModel.setLoading(false);
