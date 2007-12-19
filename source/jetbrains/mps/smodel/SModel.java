@@ -11,11 +11,12 @@ import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.ForDebug;
-import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -998,6 +999,11 @@ public class SModel implements Iterable<SNode> {
 
   /*package*/ void increaseVersion() {
     myVersion++;
+    saveVersionFile();
+  }
+
+  private void saveVersionFile() {
+    ModelPersistence.writeVersionFile(this, getModelDescriptor().getModelFile());
   }
 
   public RefactoringHistory getRefactoringHistory() {

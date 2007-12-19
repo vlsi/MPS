@@ -186,7 +186,7 @@ public class ModelPersistence {
 
   private static IFile getVersionFile(IFile modelFile) {
     String modelPath = modelFile.getAbsolutePath();
-    String versionPath = modelPath.replace(".mps", ".version");
+    String versionPath = modelPath.substring(0, modelPath.length() - ".mps".length()) + ".version";
     return FileSystem.getFile(versionPath);
   }
 

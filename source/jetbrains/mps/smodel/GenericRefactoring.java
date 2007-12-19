@@ -102,4 +102,5 @@ public class GenericRefactoring {
     refactoringContext.setModelVersion(model.getVersion());
   }
 
+
 }
