@@ -5856,6 +5856,15 @@
         <property name="style" value="BOLD" />
       </node>
     </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1198104170947">
+      <property name="name" value="literal" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1198104178995">
+        <property name="color" value="DARK_BLUE" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1198104178996">
+        <property name="style" value="BOLD" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1195158756338">
     <property name="package" value="Rule.Consequence" />
@@ -6021,13 +6030,15 @@
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198101605403">
         <property name="text" value="&lt; type" />
-        <property name="nullText" value="&lt;none&gt;" />
+        <link role="styleClass" targetNodeId="1198104170947" resolveInfo="literal" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198101616733">
+        <property name="noTargetText" value="&lt;none&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1198101462928" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198101623813">
         <property name="text" value=" or string" />
+        <link role="styleClass" targetNodeId="1198104170947" resolveInfo="literal" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1198101644815">
         <property name="noTargetText" value="&lt;no description&gt;" />
@@ -6035,6 +6046,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198101722129">
         <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="1198104170947" resolveInfo="literal" />
       </node>
     </node>
   </node>
