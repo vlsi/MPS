@@ -6,6 +6,7 @@ import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basen
 import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -52,7 +53,7 @@ public class FilterNode extends BaseNode {
   }
 
   public long getEstimatedTime(IScope scope) {
-    return ModelsProgressUtil.getInstance().getModelsProgressHelper(getTaskKind()).estimateModelsTaskTimeMillis(scope.getModelDescriptors());
+    return TaskProgressSettings.getInstance().getEstimatedTimeMillis(getTaskName());
   }
 
   public void write(Element element, MPSProject project) {

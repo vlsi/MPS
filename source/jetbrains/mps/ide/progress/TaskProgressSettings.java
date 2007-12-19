@@ -34,7 +34,7 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
   private Map<String, Long> myTransientTaskKindsToEstimatedTime = new HashMap<String, Long>();
 
   private boolean myMeasurementInProgress = false;
-  private long myDefaultTimeMillis = 1;
+  private long myDefaultTimeMillis = 150;
 
   public static TaskProgressSettings getInstance() {
     return ApplicationComponents.getInstance().getComponent(TaskProgressSettings.class);
