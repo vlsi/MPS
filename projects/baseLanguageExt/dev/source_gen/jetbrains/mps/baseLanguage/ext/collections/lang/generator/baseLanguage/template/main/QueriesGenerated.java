@@ -43,7 +43,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1197933661521(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "creator", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapCreator");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "creator", true), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator");
   }
 
   public static boolean baseMappingRule_Condition_1197935213886(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

@@ -955,9 +955,9 @@
     <link role="conceptDeclaration" targetNodeId="1.1197686869805" resolveInfo="MapCreator" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197686911356">
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197686913905">
-        <property name="text" value="map" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1198082865184">
         <property name="textFgColor" value="DARK_BLUE" />
+        <link role="relationDeclaration" targetNodeId="2.1137473891462" resolveInfo="alias" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197686924626">
         <property name="text" value="&lt;" />

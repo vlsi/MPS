@@ -2809,7 +2809,7 @@
                 </node>
               </node>
               <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1197928513533">
-                <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapCreator" id="1197928513534">
+                <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.HashMapCreator" id="1197928513534">
                   <node role="keyType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197928513535">
                     <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
                   </node>

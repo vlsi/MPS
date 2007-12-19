@@ -622,7 +622,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197686869805">
     <property name="package" value="mapType" />
-    <property name="name" value="MapCreator" />
+    <property name="name" value="HashMapCreator" />
     <link role="extends" targetNodeId="2.1145552809883" resolveInfo="AbstractCreator" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1197687026896">
       <property name="metaClass" value="aggregation" />
@@ -637,12 +637,8 @@
       <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197686889666">
-      <property name="value" value="map" />
+      <property name="value" value="hashmap" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1197687012583">
-      <property name="value" value="hash map" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1197932370469">
