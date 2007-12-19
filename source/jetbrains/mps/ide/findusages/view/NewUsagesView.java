@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.usageView.view;
+package jetbrains.mps.ide.findusages.view;
 
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;

@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.usageView.view.icons;
+package jetbrains.mps.ide.findusages.view.icons;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;

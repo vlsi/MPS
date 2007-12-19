@@ -1,11 +1,11 @@
-package jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.containernodes;
+package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.containernodes;
 
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
-import jetbrains.mps.ide.usageView.findalgorithm.finders.BaseFinder;
-import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basenodes.BaseLeaf;
-import jetbrains.mps.ide.usageView.model.result.SearchResults;
-import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes.BaseLeaf;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;

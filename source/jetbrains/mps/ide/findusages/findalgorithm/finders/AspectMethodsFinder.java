@@ -1,8 +1,8 @@
-package jetbrains.mps.ide.usageView.findalgorithm.finders;
+package jetbrains.mps.ide.findusages.findalgorithm.finders;
 
-import jetbrains.mps.ide.usageView.model.result.SearchResult;
-import jetbrains.mps.ide.usageView.model.result.SearchResults;
-import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;

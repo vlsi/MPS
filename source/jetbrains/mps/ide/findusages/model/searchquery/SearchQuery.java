@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.usageView.model.searchquery;
+package jetbrains.mps.ide.findusages.model.searchquery;
 
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.components.ComponentsUtil;

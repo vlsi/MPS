@@ -1,7 +1,7 @@
-package jetbrains.mps.ide.usageView.findalgorithm.filters;
+package jetbrains.mps.ide.findusages.findalgorithm.filters;
 
 import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.ide.usageView.model.result.SearchResults;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 

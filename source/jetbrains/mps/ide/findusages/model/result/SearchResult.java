@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.usageView.model.result;
+package jetbrains.mps.ide.findusages.model.result;
 
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.components.ComponentsUtil;
