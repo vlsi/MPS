@@ -18,7 +18,7 @@ public class SReferenceUtil {
    */
   public static boolean isDynamicResolve(String role, SNode sourceNode) {
      return false;  // disable dynamic references
-    
+
 //    LinkDeclaration link = new ConceptAndSuperConceptsScope(sourceNode.getConceptDeclarationAdapter()).getMostSpecificLinkDeclarationByRole(role);
 //    if (link == null) {
 //      LOG.error("couldn't find link declaration '" + role + "' in concept '" + sourceNode.getConceptFqName() + "'", sourceNode);
