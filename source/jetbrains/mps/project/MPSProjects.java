@@ -10,6 +10,11 @@ import java.util.List;
  * Date: Mar 24, 2005
  */
 public class MPSProjects {
+
+  public static MPSProjects instance() {
+    return ApplicationComponents.getInstance().getComponent(MPSProjects.class);
+  }
+
   private ArrayList<MPSProject> myProjects = new ArrayList<MPSProject>();
   private ArrayList<IMPSProjectsListener> myMPSProjectsListeners = new ArrayList<IMPSProjectsListener>();
 
