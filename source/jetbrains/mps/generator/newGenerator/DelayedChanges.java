@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.newGenerator;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.transformation.TLBase.structure.NodeMacro;
@@ -44,10 +45,14 @@ public class DelayedChanges {
       try {
         SNode child = MacroUtil.executeMapSrcNodeMacro(myInputNode, myMapSrcMacro.getNode(), myChildToReplace.getParent(), myGenerator);
         if (child != null) {
-          myChildToReplace.getParent().replaceChild(myChildToReplace, child);
-
+          if (child.isRegistered()) {
+            // must be "in air"
+            child = CopyUtil.copy(child, child.getModel());
+          }
           // check child because it's manual and thus error prone mapping
           validateReferences(child);
+
+          myChildToReplace.getParent().replaceChild(myChildToReplace, child);
         }
       } catch (Throwable t) {
         myGenerator.showErrorMessage(myInputNode, myMapSrcMacro.getNode(), "mapping failed: '" + t.getMessage() + "'");
