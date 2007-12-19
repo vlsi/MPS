@@ -342,13 +342,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     addCellSelectionListener(new ICellSelectionListener() {
       public void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
-        if (!getEnabledIntentions().isEmpty()) {
-          showLightBulb();
+        if (getSelectedCell() != null) {
+          if (!getEnabledIntentions().isEmpty()) {
+            showLightBulb();
+          } else {
+            hideLightBulb();
+            //myLightBulb.setVisible(false);
+          }
+          myShowIntentionsAction.setEnabled(!getAvailableIntentions().isEmpty());
         } else {
           hideLightBulb();
-          //myLightBulb.setVisible(false);
+          myShowIntentionsAction.setEnabled(false);
         }
-        myShowIntentionsAction.setEnabled(!getAvailableIntentions().isEmpty());
       }
     });
 
