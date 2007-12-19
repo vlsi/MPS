@@ -40,7 +40,7 @@ public class EnumMemberReference_enumMember_ReferentConstraint implements IModel
     return false;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     DataTypeDeclaration datatype = SModelLanguageUtil.getDatatypeFromLeft_SPropertyAccess(((SNodeOperation)SNodeOperations.getAdapter(enclosingNode)));
     SNode datatypeNode = datatype.getNode();
     return new SimpleSearchScope(SLinkOperations.getTargets(datatypeNode, "member", true));
