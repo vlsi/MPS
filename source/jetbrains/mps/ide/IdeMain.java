@@ -54,6 +54,7 @@ public class IdeMain {
     defaults.put("ToolBar.font", font);
     defaults.put("ToolTip.font", font);
     defaults.put("Tree.font", font);
+
   }
 
   private static void installFocusKiller() {
