@@ -937,7 +937,6 @@
       <option name="ENV_VARIABLES" />
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="MPS" />
-      <envs />
       <RunnerSettings RunnerId="Debug">
         <option name="DEBUG_PORT" value="4051" />
         <option name="TRANSPORT" value="0" />
@@ -1976,6 +1975,14 @@
       </CLASSES>
       <JAVADOC />
       <SOURCES />
+    </library>
+    <library name="ant-1.7.0">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/lib/ant-1.7.0/lib" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file://$PROJECT_DIR$/lib/ant-1.7.0/lib" recursive="false" />
     </library>
   </component>
   <component name="uidesigner-configuration">

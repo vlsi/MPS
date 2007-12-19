@@ -7,6 +7,8 @@
       <sourceFolder url="file://$MODULE_DIR$/languages/buildlanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.buildlanguage.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.buildlanguage.sandbox/sources" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
@@ -20,6 +22,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="ant-1.7.0" level="project" />
     <orderEntryProperties />
   </component>
 </module>
