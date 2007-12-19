@@ -1,6 +1,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.projectLanguage.structure.ModelRoot;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -91,4 +92,9 @@ public interface SModelDescriptor {
 
   @Nullable
   IOperationContext getOperationContext();
+
+  @Nullable
+  IModule getModule();
+
+  Set<IModule> getModules();
 }

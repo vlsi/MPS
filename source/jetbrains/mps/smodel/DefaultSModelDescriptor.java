@@ -276,7 +276,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   private IOperationContext findOperationContext() {
     IOperationContext operationContext = null;
-    outer : for (IModule module : SModelRepository.getInstance().getOwners(this, IModule.class)) {
+    outer : for (IModule module : getModules()) {
       if (module instanceof Generator) {
         module = ((Generator)module).getSourceLanguage();
       }
@@ -290,6 +290,19 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       }
     }
     return operationContext;
+  }
+
+  public Set<IModule> getModules() {
+    return SModelRepository.getInstance().getOwners(this, IModule.class);
+  }
+
+  @Nullable
+  public IModule getModule() {
+    Set<IModule> modules = getModules();
+    if (!modules.isEmpty()) {
+      return modules.iterator().next();
+    }
+    return null;
   }
 
   private void addListenersToNewModel() {
@@ -647,7 +660,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   public Set<ModelRoot> collectModelRoots() {
     Set<ModelRoot> result = new HashSet<ModelRoot>();
     IFile sourceFile = this.getModelFile();
-    Set<IModule> modelOwners = SModelRepository.getInstance().getOwners(this, IModule.class);
+    Set<IModule> modelOwners = getModules();
     for (IModule module : modelOwners) {
       for (ModelRoot modelRoot : module.getModelRoots()) {
         if (this.getModelUID().toString().equals(PathManager.getModelUIDString(sourceFile, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix()))) {
