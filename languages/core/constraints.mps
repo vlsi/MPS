@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.core.constraints">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
@@ -186,6 +187,18 @@
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196979238662">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1196979246084">
             <property name="value" value="nothing - resolveInfo is read-only" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1198103196215">
+      <link role="applicableProperty" targetNodeId="1.1198103150854" resolveInfo="resolveInfoDescription" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1198103205747">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198103205748">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198103213517">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198103213518">
+              <property name="value" value="name" />
+            </node>
           </node>
         </node>
       </node>

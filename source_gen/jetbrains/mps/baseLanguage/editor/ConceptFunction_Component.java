@@ -167,10 +167,10 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   public EditorCell createCellModel_ModelAccess(EditorContext context, SNode node) {
     ModelAccessor modelAccessor = this._modelAcessorFactory_1196975453808(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     ConceptFunction_Component.setupBasic_CellModel_ModelAccess(editorCell, node, context);
     ConceptFunction_Component.setupLabel_CellModel_ModelAccess(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     return editorCell;
   }
 

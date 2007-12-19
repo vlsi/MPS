@@ -7,9 +7,14 @@ import jetbrains.mps.smodel.INodeAdapter;
 public interface IResolveInfo extends INodeAdapter {
   public static final String concept = "jetbrains.mps.core.structure.IResolveInfo";
   public static String RESOLVE_INFO = "resolveInfo";
+  public static String RESOLVE_INFO_DESCRIPTION = "resolveInfoDescription";
 
   public String getResolveInfo();
 
   public void setResolveInfo(String value);
+
+  public String getResolveInfoDescription();
+
+  public void setResolveInfoDescription(String value);
 
 }

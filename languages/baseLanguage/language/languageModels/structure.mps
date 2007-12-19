@@ -158,6 +158,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1068498886292">
     <property name="name" value="ParameterDeclaration" />
     <link role="extends" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198103547463">
+      <property name="value" value="parameter" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1196979381892">
       <link role="intfc" targetNodeId="4.1196978630214" resolveInfo="IRefInfo" />
     </node>

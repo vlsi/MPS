@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.constraints">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
@@ -2474,13 +2475,13 @@
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181704962">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181704963" />
     </node>
-    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1156242279897">
-      <link role="applicableProperty" targetNodeId="2.1156234966388" />
-      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1156242316699">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1156242316700">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1156242318295">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1156242322688">
-              <property name="value" value="parameter" />
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1198103358602">
+      <link role="applicableProperty" targetNodeId="2.1198103150854" resolveInfo="resolveInfoDescription" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1198103367838">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198103367839">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198103400210">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198103400211">
+              <property name="value" value="parameter name" />
             </node>
           </node>
         </node>
