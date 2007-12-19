@@ -61,7 +61,7 @@ public class PostponedReference extends SReference {
     if (targetNode != null) {
       myReplacementReference = new StaticReference(role, outputSourceNode, targetNode);
     } else if (SReferenceUtil.isDynamicResolve(role, outputSourceNode)) {
-      myGenerator.showInformationMessage(outputSourceNode, "!!!create dynamic!!!");
+//      myGenerator.showInformationMessage(outputSourceNode, "!!!create dynamic!!!");
       myReplacementReference = new DynamicReference(
               role,
               outputSourceNode,
