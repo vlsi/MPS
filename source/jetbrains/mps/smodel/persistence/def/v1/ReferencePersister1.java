@@ -101,7 +101,21 @@ import org.jdom.Element;
       return null;
     }
 
-    return SReference.create(this.getRole(),
+//    return SReference.create(this.getRole(),
+//            this.getSourceNode(),
+//            importedModelUID,
+//            SNodeId.fromString(this.getTargetId()),
+//            this.getResolveInfo());
+
+    if (this.getTargetId().equals("^")) {
+      return new DynamicReference(
+              this.getRole(),
+              this.getSourceNode(),
+              importedModelUID,
+              this.getResolveInfo());
+    }
+    return new StaticReference(
+            this.getRole(),
             this.getSourceNode(),
             importedModelUID,
             SNodeId.fromString(this.getTargetId()),
@@ -160,7 +174,7 @@ import org.jdom.Element;
       }
     }
 
-    String targetNodeId = (reference instanceof StaticReference) ? ((StaticReference) reference).getTargetNodeId().toString() : "";
+    String targetNodeId = (reference instanceof StaticReference) ? ((StaticReference) reference).getTargetNodeId().toString() : "^";
     targetNodeId = targetModelInfo + targetNodeId;
     linkElement.setAttribute(ModelPersistence.TARGET_NODE_ID, targetNodeId);
     String resolveInfo = reference.getResolveInfo();

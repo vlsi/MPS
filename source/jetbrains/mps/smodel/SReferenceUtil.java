@@ -17,20 +17,20 @@ public class SReferenceUtil {
    * @param role - genuine role
    */
   public static boolean isDynamicResolve(String role, SNode sourceNode) {
-    return false;
+//     return false;  // disable dynamic references
+    
+    LinkDeclaration link = new ConceptAndSuperConceptsScope(sourceNode.getConceptDeclarationAdapter()).getMostSpecificLinkDeclarationByRole(role);
+    if (link == null) {
+      LOG.error("couldn't find link declaration '" + role + "' in concept '" + sourceNode.getConceptFqName() + "'", sourceNode);
+      return false;
+    }
 
-//    LinkDeclaration link = new ConceptAndSuperConceptsScope(sourceNode.getConceptDeclarationAdapter()).getMostSpecificLinkDeclarationByRole(role);
-//    if (link == null) {
-//      LOG.error("couldn't find link declaration '" + role + "' in concept '" + sourceNode.getConceptFqName() + "'", sourceNode);
-//      return false;
-//    }
-//
-//    AbstractConceptDeclaration target = link.getTarget();
-//    if (target == null) {
-//      LOG.error("link target is not defined", link);
-//      return false;
-//    }
-//
-//    return SModelUtil_new.isAssignableConcept(target, IResolveInfo.concept);
+    AbstractConceptDeclaration target = link.getTarget();
+    if (target == null) {
+      LOG.error("link target is not defined", link);
+      return false;
+    }
+
+    return SModelUtil_new.isAssignableConcept(target, IResolveInfo.concept);
   }
 }

@@ -39,14 +39,22 @@ public class CloneUtil {
         LOG.warning("broken reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
       } else {
         if (reference instanceof StaticReference) {
-          StaticReference reference1 = new StaticReference(reference.getRole(),
+          StaticReference outputReference = new StaticReference(
+                  reference.getRole(),
                   outputNode,
                   targetModelUID,
                   ((StaticReference) reference).getTargetNodeId(),
                   reference.getResolveInfo());
-          outputNode.addReference(reference1);
+          outputNode.addReference(outputReference);
+        } else if (reference instanceof DynamicReference) {
+          DynamicReference outputReference = new DynamicReference(
+                  reference.getRole(),
+                  outputNode,
+                  targetModelUID,
+                  reference.getResolveInfo());
+          outputNode.addReference(outputReference);
         } else {
-          LOG.error("internal error: can't clone non-static reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
+          LOG.error("internal error: can't clone reference '" + reference.getRole() + "' in " + inputNode.getDebugText(), inputNode);
           LOG.error(" -- was refernce class : " + reference.getClass().getName());
         }
       }
