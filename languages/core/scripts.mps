@@ -20,7 +20,7 @@
   <import index="10" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198076144993">
     <property name="name" value="MoveNodes" />
-    <property name="userFriendlyName" value="Move Nodes" />
+    <property name="userFriendlyName" value="Move Nodes (under construction, don't use)" />
     <node role="internalArguments" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1198079405212">
       <property name="name" value="role" />
       <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198079409620">
@@ -367,6 +367,89 @@
             <property name="value" value="false" />
           </node>
         </node>
+      </node>
+    </node>
+    <node role="doRefactorClause" type="jetbrains.mps.logging.refactoring.structure.DoRefactorClause" id="1198082838885">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198082838886">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198082944516">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198082944517">
+            <property name="name" value="nodes" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1198082944518" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198082944519">
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeListType" id="1198082944520" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198082944521">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getNodes():java.util.List" resolveInfo="getNodes" />
+                <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1198082944522" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198082954071">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198082954072">
+            <node role="statement" type="jetbrains.mps.logging.refactoring.structure.MoveNodesToModelOperation" id="1198083013990">
+              <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198083173017">
+                <link role="variableDeclaration" targetNodeId="1198082944517" resolveInfo="nodes" />
+              </node>
+              <node role="destination" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198083178112">
+                <node role="expression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198083184741">
+                  <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
+                </node>
+                <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1198083180646" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1198083001642">
+            <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198083004661">
+              <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198082991405">
+              <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198083016323">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198083016324">
+            <node role="statement" type="jetbrains.mps.logging.refactoring.structure.MoveNodesToNodeOperation" id="1198083047398">
+              <node role="roleInTarget" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198083251368">
+                <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getRole_():java.lang.String" resolveInfo="getRole_" />
+                <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1198083244660">
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1198083237578">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198083236577">
+                      <link role="variableDeclaration" targetNodeId="1198082944517" resolveInfo="nodes" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetElementOperation" id="1198083238595">
+                      <node role="argument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198083242034">
+                        <property name="value" value="0" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198083221571">
+                <link role="variableDeclaration" targetNodeId="1198082944517" resolveInfo="nodes" />
+              </node>
+              <node role="destination" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198083227509">
+                <node role="expression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198083233013">
+                  <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
+                </node>
+                <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198083230106" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="1198083023187">
+            <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198083029909">
+              <link role="classifier" targetNodeId="5.~SNode" resolveInfo="SNode" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198083021530">
+              <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="updateModelClause" type="jetbrains.mps.logging.refactoring.structure.UpdateModelClause" id="1198082847528">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198082847529">
+        <node role="statement" type="jetbrains.mps.logging.refactoring.structure.UpdateModelByDefaultOperation" id="1198082938234" />
       </node>
     </node>
   </node>
