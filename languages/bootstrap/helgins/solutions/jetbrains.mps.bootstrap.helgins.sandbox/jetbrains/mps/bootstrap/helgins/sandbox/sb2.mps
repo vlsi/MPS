@@ -66,6 +66,25 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1198000897975">
     <property name="name" value="BClass" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1198073342670">
+      <property name="name" value="foobar" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198073342671" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1198073342672" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198073342673">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198073370731">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198073371999">
+            <link role="baseMethodDeclaration" targetNodeId="9.1186475535905" resolveInfo="foo" />
+            <link role="classConcept" targetNodeId="9.1186475525107" resolveInfo="AClass" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198073381541">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198073383027">
+            <link role="baseMethodDeclaration" targetNodeId="9.1198073337805" resolveInfo="bar" />
+            <link role="classConcept" targetNodeId="9.1186475525107" resolveInfo="AClass" />
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1198000897976" />
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198000974198">
       <link role="classifier" targetNodeId="9.1186475525107" resolveInfo="AClass" />
