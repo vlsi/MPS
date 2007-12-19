@@ -1,4 +1,4 @@
-package jetbrains.mps.ide.findusages.options.options;
+package jetbrains.mps.ide.findusages.optionseditor.options;
 
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;

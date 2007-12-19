@@ -1,6 +1,6 @@
-package jetbrains.mps.ide.findusages.options.components;
+package jetbrains.mps.ide.findusages.optionseditor.components;
 
-import jetbrains.mps.ide.findusages.options.options.ViewOptions;
+import jetbrains.mps.ide.findusages.optionseditor.options.ViewOptions;
 
 import javax.swing.*;
 
