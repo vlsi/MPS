@@ -22,6 +22,7 @@ public class ModelsProgressUtil {
   private Map<String, ModelsProgressHelper> myTaskKindsToModelsProgressHelpers = new HashMap<String, ModelsProgressHelper>();
 
   public static final String TASK_KIND_GENERATION = "tk_generation";
+  public static final String TASK_KIND_FIND_NODE_USAGES = "tk_findNodeUsages";
   public static final String TASK_KIND_FIND_USAGES = "tk_findUsages";
   public static final String TASK_KIND_FIND_INSTANCES = "tk_findInstances";
   public static final String TASK_NAME_COMPILE_ON_GENERATION = "tn_compileOnGeneration";
@@ -46,8 +47,6 @@ public class ModelsProgressUtil {
     return modelsProgressHelper;
   }
 
-
-
   // non-generic utilities:
 
   public static String generationModelTaskName(SModelDescriptor modelDescriptor) {
@@ -58,16 +57,16 @@ public class ModelsProgressUtil {
     return getInstance().getModelsProgressHelper(TASK_KIND_GENERATION).estimateModelsTaskTimeMillis(models);
   }
 
-  public static String findUsagesModelTaskName(SModelDescriptor modelDescriptor) {
-    return getInstance().getModelsProgressHelper(TASK_KIND_FIND_USAGES).modelTaskName(modelDescriptor);
+  public static String findNodeUsagesModelTaskName(SModelDescriptor modelDescriptor) {
+    return getInstance().getModelsProgressHelper(TASK_KIND_FIND_NODE_USAGES).modelTaskName(modelDescriptor);
   }
 
   public static String checkModelTaskName(SModelDescriptor modelDescriptor) {
     return getInstance().getModelsProgressHelper(TASK_KIND_CHECK_MODELS).modelTaskName(modelDescriptor);
   }
 
-  public static long estimateFindUsagesTimeMillis(Collection<SModelDescriptor> models) {
-    return getInstance().getModelsProgressHelper(TASK_KIND_FIND_USAGES).estimateModelsTaskTimeMillis(models);
+  public static long estimateFindNodeUsagesTimeMillis(Collection<SModelDescriptor> models) {
+    return getInstance().getModelsProgressHelper(TASK_KIND_FIND_NODE_USAGES).estimateModelsTaskTimeMillis(models);
   }
 
   public static String findInstancesModelTaskName(SModelDescriptor modelDescriptor) {
@@ -128,7 +127,7 @@ public class ModelsProgressUtil {
 
   public static long estimateModelGenerationTimeMillis(SModel model, boolean isPrimaryMapping) {
     String taskName = getInstance().getModelsProgressHelper(TASK_KIND_GENERATION).modelTaskName(model.getUID());
-    double koef = isPrimaryMapping ? 1/3 : 2/3;
+    double koef = isPrimaryMapping ? 1 / 3 : 2 / 3;
     long modelTimeMillis = TaskProgressSettings.getInstance().getEstimatedTimeMillis(taskName);
     return (long) (((double) modelTimeMillis) * koef);
   }

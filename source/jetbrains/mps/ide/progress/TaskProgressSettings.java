@@ -18,18 +18,23 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
 
   private static Logger LOG = Logger.getLogger(TaskProgressSettings.class);
 
-  private long myDefaultTaskTime = 150;
+  private
+  @Externalizable
+  Map<String, Long> myTasksToEstimatedTime = new HashMap<String, Long>();
 
-  private @Externalizable Map<String , Long> myTasksToEstimatedTime = new HashMap<String, Long>();
+  private
+  @Externalizable
+  Map<String, String> myTasksToTaskKinds = new HashMap<String, String>();
 
-  private @Externalizable Map<String, String> myTasksToTaskKinds = new HashMap<String, String>();
-
-  private @Externalizable Map<String, Long> myTaskKindsToEstimatedTime = new HashMap<String, Long>();
+  private
+  @Externalizable
+  Map<String, Long> myTaskKindsToEstimatedTime = new HashMap<String, Long>();
 
   private Map<String, Long> myTransientTasksToEstimatedTime = new HashMap<String, Long>();
   private Map<String, Long> myTransientTaskKindsToEstimatedTime = new HashMap<String, Long>();
 
   private boolean myMeasurementInProgress = false;
+  private long myDefaultTimeMillis = 1;
 
   public static TaskProgressSettings getInstance() {
     return ApplicationComponents.getInstance().getComponent(TaskProgressSettings.class);
@@ -78,9 +83,8 @@ public class TaskProgressSettings extends DefaultExternalizableComponent {
         if (kindTime != null) return kindTime;
       }
     }
-    return myDefaultTaskTime;
+    return myDefaultTimeMillis;
   }
-
 
   public void registerTaskKind(String taskName, String taskKind) {
     myTasksToTaskKinds.put(taskName, taskKind);

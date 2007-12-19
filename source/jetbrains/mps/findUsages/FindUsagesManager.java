@@ -55,6 +55,7 @@ public class FindUsagesManager {
    * <p>
    * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
    * </p>
+   *
    * @param node
    * @param scope
    * @param progress
@@ -66,6 +67,7 @@ public class FindUsagesManager {
 
   /**
    * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
+   *
    * @param nodes
    * @param scope
    * @param progress
@@ -78,14 +80,14 @@ public class FindUsagesManager {
 
       if (progress == null) progress = IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR;
       List<SModelDescriptor> models = scope.getModelDescriptors();
-      long estimatedTime = ModelsProgressUtil.estimateFindUsagesTimeMillis(models);
+      long estimatedTime = ModelsProgressUtil.estimateFindNodeUsagesTimeMillis(models);
 
-      progress.startTaskAnyway(ModelsProgressUtil.TASK_KIND_FIND_USAGES, null, estimatedTime);
+      progress.startTaskAnyway(ModelsProgressUtil.TASK_KIND_FIND_NODE_USAGES, null, estimatedTime);
       progress.addText("Finding usages...");
 
       for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
-        String taskName = ModelsProgressUtil.findUsagesModelTaskName(model);
-        progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_USAGES);
+        String taskName = ModelsProgressUtil.findNodeUsagesModelTaskName(model);
+        progress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_FIND_NODE_USAGES);
         result.addAll(model.findUsages(nodes));
         if (progress.isCanceled()) {
           progress.finishAnyway();
@@ -93,7 +95,7 @@ public class FindUsagesManager {
         }
         progress.finishTask(taskName);
       }
-      progress.finishTask(ModelsProgressUtil.TASK_KIND_FIND_USAGES);
+      progress.finishTask(ModelsProgressUtil.TASK_KIND_FIND_NODE_USAGES);
       return result;
     } finally {
       // progress.finishSomehow();
@@ -105,6 +107,7 @@ public class FindUsagesManager {
    * <p>
    * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
    * </p>
+   *
    * @param conceptDeclaration
    * @param scope
    * @return
@@ -116,6 +119,7 @@ public class FindUsagesManager {
 
   /**
    * <strong>NB!</strong> This method is long-running, don't use where execution time is critical.
+   *
    * @param concept
    * @param scope
    * @param progress
@@ -145,7 +149,7 @@ public class FindUsagesManager {
       progress.finishTask(ModelsProgressUtil.TASK_KIND_FIND_INSTANCES);
       return result;
     } finally {
-     // progress.finishSomehow();
+      // progress.finishSomehow();
     }
   }
 

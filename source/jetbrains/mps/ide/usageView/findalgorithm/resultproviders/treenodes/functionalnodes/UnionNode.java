@@ -8,9 +8,9 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 
 public class UnionNode extends BaseNode {
-  public SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
+  public SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
     SearchResults results = new SearchResults();
-    for (BaseLeaf child : myChildren) {
+    for (BaseNode child : myChildren) {
       SearchResults childResults = child.getResults(query, monitor);
       results.getSearchResults().addAll(childResults.getSearchResults());
       results.getSearchedNodePointers().addAll(childResults.getSearchedNodePointers());

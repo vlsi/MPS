@@ -8,34 +8,26 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jdom.Element;
 
-public abstract class BaseLeaf implements IResultProvider {
-  protected BaseNode myParent;
+import java.util.List;
 
+public abstract class BaseLeaf extends BaseNode {
   public BaseLeaf() {
 
   }
 
-  public abstract SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor);
-
-  public void setParent(BaseNode parent) {
-    myParent = parent;
+  public void addChild(BaseNode child) {
+    throw new UnsupportedOperationException("add child to leaf node");
   }
 
-  public BaseNode getParent() {
-    return myParent;
+  public void removeChild(BaseNode child) {
+    throw new UnsupportedOperationException("remove child from leaf node");
   }
 
-  public void invalidate() {
-    if (myParent != null) {
-      ((BaseNode) myParent).invalidate();
-    }
+  public void clearChildren() {
+    throw new UnsupportedOperationException("clear children in leaf node");
   }
 
-  public void write(Element element, MPSProject project) {
-
-  }
-
-  public void read(Element element, MPSProject project) {
-
+  public List<BaseNode> getChildren() {
+    throw new UnsupportedOperationException("get children in leaf node");
   }
 }

@@ -6,9 +6,10 @@ import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basen
 import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
 import org.jdom.Element;
 
 public class FilterNode extends BaseNode {
@@ -32,17 +33,26 @@ public class FilterNode extends BaseNode {
     super.addChild(child);
   }
 
-  public SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
-    String taskName = myFilter.getDescription();
-    String taskKind = "filter";
+  public String getTaskName() {
+    return myFilter.getDescription();
+  }
 
-    monitor.addText(taskName + " started");
-    monitor.startTask(taskName, taskKind);
+  public String getTaskKind() {
+    return "filter";
+  }
+
+  public SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
+    monitor.addText(getTaskName() + " started");
+    monitor.startTask(getTaskName(), getTaskKind());
     SearchResults results = myFilter.filter(myChildren.get(0).getResults(query, monitor));
-    monitor.finishTask(taskName);
-    monitor.addText(taskName + " finished");
+    monitor.finishTask(getTaskName());
+    monitor.addText(getTaskKind() + " finished");
 
     return results;
+  }
+
+  public long getEstimatedTime(IScope scope) {
+    return ModelsProgressUtil.getInstance().getModelsProgressHelper(getTaskKind()).estimateModelsTaskTimeMillis(scope.getModelDescriptors());
   }
 
   public void write(Element element, MPSProject project) {

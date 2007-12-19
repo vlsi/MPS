@@ -2,18 +2,18 @@ package jetbrains.mps.ide.usageView.view;
 
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IGenerationScript;
 import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treebuilders.TreeBuilder;
 import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basenodes.BaseNode;
 import jetbrains.mps.ide.usageView.model.IResultProvider;
 import jetbrains.mps.ide.usageView.model.result.SearchResult;
+import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.ScopeNotFoundException;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.usageView.view.icons.Icons;
@@ -22,8 +22,6 @@ import jetbrains.mps.ide.usageView.view.usagesTree.path.IPathProvider;
 import jetbrains.mps.ide.usageView.view.usagesTree.path.concretepathproviders.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
@@ -205,10 +203,7 @@ public abstract class UsageView implements IExternalizableComponent {
     mySearchQuery = query;
     Thread t = new Thread() {
       public void run() {
-        IAdaptiveProgressMonitor monitor = myProjectFrame.createAdaptiveProgressMonitor();
-        monitor.start("find usages", 10000);
-        myTree.setContents(myResultProvider.getResults(mySearchQuery, monitor));
-        monitor.finish();
+        myTree.setContents(myResultProvider.getResults(mySearchQuery, myProjectFrame.createAdaptiveProgressMonitor()));
       }
     };
     t.start();

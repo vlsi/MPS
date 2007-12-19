@@ -5,9 +5,10 @@ import jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basen
 import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.IScope;
 import org.jdom.Element;
 
 public class FinderNode extends BaseLeaf {
@@ -26,17 +27,26 @@ public class FinderNode extends BaseLeaf {
     myFinder = finder;
   }
 
-  public SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
-    String taskName = myFinder.getDescription();
-    String taskKind = "finder";
+  public String getTaskName() {
+    return myFinder.getDescription();
+  }
 
-    monitor.addText(taskName + " started");
-    monitor.startTask(taskName, taskKind);
+  public String getTaskKind() {
+    return "finder";
+  }
+
+  public SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
+    monitor.addText(getTaskName() + " started");
+    monitor.startTask(getTaskName(), getTaskKind());
     SearchResults results = myFinder.find(query);
     monitor.finishTask();
-    monitor.addText(taskName + " finished");
+    monitor.addText(getTaskName() + " finished");
 
     return results;
+  }
+
+  public long getEstimatedTime(IScope scope) {
+    return ModelsProgressUtil.getInstance().getModelsProgressHelper(getTaskKind()).estimateModelsTaskTimeMillis(scope.getModelDescriptors());
   }
 
   public void write(Element element, MPSProject project) {
