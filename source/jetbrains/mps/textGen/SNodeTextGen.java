@@ -1,10 +1,8 @@
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.messages.IMessageHandler;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.*;
 
 /**
  * Author: Sergey Dmitriev
@@ -83,6 +81,28 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
 
   protected final void putUserObject(Object key, Object o) {
     myBuffer.putUserObject(key, o);
+  }
+
+  protected void foundError() {
+    getBuffer().foundError();
+  }
+
+
+  /**
+   * @param role - must be 'genuine role'
+   *             todo: tmp
+   */
+  protected String getReferentResolveInfoOrName(String role, SNode sourceNode) {
+    SReference reference = sourceNode.getReference(role);
+    if (reference instanceof DynamicReference) {
+      return reference.getResolveInfo();
+    }
+    SNode targetNode = reference.getTargetNode();
+    if (targetNode == null) {
+      foundError();
+      return "???";
+    }
+    return targetNode.getName();
   }
 
 }

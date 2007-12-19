@@ -42,7 +42,16 @@ public abstract class SReference {
     return mySourceNode;
   }
 
-  public abstract SNode getTargetNode();
+  public final SNode getTargetNode() {
+    SNode targetNode = getTargetNode_internal();
+    if (targetNode != null) {
+      // moved here from SNode.getReference(role)
+      NodeReadEventsCaster.fireNodeReferentReadAccess(mySourceNode, myRole, targetNode);
+    }
+    return targetNode;
+  }
+
+  protected abstract SNode getTargetNode_internal();
 
   public abstract SModelUID getTargetModelUID();
 

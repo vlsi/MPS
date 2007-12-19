@@ -35,7 +35,7 @@ public class PostponedReference extends SReference {
     throw new RuntimeException("not supported");
   }
 
-  public SNode getTargetNode() {
+  protected SNode getTargetNode_internal() {
     SReference ref = getReplacementReference();
     if (ref == null) return null;
     return ref.getTargetNode();

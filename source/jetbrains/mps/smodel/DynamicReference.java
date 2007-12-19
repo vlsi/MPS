@@ -19,8 +19,6 @@ import org.jetbrains.annotations.NotNull;
 public class DynamicReference extends SReferenceBase {
   private SNode myTargetNode;        // young
 
-  private LinkDeclaration myMostSpecificLinkForRole;
-
   public DynamicReference(@NotNull String role, @NotNull SNode sourceNode, @NotNull SNode targetNode) {
     // 'young' reference
     super(role, sourceNode, null, false);
@@ -48,7 +46,7 @@ public class DynamicReference extends SReferenceBase {
   }
 
 
-  public SNode getTargetNode() {
+  protected SNode getTargetNode_internal() {
     if (!mature()) {
       return myTargetNode;
     }
@@ -71,16 +69,14 @@ public class DynamicReference extends SReferenceBase {
       return null;
     }
 
-    if (myMostSpecificLinkForRole == null) {
-      myMostSpecificLinkForRole = new ConceptAndSuperConceptsScope(sourceNodeConcept).getMostSpecificLinkDeclarationByRole(getRole());
-      if (myMostSpecificLinkForRole == null) {
-        error("couldn't find link declaration '" + getRole() + "' in concept '" + getSourceNode().getConceptFqName() + "'");
-        return null;
-      }
+    LinkDeclaration mostSpecificForRole = new ConceptAndSuperConceptsScope(sourceNodeConcept).getMostSpecificLinkDeclarationByRole(getRole());
+    if (mostSpecificForRole == null) {
+      error("couldn't find link declaration '" + getRole() + "' in concept '" + getSourceNode().getConceptFqName() + "'");
+      return null;
     }
 
     ISearchScope searchScope = status.getSearchScope();
-    IReferenceInfoResolver infoResolver = searchScope.getReferenceInfoResolver(myMostSpecificLinkForRole.getTarget());
+    IReferenceInfoResolver infoResolver = searchScope.getReferenceInfoResolver(mostSpecificForRole.getTarget());
     if (infoResolver == null) {
       error("can't obtain resolve info resolver: '" + getRole() + "'");
       return null;
@@ -89,6 +85,7 @@ public class DynamicReference extends SReferenceBase {
     SNode targetNode = infoResolver.resolve(getResolveInfo());
     if (targetNode == null) {
       error("can't find target by resolve info: '" + getResolveInfo() + "'");
+      infoResolver.resolve(getResolveInfo());
     }
 
     return targetNode;

@@ -1038,7 +1038,6 @@ public final class SNode {
     return reference == null ? null : reference.getTargetNode();
   }
 
-  @Nullable
   public SReference getReference(@NotNull String role) {
     fireNodeReadAccess();
     SReference result = null;
@@ -1056,7 +1055,8 @@ public final class SNode {
       LOG.errorWithTrace("ERROR: " + count + " referents for role '" + role + "' in " + getDebugText());
     }
 
-    NodeReadEventsCaster.fireNodeReferentReadAccess(this, role, result == null ? null : result.getTargetNode());
+    // moved to getTargetNode() in SReference
+//    NodeReadEventsCaster.fireNodeReferentReadAccess(this, role, result == null ? null : result.getTargetNode());
     return result;
   }
 
