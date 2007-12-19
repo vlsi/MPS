@@ -463,22 +463,34 @@ public abstract class MPSTree extends JTree {
   public void rebuildTree() {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        runRebuildAction(new Runnable() {
-          public void run() {
-            if (getModel().getRoot() instanceof MPSTreeNode) {
-              (getRootNode()).disposeThisAndChildren();
-            }
-
-            MPSTreeNode root = rebuild();
-            root.setTree(MPSTree.this);
-            DefaultTreeModel model = new DefaultTreeModel(root);
-            setModel(model);
-
-            updateUI();
-          }
-        }, true);
+        rebuildNow();
       }
     });
+  }
+
+  public void rebuildLater() {
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
+        rebuildNow();
+      }
+    });
+  }
+
+  public void rebuildNow() {
+    runRebuildAction(new Runnable() {
+      public void run() {
+        if (getModel().getRoot() instanceof MPSTreeNode) {
+          (getRootNode()).disposeThisAndChildren();
+        }
+
+        MPSTreeNode root = rebuild();
+        root.setTree(MPSTree.this);
+        DefaultTreeModel model = new DefaultTreeModel(root);
+        setModel(model);
+
+        updateUI();
+      }
+    }, true);
   }
 
   private String pathToString(TreePath path) {

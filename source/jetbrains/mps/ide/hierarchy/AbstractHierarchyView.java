@@ -117,7 +117,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
     myHierarchyTree.setOperationContext(context);
     myContext = context;
     myHierarchyTree.myHierarchyNode = node;
-    myHierarchyTree.rebuildTree();
+    myHierarchyTree.rebuildNow();
     if (myTreeNode != null) myHierarchyTree.selectNode(myTreeNode);
   }
 
