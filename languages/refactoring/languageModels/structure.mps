@@ -371,6 +371,10 @@
         <link role="classifier" targetNodeId="10.~IChooseComponentPart" resolveInfo="IChooseComponentPart" />
       </node>
     </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1198076418841">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1189694712372" resolveInfo="ConceptFunctionParameter_ActionContext" />
+    </node>
   </node>
 </model>
 

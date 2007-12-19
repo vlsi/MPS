@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.helgins.dependencies.InferenceMethod;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 
 public class RulesFunctions_Collections {
@@ -34,6 +35,7 @@ public class RulesFunctions_Collections {
     }
   }
 
+  @InferenceMethod()
   public static void setInputSequenceType(SNode op, SNode target) {
     // 1. Take input expression
     // 2. Assert that it is coerceable to sequence
@@ -46,6 +48,7 @@ public class RulesFunctions_Collections {
     }
   }
 
+  @InferenceMethod()
   public static void setInputElementType(SNode op, SNode target) {
     // 1. Take input expression
     // 2. Assert that it is coerceable to sequence
@@ -58,6 +61,7 @@ public class RulesFunctions_Collections {
     }
   }
 
+  @InferenceMethod()
   public static void isInputElementType(SNode op, SNode target) {
     // 1. Take input expression
     // 2. Assert that it is coerceable to sequence

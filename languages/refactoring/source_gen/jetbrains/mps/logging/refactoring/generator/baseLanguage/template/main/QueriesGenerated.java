@@ -79,10 +79,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1197995546008(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     {
-      Pattern_ pattern_1198003953440 = new Pattern_();
-      SNode coercedNode_1198003953439 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(node, "argumentType", true), pattern_1198003953440);
-      if(coercedNode_1198003953439 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1198003953440.PatternVar;
+      Pattern_ pattern_1198076741026 = new Pattern_();
+      SNode coercedNode_1198076741025 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(node, "argumentType", true), pattern_1198076741026);
+      if(coercedNode_1198076741025 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_1198076741026.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }

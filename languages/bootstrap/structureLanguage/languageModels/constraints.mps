@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.structureLanguage.constraints">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
@@ -808,6 +809,34 @@
               </node>
             </node>
           </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198080700262">
+      <property name="name" value="isAssignableFrom" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1198080720203" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198080700264">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198080845582">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198080854835">
+            <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.isAssignableConcept(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration,jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):boolean" resolveInfo="isAssignableConcept" />
+            <link role="classConcept" targetNodeId="5.~SModelUtil_new" resolveInfo="SModelUtil_new" />
+            <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198080914172">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1198080914893" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1198080892948" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198080911058">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1198080912030" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1198080887930">
+                <link role="variableDeclaration" targetNodeId="1198080763876" resolveInfo="conceptDeclaration" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1198080763876">
+        <property name="name" value="conceptDeclaration" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198080763877">
+          <link role="concept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
         </node>
       </node>
     </node>
