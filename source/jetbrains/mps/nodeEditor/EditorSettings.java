@@ -48,7 +48,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
   public Font getDefaultEditorFont() {
     return new Font(myFontFamily, 0, myFontSize);
-  } 
+  }
 
   public void setDefaultEditorFont(Font newFont) {
     myFontFamily = newFont.getFamily();
@@ -77,8 +77,12 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     if (mySelectionColor != null) {
       return mySelectionColor;
     }
-    Color baseColor = UIManager.getColor("List.selectionBackground");
+    Color baseColor = getDefaultSelectionColor();
     return baseColor;
+  }
+
+  private Color getDefaultSelectionColor() {
+    return UIManager.getColor("TextArea.selectionBackground");
   }
 
   public Color getRangeSelectionColor() {
@@ -100,11 +104,18 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     return new MyPreferencesPage();
   }
 
-  private static class MyColorComponent extends JPanel {
+  private abstract static class MyColorComponent extends JPanel {
     private JTextField myRedTextField = new JTextField();
     private JTextField myGreenTextField = new JTextField();
     private JTextField myBlueTextField = new JTextField();
     private JTextField myAlphaTextField = new JTextField();
+
+    private JButton myResetButton = new JButton(new AbstractAction("Reset") {
+      public void actionPerformed(ActionEvent e) {
+        setColor(getDefaultColor());
+      }
+    });
+
     private JButton myChooseButton = new JButton(new AbstractAction("Choose") {
       public void actionPerformed(ActionEvent e) {
         chooseColor();
@@ -135,7 +146,10 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       add(myBlueTextField);
       add(myAlphaTextField);
       add(myChooseButton);
+      add(myResetButton);
     }
+
+    protected abstract Color getDefaultColor();
 
     private void prepareColorPartField(JTextField field) {
       ((AbstractDocument) field.getDocument()).setDocumentFilter(new IntegerValueDocumentFilter() {
@@ -181,8 +195,16 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     private JComboBox myFontsComboBox = createFontsComboBox();
     private JComboBox myFontSizesComboBox = createSizeComboBox();
     private JComboBox myTextWidthComboBox = createTextWidthComboBox();
-    private MyColorComponent mySelectedColorComponent = new MyColorComponent(getSelectionColor());
-    private MyColorComponent myRangeSelColorComponent = new MyColorComponent(getRangeSelectionColor());
+    private MyColorComponent mySelectedColorComponent = new MyColorComponent(getSelectionColor()) {
+      protected Color getDefaultColor() {
+        return getDefaultSelectionColor();
+      }
+    };
+    private MyColorComponent myRangeSelColorComponent = new MyColorComponent(getRangeSelectionColor()) {
+      protected Color getDefaultColor() {
+        return getDefaultSelectionColor();
+      }
+    };
     private JCheckBox myAntialiasingCheckBox = createAntialiasinbCheckBox();
     private JCheckBox myLegacyTypesystemCheckBox = createLegacyTypesystemCheckBox();
     private JSlider myBlinkingRateSlider = createBlinkingRateSlider();
@@ -388,7 +410,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     }
 
     public void paintSelection(Graphics g, Color c) {
-      
+
     }
 
     public void paintContent(Graphics g) {
