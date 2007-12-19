@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.usageView.view.options;
 
-import java.util.Map;
 import java.util.HashMap;
+import java.util.Map;
 
 public class FindUsagesOptions {
   Map<Class, Object> myOptions = new HashMap<Class, Object>();

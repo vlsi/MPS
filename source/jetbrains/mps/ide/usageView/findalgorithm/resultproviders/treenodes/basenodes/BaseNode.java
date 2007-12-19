@@ -1,11 +1,11 @@
 package jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basenodes;
 
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.usageView.model.IResultProvider;
 import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
-import jetbrains.mps.ide.usageView.model.IResultProvider;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
 import org.jdom.Element;
 

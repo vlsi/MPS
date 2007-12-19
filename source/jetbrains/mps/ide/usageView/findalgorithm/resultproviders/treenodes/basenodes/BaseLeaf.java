@@ -1,13 +1,5 @@
 package jetbrains.mps.ide.usageView.findalgorithm.resultproviders.treenodes.basenodes;
 
-import jetbrains.mps.ide.usageView.model.IResultProvider;
-import jetbrains.mps.ide.usageView.model.result.SearchResults;
-import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IOperationContext;
-import org.jdom.Element;
-
 import java.util.List;
 
 public abstract class BaseLeaf extends BaseNode {

@@ -3,18 +3,12 @@ package jetbrains.mps.ide.usageView.findalgorithm.finders;
 import jetbrains.mps.ide.usageView.model.result.SearchResult;
 import jetbrains.mps.ide.usageView.model.result.SearchResults;
 import jetbrains.mps.ide.usageView.model.searchquery.SearchQuery;
-import jetbrains.mps.ide.components.ComponentsUtil;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
-import java.util.Set;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class AspectMethodsFinder extends BaseFinder {
   private static final String MODELS = "models";

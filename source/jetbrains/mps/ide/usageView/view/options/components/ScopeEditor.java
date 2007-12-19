@@ -1,11 +1,11 @@
 package jetbrains.mps.ide.usageView.view.options.components;
 
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.usageView.view.options.options.ScopeOptions;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.ModelScope;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.usageView.view.options.options.ScopeOptions;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
@@ -23,13 +23,17 @@ public class ScopeEditor {
 
   private List<ListItem> myItems = new ArrayList<ListItem>();
 
-  private JPanel myPanel = new JPanel(new BorderLayout());
+  private JPanel myPanel;
+
   private JComboBox myComboBox = new JComboBox();
 
   public ScopeEditor(ActionContext context, int defaultScope) {
     myContext = context;
 
     initItems();
+
+    myPanel = new JPanel();
+    myPanel.setLayout(new BorderLayout());
 
     myPanel.add(new JLabel("Scope:"), BorderLayout.WEST);
 
@@ -49,7 +53,7 @@ public class ScopeEditor {
       }
     });
 
-    myPanel.add(new JScrollPane(myComboBox), BorderLayout.CENTER);
+    myPanel.add(myComboBox, BorderLayout.CENTER);
 
     myComboBox.setSelectedIndex(defaultScope);
   }

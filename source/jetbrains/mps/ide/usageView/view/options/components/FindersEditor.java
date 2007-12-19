@@ -4,13 +4,9 @@ import jetbrains.mps.ide.usageView.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.usageView.view.options.options.FindersOptions;
 import jetbrains.mps.smodel.IOperationContext;
 
-import javax.swing.BorderFactory;
-import javax.swing.JCheckBox;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
+import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.awt.GridLayout;
 import java.util.Set;
 
 public class FindersEditor {
@@ -20,7 +16,7 @@ public class FindersEditor {
 
   public FindersEditor(Set<BaseFinder> finders, IOperationContext context) {
     myPanel = new JPanel();
-    myPanel.setLayout(new GridLayout(finders.size(), 1));
+    myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
 
     myPanel.setBorder(
             BorderFactory.createCompoundBorder(

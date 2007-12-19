@@ -11,8 +11,11 @@ import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.BoxLayout;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import java.awt.FlowLayout;
 
 public class FindUsagesDialog extends BaseDialog {
   private JPanel myPanel;
@@ -32,15 +35,15 @@ public class FindUsagesDialog extends BaseDialog {
     //myViewOptionsEditor.getComponent().setBorder(new EmptyBorder(3,3,3,3));
     myScopeEditor.getComponent().setBorder(new EmptyBorder(7, 3, 3, 3));
 
-    JPanel centerPanel = new JPanel(new BorderLayout());
-    centerPanel.add(myFindersEditor.getComponent(), BorderLayout.WEST);
-    centerPanel.add(myViewOptionsEditor.getComponent(), BorderLayout.EAST);
+    JPanel centerPanel = new JPanel(new GridLayout(1, 2));
+    centerPanel.add(myFindersEditor.getComponent());
+    centerPanel.add(myViewOptionsEditor.getComponent());
 
     myPanel = new JPanel(new BorderLayout());
     myPanel.add(centerPanel, BorderLayout.CENTER);
     myPanel.add(myScopeEditor.getComponent(), BorderLayout.SOUTH);
 
-    setResizable(false);
+    //setResizable(false);
   }
 
   public boolean isCancelled() {
