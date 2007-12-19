@@ -12,6 +12,10 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.ArrayType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.baseLanguage.constraints.ClassConcept_Behavior;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
+import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -38,15 +42,12 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.ModelActions;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.baseLanguage.constraints.QueriesUtil;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 
 public class QueriesGenerated {
 
@@ -166,6 +167,38 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(newNode, "type", castType, true);
       }
       SLinkOperations.setTarget(newNode, "expression", sampleNode, true);
+    }
+  }
+
+  public static void nodeFactory_NodeSetup_NewExpression_1198098766258(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
+      SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(enclosingNode, sampleNode);
+      if((originalExpression != null)) {
+        SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
+        if(SNodeOperations.isInstanceOf(expectedType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+          SNode classifierType = expectedType;
+          if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierType, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+            SNode classConcept = SLinkOperations.getTarget(classifierType, "classifier", false);
+            if(!(ClassConcept_Behavior.call_isAbstract_1178610171302(classConcept))) {
+              SNode constructorDeclaration = SequenceOperations.getFirst(SLinkOperations.getTargets(classConcept, "constructor", true));
+              if(constructorDeclaration != null) {
+                SLinkOperations.setTarget(newNode, "baseMethodDeclaration", constructorDeclaration, false);
+                {
+                  ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(classifierType, "parameter", true));
+                  try {
+                    while(_zCursor1.moveToNext()) {
+                      SNode type = _zCursor1.getCurrent();
+                      SLinkOperations.addChild(newNode, "typeParameter", SNodeOperations.copyNode(type));
+                    }
+                  } finally {
+                    _zCursor1.release();
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 
@@ -656,14 +689,14 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(newNode, "constructorDeclaration", ((SNode)this.getParameterObject()), false);
             if(SNodeOperations.isInstanceOf(currentTargetNode, "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")) {
               {
-                ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(currentTargetNode, "actualArgument", true));
+                ICursor<SNode> _zCursor2 = CursorFactory.createCursor(SLinkOperations.getTargets(currentTargetNode, "actualArgument", true));
                 try {
-                  while(_zCursor1.moveToNext()) {
-                    SNode argument = _zCursor1.getCurrent();
+                  while(_zCursor2.moveToNext()) {
+                    SNode argument = _zCursor2.getCurrent();
                     SLinkOperations.addChild(newNode, "actualArgument", argument);
                   }
                 } finally {
-                  _zCursor1.release();
+                  _zCursor2.release();
                 }
               }
             }
@@ -711,14 +744,14 @@ public class QueriesGenerated {
             SLinkOperations.setTarget(newNode, "constructorDeclaration", ((SNode)this.getParameterObject()), false);
             if(SNodeOperations.isInstanceOf(currentTargetNode, "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation")) {
               {
-                ICursor<SNode> _zCursor2 = CursorFactory.createCursor(SLinkOperations.getTargets(currentTargetNode, "actualArgument", true));
+                ICursor<SNode> _zCursor3 = CursorFactory.createCursor(SLinkOperations.getTargets(currentTargetNode, "actualArgument", true));
                 try {
-                  while(_zCursor2.moveToNext()) {
-                    SNode argument = _zCursor2.getCurrent();
+                  while(_zCursor3.moveToNext()) {
+                    SNode argument = _zCursor3.getCurrent();
                     SLinkOperations.addChild(newNode, "actualArgument", argument);
                   }
                 } finally {
-                  _zCursor2.release();
+                  _zCursor3.release();
                 }
               }
             }
