@@ -88,11 +88,6 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
     myComponent.add(new JScrollPane(myList), BorderLayout.CENTER);
 
     myList.setFixedCellHeight(Toolkit.getDefaultToolkit().getFontMetrics(myList.getFont()).getHeight() + 5);
-    myList.addComponentListener(new ComponentAdapter() {
-      public void componentResized(ComponentEvent e) {
-        myList.setFixedCellWidth(myList.getWidth());
-      }
-    });
 
     myList.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
@@ -151,7 +146,6 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
 
         Message msg = (Message) value;
         if (msg.getHintObject() != null) {
-//          setText("<html>" + msg.getCreationTimeString() + "\t: <u style='color:#0000EE'>" + msg.getText() + "</u>");
           setText(msg.getCreationTimeString() + "\t: " + msg.getText());
           setForeground(Color.BLUE);
         } else {
