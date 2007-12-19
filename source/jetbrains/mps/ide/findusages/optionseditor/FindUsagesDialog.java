@@ -1,12 +1,12 @@
-package jetbrains.mps.ide.findusages.options;
+package jetbrains.mps.ide.findusages.optionseditor;
 
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.subsystem.FindUsagesManager;
-import jetbrains.mps.ide.findusages.options.components.FindersEditor;
-import jetbrains.mps.ide.findusages.options.components.ScopeEditor;
-import jetbrains.mps.ide.findusages.options.components.ViewOptionsEditor;
+import jetbrains.mps.ide.findusages.optionseditor.components.FindersEditor;
+import jetbrains.mps.ide.findusages.optionseditor.components.ScopeEditor;
+import jetbrains.mps.ide.findusages.optionseditor.components.ViewOptionsEditor;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.JComponent;
