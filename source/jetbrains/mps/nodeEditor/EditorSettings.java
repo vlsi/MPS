@@ -73,23 +73,27 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     myTextWidth = textWidth;
   }
 
-  public Color getSelectionColor() {
+  public Color getSelectionBackgroundColor() {
     if (mySelectionColor != null) {
       return mySelectionColor;
     }
-    Color baseColor = getDefaultSelectionColor();
+    Color baseColor = getDefaultSelectionBackgroundColor();
     return baseColor;
   }
 
-  private Color getDefaultSelectionColor() {
+  public Color getSelectionForegroundColor() {
+    return UIManager.getColor("TextArea.selectionForeground");
+  }
+
+  private Color getDefaultSelectionBackgroundColor() {
     return UIManager.getColor("TextArea.selectionBackground");
   }
 
-  public Color getRangeSelectionColor() {
+  public Color getRangeSelectionForegroundColor() {
     if (myRangeSelectionColor != null) {
       return myRangeSelectionColor;
     }
-    return getSelectionColor();
+    return getSelectionBackgroundColor();
   }
 
   public boolean getUseLegacyTypesystem() {
@@ -195,14 +199,14 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     private JComboBox myFontsComboBox = createFontsComboBox();
     private JComboBox myFontSizesComboBox = createSizeComboBox();
     private JComboBox myTextWidthComboBox = createTextWidthComboBox();
-    private MyColorComponent mySelectedColorComponent = new MyColorComponent(getSelectionColor()) {
+    private MyColorComponent mySelectedColorComponent = new MyColorComponent(getSelectionBackgroundColor()) {
       protected Color getDefaultColor() {
-        return getDefaultSelectionColor();
+        return getDefaultSelectionBackgroundColor();
       }
     };
-    private MyColorComponent myRangeSelColorComponent = new MyColorComponent(getRangeSelectionColor()) {
+    private MyColorComponent myRangeSelColorComponent = new MyColorComponent(getRangeSelectionForegroundColor()) {
       protected Color getDefaultColor() {
-        return getDefaultSelectionColor();
+        return getDefaultSelectionBackgroundColor();
       }
     };
     private JCheckBox myAntialiasingCheckBox = createAntialiasinbCheckBox();
