@@ -6029,7 +6029,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198101602026">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198101605403">
-        <property name="text" value="&lt; type" />
+        <property name="text" value="(" />
         <link role="styleClass" targetNodeId="1198104170947" resolveInfo="literal" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198101616733">
@@ -6037,15 +6037,17 @@
         <link role="relationDeclaration" targetNodeId="1.1198101462928" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198101623813">
-        <property name="text" value=" or string" />
+        <property name="text" value=" or" />
         <link role="styleClass" targetNodeId="1198104170947" resolveInfo="literal" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1198101644815">
         <property name="noTargetText" value="&lt;no description&gt;" />
+        <property name="textFgColor" value="DARK_GREEN" />
+        <property name="fontStyle" value="ITALIC" />
         <link role="relationDeclaration" targetNodeId="1.1198101504257" resolveInfo="stringDescription" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198101722129">
-        <property name="text" value="&gt;" />
+        <property name="text" value=")" />
         <link role="styleClass" targetNodeId="1198104170947" resolveInfo="literal" />
       </node>
     </node>

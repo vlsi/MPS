@@ -235,6 +235,36 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198183103424">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1198183103425">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198183103428">
+              <link role="variableDeclaration" targetNodeId="1198182552792" resolveInfo="stmtOrSomething" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198183103431">
+              <link role="variableDeclaration" targetNodeId="1198182552796" resolveInfo="ifStmtOrSomething" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198183024367">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1198183026103">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1198183041544">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.CastExpression" id="1198183041545">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198183041546">
+                  <link role="variableDeclaration" targetNodeId="1198182552792" resolveInfo="stmtOrSomething" />
+                </node>
+                <node role="type" type="jetbrains.mps.transformation.TLBase.structure.TypeOrStringType" id="1198183041547">
+                  <property name="stringDescription" value="something" />
+                  <node role="equivalentType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198183041548">
+                    <link role="concept" targetNodeId="2.1068580123159" resolveInfo="IfStatement" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198183024368">
+              <link role="variableDeclaration" targetNodeId="1198182552796" resolveInfo="ifStmtOrSomething" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1198104524400" />
