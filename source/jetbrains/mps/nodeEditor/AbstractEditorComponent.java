@@ -1219,6 +1219,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void rebuildEditorContent(final List<SModelEvent> events) {
+    if (isDisplayable() && !ThreadUtils.isEventDispatchThread()) {
+      throw new RuntimeException("Editor rebuild can only happen in UI Thread");
+    }
+
     removeAll();
 
     runSwapCellsActions(new Runnable() {
