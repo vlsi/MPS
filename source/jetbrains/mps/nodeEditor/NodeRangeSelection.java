@@ -36,11 +36,21 @@ public class NodeRangeSelection implements IKeyboardHandler {
   }
 
   public boolean isSelectionKeystroke(KeyEvent keyEvent) {
-    return keyEvent.isShiftDown() && keyEvent.isControlDown() && !(keyEvent.isAltDown()) &&
+    if (keyEvent.isShiftDown() && keyEvent.isControlDown() && !(keyEvent.isAltDown()) &&
             (keyEvent.getKeyCode() == KeyEvent.VK_UP ||
                     keyEvent.getKeyCode() == KeyEvent.VK_DOWN ||
                     keyEvent.getKeyCode() == KeyEvent.VK_LEFT ||
-                    keyEvent.getKeyCode() == KeyEvent.VK_RIGHT);
+                    keyEvent.getKeyCode() == KeyEvent.VK_RIGHT)) {
+      return true;
+    }
+
+    if (keyEvent.isShiftDown() && !(keyEvent.isAltDown()) &&
+            (keyEvent.getKeyCode() == KeyEvent.VK_UP ||
+                    keyEvent.getKeyCode() == KeyEvent.VK_DOWN)) {
+      return true;
+    }
+
+    return false;
   }
 
   public boolean isActive() {
