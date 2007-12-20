@@ -6427,6 +6427,7 @@
           <property name="textFgColor" value="gray" />
           <property name="allowEmptyText" value="true" />
           <property name="drawBorder" value="false" />
+          <property name="fontStyle" value="ITALIC" />
           <link role="relationDeclaration" targetNodeId="17.1168623065899" resolveInfo="value" />
         </node>
         <node role="alternationCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197651363307">
@@ -6468,13 +6469,24 @@
                       <link role="variableDeclaration" targetNodeId="1197651897481" resolveInfo="isToDo" />
                     </node>
                     <node role="rValue" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1197652016892">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197652016893">
-                        <link role="baseMethodDeclaration" targetNodeId="24.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
-                        <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197652016894">
-                          <link role="variableDeclaration" targetNodeId="1197651484655" resolveInfo="v" />
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1198174550290">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198174613549">
+                          <link role="baseMethodDeclaration" targetNodeId="24.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
+                          <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198174605686">
+                            <link role="variableDeclaration" targetNodeId="1197651484655" resolveInfo="v" />
+                          </node>
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198174615878">
+                            <property name="value" value="todo:" />
+                          </node>
                         </node>
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197652016895">
-                          <property name="value" value="FIX:" />
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197652016893">
+                          <link role="baseMethodDeclaration" targetNodeId="24.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
+                          <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197652016894">
+                            <link role="variableDeclaration" targetNodeId="1197651484655" resolveInfo="v" />
+                          </node>
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197652016895">
+                            <property name="value" value="FIX:" />
+                          </node>
                         </node>
                       </node>
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197652016896">
@@ -6502,6 +6514,7 @@
         </node>
         <node role="ifFalseCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197651366849">
           <property name="textFgColor" value="blue" />
+          <property name="fontStyle" value="BOLD_ITALIC" />
           <link role="relationDeclaration" targetNodeId="17.1168623065899" resolveInfo="value" />
         </node>
       </node>
