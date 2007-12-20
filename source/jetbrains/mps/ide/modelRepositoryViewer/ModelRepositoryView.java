@@ -36,12 +36,12 @@ public class ModelRepositoryView extends DefaultTool {
 
   public ModelRepositoryView(ToolsPane pane) {
     if (pane.isVisible(this)) {
-      myTree.rebuildTree();
+      myTree.rebuildNow();
     }
   }
 
   public void toolShown() {
-    myTree.rebuildTree();
+    myTree.rebuildNow();
     myDeferringEventHandler.installListeners();
   }
 
@@ -63,27 +63,35 @@ public class ModelRepositoryView extends DefaultTool {
 
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
-      TextTreeNode root = new TextTreeNode("Loaded Models") {
-        public Icon getIcon(boolean expanded) {
-          return Icons.PROJECT_MODELS_ICON;
-        }
+      final TextTreeNode[] root = new TextTreeNode[1];
 
-        public JPopupMenu getPopupMenu() {
-          JPopupMenu result = new JPopupMenu();
-
-          result.add(new AbstractActionWithEmptyIcon("Refresh") {
-            public void actionPerformed(ActionEvent e) {
-              myTree.rebuildTree();
+      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+        public void run() {
+          root[0] = new TextTreeNode("Loaded Models") {
+            public Icon getIcon(boolean expanded) {
+              return Icons.PROJECT_MODELS_ICON;
             }
-          });
 
-          return result;
+            public JPopupMenu getPopupMenu() {
+              JPopupMenu result = new JPopupMenu();
+
+              result.add(new AbstractActionWithEmptyIcon("Refresh") {
+                public void actionPerformed(ActionEvent e) {
+                  myTree.rebuildNow();
+                }
+              });
+
+              return result;
+            }
+          };
+          for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {
+            root[0].add(new ModelTreeNode(modelDescriptor));
+          }
         }
-      };
-      for (SModelDescriptor modelDescriptor : SortUtil.sortModels(SModelRepository.getInstance().getAllModelDescriptors())) {
-        root.add(new ModelTreeNode(modelDescriptor));
-      }
-      return root;
+      });
+
+
+      return root[0];
     }
 
     private class ModelTreeNode extends MPSTreeNode {
@@ -170,14 +178,14 @@ public class ModelRepositoryView extends DefaultTool {
       if(CommandProcessor.instance().isInsideCommand()) {
          myDeferredUpdate = true;
       } else {
-        myTree.rebuildTree();
+        myTree.rebuildLater();
       }
     }
     public void repositoryChanged() {
       if(CommandProcessor.instance().isInsideCommand()) {
          myDeferredUpdate = true;
       } else {
-        myTree.rebuildTree();
+        myTree.rebuildLater();
       }
     }
 
@@ -187,7 +195,7 @@ public class ModelRepositoryView extends DefaultTool {
     public void commandFinished(@NotNull CommandEvent event) {
       if(myDeferredUpdate) {
         myDeferredUpdate = false;
-        myTree.rebuildTree();
+        myTree.rebuildLater();
       }
     }
 

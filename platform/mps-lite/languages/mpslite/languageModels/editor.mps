@@ -1895,7 +1895,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197469602587">
         <property name="text" value="accessor" />
-        <link role="styleClass" targetNodeId="6.1186415544875" resolveInfo="keyword" />
+        <link role="styleClass" targetNodeId="9.1197980684428" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197469605682">
         <property name="text" value="}" />

@@ -40,6 +40,6 @@ public class SupertypesTree extends AbstractHierarchyTree<INodeAdapter> {
 
   public void setShowOnlyStrong(boolean showOnlyStrong) {
     myShowOnlyStrong = showOnlyStrong;
-    rebuildTree();
+    rebuildNow();
   }
 }

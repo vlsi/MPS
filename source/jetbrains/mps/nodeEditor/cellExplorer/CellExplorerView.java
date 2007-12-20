@@ -99,7 +99,7 @@ public class CellExplorerView extends DefaultTool {
     IEditor currentEditor = getEditorsPane().getCurrentEditor();
 
     if (!(currentEditor instanceof NodeEditor || currentEditor instanceof ConceptDeclarationEditor)) {
-      myTree.rebuildTree();
+      myTree.rebuildNow();
       return;
     }
 
@@ -108,7 +108,7 @@ public class CellExplorerView extends DefaultTool {
       myCurrentEditor.addRebuildListener(myRebuildListener);
       myCurrentEditor.addSynchronizationListener(mySynchronizationListener);
     }
-    myTree.rebuildTree();
+    myTree.rebuildNow();
   }
 
   private void removeListeners() {

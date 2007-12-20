@@ -116,7 +116,7 @@ public class ModuleContext extends StandaloneMPSContext {
       super(mainFrame, "Choose Context Module");
       myModules.addAll(modules);
       myTree.setRootVisible(false);
-      myTree.rebuildTree();
+      myTree.rebuildNow();
     }
 
     public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {

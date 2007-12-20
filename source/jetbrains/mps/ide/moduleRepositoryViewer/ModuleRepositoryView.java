@@ -30,7 +30,7 @@ public class ModuleRepositoryView extends DefaultTool {
   private DeferringEventHandler myDeferringEventHandler = new DeferringEventHandler();
 
   public ModuleRepositoryView() {
-    myTree.rebuildTree();
+    myTree.rebuildNow();
   }
 
   public String getName() {
@@ -46,7 +46,7 @@ public class ModuleRepositoryView extends DefaultTool {
   }
 
   public void toolShown() {
-    myTree.rebuildTree();
+    myTree.rebuildNow();
     myDeferringEventHandler.installListeners();
   }
 
@@ -56,27 +56,35 @@ public class ModuleRepositoryView extends DefaultTool {
 
   private class MyTree extends MPSTree {
     protected MPSTreeNode rebuild() {
-      TextTreeNode root = new TextTreeNode("Loaded Modules") {
-        public JPopupMenu getPopupMenu() {
-          JPopupMenu result = new JPopupMenu();
 
-          result.add(new AbstractActionWithEmptyIcon("Refresh") {
-            public void actionPerformed(ActionEvent e) {
-              myTree.rebuildTree();
+      final TextTreeNode[] root = new TextTreeNode[1];
+
+      CommandProcessor.instance().executeCommand(new Runnable() {
+        public void run() {
+          root[0] = new TextTreeNode("Loaded Modules") {
+            public JPopupMenu getPopupMenu() {
+              JPopupMenu result = new JPopupMenu();
+
+              result.add(new AbstractActionWithEmptyIcon("Refresh") {
+                public void actionPerformed(ActionEvent e) {
+                  myTree.rebuildNow();
+                }
+              });
+
+              return result;
             }
-          });
 
-          return result;
+            public Icon getIcon(boolean expanded) {
+              return Icons.PROJECT_ICON;
+            }
+          };
+          for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
+            root[0].add(new LanguageTreeNode(module));
+          }
         }
+      });
 
-        public Icon getIcon(boolean expanded) {
-          return Icons.PROJECT_ICON;
-        }
-      };
-      for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
-        root.add(new LanguageTreeNode(module));
-      }
-      return root;
+      return root[0];
     }
 
     private class LanguageTreeNode extends MPSTreeNode {
@@ -138,7 +146,7 @@ public class ModuleRepositoryView extends DefaultTool {
       if (CommandProcessor.instance().isInsideCommand()) {
         myDeferredUpdate = true;
       } else {
-        myTree.rebuildTree();
+        myTree.rebuildLater();
       }
     }
 
@@ -148,7 +156,7 @@ public class ModuleRepositoryView extends DefaultTool {
     public void commandFinished(@NotNull CommandEvent event) {
       if (myDeferredUpdate) {
         myDeferredUpdate = false;
-        myTree.rebuildTree();
+        myTree.rebuildLater();
       }
     }
 

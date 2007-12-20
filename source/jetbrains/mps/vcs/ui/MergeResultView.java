@@ -92,10 +92,10 @@ public class MergeResultView extends JPanel {
 
 
   public void updateView() {
-    myResultTree.rebuildTree();
+    myResultTree.rebuildNow();
     myResultTree.expandRoot();
 
-    myConflictsAndWarningsTree.rebuildTree();
+    myConflictsAndWarningsTree.rebuildNow();
     myConflictsAndWarningsTree.expandRoot();
   }
 

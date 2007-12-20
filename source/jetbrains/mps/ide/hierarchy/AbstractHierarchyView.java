@@ -60,14 +60,14 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
     myChildrenHierarchyButton = new JRadioButton(new AbstractAction("Children Hierarchy") {
       public void actionPerformed(ActionEvent e) {
         myHierarchyTree.setParentHierarchy(false);
-        myHierarchyTree.rebuildTree();
+        myHierarchyTree.rebuildNow();
       }
     });
 
     myParentsHierarchyButton = new JRadioButton(new AbstractAction("Parent Hierarchy") {
       public void actionPerformed(ActionEvent e) {
         myHierarchyTree.setParentHierarchy(true);
-        myHierarchyTree.rebuildTree();
+        myHierarchyTree.rebuildNow();
       }
     });
 

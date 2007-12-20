@@ -58,7 +58,7 @@ public final class ChooseNodeDialog extends BaseDialog {
     myPanel.add(new JScrollPane(myTree));
 
     myTree.setRootVisible(false);
-    myTree.rebuildTree();
+    myTree.rebuildNow();
     myTree.expandPath(new TreePath(myTree.getRootNode()));
     if (mySourceNodes != null && !mySourceNodes.isEmpty()) {
       myTree.selectNode(myTree.findNodeWith(mySourceNodes.get(0)));

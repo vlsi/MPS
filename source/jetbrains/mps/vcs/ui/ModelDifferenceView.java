@@ -115,10 +115,10 @@ public class ModelDifferenceView extends JPanel {
   }
 
   private void updateView() {
-    myChangesTree.rebuildTree();
+    myChangesTree.rebuildNow();
     myChangesTree.expandRoot();
 
-    myModelTree.rebuildTree();
+    myModelTree.rebuildNow();
     myModelTree.expandRoot();
   }
 

@@ -220,7 +220,7 @@ public abstract class MPSTree extends JTree {
 
     AbstractAction refreshTreeAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        rebuildTree();
+        rebuildNow();
       }
     };
     registerKeyboardAction(refreshTreeAction, KeyStroke.getKeyStroke("F5"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
@@ -458,14 +458,6 @@ public abstract class MPSTree extends JTree {
 
   public void rebuildTree(Runnable rebuildAction, boolean saveExpansion) {
     runRebuildAction(rebuildAction, saveExpansion);
-  }
-
-  public void rebuildTree() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        rebuildNow();
-      }
-    });
   }
 
   public void rebuildLater() {

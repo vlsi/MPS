@@ -201,7 +201,7 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   }
 
   public void rebuildTree() {
-    getTree().rebuildTree();
+    getTree().rebuildNow();
   }
 
   public void selectNode(final SNode node, final IOperationContext context) {

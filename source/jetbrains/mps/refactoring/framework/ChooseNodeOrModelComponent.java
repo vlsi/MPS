@@ -46,7 +46,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     add(new JScrollPane(myTree));
 
     myTree.setRootVisible(false);
-    myTree.rebuildTree();
+    myTree.rebuildNow();
     myTree.expandPath(new TreePath(myTree.getRootNode()));
   }
 

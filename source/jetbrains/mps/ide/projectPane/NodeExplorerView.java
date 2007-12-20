@@ -41,25 +41,9 @@ public class NodeExplorerView extends DefaultTool {
   public NodeExplorerView(AbstractProjectFrame projectFrame) {
     myAbstractProjectFrame = projectFrame;
     myTree.setRootVisible(true);
-    myTree.rebuildTree();
+    myTree.rebuildNow();
     myComponent.add(new JScrollPane(myTree), BorderLayout.CENTER);
 
-//    myHelginsCheckBox = new JCheckBox(new AbstractAction("show HELGINS type info") {
-//      public void actionPerformed(ActionEvent e) {
-//        setShowHelgins(myHelginsCheckBox.isSelected());
-//      }
-//    });
-//    myTypeCheckBox = new JCheckBox(new AbstractAction("show legacy type info") {
-//      public void actionPerformed(ActionEvent e) {
-//        setShowLegacyTypes(myTypeCheckBox.isSelected());
-//      }
-//    });
-
-//    myHelginsCheckBox.setSelected(true);
-//    JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-//    panel.add(myHelginsCheckBox);
-//    panel.add(myTypeCheckBox);
-//    myComponent.add(panel, BorderLayout.NORTH);
   }
 
   public String getName() {
@@ -80,7 +64,7 @@ public class NodeExplorerView extends DefaultTool {
     }
     myNode = node == null ? null : new SNodePointer(node);
     myTree.setOperationContext(new ProjectOperationContext(project));
-    myTree.rebuildTree();
+    myTree.rebuildNow();
   }
 
 //  public void setShowHelgins(boolean show) {
@@ -90,7 +74,7 @@ public class NodeExplorerView extends DefaultTool {
 
   public void clear() {
     myNode = null;
-    myTree.rebuildTree();
+    myTree.rebuildNow();
   }
 
 

@@ -56,7 +56,7 @@ public class StructureView extends DefaultTool {
   }
 
   public void updateView() {
-    myTree.rebuildTree();
+    myTree.rebuildNow();
     
   }
 

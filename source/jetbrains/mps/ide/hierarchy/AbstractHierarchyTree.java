@@ -54,7 +54,7 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
     boolean oldOnlyInOneModel = myOnlyInOneModel;
     myOnlyInOneModel = isOnlyInOneModel;
     if (oldOnlyInOneModel != myOnlyInOneModel) {
-      rebuildTree();
+      rebuildNow();
     }
   }
 
