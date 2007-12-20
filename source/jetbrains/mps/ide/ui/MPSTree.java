@@ -469,6 +469,10 @@ public abstract class MPSTree extends JTree {
   }
 
   public void rebuildNow() {
+    if (isDisplayable() && !ThreadUtils.isEventDispatchThread()) {
+      throw new RuntimeException("Rebuild now can be only called from UI thread");
+    }
+
     runRebuildAction(new Runnable() {
       public void run() {
         if (getModel().getRoot() instanceof MPSTreeNode) {
