@@ -59,7 +59,7 @@
   </refactoringLog>
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198085953023">
     <property name="name" value="RenameConcept" />
-    <property name="userFriendlyName" value="Rename Concept (under construction)" />
+    <property name="userFriendlyName" value="Rename Concept" />
     <node role="arguments" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1198086090026">
       <property name="name" value="newName" />
       <property name="presentation" value="new concept name" />

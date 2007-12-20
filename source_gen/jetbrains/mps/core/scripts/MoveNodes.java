@@ -29,7 +29,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   public static final String role = "role";
 
   public String getUserFriendlyName() {
-    return "Move Nodes (under construction, don't use)";
+    return "Move Nodes";
   }
 
   public String getSourceId() {

@@ -20,7 +20,7 @@
   <import index="10" modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198076144993">
     <property name="name" value="MoveNodes" />
-    <property name="userFriendlyName" value="Move Nodes (under construction, don't use)" />
+    <property name="userFriendlyName" value="Move Nodes" />
     <node role="internalArguments" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgument" id="1198079405212">
       <property name="name" value="role" />
       <node role="argumentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198079409620">

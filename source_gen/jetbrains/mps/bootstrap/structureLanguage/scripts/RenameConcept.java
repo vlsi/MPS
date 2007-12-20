@@ -24,7 +24,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
   public static final String newName = "newName";
 
   public String getUserFriendlyName() {
-    return "Rename Concept (under construction)";
+    return "Rename Concept";
   }
 
   public String getSourceId() {
