@@ -322,7 +322,7 @@ public class DOM2 extends TreePath<Node> {
     }
 
 }
-  public static class Desc_Feature_attributes implements IFeatureDescriptor<Node> {
+  public static class Desc_Feature_attributes extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
 
     public  Desc_Feature_attributes() {
     }
@@ -344,7 +344,7 @@ public class DOM2 extends TreePath<Node> {
     }
 
 }
-  public static class Desc_Feature_nodes implements IFeatureDescriptor<Node> {
+  public static class Desc_Feature_nodes extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
 
     public  Desc_Feature_nodes() {
     }

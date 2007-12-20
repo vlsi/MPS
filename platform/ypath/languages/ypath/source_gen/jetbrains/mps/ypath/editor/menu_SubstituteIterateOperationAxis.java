@@ -9,6 +9,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -32,21 +33,21 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      SNode tpa = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathAspect", false, false);
-      boolean hasDefault = !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(tpa, "features", true), new zPredicate(null, null))));
+      SNode treePath = ITreePathExpression_Behavior.call_getTreePath_1194366873089(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false));
+      SNode defaultFeat = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(treePath, "features", true), new zPredicate(null, null)));
       List<Pair> res = ListOperations.createList(new Pair[]{});
       {
-        ICursor<TraversalAxis> _zCursor2 = CursorFactory.createCursor(TraversalAxis.getConstants());
+        ICursor<TraversalAxis> _zCursor8 = CursorFactory.createCursor(TraversalAxis.getConstants());
         try {
-          while(_zCursor2.moveToNext()) {
-            TraversalAxis axis = _zCursor2.getCurrent();
-            ListOperations.addElement(res, new Pair(axis, Boolean.FALSE));
-            if(hasDefault) {
-              ListOperations.addElement(res, new Pair(axis, Boolean.TRUE));
+          while(_zCursor8.moveToNext()) {
+            TraversalAxis axis = _zCursor8.getCurrent();
+            ListOperations.addElement(res, new Pair(axis, null));
+            if((defaultFeat != null)) {
+              ListOperations.addElement(res, new Pair(axis, defaultFeat));
             }
           }
         } finally {
-          _zCursor2.release();
+          _zCursor8.release();
         }
       }
       return res;
@@ -58,9 +59,9 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
 
     public void handleAction_impl(Pair parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       TraversalAxis axis = (TraversalAxis)parameterObject.o1;
-      Boolean defFeature = (Boolean)parameterObject.o2;
+      SNode defFeature = (SNode)parameterObject.o2;
       SPropertyOperations.set(node, "axis", axis.getValue());
-      SPropertyOperations.set(node, "useDefault", "" + (defFeature));
+      SLinkOperations.setTarget(node, "usedFeature", defFeature, false);
     }
 
     public boolean isReferentPresentation() {
@@ -73,11 +74,11 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
 
     public String getMatchingText_internal(Pair parameterObject) {
       TraversalAxis axis = (TraversalAxis)parameterObject.o1;
-      Boolean defFeature = (Boolean)parameterObject.o2;
-      return (defFeature ?
-        TraversalAxisUtil.getOperationSign(axis) + "<default>" :
-        TraversalAxisUtil.getOperationSign(axis)
-      );
+      SNode defFeature = (SNode)parameterObject.o2;
+      return TraversalAxisUtil.getOperationSign(axis) + (((defFeature != null) ?
+        "" :
+        " *"
+      ));
     }
 
     public String getDescriptionText(Object parameterObject) {
@@ -86,11 +87,11 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
 
     public String getDescriptionText_internal(Pair parameterObject) {
       TraversalAxis axis = (TraversalAxis)parameterObject.o1;
-      Boolean defFeature = (Boolean)parameterObject.o2;
-      return (defFeature ?
-        "iterate " + axis.getName() + " with default feature" :
-        "iterate " + axis.getName()
-      );
+      SNode defFeature = (SNode)parameterObject.o2;
+      return "iterate " + axis.getName() + (((defFeature != null) ?
+        " (default feature)" :
+        " (all features)"
+      ));
     }
 
 }

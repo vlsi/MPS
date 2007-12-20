@@ -28,9 +28,13 @@ public class IterateOperation_DELETE {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SNode tpoe = SNodeOperations.getParent(node, null, false, false);
-      if(SNodeOperations.isInstanceOf(tpoe, "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
-        SNodeOperations.replaceWithAnother(tpoe, SLinkOperations.getTarget(tpoe, "expression", true));
+      SNode expr = SNodeOperations.getParent(node, null, false, false);
+      if(SNodeOperations.isInstanceOf(expr, "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
+        SNode newExpr = SLinkOperations.getTarget(expr, "expression", true);
+        SNodeOperations.replaceWithAnother(expr, newExpr);
+        if(SNodeOperations.isInstanceOf(newExpr, "jetbrains.mps.ypath.structure.TreePathAdapterExpression")) {
+          SNodeOperations.replaceWithAnother(newExpr, SLinkOperations.getTarget(newExpr, "expression", true));
+        }
       }
     }
 

@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.internal.SequenceWithSupplier;
 
 public class DOMF_Design {
-  public static class Design_Feature_child implements IParameterizedFeatureDesign<String> {
+  public static class Design_Feature_child extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
 
     public Iterable<String> getParameters(SNode nodeType) {
       return new SequenceWithSupplier<String>(new zValueSupplier2(null, null));

@@ -111,52 +111,52 @@ public class TestTraversal {
     public void testSampleData () {
         Assert.assertEquals (TREE1_DESCENDANTS,
             YNode.convertToString(
-                TREE_PATH.from(TREE1).traverse(TraversalAxis.DESCENDANTS)));
+                TREE_PATH.startTraversal(TREE1).traverse(TraversalAxis.DESCENDANTS)));
     
         Assert.assertEquals (TREE1_SELF_DESCENDANTS,
                 YNode.convertToString(
-                    TREE_PATH.from(TREE1).traverse(TraversalAxis.SELF_DESCENDANTS)));
+                    TREE_PATH.startTraversal(TREE1).traverse(TraversalAxis.SELF_DESCENDANTS)));
 
         Assert.assertEquals (TREE1_CHILDREN,
             YNode.convertToString(
-                TREE_PATH.from(TREE1).traverse(TraversalAxis.CHILDREN)));
+                TREE_PATH.startTraversal(TREE1).traverse(TraversalAxis.CHILDREN)));
 
         Assert.assertEquals (TREE1_DESCENDANTS_ANCESTORS,
                 YNode.convertToString(
                     TREE_PATH.
-                        from(TREE1).
+                    startTraversal(TREE1).
                         traverse(TraversalAxis.DESCENDANTS).
                         traverse(TraversalAxis.ANCESTORS)));
 
         Assert.assertEquals (SUBTREE2_ANCESTORS,
             YNode.convertToString(
-                TREE_PATH.from(SUBTREE2).traverse(TraversalAxis.ANCESTORS)));
+                TREE_PATH.startTraversal(SUBTREE2).traverse(TraversalAxis.ANCESTORS)));
 
         Assert.assertEquals (SUBTREE2_SELF_ANCESTORS,
                 YNode.convertToString(
-                    TREE_PATH.from(SUBTREE2).traverse(TraversalAxis.SELF_ANCESTORS)));
+                    TREE_PATH.startTraversal(SUBTREE2).traverse(TraversalAxis.SELF_ANCESTORS)));
 
         Assert.assertEquals (SUBTREE2_ANCESTORS_DESCENDANTS,
                 YNode.convertToString(
                     TREE_PATH.
-                        from(SUBTREE2).
+                    startTraversal(SUBTREE2).
                         traverse(TraversalAxis.ANCESTORS).
                         traverse(TraversalAxis.DESCENDANTS)));
         
         Assert.assertEquals (SUBTREE3_PRECEDING_SIBLINGS,
             YNode.convertToString(
-                TREE_PATH.from(SUBTREE3).traverse(TraversalAxis.PRECEDING_SIBLINGS)));
+                TREE_PATH.startTraversal(SUBTREE3).traverse(TraversalAxis.PRECEDING_SIBLINGS)));
 
         Assert.assertEquals (SUBTREE3_PRECEDING_SIBLINGS_SELF,
                 YNode.convertToString(
-                    TREE_PATH.from(SUBTREE3).traverse(TraversalAxis.PRECEDING_SIBLINGS_SELF)));
+                    TREE_PATH.startTraversal(SUBTREE3).traverse(TraversalAxis.PRECEDING_SIBLINGS_SELF)));
 
         Assert.assertEquals (SUBTREE3_SELF_FOLLOWING_SIBLINGS,
                 YNode.convertToString(
-                    TREE_PATH.from(SUBTREE3).traverse(TraversalAxis.SELF_FOLLOWING_SIBLINGS)));
+                    TREE_PATH.startTraversal(SUBTREE3).traverse(TraversalAxis.SELF_FOLLOWING_SIBLINGS)));
 
         Assert.assertEquals (SUBTREE3_FOLLOWING_SIBLINGS,
             YNode.convertToString(
-                TREE_PATH.from(SUBTREE3).traverse(TraversalAxis.FOLLOWING_SIBLINGS)));
+                TREE_PATH.startTraversal(SUBTREE3).traverse(TraversalAxis.FOLLOWING_SIBLINGS)));
     }
 }

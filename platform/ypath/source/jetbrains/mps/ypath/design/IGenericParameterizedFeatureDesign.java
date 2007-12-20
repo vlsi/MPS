@@ -15,4 +15,16 @@ public interface IGenericParameterizedFeatureDesign<T> extends IParameterizedFea
     SNode getterExpression (SNode srcExpr, T param, ITemplateGenerator generator);
     
     boolean isSingleTargetCardinality (T param);
+    
+    class Stub<E> extends IParameterizedFeatureDesign.Stub<E> implements IGenericParameterizedFeatureDesign<E> {
+
+        public SNode getterExpression(SNode srcExpr, E param, ITemplateGenerator generator) {
+            return null;
+        }
+
+        public boolean isSingleTargetCardinality(E param) {
+            return false;
+        }
+        
+    }
 }

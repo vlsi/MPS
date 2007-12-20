@@ -13,7 +13,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.ypath.design.IGenericFeatureDesign;
 
 public class SNODE_GEN_Design {
-  public static class Design_Feature_child implements IGenericParameterizedFeatureDesign<SNode> {
+  public static class Design_Feature_child extends IGenericParameterizedFeatureDesign.Stub<SNode> implements IGenericParameterizedFeatureDesign<SNode> {
 
     public Iterable<SNode> getParameters(SNode nodeType) {
       return SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate4(null, null));
@@ -52,7 +52,7 @@ public class SNODE_GEN_Design {
     }
 
 }
-  public static class Design_Feature_link implements IGenericParameterizedFeatureDesign<SNode> {
+  public static class Design_Feature_link extends IGenericParameterizedFeatureDesign.Stub<SNode> implements IGenericParameterizedFeatureDesign<SNode> {
 
     public Iterable<SNode> getParameters(SNode nodeType) {
       return SequenceOperations.where(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeType, "concept", false), "linkDeclaration", true), new zPredicate5(null, null));
@@ -91,7 +91,7 @@ public class SNODE_GEN_Design {
     }
 
 }
-  public static class Design_Feature_parent implements IGenericFeatureDesign {
+  public static class Design_Feature_parent extends IGenericFeatureDesign.Stub implements IGenericFeatureDesign {
 
     public SNode getterExpression(SNode expression, ITemplateGenerator generator) {
       return new QuotationClass_3().createNode(expression);

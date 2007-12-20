@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="sample3">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.ypath" />
   <maxImportIndex value="8" />
@@ -21,11 +22,8 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1169048035394">
               <link role="classifier" targetNodeId="1.~String" resolveInfo="String" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1169048041576">
-              <link role="baseMethodDeclaration" targetNodeId="1.~String.&lt;init&gt;()" resolveInfo="String" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1169048050176">
-                <property name="value" value="&lt;doc&gt; &lt;a&gt;&lt;b&gt;&lt;foobar/&gt;&lt;findme baz=&quot;fooblin&quot;/&gt;&lt;/b&gt;&lt;c&gt;&lt;/c&gt;&lt;/a&gt; &lt;/doc&gt;" />
-              </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1197994591169">
+              <property name="value" value="&lt;doc&gt; &lt;a&gt;&lt;b&gt;&lt;foobar/&gt;&lt;findme baz=&quot;fooblin&quot;/&gt;&lt;/b&gt;&lt;c&gt;&lt;/c&gt;&lt;/a&gt; &lt;/doc&gt;" />
             </node>
           </node>
         </node>
@@ -55,7 +53,7 @@
                   <link role="classifier" targetNodeId="2.~Document" resolveInfo="Document" />
                 </node>
                 <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1169048628467">
-                  <link role="baseMethodDeclaration" targetNodeId="3.~DocumentBuilder.parse(java.lang.String):org.w3c.dom.Document" resolveInfo="parse" />
+                  <link role="baseMethodDeclaration" targetNodeId="3.~DocumentBuilder.parse(java.io.InputStream):org.w3c.dom.Document" resolveInfo="parse" />
                   <node role="instance" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1169048628469">
                     <link role="baseMethodDeclaration" targetNodeId="3.~DocumentBuilderFactory.newDocumentBuilder():javax.xml.parsers.DocumentBuilder" resolveInfo="newDocumentBuilder" />
                     <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1169048628470">
@@ -63,7 +61,7 @@
                       <link role="classConcept" targetNodeId="3.~DocumentBuilderFactory" resolveInfo="DocumentBuilderFactory" />
                     </node>
                   </node>
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1169048675901">
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1197994596090">
                     <link role="variableDeclaration" targetNodeId="1169048639111" resolveInfo="is" />
                   </node>
                 </node>

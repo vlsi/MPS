@@ -10,18 +10,18 @@ import jetbrains.mps.baseLanguage.structure.Type;
 
 public class ParamListFeature extends ListFeature implements IParamFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.ParamListFeature";
+  public static String OPPOSITE = "opposite";
+  public static String PARAMETER_TYPE = "parameterType";
+  public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
+  public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
+  public static String TO_STRING_FUNCTION = "toStringFunction";
+  public static String CARDINAL = "cardinal";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
-  public static String PARAMETER_TYPE = "parameterType";
-  public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
-  public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
-  public static String TO_STRING_FUNCTION = "toStringFunction";
-  public static String CARDINAL = "cardinal";
-  public static String OPPOSITE = "opposite";
 
   public  ParamListFeature(SNode node) {
     super(node);
@@ -36,52 +36,12 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
 
-  public String getName() {
-    return this.getProperty(ParamListFeature.NAME);
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(ParamListFeature.OPPOSITE);
   }
 
-  public void setName(String value) {
-    this.setProperty(ParamListFeature.NAME, value);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(ParamListFeature.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(ParamListFeature.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(ParamListFeature.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(ParamListFeature.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(ParamListFeature.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(ParamListFeature.VIRTUAL_PACKAGE, value);
-  }
-
-  public boolean getWritable() {
-    return this.getBooleanProperty(ParamListFeature.WRITABLE);
-  }
-
-  public void setWritable(boolean value) {
-    this.setBooleanProperty(ParamListFeature.WRITABLE, value);
-  }
-
-  public boolean getDefault() {
-    return this.getBooleanProperty(ParamListFeature.DEFAULT);
-  }
-
-  public void setDefault(boolean value) {
-    this.setBooleanProperty(ParamListFeature.DEFAULT, value);
+  public void setOpposite(IFeature node) {
+    super.setReferent(ParamListFeature.OPPOSITE, node);
   }
 
   public Type getParameterType() {
@@ -164,12 +124,52 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
     this.setDeleteFunction(node);
   }
 
-  public IFeature getOpposite() {
-    return (IFeature)this.getReferent(ParamListFeature.OPPOSITE);
+  public String getName() {
+    return this.getProperty(ParamListFeature.NAME);
   }
 
-  public void setOpposite(IFeature node) {
-    super.setReferent(ParamListFeature.OPPOSITE, node);
+  public void setName(String value) {
+    this.setProperty(ParamListFeature.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(ParamListFeature.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(ParamListFeature.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(ParamListFeature.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(ParamListFeature.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(ParamListFeature.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(ParamListFeature.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getWritable() {
+    return this.getBooleanProperty(ParamListFeature.WRITABLE);
+  }
+
+  public void setWritable(boolean value) {
+    this.setBooleanProperty(ParamListFeature.WRITABLE, value);
+  }
+
+  public boolean getDefault() {
+    return this.getBooleanProperty(ParamListFeature.DEFAULT);
+  }
+
+  public void setDefault(boolean value) {
+    this.setBooleanProperty(ParamListFeature.DEFAULT, value);
   }
 
 }

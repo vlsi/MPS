@@ -17,4 +17,19 @@ public interface IParameterizedFeatureDesign<T> extends IFeatureDesign {
     
     String parameterToString (T param);
     
+    class Stub<E> implements IParameterizedFeatureDesign<E> {
+        
+        public Iterable<E> getParameters(SNode nodeType) {
+            return null;
+        }
+        
+        public SNode getTargetType(E param, SNode nodeType) {
+            return null;
+        }
+        
+        public String parameterToString(E param) {
+            return null;
+        }
+        
+    }
 }

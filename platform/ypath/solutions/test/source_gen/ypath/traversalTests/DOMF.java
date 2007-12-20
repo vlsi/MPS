@@ -103,7 +103,7 @@ public class DOMF extends TreePath<Node> {
     }
 
 }
-  public static class Desc_Feature_elements implements IFeatureDescriptor<Node> {
+  public static class Desc_Feature_elements extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
 
     public  Desc_Feature_elements() {
     }
@@ -125,7 +125,7 @@ public class DOMF extends TreePath<Node> {
     }
 
 }
-  public static class Desc_Feature_child implements IFeatureDescriptor<Node> {
+  public static class Desc_Feature_child extends IFeatureDescriptor.Stub<Node> implements IFeatureDescriptor<Node> {
 
     private String param;
 

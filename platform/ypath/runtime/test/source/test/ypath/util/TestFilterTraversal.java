@@ -91,14 +91,14 @@ public class TestFilterTraversal {
                                         
         Assert.assertEquals (TREE1_PRECEDING_SIBLINGS_D,
                 YNode.convertToString(
-                    TREE_PATH.from(TREE1).
+                    TREE_PATH.startTraversal(TREE1).
                                 traverse(TraversalAxis.DESCENDANTS).
                                 filter (nameStartsWithD).
                                 traverse(TraversalAxis.PRECEDING_SIBLINGS)));
 
         Assert.assertEquals (TREE1_FOLLOWING_SIBLINGS_D,
                 YNode.convertToString(
-                    TREE_PATH.from(TREE1).
+                    TREE_PATH.startTraversal(TREE1).
                                 traverse(TraversalAxis.DESCENDANTS).
                                 filter (nameStartsWithD).
                                 traverse(TraversalAxis.FOLLOWING_SIBLINGS)));

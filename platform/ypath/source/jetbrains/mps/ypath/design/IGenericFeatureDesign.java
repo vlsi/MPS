@@ -14,4 +14,10 @@ public interface IGenericFeatureDesign extends IFeatureDesign {
 
     SNode getterExpression (SNode srcExpr, ITemplateGenerator generator);
 
+    class Stub implements IGenericFeatureDesign {
+        public SNode getterExpression(SNode srcExpr, ITemplateGenerator generator) {
+            return null;
+        }
+    }
+
 }

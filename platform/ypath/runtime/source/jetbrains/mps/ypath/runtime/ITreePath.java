@@ -3,7 +3,6 @@
  */
 package jetbrains.mps.ypath.runtime;
 
-import java.util.Collection;
 
 
 /**
@@ -11,28 +10,47 @@ import java.util.Collection;
  */
 public interface ITreePath<T> {
 
-    T getParent(T t);
-
-    Iterable<T> getChildren(T t);
-
-    Iterable<T> getChildren(T t, String feature);
-    
-    Iterable<T> getChildren(T t, IFeatureDescriptor<T> featureDesc);
-    
-    Iterable<T> getAllChildren(T t);
-
-    Collection<T> getFeature(T t, String feature);
-
-    Collection<T> getDefaultFeature(T t);
-
-    boolean hasParent(T t);
-
-    IFeatureDescriptor<T> getFeatureDescriptor(String name);
-
-    Iterable<IFeatureDescriptor<T>> getAllFeatureDescriptors();
-
+    /**
+     * Starting point for traversing a tree from an object.
+     * @param t
+     * @return
+     */
     ITreeTraversal<T> startTraversal(T t);
-
+    
+    /**
+     * Starting point for traversing a tree (a forest) from a collection of objects.
+     * @param t
+     * @return
+     */
     ITreeTraversal<T> startTraversal(Iterable<T> it);
     
+    /**
+     * Retreives the contents of a feature.
+     * @param t
+     * @param featureDesc
+     * @return
+     */
+    Iterable<T> getContents(T t, IFeatureDescriptor<T> featureDesc);
+
+    /**
+     * Retreives contents of all features.
+     * @param t
+     * @return
+     */
+    Iterable<T> getAllContents(T t);
+
+    // The design part of the interface 
+    
+    IFeatureDescriptor<T> getFeatureDescriptor(String name);
+    
+    Iterable<IFeatureDescriptor<T>> getAllFeatureDescriptors();
+
+    // Deprecated API
+    
+    @Deprecated
+    boolean hasParent(T t);
+
+    @Deprecated
+    T getParent(T t);
+
 }

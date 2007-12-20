@@ -18,4 +18,19 @@ public interface IWritableGenericFeatureDesign extends IGenericFeatureDesign {
 
     SNode insertStatement(SNode srcExpr, SNode range, SNode insertExpr, ITemplateGenerator generator);
 
+    class Stub extends IGenericFeatureDesign.Stub implements IWritableGenericFeatureDesign {
+
+        public SNode insertStatement(SNode srcExpr, SNode range, SNode insertExpr, ITemplateGenerator generator) {
+            return null;
+        }
+
+        public SNode removeStatement(SNode srcExpr, SNode range, ITemplateGenerator generator) {
+            return null;
+        }
+
+        public SNode replaceStatement(SNode srcExpr, SNode range, SNode replaceExpr, ITemplateGenerator generator) {
+            return null;
+        }
+        
+    }
 }

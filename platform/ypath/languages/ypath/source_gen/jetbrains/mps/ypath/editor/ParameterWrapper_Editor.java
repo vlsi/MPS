@@ -52,6 +52,7 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+    editorCell.setEditable(false);
   }
 
 
@@ -95,10 +96,10 @@ public class ParameterWrapper_Editor extends DefaultNodeEditor {
   public EditorCell createCellModel_ModelAccess(EditorContext context, SNode node) {
     ModelAccessor modelAccessor = this._modelAcessorFactory_1197465964250(context, node);
     EditorCell_Property editorCell = EditorCell_Property.create(context, modelAccessor, node);
+    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     ParameterWrapper_Editor.setupBasic_CellModel_ModelAccess(editorCell, node, context);
     ParameterWrapper_Editor.setupLabel_CellModel_ModelAccess(editorCell, node, context);
     editorCell.setDefaultText("");
-    editorCell.setAction(EditorCellAction.DELETE, new CellAction_Empty());
     return editorCell;
   }
 

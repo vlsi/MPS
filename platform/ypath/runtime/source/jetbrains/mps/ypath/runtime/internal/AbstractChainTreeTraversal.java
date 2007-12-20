@@ -34,7 +34,7 @@ public abstract class AbstractChainTreeTraversal<T> extends AbstractTreeTraversa
     }
 
     protected Iterable<T> getChildren (T node) {
-        return getTreePath().getChildren(node, featureDesc);
+        return getTreePath().getContents(node, featureDesc);
     }
     
     protected boolean hasParent (T node) {

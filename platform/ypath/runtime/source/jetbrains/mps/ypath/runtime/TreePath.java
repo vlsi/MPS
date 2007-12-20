@@ -6,11 +6,10 @@ package jetbrains.mps.ypath.runtime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 import jetbrains.mps.ypath.runtime.internal.StartTreeTraversal;
-
-
 
 /**
  * @author fyodor
@@ -25,31 +24,27 @@ public abstract class TreePath <T> extends AbstractTreePath<T>  {
     private final Iterable<T> EMPTY_CHILDREN = Collections.emptyList();
 
     private final List<IFeatureDescriptor<T>> featureDescriptors = new ArrayList<IFeatureDescriptor<T>> ();  
-
-    /**
-     * This method must be called by subclasses wishing to register a feature.
-     * @param featureDesc
-     */
-    protected final void registerFeature (IFeatureDescriptor<T> featureDesc) {
-        featureDescriptors.add(featureDesc);
+    
+    public ITreeTraversal<T> startTraversal (T t) {
+        return new StartTreeTraversal<T> (this, t);
     }
     
+    public ITreeTraversal<T> startTraversal (Iterable<T> it) {
+        return new StartTreeTraversal<T> (this, it);
+    }
+
     public final Iterable <IFeatureDescriptor<T>> getAllFeatureDescriptors () {
         return featureDescriptors;
     }
-
     
-    public final T getParent (T t) {
-        return parent(t);
-    }
-    
-    public final Iterable<T> getChildren (T t) {
+    public final Iterable<T> getAllContents (final T t) {
         if (!featureDescriptors.isEmpty()) {
-            return getAllChildren(t);
+            return new Iterable<T> () {
+                public Iterator<T> iterator () { return new AllFeaturesIterator (t); }
+            };
         }
+
         // fallback to the old mechanism
-        
-        // TODO: remove the old "children" stuff
         Iterable<T> children = children(t);
         if (children != CHILDREN_DEFAULT_VALUE) {
             return children != null ? children : EMPTY_CHILDREN;
@@ -62,12 +57,28 @@ public abstract class TreePath <T> extends AbstractTreePath<T>  {
     }
     
     /**
+     * This method must be called by subclasses wishing to register a feature.
+     * @param featureDesc
+     */
+    protected final void registerFeature (IFeatureDescriptor<T> featureDesc) {
+        featureDescriptors.add(featureDesc);
+    }
+
+    // Deprecated "old" API using parent/children
+    
+    @Deprecated
+    public final T getParent (T t) {
+        return parent(t);
+    }
+    
+    /**
      * This method is meant to be overridden by subclasses.
      * It also has a default implementation that checks
      * if the <code>getParent(t)</code> return a non-null value.
      * @param t
      * @return
      */
+    @Deprecated
     public boolean hasParent (T t) {
         return getParent(t) != null;
     }
@@ -78,6 +89,7 @@ public abstract class TreePath <T> extends AbstractTreePath<T>  {
      * @param t
      * @return
      */
+    @Deprecated
     protected abstract T parent (T t);
     
     /**
@@ -86,6 +98,7 @@ public abstract class TreePath <T> extends AbstractTreePath<T>  {
      * @param t
      * @return
      */
+    @Deprecated
     protected T [] childrenArray (T t) {
       return CHILDREN_ARRAY_DEFAULT_VALUE;
     }
@@ -96,24 +109,9 @@ public abstract class TreePath <T> extends AbstractTreePath<T>  {
      * @param t
      * @return
      */
+    @Deprecated
     protected Iterable<T> children (T t) {
       return CHILDREN_DEFAULT_VALUE;
-    }
-    
-    @Deprecated
-    /**
-     * @deprecated Use method startTraversal(T t) instead
-     */
-    public ITreeTraversal<T> from (T t) {
-        return new StartTreeTraversal<T> (this, t);
-    }
-
-    public ITreeTraversal<T> startTraversal (T t) {
-        return new StartTreeTraversal<T> (this, t);
-    }
-    
-    public ITreeTraversal<T> startTraversal (Iterable<T> it) {
-        return new StartTreeTraversal<T> (this, it);
     }
 
 }

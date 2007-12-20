@@ -14,7 +14,7 @@ import jetbrains.mps.ypath.runtime.CompositeFilter;
 public class XmlDemo {
 
   public static void main(String[] args) {
-    String INPUT = new String("<doc> <a><b><foobar/><findme baz=\"fooblin\"/></b><c></c></a> </doc>");
+    String INPUT = "<doc> <a><b><foobar/><findme baz=\"fooblin\"/></b><c></c></a> </doc>";
     try {
       InputStream is = new ByteArrayInputStream(INPUT.getBytes());
       Document doc = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);

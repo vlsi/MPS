@@ -10,4 +10,7 @@ package jetbrains.mps.ypath.design;
  */
 public interface IFeatureDesign {
     
+    class Stub implements IFeatureDesign {
+    }
+    
 }

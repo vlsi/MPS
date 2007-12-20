@@ -28,7 +28,7 @@ public class TreePathAspectUtil {
       }
       SNode concept = (SNode)SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAspect");
       Iterable<SNode> instances = SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(expression), scope, "jetbrains.mps.ypath.structure.TreePathAspect");
-      ListOperations.addAllElements(treePathAspects, SequenceOperations.where(instances, new zPredicate3(null, _zClosureContext)));
+      ListOperations.addAllElements(treePathAspects, SequenceOperations.where(instances, new zPredicate1(null, _zClosureContext)));
     }
     return treePathAspects;
   }

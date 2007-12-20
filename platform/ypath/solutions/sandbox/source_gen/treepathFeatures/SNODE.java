@@ -100,7 +100,7 @@ public class SNODE extends TreePath<SNode> {
     }
 
 }
-  public static class Desc_Feature_child implements IFeatureDescriptor<SNode> {
+  public static class Desc_Feature_child extends IFeatureDescriptor.Stub<SNode> implements IFeatureDescriptor<SNode> {
 
     private String param;
 
@@ -125,7 +125,7 @@ public class SNODE extends TreePath<SNode> {
     }
 
 }
-  public static class Desc_Feature_link implements IFeatureDescriptor<SNode> {
+  public static class Desc_Feature_link extends IFeatureDescriptor.Stub<SNode> implements IFeatureDescriptor<SNode> {
 
     private String param;
 
