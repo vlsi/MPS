@@ -491,8 +491,12 @@ public class RefactoringContext {
     }
 
     public void toElement(Element element) {
-      element.setAttribute(FEATURE_NAME, myFeatureName);
-      element.setAttribute(CONCEPT_FQ_NAME, myConceptFQName);
+      if (myFeatureName != null) {
+        element.setAttribute(FEATURE_NAME, myFeatureName);
+      }
+      if (myConceptFQName != null) {
+        element.setAttribute(CONCEPT_FQ_NAME, myConceptFQName);
+      }
       element.setAttribute(FEATURE_KIND, myConceptFeatureKind.toString());
     }
 
