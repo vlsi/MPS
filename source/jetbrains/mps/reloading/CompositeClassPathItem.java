@@ -18,7 +18,7 @@ public class CompositeClassPathItem implements IClassPathItem {
   private Map<String, Set<String>> myClasses = new HashMap<String, Set<String>>();
 
   public void add(IClassPathItem item) {
-    LOG.assertLog(item != null);
+    assert item != null;
     myChildren.add(item);
   }
 
