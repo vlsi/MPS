@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.ext.collections.unittest.skip_take_test">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.baseLanguage.unitTest" />
@@ -162,6 +163,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231286" />
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1172667364856">
         <property name="methodName" value="take1" />
@@ -318,6 +320,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231260" />
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1172667481220">
         <property name="methodName" value="takeSkip" />
@@ -438,6 +441,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231830" />
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1172668363428">
         <property name="methodName" value="page" />
@@ -554,6 +558,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231642" />
       </node>
     </node>
   </node>

@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.unitTest">
+<language namespace="jetbrains.mps.baseLanguage.unitTest" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.baseLanguage.unitTest.structure" />
   </structure>
+  <actions>
+    <model modelUID="jetbrains.mps.baseLanguage.unitTest.actions" />
+  </actions>
   <constraints>
     <model modelUID="jetbrains.mps.baseLanguage.unitTest.constraints" />
   </constraints>
+  <scripts>
+    <model modelUID="jetbrains.mps.baseLanguage.unitTest.scripts" />
+  </scripts>
   <editor>
     <model modelUID="jetbrains.mps.baseLanguage.unitTest.editor" />
   </editor>
@@ -36,6 +42,7 @@
     <entry path="${language_descriptor}\classes" />
     <entry path="${mps_home}\lib\junit4\junit-4.1.jar" />
   </runtimeClassPath>
+  <sourcePath />
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />

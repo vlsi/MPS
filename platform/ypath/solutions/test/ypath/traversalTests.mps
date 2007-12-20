@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="ypath.traversalTests">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.unitTest" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
@@ -175,7 +176,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1196720899996" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231632" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196720899998" />
@@ -404,7 +405,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1196720900084" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231329" />
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196720900085" />

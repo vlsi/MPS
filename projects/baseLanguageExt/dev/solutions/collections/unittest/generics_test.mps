@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguage.ext.collections.unittest.generics_test">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.baseLanguage.unitTest" />
@@ -250,6 +251,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231473" />
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1172029195858">
         <property name="methodName" value="test2" />
@@ -314,6 +316,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231503" />
       </node>
     </node>
   </node>

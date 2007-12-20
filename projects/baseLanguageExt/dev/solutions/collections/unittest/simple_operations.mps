@@ -1242,6 +1242,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231272" />
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1172267731982">
         <property name="methodName" value="test2" />
@@ -1297,6 +1298,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231733" />
       </node>
     </node>
   </node>
@@ -1485,6 +1487,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231859" />
       </node>
     </node>
   </node>
@@ -1494,7 +1497,6 @@
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1178898648962">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1178898653156">
         <property name="methodName" value="distinct1" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1178898653157" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178898653158">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1178898665545">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1178898665546">
@@ -1703,10 +1705,10 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231686" />
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1178899307522">
         <property name="methodName" value="distinct2" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1178899307523" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178899307524">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1178899307525">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1178899307526">
@@ -1930,6 +1932,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231696" />
       </node>
     </node>
   </node>
@@ -2363,7 +2366,6 @@
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1180974291462">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1180974305208">
         <property name="methodName" value="union" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1180974305209" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180974305210">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1180976152274">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1180976152275">
@@ -2404,10 +2406,10 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231853" />
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1180974925059">
         <property name="methodName" value="exclude" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1180974925060" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180974925061">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1180976233983">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1180976233984">
@@ -2482,10 +2484,10 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231569" />
       </node>
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1180975293807">
         <property name="methodName" value="intersect" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1180975293808" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1180975293809">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1180976267767">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1180976267768">
@@ -2583,6 +2585,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231500" />
       </node>
     </node>
   </node>
@@ -2592,7 +2595,6 @@
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1181072883583">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1181072889623">
         <property name="methodName" value="test1" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1181072889624" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1181072889625">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1181072909472">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1181072909473">
@@ -2786,6 +2788,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231374" />
       </node>
     </node>
   </node>
@@ -2795,7 +2798,6 @@
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1197927649977">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1197927658791">
         <property name="methodName" value="simple" />
-        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1197927658792" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197927658793">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1197928280895">
             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1197928280896">
@@ -2849,6 +2851,7 @@
             </node>
           </node>
         </node>
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198168231582" />
       </node>
     </node>
   </node>
