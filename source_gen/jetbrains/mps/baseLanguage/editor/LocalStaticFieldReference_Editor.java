@@ -12,8 +12,6 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.nodeEditor.MPSFonts;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
@@ -68,12 +66,11 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172009005787");
+      Common_StyleSheet.STATIC_FIELD.apply(editorCell);
       editorCell.setDrawBorder(false);
-      editorCell.setFontType(MPSFonts.BOLD_ITALIC);
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
     }
 
 

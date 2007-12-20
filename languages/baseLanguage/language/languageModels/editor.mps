@@ -2690,11 +2690,10 @@
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1088427644684">
           <link role="conceptDeclaration" targetNodeId="17.1070462154015" />
           <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1088427644685">
-            <property name="textFgColor" value="DARK_MAGENTA" />
             <property name="readOnly" value="true" />
-            <property name="fontStyle" value="BOLD_ITALIC" />
             <property name="drawBorder" value="false" />
             <link role="relationDeclaration" targetNodeId="17.1083152972671" />
+            <link role="styleClass" targetNodeId="1198160792349" resolveInfo="staticField" />
           </node>
         </node>
         <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1165018744026">
@@ -3059,6 +3058,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1188210606991">
           <link role="editorComponent" targetNodeId="1181823106174" resolveInfo="VariableDeclaration_NameCellComponent" />
+          <link role="styleClass" targetNodeId="1198160792349" resolveInfo="staticField" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1188210606992">
           <property name="name" value="initializerArea" />
@@ -6778,11 +6778,10 @@
       <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1172009002551">
         <link role="conceptDeclaration" targetNodeId="17.1070462154015" />
         <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1172009005787">
-          <property name="textFgColor" value="DARK_MAGENTA" />
           <property name="readOnly" value="true" />
-          <property name="fontStyle" value="BOLD_ITALIC" />
           <property name="drawBorder" value="false" />
           <link role="relationDeclaration" targetNodeId="17.1083152972671" />
+          <link role="styleClass" targetNodeId="1198160792349" resolveInfo="staticField" />
         </node>
       </node>
     </node>
@@ -8490,6 +8489,15 @@
       </node>
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1196337297008">
         <property name="style" value="BOLD" />
+      </node>
+    </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1198160792349">
+      <property name="name" value="staticField" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1198160801001">
+        <property name="color" value="DARK_MAGENTA" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1198160806066">
+        <property name="style" value="BOLD_ITALIC" />
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1186415563770">
