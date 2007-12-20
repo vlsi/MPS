@@ -193,7 +193,9 @@ public class ModuleMaker {
 
     classPathItems.add(ClassLoaderManager.getInstance().getRTJar());
     classPathItems.add(ClassLoaderManager.getInstance().getMPSPath());
-    classPathItems.add(ClassLoaderManager.getInstance().getMPSSupportPath());
+    if (ClassLoaderManager.getInstance().getMPSSupportPath() != null) {
+      classPathItems.add(ClassLoaderManager.getInstance().getMPSSupportPath());
+    }
 
     return classPathItems;
   }
