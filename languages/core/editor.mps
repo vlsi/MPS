@@ -48,6 +48,18 @@
         <property name="style" value="BOLD" />
       </node>
     </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1198153683681">
+      <property name="name" value="NumericLiteral" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1198153692620">
+        <property name="color" value="DARK_BLUE" />
+      </node>
+    </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1198153741842">
+      <property name="name" value="StringLiteral" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1198153745702">
+        <property name="color" value="DARK_BLUE" />
+      </node>
+    </node>
   </node>
 </model>
 
