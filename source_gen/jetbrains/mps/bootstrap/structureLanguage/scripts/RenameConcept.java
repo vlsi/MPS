@@ -12,9 +12,11 @@ import jetbrains.mps.project.IModule;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.refactoring.framework.IChooseComponent;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
+import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 
@@ -50,9 +52,10 @@ public class RenameConcept extends AbstractLoggableRefactoring {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
       SModel model = actionContext.getNode().getModel();
-      IModule module = model.getModelDescriptor().getModule();
-      if(module != null) {
-        result.put(module, CollectionUtil.asList(model));
+      Language language = Language.getLanguageFor(model.getModelDescriptor());
+      if(language != null) {
+        List<SModel> aspectList = SequenceOperations.toList(SequenceOperations.select(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(language.getAspectModelDescriptors())), new zSelector(null, null)));
+        result.put(language, aspectList);
       }
       return result;
     }
