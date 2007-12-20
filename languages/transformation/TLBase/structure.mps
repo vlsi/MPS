@@ -1429,7 +1429,8 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1198101462928">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="type" />
+      <property name="role" value="equivalentType" />
+      <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="6.1068431790189" resolveInfo="Type" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198104623627">
