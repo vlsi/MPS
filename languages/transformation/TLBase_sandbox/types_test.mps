@@ -11,7 +11,7 @@
   <import index="1" modelUID="jetbrains.mps.transformation.TLBase.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1198104524399">
-    <property name="name" value="Test" />
+    <property name="name" value="Test_TypeOrStringType" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1198104532542">
       <property name="name" value="test_TypeOrString" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198104532543" />
