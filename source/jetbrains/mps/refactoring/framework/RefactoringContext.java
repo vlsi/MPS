@@ -365,27 +365,33 @@ public class RefactoringContext {
     }
     {
       Element moveMapElement = element.getChild(MOVE_MAP);
-      for (Element entryElement : (List<Element>) moveMapElement.getChildren(ENTRY)) {
-        Element keyElement = entryElement.getChild(KEY);
-        Element valueElement = entryElement.getChild(VALUE);
-        myMoveMap.put(new FullNodeId(keyElement), new FullNodeId(valueElement));
+      if (moveMapElement != null) {
+        for (Element entryElement : (List<Element>) moveMapElement.getChildren(ENTRY)) {
+          Element keyElement = entryElement.getChild(KEY);
+          Element valueElement = entryElement.getChild(VALUE);
+          myMoveMap.put(new FullNodeId(keyElement), new FullNodeId(valueElement));
+        }
       }
     }
     {
       Element featureMapElement = element.getChild(CONCEPT_FEATURE_MAP);
-      for (Element entryElement : (List<Element>) featureMapElement.getChildren(ENTRY)) {
-        Element keyElement = entryElement.getChild(KEY);
-        Element valueElement = entryElement.getChild(VALUE);
-        myConceptFeatureMap.put(new ConceptFeature(keyElement), new ConceptFeature(valueElement));
+      if (featureMapElement != null) {
+        for (Element entryElement : (List<Element>) featureMapElement.getChildren(ENTRY)) {
+          Element keyElement = entryElement.getChild(KEY);
+          Element valueElement = entryElement.getChild(VALUE);
+          myConceptFeatureMap.put(new ConceptFeature(keyElement), new ConceptFeature(valueElement));
+        }
       }
     }
     {
       Element parametersMapElement = element.getChild(PARAMETERS_MAP);
-      for (Element entryElement : (List<Element>) parametersMapElement.getChildren(ENTRY)) {
-        Element keyElement = entryElement.getChild(KEY);
-        Element valueElement = entryElement.getChild(VALUE);
-        String parameterName = keyElement.getAttributeValue(PARAMETER_NAME);
-        myAdditionalParametersMap.put(parameterName, deserialize(valueElement));
+      if (parametersMapElement != null) {
+        for (Element entryElement : (List<Element>) parametersMapElement.getChildren(ENTRY)) {
+          Element keyElement = entryElement.getChild(KEY);
+          Element valueElement = entryElement.getChild(VALUE);
+          String parameterName = keyElement.getAttributeValue(PARAMETER_NAME);
+          myAdditionalParametersMap.put(parameterName, deserialize(valueElement));
+        }
       }
     }
     computeCaches();

@@ -152,7 +152,9 @@
               </node>
             </node>
           </node>
-          <node role="newFeatureName" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198088921714" />
+          <node role="newFeatureName" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198160247532">
+            <link role="argument" targetNodeId="1198086090026" resolveInfo="newName" />
+          </node>
         </node>
       </node>
     </node>

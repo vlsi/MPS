@@ -42,7 +42,7 @@ public class RenameConcept extends AbstractLoggableRefactoring {
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       SNode node = (SNode)actionContext.getNode();
-      refactoringContext.changeFeatureName(node, SNodeOperations.getModel(node).toString() + "." + (String)refactoringContext.getParameter("newName"), null);
+      refactoringContext.changeFeatureName(node, SNodeOperations.getModel(node).toString() + "." + (String)refactoringContext.getParameter("newName"), (String)refactoringContext.getParameter("newName"));
     }
   }
 
