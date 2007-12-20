@@ -6,10 +6,12 @@ import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.logging.Logger;
 
 import java.util.*;
 
 public class FindUsagesManager {
+  private static Logger LOG = Logger.getLogger(FindUsagesManager.class);
 
   public static FindUsagesManager getInstance() {
     return ApplicationComponents.getInstance().getComponent(FindUsagesManager.class);
@@ -26,6 +28,7 @@ public class FindUsagesManager {
 
 
   public Set<AbstractConceptDeclaration> findDescendants(AbstractConceptDeclaration node, IScope scope) {
+    LOG.assertInCommand();
     HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>> knownDescendantsInModelDescriptors = myConceptsToKnownDescendantsInModelDescriptors.get(node);
     if (knownDescendantsInModelDescriptors == null) {
       knownDescendantsInModelDescriptors = new HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>();
@@ -62,6 +65,7 @@ public class FindUsagesManager {
    * @return
    */
   public Set<SReference> findUsages(SNode node, IScope scope, IAdaptiveProgressMonitor progress) {
+    LOG.assertInCommand();
     return findUsages(CollectionUtil.asSet(node), scope, progress);
   }
 
@@ -74,6 +78,7 @@ public class FindUsagesManager {
    * @return
    */
   public Set<SReference> findUsages(Set<SNode> nodes, IScope scope, IAdaptiveProgressMonitor progress) {
+    LOG.assertInCommand();
     Set<SReference> result = new HashSet<SReference>();
     //noinspection EmptyFinallyBlock
     try {
@@ -126,6 +131,7 @@ public class FindUsagesManager {
    * @return
    */
   public Set<SNode> findInstances(AbstractConceptDeclaration concept, IScope scope, IAdaptiveProgressMonitor progress) {
+    LOG.assertInCommand();
     Set<SNode> result = new HashSet<SNode>();
     //noinspection EmptyFinallyBlock
     try {

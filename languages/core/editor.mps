@@ -31,16 +31,22 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheet" id="1197980680536">
     <property name="name" value="BaseStyleSheet" />
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1197980684428">
-      <property name="name" value="keyword" />
-    </node>
-    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1197980686647">
-      <property name="name" value="stringLiteral" />
-    </node>
-    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1197980692430">
-      <property name="name" value="optinalPart" />
+      <property name="name" value="KeyWord" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1198142347346">
+        <property name="color" value="DARK_BLUE" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1198142352832">
+        <property name="style" value="BOLD" />
+      </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1197980695368">
-      <property name="name" value="comment" />
+      <property name="name" value="Comment" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1198142718755">
+        <property name="color" value="darkGray" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1198142723179">
+        <property name="style" value="BOLD" />
+      </node>
     </node>
   </node>
 </model>

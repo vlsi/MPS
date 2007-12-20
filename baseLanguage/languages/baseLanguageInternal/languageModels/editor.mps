@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguageInternal.editor">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="jetbrains.mps.baseLanguageInternal.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.core.editor" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1173990741533">
     <link role="conceptDeclaration" targetNodeId="1.1173990517731" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1173990744300">
@@ -213,7 +215,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1189170488039">
         <property name="text" value="extends" />
-        <link role="styleClass" targetNodeId="3.1186415544875" />
+        <link role="styleClass" targetNodeId="5.1197980684428" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1189170501707">
         <link role="relationDeclaration" targetNodeId="4.1107535924139" />
