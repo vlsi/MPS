@@ -6037,14 +6037,9 @@
         <link role="relationDeclaration" targetNodeId="1.1198101462928" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198101623813">
-        <property name="text" value=" or" />
+        <property name="text" value="or string" />
+        <property name="selectable" value="false" />
         <link role="styleClass" targetNodeId="1198104170947" resolveInfo="literal" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1198101644815">
-        <property name="noTargetText" value="&lt;no description&gt;" />
-        <property name="textFgColor" value="DARK_GREEN" />
-        <property name="fontStyle" value="ITALIC" />
-        <link role="relationDeclaration" targetNodeId="1.1198101504257" resolveInfo="stringDescription" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198101722129">
         <property name="text" value=")" />
