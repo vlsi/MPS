@@ -40,8 +40,8 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     if(actionContext.getNodes().isEmpty()) {
       return false;
     }
-    if((Object)refactoringContext.getParameter("target") instanceof SNode) {
-      SNode targetNode = ((SNode)(Object)refactoringContext.getParameter("target"));
+    if(((Object)refactoringContext.getParameter("target")) instanceof SNode) {
+      SNode targetNode = ((SNode)((Object)refactoringContext.getParameter("target")));
       SNode concept = SNodeOperations.getConceptDeclaration(targetNode);
       Iterable<SNode> childLinkDeclarations = SequenceOperations.where(SLinkOperations.getTargets(concept, "linkDeclaration", true), new zPredicate(null, null));
       Iterable<String> childLinksRoles = SequenceOperations.select(childLinkDeclarations, new zSelector(null, null));
@@ -60,7 +60,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
       }
       return true;
     }
-    if((Object)refactoringContext.getParameter("target") instanceof SModel) {
+    if(((Object)refactoringContext.getParameter("target")) instanceof SModel) {
       for(SNode node : actionContext.getNodes()) {
         if(!(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "rootable"))) {
           return false;
@@ -74,11 +74,11 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       List<SNode> nodes = (List<SNode>)actionContext.getNodes();
-      if((Object)refactoringContext.getParameter("target") instanceof SModel) {
-        refactoringContext.moveNodesToModel(nodes, (SModel)(Object)refactoringContext.getParameter("target"));
+      if(((Object)refactoringContext.getParameter("target")) instanceof SModel) {
+        refactoringContext.moveNodesToModel(nodes, (SModel)((Object)refactoringContext.getParameter("target")));
       }
-      if((Object)refactoringContext.getParameter("target") instanceof SNode) {
-        refactoringContext.moveNodesToNode(nodes, ListOperations.getElement(nodes, 0).getRole_(), (SNode)(Object)refactoringContext.getParameter("target"));
+      if(((Object)refactoringContext.getParameter("target")) instanceof SNode) {
+        refactoringContext.moveNodesToNode(nodes, ListOperations.getElement(nodes, 0).getRole_(), (SNode)((Object)refactoringContext.getParameter("target")));
       }
     }
   }

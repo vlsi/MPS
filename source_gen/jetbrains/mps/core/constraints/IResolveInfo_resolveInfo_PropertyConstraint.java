@@ -8,8 +8,6 @@ import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class IResolveInfo_resolveInfo_PropertyConstraint implements IModelConstraints, INodePropertyGetter, INodePropertySetter {
 
@@ -27,10 +25,7 @@ public class IResolveInfo_resolveInfo_PropertyConstraint implements IModelConstr
   }
 
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
-    if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.core.structure.INamedConcept")) {
-      return SPropertyOperations.getString(node, "name");
-    }
-    return null;
+    return node.getName();
   }
 
   public void execPropertySet(SNode node, String propertyName, String propertyValue, IScope scope) {

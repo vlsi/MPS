@@ -2470,24 +2470,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181704961">
-    <link role="concept" targetNodeId="1.1068498886292" />
-    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181704962">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181704963" />
-    </node>
-    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1198103358602">
-      <link role="applicableProperty" targetNodeId="2.1198103150854" resolveInfo="resolveInfoDescription" />
-      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1198103367838">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198103367839">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198103400210">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198103400211">
-              <property name="value" value="parameter name" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181704973">
     <link role="concept" targetNodeId="1.1170345865475" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181704974">

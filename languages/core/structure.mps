@@ -85,10 +85,6 @@
       <property name="name" value="resolveInfo" />
       <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1198103150854">
-      <property name="name" value="resolveInfoDescription" />
-      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
-    </node>
   </node>
 </model>
 
