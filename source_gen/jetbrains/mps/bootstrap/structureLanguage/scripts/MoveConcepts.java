@@ -52,7 +52,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     {
       List<SNode> nodes = (List<SNode>)actionContext.getNodes();
       SModel model = actionContext.getNode().getModel();
-      refactoringContext.setParameter("targetModel", model);
+      refactoringContext.setParameter("sourceModel", model);
       refactoringContext.moveNodesToModel(nodes, ((SModel)refactoringContext.getParameter("targetModel")));
       for(SNode node : nodes) {
         refactoringContext.changeFeatureName(node, ((SModel)refactoringContext.getParameter("targetModel")) + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));

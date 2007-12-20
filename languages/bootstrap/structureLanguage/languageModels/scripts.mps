@@ -426,8 +426,8 @@
             <node role="rValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198174270312">
               <link role="variableDeclaration" targetNodeId="1198174250582" resolveInfo="model" />
             </node>
-            <node role="lValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198174267449">
-              <link role="argument" targetNodeId="1198173589717" resolveInfo="targetModel" />
+            <node role="lValue" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198176984526">
+              <link role="argument" targetNodeId="1198174225279" resolveInfo="sourceModel" />
             </node>
           </node>
         </node>
