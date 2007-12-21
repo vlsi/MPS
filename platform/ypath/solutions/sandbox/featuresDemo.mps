@@ -333,15 +333,41 @@
       <property name="default" value="false" />
       <node role="sequenceFunction" type="jetbrains.mps.ypath.structure.FeatureSequenceFun" id="1197998065638">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197998065639">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1197998081551">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1197998081552">
-              <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1197998083082">
-                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1197998085624">
-                  <link role="classifier" targetNodeId="1.~Node" resolveInfo="Node" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198246407456">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198246407457">
+              <property name="name" value="parentNode" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198246407458">
+                <link role="classifier" targetNodeId="1.~Node" resolveInfo="Node" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197998096315">
+                <link role="baseMethodDeclaration" targetNodeId="1.~Node.getParentNode():org.w3c.dom.Node" resolveInfo="getParentNode" />
+                <node role="instance" type="jetbrains.mps.ypath.structure.NodeFunctionParam" id="1197998092832" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198246423836">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1198246423837">
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1198246430040">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198246430867" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198246427707">
+                  <link role="variableDeclaration" targetNodeId="1198246407457" resolveInfo="parentNode" />
                 </node>
-                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1197998096315">
-                  <link role="baseMethodDeclaration" targetNodeId="1.~Node.getParentNode():org.w3c.dom.Node" resolveInfo="getParentNode" />
-                  <node role="instance" type="jetbrains.mps.ypath.structure.NodeFunctionParam" id="1197998092832" />
+              </node>
+              <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1198246440605">
+                <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1198246441889">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198246444183">
+                    <link role="classifier" targetNodeId="1.~Node" resolveInfo="Node" />
+                  </node>
+                </node>
+              </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1198246434192">
+                <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1198246434193">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198246434194">
+                    <link role="classifier" targetNodeId="1.~Node" resolveInfo="Node" />
+                  </node>
+                  <node role="initValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198246434195">
+                    <link role="variableDeclaration" targetNodeId="1198246407457" resolveInfo="parentNode" />
+                  </node>
                 </node>
               </node>
             </node>

@@ -6,6 +6,7 @@ package jetbrains.mps.ypath.runtime.internal;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 import jetbrains.mps.ypath.runtime.ITreeTraversal;
 
 
@@ -19,6 +20,10 @@ public class ParentTreeTraversal<T> extends AbstractChainTreeTraversal<T> implem
         super (source);
     }
     
+    public ParentTreeTraversal (ITreeTraversal<T> source, IFeatureDescriptor<T> fd) {
+        super (source, fd);
+    }
+
     public Iterator<T> iterator() {
         return new ParentsIterator(getSourceTraversal().iterator());
     }

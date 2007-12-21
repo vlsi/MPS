@@ -35,10 +35,10 @@ public class DOM_NG extends TreePath<Node> {
     }
 
     public static IFilter<Node> getInstance() {
-      if(instance == null) {
-        instance = new DOM_NG.ELEMENT_NodeKindTrigger();
+      if(DOM_NG.ELEMENT_NodeKindTrigger.instance == null) {
+        DOM_NG.ELEMENT_NodeKindTrigger.instance = new DOM_NG.ELEMENT_NodeKindTrigger();
       }
-      return instance;
+      return DOM_NG.ELEMENT_NodeKindTrigger.instance;
     }
 
 
@@ -181,7 +181,11 @@ public class DOM_NG extends TreePath<Node> {
     }
 
     public Iterable<Node> sequence() {
-      return ListOperations.createList(new Node[]{this.thisNode.getParentNode()});
+      Node parentNode = this.thisNode.getParentNode();
+      return (parentNode != null ?
+        ListOperations.createList(new Node[]{parentNode}) :
+        ListOperations.createList(new Node[]{})
+      );
     }
 
     public Iterator<Node> iterator() {

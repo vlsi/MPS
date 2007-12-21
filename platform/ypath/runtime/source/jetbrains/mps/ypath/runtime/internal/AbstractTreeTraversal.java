@@ -38,10 +38,10 @@ public abstract class AbstractTreeTraversal<T> implements ITreeTraversal<T>{
             return new ChildrenTreeTraversal<T>(this, featureDesc);
 
         case ANCESTORS:
-            return new AncestorsOrThisTreeTraversal<T>(new ParentTreeTraversal<T>(this));
+            return new AncestorsOrThisTreeTraversal<T>(new ParentTreeTraversal<T>(this, featureDesc), featureDesc);
 
         case SELF_ANCESTORS:
-            return new AncestorsOrThisTreeTraversal<T>(this);
+            return new AncestorsOrThisTreeTraversal<T>(this, featureDesc);
 
         case FOLLOWING_SIBLINGS:
             return new SiblingsTreeTraversal<T> (this, new ISiblingsFilter<T> () {

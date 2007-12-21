@@ -7,6 +7,7 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Stack;
 
+import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 import jetbrains.mps.ypath.runtime.ITreeTraversal;
 
 
@@ -20,6 +21,10 @@ public class AncestorsOrThisTreeTraversal<T> extends AbstractChainTreeTraversal<
         super (source);
     }
     
+    public AncestorsOrThisTreeTraversal (ITreeTraversal<T> source, IFeatureDescriptor<T> fd) {
+        super (source, fd);
+    }
+
     public Iterator<T> iterator() {
         return new AncestorsOrThisIterator(getSourceTraversal().iterator());
     }

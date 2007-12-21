@@ -56,7 +56,7 @@ public interface IFeatureDescriptor<T> {
             throw new IllegalArgumentException ("No such type");
         }
     }
-
+    
     class Stub<T> implements IFeatureDescriptor<T> {
 
         public Collection<T> getFeature(T t) {
