@@ -75,6 +75,9 @@ public class _QueriesUtil {
     return null;
   }
 
+  /**
+   * todo: remove (used in reduce_bodyOfContextOwner_insertClosureContextVar)
+   */
   public static SNode resolve_MethodParm_CopyOfParm(SNode paramDecl_input, SNode templateNode, ITemplateGenerator generator) {
     // suppose that parm is simply copied to target model
     SNode paramDecl_output = generator.findCopiedOutputNodeForInputNode(paramDecl_input);

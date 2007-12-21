@@ -89,7 +89,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170295650824(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return _QueriesUtil.resolve_MethodParm_CopyOfParm(node, templateNode, generator);
+    return SPropertyOperations.getString(node, "name");
   }
 
   public static Object referenceMacro_GetReferent_1170295049904(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
