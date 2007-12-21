@@ -122,6 +122,8 @@ public class NodeSubstitutePatternEditor {
       g.setColor(Color.GRAY);
       g.drawRect(bounds.x, bounds.y, bounds.width - 1, bounds.height - 1);
 
+      AbstractEditorComponent.turnOnAliasingIfPossible((Graphics2D) g);
+
       TextLine textLine = myTextLine;
       textLine.setTextColor(Color.black);
       textLine.setSelectedBorderColor(null);

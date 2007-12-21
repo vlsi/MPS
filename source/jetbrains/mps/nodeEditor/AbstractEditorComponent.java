@@ -61,6 +61,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public static final String EDITOR_POPUP_MENU_ACTIONS = "editor-popup-menu-actions";
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = "editor-popup-menu-actions-internal";
 
+  static void turnOnAliasingIfPossible(Graphics2D g) {
+    if (EditorSettings.getInstance().isUseAntialiasing()) {
+      g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
+              RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+      g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+      g.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
+    }
+  }
+
   private Set<MPSAction> myMPSActionsWithShortcuts = new HashSet<MPSAction>();
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
 
@@ -1519,15 +1528,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     myLeftHighlighter.paint(g);
     if (myRootCell != null) {
       myRootCell.paint(g);
-    }
-  }
-
-  void turnOnAliasingIfPossible(Graphics2D g) {
-    if (EditorSettings.getInstance().isUseAntialiasing()) {
-      g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
-              RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
-      g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-      g.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
     }
   }
 
