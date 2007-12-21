@@ -2606,5 +2606,32 @@
       <link role="target" targetNodeId="1186402373407" resolveInfo="StyleSheetClass" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198256887712">
+    <property name="package" value="CellModel" />
+    <property name="name" value="CellModel_Indent" />
+    <link role="extends" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198256955554">
+      <property name="value" value="indent" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198257632966">
+    <property name="package" value="CellModel" />
+    <property name="name" value="CellModel_BlockStart" />
+    <link role="extends" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198257692449">
+      <property name="value" value="block start" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198257747917">
+    <property name="package" value="CellModel" />
+    <property name="name" value="CellModel_BlockEnd" />
+    <link role="extends" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198257819370">
+      <property name="value" value="block end" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

@@ -37,9 +37,10 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
   private @Externalizable Color mySelectionColor = null;
   private @Externalizable Color myRangeSelectionColor = null;
   private @Externalizable boolean myUseLegacyTypesystem = true;
+  private @Externalizable boolean myUseBraces = true;
+  private int myIndentSize = 2;
 
   private CaretBlinker myCaretBlinker;
-
 
   @Dependency
   public void setCaretBlinker(CaretBlinker caretBlinker) {
@@ -56,6 +57,17 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     ReloadUtils.rebuildAllEditors();
   }
 
+  public boolean useBraces() {
+    return myUseBraces;
+  }
+
+  public void setUseBraces(boolean newUseBraces) {
+    myUseBraces = newUseBraces;
+  }
+  
+  public int getIndentSize() {
+    return myIndentSize;
+  }
 
   public boolean isUseAntialiasing() {
     return myUseAntialiasing;
@@ -211,6 +223,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     };
     private JCheckBox myAntialiasingCheckBox = createAntialiasinbCheckBox();
     private JCheckBox myLegacyTypesystemCheckBox = createLegacyTypesystemCheckBox();
+    private JCheckBox myUseBraces = createUseBracesCheckBox();
     private JSlider myBlinkingRateSlider = createBlinkingRateSlider();
     private final AbstractEditorComponent myBlinkingDemo = createBlinkingDemo();
     Timer myTimer;
@@ -230,6 +243,12 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
       fontPropertiesPanel.add(myTextWidthComboBox);
 
       panel.add(fontPropertiesPanel);
+
+      JPanel useBraces = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      useBraces.add(myUseBraces);
+      useBraces.add(new JLabel("Use Braces"));
+
+      panel.add(useBraces);
 
       JPanel antialiasingPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
       antialiasingPanel.add(myAntialiasingCheckBox);
@@ -294,6 +313,12 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     private JCheckBox createLegacyTypesystemCheckBox() {
       JCheckBox result = new JCheckBox();
       result.setSelected(getUseLegacyTypesystem());
+      return result;
+    }
+
+    private JCheckBox createUseBracesCheckBox() {
+      JCheckBox result = new JCheckBox();
+      result.setSelected(useBraces());
       return result;
     }
 
@@ -370,6 +395,7 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
       setUseAntialiasing(myAntialiasingCheckBox.isSelected());
       setUseLegacyTypesystem(myLegacyTypesystemCheckBox.isSelected());
+      setUseBraces(myUseBraces.isSelected());
 
       mySelectionColor = mySelectedColorComponent.getColor();
       myRangeSelectionColor = myRangeSelColorComponent.getColor();

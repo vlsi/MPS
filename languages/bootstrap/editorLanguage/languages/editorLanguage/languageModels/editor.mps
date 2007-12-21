@@ -69,6 +69,9 @@
           <property name="vertical" value="true" />
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198258219892">
+            <property name="text" value="{" />
+          </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1078168610018">
             <property name="name" value="headerIndentCell" />
             <property name="drawBorder" value="false" />
@@ -8881,6 +8884,33 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1198256951045">
+    <property name="package" value="CellModel" />
+    <link role="conceptDeclaration" targetNodeId="2.1198256887712" resolveInfo="CellModel_Indent" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198256960655">
+      <property name="textFgColor" value="lightGray" />
+      <property name="text" value="---&gt;" />
+      <property name="drawBorder" value="true" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1198257699420">
+    <property name="package" value="CellModel" />
+    <link role="conceptDeclaration" targetNodeId="2.1198257632966" resolveInfo="CellModel_BlockStart" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198257702657">
+      <property name="text" value="{" />
+      <property name="textFgColor" value="blue" />
+      <property name="drawBorder" value="true" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1198257760530">
+    <property name="package" value="CellModel" />
+    <link role="conceptDeclaration" targetNodeId="2.1198257747917" resolveInfo="CellModel_BlockEnd" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198257766080">
+      <property name="text" value="}" />
+      <property name="textFgColor" value="blue" />
+      <property name="drawBorder" value="true" />
     </node>
   </node>
 </model>

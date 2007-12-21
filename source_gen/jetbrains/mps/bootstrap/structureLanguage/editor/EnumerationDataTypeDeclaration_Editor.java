@@ -4,15 +4,16 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.nodeEditor.BlockCells;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import java.awt.Color;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -33,6 +34,26 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myMemberListHandler_memberList_;
 
+  public static boolean _QueryFunction_NodeCondition_1198259165914(SNode node, EditorContext editorContext, IScope scope) {
+    return BlockCells.useBraces();
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1197593498320(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(node, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_presentation");
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1198259165919(SNode node, EditorContext editorContext, IScope scope) {
+    return BlockCells.useBraces();
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1198259165924(SNode node, EditorContext editorContext, IScope scope) {
+    return BlockCells.useBraces();
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1198259165929(SNode node, EditorContext editorContext, IScope scope) {
+    return BlockCells.useBraces();
+  }
+
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198240256997");
     StyleSheet_StyleSheet.STRUCTURE_KEY_WORD.apply(editorCell);
@@ -49,7 +70,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198240268798");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198259165913");
   }
 
   private static void setupBasic_HeaderRow(EditorCell editorCell, SNode node, EditorContext context) {
@@ -153,7 +174,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ConstantCell9(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198241316110");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198259165918");
   }
 
   private static void setupBasic_RowCell4(EditorCell editorCell, SNode node, EditorContext context) {
@@ -178,7 +199,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ConstantCell11(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198241513651");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198259165923");
   }
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -194,7 +215,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupBasic_ConstantCell12(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198241043821");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198259165928");
   }
 
   private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
@@ -266,10 +287,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell12(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  public static boolean _QueryFunction_NodeCondition_1197593498320(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_presentation");
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createNodeBox(context, node);
@@ -284,7 +301,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstantCell(context, node, "enumeration"));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "datatype"));
     editorCell.addEditorCell(this.createNameCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell2(context, node, "{"));
+    if(EnumerationDataTypeDeclaration_Editor._QueryFunction_NodeCondition_1198259165914(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstantCell2(context, node, "{"));
+    }
     return editorCell;
   }
 
@@ -345,7 +364,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createIndent2(context, node, "members"));
-    editorCell.addEditorCell(this.createConstantCell9(context, node, "{"));
+    if(EnumerationDataTypeDeclaration_Editor._QueryFunction_NodeCondition_1198259165919(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstantCell9(context, node, "{"));
+    }
     return editorCell;
   }
 
@@ -370,7 +391,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIndent1(context, node, ""));
     editorCell.addEditorCell(this.createRowCell4(context, node));
     editorCell.addEditorCell(this.createRowCell5(context, node));
-    editorCell.addEditorCell(this.createConstantCell11(context, node, "}"));
+    if(EnumerationDataTypeDeclaration_Editor._QueryFunction_NodeCondition_1198259165924(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstantCell11(context, node, "}"));
+    }
     return editorCell;
   }
 
@@ -393,7 +416,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createHeaderRow(context, node));
     editorCell.addEditorCell(this.createRowCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell12(context, node, "}"));
+    if(EnumerationDataTypeDeclaration_Editor._QueryFunction_NodeCondition_1198259165929(node, context, context.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstantCell12(context, node, "}"));
+    }
     return editorCell;
   }
 
