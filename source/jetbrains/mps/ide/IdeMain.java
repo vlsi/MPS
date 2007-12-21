@@ -8,6 +8,7 @@ import jetbrains.mps.ide.settings.IdeAppearanceSettings;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.SwingUtilities;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -21,41 +22,46 @@ public class IdeMain {
     }
   }
                                                                           
-  public static IDEProjectFrame openProjectWindow(boolean loadOldProject) {
-    System.setProperty("alloy.licenseCode", "2008/01/17#Konstantin.Solomatov@gmail.com#b4yfnq#18f3q7");
-    System.setProperty("swing.aatext", "true");
+  public static IDEProjectFrame openProjectWindow(final boolean loadOldProject) {
+    final IDEProjectFrame[] projectWindow = new IDEProjectFrame[1];
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        System.setProperty("alloy.licenseCode", "2008/01/17#Konstantin.Solomatov@gmail.com#b4yfnq#18f3q7");
+        System.setProperty("swing.aatext", "true");
 
-    installFocusKiller();
+        installFocusKiller();
 
-    long start = System.currentTimeMillis();
+        long start = System.currentTimeMillis();
 
-    SplashScreen.getInstance().showSplashScreen();
-    MPSPlugin.getInstance();
+        SplashScreen.getInstance().showSplashScreen();
+        MPSPlugin.getInstance();
 
-    if (expirationDate().compareTo(new Date()) == -1) {
-      JOptionPane.showMessageDialog(SplashScreen.getInstance(), "Program is expired. You can download latest version from www.jetbrains.com");
-      System.exit(0);
-    }
+        if (expirationDate().compareTo(new Date()) == -1) {
+          JOptionPane.showMessageDialog(SplashScreen.getInstance(), "Program is expired. You can download latest version from www.jetbrains.com");
+          System.exit(0);
+        }
 
-    LoggerUtil.configureLogger();
+        LoggerUtil.configureLogger();
 
-    ApplicationComponents.getInstance();
+        ApplicationComponents.getInstance();
 
-    IdeSettings.getInstance();
+        IdeSettings.getInstance();
 
-    IdeAppearanceSettings.instance().applySettings();
+        IdeAppearanceSettings.instance().applySettings();
 
 
-    IDEProjectFrame projectWindow = new IDEProjectFrame();
-    if (loadOldProject) {
-      projectWindow.loadLastProjectIfAny();
-    }
-    SplashScreen.getInstance().hideSplashScreen();
-    projectWindow.show();
+        projectWindow[0] = new IDEProjectFrame();
+        if (loadOldProject) {
+          projectWindow[0].loadLastProjectIfAny();
+        }
+        SplashScreen.getInstance().hideSplashScreen();
+        projectWindow[0].show();
 
-    long end = System.currentTimeMillis();
-    System.out.println("MPS Started in " + (end - start) + " ms");
-    return projectWindow;
+        long end = System.currentTimeMillis();
+        System.out.println("MPS Started in " + (end - start) + " ms");
+      }
+    });
+    return projectWindow[0];
   }
 
   public static Date expirationDate() {
