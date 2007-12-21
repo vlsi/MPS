@@ -16,13 +16,13 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceChild_CustomChildConcept;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_ReplaceChild_CustomChildConcept;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 
 public class AggregationConceptLink_Editor extends DefaultNodeEditor {
 
@@ -41,6 +41,10 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198239241874");
+  }
+
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105739124743");
     editorCell.setDrawBorder(false);
@@ -53,6 +57,9 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_TargetCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -69,6 +76,7 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createAggregationConceptLinkDeclarationReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "="));
     editorCell.addEditorCell(this.createTargetCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, ";"));
     return editorCell;
   }
 
@@ -76,6 +84,14 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     AggregationConceptLink_Editor.setupBasic_ConstantCell(editorCell, node, context);
     AggregationConceptLink_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    AggregationConceptLink_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    AggregationConceptLink_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -139,16 +155,6 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class AggregationConceptLink_target_cellMenu extends AbstractCellMenuPart_ReplaceChild_CustomChildConcept {
-
-    public  AggregationConceptLink_target_cellMenu() {
-    }
-
-    public SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext operationContext) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptLinkDeclaration", false), "targetType", false);
-    }
-
-}
   public static class _Inline12 extends AbstractCellProvider {
 
     public  _Inline12() {
@@ -201,6 +207,16 @@ public class AggregationConceptLink_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
+    }
+
+}
+  public static class AggregationConceptLink_target_cellMenu extends AbstractCellMenuPart_ReplaceChild_CustomChildConcept {
+
+    public  AggregationConceptLink_target_cellMenu() {
+    }
+
+    public SNode getConceptOfChild(SNode node, SNode currentChild, SNode defaultConceptOfChild, IScope scope, IOperationContext operationContext) {
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "conceptLinkDeclaration", false), "targetType", false);
     }
 
 }

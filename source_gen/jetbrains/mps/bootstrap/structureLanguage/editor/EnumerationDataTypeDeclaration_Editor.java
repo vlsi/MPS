@@ -4,15 +4,16 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.core.editor.BaseStyleSheet_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import java.awt.Color;
 import jetbrains.mps.nodeEditor.MPSColors;
+import java.awt.Color;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -33,19 +34,23 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myMemberListHandler_memberList_;
 
-  public static boolean _QueryFunction_NodeCondition_1197593498320(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_presentation");
+  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198240256997");
+    BaseStyleSheet_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
-  private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083172476030");
-    editorCell.setSelectable(true);
-    editorCell.setDrawBorder(false);
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198240260624");
+    BaseStyleSheet_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083172476031");
     editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198240268798");
   }
 
   private static void setupBasic_HeaderRow(EditorCell editorCell, SNode node, EditorContext context) {
@@ -59,16 +64,16 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349092");
+    BaseStyleSheet_StyleSheet.KEY_WORD.apply(editorCell);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_Indent1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581845504");
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
+  private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198241104746");
+    BaseStyleSheet_StyleSheet.KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_MemberDataTypeReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -82,14 +87,9 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581349097");
-    editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_Indent2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581855288");
+    BaseStyleSheet_StyleSheet.KEY_WORD.apply(editorCell);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
@@ -105,16 +105,17 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell6(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197591210900");
+    BaseStyleSheet_StyleSheet.KEY_WORD.apply(editorCell);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_Indent3(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197591210901");
+  private static void setupBasic_ConstantCell7(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198241141750");
+    BaseStyleSheet_StyleSheet.KEY_WORD.apply(editorCell);
     editorCell.setSelectable(false);
-    editorCell.setDrawBorder(false);
   }
 
   private static void setupBasic_MemberIdentifierPolicyCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -122,7 +123,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setFontType(MPSFonts.BOLD);
   }
 
-  private static void setupBasic_ConstantCell4(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_ConstantCell8(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197593552141");
     editorCell.setFontType(MPSFonts.PLAIN);
   }
@@ -139,22 +140,46 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_Indent4(EditorCell editorCell, SNode node, EditorContext context) {
+  private static void setupBasic_Indent1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162582323023");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_Indent5(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162582337073");
+  private static void setupBasic_Indent2(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198241312342");
+    BaseStyleSheet_StyleSheet.KEY_WORD.apply(editorCell);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
   }
 
+  private static void setupBasic_ConstantCell9(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198241316110");
+  }
+
+  private static void setupBasic_RowCell4(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198241312341");
+    editorCell.setSelectable(false);
+  }
+
+  private static void setupBasic_ConstantCell10(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198241484008");
+    editorCell.setSelectable(false);
+  }
+
   private static void setupBasic_MemberList(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162581824142");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198241319409");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
+  }
+
+  private static void setupBasic_RowCell5(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198241319408");
+    editorCell.setSelectable(false);
+  }
+
+  private static void setupBasic_ConstantCell11(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198241513651");
   }
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -169,6 +194,10 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
+  private static void setupBasic_ConstantCell12(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198241043821");
+  }
+
   private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083172476028");
   }
@@ -176,53 +205,70 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-    editorCell.getTextLine().setTextBackgroundColor(Color.yellow);
-    editorCell.getTextLine().setSelectedTextBackgroundColor(Color.cyan);
-  }
-
-  private static void setupLabel_Indent(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
   private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Indent1(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_MemberDataTypeReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Indent2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  private static void setupLabel_DefaultMemberReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Indent(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Indent3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_MemberDataTypeReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell5(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_DefaultMemberReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell6(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell7(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_MemberIdentifierPolicyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_MAGENTA);
   }
 
-  private static void setupLabel_ConstantCell4(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_ConstantCell8(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(Color.red);
   }
 
-  private static void setupLabel_Indent4(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Indent1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_Indent5(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  private static void setupLabel_Indent2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell9(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell10(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
   private static void setupLabel_MemberList(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell11(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  private static void setupLabel_ConstantCell12(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1197593498320(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(node, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_presentation");
   }
 
 
@@ -236,8 +282,10 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "enumeration datatype:"));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "enumeration"));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "datatype"));
     editorCell.addEditorCell(this.createNameCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell2(context, node, "{"));
     return editorCell;
   }
 
@@ -247,8 +295,8 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "member type"));
-    editorCell.addEditorCell(this.createIndent1(context, node, ":"));
+    editorCell.addEditorCell(this.createConstantCell3(context, node, "member"));
+    editorCell.addEditorCell(this.createConstantCell4(context, node, "type"));
     editorCell.addEditorCell(this.createMemberDataTypeReferenceCell(context, node));
     return editorCell;
   }
@@ -259,8 +307,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell2(context, node, "default"));
-    editorCell.addEditorCell(this.createIndent2(context, node, ":"));
+    editorCell.addEditorCell(this.createConstantCell5(context, node, "default"));
     editorCell.addEditorCell(this.createDefaultMemberReferenceCell(context, node));
     return editorCell;
   }
@@ -271,11 +318,11 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell3(context, node, "member identifier"));
-    editorCell.addEditorCell(this.createIndent3(context, node, ":"));
+    editorCell.addEditorCell(this.createConstantCell6(context, node, "member"));
+    editorCell.addEditorCell(this.createConstantCell7(context, node, "identifier"));
     editorCell.addEditorCell(this.createMemberIdentifierPolicyCell(context, node));
     if(EnumerationDataTypeDeclaration_Editor._QueryFunction_NodeCondition_1197593498320(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstantCell4(context, node, "(not recommended)"));
+      editorCell.addEditorCell(this.createConstantCell8(context, node, "(not recommended)"));
     }
     return editorCell;
   }
@@ -283,12 +330,34 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createColumnCell1(EditorContext context, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(context, node);
     EnumerationDataTypeDeclaration_Editor.setupBasic_ColumnCell1(editorCell, node, context);
-    editorCell.setGridLayout(true);
+    editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createRowCell1(context, node));
     editorCell.addEditorCell(this.createRowCell2(context, node));
     editorCell.addEditorCell(this.createRowCell3(context, node));
+    return editorCell;
+  }
+
+  public EditorCell createRowCell4(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EnumerationDataTypeDeclaration_Editor.setupBasic_RowCell4(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createIndent2(context, node, "members"));
+    editorCell.addEditorCell(this.createConstantCell9(context, node, "{"));
+    return editorCell;
+  }
+
+  public EditorCell createRowCell5(EditorContext context, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
+    EnumerationDataTypeDeclaration_Editor.setupBasic_RowCell5(editorCell, node, context);
+    editorCell.setGridLayout(false);
+    editorCell.setUsesBraces(false);
+    editorCell.setCanBeFolded(false);
+    editorCell.addEditorCell(this.createConstantCell10(context, node, "  "));
+    editorCell.addEditorCell(this.createMemberList(context, node));
     return editorCell;
   }
 
@@ -299,9 +368,10 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createColumnCell1(context, node));
-    editorCell.addEditorCell(this.createIndent4(context, node, ""));
-    editorCell.addEditorCell(this.createIndent5(context, node, ""));
-    editorCell.addEditorCell(this.createMemberList(context, node));
+    editorCell.addEditorCell(this.createIndent1(context, node, ""));
+    editorCell.addEditorCell(this.createRowCell4(context, node));
+    editorCell.addEditorCell(this.createRowCell5(context, node));
+    editorCell.addEditorCell(this.createConstantCell11(context, node, "}"));
     return editorCell;
   }
 
@@ -311,7 +381,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIndent(context, node, "    "));
+    editorCell.addEditorCell(this.createIndent(context, node, "  "));
     editorCell.addEditorCell(this.createColumnCell(context, node));
     return editorCell;
   }
@@ -324,6 +394,7 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createHeaderRow(context, node));
     editorCell.addEditorCell(this.createRowCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell12(context, node, "}"));
     return editorCell;
   }
 
@@ -331,14 +402,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumerationDataTypeDeclaration_Editor.setupBasic_ConstantCell(editorCell, node, context);
     EnumerationDataTypeDeclaration_Editor.setupLabel_ConstantCell(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createIndent(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    EnumerationDataTypeDeclaration_Editor.setupBasic_Indent(editorCell, node, context);
-    EnumerationDataTypeDeclaration_Editor.setupLabel_Indent(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -351,14 +414,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndent1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    EnumerationDataTypeDeclaration_Editor.setupBasic_Indent1(editorCell, node, context);
-    EnumerationDataTypeDeclaration_Editor.setupLabel_Indent1(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumerationDataTypeDeclaration_Editor.setupBasic_ConstantCell2(editorCell, node, context);
@@ -367,10 +422,10 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndent2(EditorContext context, SNode node, String text) {
+  public EditorCell createIndent(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    EnumerationDataTypeDeclaration_Editor.setupBasic_Indent2(editorCell, node, context);
-    EnumerationDataTypeDeclaration_Editor.setupLabel_Indent2(editorCell, node, context);
+    EnumerationDataTypeDeclaration_Editor.setupBasic_Indent(editorCell, node, context);
+    EnumerationDataTypeDeclaration_Editor.setupLabel_Indent(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -383,14 +438,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndent3(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    EnumerationDataTypeDeclaration_Editor.setupBasic_Indent3(editorCell, node, context);
-    EnumerationDataTypeDeclaration_Editor.setupLabel_Indent3(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
   public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     EnumerationDataTypeDeclaration_Editor.setupBasic_ConstantCell4(editorCell, node, context);
@@ -399,18 +446,82 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public EditorCell createIndent4(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell5(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    EnumerationDataTypeDeclaration_Editor.setupBasic_Indent4(editorCell, node, context);
-    EnumerationDataTypeDeclaration_Editor.setupLabel_Indent4(editorCell, node, context);
+    EnumerationDataTypeDeclaration_Editor.setupBasic_ConstantCell5(editorCell, node, context);
+    EnumerationDataTypeDeclaration_Editor.setupLabel_ConstantCell5(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  public EditorCell createIndent5(EditorContext context, SNode node, String text) {
+  public EditorCell createConstantCell6(EditorContext context, SNode node, String text) {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    EnumerationDataTypeDeclaration_Editor.setupBasic_Indent5(editorCell, node, context);
-    EnumerationDataTypeDeclaration_Editor.setupLabel_Indent5(editorCell, node, context);
+    EnumerationDataTypeDeclaration_Editor.setupBasic_ConstantCell6(editorCell, node, context);
+    EnumerationDataTypeDeclaration_Editor.setupLabel_ConstantCell6(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell7(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    EnumerationDataTypeDeclaration_Editor.setupBasic_ConstantCell7(editorCell, node, context);
+    EnumerationDataTypeDeclaration_Editor.setupLabel_ConstantCell7(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell8(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    EnumerationDataTypeDeclaration_Editor.setupBasic_ConstantCell8(editorCell, node, context);
+    EnumerationDataTypeDeclaration_Editor.setupLabel_ConstantCell8(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createIndent1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    EnumerationDataTypeDeclaration_Editor.setupBasic_Indent1(editorCell, node, context);
+    EnumerationDataTypeDeclaration_Editor.setupLabel_Indent1(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createIndent2(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    EnumerationDataTypeDeclaration_Editor.setupBasic_Indent2(editorCell, node, context);
+    EnumerationDataTypeDeclaration_Editor.setupLabel_Indent2(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell9(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    EnumerationDataTypeDeclaration_Editor.setupBasic_ConstantCell9(editorCell, node, context);
+    EnumerationDataTypeDeclaration_Editor.setupLabel_ConstantCell9(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell10(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    EnumerationDataTypeDeclaration_Editor.setupBasic_ConstantCell10(editorCell, node, context);
+    EnumerationDataTypeDeclaration_Editor.setupLabel_ConstantCell10(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell11(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    EnumerationDataTypeDeclaration_Editor.setupBasic_ConstantCell11(editorCell, node, context);
+    EnumerationDataTypeDeclaration_Editor.setupLabel_ConstantCell11(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell12(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    EnumerationDataTypeDeclaration_Editor.setupBasic_ConstantCell12(editorCell, node, context);
+    EnumerationDataTypeDeclaration_Editor.setupLabel_ConstantCell12(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

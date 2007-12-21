@@ -36,6 +36,10 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
   }
 
+  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198239281756");
+  }
+
   private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727243426");
     editorCell.setDrawBorder(false);
@@ -49,6 +53,9 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
 
   private static void setupLabel_ValueCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_BLUE);
+  }
+
+  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -65,6 +72,7 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createIntegerConceptPropertyDeclarationReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell(context, node, "="));
     editorCell.addEditorCell(this.createValueCell(context, node));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, ";"));
     return editorCell;
   }
 
@@ -72,6 +80,14 @@ public class IntegerConceptProperty_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     IntegerConceptProperty_Editor.setupBasic_ConstantCell(editorCell, node, context);
     IntegerConceptProperty_Editor.setupLabel_ConstantCell(editorCell, node, context);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
+    IntegerConceptProperty_Editor.setupBasic_ConstantCell1(editorCell, node, context);
+    IntegerConceptProperty_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }
