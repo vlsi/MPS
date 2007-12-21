@@ -63,10 +63,10 @@ public class TryFeatures extends TreePath<Node> {
     }
 
     public static IFilter<Node> getInstance() {
-      if(instance == null) {
-        instance = new TryFeatures.foo_NodeKindTrigger();
+      if(TryFeatures.foo_NodeKindTrigger.instance == null) {
+        TryFeatures.foo_NodeKindTrigger.instance = new TryFeatures.foo_NodeKindTrigger();
       }
-      return instance;
+      return TryFeatures.foo_NodeKindTrigger.instance;
     }
 
 

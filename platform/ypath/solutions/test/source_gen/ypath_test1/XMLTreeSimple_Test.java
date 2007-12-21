@@ -22,14 +22,14 @@ public class XMLTreeSimple_Test extends TestCase {
   public static String SIMPLE_TREE = "<root><a1><b1/><b2/></a1><a2><b3><c1/></b3></a2></root>";
 
   public void test_single() throws Exception {
-    Document doc = this.parse(SINGLE_NODE);
+    Document doc = this.parse(XMLTreeSimple_Test.SINGLE_NODE);
     ITreeTraversal<Node> tp = new DOM().startTraversal(doc);
     Assert.assertSame(SequenceOperations.getSize(tp), 1);
     Assert.assertEquals(SequenceOperations.getFirst(tp), doc);
   }
 
   public void test_children() throws Exception {
-    Document doc = this.parse(SIMPLE_TREE);
+    Document doc = this.parse(XMLTreeSimple_Test.SIMPLE_TREE);
     ITreeTraversal<Node> nodes1 = TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN"));
     Assert.assertSame(SequenceOperations.getSize(nodes1), 1);
     Assert.assertEquals("root", this.toString(nodes1));
@@ -39,21 +39,21 @@ public class XMLTreeSimple_Test extends TestCase {
   }
 
   public void test_descendants() throws Exception {
-    Document doc = this.parse(SIMPLE_TREE);
+    Document doc = this.parse(XMLTreeSimple_Test.SIMPLE_TREE);
     ITreeTraversal<Node> nodes = TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"));
     Assert.assertSame(SequenceOperations.getSize(nodes), 7);
     Assert.assertEquals("root, a1, b1, b2, a2, b3, c1", this.toString(nodes));
   }
 
   public void test_defautProperty() throws Exception {
-    Document doc = this.parse(SIMPLE_TREE);
+    Document doc = this.parse(XMLTreeSimple_Test.SIMPLE_TREE);
     ITreeTraversal<Node> nodes = TreeTraversalFactory.Filter(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS")), new CompositeFilter<Node>(DOM.ELEMENT_NodeKindTrigger.getInstance(), DOM.ELEMENT_tag_Property.getMatcher("b3")));
     Assert.assertSame(SequenceOperations.getSize(nodes), 1);
     Assert.assertEquals("b3", this.toString(nodes));
   }
 
   public void test_sibling_descendants() throws Exception {
-    Document doc = this.parse(SIMPLE_TREE);
+    Document doc = this.parse(XMLTreeSimple_Test.SIMPLE_TREE);
     Node a1 = SequenceOperations.getFirst(TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOM().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN")), TreeTraversalFactory.Axis("CHILDREN")));
     Assert.assertEquals("a1", a1.getNodeName());
     Iterable<Node> nodes = TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOM().startTraversal(a1), TreeTraversalFactory.Axis("SELF_FOLLOWING_SIBLINGS")), TreeTraversalFactory.Axis("SELF_DESCENDANTS"));

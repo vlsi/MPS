@@ -20,7 +20,7 @@ public class TestFeatures_Test extends TestCase {
   public static String SIMPLE = "<root r1=\"r1\"><a a1=\"a1\"><b b1=\"b1\" b2=\"b2\"><c c1=\"c1\"/></b></a></root>";
 
   public void test_nodesAndAttributes() throws Exception {
-    Document doc = this.parse(SIMPLE);
+    Document doc = this.parse(TestFeatures_Test.SIMPLE);
     ITreeTraversal<Node> nodes = TreeTraversalFactory.Traverse(new DOM2().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"), "nodes");
     Assert.assertEquals("root, a, b, c", this.toString(nodes));
     ITreeTraversal<Node> attribs = TreeTraversalFactory.Traverse(new DOM2().startTraversal(doc), TreeTraversalFactory.Axis("DESCENDANTS"), "attributes");

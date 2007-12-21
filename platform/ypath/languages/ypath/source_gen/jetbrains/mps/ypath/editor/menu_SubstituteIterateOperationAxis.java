@@ -37,17 +37,17 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
       SNode defaultFeat = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(treePath, "features", true), new zPredicate(null, null)));
       List<Pair> res = ListOperations.createList(new Pair[]{});
       {
-        ICursor<TraversalAxis> _zCursor8 = CursorFactory.createCursor(TraversalAxis.getConstants());
+        ICursor<TraversalAxis> _zCursor2 = CursorFactory.createCursor(TraversalAxis.getConstants());
         try {
-          while(_zCursor8.moveToNext()) {
-            TraversalAxis axis = _zCursor8.getCurrent();
+          while(_zCursor2.moveToNext()) {
+            TraversalAxis axis = _zCursor2.getCurrent();
             ListOperations.addElement(res, new Pair(axis, null));
             if((defaultFeat != null)) {
               ListOperations.addElement(res, new Pair(axis, defaultFeat));
             }
           }
         } finally {
-          _zCursor8.release();
+          _zCursor2.release();
         }
       }
       return res;

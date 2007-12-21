@@ -18,7 +18,7 @@ public class GenericFeatures_Test extends TestCase {
   public static String INPUT = "<root><a><foo/><bar><foo/></bar><baz><foo/></baz></a></root>";
 
   public void test_generic() throws Exception {
-    Document doc = this.parse(INPUT);
+    Document doc = this.parse(GenericFeatures_Test.INPUT);
     ITreeTraversal<Node> foo = TreeTraversalFactory.Traverse(TreeTraversalFactory.Traverse(new DOMF().startTraversal(doc), TreeTraversalFactory.Axis("CHILDREN"), "elements"), TreeTraversalFactory.Axis("DESCENDANTS"), DOMF.child("foo"));
     Assert.assertEquals("foo, foo, foo", this.toString(foo));
   }

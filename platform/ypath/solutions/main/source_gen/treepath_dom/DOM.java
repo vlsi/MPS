@@ -75,10 +75,10 @@ public class DOM extends TreePath<Node> {
     }
 
     public static IFilter<Node> getInstance() {
-      if(instance == null) {
-        instance = new DOM.ELEMENT_NodeKindTrigger();
+      if(DOM.ELEMENT_NodeKindTrigger.instance == null) {
+        DOM.ELEMENT_NodeKindTrigger.instance = new DOM.ELEMENT_NodeKindTrigger();
       }
-      return instance;
+      return DOM.ELEMENT_NodeKindTrigger.instance;
     }
 
 
@@ -101,10 +101,10 @@ public class DOM extends TreePath<Node> {
     }
 
     public static IFilter<Node> getInstance() {
-      if(instance == null) {
-        instance = new DOM.ATTR_NodeKindTrigger();
+      if(DOM.ATTR_NodeKindTrigger.instance == null) {
+        DOM.ATTR_NodeKindTrigger.instance = new DOM.ATTR_NodeKindTrigger();
       }
-      return instance;
+      return DOM.ATTR_NodeKindTrigger.instance;
     }
 
 

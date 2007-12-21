@@ -1618,12 +1618,6 @@
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="1196857052853" resolveInfo="GFGetterFun" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1194545216305">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="replaceFun" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1196261217802" resolveInfo="IGenericFeatureReplaceFun" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1196434554868">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="funHolders" />

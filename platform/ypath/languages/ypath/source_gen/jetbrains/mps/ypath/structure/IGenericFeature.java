@@ -8,16 +8,11 @@ import java.util.List;
 public interface IGenericFeature extends IFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.IGenericFeature";
   public static String GETTER = "getter";
-  public static String REPLACE_FUN = "replaceFun";
   public static String FUN_HOLDERS = "funHolders";
 
   public GFGetterFun getGetter();
 
   public void setGetter(GFGetterFun node);
-
-  public IGenericFeatureReplaceFun getReplaceFun();
-
-  public void setReplaceFun(IGenericFeatureReplaceFun node);
 
   public int getFunHoldersesCount();
 

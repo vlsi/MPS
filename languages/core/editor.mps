@@ -60,6 +60,15 @@
         <property name="color" value="DARK_BLUE" />
       </node>
     </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1198258356073">
+      <property name="name" value="Identifier" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1198258368534">
+        <property name="color" value="DARK_MAGENTA" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1198258386541">
+        <property name="style" value="BOLD" />
+      </node>
+    </node>
   </node>
 </model>
 
