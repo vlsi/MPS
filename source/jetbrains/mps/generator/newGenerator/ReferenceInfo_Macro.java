@@ -6,6 +6,7 @@ import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.Templ
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro;
 import jetbrains.mps.transformation.TLBase.structure.ReferenceMacro_GetReferent;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.logging.Logger;
 
 /**
  * Created by: Sergey Dmitriev
@@ -14,6 +15,7 @@ import jetbrains.mps.util.QueryMethodGenerated;
 public class ReferenceInfo_Macro extends ReferenceInfo {
   private SNode myTemplateReferenceNode;
   private ReferenceMacro myReferenceMacro;
+  private String myResolveInfoForDynamicResolve;
 
   public ReferenceInfo_Macro(SNode outputSourceNode, ReferenceMacro refMacro, SNode inputNode, SNode templateReferenceNode) {
     super(outputSourceNode, refMacro.getLink().getRole(), inputNode);
@@ -40,8 +42,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   }
 
   public String getResolveInfoForDynamicResolve() {
-    // todo: macro can return string
-    return null;
+    return myResolveInfoForDynamicResolve;
   }
 
   public String getResolveInfoForNothing() {
@@ -84,11 +85,17 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
             generator.getInputModel(),
             generator};
 
-    SNode outputTargetNode;
+    SNode outputTargetNode = null;
     try {
-      outputTargetNode = (SNode) QueryMethodGenerated.invoke_GetReferent(methodName, args_old, args_new, myReferenceMacro.getModel());
-    } catch (Exception e) {
+      Object result = QueryMethodGenerated.invoke_GetReferent(methodName, args_old, args_new, myReferenceMacro.getModel());
+      if (result instanceof SNode) {
+        outputTargetNode = (SNode) result;
+      } else {
+        myResolveInfoForDynamicResolve = (String) result;
+      }
+    } catch (Throwable t) {
       generator.showErrorMessage(getInputNode(), myReferenceMacro.getNode(), "couldn't evaluate reference macro");
+      Logger.getLogger(this.getClass()).error(t, myReferenceMacro.getNode());
       return null;
     }
 

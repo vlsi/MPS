@@ -84,40 +84,40 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(node, "name");
   }
 
-  public static SNode referenceMacro_GetReferent_1170294467354(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1170294467354(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass(node, generator);
   }
 
-  public static SNode referenceMacro_GetReferent_1170295650824(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1170295650824(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.resolve_MethodParm_CopyOfParm(node, templateNode, generator);
   }
 
-  public static SNode referenceMacro_GetReferent_1170295049904(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1170295049904(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass_constructor(node, generator);
   }
 
-  public static SNode referenceMacro_GetReferent_1170288297219(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1170288297219(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(node, generator);
   }
 
-  public static SNode referenceMacro_GetReferent_1170287949033(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1170287949033(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(node, generator);
   }
 
-  public static SNode referenceMacro_GetReferent_1170350646244(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1170350646244(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.resolve_VariableReference_Variable_ClosureContext_generatedField(node, generator);
   }
 
-  public static SNode referenceMacro_GetReferent_1170348563863(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1170348563863(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(node, generator);
   }
 
-  public static SNode referenceMacro_GetReferent_1170288676089(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1170288676089(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.find_Closure_generatedClosureAdapter_constructor(node, generator);
   }
 
-  public static SNode referenceMacro_GetReferent_1170293907670(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return _QueriesUtil.resolve_ClosureParameterReference(node, templateNode, generator);
+  public static Object referenceMacro_GetReferent_1170293907670(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "closureParameter", false), "name");
   }
 
   public static List sourceNodesQuery_1170347787985(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

@@ -46,6 +46,7 @@ public class _QueriesUtil {
 
   /**
    * Finds method parameter (generated) with the same name as the referenced ClosureParameter
+   * @depracated : was usage reduce_ClosureParmReference_MethodParmReference
    */
   public static SNode resolve_ClosureParameterReference(SNode closureParmRef_input, SNode referenceNode_template, ITemplateGenerator generator) {
     ClosureParameterReference closureParmRef_input_ = (ClosureParameterReference) closureParmRef_input.getAdapter();

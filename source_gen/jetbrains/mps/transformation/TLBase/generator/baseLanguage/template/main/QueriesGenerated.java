@@ -62,7 +62,7 @@ public class QueriesGenerated {
     return TemplateFunctionMethodName.mappingScript_CodeBlock(node);
   }
 
-  public static SNode referenceMacro_GetReferent_1167774837569(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1167774837569(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     String alias = SConceptPropertyOperations.getString(node, "alias");
     if(alias == null) {
       generator.showErrorMessage(node, templateNode, "concept function parm has no <alias> - can't map it to method parameter");
@@ -86,7 +86,7 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static SNode referenceMacro_GetReferent_1167771845166(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1167771845166(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.transformation.TLBase.structure.BaseMappingRule", false, false), "applicableConcept", false);
   }
 
