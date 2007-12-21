@@ -44,49 +44,6 @@ public class _QueriesUtil {
     return ((ClassConcept) closureAdapterClass.getAdapter()).constructors().next().getNode();
   }
 
-  /**
-   * Finds method parameter (generated) with the same name as the referenced ClosureParameter
-   * @depracated : was usage reduce_ClosureParmReference_MethodParmReference
-   */
-  public static SNode resolve_ClosureParameterReference(SNode closureParmRef_input, SNode referenceNode_template, ITemplateGenerator generator) {
-    ClosureParameterReference closureParmRef_input_ = (ClosureParameterReference) closureParmRef_input.getAdapter();
-    ClosureParameter closureParameter = closureParmRef_input_.getClosureParameter();
-    String parameterName = closureParameter.getName();
-    assert parameterName != null;
-
-    // find parent method declaration in output model
-    SNode closureParmRef_outputNode = generator.findOutputNodeByInputAndTemplateNode(closureParmRef_input, referenceNode_template);
-    BaseMethodDeclaration methodDecl_output_ = closureParmRef_outputNode.getAdapter().getParent(BaseMethodDeclaration.class);
-    if (methodDecl_output_ == null) {
-      generator.showErrorMessage(closureParmRef_input, referenceNode_template, "couldn't find method parameter for name \"" + parameterName + "\" : method not found");
-      return null;
-    }
-
-    Iterator<ParameterDeclaration> methodParms = ((BaseMethodDeclaration) methodDecl_output_).parameters();
-    while (methodParms.hasNext()) {
-      ParameterDeclaration methodParm = methodParms.next();
-      if (parameterName.equals(methodParm.getName())) {
-        return methodParm.getNode();
-      }
-    }
-
-    generator.showErrorMessage(closureParmRef_input, referenceNode_template, "couldn't find method parameter for name \"" + parameterName + "\"");
-    generator.showErrorMessage(closureParmRef_outputNode, "-- was generated node: " + closureParmRef_outputNode.getDebugText());
-    return null;
-  }
-
-  /**
-   * todo: remove (used in reduce_bodyOfContextOwner_insertClosureContextVar)
-   */
-  public static SNode resolve_MethodParm_CopyOfParm(SNode paramDecl_input, SNode templateNode, ITemplateGenerator generator) {
-    // suppose that parm is simply copied to target model
-    SNode paramDecl_output = generator.findCopiedOutputNodeForInputNode(paramDecl_input);
-    if (paramDecl_output == null) {
-      generator.showErrorMessage(paramDecl_input, templateNode, "couldn't output method parameter");
-    }
-    return paramDecl_output;
-  }
-
   public static SNode resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(SNode localVarDeclStmt, ITemplateGenerator generator) {
     VariableDeclaration variableAdapter = ((LocalVariableDeclarationStatement) localVarDeclStmt.getAdapter()).getLocalVariableDeclaration();
     if (variableAdapter != null) {
