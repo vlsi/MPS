@@ -753,6 +753,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1173946606424">
         <property name="drawBorder" value="false" />
+        <property name="attractsFocus" value="1" />
         <link role="relationDeclaration" targetNodeId="1.1173946412756" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1173946609863">

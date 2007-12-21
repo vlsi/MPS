@@ -11,9 +11,9 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 
 public class NodeDefaultSearchScope extends BaseConcept {
   public static final String concept = "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodeDefaultSearchScope";
+  public static String REFERENT_CONCEPT = "referentConcept";
   public static String SEARCH_SCOPE_CAN_CREATE = "searchScopeCanCreate";
   public static String SEARCH_SCOPE_FACTORY = "searchScopeFactory";
-  public static String REFERENT_CONCEPT = "referentConcept";
   public static String DESCRIPTION = "description";
 
   public  NodeDefaultSearchScope(SNode node) {
@@ -29,6 +29,14 @@ public class NodeDefaultSearchScope extends BaseConcept {
   }
 
 
+  public ConceptDeclaration getReferentConcept() {
+    return (ConceptDeclaration)this.getReferent(NodeDefaultSearchScope.REFERENT_CONCEPT);
+  }
+
+  public void setReferentConcept(ConceptDeclaration node) {
+    super.setReferent(NodeDefaultSearchScope.REFERENT_CONCEPT, node);
+  }
+
   public ConstraintFunction_ReferentSearchScope_CanCreate getSearchScopeCanCreate() {
     return (ConstraintFunction_ReferentSearchScope_CanCreate)this.getChild(NodeDefaultSearchScope.SEARCH_SCOPE_CAN_CREATE);
   }
@@ -43,14 +51,6 @@ public class NodeDefaultSearchScope extends BaseConcept {
 
   public void setSearchScopeFactory(ConstraintFunction_ReferentSearchScope_Factory node) {
     super.setChild(NodeDefaultSearchScope.SEARCH_SCOPE_FACTORY, node);
-  }
-
-  public ConceptDeclaration getReferentConcept() {
-    return (ConceptDeclaration)this.getReferent(NodeDefaultSearchScope.REFERENT_CONCEPT);
-  }
-
-  public void setReferentConcept(ConceptDeclaration node) {
-    super.setReferent(NodeDefaultSearchScope.REFERENT_CONCEPT, node);
   }
 
   public String getDescription() {
