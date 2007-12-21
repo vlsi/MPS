@@ -42,7 +42,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198104690510">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198104690511">
             <property name="name" value="stmtOrString1" />
-            <node role="type" type="jetbrains.mps.transformation.TLBase.structure.TypeOrStringType" id="1198104690512">
+            <node role="type" type="jetbrains.mps.transformation.TLBase.structure.SNodeOrStringType" id="1198104690512">
               <node role="equivalentType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198179977363">
                 <link role="concept" targetNodeId="2.1068580123157" resolveInfo="Statement" />
               </node>
@@ -55,7 +55,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198181077819">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198181077820">
             <property name="name" value="stmtOrString2" />
-            <node role="type" type="jetbrains.mps.transformation.TLBase.structure.TypeOrStringType" id="1198181077821">
+            <node role="type" type="jetbrains.mps.transformation.TLBase.structure.SNodeOrStringType" id="1198181077821">
               <node role="equivalentType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198181077822">
                 <link role="concept" targetNodeId="2.1068580123157" resolveInfo="Statement" />
               </node>
@@ -68,7 +68,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198181102093">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198181102094">
             <property name="name" value="stmtOrString3" />
-            <node role="type" type="jetbrains.mps.transformation.TLBase.structure.TypeOrStringType" id="1198181102095">
+            <node role="type" type="jetbrains.mps.transformation.TLBase.structure.SNodeOrStringType" id="1198181102095">
               <node role="equivalentType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198181102096">
                 <link role="concept" targetNodeId="2.1068580123157" resolveInfo="Statement" />
               </node>
@@ -81,7 +81,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198173070170">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198173070171">
             <property name="name" value="nodeOrString1" />
-            <node role="type" type="jetbrains.mps.transformation.TLBase.structure.TypeOrStringType" id="1198173070172">
+            <node role="type" type="jetbrains.mps.transformation.TLBase.structure.SNodeOrStringType" id="1198173070172">
               <node role="equivalentType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198179984426" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198173075347">
@@ -109,7 +109,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198182552787">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198182552788">
             <property name="name" value="nodeOrString" />
-            <node role="type" type="jetbrains.mps.transformation.TLBase.structure.TypeOrStringType" id="1198182552789">
+            <node role="type" type="jetbrains.mps.transformation.TLBase.structure.SNodeOrStringType" id="1198182552789">
               <node role="equivalentType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198182552790" />
             </node>
           </node>
@@ -117,7 +117,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198182552791">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198182552792">
             <property name="name" value="stmtOrString" />
-            <node role="type" type="jetbrains.mps.transformation.TLBase.structure.TypeOrStringType" id="1198182552793">
+            <node role="type" type="jetbrains.mps.transformation.TLBase.structure.SNodeOrStringType" id="1198182552793">
               <node role="equivalentType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198182552794">
                 <link role="concept" targetNodeId="2.1068580123157" resolveInfo="Statement" />
               </node>
@@ -127,7 +127,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198182552795">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198182552796">
             <property name="name" value="ifStmtOrString" />
-            <node role="type" type="jetbrains.mps.transformation.TLBase.structure.TypeOrStringType" id="1198182552797">
+            <node role="type" type="jetbrains.mps.transformation.TLBase.structure.SNodeOrStringType" id="1198182552797">
               <node role="equivalentType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198182552798">
                 <link role="concept" targetNodeId="2.1068580123159" resolveInfo="IfStatement" />
               </node>
@@ -181,7 +181,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198183041546">
                   <link role="variableDeclaration" targetNodeId="1198182552792" resolveInfo="stmtOrSomething" />
                 </node>
-                <node role="type" type="jetbrains.mps.transformation.TLBase.structure.TypeOrStringType" id="1198183041547">
+                <node role="type" type="jetbrains.mps.transformation.TLBase.structure.SNodeOrStringType" id="1198183041547">
                   <node role="equivalentType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198183041548">
                     <link role="concept" targetNodeId="2.1068580123159" resolveInfo="IfStatement" />
                   </node>

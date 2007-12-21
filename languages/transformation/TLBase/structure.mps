@@ -5,13 +5,14 @@
   <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage" />
-  <maxImportIndex value="10" />
+  <maxImportIndex value="11" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="6" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="7" modelUID="jetbrains.mps.generator.template@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
   <import index="9" modelUID="java.lang@java_stub" version="-1" />
+  <import index="11" modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1087833241328">
     <property name="name" value="PropertyMacro" />
     <property name="package" value="Macro" />
@@ -1421,7 +1422,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198101033452">
-    <property name="name" value="TypeOrStringType" />
+    <property name="name" value="SNodeOrStringType" />
     <link role="extends" targetNodeId="6.1068431790189" resolveInfo="Type" />
     <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1198101504257">
       <property name="name" value="stringDescription" />
@@ -1431,7 +1432,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="equivalentType" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="6.1068431790189" resolveInfo="Type" />
+      <link role="target" targetNodeId="11.1138055754698" resolveInfo="SNodeType" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198104623627">
       <property name="value" value="type or string" />
