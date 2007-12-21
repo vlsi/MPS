@@ -105,6 +105,12 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
 
     // check referent because it's manual and thus error prone mapping
     if (outputTargetNode.getModel() == generator.getInputModel()) {
+      // try to find copy in output model
+      SNode outputTargetNode_output = generator.findCopiedOutputNodeForInputNode(outputTargetNode);
+      if (outputTargetNode_output != null) {
+        return outputTargetNode_output;
+      }
+
       generator.showWarningMessage(getOutputSourceNode(), "reference '" + role + "' to input model in output node " + getOutputSourceNode().getDebugText());
       generator.showInformationMessage(outputTargetNode, " -- referent node: " + outputTargetNode.getDebugText());
       generator.showInformationMessage(myReferenceMacro.getNode(), " -- template node: " + myReferenceMacro.getNode().getDebugText());

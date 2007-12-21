@@ -63,13 +63,6 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
       }
     }
 
-// test
-//    // try to resolve using custom referense resolver for source node concept
-//    IReferenceResolver referenceResolver = loadReferenceResolver(getOutputSourceNode());
-//    if (referenceResolver != null) {
-//      outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), myReferenceRole, myInputTargetNode);
-//      return outputTargetNode;
-//    }
     return null;
   }
 
