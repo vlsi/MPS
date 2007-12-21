@@ -83,6 +83,10 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
   }
 
   public void doubleClick() {
+    if (myHierarchyTree.doubleClick(this)) {
+      return;
+    }
+
     final SNode node = myNodePointer.getNode();
 
     final EditorsPane editorsPane = myHierarchyTree.getHierarchyView().myIde.getEditorsPane();

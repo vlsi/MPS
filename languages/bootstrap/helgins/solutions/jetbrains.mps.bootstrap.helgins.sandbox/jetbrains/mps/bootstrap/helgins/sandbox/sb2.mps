@@ -83,6 +83,14 @@
             <link role="classConcept" targetNodeId="9.1186475525107" resolveInfo="AClass" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198250164479">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198250164480">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198250182875">
+              <link role="classifier" targetNodeId="1198000897975" resolveInfo="BClass" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1198000897976" />

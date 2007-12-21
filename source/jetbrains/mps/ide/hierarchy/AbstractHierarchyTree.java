@@ -142,6 +142,10 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
     return textRootNode;
   }
 
+  public boolean doubleClick(HierarchyTreeNode<T> hierarchyTreeNode) {
+    return false;
+  }
+
   protected class RootTextTreeNode extends TextTreeNode {
 
     public RootTextTreeNode(String s) {
