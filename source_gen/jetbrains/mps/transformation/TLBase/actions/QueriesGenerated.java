@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
@@ -23,6 +25,12 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_RuleConsequence_1195244660444(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule");
+  }
+
+  public static void nodeFactory_NodeSetup_SNodeOrStringType_1198265067453(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
+    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
+      SLinkOperations.setTarget(newNode, "equivalentType", sampleNode, true);
+    }
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_RuleConsequence_1169570930693(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
