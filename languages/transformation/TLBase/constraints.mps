@@ -433,6 +433,21 @@
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1198105075224">
     <link role="concept" targetNodeId="1.1198101033452" resolveInfo="TypeOrStringType" />
+    <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1198272138156">
+      <link role="applicableProperty" targetNodeId="13.1169194664001" resolveInfo="name" />
+      <node role="propertyGetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertyGetter" id="1198272142125">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198272142126">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198272159636">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198272160919">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1198272162626">
+                <link role="conceptMethodDeclaration" targetNodeId="12.1180102203531" resolveInfo="getPresentation" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertyGetter_FunctionParm_node" id="1198272159637" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198105077931">
       <property name="name" value="getPresentation" />
       <link role="overridenMethod" targetNodeId="12.1180102203531" resolveInfo="getPresentation" />

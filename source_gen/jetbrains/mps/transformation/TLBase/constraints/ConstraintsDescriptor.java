@@ -12,6 +12,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
   public  ConstraintsDescriptor() {
+    this.myConstraints.add(new SNodeOrStringType_name_PropertyConstraint());
     this.myConstraints.add(new MappingRule_templateNode_ReferentConstraint());
     this.myConstraints.add(new Root_MappingRule_template_ReferentConstraint());
     this.myConstraints.add(new CreateRootRule_templateNode_ReferentConstraint());
