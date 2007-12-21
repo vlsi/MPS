@@ -19,17 +19,17 @@ public class ConstrainedDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198239781041");
-    BaseStyleSheet_StyleSheet.KEY_WORD.apply(editorCell);
+    StyleSheet_StyleSheet.STRUCTURE_KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198239784715");
-    BaseStyleSheet_StyleSheet.KEY_WORD.apply(editorCell);
+    StyleSheet_StyleSheet.STRUCTURE_KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198239786685");
-    BaseStyleSheet_StyleSheet.KEY_WORD.apply(editorCell);
+    StyleSheet_StyleSheet.STRUCTURE_KEY_WORD.apply(editorCell);
   }
 
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {

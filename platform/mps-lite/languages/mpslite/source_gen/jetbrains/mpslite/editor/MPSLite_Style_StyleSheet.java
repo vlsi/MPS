@@ -14,16 +14,22 @@ public class MPSLite_Style_StyleSheet {
   public static final IStyle M_P_S_LITE_OPERATION = new IStyle() {
 
     public void apply(EditorCell cell) {
+      this.apply(cell, true);
+    }
+
+    public void apply(EditorCell cell, boolean recurive) {
       if(cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = MPSLite_Style_StyleSheet.calculateColor(cell);
-        labelCell.getTextLine().setTextColorIfNotSet(color);
+        labelCell.getTextLine().setTextColor(color);
       }
       cell.setFontType(MPSFonts.BOLD);
-      if(cell instanceof EditorCell_Collection) {
-        EditorCell_Collection collection = (EditorCell_Collection)cell;
-        for(EditorCell child : collection) {
-          this.apply(child);
+      if(recurive) {
+        if(cell instanceof EditorCell_Collection) {
+          EditorCell_Collection collection = (EditorCell_Collection)cell;
+          for(EditorCell child : collection) {
+            this.apply(child, true);
+          }
         }
       }
     }
@@ -32,16 +38,22 @@ public class MPSLite_Style_StyleSheet {
   public static final IStyle M_P_S_LITE_PROPERTY = new IStyle() {
 
     public void apply(EditorCell cell) {
+      this.apply(cell, true);
+    }
+
+    public void apply(EditorCell cell, boolean recurive) {
       if(cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = MPSLite_Style_StyleSheet.calculateColor1(cell);
-        labelCell.getTextLine().setTextColorIfNotSet(color);
+        labelCell.getTextLine().setTextColor(color);
       }
       cell.setFontType(MPSFonts.BOLD);
-      if(cell instanceof EditorCell_Collection) {
-        EditorCell_Collection collection = (EditorCell_Collection)cell;
-        for(EditorCell child : collection) {
-          this.apply(child);
+      if(recurive) {
+        if(cell instanceof EditorCell_Collection) {
+          EditorCell_Collection collection = (EditorCell_Collection)cell;
+          for(EditorCell child : collection) {
+            this.apply(child, true);
+          }
         }
       }
     }
@@ -50,16 +62,22 @@ public class MPSLite_Style_StyleSheet {
   public static final IStyle M_P_S_LITE_CHILD = new IStyle() {
 
     public void apply(EditorCell cell) {
+      this.apply(cell, true);
+    }
+
+    public void apply(EditorCell cell, boolean recurive) {
       if(cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = MPSLite_Style_StyleSheet.calculateColor2(cell);
-        labelCell.getTextLine().setTextColorIfNotSet(color);
+        labelCell.getTextLine().setTextColor(color);
       }
       cell.setFontType(MPSFonts.BOLD);
-      if(cell instanceof EditorCell_Collection) {
-        EditorCell_Collection collection = (EditorCell_Collection)cell;
-        for(EditorCell child : collection) {
-          this.apply(child);
+      if(recurive) {
+        if(cell instanceof EditorCell_Collection) {
+          EditorCell_Collection collection = (EditorCell_Collection)cell;
+          for(EditorCell child : collection) {
+            this.apply(child, true);
+          }
         }
       }
     }
@@ -68,16 +86,22 @@ public class MPSLite_Style_StyleSheet {
   public static final IStyle M_P_S_LITE_REFERENCE = new IStyle() {
 
     public void apply(EditorCell cell) {
+      this.apply(cell, true);
+    }
+
+    public void apply(EditorCell cell, boolean recurive) {
       if(cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = MPSLite_Style_StyleSheet.calculateColor3(cell);
-        labelCell.getTextLine().setTextColorIfNotSet(color);
+        labelCell.getTextLine().setTextColor(color);
       }
       cell.setFontType(MPSFonts.BOLD_ITALIC);
-      if(cell instanceof EditorCell_Collection) {
-        EditorCell_Collection collection = (EditorCell_Collection)cell;
-        for(EditorCell child : collection) {
-          this.apply(child);
+      if(recurive) {
+        if(cell instanceof EditorCell_Collection) {
+          EditorCell_Collection collection = (EditorCell_Collection)cell;
+          for(EditorCell child : collection) {
+            this.apply(child, true);
+          }
         }
       }
     }
@@ -86,16 +110,22 @@ public class MPSLite_Style_StyleSheet {
   public static final IStyle M_P_S_LITE_OPTION = new IStyle() {
 
     public void apply(EditorCell cell) {
+      this.apply(cell, true);
+    }
+
+    public void apply(EditorCell cell, boolean recurive) {
       if(cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = MPSLite_Style_StyleSheet.calculateColor4(cell);
-        labelCell.getTextLine().setTextColorIfNotSet(color);
+        labelCell.getTextLine().setTextColor(color);
       }
       cell.setFontType(MPSFonts.ITALIC);
-      if(cell instanceof EditorCell_Collection) {
-        EditorCell_Collection collection = (EditorCell_Collection)cell;
-        for(EditorCell child : collection) {
-          this.apply(child);
+      if(recurive) {
+        if(cell instanceof EditorCell_Collection) {
+          EditorCell_Collection collection = (EditorCell_Collection)cell;
+          for(EditorCell child : collection) {
+            this.apply(child, true);
+          }
         }
       }
     }
@@ -104,15 +134,21 @@ public class MPSLite_Style_StyleSheet {
   public static final IStyle M_P_S_LITE_OPTIONAL_PART = new IStyle() {
 
     public void apply(EditorCell cell) {
+      this.apply(cell, true);
+    }
+
+    public void apply(EditorCell cell, boolean recurive) {
       if(cell instanceof EditorCell_Label) {
         EditorCell_Label labelCell = (EditorCell_Label)cell;
         Color color = MPSLite_Style_StyleSheet.calculateColor5(cell);
-        labelCell.getTextLine().setTextColorIfNotSet(color);
+        labelCell.getTextLine().setTextColor(color);
       }
-      if(cell instanceof EditorCell_Collection) {
-        EditorCell_Collection collection = (EditorCell_Collection)cell;
-        for(EditorCell child : collection) {
-          this.apply(child);
+      if(recurive) {
+        if(cell instanceof EditorCell_Collection) {
+          EditorCell_Collection collection = (EditorCell_Collection)cell;
+          for(EditorCell child : collection) {
+            this.apply(child, true);
+          }
         }
       }
     }

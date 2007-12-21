@@ -12,15 +12,21 @@ public class stylesheet_Feature_StyleSheet {
   public static final IStyle O_P_P_O_S_I_T_E = new IStyle() {
 
     public void apply(EditorCell cell) {
+      this.apply(cell, true);
+    }
+
+    public void apply(EditorCell cell, boolean recurive) {
       {
         Color color = stylesheet_Feature_StyleSheet.calculateColor(cell);
         cell.setCellBackgroundColor(color);
       }
       cell.setFontType(MPSFonts.BOLD);
-      if(cell instanceof EditorCell_Collection) {
-        EditorCell_Collection collection = (EditorCell_Collection)cell;
-        for(EditorCell child : collection) {
-          this.apply(child);
+      if(recurive) {
+        if(cell instanceof EditorCell_Collection) {
+          EditorCell_Collection collection = (EditorCell_Collection)cell;
+          for(EditorCell child : collection) {
+            this.apply(child, true);
+          }
         }
       }
     }
