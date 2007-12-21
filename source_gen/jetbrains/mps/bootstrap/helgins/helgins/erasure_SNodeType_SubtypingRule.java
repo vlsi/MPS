@@ -12,7 +12,7 @@ public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime imple
   public  erasure_SNodeType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type) {
+  public SNode getSubOrSuperType(SNode snodeType) {
     return new QuotationClass_8().createNode();
   }
 

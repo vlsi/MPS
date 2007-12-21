@@ -16,13 +16,13 @@ public class check_VarRef_in_WhenConcreteStatement_InferenceRule implements Infe
   public  check_VarRef_in_WhenConcreteStatement_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode ancestor = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", false, false);
+  public void applyRule(final SNode variableReference) {
+    SNode ancestor = SNodeOperations.getAncestor(variableReference, "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", false, false);
     if(ancestor != null) {
-      SNode variableDeclaration = SLinkOperations.getTarget(argument, "variableDeclaration", false);
+      SNode variableDeclaration = SLinkOperations.getTarget(variableReference, "variableDeclaration", false);
       if(variableDeclaration != null && !(SequenceOperations.contains(SNodeOperations.getAncestors(variableDeclaration, "jetbrains.mps.bootstrap.helgins.structure.WhenConcreteStatement", false), ancestor))) {
         if(!(SPropertyOperations.getBoolean(variableDeclaration, "isFinal"))) {
-          TypeChecker.getInstance().reportTypeError(argument, "variable is used inside WHEN CONCRETE block. should be declared final", "jetbrains.mps.bootstrap.helgins.helgins", "1185875417873");
+          TypeChecker.getInstance().reportTypeError(variableReference, "variable is used inside WHEN CONCRETE block. should be declared final", "jetbrains.mps.bootstrap.helgins.helgins", "1185875417873");
         }
       }
     }

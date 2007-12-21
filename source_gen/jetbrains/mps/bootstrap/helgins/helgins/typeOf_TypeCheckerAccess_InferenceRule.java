@@ -12,8 +12,8 @@ public class typeOf_TypeCheckerAccess_InferenceRule implements InferenceRule_Run
   public  typeOf_TypeCheckerAccess_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(), argument, "jetbrains.mps.bootstrap.helgins.helgins", "1175595994022");
+  public void applyRule(final SNode typeCheckerAccess) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(), typeCheckerAccess, "jetbrains.mps.bootstrap.helgins.helgins", "1175595994022");
   }
 
   public String getApplicableConceptFQName() {

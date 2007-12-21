@@ -12,9 +12,9 @@ public class check_TypeofExpression_NonTypesystemRule implements NonTypesystemRu
   public  check_TypeofExpression_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    if(!(RulesUtil.withinInferenceItem(argument))) {
-      TypeChecker.getInstance().reportTypeError(argument, "TYPEOF should be used only within inference rules", "jetbrains.mps.bootstrap.helgins.helgins", "1195217231011");
+  public void applyRule(final SNode typeOfExpression) {
+    if(!(RulesUtil.withinInferenceItem(typeOfExpression))) {
+      TypeChecker.getInstance().reportTypeError(typeOfExpression, "TYPEOF should be used only within inference rules", "jetbrains.mps.bootstrap.helgins.helgins", "1195217231011");
     }
   }
 

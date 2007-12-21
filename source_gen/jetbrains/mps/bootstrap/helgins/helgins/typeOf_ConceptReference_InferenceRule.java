@@ -13,8 +13,8 @@ public class typeOf_ConceptReference_InferenceRule implements InferenceRule_Runt
   public  typeOf_ConceptReference_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode conceptReference = argument;
+  public void applyRule(final SNode cr) {
+    SNode conceptReference = cr;
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_1().createNode(SLinkOperations.getTarget(conceptReference, "concept", false)), conceptReference, "jetbrains.mps.bootstrap.helgins.helgins", "1175521990751");
   }
 

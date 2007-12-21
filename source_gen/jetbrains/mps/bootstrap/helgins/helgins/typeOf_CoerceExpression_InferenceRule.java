@@ -14,16 +14,16 @@ public class typeOf_CoerceExpression_InferenceRule implements InferenceRule_Runt
   public  typeOf_CoerceExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
+  public void applyRule(final SNode coerceExpression) {
     SNode concept;
-    SNode pattern = SLinkOperations.getTarget(argument, "pattern", true);
+    SNode pattern = SLinkOperations.getTarget(coerceExpression, "pattern", true);
     if(SNodeOperations.isInstanceOf(pattern, "jetbrains.mps.bootstrap.helgins.structure.ConceptReference")) {
       concept = SLinkOperations.getTarget(pattern, "concept", false);
     } else
     {
       concept = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(SLinkOperations.getTarget(pattern, "pattern", true), "patternNode", true));
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.bootstrap.helgins.helgins", "1195223916497", true), new QuotationClass_11().createNode(concept), argument, null, "jetbrains.mps.bootstrap.helgins.helgins", "1195223916495");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(coerceExpression, "jetbrains.mps.bootstrap.helgins.helgins", "1195223916497", true), new QuotationClass_11().createNode(concept), coerceExpression, null, "jetbrains.mps.bootstrap.helgins.helgins", "1195223916495");
   }
 
   public String getApplicableConceptFQName() {

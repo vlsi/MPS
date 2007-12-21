@@ -12,9 +12,9 @@ public class check_WhenConcreteStatement_NonTypesystemRule implements NonTypesys
   public  check_WhenConcreteStatement_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    if(!(RulesUtil.withinInferenceItem(argument))) {
-      TypeChecker.getInstance().reportTypeError(argument, "WHEN CONCRETE should be used only within inference rules", "jetbrains.mps.bootstrap.helgins.helgins", "1195223608203");
+  public void applyRule(final SNode whenConcreteStatement) {
+    if(!(RulesUtil.withinInferenceItem(whenConcreteStatement))) {
+      TypeChecker.getInstance().reportTypeError(whenConcreteStatement, "WHEN CONCRETE should be used only within inference rules", "jetbrains.mps.bootstrap.helgins.helgins", "1195223608203");
     }
   }
 

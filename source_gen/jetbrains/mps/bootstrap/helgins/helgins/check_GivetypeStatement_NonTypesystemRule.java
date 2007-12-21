@@ -12,9 +12,9 @@ public class check_GivetypeStatement_NonTypesystemRule implements NonTypesystemR
   public  check_GivetypeStatement_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    if(!(RulesUtil.withinInferenceItem(argument))) {
-      TypeChecker.getInstance().reportTypeError(argument, "GIVETYPE should be used only within inference rules", "jetbrains.mps.bootstrap.helgins.helgins", "1195217450603");
+  public void applyRule(final SNode givetypeStatement) {
+    if(!(RulesUtil.withinInferenceItem(givetypeStatement))) {
+      TypeChecker.getInstance().reportTypeError(givetypeStatement, "GIVETYPE should be used only within inference rules", "jetbrains.mps.bootstrap.helgins.helgins", "1195217450603");
     }
   }
 

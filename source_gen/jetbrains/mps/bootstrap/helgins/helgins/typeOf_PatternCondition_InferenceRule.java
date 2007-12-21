@@ -13,8 +13,8 @@ public class typeOf_PatternCondition_InferenceRule implements InferenceRule_Runt
   public  typeOf_PatternCondition_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode paternCondition = argument;
+  public void applyRule(final SNode pc) {
+    SNode paternCondition = pc;
     TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(paternCondition, "pattern", true), "jetbrains.mps.bootstrap.helgins.helgins", "1175521901932", true), paternCondition, "jetbrains.mps.bootstrap.helgins.helgins", "1175521900492");
   }
 

@@ -13,8 +13,8 @@ public class typeOf_applicableNodeReference_InferenceRule implements InferenceRu
   public  typeOf_applicableNodeReference_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode applicableNodeRef = argument;
+  public void applyRule(final SNode anr) {
+    SNode applicableNodeRef = anr;
     TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(applicableNodeRef, "applicableNode", false), "jetbrains.mps.bootstrap.helgins.helgins", "1175522385423", true), applicableNodeRef, "jetbrains.mps.bootstrap.helgins.helgins", "1175522380873");
   }
 

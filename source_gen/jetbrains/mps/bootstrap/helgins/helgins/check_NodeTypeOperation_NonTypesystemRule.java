@@ -12,9 +12,9 @@ public class check_NodeTypeOperation_NonTypesystemRule implements NonTypesystemR
   public  check_NodeTypeOperation_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    if(!(!(RulesUtil.withinInferenceItem(argument)))) {
-      TypeChecker.getInstance().reportTypeError(argument, "don't use typeOperation within inference rules", "jetbrains.mps.bootstrap.helgins.helgins", "1196099140505");
+  public void applyRule(final SNode node_TypeOperation) {
+    if(!(!(RulesUtil.withinInferenceItem(node_TypeOperation)))) {
+      TypeChecker.getInstance().reportTypeError(node_TypeOperation, "don't use typeOperation within inference rules", "jetbrains.mps.bootstrap.helgins.helgins", "1196099140505");
     }
   }
 

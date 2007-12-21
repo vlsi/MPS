@@ -13,8 +13,8 @@ public class typeof_MatchStatement_InferenceRule implements InferenceRule_Runtim
   public  typeof_MatchStatement_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "expression", true), "jetbrains.mps.bootstrap.helgins.helgins", "1196960489604", true), new QuotationClass_24().createNode(), SLinkOperations.getTarget(argument, "expression", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1196960500018");
+  public void applyRule(final SNode nodeToCheck) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "expression", true), "jetbrains.mps.bootstrap.helgins.helgins", "1196960489604", true), new QuotationClass_24().createNode(), SLinkOperations.getTarget(nodeToCheck, "expression", true), null, "jetbrains.mps.bootstrap.helgins.helgins", "1196960500018");
   }
 
   public String getApplicableConceptFQName() {
