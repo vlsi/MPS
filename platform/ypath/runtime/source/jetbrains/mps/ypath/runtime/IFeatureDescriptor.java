@@ -13,16 +13,22 @@ public interface IFeatureDescriptor<T> {
     
     // TODO: rename to "getFeatureContents" or something
     // TODO: why Collection? Shouldn't it be Iterable instead?
+    @Deprecated
     Collection<T> getFeature (T t);
+    
+    Iterable<T> getContents (T t);
     
     String getName();
 
     // TODO: "getType" is misleading, this is not the element type, but the feature's type: LIST|SEQUENCE
+    @Deprecated
     Type getType();
     
     boolean isDefault();
     
-    IFeatureDescriptor<T> getOpposite ();
+    boolean isDirect ();
+    
+    String getOpposite ();
     
     enum Type {
         
@@ -56,12 +62,16 @@ public interface IFeatureDescriptor<T> {
         public Collection<T> getFeature(T t) {
             return null;
         }
+        
+        public Iterable<T> getContents(T t) {
+            return getFeature(t);
+        }
 
         public String getName() {
             return null;
         }
 
-        public IFeatureDescriptor<T> getOpposite() {
+        public String getOpposite() {
             return null;
         }
 
@@ -71,6 +81,10 @@ public interface IFeatureDescriptor<T> {
 
         public boolean isDefault() {
             return false;
+        }
+        
+        public boolean isDirect() {
+            return true;
         }
         
     }

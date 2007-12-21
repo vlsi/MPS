@@ -6,7 +6,7 @@ package jetbrains.mps.ypath.runtime.internal;
 import java.util.Collections;
 import java.util.Iterator;
 
-import jetbrains.mps.ypath.runtime.AbstractTreePath;
+import jetbrains.mps.ypath.runtime.ITreePath;
 import jetbrains.mps.ypath.runtime.ITreeTraversal;
 
 
@@ -16,21 +16,21 @@ import jetbrains.mps.ypath.runtime.ITreeTraversal;
  */
 public class StartTreeTraversal<T> extends AbstractTreeTraversal<T> implements ITreeTraversal<T>{
     
-    private AbstractTreePath<T> treePath;
+    private ITreePath<T> treePath;
     private T startingNode;
     private Iterable<T> startingIterable;
     
-    public StartTreeTraversal (AbstractTreePath<T> treePath, T startingNode) {
+    public StartTreeTraversal (ITreePath<T> treePath, T startingNode) {
         this.treePath = treePath;
         this.startingNode  = startingNode;
     }
     
-    public StartTreeTraversal (AbstractTreePath<T> treePath, Iterable<T> startingIterable) {
+    public StartTreeTraversal (ITreePath<T> treePath, Iterable<T> startingIterable) {
         this.treePath = treePath;
         this.startingIterable = startingIterable;
     }
 
-    public AbstractTreePath<T> getTreePath() {
+    public ITreePath<T> getTreePath() {
         return treePath;
     }
     

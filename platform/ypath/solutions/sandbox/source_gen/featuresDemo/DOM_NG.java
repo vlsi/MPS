@@ -13,7 +13,6 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.SequenceWithSupplier;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
-import java.util.Collection;
 
 public class DOM_NG extends TreePath<Node> {
 
@@ -22,11 +21,6 @@ public class DOM_NG extends TreePath<Node> {
     this.registerFeature(new DOM_NG.Desc_Feature_attributes());
     this.registerFeature(new DOM_NG.Desc_Feature_parent());
   }
-
-  public Node parent(Node node) {
-    return null;
-  }
-
   public static class ELEMENT_NodeKindTrigger implements IFilter<Node> {
     public static DOM_NG.ELEMENT_NodeKindTrigger instance;
 
@@ -204,19 +198,23 @@ public class DOM_NG extends TreePath<Node> {
     public  Desc_Feature_nodes() {
     }
 
-    public Collection<Node> getFeature(Node node) {
+    public Iterable<Node> getContents(Node node) {
       return new DOM_NG.Feature_nodes(node);
+    }
+
+    public String getOpposite() {
+      return "parent";
     }
 
     public String getName() {
       return "nodes";
     }
 
-    public IFeatureDescriptor.Type getType() {
-      return IFeatureDescriptor.Type.LIST;
+    public boolean isDefault() {
+      return true;
     }
 
-    public boolean isDefault() {
+    public boolean isDirect() {
       return true;
     }
 
@@ -226,20 +224,24 @@ public class DOM_NG extends TreePath<Node> {
     public  Desc_Feature_attributes() {
     }
 
-    public Collection<Node> getFeature(Node node) {
+    public Iterable<Node> getContents(Node node) {
       return new DOM_NG.Feature_attributes(node);
+    }
+
+    public String getOpposite() {
+      return null;
     }
 
     public String getName() {
       return "attributes";
     }
 
-    public IFeatureDescriptor.Type getType() {
-      return IFeatureDescriptor.Type.SEQUENCE;
-    }
-
     public boolean isDefault() {
       return false;
+    }
+
+    public boolean isDirect() {
+      return true;
     }
 
 }
@@ -248,20 +250,24 @@ public class DOM_NG extends TreePath<Node> {
     public  Desc_Feature_parent() {
     }
 
-    public Collection<Node> getFeature(Node node) {
+    public Iterable<Node> getContents(Node node) {
       return new DOM_NG.Feature_parent(node);
+    }
+
+    public String getOpposite() {
+      return null;
     }
 
     public String getName() {
       return "parent";
     }
 
-    public IFeatureDescriptor.Type getType() {
-      return IFeatureDescriptor.Type.SEQUENCE;
-    }
-
     public boolean isDefault() {
       return false;
+    }
+
+    public boolean isDirect() {
+      return true;
     }
 
 }

@@ -45,12 +45,4 @@ public interface ITreePath<T> {
     
     Iterable<IFeatureDescriptor<T>> getAllFeatureDescriptors();
 
-    // Deprecated API
-    
-    @Deprecated
-    boolean hasParent(T t);
-
-    @Deprecated
-    T getParent(T t);
-
 }

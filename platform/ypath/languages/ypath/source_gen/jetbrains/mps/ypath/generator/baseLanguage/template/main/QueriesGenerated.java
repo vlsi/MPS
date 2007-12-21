@@ -92,6 +92,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(node, "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1198197077821(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "opposite", false), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1184237475711(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(node, "name");
   }
@@ -358,6 +362,14 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(node, "usedFeature", false) != null);
   }
 
+  public static boolean ifMacro_Condition_1198195864021(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "parentBlock", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1198195897410(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "childrenBlock", true) != null);
+  }
+
   public static boolean ifMacro_Condition_1184678704683(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IParamFeature");
   }
@@ -374,15 +386,11 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IParamFeature");
   }
 
-  public static boolean ifMacro_Condition_1184237537298(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.ListFeature");
+  public static boolean ifMacro_Condition_1198196013667(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "opposite", false) != null);
   }
 
-  public static boolean ifMacro_Condition_1184237569666(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.SequenceFeature");
-  }
-
-  public static boolean ifMacro_Condition_1198057704561(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1198195669032(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return (SLinkOperations.getTarget(node, "parentBlock", true) != null);
   }
 
@@ -750,11 +758,11 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
   }
 
-  public static SNode sourceNodeQuery_1179315793614(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode sourceNodeQuery_1198195857792(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "parentBlock", true);
   }
 
-  public static SNode sourceNodeQuery_1179317516347(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static SNode sourceNodeQuery_1198195892742(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "childrenBlock", true);
   }
 

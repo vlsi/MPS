@@ -5,6 +5,7 @@ package jetbrains.mps.ypath.runtime.internal;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+import java.util.Stack;
 
 import jetbrains.mps.ypath.runtime.ITreeTraversal;
 
@@ -22,43 +23,40 @@ public class AncestorsOrThisTreeTraversal<T> extends AbstractChainTreeTraversal<
     public Iterator<T> iterator() {
         return new AncestorsOrThisIterator(getSourceTraversal().iterator());
     }
-    
-    private class AncestorsOrThisIterator implements Iterator<T> {
 
-        private final Iterator<T> sourceIterator;
-        private T currentAncestor;
-        private boolean hasCurrentAncestor = false;
+    private class AncestorsOrThisIterator implements Iterator<T>{
+        
+        private Stack< Iterator<T> > ancestorsIteratorsStack = new Stack<Iterator<T>> ();
         private T nextNode = null;
         private boolean hasNextNode = false;
-
-        private AncestorsOrThisIterator (Iterator<T> sourceIterator) {
-            this.sourceIterator = sourceIterator;
-            moveToNext();
-        }
         
-        private void moveToNext() {
+        private AncestorsOrThisIterator (Iterator<T> source) {
+            ancestorsIteratorsStack.push (source);
+            moveToNext ();
+        }
+
+        private void moveToNext () {
             this.nextNode = null;
             this.hasNextNode = false;
             
-            if (!hasCurrentAncestor && sourceIterator.hasNext()) {
-                this.currentAncestor = sourceIterator.next();
-                this.hasCurrentAncestor = true;
-            }
-            
-            if (hasCurrentAncestor) {
-                this.nextNode = currentAncestor;
-                this.hasNextNode = true;
-                
-                if (hasParent(currentAncestor)) {
-                    this.hasCurrentAncestor = true;
-                    this.currentAncestor = getParent(currentAncestor);
-                }
-                else {
-                    this.hasCurrentAncestor = false;
+            while (!ancestorsIteratorsStack.isEmpty()) {
+                Iterator<T> it = ancestorsIteratorsStack.pop();
+                if (it.hasNext()) {
+                    ancestorsIteratorsStack.push(it);
+                    
+                    T node = it.next();
+                    Iterator<T> parentIt = getOppositeContents(node).iterator();
+                    if (parentIt.hasNext()) {
+                        ancestorsIteratorsStack.push(parentIt);
+                    }
+                    
+                    this.nextNode = node;
+                    this.hasNextNode = true;
+                    break;
                 }
             }
         }
-
+        
         public boolean hasNext() {
             return hasNextNode;
         }
@@ -76,4 +74,5 @@ public class AncestorsOrThisTreeTraversal<T> extends AbstractChainTreeTraversal<
             throw new UnsupportedOperationException ();
         }
     }
+    
 }

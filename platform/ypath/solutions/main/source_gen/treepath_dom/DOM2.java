@@ -15,7 +15,6 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.SequenceWithSupplier;
 import java.util.Iterator;
 import java.util.AbstractList;
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
-import java.util.Collection;
 
 public class DOM2 extends TreePath<Node> {
 
@@ -327,20 +326,24 @@ public class DOM2 extends TreePath<Node> {
     public  Desc_Feature_attributes() {
     }
 
-    public Collection<Node> getFeature(Node node) {
+    public Iterable<Node> getContents(Node node) {
       return new DOM2.Feature_attributes(node);
+    }
+
+    public String getOpposite() {
+      return null;
     }
 
     public String getName() {
       return "attributes";
     }
 
-    public IFeatureDescriptor.Type getType() {
-      return IFeatureDescriptor.Type.SEQUENCE;
-    }
-
     public boolean isDefault() {
       return false;
+    }
+
+    public boolean isDirect() {
+      return true;
     }
 
 }
@@ -349,20 +352,24 @@ public class DOM2 extends TreePath<Node> {
     public  Desc_Feature_nodes() {
     }
 
-    public Collection<Node> getFeature(Node node) {
+    public Iterable<Node> getContents(Node node) {
       return new DOM2.Feature_nodes(node);
+    }
+
+    public String getOpposite() {
+      return null;
     }
 
     public String getName() {
       return "nodes";
     }
 
-    public IFeatureDescriptor.Type getType() {
-      return IFeatureDescriptor.Type.LIST;
-    }
-
     public boolean isDefault() {
       return false;
+    }
+
+    public boolean isDirect() {
+      return true;
     }
 
 }

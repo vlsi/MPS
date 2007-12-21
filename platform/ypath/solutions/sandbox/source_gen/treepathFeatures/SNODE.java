@@ -9,7 +9,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import java.util.AbstractCollection;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
-import java.util.Collection;
 
 public class SNODE extends TreePath<SNode> {
 
@@ -108,20 +107,24 @@ public class SNODE extends TreePath<SNode> {
       this.param = param;
     }
 
-    public Collection<SNode> getFeature(SNode node) {
+    public Iterable<SNode> getContents(SNode node) {
       return new SNODE.Feature_child(node, this.param);
+    }
+
+    public String getOpposite() {
+      return null;
     }
 
     public String getName() {
       return "child";
     }
 
-    public IFeatureDescriptor.Type getType() {
-      return IFeatureDescriptor.Type.SEQUENCE;
-    }
-
     public boolean isDefault() {
       return false;
+    }
+
+    public boolean isDirect() {
+      return true;
     }
 
 }
@@ -133,20 +136,24 @@ public class SNODE extends TreePath<SNode> {
       this.param = param;
     }
 
-    public Collection<SNode> getFeature(SNode node) {
+    public Iterable<SNode> getContents(SNode node) {
       return new SNODE.Feature_link(node, this.param);
+    }
+
+    public String getOpposite() {
+      return null;
     }
 
     public String getName() {
       return "link";
     }
 
-    public IFeatureDescriptor.Type getType() {
-      return IFeatureDescriptor.Type.SEQUENCE;
-    }
-
     public boolean isDefault() {
       return false;
+    }
+
+    public boolean isDirect() {
+      return true;
     }
 
 }

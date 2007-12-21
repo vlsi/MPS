@@ -46,7 +46,7 @@ public class DescedantsOrThisTreeTraversal<T> extends AbstractChainTreeTraversal
                     childrenIteratorsStack.push(it);
                     
                     T node = it.next();
-                    Iterator<T> childIt = getChildren(node).iterator();
+                    Iterator<T> childIt = getDirectContents(node).iterator();
                     if (childIt.hasNext()) {
                         childrenIteratorsStack.push(childIt);
                     }

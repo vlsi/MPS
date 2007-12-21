@@ -3,7 +3,9 @@
  */
 package jetbrains.mps.ypath.runtime.internal;
 
+import java.util.Collections;
 import java.util.Iterator;
+import java.util.List;
 import java.util.NoSuchElementException;
 
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
@@ -38,6 +40,7 @@ public class SiblingsTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
         private Iterator<T> currentSiblingsIterator = null;
         private T currentSource;
         private boolean hasCurrentSource = false;
+        private Iterator<T> currentParentsIterator = null;
         private T nextNode = null;
         private boolean hasNextNode = false;
 
@@ -56,15 +59,25 @@ public class SiblingsTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
                         continue;
                     }
                     this.hasCurrentSource = true;
+                    this.currentParentsIterator = null;
+                    this.currentSiblingsIterator = null;
                     break;
                 }
                 
-                if (currentSiblingsIterator == null) {
-                    T parent = getParent(currentSource);
-                    this.currentSiblingsIterator = getChildren(parent).iterator();
+                if (currentParentsIterator == null) {
+                    currentParentsIterator = getOppositeContents(currentSource).iterator(); 
                 }
                 
-                while (currentSiblingsIterator.hasNext()) {
+                if (currentSiblingsIterator == null || !currentSiblingsIterator.hasNext()) {                
+                    if (currentParentsIterator.hasNext()) {
+                        currentSiblingsIterator = getDirectContents(currentParentsIterator.next()).iterator();
+                    }
+                    else {
+                        currentSiblingsIterator = null;
+                    }
+                }
+                
+                while (currentSiblingsIterator != null && currentSiblingsIterator.hasNext()) {
                     T sibling = currentSiblingsIterator.next();
                     if (!getSiblingFilter().accept(sibling, currentSource)) {
                         continue;
@@ -74,7 +87,6 @@ public class SiblingsTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
                     return;
                 }
                 
-                this.currentSiblingsIterator = null;
                 this.hasCurrentSource = false;
             }
             while (sourceIterator.hasNext());

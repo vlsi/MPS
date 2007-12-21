@@ -8,13 +8,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import jetbrains.mps.ypath.runtime.internal.StartTreeTraversal;
 
 /**
  * @author fyodor
  */
-public abstract class TreePath <T> extends AbstractTreePath<T>  {
+public abstract class TreePath <T> implements ITreePath<T>  {
 
     private final Iterable<T> CHILDREN_DEFAULT_VALUE = Collections.singletonList((T)null);
     
@@ -36,15 +37,39 @@ public abstract class TreePath <T> extends AbstractTreePath<T>  {
     public final Iterable <IFeatureDescriptor<T>> getAllFeatureDescriptors () {
         return featureDescriptors;
     }
-    
+
+    public final IFeatureDescriptor<T> getFeatureDescriptor(String name) {
+        if (name == null) {
+            throw new NullPointerException ();
+        }
+        for (IFeatureDescriptor<T> fd : getAllFeatureDescriptors()) {
+            if (name.equals(fd.getName())) {
+                return fd;
+            }
+        }
+        return null;
+    }
+
+    public final Iterable<T> getContents(T t, IFeatureDescriptor<T> featureDesc) {
+        if (featureDesc == null) {
+            // we expect all children to be returned at this point
+            return getAllContents(t);
+        }
+        return featureDesc.getContents(t);
+    }
+
     public final Iterable<T> getAllContents (final T t) {
         if (!featureDescriptors.isEmpty()) {
             return new Iterable<T> () {
                 public Iterator<T> iterator () { return new AllFeaturesIterator (t); }
             };
         }
-
         // fallback to the old mechanism
+        return getChildren(t);
+    }
+
+    @Deprecated
+    private Iterable<T> getChildren(final T t) {
         Iterable<T> children = children(t);
         if (children != CHILDREN_DEFAULT_VALUE) {
             return children != null ? children : EMPTY_CHILDREN;
@@ -90,7 +115,7 @@ public abstract class TreePath <T> extends AbstractTreePath<T>  {
      * @return
      */
     @Deprecated
-    protected abstract T parent (T t);
+    protected T parent (T t) { return null; };
     
     /**
      * This method is meant to be overridden by subclasses. 
@@ -112,6 +137,60 @@ public abstract class TreePath <T> extends AbstractTreePath<T>  {
     @Deprecated
     protected Iterable<T> children (T t) {
       return CHILDREN_DEFAULT_VALUE;
+    }
+    
+    // internal stuff
+    
+    protected class AllFeaturesIterator implements Iterator<T> {
+
+        private Iterator<IFeatureDescriptor<T>> featuresItr;
+        private Iterator<T> currentItr;
+        private boolean hasNext;
+        private T next;
+        private T node;
+        
+        public AllFeaturesIterator (T t) {
+            this.node = t;
+            this.featuresItr = getAllFeatureDescriptors().iterator();
+            moveToNext();
+        }
+        
+        private void moveToNext () {
+            this.hasNext = false;
+            this.next = null;
+            while (!hasNext) {
+                if (currentItr == null || !currentItr.hasNext()) {
+                    if (featuresItr.hasNext()) {
+                        this.currentItr = featuresItr.next().getContents(node).iterator();
+                        continue;
+                    }
+                    else {
+                        break;
+                    }
+                }
+                else {
+                    this.hasNext = true;
+                    this.next = currentItr.next();
+                }
+            }
+        }
+        
+        public boolean hasNext() {
+            return hasNext;
+        }
+        
+        public T next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException ();
+            }
+            T tmp = next;
+            moveToNext();
+            return tmp;
+        }
+        
+        public void remove() {
+            throw new UnsupportedOperationException ();
+        }
     }
 
 }

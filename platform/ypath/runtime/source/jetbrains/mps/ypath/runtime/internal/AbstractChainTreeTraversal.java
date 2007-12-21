@@ -3,9 +3,12 @@
  */
 package jetbrains.mps.ypath.runtime.internal;
 
+import java.util.Collections;
+
 import jetbrains.mps.ypath.runtime.IFeatureDescriptor;
 import jetbrains.mps.ypath.runtime.ITreePath;
 import jetbrains.mps.ypath.runtime.ITreeTraversal;
+import jetbrains.mps.ypath.runtime.TreePath;
 
 /**
  * @author fyodor
@@ -32,17 +35,20 @@ public abstract class AbstractChainTreeTraversal<T> extends AbstractTreeTraversa
     public IFeatureDescriptor<T> getFeatureDescriptor() {
         return featureDesc;
     }
-
-    protected Iterable<T> getChildren (T node) {
+    
+    protected Iterable<T> getDirectContents (T node) {
         return getTreePath().getContents(node, featureDesc);
     }
-    
-    protected boolean hasParent (T node) {
-        return getTreePath().hasParent(node);
-    }
 
-    protected T getParent (T node) {
-        return getTreePath().getParent(node);
+    protected Iterable<T> getOppositeContents (T node) {
+        if (featureDesc == null || featureDesc.getOpposite() == null) {
+            // try the old api first
+            if (((TreePath<T>)getTreePath()).hasParent(node)) {
+                return Collections.singletonList(((TreePath<T>)getTreePath()).getParent(node));
+            }
+            return Collections.emptyList();
+        }
+        return getTreePath().getContents(node, getTreePath().getFeatureDescriptor(featureDesc.getOpposite()));
     }
     
     protected ITreeTraversal<T> getSourceTraversal () {

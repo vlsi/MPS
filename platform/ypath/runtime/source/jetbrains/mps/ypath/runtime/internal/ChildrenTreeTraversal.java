@@ -46,7 +46,7 @@ public class ChildrenTreeTraversal<T> extends AbstractChainTreeTraversal<T> impl
             {
                 this.childrenIterator = null;
                 T node = sourceIterator.next();
-                this.childrenIterator = getChildren(node).iterator();
+                this.childrenIterator = getDirectContents(node).iterator();
             }
             
             if (childrenIterator != null && childrenIterator.hasNext()) {

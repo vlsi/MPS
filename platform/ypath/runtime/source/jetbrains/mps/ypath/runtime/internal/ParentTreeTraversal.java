@@ -20,17 +20,18 @@ public class ParentTreeTraversal<T> extends AbstractChainTreeTraversal<T> implem
     }
     
     public Iterator<T> iterator() {
-        return new ParentIterator(getSourceTraversal().iterator());
+        return new ParentsIterator(getSourceTraversal().iterator());
     }
     
-    private class ParentIterator implements Iterator<T> {
-
+    private class ParentsIterator implements Iterator<T> {
+        
         private final Iterator<T> sourceIterator;
+        private Iterator<T> currentParentsIterator = null;
         private T nextNode = null;
         private boolean hasNextNode = false;
 
-        private ParentIterator (Iterator<T> sourceIterator) {
-            this.sourceIterator = sourceIterator;
+        private ParentsIterator (Iterator<T> source) {
+            this.sourceIterator = source;
             moveToNext();
         }
         
@@ -38,8 +39,16 @@ public class ParentTreeTraversal<T> extends AbstractChainTreeTraversal<T> implem
             this.nextNode = null;
             this.hasNextNode = false;
             
-            if (sourceIterator.hasNext()) {
-                this.nextNode = getParent(sourceIterator.next());
+            while ((currentParentsIterator == null || !currentParentsIterator.hasNext()) &&
+                    sourceIterator.hasNext()) 
+            {
+                this.currentParentsIterator = null;
+                T node = sourceIterator.next();
+                this.currentParentsIterator = getOppositeContents(node).iterator();
+            }
+            
+            if (currentParentsIterator != null && currentParentsIterator.hasNext()) {
+                this.nextNode = currentParentsIterator.next();
                 this.hasNextNode = true;
             }
         }
@@ -60,5 +69,7 @@ public class ParentTreeTraversal<T> extends AbstractChainTreeTraversal<T> implem
         public void remove() {
             throw new UnsupportedOperationException ();
         }
+        
     }
+
 }

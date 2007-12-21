@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.SequenceWithSupplier;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import org.w3c.dom.Element;
-import java.util.Collection;
 
 public class DOMF extends TreePath<Node> {
 
@@ -108,20 +107,24 @@ public class DOMF extends TreePath<Node> {
     public  Desc_Feature_elements() {
     }
 
-    public Collection<Node> getFeature(Node node) {
+    public Iterable<Node> getContents(Node node) {
       return new DOMF.Feature_elements(node);
+    }
+
+    public String getOpposite() {
+      return null;
     }
 
     public String getName() {
       return "elements";
     }
 
-    public IFeatureDescriptor.Type getType() {
-      return IFeatureDescriptor.Type.SEQUENCE;
-    }
-
     public boolean isDefault() {
       return false;
+    }
+
+    public boolean isDirect() {
+      return true;
     }
 
 }
@@ -133,20 +136,24 @@ public class DOMF extends TreePath<Node> {
       this.param = param;
     }
 
-    public Collection<Node> getFeature(Node node) {
+    public Iterable<Node> getContents(Node node) {
       return new DOMF.Feature_child(node, this.param);
+    }
+
+    public String getOpposite() {
+      return null;
     }
 
     public String getName() {
       return "child";
     }
 
-    public IFeatureDescriptor.Type getType() {
-      return IFeatureDescriptor.Type.SEQUENCE;
-    }
-
     public boolean isDefault() {
       return false;
+    }
+
+    public boolean isDirect() {
+      return true;
     }
 
 }
