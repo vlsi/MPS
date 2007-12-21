@@ -5,11 +5,16 @@ package jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class QueriesGenerated {
 
-  public static SNode referenceMacro_GetReferent_1170351924342(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return _QueriesUtil.resolve_ConceptFunctionParm_to_MethodParameterReference_by_Alias(node, templateNode, generator);
+  public static Object referenceMacro_GetReferent_1170351924342(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    String alias = SConceptPropertyOperations.getString(node, "alias");
+    if(alias == null) {
+      generator.showErrorMessage(node, templateNode, "concept function parm has no <alias> - can't map it to method parameter");
+    }
+    return alias;
   }
 
 }
