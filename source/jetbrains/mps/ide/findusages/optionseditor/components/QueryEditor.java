@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.findusages.optionseditor.components;
 
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.findusages.optionseditor.options.ScopeOptions;
+import jetbrains.mps.ide.findusages.optionseditor.options.QueryOptions;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
@@ -14,7 +14,7 @@ import java.awt.Component;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ScopeEditor {
+public class QueryEditor {
   public static final int GLOBAL_SCOPE = 0;
   public static final int PROJECT_SCOPE = 1;
   public static final int MODULE_SCOPE = 2;
@@ -27,7 +27,7 @@ public class ScopeEditor {
 
   private JComboBox myComboBox = new JComboBox();
 
-  public ScopeEditor(ActionContext context, int defaultScope) {
+  public QueryEditor(ActionContext context, int defaultScope) {
     myContext = context;
 
     initItems();
@@ -58,8 +58,8 @@ public class ScopeEditor {
     myComboBox.setSelectedIndex(defaultScope);
   }
 
-  public ScopeOptions getScopeOptions() {
-    return new ScopeOptions(myItems.get(myComboBox.getSelectedIndex()).myScope);
+  public QueryOptions getScopeOptions() {
+    return new QueryOptions(myItems.get(myComboBox.getSelectedIndex()).myScope);
   }
 
   public JComponent getComponent() {

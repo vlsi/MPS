@@ -4,6 +4,8 @@ import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.findusages.optionseditor.FindUsagesOptions;
+import jetbrains.mps.ide.findusages.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
@@ -18,7 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewUsagesView extends DefaultTool implements IExternalizableComponent {
-  private static final String VERSION_NUMBER = "0.935";
+  private static final String VERSION_NUMBER = "0.9411";
   private static final String VERSION = "version";
   private static final String ID = "id";
 
@@ -82,8 +84,16 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     }
   }
 
-  public UsageView createUsageView(IOperationContext context) {
-    UsageView usageView = new UsageView(myProjectFrame, context) {
+  public UsageView createUsageView(IOperationContext context, FindUsagesOptions options) {
+    if (options.getOption(ViewOptions.class) != null) {
+      if (!options.getOption(ViewOptions.class).myNewTab) {
+        if (currentTabIndex() != -1) {
+          closeTab(currentTabIndex());
+          showTool();
+        }
+      }
+    }
+    UsageView usageView = new UsageView(myProjectFrame, context, options) {
       public void updateUI() {
         int index = myUsageViews.indexOf(this);
         myTabbedPane.setIconAt(index, this.getIcon());
@@ -97,7 +107,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     usageView.clear();
 
     myUsageViews.add(usageView);
-    myTabbedPane.addTab(usageView.getCaption(), usageView.getIcon(), usageView.getComponent());
+    myTabbedPane.addTab(/*usageView.getCaption(), usageView.getIcon(),*/"<null>", usageView.getComponent());
     myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
 
     return usageView;
@@ -128,7 +138,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     Element tabsXML = element.getChild(TABS);
     if (tabsXML != null) {
       for (Element tabXML : (List<Element>) tabsXML.getChildren()) {
-        UsageView usageView = createUsageView(project.createOperationContext());
+        UsageView usageView = createUsageView(project.createOperationContext(), new FindUsagesOptions());
         usageView.read(tabXML, project);
       }
     }

@@ -1,12 +1,13 @@
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.containernodes;
 
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.ide.findusages.findalgorithm.filters.BaseFilter;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes.BaseLeaf;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes.BaseNode;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.TaskProgressSettings;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
@@ -41,18 +42,23 @@ public class FilterNode extends BaseNode {
     return "filter";
   }
 
-  public SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
-    //monitor.addText(getTaskName() + " started");
-    //monitor.startTask(getTaskName(), getTaskKind());
-    SearchResults results = myFilter.filter(myChildren.get(0).getResults(query, monitor));
-    //monitor.finishTask(getTaskName());
-    //monitor.addText(getTaskKind() + " finished");
+  public SearchResults doGetResults(final SearchQuery query, final IAdaptiveProgressMonitor monitor) {
+    monitor.addText(getTaskName() + " started");
+    monitor.startTask(getTaskName(), getTaskKind());
+    final SearchResults[] results = new SearchResults[1];
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        results[0] = myFilter.filter(myChildren.get(0).getResults(query, monitor));
+      }
+    });
+    monitor.finishTask(getTaskName());
+    monitor.addText(getTaskKind() + " finished");
 
-    return results;
+    return results[0];
   }
 
   public long getEstimatedTime(IScope scope) {
-    return 0;//TaskProgressSettings.getInstance().getEstimatedTimeMillis(getTaskName());
+    return TaskProgressSettings.getInstance().getEstimatedTimeMillis(getTaskName());
   }
 
   public void write(Element element, MPSProject project) {

@@ -1,9 +1,9 @@
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.functionalnodes;
 
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes.BaseNode;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 
 public class UnionNode extends BaseNode {
   public SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {

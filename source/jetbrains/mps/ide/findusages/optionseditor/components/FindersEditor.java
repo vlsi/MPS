@@ -2,7 +2,6 @@ package jetbrains.mps.ide.findusages.optionseditor.components;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.optionseditor.options.FindersOptions;
-import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -14,7 +13,7 @@ public class FindersEditor {
 
   private FindersOptions myOptions = new FindersOptions();
 
-  public FindersEditor(Set<BaseFinder> finders, IOperationContext context) {
+  public FindersEditor(Set<BaseFinder> availableFinders) {
     myPanel = new JPanel();
     myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
 
@@ -24,7 +23,7 @@ public class FindersEditor {
                     BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
 
-    for (final BaseFinder finder : finders) {
+    for (final BaseFinder finder : availableFinders) {
       myOptions.add(finder);
 
       JCheckBox finderCheckBox = new JCheckBox(finder.getDescription(), true);

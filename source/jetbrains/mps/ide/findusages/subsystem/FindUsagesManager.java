@@ -14,10 +14,6 @@ import org.jdom.Element;
 import java.util.*;
 
 public class FindUsagesManager implements IExternalizableComponent {
-  private static final String VERSION = "version";
-  private static final String ID = "id";
-  private static final String VERSION_NUMBER = "0.1";
-
   private static final Logger LOG = Logger.getLogger(FindUsagesManager.class);
 
   private Map<String, Set<BaseFinder>> myFinders = new HashMap<String, Set<BaseFinder>>();
@@ -81,21 +77,10 @@ public class FindUsagesManager implements IExternalizableComponent {
   }
 
   public void read(Element element, MPSProject project) {
-    /*
-    Element versionXML = element.getChild(VERSION);
-    if (versionXML == null) return;
-    String version = versionXML.getAttribute(ID).getValue();
-    if (!VERSION_NUMBER.equals(version)) return;
 
-    */
   }
 
   public void write(Element element, MPSProject project) {
-    /*
-    Element versionXML = new Element(VERSION);
-    versionXML.setAttribute(ID, VERSION_NUMBER);
-    element.addContent(versionXML);
 
-    */
   }
 }

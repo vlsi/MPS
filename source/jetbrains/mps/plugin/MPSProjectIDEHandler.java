@@ -6,7 +6,11 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.findusages.UseNewUsagesViewFlag;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treebuilders.TreeBuilder;
+import jetbrains.mps.ide.findusages.optionseditor.options.TreeBuilder;
+import jetbrains.mps.ide.findusages.optionseditor.options.FindersOptions;
+import jetbrains.mps.ide.findusages.optionseditor.options.QueryOptions;
+import jetbrains.mps.ide.findusages.optionseditor.options.ViewOptions;
+import jetbrains.mps.ide.findusages.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.AspectMethodsFinder;
 import jetbrains.mps.ide.findusages.view.NewUsagesView;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
@@ -84,11 +88,15 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
         public void run() {
           try {
             NewUsagesView usagesView = getProjectWindow().getUsagesView();
-            jetbrains.mps.ide.findusages.view.UsageView usageView = usagesView.createUsageView(new ProjectOperationContext(myProject));
 
-            usageView.setResultProvider(TreeBuilder.forFinder(new AspectMethodsFinder(applicableModelDescriptors, name)));
             ModuleContext moduleContext = new ModuleContext(BootstrapLanguages.getInstance().getBaseLanguage(), myProject);
-            usageView.run(new SearchQuery(new SNodePointer((SNode) null), myProject.getScope()));
+            FindUsagesOptions options = new FindUsagesOptions();
+            options.setOption(new FindersOptions(new AspectMethodsFinder(applicableModelDescriptors, name)));
+            options.setOption(new QueryOptions(myProject.getScope(), new SNodePointer((SNode) null)));
+            options.setOption(new ViewOptions(true, true));
+
+            jetbrains.mps.ide.findusages.view.UsageView usageView = usagesView.createUsageView(new ProjectOperationContext(myProject), options);
+            usageView.run();
 
             usagesView.showTool();
           } catch (Throwable t) {
