@@ -340,7 +340,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
 
       myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
       myList.setFont(new TextLine("", null).getFont());
-      myList.setBackground(new Color(235, 244, 254));
+      myList.setBackground(UIManager.getColor("TextArea.selectionBackground").brighter());
 
       myList.addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
