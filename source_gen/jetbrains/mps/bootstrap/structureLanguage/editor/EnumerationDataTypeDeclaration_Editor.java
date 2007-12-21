@@ -4,16 +4,16 @@ package jetbrains.mps.bootstrap.structureLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.core.editor.BaseStyleSheet_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
 import java.awt.Color;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
@@ -33,6 +33,10 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myMemberListHandler_memberList_;
+
+  public static boolean _QueryFunction_NodeCondition_1197593498320(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.hasValue(node, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_presentation");
+  }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198240256997");
@@ -265,10 +269,6 @@ public class EnumerationDataTypeDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell12(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
-  public static boolean _QueryFunction_NodeCondition_1197593498320(SNode node, EditorContext editorContext, IScope scope) {
-    return SPropertyOperations.hasValue(node, "memberIdentifierPolicy", "derive_from_presentation", "derive_from_presentation");
   }
 
 

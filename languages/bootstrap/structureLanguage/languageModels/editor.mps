@@ -7,7 +7,7 @@
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="30" />
+  <maxImportIndex value="31" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.nodeEditor@java_stub" version="-1" />
@@ -22,6 +22,7 @@
   <import index="28" modelUID="jetbrains.mps.bootstrap.structureLanguage.editor@java_stub" version="-1" />
   <import index="29" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
   <import index="30" modelUID="jetbrains.mps.core.editor" version="-1" />
+  <import index="31" modelUID="java.awt@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1082979388796">
     <property name="name" value="ConstrainedDataTypeDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="1.1082978499127" />
@@ -2609,6 +2610,36 @@
             <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           </node>
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheet" id="1198253670982">
+    <property name="name" value="StyleSheet" />
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1198253682671">
+      <property name="name" value="StructureKeyWord" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1198253706907">
+        <property name="color" value="query" />
+        <node role="query" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1198253718471">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198253718472">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198253723098">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1198253723099">
+                <link role="baseMethodDeclaration" targetNodeId="31.~Color.&lt;init&gt;(int,int,int)" resolveInfo="Color" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198253737551">
+                  <property name="value" value="0" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198253745261">
+                  <property name="value" value="120" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198253740696">
+                  <property name="value" value="0" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="extendedClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClassReference" id="1198253702780">
+        <link role="styleSheetClass" targetNodeId="30.1197980684428" resolveInfo="KeyWord" />
       </node>
     </node>
   </node>

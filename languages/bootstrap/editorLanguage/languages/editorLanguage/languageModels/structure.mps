@@ -2427,6 +2427,11 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1198252369256">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="extendedClass" />
+      <link role="target" targetNodeId="1198252130653" resolveInfo="StyleSheetClassReference" />
+    </node>
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1186402391299">
       <link role="intfc" targetNodeId="3.1169194658468" />
     </node>
@@ -2589,6 +2594,16 @@
     <node role="member" type="jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration" id="1197893584870">
       <property name="internalValue" value="LAST" />
       <property name="externalValue" value="last" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198252130653">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="StyleSheetClassReference" />
+    <link role="extends" targetNodeId="3.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1198252276894">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="styleSheetClass" />
+      <link role="target" targetNodeId="1186402373407" resolveInfo="StyleSheetClass" />
     </node>
   </node>
 </model>
