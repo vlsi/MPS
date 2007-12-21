@@ -5,23 +5,17 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
-import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes.BaseNode;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.findusages.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.optionseditor.options.QueryOptions;
-import jetbrains.mps.ide.findusages.optionseditor.options.TreeBuilder;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -29,14 +23,15 @@ import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public abstract class UsageView implements IExternalizableComponent {
   //read/write constants
   private static final String OPTIONS = "options";
   private static final String TREE_WRAPPER = "treewrapper";
+  private static final String MODELS = "models";
+  private static final String MODEL = "model";
+  private static final String UID = "uid";
 
   //connection with other components
   private IDEProjectFrame myProjectFrame;
@@ -48,6 +43,9 @@ public abstract class UsageView implements IExternalizableComponent {
 
   //model components
   private FindUsagesOptions myOptions = new FindUsagesOptions();
+
+  //last results
+  List<SModelDescriptor> myFoundModelDescriptors = new ArrayList<SModelDescriptor>();
 
   public UsageView(IDEProjectFrame projectFrame, IOperationContext context, FindUsagesOptions options) {
     myProjectFrame = projectFrame;
@@ -67,13 +65,14 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public void run() {
-    myTreeWrapper.setContents(getResultProvider().getResults(getSearchQuery(), myProjectFrame.createAdaptiveProgressMonitor()));
+    SearchResults myLastResults = getResultProvider().getResults(getSearchQuery(), myProjectFrame.createAdaptiveProgressMonitor());
+    myFoundModelDescriptors = collectModels(myLastResults.getSearchResults());
+    myTreeWrapper.setContents(myLastResults);
     updateUI();
   }
 
   public void rerun() {
     if ((getSearchQuery().getScope() == null) && (getSearchQuery().getNodePointer().getNode() == null)) return;
-    TreeBuilder.invalidateAll((BaseNode) getResultProvider());
     run();
   }
 
@@ -85,28 +84,21 @@ public abstract class UsageView implements IExternalizableComponent {
 
     new Thread() {
       public void run() {
-        Set<SModel> models = new HashSet<SModel>();
-        collectModels(getResultProvider().getResults(getSearchQuery(), myProjectFrame.createAdaptiveProgressMonitor()).getSearchResults(), models);
         GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
-
-        List<SModelDescriptor> modelDescriptors = new ArrayList<SModelDescriptor>();
-
-        for (SModel m : models) {
-          modelDescriptors.add(m.getModelDescriptor());
-        }
-
-        manager.generateModelsFromDifferentModules(myContext, modelDescriptors, IGenerationType.FILES);
+        manager.generateModelsFromDifferentModules(myContext, myFoundModelDescriptors, IGenerationType.FILES);
       }
     }.start();
   }
 
-  private void collectModels(List<SearchResult> results, Set<SModel> models) {
+  private List<SModelDescriptor> collectModels(List<SearchResult> results) {
+    List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
     for (SearchResult res : results) {
       SNode node = res.getNodePointer().getNode();
       if (node != null) {
-        models.add(node.getModel());
+        models.add(node.getModel().getModelDescriptor());
       }
     }
+    return models;
   }
 
   public void clear() {
@@ -180,6 +172,15 @@ public abstract class UsageView implements IExternalizableComponent {
     Element optionsXML = element.getChild(OPTIONS);
     myOptions.read(optionsXML, project);
 
+    Element modelsXML = element.getChild(MODELS);
+    for (Element modelXML : (List<Element>) modelsXML.getChildren()) {
+      SModelUID modelUID = SModelUID.fromString(modelXML.getAttributeValue(UID));
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
+      if (modelDescriptor != null) {
+        myFoundModelDescriptors.add(modelDescriptor);
+      }
+    }
+
     Element treeWrapperXML = element.getChild(TREE_WRAPPER);
     myTreeWrapper.read(treeWrapperXML, project);
 
@@ -190,6 +191,14 @@ public abstract class UsageView implements IExternalizableComponent {
     Element optionsXML = new Element(OPTIONS);
     myOptions.write(optionsXML, project);
     element.addContent(optionsXML);
+
+    Element modelsXML = new Element(MODELS);
+    for (SModelDescriptor modelDescriptor : myFoundModelDescriptors) {
+      Element modelXML = new Element(MODEL);
+      modelXML.setAttribute(UID, modelDescriptor.getModelUID().toString());
+      modelsXML.addContent(modelXML);
+    }
+    element.addContent(modelsXML);
 
     Element treeWrapperXML = new Element(TREE_WRAPPER);
     myTreeWrapper.write(treeWrapperXML, project);

@@ -21,7 +21,6 @@ public abstract class BaseNode implements IResultProvider {
 
   protected BaseNode myParent;
   protected List<BaseNode> myChildren = new ArrayList<BaseNode>();
-  private boolean myIsInvalidated = false;
 
   public BaseNode() {
 
@@ -37,17 +36,14 @@ public abstract class BaseNode implements IResultProvider {
 
   public void addChild(BaseNode child) {
     myChildren.add(child);
-    invalidate();
   }
 
   public void removeChild(BaseNode child) {
     myChildren.remove(child);
-    invalidate();
   }
 
   public void clearChildren() {
     myChildren.clear();
-    invalidate();
   }
 
   public List<BaseNode> getChildren() {
@@ -64,7 +60,6 @@ public abstract class BaseNode implements IResultProvider {
    * NOTE: do not use from eventDispathcing thread!
    */
   public SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
-    myIsInvalidated = false;
     SearchResults results;
     if (isRoot()) {
       monitor.start("find usages", getEstimatedTime(query.getScope()));
@@ -82,12 +77,6 @@ public abstract class BaseNode implements IResultProvider {
       sumTime = sumTime + child.getEstimatedTime(scope);
     }
     return sumTime;
-  }
-
-  public void invalidate() {
-    if (myIsInvalidated) return;
-    if (!isRoot()) myParent.invalidate();
-    myIsInvalidated = true;
   }
 
   public void write(Element element, MPSProject project) {
