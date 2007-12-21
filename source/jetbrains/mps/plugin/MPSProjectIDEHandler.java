@@ -84,26 +84,22 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           applicableModelDescriptors.add(descriptor.getSModel());
         }
       }
-      SwingUtilities.invokeLater(new Runnable() {
+      new Thread() {
         public void run() {
-          try {
-            NewUsagesView usagesView = getProjectWindow().getUsagesView();
+          NewUsagesView usagesView = getProjectWindow().getUsagesView();
 
-            ModuleContext moduleContext = new ModuleContext(BootstrapLanguages.getInstance().getBaseLanguage(), myProject);
-            FindUsagesOptions options = new FindUsagesOptions();
-            options.setOption(new FindersOptions(new AspectMethodsFinder(applicableModelDescriptors, name)));
-            options.setOption(new QueryOptions(myProject.getScope(), new SNodePointer((SNode) null)));
-            options.setOption(new ViewOptions(true, true));
+          ModuleContext moduleContext = new ModuleContext(BootstrapLanguages.getInstance().getBaseLanguage(), myProject);
+          FindUsagesOptions options = new FindUsagesOptions();
+          options.setOption(new FindersOptions(new AspectMethodsFinder(applicableModelDescriptors, name)));
+          options.setOption(new QueryOptions(myProject.getScope(), new SNodePointer((SNode) null)));
+          options.setOption(new ViewOptions(true, true));
 
-            jetbrains.mps.ide.findusages.view.UsageView usageView = usagesView.createUsageView(new ProjectOperationContext(myProject), options);
-            usageView.run();
+          jetbrains.mps.ide.findusages.view.UsageView usageView = usagesView.createUsageView(new ProjectOperationContext(myProject), options);
+          usageView.run();
 
-            usagesView.showTool();
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
+          usagesView.showTool();
         }
-      });
+      }.start();
     } else {
       List<SModelDescriptor> modelDescriptors = myProject.getScope().getModelDescriptors(namespace);
       final List<SModelDescriptor> applicableModelDescriptors = new ArrayList<SModelDescriptor>();

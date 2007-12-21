@@ -5,6 +5,7 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
@@ -65,6 +66,7 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public void run() {
+    assert !ThreadUtils.isEventDispatchThread();
     SearchResults myLastResults = getResultProvider().getResults(getSearchQuery(), myProjectFrame.createAdaptiveProgressMonitor());
     myFoundModelDescriptors = collectModels(myLastResults.getSearchResults());
     myTreeWrapper.setContents(myLastResults);
