@@ -627,7 +627,6 @@ public abstract class MPSTree extends JTree {
     return result;
   }
 
-
   public int getToggleClickCount() {
     TreePath selection = getSelectionPath();
     if (selection == null) return -1;
@@ -666,7 +665,6 @@ public abstract class MPSTree extends JTree {
     tip.setComponent(this);
     return tip;
   }
-
 
   protected static class MPSTreeCellRenderer extends DefaultTreeCellRenderer {
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
