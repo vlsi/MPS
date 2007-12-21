@@ -3,6 +3,8 @@ package jetbrains.mps.ide.hierarchy;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.ui.TreeTextUtil;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -29,7 +31,7 @@ public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTre
       List<T> descendants = new ArrayList<T>(myHierarchyTree.getAbstractChildren((T) this.getUserObject()));
       Collections.sort(descendants, new Comparator<T>() {
         public int compare(T o1, T o2) {
-          return ("" + o1.getName()).compareTo(o2.getName());
+          return ("" + o1.toString()).compareTo(o2.toString());
         }
       });
 
