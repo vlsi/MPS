@@ -19,6 +19,7 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String DEFAULT = "default";
   public static String TARGETLIST = "targetlist";
+  public static String IMPORTS = "imports";
   public static String PROPERTY_LIST = "propertyList";
 
   public  Project(SNode node) {
@@ -92,6 +93,26 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
 
   public void insertTargetlist(TargetDeclaration prev, TargetDeclaration node) {
     this.insertChild(prev, Project.TARGETLIST, node);
+  }
+
+  public int getImportsesCount() {
+    return this.getChildCount(Project.IMPORTS);
+  }
+
+  public Iterator<ImportDeclatation> importses() {
+    return this.children(Project.IMPORTS);
+  }
+
+  public List<ImportDeclatation> getImportses() {
+    return this.getChildren(Project.IMPORTS);
+  }
+
+  public void addImports(ImportDeclatation node) {
+    this.addChild(Project.IMPORTS, node);
+  }
+
+  public void insertImports(ImportDeclatation prev, ImportDeclatation node) {
+    this.insertChild(prev, Project.IMPORTS, node);
   }
 
   public int getPropertyListsCount() {

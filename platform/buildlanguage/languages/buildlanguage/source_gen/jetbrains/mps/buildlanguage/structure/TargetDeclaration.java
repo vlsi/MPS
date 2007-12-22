@@ -70,19 +70,19 @@ public class TargetDeclaration extends BaseConcept implements INamedConcept, IPr
     return this.getChildCount(TargetDeclaration.TASK_CALLS_LIST);
   }
 
-  public Iterator<TaskCall> taskCallsLists() {
+  public Iterator<Call> taskCallsLists() {
     return this.children(TargetDeclaration.TASK_CALLS_LIST);
   }
 
-  public List<TaskCall> getTaskCallsLists() {
+  public List<Call> getTaskCallsLists() {
     return this.getChildren(TargetDeclaration.TASK_CALLS_LIST);
   }
 
-  public void addTaskCallsList(TaskCall node) {
+  public void addTaskCallsList(Call node) {
     this.addChild(TargetDeclaration.TASK_CALLS_LIST, node);
   }
 
-  public void insertTaskCallsList(TaskCall prev, TaskCall node) {
+  public void insertTaskCallsList(Call prev, Call node) {
     this.insertChild(prev, TargetDeclaration.TASK_CALLS_LIST, node);
   }
 
