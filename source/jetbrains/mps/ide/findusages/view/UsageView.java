@@ -132,7 +132,11 @@ public abstract class UsageView implements IExternalizableComponent {
 
     toolbar.add(new AnonymButton(Icons.RERUN_ICON, "Rerun search") {
       public void action() {
-        rerun();
+        new Thread() {
+          public void run() {
+            rerun();
+          }
+        }.start();
       }
     });
     toolbar.add(new AnonymButton(Icons.REGENERATE_ICON, "Regenerate models") {
