@@ -12,6 +12,10 @@ public class ViewOptions implements IExternalizableComponent {
   public boolean myShowOneResult;
   public boolean myNewTab;
 
+  public ViewOptions() {
+
+  }
+
   public ViewOptions(boolean showOneResult, boolean newTab) {
     myShowOneResult = showOneResult;
     myNewTab = newTab;
