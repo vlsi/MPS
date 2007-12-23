@@ -22,7 +22,7 @@ public class NodeAndDescendantsUsages_Finder extends BaseFinder {
   }
 
   public String getDescription() {
-    return "Node and descendants usages";
+    return "Node & Descendants Usages";
   }
 
   public boolean isApplicable(SNode node) {

@@ -336,7 +336,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1198430852441">
     <property name="name" value="NodeAndDescendantsUsages"/>
-    <property name="description" value="Node and descendants usages"/>
+    <property name="description" value="Node &amp; Descendants Usages"/>
     <link role="forConcept" targetNodeId="2.1133920641626" resolveInfo="BaseConcept"/>
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.IsApplicableBlock"
           id="1198430852442">
