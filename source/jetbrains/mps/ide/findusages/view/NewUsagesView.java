@@ -30,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewUsagesView extends DefaultTool implements IExternalizableComponent {
-  private static final String VERSION_NUMBER = "0.949";
+  private static final String VERSION_NUMBER = "0.95";
   private static final String VERSION = "version";
   private static final String ID = "id";
 
@@ -130,11 +130,11 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     if (!findUsagesDialog.isCancelled()) {
       FindUsagesOptions options = findUsagesDialog.getResult();
       myDefaultOptions = options;
-      findUsages(options);
+      findUsages(options, true);
     }
   }
 
-  public void findUsages(FindUsagesOptions options) {
+  public void findUsages(FindUsagesOptions options, boolean isRerunnable) {
     IResultProvider provider = options.getOption(FindersOptions.class).getResultProvider();
     SearchQuery query = options.getOption(QueryOptions.class).getSearchQuery();
     boolean showOne = options.getOption(ViewOptions.class).myShowOneResult;
@@ -172,7 +172,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
       myTabbedPane.addTab("", usageViewData.myUsageView.getComponent());
       myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
 
-      usageViewData.myUsageView.setRunOptions(provider, query, searchResults);
+      usageViewData.myUsageView.setRunOptions(provider, query, isRerunnable, searchResults);
 
       myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsageView.getCaption());
       myTabbedPane.setIconAt(currentTabIndex(), usageViewData.myUsageView.getIcon());

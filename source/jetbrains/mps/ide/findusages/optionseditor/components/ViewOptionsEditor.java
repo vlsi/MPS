@@ -19,7 +19,7 @@ public class ViewOptionsEditor {
 
     myPanel.setBorder(
             BorderFactory.createCompoundBorder(
-                    BorderFactory.createTitledBorder("View Options (not imp.)"),
+                    BorderFactory.createTitledBorder("View Options"),
                     BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
     myShowOneResult = new JCheckBox("Show one result", myOptions.myShowOneResult);

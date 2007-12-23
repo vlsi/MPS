@@ -34,6 +34,7 @@ public abstract class UsageView implements IExternalizableComponent {
   private static final String QUERY = "query";
   private static final String RESULT_PROVIDER = "result_provider";
   private static final String CLASS_NAME = "class_name";
+  private static final String OPTIONS = "options";
   private static final String RERUNNABLE = "rerunnable";
   private static final String TREE_WRAPPER = "tree_wrapper";
   private static final String MODELS = "models";
@@ -52,6 +53,9 @@ public abstract class UsageView implements IExternalizableComponent {
   private SearchQuery mySearchQuery;
   private boolean myIsRerunnable;
 
+  //for assertions - check invariant - constructor -> read|setRunOpts
+  private boolean myIsInitialized = false;
+
   //last results
   List<SModelDescriptor> myFoundModelDescriptors = new ArrayList<SModelDescriptor>();
 
@@ -68,23 +72,27 @@ public abstract class UsageView implements IExternalizableComponent {
     myTreeWrapper.setEmptyContents();
 
     myPanel.add(myTreeWrapper, BorderLayout.CENTER);
-    myPanel.add(createActionsToolbar(), BorderLayout.WEST);
   }
 
-  public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery) {
+  public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, boolean isRerunnable) {
+    assert !myIsInitialized;
+    myIsInitialized = true;
     myResultProvider = resultProvider;
     mySearchQuery = searchQuery;
+    myIsRerunnable = isRerunnable;
+    myPanel.add(new ActionsToolbar(myIsRerunnable), BorderLayout.WEST);
   }
 
-  public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, SearchResults results) {
+  public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, boolean isRerunnable, SearchResults results) {
     assert !ThreadUtils.isEventDispatchThread();
-    setRunOptions(resultProvider, searchQuery);
+    setRunOptions(resultProvider, searchQuery, isRerunnable);
 
     myFoundModelDescriptors = collectModels(results.getSearchResults());
     myTreeWrapper.setContents(results);
   }
 
   public void run() {
+    assert myIsInitialized;
     assert !ThreadUtils.isEventDispatchThread();
     final SearchResults myLastResults = myResultProvider.getResults(mySearchQuery, myProjectFrame.createAdaptiveProgressMonitor());
     myFoundModelDescriptors = collectModels(myLastResults.getSearchResults());
@@ -121,48 +129,14 @@ public abstract class UsageView implements IExternalizableComponent {
     return models;
   }
 
-  private JToolBar createActionsToolbar() {
-    JToolBar toolbar = new MPSToolBar(JToolBar.VERTICAL) {
-      protected EmptyBorder createBorder() {
-        return new EmptyBorder(2, 1, 2, 1);
-      }
-    };
-
-    toolbar.add(new AnonymButton(Icons.RERUN_ICON, "Rerun search") {
-      public void action() {
-        new Thread() {
-          public void run() {
-            rerun();
-          }
-        }.start();
-      }
-    });
-    toolbar.add(new AnonymButton(Icons.REGENERATE_ICON, "Regenerate models") {
-      public void action() {
-        regenerate();
-      }
-    });
-    toolbar.add(new AnonymButton(Icons.COLLAPSE_ICON, "Collapse") {
-      public void action() {
-        myTreeWrapper.collapseResults();
-      }
-    });
-    toolbar.add(new AnonymButton(Icons.EXPAND_ICON, "Expand") {
-      public void action() {
-        myTreeWrapper.expandResults();
-      }
-    });
-    toolbar.add(new AnonymButton(Icons.CLOSE_ICON, "Close") {
-      public void action() {
-        close();
-      }
-    });
-
-    toolbar.setFloatable(false);
-    return toolbar;
-  }
-
   public void read(Element element, MPSProject project) {
+    assert !myIsInitialized;
+    myIsInitialized = true;
+
+    Element optionsXML = element.getChild(OPTIONS);
+    myIsRerunnable = Boolean.parseBoolean(optionsXML.getAttributeValue(RERUNNABLE));
+    myPanel.add(new ActionsToolbar(myIsRerunnable), BorderLayout.WEST);
+
     Element resultProviderXML = element.getChild(RESULT_PROVIDER);
     String className = resultProviderXML.getAttributeValue(CLASS_NAME);
     try {
@@ -189,6 +163,10 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public void write(Element element, MPSProject project) {
+    Element optionsXML = new Element(OPTIONS);
+    optionsXML.setAttribute(RERUNNABLE, Boolean.toString(myIsRerunnable));
+    element.addContent(optionsXML);
+
     Element resultProviderXML = new Element(RESULT_PROVIDER);
     resultProviderXML.setAttribute(CLASS_NAME, myResultProvider.getClass().getName());
     myResultProvider.write(resultProviderXML, project);
@@ -244,5 +222,52 @@ public abstract class UsageView implements IExternalizableComponent {
     }
 
     public abstract void action();
+  }
+
+  private class ActionsToolbar extends MPSToolBar {
+    private ActionsToolbar(boolean isRerunnable) {
+      super(JToolBar.VERTICAL);
+      createButtons(isRerunnable);
+    }
+
+    private void createButtons(boolean isRerunnable) {
+      if (isRerunnable) {
+        add(new AnonymButton(Icons.RERUN_ICON, "Rerun search") {
+          public void action() {
+            new Thread() {
+              public void run() {
+                rerun();
+              }
+            }.start();
+          }
+        });
+      }
+      add(new AnonymButton(Icons.REGENERATE_ICON, "Regenerate models") {
+        public void action() {
+          regenerate();
+        }
+      });
+      add(new AnonymButton(Icons.COLLAPSE_ICON, "Collapse") {
+        public void action() {
+          myTreeWrapper.collapseResults();
+        }
+      });
+      add(new AnonymButton(Icons.EXPAND_ICON, "Expand") {
+        public void action() {
+          myTreeWrapper.expandResults();
+        }
+      });
+      add(new AnonymButton(Icons.CLOSE_ICON, "Close") {
+        public void action() {
+          close();
+        }
+      });
+
+      setFloatable(false);
+    }
+
+    protected EmptyBorder createBorder() {
+      return new EmptyBorder(2, 1, 2, 1);
+    }
   }
 }

@@ -89,7 +89,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           options.setOption(new QueryOptions(myProject.getScope(), new SNodePointer((SNode) null)));
           options.setOption(new ViewOptions(true, true));
 
-          getProjectWindow().getUsagesView().findUsages(options);
+          getProjectWindow().getUsagesView().findUsages(options, true);
         }
       }.start();
     } else {
