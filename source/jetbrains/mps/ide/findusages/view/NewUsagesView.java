@@ -61,11 +61,13 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
   }
 
   public void showTool() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        myProjectFrame.showNewUsagesView();
-      }
-    });
+    if (myUsageViews.size() > 0) {
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+          myProjectFrame.showNewUsagesView();
+        }
+      });
+    }
   }
 
   public void closeAll() {

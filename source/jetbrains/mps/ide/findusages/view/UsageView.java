@@ -13,8 +13,11 @@ import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.findusages.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.optionseditor.options.QueryOptions;
+import jetbrains.mps.ide.findusages.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.navigation.EditorNavigationCommand;
+import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
@@ -67,10 +70,36 @@ public abstract class UsageView implements IExternalizableComponent {
 
   public void run() {
     assert !ThreadUtils.isEventDispatchThread();
-    SearchResults myLastResults = getResultProvider().getResults(getSearchQuery(), myProjectFrame.createAdaptiveProgressMonitor());
+    final SearchResults myLastResults = getResultProvider().getResults(getSearchQuery(), myProjectFrame.createAdaptiveProgressMonitor());
     myFoundModelDescriptors = collectModels(myLastResults.getSearchResults());
     myTreeWrapper.setContents(myLastResults);
     updateUI();
+
+    int resCount = myLastResults.getSearchResults().size();
+    if (resCount == 0) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          new NotFoundDialog(myProjectFrame.getMainFrame(), "Not found").showDialog();
+          close();
+        }
+      });
+    } else if (resCount == 1 && !getShowOneResult()) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          SNode node = myLastResults.getSearchResults().get(0).getNodePointer().getNode();
+          if (node != null) {
+            NavigationActionProcessor.executeNavigationAction(
+                    new EditorNavigationCommand(node, myProjectFrame.getEditorsPane().getCurrentEditor(), myProjectFrame.getEditorsPane()),
+                    myProjectFrame.getProject(), true);
+          }
+          close();
+        }
+      });
+    }
+  }
+
+  public boolean getShowOneResult() {
+    return myOptions.getOption(ViewOptions.class).myShowOneResult;
   }
 
   public void rerun() {
@@ -152,24 +181,6 @@ public abstract class UsageView implements IExternalizableComponent {
     return toolbar;
   }
 
-  public JComponent getComponent() {
-    return myPanel;
-  }
-
-  public String getCaption() {
-    SNode node = getSearchQuery().getNodePointer().getNode();
-    if (node == null) return "<null>";
-    return node.toString();
-  }
-
-  public Icon getIcon() {
-    SNode node = getSearchQuery().getNodePointer().getNode();
-    if (node == null) {
-      return null;
-    }
-    return IconManager.getIconFor(node);
-  }
-
   public void read(Element element, MPSProject project) {
     Element optionsXML = element.getChild(OPTIONS);
     myOptions.read(optionsXML, project);
@@ -205,6 +216,24 @@ public abstract class UsageView implements IExternalizableComponent {
     Element treeWrapperXML = new Element(TREE_WRAPPER);
     myTreeWrapper.write(treeWrapperXML, project);
     element.addContent(treeWrapperXML);
+  }
+
+  public JComponent getComponent() {
+    return myPanel;
+  }
+
+  public String getCaption() {
+    SNode node = getSearchQuery().getNodePointer().getNode();
+    if (node == null) return "<null>";
+    return node.toString();
+  }
+
+  public Icon getIcon() {
+    SNode node = getSearchQuery().getNodePointer().getNode();
+    if (node == null) {
+      return null;
+    }
+    return IconManager.getIconFor(node);
   }
 
   public abstract void updateUI();
