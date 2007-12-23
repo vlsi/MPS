@@ -82,7 +82,6 @@ public abstract class UsageView implements IExternalizableComponent {
 
     myFoundModelDescriptors = collectModels(results.getSearchResults());
     myTreeWrapper.setContents(results);
-    updateUI();
   }
 
   public void run() {
@@ -90,7 +89,6 @@ public abstract class UsageView implements IExternalizableComponent {
     final SearchResults myLastResults = myResultProvider.getResults(mySearchQuery, myProjectFrame.createAdaptiveProgressMonitor());
     myFoundModelDescriptors = collectModels(myLastResults.getSearchResults());
     myTreeWrapper.setContents(myLastResults);
-    updateUI();
   }
 
   public void rerun() {
@@ -188,8 +186,6 @@ public abstract class UsageView implements IExternalizableComponent {
 
     Element treeWrapperXML = element.getChild(TREE_WRAPPER);
     myTreeWrapper.read(treeWrapperXML, project);
-
-    updateUI();
   }
 
   public void write(Element element, MPSProject project) {
@@ -232,8 +228,6 @@ public abstract class UsageView implements IExternalizableComponent {
     }
     return IconManager.getIconFor(node);
   }
-
-  public abstract void updateUI();
 
   public abstract void close();
 

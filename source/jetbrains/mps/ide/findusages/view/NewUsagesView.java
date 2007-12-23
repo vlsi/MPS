@@ -162,10 +162,13 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
       usageViewData.myOptions = options;
       myUsageViewsData.add(usageViewData);
 
-      myTabbedPane.addTab(/*usageView.getCaption(), usageView.getIcon(),*/"<null>", usageViewData.myUsageView.getComponent());
+      myTabbedPane.addTab("", usageViewData.myUsageView.getComponent());
       myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
 
       usageViewData.myUsageView.setRunOptions(provider, query, searchResults);
+
+      myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsageView.getCaption());
+      myTabbedPane.setIconAt(currentTabIndex(), usageViewData.myUsageView.getIcon());
 
       showTool();
     }
@@ -181,9 +184,12 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     if (tabsXML != null) {
       for (Element tabXML : (List<Element>) tabsXML.getChildren()) {
         UsageViewData usageViewData = new UsageViewData();
-        myUsageViewsData.add(usageViewData);
         usageViewData.read(tabXML, project);
+        myUsageViewsData.add(usageViewData);
         myTabbedPane.add(usageViewData.myUsageView.getComponent());
+
+        myTabbedPane.setTitleAt(myTabbedPane.getTabCount() - 1, usageViewData.myUsageView.getCaption());
+        myTabbedPane.setIconAt(myTabbedPane.getTabCount() - 1, usageViewData.myUsageView.getIcon());
       }
     }
   }
@@ -254,12 +260,6 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
 
     public void createUsageView() {
       myUsageView = new UsageView(myProjectFrame) {
-        public void updateUI() {
-          int index = myUsageViewsData.indexOf(UsageViewData.this);
-          //myTabbedPane.setIconAt(index, this.getIcon());
-          //myTabbedPane.setTitleAt(index, this.getCaption());
-        }
-
         public void close() {
           NewUsagesView.this.closeTab(myUsageViewsData.indexOf(UsageViewData.this));
         }
