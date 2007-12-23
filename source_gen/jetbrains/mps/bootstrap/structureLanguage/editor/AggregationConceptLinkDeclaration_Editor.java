@@ -42,10 +42,6 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198239235732");
-  }
-
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1137532662973");
     editorCell.setDrawBorder(false);
@@ -66,9 +62,6 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
   private static void setupLabel_TargetTypeReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
-  private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
-  }
-
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
     return this.createRowCell(context, node);
@@ -84,7 +77,6 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     editorCell.addEditorCell(this.createNameCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "target concept:"));
     editorCell.addEditorCell(this.createTargetTypeReferenceCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell2(context, node, ";"));
     return editorCell;
   }
 
@@ -100,14 +92,6 @@ public class AggregationConceptLinkDeclaration_Editor extends DefaultNodeEditor 
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     AggregationConceptLinkDeclaration_Editor.setupBasic_ConstantCell1(editorCell, node, context);
     AggregationConceptLinkDeclaration_Editor.setupLabel_ConstantCell1(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstantCell2(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    AggregationConceptLinkDeclaration_Editor.setupBasic_ConstantCell2(editorCell, node, context);
-    AggregationConceptLinkDeclaration_Editor.setupLabel_ConstantCell2(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

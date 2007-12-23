@@ -29,10 +29,6 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setDrawBorder(false);
   }
 
-  private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198239251767");
-  }
-
   private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1105727152859");
     editorCell.setDrawBorder(false);
@@ -44,9 +40,6 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
 
   private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
     editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
-  }
-
-  private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {
   }
 
 
@@ -62,7 +55,6 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     editorCell.setCanBeFolded(false);
     editorCell.addEditorCell(this.createConstantCell(context, node, "boolean"));
     editorCell.addEditorCell(this.createNameCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell1(context, node, ";"));
     return editorCell;
   }
 
@@ -70,14 +62,6 @@ public class BooleanConceptPropertyDeclaration_Editor extends DefaultNodeEditor 
     EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
     BooleanConceptPropertyDeclaration_Editor.setupBasic_ConstantCell(editorCell, node, context);
     BooleanConceptPropertyDeclaration_Editor.setupLabel_ConstantCell(editorCell, node, context);
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  public EditorCell createConstantCell1(EditorContext context, SNode node, String text) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-    BooleanConceptPropertyDeclaration_Editor.setupBasic_ConstantCell1(editorCell, node, context);
-    BooleanConceptPropertyDeclaration_Editor.setupLabel_ConstantCell1(editorCell, node, context);
     editorCell.setDefaultText("");
     return editorCell;
   }

@@ -10,7 +10,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.core.editor.BaseStyleSheet_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import java.awt.Color;
@@ -38,7 +37,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197591784562");
-    BaseStyleSheet_StyleSheet.KEY_WORD.apply(editorCell);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
@@ -57,7 +55,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162585934258");
-    BaseStyleSheet_StyleSheet.KEY_WORD.apply(editorCell);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
@@ -70,7 +67,6 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1162585954651");
-    BaseStyleSheet_StyleSheet.KEY_WORD.apply(editorCell);
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
@@ -148,12 +144,12 @@ public class EnumerationMemberDeclaration_Editor extends DefaultNodeEditor {
     if(EnumerationMemberDeclaration_Editor._QueryFunction_NodeCondition_1197591831892(node, context, context.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRowCell1(context, node));
     }
-    editorCell.addEditorCell(this.createConstantCell1(context, node, "value"));
+    editorCell.addEditorCell(this.createConstantCell1(context, node, "  value"));
     editorCell.addEditorCell(this.createInternalValueCell(context, node));
-    editorCell.addEditorCell(this.createConstantCell2(context, node, "presentation"));
+    editorCell.addEditorCell(this.createConstantCell2(context, node, "  presentation"));
     editorCell.addEditorCell(this.createExternalValueCell(context, node));
     if(EnumerationMemberDeclaration_Editor._QueryFunction_NodeCondition_1162585619940(node, context, context.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstantCell3(context, node, "(default)"));
+      editorCell.addEditorCell(this.createConstantCell3(context, node, "    (default)"));
     }
     return editorCell;
   }
