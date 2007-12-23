@@ -10,6 +10,8 @@ public class ViewOptionsEditor {
   private ViewOptions myOptions = new ViewOptions(true, true);
 
   private JPanel myPanel;
+  private JCheckBox myShowOneResult;
+  private JCheckBox myNewTab;
 
   public ViewOptionsEditor() {
     myPanel = new JPanel();
@@ -20,21 +22,26 @@ public class ViewOptionsEditor {
                     BorderFactory.createTitledBorder("View Options (not imp.)"),
                     BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
-    JCheckBox viewOne = new JCheckBox("Show one result", myOptions.myShowOneResult);
-    viewOne.addChangeListener(new ChangeListener() {
+    myShowOneResult = new JCheckBox("Show one result", myOptions.myShowOneResult);
+    myShowOneResult.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
         myOptions.myShowOneResult = ((JCheckBox) e.getSource()).isSelected();
       }
     });
-    myPanel.add(viewOne);
+    myPanel.add(myShowOneResult);
 
-    JCheckBox newTab = new JCheckBox("New tab", myOptions.myNewTab);
-    newTab.addChangeListener(new ChangeListener() {
+    myNewTab = new JCheckBox("New tab", myOptions.myNewTab);
+    myNewTab.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
         myOptions.myNewTab = ((JCheckBox) e.getSource()).isSelected();
       }
     });
-    myPanel.add(newTab);
+    myPanel.add(myNewTab);
+  }
+
+  public void setDefaults(ViewOptions defaultOptions) {
+    myShowOneResult.setSelected(defaultOptions.myShowOneResult);
+    myNewTab.setSelected(defaultOptions.myNewTab);
   }
 
   public JComponent getComponent() {

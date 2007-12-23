@@ -35,7 +35,7 @@ public abstract class AbstractModule implements IModule {
   private boolean myInitialized = false;
   protected IFile myDescriptorFile;
 
-  private MyScope myScope = new MyScope();
+  private ModuleScope myScope = new ModuleScope();
 
   private IClassPathItem myRuntimeClassPathItem;
   private IClassPathItem myJavaStubsClassPathItem;
@@ -659,7 +659,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   //TODO: make private (was made visible for usages view to save view scope by Mihail Muhin)
-  public class MyScope extends BaseScope {
+  public class ModuleScope extends BaseScope {
     public ModelOwner getModelOwner() {
       return AbstractModule.this;
     }

@@ -3,6 +3,8 @@ package jetbrains.mps.ide.findusages.optionseditor.components;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.optionseditor.options.QueryOptions;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.AbstractModule.ModuleScope;
+import jetbrains.mps.project.MPSProject.ProjectScope;
 import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
@@ -58,7 +60,20 @@ public class QueryEditor {
     myComboBox.setSelectedIndex(defaultScope);
   }
 
-  public QueryOptions getScopeOptions() {
+  public void setDefaults(QueryOptions defaultOptions) {
+    IScope scope = defaultOptions.myScope;
+    if (scope instanceof GlobalScope) {
+      myComboBox.setSelectedIndex(0);
+    } else if (scope instanceof ProjectScope) {
+      myComboBox.setSelectedIndex(1);
+    } else if (scope instanceof ModuleScope) {
+      myComboBox.setSelectedIndex(2);
+    } else if (scope instanceof ModelScope) {
+      myComboBox.setSelectedIndex(3);
+    }
+  }
+
+  public QueryOptions getQueryOptions() {
     return new QueryOptions(myItems.get(myComboBox.getSelectedIndex()).myScope, new SNodePointer(myNode));
   }
 

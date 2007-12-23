@@ -3,7 +3,7 @@ package jetbrains.mps.ide.findusages.model.searchquery;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.AbstractModule.MyScope;
+import jetbrains.mps.project.AbstractModule.ModuleScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -51,9 +51,9 @@ public class SearchQuery implements IExternalizableComponent {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_GLOBAL);
     } else if (myScope instanceof ProjectScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_PROJECT);
-    } else if (myScope instanceof MyScope) {
+    } else if (myScope instanceof ModuleScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODULE);
-      scopeXML.setAttribute(MODULE_ID, ((AbstractModule) ((MyScope) myScope).getModelOwner()).getModuleUID());
+      scopeXML.setAttribute(MODULE_ID, ((AbstractModule) ((ModuleScope) myScope).getModelOwner()).getModuleUID());
     } else if (myScope instanceof ModelScope) {
       scopeXML.setAttribute(SCOPE_TYPE, SCOPE_TYPE_MODEL);
       scopeXML.setAttribute(MODEL_ID, ((ModelScope) myScope).getModelDescriptor().getModelUID().toString());

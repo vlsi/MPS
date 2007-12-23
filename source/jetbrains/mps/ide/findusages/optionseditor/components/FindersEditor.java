@@ -6,12 +6,15 @@ import jetbrains.mps.ide.findusages.optionseditor.options.FindersOptions;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Set;
 
 public class FindersEditor {
   private JPanel myPanel;
 
   private FindersOptions myOptions = new FindersOptions();
+  private HashMap<Class, JCheckBox> myCheckboxes = new HashMap<Class, JCheckBox>();
 
   public FindersEditor(Set<BaseFinder> availableFinders) {
     myPanel = new JPanel();
@@ -28,6 +31,8 @@ public class FindersEditor {
 
       JCheckBox finderCheckBox = new JCheckBox(finder.getDescription(), true);
 
+      myCheckboxes.put(finder.getClass(), finderCheckBox);
+
       finderCheckBox.addChangeListener(new ChangeListener() {
         public void stateChanged(ChangeEvent e) {
           if (((JCheckBox) e.getSource()).isSelected()) {
@@ -38,6 +43,19 @@ public class FindersEditor {
         }
       });
       myPanel.add(finderCheckBox);
+    }
+  }
+
+  public void setDefaults(FindersOptions defaultOptions) {
+    Set<String> enabledFinders = new HashSet<String>();
+
+    for (BaseFinder finder : defaultOptions) {
+      enabledFinders.add(finder.getClass().getName());
+    }
+
+    for (Class finderClass : myCheckboxes.keySet()) {
+      boolean enabled = enabledFinders.contains(finderClass.getName());
+      myCheckboxes.get(finderClass).setSelected(enabled);
     }
   }
 

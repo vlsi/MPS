@@ -6,6 +6,9 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.optionseditor.components.FindersEditor;
 import jetbrains.mps.ide.findusages.optionseditor.components.QueryEditor;
 import jetbrains.mps.ide.findusages.optionseditor.components.ViewOptionsEditor;
+import jetbrains.mps.ide.findusages.optionseditor.options.FindersOptions;
+import jetbrains.mps.ide.findusages.optionseditor.options.QueryOptions;
+import jetbrains.mps.ide.findusages.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.findusages.subsystem.FindUsagesManager;
 import jetbrains.mps.smodel.SNode;
 
@@ -44,12 +47,21 @@ public class FindUsagesDialog extends BaseDialog {
     //setResizable(false);
   }
 
+  public void setDefaults(FindUsagesOptions defaultOptions) {
+    QueryOptions queryOptions = defaultOptions.getOption(QueryOptions.class);
+    if (queryOptions != null) myQueryEditor.setDefaults(queryOptions);
+    FindersOptions findersOptions = defaultOptions.getOption(FindersOptions.class);
+    if (findersOptions != null) myFindersEditor.setDefaults(findersOptions);
+    ViewOptions viewOptions = defaultOptions.getOption(ViewOptions.class);
+    if (viewOptions != null) myViewOptionsEditor.setDefaults(viewOptions);
+  }
+
   public boolean isCancelled() {
     return myIsCancelled;
   }
 
   public FindUsagesOptions getResult() {
-    FindUsagesOptions options = new FindUsagesOptions(myFindersEditor.getFindersOptions(), myQueryEditor.getScopeOptions(), myViewOptionsEditor.getViewOptions());
+    FindUsagesOptions options = new FindUsagesOptions(myFindersEditor.getFindersOptions(), myQueryEditor.getQueryOptions(), myViewOptionsEditor.getViewOptions());
     return options;
   }
 

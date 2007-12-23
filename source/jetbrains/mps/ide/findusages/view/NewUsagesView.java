@@ -30,18 +30,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewUsagesView extends DefaultTool implements IExternalizableComponent {
-  private static final String VERSION_NUMBER = "0.943";
+  private static final String VERSION_NUMBER = "0.949";
   private static final String VERSION = "version";
   private static final String ID = "id";
 
   private static final String TAB = "tab";
   private static final String TABS = "tabs";
 
+  private static final String PREFERENCES = "preferences";
+
   private IDEProjectFrame myProjectFrame;
 
   private JPanel myPanel;
   private JTabbedPane myTabbedPane;
   private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
+  private FindUsagesOptions myDefaultOptions = new FindUsagesOptions();
 
   public NewUsagesView(IDEProjectFrame projectFrame) {
     super();
@@ -71,11 +74,13 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
   }
 
   public void showTool() {
-    ThreadUtils.runInUIThreadAndWait(new Runnable() {
-      public void run() {
-        myProjectFrame.showNewUsagesView();
-      }
-    });
+    if (myUsageViewsData.size() > 0) {
+      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+        public void run() {
+          myProjectFrame.showNewUsagesView();
+        }
+      });
+    }
   }
 
   public void closeAll() {
@@ -120,9 +125,11 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     SNode operationNode = EditorUtil.getOperationNodeWRTReference(context, semanticNode);
 
     final FindUsagesDialog findUsagesDialog = new FindUsagesDialog(operationNode, context);
+    findUsagesDialog.setDefaults(myDefaultOptions);
     findUsagesDialog.showDialog();
     if (!findUsagesDialog.isCancelled()) {
       FindUsagesOptions options = findUsagesDialog.getResult();
+      myDefaultOptions = options;
       findUsages(options);
     }
   }
@@ -192,6 +199,9 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
         myTabbedPane.setIconAt(myTabbedPane.getTabCount() - 1, usageViewData.myUsageView.getIcon());
       }
     }
+
+    Element preferencesXML = element.getChild(PREFERENCES);
+    myDefaultOptions.read(preferencesXML, project);
   }
 
   public void write(Element element, MPSProject project) {
@@ -206,6 +216,10 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
       tabsXML.addContent(tabXML);
     }
     element.addContent(tabsXML);
+
+    Element preferencesXML = new Element(PREFERENCES);
+    myDefaultOptions.write(preferencesXML, project);
+    element.addContent(preferencesXML);
   }
 
   class TabPaneMouseListener extends MouseAdapter {
