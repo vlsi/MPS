@@ -256,8 +256,8 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
       myUsageView = new UsageView(myProjectFrame) {
         public void updateUI() {
           int index = myUsageViewsData.indexOf(UsageViewData.this);
-          myTabbedPane.setIconAt(index, this.getIcon());
-          myTabbedPane.setTitleAt(index, this.getCaption());
+          //myTabbedPane.setIconAt(index, this.getIcon());
+          //myTabbedPane.setTitleAt(index, this.getCaption());
         }
 
         public void close() {
