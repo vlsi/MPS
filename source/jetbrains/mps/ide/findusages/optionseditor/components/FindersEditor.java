@@ -6,9 +6,7 @@ import jetbrains.mps.ide.findusages.optionseditor.options.FindersOptions;
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class FindersEditor {
   private JPanel myPanel;
@@ -26,7 +24,14 @@ public class FindersEditor {
                     BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
 
-    for (final BaseFinder finder : availableFinders) {
+    List<BaseFinder> sortedFinders = new ArrayList<BaseFinder>(availableFinders);
+    Collections.sort(sortedFinders, new Comparator<BaseFinder>() {
+      public int compare(BaseFinder o1, BaseFinder o2) {
+        return o1.getDescription().compareToIgnoreCase(o2.getDescription());
+      }
+    });
+
+    for (final BaseFinder finder : sortedFinders) {
       myOptions.add(finder);
 
       JCheckBox finderCheckBox = new JCheckBox(finder.getDescription(), true);
