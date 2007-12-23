@@ -1,16 +1,16 @@
 package jetbrains.mps.ide.findusages.model.searchquery;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.AbstractModule.MyScope;
-import jetbrains.mps.project.MPSProject.ProjectScope;
-import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.components.IExternalizableComponent;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.ide.components.ComponentsUtil;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.AbstractModule.MyScope;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.MPSProject.ProjectScope;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 public class SearchQuery implements IExternalizableComponent {
   private static final String NODE = "node";
@@ -31,6 +31,10 @@ public class SearchQuery implements IExternalizableComponent {
   public SearchQuery(@NotNull SNodePointer nodePointer, IScope scope) {
     myNodePointer = nodePointer;
     myScope = scope;
+  }
+
+  public SearchQuery(Element element, MPSProject project) {
+    read(element, project);
   }
 
   public SNodePointer getNodePointer() {

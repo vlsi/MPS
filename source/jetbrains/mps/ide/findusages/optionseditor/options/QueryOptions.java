@@ -1,15 +1,11 @@
 package jetbrains.mps.ide.findusages.optionseditor.options;
 
 import jetbrains.mps.components.IExternalizableComponent;
-import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.AbstractModule.MyScope;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.MPSProject.ProjectScope;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 
 public class QueryOptions implements IExternalizableComponent {
@@ -30,10 +26,6 @@ public class QueryOptions implements IExternalizableComponent {
 
   public QueryOptions() {
 
-  }
-
-  public QueryOptions(IScope scope) {
-    myScope = scope;
   }
 
   public QueryOptions(IScope scope, SNodePointer nodePointer) {

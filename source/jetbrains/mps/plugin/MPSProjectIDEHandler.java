@@ -5,8 +5,6 @@ import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.ide.*;
 import jetbrains.mps.ide.findusages.UseNewUsagesViewFlag;
-import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-import jetbrains.mps.ide.findusages.optionseditor.options.TreeBuilder;
 import jetbrains.mps.ide.findusages.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.optionseditor.options.ViewOptions;
@@ -86,18 +84,12 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
       }
       new Thread() {
         public void run() {
-          NewUsagesView usagesView = getProjectWindow().getUsagesView();
-
-          ModuleContext moduleContext = new ModuleContext(BootstrapLanguages.getInstance().getBaseLanguage(), myProject);
           FindUsagesOptions options = new FindUsagesOptions();
           options.setOption(new FindersOptions(new AspectMethodsFinder(applicableModelDescriptors, name)));
           options.setOption(new QueryOptions(myProject.getScope(), new SNodePointer((SNode) null)));
           options.setOption(new ViewOptions(true, true));
 
-          jetbrains.mps.ide.findusages.view.UsageView usageView = usagesView.createUsageView(new ProjectOperationContext(myProject), options);
-          usageView.run();
-
-          usagesView.showTool();
+          getProjectWindow().getUsagesView().findUsages(options);
         }
       }.start();
     } else {

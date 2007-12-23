@@ -25,7 +25,7 @@ public class FindUsagesDialog extends BaseDialog {
   public FindUsagesDialog(SNode node, ActionContext context) {
     super(context.getOperationContext().getMainFrame(), "Find usages");
 
-    myQueryEditor = new QueryEditor(context, QueryEditor.PROJECT_SCOPE);
+    myQueryEditor = new QueryEditor(node, context, QueryEditor.PROJECT_SCOPE);
     myFindersEditor = new FindersEditor(FindUsagesManager.getInstance().getAvailableFinders(node));
     myViewOptionsEditor = new ViewOptionsEditor();
 

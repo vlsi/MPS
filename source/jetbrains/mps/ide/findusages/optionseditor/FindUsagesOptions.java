@@ -21,6 +21,10 @@ public class FindUsagesOptions implements IExternalizableComponent {
 
   }
 
+  public FindUsagesOptions(Element element, MPSProject project) {
+    read(element, project);
+  }
+
   public FindUsagesOptions(Object... objs) {
     for (Object o : objs) {
       myOptions.put(o.getClass(), o);

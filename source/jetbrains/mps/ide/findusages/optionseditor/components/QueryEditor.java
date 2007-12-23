@@ -3,9 +3,7 @@ package jetbrains.mps.ide.findusages.optionseditor.components;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.optionseditor.options.QueryOptions;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.ModelScope;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
@@ -20,6 +18,7 @@ public class QueryEditor {
   public static final int MODULE_SCOPE = 2;
 
   private ActionContext myContext;
+  private SNode myNode;
 
   private List<ListItem> myItems = new ArrayList<ListItem>();
 
@@ -27,8 +26,9 @@ public class QueryEditor {
 
   private JComboBox myComboBox = new JComboBox();
 
-  public QueryEditor(ActionContext context, int defaultScope) {
+  public QueryEditor(SNode node, ActionContext context, int defaultScope) {
     myContext = context;
+    myNode = node;
 
     initItems();
 
@@ -59,7 +59,7 @@ public class QueryEditor {
   }
 
   public QueryOptions getScopeOptions() {
-    return new QueryOptions(myItems.get(myComboBox.getSelectedIndex()).myScope);
+    return new QueryOptions(myItems.get(myComboBox.getSelectedIndex()).myScope, new SNodePointer(myNode));
   }
 
   public JComponent getComponent() {

@@ -4,11 +4,21 @@ import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.model.result.SearchResults;
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.findusages.optionseditor.FindUsagesDialog;
 import jetbrains.mps.ide.findusages.optionseditor.FindUsagesOptions;
+import jetbrains.mps.ide.findusages.optionseditor.options.FindersOptions;
+import jetbrains.mps.ide.findusages.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.optionseditor.options.ViewOptions;
+import jetbrains.mps.ide.navigation.EditorNavigationCommand;
+import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
+import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -20,7 +30,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewUsagesView extends DefaultTool implements IExternalizableComponent {
-  private static final String VERSION_NUMBER = "0.9412";
+  private static final String VERSION_NUMBER = "0.943";
   private static final String VERSION = "version";
   private static final String ID = "id";
 
@@ -31,7 +41,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
 
   private JPanel myPanel;
   private JTabbedPane myTabbedPane;
-  private List<UsageView> myUsageViews = new ArrayList<UsageView>();
+  private List<UsageViewData> myUsageViewsData = new ArrayList<UsageViewData>();
 
   public NewUsagesView(IDEProjectFrame projectFrame) {
     super();
@@ -50,8 +60,8 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
 
   public void closeTab(int index) {
     myTabbedPane.remove(index);
-    myUsageViews.remove(index);
-    if (myUsageViews.isEmpty()) {
+    myUsageViewsData.remove(index);
+    if (myUsageViewsData.isEmpty()) {
       hideTool();
     }
   }
@@ -61,58 +71,27 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
   }
 
   public void showTool() {
-    if (myUsageViews.size() > 0) {
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
-        public void run() {
-          myProjectFrame.showNewUsagesView();
-        }
-      });
-    }
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      public void run() {
+        myProjectFrame.showNewUsagesView();
+      }
+    });
   }
 
   public void closeAll() {
-    myUsageViews.clear();
+    myUsageViewsData.clear();
     myTabbedPane.removeAll();
     hideTool();
   }
 
   private void closeAllBut(int tabIndex) {
-    int i = myUsageViews.size() - 1;
+    int i = myUsageViewsData.size() - 1;
     for (; i > tabIndex; i--) {
       closeTab(tabIndex + 1);
     }
     for (i = 0; i < tabIndex; i++) {
       closeTab(tabIndex - 1 - i);
     }
-  }
-
-  public UsageView createUsageView(IOperationContext context, FindUsagesOptions options) {
-    if (options.getOption(ViewOptions.class) != null) {
-      if (!options.getOption(ViewOptions.class).myNewTab) {
-        if (currentTabIndex() != -1) {
-          closeTab(currentTabIndex());
-          showTool();
-        }
-      }
-    }
-    UsageView usageView = new UsageView(myProjectFrame, context, options) {
-      public void updateUI() {
-        int index = myUsageViews.indexOf(this);
-        myTabbedPane.setIconAt(index, this.getIcon());
-        myTabbedPane.setTitleAt(index, this.getCaption());
-      }
-
-      public void close() {
-        NewUsagesView.this.closeTab(myUsageViews.indexOf(this));
-      }
-    };
-    usageView.clear();
-
-    myUsageViews.add(usageView);
-    myTabbedPane.addTab(/*usageView.getCaption(), usageView.getIcon(),*/"<null>", usageView.getComponent());
-    myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
-
-    return usageView;
   }
 
   public int getNumber() {
@@ -131,6 +110,67 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     return myPanel;
   }
 
+  public void clear() {
+    closeAll();
+    hideTool();
+  }
+
+  public void findUsages(final ActionContext context) {
+    SNode semanticNode = context.getNode();
+    SNode operationNode = EditorUtil.getOperationNodeWRTReference(context, semanticNode);
+
+    final FindUsagesDialog findUsagesDialog = new FindUsagesDialog(operationNode, context);
+    findUsagesDialog.showDialog();
+    if (!findUsagesDialog.isCancelled()) {
+      FindUsagesOptions options = findUsagesDialog.getResult();
+      findUsages(options);
+    }
+  }
+
+  public void findUsages(FindUsagesOptions options) {
+    IResultProvider provider = options.getOption(FindersOptions.class).getResultProvider();
+    SearchQuery query = options.getOption(QueryOptions.class).getSearchQuery();
+    boolean showOne = options.getOption(ViewOptions.class).myShowOneResult;
+    final SearchResults searchResults = provider.getResults(query, myProjectFrame.createAdaptiveProgressMonitor());
+
+    int resCount = searchResults.getSearchResults().size();
+    if (resCount == 0) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          new HintDialog(myProjectFrame.getMainFrame(), "Not found", "No usages for that node").showDialog();
+        }
+      });
+    } else if (resCount == 1 && !showOne) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          SNode node = searchResults.getSearchResults().get(0).getNodePointer().getNode();
+          if (node != null) {
+            NavigationActionProcessor.executeNavigationAction(
+                    new EditorNavigationCommand(node, myProjectFrame.getEditorsPane().getCurrentEditor(), myProjectFrame.getEditorsPane()),
+                    myProjectFrame.getProject(), true);
+          }
+        }
+      });
+    } else {
+      if (!options.getOption(ViewOptions.class).myNewTab) {
+        if (currentTabIndex() != -1) {
+          closeTab(currentTabIndex());
+        }
+      }
+      UsageViewData usageViewData = new UsageViewData();
+      usageViewData.createUsageView();
+      usageViewData.myOptions = options;
+      myUsageViewsData.add(usageViewData);
+
+      myTabbedPane.addTab(/*usageView.getCaption(), usageView.getIcon(),*/"<null>", usageViewData.myUsageView.getComponent());
+      myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
+
+      usageViewData.myUsageView.setRunOptions(provider, query, searchResults);
+
+      showTool();
+    }
+  }
+
   public void read(Element element, MPSProject project) {
     Element versionXML = element.getChild(VERSION);
     if (versionXML == null) return;
@@ -140,8 +180,10 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     Element tabsXML = element.getChild(TABS);
     if (tabsXML != null) {
       for (Element tabXML : (List<Element>) tabsXML.getChildren()) {
-        UsageView usageView = createUsageView(project.createOperationContext(), new FindUsagesOptions());
-        usageView.read(tabXML, project);
+        UsageViewData usageViewData = new UsageViewData();
+        myUsageViewsData.add(usageViewData);
+        usageViewData.read(tabXML, project);
+        myTabbedPane.add(usageViewData.myUsageView.getComponent());
       }
     }
   }
@@ -152,16 +194,12 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     element.addContent(versionXML);
 
     Element tabsXML = new Element(TABS);
-    for (UsageView usageView : myUsageViews) {
+    for (UsageViewData usageViewData : myUsageViewsData) {
       Element tabXML = new Element(TAB);
-      usageView.write(tabXML, project);
+      usageViewData.write(tabXML, project);
       tabsXML.addContent(tabXML);
     }
     element.addContent(tabsXML);
-  }
-
-  public void clear() {
-    closeAll();
   }
 
   class TabPaneMouseListener extends MouseAdapter {
@@ -207,4 +245,44 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     }
   }
 
+  class UsageViewData {
+    private static final String USAGE_VIEW = "usage_view";
+    private static final String USAGE_VIEW_OPTIONS = "usage_view_options";
+
+    public UsageView myUsageView;
+    public FindUsagesOptions myOptions;
+
+    public void createUsageView() {
+      myUsageView = new UsageView(myProjectFrame) {
+        public void updateUI() {
+          int index = myUsageViewsData.indexOf(UsageViewData.this);
+          myTabbedPane.setIconAt(index, this.getIcon());
+          myTabbedPane.setTitleAt(index, this.getCaption());
+        }
+
+        public void close() {
+          NewUsagesView.this.closeTab(myUsageViewsData.indexOf(UsageViewData.this));
+        }
+      };
+    }
+
+    public void read(Element element, MPSProject project) {
+      Element usageViewXML = element.getChild(USAGE_VIEW);
+      createUsageView();
+      myUsageView.read(usageViewXML, project);
+
+      Element usageViewOptionsXML = element.getChild(USAGE_VIEW_OPTIONS);
+      myOptions = new FindUsagesOptions(usageViewOptionsXML, project);
+    }
+
+    public void write(Element element, MPSProject project) {
+      Element usageViewXML = new Element(USAGE_VIEW);
+      myUsageView.write(usageViewXML, project);
+      element.addContent(usageViewXML);
+
+      Element usageViewOptionsXML = new Element(USAGE_VIEW_OPTIONS);
+      myOptions.write(usageViewOptionsXML, project);
+      element.addContent(usageViewOptionsXML);
+    }
+  }
 }

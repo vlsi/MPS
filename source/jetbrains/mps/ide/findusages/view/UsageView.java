@@ -10,16 +10,14 @@ import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-import jetbrains.mps.ide.findusages.optionseditor.FindUsagesOptions;
-import jetbrains.mps.ide.findusages.optionseditor.options.FindersOptions;
-import jetbrains.mps.ide.findusages.optionseditor.options.QueryOptions;
-import jetbrains.mps.ide.findusages.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelUID;
+import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -30,31 +28,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class UsageView implements IExternalizableComponent {
+  private static final Logger LOG = Logger.getLogger(UsageView.class);
+
   //read/write constants
-  private static final String OPTIONS = "options";
-  private static final String TREE_WRAPPER = "treewrapper";
+  private static final String QUERY = "query";
+  private static final String RESULT_PROVIDER = "result_provider";
+  private static final String CLASS_NAME = "class_name";
+  private static final String RERUNNABLE = "rerunnable";
+  private static final String TREE_WRAPPER = "tree_wrapper";
   private static final String MODELS = "models";
   private static final String MODEL = "model";
   private static final String UID = "uid";
 
   //connection with other components
   private IDEProjectFrame myProjectFrame;
-  private IOperationContext myContext = null;
 
   //my components
   private JPanel myPanel;
   private UsagesTreeWrapper myTreeWrapper;
 
   //model components
-  private FindUsagesOptions myOptions = new FindUsagesOptions();
+  private IResultProvider myResultProvider;
+  private SearchQuery mySearchQuery;
+  private boolean myIsRerunnable;
 
   //last results
   List<SModelDescriptor> myFoundModelDescriptors = new ArrayList<SModelDescriptor>();
 
-  public UsageView(IDEProjectFrame projectFrame, IOperationContext context, FindUsagesOptions options) {
+  public UsageView(IDEProjectFrame projectFrame) {
     myProjectFrame = projectFrame;
-    myContext = context;
-    myOptions = options;
 
     myPanel = new JPanel(new BorderLayout());
 
@@ -63,47 +65,36 @@ public abstract class UsageView implements IExternalizableComponent {
         return myProjectFrame;
       }
     };
+    myTreeWrapper.setEmptyContents();
 
     myPanel.add(myTreeWrapper, BorderLayout.CENTER);
     myPanel.add(createActionsToolbar(), BorderLayout.WEST);
   }
 
+  public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery) {
+    myResultProvider = resultProvider;
+    mySearchQuery = searchQuery;
+  }
+
+  public void setRunOptions(IResultProvider resultProvider, SearchQuery searchQuery, SearchResults results) {
+    assert !ThreadUtils.isEventDispatchThread();
+    setRunOptions(resultProvider, searchQuery);
+
+    myFoundModelDescriptors = collectModels(results.getSearchResults());
+    myTreeWrapper.setContents(results);
+    updateUI();
+  }
+
   public void run() {
     assert !ThreadUtils.isEventDispatchThread();
-    final SearchResults myLastResults = getResultProvider().getResults(getSearchQuery(), myProjectFrame.createAdaptiveProgressMonitor());
+    final SearchResults myLastResults = myResultProvider.getResults(mySearchQuery, myProjectFrame.createAdaptiveProgressMonitor());
     myFoundModelDescriptors = collectModels(myLastResults.getSearchResults());
     myTreeWrapper.setContents(myLastResults);
     updateUI();
-
-    int resCount = myLastResults.getSearchResults().size();
-    if (resCount == 0) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          new NotFoundDialog(myProjectFrame.getMainFrame(), "Not found").showDialog();
-          close();
-        }
-      });
-    } else if (resCount == 1 && !getShowOneResult()) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          SNode node = myLastResults.getSearchResults().get(0).getNodePointer().getNode();
-          if (node != null) {
-            NavigationActionProcessor.executeNavigationAction(
-                    new EditorNavigationCommand(node, myProjectFrame.getEditorsPane().getCurrentEditor(), myProjectFrame.getEditorsPane()),
-                    myProjectFrame.getProject(), true);
-          }
-          close();
-        }
-      });
-    }
-  }
-
-  public boolean getShowOneResult() {
-    return myOptions.getOption(ViewOptions.class).myShowOneResult;
   }
 
   public void rerun() {
-    if ((getSearchQuery().getScope() == null) && (getSearchQuery().getNodePointer().getNode() == null)) return;
+    if ((mySearchQuery.getScope() == null) && (mySearchQuery.getNodePointer().getNode() == null)) return;
     run();
   }
 
@@ -116,7 +107,7 @@ public abstract class UsageView implements IExternalizableComponent {
     new Thread() {
       public void run() {
         GeneratorManager manager = project.getComponentSafe(GeneratorManager.class);
-        manager.generateModelsFromDifferentModules(myContext, myFoundModelDescriptors, IGenerationType.FILES);
+        manager.generateModelsFromDifferentModules(project.createOperationContext(), myFoundModelDescriptors, IGenerationType.FILES);
       }
     }.start();
   }
@@ -130,18 +121,6 @@ public abstract class UsageView implements IExternalizableComponent {
       }
     }
     return models;
-  }
-
-  public void clear() {
-    myTreeWrapper.setEmptyContents();
-  }
-
-  private IResultProvider getResultProvider() {
-    return myOptions.getOption(FindersOptions.class).getResultProvider();
-  }
-
-  private SearchQuery getSearchQuery() {
-    return myOptions.getOption(QueryOptions.class).getSearchQuery();
   }
 
   private JToolBar createActionsToolbar() {
@@ -182,8 +161,17 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public void read(Element element, MPSProject project) {
-    Element optionsXML = element.getChild(OPTIONS);
-    myOptions.read(optionsXML, project);
+    Element resultProviderXML = element.getChild(RESULT_PROVIDER);
+    String className = resultProviderXML.getAttributeValue(CLASS_NAME);
+    try {
+      myResultProvider = (IResultProvider) Class.forName(className).newInstance();
+      myResultProvider.read(resultProviderXML, project);
+    } catch (Exception e) {
+      LOG.error("Can't instantiate result provider: " + className);
+    }
+
+    Element queryXML = element.getChild(QUERY);
+    mySearchQuery = new SearchQuery(queryXML, project);
 
     Element modelsXML = element.getChild(MODELS);
     for (Element modelXML : (List<Element>) modelsXML.getChildren()) {
@@ -201,9 +189,14 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public void write(Element element, MPSProject project) {
-    Element optionsXML = new Element(OPTIONS);
-    myOptions.write(optionsXML, project);
-    element.addContent(optionsXML);
+    Element resultProviderXML = new Element(RESULT_PROVIDER);
+    resultProviderXML.setAttribute(CLASS_NAME, myResultProvider.getClass().getName());
+    myResultProvider.write(resultProviderXML, project);
+    element.addContent(resultProviderXML);
+
+    Element queryXML = new Element(QUERY);
+    mySearchQuery.write(queryXML, project);
+    element.addContent(queryXML);
 
     Element modelsXML = new Element(MODELS);
     for (SModelDescriptor modelDescriptor : myFoundModelDescriptors) {
@@ -223,13 +216,13 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public String getCaption() {
-    SNode node = getSearchQuery().getNodePointer().getNode();
+    SNode node = mySearchQuery.getNodePointer().getNode();
     if (node == null) return "<null>";
     return node.toString();
   }
 
   public Icon getIcon() {
-    SNode node = getSearchQuery().getNodePointer().getNode();
+    SNode node = mySearchQuery.getNodePointer().getNode();
     if (node == null) {
       return null;
     }
@@ -254,5 +247,4 @@ public abstract class UsageView implements IExternalizableComponent {
 
     public abstract void action();
   }
-
 }
