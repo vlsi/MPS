@@ -1845,28 +1845,9 @@
         </node>
         <node role="validator" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Validator" id="1198491420661">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198491420662">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198492052235">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198492059744">
-                <link role="baseMethodDeclaration" targetNodeId="24.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_text" id="1198492060792" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1198492751647">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198492756400">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198492754103">
-                      <property name="value" value="&lt;" />
-                    </node>
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198492759219">
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198492759800">
-                        <property name="value" value="&gt;" />
-                      </node>
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198492756872">
-                        <link role="baseMethodDeclaration" targetNodeId="20.~SNode.getRole_():java.lang.String" resolveInfo="getRole_" />
-                        <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1198492756873">
-                          <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198492756874" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198514631235">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1198514631236">
+                <property name="value" value="false" />
               </node>
             </node>
           </node>
