@@ -101,6 +101,11 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(node);
   }
 
+  public static Object propertyMacro_GetPropertyValue_1198508092517(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode conceptDeclaration = SLinkOperations.getTarget(node, "intfc", false);
+    return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1189815461294(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return NameUtil.nodeFQName(node);
   }
@@ -217,10 +222,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1169126625179(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(node, "name");
-  }
-
-  public static Object referenceMacro_GetReferent_1169130026119(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return _QueriesUtil.extendedInterfaceConcept_generatedInterface(node, templateNode, generator);
   }
 
   public static Object referenceMacro_GetReferent_1197509802062(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
@@ -581,7 +582,7 @@ public class QueriesGenerated {
     return SLinkOperations.getCount(node, "extends") == 0;
   }
 
-  public static List sourceNodesQuery_1169129983235(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1198508062250(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "implements", true);
   }
 
