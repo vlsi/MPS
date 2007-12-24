@@ -132,6 +132,9 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1198507396463(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    if(node == SLinkOperations.getTarget(new QuotationClass_().createNode(), "concept", false)) {
+      return "jetbrains.mps.smodel.BaseAdapter";
+    }
     SNode conceptDeclaration = SLinkOperations.getTarget(node, "extends", false);
     if((conceptDeclaration == null)) {
       return "jetbrains.mps.core.structure.BaseConcept";
