@@ -2611,14 +2611,22 @@
     <property name="name" value="CellModel_Indent" />
     <link role="extends" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198256955554">
-      <property name="value" value="indent" />
+      <property name="value" value="---&gt;" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198509278511">
+      <property name="value" value="indent" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" resolveInfo="short_description" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198257632966">
     <property name="package" value="CellModel" />
     <property name="name" value="CellModel_BlockStart" />
     <link role="extends" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1198504797640">
+      <property name="name" value="openBrace" />
+      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198257692449">
       <property name="value" value="block start" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
@@ -2632,11 +2640,23 @@
       <property name="value" value="block end" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1198506631483">
+      <property name="name" value="closeBrace" />
+      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198489924438">
     <property name="package" value="CellModel" />
     <property name="name" value="CellModel_Block" />
     <link role="extends" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1198508727334">
+      <property name="name" value="openBrace" />
+      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1198508733600">
+      <property name="name" value="closeBrace" />
+      <link role="dataType" targetNodeId="3.1082983041843" resolveInfo="string" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198490012674">
       <property name="value" value="block" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
