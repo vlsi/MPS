@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
@@ -31,14 +31,6 @@ public class ConceptFunction_Component extends AbstractCellProvider {
 
   public  ConceptFunction_Component(SNode node) {
     super(node);
-  }
-
-  public static Color _QueryFunction_Color_1196975453900(SNode node, EditorContext editorContext) {
-    return Color.white;
-  }
-
-  public static Color _QueryFunction_Color_1196975453904(SNode node, EditorContext editorContext) {
-    return new Color(238, 238, 238);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -93,6 +85,14 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   }
 
   private static void setupLabel_BodyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Color _QueryFunction_Color_1196975453900(SNode node, EditorContext editorContext) {
+    return Color.white;
+  }
+
+  public static Color _QueryFunction_Color_1196975453904(SNode node, EditorContext editorContext) {
+    return new Color(238, 238, 238);
   }
 
 
