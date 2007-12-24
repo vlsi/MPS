@@ -4,7 +4,6 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.nodeEditor.FocusPolicy.FirstEditableCell;
 
 /**
  * Created by IntelliJ IDEA.
@@ -15,20 +14,20 @@ import jetbrains.mps.nodeEditor.FocusPolicy.FirstEditableCell;
  */
 public class FocusPolicyUtil {
   public static EditorCell findCellToSelectDueToFocusPolicy(EditorCell cell) {
-    EditorCell _selectedCell = findFocusedCell(cell);
-    if (_selectedCell == null || _selectedCell == cell) return cell;
-    if (_selectedCell.getFocusPolicy() == FocusPolicy.NONE) {
-      EditorCell firstEditableCell = EditorUtil.findFirstEditableCell(_selectedCell);
-      if (firstEditableCell != null) _selectedCell = firstEditableCell;
+    EditorCell selectedCell = findFocusedCell(cell);
+    if (selectedCell == null || selectedCell == cell) return cell;
+    if (!selectedCell.hasFocusPolicy()) {
+      EditorCell firstEditableCell = EditorUtil.findFirstEditableCell(selectedCell);
+      if (firstEditableCell != null) selectedCell = firstEditableCell;
     }
-    return _selectedCell;
+    return selectedCell;
   }
 
   private static EditorCell findFocusedCell(EditorCell selectedCell) {
     EditorCell prevCell = selectedCell;
     EditorCell focusedCell = findCellWhichAttractsFocus(selectedCell, true);
     while (focusedCell != null) {
-      if (focusedCell.getFocusPolicy() instanceof FirstEditableCell) {
+      if (focusedCell.getFocusPolicy() == FocusPolicy.FIRST_EDITABLE_CELL) {
         EditorCell result = EditorUtil.findFirstEditableCell(focusedCell);
         if (result == null) return focusedCell; else return result;
       }
@@ -40,7 +39,7 @@ public class FocusPolicyUtil {
 
   private static EditorCell findCellWhichAttractsFocus(EditorCell cell, boolean includingMe) {
     if (cell == null) return null;
-    if (includingMe && cell.getFocusPolicy() != FocusPolicy.NONE) return cell;
+    if (includingMe && cell.hasFocusPolicy()) return cell;
     if (cell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) cell;
       for (EditorCell childCell : collection) {

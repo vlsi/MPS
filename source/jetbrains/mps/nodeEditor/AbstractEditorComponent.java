@@ -323,7 +323,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           if (rootCell instanceof EditorCell_Collection) {
             EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
             EditorCell toSelect;
-            if (focusPolicyCell == null || (focusPolicyCell == rootCell && focusPolicyCell.getFocusPolicy() == FocusPolicy.NONE)) {
+            if (focusPolicyCell == null || (focusPolicyCell == rootCell && !focusPolicyCell.hasFocusPolicy())) {
               toSelect = EditorUtil.findFirstEditableCell(rootCell);
             } else {
               toSelect = focusPolicyCell;
@@ -1943,7 +1943,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   public EditorCell changeSelectionWRTFocusPolicy(EditorCell cell) {
     EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
     EditorCell toSelect;
-    if (focusPolicyCell == null || (focusPolicyCell == cell && focusPolicyCell.getFocusPolicy() == FocusPolicy.NONE)) {
+    if (focusPolicyCell == null || (focusPolicyCell == cell && !focusPolicyCell.hasFocusPolicy())) {
       toSelect = findErrorOrEditableCell(cell);
       if (toSelect == null) {
         toSelect = EditorUtil.findFirstSelectableCell(cell);
