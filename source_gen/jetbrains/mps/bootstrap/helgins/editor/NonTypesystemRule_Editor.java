@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.core.editor.BaseStyleSheet_StyleSheet;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
@@ -82,7 +83,7 @@ public class NonTypesystemRule_Editor extends DefaultNodeEditor {
   private static void setupBasic_ApplicableNodeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198242185699");
     editorCell.setDrawBorder(false);
-    editorCell.putUserObject(EditorCell.ATTRACTS_FOCUS_POLICY, EditorCell.FIRST_EDITABLE_CELL);
+    editorCell.setFocusPolicy(FocusPolicy.FIRST_EDITABLE_CELL);
   }
 
   private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {

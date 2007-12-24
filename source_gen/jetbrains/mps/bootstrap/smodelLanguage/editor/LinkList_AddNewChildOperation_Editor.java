@@ -27,7 +27,6 @@ public class LinkList_AddNewChildOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139877775154");
     editorCell.setDrawBorder(false);
-    editorCell.putUserObject(EditorCell.ATTRACTS_FOCUS_POLICY, EditorCell.FIRST_EDITABLE_CELL);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {

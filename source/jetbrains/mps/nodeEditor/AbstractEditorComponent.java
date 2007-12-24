@@ -14,7 +14,7 @@ import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.modelchecker.ModelCheckResult;
 import jetbrains.mps.ide.modelchecker.ModelChecker;
 import jetbrains.mps.ide.modelchecker.ModelCheckerMessage;
-import jetbrains.mps.ide.navigation.FocusPolicy;
+import jetbrains.mps.ide.navigation.FocusPolicyUtil;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
 import jetbrains.mps.ide.ui.CellSpeedSearch;
@@ -321,9 +321,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (selectedCell == null) {
           EditorCell rootCell = getRootCell();
           if (rootCell instanceof EditorCell_Collection) {
-            EditorCell focusPolicyCell = FocusPolicy.findCellToSelectDueToFocusPolicy(rootCell);
+            EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(rootCell);
             EditorCell toSelect;
-            if (focusPolicyCell == null || (focusPolicyCell == rootCell && focusPolicyCell.getUserObject(EditorCell.ATTRACTS_FOCUS_POLICY) == null)) {
+            if (focusPolicyCell == null || (focusPolicyCell == rootCell && focusPolicyCell.getFocusPolicy() == FocusPolicy.NONE)) {
               toSelect = EditorUtil.findFirstEditableCell(rootCell);
             } else {
               toSelect = focusPolicyCell;
@@ -1941,9 +1941,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
   public EditorCell changeSelectionWRTFocusPolicy(EditorCell cell) {
-    EditorCell focusPolicyCell = FocusPolicy.findCellToSelectDueToFocusPolicy(cell);
+    EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
     EditorCell toSelect;
-    if (focusPolicyCell == null || (focusPolicyCell == cell && focusPolicyCell.getUserObject(EditorCell.ATTRACTS_FOCUS_POLICY) == null)) {
+    if (focusPolicyCell == null || (focusPolicyCell == cell && focusPolicyCell.getFocusPolicy() == FocusPolicy.NONE)) {
       toSelect = findErrorOrEditableCell(cell);
       if (toSelect == null) {
         toSelect = EditorUtil.findFirstSelectableCell(cell);
