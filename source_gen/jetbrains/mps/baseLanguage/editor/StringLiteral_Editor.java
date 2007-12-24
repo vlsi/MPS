@@ -22,6 +22,8 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1079623722229");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
+    if(true) {
+    }
   }
 
   private static void setupBasic_ValueCell(EditorCell editorCell, SNode node, EditorContext context) {
@@ -30,6 +32,8 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.setLayoutConstraint("punctuation");
+    if(true) {
+    }
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -38,11 +42,15 @@ public class StringLiteral_Editor extends DefaultNodeEditor {
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
     editorCell.setLayoutConstraint("punctuation");
+    if(true) {
+    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1079623722228");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

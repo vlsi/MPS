@@ -19,6 +19,8 @@ public class Concept_FindInstances_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182279799231");
+    if(true) {
+    }
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
@@ -26,20 +28,28 @@ public class Concept_FindInstances_Editor extends DefaultNodeEditor {
     editorCell.setSelectable(false);
     editorCell.setFontType(MPSFonts.PLAIN);
     editorCell.setLayoutConstraint("punctuation");
+    if(true) {
+    }
   }
 
   private static void setupBasic_ScopeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182279799233");
+    if(true) {
+    }
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182279799234");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.PLAIN);
+    if(true) {
+    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182279799230");
+    if(true) {
+    }
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

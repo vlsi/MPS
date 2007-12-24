@@ -7,7 +7,11 @@ import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
@@ -33,26 +37,37 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
   private static void setupBasic_StaticMethodDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172058697111");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172058730163");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupBasic_ActualArgumentList(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172058760745");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172058732259");
     editorCell.setDrawBorder(false);
+    if(LocalStaticMethodCall_Editor._QueryFunction_NodeCondition_1198514428235(node, context, context.getScope())) {
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
+    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172058688093");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_StaticMethodDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -65,6 +80,10 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell2(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1198514428235(SNode node, EditorContext editorContext, IScope scope) {
+    return SequenceOperations.isEmpty(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter", true));
   }
 
 
@@ -153,6 +172,8 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172058703208");
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
+      if(true) {
+      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -207,6 +228,8 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172058772949");
       editorCell.setSelectable(true);
       editorCell.setDrawBorder(false);
+      if(true) {
+      }
     }
 
     private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -4,12 +4,12 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
-import java.awt.Color;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell;
+import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.MPSFonts;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
 import jetbrains.mps.nodeEditor.MPSColors;
+import java.awt.Color;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.ModelAccessor;
@@ -33,33 +33,33 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     super(node);
   }
 
-  public static Color _QueryFunction_Color_1196975453900(SNode node, EditorContext editorContext) {
-    return Color.white;
-  }
-
-  public static Color _QueryFunction_Color_1196975453904(SNode node, EditorContext editorContext) {
-    return new Color(238, 238, 238);
-  }
-
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196975453805");
     editorCell.setSelectable(false);
+    if(true) {
+    }
   }
 
   private static void setupBasic_CellModel_ModelAccess(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196975453808");
     editorCell.setSelectable(true);
     editorCell.setFontType(MPSFonts.ITALIC);
+    if(true) {
+    }
   }
 
   private static void setupBasic_RowCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196975453807");
     editorCell.setSelectable(false);
+    if(true) {
+    }
   }
 
   private static void setupBasic_BodyCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196975453899");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupBasic_RowCell3(EditorCell editorCell, SNode node, EditorContext context) {
@@ -67,21 +67,29 @@ public class ConceptFunction_Component extends AbstractCellProvider {
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
     editorCell.setCellBackgroundColor(ConceptFunction_Component._QueryFunction_Color_1196975453900(node, context));
+    if(true) {
+    }
   }
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196975453806");
     editorCell.setSelectable(false);
+    if(true) {
+    }
   }
 
   private static void setupBasic_RowCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196975453804");
     editorCell.setSelectable(false);
     editorCell.setCellBackgroundColor(ConceptFunction_Component._QueryFunction_Color_1196975453904(node, context));
+    if(true) {
+    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196975453803");
+    if(true) {
+    }
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -93,6 +101,14 @@ public class ConceptFunction_Component extends AbstractCellProvider {
   }
 
   private static void setupLabel_BodyCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static Color _QueryFunction_Color_1196975453900(SNode node, EditorContext editorContext) {
+    return Color.white;
+  }
+
+  public static Color _QueryFunction_Color_1196975453904(SNode node, EditorContext editorContext) {
+    return new Color(238, 238, 238);
   }
 
 

@@ -17,7 +17,9 @@ public class Node_GetIndexInParentOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CellModel_ConceptProperty(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179168170880");
-    editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
+    if(true) {
+      editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
+    }
   }
 
   private static void setupLabel_CellModel_ConceptProperty(EditorCell_Label editorCell, SNode node, EditorContext context) {

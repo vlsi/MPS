@@ -24,27 +24,37 @@ public class SNodeType_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138405916830");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
+    if(true) {
+    }
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138406005691");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupBasic_ConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138406014241");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138406102625");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138405907970");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -141,6 +151,8 @@ public class SNodeType_Editor extends DefaultNodeEditor {
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1138406019759");
       editorCell.setDrawBorder(false);
+      if(true) {
+      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

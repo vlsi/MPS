@@ -28,6 +28,8 @@ public class StatementList_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1073416106126");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_StatementList(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -62,6 +64,8 @@ public class StatementList_Editor extends DefaultNodeEditor {
       editorCell.setSelectable(true);
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
+      if(true) {
+      }
     }
 
     private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

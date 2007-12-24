@@ -14,6 +14,8 @@ public class Statement_Editor extends DefaultNodeEditor {
   private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1078746085984");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_NodeBox(EditorCell_Label editorCell, SNode node, EditorContext context) {

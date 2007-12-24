@@ -20,6 +20,8 @@ public class _Component_Visibility extends AbstractCellProvider {
 
   private static void setupBasic_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1178547765558");
+    if(true) {
+    }
   }
 
   private static void setupLabel_VisibilityCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -21,18 +21,26 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_KeyReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188214583881");
+    if(true) {
+    }
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188214589980");
+    if(true) {
+    }
   }
 
   private static void setupBasic_ValueCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188214613860");
+    if(true) {
+    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188214582614");
+    if(true) {
+    }
   }
 
   private static void setupLabel_KeyReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -135,6 +143,8 @@ public class AnnotationInstanceValue_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188214586947");
+      if(true) {
+      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

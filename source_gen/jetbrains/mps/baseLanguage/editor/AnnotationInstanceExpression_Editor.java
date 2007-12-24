@@ -17,10 +17,14 @@ public class AnnotationInstanceExpression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_AnnotationInstanceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188214522482");
+    if(true) {
+    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188214520621");
+    if(true) {
+    }
   }
 
   private static void setupLabel_AnnotationInstanceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

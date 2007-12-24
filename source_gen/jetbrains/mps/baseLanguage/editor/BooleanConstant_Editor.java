@@ -20,6 +20,8 @@ public class BooleanConstant_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1088424970609");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
+    if(true) {
+    }
   }
 
   private static void setupLabel_ValueCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

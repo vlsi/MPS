@@ -20,6 +20,8 @@ public class FieldReferenceOperation_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_FieldDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197029661551");
+    if(true) {
+    }
   }
 
   private static void setupLabel_FieldDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -68,6 +70,8 @@ public class FieldReferenceOperation_Editor extends DefaultNodeEditor {
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1197029664792");
       editorCell.setFontType(MPSFonts.BOLD);
+      if(true) {
+      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

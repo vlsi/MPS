@@ -24,22 +24,30 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146158270588");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
+    if(true) {
+    }
   }
 
   private static void setupBasic_EnumMemberReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146158258594");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146158355984");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
+    if(true) {
+    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146158256146");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -125,6 +133,8 @@ public class EnumMemberReference_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1146158258596");
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.BOLD);
+      if(true) {
+      }
     }
 
     private static void setupLabel_ExternalValueCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

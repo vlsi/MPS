@@ -17,6 +17,8 @@ public class SNodeListCreator_Editor extends DefaultNodeEditor {
   private static void setupBasic_CreatedTypeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145567624652");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_CreatedTypeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

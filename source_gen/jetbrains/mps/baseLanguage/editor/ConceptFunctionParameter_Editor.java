@@ -20,6 +20,8 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1139533905854");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
+    if(true) {
+    }
   }
 
   private static void setupLabel_CellModel_ConceptProperty(EditorCell_Label editorCell, SNode node, EditorContext context) {

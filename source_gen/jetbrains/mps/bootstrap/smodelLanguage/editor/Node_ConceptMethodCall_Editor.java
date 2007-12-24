@@ -31,22 +31,32 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptMethodDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179409337167");
+    if(true) {
+    }
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179409365157");
+    if(true) {
+    }
   }
 
   private static void setupBasic_ActualArgumentList(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179409369096");
+    if(true) {
+    }
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179409379177");
+    if(true) {
+    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179409334055");
+    if(true) {
+    }
   }
 
   private static void setupLabel_ConceptMethodDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -145,6 +155,8 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179409341654");
+      if(true) {
+      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -197,6 +209,8 @@ public class Node_ConceptMethodCall_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179409374863");
+      if(true) {
+      }
     }
 
     private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {

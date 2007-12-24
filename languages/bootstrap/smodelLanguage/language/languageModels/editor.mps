@@ -1041,6 +1041,7 @@
         <property name="textFgColor" value="DARK_MAGENTA" />
         <property name="text" value="/" />
         <property name="drawBorder" value="false" />
+        <property name="attractsFocus" value="1" />
         <link role="actionMap" targetNodeId="1145407825538" resolveInfo="SemanticDowncastExpression_Symbol_Actions" />
       </node>
     </node>

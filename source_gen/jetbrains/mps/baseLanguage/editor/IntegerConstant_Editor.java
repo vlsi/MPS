@@ -18,6 +18,8 @@ public class IntegerConstant_Editor extends DefaultNodeEditor {
   private static void setupBasic_ValueCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1083091696640");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_ValueCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

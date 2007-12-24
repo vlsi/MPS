@@ -19,6 +19,8 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081880010410");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
     DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new OpenParenthesis_KeyMap());
   }
@@ -26,12 +28,16 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_ExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081880010411");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081880010412");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
     DeleteParenthesis_Actions.setCellActions(editorCell, node, context);
     editorCell.addKeyMap(new CloseParenthesis_KeyMap());
   }
@@ -39,6 +45,8 @@ public class ParenthesizedExpression_Editor extends DefaultNodeEditor {
   private static void setupBasic_NodeBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1081880010409");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

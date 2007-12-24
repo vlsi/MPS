@@ -18,6 +18,8 @@ public class FloatingPointConstant_Editor extends DefaultNodeEditor {
   private static void setupBasic_ValueCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1113006710627");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_ValueCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

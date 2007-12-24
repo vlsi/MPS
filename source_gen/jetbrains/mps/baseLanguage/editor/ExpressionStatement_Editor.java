@@ -20,17 +20,23 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075379141236");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
     ExpressionStatement_Expression_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075379141237");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupBasic_StatementBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1075379141235");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_ExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

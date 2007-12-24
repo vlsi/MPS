@@ -14,6 +14,8 @@ public class AbstractCreator_Editor extends DefaultNodeEditor {
   private static void setupBasic_ErrorCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1145552947529");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_ErrorCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

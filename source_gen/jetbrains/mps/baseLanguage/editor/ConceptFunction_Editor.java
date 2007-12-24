@@ -15,6 +15,8 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ConceptFunction_ComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196975582231");
+    if(true) {
+    }
   }
 
 

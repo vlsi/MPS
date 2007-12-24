@@ -19,6 +19,8 @@ public class ClosureParameter_Editor extends DefaultNodeEditor {
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1196264216968");
     editorCell.setFontType(MPSFonts.ITALIC);
+    if(true) {
+    }
   }
 
   private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
