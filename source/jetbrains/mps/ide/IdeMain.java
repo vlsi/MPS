@@ -29,8 +29,6 @@ public class IdeMain {
         System.setProperty("alloy.licenseCode", "2008/01/17#Konstantin.Solomatov@gmail.com#b4yfnq#18f3q7");
         System.setProperty("swing.aatext", "true");
 
-        installFocusKiller();
-
         long start = System.currentTimeMillis();
 
         SplashScreen.getInstance().showSplashScreen();
