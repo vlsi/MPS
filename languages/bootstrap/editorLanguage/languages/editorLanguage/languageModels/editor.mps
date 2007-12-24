@@ -69,14 +69,6 @@
           <property name="vertical" value="true" />
           <property name="drawBorder" value="false" />
           <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198258219892">
-            <property name="text" value="{" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1078168610018">
-            <property name="name" value="headerIndentCell" />
-            <property name="drawBorder" value="false" />
-            <property name="selectable" value="false" />
-          </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1078168651395">
             <property name="selectable" value="false" />
             <property name="text" value="node cell layout:" />
@@ -183,6 +175,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1176716980679">
+        <property name="drawBorder" value="true" />
         <link role="editorComponent" targetNodeId="1176716904723" resolveInfo="_CloseTag" />
       </node>
     </node>
@@ -2090,8 +2083,10 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1176724690194">
         <property name="text" value="model access" />
+        <property name="drawBorder" value="true" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1176717135427">
+        <property name="drawBorder" value="true" />
         <link role="editorComponent" targetNodeId="1176716904723" resolveInfo="_CloseTag" />
       </node>
     </node>
