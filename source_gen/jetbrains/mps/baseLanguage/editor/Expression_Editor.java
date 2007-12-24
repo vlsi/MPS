@@ -58,7 +58,7 @@ public class Expression_Editor extends DefaultNodeEditor {
       }
 
       public boolean isValidText(String text) {
-        return ("<" + node.getRole_() + ">").equals(text);
+        return false;
       }
 
     };
