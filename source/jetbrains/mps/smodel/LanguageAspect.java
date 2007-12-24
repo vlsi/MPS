@@ -180,6 +180,10 @@ public enum LanguageAspect {
   }
 
   public SModelDescriptor createNew(Language l) {
+    return createNew(l, true);
+  }
+
+  public SModelDescriptor createNew(Language l, boolean saveDescriptor) {
     assert get(l) == null;
 
     SModel sm = l.getLanguageDescriptor().getModel();
@@ -190,19 +194,27 @@ public enum LanguageAspect {
       model.getSModel().addLanguage(lang);
     }
 
+    model.getSModel().addLanguage(BootstrapLanguages.getInstance().getCollectionsLanguage().getNamespace());
+    model.getSModel().addLanguage(BootstrapLanguages.getInstance().getSModelLanguage().getNamespace());
+    model.getSModel().addLanguage(BootstrapLanguages.getInstance().getBaseLanguage().getNamespace());
+
     for (String modelUID : getModelsToImport(l)) {
       model.getSModel().addImportedModel(SModelUID.fromString(modelUID));
     }
+    
+    model.getSModel().addImportedModel(l.getStructureModelDescriptor().getModelUID());
 
     model.save();
 
-    Model m = Model.newInstance(sm);
-    m.setName(model.getModelUID().toString());
+    if (saveDescriptor) {
+      Model m = Model.newInstance(sm);
+      m.setName(model.getModelUID().toString());
 
-    registerInLanguageDescriptor(l.getLanguageDescriptor(), m);
-    l.setLanguageDescriptor(l.getLanguageDescriptor());
+      registerInLanguageDescriptor(l.getLanguageDescriptor(), m);
+      l.setLanguageDescriptor(l.getLanguageDescriptor());
 
-    l.save();
+      l.save();
+    }
 
     return model;
   }
