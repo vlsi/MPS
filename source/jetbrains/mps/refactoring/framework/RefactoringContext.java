@@ -131,7 +131,7 @@ public class RefactoringContext {
     if (sourceNodes.isEmpty()) {
       return;
     }
-    SModel sourceModel = sourceNodes.get(0).getModel();
+//    SModel sourceModel = sourceNodes.get(0).getModel();
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> targetNodes = CopyUtil.copy(sourceNodes, targetModel, mapping);
     for (SNode node : targetNodes) {
@@ -144,7 +144,8 @@ public class RefactoringContext {
     for (SNode node : sourceNodes) {
       node.delete();
     }
-    targetModel.addImportedModel(sourceModel.getUID());
+    targetModel.validateLanguagesAndImports();
+   // targetModel.addImportedModel(sourceModel.getUID());
     myCachesAreUpToDate = false;
   }
 
