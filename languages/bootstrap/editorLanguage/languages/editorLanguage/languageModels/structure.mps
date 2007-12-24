@@ -2633,5 +2633,26 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198489924438">
+    <property name="package" value="CellModel" />
+    <property name="name" value="CellModel_Block" />
+    <link role="extends" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198490012674">
+      <property name="value" value="block" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1198489985045">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="header" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1198489993734">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="body" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
+    </node>
+  </node>
 </model>
 
