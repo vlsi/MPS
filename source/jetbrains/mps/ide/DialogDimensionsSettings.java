@@ -13,15 +13,15 @@ import java.util.HashMap;
  * To change this template use File | Settings | File Templates.
  */
 public class DialogDimensionsSettings extends DefaultExternalizableComponent {
-  private @Externalizable HashMap<Class<? extends BaseDialog>, DialogDimensions> myDialogsDimensions = new HashMap<Class<? extends BaseDialog>, DialogDimensions>();
+  private @Externalizable HashMap<String, DialogDimensions> myDialogsDimensions = new HashMap<String, DialogDimensions>();
 
   protected DialogDimensions getDimensionSettings(Class <? extends BaseDialog> cls) {
-    return myDialogsDimensions.get(cls);
+    return myDialogsDimensions.get(cls.getName());
   }
 
   protected void saveDimensionSettings(int left, int top, int width, int height, Class<? extends BaseDialog> cls) {
     DialogDimensions dialogDimensions = new DialogDimensions(left, top, width, height);
-    myDialogsDimensions.put(cls, dialogDimensions);
+    myDialogsDimensions.put(cls.getName(), dialogDimensions);
   }
 
   public static class DialogDimensions {
