@@ -125,6 +125,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(node, "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1198507396463(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode conceptDeclaration = SLinkOperations.getTarget(node, "extends", false);
+    if((conceptDeclaration == null)) {
+      return "jetbrains.mps.core.structure.BaseConcept";
+    }
+    return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1169581753467(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "get" + NameUtil.capitalize(SPropertyOperations.getString(node, "name"));
   }
@@ -211,305 +219,301 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(node, "name");
   }
 
-  public static SNode referenceMacro_GetReferent_1169130026119(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1169130026119(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.extendedInterfaceConcept_generatedInterface(node, templateNode, generator);
   }
 
-  public static SNode referenceMacro_GetReferent_1168020518409(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return _QueriesUtil.extendedConcept_generatedClass(node, templateNode, generator);
-  }
-
-  public static SNode referenceMacro_GetReferent_1197509802062(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197509802062(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1197509213196(node);
     SNode outputEnumConstant = generator.findOutputNodeByInputNodeAndMappingName(defaultMember, "outputEnumConstant");
     return (SNode)outputEnumConstant;
   }
 
-  public static SNode referenceMacro_GetReferent_1197511833804(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197511833804(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode dataType = SLinkOperations.getTarget(node, "dataType", false);
     SNode generatedClassifier = _QueriesUtil.dataTypeDeclaration_generatedClassifier(dataType, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197511334709(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197511334709(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode dataType = SLinkOperations.getTarget(node, "dataType", false);
     SNode generatedClassifier = _QueriesUtil.dataTypeDeclaration_generatedClassifier(dataType, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197511866575(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197511866575(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode dataType = SLinkOperations.getTarget(node, "dataType", false);
     SNode generatedClassifier = _QueriesUtil.dataTypeDeclaration_generatedClassifier(dataType, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510908112(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510908112(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510902014(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510902014(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510867839(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510867839(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510690583(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510690583(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510325660(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510325660(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510700414(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510700414(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510813095(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510813095(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510806638(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510806638(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510826114(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510826114(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510833242(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510833242(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510793291(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510793291(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510969529(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510969529(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197512800039(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197512800039(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode generatedMethod = _QueriesUtil.linkDeclaration_generatedGetterMethod(SLinkOperations.getTarget(node, "specializedLink", false), generator);
     return (SNode)generatedMethod;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510953677(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510953677(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197567857382(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197567857382(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode generatedMethod = _QueriesUtil.linkDeclaration_generatedSetterMethod(SLinkOperations.getTarget(node, "specializedLink", false), generator);
     return (SNode)generatedMethod;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510980829(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510980829(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510742269(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510742269(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197512449216(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197512449216(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode generatedMethod = _QueriesUtil.linkDeclaration_generatedGetterMethod(SLinkOperations.getTarget(node, "specializedLink", false), generator);
     return (SNode)generatedMethod;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510722871(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510722871(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197567821842(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197567821842(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode generatedMethod = _QueriesUtil.linkDeclaration_generatedSetterMethod(SLinkOperations.getTarget(node, "specializedLink", false), generator);
     return (SNode)generatedMethod;
   }
 
-  public static SNode referenceMacro_GetReferent_1197510751303(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197510751303(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197508914510(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197508914510(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkSource = SLinkOperations.getTarget(node, "source", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkSource, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197500159012(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197500159012(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197506572757(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197506572757(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197506635785(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197506635785(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197508923247(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197508923247(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkSource = SLinkOperations.getTarget(node, "source", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkSource, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197506646679(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197506646679(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197506655885(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197506655885(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197508932735(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197508932735(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkSource = SLinkOperations.getTarget(node, "source", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkSource, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197508742319(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197508742319(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkSource = SLinkOperations.getTarget(node, "source", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkSource, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197508502810(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197508502810(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197506908680(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197506908680(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197506916574(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197506916574(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197508944102(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197508944102(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkSource = SLinkOperations.getTarget(node, "source", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkSource, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197508408983(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197508408983(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197508425580(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197508425580(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197508956027(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197508956027(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkSource = SLinkOperations.getTarget(node, "source", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkSource, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197508972425(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197508972425(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkSource = SLinkOperations.getTarget(node, "source", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkSource, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197508472307(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197508472307(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197506823892(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197506823892(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197506831739(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197506831739(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197508982475(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197508982475(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkSource = SLinkOperations.getTarget(node, "source", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkSource, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197506783616(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197506783616(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197506809759(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197506809759(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkTarget = SLinkOperations.getTarget(node, "target", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkTarget, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1197508992619(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1197508992619(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode linkSource = SLinkOperations.getTarget(node, "source", false);
     SNode generatedClassifier = _QueriesUtil.abstractConceptDeclaration_generatedClassifier(linkSource, templateNode, generator);
     return (SNode)generatedClassifier;
   }
 
-  public static SNode referenceMacro_GetReferent_1169128252878(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1169128252878(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return _QueriesUtil.extendedInterfaceConcept_generatedInterface(node, templateNode, generator);
   }
 

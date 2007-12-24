@@ -11,7 +11,6 @@ import jetbrains.mps.project.GlobalScope;
 public class ParameterDeclaration extends VariableDeclaration implements IResolveInfo {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ParameterDeclaration";
   public static String RESOLVE_INFO = "resolveInfo";
-  public static String RESOLVE_INFO_DESCRIPTION = "resolveInfoDescription";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
@@ -35,14 +34,6 @@ public class ParameterDeclaration extends VariableDeclaration implements IResolv
 
   public void setResolveInfo(String value) {
     this.setProperty(ParameterDeclaration.RESOLVE_INFO, value);
-  }
-
-  public String getResolveInfoDescription() {
-    return this.getProperty(ParameterDeclaration.RESOLVE_INFO_DESCRIPTION);
-  }
-
-  public void setResolveInfoDescription(String value) {
-    this.setProperty(ParameterDeclaration.RESOLVE_INFO_DESCRIPTION, value);
   }
 
   public String getShortDescription() {
