@@ -14,6 +14,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.structureLanguage.generator_new.util.QueriesUtil;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.EnumerationDataTypeDeclaration_Behavior;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
@@ -237,8 +238,20 @@ public class QueriesGenerated {
     return QueriesUtil.conceptClassFQName(SLinkOperations.getTarget(node, "target", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1198517006541(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.conceptClassFQName(SLinkOperations.getTarget(node, "target", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1198517017613(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.linkGetterName(((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "specializedLink", false))));
+  }
+
   public static Object propertyMacro_GetPropertyValue_1198511244640(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.conceptClassFQName(SLinkOperations.getTarget(node, "target", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1198517087605(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.linkSetterName(((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "specializedLink", false))));
   }
 
   public static Object propertyMacro_GetPropertyValue_1198511251162(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -257,8 +270,20 @@ public class QueriesGenerated {
     return QueriesUtil.conceptClassFQName(SLinkOperations.getTarget(node, "target", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1198516896741(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.conceptClassFQName(SLinkOperations.getTarget(node, "target", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1198516914297(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.linkGetterName(((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "specializedLink", false))));
+  }
+
   public static Object propertyMacro_GetPropertyValue_1198510354819(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.conceptClassFQName(SLinkOperations.getTarget(node, "target", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1198516836152(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return _QueriesUtil.linkSetterName(((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.getTarget(node, "specializedLink", false))));
   }
 
   public static Object propertyMacro_GetPropertyValue_1198510461552(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -413,26 +438,6 @@ public class QueriesGenerated {
     SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1197509213196(node);
     SNode outputEnumConstant = generator.findOutputNodeByInputNodeAndMappingName(defaultMember, "outputEnumConstant");
     return (SNode)outputEnumConstant;
-  }
-
-  public static Object referenceMacro_GetReferent_1197512800039(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode generatedMethod = _QueriesUtil.linkDeclaration_generatedGetterMethod(SLinkOperations.getTarget(node, "specializedLink", false), generator);
-    return (SNode)generatedMethod;
-  }
-
-  public static Object referenceMacro_GetReferent_1197567857382(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode generatedMethod = _QueriesUtil.linkDeclaration_generatedSetterMethod(SLinkOperations.getTarget(node, "specializedLink", false), generator);
-    return (SNode)generatedMethod;
-  }
-
-  public static Object referenceMacro_GetReferent_1197512449216(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode generatedMethod = _QueriesUtil.linkDeclaration_generatedGetterMethod(SLinkOperations.getTarget(node, "specializedLink", false), generator);
-    return (SNode)generatedMethod;
-  }
-
-  public static Object referenceMacro_GetReferent_1197567821842(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode generatedMethod = _QueriesUtil.linkDeclaration_generatedSetterMethod(SLinkOperations.getTarget(node, "specializedLink", false), generator);
-    return (SNode)generatedMethod;
   }
 
   public static boolean ifMacro_Condition_1169758775014(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

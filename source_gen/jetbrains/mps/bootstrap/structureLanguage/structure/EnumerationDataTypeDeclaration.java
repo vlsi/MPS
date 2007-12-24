@@ -11,10 +11,10 @@ import java.util.List;
 
 public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   public static final String concept = "jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration";
+  public static String MEMBER = "member";
   public static String MEMBER_IDENTIFIER_POLICY = "memberIdentifierPolicy";
   public static String MEMBER_DATA_TYPE = "memberDataType";
   public static String DEFAULT_MEMBER = "defaultMember";
-  public static String MEMBER = "member";
 
   public  EnumerationDataTypeDeclaration(SNode node) {
     super(node);
@@ -28,6 +28,26 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
     return EnumerationDataTypeDeclaration.newInstance(sm, false);
   }
 
+
+  public int getMembersCount() {
+    return this.getChildCount(EnumerationDataTypeDeclaration.MEMBER);
+  }
+
+  public Iterator<EnumerationMemberDeclaration> members() {
+    return this.children(EnumerationDataTypeDeclaration.MEMBER);
+  }
+
+  public List<EnumerationMemberDeclaration> getMembers() {
+    return this.getChildren(EnumerationDataTypeDeclaration.MEMBER);
+  }
+
+  public void addMember(EnumerationMemberDeclaration node) {
+    this.addChild(EnumerationDataTypeDeclaration.MEMBER, node);
+  }
+
+  public void insertMember(EnumerationMemberDeclaration prev, EnumerationMemberDeclaration node) {
+    this.insertChild(prev, EnumerationDataTypeDeclaration.MEMBER, node);
+  }
 
   public EnumerationMemberIdentifierPolicy getMemberIdentifierPolicy() {
     String value = super.getProperty(EnumerationDataTypeDeclaration.MEMBER_IDENTIFIER_POLICY);
@@ -52,26 +72,6 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
 
   public void setDefaultMember(EnumerationMemberDeclaration node) {
     super.setReferent(EnumerationDataTypeDeclaration.DEFAULT_MEMBER, node);
-  }
-
-  public int getMembersCount() {
-    return this.getChildCount(EnumerationDataTypeDeclaration.MEMBER);
-  }
-
-  public Iterator<EnumerationMemberDeclaration> members() {
-    return this.children(EnumerationDataTypeDeclaration.MEMBER);
-  }
-
-  public List<EnumerationMemberDeclaration> getMembers() {
-    return this.getChildren(EnumerationDataTypeDeclaration.MEMBER);
-  }
-
-  public void addMember(EnumerationMemberDeclaration node) {
-    this.addChild(EnumerationDataTypeDeclaration.MEMBER, node);
-  }
-
-  public void insertMember(EnumerationMemberDeclaration prev, EnumerationMemberDeclaration node) {
-    this.insertChild(prev, EnumerationDataTypeDeclaration.MEMBER, node);
   }
 
 }
