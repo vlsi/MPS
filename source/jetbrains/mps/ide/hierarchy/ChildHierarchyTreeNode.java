@@ -3,6 +3,7 @@ package jetbrains.mps.ide.hierarchy;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.ui.TreeTextUtil;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 
@@ -28,19 +29,23 @@ public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTre
     }
 
     protected void doInit() {
-      List<T> descendants = new ArrayList<T>(myHierarchyTree.getAbstractChildren((T) this.getUserObject()));
-      Collections.sort(descendants, new Comparator<T>() {
-        public int compare(T o1, T o2) {
-          return ("" + o1.toString()).compareTo(o2.toString());
+      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+        public void run() {
+          List<T> descendants = new ArrayList<T>(myHierarchyTree.getAbstractChildren((T) getUserObject()));
+          Collections.sort(descendants, new Comparator<T>() {
+            public int compare(T o1, T o2) {
+              return ("" + o1.toString()).compareTo(o2.toString());
+            }
+          });
+
+          for (T descendant : descendants) {
+            ChildHierarchyTreeNode childHierarchyTreeNode = new ChildHierarchyTreeNode(descendant, getOperationContext(), myHierarchyTree);
+            add(childHierarchyTreeNode);
+          }
+
+          myInitialized = true;
         }
       });
-
-      for (T descendant : descendants) {
-        ChildHierarchyTreeNode childHierarchyTreeNode = new ChildHierarchyTreeNode(descendant, getOperationContext(), myHierarchyTree);
-        this.add(childHierarchyTreeNode);
-      }
-
-      myInitialized = true;
     }
 
     protected void doUpdate() {

@@ -2192,6 +2192,18 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" />
           </node>
         </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198493078450">
+          <property name="selectable" value="false" />
+          <property name="vertical" value="false" />
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198493078451">
+            <property name="text" value="default caret position" />
+            <property name="drawBorder" value="true" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1198493078452">
+            <property name="drawBorder" value="true" />
+            <link role="relationDeclaration" targetNodeId="2.1197893615481" resolveInfo="defaultCaretPosition" />
+          </node>
+        </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1139313523459">
           <property name="drawBorder" value="true" />
           <link role="editorComponent" targetNodeId="1139313041650" resolveInfo="_EditorCellModel_CellBackground_Component" />

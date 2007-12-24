@@ -1787,9 +1787,86 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075376169046">
     <property name="name" value="Expression_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068431790191" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Error" id="1075376431437">
-      <property name="drawBorder" value="false" />
-      <property name="text" value="expression" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1198491420655">
+      <property name="textBgColor" value="query" />
+      <property name="textFgColor" value="red" />
+      <property name="defaultCaretPosition" value="FIRST" />
+      <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1198491420656">
+        <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1198491420657">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198491420658">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198492732995">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198492737918">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198492732996">
+                  <property name="value" value="&lt;" />
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198492741081">
+                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198492741646">
+                    <property name="value" value="&gt;" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198492738328">
+                    <link role="baseMethodDeclaration" targetNodeId="20.~SNode.getRole_():java.lang.String" resolveInfo="getRole_" />
+                    <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1198492738329">
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198492738330" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="setter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Setter" id="1198491420659">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198491420660" />
+        </node>
+        <node role="validator" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Validator" id="1198491420661">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198491420662">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198492052235">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198492059744">
+                <link role="baseMethodDeclaration" targetNodeId="24.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_text" id="1198492060792" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression" id="1198492751647">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198492756400">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198492754103">
+                      <property name="value" value="&lt;" />
+                    </node>
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198492759219">
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198492759800">
+                        <property name="value" value="&gt;" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198492756872">
+                        <link role="baseMethodDeclaration" targetNodeId="20.~SNode.getRole_():java.lang.String" resolveInfo="getRole_" />
+                        <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1198492756873">
+                          <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198492756874" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="textBackgroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1198492287183">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198492287184">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198492744522">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1198492744523">
+              <link role="baseMethodDeclaration" targetNodeId="56.~Color.&lt;init&gt;(int,int,int,int)" resolveInfo="Color" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198492784702">
+                <property name="value" value="255" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198492791454">
+                <property name="value" value="127" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198492800722">
+                <property name="value" value="127" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198492803349">
+                <property name="value" value="50" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075379141234">

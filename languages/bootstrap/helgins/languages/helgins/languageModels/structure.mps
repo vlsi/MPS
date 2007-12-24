@@ -392,13 +392,13 @@
     <link role="extends" targetNodeId="2.1068580123157" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1175517851849">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..1" />
+      <property name="sourceCardinality" value="1" />
       <property name="role" value="errorString" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1175517865066">
       <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..1" />
+      <property name="sourceCardinality" value="1" />
       <property name="role" value="nodeToReport" />
       <link role="target" targetNodeId="2.1068431790191" />
     </node>
