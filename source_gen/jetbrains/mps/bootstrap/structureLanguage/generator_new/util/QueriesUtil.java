@@ -148,4 +148,11 @@ public class QueriesUtil {
     return b1 || b2;
   }
 
+  public static String conceptClassFQName(SNode conceptDeclaration) {
+    if((conceptDeclaration == null)) {
+      return "jetbrains.mps.core.structure.BaseConcept";
+    }
+    return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+  }
+
 }
