@@ -173,6 +173,22 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(node, "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1198515969941(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.enumClassFQName(SLinkOperations.getTarget(node, "dataType", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1198516036717(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.enumClassFQName(SLinkOperations.getTarget(node, "dataType", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1198516075698(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.enumClassFQName(SLinkOperations.getTarget(node, "dataType", false));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1198515654379(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return QueriesUtil.enumClassFQName(SLinkOperations.getTarget(node, "dataType", false));
+  }
+
   public static Object propertyMacro_GetPropertyValue_1198511145355(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.conceptClassFQName(SLinkOperations.getTarget(node, "target", false));
   }
@@ -397,24 +413,6 @@ public class QueriesGenerated {
     SNode defaultMember = EnumerationDataTypeDeclaration_Behavior.call_getDefaultMember_1197509213196(node);
     SNode outputEnumConstant = generator.findOutputNodeByInputNodeAndMappingName(defaultMember, "outputEnumConstant");
     return (SNode)outputEnumConstant;
-  }
-
-  public static Object referenceMacro_GetReferent_1197511833804(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode dataType = SLinkOperations.getTarget(node, "dataType", false);
-    SNode generatedClassifier = _QueriesUtil.dataTypeDeclaration_generatedClassifier(dataType, templateNode, generator);
-    return (SNode)generatedClassifier;
-  }
-
-  public static Object referenceMacro_GetReferent_1197511334709(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode dataType = SLinkOperations.getTarget(node, "dataType", false);
-    SNode generatedClassifier = _QueriesUtil.dataTypeDeclaration_generatedClassifier(dataType, templateNode, generator);
-    return (SNode)generatedClassifier;
-  }
-
-  public static Object referenceMacro_GetReferent_1197511866575(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode dataType = SLinkOperations.getTarget(node, "dataType", false);
-    SNode generatedClassifier = _QueriesUtil.dataTypeDeclaration_generatedClassifier(dataType, templateNode, generator);
-    return (SNode)generatedClassifier;
   }
 
   public static Object referenceMacro_GetReferent_1197512800039(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {

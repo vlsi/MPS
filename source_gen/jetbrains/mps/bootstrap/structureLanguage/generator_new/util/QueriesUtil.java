@@ -155,4 +155,11 @@ public class QueriesUtil {
     return SNodeOperations.getModel(conceptDeclaration).toString() + "." + SPropertyOperations.getString(conceptDeclaration, "name");
   }
 
+  public static String enumClassFQName(SNode enumDeclaration) {
+    if((enumDeclaration == null)) {
+      return "jetbrains.mps.core.structure.BaseConcept";
+    }
+    return SNodeOperations.getModel(enumDeclaration).toString() + "." + SPropertyOperations.getString(enumDeclaration, "name");
+  }
+
 }
