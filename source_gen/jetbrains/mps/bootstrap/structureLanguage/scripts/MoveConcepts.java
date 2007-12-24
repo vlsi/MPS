@@ -10,13 +10,17 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SModelDescriptor;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.HashMap;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelDescriptor;
-import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseModelComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
@@ -53,11 +57,51 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       List<SNode> nodes = (List<SNode>)actionContext.getNodes();
       SModel model = actionContext.getNode().getModel();
       refactoringContext.setParameter("sourceModel", model);
+      Language sourceLanguage = Language.getLanguageFor(((SModel)refactoringContext.getParameter("sourceModel")).getModelDescriptor());
+      Language targetLanguage = Language.getLanguageFor(((SModel)refactoringContext.getParameter("targetModel")).getModelDescriptor());
       refactoringContext.moveNodesToModel(nodes, ((SModel)refactoringContext.getParameter("targetModel")));
       for(SNode node : nodes) {
         refactoringContext.changeFeatureName(node, ((SModel)refactoringContext.getParameter("targetModel")) + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
       }
-      // todo: move editors, behaviors and other concept-related aspect stuff
+      // editors:
+      SModelDescriptor editorModelDescriptor = sourceLanguage.getEditorModelDescriptor();
+      if(editorModelDescriptor != null) {
+        List<SNode> editors = new ArrayList<SNode>();
+        for(SNode node : nodes) {
+          if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration")) {
+            SNode editor = (SNode)SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), ((ConceptDeclaration)SNodeOperations.getAdapter(node))).getNode();
+            if((editor != null)) {
+              ListOperations.addElement(editors, editor);
+            }
+          }
+        }
+        if(!(SequenceOperations.isEmpty(editors))) {
+          SModelDescriptor targetEditorModelDescriptor = targetLanguage.getEditorModelDescriptor();
+          if(targetEditorModelDescriptor == null) {
+            targetEditorModelDescriptor = targetLanguage.createLanguageEditorModel();
+          }
+          refactoringContext.moveNodesToModel(editors, targetEditorModelDescriptor.getSModel());
+        }
+      }
+      // behaviors:
+      SModelDescriptor constraintsModelDescriptor = sourceLanguage.getConstraintsModelDescriptor();
+      if(constraintsModelDescriptor != null) {
+        List<SNode> behaviors = new ArrayList<SNode>();
+        for(SNode node : nodes) {
+          SNode behavior = (SNode)SModelUtil_new.findBehaviorDeclaration(constraintsModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node))).getNode();
+          if((behavior != null)) {
+            ListOperations.addElement(behaviors, behavior);
+          }
+        }
+        if(!(SequenceOperations.isEmpty(behaviors))) {
+          SModelDescriptor targetConstraintsModelDescriptor = targetLanguage.getConstraintsModelDescriptor();
+          if(targetConstraintsModelDescriptor == null) {
+            targetConstraintsModelDescriptor = targetLanguage.createLanguageBehaviorModel();
+          }
+          refactoringContext.moveNodesToModel(behaviors, targetConstraintsModelDescriptor.getSModel());
+        }
+      }
+      // todo: move other concept-related aspect stuff
     }
   }
 
