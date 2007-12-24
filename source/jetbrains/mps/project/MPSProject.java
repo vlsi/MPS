@@ -751,7 +751,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     new ModuleMaker().make(modulesToBuild, monitor);
 
-    ReloadUtils.reloadAll(true);
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        ReloadUtils.reloadAll(true);
+      }
+    });
   }
 
   public static class TestResult {
@@ -873,9 +877,17 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
-        for (BaseGeneratorConfiguration t : myProjectDescriptor.getRunConfigurations()) {
-          if (!t.getTest()) continue;
+        List<BaseGeneratorConfiguration> configurations = new ArrayList<BaseGeneratorConfiguration>(myProjectDescriptor.getRunConfigurations());
 
+        if (myProjectDescriptor.getTestAllLanguages()) {
+          for (Language l : getProjectLanguages()) {
+            LanguageGeneratorConfiguration conf = LanguageGeneratorConfiguration.newInstance(myProjectDescriptor.getModel());            
+            conf.setLanguageNamespace(l.getNamespace());
+            configurations.add(conf);
+          }
+        }
+
+        for (BaseGeneratorConfiguration t : configurations) {
           GenParameters parms;
           try {
             parms = GeneratorConfigUtil.calculate(MPSProject.this, t);
