@@ -217,15 +217,7 @@ public class QueriesGenerated {
     return QueriesUtil.conceptClassFQName(SLinkOperations.getTarget(node, "target", false));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1198522292010(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.conceptClassFQName(SLinkOperations.getTarget(node, "target", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_1198510998198(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.conceptClassFQName(SLinkOperations.getTarget(node, "target", false));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1198522275244(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return QueriesUtil.conceptClassFQName(SLinkOperations.getTarget(node, "target", false));
   }
 
