@@ -517,7 +517,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1088425851836">
         <property name="noTargetText" value="&lt;no member&gt;" />
-        <property name="attractsFocus" value="0" />
+        <property name="attractsFocus" value="1" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="17.1070568237987" />
         <link role="actionMap" targetNodeId="1142045237802" resolveInfo="FieldReference_FieldName_Actions" />

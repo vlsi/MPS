@@ -1374,6 +1374,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   void changeSelection(EditorCell newSelectedCell, boolean resetLastCaretX, boolean scroll) {
+    if (newSelectedCell != null) {
+      System.out.println("change selection to " + newSelectedCell.getSNode());
+    } else {
+      System.out.println("change selection to null");
+    }
+    new Throwable().printStackTrace(System.out);
+
     clearSelectionStack();
     Stack<EditorCell_Collection> foldedParents = new Stack<EditorCell_Collection>();
     if (newSelectedCell != null) {

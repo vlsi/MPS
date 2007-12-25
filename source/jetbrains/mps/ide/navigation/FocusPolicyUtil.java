@@ -43,6 +43,7 @@ public class FocusPolicyUtil {
     if (cell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) cell;
       for (EditorCell childCell : collection) {
+        if (childCell.isBigCell()) continue;
         EditorCell focusedCell = findCellWhichAttractsFocus(childCell, true);
         if (focusedCell != null) return focusedCell;
       }

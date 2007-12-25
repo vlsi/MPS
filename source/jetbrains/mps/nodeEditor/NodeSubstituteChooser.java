@@ -281,7 +281,7 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
     String pattern = getPatternEditor().getPattern();
     INodeSubstituteAction action = mySubstituteActions.get(myPopupWindow.getSelectionIndex());
     setVisible(false);
-    EditorUtil.substituteNode(action, pattern, myEditorComponent.getEditorContext());
+    EditorUtil.substituteNode(action, pattern, myEditorComponent.getEditorContext());    
   }
 
   private void updatePatternEditor() {

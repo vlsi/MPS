@@ -156,6 +156,17 @@ public class EditorContext {
     });
   }
 
+  public void selectLaterWRTFocusPolicy(final SNode node) {
+    CommandProcessor.instance().invokeLater(new Runnable() {
+      public void run() {
+        EditorCell cell = getNodeEditorComponent().findNodeCell(node);
+        if (cell != null) {
+          getNodeEditorComponent().changeSelectionWRTFocusPolicy(cell);
+        }
+      }
+    });
+  }
+
   public void selectAndSetCaretLater(final SNode node, final int position) {
     CommandProcessor.instance().invokeLater(new Runnable() {
       public void run() {
