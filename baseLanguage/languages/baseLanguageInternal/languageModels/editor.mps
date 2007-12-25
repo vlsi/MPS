@@ -10,7 +10,7 @@
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
-  <import index="5" modelUID="jetbrains.mps.core.editor" version="-1" />
+  <import index="5" modelUID="jetbrains.mps.core.editor" version="0" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1173990741533">
     <link role="conceptDeclaration" targetNodeId="1.1173990517731" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1173990744300">

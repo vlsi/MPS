@@ -13,9 +13,9 @@ import jetbrains.mps.smodel.IScope;
 public abstract class AbstractChildNodeSetter implements IChildNodeSetter {
 
   public final SNode execute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope) {
-    doExecute(parentNode, oldChild, newChild, scope);
-    return newChild;
+    SNode result = doExecute(parentNode, oldChild, newChild, scope);
+    return result;
   }
 
-  protected abstract void doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope);
+  protected abstract SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope scope);
 }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="test">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.transformation.TLBase" />
   <language namespace="jetbrains.mps.core" />

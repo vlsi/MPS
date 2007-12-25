@@ -189,8 +189,10 @@ public class QueriesGenerated {
           return vpd;
         }
 
-        public void doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
-          childSetter.execute(parentNode, currentTargetNode, this.wrapNode(nc, nc.getModel()), operationContext.getScope());
+        public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
+          SNode wrappedNode = this.wrapNode(nc, nc.getModel());
+          childSetter.execute(parentNode, currentTargetNode, wrappedNode, operationContext.getScope());
+          return wrappedNode;
         }
 
       };

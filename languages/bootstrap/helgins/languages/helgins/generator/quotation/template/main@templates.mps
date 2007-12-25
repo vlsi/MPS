@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.bootstrap.helgins.generator.quotation.template.main">
   <persistence version="1" />
+  <refactoringHistory />
   <language namespace="jetbrains.mps.transformation.TLBase" />
   <language namespace="jetbrains.mps.quotation" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
