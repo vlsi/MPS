@@ -34,7 +34,19 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198514548926">
               <link role="classifier" targetNodeId="6.~Object" resolveInfo="Object" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.Expression" id="1198514549552" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198574493573">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198574507511">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198574508432">
+                  <property name="value" value="23" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198574495105">
+                  <property name="value" value="23" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198574492477">
+                <property name="value" value="23" />
+              </node>
+            </node>
           </node>
         </node>
       </node>

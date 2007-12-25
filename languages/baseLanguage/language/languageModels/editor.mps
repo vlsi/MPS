@@ -1808,62 +1808,54 @@
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1075376169046">
     <property name="name" value="Expression_Editor" />
     <link role="conceptDeclaration" targetNodeId="17.1068431790191" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1198491420655">
-      <property name="textBgColor" value="query" />
-      <property name="textFgColor" value="red" />
-      <property name="defaultCaretPosition" value="FIRST" />
-      <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1198491420656">
-        <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1198491420657">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198491420658">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198492732995">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198492737918">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198492732996">
-                  <property name="value" value="&lt;" />
-                </node>
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198492741081">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198492741646">
-                    <property name="value" value="&gt;" />
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198492738328">
-                    <link role="baseMethodDeclaration" targetNodeId="20.~SNode.getRole_():java.lang.String" resolveInfo="getRole_" />
-                    <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1198492738329">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198492738330" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Custom" id="1198574536104">
+      <node role="cellProvider" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_CellProvider" id="1198574536105">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198574536106">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198574612923">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1198574622730">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="1198574622731">
+                <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="1198574622732">
+                  <link role="classifier" targetNodeId="21.~AbstractCellProvider" resolveInfo="AbstractCellProvider" />
+                  <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1198574638510">
+                    <property name="name" value="createEditorCell" />
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1198574856431">
+                      <property name="name" value="context" />
+                      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198574865733">
+                        <link role="classifier" targetNodeId="21.~EditorContext" resolveInfo="EditorContext" />
+                      </node>
+                    </node>
+                    <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198574642812">
+                      <link role="classifier" targetNodeId="21.~EditorCell" resolveInfo="EditorCell" />
+                    </node>
+                    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1198574638512" />
+                    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198574638513">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198574649655">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1198574653166">
+                          <link role="baseMethodDeclaration" targetNodeId="21.~EditorCell_Error.&lt;init&gt;(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.smodel.SNode,java.lang.String)" resolveInfo="EditorCell_Error" />
+                          <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1198574668320" />
+                          <node role="actualArgument" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198574673940" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198574694443">
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198574691577">
+                              <property name="value" value="&lt;" />
+                            </node>
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198574698393">
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198574702566">
+                                <property name="value" value="&gt;" />
+                              </node>
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198574695235">
+                                <link role="baseMethodDeclaration" targetNodeId="20.~SNode.getRole_():java.lang.String" resolveInfo="getRole_" />
+                                <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1198574695236">
+                                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198574695237" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                   </node>
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1198574622733" />
                 </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="setter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Setter" id="1198491420659">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198491420660" />
-        </node>
-        <node role="validator" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Validator" id="1198491420661">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198491420662">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198528104576">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1198528104577">
-                <property name="value" value="false" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="textBackgroundFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_Color" id="1198492287183">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198492287184">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198492744522">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1198492744523">
-              <link role="baseMethodDeclaration" targetNodeId="56.~Color.&lt;init&gt;(int,int,int,int)" resolveInfo="Color" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198492784702">
-                <property name="value" value="255" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198492791454">
-                <property name="value" value="127" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198492800722">
-                <property name="value" value="127" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198492803349">
-                <property name="value" value="50" />
               </node>
             </node>
           </node>
