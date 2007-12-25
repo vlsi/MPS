@@ -25,7 +25,7 @@ public class RenameLink extends AbstractLoggableRefactoring {
   public static final String newName = "newName";
 
   public String getUserFriendlyName() {
-    return "Rename Link (under construction)";
+    return "Rename Link";
   }
 
   public String getSourceId() {

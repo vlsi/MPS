@@ -1163,7 +1163,7 @@
   </node>
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198587937318">
     <property name="name" value="RenameLink" />
-    <property name="userFriendlyName" value="Rename Link (under construction)" />
+    <property name="userFriendlyName" value="Rename Link" />
     <node role="arguments" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1198587985396">
       <property name="name" value="newName" />
       <property name="presentation" value="enter new name" />
