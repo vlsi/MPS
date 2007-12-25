@@ -13,10 +13,10 @@ public class typeof_ChangeFeatureNameOperation_InferenceRule implements Inferenc
   public  typeof_ChangeFeatureNameOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "feature", true), "jetbrains.mps.logging.refactoring.helgins", "1197387006800", true), new QuotationClass_8().createNode(), SLinkOperations.getTarget(argument, "feature", true), null, "jetbrains.mps.logging.refactoring.helgins", "1197387014932");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "newConceptFQName", true), "jetbrains.mps.logging.refactoring.helgins", "1197387022441", true), new QuotationClass_9().createNode(), SLinkOperations.getTarget(argument, "newConceptFQName", true), null, "jetbrains.mps.logging.refactoring.helgins", "1197387031620");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "newFeatureName", true), "jetbrains.mps.logging.refactoring.helgins", "1197387038207", true), new QuotationClass_10().createNode(), SLinkOperations.getTarget(argument, "newFeatureName", true), null, "jetbrains.mps.logging.refactoring.helgins", "1197387047917");
+  public void applyRule(final SNode nodeToCheck) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "feature", true), "jetbrains.mps.logging.refactoring.helgins", "1197387006800", true), new QuotationClass_8().createNode(), SLinkOperations.getTarget(nodeToCheck, "feature", true), null, "jetbrains.mps.logging.refactoring.helgins", "1197387014932");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "newConceptFQName", true), "jetbrains.mps.logging.refactoring.helgins", "1197387022441", true), new QuotationClass_9().createNode(), SLinkOperations.getTarget(nodeToCheck, "newConceptFQName", true), null, "jetbrains.mps.logging.refactoring.helgins", "1197387031620");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(nodeToCheck, "newFeatureName", true), "jetbrains.mps.logging.refactoring.helgins", "1197387038207", true), new QuotationClass_10().createNode(), SLinkOperations.getTarget(nodeToCheck, "newFeatureName", true), null, "jetbrains.mps.logging.refactoring.helgins", "1197387047917");
   }
 
   public String getApplicableConceptFQName() {

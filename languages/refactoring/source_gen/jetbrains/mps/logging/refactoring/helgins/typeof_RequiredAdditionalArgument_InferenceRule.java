@@ -13,8 +13,8 @@ public class typeof_RequiredAdditionalArgument_InferenceRule implements Inferenc
   public  typeof_RequiredAdditionalArgument_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.logging.refactoring.helgins", "1190728902837", true), SLinkOperations.getTarget(argument, "argumentType", true), argument, null, "jetbrains.mps.logging.refactoring.helgins", "1190728908074");
+  public void applyRule(final SNode requiredAdditionalArgument) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(requiredAdditionalArgument, "jetbrains.mps.logging.refactoring.helgins", "1190728902837", true), SLinkOperations.getTarget(requiredAdditionalArgument, "argumentType", true), requiredAdditionalArgument, null, "jetbrains.mps.logging.refactoring.helgins", "1190728908074");
   }
 
   public String getApplicableConceptFQName() {

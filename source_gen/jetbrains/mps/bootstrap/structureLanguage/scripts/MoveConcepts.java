@@ -93,14 +93,18 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
         if(targetEditorModelDescriptor == null) {
           targetEditorModelDescriptor = targetLanguage.createLanguageEditorModel();
         }
-        refactoringContext.moveNodesToModel(editors, targetEditorModelDescriptor.getSModel());
+        SModel editorModel = targetEditorModelDescriptor.getSModel();
+        refactoringContext.moveNodesToModel(editors, editorModel);
+        /*statement: [statement] UpdateModelProcedure <no name>[1198578373601] in jetbrains.mps.bootstrap.structureLanguage.scripts@1_0_1198578279655*/
       }
       if(!(SequenceOperations.isEmpty(behaviors))) {
         SModelDescriptor targetConstraintsModelDescriptor = targetLanguage.getConstraintsModelDescriptor();
         if(targetConstraintsModelDescriptor == null) {
           targetConstraintsModelDescriptor = targetLanguage.createLanguageBehaviorModel();
         }
-        refactoringContext.moveNodesToModel(behaviors, targetConstraintsModelDescriptor.getSModel());
+        SModel constraintsModel = targetConstraintsModelDescriptor.getSModel();
+        refactoringContext.moveNodesToModel(behaviors, constraintsModel);
+        /*statement: [statement] UpdateModelProcedure <no name>[1198578373633] in jetbrains.mps.bootstrap.structureLanguage.scripts@1_0_1198578279655*/
       }
       // todo: move other concept-related aspect stuff
     }

@@ -19,6 +19,8 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
 
   private static void setupBasic_ArgumentReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1189694123409");
+    if(true) {
+    }
   }
 
   private static void setupLabel_ArgumentReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -66,6 +68,8 @@ public class RequiredAdditionalArgumentReference_Editor extends DefaultNodeEdito
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1189694134365");
+      if(true) {
+      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

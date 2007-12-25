@@ -803,15 +803,31 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198578312499">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198578312500">
+                <property name="name" value="editorModel" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198578312501">
+                  <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198523148229">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198523148230">
+                    <link role="variableDeclaration" targetNodeId="1198523148213" resolveInfo="targetEditorModelDescriptor" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.logging.refactoring.structure.MoveNodesToModelOperation" id="1198523148227">
               <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198523148228">
                 <link role="variableDeclaration" targetNodeId="1198523058147" resolveInfo="editors" />
               </node>
-              <node role="destination" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198523148229">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198523148230">
-                  <link role="variableDeclaration" targetNodeId="1198523148213" resolveInfo="targetEditorModelDescriptor" />
-                </node>
+              <node role="destination" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198578312502">
+                <link role="variableDeclaration" targetNodeId="1198578312500" resolveInfo="editorModel" />
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.logging.refactoring.structure.UpdateModelProcedure" id="1198578300606">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198578318588">
+                <link role="variableDeclaration" targetNodeId="1198578312500" resolveInfo="editorModel" />
               </node>
             </node>
           </node>
@@ -861,15 +877,31 @@
                 </node>
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198578331104">
+              <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198578331105">
+                <property name="name" value="constraintsModel" />
+                <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198578331106">
+                  <link role="classifier" targetNodeId="5.~SModel" resolveInfo="SModel" />
+                </node>
+                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198523135266">
+                  <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198523135267">
+                    <link role="variableDeclaration" targetNodeId="1198523135250" resolveInfo="targetConstraintsModelDescriptor" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.logging.refactoring.structure.MoveNodesToModelOperation" id="1198523135264">
               <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198523135265">
                 <link role="variableDeclaration" targetNodeId="1198523085615" resolveInfo="behaviors" />
               </node>
-              <node role="destination" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198523135266">
-                <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
-                <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198523135267">
-                  <link role="variableDeclaration" targetNodeId="1198523135250" resolveInfo="targetConstraintsModelDescriptor" />
-                </node>
+              <node role="destination" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198578331107">
+                <link role="variableDeclaration" targetNodeId="1198578331105" resolveInfo="constraintsModel" />
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.logging.refactoring.structure.UpdateModelProcedure" id="1198578338817">
+              <node role="argument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198578342845">
+                <link role="variableDeclaration" targetNodeId="1198578331105" resolveInfo="constraintsModel" />
               </node>
             </node>
           </node>

@@ -320,5 +320,19 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1198577497375">
+    <link role="conceptDeclaration" targetNodeId="1.1198577376375" resolveInfo="UpdateModelProcedure" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198577501490">
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198577506528">
+        <property name="text" value="updateModel(" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198577509283">
+        <link role="relationDeclaration" targetNodeId="1.1198577431631" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198577511459">
+        <property name="text" value=");" />
+      </node>
+    </node>
+  </node>
 </model>
 
