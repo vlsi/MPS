@@ -1009,15 +1009,15 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198080854835">
             <link role="baseMethodDeclaration" targetNodeId="5.~SModelUtil_new.isAssignableConcept(jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration,jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration):boolean" resolveInfo="isAssignableConcept" />
             <link role="classConcept" targetNodeId="5.~SModelUtil_new" resolveInfo="SModelUtil_new" />
-            <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198080914172">
-              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1198080914893" />
-              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1198080892948" />
-            </node>
             <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198080911058">
               <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1198080912030" />
               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1198080887930">
                 <link role="variableDeclaration" targetNodeId="1198080763876" resolveInfo="conceptDeclaration" />
               </node>
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198080914172">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAdapterOperation" id="1198080914893" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1198080892948" />
             </node>
           </node>
         </node>
