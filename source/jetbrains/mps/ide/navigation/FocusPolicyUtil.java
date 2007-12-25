@@ -37,14 +37,18 @@ public class FocusPolicyUtil {
     return prevCell;
   }
 
+
   private static EditorCell findCellWhichAttractsFocus(EditorCell cell, boolean includingMe) {
+    return findCellWhichAttractsFocus(cell, includingMe, true);
+  }
+
+  private static EditorCell findCellWhichAttractsFocus(EditorCell cell, boolean includingMe, boolean descend) {
     if (cell == null) return null;
     if (includingMe && cell.hasFocusPolicy()) return cell;
-    if (cell instanceof EditorCell_Collection) {
+    if (descend && cell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) cell;
       for (EditorCell childCell : collection) {
-        if (childCell.isBigCell()) continue;
-        EditorCell focusedCell = findCellWhichAttractsFocus(childCell, true);
+        EditorCell focusedCell = findCellWhichAttractsFocus(childCell, true, !cell.isBigCell());
         if (focusedCell != null) return focusedCell;
       }
     }
