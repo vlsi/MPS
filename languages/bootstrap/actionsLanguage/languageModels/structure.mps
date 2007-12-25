@@ -688,6 +688,10 @@
     <property name="package" value="MenuParts.Substitute" />
     <property name="name" value="WrapperSubstituteMenuPart" />
     <link role="extends" targetNodeId="1177323652379" resolveInfo="SubstituteMenuPart" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1198600224682">
+      <property name="name" value="returnSmallPart" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177496087440">
       <property name="value" value="wrapper" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />

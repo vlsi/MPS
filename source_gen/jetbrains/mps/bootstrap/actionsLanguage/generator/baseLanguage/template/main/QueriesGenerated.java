@@ -137,11 +137,11 @@ public class QueriesGenerated {
     return "removeRTActionsByCondition_" + node.getId();
   }
 
-  public static SNode referenceMacro_GetReferent_1179457640879(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1179457640879(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(node, "variable");
   }
 
-  public static SNode referenceMacro_GetReferent_1181738985236(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1181738985236(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(node, "variable");
   }
 
@@ -171,6 +171,14 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1177399369261(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "descriptionText", true) != null;
+  }
+
+  public static boolean ifMacro_Condition_1198600310110(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return !(SPropertyOperations.getBoolean(node, "returnSmallPart"));
+  }
+
+  public static boolean ifMacro_Condition_1198600330839(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getBoolean(node, "returnSmallPart");
   }
 
   public static boolean ifMacro_Condition_1181738756958(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

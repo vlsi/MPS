@@ -583,7 +583,7 @@ public class QueriesGenerated {
         public SNode doExecute(SNode pn, SNode oc, SNode nc, IScope sc) {
           SNode wrappedNode = this.wrapNode(nc, nc.getModel());
           childSetter.execute(parentNode, currentTargetNode, wrappedNode, operationContext.getScope());
-          return wrappedNode;
+          return nc;
         }
 
       };

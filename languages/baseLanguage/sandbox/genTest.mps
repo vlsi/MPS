@@ -24,6 +24,14 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198600579616">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198600581667">
+            <link role="baseMethodDeclaration" targetNodeId="6.~Object.clone():java.lang.Object" resolveInfo="clone" />
+            <node role="instance" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198600579617">
+              <link role="variableDeclaration" targetNodeId="1198591054719" resolveInfo="o" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198591060461">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198591070747">
             <link role="baseMethodDeclaration" targetNodeId="6.~String.toString():java.lang.String" resolveInfo="toString" />

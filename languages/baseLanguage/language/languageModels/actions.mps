@@ -2802,6 +2802,7 @@
       <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1177403622097">
         <link role="concept" targetNodeId="1.1068580123155" />
         <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.WrapperSubstituteMenuPart" id="1177403626165">
+          <property name="returnSmallPart" value="true" />
           <link role="wrappedConcept" targetNodeId="1.1068431790191" />
           <node role="wrapperBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_SubstituteWrapper" id="1177403626166">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1177403626167">
