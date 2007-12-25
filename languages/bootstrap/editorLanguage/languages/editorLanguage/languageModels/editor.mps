@@ -6,7 +6,7 @@
   <language namespace="jetbrains.mps.baseLanguage" />
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <maxImportIndex value="24" />
+  <maxImportIndex value="25" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
   <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -19,6 +19,7 @@
   <import index="20" modelUID="java.awt@java_stub" version="-1" />
   <import index="22" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure@java_stub" version="-1" />
   <import index="24" modelUID="jetbrains.mps.core.editor" version="-1" />
+  <import index="25" modelUID="javax.swing@java_stub" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1078153915535">
     <property name="name" value="ConceptEditorDeclaration_Editor" />
     <link role="conceptDeclaration" targetNodeId="2.1071666914219" />
@@ -256,41 +257,8 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514066558">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198514066559">
-            <property name="text" value="focus policy applicable:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514066560">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198514066561">
-              <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-            </node>
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198514066562">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198514066563">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198514066564">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198514066565">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514066566">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514066567">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198514066568" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198514066569">
-                        <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                      </node>
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198514066570">
-                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198514066571">
-                        <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590423261">
+          <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1139313507264">
           <property name="drawBorder" value="true" />
@@ -701,41 +669,8 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514012606">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198514012607">
-            <property name="text" value="focus policy applicable:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514012608">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198514012609">
-              <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-            </node>
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198514012610">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198514012611">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198514012612">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198514012613">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514012614">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514012615">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198514012616" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198514012617">
-                        <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                      </node>
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198514012618">
-                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198514012619">
-                        <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590393061">
+          <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1078936199327">
           <property name="vertical" value="false" />
@@ -1041,6 +976,7 @@
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1078939636327">
       <property name="vertical" value="false" />
       <property name="drawBorder" value="true" />
+      <link role="keyMap" targetNodeId="1198590715451" resolveInfo="CellModel_Component_KeyMap" />
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1176717023528">
         <link role="editorComponent" targetNodeId="1176716781495" resolveInfo="_OpenTag" />
       </node>
@@ -1121,41 +1057,8 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514025559">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198514025560">
-            <property name="text" value="focus policy applicable:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514025561">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198514025562">
-              <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-            </node>
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198514025563">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198514025564">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198514025565">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198514025566">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514025567">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514025568">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198514025569" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198514025570">
-                        <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                      </node>
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198514025571">
-                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198514025572">
-                        <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590399145">
+          <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1139313469637">
           <property name="drawBorder" value="true" />
@@ -1654,41 +1557,8 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514049668">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198514049669">
-            <property name="text" value="focus policy applicable:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514049670">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198514049671">
-              <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-            </node>
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198514049672">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198514049673">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198514049674">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198514049675">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514049676">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514049677">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198514049678" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198514049679">
-                        <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                      </node>
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198514049680">
-                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198514049681">
-                        <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590413970">
+          <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197893663812">
           <property name="selectable" value="false" />
@@ -2026,41 +1896,8 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514058215">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198514058216">
-            <property name="text" value="focus policy applicable:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514058217">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198514058218">
-              <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-            </node>
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198514058219">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198514058220">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198514058221">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198514058222">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514058223">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514058224">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198514058225" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198514058226">
-                        <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                      </node>
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198514058227">
-                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198514058228">
-                        <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590418819">
+          <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1139313492303">
           <property name="drawBorder" value="true" />
@@ -2372,41 +2209,8 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514091983">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198514091984">
-            <property name="text" value="focus policy applicable:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514091985">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198514091986">
-              <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-            </node>
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198514091987">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198514091988">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198514091989">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198514091990">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514091991">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514091992">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198514091993" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198514091994">
-                        <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                      </node>
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198514091995">
-                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198514091996">
-                        <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590437118">
+          <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198493078450">
           <property name="selectable" value="false" />
@@ -2783,41 +2587,8 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514101138">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198514101139">
-            <property name="text" value="focus policy applicable:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514101140">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198514101141">
-              <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-            </node>
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198514101142">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198514101143">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198514101144">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198514101145">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514101146">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514101147">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198514101148" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198514101149">
-                        <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                      </node>
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198514101150">
-                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198514101151">
-                        <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590441544">
+          <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1139313534810">
           <property name="drawBorder" value="true" />
@@ -3214,41 +2985,8 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514125074">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198514125075">
-            <property name="text" value="focus policy applicable:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514125076">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198514125077">
-              <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-            </node>
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198514125078">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198514125079">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198514125080">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198514125081">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514125082">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514125083">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198514125084" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198514125085">
-                        <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                      </node>
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198514125086">
-                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198514125087">
-                        <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590458091">
+          <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1139313567410">
           <property name="drawBorder" value="true" />
@@ -3795,41 +3533,8 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514108935">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198514108936">
-            <property name="text" value="focus policy applicable:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514108937">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198514108938">
-              <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-            </node>
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198514108939">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198514108940">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198514108941">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198514108942">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514108943">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514108944">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198514108945" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198514108946">
-                        <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                      </node>
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198514108947">
-                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198514108948">
-                        <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590445986">
+          <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1139313542348">
           <property name="drawBorder" value="true" />
@@ -4269,41 +3974,8 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198513966421">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198513966422">
-            <property name="text" value="focus policy applicable:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198513966423">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198513966424">
-              <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-            </node>
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198513966425">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198513966426">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198513966427">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198513966428">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198513966429">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198513966430">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198513966431" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198513966432">
-                        <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                      </node>
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198513966433">
-                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198513966434">
-                        <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590347414">
+          <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1139313440501">
           <property name="drawBorder" value="true" />
@@ -5342,41 +5014,8 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514038887">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198514038888">
-            <property name="text" value="focus policy applicable:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514038889">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198514038890">
-              <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-            </node>
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198514038891">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198514038892">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198514038893">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198514038894">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514038895">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514038896">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198514038897" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198514038898">
-                        <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                      </node>
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198514038899">
-                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198514038900">
-                        <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590403993">
+          <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1139313478970">
           <property name="drawBorder" value="true" />
@@ -6237,41 +5876,8 @@
           <link role="relationDeclaration" targetNodeId="2.1130859485024" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514078420">
-        <property name="selectable" value="false" />
-        <property name="vertical" value="true" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198514078421">
-          <property name="text" value="focus policy applicable:" />
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514078422">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198514078423">
-            <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-            <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-          </node>
-        </node>
-        <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198514078424">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198514078425">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198514078426">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198514078427">
-                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514078428">
-                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514078429">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198514078430" />
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198514078431">
-                      <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                    </node>
-                  </node>
-                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198514078432">
-                    <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198514078433">
-                      <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590428125">
+        <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1139749668593">
         <property name="drawBorder" value="true" />
@@ -6525,211 +6131,6 @@
         <property name="selectable" value="false" />
         <property name="text" value="&lt;|" />
         <property name="drawBorder" value="true" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1158958765527">
-    <property name="package" value="CellKeyMap" />
-    <link role="conceptDeclaration" targetNodeId="2.1136917249679" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1158958871965">
-      <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158958871966">
-        <property name="textFgColor" value="blue" />
-        <property name="text" value="&gt;" />
-        <property name="attractsFocus" value="1" />
-        <property name="fontStyle" value="BOLD" />
-        <property name="selectable" value="true" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1158958871967">
-        <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
-        <link role="relationDeclaration" targetNodeId="12.1137022507850" />
-      </node>
-    </node>
-    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1158958888364">
-      <property name="vertical" value="true" />
-      <property name="drawBorder" value="false" />
-      <property name="selectable" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158958888365">
-        <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="blue" />
-        <property name="text" value="keymap action precondition" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158958935135">
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158958935136">
-        <property name="fontStyle" value="PLAIN" />
-        <property name="drawBorder" value="false" />
-        <property name="text" value="returns: boolean" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158958888366">
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158958888367">
-        <property name="fontStyle" value="PLAIN" />
-        <property name="drawBorder" value="false" />
-        <property name="text" value="parameters:" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1158958888368">
-        <property name="vertical" value="true" />
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-        <property name="gridLayout" value="true" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1158959186956">
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158959186957">
-            <property name="drawBorder" value="false" />
-            <property name="text" value="node" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158959186973">
-            <property name="fontStyle" value="PLAIN" />
-            <property name="drawBorder" value="false" />
-            <property name="text" value="action node" />
-          </node>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1189583081427">
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1189583081428">
-            <property name="drawBorder" value="false" />
-            <property name="text" value="selectedNodes" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1189583081429">
-            <property name="fontStyle" value="PLAIN" />
-            <property name="drawBorder" value="false" />
-            <property name="text" value="list of selected nod" />
-          </node>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1158958888369">
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158958888370">
-            <property name="drawBorder" value="false" />
-            <property name="text" value="editorContext" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158958888371">
-            <property name="fontStyle" value="PLAIN" />
-            <property name="drawBorder" value="false" />
-            <property name="text" value="context (jetbrains.mps.nodeEditor.EditorContext)" />
-          </node>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1158958888375">
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158958888376">
-            <property name="drawBorder" value="false" />
-            <property name="text" value="keyEvent" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158958888377">
-            <property name="fontStyle" value="PLAIN" />
-            <property name="drawBorder" value="false" />
-            <property name="text" value="context (java.awt.event.KeyEvent)" />
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1158959210849">
-    <property name="package" value="CellKeyMap" />
-    <link role="conceptDeclaration" targetNodeId="2.1136917288805" />
-    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1158959228973">
-      <property name="drawBorder" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158959228974">
-        <property name="textFgColor" value="blue" />
-        <property name="text" value="&gt;" />
-        <property name="attractsFocus" value="1" />
-        <property name="fontStyle" value="BOLD" />
-        <property name="selectable" value="true" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1158959228975">
-        <property name="drawBorder" value="false" />
-        <property name="drawBrackets" value="true" />
-        <link role="relationDeclaration" targetNodeId="12.1137022507850" />
-      </node>
-    </node>
-    <node role="inspectedCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1158959240368">
-      <property name="vertical" value="true" />
-      <property name="drawBorder" value="false" />
-      <property name="selectable" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158959240369">
-        <property name="textBgColor" value="lightGray" />
-        <property name="textFgColor" value="blue" />
-        <property name="text" value="keymap action" />
-        <property name="drawBorder" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158959240370">
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158959240373">
-        <property name="fontStyle" value="PLAIN" />
-        <property name="drawBorder" value="false" />
-        <property name="text" value="parameters:" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1158959240374">
-        <property name="vertical" value="true" />
-        <property name="drawBorder" value="false" />
-        <property name="selectable" value="false" />
-        <property name="gridLayout" value="true" />
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1158959240375">
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158959240376">
-            <property name="drawBorder" value="false" />
-            <property name="text" value="node" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158959240377">
-            <property name="fontStyle" value="PLAIN" />
-            <property name="drawBorder" value="false" />
-            <property name="text" value="action node" />
-          </node>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1189582815553">
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1189582815554">
-            <property name="drawBorder" value="false" />
-            <property name="text" value="selectedNodes" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1189582815555">
-            <property name="fontStyle" value="PLAIN" />
-            <property name="drawBorder" value="false" />
-            <property name="text" value="list of selected nod" />
-          </node>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1158959240378">
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158959240379">
-            <property name="drawBorder" value="false" />
-            <property name="text" value="editorContext" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158959240380">
-            <property name="fontStyle" value="PLAIN" />
-            <property name="drawBorder" value="false" />
-            <property name="text" value="context (jetbrains.mps.nodeEditor.EditorContext)" />
-          </node>
-        </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1158959240381">
-          <property name="drawBorder" value="false" />
-          <property name="selectable" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158959240382">
-            <property name="drawBorder" value="false" />
-            <property name="text" value="keyEvent" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1158959240383">
-            <property name="fontStyle" value="PLAIN" />
-            <property name="drawBorder" value="false" />
-            <property name="text" value="context (java.awt.event.KeyEvent)" />
-          </node>
-        </node>
       </node>
     </node>
   </node>
@@ -8596,41 +7997,8 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514116919">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198514116920">
-            <property name="text" value="focus policy applicable:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514116921">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198514116922">
-              <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-            </node>
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198514116923">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198514116924">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198514116925">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198514116926">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514116927">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514116928">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198514116929" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198514116930">
-                        <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                      </node>
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198514116931">
-                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198514116932">
-                        <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590452570">
+          <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1182191264615">
           <property name="drawBorder" value="true" />
@@ -9440,41 +8808,8 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198513989201">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198513989202">
-            <property name="text" value="focus policy applicable:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198513989203">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198513989204">
-              <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-            </node>
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198513989205">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198513989206">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198513989207">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198513989208">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198513989209">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198513989210">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198513989211" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198513989212">
-                        <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                      </node>
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198513989213">
-                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198513989214">
-                        <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590333983">
+          <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198504953501">
           <property name="name" value="separator" />
@@ -9669,41 +9004,8 @@
             <link role="relationDeclaration" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198513973608">
-          <property name="selectable" value="false" />
-          <property name="vertical" value="true" />
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198513973609">
-            <property name="text" value="focus policy applicable:" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198513973610">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="false" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198513973611">
-              <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-              <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-            </node>
-          </node>
-          <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198513973612">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198513973613">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198513973614">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198513973615">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198513973616">
-                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198513973617">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198513973618" />
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198513973619">
-                        <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                      </node>
-                    </node>
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198513973620">
-                      <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198513973621">
-                        <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590374248">
+          <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198506653665">
           <property name="name" value="separator" />
@@ -9932,41 +9234,8 @@
               <link role="relationDeclaration" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
             </node>
           </node>
-          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514001716">
-            <property name="selectable" value="false" />
-            <property name="vertical" value="true" />
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198514001717">
-              <property name="text" value="focus policy applicable:" />
-            </node>
-            <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198514001718">
-              <property name="selectable" value="false" />
-              <property name="vertical" value="false" />
-              <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198514001719">
-                <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
-                <link role="relationDeclaration" targetNodeId="2.1198512004906" />
-              </node>
-            </node>
-            <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198514001720">
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198514001721">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198514001722">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198514001723">
-                    <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514001724">
-                      <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198514001725">
-                        <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198514001726" />
-                        <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198514001727">
-                          <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
-                        </node>
-                      </node>
-                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198514001728">
-                        <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198514001729">
-                          <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
+          <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1198590382833">
+            <link role="editorComponent" targetNodeId="1198590333967" resolveInfo="_FocusPolicy_Applicable" />
           </node>
           <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198502611126">
             <property name="drawBorder" value="true" />
@@ -10107,6 +9376,272 @@
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198502611175">
               <property name="noTargetText" value="&lt;none&gt;" />
               <link role="relationDeclaration" targetNodeId="2.1142887637401" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapDeclaration" id="1198588525521">
+    <property name="name" value="ExtractComponent_KeyMap" />
+    <property name="everyModel" value="true" />
+    <link role="applicableConcept" targetNodeId="2.1073389214265" resolveInfo="EditorCellModel" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapItem" id="1198588541429">
+      <property name="description" value="extract component" />
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1198588541430">
+        <property name="modifiers" value="ctrl+alt" />
+        <property name="keycode" value="VK_C" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_ExecuteFunction" id="1198588541431">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198588541432">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198588572590">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198588572591">
+              <property name="name" value="container" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198588572592">
+                <link role="concept" targetNodeId="2.1080736578640" resolveInfo="BaseEditorComponent" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198588621331">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1198588928051">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1198588928052">
+                    <link role="concept" targetNodeId="2.1080736578640" resolveInfo="BaseEditorComponent" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1198588620924" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198589362754">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198589362755">
+              <property name="name" value="componentName" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198589362756">
+                <link role="classifier" targetNodeId="14.~String" resolveInfo="String" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198589400754">
+                <link role="baseMethodDeclaration" targetNodeId="25.~JOptionPane.showInputDialog(java.awt.Component,java.lang.Object,java.lang.Object):java.lang.String" resolveInfo="showInputDialog" />
+                <link role="classConcept" targetNodeId="25.~JOptionPane" resolveInfo="JOptionPane" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198589412852">
+                  <link role="baseMethodDeclaration" targetNodeId="16.~EditorContext.getNodeEditorComponent():jetbrains.mps.nodeEditor.AbstractEditorComponent" resolveInfo="getNodeEditorComponent" />
+                  <node role="instance" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_editorContext" id="1198589407021" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198589416985">
+                  <property name="value" value="Enter a component name:" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198589426909">
+                  <property name="value" value="" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198589706652">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198589706653">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198589710239" />
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1198589708188">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198589709129" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198589707453">
+                <link role="variableDeclaration" targetNodeId="1198589362755" resolveInfo="componentName" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198588985173">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198588985174">
+              <property name="name" value="model" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType" id="1198588985175" />
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198588985176">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1198588985177" />
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetModelOperation" id="1198588985178" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198588968711">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198588968712">
+              <property name="name" value="component" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198588968713">
+                <link role="concept" targetNodeId="2.1078938745671" resolveInfo="EditorComponentDeclaration" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198588998071">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Model_CreateNewRootNodeOperation" id="1198589003621">
+                  <link role="concept" targetNodeId="2.1078938745671" resolveInfo="EditorComponentDeclaration" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198588985179">
+                  <link role="variableDeclaration" targetNodeId="1198588985174" resolveInfo="model" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198590070992">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198590077453">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_SetOperation" id="1198590078238">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198590080523">
+                  <link role="variableDeclaration" targetNodeId="1198589362755" resolveInfo="componentName" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198590071415">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198590072387">
+                  <link role="property" targetNodeId="3.1169194664001" resolveInfo="name" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198590070993">
+                  <link role="variableDeclaration" targetNodeId="1198588968712" resolveInfo="component" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198590084543">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198590095493">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1198590096512">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198590098031">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198590101349">
+                    <link role="link" targetNodeId="2.1166049300910" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198590097499">
+                    <link role="variableDeclaration" targetNodeId="1198588572591" resolveInfo="container" />
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198590085014">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198590094804">
+                  <link role="link" targetNodeId="2.1166049300910" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198590084544">
+                  <link role="variableDeclaration" targetNodeId="1198588968712" resolveInfo="component" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198589010436">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198589013661">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1198589015242">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198589016651">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" id="1198589017873" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1198589016307" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198589010672">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198589013238">
+                  <link role="link" targetNodeId="2.1080736633877" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198589010437">
+                  <link role="variableDeclaration" targetNodeId="1198588968712" resolveInfo="component" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198589031954">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198589031955">
+              <property name="name" value="toReplace" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198589031956">
+                <link role="concept" targetNodeId="2.1078939183254" resolveInfo="CellModel_Component" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1198589038255">
+                <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1198589038256">
+                  <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198589038257">
+                    <link role="concept" targetNodeId="2.1078939183254" resolveInfo="CellModel_Component" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198589043993">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198589054750">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1198589056253">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198589057614">
+                  <link role="variableDeclaration" targetNodeId="1198588968712" resolveInfo="component" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198589044636">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198589053358">
+                  <link role="link" targetNodeId="2.1078939183255" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198589043994">
+                  <link role="variableDeclaration" targetNodeId="1198589031955" resolveInfo="toReplace" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198589059194">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198589059696">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1198589061387">
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198589063592">
+                  <link role="variableDeclaration" targetNodeId="1198589031955" resolveInfo="toReplace" />
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1198589059195" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.EditorComponentDeclaration" id="1198590333967">
+    <property name="name" value="_FocusPolicy_Applicable" />
+    <link role="conceptDeclaration" targetNodeId="2.1198257632966" resolveInfo="CellModel_BlockStart" />
+    <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198590333969">
+      <property name="selectable" value="false" />
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1198590333970">
+        <property name="text" value="focus policy applicable:" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1198590333971">
+        <property name="selectable" value="false" />
+        <property name="vertical" value="false" />
+        <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1198590333972">
+          <property name="noTargetText" value="&lt;no focus policy condition&gt;" />
+          <link role="relationDeclaration" targetNodeId="2.1198512004906" />
+        </node>
+      </node>
+      <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198590333973">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198590333974">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198590333975">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1198590333976">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198590333977">
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198590333978">
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198590333979" />
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198590333980">
+                    <link role="property" targetNodeId="2.1130859485024" resolveInfo="attractsFocus" />
+                  </node>
+                </node>
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Property_HasValue_Enum" id="1198590333981">
+                  <node role="value" type="jetbrains.mps.bootstrap.smodelLanguage.structure.EnumMemberReference" id="1198590333982">
+                    <link role="enumMember" targetNodeId="2.1130926557292" resolveInfo="noAttraction" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapDeclaration" id="1198590715451">
+    <property name="package" value="CellModel" />
+    <property name="name" value="CellModel_Component_KeyMap" />
+    <link role="applicableConcept" targetNodeId="2.1078939183254" resolveInfo="CellModel_Component" />
+    <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapItem" id="1198590726802">
+      <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1198590726803">
+        <property name="modifiers" value="ctrl+alt" />
+        <property name="keycode" value="VK_N" />
+      </node>
+      <node role="executeFunction" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_ExecuteFunction" id="1198590726804">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198590726805">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198591003471">
+            <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198591003833">
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1198591006040">
+                <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198591023826">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_CopyOperation" id="1198591025079" />
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198591022149">
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198591023418">
+                      <link role="link" targetNodeId="2.1080736633877" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198591007356">
+                      <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198591021757">
+                        <link role="link" targetNodeId="2.1078939183255" />
+                      </node>
+                      <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1198591007074" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1198591003472" />
             </node>
           </node>
         </node>
