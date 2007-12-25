@@ -157,8 +157,16 @@ public class EditorContext {
   }
 
   public void selectLaterWRTFocusPolicy(final SNode node) {
+    selectLaterWRTFocusPolicy(node, true);
+  }
+
+  public void selectLaterWRTFocusPolicy(final SNode node, final boolean force) {
     CommandProcessor.instance().invokeLater(new Runnable() {
       public void run() {
+        if (!force && getNodeEditorComponent().getSelectedNode() == node) {
+          return;
+        }
+
         EditorCell cell = getNodeEditorComponent().findNodeCell(node);
         if (cell != null) {
           getNodeEditorComponent().changeSelectionWRTFocusPolicy(cell);

@@ -372,7 +372,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     addRebuildListener(UndoManager.instance().rebuildListener());
   }
 
-  private SNode getSelectedNode() {
+  public SNode getSelectedNode() {
     if (getSelectedCell() == null) {
       return null;
     }
