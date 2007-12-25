@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseStringComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
@@ -65,12 +66,21 @@ public class RenameConcept extends AbstractLoggableRefactoring {
     refactoringContext.updateModelWithMaps(model);
   }
 
+  public String newName_initialValue(ActionContext actionContext) {
+    SNode node = actionContext.getNode();
+    if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration"))) {
+      return "";
+    }
+    return SPropertyOperations.getString(node, "name");
+  }
+
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
     boolean result = false;
     List<IChooseComponent> components = new ArrayList<IChooseComponent>();
     {
       IChooseComponent<String> chooseComponent;
       chooseComponent = new ChooseStringComponent("new concept name", "newName");
+      chooseComponent.setInitialValue(this.newName_initialValue(actionContext));
       components.add(chooseComponent);
     }
     ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
