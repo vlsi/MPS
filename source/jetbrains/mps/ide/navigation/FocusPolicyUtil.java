@@ -28,8 +28,12 @@ public class FocusPolicyUtil {
     EditorCell focusedCell = findCellWhichAttractsFocus(selectedCell, true);
     while (focusedCell != null) {
       if (focusedCell.getFocusPolicy() == FocusPolicy.FIRST_EDITABLE_CELL) {
-        EditorCell result = EditorUtil.findFirstEditableCell(focusedCell);
-        if (result == null) return focusedCell; else return result;
+        EditorCell result = EditorUtil.findErrorOrEditableCell(focusedCell);
+        if (result == null) {
+          return focusedCell;
+        } else {
+          return result;
+        }
       }
       prevCell = focusedCell;
       focusedCell = findCellWhichAttractsFocus(focusedCell, false);

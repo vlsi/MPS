@@ -963,7 +963,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   public void selectFirstEditableCellOf(final SNode node) {
     EditorCell cell = findNodeCell(node);
-    EditorCell editable = findEditableCell(cell);
+    EditorCell editable = EditorUtil.findEditableCell(cell);
     if (editable == null) {
       changeSelection(cell);
     } else {
@@ -1877,41 +1877,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     return isValid(cell.getParent());
   }
 
-  private EditorCell findEditableCell(EditorCell root) {
-    if (root instanceof EditorCell_Label && ((EditorCell_Label) root).isEditable() && root.isSelectable()) {
-      return root;
-    }
-    if (root instanceof EditorCell_Collection) {
-      EditorCell_Collection collection = (EditorCell_Collection) root;
-      for (EditorCell child : collection) {
-        EditorCell result = findEditableCell(child);
-        if (result != null) return result;
-      }
-    }
-    return null;
-  }
-
-  private EditorCell findLastEditableCell(EditorCell root) {
-    if (root instanceof EditorCell_Label && ((EditorCell_Label) root).isEditable() && root.isSelectable()) {
-      return root;
-    }
-    if (root instanceof EditorCell_Collection) {
-      EditorCell_Collection collection = (EditorCell_Collection) root;
-      for (EditorCell child : CollectionUtil.iteratorAsIterable(collection.reverseCellIterator())) {
-        EditorCell result = findLastEditableCell(child);
-        if (result != null) return result;
-      }
-    }
-    return null;
-  }
-
-  /*package*/ EditorCell findErrorOrEditableCell(EditorCell root) {
-    EditorCell result = EditorUtil.findErrorCell(root);
-    if (result != null) return result;
-    return findLastEditableCell(root);
-  }
-
-
   public IHistoryItem getHistoryItemFromEditor() {
     return new HistoryItem(this, this.mySelectedCell, getSelectedStackForMemento());
   }
@@ -1944,7 +1909,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     EditorCell focusPolicyCell = FocusPolicyUtil.findCellToSelectDueToFocusPolicy(cell);
     EditorCell toSelect;
     if (focusPolicyCell == null || (focusPolicyCell == cell && !focusPolicyCell.hasFocusPolicy())) {
-      toSelect = findErrorOrEditableCell(cell);
+      toSelect = EditorUtil.findErrorOrEditableCell(cell);
       if (toSelect == null) {
         toSelect = EditorUtil.findFirstSelectableCell(cell);
       }

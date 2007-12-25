@@ -7,9 +7,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
-import jetbrains.mps.helgins.inference.NodeTypesComponent_new;
 
 import java.util.List;
 
@@ -151,7 +148,7 @@ public class IntelligentInputUtil {
         public void run() {
           AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
           EditorCell yetNewNodeCell = editor.findNodeCell(yetNewNode);
-          EditorCell errorOrEditableCell = editor.findErrorOrEditableCell(yetNewNodeCell);
+          EditorCell errorOrEditableCell = EditorUtil.findErrorOrEditableCell(yetNewNodeCell);
           editor.changeSelectionWRTFocusPolicy(errorOrEditableCell);
         }
       });

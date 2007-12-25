@@ -71,7 +71,7 @@
         <property name="text" value="." />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1151702180528">
-        <property name="attractsFocus" value="1" />
+        <property name="attractsFocus" value="2" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1151702083785" />
         <link role="actionMap" targetNodeId="1153772879681" resolveInfo="SequenceOperationExpression_Operation_Actions" />
