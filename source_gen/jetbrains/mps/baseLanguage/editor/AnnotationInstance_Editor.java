@@ -202,12 +202,12 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188208085021");
+      BaseLanguageStyle_StyleSheet.ANNOTATION.apply(editorCell);
       if(true) {
       }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
-      editorCell.getTextLine().setTextColor(MPSColors.DARK_GREEN);
     }
 
 
