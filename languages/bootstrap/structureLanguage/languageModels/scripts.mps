@@ -1437,7 +1437,7 @@
   </node>
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198592945615">
     <property name="name" value="MoveLinkUp" />
-    <property name="userFriendlyName" value="Move Link Up (under construction)" />
+    <property name="userFriendlyName" value="Move Link Up" />
     <node role="arguments" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1198592978857">
       <property name="name" value="targetConcept" />
       <property name="presentation" value="chooseTargetConcept" />

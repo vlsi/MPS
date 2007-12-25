@@ -26,7 +26,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   public static final String targetConcept = "targetConcept";
 
   public String getUserFriendlyName() {
-    return "Move Link Up (under construction)";
+    return "Move Link Up";
   }
 
   public String getSourceId() {
