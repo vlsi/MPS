@@ -68,7 +68,7 @@ public class LocalStaticFieldReference_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172009005787");
-      Common_StyleSheet.STATIC_FIELD.apply(editorCell);
+      BaseLanguageStyle_StyleSheet.STATIC_FIELD.apply(editorCell);
       editorCell.setDrawBorder(false);
       if(true) {
       }

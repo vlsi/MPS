@@ -88,7 +88,7 @@ public class StaticFieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_VariableDeclaration_NameCellComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210606991");
-    Common_StyleSheet.STATIC_FIELD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.STATIC_FIELD.apply(editorCell);
     if(true) {
     }
   }

@@ -68,7 +68,7 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_VariableDeclaration_NameCellComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210576816");
-    Common_StyleSheet.FIELD.apply(editorCell);
+    BaseLanguageStyle_StyleSheet.FIELD.apply(editorCell);
     if(true) {
     }
   }

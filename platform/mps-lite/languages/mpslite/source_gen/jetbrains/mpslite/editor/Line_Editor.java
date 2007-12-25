@@ -24,12 +24,16 @@ public class Line_Editor extends DefaultNodeEditor {
   private static void setupBasic_LinePartList(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511258456");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
     editorCell.addKeyMap(new _Line_Actions());
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511256407");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_LinePartList(EditorCell_Label editorCell, SNode node, EditorContext context) {

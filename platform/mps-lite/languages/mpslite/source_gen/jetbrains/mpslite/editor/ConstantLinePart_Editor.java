@@ -18,12 +18,16 @@ public class ConstantLinePart_Editor extends DefaultNodeEditor {
   private static void setupBasic_TextCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511294276");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
     _LinePart_RT.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182511294275");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_TextCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

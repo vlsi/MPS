@@ -215,7 +215,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1189170488039">
         <property name="text" value="extends" />
-        <link role="styleClass" targetNodeId="5.1197980684428" resolveInfo="KeyWord" />
+        <link role="styleClass" targetNodeId="3.1186415544875" resolveInfo="KeyWord" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1189170501707">
         <link role="relationDeclaration" targetNodeId="4.1107535924139" />

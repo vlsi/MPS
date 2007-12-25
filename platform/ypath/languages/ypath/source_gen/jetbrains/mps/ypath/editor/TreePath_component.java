@@ -21,10 +21,14 @@ public class TreePath_component extends AbstractCellProvider {
 
   private static void setupBasic_TreePathTypeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179306204982");
+    if(true) {
+    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1179306198078");
+    if(true) {
+    }
   }
 
   private static void setupLabel_TreePathTypeCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

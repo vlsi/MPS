@@ -584,7 +584,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell3(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1170345922037");
-      Common_StyleSheet.EMPTY_CELL.apply(editorCell);
+      BaseLanguageStyle_StyleSheet.EMPTY_CELL.apply(editorCell);
       editorCell.setSelectable(true);
       editorCell.setDrawBorder(false);
       if(true) {
@@ -652,7 +652,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell5(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1170345922047");
-      Common_StyleSheet.EMPTY_CELL.apply(editorCell);
+      BaseLanguageStyle_StyleSheet.EMPTY_CELL.apply(editorCell);
       editorCell.setSelectable(true);
       editorCell.setDrawBorder(false);
       if(true) {
@@ -720,7 +720,7 @@ public class AnonymousClass_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_ConstantCell7(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1170345922052");
-      Common_StyleSheet.EMPTY_CELL.apply(editorCell);
+      BaseLanguageStyle_StyleSheet.EMPTY_CELL.apply(editorCell);
       editorCell.setSelectable(true);
       editorCell.setDrawBorder(false);
       if(true) {

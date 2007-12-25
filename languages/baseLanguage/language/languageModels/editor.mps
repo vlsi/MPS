@@ -8863,9 +8863,9 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheet" id="1186415538255">
-    <property name="name" value="Common" />
+    <property name="name" value="BaseLanguageStyle" />
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1186415544875">
-      <property name="name" value="keyword" />
+      <property name="name" value="KeyWord" />
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1186415551923">
         <property name="color" value="DARK_BLUE" />
       </node>
@@ -8874,7 +8874,7 @@
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1196337283737">
-      <property name="name" value="field" />
+      <property name="name" value="Field" />
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1196337289157">
         <property name="color" value="DARK_MAGENTA" />
       </node>
@@ -8883,7 +8883,7 @@
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1198160792349">
-      <property name="name" value="staticField" />
+      <property name="name" value="StaticField" />
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1198160801001">
         <property name="color" value="DARK_MAGENTA" />
       </node>
@@ -8892,7 +8892,7 @@
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1186415563770">
-      <property name="name" value="string" />
+      <property name="name" value="StringLiteral" />
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1186415567224">
         <property name="color" value="DARK_GREEN" />
       </node>
@@ -8901,7 +8901,7 @@
       </node>
     </node>
     <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1187948382795">
-      <property name="name" value="emptyCell" />
+      <property name="name" value="EmptyCell" />
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1187948392667">
         <property name="color" value="lightGray" />
       </node>
