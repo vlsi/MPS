@@ -482,6 +482,7 @@ public final class SNode {
   @NotNull
   public Set<SNode> getLinkAttributesForLinkRole(String linkRole) {
     Set<SNode> result = new HashSet<SNode>();
+    if (linkRole == null) return result;
     for (String role : getChildRoles(true)) {
       String attributelinkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(role);
       if (linkRole.equals(attributelinkRole)) {
