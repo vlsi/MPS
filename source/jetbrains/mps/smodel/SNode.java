@@ -484,7 +484,7 @@ public final class SNode {
     Set<SNode> result = new HashSet<SNode>();
     for (String role : getChildRoles(true)) {
       String attributelinkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(role);
-      if (attributelinkRole.equals(linkRole)) {
+      if (linkRole.equals(attributelinkRole)) {
         result.add(getChild(role));
       }
     }
