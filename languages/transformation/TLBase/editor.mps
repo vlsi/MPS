@@ -4004,7 +4004,7 @@
       </node>
     </node>
     <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapItem" id="1176304571070">
-      <property name="description" value="navigate to generated query method in QueriesGenerated" />
+      <property name="description" value="Navigate to generated query method" />
       <property name="showInPopup" value="true" />
       <node role="keystroke" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMapKeystroke" id="1176304571071">
         <property name="keycode" value="VK_Q" />
@@ -4022,6 +4022,7 @@
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1176304651550">
                     <link role="concept" targetNodeId="18.1137021947720" />
                   </node>
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1198611121507" />
                 </node>
               </node>
             </node>
@@ -4052,6 +4053,7 @@
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1176305127925">
                     <link role="concept" targetNodeId="18.1137021947720" />
                   </node>
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1198611114425" />
                 </node>
               </node>
             </node>
