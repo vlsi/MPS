@@ -28,4 +28,8 @@ public class ChooseNodeComponent extends JPanel implements IChooseComponent<SNod
   public String getPropertyName() {
     return myChooseNodeOrModelComponent.getPropertyName();
   }
+
+  public void setInitialValue(SNode initialValue) {
+    myChooseNodeOrModelComponent.setInitialValue(initialValue);
+  }
 }

@@ -29,4 +29,8 @@ public class ChooseModelComponent extends JPanel implements IChooseComponent<SMo
   public String getPropertyName() {
     return myChooseNodeOrModelComponent.getPropertyName();
   }
+
+  public void setInitialValue(SModel initialValue) {
+    myChooseNodeOrModelComponent.setInitialValue(initialValue);
+  }
 }

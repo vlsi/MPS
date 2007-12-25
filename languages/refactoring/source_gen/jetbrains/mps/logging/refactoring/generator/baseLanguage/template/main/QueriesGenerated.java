@@ -57,6 +57,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(node, "name") + "_componentCreator";
   }
 
+  public static Object propertyMacro_GetPropertyValue_1198600574129(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getString(node, "name") + "_initialValue";
+  }
+
   public static Object propertyMacro_GetPropertyValue_1197994374982(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SPropertyOperations.getString(node, "name");
   }
@@ -79,10 +83,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1197995546008(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     {
-      Pattern_ pattern_1198579541766 = new Pattern_();
-      SNode coercedNode_1198579541765 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(node, "argumentType", true), pattern_1198579541766);
-      if(coercedNode_1198579541765 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1198579541766.PatternVar;
+      Pattern_ pattern_1198600724959 = new Pattern_();
+      SNode coercedNode_1198600724958 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(node, "argumentType", true), pattern_1198600724959);
+      if(coercedNode_1198600724958 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_1198600724959.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }
@@ -111,6 +115,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1197996022708(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(node, "componentCreator");
+  }
+
+  public static Object referenceMacro_GetReferent_1198600564705(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+    return generator.findOutputNodeByInputNodeAndMappingName(node, "initialValue");
   }
 
   public static Object referenceMacro_GetReferent_1189764427569(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
@@ -165,6 +173,10 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(node, "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(node, "argumentType", true), new QuotationClass_2().createNode());
   }
 
+  public static boolean ifMacro_Condition_1198600531754(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "initialValue", true) != null);
+  }
+
   public static boolean ifMacro_Condition_1192803873886(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return (SLinkOperations.getTarget(node, "filterClause", true) != null);
   }
@@ -186,6 +198,17 @@ public class QueriesGenerated {
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(node, "arguments", true);
     for(SNode argument : requiredUserEnteredArguments) {
       if((SLinkOperations.getTarget(argument, "chooseComponentClause", true) != null)) {
+        ListOperations.addElement(result, argument);
+      }
+    }
+    return result;
+  }
+
+  public static List sourceNodesQuery_1198600029014(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    List<SNode> result = new ArrayList<SNode>();
+    List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(node, "arguments", true);
+    for(SNode argument : requiredUserEnteredArguments) {
+      if((SLinkOperations.getTarget(argument, "initialValue", true) != null)) {
         ListOperations.addElement(result, argument);
       }
     }
@@ -218,6 +241,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1197992605929(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "chooseComponentClause", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1198600035299(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(node, "argumentType", true);
+  }
+
+  public static SNode sourceNodeQuery_1198600088963(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "initialValue", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_1197991695093(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

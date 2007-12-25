@@ -11,6 +11,7 @@ public class RequiredUserEnteredArgument extends RequiredAdditionalArgument {
   public static final String concept = "jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument";
   public static String FILTER_CLAUSE = "filterClause";
   public static String CHOOSE_COMPONENT_CLAUSE = "chooseComponentClause";
+  public static String INITIAL_VALUE = "initialValue";
 
   public  RequiredUserEnteredArgument(SNode node) {
     super(node);
@@ -39,6 +40,14 @@ public class RequiredUserEnteredArgument extends RequiredAdditionalArgument {
 
   public void setChooseComponentClause(ChooseComponentClause node) {
     super.setChild(RequiredUserEnteredArgument.CHOOSE_COMPONENT_CLAUSE, node);
+  }
+
+  public InitialValueClause getInitialValue() {
+    return (InitialValueClause)this.getChild(RequiredUserEnteredArgument.INITIAL_VALUE);
+  }
+
+  public void setInitialValue(InitialValueClause node) {
+    super.setChild(RequiredUserEnteredArgument.INITIAL_VALUE, node);
   }
 
 }

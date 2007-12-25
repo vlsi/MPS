@@ -9,4 +9,5 @@ package jetbrains.mps.refactoring.framework;
  */
 public interface IChooseComponentPart<T> {
   public T submit() throws InvalidInputValueException;
+  public void setInitialValue(T initialValue);
 }

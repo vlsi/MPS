@@ -154,5 +154,34 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1198599773923">
+    <link role="concept" targetNodeId="1.1198599668934" resolveInfo="InitialValueClause" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1198599773924">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198599773925" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198599776488">
+      <property name="name" value="getExpectedReturnType" />
+      <link role="overridenMethod" targetNodeId="7.1178571276073" resolveInfo="getExpectedReturnType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198599776490">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198599792361">
+          <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198599865164">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198599865165">
+              <link role="link" targetNodeId="1.1190637130098" />
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression" id="1198599865166">
+              <link role="concept" targetNodeId="1.1192792808079" resolveInfo="RequiredUserEnteredArgument" />
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198599865167">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1198599865168" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1198599865169" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198599788063">
+        <link role="concept" targetNodeId="8.1068431790189" resolveInfo="Type" />
+      </node>
+    </node>
+  </node>
 </model>
 

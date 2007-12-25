@@ -14,6 +14,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.tree.TreePath;
+import javax.swing.tree.TreeNode;
 import java.awt.BorderLayout;
 import java.util.*;
 
@@ -110,5 +111,12 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
 
   public String getPropertyName() {
     return myPropertyName;
+  }
+
+  public void setInitialValue(Object initialValue) {
+    TreeNode treeNode = myTree.findNodeWith(initialValue);
+    if (treeNode != null) {
+      myTree.selectNode(treeNode);
+    }
   }
 }

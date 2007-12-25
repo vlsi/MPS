@@ -211,6 +211,11 @@
       <property name="role" value="chooseComponentClause" />
       <link role="target" targetNodeId="1197983858784" resolveInfo="ChooseComponentClause" />
     </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1198599595536">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="initialValue" />
+      <link role="target" targetNodeId="1198599668934" resolveInfo="InitialValueClause" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1192793302394">
     <property name="name" value="FilterArgumentClause" />
@@ -388,6 +393,20 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1198577472976">
       <property name="value" value="updateModel(...)" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198599668934">
+    <property name="name" value="InitialValueClause" />
+    <link role="extends" targetNodeId="2.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.AggregationConceptLink" id="1198599755934">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198599758655">
+        <link role="classifier" targetNodeId="7.~Object" resolveInfo="Object" />
+      </node>
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1198599737446">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1189694712372" resolveInfo="ConceptFunctionParameter_ActionContext" />
     </node>
   </node>
 </model>

@@ -38,4 +38,8 @@ public class ChooseStringComponent extends JPanel implements IChooseComponent<St
   public String getPropertyName() {
     return myPropertyName;
   }
+
+  public void setInitialValue(String initialValue) {
+    myTextField.setText(initialValue);
+  }
 }
