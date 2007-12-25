@@ -3195,6 +3195,24 @@
         <property name="attractsFocus" value="1" />
         <node role="focusPolicyApplicable" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198529264929">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198529264930">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198580015741">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198580015742">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198580021817">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1198580023913">
+                    <property name="value" value="false" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1198580019688">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198580020566" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198580017574">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198580019077">
+                    <link role="link" targetNodeId="17.1073063089579" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198580017120" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198529269561">
               <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1198529285890">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198529274727">
