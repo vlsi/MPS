@@ -7,11 +7,11 @@ import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class IFeature_default_PropertyConstraint implements IModelConstraints, INodePropertySetter {
 
@@ -27,7 +27,7 @@ public class IFeature_default_PropertyConstraint implements IModelConstraints, I
   }
 
   public void execPropertySet(SNode node, String propertyName, String propertyValue, IScope scope) {
-    if(Boolean.valueOf(propertyValue)) {
+    if((SPropertyOperations.getBoolean(node, propertyValue))) {
       {
         ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(SNodeOperations.getParent(node, null, false, false), "features", true));
         try {
@@ -42,7 +42,7 @@ public class IFeature_default_PropertyConstraint implements IModelConstraints, I
         }
       }
     }
-    SPropertyOperations.set(node, "default", "" + (propertyValue));
+    SPropertyOperations.set(node, "default", "" + ((SPropertyOperations.getBoolean(node, propertyValue))));
   }
 
 }

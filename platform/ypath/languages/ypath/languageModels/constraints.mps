@@ -1388,11 +1388,7 @@
       <node role="propertySetter" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConstraintFunction_PropertySetter" id="1197906970255">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197906970256">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1197907015589">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1197907020949">
-              <link role="baseMethodDeclaration" targetNodeId="3.~Boolean.valueOf(java.lang.String):java.lang.Boolean" resolveInfo="valueOf" />
-              <link role="classConcept" targetNodeId="3.~Boolean" resolveInfo="Boolean" />
-              <node role="actualArgument" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_propertyValue" id="1197907023466" />
-            </node>
+            <node role="condition" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.PropertySetter_FunctionParm_propertyValue" id="1198586659345" />
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197907015591">
               <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement" id="1197907033790">
                 <node role="variable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable" id="1197907033791">
