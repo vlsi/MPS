@@ -95,7 +95,8 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
         }
         SModel editorModel = targetEditorModelDescriptor.getSModel();
         refactoringContext.moveNodesToModel(editors, editorModel);
-        /*statement: [statement] UpdateModelProcedure <no name>[1198578373601] in jetbrains.mps.bootstrap.structureLanguage.scripts@1_0_1198578279655*/
+        refactoringContext.computeCaches();
+        refactoringContext.updateModelWithMaps(editorModel);
       }
       if(!(SequenceOperations.isEmpty(behaviors))) {
         SModelDescriptor targetConstraintsModelDescriptor = targetLanguage.getConstraintsModelDescriptor();
@@ -104,7 +105,8 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
         }
         SModel constraintsModel = targetConstraintsModelDescriptor.getSModel();
         refactoringContext.moveNodesToModel(behaviors, constraintsModel);
-        /*statement: [statement] UpdateModelProcedure <no name>[1198578373633] in jetbrains.mps.bootstrap.structureLanguage.scripts@1_0_1198578279655*/
+        refactoringContext.computeCaches();
+        refactoringContext.updateModelWithMaps(constraintsModel);
       }
       // todo: move other concept-related aspect stuff
     }
