@@ -52,7 +52,7 @@ public class FocusPolicyUtil {
     if (descend && cell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) cell;
       for (EditorCell childCell : collection) {
-        EditorCell focusedCell = findCellWhichAttractsFocus(childCell, true, !cell.isBigCell());
+        EditorCell focusedCell = findCellWhichAttractsFocus(childCell, true, !childCell.isBigCell());
         if (focusedCell != null) return focusedCell;
       }
     }
