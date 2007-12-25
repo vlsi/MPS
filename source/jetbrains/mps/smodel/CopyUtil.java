@@ -90,8 +90,16 @@ public class CopyUtil {
 
       for (SReference ref : node.getReferences()) {
         SNode targetNode = ref.getTargetNode();
-        if (targetNode == null) {
-//          LOG.warning("broken reference '" + ref.getRole() + "' in " + node.getDebugText(), node);
+        if (targetNode == null) {//broken reference
+          if (ref instanceof StaticReference) {//copy a broken static reference
+            StaticReference staticReference = (StaticReference) ref;
+            target.addReference(new StaticReference(
+                    staticReference.getRole(),
+                    staticReference.getSourceNode(),
+                    staticReference.getTargetModelUID(),
+                    staticReference.getTargetNodeId(),
+                    staticReference.getResolveInfo()));
+          }
         } else if (mapping.containsKey(targetNode)) {
           target.setReferent(ref.getRole(), mapping.get(targetNode), false);
         } else {
