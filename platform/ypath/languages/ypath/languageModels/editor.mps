@@ -21,7 +21,7 @@
   <import index="36" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <import index="37" modelUID="jetbrains.mps.ypath.runtime@java_stub" version="-1" />
   <import index="38" modelUID="jetbrains.mps.util@java_stub" version="-1" />
-  <import index="39" modelUID="jetbrains.mps.core.editor" version="-1" />
+  <import index="39" modelUID="jetbrains.mps.core.editor" version="0" />
   <import index="40" modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1168428570720">
     <link role="conceptDeclaration" targetNodeId="1.1168428529658" />
@@ -418,7 +418,7 @@
           <property name="drawBorder" value="false" />
           <property name="attractsFocus" value="1" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
-          <link role="styleClass" targetNodeId="39.1198258356073" resolveInfo="Identifier" />
+          <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1168883926824">
           <property name="selectable" value="false" />
@@ -461,7 +461,7 @@
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197998278362">
                 <property name="text" value="/* this section is deprecated */" />
                 <property name="textFgColor" value="lightGray" />
-                <link role="styleClass" targetNodeId="39.1197980695368" resolveInfo="Comment" />
+                <link role="styleClass" targetNodeId="40.1198594875276" resolveInfo="Comment" />
               </node>
             </node>
             <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197998278363">
@@ -1655,7 +1655,7 @@
           <property name="noTargetText" value="?name?" />
           <property name="rightTransformAnchorTag" value="default_RTransform" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
-          <link role="styleClass" targetNodeId="39.1198258356073" resolveInfo="Identifier" />
+          <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197921774646">
           <property name="selectable" value="false" />
@@ -1867,7 +1867,7 @@
                   <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197921774731">
                     <property name="readOnly" value="true" />
                     <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
-                    <link role="styleClass" targetNodeId="39.1198258356073" resolveInfo="Identifier" />
+                    <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
                   </node>
                 </node>
                 <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197921774732">
@@ -2239,7 +2239,7 @@
           <property name="rightTransformAnchorTag" value="default_RTransform" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
           <link role="actionMap" targetNodeId="1197906509884" resolveInfo="action_DeleteOpposite" />
-          <link role="styleClass" targetNodeId="39.1198258356073" resolveInfo="Identifier" />
+          <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197921944681">
           <property name="selectable" value="false" />
@@ -2262,7 +2262,7 @@
               <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ModelAccess" id="1197921944687">
                 <property name="editable" value="false" />
                 <property name="drawBrackets" value="true" />
-                <link role="styleClass" targetNodeId="39.1198258356073" resolveInfo="Identifier" />
+                <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
                 <node role="modelAcessor" type="jetbrains.mps.bootstrap.editorLanguage.structure.ModelAccessor" id="1197921944688">
                   <node role="getter" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_ModelAccess_Getter" id="1197921944689">
                     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197921944690">
@@ -2445,7 +2445,7 @@
                   <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197921944766">
                     <property name="readOnly" value="true" />
                     <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
-                    <link role="styleClass" targetNodeId="39.1198258356073" resolveInfo="Identifier" />
+                    <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
                   </node>
                 </node>
                 <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197921944767">
@@ -2979,7 +2979,7 @@
           <property name="noTargetText" value="?name?" />
           <property name="rightTransformAnchorTag" value="default_RTransform" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
-          <link role="styleClass" targetNodeId="39.1198258356073" resolveInfo="Identifier" />
+          <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197922196248">
           <property name="text" value="&lt;" />
@@ -3201,7 +3201,7 @@
                   <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197921919460">
                     <property name="readOnly" value="true" />
                     <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
-                    <link role="styleClass" targetNodeId="39.1198258356073" resolveInfo="Identifier" />
+                    <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
                   </node>
                 </node>
                 <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197921919461">
@@ -3659,7 +3659,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1184659128464">
           <property name="noTargetText" value="?name?" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
-          <link role="styleClass" targetNodeId="39.1198258356073" resolveInfo="Identifier" />
+          <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197229298731">
           <property name="text" value="&lt;" />
@@ -3881,7 +3881,7 @@
                   <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197922168497">
                     <property name="readOnly" value="true" />
                     <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
-                    <link role="styleClass" targetNodeId="39.1198258356073" resolveInfo="Identifier" />
+                    <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
                   </node>
                 </node>
                 <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197922168498">
@@ -4401,7 +4401,7 @@
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1190799200440">
           <property name="noTargetText" value="?name?" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" />
-          <link role="styleClass" targetNodeId="39.1198258356073" resolveInfo="Identifier" />
+          <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197226753904">
           <property name="text" value="&lt;" />
@@ -4623,7 +4623,7 @@
                   <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197921394459">
                     <property name="readOnly" value="true" />
                     <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
-                    <link role="styleClass" targetNodeId="39.1198258356073" resolveInfo="Identifier" />
+                    <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
                   </node>
                 </node>
                 <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197921394460">
@@ -6981,7 +6981,7 @@
           <property name="noTargetText" value="?name?" />
           <property name="rightTransformAnchorTag" value="default_RTransform" />
           <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
-          <link role="styleClass" targetNodeId="39.1198258356073" resolveInfo="Identifier" />
+          <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197922544505">
           <property name="selectable" value="false" />
@@ -7193,7 +7193,7 @@
                   <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197922544590">
                     <property name="readOnly" value="true" />
                     <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
-                    <link role="styleClass" targetNodeId="39.1198258356073" resolveInfo="Identifier" />
+                    <link role="styleClass" targetNodeId="40.1198595398954" resolveInfo="Identifier" />
                   </node>
                 </node>
                 <node role="renderingCondition" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1197922544591">

@@ -25,7 +25,7 @@
   <import index="23" modelUID="jetbrains.mps.smodel.action@java_stub" version="-1" />
   <import index="24" modelUID="jetbrains.mps.core.constraints" version="-1" />
   <import index="25" modelUID="jetbrains.mps.util@java_stub" version="-1" />
-  <import index="26" modelUID="jetbrains.mps.core.editor" version="-1" />
+  <import index="26" modelUID="jetbrains.mps.core.editor" version="0" />
   <import index="27" modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1174385632621">
     <link role="conceptDeclaration" targetNodeId="1.1174385511721" />

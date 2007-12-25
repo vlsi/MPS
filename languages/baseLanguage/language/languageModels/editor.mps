@@ -1191,7 +1191,7 @@
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Component" id="1188210576816">
           <link role="editorComponent" targetNodeId="1181823106174" resolveInfo="VariableDeclaration_NameCellComponent" />
-          <link role="styleClass" targetNodeId="1196337283737" resolveInfo="field" />
+          <link role="styleClass" targetNodeId="1198595398954" resolveInfo="Field" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1188210576817">
           <property name="name" value="initializerArea" />
@@ -8873,12 +8873,12 @@
         <property name="style" value="BOLD" />
       </node>
     </node>
-    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1196337283737">
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1198595398954">
       <property name="name" value="Field" />
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1196337289157">
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1198595398955">
         <property name="color" value="DARK_MAGENTA" />
       </node>
-      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1196337297008">
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1198595398956">
         <property name="style" value="BOLD" />
       </node>
     </node>
@@ -8904,6 +8904,15 @@
       <property name="name" value="EmptyCell" />
       <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1187948392667">
         <property name="color" value="lightGray" />
+      </node>
+    </node>
+    <node role="styleClass" type="jetbrains.mps.bootstrap.editorLanguage.structure.StyleSheetClass" id="1198594875276">
+      <property name="name" value="Comment" />
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.ForegroundColorStyleSheetItem" id="1198594875277">
+        <property name="color" value="darkGray" />
+      </node>
+      <node role="item" type="jetbrains.mps.bootstrap.editorLanguage.structure.FontStyleStyleSheetItem" id="1198594875278">
+        <property name="style" value="BOLD" />
       </node>
     </node>
   </node>

@@ -130,6 +130,30 @@ public class BaseLanguageStyle_StyleSheet {
     }
 
   };
+  public static final IStyle COMMENT = new IStyle() {
+
+    public void apply(EditorCell cell) {
+      this.apply(cell, true);
+    }
+
+    public void apply(EditorCell cell, boolean recurive) {
+      if(cell instanceof EditorCell_Label) {
+        EditorCell_Label labelCell = (EditorCell_Label)cell;
+        Color color = BaseLanguageStyle_StyleSheet.calculateColor5(cell);
+        labelCell.getTextLine().setTextColor(color);
+      }
+      cell.setFontType(MPSFonts.BOLD);
+      if(recurive) {
+        if(cell instanceof EditorCell_Collection) {
+          EditorCell_Collection collection = (EditorCell_Collection)cell;
+          for(EditorCell child : collection) {
+            this.apply(child, true);
+          }
+        }
+      }
+    }
+
+  };
 
   private static Color calculateColor(EditorCell cell) {
     Color result;
@@ -158,6 +182,12 @@ public class BaseLanguageStyle_StyleSheet {
   private static Color calculateColor4(EditorCell cell) {
     Color result;
     result = Color.lightGray;
+    return result;
+  }
+
+  private static Color calculateColor5(EditorCell cell) {
+    Color result;
+    result = Color.darkGray;
     return result;
   }
 

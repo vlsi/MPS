@@ -39,20 +39,20 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
       if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
         SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "nodeType", true);
         {
-          ICursor<SNode> _zCursor6 = CursorFactory.createCursor(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType));
+          ICursor<SNode> _zCursor = CursorFactory.createCursor(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType));
           try {
-            while(_zCursor6.moveToNext()) {
-              SNode fe = _zCursor6.getCurrent();
+            while(_zCursor.moveToNext()) {
+              SNode fe = _zCursor.getCurrent();
               if(SNodeOperations.isInstanceOf(fe, "jetbrains.mps.ypath.structure.IParamFeature")) {
                 {
-                  ICursor<SNode> _zCursor7 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(fe, nodeType));
+                  ICursor<SNode> _zCursor1 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(fe, nodeType));
                   try {
-                    while(_zCursor7.moveToNext()) {
-                      SNode pw = _zCursor7.getCurrent();
+                    while(_zCursor1.moveToNext()) {
+                      SNode pw = _zCursor1.getCurrent();
                       ListOperations.addElement(res, new Pair(fe, pw));
                     }
                   } finally {
-                    _zCursor7.release();
+                    _zCursor1.release();
                   }
                 }
               } else
@@ -61,7 +61,7 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
               }
             }
           } finally {
-            _zCursor6.release();
+            _zCursor.release();
           }
         }
       }
