@@ -1715,28 +1715,28 @@
     </library>
     <library name="JAX RPC">
       <CLASSES>
-        <root url="jar://C:/Documents and Settings/Vadim.Gurov/.IntelliJIdea70/config/plugins/WebServices/lib/jaxrpc.jar!/" />
+        <root url="jar://$TEMPLATE$/Documents and Settings/Vadim.Gurov/.IntelliJIdea70/config/plugins/WebServices/lib/jaxrpc.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
     </library>
     <library name="SAAJ">
       <CLASSES>
-        <root url="jar://C:/Documents and Settings/Vadim.Gurov/.IntelliJIdea70/config/plugins/WebServices/lib/saaj.jar!/" />
+        <root url="jar://$TEMPLATE$/Documents and Settings/Vadim.Gurov/.IntelliJIdea70/config/plugins/WebServices/lib/saaj.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
     </library>
     <library name="Axis">
       <CLASSES>
-        <root url="jar://C:/Documents and Settings/Vadim.Gurov/.IntelliJIdea70/config/plugins/WebServices/lib/axis.jar!/" />
+        <root url="jar://$TEMPLATE$/Documents and Settings/Vadim.Gurov/.IntelliJIdea70/config/plugins/WebServices/lib/axis.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
     </library>
     <library name="Commons Discovery">
       <CLASSES>
-        <root url="jar://C:/Documents and Settings/Vadim.Gurov/.IntelliJIdea70/config/plugins/WebServices/lib/commons-discovery-0.2.jar!/" />
+        <root url="jar://$TEMPLATE$/Documents and Settings/Vadim.Gurov/.IntelliJIdea70/config/plugins/WebServices/lib/commons-discovery-0.2.jar!/" />
       </CLASSES>
       <JAVADOC />
       <SOURCES />
@@ -1990,8 +1990,5 @@
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
   </component>
-  <UsedPathMacros>
-    <macro name="TEMPLATE" />
-  </UsedPathMacros>
 </project>
 
