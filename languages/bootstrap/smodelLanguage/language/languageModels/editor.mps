@@ -49,7 +49,7 @@
         <property name="selectable" value="false" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefNode" id="1138412455559">
-        <property name="attractsFocus" value="0" />
+        <property name="attractsFocus" value="2" />
         <property name="drawBorder" value="false" />
         <link role="relationDeclaration" targetNodeId="1.1138411864174" />
         <link role="actionMap" targetNodeId="1140123519849" resolveInfo="SNodeOperationExpression_Operation_Actions" />
@@ -1987,6 +1987,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1176109740908">
         <property name="drawBorder" value="false" />
+        <property name="noTargetText" value="&lt;no concept&gt;" />
         <link role="relationDeclaration" targetNodeId="1.1176109685394" />
         <node role="editorComponent" type="jetbrains.mps.bootstrap.editorLanguage.structure.InlineEditorComponent" id="1176109740909">
           <link role="conceptDeclaration" targetNodeId="3.1169125787135" />

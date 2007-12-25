@@ -204,7 +204,7 @@ public class Model_RootsIncludingImportedOperation_Editor extends DefaultNodeEdi
   public EditorCell createConceptReferenceCell(EditorContext context, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, context);
     provider.setRole("concept");
-    provider.setNoTargetText("");
+    provider.setNoTargetText("<no concept>");
     provider.setReadOnly(false);
     provider.setAllowsEmptyTarget(false);
     EditorCell cellWithRole = this.createConceptReferenceCellinternal(context, node, provider);

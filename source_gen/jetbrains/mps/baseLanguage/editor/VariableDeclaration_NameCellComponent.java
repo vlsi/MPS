@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class VariableDeclaration_NameCellComponent extends AbstractCellProvider {
 
@@ -89,6 +90,11 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
       } else
       {
         result = ListOperations.createList(new String[]{});
+      }
+      // we need this because of smart input
+      // DO NOT REMOVE IT
+      if(SPropertyOperations.getString(node, "name") != null) {
+        ListOperations.addElement(result, SPropertyOperations.getString(node, "name"));
       }
       return result;
     }

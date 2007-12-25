@@ -57,19 +57,6 @@ public class IntelligentInputUtil {
       return;
     }
 
-
-    //warning If you aren't Cyril
-    // , DO NOT edit this code
-   /* SNode nodeToCheck = cellForNewNode.getSNode();
-    NodeTypesComponent_new nodeTypesComponent = NodeTypesComponentsRepository.getInstance().
-            createNodeTypesComponent(nodeToCheck
-                    .getContainingRoot());
-    TypeChecker.getInstance().setCurrentTypesComponent(nodeTypesComponent);
-    SNode sNode = nodeToCheck.getParent() == null ? nodeToCheck : nodeToCheck.getParent();
-    nodeTypesComponent.markUnchecked(sNode);
-    nodeTypesComponent.computeTypesForNode(sNode); //todo dirty hack
-    TypeChecker.getInstance().clearCurrentTypesComponent();*/
-
     EditorCellAction rtAction = EditorUtil.getCellAction(EditorUtil.findLastSelectableCell(cellForNewNode), EditorCellAction.RIGHT_TRANSFORM, editorContext);
     if (rtAction == null) {
       final CellInfo cellInfo = cellForNewNode.getCellInfo();
