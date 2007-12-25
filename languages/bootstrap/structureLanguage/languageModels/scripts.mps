@@ -318,7 +318,7 @@
   </node>
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198173570106">
     <property name="name" value="MoveConcepts" />
-    <property name="userFriendlyName" value="Move Concepts (under construction, don't use)" />
+    <property name="userFriendlyName" value="Move Concepts" />
     <node role="arguments" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1198173589717">
       <property name="name" value="targetModel" />
       <property name="presentation" value="choose target model" />

@@ -30,7 +30,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   public static final String sourceModel = "sourceModel";
 
   public String getUserFriendlyName() {
-    return "Move Concepts (under construction, don't use)";
+    return "Move Concepts";
   }
 
   public String getSourceId() {
