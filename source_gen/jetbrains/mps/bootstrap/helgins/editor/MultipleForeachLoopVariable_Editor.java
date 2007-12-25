@@ -18,18 +18,26 @@ public class MultipleForeachLoopVariable_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_VariableCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176547913156");
+    if(true) {
+    }
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176547916471");
+    if(true) {
+    }
   }
 
   private static void setupBasic_IterableCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176547925817");
+    if(true) {
+    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176547910436");
+    if(true) {
+    }
   }
 
   private static void setupLabel_VariableCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

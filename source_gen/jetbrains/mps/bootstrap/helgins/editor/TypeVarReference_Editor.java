@@ -19,6 +19,8 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
   private static void setupBasic_TypeVarDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174666294979");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_TypeVarDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -67,6 +69,8 @@ public class TypeVarReference_Editor extends DefaultNodeEditor {
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174666297138");
       editorCell.setDrawBorder(false);
+      if(true) {
+      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

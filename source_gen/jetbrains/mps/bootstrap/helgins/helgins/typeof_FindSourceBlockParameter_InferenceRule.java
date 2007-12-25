@@ -17,7 +17,7 @@ public class typeof_FindSourceBlockParameter_InferenceRule implements InferenceR
   public void applyRule(final SNode findSourceBlockParameter) {
     SNode dependency = SNodeOperations.getAncestor(findSourceBlockParameter, "jetbrains.mps.bootstrap.helgins.structure.Dependency", false, false);
     if((dependency != null)) {
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(findSourceBlockParameter, "jetbrains.mps.bootstrap.helgins.helgins", "1193734407573", true), new QuotationClass_22().createNode(SLinkOperations.getTarget(dependency, "targetConcept", false)), findSourceBlockParameter, null, "jetbrains.mps.bootstrap.helgins.helgins", "1193734407570");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(findSourceBlockParameter, "jetbrains.mps.bootstrap.helgins.helgins", "1193734407573", true), new QuotationClass_18().createNode(SLinkOperations.getTarget(dependency, "targetConcept", false)), findSourceBlockParameter, null, "jetbrains.mps.bootstrap.helgins.helgins", "1193734407570");
     }
   }
 

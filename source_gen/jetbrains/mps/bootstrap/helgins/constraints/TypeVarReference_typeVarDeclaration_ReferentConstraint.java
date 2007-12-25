@@ -28,7 +28,7 @@ public class TypeVarReference_typeVarDeclaration_ReferentConstraint implements I
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     return new TypeVarScope(enclosingNode);
   }
 

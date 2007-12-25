@@ -14,7 +14,6 @@ public class typeOf_TypeVarDeclaration_InferenceRule implements InferenceRule_Ru
 
   public void applyRule(final SNode typeVarDeclaration) {
     TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(typeVarDeclaration, "jetbrains.mps.bootstrap.helgins.helgins", "1185878023858", true), new QuotationClass_15().createNode(), typeVarDeclaration, null, "jetbrains.mps.bootstrap.helgins.helgins", "1185878029189");
-    TypeChecker.getInstance().getRuntimeSupport().addEffect(TypeChecker.getInstance().getRuntimeSupport().typeOf(typeVarDeclaration, "jetbrains.mps.bootstrap.helgins.helgins", "1186407321485", true), RulesUtil.MAY_BE_VARIABLE);
   }
 
   public String getApplicableConceptFQName() {

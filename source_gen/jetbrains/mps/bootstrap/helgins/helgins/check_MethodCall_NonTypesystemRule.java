@@ -15,7 +15,7 @@ public class check_MethodCall_NonTypesystemRule implements NonTypesystemRule_Run
 
   public void applyRule(final SNode baseMethodCall) {
     for(SNode annotationInstance : SLinkOperations.getTargets(SLinkOperations.getTarget(baseMethodCall, "baseMethodDeclaration", false), "annotation", true)) {
-      if(SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new QuotationClass_23().createNode(), "classifier", false)) {
+      if(SLinkOperations.getTarget(annotationInstance, "annotation", false) == SLinkOperations.getTarget(new QuotationClass_19().createNode(), "classifier", false)) {
         if(!(RulesUtil.withinInferenceItem(baseMethodCall))) {
           TypeChecker.getInstance().reportTypeError(baseMethodCall, "inference method should be called only within inference rules", "jetbrains.mps.bootstrap.helgins.helgins", "1196178341653");
         }

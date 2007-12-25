@@ -13,6 +13,8 @@ public class ApplicableNodeCondition_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_ErrorCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1176905455508");
+    if(true) {
+    }
   }
 
   private static void setupLabel_ErrorCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

@@ -21,6 +21,8 @@ public class PatternVariableReference_Editor extends DefaultNodeEditor {
   private static void setupBasic_PatternVarDeclReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174990327274");
     editorCell.setDrawBorder(false);
+    if(true) {
+    }
   }
 
   private static void setupLabel_PatternVarDeclReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -70,6 +72,8 @@ public class PatternVariableReference_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174990329402");
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.BOLD);
+      if(true) {
+      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
