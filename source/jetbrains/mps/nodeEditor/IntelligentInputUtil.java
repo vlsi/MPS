@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.INodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NullSubstituteInfo;
+import jetbrains.mps.nodeEditor.EditorManager.EditorCell_RTHint;
 
 import java.util.List;
 
@@ -27,11 +28,17 @@ public class IntelligentInputUtil {
     if (pattern == null || pattern.equals("")) {
       return;
     }
-    //todo why returning here? For example, we might enter a == and we have to press control+space in order
-    //todo to complete here
-    if (cell instanceof EditorManager.EditorCell_RTHint) return;
-    String smallPattern = pattern.substring(0,pattern.length() - 1);
-    final String tail = pattern.substring(pattern.length() - 1, pattern.length());
+    if (cell instanceof EditorManager.EditorCell_RTHint) {
+      EditorManager.EditorCell_RTHint rtHintCell = (EditorCell_RTHint) cell;
+      INodeSubstituteInfo substituteInfo = rtHintCell.getSubstituteInfo();
+      if (uniqueAction(substituteInfo, pattern, "")) {
+        SNode resultNode = substituteInfo.getMatchingActions(pattern, true).get(0).doSubstitute(pattern);
+        editorContext.selectLaterWRTFocusPolicy(resultNode);
+      }
+      return;
+    }
+    String smallPattern = pattern.substring(0, pattern.length() - 1);
+    String tail = pattern.substring(pattern.length() - 1, pattern.length());
     processCell(cell, editorContext, smallPattern, tail);
   }
 
@@ -45,7 +52,7 @@ public class IntelligentInputUtil {
     EditorCell cellForNewNode;
     SNode newNode;
     if (cell.isValidText(smallPattern) && !"".equals(smallPattern)
-            && substituteInfo.hasExactlyNActions(smallPattern+tail, false, 0)) {
+            && substituteInfo.hasExactlyNActions(smallPattern + tail, false, 0)) {
       newNode = cell.getSNode();
       cellForNewNode = cell;
       sourceCellRemains = true;
@@ -154,7 +161,7 @@ public class IntelligentInputUtil {
 
     // * has special meaning in completion patterns but we often want to complete multiplication
     // operations
-    return info.hasExactlyNActions(smallPattern, true, 1) && (tail.equals("*") || info.hasExactlyNActions(smallPattern+tail, false, 0));
+    return info.hasExactlyNActions(smallPattern, true, 1) && (tail.equals("*") || info.hasExactlyNActions(smallPattern + tail, false, 0));
   }
 
   

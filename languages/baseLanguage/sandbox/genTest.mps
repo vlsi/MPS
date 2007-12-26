@@ -275,31 +275,8 @@
               </node>
             </node>
           </node>
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198681047075">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198681048064">
-              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198681048896">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198681049509">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198681050404">
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.Expression" id="1198681050405" />
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198681050340">
-                      <property name="value" value="2" />
-                    </node>
-                  </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198681049461">
-                    <property name="value" value="2" />
-                  </node>
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198681048848">
-                  <property name="value" value="2" />
-                </node>
-              </node>
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198681048016">
-                <property name="value" value="2" />
-              </node>
-            </node>
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198681028398">
-              <link role="variableDeclaration" targetNodeId="1198681054835" resolveInfo="a" />
-            </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198682186970">
+            <link role="variableDeclaration" targetNodeId="1198681054835" resolveInfo="a" />
           </node>
         </node>
       </node>
