@@ -24,6 +24,8 @@ import java.util.HashMap;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseModelComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.LanguageAspect;
 
 public class MoveConcepts extends AbstractLoggableRefactoring {
   public static final String targetModel = "targetModel";
@@ -139,6 +141,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     {
       IChooseComponent<SModel> chooseComponent;
       chooseComponent = new ChooseModelComponent("choose target model", "targetModel", actionContext);
+      chooseComponent.setCondition(new MoveConcepts.My_targetModel_Condition(actionContext));
       components.add(chooseComponent);
     }
     ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
@@ -146,5 +149,23 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     result = dialog.getResult();
     return result;
   }
+
+  public static class My_targetModel_Condition implements Condition<SModel> {
+
+    private ActionContext myActionContext;
+
+    public  My_targetModel_Condition(ActionContext actionContext) {
+      this.myActionContext = actionContext;
+    }
+
+    public boolean met(SModel argument) {
+      return this.met_internal(argument, this.myActionContext);
+    }
+
+    public boolean met_internal(SModel argument, ActionContext actionContext) {
+      return Language.getModelAspect(argument.getModelDescriptor()) == LanguageAspect.STRUCTURE;
+    }
+
+}
 
 }
