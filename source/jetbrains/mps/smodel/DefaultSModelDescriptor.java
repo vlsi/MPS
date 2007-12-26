@@ -49,7 +49,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
   private List<SModelCommandListener> myModelCommandListeners = new ArrayList<SModelCommandListener>();
   private Map<String, Object> myUserObjects = new HashMap<String, Object>();
   private long myLastStructuralChange = System.currentTimeMillis();
-  private long myLastChange = System.currentTimeMillis();
+  private long myLastChange ;
   private IFile myModelFile;
   private FastNodeFinder myFastNodeFinder;
   private List<IPostLoadRunnable> myPostLoadRunnables = new ArrayList<IPostLoadRunnable>(2);
@@ -64,6 +64,12 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     myModelUID = modelUID;
     myModelRootManager = manager;
     myModelFile = modelFile;
+
+    if (modelFile != null) {
+      myLastChange = modelFile.lastModified();
+    } else {
+      myLastChange = System.currentTimeMillis();            
+    }
 
     checkModelDuplication();
     addPostLoadRunnable(new IPostLoadRunnable() {
@@ -333,7 +339,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return myLastStructuralChange;
   }
 
-  public long lastChange() {
+  public long lastChangeTime() {
     return myLastChange;
   }
 

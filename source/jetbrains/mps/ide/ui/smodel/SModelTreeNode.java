@@ -338,11 +338,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
             getOperationContext().getComponent(ProjectPane.class).isShowPropertiesAndReferences();
   }
 
-
   protected void dispose() {
     getSModel().removeModelCommandListener(myModelListener);
   }
-
 
   private SNodeTreeNode findRootSNodeTreeNode(SNode node) {
     return findRootSNodeTreeNode(this, node);

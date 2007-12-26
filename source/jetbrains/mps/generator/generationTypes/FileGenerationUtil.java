@@ -34,7 +34,7 @@ public class FileGenerationUtil {
   }
 
   public static boolean generationRequired(SModelDescriptor sm) {
-    return sm.lastChange() >= getLastGenerationTime(sm);
+    return sm.lastChangeTime() >= getLastGenerationTime(sm);
   }
 
   public static void handleOutput(IOperationContext context, SModelDescriptor sm, GenerationStatus status, String outputDir, IMessageHandler messages) {

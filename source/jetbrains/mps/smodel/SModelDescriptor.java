@@ -66,7 +66,7 @@ public interface SModelDescriptor {
 
   long lastStructuralChange();
 
-  long lastChange();
+  long lastChangeTime();
 
   //dramatical event counter
   long structuralState();
