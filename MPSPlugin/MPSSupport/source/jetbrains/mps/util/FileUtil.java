@@ -209,6 +209,10 @@ public class FileUtil {
   }
 
   public static long getNewestFileTime(File dir) {
+    return getNewestFileTime(dir, true);
+  }
+
+  public static long getNewestFileTime(File dir, boolean recursive) {
     File[] files = dir.listFiles();
     if (files == null) {
       return dir.lastModified();
@@ -219,7 +223,11 @@ public class FileUtil {
         continue;
       }
 
-      result = Math.max(result, getNewestFileTime(file));
+      if (recursive) {
+        result = Math.max(result, getNewestFileTime(file));
+      } else {
+        result = Math.max(result, file.lastModified());
+      }
     }
     return result;
   }

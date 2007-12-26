@@ -7,6 +7,7 @@ import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.ide.messages.IMessageHandler;
+import jetbrains.mps.util.FileUtil;
 
 import javax.swing.JOptionPane;
 import java.io.File;
@@ -19,16 +20,25 @@ public class FileGenerationUtil {
   private static String LAST_GENERATION_TIME = "lastGenerationTime";
 
   public static long getLastGenerationTime(SModelDescriptor sm) {
+    IOperationContext operationContext = sm.getOperationContext();
+    assert operationContext != null;
+
+    String outputPath = operationContext.getModule().getGeneratorOutputPath();
+
+    String sourcesDir = outputPath + File.separator + sm.getLongName().replace('.', File.separatorChar);
+
+    return FileUtil.getNewestFileTime(new File(sourcesDir));
+/*
     String value = sm.getAttribute(LAST_GENERATION_TIME);
     try {
       return Long.parseLong(value);
     } catch (NumberFormatException e) {
       return -1;
-    }
+    }*/
   }
 
   public static void updateLastGenerationTime(SModelDescriptor sm) {
-    sm.setAttribute(LAST_GENERATION_TIME, "" + System.currentTimeMillis());
+//    sm.setAttribute(LAST_GENERATION_TIME, "" + System.currentTimeMillis());
   }
 
   public static boolean generationRequired(SModelDescriptor sm) {    
