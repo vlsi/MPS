@@ -63,11 +63,11 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
     }
 
     private boolean canExecute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
-      return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false) != null);
+      return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false) != null);
     }
 
     private void execute_internal(KeyEvent keyEvent, EditorContext editorContext, SNode node, List<SNode> selectedNodes) {
-      SNode method = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
+      SNode method = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false);
       SNode declClassifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       if((declClassifier != null)) {
         ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(declClassifier)), IClassifiersSearchScope.INSTANCE_METHOD);

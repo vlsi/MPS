@@ -11126,6 +11126,7 @@
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1198253074012">
                     <link role="concept" targetNodeId="17.1068580123165" resolveInfo="InstanceMethodDeclaration" />
                   </node>
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1198679061795" />
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1198253070633" />
               </node>
@@ -11270,6 +11271,7 @@
                   <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1198252654747">
                     <link role="concept" targetNodeId="17.1068580123165" resolveInfo="InstanceMethodDeclaration" />
                   </node>
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Inclusion" id="1198679055460" />
                 </node>
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellKeyMap_FunctionParm_selectedNode" id="1198252647725" />
               </node>
