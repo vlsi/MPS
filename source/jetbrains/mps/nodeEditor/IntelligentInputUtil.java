@@ -27,6 +27,8 @@ public class IntelligentInputUtil {
     if (pattern == null || pattern.equals("")) {
       return;
     }
+    //todo why returning here? For example, we might enter a == and we have to press control+space in order
+    //todo to complete here
     if (cell instanceof EditorManager.EditorCell_RTHint) return;
     String smallPattern = pattern.substring(0,pattern.length()-1);
     final String tail = pattern.substring(pattern.length()-1, pattern.length());
