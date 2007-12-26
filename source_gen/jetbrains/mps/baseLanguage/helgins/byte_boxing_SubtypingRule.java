@@ -12,7 +12,7 @@ public class byte_boxing_SubtypingRule extends SubtypingRule_Runtime implements 
   public  byte_boxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type) {
+  public SNode getSubOrSuperType(SNode byteType) {
     return new QuotationClass_61().createNode();
   }
 

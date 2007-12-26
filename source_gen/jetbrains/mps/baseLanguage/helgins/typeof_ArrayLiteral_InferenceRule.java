@@ -13,12 +13,12 @@ public class typeof_ArrayLiteral_InferenceRule implements InferenceRule_Runtime 
   public  typeof_ArrayLiteral_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
+  public void applyRule(final SNode arrayLiteral) {
     final SNode elementType_typevar_1188221443596 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-    for(SNode item : SLinkOperations.getTargets(argument, "item", true)) {
+    for(SNode item : SLinkOperations.getTargets(arrayLiteral, "item", true)) {
       TypeChecker.getInstance().getRuntimeSupport().createGreaterThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596), TypeChecker.getInstance().getRuntimeSupport().typeOf(item, "jetbrains.mps.baseLanguage.helgins", "1188221461717", true), item, null, "jetbrains.mps.baseLanguage.helgins", "1188221461712");
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguage.helgins", "1188221454647", true), new QuotationClass_76().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596)), argument, null, "jetbrains.mps.baseLanguage.helgins", "1188221467376");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arrayLiteral, "jetbrains.mps.baseLanguage.helgins", "1188221454647", true), new QuotationClass_76().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1188221443596)), arrayLiteral, null, "jetbrains.mps.baseLanguage.helgins", "1188221467376");
   }
 
   public String getApplicableConceptFQName() {

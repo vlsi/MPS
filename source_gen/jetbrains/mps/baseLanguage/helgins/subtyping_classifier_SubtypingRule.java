@@ -18,8 +18,8 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
   public  subtyping_classifier_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode type) {
-    SNode classifier = SLinkOperations.getTarget(type, "classifier", false);
+  public List<SNode> getSubOrSuperTypes(SNode clt) {
+    SNode classifier = SLinkOperations.getTarget(clt, "classifier", false);
     SModel runtimeTypesModel = TypeChecker.getInstance().getRuntimeTypesModel();
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> supertypes = new ArrayList<SNode>();
@@ -46,17 +46,17 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
         if(SNodeOperations.isInstanceOf(typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
           SNode tvr = typeParam;
           int i = ((List)SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).indexOf(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false));
-          if(i < 0 || i >= SLinkOperations.getCount(type, "parameter")) {
+          if(i < 0 || i >= SLinkOperations.getCount(clt, "parameter")) {
             ((SNode)supertypeCopy).removeChild(typeParam);
             continue;
           }
-          SNode newNode = SNodeOperations.copyNode(((SNode)((List)SLinkOperations.getTargets(type, "parameter", true)).get(i)), runtimeTypesModel);
+          SNode newNode = SNodeOperations.copyNode(((SNode)((List)SLinkOperations.getTargets(clt, "parameter", true)).get(i)), runtimeTypesModel);
           supertypeCopy.replaceChild(typeParam, newNode);
         }
       }
       result.add(supertypeCopy);
     }
-    supertypes.add(type);
+    supertypes.add(clt);
     for(SNode supertype : supertypes) {
       SNode erasure = SNodeOperations.copyNode(supertype, runtimeTypesModel);
       if(SLinkOperations.getCount(erasure, "parameter") > 0) {

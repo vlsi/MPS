@@ -13,7 +13,7 @@ public class short_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
   public  short_unboxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type) {
+  public SNode getSubOrSuperType(SNode shortType) {
     return new QuotationClass_73().createNode();
   }
 

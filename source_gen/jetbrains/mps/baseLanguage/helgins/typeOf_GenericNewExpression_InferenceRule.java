@@ -13,8 +13,8 @@ public class typeOf_GenericNewExpression_InferenceRule implements InferenceRule_
   public  typeOf_GenericNewExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguage.helgins", "1197929386566", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "creator", true), "jetbrains.mps.baseLanguage.helgins", "1176896993400", true), argument, null, "jetbrains.mps.baseLanguage.helgins", "1197929386564");
+  public void applyRule(final SNode genericNE) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(genericNE, "jetbrains.mps.baseLanguage.helgins", "1197929386566", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(genericNE, "creator", true), "jetbrains.mps.baseLanguage.helgins", "1176896993400", true), genericNE, null, "jetbrains.mps.baseLanguage.helgins", "1197929386564");
   }
 
   public String getApplicableConceptFQName() {

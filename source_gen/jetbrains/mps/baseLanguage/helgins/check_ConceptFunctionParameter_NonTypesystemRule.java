@@ -15,17 +15,17 @@ public class check_ConceptFunctionParameter_NonTypesystemRule implements NonType
   public  check_ConceptFunctionParameter_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode argument) {
+  public void applyRule(final SNode parameter) {
     final zClosureContext _zClosureContext = new zClosureContext();
-    SNode conceptFunction = SNodeOperations.getAncestor(argument, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
+    SNode conceptFunction = SNodeOperations.getAncestor(parameter, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     if(SNodeOperations.isInstanceOf(conceptFunction, "jetbrains.mps.baseLanguage.structure.Closure")) {
-      TypeChecker.getInstance().reportTypeError(argument, "concept function parameter can not be used in closure", "jetbrains.mps.baseLanguage.helgins", "1197313614703");
+      TypeChecker.getInstance().reportTypeError(parameter, "concept function parameter can not be used in closure", "jetbrains.mps.baseLanguage.helgins", "1197313614703");
     } else
     {
-      _zClosureContext.parameterConcept = SNodeOperations.getConceptDeclaration(argument);
+      _zClosureContext.parameterConcept = SNodeOperations.getConceptDeclaration(parameter);
       Iterable<SNode> seq = SequenceOperations.where(ConceptFunction_Behavior.call_getParameters_1197312191473(conceptFunction), new zPredicate(check_ConceptFunctionParameter_NonTypesystemRule.this, _zClosureContext));
       if(SequenceOperations.isEmpty(seq)) {
-        TypeChecker.getInstance().reportTypeError(argument, "not applicable in this context", "jetbrains.mps.baseLanguage.helgins", "1197313958459");
+        TypeChecker.getInstance().reportTypeError(parameter, "not applicable in this context", "jetbrains.mps.baseLanguage.helgins", "1197313958459");
       }
     }
   }

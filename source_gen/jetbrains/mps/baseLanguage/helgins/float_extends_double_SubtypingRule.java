@@ -12,7 +12,7 @@ public class float_extends_double_SubtypingRule extends SubtypingRule_Runtime im
   public  float_extends_double_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type) {
+  public SNode getSubOrSuperType(SNode floatType) {
     return new QuotationClass_56().createNode();
   }
 

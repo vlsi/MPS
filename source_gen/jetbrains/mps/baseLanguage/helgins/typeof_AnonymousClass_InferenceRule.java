@@ -13,8 +13,8 @@ public class typeof_AnonymousClass_InferenceRule implements InferenceRule_Runtim
   public  typeof_AnonymousClass_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguage.helgins", "1194623855703", true), new QuotationClass_78().createNode(SLinkOperations.getTarget(argument, "classifier", false), SLinkOperations.getTargets(argument, "parameter", true)), argument, null, "jetbrains.mps.baseLanguage.helgins", "1194623862628");
+  public void applyRule(final SNode nodeToCheck) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(nodeToCheck, "jetbrains.mps.baseLanguage.helgins", "1194623855703", true), new QuotationClass_78().createNode(SLinkOperations.getTarget(nodeToCheck, "classifier", false), SLinkOperations.getTargets(nodeToCheck, "parameter", true)), nodeToCheck, null, "jetbrains.mps.baseLanguage.helgins", "1194623862628");
   }
 
   public String getApplicableConceptFQName() {

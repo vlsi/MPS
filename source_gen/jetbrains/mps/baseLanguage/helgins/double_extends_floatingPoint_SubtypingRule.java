@@ -13,7 +13,7 @@ public class double_extends_floatingPoint_SubtypingRule extends SubtypingRule_Ru
   public  double_extends_floatingPoint_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type) {
+  public SNode getSubOrSuperType(SNode doubleType) {
     return SLinkOperations.getTarget(new QuotationClass_57().createNode(), "descriptor", false);
   }
 

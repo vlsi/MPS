@@ -13,8 +13,8 @@ public class typeOf_DoWhileStatement_InferenceRule implements InferenceRule_Runt
   public  typeOf_DoWhileStatement_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1177667395190", true), new QuotationClass_74().createNode(), SLinkOperations.getTarget(argument, "condition", true), null, "jetbrains.mps.baseLanguage.helgins", "1177667395187");
+  public void applyRule(final SNode doWhileStatement) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(doWhileStatement, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1177667395190", true), new QuotationClass_74().createNode(), SLinkOperations.getTarget(doWhileStatement, "condition", true), null, "jetbrains.mps.baseLanguage.helgins", "1177667395187");
   }
 
   public String getApplicableConceptFQName() {

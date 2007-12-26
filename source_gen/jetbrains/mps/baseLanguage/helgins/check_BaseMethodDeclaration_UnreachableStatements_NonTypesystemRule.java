@@ -18,14 +18,14 @@ public class check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule
   public  check_BaseMethodDeclaration_UnreachableStatements_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    CFGBuilder cfgBuilder = new CFGBuilder(argument);
+  public void applyRule(final SNode baseMethodDeclaration) {
+    CFGBuilder cfgBuilder = new CFGBuilder(baseMethodDeclaration);
     for(BasicBlock basicBlock : cfgBuilder.getUnreachableBasicBlocks()) {
       if(!(basicBlock.isFake())) {
         TypeChecker.getInstance().reportTypeError(basicBlock.getSourceNode(), "unreachable statement", "jetbrains.mps.baseLanguage.helgins", "1196169269696");
       }
     }
-    if(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(argument, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
+    if(!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(baseMethodDeclaration, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"))) {
       IControlFlowGraph controlFlowGraph = cfgBuilder.getControlFlowGraph();
       Set<BasicBlock> lastBlocks = RulesFunctions_BaseLanguage.findLastBlocks(controlFlowGraph);
       for(BasicBlock basicBlock : lastBlocks) {

@@ -12,7 +12,7 @@ public class boolean_extends_Boolean_1_SubtypingRule extends SubtypingRule_Runti
   public  boolean_extends_Boolean_1_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type) {
+  public SNode getSubOrSuperType(SNode boolType) {
     return new QuotationClass_7().createNode();
   }
 

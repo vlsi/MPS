@@ -157,6 +157,31 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1196335717102">
     <property name="name" value="AAAA" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1198681051909">
+      <property name="name" value="test" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198681051910" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1198681051911" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198681051912">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198681054834">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198681054835">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1198681054836" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1198681060515">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.Expression" id="1198681060517" />
+              <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.Expression" id="1198681060518" />
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1198681058246">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198681059467">
+                  <property name="value" value="3" />
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198681057620">
+                  <property name="value" value="2" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1196335717103" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1196335720640">

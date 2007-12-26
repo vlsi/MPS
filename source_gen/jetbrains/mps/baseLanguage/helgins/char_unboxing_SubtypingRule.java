@@ -13,7 +13,7 @@ public class char_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   public  char_unboxing_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type) {
+  public SNode getSubOrSuperType(SNode charType) {
     return new QuotationClass_67().createNode();
   }
 

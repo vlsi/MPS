@@ -13,8 +13,8 @@ public class typeOf_EnumConstantDeclaration_InferenceRule implements InferenceRu
   public  typeOf_EnumConstantDeclaration_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_46().createNode(SNodeOperations.getAncestor(argument, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false)), argument, "jetbrains.mps.baseLanguage.helgins", "1176904413280");
+  public void applyRule(final SNode enumConstDecl) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_46().createNode(SNodeOperations.getAncestor(enumConstDecl, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false)), enumConstDecl, "jetbrains.mps.baseLanguage.helgins", "1176904413280");
   }
 
   public String getApplicableConceptFQName() {

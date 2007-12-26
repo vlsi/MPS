@@ -13,9 +13,9 @@ public class typeOf_equalsExpression_InferenceRule implements InferenceRule_Runt
   public  typeOf_equalsExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1175606151425", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins", "1175606166039", true), argument, null, "jetbrains.mps.baseLanguage.helgins", "1175606148093");
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_13().createNode(), argument, "jetbrains.mps.baseLanguage.helgins", "1175606176810");
+  public void applyRule(final SNode equalsExpr) {
+    TypeChecker.getInstance().getRuntimeSupport().createComparableEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(equalsExpr, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1175606151425", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(equalsExpr, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins", "1175606166039", true), equalsExpr, null, "jetbrains.mps.baseLanguage.helgins", "1175606148093");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_13().createNode(), equalsExpr, "jetbrains.mps.baseLanguage.helgins", "1175606176810");
   }
 
   public String getApplicableConceptFQName() {

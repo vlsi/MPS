@@ -12,8 +12,8 @@ public class typeOf_IntegerLiteral_InferenceRule implements InferenceRule_Runtim
   public  typeOf_IntegerLiteral_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_48().createNode(), argument, "jetbrains.mps.baseLanguage.helgins", "1176907711684");
+  public void applyRule(final SNode integerLiteral) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_48().createNode(), integerLiteral, "jetbrains.mps.baseLanguage.helgins", "1176907711684");
   }
 
   public String getApplicableConceptFQName() {

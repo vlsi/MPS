@@ -20,28 +20,28 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
   public  typeOf_BaseMethodDeclaration_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    for(SNode throwsItem : SLinkOperations.getTargets(argument, "throwsItem", true)) {
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_33().createNode(), argument, null, "jetbrains.mps.baseLanguage.helgins", "1176898076811");
+  public void applyRule(final SNode bmd) {
+    for(SNode throwsItem : SLinkOperations.getTargets(bmd, "throwsItem", true)) {
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(throwsItem, new QuotationClass_33().createNode(), bmd, null, "jetbrains.mps.baseLanguage.helgins", "1176898076811");
     }
     // ==========
-    if(SLinkOperations.getTarget(argument, "body", true) == null) {
+    if(SLinkOperations.getTarget(bmd, "body", true) == null) {
       return;
     }
-    if(SConceptPropertyOperations.getBoolean(argument, "abstract")) {
+    if(SConceptPropertyOperations.getBoolean(bmd, "abstract")) {
       return;
     }
-    if(SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SPropertyOperations.getBoolean(argument, "isAbstract")) {
+    if(SNodeOperations.isInstanceOf(bmd, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SPropertyOperations.getBoolean(bmd, "isAbstract")) {
       return;
     }
     // =============
-    SNode expectedRetType = SLinkOperations.getTarget(argument, "returnType", true);
-    if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType") || SNodeOperations.isInstanceOf(argument, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
+    SNode expectedRetType = SLinkOperations.getTarget(bmd, "returnType", true);
+    if(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(expectedRetType), "jetbrains.mps.baseLanguage.structure.Type") || SNodeOperations.isInstanceOf(expectedRetType, "jetbrains.mps.baseLanguage.structure.VoidType") || SNodeOperations.isInstanceOf(bmd, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
       // actually - no return type
       expectedRetType = null;
     }
     // =============
-    Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(argument, "body", true));
+    Iterable<SNode> returnStatements = RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(bmd, "body", true));
     if(expectedRetType == null) {
       // shouldn't return any values
       {
@@ -81,7 +81,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule implements InferenceRule
     // =============
     if(expectedRetType != null) {
       // last expression statement can serve as return statement
-      SNode lastStatement = SequenceOperations.getLast(SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "body", true), "statement", true));
+      SNode lastStatement = SequenceOperations.getLast(SLinkOperations.getTargets(SLinkOperations.getTarget(bmd, "body", true), "statement", true));
       if(SNodeOperations.isInstanceOf(lastStatement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
         SNode returnType = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(lastStatement, "expression", true), "jetbrains.mps.baseLanguage.helgins", "1178765601477", true);
         TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(returnType, expectedRetType, SLinkOperations.getTarget(lastStatement, "expression", true), expectedRetType + " is expected", "jetbrains.mps.baseLanguage.helgins", "1185363855090");

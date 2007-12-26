@@ -13,8 +13,8 @@ public class typeOf_andExpression_InferenceRule implements InferenceRule_Runtime
   public  typeOf_andExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode ae = argument;
+  public void applyRule(final SNode andExpr) {
+    SNode ae = andExpr;
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ae, "leftExpression", true), "jetbrains.mps.baseLanguage.helgins", "1175495306377", true), new QuotationClass_().createNode(), SLinkOperations.getTarget(ae, "leftExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1175495304171");
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ae, "rightExpression", true), "jetbrains.mps.baseLanguage.helgins", "1175495418307", true), new QuotationClass_1().createNode(), SLinkOperations.getTarget(ae, "rightExpression", true), null, "jetbrains.mps.baseLanguage.helgins", "1175495418306");
     TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(), ae, "jetbrains.mps.baseLanguage.helgins", "1175496779853");

@@ -12,8 +12,8 @@ public class typeOf_StringLiteral_InferenceRule implements InferenceRule_Runtime
   public  typeOf_StringLiteral_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_23().createNode(), argument, "jetbrains.mps.baseLanguage.helgins", "1176895947771");
+  public void applyRule(final SNode stringLiteral) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_23().createNode(), stringLiteral, "jetbrains.mps.baseLanguage.helgins", "1176895947771");
   }
 
   public String getApplicableConceptFQName() {

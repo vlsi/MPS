@@ -1201,8 +1201,12 @@ public class QueriesGenerated {
 
         public SNode doSubstitute(String pattern) {
           SNode to = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null);
-          SNodeOperations.replaceWithAnother(sourceNode, to);
-          SLinkOperations.setTarget(to, "condition", sourceNode, true);
+          SNode current = sourceNode;
+          while(SNodeOperations.isInstanceOf(SNodeOperations.getParent(current, null, false, false), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+            current = SNodeOperations.getParent(current, null, false, false);
+          }
+          SNodeOperations.replaceWithAnother(current, to);
+          SLinkOperations.setTarget(to, "condition", current, true);
           return to;
         }
 

@@ -12,7 +12,7 @@ public class int_extends_long_SubtypingRule extends SubtypingRule_Runtime implem
   public  int_extends_long_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type) {
+  public SNode getSubOrSuperType(SNode intType) {
     return new QuotationClass_52().createNode();
   }
 

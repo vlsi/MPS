@@ -16,10 +16,10 @@ public class typeOf_ConceptFunctionParameter_InferenceRule implements InferenceR
   public  typeOf_ConceptFunctionParameter_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    List<SNode> conceptFunctionParameters = SLinkOperations.getConceptLinkTargets(argument, "conceptFunctionParameterType");
+  public void applyRule(final SNode conceptFunctionParameter) {
+    List<SNode> conceptFunctionParameters = SLinkOperations.getConceptLinkTargets(conceptFunctionParameter, "conceptFunctionParameterType");
     if(!(SequenceOperations.isEmpty(conceptFunctionParameters))) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(ListOperations.getElement(conceptFunctionParameters, 0), argument, "jetbrains.mps.baseLanguage.helgins", "1177326121286");
+      TypeChecker.getInstance().getRuntimeSupport().givetype(ListOperations.getElement(conceptFunctionParameters, 0), conceptFunctionParameter, "jetbrains.mps.baseLanguage.helgins", "1177326121286");
     }
   }
 

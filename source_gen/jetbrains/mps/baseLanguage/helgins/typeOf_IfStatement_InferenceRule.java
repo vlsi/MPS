@@ -13,8 +13,8 @@ public class typeOf_IfStatement_InferenceRule implements InferenceRule_Runtime {
   public  typeOf_IfStatement_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1176898833121", true), new QuotationClass_34().createNode(), SLinkOperations.getTarget(argument, "condition", true), "condition should be boolean", "jetbrains.mps.baseLanguage.helgins", "1176898861472");
+  public void applyRule(final SNode ifStatement) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(ifStatement, "condition", true), "jetbrains.mps.baseLanguage.helgins", "1176898833121", true), new QuotationClass_34().createNode(), SLinkOperations.getTarget(ifStatement, "condition", true), "condition should be boolean", "jetbrains.mps.baseLanguage.helgins", "1176898861472");
   }
 
   public String getApplicableConceptFQName() {

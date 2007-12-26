@@ -16,9 +16,9 @@ public class PrimitiveSubtyping_SubtypingRule extends SubtypingRule_Runtime impl
   public  PrimitiveSubtyping_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode type) {
+  public List<SNode> getSubOrSuperTypes(SNode primitiveTypeDescriptor) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode ref : SLinkOperations.getTargets(type, "extends", true)) {
+    for(SNode ref : SLinkOperations.getTargets(primitiveTypeDescriptor, "extends", true)) {
       ListOperations.addElement(result, SLinkOperations.getTarget(ref, "descriptor", false));
     }
     return result;

@@ -13,8 +13,8 @@ public class typeOf_ThrowStatement_InferenceRule implements InferenceRule_Runtim
   public  typeOf_ThrowStatement_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "throwable", true), "jetbrains.mps.baseLanguage.helgins", "1176896098411", true), new QuotationClass_24().createNode(), SLinkOperations.getTarget(argument, "throwable", true), null, "jetbrains.mps.baseLanguage.helgins", "1176896118328");
+  public void applyRule(final SNode throwStatement) {
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(throwStatement, "throwable", true), "jetbrains.mps.baseLanguage.helgins", "1176896098411", true), new QuotationClass_24().createNode(), SLinkOperations.getTarget(throwStatement, "throwable", true), null, "jetbrains.mps.baseLanguage.helgins", "1176896118328");
   }
 
   public String getApplicableConceptFQName() {
