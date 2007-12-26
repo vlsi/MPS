@@ -23,6 +23,8 @@ public class IdeMain {
   }
                                                                           
   public static IDEProjectFrame openProjectWindow(final boolean loadOldProject) {
+    installFocusKiller();
+
     final IDEProjectFrame[] projectWindow = new IDEProjectFrame[1];
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
