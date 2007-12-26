@@ -21,7 +21,7 @@ public class PluginUtil {
   public static<PE extends PsiElement> PE getElement(PsiElement current, Class<PE> elementClass) {
     if (elementClass.isInstance(current)) {
       return (PE) current;
-    }
+    }    
     if (current.getParent() == null) return null;
     return getElement(current.getParent(), elementClass);
   }

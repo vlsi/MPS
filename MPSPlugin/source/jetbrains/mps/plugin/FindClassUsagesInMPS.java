@@ -21,7 +21,10 @@ public class FindClassUsagesInMPS extends AnAction {
     }
   }
 
-  private PsiClass getPsiClass(PsiElement element) {
+  private PsiClass getPsiClass(PsiElement element) {    
+    if (element == null) {
+      return null;
+    }
     PsiClass cls = PluginUtil.getElement(element, PsiClass.class);
     if (PluginUtil.getElement(element, PsiMethod.class) != null || PluginUtil.getElement(element, PsiField.class) != null) {
       cls = null;
