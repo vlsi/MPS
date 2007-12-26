@@ -34,104 +34,74 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_AnnotationList(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210594842");
-    if(true) {
-    }
   }
 
   private static void setupBasic_ColumnCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210594841");
     editorCell.setSelectable(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic__Component_VisibilityCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210576814");
-    if(true) {
-    }
   }
 
   private static void setupBasic_TypeCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210576815");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_VariableDeclaration_NameCellComponentCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210576816");
     BaseLanguageStyle_StyleSheet.FIELD.apply(editorCell);
-    if(true) {
-    }
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210576818");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_InitializerCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210576819");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_InitializerArea(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210576817");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210576828");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_DeclarationBox(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210576813");
     editorCell.setSelectable(false);
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
     editorCell.addKeyMap(new FieldDeclaration_keyMap());
   }
 
   private static void setupBasic_ColumnCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210576812");
-    if(true) {
-    }
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210583260");
-    if(true) {
-    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210583259");
     editorCell.setSelectable(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_AnnotationList1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210583261");
-    if(true) {
-    }
   }
 
   private static void setupBasic_ColumnCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188210582852");
-    if(true) {
-    }
   }
 
   private static void setupLabel_AnnotationList(EditorCell_Label editorCell, SNode node, EditorContext context) {

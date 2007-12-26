@@ -37,22 +37,16 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
   private static void setupBasic_StaticMethodDeclarationReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172058697111");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172058730163");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_ActualArgumentList(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172058760745");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
@@ -66,8 +60,6 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172058688093");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupLabel_StaticMethodDeclarationReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -172,8 +164,6 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172058703208");
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
-      if(true) {
-      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -228,8 +218,6 @@ public class LocalStaticMethodCall_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1172058772949");
       editorCell.setSelectable(true);
       editorCell.setDrawBorder(false);
-      if(true) {
-      }
     }
 
     private static void setupLabel_ConstantCell1(EditorCell_Label editorCell, SNode node, EditorContext context) {

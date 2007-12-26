@@ -31,8 +31,6 @@ public class VariableDeclaration_NameCellComponent extends AbstractCellProvider 
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1181823199382");
     editorCell.setDrawBorder(false);
     editorCell.setRightTransformAnchorTag("default_RTransform");
-    if(true) {
-    }
   }
 
   private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

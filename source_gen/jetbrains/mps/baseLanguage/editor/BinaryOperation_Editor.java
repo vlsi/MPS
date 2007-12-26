@@ -22,8 +22,6 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
   private static void setupBasic_LeftExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063955821");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
     BinaryOperation_LeftArgument_Actions.setCellActions(editorCell, node, context);
   }
 
@@ -31,24 +29,18 @@ public class BinaryOperation_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063984223");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
     editorCell.addKeyMap(new CastExpression_KeyMap());
   }
 
   private static void setupBasic_RightExpressionCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063955825");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
     BinaryOperation_RightArgument_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1166063955820");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupLabel_LeftExpressionCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

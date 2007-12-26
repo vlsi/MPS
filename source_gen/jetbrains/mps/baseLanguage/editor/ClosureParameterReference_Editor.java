@@ -21,8 +21,6 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
   private static void setupBasic_ClosureParameterReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1153179576790");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupLabel_ClosureParameterReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -72,8 +70,6 @@ public class ClosureParameterReference_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1153179665872");
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
-      if(true) {
-      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

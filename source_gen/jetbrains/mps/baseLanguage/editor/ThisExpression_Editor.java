@@ -25,43 +25,31 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182954963748");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
     editorCell.addKeyMap(new ThisExpression_KeyMap());
   }
 
   private static void setupBasic_ClassConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182955053205");
-    if(true) {
-    }
     ThisExpression_ClassConcept_Actions.setCellActions(editorCell, node, context);
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182955075319");
     editorCell.setSelectable(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182954970616");
     editorCell.setSelectable(true);
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182954969191");
-    if(true) {
-    }
   }
 
   private static void setupBasic_CellAlternation(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182954960781");
-    if(true) {
-    }
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -177,8 +165,6 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1182955065205");
-      if(true) {
-      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

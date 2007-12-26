@@ -15,8 +15,6 @@ public class Expression_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_CellModel_Custom(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198574536104");
-    if(true) {
-    }
   }
 
 
