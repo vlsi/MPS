@@ -153,28 +153,31 @@ public class FileUtil {
 
   public static void copyFile(File f, File to) {
     try {
-      byte[] bytes = new byte[(int) f.length()];
-
-      FileInputStream is = new FileInputStream(f);
-
-
-      File target;
-      if (to.isDirectory()) {
-        target = new File(to, f.getName());
-      } else {
-        target = to;        
-      }
-
-      OutputStream os = new FileOutputStream(target);
-
-      ReadUtil.read(bytes, is);
-      os.write(bytes);
-
-      is.close();
-      os.close();
+      copyFileChecked(f, to);
     } catch (IOException e) {
       e.printStackTrace();
     }
+  }
+
+  public static void copyFileChecked(File f, File to) throws IOException {
+    byte[] bytes = new byte[(int) f.length()];
+
+    FileInputStream is = new FileInputStream(f);
+
+    File target;
+    if (to.isDirectory()) {
+      target = new File(to, f.getName());
+    } else {
+      target = to;
+    }
+
+    OutputStream os = new FileOutputStream(target);
+
+    ReadUtil.read(bytes, is);
+    os.write(bytes);
+
+    is.close();
+    os.close();
   }
 
   public static String getCanonicalPath(File file) {
