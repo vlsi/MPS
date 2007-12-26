@@ -447,6 +447,10 @@ public abstract class MPSTree extends JTree {
   }
 
   public void runRebuildAction(Runnable rebuildAction, boolean saveExpansion) {
+    if (!ThreadUtils.isEventDispatchThread()) {
+      throw new RuntimeException("Rebuild now can be only called from UI thread");
+    }
+
     List<String> expansion = getExpandedPaths();
     List<String> selection = getSelectedPaths();
     rebuildAction.run();
