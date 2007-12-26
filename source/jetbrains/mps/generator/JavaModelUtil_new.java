@@ -136,7 +136,6 @@ public class JavaModelUtil_new {
     return (Classifier) BaseAdapter.fromNode(findClassifier(modelName, rootName));
   }
 
-  @Nullable
   public static SNode findClassifier(String packageName, String shortClassName) {
     SModelUID modelUID = new SModelUID(packageName, SModelStereotype.JAVA_STUB);
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
