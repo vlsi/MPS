@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
+import java.util.Map;
 
 /**
  * @author Kostik
@@ -20,13 +21,16 @@ public interface IModelRootManager {
   @NotNull
   SModel loadModel(@NotNull SModelDescriptor modelDescriptor);
 
-  int getVersion(@NotNull SModelDescriptor modelDescriptor);
-
   void updateAfterLoad(@NotNull SModelDescriptor modelDescriptor);
 
   void saveModel(@NotNull SModelDescriptor modelDescriptor);
 
   @Nullable SModel refresh(@NotNull SModelDescriptor modelDescriptor);
+
+  @Nullable
+  Map<String, String> loadMetadata(@NotNull SModelDescriptor modelDescriptor);
+
+  void saveMetadata(@NotNull SModelDescriptor modelDescriptor);
 
   boolean isFindUsagesSupported();
 

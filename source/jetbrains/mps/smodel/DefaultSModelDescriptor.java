@@ -31,12 +31,18 @@ import java.util.*;
  * @author Kostik
  */
 public class DefaultSModelDescriptor implements SModelDescriptor {
+  private static final String VERSION = "version";
+
   private static final Logger LOG = Logger.getLogger(DefaultSModelDescriptor.class);
 
   private static volatile long ourStructuralState = 0;
   private static volatile long ourState = 0;
 
   protected SModel mySModel = null;
+
+  private Map<String, String> myMetadata;
+  private boolean myMetadataLoaded;
+
   private SModelUID myModelUID = new SModelUID("", "");
   private List<SModelListener> myWeakModelListeners = new ArrayList<SModelListener>();
   private List<SModelListener> myModelListeners = new ArrayList<SModelListener>();
@@ -62,12 +68,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     checkModelDuplication();
     addPostLoadRunnable(new IPostLoadRunnable() {
       public void doPostLoadStuff(final SModelDescriptor descriptor) {
-        /* if (CommandProcessor.instance().getCurrentCommandKind() == CommandKind.GENERATION) {
-          return;
-        }*/
-        /*  if (getStereotype().equals(SModelStereotype.TEMPLATES)) {
-          return;
-        }*/
         if (descriptor.getSModel().hasLanguage("jetbrains.mps.bootstrap.helgins")) {
           boolean needsRefactoring = false;
           for (SNode node : descriptor.getSModel().allNodes()) {
@@ -208,7 +208,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     myModelRootManager.updateAfterLoad(this);
     SModelsMulticaster.getInstance().fireModelLoadedEvent(this);
     LOG.assertLog(mySModel != null, "Couldn't load model \"" + getModelUID() + "\"");
-    mySModel.setVersion(myModelRootManager.getVersion(this));
 
     updateModelWithRefactorings();
     doAdditionalPostLoadStuff();
@@ -338,7 +337,6 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return myLastChange;
   }
 
-  //event counter
   public long structuralState() {
     return ourStructuralState;
   }
@@ -644,17 +642,57 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     return myTransient;
   }
 
-  public void setTransient(boolean b) {
-    myTransient = b;
+  private Map<String, String> getMetaData_internal() {
+    if (myMetadataLoaded) {
+      return myMetadata;
+    }
+    myMetadata = myModelRootManager.loadMetadata(this);
+    myMetadataLoaded = true;
+    return myMetadata;
   }
 
+  public String getAttribute(String key) {
+    if (getMetaData_internal() == null) {
+      return null;
+    }
+    return getMetaData_internal().get(key);
+  }
+
+  public void setAttribute(String key, String value) {
+    if (getMetaData_internal() == null) {
+      throw new UnsupportedOperationException();
+    }
+
+    if (value == null) {
+      getMetaData_internal().remove(key);
+    } else {
+      getMetaData_internal().put(key, value);
+    }
+
+    myModelRootManager.saveMetadata(this);
+  }
+
+  public Map<String, String> getMetaData() {
+    if (getMetaData_internal() == null) {
+      return null;
+    }
+    return Collections.unmodifiableMap(getMetaData_internal());
+  }
 
   public int getVersion() {
-    if (mySModel == null) {
-      return myModelRootManager.getVersion(this);
-    } else {
-      return mySModel.getVersion();
+    try {
+      return Integer.parseInt(getAttribute(VERSION));
+    } catch (NumberFormatException e) {
+      return -1;
     }
+  }
+
+  public void setVersion(int newVersion) {
+    setAttribute(VERSION, "" + newVersion);
+  }
+
+  public void setTransient(boolean b) {
+    myTransient = b;
   }
 
   public Set<ModelRoot> collectModelRoots() {

@@ -60,7 +60,6 @@ public class SModel implements Iterable<SNode> {
   private RefactoringHistory myRefactoringHistory = new RefactoringHistory();
   private boolean myUsesLog;
   private boolean myRegistrationsForbidden = false;
-  private int myVersion = -1;
   private Set<String> myNewLanguageNamespaces = new HashSet<String>();
 
   public SModel(@NotNull SModelUID modelUID) {
@@ -114,7 +113,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public int getVersion() {
-    return myVersion;
+    return getModelDescriptor().getVersion();
   }
 
   @Deprecated
@@ -970,10 +969,6 @@ public class SModel implements Iterable<SNode> {
     return new ArrayList<String>(myLanguagesEngagedOnGeneration);
   }
 
-  /*package*/ void setVersion(int version) {
-    myVersion = version;
-  }
-
   public int getUsedVersion(SModelUID sModelUID) {
     ImportElement importElement = getImportElement(sModelUID);
     if (importElement == null) return -1;
@@ -998,12 +993,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   /*package*/ void increaseVersion() {
-    myVersion++;
-    saveVersionFile();
-  }
-
-  private void saveVersionFile() {
-    ModelPersistence.writeVersionFile(this, getModelDescriptor().getModelFile());
+    getModelDescriptor().setVersion(getVersion() + 1);
   }
 
   public RefactoringHistory getRefactoringHistory() {

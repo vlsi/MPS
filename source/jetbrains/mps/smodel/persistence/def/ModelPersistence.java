@@ -163,7 +163,6 @@ public class ModelPersistence {
 
     try {
       JDOMUtil.writeDocument(document, file);
-      writeVersionFile(model, file);
       SModelRepository.getInstance().markChanged(model, false);
     } catch (IOException e) {
       LOG.error(e);
@@ -183,55 +182,4 @@ public class ModelPersistence {
   public static void saveNode(Element container, SNode node) {
     modelWriters.get(currentPersistenceVersion).saveNode(container, node);
   }
-
-
-  private static IFile getVersionFile(IFile modelFile) {
-    String modelPath = modelFile.getAbsolutePath();
-    String versionPath = modelPath.substring(0, modelPath.length() - ".mps".length()) + ".version";
-    return FileSystem.getFile(versionPath);
-  }
-
-  public static void writeVersionFile(SModel model, IFile modelFile) {
-    int version = model.getVersion();
-    if (version < 0) return;
-    IFile versionFile = getVersionFile(modelFile);
-    try {
-      if (!versionFile.exists()) {
-        versionFile.createNewFile();
-        IOperationContext operationContext = model.getModelDescriptor().getOperationContext();
-        if (operationContext != null) {
-          IProjectHandler projectHandler = operationContext.getProject().getProjectHandler();
-          if (projectHandler != null) {
-            try {
-              projectHandler.addFilesToVCS(CollectionUtil.asList(versionFile.toFile()));
-            } catch (RemoteException e) {
-              LOG.error(e);
-            }
-          }
-        } else {
-          LOG.warning("can't find an operation context for a model "+model);
-        }
-      }
-      Document doc = new Document(new Element("version").setText("" + version));
-      JDOMUtil.writeDocument(doc, versionFile);
-    } catch (IOException ioe) {
-      LOG.error(ioe);
-    }
-  }
-
-  public static int readVersionFromFile(IFile modelFile) {
-    IFile versionFile = getVersionFile(modelFile);
-    if (versionFile.exists()) {
-      try {
-        Document versionDoc = JDOMUtil.loadDocument(versionFile);
-        return Integer.parseInt(versionDoc.getRootElement().getText());
-      } catch (JDOMException ex) {
-        LOG.error(ex);
-      } catch (IOException ex) {
-        LOG.error(ex);
-      }
-    }
-    return -1;
-  }
-
 }

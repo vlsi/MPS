@@ -18,14 +18,13 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileNameFilter;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.rmi.RemoteException;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 /**
  * @author Kostik
@@ -78,7 +77,6 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
                     "Make sure that all project's roots and/or the model namespace is correct");
     return model;
   }
-
 
   public boolean containsSomeString(@NotNull SModelDescriptor modelDescriptor, @NotNull Set<String> strings) {
     if (SModelRepository.getInstance().isChanged(modelDescriptor)) return true;
@@ -195,11 +193,6 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     return modelDescriptor;
   }
 
-  public int getVersion(@NotNull SModelDescriptor modelDescriptor) {
-    return ModelPersistence.readVersionFromFile(modelDescriptor.getModelFile());
-  }
-
-
   public boolean renameModelDescriptor(SModelDescriptor modelDescriptor, String newLongName, MPSProject project) {
     assert modelDescriptor instanceof DefaultSModelDescriptor;
     // 1. rename file
@@ -250,5 +243,45 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
     // update node pointers
     SNodePointer.changeModelUID(oldModelUID, newModelUID);
     return true;
+  }
+
+  public void saveMetadata(@NotNull SModelDescriptor modelDescriptor) {
+    Map<String, String> metadata = modelDescriptor.getMetaData();
+    if (metadata.isEmpty()) return;
+
+    IFile metadataFile = getMetadataFile(modelDescriptor.getModelFile());
+    if (!metadataFile.exists()) {
+        metadataFile.createNewFile();
+        IOperationContext operationContext = modelDescriptor.getOperationContext();
+        if (operationContext != null) {
+          IProjectHandler projectHandler = operationContext.getProject().getProjectHandler();
+          if (projectHandler != null) {
+            try {
+              projectHandler.addFilesToVCS(CollectionUtil.asList(metadataFile.toFile()));
+            } catch (RemoteException e) {
+              LOG.error(e);
+            }
+          }
+        } else {
+          LOG.warning("can't find an operation context for a model " + modelDescriptor);
+        }
+    }
+
+    DefaultMetadataPersistence.save(metadataFile, metadata);
+  }
+
+  @Nullable
+  public Map<String, String> loadMetadata(@NotNull SModelDescriptor modelDescriptor) {
+    IFile metadataFile = getMetadataFile(modelDescriptor.getModelFile());
+    if (!metadataFile.exists()) {
+      return new HashMap<String, String>();
+    }
+    return DefaultMetadataPersistence.load(metadataFile);
+  }
+
+  private static IFile getMetadataFile(IFile modelFile) {
+    String modelPath = modelFile.getAbsolutePath();
+    String versionPath = modelPath.substring(0, modelPath.length() - ".mps".length()) + ".metadata";
+    return FileSystem.getFile(versionPath);
   }
 }

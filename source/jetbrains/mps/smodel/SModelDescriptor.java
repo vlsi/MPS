@@ -10,6 +10,7 @@ import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Set;
+import java.util.Map;
 
 /**
  * User: Sergey Dmitriev
@@ -80,7 +81,15 @@ public interface SModelDescriptor {
 
   boolean isTransient();
 
+  String getAttribute(String key);
+
+  void setAttribute(String key, String value);
+
+  Map<String, String> getMetaData();
+
   int getVersion();
+
+  void setVersion(int newVersion);
 
   boolean rename(String newLongName, MPSProject project, ModelRoot newRoot);
 
