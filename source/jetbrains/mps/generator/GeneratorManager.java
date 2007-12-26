@@ -559,8 +559,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       updateLanguagesGenerationRequiredStatus(invocationContext);
 
       checkMonitorCanceled(progress);
-      progress.addText("");
-      if (status.isOk()) {
+      progress.addText("");     
+      if (status == null || status.isOk()) {
         IModule module = invocationContext.getModule();
         if (!myCompileOnGeneration || !(ideaPresent || module.isCompileInMPS())
                 || !generationType.requiresCompilationInIDEAfterGeneration()) {
