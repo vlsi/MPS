@@ -65,11 +65,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
     myModelRootManager = manager;
     myModelFile = modelFile;
 
-    if (modelFile != null) {
-      myLastChange = modelFile.lastModified();
-    } else {
-      myLastChange = System.currentTimeMillis();            
-    }
+    updateLastChange();
 
     checkModelDuplication();
     addPostLoadRunnable(new IPostLoadRunnable() {
@@ -111,6 +107,14 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
         }
       }
     });
+  }
+
+  private void updateLastChange() {
+    if (myModelFile != null) {
+      myLastChange = myModelFile.lastModified();
+    } else {
+      myLastChange = System.currentTimeMillis();
+    }
   }
 
   {
@@ -155,7 +159,10 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
       SModel oldModel = mySModel;
       mySModel = loadModel();
+      updateLastChange();
+
       doPostLoadStuff();
+
       oldModel.dispose();
       SModelRepository.getInstance().markChanged(this, false);
       MPSModuleRepository.getInstance().invalidateCaches();

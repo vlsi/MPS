@@ -3,6 +3,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
+import jetbrains.mps.generator.generationTypes.FileGenerationUtil;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.TypeChecker;
@@ -525,6 +526,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             if (generateText) {
               generationType.handleOutput(invocationContext, sourceModelDescriptor, status, progress, outputFolder, messages);
             }
+          } else {
+            //marks as generated models without applicable generators
+            FileGenerationUtil.updateLastGenerationTime(sourceModelDescriptor);
           }
           generationSession.discardTransients();
           progress.finishTask(taskName);

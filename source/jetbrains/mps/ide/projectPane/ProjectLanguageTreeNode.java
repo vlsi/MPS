@@ -79,18 +79,14 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     return result;
   }
 
-  public String toString() {
+  protected String getModulePresentation() {
     String languageUID = myLanguage.getModuleUID();
 
     if (myShortNameOnly) {
       languageUID = NameUtil.shortNameFromLongName(languageUID);
     }
 
-    if (myLanguage.isUpToDate()) {
-      return languageUID + "  (up-to-date)";
-    } else {
-      return languageUID + "  (generation required)";
-    }
+    return languageUID;
   }
 
   private void populate() {

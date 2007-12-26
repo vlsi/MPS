@@ -241,7 +241,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public String toString() {
-
     SModelUID uid;
 
     if (getSModelDescriptor() != null) {
@@ -428,7 +427,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           updateChangedRefs(nodesWithChangedRefs);
           updateNodesWithChangedPackages(nodesWithChangedPackages);
 
-          ((DefaultTreeModel) getTree().getModel()).nodeChanged(SModelTreeNode.this);
+
+          updateAncestorsText();
         }
       }, false);
     }

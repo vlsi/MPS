@@ -55,7 +55,7 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     return result;
   }
 
-  public String toString() {
+  protected String getModulePresentation() {
     String name = myDevKit.getModuleDescriptor().getName();
 
     if (myShortNameOnly) {

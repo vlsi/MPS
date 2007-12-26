@@ -66,7 +66,7 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
     return result;
   }
 
-  public String toString() {
+  protected String getModulePresentation() {
     String name = mySolution.getSolutionDescriptor().getName();
 
     if (myShortNameOnly) {
@@ -78,7 +78,7 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
     }
     return "solution";
   }
-
+ 
   private void populate() {
     SModelsSubtree.create(this, getOperationContext());
   }

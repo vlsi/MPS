@@ -7,6 +7,8 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.generator.generationTypes.FileGenerationUtil;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
 
@@ -33,6 +35,26 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
 
   protected ProjectModuleTreeNode(IOperationContext operationContext) {
     super(operationContext);
+  }
+
+  protected abstract String getModulePresentation();
+
+  public String toString() {
+    if (isUpToDate()) {
+      return getModulePresentation();
+    } else {
+      return getModulePresentation() + " (generation required)";
+    }
+  }
+
+  public boolean isUpToDate() {
+    for (SModelDescriptor sm : getModule().getOwnModelDescriptors()) {
+      if (FileGenerationUtil.generationRequired(sm)) {
+        return false;
+      }
+    }
+
+    return true;
   }
 
   public abstract IModule getModule();

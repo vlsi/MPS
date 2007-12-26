@@ -177,4 +177,15 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   public int getToggleClickCount() {
     return 2;
   }
+
+  public void updateText() {
+    ((DefaultTreeModel) getTree().getModel()).nodeChanged(this);
+  }
+
+  public void updateAncestorsText() {
+    updateText();
+    if (getParent() != null) {
+      ((MPSTreeNode) getParent()).updateAncestorsText();
+    }
+  }
 }
