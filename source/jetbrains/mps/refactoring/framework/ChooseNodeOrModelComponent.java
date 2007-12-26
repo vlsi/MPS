@@ -63,7 +63,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
       modelCondition = myCondition;
     }
     Set<SModelDescriptor> models = getModelsFrom(myOperationContext, modelCondition);
-    myModels.addAll(models);
+    myModels = models;
     myTree.rebuildNow();
   }
 

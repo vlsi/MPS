@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
+import jetbrains.mps.util.Condition;
 
 public class MoveLinkUp extends AbstractLoggableRefactoring {
   public static final String targetConcept = "targetConcept";
@@ -82,6 +83,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
     {
       IChooseComponent<SNode> chooseComponent;
       chooseComponent = new ChooseNodeComponent("chooseTargetConcept", "targetConcept", actionContext, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
+      chooseComponent.setCondition(new MoveLinkUp.My_targetConcept_Condition(actionContext));
       components.add(chooseComponent);
     }
     ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
@@ -89,5 +91,31 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
     result = dialog.getResult();
     return result;
   }
+
+  public static class My_targetConcept_Condition implements Condition<SNode> {
+
+    private ActionContext myActionContext;
+
+    public  My_targetConcept_Condition(ActionContext actionContext) {
+      this.myActionContext = actionContext;
+    }
+
+    public boolean met(SNode argument) {
+      return this.met_internal(argument, this.myActionContext);
+    }
+
+    public boolean met_internal(SNode argument, ActionContext actionContext) {
+      SNode node = actionContext.getNode();
+      if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"))) {
+        return false;
+      }
+      SNode concept = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
+      if(concept == null) {
+        return false;
+      }
+      return argument != concept && AbstractConceptDeclaration_Behavior.call_isAssignableFrom_1198080700262(argument, concept);
+    }
+
+}
 
 }
