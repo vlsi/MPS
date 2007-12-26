@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.generator.generationTypes.FileGenerationUtil;
 
 import javax.swing.Icon;
 import javax.swing.JOptionPane;
@@ -226,7 +227,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return context;
   }
 
-
   public JPopupMenu getQuickCreatePopupMenu() {
     JPopupMenu popupMenu = new JPopupMenu();
     ActionGroup group = new CreateRootNodeGroup();
@@ -253,10 +253,19 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     String name = myShowLongName ? uid.toString()
                                  : uid.getShortName();
 
+    String result;
+
     if (myLabel != null) {
-      return myLabel + " : " + name;
+      result = myLabel + " : " + name;
+    } else {
+      result = name;
     }
-    return name;
+
+    if (FileGenerationUtil.generationRequired(getSModelDescriptor())) {
+      result += " (generation required)";
+    }
+
+    return result;
   }
 
   ModelCheckResult getModelCheckResult() {
@@ -420,6 +429,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           updateChangedProperties(nodesWithChangedProperties);
           updateChangedRefs(nodesWithChangedRefs);
           updateNodesWithChangedPackages(nodesWithChangedPackages);
+
+          ((DefaultTreeModel) getTree().getModel()).nodeChanged(SModelTreeNode.this);
         }
       }, false);
     }

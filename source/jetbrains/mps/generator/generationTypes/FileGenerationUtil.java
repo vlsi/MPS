@@ -2,6 +2,7 @@ package jetbrains.mps.generator.generationTypes;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
@@ -16,7 +17,27 @@ import java.util.*;
 import java.rmi.RemoteException;
 
 public class FileGenerationUtil {
-  public static void handleOutput(IOperationContext context, GenerationStatus status, String outputDir, IMessageHandler messages) {
+
+  private static String LAST_GENERATION_TIME = "lastGenerationTime";
+
+  public static long getLastGenerationTime(SModelDescriptor sm) {
+    String value = sm.getAttribute(LAST_GENERATION_TIME);
+    try {
+      return Long.parseLong(value);
+    } catch (NumberFormatException e) {
+      return -1;
+    }
+  }
+
+  public static void updateLastGenerationTime(SModelDescriptor sm) {
+    sm.setAttribute(LAST_GENERATION_TIME, "" + System.currentTimeMillis());
+  }
+
+  public static boolean generationRequired(SModelDescriptor sm) {
+    return sm.lastChange() >= getLastGenerationTime(sm);
+  }
+
+  public static void handleOutput(IOperationContext context, SModelDescriptor sm, GenerationStatus status, String outputDir, IMessageHandler messages) {
     if (outputDir == null) throw new RuntimeException("Unspecified output path. Please specify one.");
 
     File outputRootDirectory = new File(outputDir);
@@ -33,7 +54,7 @@ public class FileGenerationUtil {
     Set<File> generatedFiles = new HashSet<File>();
     Set<File> directories = new HashSet<File>();
 
-    generateFiles(status, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
+    generateFiles(status, sm, outputRootDirectory, gm, outputNodeContents, generatedFiles, directories);
 
 
     IProjectHandler handler = context.getProject().getProjectHandler();
@@ -89,7 +110,10 @@ public class FileGenerationUtil {
     }
   }
 
-  public static void generateFiles(GenerationStatus status, File outputRootDirectory, GeneratorManager gm, Map<SNode, String> outputNodeContents, Set<File> generatedFiles, Set<File> directories) {
+  public static void generateFiles(GenerationStatus status, SModelDescriptor sm, File outputRootDirectory, GeneratorManager gm, Map<SNode, String> outputNodeContents, Set<File> generatedFiles, Set<File> directories) {
+
+    System.out.println("model = " + sm);
+    updateLastGenerationTime(sm);
     for (SNode outputRootNode : outputNodeContents.keySet()) {
       try {
         SNode originalInputNode = null;
