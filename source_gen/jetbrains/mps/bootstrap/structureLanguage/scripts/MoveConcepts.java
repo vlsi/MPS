@@ -11,8 +11,8 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperati
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelDescriptor;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
@@ -22,7 +22,7 @@ import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.HashMap;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
-import jetbrains.mps.refactoring.framework.ChooseModelComponent;
+import jetbrains.mps.refactoring.framework.ChooseModelDescriptorComponent;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -58,9 +58,9 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     {
       List<SNode> nodes = (List<SNode>)actionContext.getNodes();
       SModel model = actionContext.getNode().getModel();
-      refactoringContext.setParameter("sourceModel", model);
-      Language sourceLanguage = Language.getLanguageFor(((SModel)refactoringContext.getParameter("sourceModel")).getModelDescriptor());
-      Language targetLanguage = Language.getLanguageFor(((SModel)refactoringContext.getParameter("targetModel")).getModelDescriptor());
+      refactoringContext.setParameter("sourceModel", model.getModelDescriptor());
+      Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
+      Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
       List<SNode> editors = new ArrayList<SNode>();
       List<SNode> behaviors = new ArrayList<SNode>();
       // collecting editors:
@@ -86,9 +86,9 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
         }
       }
       // refactoring itself
-      refactoringContext.moveNodesToModel(nodes, ((SModel)refactoringContext.getParameter("targetModel")));
+      refactoringContext.moveNodesToModel(nodes, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModel());
       for(SNode node : nodes) {
-        refactoringContext.changeFeatureName(node, ((SModel)refactoringContext.getParameter("targetModel")) + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
+        refactoringContext.changeFeatureName(node, ((SModelDescriptor)refactoringContext.getParameter("targetModel")) + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
       }
       if(!(SequenceOperations.isEmpty(editors))) {
         SModelDescriptor targetEditorModelDescriptor = targetLanguage.getEditorModelDescriptor();
@@ -117,12 +117,12 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
   public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
-      Language sourceLanguage = Language.getLanguageFor(((SModel)refactoringContext.getParameter("sourceModel")).getModelDescriptor());
+      Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
       if(sourceLanguage != null) {
         List<SModel> aspectList = SequenceOperations.toList(SequenceOperations.select(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(sourceLanguage.getAspectModelDescriptors())), new zSelector1(null, null)));
         result.put(sourceLanguage, aspectList);
       }
-      Language targetLanguage = Language.getLanguageFor(((SModel)refactoringContext.getParameter("targetModel")).getModelDescriptor());
+      Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
       if(targetLanguage != null) {
         List<SModel> aspectList = SequenceOperations.toList(SequenceOperations.select(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(targetLanguage.getAspectModelDescriptors())), new zSelector2(null, null)));
         result.put(targetLanguage, aspectList);
@@ -139,8 +139,8 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     boolean result = false;
     List<IChooseComponent> components = new ArrayList<IChooseComponent>();
     {
-      IChooseComponent<SModel> chooseComponent;
-      chooseComponent = new ChooseModelComponent("choose target model", "targetModel", actionContext);
+      IChooseComponent<SModelDescriptor> chooseComponent;
+      chooseComponent = new ChooseModelDescriptorComponent("choose target model", "targetModel", actionContext);
       chooseComponent.setCondition(new MoveConcepts.My_targetModel_Condition(actionContext));
       components.add(chooseComponent);
     }
@@ -150,7 +150,7 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     return result;
   }
 
-  public static class My_targetModel_Condition implements Condition<SModel> {
+  public static class My_targetModel_Condition implements Condition<SModelDescriptor> {
 
     private ActionContext myActionContext;
 
@@ -158,12 +158,12 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       this.myActionContext = actionContext;
     }
 
-    public boolean met(SModel argument) {
+    public boolean met(SModelDescriptor argument) {
       return this.met_internal(argument, this.myActionContext);
     }
 
-    public boolean met_internal(SModel argument, ActionContext actionContext) {
-      return Language.getModelAspect(argument.getModelDescriptor()) == LanguageAspect.STRUCTURE;
+    public boolean met_internal(SModelDescriptor argument, ActionContext actionContext) {
+      return Language.getModelAspect(argument) == LanguageAspect.STRUCTURE;
     }
 
 }

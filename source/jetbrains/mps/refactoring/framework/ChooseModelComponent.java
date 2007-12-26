@@ -19,7 +19,7 @@ public class ChooseModelComponent extends JPanel implements IChooseComponent<SMo
   private ChooseNodeOrModelComponent myChooseNodeOrModelComponent;
 
   public ChooseModelComponent(String caption, String propertyName, ActionContext actionContext) {
-    myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(caption, propertyName, actionContext, null, true, false);
+    myChooseNodeOrModelComponent = new ChooseNodeOrModelComponent(caption, propertyName, actionContext, null, true, false, true);
     add(myChooseNodeOrModelComponent, BorderLayout.CENTER);
   }
 

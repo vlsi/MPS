@@ -23,6 +23,7 @@ public class Serializer {
   public static final String SNODE = "snode";
   public static final String STRING = "string";
   public static final String SMODEL = "smodel";
+  public static final String SMODEL_DESCRIPTOR = "smodelDescriptor";
   public static final String ISERIALIZABLE = "iserializable";
 
   public static final String STRING_VALUE = "stringValue";
@@ -45,6 +46,10 @@ public class Serializer {
       element.setAttribute(OBJECT_TYPE, SMODEL);
       element.setAttribute(MODEL_UID, ((SModel)value).toString());
     }
+    if (value instanceof SModelDescriptor) {
+      element.setAttribute(OBJECT_TYPE, SMODEL_DESCRIPTOR);
+      element.setAttribute(MODEL_UID, ((SModelDescriptor)value).toString());
+    }
     if (value instanceof ISerializable) {
       element.setAttribute(OBJECT_TYPE, ISERIALIZABLE);
       element.setAttribute(CLASS_NAME, value.getClass().getName());
@@ -61,8 +66,16 @@ public class Serializer {
       FullNodeId fullNodeId = new FullNodeId(element);
       return fullNodeId.getNode();
     }
-    if (SMODEL.equals(OBJECT_TYPE)) {
+    if (SMODEL_DESCRIPTOR.equals(OBJECT_TYPE)) {
       return SModelRepository.getInstance().getModelDescriptor(SModelUID.fromString(element.getAttributeValue(MODEL_UID)));
+    }
+    if (SMODEL.equals(OBJECT_TYPE)) {
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().
+              getModelDescriptor(SModelUID.fromString(element.getAttributeValue(MODEL_UID)));
+      if (modelDescriptor == null) {
+        return null;
+      }
+      return modelDescriptor.getSModel();
     }
     if (ISERIALIZABLE.equals(OBJECT_TYPE)) {
       String className = element.getAttributeValue(CLASS_NAME);

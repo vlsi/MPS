@@ -6,11 +6,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
 
@@ -32,24 +28,18 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   private Set<SModelDescriptor> myModels = new HashSet<SModelDescriptor>();
   boolean myMayBeModel;
   boolean myMayBeNode;
+  boolean myReturnLoadedModels = false;
 
   private Condition myCondition = Condition.TRUE_CONDITION;
 
-  public ChooseNodeOrModelComponent(String caption, String propertyName, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode, Condition condition) {
+  public ChooseNodeOrModelComponent(String caption, String propertyName, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
     myCaption = caption;
     myPropertyName = propertyName;
     myActionContext = actionContext;
     myOperationContext = myActionContext.getOperationContext();
     myMayBeModel = mayBeModel;
     myMayBeNode = mayBeNode;
-    myCondition = condition;
 
-    Condition modelCondition = Condition.TRUE_CONDITION;
-    if (myMayBeModel) {
-      modelCondition = myCondition;
-    }
-    Set<SModelDescriptor> models = getModelsFrom(myOperationContext, modelCondition);
-    myModels.addAll(models);
     myConceptFQName = conceptFQName;
 
     add(new JLabel(myCaption), BorderLayout.NORTH);
@@ -60,22 +50,37 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     myTree.expandPath(new TreePath(myTree.getRootNode()));
   }
 
-   public ChooseNodeOrModelComponent(String caption, String propertyName, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
-     this(caption, propertyName, actionContext, conceptFQName, mayBeModel, mayBeNode, Condition.TRUE_CONDITION);
-   }
+
+  public ChooseNodeOrModelComponent(String caption, String propertyName, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode, boolean useLoadedModels) {
+    this(caption, propertyName, actionContext, conceptFQName, mayBeModel, mayBeNode);
+    myReturnLoadedModels = useLoadedModels;
+  }
 
   public void setCondition(Condition<Object> condition) {
     myCondition = condition;
+    Condition modelCondition = Condition.TRUE_CONDITION;
+    if (myMayBeModel) {
+      modelCondition = myCondition;
+    }
+    Set<SModelDescriptor> models = getModelsFrom(myOperationContext, modelCondition);
+    myModels.addAll(models);
+    myTree.rebuildNow();
   }
 
-   private static Set<SModelDescriptor> getModelsFrom(IOperationContext context, Condition condition) {
+  private Set<SModelDescriptor> getModelsFrom(IOperationContext context, Condition condition) {
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(context.getProject().getScope().getModelDescriptors());
     for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
       if (!model.getStereotype().equals(SModelStereotype.NONE) && !model.getStereotype().equals(SModelStereotype.TEMPLATES)) {
         models.remove(model);
       }
-      if (!condition.met(model.getSModel())) {
-        models.remove(model);
+      if (myReturnLoadedModels) {
+        if (!condition.met(model.getSModel())) {
+          models.remove(model);
+        }
+      } else {
+        if (!condition.met(model)) {
+          models.remove(model);
+        }
       }
     }
     return models;
@@ -121,7 +126,11 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
         throw new InvalidInputValueException(myCaption + ": selected value should not not be a model");
       }
       SModelDescriptor modelDescriptor = ((SModelTreeNode)node).getSModelDescriptor();
-      return modelDescriptor.getSModel();
+      if (myReturnLoadedModels) {
+        return modelDescriptor.getSModel();
+      } else {
+        return modelDescriptor;
+      }
     }
     throw new InvalidInputValueException(myCaption + ": nothing is selected");
   }
@@ -131,6 +140,9 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   }
 
   public void setInitialValue(Object initialValue) {
+    if (myReturnLoadedModels && initialValue instanceof SModel) {
+      initialValue = ((SModel)initialValue).getModelDescriptor();
+    }
     TreeNode treeNode = myTree.findNodeWith(initialValue);
     if (treeNode != null) {
       myTree.selectNode(treeNode);
