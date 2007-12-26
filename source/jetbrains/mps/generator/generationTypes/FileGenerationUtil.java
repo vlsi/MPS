@@ -1,9 +1,6 @@
 package jetbrains.mps.generator.generationTypes;
 
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
@@ -37,9 +34,13 @@ public class FileGenerationUtil {
   public static boolean generationRequired(SModelDescriptor sm) {    
     if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) {
       return false;
-    }
+    }        
 
     if (sm.getModelFile() == null) {
+      return false;
+    }
+
+    if (Language.isAccessoryModel(sm)) {
       return false;
     }
 
