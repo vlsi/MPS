@@ -13,15 +13,15 @@ public class typeof_InternalNewExpression_InferenceRule implements InferenceRule
   public  typeof_InternalNewExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
+  public void applyRule(final SNode internalNewExpression) {
     SNode type;
-    if((SLinkOperations.getTarget(argument, "type", true) != null)) {
-      type = SLinkOperations.getTarget(argument, "type", true);
+    if((SLinkOperations.getTarget(internalNewExpression, "type", true) != null)) {
+      type = SLinkOperations.getTarget(internalNewExpression, "type", true);
     } else
     {
       type = new QuotationClass_().createNode();
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371898", true), type, argument, null, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371896");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(internalNewExpression, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371898", true), type, internalNewExpression, null, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371896");
   }
 
   public String getApplicableConceptFQName() {

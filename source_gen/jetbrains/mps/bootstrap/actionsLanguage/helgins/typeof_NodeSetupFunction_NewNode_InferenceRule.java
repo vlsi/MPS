@@ -14,10 +14,10 @@ public class typeof_NodeSetupFunction_NewNode_InferenceRule implements Inference
   public  typeof_NodeSetupFunction_NewNode_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode hostFactory = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory", false, false);
+  public void applyRule(final SNode node) {
+    SNode hostFactory = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory", false, false);
     SNode applicableConcept = SLinkOperations.getTarget(hostFactory, "applicableConcept", false);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_4().createNode(applicableConcept), argument, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046823644");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_4().createNode(applicableConcept), node, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046823644");
   }
 
   public String getApplicableConceptFQName() {

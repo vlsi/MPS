@@ -14,16 +14,16 @@ public class typeof_ConceptFunctionParameter_result_InferenceRule implements Inf
   public  typeof_ConceptFunctionParameter_result_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
+  public void applyRule(final SNode result) {
     SNode conceptOfResult = null;
-    SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(argument, new String[]{"jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart","jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformMenuPart"}, false, false);
+    SNode ancestor = SNodeOperations.getAncestorWhereConceptInList(result, new String[]{"jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart","jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformMenuPart"}, false, false);
     if(SNodeOperations.isInstanceOf(ancestor, "jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptRightTransformPart")) {
       conceptOfResult = SLinkOperations.getTarget(ancestor, "concept", false);
     } else
     {
       conceptOfResult = SLinkOperations.getTarget(ancestor, "baseConcept", false);
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_1().createNode(conceptOfResult), argument, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046146702");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_1().createNode(conceptOfResult), result, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046146702");
   }
 
   public String getApplicableConceptFQName() {

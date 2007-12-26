@@ -10,30 +10,37 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Type;
 
 public class InternalVariableReference extends Expression {
-  public static String NAME = "name";
+  public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference";
   public static String TYPE = "type";
+  public static String NAME = "name";
 
   public  InternalVariableReference(SNode node) {
     super(node);
   }
 
   public static InternalVariableReference newInstance(SModel sm, boolean init) {
-    return (InternalVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.InternalVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static InternalVariableReference newInstance(SModel sm) {
     return InternalVariableReference.newInstance(sm, false);
+  }
+
+
+  public Type getType() {
+    return (Type)this.getChild(InternalVariableReference.TYPE);
+  }
+
+  public void setType(Type node) {
+    super.setChild(InternalVariableReference.TYPE, node);
   }
 
   public String getName() {
     return this.getProperty(InternalVariableReference.NAME);
   }
+
   public void setName(String value) {
     this.setProperty(InternalVariableReference.NAME, value);
   }
-  public Type getType() {
-    return (Type)this.getChild(InternalVariableReference.TYPE);
-  }
-  public void setType(Type node) {
-    super.setChild(InternalVariableReference.TYPE, node);
-  }
+
 }

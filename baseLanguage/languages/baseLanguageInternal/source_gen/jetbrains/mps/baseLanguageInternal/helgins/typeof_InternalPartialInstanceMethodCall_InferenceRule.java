@@ -13,8 +13,8 @@ public class typeof_InternalPartialInstanceMethodCall_InferenceRule implements I
   public  typeof_InternalPartialInstanceMethodCall_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(argument, "returnType", true), argument, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371905");
+  public void applyRule(final SNode mc) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(mc, "returnType", true), mc, "jetbrains.mps.baseLanguageInternal.helgins", "1196525371905");
   }
 
   public String getApplicableConceptFQName() {

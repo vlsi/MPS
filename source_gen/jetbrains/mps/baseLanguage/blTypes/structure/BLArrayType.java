@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BLArrayType extends NamedConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType";
   public static String COMPONENT_TYPE = "componentType";
 
   public  BLArrayType(SNode node) {
@@ -16,16 +17,20 @@ public class BLArrayType extends NamedConcept {
   }
 
   public static BLArrayType newInstance(SModel sm, boolean init) {
-    return (BLArrayType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.BLArrayType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BLArrayType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.BLArrayType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static BLArrayType newInstance(SModel sm) {
     return BLArrayType.newInstance(sm, false);
   }
 
+
   public NamedConcept getComponentType() {
     return (NamedConcept)this.getReferent(BLArrayType.COMPONENT_TYPE);
   }
+
   public void setComponentType(NamedConcept node) {
     super.setReferent(BLArrayType.COMPONENT_TYPE, node);
   }
+
 }

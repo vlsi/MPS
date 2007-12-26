@@ -14,9 +14,9 @@ public class typeof_ConceptFunctionParameter_nodeToWrap_InferenceRule implements
   public  typeof_ConceptFunctionParameter_nodeToWrap_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode menu = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.WrapperSubstituteMenuPart", false, false);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SLinkOperations.getTarget(menu, "wrappedConcept", false)), argument, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046146686");
+  public void applyRule(final SNode nodeToWrap) {
+    SNode menu = SNodeOperations.getAncestor(nodeToWrap, "jetbrains.mps.bootstrap.actionsLanguage.structure.WrapperSubstituteMenuPart", false, false);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_().createNode(SLinkOperations.getTarget(menu, "wrappedConcept", false)), nodeToWrap, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046146686");
   }
 
   public String getApplicableConceptFQName() {

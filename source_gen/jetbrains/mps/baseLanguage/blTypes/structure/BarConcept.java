@@ -9,15 +9,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class BarConcept extends BaseConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.blTypes.structure.BarConcept";
 
   public  BarConcept(SNode node) {
     super(node);
   }
 
   public static BarConcept newInstance(SModel sm, boolean init) {
-    return (BarConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.BarConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BarConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.BarConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static BarConcept newInstance(SModel sm) {
     return BarConcept.newInstance(sm, false);
   }
+
 }

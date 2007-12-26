@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Type;
 
 public class InternalClassExpression extends Expression {
+  public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression";
   public static String TYPE = "type";
 
   public  InternalClassExpression(SNode node) {
@@ -17,16 +18,20 @@ public class InternalClassExpression extends Expression {
   }
 
   public static InternalClassExpression newInstance(SModel sm, boolean init) {
-    return (InternalClassExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.InternalClassExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalClassExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static InternalClassExpression newInstance(SModel sm) {
     return InternalClassExpression.newInstance(sm, false);
   }
 
+
   public Type getType() {
     return (Type)this.getChild(InternalClassExpression.TYPE);
   }
+
   public void setType(Type node) {
     super.setChild(InternalClassExpression.TYPE, node);
   }
+
 }

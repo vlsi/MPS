@@ -129,13 +129,7 @@ public class JDOMUtil {
     return new String(writer.toCharArray()).getBytes(ENCODING);
   }
 
-  /**
-   * Use this method only for a debug or logging purposes. When you use a XML document with
-   * characters other than ASCII it will cause encoding problems because each writer has
-   * its own encoding. It is better to use writeDocument with an output stream parameter. 
-   */
-  // method used in the DiffXMLServlet !?!
-  /*private*/ public static void writeDocument(Document document, Writer writer) throws IOException {
+  public static void writeDocument(Document document, Writer writer) throws IOException {
     XMLOutputter xmlOutputter = createOutputter();
     try {
       xmlOutputter.output(document, writer);

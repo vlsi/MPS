@@ -17,12 +17,12 @@ public class check_ConceptSubstitutePart_NonTypesystemRule implements NonTypesys
   public  check_ConceptSubstitutePart_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode builder = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", false, false);
+  public void applyRule(final SNode nodeToCheck) {
+    SNode builder = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", false, false);
     SNode substituteConcept = SLinkOperations.getTarget(builder, "applicableConcept", false);
-    SNode conceptToAdd = SLinkOperations.getTarget(argument, "concept", false);
+    SNode conceptToAdd = SLinkOperations.getTarget(nodeToCheck, "concept", false);
     if(!(SConceptOperations.isSubConceptOf(conceptToAdd, NameUtil.nodeFQName(substituteConcept)))) {
-      TypeChecker.getInstance().reportTypeError(argument, "Wrong concept to add. Use subtype of " + SPropertyOperations.getString(substituteConcept, "name"), "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1197896061431");
+      TypeChecker.getInstance().reportTypeError(nodeToCheck, "Wrong concept to add. Use subtype of " + SPropertyOperations.getString(substituteConcept, "name"), "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1197896061431");
     }
   }
 

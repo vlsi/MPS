@@ -14,9 +14,9 @@ public class typeof_ConceptFunctionParameter_currentTargetNode_InferenceRule imp
   public  typeof_ConceptFunctionParameter_currentTargetNode_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode builder = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", false, false);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(SLinkOperations.getTarget(builder, "applicableConcept", false)), argument, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046146718");
+  public void applyRule(final SNode node) {
+    SNode builder = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder", false, false);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_2().createNode(SLinkOperations.getTarget(builder, "applicableConcept", false)), node, "jetbrains.mps.bootstrap.actionsLanguage.helgins", "1180046146718");
   }
 
   public String getApplicableConceptFQName() {

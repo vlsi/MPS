@@ -11,6 +11,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
   public static final String concept = "jetbrains.mps.bootstrap.actionsLanguage.structure.WrapperSubstituteMenuPart";
   public static String WRAPPER_BLOCK = "wrapperBlock";
+  public static String RETURN_SMALL_PART = "returnSmallPart";
   public static String WRAPPED_CONCEPT = "wrappedConcept";
 
   public  WrapperSubstituteMenuPart(SNode node) {
@@ -32,6 +33,14 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
 
   public void setWrapperBlock(QueryFunction_SubstituteWrapper node) {
     super.setChild(WrapperSubstituteMenuPart.WRAPPER_BLOCK, node);
+  }
+
+  public boolean getReturnSmallPart() {
+    return this.getBooleanProperty(WrapperSubstituteMenuPart.RETURN_SMALL_PART);
+  }
+
+  public void setReturnSmallPart(boolean value) {
+    this.setBooleanProperty(WrapperSubstituteMenuPart.RETURN_SMALL_PART, value);
   }
 
   public ConceptDeclaration getWrappedConcept() {
