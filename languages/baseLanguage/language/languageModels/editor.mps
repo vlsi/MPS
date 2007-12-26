@@ -7399,6 +7399,7 @@
         <property name="fontStyle" value="PLAIN" />
         <property name="drawBorder" value="false" />
         <property name="text" value=".length" />
+        <property name="attractsFocus" value="1" />
         <link role="actionMap" targetNodeId="1173187270078" resolveInfo="ArrayLengthExpression_Actions" />
       </node>
     </node>
@@ -7480,6 +7481,24 @@
         <property name="attractsFocus" value="1" />
         <node role="focusPolicyApplicable" type="jetbrains.mps.bootstrap.editorLanguage.structure.QueryFunction_NodeCondition" id="1198529046862">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198529046863">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198681960152">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198681960153">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198681973540">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1198681977823">
+                    <property name="value" value="false" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1198681969036">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198681972101" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198681961500">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1198681963503">
+                    <link role="link" targetNodeId="17.1068499141037" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptFunctionParameter_node" id="1198681961359" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198529119435">
               <node role="expression" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1198529129835">
                 <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198529126284">
