@@ -12,4 +12,10 @@ public interface Condition<T> {
       return true;
     }
   };
+
+  public static final Condition FALSE_CONDITION = new Condition() {
+    public boolean met(Object object) {
+      return false;
+    }
+  };
 }

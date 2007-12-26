@@ -6,15 +6,19 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeNode;
+import javax.swing.tree.TreePath;
 import java.awt.BorderLayout;
 import java.util.*;
 
@@ -39,7 +43,12 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     myMayBeModel = mayBeModel;
     myMayBeNode = mayBeNode;
     myCondition = condition;
-    Set<SModelDescriptor> models = getModelsFrom(myOperationContext, myCondition);
+
+    Condition modelCondition = Condition.TRUE_CONDITION;
+    if (myMayBeModel) {
+      modelCondition = myCondition;
+    }
+    Set<SModelDescriptor> models = getModelsFrom(myOperationContext, modelCondition);
     myModels.addAll(models);
     myConceptFQName = conceptFQName;
 
@@ -55,13 +64,17 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
      this(caption, propertyName, actionContext, conceptFQName, mayBeModel, mayBeNode, Condition.TRUE_CONDITION);
    }
 
+  public void setCondition(Condition<Object> condition) {
+    myCondition = condition;
+  }
+
    private static Set<SModelDescriptor> getModelsFrom(IOperationContext context, Condition condition) {
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(context.getProject().getScope().getModelDescriptors());
     for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
       if (!model.getStereotype().equals(SModelStereotype.NONE) && !model.getStereotype().equals(SModelStereotype.TEMPLATES)) {
         models.remove(model);
       }
-      if (!condition.met(model)) {
+      if (!condition.met(model.getSModel())) {
         models.remove(model);
       }
     }
@@ -76,7 +89,11 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
       Collections.sort(models, new ToStringComparator());
 
       for (SModelDescriptor modelDescriptor : models) {
-        root.add(new SModelTreeNode(modelDescriptor, null, myOperationContext));
+        Condition<SNode> nodeCondition = Condition.FALSE_CONDITION;
+        if (myMayBeNode) {
+          nodeCondition = myCondition;
+        }
+        root.add(new SModelTreeNode(modelDescriptor, null, myOperationContext, nodeCondition));
       }
 
       return root;

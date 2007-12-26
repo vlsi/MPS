@@ -2,6 +2,7 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.util.Condition;
 
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -31,5 +32,9 @@ public class ChooseNodeComponent extends JPanel implements IChooseComponent<SNod
 
   public void setInitialValue(SNode initialValue) {
     myChooseNodeOrModelComponent.setInitialValue(initialValue);
+  }
+
+  public void setCondition(Condition<SNode> condition) {
+    myChooseNodeOrModelComponent.setCondition((Condition) condition);
   }
 }

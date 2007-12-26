@@ -11,7 +11,7 @@ import java.awt.GridLayout;
 public class ChooseStringComponent extends JPanel implements IChooseComponent<String>  {
   private JTextField myTextField;
   private String myPropertyName;
-  private Condition myCondition = Condition.TRUE_CONDITION;
+  private Condition<String> myCondition = Condition.TRUE_CONDITION;
 
   public ChooseStringComponent(String caption, String propetyName) {
     myPropertyName = propetyName;
@@ -41,5 +41,9 @@ public class ChooseStringComponent extends JPanel implements IChooseComponent<St
 
   public void setInitialValue(String initialValue) {
     myTextField.setText(initialValue);
+  }
+
+  public void setCondition(Condition<String> condition) {
+    myCondition = condition;
   }
 }

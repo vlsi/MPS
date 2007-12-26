@@ -11,6 +11,8 @@ import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.CollectionUtil;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
@@ -31,15 +33,21 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   protected boolean myInitialized = false;
   private SNode myNode;
   private String myRole;
+  private Condition<SNode> myCondition = Condition.TRUE_CONDITION;
 
   public SNodeTreeNode(SNode node, IOperationContext operationContext) {
     this(node, null, operationContext);
   }
 
   public SNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
+    this(node, role, operationContext, Condition.TRUE_CONDITION);
+  }
+
+  public SNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
     super(operationContext);
     myNode = node;
     myRole = role;
+    myCondition = condition;
   }
 
   public SModelTreeNode getSModelModelTreeNode() {
@@ -118,8 +126,10 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       add(new PropertiesTreeNode(getOperationContext(), n));
       add(new ReferencesTreeNode(getOperationContext(), n));
     }
-    
-    for (SNode childNode : n.getChildren()) {
+
+    List<SNode> children = n.getChildren();
+    List<SNode> filteredChildren = CollectionUtil.filter(children, myCondition);
+    for (SNode childNode : filteredChildren) {
       add(getSModelModelTreeNode().createSNodeTreeNode(childNode, childNode.getRole_(), getOperationContext()));
     }
 

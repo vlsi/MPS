@@ -1,29 +1,28 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.annotations.structure.AttributeConcept;
+import jetbrains.mps.generator.generationTypes.FileGenerationUtil;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.SystemInfo;
-import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.ide.action.ActionManager;
 import jetbrains.mps.ide.actions.model.CreateRootNodeGroup;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.modelchecker.ModelCheckResult;
 import jetbrains.mps.ide.modelchecker.ModelChecker;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.SortUtil;
-import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.util.AndCondition;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
-import jetbrains.mps.generator.generationTypes.FileGenerationUtil;
 
 import javax.swing.Icon;
 import javax.swing.JOptionPane;
@@ -32,9 +31,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import java.awt.Color;
 import java.awt.Frame;
-import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
-import java.awt.event.KeyEvent;
 import java.util.*;
 
 public class SModelTreeNode extends MPSTreeNodeEx {
@@ -48,6 +45,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private boolean myShowLongName;
   private List<SNodeGroupTreeNode> myRootGroups = new ArrayList<SNodeGroupTreeNode>();
 
+  private Condition<SNode> myNodesCondition = Condition.TRUE_CONDITION;
+
   private boolean myPackagesEnabled = true;
   private Map<String, PackageNode> myPackageNodes = new HashMap<String, PackageNode>();
 
@@ -60,11 +59,27 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   public SModelTreeNode(SModelDescriptor modelDescriptor,
                         String label,
                         IOperationContext operationContext,
+                        Condition<SNode> condition) {
+    this(modelDescriptor, label, operationContext, true, condition);
+  }
+
+  public SModelTreeNode(SModelDescriptor modelDescriptor,
+                        String label,
+                        IOperationContext operationContext,
                         boolean showLongName) {
+    this(modelDescriptor, label, operationContext, showLongName, Condition.TRUE_CONDITION);
+  }
+
+  public SModelTreeNode(SModelDescriptor modelDescriptor,
+                        String label,
+                        IOperationContext operationContext,
+                        boolean showLongName,
+                        Condition<SNode> condition) {
     super(operationContext);
     myShowLongName = showLongName;
     myModelDescriptor = modelDescriptor;
     myLabel = label;
+    myNodesCondition = condition;
   }
 
   protected SNodeGroupTreeNode getNodeGroupFor(SNode node) {
@@ -198,8 +213,16 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return createSNodeTreeNode(node, null, operationContext);
   }
 
+  public SNodeTreeNode createSNodeTreeNode(SNode node, IOperationContext operationContext, Condition<SNode> condition) {
+    return createSNodeTreeNode(node, null, operationContext, condition);
+  }
+
   public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
-    return new SNodeTreeNode(node, role, operationContext);
+    return createSNodeTreeNode(node, role, operationContext, Condition.TRUE_CONDITION);
+  }
+
+  public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
+    return new SNodeTreeNode(node, role, operationContext, condition);
   }
 
   public JPopupMenu getPopupMenu() {
@@ -275,7 +298,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return (ModelCheckResult) sm.getUserObject(ModelChecker.MODEL_CHECK_RESULT);
   }
 
-  public Color getColor() {    
+  public Color getColor() {
     ModelCheckResult r = getModelCheckResult();
     if (r != null && r.hasErrors()) {
       return Color.RED;
@@ -309,14 +332,15 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       if (!model.hasModelCommandListener(myModelListener)) {
         model.addModelCommandListener(myModelListener);
       }
-      List<SNode> filteredRoots = CollectionUtil.filter(model.getRoots(), new Condition<SNode>() {
+      Condition<SNode> condition = new Condition<SNode>() {
         public boolean met(SNode object) {
           return !(BaseAdapter.fromNode(object) instanceof AttributeConcept);
         }
-      });
+      };
+      List<SNode> filteredRoots = CollectionUtil.filter(model.getRoots(), new AndCondition<SNode>(condition, myNodesCondition));
       List<SNode> sortedRoots = SortUtil.sortNodes(filteredRoots);
       for (SNode sortedRoot : sortedRoots) {
-        MPSTreeNodeEx treeNode = createSNodeTreeNode(sortedRoot, getOperationContext());
+        MPSTreeNodeEx treeNode = createSNodeTreeNode(sortedRoot, getOperationContext(), myNodesCondition);
         MPSTreeNode group = getNodeGroupFor(sortedRoot);
         if (group != null) {
           group.add(treeNode);

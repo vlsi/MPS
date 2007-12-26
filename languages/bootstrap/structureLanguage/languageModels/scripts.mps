@@ -1540,6 +1540,72 @@
       <node role="argumentType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198593001176">
         <link role="concept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
       </node>
+      <node role="filterClause" type="jetbrains.mps.logging.refactoring.structure.FilterArgumentClause" id="1198674602943">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198674602944">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198675037530">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198675037531">
+              <property name="name" value="node" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198675037532" />
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198675037533">
+                <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getNode():jetbrains.mps.smodel.SNode" resolveInfo="getNode" />
+                <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1198675037534" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198675073060">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198675073061">
+              <property name="name" value="concept" />
+              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198675073062">
+                <link role="concept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198675091143">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetAncestorOperation" id="1198675091144">
+                  <node role="parameter" type="jetbrains.mps.bootstrap.smodelLanguage.structure.OperationParm_Concept" id="1198675091145">
+                    <link role="concept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198675091146">
+                  <link role="variableDeclaration" targetNodeId="1198675037531" resolveInfo="node" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198675098429">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198675098430">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198675111469">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1198675114581">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1198675108075">
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1198675109718" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198675102089">
+                <link role="variableDeclaration" targetNodeId="1198675073061" resolveInfo="concept" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198675027260">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="1198675132508">
+              <node role="rightExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198675146825">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1198675305598">
+                  <link role="conceptMethodDeclaration" targetNodeId="14.1198080700262" resolveInfo="isAssignableFrom" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198675309506">
+                    <link role="variableDeclaration" targetNodeId="1198675073061" resolveInfo="concept" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_UserArgument" id="1198675377256" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1198675127957">
+                <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_UserArgument" id="1198675029216" />
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198675130163">
+                  <link role="variableDeclaration" targetNodeId="1198675073061" resolveInfo="concept" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="isApplicableClause" type="jetbrains.mps.logging.refactoring.structure.IsApplicableClause" id="1198593012789">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198593012790">
