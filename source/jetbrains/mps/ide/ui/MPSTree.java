@@ -681,6 +681,7 @@ public abstract class MPSTree extends JTree {
         MPSTreeNode node = (MPSTreeNode) value;
         setIcon(node.getIcon(expanded));
         setForeground(node.getColor());
+        setFont(getFont().deriveFont(node.getFontStyle()));        
       }
       return this;
     }

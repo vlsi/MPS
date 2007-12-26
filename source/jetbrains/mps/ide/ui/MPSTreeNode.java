@@ -13,6 +13,7 @@ import javax.swing.tree.DefaultTreeModel;
 import java.awt.event.KeyEvent;
 import java.awt.Color;
 import java.awt.Rectangle;
+import java.awt.Font;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -168,6 +169,10 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   public Color getColor() {
     return Color.BLACK;
+  }
+
+  public int getFontStyle() {
+    return Font.PLAIN;
   }
 
   public String toString() {
