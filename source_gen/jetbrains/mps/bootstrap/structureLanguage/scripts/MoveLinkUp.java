@@ -19,13 +19,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.refactoring.framework.IChooseComponentPart;
-import jetbrains.mps.refactoring.framework.IDescendantsProvider;
-import java.util.Set;
-import jetbrains.mps.smodel.INodeAdapter;
-import java.util.HashSet;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
+import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseComponentWithName;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
@@ -85,26 +80,9 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   }
 
   public IChooseComponentPart<SNode> targetConcept_componentCreator(ActionContext actionContext) {
-    IDescendantsProvider descendantsProvider = new IDescendantsProvider() {
-
-      public Set<INodeAdapter> getDescendants(INodeAdapter nodeAdapter) {
-        SNode node = nodeAdapter.getNode();
-        Set<SNode> result = new HashSet<SNode>();
-        if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration")) {
-          SNode conceptDeclaration = node;
-          result.addAll(SLinkOperations.getTargets(conceptDeclaration, "implements", true));
-          result.add(SLinkOperations.getTarget(conceptDeclaration, "extends", false));
-        }
-        if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration")) {
-          result.addAll(SLinkOperations.getTargets(node, "extends", true));
-        }
-        return BaseAdapter.toAdapters(result);
-      }
-
-    };
     SNode node = actionContext.getNode();
     SNode abstractConceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
-    return new HierarchicalChooseNodeComponent("choose target concept", "targetConcept", actionContext, descendantsProvider, abstractConceptDeclaration);
+    return new HierarchicalChooseNodeComponent("choose target concept", "targetConcept", actionContext, new ConceptAncestorsProvider(), abstractConceptDeclaration);
   }
 
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
