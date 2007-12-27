@@ -3101,6 +3101,7 @@
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1081942381484">
     <property name="name" value="Type_Editor" />
+    <property name="package" value="type" />
     <link role="conceptDeclaration" targetNodeId="17.1068431790189" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1138060380694">
       <property name="drawBorder" value="false" />
@@ -3833,6 +3834,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1109281376921">
+    <property name="package" value="type" />
     <link role="conceptDeclaration" targetNodeId="17.1109279763828" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1109281432641">
       <property name="noTargetText" value="&lt;no name&gt;" />
@@ -3841,6 +3843,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1109283666334">
+    <property name="package" value="type" />
     <link role="conceptDeclaration" targetNodeId="17.1109283449304" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1109283721555">
       <property name="noTargetText" value="&lt;no type variable&gt;" />
@@ -3867,6 +3870,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1113208357709">
+    <property name="package" value="type" />
     <link role="conceptDeclaration" targetNodeId="17.1070534760951" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1113208366980">
       <property name="vertical" value="false" />
@@ -3909,6 +3913,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1128163980260">
+    <property name="package" value="type" />
     <link role="conceptDeclaration" targetNodeId="17.1107535904670" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Alternation" id="1140569118323">
       <property name="vertical" value="true" />
@@ -7038,6 +7043,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1171903619613">
+    <property name="package" value="type" />
     <link role="conceptDeclaration" targetNodeId="17.1171903607971" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1171903622365">
       <property name="drawBorder" value="false" />
@@ -7048,6 +7054,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1171903877173">
+    <property name="package" value="type" />
     <link role="conceptDeclaration" targetNodeId="17.1171903862077" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1171903879284">
       <property name="drawBorder" value="false" />
@@ -7067,6 +7074,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1171903928452">
+    <property name="package" value="type" />
     <link role="conceptDeclaration" targetNodeId="17.1171903916106" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1171903933830">
       <property name="drawBorder" value="false" />

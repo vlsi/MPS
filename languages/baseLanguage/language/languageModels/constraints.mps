@@ -629,6 +629,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178549561824" />
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178180387775">
+    <property name="package" value="type" />
     <link role="concept" targetNodeId="1.1107535904670" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1195229542312">
       <property name="name" value="getPresentation" />
@@ -998,6 +999,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178180470411">
+    <property name="package" value="type" />
     <link role="concept" targetNodeId="1.1171903916106" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1195229647250">
       <property name="name" value="getPresentation" />
@@ -1097,6 +1099,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178180512795">
+    <property name="package" value="type" />
     <link role="concept" targetNodeId="1.1171903862077" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1195229564798">
       <property name="name" value="getPresentation" />
@@ -1196,6 +1199,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178180533543">
+    <property name="package" value="type" />
     <link role="concept" targetNodeId="1.1171903607971" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1195229709462">
       <property name="name" value="getPresentation" />
@@ -1228,6 +1232,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181704918">
+    <property name="package" value="type" />
     <link role="concept" targetNodeId="1.1068431790189" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1195230011641">
       <property name="name" value="getPresentation" />
@@ -2824,6 +2829,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181705030">
+    <property name="package" value="type" />
     <link role="concept" targetNodeId="1.1109283449304" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181705031">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181705032" />
@@ -4764,6 +4770,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182417073821">
+    <property name="package" value="type.primitive" />
     <link role="concept" targetNodeId="1.1164118113764" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1195229619668">
       <property name="name" value="getPresentation" />
@@ -4834,6 +4841,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182580680652">
+    <property name="package" value="type.primitive" />
     <link role="concept" targetNodeId="1.1070534370425" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182580682186">
       <property name="name" value="getUnboxedType" />
@@ -4873,6 +4881,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182580714619">
+    <property name="package" value="type.primitive" />
     <link role="concept" targetNodeId="1.1070534644030" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182580716122">
       <property name="name" value="getUnboxedType" />
@@ -4912,6 +4921,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182580731555">
+    <property name="package" value="type.primitive" />
     <link role="concept" targetNodeId="1.1070534604311" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182580733121">
       <property name="name" value="getUnboxedType" />
@@ -4951,6 +4961,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182580749554">
+    <property name="package" value="type.primitive" />
     <link role="concept" targetNodeId="1.1070534555686" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182580751166">
       <property name="name" value="getUnboxedType" />
@@ -4990,6 +5001,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182580774458">
+    <property name="package" value="type.primitive" />
     <link role="concept" targetNodeId="1.1070534513062" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182580775742">
       <property name="name" value="getUnboxedType" />
@@ -5029,6 +5041,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182580792347">
+    <property name="package" value="type.primitive" />
     <link role="concept" targetNodeId="1.1070534436861" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182580793788">
       <property name="name" value="getUnboxedType" />
@@ -5068,6 +5081,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182580809252">
+    <property name="package" value="type.primitive" />
     <link role="concept" targetNodeId="1.1068581242867" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182580810489">
       <property name="name" value="getUnboxedType" />
@@ -5107,6 +5121,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182580828906">
+    <property name="package" value="type.primitive" />
     <link role="concept" targetNodeId="1.1070533982221" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182580830253">
       <property name="name" value="getUnboxedType" />
@@ -5883,6 +5898,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1187625988101">
+    <property name="package" value="type" />
     <link role="concept" targetNodeId="1.1070534760951" />
     <node role="properties" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint" id="1187796565071">
       <link role="applicableProperty" targetNodeId="2.1169194664001" />
