@@ -10,6 +10,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.generationTypes.FileGenerationUtil;
 
+import java.awt.Font;
+
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   private boolean myGenerationRequired;
 
@@ -48,7 +50,13 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
     }
   }
 
-
+  public int getFontStyle() {
+    if (generationRequired()) {
+      return Font.ITALIC;
+    } else {
+      return Font.PLAIN;
+    }
+  }
 
   public boolean generationRequired() {
     if (myGenerationRequired) {
@@ -62,7 +70,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
       }
     }
 
-    return true;
+    return false;
   }
 
   public abstract IModule getModule();
