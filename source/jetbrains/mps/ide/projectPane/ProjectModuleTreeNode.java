@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.generator.generationTypes.FileGenerationUtil;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
+  private boolean myGenerationRequired;
 
   public static ProjectModuleTreeNode createFor(MPSProject project, IModule module) {
     return createFor(project, module, false);
@@ -40,17 +41,24 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   protected abstract String getModulePresentation();
 
   public String toString() {
-    if (isUpToDate()) {
-      return getModulePresentation();
-    } else {
+    if (generationRequired()) {
       return getModulePresentation() + " (generation required)";
+    } else {
+      return getModulePresentation();
     }
   }
 
-  public boolean isUpToDate() {
+
+
+  public boolean generationRequired() {
+    if (myGenerationRequired) {
+      return true;
+    }
+
     for (SModelDescriptor sm : getModule().getOwnModelDescriptors()) {
       if (FileGenerationUtil.generationRequired(sm)) {
-        return false;
+        myGenerationRequired = true;
+        return true;
       }
     }
 
