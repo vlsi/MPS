@@ -190,12 +190,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(node, "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1198780448733(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode propertyConstraint = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint", false, false);
-    SNode property = SLinkOperations.getTarget(propertyConstraint, "applicableProperty", false);
-    return SPropertyOperations.getString(property, "name");
-  }
-
   public static Object referenceMacro_GetReferent_1194605886822(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(node, "parameters");
   }
