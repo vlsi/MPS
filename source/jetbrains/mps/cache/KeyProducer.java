@@ -32,5 +32,9 @@ public class KeyProducer {
     public int hashCode() {
       return 31 * myProducerHashCode + myInnerKey.hashCode();
     }
+
+    public String toString() {
+      return myProducerHashCode + "/" + myInnerKey.toString();
+    }
   }
 }
