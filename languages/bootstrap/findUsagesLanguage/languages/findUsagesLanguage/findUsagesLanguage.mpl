@@ -1,48 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.bootstrap.findUsagesLanguage" compileInMPS="false">
   <structure>
-    <model modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure"/>
+    <model modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" />
   </structure>
   <helginsTypeSystem>
-    <model modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.helgins"/>
+    <model modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.helgins" />
   </helginsTypeSystem>
   <constraints>
-    <model modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.constraints"/>
+    <model modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.constraints" />
   </constraints>
   <editor>
-    <model modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.editor"/>
+    <model modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.editor" />
   </editor>
   <models>
-    <modelRoot path="${language_descriptor}\languageModels"
-               namespacePrefix="jetbrains.mps.bootstrap.findUsagesLanguage"/>
-    <modelRoot path="${language_descriptor}\languageAccessories"
-               namespacePrefix="jetbrains.mps.bootstrap.findUsagesLanguage"/>
+    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.bootstrap.findUsagesLanguage" />
+    <modelRoot path="${language_descriptor}\languageAccessories" namespacePrefix="jetbrains.mps.bootstrap.findUsagesLanguage" />
   </models>
-  <module/>
-  <accessoryModels/>
+  <module />
+  <accessoryModels />
   <generators>
-    <generator generatorUID="jetbrains.mps.bootstrap.findUsagesLanguage#1197044805809"
-               targetLanguage="jetbrains.mps.baseLanguage">
+    <generator generatorUID="jetbrains.mps.bootstrap.findUsagesLanguage#1197044805809" targetLanguage="jetbrains.mps.baseLanguage">
       <models>
-        <modelRoot path="${language_descriptor}\generator\baseLanguage\template"
-                   namespacePrefix="jetbrains.mps.bootstrap.findUsagesLanguage.generator.baseLanguage.template"/>
+        <modelRoot path="${language_descriptor}\generator\baseLanguage\template" namespacePrefix="jetbrains.mps.bootstrap.findUsagesLanguage.generator.baseLanguage.template" />
       </models>
-      <module/>
-      <external-templates/>
+      <module />
+      <external-templates />
       <dependencies>
         <dependency>jetbrains.mps.baseLanguage</dependency>
       </dependencies>
-      <mapping-priorities/>
+      <mapping-priorities />
     </generator>
   </generators>
-  <classPath/>
+  <classPath>
+    <entry path="${mps_home}\lib\jdom\jdom-1.0.jar" />
+  </classPath>
   <runtimeClassPath>
-    <entry path="${mps_home}\classes\jetbrains\mps\bootstrap\findUsagesLanguage"/>
+    <entry path="${mps_home}\classes\jetbrains\mps\bootstrap\findUsagesLanguage" />
   </runtimeClassPath>
-  <sourcePath/>
+  <sourcePath />
   <osgiOptions>
-    <requiredBundles/>
-    <exportedPackage/>
+    <requiredBundles />
+    <exportedPackage />
   </osgiOptions>
 </language>
 
