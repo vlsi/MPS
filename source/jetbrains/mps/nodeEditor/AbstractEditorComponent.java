@@ -38,6 +38,8 @@ import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -437,17 +439,61 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         final SNode parent = current.getParent();
         final String role = current.getRole_();
         assert parent != null && role != null;
+
+        final AbstractConceptDeclaration acd = parent.getConceptDeclarationAdapter();
+        final LinkDeclaration link = SModelUtil_new.findLinkDeclaration(acd, role);
+        final AbstractConceptDeclaration targetType = (AbstractConceptDeclaration) link.getParent();
+
         int index = parent.getChildren(role).indexOf(current);
-        if (index == 0) return;
+        if (index == 0) {
+          SNode currentAnchor = parent;
+          SNode currentTarget = parent.getParent();
+
+          while (currentTarget != null) {
+            if (currentTarget.isInstanceOfConcept(targetType)) {
+              parent.removeChild(current);
+              currentTarget.insertChild(currentAnchor, role, current, true);
+              return;
+            }
+
+            currentTarget = currentTarget.getParent();
+            currentAnchor = currentAnchor.getParent();
+          }
+
+          return;
+        }
 
         final SNode prevChild = parent.getPrevChild(current);
 
-        parent.removeChild(current);
-        parent.insertChild(prevChild, role, current, true);
+        SNode innermostContainer = findLeftNode(targetType, prevChild, true);
+        if (innermostContainer != null) {
+          parent.removeChild(current);
+          innermostContainer.addChild(role, current);
+        } else {
+          parent.removeChild(current);
+          parent.insertChild(prevChild, role, current, true);
+        }
       }
     });
 
     selectNode(current);
+  }
+
+  private SNode findLeftNode(AbstractConceptDeclaration acd, SNode current, boolean includeThis) {
+    if (includeThis && current.isInstanceOfConcept(acd)) {
+      return current;
+    }
+
+    List<SNode> children = new ArrayList<SNode>(current.getChildren());
+    Collections.reverse(children);
+    for (SNode child : children) {
+      SNode result = findLeftNode(acd, child, true);
+      if (result != null) {
+        return result;
+      }
+    }
+
+    return null;
   }
 
   private void moveCurrentDown() {
@@ -459,19 +505,63 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
         final SNode parent = current.getParent();
         final String role = current.getRole_();
+
         assert parent != null && role != null;
+
+        final AbstractConceptDeclaration acd = parent.getConceptDeclarationAdapter();
+        final LinkDeclaration link = SModelUtil_new.findLinkDeclaration(acd, role);
+        final AbstractConceptDeclaration targetType = (AbstractConceptDeclaration) link.getParent();
+
         List<SNode> siblings = parent.getChildren(role);
         int index = siblings.indexOf(current);
-        if (index == siblings.size() - 1) return;
+        if (index == siblings.size() - 1) {
+          SNode currentAnchor = parent;
+          SNode currentTarget = parent.getParent();
+
+          while (currentTarget != null) {
+            if (currentTarget.isInstanceOfConcept(targetType)) {
+              parent.removeChild(current);
+              currentTarget.insertChild(currentAnchor, role, current, false);
+              return;
+            }
+
+            currentTarget = currentTarget.getParent();
+            currentAnchor = currentAnchor.getParent();
+          }
+
+          return;
+        }
 
         final SNode nextChild = parent.getNextChild(current);
 
-        parent.removeChild(current);
-        parent.insertChild(nextChild, role, current);
+        SNode innermostContainer = findRightNode(targetType, nextChild, true);
+        if (innermostContainer != null) {
+          parent.removeChild(current);
+          innermostContainer.insertChild(null, role, current);
+        } else {
+          parent.removeChild(current);
+          parent.insertChild(nextChild, role, current);
+        }
       }
     });
 
     selectNode(current);
+  }
+
+  private SNode findRightNode(AbstractConceptDeclaration acd, SNode current, boolean includeThis) {
+    if (includeThis && current.isInstanceOfConcept(acd)) {
+      return current;
+    }
+
+    List<SNode> children = new ArrayList<SNode>(current.getChildren());
+    for (SNode child : children) {
+      SNode result = findRightNode(acd, child, true);
+      if (result != null) {
+        return result;
+      }
+    }
+
+    return null;
   }
 
   public SNode getEditedNode() {

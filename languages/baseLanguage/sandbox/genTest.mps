@@ -190,7 +190,13 @@
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1198684813858">
                 <property name="value" value="true" />
               </node>
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198684812779" />
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198684812779">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198682334523">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1198682334524">
+                    <link role="baseMethodDeclaration" targetNodeId="1196072464744" resolveInfo="ABC" />
+                  </node>
+                </node>
+              </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198684963013">
               <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198684963014">
@@ -222,11 +228,6 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198682143302">
               <link role="classifier" targetNodeId="6.~Object" resolveInfo="Object" />
             </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198682334523">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1198682334524">
-            <link role="baseMethodDeclaration" targetNodeId="1196072464744" resolveInfo="ABC" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198682144944">
