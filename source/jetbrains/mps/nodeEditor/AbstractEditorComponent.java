@@ -40,6 +40,7 @@ import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
@@ -442,6 +443,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
         final AbstractConceptDeclaration acd = parent.getConceptDeclarationAdapter();
         final LinkDeclaration link = SModelUtil_new.findLinkDeclaration(acd, role);
+
+        if (link.getSourceCardinality() != Cardinality._0__n && link.getSourceCardinality() != Cardinality._1__n) {
+          return;
+        }
+
         final AbstractConceptDeclaration targetType = (AbstractConceptDeclaration) link.getParent();
 
         int index = parent.getChildren(role).indexOf(current);
@@ -511,6 +517,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         final AbstractConceptDeclaration acd = parent.getConceptDeclarationAdapter();
         final LinkDeclaration link = SModelUtil_new.findLinkDeclaration(acd, role);
         final AbstractConceptDeclaration targetType = (AbstractConceptDeclaration) link.getParent();
+
+        if (link.getSourceCardinality() != Cardinality._0__n && link.getSourceCardinality() != Cardinality._1__n) {
+          return;
+        }
 
         List<SNode> siblings = parent.getChildren(role);
         int index = siblings.indexOf(current);
