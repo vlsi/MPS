@@ -25,21 +25,21 @@ import jetbrains.mps.refactoring.framework.IChooseComponent;
 import jetbrains.mps.refactoring.framework.ChooseComponentWithName;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 
-public class MoveLinkUp extends AbstractLoggableRefactoring {
+public class MovePropertyUp extends AbstractLoggableRefactoring {
   public static final String targetConcept = "targetConcept";
 
   public String getUserFriendlyName() {
-    return "Move Link Up";
+    return "Move Property Up (under construction)";
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.bootstrap.structureLanguage.scripts#1198592945615";
+    return "jetbrains.mps.bootstrap.structureLanguage.scripts#1198776916667";
   }
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       SNode node = actionContext.getNode();
-      if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"))) {
+      if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration"))) {
         return false;
       }
       SNode concept = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
@@ -70,11 +70,11 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
       Language language = Language.getLanguageFor(model.getModelDescriptor());
       Language targetLanguage = Language.getLanguageFor(targetModel.getModelDescriptor());
       if(language != null) {
-        List<SModel> aspectList = SequenceOperations.toList(SequenceOperations.select(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(language.getAspectModelDescriptors())), new zSelector4(null, null)));
+        List<SModel> aspectList = SequenceOperations.toList(SequenceOperations.select(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(language.getAspectModelDescriptors())), new zSelector7(null, null)));
         result.put(language, aspectList);
       }
       if(targetLanguage != null && targetLanguage != language) {
-        List<SModel> aspectList = SequenceOperations.toList(SequenceOperations.select(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(targetLanguage.getAspectModelDescriptors())), new zSelector5(null, null)));
+        List<SModel> aspectList = SequenceOperations.toList(SequenceOperations.select(((List<SModelDescriptor>)new ArrayList<SModelDescriptor>(targetLanguage.getAspectModelDescriptors())), new zSelector8(null, null)));
         result.put(targetLanguage, aspectList);
       }
       return result;
