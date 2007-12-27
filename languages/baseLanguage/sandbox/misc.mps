@@ -2,12 +2,52 @@
 <model name="jetbrains.mps.baseLanguage.sandbox.misc">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <language namespace="jetbrains.mps.core" />
-  <language namespace="jetbrains.mps.quotation" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.bootstrap.helgins">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.helgins" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.core">
+    <languageAspect modelUID="jetbrains.mps.core.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.core.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.core.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.core.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.core.scripts" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.quotation">
+    <languageAspect modelUID="jetbrains.mps.quotation.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.quotation.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.quotation.helgins" version="-1" />
+  </language>
   <maxImportIndex value="125" />
   <import index="1" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="java.util@java_stub" version="-1" />
@@ -297,9 +337,7 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198665434537">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198665434538">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1198665434539" />
-          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198665434538" />
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1198665436448">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198665438624">
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1198665467465">
@@ -328,7 +366,12 @@
               <property name="value" value="239" />
             </node>
           </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1198783138201">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198783138202" />
+          </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1198599757318" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1198665434539" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198599966008">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198599966760">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1198599968045">
@@ -350,9 +393,7 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198599757316">
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198599757317">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1198599757318" />
-          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198599757317" />
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198599864349">
             <property name="value" value="3" />
           </node>

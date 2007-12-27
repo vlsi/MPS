@@ -432,154 +432,22 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void moveCurrentUp() {
     final SNode current = getSelectedCell().getSNode();
-    CommandProcessor.instance().executeCommand(new Runnable() {
-      public void run() {
-        if (current == null) return;
-        if (current.getParent() == null) return;
-
-        final SNode parent = current.getParent();
-        final String role = current.getRole_();
-        assert parent != null && role != null;
-
-        final AbstractConceptDeclaration acd = parent.getConceptDeclarationAdapter();
-        final LinkDeclaration link = SModelUtil_new.findLinkDeclaration(acd, role);
-
-        if (link.getSourceCardinality() != Cardinality._0__n && link.getSourceCardinality() != Cardinality._1__n) {
-          return;
-        }
-
-        final AbstractConceptDeclaration targetType = (AbstractConceptDeclaration) link.getParent();
-
-        int index = parent.getChildren(role).indexOf(current);
-        if (index == 0) {
-          SNode currentAnchor = parent;
-          SNode currentTarget = parent.getParent();
-
-          while (currentTarget != null) {
-            if (currentTarget.isInstanceOfConcept(targetType)) {
-              parent.removeChild(current);
-              currentTarget.insertChild(currentAnchor, role, current, true);
-              return;
-            }
-
-            SNode levelCurrent = currentAnchor.prevSibling();
-            while (levelCurrent != null) {
-              SNode result = findRightNode(targetType, levelCurrent, true);
-              if (result != null) {
-                parent.removeChild(current);
-                result.addChild(role, current);
-                return;
-              }
-
-              levelCurrent = levelCurrent.prevSibling();
-            }
-
-            currentTarget = currentTarget.getParent();
-            currentAnchor = currentAnchor.getParent();
-          }
-
-          return;
-        }
-
-        final SNode prevChild = parent.getPrevChild(current);
-
-        SNode innermostContainer = findRightNode(targetType, prevChild, true);
-        if (innermostContainer != null) {
-          parent.removeChild(current);
-          innermostContainer.addChild(role, current);
-        } else {
-          parent.removeChild(current);
-          parent.insertChild(prevChild, role, current, true);
-        }
+    new IntelligentNodeMover(current) {
+      boolean forward() {
+        return false;
       }
-    });
-
+    }.move();
     selectNode(current);
   }
 
-  private SNode findRightNode(AbstractConceptDeclaration acd, SNode current, boolean includeThis) {
-    if (includeThis && current.isInstanceOfConcept(acd)) {
-      return current;
-    }
-
-    List<SNode> children = new ArrayList<SNode>(current.getChildren());
-    Collections.reverse(children);
-    for (SNode child : children) {
-      SNode result = findRightNode(acd, child, true);
-      if (result != null) {
-        return result;
-      }
-    }
-
-    return null;
-  }
 
   private void moveCurrentDown() {
     final SNode current = getSelectedCell().getSNode();
-    CommandProcessor.instance().executeCommand(new Runnable() {
-      public void run() {
-        if (current == null) return;
-        if (current.getParent() == null) return;
-
-        final SNode parent = current.getParent();
-        final String role = current.getRole_();
-
-        assert parent != null && role != null;
-
-        final AbstractConceptDeclaration acd = parent.getConceptDeclarationAdapter();
-        final LinkDeclaration link = SModelUtil_new.findLinkDeclaration(acd, role);
-        final AbstractConceptDeclaration targetType = (AbstractConceptDeclaration) link.getParent();
-
-        if (link.getSourceCardinality() != Cardinality._0__n && link.getSourceCardinality() != Cardinality._1__n) {
-          return;
-        }
-
-        List<SNode> siblings = parent.getChildren(role);
-        int index = siblings.indexOf(current);
-        if (index == siblings.size() - 1) {
-          SNode currentAnchor = parent;
-          SNode currentTarget = parent.getParent();
-
-          while (currentTarget != null) {
-            if (currentTarget.isInstanceOfConcept(targetType)) {
-              parent.removeChild(current);
-              currentTarget.insertChild(currentAnchor, role, current, false);
-              return;
-            }
-
-            SNode levelCurrent = currentAnchor.nextSibling();
-            while (levelCurrent != null) {
-              SNode result = findLeftNode(targetType, levelCurrent, true);
-              if (result != null) {
-                parent.removeChild(current);
-                result.insertChild(null, role, current);
-                return;
-              }
-
-              levelCurrent = levelCurrent.nextSibling();
-            }
-
-
-            currentTarget = currentTarget.getParent();
-            currentAnchor = currentAnchor.getParent();
-          }
-
-          return;
-        }
-
-        final SNode nextChild = parent.getNextChild(current);
-
-        SNode innermostContainer = findLeftNode(targetType, nextChild, true);
-        if (innermostContainer != null) {
-          parent.removeChild(current);
-          innermostContainer.insertChild(null, role, current);
-        } else {
-          parent.removeChild(current);
-          parent.insertChild(nextChild, role, current);
-        }
+    new IntelligentNodeMover(current) {
+      boolean forward() {
+        return true;
       }
-    });
-
+    }.move();
     selectNode(current);
   }
 
