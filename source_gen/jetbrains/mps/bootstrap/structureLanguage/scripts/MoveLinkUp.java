@@ -18,10 +18,17 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.refactoring.framework.IChooseComponentPart;
+import jetbrains.mps.refactoring.framework.IDescendantsProvider;
+import java.util.Set;
+import jetbrains.mps.smodel.INodeAdapter;
+import java.util.HashSet;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.IChooseComponent;
-import jetbrains.mps.refactoring.framework.ChooseNodeComponent;
+import jetbrains.mps.refactoring.framework.ChooseComponentWithName;
 import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
-import jetbrains.mps.util.Condition;
 
 public class MoveLinkUp extends AbstractLoggableRefactoring {
   public static final String targetConcept = "targetConcept";
@@ -77,13 +84,35 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
     refactoringContext.updateModelWithMaps(model);
   }
 
+  public IChooseComponentPart<SNode> targetConcept_componentCreator(ActionContext actionContext) {
+    IDescendantsProvider descendantsProvider = new IDescendantsProvider() {
+
+      public Set<INodeAdapter> getDescendants(INodeAdapter nodeAdapter) {
+        SNode node = nodeAdapter.getNode();
+        Set<SNode> result = new HashSet<SNode>();
+        if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration")) {
+          SNode conceptDeclaration = node;
+          result.addAll(SLinkOperations.getTargets(conceptDeclaration, "implements", true));
+          result.add(SLinkOperations.getTarget(conceptDeclaration, "extends", false));
+        }
+        if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration")) {
+          result.addAll(SLinkOperations.getTargets(node, "extends", true));
+        }
+        return BaseAdapter.toAdapters(result);
+      }
+
+    };
+    SNode node = actionContext.getNode();
+    SNode abstractConceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
+    return new HierarchicalChooseNodeComponent("choose target concept", "targetConcept", actionContext, descendantsProvider, abstractConceptDeclaration);
+  }
+
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
     boolean result = false;
     List<IChooseComponent> components = new ArrayList<IChooseComponent>();
     {
       IChooseComponent<SNode> chooseComponent;
-      chooseComponent = new ChooseNodeComponent("chooseTargetConcept", "targetConcept", actionContext, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration");
-      chooseComponent.setCondition(new MoveLinkUp.My_targetConcept_Condition(actionContext));
+      chooseComponent = new ChooseComponentWithName<SNode>("targetConcept", this.targetConcept_componentCreator(actionContext));
       components.add(chooseComponent);
     }
     ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
@@ -91,31 +120,5 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
     result = dialog.getResult();
     return result;
   }
-
-  public static class My_targetConcept_Condition implements Condition<SNode> {
-
-    private ActionContext myActionContext;
-
-    public  My_targetConcept_Condition(ActionContext actionContext) {
-      this.myActionContext = actionContext;
-    }
-
-    public boolean met(SNode argument) {
-      return this.met_internal(argument, this.myActionContext);
-    }
-
-    public boolean met_internal(SNode argument, ActionContext actionContext) {
-      SNode node = actionContext.getNode();
-      if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"))) {
-        return false;
-      }
-      SNode concept = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration", false, false);
-      if(concept == null) {
-        return false;
-      }
-      return argument != concept && AbstractConceptDeclaration_Behavior.call_isAssignableFrom_1198080700262(argument, concept);
-    }
-
-}
 
 }

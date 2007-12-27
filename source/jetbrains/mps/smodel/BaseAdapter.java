@@ -448,7 +448,9 @@ public abstract class BaseAdapter implements INodeAdapter {
   public static <T extends INodeAdapter> Set<T> toAdapters(Set<? extends SNode> list) {
     Set<T> result = new HashSet<T>();
     for (SNode node : list) {
-      result.add((T) node.getAdapter());
+      if (node != null) {
+        result.add((T) node.getAdapter());
+      }
     }
     return result;
   }

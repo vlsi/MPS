@@ -22,51 +22,54 @@ import java.awt.Color;
  */
 public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTreeNode<T> {
 
-    private boolean myInitialized = false;
+  private boolean myInitialized = false;
 
-    public boolean isInitialized() {
-      return myInitialized;
-    }
+  public boolean isInitialized() {
+    return myInitialized;
+  }
 
-    protected void doInit() {
-      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
-        public void run() {
-          List<T> descendants = new ArrayList<T>(myHierarchyTree.getAbstractChildren((T) getUserObject()));
-          Collections.sort(descendants, new Comparator<T>() {
-            public int compare(T o1, T o2) {
-              return ("" + o1.toString()).compareTo(o2.toString());
-            }
-          });
-
-          for (T descendant : descendants) {
-            ChildHierarchyTreeNode childHierarchyTreeNode = new ChildHierarchyTreeNode(descendant, getOperationContext(), myHierarchyTree);
-            add(childHierarchyTreeNode);
+  protected void doInit() {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        List<T> descendants = new ArrayList<T>(myHierarchyTree.getAbstractChildren((T) getUserObject()));
+        Collections.sort(descendants, new Comparator<T>() {
+          public int compare(T o1, T o2) {
+            return ("" + o1.toString()).compareTo(o2.toString());
           }
+        });
 
-          myInitialized = true;
+        for (T descendant : descendants) {
+          ChildHierarchyTreeNode childHierarchyTreeNode = new ChildHierarchyTreeNode(descendant, getOperationContext(), myHierarchyTree);
+          add(childHierarchyTreeNode);
         }
-      });
-    }
 
-    protected void doUpdate() {
-      this.removeAllChildren();
-      myInitialized = false;
-    }
+        myInitialized = true;
+      }
+    });
+  }
 
-    public ChildHierarchyTreeNode(T declaration, IOperationContext operationContext, AbstractHierarchyTree<T> tree) {
-      super(declaration, operationContext, tree);
-    }
+  protected void doUpdate() {
+    this.removeAllChildren();
+    myInitialized = false;
+  }
 
-    public Color getColor() {
-      return new Color(0x40, 0x00, 0x90);
-    }
+  public ChildHierarchyTreeNode(T declaration, IOperationContext operationContext, AbstractHierarchyTree<T> tree) {
+    super(declaration, operationContext, tree);
+  }
 
-    public String toString() {
-      String name = super.toString();
-      if (this == myHierarchyTree.getHierarchyView().myTreeNode) {
+  public Color getColor() {
+    return new Color(0x40, 0x00, 0x90);
+  }
+
+  public String toString() {
+    String name = super.toString();
+    AbstractHierarchyView<T> hierarchyView = myHierarchyTree.getHierarchyView();
+    if (hierarchyView != null) {
+      if (this == hierarchyView.myTreeNode) {
         name = TreeTextUtil.toHtml(name);
       }
-      return name;
     }
+    return name;
+  }
 }
 

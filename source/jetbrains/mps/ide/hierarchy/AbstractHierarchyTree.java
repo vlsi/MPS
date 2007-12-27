@@ -1,20 +1,20 @@
 package jetbrains.mps.ide.hierarchy;
 
+import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;
-import java.util.Set;
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -38,6 +38,7 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
     myIsParentHierarchy = isParentHierarchy;
   }
 
+  @Nullable
   public AbstractHierarchyView<T> getHierarchyView() {
     return myHierarchyView;
   }
@@ -135,9 +136,13 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
       }
       parentTreeNode = hierarchyTreeNode;
     }
-    myHierarchyView.myTreeNode = hierarchyTreeNode;
-    assert myHierarchyView.myTreeNode != null;
-    TextTreeNode textRootNode = new RootTextTreeNode("<html>Hierarchy for <font color=\"#400090\"><b>" + TreeTextUtil.toHtml(((T) myHierarchyView.myTreeNode.getUserObject()).getName()) + "</b></font>");
+    String text = "Hierarchy";
+    if (myHierarchyView != null) {
+      myHierarchyView.myTreeNode = hierarchyTreeNode;
+      assert myHierarchyView.myTreeNode != null;
+      text = "<html>Hierarchy for <font color=\"#400090\"><b>" + TreeTextUtil.toHtml(((T) myHierarchyView.myTreeNode.getUserObject()).getName()) + "</b></font>";
+    }
+    TextTreeNode textRootNode = new RootTextTreeNode(text);
     textRootNode.add(rootNode);
     return textRootNode;
   }
@@ -153,11 +158,17 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
     }
 
     public Icon getIcon(boolean expanded) {
-      return myHierarchyView.getIcon();
+      if (myHierarchyView != null) {
+        return myHierarchyView.getIcon();
+      }
+      return super.getIcon(expanded);
     }
 
     public JPopupMenu getPopupMenu() {
-      return myHierarchyView.showHierarchyForFoundConceptPopupMenu(myClass);
+      if (myHierarchyView != null) {
+        return myHierarchyView.showHierarchyForFoundConceptPopupMenu(myClass);
+      }
+      return null;
     }
   }
 }

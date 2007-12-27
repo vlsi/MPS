@@ -72,11 +72,13 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
   }
 
   public JPopupMenu getPopupMenu() {
+    final AbstractHierarchyView<T> hierarchyView = myHierarchyTree.getHierarchyView();
+    if (hierarchyView == null) return null;
     JPopupMenu result = new JPopupMenu();
     result.add(new AbstractActionWithEmptyIcon("Show Hierarchy For This Node") {
       public void actionPerformed(ActionEvent e) {
         final SNode node = myNodePointer.getNode();
-        myHierarchyTree.getHierarchyView().showConceptInHierarchy((T) node.getAdapter(), getOperationContext());
+        hierarchyView.showConceptInHierarchy((T) node.getAdapter(), getOperationContext());
       }
     }).setBorder(null);
     return result;
@@ -89,11 +91,12 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 
     final SNode node = myNodePointer.getNode();
 
-    final EditorsPane editorsPane = myHierarchyTree.getHierarchyView().myIde.getEditorsPane();
-    final IEditor currentEditor = editorsPane.getCurrentEditor();
-
-    NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), getOperationContext().getProject());
-
+    AbstractHierarchyView<T> hierarchyView = myHierarchyTree.getHierarchyView();
+    if (hierarchyView != null) {
+      final EditorsPane editorsPane = hierarchyView.myIde.getEditorsPane();
+      final IEditor currentEditor = editorsPane.getCurrentEditor();
+      NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), getOperationContext().getProject());
+    }
   }
 
   public Icon getIcon(boolean expanded) {
