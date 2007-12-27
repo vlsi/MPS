@@ -99,7 +99,11 @@ public class SModelRepository extends SModelAdapter {
       List<SModelCommandListener> listeners = myCommandListeners.get(language);
       if (listeners != null) {
         for (SModelCommandListener l : listeners) {
-          l.modelChangedInCommand(Collections.unmodifiableList(events));
+          try {
+            l.modelChangedInCommand(Collections.unmodifiableList(events));
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
         }
       }
     }
