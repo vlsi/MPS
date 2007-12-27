@@ -25,7 +25,7 @@ public class RenameProperty extends AbstractLoggableRefactoring {
   public static final String newName = "newName";
 
   public String getUserFriendlyName() {
-    return "Rename Property (under construction)";
+    return "Rename Property";
   }
 
   public String getSourceId() {
