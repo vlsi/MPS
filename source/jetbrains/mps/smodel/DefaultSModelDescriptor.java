@@ -288,7 +288,8 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
 
   private IOperationContext findOperationContext() {
     IOperationContext operationContext = null;
-    outer : for (IModule module : getModules()) {
+  outer : 
+    for (IModule module : getModules()) {
       if (module instanceof Generator) {
         module = ((Generator)module).getSourceLanguage();
       }

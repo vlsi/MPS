@@ -8,6 +8,8 @@ import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.JOptionPane;
 import java.io.File;
@@ -16,25 +18,24 @@ import java.util.*;
 import java.rmi.RemoteException;
 
 public class FileGenerationUtil {
+  public static final Logger LOG = Logger.getLogger(FileGenerationUtil.class);
 
   private static String LAST_GENERATION_TIME = "lastGenerationTime";
 
   public static long getLastGenerationTime(SModelDescriptor sm) {
-    IOperationContext operationContext = sm.getOperationContext();
-    assert operationContext != null;
+    Set<IModule> modules = sm.getModules();
 
-    String outputPath = operationContext.getModule().getGeneratorOutputPath();
+    if (modules.size() != 1) {
+      LOG.warning("model " + sm.getModelUID() + " has to many owners : " + modules);
+    }
+
+    IModule module = modules.iterator().next();
+
+    String outputPath = module.getGeneratorOutputPath();
 
     String sourcesDir = outputPath + File.separator + sm.getLongName().replace('.', File.separatorChar);
 
     return FileUtil.getNewestFileTime(new File(sourcesDir));
-/*
-    String value = sm.getAttribute(LAST_GENERATION_TIME);
-    try {
-      return Long.parseLong(value);
-    } catch (NumberFormatException e) {
-      return -1;
-    }*/
   }
 
   public static void updateLastGenerationTime(SModelDescriptor sm) {

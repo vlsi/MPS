@@ -246,14 +246,25 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
     DefaultTreeModel treeModel = (DefaultTreeModel) myTree.getModel();
     MPSTreeNode rootTreeNode = (MPSTreeNode) treeModel.getRoot();
 
-    if (!myModulesPool.isInitialized()) {
-      myModulesPool.init();
+    MPSTreeNode result = findModuleTreeNode(module, rootTreeNode);
+
+    if (result != null) {
+      return result;
     }
 
+    if (!myModulesPool.isInitialized()) {
+      myModulesPool.init();      
+      return findModuleTreeNode(module);
+    }
+
+    return null;
+  }
+
+  private MPSTreeNode findModuleTreeNode(final IModule module, MPSTreeNode rootTreeNode) {
     return findTreeNode(rootTreeNode,
       new Condition<MPSTreeNode>() {
         public boolean met(MPSTreeNode object) {
-          return !(object instanceof ProjectModuleTreeNode); 
+          return !(object instanceof ProjectModuleTreeNode);
         }
       },
       new Condition<MPSTreeNode>() {
