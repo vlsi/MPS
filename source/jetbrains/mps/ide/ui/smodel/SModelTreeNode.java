@@ -50,6 +50,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   private boolean myPackagesEnabled = true;
   private Map<String, PackageNode> myPackageNodes = new HashMap<String, PackageNode>();
+  private boolean myGenerationRequired = false;
 
   public SModelTreeNode(SModelDescriptor modelDescriptor,
                         String label,
@@ -284,15 +285,27 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       result = name;
     }
 
-    if (FileGenerationUtil.generationRequired(getSModelDescriptor())) {
+    if (generationRequired()) {
       result += " (generation required)";
     }
 
     return result;
   }
 
+  private boolean generationRequired() {
+    //once generation required, it can't be changed back unless we revert or reload a model
+    //if a model is rebuilt, the tree is rebuilt as well and we get the flag cleared
+    if (myGenerationRequired) {
+      return true;
+    }
+
+    myGenerationRequired = FileGenerationUtil.generationRequired(getSModelDescriptor());
+    return myGenerationRequired;
+  }
+
+
   public int getFontStyle() {
-    if (FileGenerationUtil.generationRequired(getSModelDescriptor())) {
+    if (generationRequired()) {
       return Font.ITALIC;
     } else {
       return Font.PLAIN;
