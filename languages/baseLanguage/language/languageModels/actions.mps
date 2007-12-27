@@ -1956,6 +1956,38 @@
         </node>
       </node>
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1198761609306">
+      <property name="useNewActions" value="true" />
+      <property name="description" value="Allow array literal only as VariableDeclaration.initializer or ArrayLiteral.item" />
+      <link role="applicableConcept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
+      <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstitutePreconditionFunction" id="1198761649460">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198761649461">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198761665622">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1198761747569">
+              <node role="rightExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198761750389">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1198761752771">
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1198761757597">
+                    <link role="conceptDeclaration" targetNodeId="1.1188220165133" resolveInfo="ArrayLiteral" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1198761749664" />
+              </node>
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198761666280">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1198761669417">
+                  <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1198761717369">
+                    <link role="conceptDeclaration" targetNodeId="1.1068431474542" resolveInfo="VariableDeclaration" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_parentNode" id="1198761665623" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptSubstitutePart" id="1198762031395">
+        <link role="concept" targetNodeId="1.1188220165133" resolveInfo="ArrayLiteral" />
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1177361127293">
     <property name="name" value="instanceFields" />

@@ -2298,6 +2298,9 @@
       <property name="value" value="array literal" />
       <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1198761581537">
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1188220173759">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="item" />

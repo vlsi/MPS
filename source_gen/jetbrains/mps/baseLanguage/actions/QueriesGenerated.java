@@ -32,13 +32,13 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
+import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.baseLanguage.constraints.Classifier_Behavior;
 import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.search.VisibleClassifiersScope;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
-import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -50,6 +50,10 @@ import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.editor.ParenthesisUtil;
 
 public class QueriesGenerated {
+
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1198761649460(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
+    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration") || SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.ArrayLiteral");
+  }
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1177400765736(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
     SNode parent = SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement","jetbrains.mps.baseLanguage.structure.Closure"}, false, false);
@@ -373,6 +377,16 @@ public class QueriesGenerated {
         }
 
       });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1198761609306(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLiteral", operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
+      result.addAll(defaultActions);
     }
     return result;
   }
