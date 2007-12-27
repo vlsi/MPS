@@ -1048,6 +1048,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       cell = findNodeCellWithRole(sourceNode, role);
       if (cell == null) cell = findNodeCell(sourceNode);
     }
+    if (cell == null) {
+      return;
+    }
     changeSelectionWRTFocusPolicy(cell);
   }
 
@@ -2084,7 +2087,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
     private void updateSelection(List<SModelEvent> events) {
-
       SModelEvent lastAdd = null;
       SModelEvent lastRemove = null;
 
@@ -2093,11 +2095,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       for (SModelEvent e : events) {
         if (e instanceof SModelChildEvent) {
           SModelChildEvent ce = (SModelChildEvent) e;
-          if (ce.isAdded()) {
-            lastAdd = ce;
-            childAddedEventNodes.add(ce.getChild());
+          if (ce.getParent().getContainingRoot() == getEditedNode()) {
+            if (ce.isAdded()) {
+              lastAdd = ce;
+              childAddedEventNodes.add(ce.getChild());
+            }
+            if (ce.isRemoved()) lastRemove = ce;
           }
-          if (ce.isRemoved()) lastRemove = ce;
         }
 
         if (e instanceof SModelReferenceEvent) {
@@ -2112,7 +2116,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           List<NodesParetoFrontier.NodeBox> frontier = NodesParetoFrontier.findParetoFrontier(childAddedEventNodes);
           SNode addedChild = frontier.get(frontier.size() - 1).getNode();
           EditorCell cell = findNodeCell(addedChild);
-          changeSelectionWRTFocusPolicy(cell);
+          if (cell != null) {
+            changeSelectionWRTFocusPolicy(cell);
+          }
           return;
         } else //noinspection ConstantConditions
           if (lastAdd instanceof SModelReferenceEvent) {
@@ -2134,7 +2140,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           if (parent.getChildCount() > index) {
             SNode child = parent.getChildAt(index);
             if (role.equals(child.getRole_())) {
-              changeSelectionWRTFocusPolicy(findNodeCell(child));
+              EditorCell cell = findNodeCell(child);
+              if (cell != null) {
+                changeSelectionWRTFocusPolicy(cell);
+              }
               return;
             }
           }
@@ -2142,7 +2151,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           if (index != 0) {
             SNode child = parent.getChildAt(index - 1);
             if (role.equals(child.getRole_())) {
-              changeSelectionWRTFocusPolicy(findNodeCell(child));
+              EditorCell cell = findNodeCell(child);
+              if (cell != null) {
+                changeSelectionWRTFocusPolicy(cell);
+              }
               return;
             }
           }
@@ -2150,7 +2162,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
           EditorCell nullCell = findNodeCellWithRole(parent, role);
           if (nullCell == null) {
-            changeSelectionWRTFocusPolicy(findNodeCell(parent));
+            EditorCell cell = findNodeCell(parent);
+            if (cell != null) {
+              changeSelectionWRTFocusPolicy(cell);
+            }
           } else {
             changeSelectionWRTFocusPolicy(nullCell);
           }
@@ -2166,7 +2181,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           String role = ref.getRole();
           EditorCell nullCell = findNodeCellWithRole(sourceNode, role);
           if (nullCell == null) {
-            changeSelectionWRTFocusPolicy(findNodeCell(sourceNode));
+            EditorCell cell = findNodeCell(sourceNode);
+            if (cell != null) {
+              changeSelectionWRTFocusPolicy(cell);
+            }
           } else {
             changeSelectionWRTFocusPolicy(nullCell);
           }

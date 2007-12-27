@@ -566,6 +566,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
       outer : for (SNode added : addedNodes) {
         if (added.isDeleted()) continue;
+        if (added.getParent() == null) continue;
         SNodeTreeNode parent = (SNodeTreeNode) findDescendantWith(added.getParent());
         if (parent == null) continue;
         if (!parent.isInitialized()) continue;
