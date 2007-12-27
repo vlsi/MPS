@@ -429,19 +429,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void moveCurrentUp() {
     final SNode current = getSelectedCell().getSNode();
-    if (current == null) return;
-    if (current.getParent() == null) return;
-
-    final SNode parent = current.getParent();
-    final String role = current.getRole_();
-    assert parent != null && role != null;
-    int index = parent.getChildren(role).indexOf(current);
-    if (index == 0) return;
-
-    final SNode prevChild = parent.getPrevChild(current);
-
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
+        if (current == null) return;
+        if (current.getParent() == null) return;
+
+        final SNode parent = current.getParent();
+        final String role = current.getRole_();
+        assert parent != null && role != null;
+        int index = parent.getChildren(role).indexOf(current);
+        if (index == 0) return;
+
+        final SNode prevChild = parent.getPrevChild(current);
+
         parent.removeChild(current);
         parent.insertChild(prevChild, role, current, true);
       }
@@ -452,20 +452,20 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void moveCurrentDown() {
     final SNode current = getSelectedCell().getSNode();
-    if (current == null) return;
-    if (current.getParent() == null) return;
-
-    final SNode parent = current.getParent();
-    final String role = current.getRole_();
-    assert parent != null && role != null;
-    List<SNode> siblings = parent.getChildren(role);
-    int index = siblings.indexOf(current);
-    if (index == siblings.size() - 1) return;
-
-    final SNode nextChild = parent.getNextChild(current);
-
     CommandProcessor.instance().executeCommand(new Runnable() {
       public void run() {
+        if (current == null) return;
+        if (current.getParent() == null) return;
+
+        final SNode parent = current.getParent();
+        final String role = current.getRole_();
+        assert parent != null && role != null;
+        List<SNode> siblings = parent.getChildren(role);
+        int index = siblings.indexOf(current);
+        if (index == siblings.size() - 1) return;
+
+        final SNode nextChild = parent.getNextChild(current);
+
         parent.removeChild(current);
         parent.insertChild(nextChild, role, current);
       }
