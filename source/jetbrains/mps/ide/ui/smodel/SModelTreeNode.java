@@ -49,6 +49,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private Condition<SNode> myNodesCondition = Condition.TRUE_CONDITION;
 
   private boolean myPackagesEnabled = true;
+
   private Map<String, PackageNode> myPackageNodes = new HashMap<String, PackageNode>();
   private boolean myGenerationRequired = false;
 
@@ -82,6 +83,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myModelDescriptor = modelDescriptor;
     myLabel = label;
     myNodesCondition = condition;
+    
+    setUserObject(modelDescriptor);
+    updateGenerationRequiredStatus();
   }
 
   protected SNodeGroupTreeNode getNodeGroupFor(SNode node) {
@@ -285,27 +289,34 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       result = name;
     }
 
-    if (generationRequired()) {
+    if (myGenerationRequired) {
       result += " (generation required)";
     }
 
     return result;
   }
 
-  private boolean generationRequired() {
-    //once generation required, it can't be changed back unless we revert or reload a model
-    //if a model is rebuilt, the tree is rebuilt as well and we get the flag cleared
-    if (myGenerationRequired) {
-      return true;
-    }
-
-    myGenerationRequired = FileGenerationUtil.generationRequired(getSModelDescriptor());
+  public boolean generationRequired() {
     return myGenerationRequired;
   }
 
+  private void updateGenerationRequiredStatus() {
+    //once generation required, it can't be changed back unless we revert or reload a model
+    //if a model is rebuilt, the tree is rebuilt as well and we get the flag cleared
+    if (myGenerationRequired) {
+      return;
+    }
+
+    myGenerationRequired = FileGenerationUtil.generationRequired(getSModelDescriptor());
+
+    if (myGenerationRequired && getTree() != null) {
+      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+      treeModel.nodeChanged(this);
+    }
+  }
 
   public int getFontStyle() {
-    if (generationRequired()) {
+    if (myGenerationRequired) {
       return Font.ITALIC;
     } else {
       return Font.PLAIN;
@@ -473,7 +484,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           updateChangedRefs(nodesWithChangedRefs);
           updateNodesWithChangedPackages(nodesWithChangedPackages);
 
-
+          updateGenerationRequiredStatus();
           updateAncestorsText();
         }
       }, false);
@@ -551,8 +562,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           propsNode.update();
           propsNode.init();
         }
-
-        treeModel.nodeChanged(treeNode);
       }
     }
 

@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -13,8 +14,6 @@ import jetbrains.mps.generator.generationTypes.FileGenerationUtil;
 import java.awt.Font;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
-  private boolean myGenerationRequired;
-
   public static ProjectModuleTreeNode createFor(MPSProject project, IModule module) {
     return createFor(project, module, false);
   }
@@ -59,17 +58,14 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   }
 
   public boolean generationRequired() {
-    if (myGenerationRequired) {
-      return true;
-    }
-
     for (SModelDescriptor sm : getModule().getOwnModelDescriptors()) {
-      if (FileGenerationUtil.generationRequired(sm)) {
-        myGenerationRequired = true;
-        return true;
+      SModelTreeNode modelNode = (SModelTreeNode) findDescendantWith(sm);
+      if (modelNode != null) {
+        if (modelNode.generationRequired()) {
+          return true;
+        }
       }
     }
-
     return false;
   }
 
