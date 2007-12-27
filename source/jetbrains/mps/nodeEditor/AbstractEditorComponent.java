@@ -462,6 +462,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
               return;
             }
 
+            SNode levelCurrent = currentAnchor.prevSibling();
+            while (levelCurrent != null) {
+              SNode result = findRightNode(targetType, levelCurrent, true);
+              if (result != null) {
+                parent.removeChild(current);
+                result.addChild(role, current);
+                return;
+              }
+
+              levelCurrent = levelCurrent.prevSibling();
+            }
+
             currentTarget = currentTarget.getParent();
             currentAnchor = currentAnchor.getParent();
           }
@@ -471,7 +483,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
         final SNode prevChild = parent.getPrevChild(current);
 
-        SNode innermostContainer = findLeftNode(targetType, prevChild, true);
+        SNode innermostContainer = findRightNode(targetType, prevChild, true);
         if (innermostContainer != null) {
           parent.removeChild(current);
           innermostContainer.addChild(role, current);
@@ -485,7 +497,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     selectNode(current);
   }
 
-  private SNode findLeftNode(AbstractConceptDeclaration acd, SNode current, boolean includeThis) {
+  private SNode findRightNode(AbstractConceptDeclaration acd, SNode current, boolean includeThis) {
     if (includeThis && current.isInstanceOfConcept(acd)) {
       return current;
     }
@@ -493,7 +505,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     List<SNode> children = new ArrayList<SNode>(current.getChildren());
     Collections.reverse(children);
     for (SNode child : children) {
-      SNode result = findLeftNode(acd, child, true);
+      SNode result = findRightNode(acd, child, true);
       if (result != null) {
         return result;
       }
@@ -535,6 +547,19 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
               return;
             }
 
+            SNode levelCurrent = currentAnchor.nextSibling();
+            while (levelCurrent != null) {
+              SNode result = findLeftNode(targetType, levelCurrent, true);
+              if (result != null) {
+                parent.removeChild(current);
+                result.insertChild(null, role, current);
+                return;
+              }
+
+              levelCurrent = levelCurrent.nextSibling();
+            }
+
+
             currentTarget = currentTarget.getParent();
             currentAnchor = currentAnchor.getParent();
           }
@@ -544,7 +569,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
         final SNode nextChild = parent.getNextChild(current);
 
-        SNode innermostContainer = findRightNode(targetType, nextChild, true);
+        SNode innermostContainer = findLeftNode(targetType, nextChild, true);
         if (innermostContainer != null) {
           parent.removeChild(current);
           innermostContainer.insertChild(null, role, current);
@@ -558,14 +583,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     selectNode(current);
   }
 
-  private SNode findRightNode(AbstractConceptDeclaration acd, SNode current, boolean includeThis) {
+  private SNode findLeftNode(AbstractConceptDeclaration acd, SNode current, boolean includeThis) {
     if (includeThis && current.isInstanceOfConcept(acd)) {
       return current;
     }
 
     List<SNode> children = new ArrayList<SNode>(current.getChildren());
     for (SNode child : children) {
-      SNode result = findRightNode(acd, child, true);
+      SNode result = findLeftNode(acd, child, true);
       if (result != null) {
         return result;
       }

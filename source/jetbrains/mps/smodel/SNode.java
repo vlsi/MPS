@@ -1787,6 +1787,30 @@ public final class SNode {
     return childDepth + 1;
   }
 
+  public SNode prevSibling() {
+    if (getParent() == null) {
+      return null;
+    }
+    List<SNode> children = getParent().getChildren();
+    int index = children.indexOf(this);
+    if (index - 1 >= 0) {
+      return children.get(index - 1);
+    }
+    return null;
+  }
+
+  public SNode nextSibling() {
+    if (getParent() == null) {
+      return null;
+    }
+    List<SNode> children = getParent().getChildren();
+    int index = children.indexOf(this);
+    if (index + 1 < children.size()) {
+      return children.get(index + 1);
+    }
+    return null;
+  }
+
   /**
    * tmp
    */

@@ -199,12 +199,16 @@
               <link role="variableDeclaration" targetNodeId="1198681054835" resolveInfo="a" />
             </node>
           </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198682143300">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198682143301">
-            <property name="name" value="o" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198682143302">
-              <link role="classifier" targetNodeId="6.~Object" resolveInfo="Object" />
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="1198771184479">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198771184480">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198682143300">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198682143301">
+                  <property name="name" value="o" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198682143302">
+                    <link role="classifier" targetNodeId="6.~Object" resolveInfo="Object" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
