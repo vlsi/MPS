@@ -274,9 +274,9 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       for (RefactoringContext refactoringContext : refactoringHistory.getRefactoringContexts()) {
         if (refactoringContext.getModelVersion() <= usedVersion) continue;
         refactoringContext.getRefactoring().updateModel(mySModel, refactoringContext);
-        save();
       }
       mySModel.updateImportedModelUsedVersion(modelDescriptor.getModelUID(), currentVersion);
+      save();
     }
     return;
   }
