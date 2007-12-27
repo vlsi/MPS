@@ -141,7 +141,21 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
   @NotNull
   public SModelDescriptor createNewModel(@NotNull ModelRoot root, @NotNull SModelUID uid, @NotNull ModelOwner owner) {
     IFile modelFile = createFileForModelUID(root, uid);
-    return DefaultModelRootManager.createModel(this, root, modelFile.getCanonicalPath(), uid, owner);
+    SModelDescriptor result = DefaultModelRootManager.createModel(this, root, modelFile.getCanonicalPath(), uid, owner);
+    IOperationContext operationContext = result.getOperationContext();
+    if (operationContext != null) {
+      IProjectHandler projectHandler = operationContext.getProject().getProjectHandler();
+      if (projectHandler != null) {
+        try {
+          projectHandler.addFilesToVCS(CollectionUtil.asList(modelFile.toFile()));
+        } catch (RemoteException e) {
+          LOG.error(e);
+        }
+      }
+    } else {
+      LOG.warning("can't find an operation context for a model " + result);
+    }
+    return result;
   }
 
   private IFile createFileForModelUID(ModelRoot root, SModelUID uid) {
@@ -251,20 +265,20 @@ public class DefaultModelRootManager extends AbstractModelRootManager {
 
     IFile metadataFile = getMetadataFile(modelDescriptor.getModelFile());
     if (!metadataFile.exists()) {
-        metadataFile.createNewFile();
-        IOperationContext operationContext = modelDescriptor.getOperationContext();
-        if (operationContext != null) {
-          IProjectHandler projectHandler = operationContext.getProject().getProjectHandler();
-          if (projectHandler != null) {
-            try {
-              projectHandler.addFilesToVCS(CollectionUtil.asList(metadataFile.toFile()));
-            } catch (RemoteException e) {
-              LOG.error(e);
-            }
+      metadataFile.createNewFile();
+      IOperationContext operationContext = modelDescriptor.getOperationContext();
+      if (operationContext != null) {
+        IProjectHandler projectHandler = operationContext.getProject().getProjectHandler();
+        if (projectHandler != null) {
+          try {
+            projectHandler.addFilesToVCS(CollectionUtil.asList(metadataFile.toFile()));
+          } catch (RemoteException e) {
+            LOG.error(e);
           }
-        } else {
-          LOG.warning("can't find an operation context for a model " + modelDescriptor);
         }
+      } else {
+        LOG.warning("can't find an operation context for a model " + modelDescriptor);
+      }
     }
 
     DefaultMetadataPersistence.save(metadataFile, metadata);
