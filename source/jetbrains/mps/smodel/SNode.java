@@ -417,8 +417,10 @@ public final class SNode {
     Set<SNode> result = new HashSet<SNode>();
     for (String role : getChildRoles(true)) {
       String attributePropertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
-      if (attributePropertyName.equals(propertyName)) {
-        result.add(getChild(role));
+      if (attributePropertyName != null) {
+        if (attributePropertyName.equals(propertyName)) {
+          result.add(getChild(role));
+        }
       }
     }
     return result;
