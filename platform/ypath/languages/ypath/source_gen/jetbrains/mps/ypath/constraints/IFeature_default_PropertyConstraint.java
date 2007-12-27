@@ -27,7 +27,7 @@ public class IFeature_default_PropertyConstraint implements IModelConstraints, I
   }
 
   public void execPropertySet(SNode node, String propertyName, String propertyValue, IScope scope) {
-    if((SPropertyOperations.getBoolean(node, propertyValue))) {
+    if((SPropertyOperations.getBoolean(node, "default"))) {
       {
         ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(SNodeOperations.getParent(node, null, false, false), "features", true));
         try {
@@ -42,7 +42,7 @@ public class IFeature_default_PropertyConstraint implements IModelConstraints, I
         }
       }
     }
-    SPropertyOperations.set(node, "default", "" + ((SPropertyOperations.getBoolean(node, propertyValue))));
+    SPropertyOperations.set(node, "default", "" + ((SPropertyOperations.getBoolean(node, "default"))));
   }
 
 }

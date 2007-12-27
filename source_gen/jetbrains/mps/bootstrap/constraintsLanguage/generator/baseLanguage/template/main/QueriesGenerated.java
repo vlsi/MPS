@@ -18,7 +18,6 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.NodePropertyConstraint_Behavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.DataTypeDeclaration_Behavior;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
@@ -191,6 +190,12 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(node, "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1198780448733(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode propertyConstraint = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint", false, false);
+    SNode property = SLinkOperations.getTarget(propertyConstraint, "applicableProperty", false);
+    return SPropertyOperations.getString(property, "name");
+  }
+
   public static Object referenceMacro_GetReferent_1194605886822(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(node, "parameters");
   }
@@ -220,14 +225,6 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1194967351492(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode snode = generator.findOutputNodeByInputNodeAndMappingName(node, "class_for_concept");
     return SequenceOperations.getFirst(SLinkOperations.getTargets(snode, "constructor", true));
-  }
-
-  public static Object referenceMacro_GetReferent_1198586080430(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    String alias = SConceptPropertyOperations.getString(node, "alias");
-    if(alias == null) {
-      generator.showErrorMessage(node, templateNode, "concept function parm has no <alias> - can't map it to method parameter");
-    }
-    return alias;
   }
 
   public static Object referenceMacro_GetReferent_1198586190309(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {

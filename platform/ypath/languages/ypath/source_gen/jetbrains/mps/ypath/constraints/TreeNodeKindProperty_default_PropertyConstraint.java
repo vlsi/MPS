@@ -24,7 +24,7 @@ public class TreeNodeKindProperty_default_PropertyConstraint implements IModelCo
   }
 
   public void execPropertySet(SNode node, String propertyName, String propertyValue, IScope scope) {
-    if(Boolean.valueOf((SPropertyOperations.getBoolean(node, propertyValue)))) {
+    if(Boolean.valueOf((SPropertyOperations.getBoolean(node, "default")))) {
       SNode treepath = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathAspect", false, false);
       for(SNode desc : SNodeOperations.getDescendants(treepath, null, false)) {
         if(SNodeOperations.isInstanceOf(desc, "jetbrains.mps.ypath.structure.TreeNodeKindProperty")) {
@@ -32,7 +32,7 @@ public class TreeNodeKindProperty_default_PropertyConstraint implements IModelCo
         }
       }
     }
-    SPropertyOperations.set(node, "default", "" + ((SPropertyOperations.getBoolean(node, propertyValue))));
+    SPropertyOperations.set(node, "default", "" + ((SPropertyOperations.getBoolean(node, "default"))));
   }
 
 }
