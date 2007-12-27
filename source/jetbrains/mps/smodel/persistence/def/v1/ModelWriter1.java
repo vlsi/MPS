@@ -45,6 +45,7 @@ public class ModelWriter1 implements IModelWriter {
           SModelUID uid = sModelDescriptor.getModelUID();
           aspectModelElement.setAttribute(ModelPersistence.MODEL_UID, uid.toString());
           aspectModelElement.setAttribute(ModelPersistence.VERSION, "" + sourceModel.getLanguageAspectModelVersion(uid));
+          languageElem.addContent(aspectModelElement);
         }
       }
       rootElement.addContent(languageElem);

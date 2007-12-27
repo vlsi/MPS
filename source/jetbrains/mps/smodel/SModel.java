@@ -971,7 +971,9 @@ public class SModel implements Iterable<SNode> {
 
   public int getUsedVersion(SModelUID sModelUID) {
     ImportElement importElement = getImportElement(sModelUID);
-    if (importElement == null) return -1;
+    if (importElement == null) {
+      return getLanguageAspectModelVersion(sModelUID);
+    }
     return importElement.getUsedVersion();
   }
 
