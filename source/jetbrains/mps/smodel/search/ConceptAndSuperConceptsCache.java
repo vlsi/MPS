@@ -19,14 +19,18 @@ import java.util.*;
   public static ConceptAndSuperConceptsCache getInstance(AbstractConceptDeclaration topConcept) {
     SNode node = topConcept.getNode();
     Object key = keyProducer.createKey(node);
-    ConceptAndSuperConceptsCache cache = (ConceptAndSuperConceptsCache) CachesManager.getInstance().getCache(key);
-    if (cache == null) {
-      cache = new ConceptAndSuperConceptsCache(key, topConcept);
-      Set<SModelDescriptor> dependsOnModel = new HashSet<SModelDescriptor>();
-      for (AbstractConceptDeclaration concept : cache.getConcepts()) {
-        dependsOnModel.add(concept.getModel().getModelDescriptor());
+    CachesManager cachesManager = CachesManager.getInstance();
+    ConceptAndSuperConceptsCache cache;
+    synchronized (cachesManager) {
+      cache = (ConceptAndSuperConceptsCache) cachesManager.getCache(key);
+      if (cache == null) {
+        cache = new ConceptAndSuperConceptsCache(key, topConcept);
+        Set<SModelDescriptor> dependsOnModel = new HashSet<SModelDescriptor>();
+        for (AbstractConceptDeclaration concept : cache.getConcepts()) {
+          dependsOnModel.add(concept.getModel().getModelDescriptor());
+        }
+        CachesManager.getInstance().putCache(key, cache, dependsOnModel);
       }
-      CachesManager.getInstance().putCache(key, cache, dependsOnModel);
     }
     return cache;
   }
