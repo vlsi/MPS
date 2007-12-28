@@ -482,6 +482,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         ReloadUtils.reloadAll(false);
         progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
         checkMonitorCanceled(progress);
+      } else {
+        //we need it to update genearation status
+        ReloadUtils.rebuildProjectPanes();
       }
 
       //++ generation
