@@ -4,6 +4,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.ui.tooltip.TreeToolTipHandler;
 import jetbrains.mps.logging.Logger;
 import org.jdom.Element;
 
@@ -28,7 +29,6 @@ public abstract class MPSTree extends JTree {
 
   public static final String TREE_PATH_SEPARATOR = "/";
 
-  private MPSToolTipInfo myToolTipInfo;
   private int myTooltipManagerRecentInitialDelay;
   private boolean myAutoExpandEnabled = true;
   private boolean myAutoOpen = false;
@@ -36,7 +36,7 @@ public abstract class MPSTree extends JTree {
   protected MPSTree() {
     largeModel = true;
 
-    ToolTipManager.sharedInstance().registerComponent(this);
+    TreeToolTipHandler.install(this);
 
     setCellRenderer(new MPSTreeCellRenderer());
 
@@ -297,36 +297,6 @@ public abstract class MPSTree extends JTree {
     return ((MPSTreeCellRenderer) getCellRenderer().getTreeCellRendererComponent(this, object, this.isPathSelected(path), false, false, row, false));
   }
 
-  public Point getToolTipLocation(MouseEvent event) {
-    TreePath path = getPathForLocation(event.getX(), event.getY());
-    if (path == null) return null;
-    int row = getRowForPath(path);
-
-    if (getVisibleRect().contains(getRowBounds(row))) return null;
-
-    MPSTreeCellRenderer label = getLabelFor(path);
-    Rectangle rect = getRowBounds(row);
-
-    int iconWidth = 0;
-    if (label.getIcon() != null) {
-      iconWidth += label.getIconTextGap() + label.getIcon().getIconWidth();
-    }
-
-    Insets insets = label.getInsets();
-
-
-    Insets tooltipInsets = new Insets(insets.top, insets.left, insets.bottom, insets.right);
-    Color bgNonSelColor = label.getBackgroundNonSelectionColor();
-    Color bgSelColor = label.getBackgroundSelectionColor();
-    Color borderSelColor = label.getBorderSelectionColor();
-    boolean overSelected = label.isSelected();
-    Rectangle visibleRect = getVisibleRect();
-    Point location = new Point(rect.x + iconWidth + insets.left - 1, rect.y + insets.top);
-
-    myToolTipInfo = new MPSToolTipInfo(location, bgNonSelColor, bgSelColor, borderSelColor, tooltipInsets, overSelected, visibleRect);
-
-    return myToolTipInfo.getLocation();
-  }
 
   private static class Pair {
     KeyStroke myKeyStroke;
@@ -659,15 +629,6 @@ public abstract class MPSTree extends JTree {
       }
       expandPaths(expansionPaths);
     }
-  }
-
-  public JToolTip createToolTip() {
-    if (myToolTipInfo == null) {
-      return super.createToolTip();
-    }
-    JToolTip tip = new MPSTreeToolTip(myToolTipInfo, this);
-    tip.setComponent(this);
-    return tip;
   }
 
   protected static class MPSTreeCellRenderer extends DefaultTreeCellRenderer {
