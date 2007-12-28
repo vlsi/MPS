@@ -32,7 +32,7 @@ public class Attribute_attributeDeclaration_ReferentConstraint implements IModel
     return true;
   }
 
-  public ISearchScope createNodeReferentSearchScope(SModel model, SNode enclosingNode, SNode referenceNode, IScope scope) {
+  public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     ISearchScope searchScope;
     SNode element = SNodeOperations.getAncestor(enclosingNode, "webr.xml.structure.Element", false, false);
     if((element == null)) {
