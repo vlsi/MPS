@@ -42,6 +42,27 @@
     <languageAspect modelUID="jetbrains.mps.logging.refactoring.editor" version="-1" />
     <languageAspect modelUID="jetbrains.mps.logging.refactoring.actions" version="-1" />
   </language>
+  <language namespace="jetbrains.mps.quotation">
+    <languageAspect modelUID="jetbrains.mps.quotation.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.quotation.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.quotation.editor" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.core">
+    <languageAspect modelUID="jetbrains.mps.core.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.core.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.core.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.core.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.core.editor" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="-1" />
+  </language>
   <maxImportIndex value="13" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
@@ -488,72 +509,6 @@
     <node role="updateModelClause" type="jetbrains.mps.logging.refactoring.structure.UpdateModelClause" id="1198082847528">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198082847529">
         <node role="statement" type="jetbrains.mps.logging.refactoring.structure.UpdateModelByDefaultOperation" id="1198082938234" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScript" id="1198798900397">
-    <property name="name" value="Eliminate_getPresentation_1" />
-    <property name="title" value="move implementation from getPresentation() to representation:get" />
-    <node role="part" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance" id="1198799086195">
-      <property name="description" value="-" />
-      <link role="affectedInstanceConcept" targetNodeId="12.1177673300966" resolveInfo="ConceptMethodDeclaration" />
-      <node role="affectedInstancePredicate" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Predicate" id="1198799086196">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198799086197">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1198800229087">
-            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198800229088">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198800229089">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1198800229090">
-                  <property name="value" value="true" />
-                </node>
-              </node>
-            </node>
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198800229091">
-              <link role="baseMethodDeclaration" targetNodeId="4.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198800229092">
-                <property name="value" value="getPresentation" />
-              </node>
-              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198800229093">
-                <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1198800247327" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198800250843">
-                  <link role="property" targetNodeId="11.1083152972672" resolveInfo="name" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198800229096">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198800229097">
-              <property name="name" value="overriddenMethod" />
-              <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198800229098">
-                <link role="concept" targetNodeId="12.1177673300966" resolveInfo="ConceptMethodDeclaration" />
-              </node>
-              <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198800229099">
-                <node role="leftExpression" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_node" id="1198800260563" />
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ConceptMethodCall" id="1198800229101">
-                  <link role="conceptMethodDeclaration" targetNodeId="13.1177759451607" resolveInfo="getOverridenMethod" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1198800229102">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198800229103">
-              <link role="baseMethodDeclaration" targetNodeId="4.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198800229104">
-                <property name="value" value="getPresentation" />
-              </node>
-              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198800229105">
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198800229106">
-                  <link role="variableDeclaration" targetNodeId="1198800229097" resolveInfo="overriddenMethod" />
-                </node>
-                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SPropertyAccess" id="1198800268580">
-                  <link role="property" targetNodeId="11.1083152972672" resolveInfo="name" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="affectedInstanceUpdater" type="jetbrains.mps.ide.scriptLanguage.structure.MigrationScriptPart_Instance_Updater" id="1198799086198">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198799086199" />
       </node>
     </node>
   </node>

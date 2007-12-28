@@ -23,7 +23,6 @@ public class BaseConcept extends BaseAdapter {
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String REPRESENTATION = "representation";
 
   public  BaseConcept(SNode node) {
     super(node);
@@ -60,14 +59,6 @@ public class BaseConcept extends BaseAdapter {
 
   public void setVirtualPackage(String value) {
     this.setProperty(BaseConcept.VIRTUAL_PACKAGE, value);
-  }
-
-  public String getRepresentation() {
-    return this.getProperty(BaseConcept.REPRESENTATION);
-  }
-
-  public void setRepresentation(String value) {
-    this.setProperty(BaseConcept.REPRESENTATION, value);
   }
 
 }
