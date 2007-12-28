@@ -16,6 +16,10 @@ public class SModelUID implements Comparable {
   private String myStereotype;
   private String myUIDString;
 
+  public SModelUID(String longName) {
+    this(longName, "");
+  }
+
   public SModelUID(String longName, String stereotype) {
     if (longName == null) longName = "";
     if (stereotype == null) stereotype = "";
