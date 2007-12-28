@@ -246,19 +246,16 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
 
       JPanel useBraces = new JPanel(new FlowLayout(FlowLayout.LEFT));
       useBraces.add(myUseBraces);
-      useBraces.add(new JLabel("Use Braces"));
 
       panel.add(useBraces);
 
       JPanel antialiasingPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
       antialiasingPanel.add(myAntialiasingCheckBox);
-      antialiasingPanel.add(new JLabel("Use Antialiasing"));
 
       panel.add(antialiasingPanel);
 
       JPanel legacyTypesystemPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
       legacyTypesystemPanel.add(myLegacyTypesystemCheckBox);
-      legacyTypesystemPanel.add(new JLabel("Use Legacy Typesystem For Highlighting"));
 
       panel.add(legacyTypesystemPanel);
 
@@ -305,19 +302,19 @@ public class EditorSettings extends DefaultExternalizableComponent implements IC
     }
 
     private JCheckBox createAntialiasinbCheckBox() {
-      JCheckBox result = new JCheckBox();
+      JCheckBox result = new JCheckBox("Use Antialiasing");
       result.setSelected(isUseAntialiasing());
       return result;
     }
 
     private JCheckBox createLegacyTypesystemCheckBox() {
-      JCheckBox result = new JCheckBox();
+      JCheckBox result = new JCheckBox("Use Lgeacy Typesystem For Highlighting");
       result.setSelected(getUseLegacyTypesystem());
       return result;
     }
 
     private JCheckBox createUseBracesCheckBox() {
-      JCheckBox result = new JCheckBox();
+      JCheckBox result = new JCheckBox("Use Braces");
       result.setSelected(useBraces());
       return result;
     }
