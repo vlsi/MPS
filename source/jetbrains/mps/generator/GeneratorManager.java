@@ -482,9 +482,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         ReloadUtils.reloadAll(false);
         progress.finishTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
         checkMonitorCanceled(progress);
-      } else {
-        //we need it to update genearation status
-        ReloadUtils.rebuildProjectPanes();
       }
 
       //++ generation
@@ -606,6 +603,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             public void run() {
             }
           });
+        } else {
+          //we need it to update genearation status
+          ReloadUtils.rebuildProjectPanes();
         }
 
         progress.addText("generation completed successfully");
