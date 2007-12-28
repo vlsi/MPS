@@ -43,10 +43,15 @@ public class NodeEditorActions {
       EditorCell target = findTarget(selection);
       nodeEditorComponent.changeSelection(target);
       if (selection.isPunctuationLayout() && target instanceof EditorCell_Label) {
-        TextLine textLine = ((EditorCell_Label) target).getTextLine();
+        EditorCell_Label targetLabel = (EditorCell_Label) target;
+        TextLine textLine = targetLabel.getRenderedTextLine();
         int textLength = textLine.getText().length();
         if (textLength > 0) {
-          textLine.setCaretPosition(textLength -1);
+          if (textLine == targetLabel.getNullTextLine()) {
+            textLine.setCaretPosition(0);
+          } else {
+            textLine.setCaretPosition(textLength -1);
+          }
         } else {
           if (this.canExecute(context)) this.execute(context);
         }
