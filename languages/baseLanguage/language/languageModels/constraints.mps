@@ -9,6 +9,7 @@
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
   <language namespace="jetbrains.mps.bootstrap.helgins" />
   <language namespace="jetbrains.mps.quotation" />
+  <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
   <maxImportIndex value="41" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -2448,13 +2449,30 @@
     <link role="concept" targetNodeId="1.1068431474542" />
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182160839808">
       <property name="isVirtual" value="true" />
-      <property name="isAbstract" value="true" />
+      <property name="isAbstract" value="false" />
       <property name="name" value="inline" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1182160869063" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1182162555072">
         <property name="name" value="editorContext" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1182162555073">
           <link role="classifier" targetNodeId="26.~EditorContext" resolveInfo="EditorContext" />
+        </node>
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198838207743">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1198838218045">
+          <property name="value" value="Do nothing by default" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198838351591">
+      <property name="name" value="isInitializable" />
+      <property name="isVirtual" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1198838353788" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198838351593">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198838361623">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1198838361624">
+            <property name="value" value="false" />
+          </node>
         </node>
       </node>
     </node>
@@ -2811,6 +2829,47 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1190026803775" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198838531538">
+      <property name="name" value="isInitializable" />
+      <link role="overridenMethod" targetNodeId="1198838351591" resolveInfo="isInitializable" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198838531540">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198838576798">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198838576799">
+            <property name="name" value="parent" />
+            <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1198838576800" />
+            <node role="initializer" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198838576801">
+              <node role="leftExpression" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ThisNodeExpression" id="1198838582438" />
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1198838576803" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198838617354">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="1198838618753">
+            <node role="rightExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198838618754">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198838618755">
+                <link role="variableDeclaration" targetNodeId="1198838576799" resolveInfo="parent" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1198838618756">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1198838618757">
+                  <link role="conceptDeclaration" targetNodeId="1.1144231330558" resolveInfo="ForStatement" />
+                </node>
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1198838618758">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198838618759">
+                <link role="variableDeclaration" targetNodeId="1198838576799" resolveInfo="parent" />
+              </node>
+              <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1198838618760">
+                <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1198838618761">
+                  <link role="conceptDeclaration" targetNodeId="1.1068581242864" resolveInfo="LocalVariableDeclarationStatement" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1198838534422" />
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181705017">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1178181705018" />
@@ -5493,6 +5552,18 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198838375885">
+      <property name="name" value="isInitializable" />
+      <link role="overridenMethod" targetNodeId="1198838351591" resolveInfo="isInitializable" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198838375887">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198838396357">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1198838396358">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1198838391568" />
+    </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1184160780379">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1184160780380" />
     </node>
@@ -6752,6 +6823,24 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1197462236380">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1197462236381" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1198838409529">
+    <link role="concept" targetNodeId="1.1070462154015" resolveInfo="StaticFieldDeclaration" />
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1198838409530">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198838409531" />
+    </node>
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1198838412160">
+      <property name="name" value="isInitializable" />
+      <link role="overridenMethod" targetNodeId="1198838351591" resolveInfo="isInitializable" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198838412162">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198838418168">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1198838418169">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1198838415297" />
     </node>
   </node>
 </model>

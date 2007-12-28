@@ -8298,8 +8298,8 @@
       <property name="defaultValue" value="?" />
       <property name="noTargetText" value="&lt;no name&gt;" />
       <property name="attractsFocus" value="0" />
-      <property name="rightTransformAnchorTag" value="default_RTransform" />
       <property name="drawBorder" value="false" />
+      <property name="rightTransformAnchorTag" value="default_RTransform" />
       <link role="relationDeclaration" targetNodeId="18.1169194664001" />
       <node role="menuDescriptor" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuDescriptor" id="1181823199383">
         <node role="cellMenuPart" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellMenuPart_PropertyPostfixHints" id="1181823199384">

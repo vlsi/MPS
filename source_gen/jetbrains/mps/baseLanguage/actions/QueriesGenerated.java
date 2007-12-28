@@ -11,6 +11,7 @@ import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.ArrayType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.constraints.VariableDeclaration_Behavior;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.constraints.ClassConcept_Behavior;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -99,19 +100,7 @@ public class QueriesGenerated {
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1177505054800(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    if(SLinkOperations.getTarget(sourceNode, "initializer", true) != null) {
-      return false;
-    }
-    if(SNodeOperations.isInstanceOf(sourceNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(sourceNode, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
-      return true;
-    }
-    if(SNodeOperations.isInstanceOf(sourceNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration")) {
-      SNode parent = SNodeOperations.getParent(sourceNode, null, false, false);
-      if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement") || SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.ForStatement")) {
-        return true;
-      }
-    }
-    return false;
+    return SLinkOperations.getTarget(sourceNode, "initializer", true) == null && VariableDeclaration_Behavior.call_isInitializable_1198838351591(sourceNode);
   }
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_1177505734541(SNode sourceNode, IScope scope, IOperationContext operationContext) {
