@@ -21,4 +21,5 @@ public class Icons {
   public static final Icon MODULE_ICON = new ImageIcon(Icons.class.getResource("groupByModule.png"));
   public static final Icon MODEL_ICON = new ImageIcon(Icons.class.getResource("showModels.png"));
   public static final Icon CATEGORY_ICON = new ImageIcon(Icons.class.getResource("groupByCategory.png"));
+  public static final Icon ROOT_ICON = new ImageIcon(Icons.class.getResource("showRoots.png"));
 }
