@@ -1283,7 +1283,13 @@ public final class SNode {
 //      return name;
 //    }
 //    return getConceptShortName();
-    return BaseConcept_Behavior.call_getPresentation_1180102203531(this);
+    String s = BaseConcept_Behavior.call_getPresentation_1180102203531(this);
+    if (s == null) {
+      LOG.error("no presentation for node: " + this.getDebugText());
+      BaseConcept_Behavior.call_getPresentation_1180102203531(this);
+      return super.toString();
+    }
+    return s;
   }
 
   @NotNull
