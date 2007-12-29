@@ -15,8 +15,8 @@ public class typeof_SuperNodeExpression_InferenceRule implements InferenceRule_R
   public  typeof_SuperNodeExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode behaviour = SNodeOperations.getAncestor(argument, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior", true, false);
+  public void applyRule(final SNode nodeToCheck) {
+    SNode behaviour = SNodeOperations.getAncestor(nodeToCheck, "jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior", true, false);
     SNode concept = SLinkOperations.getTarget(behaviour, "concept", false);
     SNode result = null;
     if(SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration")) {
@@ -27,7 +27,7 @@ public class typeof_SuperNodeExpression_InferenceRule implements InferenceRule_R
       SNode icd = concept;
       result = SequenceOperations.getFirst(SLinkOperations.getTargets(icd, "extends", true));
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_11().createNode(result), argument, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1193400817254");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_11().createNode(result), nodeToCheck, "jetbrains.mps.bootstrap.constraintsLanguage.helgins", "1193400817254");
   }
 
   public String getApplicableConceptFQName() {
