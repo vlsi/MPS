@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class AssertFalse extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse";
   public static String CONDITION = "condition";
 
   public  AssertFalse(SNode node) {
@@ -17,16 +18,20 @@ public class AssertFalse extends Statement {
   }
 
   public static AssertFalse newInstance(SModel sm, boolean init) {
-    return (AssertFalse)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.AssertFalse", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AssertFalse)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertFalse", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static AssertFalse newInstance(SModel sm) {
     return AssertFalse.newInstance(sm, false);
   }
 
+
   public Expression getCondition() {
     return (Expression)this.getChild(AssertFalse.CONDITION);
   }
+
   public void setCondition(Expression node) {
     super.setChild(AssertFalse.CONDITION, node);
   }
+
 }

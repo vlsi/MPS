@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class AssertEquals extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals";
   public static String EXPECTED = "expected";
   public static String ACTUAL = "actual";
 
@@ -18,22 +19,28 @@ public class AssertEquals extends Statement {
   }
 
   public static AssertEquals newInstance(SModel sm, boolean init) {
-    return (AssertEquals)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.AssertEquals", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AssertEquals)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static AssertEquals newInstance(SModel sm) {
     return AssertEquals.newInstance(sm, false);
   }
 
+
   public Expression getExpected() {
     return (Expression)this.getChild(AssertEquals.EXPECTED);
   }
+
   public void setExpected(Expression node) {
     super.setChild(AssertEquals.EXPECTED, node);
   }
+
   public Expression getActual() {
     return (Expression)this.getChild(AssertEquals.ACTUAL);
   }
+
   public void setActual(Expression node) {
     super.setChild(AssertEquals.ACTUAL, node);
   }
+
 }

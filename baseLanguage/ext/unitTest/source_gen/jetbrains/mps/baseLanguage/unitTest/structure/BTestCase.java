@@ -7,33 +7,39 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList;
 
 public class BTestCase extends ClassConcept {
-  public static String TEST_METHOD_LIST = "testMethodList";
+  public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase";
   public static String TEST_CASE_NAME = "testCaseName";
+  public static String TEST_METHOD_LIST = "testMethodList";
 
   public  BTestCase(SNode node) {
     super(node);
   }
 
   public static BTestCase newInstance(SModel sm, boolean init) {
-    return (BTestCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.BTestCase", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BTestCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static BTestCase newInstance(SModel sm) {
     return BTestCase.newInstance(sm, false);
+  }
+
+
+  public String getTestCaseName() {
+    return this.getProperty(BTestCase.TEST_CASE_NAME);
+  }
+
+  public void setTestCaseName(String value) {
+    this.setProperty(BTestCase.TEST_CASE_NAME, value);
   }
 
   public TestMethodList getTestMethodList() {
     return (TestMethodList)this.getChild(BTestCase.TEST_METHOD_LIST);
   }
+
   public void setTestMethodList(TestMethodList node) {
     super.setChild(BTestCase.TEST_METHOD_LIST, node);
   }
-  public String getTestCaseName() {
-    return this.getProperty(BTestCase.TEST_CASE_NAME);
-  }
-  public void setTestCaseName(String value) {
-    this.setProperty(BTestCase.TEST_CASE_NAME, value);
-  }
+
 }

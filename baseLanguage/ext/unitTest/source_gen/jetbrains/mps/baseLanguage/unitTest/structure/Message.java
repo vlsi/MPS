@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class Message extends BaseConcept {
+  public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.Message";
   public static String MESSAGE = "message";
 
   public  Message(SNode node) {
@@ -17,16 +18,20 @@ public class Message extends BaseConcept {
   }
 
   public static Message newInstance(SModel sm, boolean init) {
-    return (Message)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.Message", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Message)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.Message", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static Message newInstance(SModel sm) {
     return Message.newInstance(sm, false);
   }
 
+
   public Expression getMessage() {
     return (Expression)this.getChild(Message.MESSAGE);
   }
+
   public void setMessage(Expression node) {
     super.setChild(Message.MESSAGE, node);
   }
+
 }

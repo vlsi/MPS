@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Expression;
 
 public class AssertTrue extends Statement {
+  public static final String concept = "jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue";
   public static String CONDITION = "condition";
 
   public  AssertTrue(SNode node) {
@@ -17,16 +18,20 @@ public class AssertTrue extends Statement {
   }
 
   public static AssertTrue newInstance(SModel sm, boolean init) {
-    return (AssertTrue)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.AssertTrue", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AssertTrue)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue", sm, GlobalScope.getInstance(), init).getAdapter();
   }
+
   public static AssertTrue newInstance(SModel sm) {
     return AssertTrue.newInstance(sm, false);
   }
 
+
   public Expression getCondition() {
     return (Expression)this.getChild(AssertTrue.CONDITION);
   }
+
   public void setCondition(Expression node) {
     super.setChild(AssertTrue.CONDITION, node);
   }
+
 }
