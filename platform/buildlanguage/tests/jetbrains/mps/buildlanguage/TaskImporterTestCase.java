@@ -21,7 +21,7 @@ public class TaskImporterTestCase extends TestCase {
 
   public void testTestTask1(){
     try {
-      Map<String, Class<?>> attrs = SmartItemsInfoExtractor.getInstance().getAttributesFromTask(ANT_PATH, TEST_FOLDER,"jetbrains.mps.buildlanguage.resource.TestTask", Task.class);
+      Map<String, Class<?>> attrs = SmartItemsInfoExtractor.getInstance().getAttributesFromTask(ANT_PATH,"jetbrains.mps.buildlanguage.resource.TestTask", Task.class, TEST_FOLDER);
       assertTrue(attrs.get("booleanattribute").equals(boolean.class));
       assertTrue(attrs.get("intattribute").equals(int.class));
       assertTrue(attrs.get("stringattribute").equals(String.class));
