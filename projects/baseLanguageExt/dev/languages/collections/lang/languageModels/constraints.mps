@@ -12,13 +12,13 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="-1" />
@@ -40,56 +40,11 @@
   <maxImportIndex value="9" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
-  <import index="3" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="4" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   <import index="5" modelUID="java.lang@java_stub" version="-1" />
-  <import index="6" modelUID="jetbrains.mps.helgins.uiActions@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
   <import index="9" modelUID="jetbrains.mps.core.constraints" version="-1" />
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1174067603069">
-    <property name="name" value="QueriesUtil" />
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1174067612898">
-      <property name="name" value="typePresentation" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1174067633559">
-        <link role="classifier" targetNodeId="5.~String" resolveInfo="String" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1174067612900">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1174067684271">
-          <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1174067691415">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1174067687149">
-              <link role="variableDeclaration" targetNodeId="1174067649314" resolveInfo="type" />
-            </node>
-            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsNullOperation" id="1174067694713" />
-          </node>
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1174067684273">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1174067696917">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1174067699232">
-                <property name="value" value="?" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1174067709781">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1174067730190">
-            <link role="baseMethodDeclaration" targetNodeId="6.~PresentationManager.toString_1(jetbrains.mps.smodel.SNode):java.lang.String" resolveInfo="toString_1" />
-            <link role="classConcept" targetNodeId="6.~PresentationManager" resolveInfo="PresentationManager" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1174067733207">
-              <link role="variableDeclaration" targetNodeId="1174067649314" resolveInfo="type" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1174067649314">
-        <property name="name" value="type" />
-        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1174067649315">
-          <link role="concept" targetNodeId="4.1068431790189" />
-        </node>
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178546096965" />
-    </node>
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1178550080910" />
-  </node>
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1178181704967">
     <link role="concept" targetNodeId="1.1151688443754" />
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1178181704968">
