@@ -12,10 +12,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
   public  ConstraintsDescriptor() {
-    this.myConstraints.add(new ClassifierType_name_PropertyConstraint());
-    this.myConstraints.add(new UpperBoundType_name_PropertyConstraint());
-    this.myConstraints.add(new LowerBoundType_name_PropertyConstraint());
-    this.myConstraints.add(new WildCardType_name_PropertyConstraint());
     this.myConstraints.add(new Type_name_PropertyConstraint());
     this.myConstraints.add(new Type_alias_PropertyConstraint());
     this.myConstraints.add(new BaseMethodDeclaration_alias_PropertyConstraint());
@@ -26,11 +22,9 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new VariableDeclaration_shortDescription_PropertyConstraint());
     this.myConstraints.add(new AnonymousClass_name_PropertyConstraint());
     this.myConstraints.add(new LocalVariableDeclaration_shortDescription_PropertyConstraint());
-    this.myConstraints.add(new TypeVariableReference_name_PropertyConstraint());
     this.myConstraints.add(new MethodDeclaration_shortDescription_PropertyConstraint());
     this.myConstraints.add(new EnumConstantDeclaration_shortDescription_PropertyConstraint());
     this.myConstraints.add(new ConstructorDeclaration_name_PropertyConstraint());
-    this.myConstraints.add(new ArrayType_name_PropertyConstraint());
     this.myConstraints.add(new TypeVariableReference_typeVariableDeclaration_ReferentConstraint());
     this.myConstraints.add(new LocalStaticMethodCall_staticMethodDeclaration_ReferentConstraint());
     this.myConstraints.add(new StaticFieldReference_staticFieldDeclaration_ReferentConstraint());
