@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  * Time: 14:07:53
  * To change this template use File | Settings | File Templates.
  */
-public class SModelUID implements Comparable {
+public class SModelUID implements Comparable<Object> {
   private String myLongName;
   private String myStereotype;
   private String myUIDString;
