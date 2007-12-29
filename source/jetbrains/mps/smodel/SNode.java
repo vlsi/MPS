@@ -3,6 +3,7 @@ package jetbrains.mps.smodel;
 import jetbrains.mps.bootstrap.structureLanguage.structure.*;
 import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.core.structure.IResolveInfo;
+import jetbrains.mps.core.constraints.BaseConcept_Behavior;
 import jetbrains.mps.ide.command.undo.IUndoableAction;
 import jetbrains.mps.ide.command.undo.UndoManager;
 import jetbrains.mps.ide.command.undo.UnexpectedUndoException;
@@ -1277,11 +1278,12 @@ public final class SNode {
   @NotNull
   public String toString() {
     fireNodeReadAccess();
-    String name = getName();
-    if (name != null && !name.equals("")) {
-      return name;
-    }
-    return getConceptShortName();
+//    String name = getName();
+//    if (name != null && !name.equals("")) {
+//      return name;
+//    }
+//    return getConceptShortName();
+    return BaseConcept_Behavior.call_getPresentation_1180102203531(this);
   }
 
   @NotNull
