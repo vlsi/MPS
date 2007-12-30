@@ -13,13 +13,13 @@ import java.util.List;
 
 public class TargetDeclaration extends BaseConcept implements INamedConcept, IPropertyHolder {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.TargetDeclaration";
-  public static String TASK_CALLS_LIST = "taskCallsList";
-  public static String DEPENDS_LIST = "dependsList";
-  public static String PROPERTY_LIST = "propertyList";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
+  public static String TASK_CALLS_LIST = "taskCallsList";
+  public static String DEPENDS_LIST = "dependsList";
+  public static String PROPERTY_LIST = "propertyList";
 
   public  TargetDeclaration(SNode node) {
     super(node);
@@ -33,6 +33,38 @@ public class TargetDeclaration extends BaseConcept implements INamedConcept, IPr
     return TargetDeclaration.newInstance(sm, false);
   }
 
+
+  public String getName() {
+    return this.getProperty(TargetDeclaration.NAME);
+  }
+
+  public void setName(String value) {
+    this.setProperty(TargetDeclaration.NAME, value);
+  }
+
+  public String getShortDescription() {
+    return this.getProperty(TargetDeclaration.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(TargetDeclaration.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(TargetDeclaration.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(TargetDeclaration.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(TargetDeclaration.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(TargetDeclaration.VIRTUAL_PACKAGE, value);
+  }
 
   public int getTaskCallsListsCount() {
     return this.getChildCount(TargetDeclaration.TASK_CALLS_LIST);
@@ -92,38 +124,6 @@ public class TargetDeclaration extends BaseConcept implements INamedConcept, IPr
 
   public void insertPropertyList(PropertyDeclaration prev, PropertyDeclaration node) {
     this.insertChild(prev, TargetDeclaration.PROPERTY_LIST, node);
-  }
-
-  public String getName() {
-    return this.getProperty(TargetDeclaration.NAME);
-  }
-
-  public void setName(String value) {
-    this.setProperty(TargetDeclaration.NAME, value);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(TargetDeclaration.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(TargetDeclaration.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(TargetDeclaration.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(TargetDeclaration.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(TargetDeclaration.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(TargetDeclaration.VIRTUAL_PACKAGE, value);
   }
 
 }
