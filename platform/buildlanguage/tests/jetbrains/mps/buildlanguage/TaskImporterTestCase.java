@@ -113,7 +113,7 @@ public class TaskImporterTestCase extends TestCase {
       return sb.toString();
     }
 
-    public void createDeclaration(String declName, boolean isAbstract) {
+    public void createDeclaration(String declName, boolean isAbstract, boolean canHaveInternalText) {
       myDecls.put(declName, isAbstract);
     }
 
