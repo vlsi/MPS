@@ -29,31 +29,36 @@ public class NodePresentationUtil {
     }
 
     // all other nodes (not a concept declarations)
-    return matchingText_internal(nodeAdapter);
-  }
-
-  private static String matchingText_internal(INodeAdapter nodeAdapter) {
-    if (nodeAdapter == null) {
-      return "<none>";
-    }
-
-    if (nodeAdapter instanceof LinkDeclaration) {
-      return ((LinkDeclaration) nodeAdapter).getRole();
-    }
-
-    if (nodeAdapter instanceof BaseConcept) {
+//    return matchingText_internal(nodeAdapter);
+    if (nodeAdapter instanceof BaseConcept) {  // todo: get rid of 'custom alias' - only use 'presentation'
       String customAlias = ((BaseConcept) nodeAdapter).getAlias();
       if (customAlias != null) return customAlias;
-      if (nodeAdapter instanceof NamedConcept || nodeAdapter instanceof INamedConcept) {
-        String name = nodeAdapter.getName();
-        if (name != null) {
-          return name;
-        }
-      }
     }
-
-    return getAliasOrConceptName(nodeAdapter.getNode());
+    return nodeAdapter.getNode().getPresentation();
   }
+
+//  private static String matchingText_internal(INodeAdapter nodeAdapter) {
+//    if (nodeAdapter == null) {
+//      return "<none>";
+//    }
+//
+//    if (nodeAdapter instanceof LinkDeclaration) {  // todo: remove
+//      return ((LinkDeclaration) nodeAdapter).getRole();
+//    }
+//
+//    if (nodeAdapter instanceof BaseConcept) {
+//      String customAlias = ((BaseConcept) nodeAdapter).getAlias();
+//      if (customAlias != null) return customAlias;
+//      if (nodeAdapter instanceof NamedConcept || nodeAdapter instanceof INamedConcept) {
+//        String name = nodeAdapter.getName();
+//        if (name != null) {
+//          return name;
+//        }
+//      }
+//    }
+//
+//    return getAliasOrConceptName(nodeAdapter.getNode());
+//  }
 
   public static String descriptionText(SNode node) {
     return descriptionText(node, false);
@@ -108,7 +113,7 @@ public class NodePresentationUtil {
     if (alias != null) {
       return alias;
     }
-    
+
     return node.getConceptShortName();
   }
 
