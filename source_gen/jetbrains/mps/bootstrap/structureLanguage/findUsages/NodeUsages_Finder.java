@@ -6,9 +6,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-
 import java.util.Set;
-
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
@@ -31,7 +29,7 @@ public class NodeUsages_Finder extends BaseFinder {
   public SearchResults find(SearchQuery searchQuery) {
     Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(searchQuery.getNodePointer().getNode(), searchQuery.getScope());
     SearchResults results = new SearchResults();
-    for (SReference reference : resRefs) {
+    for(SReference reference : resRefs) {
       results.getSearchResults().add(new SearchResult(new SNodePointer(reference.getSourceNode()), "Node Usages"));
     }
     results.getSearchedNodePointers().add(searchQuery.getNodePointer());

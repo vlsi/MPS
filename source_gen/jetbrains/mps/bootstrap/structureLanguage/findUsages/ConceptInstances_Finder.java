@@ -7,9 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-
 import java.util.List;
-
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.smodel.SNodePointer;
@@ -31,7 +29,7 @@ public class ConceptInstances_Finder extends BaseFinder {
   public SearchResults find(SearchQuery searchQuery) {
     List<SNode> resNodes = FindUsagesManager.getInstance().findInstances(searchQuery.getNodePointer().getNode(), searchQuery.getScope());
     SearchResults results = new SearchResults();
-    for (SNode node : resNodes) {
+    for(SNode node : resNodes) {
       results.getSearchResults().add(new SearchResult(new SNodePointer(node), "Concept Instances"));
     }
     results.getSearchedNodePointers().add(searchQuery.getNodePointer());
