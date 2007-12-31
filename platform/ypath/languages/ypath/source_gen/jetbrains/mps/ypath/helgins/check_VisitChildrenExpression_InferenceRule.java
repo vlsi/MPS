@@ -17,21 +17,21 @@ public class check_VisitChildrenExpression_InferenceRule implements InferenceRul
   public  check_VisitChildrenExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    int actualCount = SLinkOperations.getCount(argument, "actualArgument");
-    SNode visitBlock = VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1180014794484(argument);
+  public void applyRule(final SNode visitChildrenExpression) {
+    int actualCount = SLinkOperations.getCount(visitChildrenExpression, "actualArgument");
+    SNode visitBlock = VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1180014794484(visitChildrenExpression);
     if(!((visitBlock != null))) {
-      TypeChecker.getInstance().reportTypeError(argument, "visit children is unexpected here", "jetbrains.mps.ypath.helgins", "1180014856089");
+      TypeChecker.getInstance().reportTypeError(visitChildrenExpression, "visit children is unexpected here", "jetbrains.mps.ypath.helgins", "1180014856089");
     }
     List<SNode> parameters = SLinkOperations.getTargets(SLinkOperations.getTarget(visitBlock, "visitParameterDeclarationList", true), "visitParameterDeclaration", true);
     int expectedCount = SequenceOperations.getSize(parameters);
     if(!(actualCount == expectedCount)) {
-      TypeChecker.getInstance().reportTypeError(argument, "wrong parameters number: expected " + expectedCount + " , actual " + actualCount, "jetbrains.mps.ypath.helgins", "1180014444793");
+      TypeChecker.getInstance().reportTypeError(visitChildrenExpression, "wrong parameters number: expected " + expectedCount + " , actual " + actualCount, "jetbrains.mps.ypath.helgins", "1180014444793");
     }
     {
       SNode arg;
       SNode param;
-      Iterator<SNode> arg_iterator = SLinkOperations.getTargets(argument, "actualArgument", true).iterator();
+      Iterator<SNode> arg_iterator = SLinkOperations.getTargets(visitChildrenExpression, "actualArgument", true).iterator();
       Iterator<SNode> param_iterator = parameters.iterator();
       while(true) {
         if(!(arg_iterator.hasNext())) {

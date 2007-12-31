@@ -37,7 +37,7 @@ public abstract class AbstractChainTreeTraversal<T> extends AbstractTreeTraversa
     }
     
     protected Iterable<T> getDirectContents (T node) {
-        return getTreePath().getContents(node, featureDesc);
+        return ((TreePath<T>)getTreePath()).getContents(node, featureDesc, false);
     }
 
     protected Iterable<T> getOppositeContents (T node) {
@@ -48,7 +48,7 @@ public abstract class AbstractChainTreeTraversal<T> extends AbstractTreeTraversa
             }
             return Collections.emptyList();
         }
-        return getTreePath().getContents(node, getTreePath().getFeatureDescriptor(featureDesc.getOpposite()));
+        return ((TreePath<T>)getTreePath()).getContents(node, getTreePath().getFeatureDescriptor(featureDesc.getOpposite()), true);
     }
     
     protected ITreeTraversal<T> getSourceTraversal () {

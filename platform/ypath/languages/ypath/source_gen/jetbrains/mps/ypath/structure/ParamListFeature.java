@@ -16,12 +16,13 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
-  public static String OPPOSITE = "opposite";
+  public static String ASCENDING = "ascending";
   public static String PARAMETER_TYPE = "parameterType";
   public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
   public static String TO_STRING_FUNCTION = "toStringFunction";
   public static String CARDINAL = "cardinal";
+  public static String OPPOSITE = "opposite";
 
   public  ParamListFeature(SNode node) {
     super(node);
@@ -84,12 +85,12 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
     this.setBooleanProperty(ParamListFeature.DEFAULT, value);
   }
 
-  public IFeature getOpposite() {
-    return (IFeature)this.getReferent(ParamListFeature.OPPOSITE);
+  public boolean getAscending() {
+    return this.getBooleanProperty(ParamListFeature.ASCENDING);
   }
 
-  public void setOpposite(IFeature node) {
-    super.setReferent(ParamListFeature.OPPOSITE, node);
+  public void setAscending(boolean value) {
+    this.setBooleanProperty(ParamListFeature.ASCENDING, value);
   }
 
   public Type getParameterType() {
@@ -170,6 +171,14 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
 
   public void setParamDeleteFunction(ParamFeatureDeleteFun node) {
     this.setDeleteFunction(node);
+  }
+
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(ParamListFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(ParamListFeature.OPPOSITE, node);
   }
 
 }

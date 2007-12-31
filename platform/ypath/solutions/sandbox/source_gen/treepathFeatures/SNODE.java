@@ -123,8 +123,8 @@ public class SNODE extends TreePath<SNode> {
       return false;
     }
 
-    public boolean isDirect() {
-      return true;
+    public boolean isAscending() {
+      return false;
     }
 
 }
@@ -152,8 +152,8 @@ public class SNODE extends TreePath<SNode> {
       return false;
     }
 
-    public boolean isDirect() {
-      return true;
+    public boolean isAscending() {
+      return false;
     }
 
 }

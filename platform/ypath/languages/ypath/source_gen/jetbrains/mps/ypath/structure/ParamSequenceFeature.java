@@ -16,12 +16,13 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
-  public static String OPPOSITE = "opposite";
+  public static String ASCENDING = "ascending";
   public static String PARAMETER_TYPE = "parameterType";
   public static String PARAMETER_QUERY_FUNCTION = "parameterQueryFunction";
   public static String TARGET_TYPE_FUNCTION = "targetTypeFunction";
   public static String TO_STRING_FUNCTION = "toStringFunction";
   public static String CARDINAL = "cardinal";
+  public static String OPPOSITE = "opposite";
 
   public  ParamSequenceFeature(SNode node) {
     super(node);
@@ -84,12 +85,12 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
     this.setBooleanProperty(ParamSequenceFeature.DEFAULT, value);
   }
 
-  public IFeature getOpposite() {
-    return (IFeature)this.getReferent(ParamSequenceFeature.OPPOSITE);
+  public boolean getAscending() {
+    return this.getBooleanProperty(ParamSequenceFeature.ASCENDING);
   }
 
-  public void setOpposite(IFeature node) {
-    super.setReferent(ParamSequenceFeature.OPPOSITE, node);
+  public void setAscending(boolean value) {
+    this.setBooleanProperty(ParamSequenceFeature.ASCENDING, value);
   }
 
   public Type getParameterType() {
@@ -162,6 +163,14 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
 
   public void setParamRemoveFunction(ParamFeatureRemoveFun node) {
     this.setRemoveFunction(node);
+  }
+
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(ParamSequenceFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(ParamSequenceFeature.OPPOSITE, node);
   }
 
 }

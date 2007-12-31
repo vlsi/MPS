@@ -12,8 +12,8 @@ public class typeof_GeneratorFunctionParam_InferenceRule implements InferenceRul
   public  typeof_GeneratorFunctionParam_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_28().createNode(), argument, "jetbrains.mps.ypath.helgins", "1196768351890");
+  public void applyRule(final SNode nodeToCheck) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_28().createNode(), nodeToCheck, "jetbrains.mps.ypath.helgins", "1196768351890");
   }
 
   public String getApplicableConceptFQName() {

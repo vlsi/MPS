@@ -218,8 +218,8 @@ public class DOM_NG extends TreePath<Node> {
       return true;
     }
 
-    public boolean isDirect() {
-      return true;
+    public boolean isAscending() {
+      return false;
     }
 
 }
@@ -244,8 +244,8 @@ public class DOM_NG extends TreePath<Node> {
       return false;
     }
 
-    public boolean isDirect() {
-      return true;
+    public boolean isAscending() {
+      return false;
     }
 
 }
@@ -270,8 +270,8 @@ public class DOM_NG extends TreePath<Node> {
       return false;
     }
 
-    public boolean isDirect() {
-      return true;
+    public boolean isAscending() {
+      return false;
     }
 
 }

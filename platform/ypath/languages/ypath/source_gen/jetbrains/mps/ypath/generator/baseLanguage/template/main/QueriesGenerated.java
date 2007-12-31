@@ -104,6 +104,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(node, "default");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1199012579668(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.getBoolean(node, "ascending");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1184238341011(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "Desc_" + IFeature_Behavior.call_getFullName_1184069386479(node);
   }
@@ -238,33 +242,33 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(node, "usedFeature", false), "name");
   }
 
-  public static SNode referenceMacro_GetReferent_1184059521295(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1184059521295(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode feature = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.IFeature", false, false);
     SNode featureClass = generator.findOutputNodeByInputNodeAndMappingName(feature, "feature_class");
     return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(featureClass, "field", true), new zPredicate2(null, null)));
   }
 
-  public static SNode referenceMacro_GetReferent_1183990372956(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1183990372956(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode fun = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode body = generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(fun, "body", true), "function_body");
     SNode imd = SNodeOperations.getAncestor(body, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
     return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(imd, "parameter", true), new zPredicate3(null, null)));
   }
 
-  public static SNode referenceMacro_GetReferent_1183991612087(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1183991612087(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode fun = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode body = generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(fun, "body", true), "function_body");
     SNode imd = SNodeOperations.getAncestor(body, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false);
     return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(imd, "parameter", true), new zPredicate4(null, null)));
   }
 
-  public static SNode referenceMacro_GetReferent_1184674316408(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1184674316408(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode feature = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.IFeature", false, false);
     SNode featureClass = generator.findOutputNodeByInputNodeAndMappingName(feature, "feature_class");
     return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(featureClass, "field", true), new zPredicate5(null, null)));
   }
 
-  public static SNode referenceMacro_GetReferent_1184771402282(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1184771402282(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     final zClosureContext _zClosureContext = new zClosureContext();
     SNode df = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.IDesignFunction", false, false);
     SNode stmts = generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(df, "body", true), "body");
@@ -272,7 +276,7 @@ public class QueriesGenerated {
     return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getAncestor(stmts, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", false, false), "parameter", true), new zPredicate6(null, _zClosureContext)));
   }
 
-  public static SNode referenceMacro_GetReferent_1184763478621(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1184763478621(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     final zClosureContext1 _zClosureContext1 = new zClosureContext1();
     _zClosureContext1.fun = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode feature = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.IParamFeature", false, false);
@@ -281,72 +285,72 @@ public class QueriesGenerated {
     return SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(method, "parameter", true), new zPredicate8(null, _zClosureContext1)));
   }
 
-  public static SNode referenceMacro_GetReferent_1172658935860(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1172658935860(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode tpCreator = SLinkOperations.getTarget(node, "creator", true);
     SNode klass = generator.findOutputNodeByInputNodeAndMappingName(tpCreator, "treePathCreator_class");
     return SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(klass, null, false), new zPredicate9(null, null)));
   }
 
-  public static SNode referenceMacro_GetReferent_1179324381847(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1179324381847(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "parentBlock", true), "closure_adapterClass");
   }
 
-  public static SNode referenceMacro_GetReferent_1179324381879(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1179324381879(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "childrenBlock", true), "closure_adapterClass");
   }
 
-  public static SNode referenceMacro_GetReferent_1179324381920(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1179324381920(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "childrenBlock", true), "closure_adapterClass");
   }
 
-  public static SNode referenceMacro_GetReferent_1184680030750(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1184680030750(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode descClass = generator.findOutputNodeByInputNodeAndMappingName(node, "feature_descriptor");
     return SequenceOperations.getFirst(SLinkOperations.getTargets(descClass, "constructor", true));
   }
 
-  public static SNode referenceMacro_GetReferent_1184237709773(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1184237709773(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode descClass = generator.findOutputNodeByInputNodeAndMappingName(node, "feature_descriptor");
     return SequenceOperations.getFirst(SLinkOperations.getTargets(descClass, "constructor", true));
   }
 
-  public static SNode referenceMacro_GetReferent_1184236913540(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1184236913540(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     SNode featureClass = generator.findOutputNodeByInputNodeAndMappingName(node, "feature_class");
     return SequenceOperations.getFirst(SLinkOperations.getTargets(featureClass, "constructor", true));
   }
 
-  public static SNode referenceMacro_GetReferent_1179316632549(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1179316632549(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "parentBlock", true), "closure_adapterClass");
   }
 
-  public static SNode referenceMacro_GetReferent_1172647377697(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1172647377697(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "childrenBlock", true), "closure_adapterClass");
   }
 
-  public static SNode referenceMacro_GetReferent_1172647667138(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1172647667138(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "childrenBlock", true), "closure_adapterClass");
   }
 
-  public static SNode referenceMacro_GetReferent_1179399834672(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1179399834672(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "getter", true), "closure_adapterClass");
   }
 
-  public static SNode referenceMacro_GetReferent_1179399838693(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1179399838693(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "getter", true), "closure_adapterClass");
   }
 
-  public static SNode referenceMacro_GetReferent_1180087675936(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1180087675936(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "mn_foundCaseVariable");
   }
 
-  public static SNode referenceMacro_GetReferent_1180087636529(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1180087636529(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "mn_foundCaseVariable");
   }
 
-  public static SNode referenceMacro_GetReferent_1180088156283(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1180088156283(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "mn_foundCaseVariable");
   }
 
-  public static SNode referenceMacro_GetReferent_1180088156337(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1180088156337(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     return generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "mn_foundCaseVariable");
   }
 

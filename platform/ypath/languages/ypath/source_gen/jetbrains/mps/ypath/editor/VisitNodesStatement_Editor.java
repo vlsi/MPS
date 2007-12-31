@@ -16,8 +16,6 @@ public class VisitNodesStatement_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_VisitBlockCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180024976538");
-    if(true) {
-    }
   }
 
   private static void setupLabel_VisitBlockCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

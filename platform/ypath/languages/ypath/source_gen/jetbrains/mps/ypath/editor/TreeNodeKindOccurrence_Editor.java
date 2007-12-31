@@ -30,8 +30,6 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175167690330");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupLabel_NodeKindReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -89,8 +87,6 @@ public class TreeNodeKindOccurrence_Editor extends DefaultNodeEditor {
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1175256342832");
-      if(true) {
-      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

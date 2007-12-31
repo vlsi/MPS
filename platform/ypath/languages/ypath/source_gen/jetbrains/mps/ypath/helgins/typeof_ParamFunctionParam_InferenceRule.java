@@ -14,8 +14,8 @@ public class typeof_ParamFunctionParam_InferenceRule implements InferenceRule_Ru
   public  typeof_ParamFunctionParam_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SNodeOperations.getAncestor(argument, "jetbrains.mps.ypath.structure.IParamFeature", false, false), "parameterType", true), argument, "jetbrains.mps.ypath.helgins", "1184674431409");
+  public void applyRule(final SNode param) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(SNodeOperations.getAncestor(param, "jetbrains.mps.ypath.structure.IParamFeature", false, false), "parameterType", true), param, "jetbrains.mps.ypath.helgins", "1184674431409");
   }
 
   public String getApplicableConceptFQName() {

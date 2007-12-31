@@ -12,8 +12,8 @@ public class typeof_TreePathType_InferenceRule implements InferenceRule_Runtime 
   public  typeof_TreePathType_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(argument, argument, "jetbrains.mps.ypath.helgins", "1178551166973");
+  public void applyRule(final SNode tptype) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(tptype, tptype, "jetbrains.mps.ypath.helgins", "1178551166973");
   }
 
   public String getApplicableConceptFQName() {

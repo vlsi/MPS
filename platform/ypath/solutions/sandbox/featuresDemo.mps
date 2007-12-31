@@ -2,16 +2,38 @@
 <model name="featuresDemo">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <language namespace="jetbrains.mps.ypath" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.ypath">
+    <languageAspect modelUID="jetbrains.mps.ypath.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.ypath.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.ypath.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.ypath.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.ypath.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.ypath.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.ypath.editor" version="-1" />
+  </language>
   <maxImportIndex value="6" />
   <import index="1" modelUID="org.w3c.dom@java_stub" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
   <import index="3" modelUID="javax.xml.parsers@java_stub" version="-1" />
   <import index="4" modelUID="java.io@java_stub" version="-1" />
   <import index="5" modelUID="treepath_dom" version="-1" />
-  <import index="6" modelUID="sample3" version="-1" />
   <node type="jetbrains.mps.ypath.structure.TreePathAspect" id="1197995958228">
     <property name="name" value="DOM_NG" />
     <node role="nodeKinds" type="jetbrains.mps.ypath.structure.TreeNodeKind" id="1198083374763">
@@ -543,6 +565,195 @@
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1197998525687" />
+  </node>
+  <node type="jetbrains.mps.ypath.structure.TreePathAspect" id="1198846127773">
+    <property name="name" value="FILE_NG" />
+    <node role="nodeKinds" type="jetbrains.mps.ypath.structure.TreeNodeKind" id="1198863383495">
+      <property name="name" value="DIR" />
+      <node role="trigger" type="jetbrains.mps.ypath.structure.KindBlock" id="1198863383496">
+        <node role="parameter" type="jetbrains.mps.ypath.structure.LambdaMethodParameter" id="1198863383497">
+          <property name="name" value="node" />
+        </node>
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198863383498">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198863392293">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198863394024">
+              <link role="baseMethodDeclaration" targetNodeId="4.~File.isDirectory():boolean" resolveInfo="isDirectory" />
+              <node role="instance" type="jetbrains.mps.baseLanguage.structure.ClosureParameterReference" id="1198863392294">
+                <link role="closureParameter" targetNodeId="1198863383497" resolveInfo="node" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="features" type="jetbrains.mps.ypath.structure.ListFeature" id="1198846181174">
+      <property name="name" value="children" />
+      <property name="default" value="true" />
+      <link role="opposite" targetNodeId="1198846249115" resolveInfo="parent" />
+      <node role="getFunction" type="jetbrains.mps.ypath.structure.FeatureGetFun" id="1198846181175">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198846181176">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198846204987">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.ArrayAccessExpression" id="1198846212205">
+              <node role="index" type="jetbrains.mps.ypath.structure.IndexFunctionParam" id="1198846216729" />
+              <node role="array" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198846210012">
+                <link role="baseMethodDeclaration" targetNodeId="4.~File.listFiles():java.io.File[]" resolveInfo="listFiles" />
+                <node role="instance" type="jetbrains.mps.ypath.structure.NodeFunctionParam" id="1198846204988" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="sizeFunction" type="jetbrains.mps.ypath.structure.FeatureSizeFun" id="1198846181177">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198846181178">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198862583113">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="1198862583114">
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198862586519">
+                <link role="baseMethodDeclaration" targetNodeId="4.~File.isDirectory():boolean" resolveInfo="isDirectory" />
+                <node role="instance" type="jetbrains.mps.ypath.structure.NodeFunctionParam" id="1198862584596" />
+              </node>
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.ArrayLengthExpression" id="1198862597363">
+                <node role="array" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198862594339">
+                  <link role="baseMethodDeclaration" targetNodeId="4.~File.listFiles():java.io.File[]" resolveInfo="listFiles" />
+                  <node role="instance" type="jetbrains.mps.ypath.structure.NodeFunctionParam" id="1198862591034" />
+                </node>
+              </node>
+              <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198862601687">
+                <property name="value" value="0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="setFunction" type="jetbrains.mps.ypath.structure.FeatureSetFun" id="1198846181179">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198846181180" />
+      </node>
+      <node role="insertFunction" type="jetbrains.mps.ypath.structure.FeatureInsertFun" id="1198846181181">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198846181182" />
+      </node>
+      <node role="deleteFunction" type="jetbrains.mps.ypath.structure.FeatureDeleteFun" id="1198846181183">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198846181184" />
+      </node>
+    </node>
+    <node role="features" type="jetbrains.mps.ypath.structure.SequenceFeature" id="1198846249115">
+      <property name="name" value="parent" />
+      <property name="default" value="false" />
+      <property name="ascending" value="true" />
+      <node role="sequenceFunction" type="jetbrains.mps.ypath.structure.FeatureSequenceFun" id="1198846249116">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198846249117">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198846278983">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1198846278984">
+              <node role="creator" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListCreatorWithInit" id="1198846280105">
+                <node role="initValue" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198846295541">
+                  <link role="baseMethodDeclaration" targetNodeId="4.~File.getParentFile():java.io.File" resolveInfo="getParentFile" />
+                  <node role="instance" type="jetbrains.mps.ypath.structure.NodeFunctionParam" id="1198846291814" />
+                </node>
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198846281843">
+                  <link role="classifier" targetNodeId="4.~File" resolveInfo="File" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="sizeFunction" type="jetbrains.mps.ypath.structure.FeatureSizeFun" id="1198846249118">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198846249119">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198849982247">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1198849982248">
+              <property name="value" value="1" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="addFunction" type="jetbrains.mps.ypath.structure.FeatureAddFun" id="1198846249120">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198846249121" />
+      </node>
+      <node role="removeFunction" type="jetbrains.mps.ypath.structure.FeatureRemoveFun" id="1198846249122">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198846249123" />
+      </node>
+    </node>
+    <node role="treePathType" type="jetbrains.mps.ypath.structure.TreePathType" id="1198846127774">
+      <node role="nodeType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198846136198">
+        <link role="classifier" targetNodeId="4.~File" resolveInfo="File" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1198852328670">
+    <property name="name" value="FileDemo" />
+    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1198852333307">
+      <property name="name" value="main" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1198852333308" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1198852333309" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198852333310">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1198852354928">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1198852354929">
+            <property name="name" value="dir" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198852354930">
+              <link role="classifier" targetNodeId="4.~File" resolveInfo="File" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NewExpression" id="1198852360678">
+              <link role="baseMethodDeclaration" targetNodeId="4.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198861049039">
+                <link role="baseMethodDeclaration" targetNodeId="2.~System.getProperty(java.lang.String):java.lang.String" resolveInfo="getProperty" />
+                <link role="classConcept" targetNodeId="2.~System" resolveInfo="System" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1198861050184">
+                  <property name="value" value="user.home" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement" id="1198861603053">
+          <node role="variable" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariable" id="1198861603054">
+            <property name="name" value="d" />
+          </node>
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198861603056">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198861617528">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198861625467">
+                <link role="baseMethodDeclaration" targetNodeId="4.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
+                <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1198861617529">
+                  <link role="classifier" targetNodeId="2.~System" resolveInfo="System" />
+                  <link role="variableDeclaration" targetNodeId="2.~System.out" resolveInfo="out" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198861634132">
+                  <link role="baseMethodDeclaration" targetNodeId="4.~File.getName():java.lang.String" resolveInfo="getName" />
+                  <node role="instance" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference" id="1198861629664">
+                    <link role="variable" targetNodeId="1198861603054" resolveInfo="d" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="inputSequence" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1198864375109">
+            <node role="expression" type="jetbrains.mps.ypath.structure.TreePathOperationExpression" id="1198861671765">
+              <node role="expression" type="jetbrains.mps.ypath.structure.TreePathAdapterExpression" id="1198861671766">
+                <link role="treepathAspect" targetNodeId="1198846127773" resolveInfo="FILE_NG" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198861671767">
+                  <link role="variableDeclaration" targetNodeId="1198852354929" resolveInfo="dir" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.ypath.structure.IterateOperation" id="1198861671768">
+                <property name="axis" value="DESCENDANTS" />
+                <link role="usedFeature" targetNodeId="1198846181174" resolveInfo="children" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.ypath.structure.MatchKindOperation" id="1198864375190">
+              <node role="nodeKindOccurrence" type="jetbrains.mps.ypath.structure.TreeNodeKindOccurrence" id="1198864375191">
+                <link role="nodeKind" targetNodeId="1198863383495" resolveInfo="DIR" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1198852341048">
+        <property name="name" value="args" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ArrayType" id="1198852342968">
+          <node role="componentType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1198852341049">
+            <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1198852328671" />
   </node>
 </model>
 

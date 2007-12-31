@@ -37,7 +37,7 @@ public abstract class TreePath <T> implements ITreePath<T>  {
     public final Iterable <IFeatureDescriptor<T>> getAllFeatureDescriptors () {
         return featureDescriptors;
     }
-
+    
     public final IFeatureDescriptor<T> getFeatureDescriptor(String name) {
         if (name == null) {
             throw new NullPointerException ();
@@ -50,22 +50,41 @@ public abstract class TreePath <T> implements ITreePath<T>  {
         return null;
     }
 
-    public final Iterable<T> getContents(T t, IFeatureDescriptor<T> featureDesc) {
+    public final Iterable<T> getContents(T t, IFeatureDescriptor<T> featureDesc, boolean ascending) {
         if (featureDesc == null) {
-            // we expect all children to be returned at this point
-            return getAllContents(t);
+            // we expect all children/parents to be returned at this point
+            return ascending ? getAllOppositeContents(t) : getAllContents(t);
         }
         return featureDesc.getContents(t);
     }
 
-    public final Iterable<T> getAllContents (final T t) {
+    private Iterable<T> getAllContents (final T t) {
         if (!featureDescriptors.isEmpty()) {
             return new Iterable<T> () {
-                public Iterator<T> iterator () { return new AllFeaturesIterator (t); }
+                    public Iterator<T> iterator () { return new AllFeaturesIterator (t, new FeatureFilter<T> () {
+                        public boolean accept(IFeatureDescriptor<T> desc) {
+                            return !(desc.isAscending());
+                        }
+                    }); 
+                }
             };
         }
         // fallback to the old mechanism
         return getChildren(t);
+    }
+
+    private Iterable<T> getAllOppositeContents (final T t) {
+        if (!featureDescriptors.isEmpty()) {
+            return new Iterable<T> () {
+                    public Iterator<T> iterator () { return new AllFeaturesIterator (t, new FeatureFilter<T> () {
+                        public boolean accept(IFeatureDescriptor<T> desc) {
+                            return desc.isAscending();
+                        }
+                    }); 
+                }
+            };
+        }
+        return Collections.emptyList();
     }
 
     @Deprecated
@@ -148,6 +167,7 @@ public abstract class TreePath <T> implements ITreePath<T>  {
         private boolean hasNext;
         private T next;
         private T node;
+        private FeatureFilter<T> filter;
         
         public AllFeaturesIterator (T t) {
             this.node = t;
@@ -155,18 +175,28 @@ public abstract class TreePath <T> implements ITreePath<T>  {
             moveToNext();
         }
         
+        public AllFeaturesIterator (T t, FeatureFilter<T> ff) {
+            this.node = t;
+            this.featuresItr = getAllFeatureDescriptors().iterator();
+            this.filter = ff;
+            moveToNext();
+        }
+        
         private void moveToNext () {
             this.hasNext = false;
             this.next = null;
+while_not_hasnext:
             while (!hasNext) {
                 if (currentItr == null || !currentItr.hasNext()) {
-                    if (featuresItr.hasNext()) {
-                        this.currentItr = featuresItr.next().getContents(node).iterator();
-                        continue;
+                    while (featuresItr.hasNext()) {
+                        IFeatureDescriptor<T> desc = featuresItr.next();
+                        if (filter != null && !filter.accept(desc)) {
+                            continue;
+                        }
+                        this.currentItr = desc.getContents(node).iterator();
+                        continue while_not_hasnext;
                     }
-                    else {
-                        break;
-                    }
+                    break;
                 }
                 else {
                     this.hasNext = true;
@@ -191,6 +221,10 @@ public abstract class TreePath <T> implements ITreePath<T>  {
         public void remove() {
             throw new UnsupportedOperationException ();
         }
+    }
+    
+    protected static interface FeatureFilter<T> {
+        boolean accept (IFeatureDescriptor<T> desc);
     }
 
 }

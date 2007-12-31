@@ -26,7 +26,7 @@ public interface IFeatureDescriptor<T> {
     
     boolean isDefault();
     
-    boolean isDirect ();
+    boolean isAscending ();
     
     String getOpposite ();
     
@@ -83,7 +83,7 @@ public interface IFeatureDescriptor<T> {
             return false;
         }
         
-        public boolean isDirect() {
+        public boolean isAscending() {
             return true;
         }
         

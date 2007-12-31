@@ -17,11 +17,12 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
-  public static String OPPOSITE = "opposite";
+  public static String ASCENDING = "ascending";
   public static String SEQUENCE_FUNCTION = "sequenceFunction";
   public static String SIZE_FUNCTION = "sizeFunction";
   public static String ADD_FUNCTION = "addFunction";
   public static String REMOVE_FUNCTION = "removeFunction";
+  public static String OPPOSITE = "opposite";
 
   public  SequenceFeature(SNode node) {
     super(node);
@@ -84,12 +85,12 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
     this.setBooleanProperty(SequenceFeature.DEFAULT, value);
   }
 
-  public IFeature getOpposite() {
-    return (IFeature)this.getReferent(SequenceFeature.OPPOSITE);
+  public boolean getAscending() {
+    return this.getBooleanProperty(SequenceFeature.ASCENDING);
   }
 
-  public void setOpposite(IFeature node) {
-    super.setReferent(SequenceFeature.OPPOSITE, node);
+  public void setAscending(boolean value) {
+    this.setBooleanProperty(SequenceFeature.ASCENDING, value);
   }
 
   public FeatureSequenceFun getSequenceFunction() {
@@ -122,6 +123,14 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
 
   public void setRemoveFunction(FeatureRemoveFun node) {
     super.setChild(SequenceFeature.REMOVE_FUNCTION, node);
+  }
+
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(SequenceFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(SequenceFeature.OPPOSITE, node);
   }
 
 }

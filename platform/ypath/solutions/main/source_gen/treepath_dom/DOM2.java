@@ -342,8 +342,8 @@ public class DOM2 extends TreePath<Node> {
       return false;
     }
 
-    public boolean isDirect() {
-      return true;
+    public boolean isAscending() {
+      return false;
     }
 
 }
@@ -368,8 +368,8 @@ public class DOM2 extends TreePath<Node> {
       return false;
     }
 
-    public boolean isDirect() {
-      return true;
+    public boolean isAscending() {
+      return false;
     }
 
 }

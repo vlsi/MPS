@@ -19,8 +19,6 @@ public class LambdaMethodParameter_Editor extends DefaultNodeEditor {
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1180010566277");
     editorCell.setFontType(MPSFonts.ITALIC);
-    if(true) {
-    }
   }
 
   private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

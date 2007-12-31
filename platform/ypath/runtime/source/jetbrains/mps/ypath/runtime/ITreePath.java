@@ -23,21 +23,6 @@ public interface ITreePath<T> {
      * @return
      */
     ITreeTraversal<T> startTraversal(Iterable<T> it);
-    
-    /**
-     * Retreives the contents of a feature.
-     * @param t
-     * @param featureDesc
-     * @return
-     */
-    Iterable<T> getContents(T t, IFeatureDescriptor<T> featureDesc);
-
-    /**
-     * Retreives contents of all features.
-     * @param t
-     * @return
-     */
-    Iterable<T> getAllContents(T t);
 
     // The design part of the interface 
     

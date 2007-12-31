@@ -13,8 +13,8 @@ public class typeof_TreePathCreator_InferenceRule implements InferenceRule_Runti
   public  typeof_TreePathCreator_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.ypath.helgins", "1184578650091", true), SLinkOperations.getTarget(argument, "treePathType", true), argument, null, "jetbrains.mps.ypath.helgins", "1184578650090");
+  public void applyRule(final SNode tpCreator) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(tpCreator, "jetbrains.mps.ypath.helgins", "1184578650091", true), SLinkOperations.getTarget(tpCreator, "treePathType", true), tpCreator, null, "jetbrains.mps.ypath.helgins", "1184578650090");
   }
 
   public String getApplicableConceptFQName() {

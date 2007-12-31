@@ -13,19 +13,19 @@ public class typeof_TreePathOperation_InferenceRule implements InferenceRule_Run
   public  typeof_TreePathOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode parent = SNodeOperations.getParent(argument, null, false, false);
+  public void applyRule(final SNode op) {
+    SNode parent = SNodeOperations.getParent(op, null, false, false);
     do {
       SNode matchedNode_1178551167097 = parent;
       {
         boolean matches_1178551167099 = false;
         matches_1178551167099 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
         if(matches_1178551167099) {
-          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.ypath.helgins", "1178551167102", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(matchedNode_1178551167097, "jetbrains.mps.ypath.helgins", "1178551167104", true), argument, null, "jetbrains.mps.ypath.helgins", "1178551167101");
+          TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.ypath.helgins", "1178551167102", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(matchedNode_1178551167097, "jetbrains.mps.ypath.helgins", "1178551167104", true), op, null, "jetbrains.mps.ypath.helgins", "1178551167101");
           break;
         }
       }
-      TypeChecker.getInstance().reportTypeError(argument, "Error in model structure: wrong parent type", "jetbrains.mps.ypath.helgins", "1190288908359");
+      TypeChecker.getInstance().reportTypeError(op, "Error in model structure: wrong parent type", "jetbrains.mps.ypath.helgins", "1190288908359");
     } while(false);
   }
 

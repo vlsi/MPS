@@ -21,30 +21,22 @@ public class LambdaMethod_Editor extends DefaultNodeEditor {
   private static void setupBasic_ParameterCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168428744598");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168428749595");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.BOLD);
-    if(true) {
-    }
   }
 
   private static void setupBasic_BodyCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168428754196");
     editorCell.setDrawBorder(false);
     editorCell.setDrawBrackets(true);
-    if(true) {
-    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1168428739492");
-    if(true) {
-    }
   }
 
   private static void setupLabel_ParameterCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

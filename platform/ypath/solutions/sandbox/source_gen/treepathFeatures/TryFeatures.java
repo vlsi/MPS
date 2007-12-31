@@ -267,8 +267,8 @@ public class TryFeatures extends TreePath<Node> {
       return false;
     }
 
-    public boolean isDirect() {
-      return true;
+    public boolean isAscending() {
+      return false;
     }
 
 }
@@ -293,8 +293,8 @@ public class TryFeatures extends TreePath<Node> {
       return false;
     }
 
-    public boolean isDirect() {
-      return true;
+    public boolean isAscending() {
+      return false;
     }
 
 }

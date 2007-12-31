@@ -12,8 +12,8 @@ public class typeof_ExpressionFunctionParam_InferenceRule implements InferenceRu
   public  typeof_ExpressionFunctionParam_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_10().createNode(), argument, "jetbrains.mps.ypath.helgins", "1192620803140");
+  public void applyRule(final SNode expressionFunctionParam) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_10().createNode(), expressionFunctionParam, "jetbrains.mps.ypath.helgins", "1192620803140");
   }
 
   public String getApplicableConceptFQName() {
