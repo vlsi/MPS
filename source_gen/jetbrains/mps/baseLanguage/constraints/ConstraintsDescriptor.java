@@ -12,12 +12,9 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
   public  ConstraintsDescriptor() {
-    this.myConstraints.add(new Type_alias_PropertyConstraint());
-    this.myConstraints.add(new BaseMethodDeclaration_alias_PropertyConstraint());
     this.myConstraints.add(new BaseMethodDeclaration_shortDescription_PropertyConstraint());
     this.myConstraints.add(new Classifier_shortDescription_PropertyConstraint());
     this.myConstraints.add(new StringLiteral_value_PropertyConstraint());
-    this.myConstraints.add(new VariableDeclaration_alias_PropertyConstraint());
     this.myConstraints.add(new VariableDeclaration_shortDescription_PropertyConstraint());
     this.myConstraints.add(new AnonymousClass_name_PropertyConstraint());
     this.myConstraints.add(new LocalVariableDeclaration_shortDescription_PropertyConstraint());
