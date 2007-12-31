@@ -1424,25 +1424,6 @@ public final class SNode {
     return SModelUtil_new.findLinkDeclaration(conceptDeclaration, role);
   }
 
-  public AnnotationLinkDeclaration findAnnotationLinkDeclaration(IScope scope) {
-    String attributeChildRole = getRole_();
-    assert attributeChildRole != null;
-    int index = attributeChildRole.indexOf(AttributesRolesUtil.STEREOTYPE_DELIM);
-    if (index < 0) return null;
-    String declaredRole = attributeChildRole.substring(0, index);
-    AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
-    SModel structureModel = conceptDeclaration.getModel();
-    List<AnnotationLinkDeclaration> annotationLinkDecls =
-            structureModel.allRootsIncludingImported(scope, AnnotationLinkDeclaration.class);
-    for (AnnotationLinkDeclaration annotationLinkDeclaration : annotationLinkDecls) {
-      if (declaredRole.equals(annotationLinkDeclaration.getRole())) {
-        return annotationLinkDeclaration;
-      }
-    }
-    return null;
-  }
-
-
   public <BA extends INodeAdapter> List<BA> allChildrenByAdaptor(Class<BA> clazz) {
     List<BA> result = new ArrayList<BA>();
     for (SNode child : allChildren()) {
