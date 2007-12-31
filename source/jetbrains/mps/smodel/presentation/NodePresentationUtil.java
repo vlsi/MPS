@@ -2,7 +2,6 @@ package jetbrains.mps.smodel.presentation;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
@@ -21,7 +20,7 @@ public class NodePresentationUtil {
     INodeAdapter nodeAdapter = node.getAdapter();
     if (nodeAdapter instanceof ConceptDeclaration) {
       if (!referent_presentation) {
-        String alias = node.getConceptProperty("alias", GlobalScope.getInstance());
+        String alias = node.getConceptProperty("alias");
         if (alias != null) {
           return alias;
         }
@@ -67,7 +66,7 @@ public class NodePresentationUtil {
   public static String descriptionText(SNode node, boolean referent_presentation) {
     if (node.getAdapter() instanceof ConceptDeclaration &&
             !referent_presentation) {
-      String description = node.getConceptProperty("short_description", GlobalScope.getInstance());
+      String description = node.getConceptProperty("short_description");
       if (description != null) {
         return description;
       }
@@ -105,7 +104,7 @@ public class NodePresentationUtil {
   }
 
   public static String getAliasOrConceptName(SNode node) {
-    String alias = node.getConceptProperty("alias", GlobalScope.getInstance());
+    String alias = node.getConceptProperty("alias");
     if (alias != null) {
       return alias;
     }

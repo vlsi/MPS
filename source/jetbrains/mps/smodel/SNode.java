@@ -1413,13 +1413,13 @@ public final class SNode {
     return concept;
   }
 
-  public PropertyDeclaration getPropertyDeclaration(String propertyName, IScope scope) {
+  public PropertyDeclaration getPropertyDeclaration(String propertyName) {
     SNode sourceNode = this;
     AbstractConceptDeclaration typeDeclaration = sourceNode.getConceptDeclarationAdapter();
     return SModelSearchUtil_new.findPropertyDeclaration(typeDeclaration, propertyName);
   }
 
-  public LinkDeclaration getLinkDeclaration(String role, IScope scope) {
+  public LinkDeclaration getLinkDeclaration(String role) {
     AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
     return SModelUtil_new.findLinkDeclaration(conceptDeclaration, role);
   }
@@ -1508,7 +1508,7 @@ public final class SNode {
   // concept properties support
   // -----------------------------
 
-  public boolean hasConceptProperty(String propertyName, IScope scope) {
+  public boolean hasConceptProperty(String propertyName) {
     if ("root".equals(propertyName)) {
       if (getAdapter() instanceof ConceptDeclaration) {
         return ((ConceptDeclaration) getAdapter()).getRootable();
@@ -1521,12 +1521,12 @@ public final class SNode {
       return false;
     }
 
-    ConceptProperty conceptProperty = findConceptProperty(propertyName, scope);
+    ConceptProperty conceptProperty = findConceptProperty(propertyName);
     return conceptProperty != null;
   }
 
-  public String getConceptProperty(String propertyName, IScope scope) {
-    ConceptProperty conceptProperty = findConceptProperty(propertyName, scope);
+  public String getConceptProperty(String propertyName) {
+    ConceptProperty conceptProperty = findConceptProperty(propertyName);
     if (conceptProperty instanceof StringConceptProperty) {
       return ((StringConceptProperty) conceptProperty).getValue();
     }
@@ -1541,12 +1541,7 @@ public final class SNode {
     return null;
   }
 
-  public jetbrains.mps.bootstrap.structureLanguage.structure.ConceptProperty findConceptPropertyAdapter(String propertyName, IScope scope) {
-    return findConceptProperty(propertyName, scope);
-  }
-
-
-  public ConceptProperty findConceptProperty(String propertyName, IScope scope) { //??? remove scope
+  public ConceptProperty findConceptProperty(String propertyName) {
     INodeAdapter node = getAdapter();
     AbstractConceptDeclaration conceptDeclaration;
     if (node instanceof AbstractConceptDeclaration) {
@@ -1562,7 +1557,7 @@ public final class SNode {
   }
 
 
-  public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy, IScope scope) {
+  public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy) {
     AbstractConceptDeclaration conceptDeclaration;
     if (getAdapter() instanceof AbstractConceptDeclaration) {
       conceptDeclaration = (AbstractConceptDeclaration) getAdapter();
@@ -1595,9 +1590,9 @@ public final class SNode {
     return result;
   }
 
-  public List<SNode> getConceptLinkTargets(String linkName, boolean lookupHierarchy, IScope scope) {
+  public List<SNode> getConceptLinkTargets(String linkName, boolean lookupHierarchy) {
     List<SNode> result = new ArrayList<SNode>();
-    List<ConceptLink> conceptLinks = getConceptLinks(linkName, lookupHierarchy, scope);
+    List<ConceptLink> conceptLinks = getConceptLinks(linkName, lookupHierarchy);
     for (ConceptLink conceptLink : conceptLinks) {
       INodeAdapter target = SModelUtil_new.getConceptLinkTarget(conceptLink);
       if (target != null) {

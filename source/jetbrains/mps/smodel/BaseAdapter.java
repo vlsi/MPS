@@ -111,7 +111,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy, IScope scope) {
-    return myNode.getConceptLinks(linkName, lookupHierarchy, scope);
+    return myNode.getConceptLinks(linkName, lookupHierarchy);
   }
 
   public final AbstractConceptDeclaration getConceptDeclarationAdapter() {
@@ -188,11 +188,11 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public boolean hasConceptProperty(String propertyName, IScope scope) {
-    return myNode.hasConceptProperty(propertyName, scope);
+    return myNode.hasConceptProperty(propertyName);
   }
 
   public String getConceptProperty(String propertyName, IScope scope) {
-    return myNode.getConceptProperty(propertyName, scope);
+    return myNode.getConceptProperty(propertyName);
   }
 
 
@@ -550,7 +550,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public final List<SNode> getConceptLinkTargets(String linkName, boolean lookupHierarchy, IScope scope) {
-    return myNode.getConceptLinkTargets(linkName, lookupHierarchy, scope);
+    return myNode.getConceptLinkTargets(linkName, lookupHierarchy);
   }
 
 

@@ -12,7 +12,6 @@ import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
-import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
@@ -77,7 +76,7 @@ public class NodeRangeSelection implements IKeyboardHandler {
     String role = null;
     while (parentNode != null) {
       role = childNode.getRole_();
-      LinkDeclaration childDeclaration = parentNode.getLinkDeclaration(role, myEditorComponent.getEditorContext().getOperationContext().getScope());
+      LinkDeclaration childDeclaration = parentNode.getLinkDeclaration(role);
 
       if (childDeclaration == null) {
         //it might have happened if we found a annotation macro

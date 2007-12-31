@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.CopyUtil;
 
 import java.util.Set;
@@ -70,7 +69,7 @@ public class Queries {
 
   public static Object CustomExpression_hasConceptProperty_lvalue(Object... args) {
     SNode node = (SNode) args[0];
-    return node.hasConceptProperty("lvalue", GlobalScope.getInstance());
+    return node.hasConceptProperty("lvalue");
   }
 
   @Hack

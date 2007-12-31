@@ -29,7 +29,7 @@ public class HUtil {
     return new IMatchingPattern() {
       public boolean match(SNode nodeToMatch) {
         if (nodeToMatch == null) return false;
-        return nodeToMatch.isInstanceOfConcept(conceptFQName, GlobalScope.getInstance());
+        return nodeToMatch.isInstanceOfConcept(conceptFQName);
       }
     };
   }
