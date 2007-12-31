@@ -2,9 +2,11 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLink;
+import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -108,10 +110,6 @@ public abstract class BaseAdapter implements INodeAdapter {
       list.add(currNode);
     }
     return list;
-  }
-
-  public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy, IScope scope) {
-    return myNode.getConceptLinks(linkName, lookupHierarchy);
   }
 
   public final AbstractConceptDeclaration getConceptDeclarationAdapter() {
@@ -549,12 +547,57 @@ public abstract class BaseAdapter implements INodeAdapter {
     return myNode.isRoot();
   }
 
-  public final List<SNode> getConceptLinkTargets(String linkName, boolean lookupHierarchy, IScope scope) {
-    return myNode.getConceptLinkTargets(linkName, lookupHierarchy);
-  }
-
 
   public String getConceptFQName() {
     return myNode.getConceptFqName();
+  }
+
+  public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy, IScope scope) {
+    return getConceptLinks(linkName, lookupHierarchy);
+  }
+
+  public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy) {
+    AbstractConceptDeclaration conceptDeclaration;
+    if (this instanceof AbstractConceptDeclaration) {
+      conceptDeclaration = (AbstractConceptDeclaration) this;
+    } else {
+      conceptDeclaration = getConceptDeclarationAdapter();
+    }
+
+    if (lookupHierarchy) {
+      return (List) new ConceptAndSuperConceptsScope(conceptDeclaration).
+              getAdapters(new Condition<INodeAdapter>() {
+                public boolean met(INodeAdapter n) {
+                  if (n instanceof ConceptLink) {
+                    ConceptLinkDeclaration conceptLinkDeclaration = ((ConceptLink) n).getConceptLinkDeclaration();
+                    return (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName()));
+                  }
+                  return false;
+                }
+              });
+    }
+
+    List<ConceptLink> result = new ArrayList<ConceptLink>();
+    Iterator<ConceptLink> conceptLinks = conceptDeclaration.conceptLinks();
+    while (conceptLinks.hasNext()) {
+      ConceptLink conceptLink = conceptLinks.next();
+      ConceptLinkDeclaration conceptLinkDeclaration = conceptLink.getConceptLinkDeclaration();
+      if (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName())) {
+        result.add(conceptLink);
+      }
+    }
+    return result;
+  }
+
+  public List<SNode> getConceptLinkTargets(String linkName, boolean lookupHierarchy) {
+    List<SNode> result = new ArrayList<SNode>();
+    List<ConceptLink> conceptLinks = getConceptLinks(linkName, lookupHierarchy);
+    for (ConceptLink conceptLink : conceptLinks) {
+      INodeAdapter target = SModelUtil_new.getConceptLinkTarget(conceptLink);
+      if (target != null) {
+        result.add(target.getNode());
+      }
+    }
+    return result;
   }
 }

@@ -1537,52 +1537,6 @@ public final class SNode {
     return SModelUtil_new.getAlias(getConceptDeclarationAdapter());
   }
 
-
-  public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy) {
-    AbstractConceptDeclaration conceptDeclaration;
-    if (getAdapter() instanceof AbstractConceptDeclaration) {
-      conceptDeclaration = (AbstractConceptDeclaration) getAdapter();
-    } else {
-      conceptDeclaration = getConceptDeclarationAdapter();
-    }
-
-    if (lookupHierarchy) {
-      return (List) new ConceptAndSuperConceptsScope(conceptDeclaration).
-              getAdapters(new Condition<INodeAdapter>() {
-                public boolean met(INodeAdapter n) {
-                  if (n instanceof ConceptLink) {
-                    ConceptLinkDeclaration conceptLinkDeclaration = ((ConceptLink) n).getConceptLinkDeclaration();
-                    return (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName()));
-                  }
-                  return false;
-                }
-              });
-    }
-
-    List<ConceptLink> result = new ArrayList<ConceptLink>();
-    Iterator<ConceptLink> conceptLinks = conceptDeclaration.conceptLinks();
-    while (conceptLinks.hasNext()) {
-      ConceptLink conceptLink = conceptLinks.next();
-      ConceptLinkDeclaration conceptLinkDeclaration = conceptLink.getConceptLinkDeclaration();
-      if (conceptLinkDeclaration != null && linkName.equals(conceptLinkDeclaration.getName())) {
-        result.add(conceptLink);
-      }
-    }
-    return result;
-  }
-
-  public List<SNode> getConceptLinkTargets(String linkName, boolean lookupHierarchy) {
-    List<SNode> result = new ArrayList<SNode>();
-    List<ConceptLink> conceptLinks = getConceptLinks(linkName, lookupHierarchy);
-    for (ConceptLink conceptLink : conceptLinks) {
-      INodeAdapter target = SModelUtil_new.getConceptLinkTarget(conceptLink);
-      if (target != null) {
-        result.add(target.getNode());
-      }
-    }
-    return result;
-  }
-
   public SNode findChildByPath(String path) {
     if (path == null) return null;
     String residual = path;
