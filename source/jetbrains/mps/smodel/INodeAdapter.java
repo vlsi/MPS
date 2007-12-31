@@ -43,8 +43,6 @@ public interface INodeAdapter {
 
   <T extends INodeAdapter> List<T> findParents(Class<T> aClass);
 
-  List<ConceptLink> getConceptLinks(String linkName, boolean lookupHierarchy, IScope scope);
-
   AbstractConceptDeclaration getConceptDeclarationAdapter();
 
   void replaceChild(INodeAdapter oldChild, INodeAdapter newChild);

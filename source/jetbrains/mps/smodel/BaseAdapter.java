@@ -552,10 +552,6 @@ public abstract class BaseAdapter implements INodeAdapter {
     return myNode.getConceptFqName();
   }
 
-  public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy, IScope scope) {
-    return getConceptLinks(linkName, lookupHierarchy);
-  }
-
   public List<ConceptLink> getConceptLinks(final String linkName, boolean lookupHierarchy) {
     AbstractConceptDeclaration conceptDeclaration;
     if (this instanceof AbstractConceptDeclaration) {
