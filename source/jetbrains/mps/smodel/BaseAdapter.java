@@ -72,7 +72,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     while (current != null) {
       if (cls.isInstance(current)) {
         return (BA) current;
-      }      
+      }
       current = current.getParent();
     }
 
@@ -437,6 +437,7 @@ public abstract class BaseAdapter implements INodeAdapter {
     return getNode().toString();
   }
 
+  
   public static <T extends INodeAdapter> List<T> toAdapters(List<? extends SNode> list) {
     List<T> result = new ArrayList<T>();
     for (SNode node : list) {

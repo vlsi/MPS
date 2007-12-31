@@ -1275,18 +1275,16 @@ public final class SNode {
     UnregisteredNodes.instance().nodeIdChanged(this, wasId);
   }
 
+  public String getPresentation() {
+    return BaseConcept_Behavior.call_getPresentation_1180102203531(this);
+  }
+
   @NotNull
   public String toString() {
     fireNodeReadAccess();
-//    String name = getName();
-//    if (name != null && !name.equals("")) {
-//      return name;
-//    }
-//    return getConceptShortName();
     String s = BaseConcept_Behavior.call_getPresentation_1180102203531(this);
     if (s == null) {
       LOG.error("no presentation for node: " + this.getDebugText());
-      BaseConcept_Behavior.call_getPresentation_1180102203531(this);
       return super.toString();
     }
     return s;
