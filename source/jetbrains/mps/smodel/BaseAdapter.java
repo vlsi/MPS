@@ -45,7 +45,7 @@ public abstract class BaseAdapter implements INodeAdapter {
   }
 
   public String getAlias() {
-    return myNode.getAlias();
+    return SModelUtil_new.getAlias(getConceptDeclarationAdapter());
   }
 
   public INodeAdapter getParent() {

@@ -1533,10 +1533,6 @@ public final class SNode {
     return SModelUtil_new.findConceptProperty(conceptDeclaration, propertyName);
   }
 
-  public String getAlias() {
-    return SModelUtil_new.getAlias(getConceptDeclarationAdapter());
-  }
-
   public SNode findChildByPath(String path) {
     if (path == null) return null;
     String residual = path;
