@@ -21,7 +21,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.baseLanguage.constraints.ConceptFunction_Behavior;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.core.constraints.BaseConcept_Behavior;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -196,7 +196,7 @@ public class ConceptFunction_Component extends AbstractCellProvider {
           result.append("void");
         } else
         {
-          result.append(SPropertyOperations.getString(expectedReturnType, "name"));
+          result.append(BaseConcept_Behavior.call_getPresentation_1180102203531(expectedReturnType));
         }
         return result.toString();
       }
