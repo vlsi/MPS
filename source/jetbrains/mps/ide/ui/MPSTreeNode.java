@@ -179,6 +179,10 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return getNodeIdentifier();
   }
 
+  public String getAdditionalText() {
+    return null;
+  }
+
   public int getToggleClickCount() {
     return 2;
   }

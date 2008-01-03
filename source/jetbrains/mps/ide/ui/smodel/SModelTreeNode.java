@@ -289,11 +289,14 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       result = name;
     }
 
-    if (myGenerationRequired) {
-      result += " (generation required)";
-    }
-
     return result;
+  }
+
+  public String getAdditionalText() {
+    if (myGenerationRequired) {
+      return "generation required";
+    }
+    return null;
   }
 
   public boolean generationRequired() {
@@ -312,14 +315,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     if (myGenerationRequired && getTree() != null) {
       DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
       treeModel.nodeChanged(this);
-    }
-  }
-
-  public int getFontStyle() {
-    if (myGenerationRequired) {
-      return Font.ITALIC;
-    } else {
-      return Font.PLAIN;
     }
   }
 

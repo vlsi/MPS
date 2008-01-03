@@ -9,6 +9,7 @@ import jetbrains.mps.logging.Logger;
 import org.jdom.Element;
 
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicGraphicsUtils;
 import javax.swing.event.*;
 import javax.swing.tree.*;
 import java.awt.*;
@@ -38,7 +39,7 @@ public abstract class MPSTree extends JTree {
 
     TreeToolTipHandler.install(this);
 
-    setCellRenderer(new MPSTreeCellRenderer());
+    setCellRenderer(new NewMPSTreeCellRenderer());
 
     addTreeWillExpandListener(new TreeWillExpandListener() {
       public void treeWillExpand(TreeExpansionEvent event) throws ExpandVetoException {
@@ -276,25 +277,6 @@ public abstract class MPSTree extends JTree {
 
   public void setAutoOpen(boolean autoOpen) {
     myAutoOpen = autoOpen;
-  }
-
-  public String getToolTipText(MouseEvent event) {
-    TreePath path = getPathForLocation(event.getX(), event.getY());
-    if (path == null) return null;
-
-    int row = getRowForPath(path);
-    if (getVisibleRect().contains(getRowBounds(row))) return null;
-
-    JLabel label = getLabelFor(path);
-
-    return label.getText();
-  }
-
-
-  private MPSTreeCellRenderer getLabelFor(TreePath path) {
-    Object object = path.getLastPathComponent();
-    int row = getRowForPath(path);
-    return ((MPSTreeCellRenderer) getCellRenderer().getTreeCellRendererComponent(this, object, this.isPathSelected(path), false, false, row, false));
   }
 
 
@@ -631,6 +613,108 @@ public abstract class MPSTree extends JTree {
     }
   }
 
+  protected static class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
+    private JLabel myMainTextLabel = new JLabel();
+    private JLabel myAdditionalTextLabel = new JLabel();
+    private boolean mySelected;
+    private boolean myHasFocus;
+
+    public NewMPSTreeCellRenderer() {
+      setLayout(new BorderLayout());
+      setOpaque(false);
+      add(myMainTextLabel, BorderLayout.CENTER);
+      add(myAdditionalTextLabel, BorderLayout.EAST);
+    }
+
+    public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
+      Color foreground;
+      if (selected) {
+        foreground = UIManager.getColor("Tree.selectionForeground");
+      } else {
+        foreground = UIManager.getColor("Tree.textForeground");
+      }
+      myMainTextLabel.setForeground(foreground);
+      myAdditionalTextLabel.setForeground(Color.GRAY);
+
+      Icon icon = null;
+      String text = value.toString();
+      String additionalText = null;
+      if (value instanceof MPSTreeNode) {
+        MPSTreeNode treeNode = (MPSTreeNode) value;
+        icon = treeNode.getIcon(expanded);
+        additionalText =  treeNode.getAdditionalText();
+
+        Font newFont = tree.getFont().deriveFont(treeNode.getFontStyle());
+        myMainTextLabel.setFont(newFont);
+        myAdditionalTextLabel.setFont(newFont);
+      } else {
+        myMainTextLabel.setFont(tree.getFont());
+        myAdditionalTextLabel.setFont(tree.getFont());
+      }
+
+      myMainTextLabel.setText(text);
+      if (additionalText != null) {
+        myAdditionalTextLabel.setText(" (" + additionalText + ")");
+      } else {
+        myAdditionalTextLabel.setText("");
+      }
+
+      if (icon == null) {
+        if (leaf) {
+          icon = UIManager.getIcon("Tree.leafIcon");
+        } else if (expanded) {
+          icon = UIManager.getIcon(UIManager.getIcon("Tree.openIcon"));
+        } else {
+          icon = UIManager.getIcon(UIManager.getIcon("Tree.closedIcon"));
+        }
+      }
+      myMainTextLabel.setIcon(icon);
+      mySelected = selected;
+      myHasFocus = hasFocus;
+
+      return this;
+    }
+
+    public void paint(Graphics g) {
+      Color background;
+      if (mySelected) {
+        background = UIManager.getColor("Tree.selectionBackground");
+      } else {
+        background = UIManager.getColor("Tree.textBackground");
+        if (background == null) {
+          background = getBackground();
+        }
+      }
+
+      int imageOffset;
+      Icon icon = myMainTextLabel.getIcon();
+      if (icon != null) {
+        imageOffset = icon.getIconWidth() + Math.max(0, myMainTextLabel.getIconTextGap() - 1);
+      } else {
+        imageOffset = 0;
+      }
+
+      if (background != null) {
+        g.setColor(background);
+        g.fillRect(imageOffset, 0, getWidth() - imageOffset, getHeight());
+      }
+
+      if (myHasFocus) {
+        Boolean drawDashedFocusIndicator = (Boolean) UIManager.get("Tree.drawDashedFocusIndicator");
+        if (drawDashedFocusIndicator != null && drawDashedFocusIndicator) {
+          BasicGraphicsUtils.drawDashedRect(g, imageOffset, 0, getWidth() - imageOffset - 1, getHeight() - 1);
+        } else {
+          g.setColor(UIManager.getColor("Tree.selectionBorderColor"));
+          g.drawRect(imageOffset, 0, getWidth() - imageOffset - 1, getHeight() - 1);
+        }
+      }
+
+      super.paint(g);
+    }
+  }
+
+
+  //todo Misha's code uses it. Get rid of it.
   protected static class MPSTreeCellRenderer extends DefaultTreeCellRenderer {
     public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
       String text = value.toString();

@@ -42,19 +42,14 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   protected abstract String getModulePresentation();
 
   public String toString() {
-    if (generationRequired()) {
-      return getModulePresentation() + " (generation required)";
-    } else {
-      return getModulePresentation();
-    }
+    return getModulePresentation();
   }
 
-  public int getFontStyle() {
+  public String getAdditionalText() {
     if (generationRequired()) {
-      return Font.ITALIC;
-    } else {
-      return Font.PLAIN;
+      return "generation required";
     }
+    return null;
   }
 
   public boolean generationRequired() {
