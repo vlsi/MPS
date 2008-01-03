@@ -11,6 +11,10 @@ import jetbrains.mps.util.NameUtil;
  * Date: Jan 13, 2004
  */
 public final class JavaNameUtil {
+
+  private JavaNameUtil() {
+  }
+
   public static String fqClassName(SModel model, String shortClassName) {
     String packageName = packageName(model);
     if (packageName == null || packageName.length() == 0) {
