@@ -172,7 +172,7 @@ public class ConceptBehavior_Editor extends DefaultNodeEditor {
     editorCell.setGridLayout(false);
     editorCell.setUsesBraces(false);
     editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createConstantCell(context, node, "concept behaviour"));
+    editorCell.addEditorCell(this.createConstantCell(context, node, "concept behavior"));
     editorCell.addEditorCell(this.createConceptReferenceCell(context, node));
     editorCell.addEditorCell(this.createConstantCell1(context, node, "{"));
     return editorCell;
