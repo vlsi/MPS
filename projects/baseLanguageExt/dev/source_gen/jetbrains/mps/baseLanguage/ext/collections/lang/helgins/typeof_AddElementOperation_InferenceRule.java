@@ -12,8 +12,8 @@ public class typeof_AddElementOperation_InferenceRule implements InferenceRule_R
   public  typeof_AddElementOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    RulesFunctions_Collections.isInputElementType(argument, SLinkOperations.getTarget(argument, "argument", true));
+  public void applyRule(final SNode op) {
+    RulesFunctions_Collections.isInputElementType(op, SLinkOperations.getTarget(op, "argument", true));
   }
 
   public String getApplicableConceptFQName() {

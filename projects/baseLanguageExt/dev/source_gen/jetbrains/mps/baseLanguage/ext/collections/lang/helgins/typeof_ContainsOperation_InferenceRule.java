@@ -13,19 +13,19 @@ public class typeof_ContainsOperation_InferenceRule implements InferenceRule_Run
   public  typeof_ContainsOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode parent = SNodeOperations.getParent(argument, null, false, false);
+  public void applyRule(final SNode op) {
+    SNode parent = SNodeOperations.getParent(op, null, false, false);
     do {
       SNode matchedNode_1178725705169 = parent;
       {
         boolean matches_1178725705171 = false;
         matches_1178725705171 = SModelUtil_new.isAssignableConcept(parent.getConceptFqName(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression");
         if(matches_1178725705171) {
-          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_14().createNode(), argument, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705174");
+          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_14().createNode(), op, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705174");
           break;
         }
       }
-      TypeChecker.getInstance().reportTypeError(argument, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705180");
+      TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705180");
     } while(false);
   }
 

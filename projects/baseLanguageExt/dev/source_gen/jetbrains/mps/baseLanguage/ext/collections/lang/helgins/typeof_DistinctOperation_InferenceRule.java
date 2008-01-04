@@ -11,8 +11,8 @@ public class typeof_DistinctOperation_InferenceRule implements InferenceRule_Run
   public  typeof_DistinctOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    RulesFunctions_Collections.setInputSequenceType(argument, argument);
+  public void applyRule(final SNode op) {
+    RulesFunctions_Collections.setInputSequenceType(op, op);
   }
 
   public String getApplicableConceptFQName() {

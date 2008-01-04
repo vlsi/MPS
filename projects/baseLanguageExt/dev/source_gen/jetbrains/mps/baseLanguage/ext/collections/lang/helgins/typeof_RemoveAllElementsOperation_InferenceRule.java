@@ -13,14 +13,14 @@ public class typeof_RemoveAllElementsOperation_InferenceRule implements Inferenc
   public  typeof_RemoveAllElementsOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode input = RulesFunctions_Collections.getInput(argument);
+  public void applyRule(final SNode op) {
+    SNode input = RulesFunctions_Collections.getInput(op);
     final SNode elementType_typevar_1184856319398 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     final SNode expectedElementType_typevar_1184856319399 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
     TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(input, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856319407", true), new QuotationClass_29().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184856319398)), input, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856319401");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "argument", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856319415", true), new QuotationClass_30().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(expectedElementType_typevar_1184856319399)), SLinkOperations.getTarget(argument, "argument", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856319409");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(expectedElementType_typevar_1184856319399), TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184856319398), argument, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856319417");
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184851894367", true), new QuotationClass_31().createNode(), argument, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184851898840");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "argument", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856319415", true), new QuotationClass_30().createNode(TypeChecker.getInstance().getEquationManager().getRepresentator(expectedElementType_typevar_1184856319399)), SLinkOperations.getTarget(op, "argument", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856319409");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getEquationManager().getRepresentator(expectedElementType_typevar_1184856319399), TypeChecker.getInstance().getEquationManager().getRepresentator(elementType_typevar_1184856319398), op, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184856319417");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(op, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184851894367", true), new QuotationClass_31().createNode(), op, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184851898840");
   }
 
   public String getApplicableConceptFQName() {

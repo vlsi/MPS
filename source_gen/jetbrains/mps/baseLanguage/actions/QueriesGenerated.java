@@ -12,9 +12,10 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.ArrayType;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.constraints.VariableDeclaration_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.constraints.ClassConcept_Behavior;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
@@ -27,7 +28,6 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
@@ -113,6 +113,14 @@ public class QueriesGenerated {
 
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_NewExpression_1177506323526(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getCount(sourceNode, "typeParameter") == 0;
+  }
+
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_BreakStatement_1199466283835(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.hasValue(sourceNode, "label", null) && !(SequenceOperations.isEmpty(SequenceOperations.map(SNodeOperations.getAncestors(sourceNode, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper1(null, null))));
+  }
+
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ContinueStatement_1199470413669(SNode sourceNode, IScope scope, IOperationContext operationContext) {
+    return SPropertyOperations.hasValue(sourceNode, "label", null) && !(SequenceOperations.isEmpty(SequenceOperations.map(SNodeOperations.getAncestors(sourceNode, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper3(null, null))));
   }
 
   public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
@@ -1259,6 +1267,60 @@ public class QueriesGenerated {
       };
       SNode node = (SNode)calc.calculate();
       result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, transformationTag, operationContext));
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_BreakStatement_1199465912028(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      Calculable calculable = new Calculable() {
+
+        public Object calculate() {
+          return SequenceOperations.toList(SequenceOperations.map(SNodeOperations.getAncestors(sourceNode, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper(null, null)));
+        }
+
+      };
+      Iterable<String> parameterObjects = (Iterable<String>)calculable.calculate();
+      assert parameterObjects != null;
+      for(String parameter : parameterObjects) {
+        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
+
+          public SNode doSubstitute(String pattern) {
+            SPropertyOperations.set(sourceNode, "label", ((String)this.getParameterObject()));
+            return sourceNode;
+          }
+
+        });
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_ContinueStatement_1199470401054(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      Calculable calculable = new Calculable() {
+
+        public Object calculate() {
+          return SequenceOperations.toList(SequenceOperations.map(SNodeOperations.getAncestors(sourceNode, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper2(null, null)));
+        }
+
+      };
+      Iterable<String> parameterObjects = (Iterable<String>)calculable.calculate();
+      assert parameterObjects != null;
+      for(String parameter : parameterObjects) {
+        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
+
+          public SNode doSubstitute(String pattern) {
+            SPropertyOperations.set(sourceNode, "label", ((String)this.getParameterObject()));
+            return sourceNode;
+          }
+
+        });
+      }
     }
     return result;
   }

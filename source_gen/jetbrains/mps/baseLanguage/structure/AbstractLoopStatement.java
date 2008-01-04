@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 public class AbstractLoopStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement";
   public static String BODY = "body";
+  public static String LABEL = "label";
 
   public  AbstractLoopStatement(SNode node) {
     super(node);
@@ -30,6 +31,14 @@ public class AbstractLoopStatement extends Statement {
 
   public void setBody(StatementList node) {
     super.setChild(AbstractLoopStatement.BODY, node);
+  }
+
+  public String getLabel() {
+    return this.getProperty(AbstractLoopStatement.LABEL);
+  }
+
+  public void setLabel(String value) {
+    this.setProperty(AbstractLoopStatement.LABEL, value);
   }
 
 }

@@ -11,8 +11,8 @@ public class typeof_GetLastOperation_InferenceRule implements InferenceRule_Runt
   public  typeof_GetLastOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    RulesFunctions_Collections.setInputElementType(argument, argument);
+  public void applyRule(final SNode op) {
+    RulesFunctions_Collections.setInputElementType(op, op);
   }
 
   public String getApplicableConceptFQName() {

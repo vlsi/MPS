@@ -13,8 +13,8 @@ public class typeof_HashMapCreator_InferenceRule implements InferenceRule_Runtim
   public  typeof_HashMapCreator_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1198082325421", true), new QuotationClass_53().createNode(SLinkOperations.getTarget(argument, "keyType", true), SLinkOperations.getTarget(argument, "valueType", true)), argument, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1198082330971");
+  public void applyRule(final SNode hashMapCreator) {
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(hashMapCreator, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1198082325421", true), new QuotationClass_53().createNode(SLinkOperations.getTarget(hashMapCreator, "keyType", true), SLinkOperations.getTarget(hashMapCreator, "valueType", true)), hashMapCreator, null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1198082330971");
   }
 
   public String getApplicableConceptFQName() {

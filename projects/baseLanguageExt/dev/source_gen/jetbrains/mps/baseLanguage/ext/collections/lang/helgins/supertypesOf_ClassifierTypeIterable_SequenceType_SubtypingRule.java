@@ -13,7 +13,7 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
   public  supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type) {
+  public SNode getSubOrSuperType(SNode iterableClassifierType) {
     return new QuotationClass_39().createNode(this.myMatchingPattern.PatternVar1);
   }
 

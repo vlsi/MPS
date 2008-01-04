@@ -13,18 +13,18 @@ public class typeof_IsNotEmptyOperation_InferenceRule implements InferenceRule_R
   public  typeof_IsNotEmptyOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
+  public void applyRule(final SNode op) {
     do {
-      SNode matchedNode_1178725705667 = SNodeOperations.getParent(argument, null, false, false);
+      SNode matchedNode_1178725705667 = SNodeOperations.getParent(op, null, false, false);
       {
         boolean matches_1178725705671 = false;
-        matches_1178725705671 = SModelUtil_new.isAssignableConcept(SNodeOperations.getParent(argument, null, false, false).getConceptFqName(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression");
+        matches_1178725705671 = SModelUtil_new.isAssignableConcept(SNodeOperations.getParent(op, null, false, false).getConceptFqName(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression");
         if(matches_1178725705671) {
-          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_34().createNode(), argument, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705674");
+          TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_34().createNode(), op, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705674");
           break;
         }
       }
-      TypeChecker.getInstance().reportTypeError(argument, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705680");
+      TypeChecker.getInstance().reportTypeError(op, "not expected here", "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1178725705680");
     } while(false);
   }
 

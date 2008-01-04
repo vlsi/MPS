@@ -13,10 +13,10 @@ public class typeof_PageOperation_InferenceRule implements InferenceRule_Runtime
   public  typeof_PageOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    RulesFunctions_Collections.setInputSequenceType(argument, argument);
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "fromElement", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184784251266", true), new QuotationClass_8().createNode(), SLinkOperations.getTarget(argument, "fromElement", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184784238570");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "toElement", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184784257962", true), new QuotationClass_9().createNode(), SLinkOperations.getTarget(argument, "toElement", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184784267337");
+  public void applyRule(final SNode op) {
+    RulesFunctions_Collections.setInputSequenceType(op, op);
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "fromElement", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184784251266", true), new QuotationClass_8().createNode(), SLinkOperations.getTarget(op, "fromElement", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184784238570");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(op, "toElement", true), "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184784257962", true), new QuotationClass_9().createNode(), SLinkOperations.getTarget(op, "toElement", true), null, "jetbrains.mps.baseLanguage.ext.collections.lang.helgins", "1184784267337");
   }
 
   public String getApplicableConceptFQName() {

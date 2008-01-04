@@ -13,7 +13,7 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
   public  supertypesOf_ClassifierTypeList_ListType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type) {
+  public SNode getSubOrSuperType(SNode node) {
     return new QuotationClass_38().createNode(this.myMatchingPattern.PatternVar);
   }
 

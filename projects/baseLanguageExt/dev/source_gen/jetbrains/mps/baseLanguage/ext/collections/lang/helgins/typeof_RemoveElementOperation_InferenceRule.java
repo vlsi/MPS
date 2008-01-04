@@ -12,8 +12,8 @@ public class typeof_RemoveElementOperation_InferenceRule implements InferenceRul
   public  typeof_RemoveElementOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    RulesFunctions_Collections.isInputElementType(argument, SLinkOperations.getTarget(argument, "argument", true));
+  public void applyRule(final SNode op) {
+    RulesFunctions_Collections.isInputElementType(op, SLinkOperations.getTarget(op, "argument", true));
   }
 
   public String getApplicableConceptFQName() {

@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BreakStatement extends Statement {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.BreakStatement";
+  public static String LABEL = "label";
 
   public  BreakStatement(SNode node) {
     super(node);
@@ -20,6 +21,15 @@ public class BreakStatement extends Statement {
 
   public static BreakStatement newInstance(SModel sm) {
     return BreakStatement.newInstance(sm, false);
+  }
+
+
+  public String getLabel() {
+    return this.getProperty(BreakStatement.LABEL);
+  }
+
+  public void setLabel(String value) {
+    this.setProperty(BreakStatement.LABEL, value);
   }
 
 }

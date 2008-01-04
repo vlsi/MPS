@@ -13,8 +13,8 @@ public class map_extends_java_util_Map_SubtypingRule extends SubtypingRule_Runti
   public  map_extends_java_util_Map_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type) {
-    return new QuotationClass_55().createNode(SLinkOperations.getTarget(type, "keyType", true), SLinkOperations.getTarget(type, "valueType", true));
+  public SNode getSubOrSuperType(SNode mapType) {
+    return new QuotationClass_55().createNode(SLinkOperations.getTarget(mapType, "keyType", true), SLinkOperations.getTarget(mapType, "valueType", true));
   }
 
   public String getApplicableConceptFQName() {

@@ -39,6 +39,7 @@ public class ConvertForEachStatementToForeachStatement_Intention extends BaseInt
     SNode foreachStatement = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.ForeachStatement");
     SLinkOperations.setTarget(foreachStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
     SLinkOperations.setTarget(foreachStatement, "iterable", SLinkOperations.getTarget(node, "inputSequence", true), true);
+    SPropertyOperations.set(foreachStatement, "label", SPropertyOperations.getString(node, "label"));
     SNode newVariable = SLinkOperations.setNewChild(foreachStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
     SPropertyOperations.set(newVariable, "name", SPropertyOperations.getString(_zClosureContext.oldVariable, "name"));
     SLinkOperations.setTarget(newVariable, "type", variableType, true);
