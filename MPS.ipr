@@ -1960,6 +1960,198 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="Jira Development Kit">
+      <CLASSES>
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-digester/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-cache-servlet/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-jelly/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-beanutils/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-httpclient/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/cglib/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/alt/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/csv/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/dom4j/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-collections/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-configurableobjects/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-codec/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-bandana/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-logging/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/bonnie/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-ofbiz/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-dbcp/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/bsf/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-trackback/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-extras/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-plugins/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-scheduler/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-discovery/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-johnson/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-jexl/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-velocity/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-lang/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-core/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-mail/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-pool/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/axis/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-profiling/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-configuration/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-tagutil/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/bsh/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-jdk-utilities/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/backport-util-concurrent/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-jira/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-renderer/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/carol/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/activation/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/datafile/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/seraph/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/dwr/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/javacvs/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jdom/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/statcvs/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jsch/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/hsqldb/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jzlib/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/p6spy/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/mockobjects/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/picocontainer/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/radeox/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/osworkflow/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/log4j/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/saxon/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/ots-jts/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/easymock/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/servletapi/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jta/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jcaptcha/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/org.codehaus.xfire/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jtidy/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/velocity/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/oro/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jotm/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/quartz/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/propertyset/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/oscore/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/ofbcore/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/glue/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/net.java.dev.urlrewrite/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jfree/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jregex/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/sitemesh/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/osuser/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/javamail/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jfreechart/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/ehcache/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/lucene/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jndi/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/stax/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/junit/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xapool/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xpp3/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xstream/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xml-security/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/webwork/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/woodstox/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xerces/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xmlrpc/jars" />
+        <root url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xml-apis/jars" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/activation/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/alt/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-bandana/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-cache-servlet/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-configurableobjects/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-core/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-extras/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-jdk-utilities/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-jira/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-johnson/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-mail/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-ofbiz/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-plugins/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-profiling/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-renderer/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-scheduler/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-tagutil/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-trackback/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/atlassian-velocity/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/axis/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/backport-util-concurrent/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/bonnie/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/bsf/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/bsh/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/carol/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/cglib/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-beanutils/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-codec/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-collections/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-configuration/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-dbcp/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-digester/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-discovery/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-httpclient/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-jelly/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-jexl/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-lang/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-logging/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/commons-pool/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/csv/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/datafile/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/dom4j/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/dwr/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/easymock/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/ehcache/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/glue/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/hsqldb/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/javacvs/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/javamail/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jcaptcha/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jdom/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jfree/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jfreechart/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jndi/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jotm/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jregex/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jsch/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jta/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jtidy/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/junit/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/jzlib/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/log4j/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/lucene/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/mockobjects/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/net.java.dev.urlrewrite/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/ofbcore/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/org.codehaus.xfire/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/oro/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/oscore/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/osuser/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/osworkflow/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/ots-jts/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/p6spy/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/picocontainer/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/propertyset/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/quartz/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/radeox/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/saxon/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/seraph/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/servletapi/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/sitemesh/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/statcvs/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/stax/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/velocity/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/webwork/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/woodstox/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xapool/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xerces/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xml-apis/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xml-security/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xmlrpc/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xpp3/jars" recursive="false" />
+      <jarDirectory url="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/jira-development-kit-3.10/lib/xstream/jars" recursive="false" />
+    </library>
   </component>
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
