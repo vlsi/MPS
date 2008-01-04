@@ -9,11 +9,8 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
-import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil;
 
 public class QueriesGenerated {
@@ -66,24 +63,8 @@ public class QueriesGenerated {
     String alias = SConceptPropertyOperations.getString(node, "alias");
     if(alias == null) {
       generator.showErrorMessage(node, templateNode, "concept function parm has no <alias> - can't map it to method parameter");
-      return null;
     }
-    SNode method = SNodeOperations.getAncestor(outputNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    {
-      ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(method, "parameter", true));
-      try {
-        while(_zCursor.moveToNext()) {
-          SNode parm = _zCursor.getCurrent();
-          if(alias.equals(SPropertyOperations.getString(parm, "name"))) {
-            return parm;
-          }
-        }
-      } finally {
-        _zCursor.release();
-      }
-    }
-    generator.showErrorMessage(node, templateNode, "couldn't find method parameter for concept function parm '" + alias + "'");
-    return null;
+    return alias;
   }
 
   public static Object referenceMacro_GetReferent_1167771845166(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
