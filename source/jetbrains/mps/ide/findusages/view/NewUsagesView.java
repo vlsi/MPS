@@ -19,6 +19,8 @@ import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
+import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -30,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewUsagesView extends DefaultTool implements IExternalizableComponent {
-  private static final String VERSION_NUMBER = "0.95";
+  private static final String VERSION_NUMBER = "0.951";
   private static final String VERSION = "version";
   private static final String ID = "id";
 
@@ -55,6 +57,15 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     myTabbedPane = new JTabbedPane(JTabbedPane.BOTTOM);
     myTabbedPane.addMouseListener(new TabPaneMouseListener());
     myPanel.add(myTabbedPane, BorderLayout.CENTER);
+
+    setDefaultOptions();
+  }
+
+  private void setDefaultOptions() {
+    FindersOptions findersOptions = new FindersOptions(new NodeUsages_Finder(), new ConceptInstances_Finder());
+    ViewOptions viewOptions = new ViewOptions(false, false);
+    myDefaultOptions.setOption(findersOptions);
+    myDefaultOptions.setOption(viewOptions);
   }
 
   private int currentTabIndex() {
