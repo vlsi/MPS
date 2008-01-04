@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import java.util.List;
@@ -112,7 +113,8 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170982686718(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "variable", false), "name");
+    SNode localVar = _QueriesUtil.resolve_ForEachVariableReference(((ForEachVariableReference)SNodeOperations.getAdapter(node)), templateNode, generator);
+    return (SNode)localVar;
   }
 
   public static Object referenceMacro_GetReferent_1172276865420(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
