@@ -152,7 +152,7 @@ public class RuleUtil {
     String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(conditionFunction.getNode());
     Object[] args = new Object[]{
             inputNode,
-            generator.getSourceModel(),
+            generator.getInputModel(),
             generator,
             generator.getScope(),
             generator.getGeneratorSessionContext()};
@@ -687,8 +687,24 @@ public class RuleUtil {
     return outputNodes;
   }
 
+  private List<SNode> tryToReduce(SNode inputNode) {
+    INodeAdapter reductionRule;
+    boolean wasChanged = myGenerator.isChanged();
+    try {
+      reductionRule = myRuleManager.getReductionRuleManager().findReductionRule(inputNode);
+      if (reductionRule != null) {
+        return myRuleManager.getReductionRuleManager().applyReductionRule(inputNode, reductionRule);
+      }
+    } catch (DismissTopMappingRuleException ex) {
+      // it's ok, just continue
+      myGenerator.setChanged(wasChanged);
+    }
+    return null;
+  }
+
+
   private List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode) {
-    List<SNode> outputNodes = myRuleManager.getReductionRuleManager().tryToReduce(inputNode);
+    List<SNode> outputNodes = tryToReduce(inputNode);
     if (outputNodes != null) {
       if (outputNodes.size() == 1) {
         SNode outputNode = outputNodes.get(0);
