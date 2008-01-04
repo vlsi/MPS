@@ -28,12 +28,21 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   public static final String target = "target";
   public static final String role = "role";
 
+  public static String getKeyStroke_static() {
+    return " F6";
+  }
+
+
   public String getUserFriendlyName() {
     return "Move Nodes";
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1199457996997#1198076144993";
+    return "jetbrains.mps.core.scripts@1_0_1199462490982#1198076144993";
+  }
+
+  public String getKeyStroke() {
+    return MoveNodes.getKeyStroke_static();
   }
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {

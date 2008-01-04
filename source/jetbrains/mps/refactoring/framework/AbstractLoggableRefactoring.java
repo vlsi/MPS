@@ -38,6 +38,10 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
     return null;
   }
 
+  public String getKeyStroke() {
+    return "";
+  }
+
   public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
     return new HashMap<IModule, List<SModel>>();
   }

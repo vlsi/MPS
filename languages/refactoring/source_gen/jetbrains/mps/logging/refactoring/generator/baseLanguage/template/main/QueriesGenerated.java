@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.editorLanguage.constraints.CellKeyMapKeystroke_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
@@ -27,6 +28,15 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1189763354452(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1199462157225(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return CellKeyMapKeystroke_Behavior.call_getKeyStroke_1199461571140(SLinkOperations.getTarget(node, "keystroke", true));
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1199462256696(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode overriden = SLinkOperations.getTarget(node, "overrides", false);
+    return SNodeOperations.getModel(overriden) + "." + SPropertyOperations.getString(overriden, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1198673899511(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -87,10 +97,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1197995546008(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     {
-      Pattern_ pattern_1198681921073 = new Pattern_();
-      SNode coercedNode_1198681921072 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(node, "argumentType", true), pattern_1198681921073);
-      if(coercedNode_1198681921072 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1198681921073.PatternVar;
+      Pattern_ pattern_1199462432967 = new Pattern_();
+      SNode coercedNode_1199462432966 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(node, "argumentType", true), pattern_1199462432967);
+      if(coercedNode_1199462432966 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_1199462432967.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }
@@ -147,6 +157,18 @@ public class QueriesGenerated {
     SNode conceptFunction = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
     SNode method = (SNode)generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
     return ListOperations.getElement(SLinkOperations.getTargets(method, "parameter", true), 1);
+  }
+
+  public static boolean ifMacro_Condition_1199462382860(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "overrides", false) == null) && (SLinkOperations.getTarget(node, "keystroke", true) == null);
+  }
+
+  public static boolean ifMacro_Condition_1199462333157(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "overrides", false) == null) && (SLinkOperations.getTarget(node, "keystroke", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1199462335285(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "overrides", false) != null);
   }
 
   public static boolean ifMacro_Condition_1198674172362(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

@@ -19,12 +19,21 @@ import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 public class Rename extends AbstractLoggableRefactoring {
   public static final String newName = "newName";
 
+  public static String getKeyStroke_static() {
+    return "shift F6";
+  }
+
+
   public String getUserFriendlyName() {
     return "Rename";
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1199457996997#1199457919461";
+    return "jetbrains.mps.core.scripts@1_0_1199462490982#1199457919461";
+  }
+
+  public String getKeyStroke() {
+    return Rename.getKeyStroke_static();
   }
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
