@@ -1951,6 +1951,15 @@
       <JAVADOC />
       <SOURCES />
     </library>
+    <library name="Lucene">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/platform/dnq/runtime/lib/lucene-analyzers-2.1.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/platform/dnq/runtime/lib/lucene-core-2.1.0.jar!/" />
+        <root url="jar://$PROJECT_DIR$/platform/dnq/runtime/lib/lucene-snowball-2.1.0.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
