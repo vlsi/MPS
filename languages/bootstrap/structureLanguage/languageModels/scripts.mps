@@ -4,51 +4,51 @@
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage">
     <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.scripts" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.actions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.intentions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="-1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1" />
   </language>
   <language namespace="jetbrains.mps.ide.scriptLanguage">
+    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.helgins" version="-1" />
     <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.structure" version="-1" />
     <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.structure" version="-1" />
   </language>
   <language namespace="jetbrains.mps.logging.refactoring">
+    <languageAspect modelUID="jetbrains.mps.logging.refactoring.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.logging.refactoring.actions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.logging.refactoring.structure" version="-1" />
     <languageAspect modelUID="jetbrains.mps.logging.refactoring.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.logging.refactoring.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.logging.refactoring.helgins" version="-1" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.intentions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.actions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.intentions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.helgins" version="-1" />
   </language>
   <maxImportIndex value="14" />
@@ -107,6 +107,8 @@
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198085953023">
     <property name="name" value="RenameConcept" />
     <property name="userFriendlyName" value="Rename Concept" />
+    <link role="applicableConcept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    <link role="overrides" targetNodeId="7.1199457919461" resolveInfo="Rename" />
     <node role="arguments" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1198086090026">
       <property name="name" value="newName" />
       <property name="presentation" value="new concept name" />
@@ -411,6 +413,8 @@
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198173570106">
     <property name="name" value="MoveConcepts" />
     <property name="userFriendlyName" value="Move Concepts" />
+    <link role="applicableConcept" targetNodeId="1.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    <link role="overrides" targetNodeId="7.1198076144993" resolveInfo="MoveNodes" />
     <node role="arguments" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1198173589717">
       <property name="name" value="targetModel" />
       <property name="presentation" value="choose target model" />
@@ -1263,6 +1267,8 @@
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198587937318">
     <property name="name" value="RenameLink" />
     <property name="userFriendlyName" value="Rename Link" />
+    <link role="applicableConcept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+    <link role="overrides" targetNodeId="7.1199457919461" resolveInfo="Rename" />
     <node role="arguments" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1198587985396">
       <property name="name" value="newName" />
       <property name="presentation" value="enter new name" />
@@ -1584,6 +1590,8 @@
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198592945615">
     <property name="name" value="MoveLinkUp" />
     <property name="userFriendlyName" value="Move Link Up" />
+    <link role="applicableConcept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
+    <link role="overrides" targetNodeId="7.1198076144993" resolveInfo="MoveNodes" />
     <node role="arguments" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1198592978857">
       <property name="name" value="targetConcept" />
       <property name="presentation" value="chooseTargetConcept" />
@@ -2081,6 +2089,8 @@
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198764756152">
     <property name="name" value="RenameProperty" />
     <property name="userFriendlyName" value="Rename Property" />
+    <link role="applicableConcept" targetNodeId="1.1071489288299" resolveInfo="PropertyDeclaration" />
+    <link role="overrides" targetNodeId="7.1199457919461" resolveInfo="Rename" />
     <node role="arguments" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1198764804967">
       <property name="name" value="newName" />
       <property name="presentation" value="enter new name" />
@@ -2388,6 +2398,8 @@
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198776916667">
     <property name="name" value="MovePropertyUp" />
     <property name="userFriendlyName" value="Move Property Up (under construction)" />
+    <link role="applicableConcept" targetNodeId="1.1071489288299" resolveInfo="PropertyDeclaration" />
+    <link role="overrides" targetNodeId="7.1198076144993" resolveInfo="MoveNodes" />
     <node role="arguments" type="jetbrains.mps.logging.refactoring.structure.RequiredUserEnteredArgument" id="1198776978561">
       <property name="name" value="targetConcept" />
       <property name="presentation" value="chooseTargetConcept" />

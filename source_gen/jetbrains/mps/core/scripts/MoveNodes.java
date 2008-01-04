@@ -33,7 +33,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts#1198076144993";
+    return "jetbrains.mps.core.scripts@1_0_1199457996997#1198076144993";
   }
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {
