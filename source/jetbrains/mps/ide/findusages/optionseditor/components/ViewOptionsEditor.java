@@ -28,10 +28,10 @@ public class ViewOptionsEditor {
                     BorderFactory.createTitledBorder("View Options"),
                     BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
-    myShowOneResult = new JCheckBox("Show one result", myOptions.myShowOneResult);
+    myShowOneResult = new JCheckBox("Skip results tab with one usages", !myOptions.myShowOneResult);
     myShowOneResult.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
-        myOptions.myShowOneResult = ((JCheckBox) e.getSource()).isSelected();
+        myOptions.myShowOneResult = !((JCheckBox) e.getSource()).isSelected();
       }
     });
     myPanel.add(myShowOneResult);
