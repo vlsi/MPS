@@ -437,7 +437,7 @@ public class RuleUtil {
       String mappingName_ = nodeMacro.getMappingId() != null ? nodeMacro.getMappingId() : mappingName;
       if (nodeMacro instanceof LoopMacro) {
         // $LOOP$
-        List<SNode> newInputNodes = MacroUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+        List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
@@ -451,7 +451,7 @@ public class RuleUtil {
         return outputNodes;
       } else if (nodeMacro instanceof CopySrcNodeMacro || nodeMacro instanceof CopySrcListMacro) {
         // $COPY-SRC$
-        List<SNode> newInputNodes = MacroUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+        List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           List<SNode> _outputNodes = copyNodeFromInputNode(mappingName_, templateNode, newInputNode);
           outputNodes.addAll(_outputNodes);
@@ -498,7 +498,7 @@ public class RuleUtil {
           mapperId = ((MapSrcListMacro) nodeMacro).getSourceNodeMapperId();
         }
 
-        List<SNode> newInputNodes = MacroUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+        List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
           if (mapperId != null || macro_mapperFunction != null) {
@@ -520,7 +520,7 @@ public class RuleUtil {
       } else if (nodeMacro instanceof SwitchMacro) {
         // $SWITCH$
         TemplateSwitch templateSwitch = ((SwitchMacro) nodeMacro).getTemplateSwitch();
-        List<SNode> newInputNodes = MacroUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, macroCount - 1, myGenerator);
+        List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, macroCount - 1, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
           RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getConsequenceForSwitchCase(newInputNode, templateSwitch);
@@ -568,7 +568,7 @@ public class RuleUtil {
       } else if (nodeMacro instanceof IncludeMacro) {
         // $INCLUDE$
         IncludeMacro includeMacro = (IncludeMacro) nodeMacro;
-        List<SNode> newInputNodes = MacroUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, macroCount - 1, myGenerator);
+        List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, macroCount - 1, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
           TemplateDeclaration includeTemplate = includeMacro.getIncludeTemplate();
@@ -599,7 +599,7 @@ public class RuleUtil {
         return outputNodes;
       } else {
         // $$
-        List<SNode> newInputNodes = MacroUtil.createSourceNodeListForTemplateNode(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
+        List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
           List<SNode> outputChildNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
