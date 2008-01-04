@@ -9,9 +9,15 @@ import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.core.structure.BaseConcept;
+
+import java.util.List;
+import java.util.ArrayList;
+import java.util.LinkedList;
 
 /**
  * Created by: Sergey Dmitriev
@@ -20,7 +26,7 @@ import jetbrains.mps.logging.Logger;
 public class MacroUtil {
   private static final Logger LOG = Logger.getLogger(MacroUtil.class);
 
-  public static void expandPropertyMacro(ITemplateGenerator generator, PropertyMacro propertyMacro, SNode sourceNode, SNode templateNode, SNode targetNode) {
+  public static void expandPropertyMacro(ITemplateGenerator generator, PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode putputNode) {
     String propertyName = propertyMacro.getProperty().getName();
     assert propertyName != null;
     String propertyValue;
@@ -32,10 +38,10 @@ public class MacroUtil {
 
       String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function.getNode());
       Object[] args = new Object[]{
-              sourceNode,
+              inputNode,
               templateValue,
               templateNode,
-              generator.getSourceModel(),
+              generator.getInputModel(),
               generator,
               generator.getScope(),
               generator.getGeneratorSessionContext()};
@@ -43,7 +49,7 @@ public class MacroUtil {
         Object macroValue = QueryMethodGenerated.invoke(methodName, args, propertyMacro.getModel());
         propertyValue = macroValue == null ? null : String.valueOf(macroValue);
       } catch (Exception e) {
-        generator.showErrorMessage(sourceNode, templateNode, BaseAdapter.fromAdapter(propertyMacro), "couldn't evaluate property macro");
+        generator.showErrorMessage(inputNode, templateNode, BaseAdapter.fromAdapter(propertyMacro), "couldn't evaluate property macro");
         LOG.error(e);
         return;
       }
@@ -51,19 +57,19 @@ public class MacroUtil {
     } else {
       // try old query
       Object[] args = new Object[]{
-              sourceNode,
+              inputNode,
               templateNode,
               BaseAdapter.fromAdapter(propertyMacro.getProperty()),
               generator};
       propertyValue = (String) QueryMethod.invoke("propertyMacro_" + propertyMacro.getAspectMethodName(), args, propertyMacro.getModel());
     }
 
-    targetNode.setProperty(propertyName, propertyValue);
+    putputNode.setProperty(propertyName, propertyValue);
   }
 
 
-  public static SNode executeMapSrcNodeMacro(SNode sourceNode, SNode myMapSrcNodeOrListMacro, SNode parentOutputNode, ITemplateGenerator generator) {
-    INodeAdapter adapter = myMapSrcNodeOrListMacro.getAdapter();
+  public static SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, ITemplateGenerator generator) {
+    INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
     // new
     MapSrcMacro_MapperFunction mapperFunction;
     if (adapter instanceof MapSrcNodeMacro) {
@@ -74,20 +80,20 @@ public class MacroUtil {
     if (mapperFunction != null) {
       String methodName = TemplateFunctionMethodName.mapSrcMacro_MapperFunction(mapperFunction.getNode());
       Object[] args_old = new Object[]{
-              sourceNode,
-              generator.getSourceModel(),
+              inputNode,
+              generator.getInputModel(),
               generator,
               generator.getScope(),
               generator.getGeneratorSessionContext()};
       Object[] args_new = new Object[]{
-              sourceNode,
+              inputNode,
               parentOutputNode,
               generator};
       try {
-        SNode outputNode = (SNode) QueryMethodGenerated.invoke_MapperFunction(methodName, args_old, args_new, myMapSrcNodeOrListMacro.getModel());
+        SNode outputNode = (SNode) QueryMethodGenerated.invoke_MapperFunction(methodName, args_old, args_new, mapSrcNodeOrListMacro.getModel());
         return outputNode;
       } catch (Exception e) {
-        generator.showErrorMessage(sourceNode, null, myMapSrcNodeOrListMacro, "couldn't evaluate macro query");
+        generator.showErrorMessage(inputNode, null, mapSrcNodeOrListMacro, "couldn't evaluate macro query");
         LOG.error(e);
         return null;
       }
@@ -101,8 +107,262 @@ public class MacroUtil {
       sourceNodeMapperId = ((MapSrcListMacro) adapter).getSourceNodeMapperId();
     }
     String methodName = "templateSourceNodeMapper_" + sourceNodeMapperId;
-    Object[] args = new Object[]{sourceNode, generator};
-    SNode targetNode = (SNode) QueryMethod.invoke(methodName, args, myMapSrcNodeOrListMacro.getModel());
+    Object[] args = new Object[]{inputNode, generator};
+    SNode targetNode = (SNode) QueryMethod.invoke(methodName, args, mapSrcNodeOrListMacro.getModel());
     return targetNode;
   }
+
+  public static boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, ITemplateGenerator generator) {
+    // new
+    IfMacro_Condition function = ifMacro.getConditionFunction();
+    long startTime = System.currentTimeMillis();
+    Boolean res = false;
+    if (function != null) {
+      String methodName = TemplateFunctionMethodName.ifMacro_Condition(function.getNode());
+      Object[] args = new Object[]{
+              inputNode,
+              generator.getInputModel(),
+              generator,
+              generator.getScope(),
+              generator.getGeneratorSessionContext()};
+      try {
+        res = (Boolean) QueryMethodGenerated.invoke(methodName, args, ifMacro.getModel());
+        return res;
+      } catch (Exception e) {
+        generator.showErrorMessage(inputNode, null, BaseAdapter.fromAdapter(ifMacro), "couldn't evaluate if-macro condition");
+        LOG.error(e);
+        return false;
+      } finally {
+        Statistics.getStatistic(Statistics.TPL).add(ifMacro.getModel(), methodName, startTime, res);
+      }
+    }
+
+    // old
+    String conditionAspectId = ifMacro.getConditionAspectId();
+    if (conditionAspectId != null) {
+      String methodName = "semanticNodeCondition_" + conditionAspectId;
+      Object[] args = new Object[]{inputNode};
+      try {
+        res = (Boolean) QueryMethod.invokeWithOptionalArg(methodName, args, ifMacro.getModel(), generator.getGeneratorSessionContext());
+        return res;
+      } catch (Exception e) {
+        generator.showErrorMessage(inputNode, null, BaseAdapter.fromAdapter(ifMacro), "couldn't evaluate if-macro condition: " + NameUtil.shortNameFromLongName(e.getClass().getName()) + " : " + e.getMessage());
+        LOG.error(e);
+        return false;
+      } finally {
+        Statistics.getStatistic(Statistics.TPL).add(ifMacro.getModel(), methodName, startTime, res);
+      }
+    }
+
+    throw new GenerationFailedException(new GenerationFailueInfo("couldn't evaluate if-macro condition", inputNode, BaseAdapter.fromAdapter(ifMacro), null, generator.getGeneratorSessionContext()));
+  }
+
+  public static List<SNode> createSourceNodeListForTemplateNode(SNode currentInputNode, SNode templateNode, int currentMacroIndex, ITemplateGenerator generator) {
+    try {
+      List<NodeMacro> nodeMacros = NodeMacro_AnnotationLink.getNodeMacros((BaseConcept) templateNode.getAdapter());
+      NodeMacro nodeMacro = null;
+      if (nodeMacros.size() > currentMacroIndex) {
+        nodeMacro = nodeMacros.get(currentMacroIndex);
+      }
+
+      if (nodeMacro instanceof CopySrcNodeMacro) {
+        return getSourceNodesForMacroWithSourceNodeQuery(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcNodeMacro) nodeMacro).getSourceNodeQuery(), false, generator);
+      } else if (nodeMacro instanceof MapSrcNodeMacro) {
+        return getSourceNodesForMacroWithSourceNodeQuery(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcNodeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
+      } else if (nodeMacro instanceof LoopMacro) {
+        return getSourceNodesForMacroWithSourceNodesQuery(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((LoopMacro) nodeMacro).getSourceNodesQuery(), generator);
+      } else if (nodeMacro instanceof CopySrcListMacro) {
+        return getSourceNodesForMacroWithSourceNodesQuery(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((CopySrcListMacro) nodeMacro).getSourceNodesQuery(), generator);
+      } else if (nodeMacro instanceof MapSrcListMacro) {
+        return getSourceNodesForMacroWithSourceNodesQuery(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((MapSrcListMacro) nodeMacro).getSourceNodesQuery(), generator);
+      } else if (nodeMacro instanceof SwitchMacro) {
+        return getSourceNodesForSwitchMacro(currentInputNode, (SwitchMacro) nodeMacro, generator);
+      } else if (nodeMacro instanceof IncludeMacro) {
+        return getSourceNodesForMacroWithSourceNodeQuery(currentInputNode, (SourceSubstituteMacro) nodeMacro, ((IncludeMacro) nodeMacro).getSourceNodeQuery(), true, generator);
+      }
+
+      if (nodeMacro != null) {
+        // old
+        String sourceQueryAspectMethodName = nodeMacro.getSourceQueryAspectMethodName();
+        if (sourceQueryAspectMethodName != null) {
+          String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
+          Object[] args = new Object[]{currentInputNode, generator};
+          List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, nodeMacro.getModel());
+          return sourceNodes;
+        }
+      }
+
+      // <default> : propagate  current input node
+      List<SNode> list = new ArrayList<SNode>(1);
+      list.add(currentInputNode);
+      return list;
+
+    } catch (GenerationFailedException gfe) {
+      throw gfe;
+    } catch (Throwable t) {
+      throw new GenerationFailedException(new GenerationFailueInfo(t.toString(), currentInputNode, templateNode, null, generator.getGeneratorSessionContext()), t);
+    }
+  }
+
+  private static List<SNode> getSourceNodesForMacroWithSourceNodeQuery(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodeQuery query, boolean optionalQuery, ITemplateGenerator generator) {
+    List<SNode> result = new ArrayList<SNode>(1);
+
+    // optional query is not defined?
+    String sourceQueryAspectMethodName = null;
+    if (macro instanceof CopySrcNodeMacro) {
+      sourceQueryAspectMethodName = ((CopySrcNodeMacro) macro).getSourceNodeQueryId();
+    } else if (macro instanceof MapSrcNodeMacro) {
+      sourceQueryAspectMethodName = ((MapSrcNodeMacro) macro).getSourceNodeQueryId();
+    }
+
+    if (query == null && sourceQueryAspectMethodName == null && optionalQuery) {
+      // continue with current source node
+      result.add(currentInputNode);
+      return result;
+    }
+
+    // new
+    if (query != null) {
+      SNode resultNode = evaluateSourceNodeQuery(currentInputNode, query, generator);
+      if (resultNode != null) {
+        result.add(resultNode);
+      }
+      return result;
+    }
+
+    // old
+    if (sourceQueryAspectMethodName != null) {
+      String methodName = "templateSourceNodeQuery_" + sourceQueryAspectMethodName;
+      Object[] args = new Object[]{currentInputNode, generator};
+      long startTime = System.currentTimeMillis();
+      try {
+        SNode outputSourceNode = (SNode) QueryMethod.invoke(methodName, args, macro.getModel());
+        if (outputSourceNode != null) {
+          result.add(outputSourceNode);
+        }
+        return result;
+      } catch (Exception e) {
+        generator.showErrorMessage(currentInputNode, null, BaseAdapter.fromAdapter(macro), "couldn't evaluate macro query: " + NameUtil.shortNameFromLongName(e.getClass().getName()) + " : " + e.getMessage());
+        LOG.error(e);
+        return new LinkedList<SNode>();
+      } finally {
+        Statistics.getStatistic(Statistics.TPL).add(macro.getModel(), methodName, startTime);
+      }
+    }
+
+    throw new GenerationFailedException(new GenerationFailueInfo("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null, generator.getGeneratorSessionContext()));
+  }
+
+  private static List<SNode> getSourceNodesForMacroWithSourceNodesQuery(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {
+    // new
+    if (query != null) {
+      List<SNode> list = evaluateSourceNodesQuery(currentInputNode, query, generator);
+      if (list != null) {
+        return list;
+      }
+      return new LinkedList<SNode>();
+    }
+
+    // old
+    String sourceQueryAspectMethodName = macro.getSourceQueryAspectMethodName();
+    if (sourceQueryAspectMethodName != null) {
+      String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
+      Object[] args = new Object[]{currentInputNode, generator};
+      long startTime = System.currentTimeMillis();
+      try {
+        List<SNode> sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, macro.getModel());
+        if (sourceNodes != null) {
+          return sourceNodes;
+        }
+        return new LinkedList<SNode>();
+      } catch (Exception e) {
+        generator.showErrorMessage(currentInputNode, null, BaseAdapter.fromAdapter(macro), "couldn't evaluate macro query: " + NameUtil.shortNameFromLongName(e.getClass().getName()) + " : " + e.getMessage());
+        LOG.error(e);
+        return new LinkedList<SNode>();
+      } finally {
+        Statistics.getStatistic(Statistics.TPL).add(macro.getModel(), methodName, startTime);
+      }
+    }
+
+    throw new GenerationFailedException(new GenerationFailueInfo("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null, generator.getGeneratorSessionContext()));
+  }
+
+  private static List<SNode> getSourceNodesForSwitchMacro(SNode currentInputNode, SwitchMacro macro, ITemplateGenerator generator) {
+    List<SNode> sourceNodes = new ArrayList<SNode>(1);
+
+    // in SWITCH query is optional?
+    String sourceQueryAspectMethodName = macro.getSourceQueryAspectMethodName();
+    SourceSubstituteMacro_SourceNodeQuery query = macro.getSourceNodeQuery();
+    if (query == null && sourceQueryAspectMethodName == null) {
+      // continue with current source node
+      sourceNodes.add(currentInputNode);
+      return sourceNodes;
+    }
+
+    // new
+    if (query != null) {
+      SNode resultNode = evaluateSourceNodeQuery(currentInputNode, query, generator);
+      if (resultNode != null) {
+        sourceNodes.add(resultNode);
+        return sourceNodes;
+      }
+    }
+
+    // old (returns list in switch)
+    String methodName = "templateSourceQuery_" + sourceQueryAspectMethodName;
+    Object[] args = new Object[]{currentInputNode, generator};
+    long startTime = System.currentTimeMillis();
+    try {
+      sourceNodes = (List<SNode>) QueryMethod.invoke(methodName, args, macro.getModel());
+      return sourceNodes;
+    } catch (Exception e) {
+      generator.showErrorMessage(currentInputNode, null, BaseAdapter.fromAdapter(macro), "couldn't evaluate macro query: " + NameUtil.shortNameFromLongName(e.getClass().getName()) + " : " + e.getMessage());
+      LOG.error(e);
+      return new LinkedList<SNode>();
+    } finally {
+      Statistics.getStatistic(Statistics.TPL).add(macro.getModel(), methodName, startTime);
+    }
+  }
+
+  private static List<SNode> evaluateSourceNodesQuery(SNode inputNode, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {
+    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
+    Object[] args = new Object[]{
+            inputNode,
+            generator.getInputModel(),
+            generator,
+            generator.getScope(),
+            generator.getGeneratorSessionContext()};
+    long startTime = System.currentTimeMillis();
+    try {
+      List<SNode> result = (List<SNode>) QueryMethodGenerated.invoke(methodName, args, query.getModel());
+      return result;
+    } catch (Exception e) {
+      generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
+      LOG.error(e);
+      return new LinkedList<SNode>();
+    } finally {
+      Statistics.getStatistic(Statistics.TPL).add(query.getModel(), methodName, startTime);
+    }
+  }
+
+  private static SNode evaluateSourceNodeQuery(SNode inputNode, SourceSubstituteMacro_SourceNodeQuery query, ITemplateGenerator generator) {
+    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query.getNode());
+    Object[] args = new Object[]{
+            inputNode,
+            generator.getInputModel(),
+            generator,
+            generator.getScope(),
+            generator.getGeneratorSessionContext()};
+    long startTime = System.currentTimeMillis();
+    try {
+      return (SNode) QueryMethodGenerated.invoke(methodName, args, query.getModel());
+    } catch (Exception e) {
+      generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
+      LOG.error(e);
+      return null;
+    } finally {
+      Statistics.getStatistic(Statistics.TPL).add(query.getModel(), methodName, startTime);
+    }
+  }
+
 }
