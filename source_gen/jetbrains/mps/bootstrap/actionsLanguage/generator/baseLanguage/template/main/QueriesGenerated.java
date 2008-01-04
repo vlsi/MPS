@@ -137,10 +137,6 @@ public class QueriesGenerated {
     return "removeRTActionsByCondition_" + node.getId();
   }
 
-  public static Object referenceMacro_GetReferent_1181738985236(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "variable");
-  }
-
   public static boolean ifMacro_Condition_1178782034640(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "commonInitializer", true) != null;
   }
