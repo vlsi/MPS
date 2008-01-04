@@ -1944,9 +1944,19 @@
       <SOURCES />
       <jarDirectory url="file://$PROJECT_DIR$/lib/ant-1.7.0/lib" recursive="false" />
     </library>
+    <library name="Trove">
+      <CLASSES>
+        <root url="jar://$PROJECT_DIR$/platform/dnq/runtime/lib/trove4j.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
   </component>
   <component name="uidesigner-configuration">
     <option name="INSTRUMENT_CLASSES" value="false" />
   </component>
+  <UsedPathMacros>
+    <macro name="TEMPLATE" />
+  </UsedPathMacros>
 </project>
 
