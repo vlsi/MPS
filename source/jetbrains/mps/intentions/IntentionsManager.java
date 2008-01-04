@@ -144,8 +144,8 @@ public class IntentionsManager implements IExternalizableComponent {
             } else {
               LOG.warning("Intention is registered but isn't compiled " + NameUtil.nodeFQName(intentionDeclaration), intentionDeclaration);
             }
-          } catch (Exception e) {
-            LOG.error(e, intentionDeclaration);
+          } catch (Throwable throwable) {
+            LOG.error(throwable, intentionDeclaration);
           }
         }
       }

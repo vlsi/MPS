@@ -659,7 +659,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
         for (Object pc : getComponents()) {
           if (pc instanceof IDisposable) {
-            ((IDisposable) pc).dispose();
+            try {
+              ((IDisposable) pc).dispose();
+            } catch (Throwable t) {
+              LOG.error(t);
+            }
           }
         }
 
