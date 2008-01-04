@@ -4,20 +4,20 @@ package jetbrains.mps.bootstrap.structureLanguage.scripts;
 
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.core.scripts.MoveNodes;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -36,6 +36,19 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
     return MoveNodes.getKeyStroke_static();
   }
 
+  public static Class getClass_static() {
+    return MoveConcepts.class;
+  }
+
+  public static boolean isApplicableWRTConcept_static(SNode node) {
+    if(SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
+      return true;
+    } else
+    {
+      return MoveNodes.isApplicableWRTConcept_static(node);
+    }
+  }
+
 
   public String getUserFriendlyName() {
     return "Move Concepts";
@@ -47,6 +60,18 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
 
   public String getKeyStroke() {
     return MoveConcepts.getKeyStroke_static();
+  }
+
+  public boolean isApplicableWRTConcept(SNode node) {
+    return MoveConcepts.isApplicableWRTConcept_static(node);
+  }
+
+  public String getApplicableConceptFQName() {
+    return "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration";
+  }
+
+  public Class getOverridenRefactoringClass() {
+    return MoveNodes.getClass_static();
   }
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {

@@ -2,6 +2,7 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.project.IModule;
 
 import java.util.Map;
@@ -42,7 +43,19 @@ public abstract class AbstractLoggableRefactoring implements ILoggableRefactorin
     return "";
   }
 
+  public boolean isApplicableWRTConcept(SNode node) {
+    return false;
+  }
+
+  public String getApplicableConceptFQName() {
+    return "";
+  }
+
   public Map<IModule, List<SModel>> getModelsToGenerate(ActionContext actionContext, RefactoringContext refactoringContext) {
     return new HashMap<IModule, List<SModel>>();
+  }
+
+  public Class getOverridenRefactoringClass() {
+    return null;
   }
 }

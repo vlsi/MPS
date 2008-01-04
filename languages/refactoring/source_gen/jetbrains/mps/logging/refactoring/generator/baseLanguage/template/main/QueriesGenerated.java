@@ -39,6 +39,16 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(overriden) + "." + SPropertyOperations.getString(overriden, "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1199464161444(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode conceptDeclaration = SLinkOperations.getTarget(node, "applicableConcept", false);
+    return SNodeOperations.getModel(conceptDeclaration) + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1199464123907(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode overriden = SLinkOperations.getTarget(node, "overrides", false);
+    return SNodeOperations.getModel(overriden) + "." + SPropertyOperations.getString(overriden, "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1198673899511(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return "My_" + SPropertyOperations.getString(node, "name") + "_Condition";
   }
@@ -65,6 +75,16 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1191238835892(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.getModel(node).toString() + "#" + node.getId();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1199466527696(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode conceptDeclaration = SLinkOperations.getTarget(node, "applicableConcept", false);
+    return SNodeOperations.getModel(conceptDeclaration) + "." + SPropertyOperations.getString(conceptDeclaration, "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1199468168869(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    SNode overriden = SLinkOperations.getTarget(node, "overrides", false);
+    return SNodeOperations.getModel(overriden) + "." + SPropertyOperations.getString(overriden, "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1197993525530(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -97,10 +117,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1197995546008(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     {
-      Pattern_ pattern_1199462432967 = new Pattern_();
-      SNode coercedNode_1199462432966 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(node, "argumentType", true), pattern_1199462432967);
-      if(coercedNode_1199462432966 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1199462432967.PatternVar;
+      Pattern_ pattern_1199468201963 = new Pattern_();
+      SNode coercedNode_1199468201962 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(node, "argumentType", true), pattern_1199468201963);
+      if(coercedNode_1199468201962 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_1199468201963.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }
@@ -171,8 +191,24 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(node, "overrides", false) != null);
   }
 
+  public static boolean ifMacro_Condition_1199464602796(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "overrides", false) == null);
+  }
+
+  public static boolean ifMacro_Condition_1199464637201(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "overrides", false) != null);
+  }
+
   public static boolean ifMacro_Condition_1198674172362(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return true;
+  }
+
+  public static boolean ifMacro_Condition_1199467946000(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "overrides", false) == null);
+  }
+
+  public static boolean ifMacro_Condition_1199468168888(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return (SLinkOperations.getTarget(node, "overrides", false) != null);
   }
 
   public static boolean ifMacro_Condition_1190725064806(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

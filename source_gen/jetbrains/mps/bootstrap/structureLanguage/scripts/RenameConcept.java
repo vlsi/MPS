@@ -4,10 +4,12 @@ package jetbrains.mps.bootstrap.structureLanguage.scripts;
 
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.core.scripts.Rename;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import java.util.List;
@@ -29,6 +31,19 @@ public class RenameConcept extends AbstractLoggableRefactoring {
     return Rename.getKeyStroke_static();
   }
 
+  public static Class getClass_static() {
+    return RenameConcept.class;
+  }
+
+  public static boolean isApplicableWRTConcept_static(SNode node) {
+    if(SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration")) {
+      return true;
+    } else
+    {
+      return Rename.isApplicableWRTConcept_static(node);
+    }
+  }
+
 
   public String getUserFriendlyName() {
     return "Rename Concept";
@@ -40,6 +55,18 @@ public class RenameConcept extends AbstractLoggableRefactoring {
 
   public String getKeyStroke() {
     return RenameConcept.getKeyStroke_static();
+  }
+
+  public boolean isApplicableWRTConcept(SNode node) {
+    return RenameConcept.isApplicableWRTConcept_static(node);
+  }
+
+  public String getApplicableConceptFQName() {
+    return "jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration";
+  }
+
+  public Class getOverridenRefactoringClass() {
+    return Rename.getClass_static();
   }
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {

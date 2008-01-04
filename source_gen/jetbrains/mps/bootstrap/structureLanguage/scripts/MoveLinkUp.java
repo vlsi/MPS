@@ -4,10 +4,12 @@ package jetbrains.mps.bootstrap.structureLanguage.scripts;
 
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.core.scripts.MoveNodes;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 import java.util.List;
 import java.util.ArrayList;
@@ -33,6 +35,19 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
     return MoveNodes.getKeyStroke_static();
   }
 
+  public static Class getClass_static() {
+    return MoveLinkUp.class;
+  }
+
+  public static boolean isApplicableWRTConcept_static(SNode node) {
+    if(SModelUtil_new.isAssignableConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(node))), "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration")) {
+      return true;
+    } else
+    {
+      return MoveNodes.isApplicableWRTConcept_static(node);
+    }
+  }
+
 
   public String getUserFriendlyName() {
     return "Move Link Up";
@@ -44,6 +59,18 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
 
   public String getKeyStroke() {
     return MoveLinkUp.getKeyStroke_static();
+  }
+
+  public boolean isApplicableWRTConcept(SNode node) {
+    return MoveLinkUp.isApplicableWRTConcept_static(node);
+  }
+
+  public String getApplicableConceptFQName() {
+    return "jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration";
+  }
+
+  public Class getOverridenRefactoringClass() {
+    return MoveNodes.getClass_static();
   }
 
   public boolean isApplicable(ActionContext actionContext, RefactoringContext refactoringContext) {

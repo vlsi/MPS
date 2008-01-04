@@ -103,4 +103,11 @@ public class GenericRefactoring {
   }
 
 
+  public String getKeyStroke() {
+    return myRefactoring.getKeyStroke();
+  }
+
+  public boolean isApplicable(SNode node) {
+    return myRefactoring.isApplicableWRTConcept(node);
+  }
 }

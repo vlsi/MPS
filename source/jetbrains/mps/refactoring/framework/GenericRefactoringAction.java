@@ -4,6 +4,7 @@ import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.plugins.CurrentProjectMPSAction;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.GenericRefactoring;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -21,8 +22,22 @@ public class GenericRefactoringAction extends CurrentProjectMPSAction {
     myRefactoring = new GenericRefactoring(refactoring);
   }
 
+  @NotNull
+  public String getKeyStroke() {
+    return myRefactoring.getKeyStroke();
+  }
+
   public void execute(@NotNull ActionContext context) {
     myRefactoring.execute(context);
-  }       
-  
+  }
+
+  public void update(@NotNull ActionContext context) {
+    boolean enabled = false;
+    SNode node = context.getNode();
+    if (node != null) {
+      enabled = myRefactoring.isApplicable(node);
+    }
+    setEnabled(enabled);
+    setVisible(enabled);
+  }
 }
