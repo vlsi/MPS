@@ -247,8 +247,8 @@
           <property name="text" value="(" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Property" id="1197985313788">
-          <property name="textFgColor" value="DARK_GREEN" />
           <link role="relationDeclaration" targetNodeId="1.1189768565365" resolveInfo="presentation" />
+          <link role="styleClass" targetNodeId="4.1186415563770" resolveInfo="StringLiteral" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Constant" id="1197985313789">
           <property name="text" value=")" />
