@@ -7,10 +7,13 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 public class QueryOptions implements IExternalizableComponent {
   public IScope myScope;
-  public SNodePointer myNodePointer;
+  public
+  @NotNull
+  SNodePointer myNodePointer;
 
   public QueryOptions() {
 

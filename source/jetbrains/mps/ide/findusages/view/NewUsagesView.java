@@ -1,5 +1,7 @@
 package jetbrains.mps.ide.findusages.view;
 
+import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
+import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.IDEProjectFrame;
@@ -19,8 +21,7 @@ import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
-import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
+import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -68,7 +69,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     ViewOptions viewOptions = new ViewOptions(false, false);
     myDefaultOptions.setOption(viewOptions);
 
-    QueryOptions queryOptions = new QueryOptions();
+    QueryOptions queryOptions = new QueryOptions(null, new SNodePointer((SNode) null));
     myDefaultOptions.setOption(queryOptions);
   }
 
