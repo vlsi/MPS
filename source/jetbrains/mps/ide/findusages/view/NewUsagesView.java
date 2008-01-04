@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewUsagesView extends DefaultTool implements IExternalizableComponent {
-  private static final String VERSION_NUMBER = "0.951";
+  private static final String VERSION_NUMBER = "0.953";
   private static final String VERSION = "version";
   private static final String ID = "id";
 
