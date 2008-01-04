@@ -20,6 +20,7 @@ import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.nodeEditor.EditorUtil;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
@@ -69,7 +70,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     ViewOptions viewOptions = new ViewOptions(false, false);
     myDefaultOptions.setOption(viewOptions);
 
-    QueryOptions queryOptions = new QueryOptions(null, new SNodePointer((SNode) null));
+    QueryOptions queryOptions = new QueryOptions(GlobalScope.getInstance(), new SNodePointer((SNode) null));
     myDefaultOptions.setOption(queryOptions);
   }
 
