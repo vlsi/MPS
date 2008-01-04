@@ -2,10 +2,39 @@
 <model name="jetbrains.mps.bootstrap.actionsLanguage.editor">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.editorLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <language namespace="jetbrains.mps.bootstrap.editorLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1" />
+  </language>
   <maxImportIndex value="8" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -1068,7 +1097,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1177327881805">
-    <property name="package" value="MenuParts" />
+    <property name="package" value="menuParts" />
     <link role="conceptDeclaration" targetNodeId="1.1177327666243" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177327886247">
       <property name="vertical" value="true" />
@@ -1152,7 +1181,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1177337688066">
-    <property name="package" value="MenuParts" />
+    <property name="package" value="menuParts" />
     <link role="conceptDeclaration" targetNodeId="1.1177337641126" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177337690990">
       <property name="vertical" value="true" />
@@ -1248,7 +1277,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1177398832575">
-    <property name="package" value="MenuParts" />
+    <property name="package" value="menuParts" />
     <link role="conceptDeclaration" targetNodeId="1.1177398027324" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177398838672">
       <property name="vertical" value="true" />
@@ -1288,7 +1317,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1177402769232">
-    <property name="package" value="MenuParts" />
+    <property name="package" value="menuParts" />
     <link role="conceptDeclaration" targetNodeId="1.1177402519659" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177402774093">
       <property name="vertical" value="true" />
@@ -1408,7 +1437,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1177498637838">
-    <property name="package" value="MenuParts.RightTransform" />
+    <property name="package" value="menuParts.RightTransform" />
     <link role="conceptDeclaration" targetNodeId="1.1177498013932" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177498639100">
       <property name="vertical" value="true" />
@@ -1478,7 +1507,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1177508995202">
-    <property name="package" value="MenuParts.RightTransform" />
+    <property name="package" value="menuParts.RightTransform" />
     <link role="conceptDeclaration" targetNodeId="1.1177508764419" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177508996217">
       <property name="vertical" value="true" />
@@ -1574,7 +1603,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1177526159985">
-    <property name="package" value="MenuParts.RightTransform" />
+    <property name="package" value="menuParts.RightTransform" />
     <link role="conceptDeclaration" targetNodeId="1.1177526142802" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177526162631">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_RefCell" id="1177526163581">
@@ -1590,7 +1619,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1177526184743">
-    <property name="package" value="MenuParts.RightTransform" />
+    <property name="package" value="menuParts.RightTransform" />
     <link role="conceptDeclaration" targetNodeId="1.1177526070940" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177526187712">
       <property name="vertical" value="true" />
@@ -1676,7 +1705,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1177572007175">
-    <property name="package" value="MenuParts.Substitute" />
+    <property name="package" value="menuParts.Substitute" />
     <link role="conceptDeclaration" targetNodeId="1.1177571984778" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1177572009660">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1177584244651">
@@ -1713,7 +1742,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1178537152046">
-    <property name="package" value="MenuParts.RightTransform" />
+    <property name="package" value="menuParts.RightTransform" />
     <link role="conceptDeclaration" targetNodeId="1.1178536947382" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1178537170020">
       <property name="vertical" value="true" />
@@ -1766,14 +1795,14 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1179357638924">
-    <property name="package" value="MenuParts" />
+    <property name="package" value="menuParts" />
     <link role="conceptDeclaration" targetNodeId="1.1177495774157" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Error" id="1179357640989">
       <property name="text" value="menuPart" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1180111542964">
-    <property name="package" value="MenuBuilderParts" />
+    <property name="package" value="menuBuilderParts" />
     <link role="conceptDeclaration" targetNodeId="1.1180111159572" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1180111544812">
       <property name="vertical" value="true" />
@@ -1797,7 +1826,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1180135218889">
-    <property name="package" value="MenuBuilderParts.Substitute" />
+    <property name="package" value="menuBuilderParts.Substitute" />
     <link role="conceptDeclaration" targetNodeId="1.1180134965967" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1180135221562">
       <node role="childCellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_ConceptProperty" id="1180135221563">
@@ -1820,7 +1849,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1182819273371">
-    <property name="package" value="MenuBuilderParts.RightTransform" />
+    <property name="package" value="menuBuilderParts.RightTransform" />
     <link role="conceptDeclaration" targetNodeId="1.1182819125053" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1182819336190">
       <property name="vertical" value="true" />
@@ -1872,7 +1901,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196433946727">
-    <property name="package" value="Sugar" />
+    <property name="package" value="sugar" />
     <link role="conceptDeclaration" targetNodeId="1.1196433923911" resolveInfo="RightTransform_SimpleString" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196433948729">
       <property name="vertical" value="false" />
@@ -1883,7 +1912,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1196434842026">
-    <property name="package" value="Sugar" />
+    <property name="package" value="sugar" />
     <link role="conceptDeclaration" targetNodeId="1.1196434649611" resolveInfo="Substitute_SimpleString" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1196434844138">
       <property name="vertical" value="false" />
@@ -1894,7 +1923,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197454664800">
-    <property name="package" value="MenuBuilderParts" />
+    <property name="package" value="menuBuilderParts" />
     <link role="conceptDeclaration" targetNodeId="1.1197454626277" resolveInfo="RemoveRTByConditionPart" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Collection" id="1197454671021">
       <property name="vertical" value="true" />
@@ -1918,7 +1947,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration" id="1197933062682">
-    <property name="package" value="MenuBuilderParts" />
+    <property name="package" value="menuBuilderParts" />
     <link role="conceptDeclaration" targetNodeId="1.1177323240852" resolveInfo="MenuBuilderPart" />
     <node role="cellModel" type="jetbrains.mps.bootstrap.editorLanguage.structure.CellModel_Error" id="1197933065153">
       <property name="text" value="menu builder part" />
