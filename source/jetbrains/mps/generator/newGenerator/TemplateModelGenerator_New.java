@@ -176,7 +176,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
     if (inputReference == null) return;
     outputNode.removeReference(reference);
     SNode inputTargetNode = inputReference.getTargetNode();
-    if(inputTargetNode == null) {
+    if (inputTargetNode == null) {
       showErrorMessage(inputNode, "bad reference '" + inputReference.getRole() + "' in input node " + inputNode.getDebugText());
       return;
     }

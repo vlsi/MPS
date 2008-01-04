@@ -14,24 +14,18 @@ public class CloneUtil {
    * Creates cloned model, each node in target model has the same nodeId that corresponding node in source model
    * it allows to resolve internal references much faster
    */
-  public static SNode clone(SNode node, SModel outputModel, IScope scope) {
-    return cloneInt(node, outputModel, scope, true);
+  public static void cloneModel(SModel inputModel, SModel outputModel, IScope scope) {
+    for (SNode node : inputModel.getRoots()) {
+      SNode outputNode = clone(node, outputModel, scope);
+      outputModel.addRoot(outputNode);
+    }
   }
 
-
-  /**
-   * Same as <code>clone()</code> but assigns a new ID to the cloned node.
-   */
-  public static SNode cloneNotPreservingId(SNode node, SModel outputModel, IScope scope) {
-    return cloneInt(node, outputModel, scope, false);
-  }
-
-  private static SNode cloneInt(SNode inputNode, SModel outputModel, IScope scope, boolean keepOldId) {
+  public static SNode clone(SNode inputNode, SModel outputModel, IScope scope) {
     SNode outputNode = SModelUtil_new.instantiateConceptDeclaration(inputNode.getConceptFqName(), outputModel, scope, false);
     assert outputNode != null;
-    if (keepOldId) {
-      outputNode.setId(inputNode.getSNodeId());
-    }
+    // keep old Id
+    outputNode.setId(inputNode.getSNodeId());
     outputNode.putProperties(inputNode);
     for (SReference reference : inputNode.getReferences()) {
       SModelUID targetModelUID = reference.isExternal() ? reference.getTargetModelUID() : outputModel.getUID();
@@ -63,15 +57,9 @@ public class CloneUtil {
     for (SNode child : inputNode.getChildren()) {
       String role = child.getRole_();
       assert role != null;
-      outputNode.addChild(role, cloneInt(child, outputModel, scope, keepOldId));
+      outputNode.addChild(role, clone(child, outputModel, scope));
     }
     return outputNode;
   }
 
-  public static void cloneModel(SModel inputModel, SModel outputModel, IScope scope) {
-    for (SNode node : inputModel.getRoots()) {
-      SNode outputNode = clone(node, outputModel, scope);
-      outputModel.addRoot(outputNode);
-    }
-  }
 }
