@@ -9,18 +9,6 @@ import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 
 public class QueryOptions implements IExternalizableComponent {
-  private static final String NODE = "node";
-  private static final String SCOPE = "scope";
-  private static final String SCOPE_TYPE = "scope_type";
-
-  private static final String SCOPE_TYPE_GLOBAL = "global_scope";
-  private static final String SCOPE_TYPE_PROJECT = "project_scope";
-  private static final String SCOPE_TYPE_MODULE = "module_scope";
-  private static final String SCOPE_TYPE_MODEL = "model_scope";
-
-  private static final String MODULE_ID = "module_id";
-  private static final String MODEL_ID = "model_id";
-
   public IScope myScope;
   public SNodePointer myNodePointer;
 
@@ -33,6 +21,15 @@ public class QueryOptions implements IExternalizableComponent {
     myNodePointer = nodePointer;
   }
 
+  public SearchQuery getSearchQuery() {
+    return new SearchQuery(myNodePointer, myScope);
+  }
+
+  public void copyOf(QueryOptions options) {
+    myScope = options.myScope;
+    myNodePointer = new SNodePointer(options.myNodePointer.getNode());
+  }
+
   public void write(Element element, MPSProject project) {
     new SearchQuery(myNodePointer, myScope).write(element, project);
   }
@@ -42,9 +39,5 @@ public class QueryOptions implements IExternalizableComponent {
     query.read(element, project);
     myNodePointer = query.getNodePointer();
     myScope = query.getScope();
-  }
-
-  public SearchQuery getSearchQuery() {
-    return new SearchQuery(myNodePointer, myScope);
   }
 }

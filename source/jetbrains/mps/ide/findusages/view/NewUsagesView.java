@@ -63,9 +63,13 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
 
   private void setDefaultOptions() {
     FindersOptions findersOptions = new FindersOptions(new NodeUsages_Finder(), new ConceptInstances_Finder());
-    ViewOptions viewOptions = new ViewOptions(false, false);
     myDefaultOptions.setOption(findersOptions);
+
+    ViewOptions viewOptions = new ViewOptions(false, false);
     myDefaultOptions.setOption(viewOptions);
+
+    QueryOptions queryOptions = new QueryOptions();
+    myDefaultOptions.setOption(queryOptions);
   }
 
   private int currentTabIndex() {
@@ -135,12 +139,10 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     SNode semanticNode = context.getNode();
     SNode operationNode = EditorUtil.getOperationNodeWRTReference(context, semanticNode);
 
-    final FindUsagesDialog findUsagesDialog = new FindUsagesDialog(operationNode, context);
-    findUsagesDialog.setDefaults(myDefaultOptions);
+    FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultOptions, operationNode, context);
     findUsagesDialog.showDialog();
     if (!findUsagesDialog.isCancelled()) {
       FindUsagesOptions options = findUsagesDialog.getResult();
-      myDefaultOptions = options;
       findUsages(options, true);
     }
   }

@@ -11,24 +11,27 @@ import javax.swing.*;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
 import java.awt.BorderLayout;
 import java.awt.Component;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
 public class QueryEditor {
-  public static final int GLOBAL_SCOPE = 0;
-  public static final int PROJECT_SCOPE = 1;
-  public static final int MODULE_SCOPE = 2;
-
   private ActionContext myContext;
   private SNode myNode;
+  private QueryOptions myOptions;
+  private QueryOptions myDefaultOptions;
 
   private List<ListItem> myItems = new ArrayList<ListItem>();
-
+  private JComboBox myComboBox = new JComboBox();
   private JPanel myPanel;
 
-  private JComboBox myComboBox = new JComboBox();
+  public QueryEditor(QueryOptions defaultOptions, SNode node, ActionContext context) {
+    myOptions = defaultOptions;
 
-  public QueryEditor(SNode node, ActionContext context, int defaultScope) {
+    myDefaultOptions = new QueryOptions();
+    myDefaultOptions.copyOf(myOptions);
+
     myContext = context;
     myNode = node;
 
@@ -55,26 +58,36 @@ public class QueryEditor {
       }
     });
 
+    myComboBox.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent e) {
+        myOptions.copyOf(new QueryOptions(myItems.get(myComboBox.getSelectedIndex()).myScope, new SNodePointer(myNode)));
+      }
+    });
+
     myPanel.add(myComboBox, BorderLayout.CENTER);
 
-    myComboBox.setSelectedIndex(defaultScope);
+    myComboBox.setSelectedIndex(getIndex(myOptions.myScope));
   }
 
-  public void setDefaults(QueryOptions defaultOptions) {
-    IScope scope = defaultOptions.myScope;
+  private int getIndex(IScope scope) {
     if (scope instanceof GlobalScope) {
-      myComboBox.setSelectedIndex(0);
+      return 0;
     } else if (scope instanceof ProjectScope) {
-      myComboBox.setSelectedIndex(1);
+      return 1;
     } else if (scope instanceof ModuleScope) {
-      myComboBox.setSelectedIndex(2);
+      return 2;
     } else if (scope instanceof ModelScope) {
-      myComboBox.setSelectedIndex(3);
+      return 3;
     }
+    throw new IllegalArgumentException();
+  }
+
+  public void restoreDefaults() {
+    myOptions.copyOf(myDefaultOptions);
   }
 
   public QueryOptions getQueryOptions() {
-    return new QueryOptions(myItems.get(myComboBox.getSelectedIndex()).myScope, new SNodePointer(myNode));
+    return myOptions;
   }
 
   public JComponent getComponent() {

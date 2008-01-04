@@ -33,6 +33,11 @@ public class FindersOptions extends HashSet<BaseFinder> implements IExternalizab
     return myProvider;
   }
 
+  public void copyOf(FindersOptions options) {
+    this.clear();
+    this.addAll(options);
+  }
+
   public void write(Element element, MPSProject project) {
     Element findersXML = new Element(FINDERS);
     for (BaseFinder finder : this) {

@@ -4,7 +4,7 @@ import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
-public class ViewOptions implements IExternalizableComponent {
+public class ViewOptions implements IExternalizableComponent, Cloneable {
   private static final String FLAGS = "flags";
   private static final String SHOW_ONE_RESULT = "show_one_result";
   private static final String NEW_TAB = "new_tab";
@@ -19,6 +19,11 @@ public class ViewOptions implements IExternalizableComponent {
   public ViewOptions(boolean showOneResult, boolean newTab) {
     myShowOneResult = showOneResult;
     myNewTab = newTab;
+  }
+
+  public void copyOf(ViewOptions options) {
+    myShowOneResult = options.myShowOneResult;
+    myNewTab = options.myNewTab;
   }
 
   public void read(Element element, MPSProject project) {

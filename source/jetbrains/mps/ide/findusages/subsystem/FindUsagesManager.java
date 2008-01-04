@@ -45,6 +45,17 @@ public class FindUsagesManager implements IExternalizableComponent {
     return Collections.unmodifiableSet(result);
   }
 
+  public BaseFinder getFinderByClassName(String className) {
+    for (Set<BaseFinder> finders : myFinders.values()) {
+      for (BaseFinder finder : finders) {
+        if (finder.getClass().getName().equals(className)) {
+          return finder;
+        }
+      }
+    }
+    return null;
+  }
+
   public void reload() {
     myFinders.clear();
     for (Language l : MPSModuleRepository.getInstance().getAllLanguages()) {

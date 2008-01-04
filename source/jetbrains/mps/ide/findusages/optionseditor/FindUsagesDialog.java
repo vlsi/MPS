@@ -1,5 +1,7 @@
 package jetbrains.mps.ide.findusages.optionseditor;
 
+import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
+import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.action.ActionContext;
@@ -10,7 +12,10 @@ import jetbrains.mps.ide.findusages.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.findusages.subsystem.FindUsagesManager;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
+import org.jdom.Element;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -25,15 +30,19 @@ public class FindUsagesDialog extends BaseDialog {
   private ViewOptionsEditor myViewOptionsEditor;
   private boolean myIsCancelled = true;
 
-  public FindUsagesDialog(SNode node, ActionContext context) {
+  public FindUsagesDialog(FindUsagesOptions defaultOptions, SNode node, ActionContext context) {
     super(context.getOperationContext().getMainFrame(), "Find usages");
 
-    myQueryEditor = new QueryEditor(node, context, QueryEditor.PROJECT_SCOPE);
-    myFindersEditor = new FindersEditor(FindUsagesManager.getInstance().getAvailableFinders(node));
-    myViewOptionsEditor = new ViewOptionsEditor();
+    QueryOptions queryOptions = defaultOptions.getOption(QueryOptions.class);
+    if (queryOptions.myScope == null) {
+      queryOptions.myNodePointer = new SNodePointer(node);
+      queryOptions.myScope = context.getOperationContext().getProject().getScope();
+    }
 
-    //myFindersEditor.getComponent().setBorder(new EmptyBorder(3,3,3,3));
-    //myViewOptionsEditor.getComponent().setBorder(new EmptyBorder(3,3,3,3));
+    myQueryEditor = new QueryEditor(queryOptions, node, context);
+    myFindersEditor = new FindersEditor(defaultOptions.getOption(FindersOptions.class), FindUsagesManager.getInstance().getAvailableFinders(node));
+    myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class));
+
     myQueryEditor.getComponent().setBorder(new EmptyBorder(7, 3, 3, 3));
 
     JPanel centerPanel = new JPanel(new GridLayout(1, 2));
@@ -47,22 +56,19 @@ public class FindUsagesDialog extends BaseDialog {
     //setResizable(false);
   }
 
-  public void setDefaults(FindUsagesOptions defaultOptions) {
-    QueryOptions queryOptions = defaultOptions.getOption(QueryOptions.class);
-    if (queryOptions != null) myQueryEditor.setDefaults(queryOptions);
-    FindersOptions findersOptions = defaultOptions.getOption(FindersOptions.class);
-    if (findersOptions != null) myFindersEditor.setDefaults(findersOptions);
-    ViewOptions viewOptions = defaultOptions.getOption(ViewOptions.class);
-    if (viewOptions != null) myViewOptionsEditor.setDefaults(viewOptions);
-  }
-
-  public boolean isCancelled() {
-    return myIsCancelled;
+  private void restoreDefaults() {
+    myQueryEditor.restoreDefaults();
+    myFindersEditor.restoreDefaults();
+    myViewOptionsEditor.restoreDefaults();
   }
 
   public FindUsagesOptions getResult() {
     FindUsagesOptions options = new FindUsagesOptions(myFindersEditor.getFindersOptions(), myQueryEditor.getQueryOptions(), myViewOptionsEditor.getViewOptions());
     return options;
+  }
+
+  public boolean isCancelled() {
+    return myIsCancelled;
   }
 
   @Button(position = 0, name = "OK", defaultButton = true)
@@ -73,6 +79,7 @@ public class FindUsagesDialog extends BaseDialog {
 
   @Button(position = 1, name = "Cancel")
   public void onCancel() {
+    restoreDefaults();
     dispose();
   }
 

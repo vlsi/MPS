@@ -7,13 +7,19 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class ViewOptionsEditor {
-  private ViewOptions myOptions = new ViewOptions(true, true);
+  private ViewOptions myOptions;
+  private ViewOptions myDefaultOptions;
 
   private JPanel myPanel;
   private JCheckBox myShowOneResult;
   private JCheckBox myNewTab;
 
-  public ViewOptionsEditor() {
+  public ViewOptionsEditor(ViewOptions defaultOptions) {
+    myOptions = defaultOptions;
+
+    myDefaultOptions = new ViewOptions();
+    myDefaultOptions.copyOf(myOptions);
+
     myPanel = new JPanel();
     myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
 
@@ -39,9 +45,8 @@ public class ViewOptionsEditor {
     myPanel.add(myNewTab);
   }
 
-  public void setDefaults(ViewOptions defaultOptions) {
-    myShowOneResult.setSelected(defaultOptions.myShowOneResult);
-    myNewTab.setSelected(defaultOptions.myNewTab);
+  public void restoreDefaults() {
+    myOptions.copyOf(myDefaultOptions);
   }
 
   public JComponent getComponent() {
