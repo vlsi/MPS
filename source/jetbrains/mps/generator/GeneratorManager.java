@@ -189,14 +189,22 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
    */
   public IFileGenerator chooseFileGenerator(SNode outputRootNode, SNode originalInputNode) {
     for (IFileGenerator fileGenerator : myFileGenerators) {
-      if (fileGenerator.overridesDefault(outputRootNode, originalInputNode)) {
-        return fileGenerator;
+      try{
+        if (fileGenerator.overridesDefault(outputRootNode, originalInputNode)) {
+          return fileGenerator;
+        }
+      } catch (Throwable t) {
+        LOG.error(t);
       }
     }
 
     for (IFileGenerator fileGenerator : myFileGenerators) {
-      if (fileGenerator.isDefault(outputRootNode)) {
-        return fileGenerator;
+      try {
+        if (fileGenerator.isDefault(outputRootNode)) {
+          return fileGenerator;
+        }
+      } catch (Throwable t) {
+        LOG.error(t);
       }
     }
     return null;
