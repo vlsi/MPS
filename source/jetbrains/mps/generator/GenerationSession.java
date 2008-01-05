@@ -239,7 +239,7 @@ public class GenerationSession implements IGenerationSession {
 
     // -- replace generator
     myGeneratorLogger.setOperationContext(context);
-    ITemplateGenerator generator = new TemplateModelGenerator_New(context, myProgressMonitor, myGeneratorLogger);
+    ITemplateGenerator generator = new TemplateGenerator(context, myProgressMonitor, myGeneratorLogger);
     GenerationStatus status;
     try {
       SModel outputModel = generateModel(inputModel, generator);

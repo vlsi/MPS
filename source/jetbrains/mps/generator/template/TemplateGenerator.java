@@ -20,7 +20,7 @@ import java.util.*;
  * Created by: Sergey Dmitriev
  * Date: Jan 23, 2007
  */
-public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
+public class TemplateGenerator extends AbstractTemplateGenerator {
   private SModel myInputModel;
   private SModel myOutputModel;
   private ArrayList<SNode> myRootsNotToCopy = new ArrayList<SNode>();
@@ -35,7 +35,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
   private boolean myChanged = false;
 
-  public TemplateModelGenerator_New(GenerationSessionContext operationContext,
+  public TemplateGenerator(GenerationSessionContext operationContext,
                                     IAdaptiveProgressMonitor progressMonitor,
                                     GeneratorLogger generatorLogger) {
     super(operationContext, progressMonitor, generatorLogger);
