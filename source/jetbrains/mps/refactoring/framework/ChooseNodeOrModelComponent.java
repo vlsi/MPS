@@ -33,6 +33,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   private Condition myCondition = Condition.TRUE_CONDITION;
 
   public ChooseNodeOrModelComponent(String caption, String propertyName, ActionContext actionContext, String conceptFQName, boolean mayBeModel, boolean mayBeNode) {
+    setLayout(new BorderLayout());
     myCaption = caption;
     myPropertyName = propertyName;
     myActionContext = actionContext;
@@ -43,9 +44,10 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     myConceptFQName = conceptFQName;
 
     add(new JLabel(myCaption), BorderLayout.NORTH);
-    add(new JScrollPane(myTree));
+    add(new JScrollPane(myTree), BorderLayout.CENTER);
 
     myTree.setRootVisible(false);
+    updateModels(myCondition);
     myTree.rebuildNow();
     myTree.expandPath(new TreePath(myTree.getRootNode()));
   }
@@ -62,9 +64,13 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     if (myMayBeModel) {
       modelCondition = myCondition;
     }
+    updateModels(modelCondition);
+    myTree.rebuildNow();
+  }
+
+  private void updateModels(Condition modelCondition) {
     Set<SModelDescriptor> models = getModelsFrom(myOperationContext, modelCondition);
     myModels = models;
-    myTree.rebuildNow();
   }
 
   private Set<SModelDescriptor> getModelsFrom(IOperationContext context, Condition condition) {
