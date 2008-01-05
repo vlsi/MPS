@@ -3,10 +3,6 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.core.structure.INamedConcept;
-import jetbrains.mps.generator.template.DismissTopMappingRuleException;
-import jetbrains.mps.generator.template.INodeBuilder;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.GeneratorUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
@@ -38,73 +34,6 @@ public class RuleUtil {
     myOutputModel = myGenerator.getTargetModel();
   }
 
-//  public void applyRootRule(CreateRootRule createRootRule) {
-//    if (checkConditionForCreateRootRule(createRootRule)) {
-//      INamedConcept templateNode = createRootRule.getTemplateNode();
-//      if (templateNode == null) {
-//        myGenerator.showErrorMessage(null, null, BaseAdapter.fromAdapter(createRootRule), "'create root' rule has no template");
-//      } else {
-//        boolean wasChanged = myGenerator.isChanged();
-//        try {
-//          createRootNodeFromTemplate(createRootRule.getName(), BaseAdapter.fromAdapter(templateNode), null);
-//        } catch (DismissTopMappingRuleException e) {
-//          // it's ok, just continue
-//          myGenerator.setChanged(wasChanged);
-//        }
-//      }
-//    }
-//  }
-
-//  public boolean checkConditionForCreateRootRule(CreateRootRule createRootRule) {
-//    CreateRootRule_Condition conditionFunction = createRootRule.getConditionFunction();
-//    if (conditionFunction == null) {
-//      return true;
-//    }
-//    String methodName = TemplateFunctionMethodName.createRootRule_Condition(conditionFunction.getNode());
-//    Object[] args = new Object[]{
-//            myGenerator.getSourceModel(),
-//            myGenerator,
-//            myGenerator.getScope(),
-//            myGenerator.getGeneratorSessionContext()};
-//    try {
-//      return (Boolean) QueryMethodGenerated.invoke(methodName, args, createRootRule.getModel());
-//    } catch (Exception e) {
-//      myGenerator.showErrorMessage(null, null, BaseAdapter.fromAdapter(createRootRule), "couldn't evaluate rule condition");
-//      LOG.error(e);
-//      return false;
-//    }
-//  }
-
-//  public void applyMappingRule(MappingRule mappingRule) {
-//    BaseConcept templateNode = mappingRule.getTemplateNode();
-//    if (templateNode == null) {
-//      myGenerator.showErrorMessage(null, null, mappingRule.getNode(), "mapping rule has no template");
-//      return;
-//    }
-//    List<SNode> inputNodes = createInputNodeListForMappingRule(mappingRule);
-//    boolean wasChanged = myGenerator.isChanged();
-//    try {
-//      if (inputNodes.size() > 0) myGenerator.setChanged(true);
-//      for (SNode inputNode : inputNodes) {
-//        createRootNodeFromTemplate(mappingRule.getName(), BaseAdapter.fromAdapter(templateNode), inputNode);
-//        if (inputNode.isRoot()) {
-//          myGenerator.addRootNotToCopy(inputNode);
-//        }
-//      }
-//    } catch (DismissTopMappingRuleException e) {
-//      // it's ok, just continue
-//      myGenerator.setChanged(wasChanged);
-//    }
-//  }
-
-//  private List<SNode> createInputNodeListForMappingRule(MappingRule mappingRule) {
-//    String sourceQueryAspectId = mappingRule.getSourceQueryAspectId();
-//    String methodName = "templateMappingRule_SourceQuery_" + sourceQueryAspectId;
-//    Object[] args = new Object[]{myGenerator};
-//    List<SNode> inputNodes = (List<SNode>) QueryMethod.invoke(methodName, args, mappingRule.getModel());
-//    return inputNodes;
-//  }
-
   public void applyRoot_MappingRule(Root_MappingRule rule) {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
@@ -120,7 +49,7 @@ public class RuleUtil {
         continue;
       }
 
-      if (checkBaseMappingRuleCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), myGenerator)) {
+      if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), myGenerator)) {
         boolean wasChanged = myGenerator.isChanged();
         try {
           myGenerator.setChanged(true);
@@ -138,30 +67,6 @@ public class RuleUtil {
           myGenerator.setChanged(wasChanged);
         }
       }
-    }
-  }
-
-  private static boolean checkBaseMappingRuleCondition(BaseMappingRule_Condition conditionFunction, boolean required, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
-    if (conditionFunction == null) {
-      if (required) {
-        generator.showErrorMessage(inputNode, null, ruleNode, "rule condition required");
-        return false;
-      }
-      return true;
-    }
-    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(conditionFunction.getNode());
-    Object[] args = new Object[]{
-            inputNode,
-            generator.getInputModel(),
-            generator,
-            generator.getScope(),
-            generator.getGeneratorSessionContext()};
-    try {
-      return (Boolean) QueryMethodGenerated.invoke(methodName, args, ruleNode.getModel());
-    } catch (Exception e) {
-      generator.showErrorMessage(inputNode, null, ruleNode, "couldn't evaluate rule condition");
-      LOG.error(e);
-      return false;
     }
   }
 
@@ -350,7 +255,7 @@ public class RuleUtil {
     boolean includeInheritors = rule.getApplyToConceptInheritors();
     List<SNode> nodes = myGenerator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
     for (SNode applicableNode : nodes) {
-      if (checkBaseMappingRuleCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode(), myGenerator)) {
+      if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode(), myGenerator)) {
         SNode outputContextNode = getContextNodeForWeavingingRule(applicableNode, rule.getNode(), rule.getContextProviderAspectId(), rule.getContextNodeQuery());
         if (outputContextNode == null) {
           myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
@@ -404,10 +309,10 @@ public class RuleUtil {
   }
 
   public List<SNode> createOutputNodesForTemplateNode(String mappingName,
-                                                         SNode templateNode,
-                                                         SNode inputNode,
-                                                         int nodeMacrosToSkip,
-                                                         boolean registerTopOutput) throws DismissTopMappingRuleException {
+                                                      SNode templateNode,
+                                                      SNode inputNode,
+                                                      int nodeMacrosToSkip,
+                                                      boolean registerTopOutput) throws DismissTopMappingRuleException {
     int macroCount = 0;
     List<SNode> outputNodes = new ArrayList<SNode>();
     // templateNode has unprocessed node-macros?
@@ -814,7 +719,7 @@ public class RuleUtil {
     } else if (ruleConsequence instanceof InlineSwitch_RuleConsequence) {
       InlineSwitch_RuleConsequence inlineSwitch = (InlineSwitch_RuleConsequence) ruleConsequence;
       for (InlineSwitch_Case switchCase : inlineSwitch.getCases()) {
-        if (checkBaseMappingRuleCondition(switchCase.getConditionFunction(), true, inputNode, switchCase.getNode(), generator)) {
+        if (GeneratorUtil.checkCondition(switchCase.getConditionFunction(), true, inputNode, switchCase.getNode(), generator)) {
           return getTemplateNodeFromRuleConsequence(switchCase.getCaseConsequence(), inputNode, switchCase.getNode(), generator);
         }
       }

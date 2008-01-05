@@ -96,6 +96,36 @@ public class GeneratorUtil {
     }
   }
 
+  public static boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
+    if (condition == null) {
+      if (required) {
+        generator.showErrorMessage(inputNode, null, ruleNode, "rule condition required");
+        return false;
+      }
+      return true;
+    }
+
+    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition.getNode());
+    Object[] args = new Object[]{
+            inputNode,
+            generator.getInputModel(),
+            generator,
+            generator.getScope(),
+            generator.getGeneratorSessionContext()};
+    long startTime = System.currentTimeMillis();
+    boolean res = false;
+    try {
+      res = (Boolean) QueryMethodGenerated.invoke(methodName, args, ruleNode.getModel());
+      return res;
+    } catch (Exception e) {
+      generator.showErrorMessage(inputNode, null, ruleNode, "couldn't evaluate rule condition");
+      LOG.error(e);
+      return false;
+    } finally {
+      Statistics.getStatistic(Statistics.TPL).add(ruleNode.getModel(), methodName, startTime, res);
+    }
+  }
+
   public static void executeMappingScript(MappingScript mappingScript, SModel model, ITemplateGenerator generator) {
     MappingScript_CodeBlock codeBlock = mappingScript.getCodeBlock();
     if (codeBlock == null) {
