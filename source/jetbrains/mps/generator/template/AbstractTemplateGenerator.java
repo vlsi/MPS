@@ -7,17 +7,11 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationCanceledException;
-import jetbrains.mps.generator.newGenerator.GeneratorLogger;
-import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.messages.MessageKind;
-import jetbrains.mps.ide.messages.NodeWithContext;
+import jetbrains.mps.generator.template.GeneratorLogger;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
-
-import java.util.HashSet;
 
 public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private IOperationContext myOperationContext;

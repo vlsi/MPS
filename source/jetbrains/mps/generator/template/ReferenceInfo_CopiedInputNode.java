@@ -1,9 +1,7 @@
-package jetbrains.mps.generator.newGenerator;
+package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.template.IReferenceResolver;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
 
 import java.util.List;
 

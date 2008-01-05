@@ -1,4 +1,4 @@
-package jetbrains.mps.generator.newGenerator;
+package jetbrains.mps.generator.template;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;

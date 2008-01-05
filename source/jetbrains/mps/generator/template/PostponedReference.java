@@ -1,6 +1,5 @@
-package jetbrains.mps.generator.newGenerator;
+package jetbrains.mps.generator.template;
 
-import jetbrains.mps.generator.template.IReferenceResolver;
 import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 

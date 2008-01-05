@@ -1,13 +1,10 @@
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.newGenerator.CloneUtil;
-import jetbrains.mps.generator.newGenerator.GeneratorLogger;
-import jetbrains.mps.generator.newGenerator.TemplateModelGenerator_New;
+import jetbrains.mps.generator.template.CloneUtil;
 import jetbrains.mps.generator.plan.AbstractGenerationStepController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationStepController;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.Statistics;
+import jetbrains.mps.generator.template.*;
 import jetbrains.mps.generator.GeneratorUtil;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;

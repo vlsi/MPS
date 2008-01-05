@@ -1,4 +1,4 @@
-package jetbrains.mps.generator.newGenerator;
+package jetbrains.mps.generator.template;
 
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.generator.GenerationFailedException;

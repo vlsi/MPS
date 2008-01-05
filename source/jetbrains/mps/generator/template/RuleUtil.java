@@ -1,4 +1,4 @@
-package jetbrains.mps.generator.newGenerator;
+package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;

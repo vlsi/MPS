@@ -4,10 +4,9 @@
  * Date: Nov 17, 2004
  * Time: 6:10:11 PM
  */
-package jetbrains.mps.generator.newGenerator;
+package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.transformation.TLBase.structure.*;
 
 import java.util.Iterator;
