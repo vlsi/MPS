@@ -70,7 +70,7 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.actions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
   </language>
-  <maxImportIndex value="15" />
+  <maxImportIndex value="17" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.ide.action@java_stub" version="-1" />
   <import index="3" modelUID="java.io@java_stub" version="-1" />
@@ -86,6 +86,8 @@
   <import index="13" modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="-1" />
   <import index="14" modelUID="jetbrains.mps.smodel.search@java_stub" version="-1" />
   <import index="15" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure@java_stub" version="-1" />
+  <import index="16" modelUID="jetbrains.mps.ide@java_stub" version="-1" />
+  <import index="17" modelUID="jetbrains.mps.ide.navigation@java_stub" version="-1" />
   <node type="jetbrains.mps.logging.refactoring.structure.Refactoring" id="1198076144993">
     <property name="name" value="MoveNodes" />
     <property name="userFriendlyName" value="Move Nodes" />
@@ -576,6 +578,36 @@
             </node>
             <node role="leftExpression" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198083021530">
               <link role="argument" targetNodeId="1198076162946" resolveInfo="target" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199554729094">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199554729095">
+            <property name="name" value="operationContext" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1199554729096">
+              <link role="classifier" targetNodeId="5.~IOperationContext" resolveInfo="IOperationContext" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1199554729097">
+              <link role="baseMethodDeclaration" targetNodeId="2.~ActionContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
+              <node role="instance" type="jetbrains.mps.logging.refactoring.structure.ConceptFunctionParameter_ActionContext" id="1199554729098" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199554756723">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1199554761271">
+            <link role="baseMethodDeclaration" targetNodeId="17.~NavigationActionProcessor.navigateToNode(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.IOperationContext,boolean):void" resolveInfo="navigateToNode" />
+            <link role="classConcept" targetNodeId="17.~NavigationActionProcessor" resolveInfo="NavigationActionProcessor" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression" id="1199554776481">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199554764022">
+                <link role="variableDeclaration" targetNodeId="1198082944517" resolveInfo="nodes" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.GetFirstOperation" id="1199554778341" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199554785921">
+              <link role="variableDeclaration" targetNodeId="1199554729095" resolveInfo="operationContext" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199554795642">
+              <property name="value" value="true" />
             </node>
           </node>
         </node>
