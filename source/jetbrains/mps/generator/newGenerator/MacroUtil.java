@@ -1,23 +1,24 @@
 package jetbrains.mps.generator.newGenerator;
 
-import jetbrains.mps.transformation.TLBase.structure.*;
-import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.util.QueryMethod;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.Statistics;
+import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
+import jetbrains.mps.generator.GeneratorUtil;
+import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
+import jetbrains.mps.transformation.TLBase.structure.*;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.QueryMethod;
+import jetbrains.mps.util.QueryMethodGenerated;
 
-import java.util.List;
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by: Sergey Dmitriev
@@ -222,7 +223,7 @@ public class MacroUtil {
 
     // new
     if (query != null) {
-      SNode resultNode = evaluateSourceNodeQuery(currentInputNode, query, generator);
+      SNode resultNode = GeneratorUtil.evaluateSourceNodeQuery(currentInputNode, query, generator);
       if (resultNode != null) {
         result.add(resultNode);
       }
@@ -255,7 +256,7 @@ public class MacroUtil {
   private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {
     // new
     if (query != null) {
-      List<SNode> list = evaluateSourceNodesQuery(currentInputNode, query, generator);
+      List<SNode> list = GeneratorUtil.evaluateSourceNodesQuery(currentInputNode, query, generator);
       if (list != null) {
         return list;
       }
@@ -300,7 +301,7 @@ public class MacroUtil {
 
     // new
     if (query != null) {
-      SNode resultNode = evaluateSourceNodeQuery(currentInputNode, query, generator);
+      SNode resultNode = GeneratorUtil.evaluateSourceNodeQuery(currentInputNode, query, generator);
       if (resultNode != null) {
         sourceNodes.add(resultNode);
         return sourceNodes;
@@ -322,46 +323,4 @@ public class MacroUtil {
       Statistics.getStatistic(Statistics.TPL).add(macro.getModel(), methodName, startTime);
     }
   }
-
-  private static List<SNode> evaluateSourceNodesQuery(SNode inputNode, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {
-    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
-    Object[] args = new Object[]{
-            inputNode,
-            generator.getInputModel(),
-            generator,
-            generator.getScope(),
-            generator.getGeneratorSessionContext()};
-    long startTime = System.currentTimeMillis();
-    try {
-      List<SNode> result = (List<SNode>) QueryMethodGenerated.invoke(methodName, args, query.getModel());
-      return result;
-    } catch (Exception e) {
-      generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
-      LOG.error(e);
-      return new LinkedList<SNode>();
-    } finally {
-      Statistics.getStatistic(Statistics.TPL).add(query.getModel(), methodName, startTime);
-    }
-  }
-
-  private static SNode evaluateSourceNodeQuery(SNode inputNode, SourceSubstituteMacro_SourceNodeQuery query, ITemplateGenerator generator) {
-    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query.getNode());
-    Object[] args = new Object[]{
-            inputNode,
-            generator.getInputModel(),
-            generator,
-            generator.getScope(),
-            generator.getGeneratorSessionContext()};
-    long startTime = System.currentTimeMillis();
-    try {
-      return (SNode) QueryMethodGenerated.invoke(methodName, args, query.getModel());
-    } catch (Exception e) {
-      generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
-      LOG.error(e);
-      return null;
-    } finally {
-      Statistics.getStatistic(Statistics.TPL).add(query.getModel(), methodName, startTime);
-    }
-  }
-
 }

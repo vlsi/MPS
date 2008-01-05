@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule;
+import jetbrains.mps.generator.GeneratorUtil;
 
 import java.util.*;
 
@@ -132,7 +133,7 @@ public class FastRuleFinder {
     }
 
     for (Reduction_MappingRule rule : allRules) {
-      if (TemplateGenUtil.checkConditionForBaseMappingRule(node, rule, generator)) {
+      if (GeneratorUtil.checkConditionForBaseMappingRule(node, rule, generator)) {
         return BaseAdapter.fromAdapter(rule);
       }
     }
@@ -145,7 +146,7 @@ public class FastRuleFinder {
   public SNode findReductionRule_SLOW(SNode node, ITemplateGenerator generator) {
     ConceptDeclaration concept = (ConceptDeclaration) node.getConceptDeclarationAdapter();
     for (Reduction_MappingRule rule : myRuleList) {
-      if (TemplateGenUtil.checkPremiseForBaseMappingRule(node, concept, rule, generator)) {
+      if (GeneratorUtil.checkPremiseForBaseMappingRule(node, concept, rule, generator)) {
         return BaseAdapter.fromAdapter(rule);
       }
     }

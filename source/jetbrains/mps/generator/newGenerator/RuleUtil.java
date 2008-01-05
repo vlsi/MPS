@@ -7,7 +7,7 @@ import jetbrains.mps.core.structure.INamedConcept;
 import jetbrains.mps.generator.template.DismissTopMappingRuleException;
 import jetbrains.mps.generator.template.INodeBuilder;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.TemplateGenUtil;
+import jetbrains.mps.generator.GeneratorUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
@@ -371,13 +371,13 @@ public class RuleUtil {
 
           } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
             WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
-            SourceSubstituteMacro_SourceNodesQuery nodesQuery = weaveEach.getSourceNodesQuery();
-            if (nodesQuery == null) {
+            SourceSubstituteMacro_SourceNodesQuery query = weaveEach.getSourceNodesQuery();
+            if (query == null) {
               myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't create list of source nodes");
               break;
             }
             template = weaveEach.getTemplate();
-            List<SNode> queryNodes = evaluateSourceNodesQuery(applicableNode, nodesQuery, ruleConsequence.getNode());
+            List<SNode> queryNodes = GeneratorUtil.evaluateSourceNodesQuery(applicableNode, query, myGenerator);
             for (SNode queryNode : queryNodes) {
               weaveTemplateDeclaration(queryNode, template, outputContextNode, rule.getNode());
             }
@@ -387,24 +387,6 @@ public class RuleUtil {
 
         } // RuleConsequence
       }
-    }
-  }
-
-  protected List<SNode> evaluateSourceNodesQuery(SNode inputNode, SourceSubstituteMacro_SourceNodesQuery query, SNode queryOwner) {
-    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
-    Object[] args = new Object[]{
-            inputNode,
-            myGenerator.getSourceModel(),
-            myGenerator,
-            myGenerator.getScope(),
-            myGenerator.getGeneratorSessionContext()};
-    try {
-      List<SNode> inputNodes = (List<SNode>) QueryMethodGenerated.invoke(methodName, args, queryOwner.getModel());
-      return inputNodes;
-    } catch (Exception e) {
-      myGenerator.showErrorMessage(inputNode, queryOwner, "couldn't evaluate query");
-      LOG.error(e);
-      return new LinkedList<SNode>();
     }
   }
 
@@ -671,7 +653,7 @@ public class RuleUtil {
                 myGenerator
         );
         outputNode.addReference(postponedReference);
-      } else if (!TemplateGenUtil.isTemplateLanguageElement(templateChildNode)) {
+      } else if (!GeneratorUtil.isTemplateLanguageElement(templateChildNode)) {
         templateChildNodes.add(templateChildNode);
       }
     }

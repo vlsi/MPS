@@ -4,9 +4,9 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.GeneratorUtil;
 import jetbrains.mps.generator.template.AbstractTemplateGenerator;
 import jetbrains.mps.generator.template.INodeBuilder;
-import jetbrains.mps.generator.template.TemplateGenUtil;
 import jetbrains.mps.generator.template.TemplateSwitchGraph;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.*;
@@ -416,7 +416,7 @@ public class TemplateModelGenerator_New extends AbstractTemplateGenerator {
       // new rules
       List<Reduction_MappingRule> rules = aSwitch.getReductionMappingRules();
       for (Reduction_MappingRule rule : rules) {
-        if (TemplateGenUtil.checkPremiseForBaseMappingRule(sourceNode, nodeConcept, rule, this)) {
+        if (GeneratorUtil.checkPremiseForBaseMappingRule(sourceNode, nodeConcept, rule, this)) {
           // new (return consequences)
           RuleConsequence ruleConsequence = rule.getRuleConsequence();
           if (ruleConsequence != null) {

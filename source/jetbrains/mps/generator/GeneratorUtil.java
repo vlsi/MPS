@@ -4,28 +4,27 @@
  * Date: Jul 9, 2004
  * Time: 7:07:36 PM
  */
-package jetbrains.mps.generator.template;
+package jetbrains.mps.generator;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
+import jetbrains.mps.generator.newGenerator.MacroUtil;
+import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 
-import java.util.LinkedList;
 import java.util.List;
-import java.util.ArrayList;
+import java.util.LinkedList;
 
-public class TemplateGenUtil {
-  private static final Logger LOG = Logger.getLogger(TemplateGenUtil.class);
+public class GeneratorUtil {
+  private static final Logger LOG = Logger.getLogger(GeneratorUtil.class);
 
   private static boolean checkResolvedReference(SNode sourceNode, SNode targetNode, SNode templateNode, String role, SNode targetReferentNode, ITemplateGenerator generator) {
     if (!targetNode.isAcceptableReferent(role, targetReferentNode)) {
@@ -68,7 +67,7 @@ public class TemplateGenUtil {
     return checkConditionForBaseMappingRule(sourceNode, mappingRule, generator);
   }
 
-  protected static boolean checkConditionForBaseMappingRule(SNode sourceNode, BaseMappingRule mappingRule, ITemplateGenerator generator) {
+  public static boolean checkConditionForBaseMappingRule(SNode sourceNode, BaseMappingRule mappingRule, ITemplateGenerator generator) {
     BaseMappingRule_Condition conditionFunction = mappingRule.getConditionFunction();
     if (conditionFunction == null) {
       return true;
@@ -124,6 +123,47 @@ public class TemplateGenUtil {
 
     finally {
       Statistics.getStatistic(Statistics.TPL).add(mappingScript.getModel(), methodName, startTime);
+    }
+  }
+
+  public static List<SNode> evaluateSourceNodesQuery(SNode inputNode, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {
+    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
+    Object[] args = new Object[]{
+            inputNode,
+            generator.getInputModel(),
+            generator,
+            generator.getScope(),
+            generator.getGeneratorSessionContext()};
+    long startTime = System.currentTimeMillis();
+    try {
+      List<SNode> result = (List<SNode>) QueryMethodGenerated.invoke(methodName, args, query.getModel());
+      return result;
+    } catch (Exception e) {
+      generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
+      LOG.error(e);
+      return new LinkedList<SNode>();
+    } finally {
+      Statistics.getStatistic(Statistics.TPL).add(query.getModel(), methodName, startTime);
+    }
+  }
+
+  public static SNode evaluateSourceNodeQuery(SNode inputNode, SourceSubstituteMacro_SourceNodeQuery query, ITemplateGenerator generator) {
+    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query.getNode());
+    Object[] args = new Object[]{
+            inputNode,
+            generator.getInputModel(),
+            generator,
+            generator.getScope(),
+            generator.getGeneratorSessionContext()};
+    long startTime = System.currentTimeMillis();
+    try {
+      return (SNode) QueryMethodGenerated.invoke(methodName, args, query.getModel());
+    } catch (Exception e) {
+      generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
+      LOG.error(e);
+      return null;
+    } finally {
+      Statistics.getStatistic(Statistics.TPL).add(query.getModel(), methodName, startTime);
     }
   }
 }

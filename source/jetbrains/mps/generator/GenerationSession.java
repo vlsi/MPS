@@ -8,7 +8,7 @@ import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationStepController;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.Statistics;
-import jetbrains.mps.generator.template.TemplateGenUtil;
+import jetbrains.mps.generator.GeneratorUtil;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -315,7 +315,7 @@ public class GenerationSession implements IGenerationSession {
         continue;
       }
       addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getUID() + ")");
-      TemplateGenUtil.executeMappingScript(preMappingScript, currentInputModel, generator);
+      GeneratorUtil.executeMappingScript(preMappingScript, currentInputModel, generator);
     }
 
     SModel currentOutputModel = createTransientModel(modelsLongName, module);
@@ -373,7 +373,7 @@ public class GenerationSession implements IGenerationSession {
         continue;
       }
       addMessage(MessageKind.INFORMATION, "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")");
-      TemplateGenUtil.executeMappingScript(postMappingScript, currentOutputModel, generator);
+      GeneratorUtil.executeMappingScript(postMappingScript, currentOutputModel, generator);
     }
 
     return currentOutputModel;
