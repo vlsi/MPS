@@ -56,45 +56,46 @@ public class GeneratorUtil {
             n instanceof RootTemplateAnnotation;
   }
 
-  public static boolean checkPremiseForBaseMappingRule(SNode sourceNode, ConceptDeclaration sourceNodeConcept, BaseMappingRule mappingRule, ITemplateGenerator generator) {
-    AbstractConceptDeclaration applicableConcept = mappingRule.getApplicableConcept();
+  public static boolean checkPremiseForBaseMappingRule(SNode inputNode, ConceptDeclaration sourceNodeConcept, BaseMappingRule rule, ITemplateGenerator generator) {
+    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept != null) {
-      if (mappingRule.getApplyToConceptInheritors()) {
+      if (rule.getApplyToConceptInheritors()) {
         if (!SModelUtil_new.isAssignableConcept(sourceNodeConcept, applicableConcept)) return false;
       } else {
         if (sourceNodeConcept != applicableConcept) return false;
       }
     }
-    return checkConditionForBaseMappingRule(sourceNode, mappingRule, generator);
+//    return checkConditionForBaseMappingRule(inputNode, rule, generator);
+    return checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), generator);
   }
 
-  public static boolean checkConditionForBaseMappingRule(SNode sourceNode, BaseMappingRule mappingRule, ITemplateGenerator generator) {
-    BaseMappingRule_Condition conditionFunction = mappingRule.getConditionFunction();
-    if (conditionFunction == null) {
-      return true;
-    }
-
-    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(conditionFunction.getNode());
-    Object[] args = new Object[]{
-            sourceNode,
-            generator.getInputModel(),
-            generator,
-            generator.getScope(),
-            generator.getGeneratorSessionContext()};
-    long startTime = System.currentTimeMillis();
-    boolean res = false;
-    try {
-      res = (Boolean) QueryMethodGenerated.invoke(methodName, args, mappingRule.getModel());
-      return res;
-    } catch (Exception e) {
-      generator.showErrorMessage(sourceNode, null, BaseAdapter.fromAdapter(mappingRule), "couldn't evaluate rule condition");
-      LOG.error(e);
-
-      return false;
-    } finally {
-      Statistics.getStatistic(Statistics.TPL).add(mappingRule.getModel(), methodName, startTime, res);
-    }
-  }
+//  public static boolean checkConditionForBaseMappingRule(SNode sourceNode, BaseMappingRule mappingRule, ITemplateGenerator generator) {
+//    BaseMappingRule_Condition conditionFunction = mappingRule.getConditionFunction();
+//    if (conditionFunction == null) {
+//      return true;
+//    }
+//
+//    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(conditionFunction.getNode());
+//    Object[] args = new Object[]{
+//            sourceNode,
+//            generator.getInputModel(),
+//            generator,
+//            generator.getScope(),
+//            generator.getGeneratorSessionContext()};
+//    long startTime = System.currentTimeMillis();
+//    boolean res = false;
+//    try {
+//      res = (Boolean) QueryMethodGenerated.invoke(methodName, args, mappingRule.getModel());
+//      return res;
+//    } catch (Exception e) {
+//      generator.showErrorMessage(sourceNode, null, BaseAdapter.fromAdapter(mappingRule), "couldn't evaluate rule condition");
+//      LOG.error(e);
+//
+//      return false;
+//    } finally {
+//      Statistics.getStatistic(Statistics.TPL).add(mappingRule.getModel(), methodName, startTime, res);
+//    }
+//  }
 
   public static boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     if (condition == null) {

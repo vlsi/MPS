@@ -133,7 +133,8 @@ public class FastRuleFinder {
     }
 
     for (Reduction_MappingRule rule : allRules) {
-      if (GeneratorUtil.checkConditionForBaseMappingRule(node, rule, generator)) {
+//      if (GeneratorUtil.checkConditionForBaseMappingRule(node, rule, generator)) {
+      if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, node, rule.getNode(), generator)) {
         return BaseAdapter.fromAdapter(rule);
       }
     }
