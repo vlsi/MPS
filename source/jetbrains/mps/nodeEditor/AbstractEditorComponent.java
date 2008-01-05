@@ -282,7 +282,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     myShowIntentionsAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        showIntentionsMenu();
+        if (!getEditedNode().getModel().isNotEditable()) {
+          showIntentionsMenu();
+        }
       }
     };
     registerKeyboardAction(myShowIntentionsAction, KeyStroke.getKeyStroke("alt ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
@@ -356,12 +358,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     addCellSelectionListener(new ICellSelectionListener() {
       public void selectionChanged(AbstractEditorComponent editor, EditorCell oldSelection, EditorCell newSelection) {
         if (getSelectedCell() != null) {
-          if (!getEnabledIntentions().isEmpty()) {
-            showLightBulb();
-          } else {
-            hideLightBulb();
-            //myLightBulb.setVisible(false);
-          }
+          setLightBulbVisibility(!getEnabledIntentions().isEmpty());
           myShowIntentionsAction.setEnabled(!getAvailableIntentions().isEmpty());
         } else {
           hideLightBulb();
@@ -2166,7 +2163,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private void setLightBulbVisibility(boolean value) {
     if (value) {
-      if (!getEnabledIntentions().isEmpty()) {
+      if ((!getEnabledIntentions().isEmpty()) && (!getEditedNode().getModel().isNotEditable())) {
         showLightBulb();
       }
     } else {
