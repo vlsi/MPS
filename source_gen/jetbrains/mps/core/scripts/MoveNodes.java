@@ -18,10 +18,11 @@ import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDecl
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import java.util.Map;
-import jetbrains.mps.project.IModule;
 import java.util.HashMap;
 import jetbrains.mps.refactoring.framework.IChooseComponentPart;
 import jetbrains.mps.refactoring.framework.ChooseNodeOrModelComponent;
@@ -57,7 +58,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1199555333310#1198076144993";
+    return "jetbrains.mps.core.scripts@1_0_1199556422157#1198076144993";
   }
 
   public String getKeyStroke() {
@@ -126,7 +127,8 @@ public class MoveNodes extends AbstractLoggableRefactoring {
         targetModel = ((SNode)((Object)refactoringContext.getParameter("target"))).getModel();
       }
       if(targetModel != null) {
-        IOperationContext operationContext = targetModel.getModelDescriptor().getOperationContext();
+        IModule module = targetModel.getModelDescriptor().getModule();
+        IOperationContext operationContext = new ModuleContext(module, actionContext.getOperationContext().getProject());
         if(operationContext != null) {
           NavigationActionProcessor.navigateToNode(SequenceOperations.getFirst(nodes), operationContext, true);
         }

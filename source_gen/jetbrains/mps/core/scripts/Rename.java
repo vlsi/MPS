@@ -45,7 +45,7 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1199555333310#1199457919461";
+    return "jetbrains.mps.core.scripts@1_0_1199556422157#1199457919461";
   }
 
   public String getKeyStroke() {
