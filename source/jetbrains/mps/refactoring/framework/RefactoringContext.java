@@ -111,7 +111,7 @@ public class RefactoringContext {
     myCachesAreUpToDate = false;
   }
 
-  public void moveNodesToNode(List<SNode> sourceNodes, String role, SNode targetNode) {
+  public List<SNode> moveNodesToNode(List<SNode> sourceNodes, String role, SNode targetNode) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> targetNodes = CopyUtil.copy(sourceNodes, targetNode.getModel(), mapping);
     for (SNode node : targetNodes) {
@@ -125,11 +125,12 @@ public class RefactoringContext {
       node.delete();
     }
     myCachesAreUpToDate = false;
+    return targetNodes;
   }
 
-  public void moveNodesToModel(List<SNode> sourceNodes, SModel targetModel) {
+  public List<SNode> moveNodesToModel(List<SNode> sourceNodes, SModel targetModel) {
     if (sourceNodes.isEmpty()) {
-      return;
+      return new ArrayList<SNode>();
     }
 //    SModel sourceModel = sourceNodes.get(0).getModel();
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
@@ -147,6 +148,7 @@ public class RefactoringContext {
     targetModel.validateLanguagesAndImports();
    // targetModel.addImportedModel(sourceModel.getUID());
     myCachesAreUpToDate = false;
+    return targetNodes;
   }
 
   public void changeFeatureName(SNode feature, @Nullable String newConceptFQName, @Nullable String newFeatureName) {
