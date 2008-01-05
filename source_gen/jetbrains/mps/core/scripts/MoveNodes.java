@@ -9,12 +9,14 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import java.util.List;
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
-import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -53,7 +55,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1199468154873#1198076144993";
+    return "jetbrains.mps.core.scripts@1_0_1199553525048#1198076144993";
   }
 
   public String getKeyStroke() {
@@ -79,8 +81,10 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     if(((Object)refactoringContext.getParameter("target")) instanceof SNode) {
       SNode targetNode = ((SNode)((Object)refactoringContext.getParameter("target")));
       SNode concept = SNodeOperations.getConceptDeclaration(targetNode);
-      Iterable<SNode> childLinkDeclarations = SequenceOperations.where(SLinkOperations.getTargets(concept, "linkDeclaration", true), new zPredicate(null, null));
-      Iterable<String> childLinksRoles = SequenceOperations.select(childLinkDeclarations, new zSelector(null, null));
+      ConceptAndSuperConceptsScope superConceptsScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)));
+      List<LinkDeclaration> linkDeclarations = superConceptsScope.getLinkDeclarationsExcludingOverridden();
+      Iterable<SNode> childLinkDeclarations = SequenceOperations.select(SequenceOperations.where(linkDeclarations, new zPredicate(null, null)), new zSelector(null, null));
+      Iterable<String> childLinksRoles = SequenceOperations.select(childLinkDeclarations, new zSelector1(null, null));
       for(SNode node : actionContext.getNodes()) {
         String childRole = node.getRole_();
         if(!(SequenceOperations.contains(childLinksRoles, childRole))) {
