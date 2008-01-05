@@ -6,7 +6,7 @@ import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 
 public abstract class AnonymToggleButton extends JToggleButton {
-  AnonymToggleButton(Icon icon, String tooltip) {
+  public AnonymToggleButton(Icon icon, String tooltip) {
     setAction(new AbstractAction("", icon) {
       public void actionPerformed(ActionEvent e) {
         if (getModel().isSelected()) {

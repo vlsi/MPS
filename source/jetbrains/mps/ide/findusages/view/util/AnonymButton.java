@@ -6,7 +6,7 @@ import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 
 public abstract class AnonymButton extends JButton {
-  AnonymButton(Icon icon, String tooltip) {
+  public AnonymButton(Icon icon, String tooltip) {
     setAction(new AbstractAction("", icon) {
       public void actionPerformed(ActionEvent e) {
         action();
