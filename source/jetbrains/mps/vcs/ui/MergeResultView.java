@@ -442,14 +442,9 @@ public class MergeResultView extends JPanel {
 
       add(new ChangeNode(conflict.getC1(), "mine"));
       add(new ChangeNode(conflict.getC2(), "theirs"));
-    }
 
-    public String getNodeIdentifier () {
-      return "Conflict" + getParent().getIndex(this);
-    }
-
-    public String toString() {
-      return "Conflict";
+      setNodeIdentifier("Conflict" + getParent().getIndex(this));
+      setText("Conflict");
     }
   }
 
@@ -459,6 +454,8 @@ public class MergeResultView extends JPanel {
     public WarningNode(Warning w) {
       super(null);
       myWarning = w;
+
+      setNodeIdentifier(myWarning.toString());
     }
 
     public void doubleClick() {
@@ -467,10 +464,6 @@ public class MergeResultView extends JPanel {
         TreeNode tn = myResultTree.findNodeWith(node);
         myResultTree.selectNode(tn);
       }
-    }
-
-    public String getNodeIdentifier() {
-      return myWarning.toString();
     }
   }
 
@@ -486,6 +479,9 @@ public class MergeResultView extends JPanel {
       super(null);
       myChange = change;
       myAdditionalText = additionalText;
+
+      setNodeIdentifier(myChange + "");
+      setText(calculateText());
     }
 
     public JPopupMenu getPopupMenu() {
@@ -531,8 +527,7 @@ public class MergeResultView extends JPanel {
     }
 
 
-    public String toString() {
-
+    public String calculateText() {
       String result;
       if (myExcludedChanges.contains(myChange)) {
         result = "<html><s>" + myChange +  "</s>";
@@ -545,10 +540,6 @@ public class MergeResultView extends JPanel {
       }
 
       return result;
-    }
-
-    public String getNodeIdentifier() {
-      return myChange + "";
     }
   }
 }

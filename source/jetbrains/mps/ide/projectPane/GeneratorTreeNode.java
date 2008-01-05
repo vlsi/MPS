@@ -26,6 +26,8 @@ class GeneratorTreeNode extends MPSTreeNode {
 
   protected void updatePresentation() {
     setIcon(Icons.GENERATOR_ICON);
+    setNodeIdentifier(calculateNodeIdenifier());
+    setText(calculateText());
   }
 
   public Generator getGenerator() {
@@ -62,14 +64,13 @@ class GeneratorTreeNode extends MPSTreeNode {
     SModelsSubtree.create(this, getOperationContext());
   }
 
-  public String toString() {
+  public String calculateText() {
     Generator generator = getGenerator();
     if (generator == null) return "null";
     return "generator -> " + generator.getTargetLanguageName();
   }
 
-  public String getNodeIdentifier() {
-    // return toString();
+  public String calculateNodeIdenifier() {
     Generator generator = getGenerator();
     if (generator == null) return "null";
     return generator.getModuleUID();

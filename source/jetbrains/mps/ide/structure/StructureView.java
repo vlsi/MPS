@@ -156,10 +156,8 @@ public class StructureView extends DefaultTool {
     public LinkTreeNode(LinkDeclaration link) {
       super(link.getNode());
       myLink = link;
-    }
 
-    public String toString() {
-      return myLink.getRole() + " : " + myLink.getSourceCardinality();
+      setText(myLink.getRole() + " : " + myLink.getSourceCardinality());
     }
   }
 

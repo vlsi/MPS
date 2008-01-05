@@ -218,6 +218,8 @@ public class CellExplorerView extends DefaultTool {
       } else {
         setIcon(Icons.CELL_DEFAULT_ICON);
       }
+
+      setNodeIdentifier(calculateNodeIdentifier());
     }
 
     public boolean isInitialized() {
@@ -298,7 +300,7 @@ public class CellExplorerView extends DefaultTool {
     }
 
 
-    public String toString() {
+    public String calculateText() {
       String result = NameUtil.shortNameFromLongName(myCell.getClass().getName());
       if (myCell instanceof EditorCell_Label) {
         String text = ((EditorCell_Label) myCell).getText();
@@ -313,7 +315,7 @@ public class CellExplorerView extends DefaultTool {
       return result;
     }
 
-    public String getNodeIdentifier() {
+    public String calculateNodeIdentifier() {
       String result = myCell.getClass().getName();
       if (myCell.getSNode() != null) result += "[" + myCell.getSNode().getId() + "]";
       if (myCell.getUserObject(EditorCell.CELL_ID) != null) result += "[" + myCell.getUserObject(EditorCell.CELL_ID).toString() + "]";
@@ -330,11 +332,9 @@ public class CellExplorerView extends DefaultTool {
       for (String action : actions) {
         add(new TextTreeNode(action));
       }
+      setNodeIdentifier("Actions");
     }
 
-    public String getNodeIdentifier() {
-      return "Actions";
-    }
   }
 
   private class KeyMapTreeNode extends MPSTreeNode {

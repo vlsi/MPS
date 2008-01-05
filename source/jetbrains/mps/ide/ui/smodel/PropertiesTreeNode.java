@@ -36,10 +36,7 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
       add(new TextTreeNode(p + " = " + myNode.getProperty(p)) {
         {
           setIcon(Icons.DEFAULT_ICON);
-        }
-
-        public String getNodeIdentifier() {
-          return p;
+          setNodeIdentifier(p);
         }
 
         public boolean isLeaf() {

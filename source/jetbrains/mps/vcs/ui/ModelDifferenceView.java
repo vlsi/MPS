@@ -250,12 +250,9 @@ public class ModelDifferenceView extends JPanel {
     public ChangeNode(Change change) {
       super(change, null);
       myChange = change;
-    }
 
-    public String getNodeIdentifier() {
-      return myChange.toString();
+      setNodeIdentifier(myChange.toString());
     }
-
 
     public void doubleClick() {
       SNodeId affectedNode = myChange.getAffectedNodeId();

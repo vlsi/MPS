@@ -11,9 +11,6 @@ public class TextMPSTreeNode extends MPSTreeNode {
   public TextMPSTreeNode(String text, IOperationContext operationContext) {
     super(operationContext);
     myText = text;
-  }
-
-  public String getNodeIdentifier() {
-    return myText;
+    setNodeIdentifier(myText);
   }
 }

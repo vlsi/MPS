@@ -206,11 +206,11 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     myFontStyle = fontStyle;
   }
 
-  public String getNodeIdentifier() {
+  public final String getNodeIdentifier() {
     return myNodeIdentifier;
   }
 
-  public void setNodeIdentifier(String newNodeIdentifier) {
+  public final void setNodeIdentifier(String newNodeIdentifier) {
     myNodeIdentifier = newNodeIdentifier;
   }
 

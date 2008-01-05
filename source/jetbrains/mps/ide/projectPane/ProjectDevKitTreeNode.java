@@ -37,6 +37,7 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   protected void updatePresentation() {
     super.updatePresentation();
     setIcon(Icons.DEVKIT_ICON);
+    setNodeIdentifier(calculateNodeIdentifier());
   }
 
   public IModule getModule() {
@@ -47,7 +48,7 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     return myDevKit;
   }
 
-  public String getNodeIdentifier() {
+  public String calculateNodeIdentifier() {
     IFile descriptorFile = myDevKit.getDescriptorFile();
     assert descriptorFile != null;
     return descriptorFile.getAbsolutePath();

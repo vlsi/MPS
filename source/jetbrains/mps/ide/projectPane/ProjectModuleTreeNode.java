@@ -55,10 +55,6 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
 
   protected abstract String getModulePresentation();
 
-  public String toString() {
-    return getModulePresentation();
-  }
-
   public boolean generationRequired() {
     for (SModelDescriptor sm : getModule().getOwnModelDescriptors()) {
       SModelTreeNode modelNode = (SModelTreeNode) findDescendantWith(sm);

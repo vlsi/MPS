@@ -157,6 +157,8 @@ public class ModuleContext extends StandaloneMPSContext {
       public ModuleTreeNode(IModule module) {
         super(module, null);
         myModule = module;
+
+        setNodeIdentifier(myModule.toString());
       }
 
       public void doubleClick() {
@@ -169,10 +171,6 @@ public class ModuleContext extends StandaloneMPSContext {
 
       public boolean isLeaf() {
         return true;
-      }
-
-      public String getNodeIdentifier() {
-        return myModule.toString();
       }
     }
   }

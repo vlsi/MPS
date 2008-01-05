@@ -103,11 +103,9 @@ public class ModuleRepositoryView extends DefaultTool {
 
       protected void updatePresentation() {
         setIcon(IconManager.getIconFor(myModule));
+        setNodeIdentifier(myModule.toString());
       }
 
-      public String getNodeIdentifier() {
-        return myModule.toString();
-      }
     }
 
     private class OwnerTreeNode extends MPSTreeNode {

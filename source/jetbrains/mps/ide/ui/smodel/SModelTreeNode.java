@@ -113,6 +113,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     } else {
       setAdditionalText(null);
     }
+
+    setNodeIdentifier(myModelDescriptor.toString());
+    setText(calculateText());
   }
 
   protected SNodeGroupTreeNode getNodeGroupFor(SNode node) {
@@ -284,11 +287,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return popupMenu;
   }
 
-  public String getNodeIdentifier() {
-    return myModelDescriptor.toString();
-  }
-
-  public String toString() {
+  public String calculateText() {
     SModelUID uid;
 
     if (getSModelDescriptor() != null) {

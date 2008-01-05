@@ -46,7 +46,8 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
   }
 
   protected void updatePresentation() {
-    setIcon(IconManager.getIconFor(myNodePointer.getNode()));  
+    setIcon(IconManager.getIconFor(myNodePointer.getNode()));
+    setNodeIdentifier(calculateNodeIdentifier());
   }
 
   protected void dispose() {
@@ -71,7 +72,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     return (T) BaseAdapter.fromNode(myNodePointer.getNode());
   }
 
-  public String getNodeIdentifier() {
+  public String calculateNodeIdentifier() {
     if (getNode() == null) return "null";
     String namespace = getNode().getModel().toString();
     return getNode().getName() + "  (" + namespace + ")";

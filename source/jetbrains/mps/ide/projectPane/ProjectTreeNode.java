@@ -21,6 +21,7 @@ class ProjectTreeNode extends MPSTreeNode {
     super(new ProjectOperationContext(project));
 
     setIcon(Icons.PROJECT_ICON);
+    setNodeIdentifier("Project");
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
@@ -33,13 +34,5 @@ class ProjectTreeNode extends MPSTreeNode {
     JPopupMenu result = new JPopupMenu();
     ActionManager.instance().getGroup(ProjectPane.PROJECT_PANE_PROJECT_ACTIONS).add(result, new ActionContext(getOperationContext()));
     return result;
-  }
-
-  public String getNodeIdentifier() {
-    return "Project";
-  }
-
-  public String toString() {
-    return "Project";
   }
 }

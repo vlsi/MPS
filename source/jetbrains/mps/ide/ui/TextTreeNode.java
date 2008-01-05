@@ -17,10 +17,6 @@ public class TextTreeNode extends MPSTreeNode {
   public TextTreeNode(String text, IOperationContext context) {
     super(context);
     setText(text);
-  }
-
-
-  public String getNodeIdentifier() {
-    return getText().replaceAll(MPSTree.TREE_PATH_SEPARATOR, " ");
+    setNodeIdentifier(text.replaceAll(MPSTree.TREE_PATH_SEPARATOR, " "));
   }
 }

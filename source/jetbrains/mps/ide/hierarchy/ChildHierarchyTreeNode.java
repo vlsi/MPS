@@ -27,6 +27,7 @@ public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTre
   public ChildHierarchyTreeNode(T declaration, IOperationContext operationContext, AbstractHierarchyTree<T> tree) {
     super(declaration, operationContext, tree);
     setColor(new Color(0x40, 0x00, 0x90));
+    setText(calculateText());
   }
 
   public boolean isInitialized() {
@@ -58,7 +59,7 @@ public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTre
     myInitialized = false;
   }
 
-  public String toString() {
+  public String calculateText() {
     String name = super.toString();
     AbstractHierarchyView<T> hierarchyView = myHierarchyTree.getHierarchyView();
     if (hierarchyView != null) {
