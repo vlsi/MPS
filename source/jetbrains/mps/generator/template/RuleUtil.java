@@ -75,35 +75,35 @@ public class RuleUtil {
 //    }
 //  }
 
-  public void applyMappingRule(MappingRule mappingRule) {
-    BaseConcept templateNode = mappingRule.getTemplateNode();
-    if (templateNode == null) {
-      myGenerator.showErrorMessage(null, null, mappingRule.getNode(), "mapping rule has no template");
-      return;
-    }
-    List<SNode> inputNodes = createInputNodeListForMappingRule(mappingRule);
-    boolean wasChanged = myGenerator.isChanged();
-    try {
-      if (inputNodes.size() > 0) myGenerator.setChanged(true);
-      for (SNode inputNode : inputNodes) {
-        createRootNodeFromTemplate(mappingRule.getName(), BaseAdapter.fromAdapter(templateNode), inputNode);
-        if (inputNode.isRoot()) {
-          myGenerator.addRootNotToCopy(inputNode);
-        }
-      }
-    } catch (DismissTopMappingRuleException e) {
-      // it's ok, just continue
-      myGenerator.setChanged(wasChanged);
-    }
-  }
+//  public void applyMappingRule(MappingRule mappingRule) {
+//    BaseConcept templateNode = mappingRule.getTemplateNode();
+//    if (templateNode == null) {
+//      myGenerator.showErrorMessage(null, null, mappingRule.getNode(), "mapping rule has no template");
+//      return;
+//    }
+//    List<SNode> inputNodes = createInputNodeListForMappingRule(mappingRule);
+//    boolean wasChanged = myGenerator.isChanged();
+//    try {
+//      if (inputNodes.size() > 0) myGenerator.setChanged(true);
+//      for (SNode inputNode : inputNodes) {
+//        createRootNodeFromTemplate(mappingRule.getName(), BaseAdapter.fromAdapter(templateNode), inputNode);
+//        if (inputNode.isRoot()) {
+//          myGenerator.addRootNotToCopy(inputNode);
+//        }
+//      }
+//    } catch (DismissTopMappingRuleException e) {
+//      // it's ok, just continue
+//      myGenerator.setChanged(wasChanged);
+//    }
+//  }
 
-  private List<SNode> createInputNodeListForMappingRule(MappingRule mappingRule) {
-    String sourceQueryAspectId = mappingRule.getSourceQueryAspectId();
-    String methodName = "templateMappingRule_SourceQuery_" + sourceQueryAspectId;
-    Object[] args = new Object[]{myGenerator};
-    List<SNode> inputNodes = (List<SNode>) QueryMethod.invoke(methodName, args, mappingRule.getModel());
-    return inputNodes;
-  }
+//  private List<SNode> createInputNodeListForMappingRule(MappingRule mappingRule) {
+//    String sourceQueryAspectId = mappingRule.getSourceQueryAspectId();
+//    String methodName = "templateMappingRule_SourceQuery_" + sourceQueryAspectId;
+//    Object[] args = new Object[]{myGenerator};
+//    List<SNode> inputNodes = (List<SNode>) QueryMethod.invoke(methodName, args, mappingRule.getModel());
+//    return inputNodes;
+//  }
 
   public void applyRoot_MappingRule(Root_MappingRule rule) {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();

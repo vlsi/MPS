@@ -91,15 +91,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     // create all roots
     if (isPrimary) {
-//      for (CreateRootRule createRootRule : ruleManager.getCreateRootRules()) {
-//        ruleUtil.applyRootRule(createRootRule);
-//      }
       ruleManager.applyCreateRootRules();
     }
-    for (MappingRule mappingRule : ruleManager.getMappingRules()) {
-      checkMonitorCanceled();
-      myRuleUtil.applyMappingRule(mappingRule);
-    }
+    ruleManager.applyMappingRules();
+
     for (Root_MappingRule rootMappingRule : ruleManager.getRoot_MappingRules()) {
       checkMonitorCanceled();
       myRuleUtil.applyRoot_MappingRule(rootMappingRule);

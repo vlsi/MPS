@@ -82,10 +82,10 @@ public class RuleManager {
       }
 
       // conditional root rules
-        Iterator<CreateRootRule> createRootRules = mappingConfig.createRootRules();
-        while (createRootRules.hasNext()) {
-          myCreateRootRules.add(createRootRules.next());
-        }
+      Iterator<CreateRootRule> createRootRules = mappingConfig.createRootRules();
+      while (createRootRules.hasNext()) {
+        myCreateRootRules.add(createRootRules.next());
+      }
 
       // mapping rules (old)
       Iterator<MappingRule> mappingRules = mappingConfig.mappingRules();
@@ -125,18 +125,18 @@ public class RuleManager {
     return myOutputRootConcepts;
   }
 
-  public List<CreateRootRule> getCreateRootRules() {
-    return myCreateRootRules;
-  }
-
   public void applyCreateRootRules() {
     for (CreateRootRule createRootRule : myCreateRootRules) {
+      myGenerator.checkMonitorCanceled();
       GeneratorUtil.applyCreateRootRule(createRootRule, myGenerator);
     }
   }
 
-  public List<MappingRule> getMappingRules() {
-    return myMappingRules;
+  public void applyMappingRules() {
+    for (MappingRule mappingRule : myMappingRules) {
+      myGenerator.checkMonitorCanceled();
+      GeneratorUtil.applyMappingRule(mappingRule, myGenerator);
+    }
   }
 
   public List<Root_MappingRule> getRoot_MappingRules() {
