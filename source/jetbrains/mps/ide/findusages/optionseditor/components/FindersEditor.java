@@ -68,11 +68,13 @@ public class FindersEditor {
               }
             } else {
               myOptions.remove(finder);
+              FindersOptions deletedOptions = new FindersOptions();
               for (BaseFinder f : myDefaultOptions) {
                 if (f.getClass().getName().equals(finder.getClass().getName())) {
-                  myDefaultOptions.remove(f);
+                  deletedOptions.add(f);
                 }
               }
+              myDefaultOptions.removeAll(deletedOptions);
             }
           }
         }
