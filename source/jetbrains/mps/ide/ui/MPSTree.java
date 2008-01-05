@@ -472,6 +472,22 @@ public abstract class MPSTree extends JTree {
     return (MPSTreeNode) getModel().getRoot();
   }
 
+  public MPSTreeNode getCurrentNode() {
+    javax.swing.tree.TreePath path = getLeadSelectionPath();
+    if (path == null) {
+      return null;
+    }
+    Object obj = path.getLastPathComponent();
+    if (!(obj instanceof TreeNode)) {
+      return null;
+    }
+    return (MPSTreeNode) obj;
+  }
+
+  public void setCurrentNode(MPSTreeNode node) {
+    setSelectionPath(new TreePath(node.getPath()));
+  }
+
   private MPSTreeNode findNodeWith(MPSTreeNode root, Object userObject) {
     if (root.getUserObject() == userObject) return root;
     if (!(root.isInitialized() || root.hasInfiniteSubtree())) root.init();
@@ -643,7 +659,7 @@ public abstract class MPSTree extends JTree {
         MPSTreeNode treeNode = (MPSTreeNode) value;
         icon = treeNode.getIcon(expanded);
         text = treeNode.getText();
-        additionalText =  treeNode.getAdditionalText();
+        additionalText = treeNode.getAdditionalText();
 
         Font newFont = tree.getFont().deriveFont(treeNode.getFontStyle());
         myMainTextLabel.setFont(newFont);
@@ -727,7 +743,7 @@ public abstract class MPSTree extends JTree {
         MPSTreeNode node = (MPSTreeNode) value;
         setIcon(node.getIcon(expanded));
         setForeground(node.getColor());
-        setFont(getFont().deriveFont(node.getFontStyle()));        
+        setFont(getFont().deriveFont(node.getFontStyle()));
       }
       return this;
     }

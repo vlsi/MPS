@@ -242,6 +242,16 @@ public abstract class UsageView implements IExternalizableComponent {
           myTreeWrapper.expandResults();
         }
       });
+      add(new AnonymButton(Icons.PREVIOUS_ICON, "Previous occurence") {
+        public void action() {
+          myTreeWrapper.prevOccurence();
+        }
+      });
+      add(new AnonymButton(Icons.NEXT_ICON, "Next occurence") {
+        public void action() {
+          myTreeWrapper.nextOccurence();
+        }
+      });
       add(new AnonymButton(Icons.CLOSE_ICON, "Close") {
         public void action() {
           close();

@@ -8,8 +8,10 @@ public class Icons {
   public static final Icon REGENERATE_ICON = new ImageIcon(Icons.class.getResource("generate.png"));
   public static final Icon EXPAND_ICON = new ImageIcon(Icons.class.getResource("expandall.png"));
   public static final Icon COLLAPSE_ICON = new ImageIcon(Icons.class.getResource("collapseall.png"));
+  public static final Icon PREVIOUS_ICON = new ImageIcon(Icons.class.getResource("prev.png"));
+  public static final Icon NEXT_ICON = new ImageIcon(Icons.class.getResource("next.png"));
   public static final Icon CLOSE_ICON = new ImageIcon(Icons.class.getResource("close.png"));
-  
+
   public static final Icon ROOT_ICON_OLD = new ImageIcon(Icons.class.getResource("root.png"));
   public static final Icon PATH_ICON_OLD = new ImageIcon(Icons.class.getResource("path.png"));
   public static final Icon NUM_ICON_OLD = new ImageIcon(Icons.class.getResource("usagesNum.png"));
