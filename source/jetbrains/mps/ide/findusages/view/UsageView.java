@@ -11,6 +11,7 @@ import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
+import jetbrains.mps.ide.findusages.view.util.AnonymButton;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
@@ -23,7 +24,6 @@ import org.jdom.Element;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -208,21 +208,6 @@ public abstract class UsageView implements IExternalizableComponent {
   }
 
   public abstract void close();
-
-  private abstract class AnonymButton extends JButton {
-    AnonymButton(Icon icon, String tooltip) {
-      setAction(new AbstractAction("", icon) {
-        public void actionPerformed(ActionEvent e) {
-          action();
-        }
-      });
-      if (tooltip != null) {
-        setToolTipText(tooltip);
-      }
-    }
-
-    public abstract void action();
-  }
 
   private class ActionsToolbar extends MPSToolBar {
     private ActionsToolbar(boolean isRerunnable) {
