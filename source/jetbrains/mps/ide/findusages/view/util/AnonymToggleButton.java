@@ -5,7 +5,7 @@ import javax.swing.Icon;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 
-abstract class AnonymToggleButton extends JToggleButton {
+public abstract class AnonymToggleButton extends JToggleButton {
   AnonymToggleButton(Icon icon, String tooltip) {
     setAction(new AbstractAction("", icon) {
       public void actionPerformed(ActionEvent e) {

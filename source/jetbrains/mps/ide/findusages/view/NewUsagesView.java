@@ -15,6 +15,7 @@ import jetbrains.mps.ide.findusages.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.optionseditor.options.ViewOptions;
+import jetbrains.mps.ide.findusages.view.util.HintDialog;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
