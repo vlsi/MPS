@@ -60,7 +60,15 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
     if (myNode != null) {
       setIcon(IconManager.getIconFor(myNode));
-    } 
+    }
+
+    if (getSNode() == null) {
+      setNodeIdentifier("null");
+    } else {
+      setNodeIdentifier(getSNode().getId());
+    }
+
+    setText(caclulateNodeTextPresentation());
   }
 
   public SModelTreeNode getSModelModelTreeNode() {
@@ -116,11 +124,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     return myNode;
   }
 
-  public String getNodeIdentifier() {
-    if (getSNode() == null) return "null";
-    return getSNode().getId();
-  }
-
   protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;
@@ -161,7 +164,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     projectFrame.openNode(myNode, getOperationContext());
   }
 
-  public String toString() {
+  private String caclulateNodeTextPresentation() {
     StringBuffer output = new StringBuffer();
 
     if (myRole != null) {

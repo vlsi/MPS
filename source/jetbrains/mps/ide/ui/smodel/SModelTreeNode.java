@@ -559,6 +559,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           propsNode.update();
           propsNode.init();
         }
+
+        treeNode.updatePresentation();
+        treeNode.updateNodePresentationInTree();
       }
     }
 
