@@ -35,9 +35,7 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import org.jetbrains.annotations.NotNull;
 import org.eclipse.jdt.internal.core.util.WeakHashSetOfCharArray.HashableWeakReference;
 
@@ -1433,7 +1431,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void scrollToCell(EditorCell cell) {
-    EditorCell largestBigCell = findLargestBigCellFittingOnTheScreen(cell);
+    EditorCell largestHorizontalBigCell = findLargestBigCellFittingOnTheScreenHorizontallyAndVertically(cell);
+    EditorCell largestVerticalBigCell = findLargestBigCellFittingOnTheScreenVertically(cell);
 
     int x0;
     int width;
@@ -1450,18 +1449,23 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       width = cell.getWidth();
     }
 
+    if (largestHorizontalBigCell != cell) {
+      x0 = largestHorizontalBigCell.getX();
+      width = largestHorizontalBigCell.getWidth();
+    }
+
     int viewportWidth = myScrollPane.getViewport().getWidth();
 
     int x1 = Math.max(0, x0 + width - viewportWidth);
     scrollRectToVisible(
             expandRectangleOneLine(
                     new Rectangle(
-                            x1, largestBigCell.getY(),
-                            x0 - x1 + width, largestBigCell.getHeight()
+                            x1, largestVerticalBigCell.getY(),
+                            x0 - x1 + width, largestVerticalBigCell.getHeight()
                     )));
   }
 
-  private EditorCell findLargestBigCellFittingOnTheScreen(EditorCell cell) {
+  private EditorCell findLargestBigCellFittingOnTheScreenVertically(EditorCell cell) {
     int thresholdHeight = myScrollPane.getViewport().getHeight();
 
     EditorCell result = cell;
@@ -1479,6 +1483,30 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       if (current.getHeight() > thresholdHeight) {
+        return result;
+      }
+    }
+  }
+
+  private EditorCell findLargestBigCellFittingOnTheScreenHorizontallyAndVertically(EditorCell cell) {
+    int thresholdWidth = myScrollPane.getViewport().getWidth();
+    int thresholdHeight = myScrollPane.getViewport().getHeight();
+
+    EditorCell result = cell;
+    EditorCell current = cell;
+
+    while (true) {
+      if (current.isBigCell()) {
+        result = current;
+      }
+
+      current = current.getParent();
+
+      if (current == null) {
+        return result;
+      }
+
+      if (current.getWidth() > thresholdWidth || current.getHeight() > thresholdHeight) {
         return result;
       }
     }
