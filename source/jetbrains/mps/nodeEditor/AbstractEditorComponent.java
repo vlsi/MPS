@@ -1434,9 +1434,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     EditorCell largestHorizontalBigCell = findLargestBigCellFittingOnTheScreenHorizontallyAndVertically(cell);
     EditorCell largestVerticalBigCell = findLargestBigCellFittingOnTheScreenVertically(cell);
 
+    int viewportWidth = myScrollPane.getViewport().getWidth();
+
     int x0;
     int width;
-    if (cell instanceof EditorCell_Label) {
+    if (cell instanceof EditorCell_Label && cell.getWidth() > viewportWidth) {
       EditorCell_Label cellLabel = (EditorCell_Label) cell;
 
       int caretX = cellLabel.getCaretX();
@@ -1445,16 +1447,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       x0 = caretX - 2 * charWidth;
       width = 4 * charWidth;
     } else {
+
+
+//      EditorCell bigCell = cell.get
+
       x0 = cell.getX();
       width = cell.getWidth();
     }
 
-    if (largestHorizontalBigCell != cell) {
-      x0 = largestHorizontalBigCell.getX();
-      width = largestHorizontalBigCell.getWidth();
-    }
-
-    int viewportWidth = myScrollPane.getViewport().getWidth();
+//    if (largestHorizontalBigCell != cell) {
+//      x0 = largestHorizontalBigCell.getX();
+//      width = largestHorizontalBigCell.getWidth();
+//    }
 
     int x1 = Math.max(0, x0 + width - viewportWidth);
     scrollRectToVisible(
