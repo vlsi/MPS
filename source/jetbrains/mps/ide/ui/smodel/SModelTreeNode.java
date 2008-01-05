@@ -107,6 +107,12 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     } else {
       setIcon(Icons.MODEL_ICON);
     }
+
+    if (myGenerationRequired) {
+      setAdditionalText("generation required");
+    } else {
+      setAdditionalText(null);
+    }
   }
 
   protected SNodeGroupTreeNode getNodeGroupFor(SNode node) {
@@ -305,13 +311,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return result;
   }
 
-  public String getAdditionalText() {
-    if (myGenerationRequired) {
-      return "generation required";
-    }
-    return null;
-  }
-
   public boolean generationRequired() {
     return myGenerationRequired;
   }
@@ -326,9 +325,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myGenerationRequired = FileGenerationUtil.generationRequired(getSModelDescriptor());
 
     if (myGenerationRequired && getTree() != null) {
-      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-      treeModel.nodeChanged(this);
+      updateAncestorsPresentationInTree();
     }
+  }
+
+  public void updateNodePresentationInTree() {
+    updatePresentation();
+    super.updateNodePresentationInTree();
   }
 
   ModelCheckResult getModelCheckResult() {

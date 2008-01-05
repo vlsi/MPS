@@ -48,6 +48,11 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
     setText(getModulePresentation());
   }
 
+  public void updateNodePresentationInTree() {
+    updatePresentation();
+    super.updateNodePresentationInTree();
+  }
+
   protected abstract String getModulePresentation();
 
   public String toString() {

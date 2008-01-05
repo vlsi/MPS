@@ -214,7 +214,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     myNodeIdentifier = newNodeIdentifier;
   }
 
-  public String getAdditionalText() {
+  public final String getAdditionalText() {
     return myAdditionalText;
   }
 
