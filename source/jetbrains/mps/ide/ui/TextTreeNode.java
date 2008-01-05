@@ -10,26 +10,17 @@ import jetbrains.mps.smodel.IOperationContext;
  * To change this template use File | Settings | File Templates.
  */
 public class TextTreeNode extends MPSTreeNode {
-  private String myText;
-
   public TextTreeNode(String text) {
     this(text, null);
   }
 
   public TextTreeNode(String text, IOperationContext context) {
     super(context);
-    myText = text;
+    setText(text);
   }
 
-  protected void setText(String newText) {
-    myText = newText;
-  }
 
   public String getNodeIdentifier() {
-    return myText.replaceAll(MPSTree.TREE_PATH_SEPARATOR, " ");
-  }
-
-  public String toString() {
-    return myText;
+    return getText().replaceAll(MPSTree.TREE_PATH_SEPARATOR, " ");
   }
 }

@@ -31,7 +31,6 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreePath;
 import java.awt.Color;
 import java.awt.Frame;
-import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
@@ -480,7 +479,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           updateNodesWithChangedPackages(nodesWithChangedPackages);
 
           updateGenerationRequiredStatus();
-          updateAncestorsText();
+          updateAncestorsPresentationInTree();
         }
       }, false);
     }

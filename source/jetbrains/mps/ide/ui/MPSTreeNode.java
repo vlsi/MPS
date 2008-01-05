@@ -2,9 +2,6 @@ package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.SystemInfo;
-import jetbrains.mps.ide.actions.model.CreateRootNodeGroup;
-import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.action.ActionGroup;
 import jetbrains.mps.smodel.IOperationContext;
 
 import javax.swing.*;
@@ -27,6 +24,14 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private IOperationContext myOperationContext;
   private MPSTree myTree;
 
+  private Icon myCollapsedIcon = Icons.CLOSED_FOLDER;
+  private Icon myExpandedIcon = Icons.OPENED_FOLDER;
+  private String myNodeIdentifier;
+  private String myText;
+  private String myAdditionalText = null;
+  private Color myColor = Color.BLACK;
+  private int myFontStyle = Font.PLAIN;
+
   public MPSTreeNode(IOperationContext operationContext) {
     myOperationContext = operationContext;
   }
@@ -43,8 +48,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   public boolean isAutoExpandable() {
     return true;
   }
-
-  public abstract String getNodeIdentifier();
 
   public Iterator<MPSTreeNode> iterator() {
     List<MPSTreeNode> result = new ArrayList<MPSTreeNode>();
@@ -159,42 +162,82 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return null;
   }
 
-  public Icon getIcon(boolean expanded) {
-    if (expanded) {
-      return Icons.OPENED_FOLDER;
-    } else {
-      return Icons.CLOSED_FOLDER;
-    }
-  }
-
-  public Color getColor() {
-    return Color.BLACK;
-  }
-
-  public int getFontStyle() {
-    return Font.PLAIN;
-  }
-
-  public String toString() {
-    return getNodeIdentifier();
-  }
-
-  public String getAdditionalText() {
-    return null;
-  }
-
   public int getToggleClickCount() {
     return 2;
   }
 
-  public void updateText() {
+  public Icon getIcon(boolean expanded) {
+    if (expanded) {
+      return myExpandedIcon;
+    } else {
+      return myCollapsedIcon;
+    }
+  }
+
+  public void setIcon(Icon newIcon, boolean expanded) {
+    if (expanded) {
+      myExpandedIcon = newIcon;
+    } else {
+      myCollapsedIcon = newIcon;
+    }
+  }
+
+  public Color getColor() {
+    return myColor;
+  }
+
+  public void setColor(Color color) {
+    myColor = color;
+  }
+
+  public int getFontStyle() {
+    return myFontStyle;
+  }
+
+  public void setFontStyle(int fontStyle) {
+    myFontStyle = fontStyle;
+  }
+
+  public String getNodeIdentifier() {
+    return myNodeIdentifier;
+  }
+
+  public void setNodeIdentifier(String newNodeIdentifier) {
+    myNodeIdentifier = newNodeIdentifier;
+  }
+
+  public String getAdditionalText() {
+    return myAdditionalText;
+  }
+
+  public void setAdditionalText(String newAdditionalText) {
+    myAdditionalText = newAdditionalText;
+  }
+
+  public String getText() {
+    if (myText == null) {
+      return getNodeIdentifier();
+    } else {
+      return myText;
+    }
+  }
+
+  public void setText(String text) {
+    myText = text;
+  }
+
+  public String toString() {
+    return getText();
+  }
+
+  public void updateNodePresentationInTree() {
     ((DefaultTreeModel) getTree().getModel()).nodeChanged(this);
   }
 
-  public void updateAncestorsText() {
-    updateText();
+  public void updateAncestorsPresentationInTree() {
+    updateNodePresentationInTree();
     if (getParent() != null) {
-      ((MPSTreeNode) getParent()).updateAncestorsText();
+      ((MPSTreeNode) getParent()).updateAncestorsPresentationInTree();
     }
   }
 }
