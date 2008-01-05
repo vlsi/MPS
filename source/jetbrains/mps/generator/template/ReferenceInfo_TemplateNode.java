@@ -25,7 +25,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     return myTemplateTargetNode;
   }
 
-  public SNode doResolve_Straightforward(TemplateModelGenerator_New generator) {
+  public SNode doResolve_Straightforward(TemplateGenerator generator) {
     SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
     if (outputTargetNode != null) {
       return outputTargetNode;
@@ -62,7 +62,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     return null;
   }
 
-  public SNode doResolve_Tricky(TemplateModelGenerator_New generator) {
+  public SNode doResolve_Tricky(TemplateGenerator generator) {
     // find least common parent for the template reference and referent nodes
     SNode leastCommonParent_template = myTemplateSourceNode.findLeastCommonParent(myTemplateTargetNode);
     if (leastCommonParent_template != null) {
@@ -84,7 +84,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
     return outputTargetNode;
   }
 
-  private static SNode findOutputSubnodeByTemplateNode(TemplateModelGenerator_New generator, SNode outputNode, SNode templateNode) {
+  private static SNode findOutputSubnodeByTemplateNode(TemplateGenerator generator, SNode outputNode, SNode templateNode) {
     if (generator.findTemplateNodeByOutputNode(outputNode) == templateNode) return outputNode;
     List<SNode> children = outputNode.getChildren();
     for (SNode childNode : children) {

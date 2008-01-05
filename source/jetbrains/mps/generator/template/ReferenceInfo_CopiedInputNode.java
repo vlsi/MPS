@@ -33,7 +33,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     return myInputTargetNode;
   }
 
-  public SNode doResolve_Straightforward(TemplateModelGenerator_New generator) {
+  public SNode doResolve_Straightforward(TemplateGenerator generator) {
     // output target node might has been copied (reduced) from the input target node
     SNode outputTargetNode = generator.findCopiedOutputNodeForInputNode(myInputTargetNode);
     if (outputTargetNode != null) {
@@ -64,7 +64,7 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
     return null;
   }
 
-  public SNode doResolve_Tricky(TemplateModelGenerator_New generator) {
+  public SNode doResolve_Tricky(TemplateGenerator generator) {
     return null;
   }
 

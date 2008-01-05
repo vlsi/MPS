@@ -29,7 +29,7 @@ import java.util.List;
 public class RuleUtil {
   private static final Logger LOG = Logger.getLogger(RuleUtil.class);
   private RuleManager myRuleManager;
-  private TemplateModelGenerator_New myGenerator;
+  private TemplateGenerator myGenerator;
   private SModel myOutputModel;
 
   public RuleUtil(RuleManager ruleManager) {

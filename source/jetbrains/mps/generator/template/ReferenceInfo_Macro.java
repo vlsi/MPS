@@ -28,7 +28,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return myTemplateReferenceNode.getReferent(role);
   }
 
-  public SNode doResolve_Straightforward(TemplateModelGenerator_New generator) {
+  public SNode doResolve_Straightforward(TemplateGenerator generator) {
     //todo it should be removed after going to new generator
     generator.setCurrentBuilder(getOutputSourceNode());
     SNode outputTargetNode = expandReferenceMacro(generator);
@@ -36,7 +36,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
     return outputTargetNode;
   }
 
-  public SNode doResolve_Tricky(TemplateModelGenerator_New generator) {
+  public SNode doResolve_Tricky(TemplateGenerator generator) {
     // nothing
     return null;
   }

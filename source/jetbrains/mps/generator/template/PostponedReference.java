@@ -12,11 +12,11 @@ import org.jetbrains.annotations.NotNull;
  */
 public class PostponedReference extends SReference {
   private ReferenceInfo myReferenceInfo;
-  private TemplateModelGenerator_New myGenerator;
+  private TemplateGenerator myGenerator;
   private SReference myReplacementReference;
 
 
-  public PostponedReference(ReferenceInfo referenceInfo, TemplateModelGenerator_New generator) {
+  public PostponedReference(ReferenceInfo referenceInfo, TemplateGenerator generator) {
     super(referenceInfo.getReferenceRole(), referenceInfo.getOutputSourceNode());
     myReferenceInfo = referenceInfo;
     myGenerator = generator;

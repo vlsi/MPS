@@ -41,9 +41,9 @@ public abstract class ReferenceInfo {
   /**
    * test postponed references
    */
-  public abstract SNode doResolve_Straightforward(TemplateModelGenerator_New generator);
+  public abstract SNode doResolve_Straightforward(TemplateGenerator generator);
 
-  public abstract SNode doResolve_Tricky(TemplateModelGenerator_New generator);
+  public abstract SNode doResolve_Tricky(TemplateGenerator generator);
 
   public abstract String getResolveInfoForDynamicResolve();
 

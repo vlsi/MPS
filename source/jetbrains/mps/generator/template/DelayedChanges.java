@@ -17,7 +17,7 @@ public class DelayedChanges {
 
   private ArrayList<ExecuteMapSrcNodeMacroChange> myExecuteMapSrcNodeMacroChanges = new ArrayList<ExecuteMapSrcNodeMacroChange>();
 
-  public void addExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, TemplateModelGenerator_New generator) {
+  public void addExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, TemplateGenerator generator) {
     myExecuteMapSrcNodeMacroChanges.add(new ExecuteMapSrcNodeMacroChange(mapSrcMacro, childToReplace, inputNode, generator));
   }
 
@@ -32,9 +32,9 @@ public class DelayedChanges {
     private NodeMacro myMapSrcMacro;
     protected SNode myChildToReplace;
     private SNode myInputNode;
-    private TemplateModelGenerator_New myGenerator;
+    private TemplateGenerator myGenerator;
 
-    public ExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, TemplateModelGenerator_New generator) {
+    public ExecuteMapSrcNodeMacroChange(NodeMacro mapSrcMacro, SNode childToReplace, SNode inputNode, TemplateGenerator generator) {
       myMapSrcMacro = mapSrcMacro;
       myChildToReplace = childToReplace;
       myInputNode = inputNode;

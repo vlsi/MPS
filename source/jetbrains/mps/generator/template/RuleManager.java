@@ -22,17 +22,17 @@ public class RuleManager {
   private List<WeavingRule> myWeavingRules;
   private List<Weaving_MappingRule> myWeaving_MappingRules;
   private List<ConceptDeclaration> myAbandonedRootConcepts;
-  protected TemplateModelGenerator_New myGenerator;
+  protected TemplateGenerator myGenerator;
 
   private ReductionRuleManager myReductionRuleManager;
 
-  public RuleManager(TemplateModelGenerator_New generator) {
+  public RuleManager(TemplateGenerator generator) {
     myGenerator = generator;
     myReductionRuleManager = new ReductionRuleManager(generator);
     initialize();
   }
 
-  public TemplateModelGenerator_New getGenerator() {
+  public TemplateGenerator getGenerator() {
     return myGenerator;
   }
 
