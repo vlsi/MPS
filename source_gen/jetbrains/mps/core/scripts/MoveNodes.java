@@ -57,7 +57,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1199554771600#1198076144993";
+    return "jetbrains.mps.core.scripts@1_0_1199555333310#1198076144993";
   }
 
   public String getKeyStroke() {
@@ -116,14 +116,21 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       List<SNode> nodes = (List<SNode>)actionContext.getNodes();
+      SModel targetModel = null;
       if(((Object)refactoringContext.getParameter("target")) instanceof SModel) {
         refactoringContext.moveNodesToModel(nodes, (SModel)((Object)refactoringContext.getParameter("target")));
+        targetModel = (SModel)((Object)refactoringContext.getParameter("target"));
       }
       if(((Object)refactoringContext.getParameter("target")) instanceof SNode) {
         refactoringContext.moveNodesToNode(nodes, ListOperations.getElement(nodes, 0).getRole_(), (SNode)((Object)refactoringContext.getParameter("target")));
+        targetModel = ((SNode)((Object)refactoringContext.getParameter("target"))).getModel();
       }
-      IOperationContext operationContext = actionContext.getOperationContext();
-      NavigationActionProcessor.navigateToNode(SequenceOperations.getFirst(nodes), operationContext, true);
+      if(targetModel != null) {
+        IOperationContext operationContext = targetModel.getModelDescriptor().getOperationContext();
+        if(operationContext != null) {
+          NavigationActionProcessor.navigateToNode(SequenceOperations.getFirst(nodes), operationContext, true);
+        }
+      }
     }
   }
 
