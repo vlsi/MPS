@@ -231,8 +231,9 @@ public class EditorManager {
       nodeCell = new EditorCell_Error(context, node, "!exception!:" + node.getDebugText());
     } finally {
       if (nodeCell != null) {        
-        nodeCell.putUserObject(BIG_CELL_CONTEXT, refContext.contextWihtNoAttributes());
-        abstractEditorComponent.registerAsBigCell(nodeCell, refContext.contextWihtNoAttributes() , this);
+        ReferencedNodeContext refContextWithoutAttributes = refContext.contextWihtNoAttributes();
+        nodeCell.putUserObject(BIG_CELL_CONTEXT, refContextWithoutAttributes);
+        abstractEditorComponent.registerAsBigCell(nodeCell, refContextWithoutAttributes, this);
         nodeAccessListener.recordingFinishedForCell(nodeCell);
       }
       NodeReadAccessCaster.removeCellBuildNodeAccessListener();
