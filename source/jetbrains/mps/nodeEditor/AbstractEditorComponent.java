@@ -1431,7 +1431,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void scrollToCell(EditorCell cell) {
-    EditorCell largestHorizontalBigCell = findLargestBigCellFittingOnTheScreenHorizontallyAndVertically(cell);
     EditorCell largestVerticalBigCell = findLargestBigCellFittingOnTheScreenVertically(cell);
 
     int viewportWidth = myScrollPane.getViewport().getWidth();
@@ -1447,18 +1446,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       x0 = caretX - 2 * charWidth;
       width = 4 * charWidth;
     } else {
-
-
-//      EditorCell bigCell = cell.get
-
-      x0 = cell.getX();
-      width = cell.getWidth();
+      EditorCell bigCell = cell.getContainingBigCell();      
+      if (bigCell != null && bigCell.getWidth() < viewportWidth) {
+        x0 = bigCell.getX();
+        width = bigCell.getWidth();
+      } else {
+        x0 = cell.getX();
+        width = cell.getWidth();
+      }
     }
-
-//    if (largestHorizontalBigCell != cell) {
-//      x0 = largestHorizontalBigCell.getX();
-//      width = largestHorizontalBigCell.getWidth();
-//    }
 
     int x1 = Math.max(0, x0 + width - viewportWidth);
     scrollRectToVisible(
@@ -1487,30 +1483,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
 
       if (current.getHeight() > thresholdHeight) {
-        return result;
-      }
-    }
-  }
-
-  private EditorCell findLargestBigCellFittingOnTheScreenHorizontallyAndVertically(EditorCell cell) {
-    int thresholdWidth = myScrollPane.getViewport().getWidth();
-    int thresholdHeight = myScrollPane.getViewport().getHeight();
-
-    EditorCell result = cell;
-    EditorCell current = cell;
-
-    while (true) {
-      if (current.isBigCell()) {
-        result = current;
-      }
-
-      current = current.getParent();
-
-      if (current == null) {
-        return result;
-      }
-
-      if (current.getWidth() > thresholdWidth || current.getHeight() > thresholdHeight) {
         return result;
       }
     }
