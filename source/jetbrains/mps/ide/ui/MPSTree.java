@@ -642,6 +642,7 @@ public abstract class MPSTree extends JTree {
       if (value instanceof MPSTreeNode) {
         MPSTreeNode treeNode = (MPSTreeNode) value;
         icon = treeNode.getIcon(expanded);
+        text = treeNode.getText();
         additionalText =  treeNode.getAdditionalText();
 
         Font newFont = tree.getFont().deriveFont(treeNode.getFontStyle());
