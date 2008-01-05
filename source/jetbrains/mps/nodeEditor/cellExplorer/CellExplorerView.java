@@ -175,14 +175,14 @@ public class CellExplorerView extends DefaultTool {
       IEditor editor = getEditorsPane().getCurrentEditor();
       if (editor == null || editor.getCurrentEditorComponent() == null) {
         return new TextTreeNode("No editor selected") {
-          public Icon getIcon(boolean expanded) {
-            return Icons.CELL_EXPLORER_ICON;
+          {
+            setIcon(Icons.CELL_EXPLORER_ICON);
           }
         };
       } else {
         TextTreeNode root = new TextTreeNode("CELLS") {
-          public Icon getIcon(boolean expanded) {
-            return Icons.CELL_EXPLORER_ICON;
+          {
+            setIcon(Icons.CELL_EXPLORER_ICON);
           }
         };
         root.add(new CellTreeNode(editor.getRootCell()));
@@ -198,6 +198,26 @@ public class CellExplorerView extends DefaultTool {
     public CellTreeNode(EditorCell cell) {
       super(cell, null);
       myCell = cell;
+
+      updatePresentation();
+    }
+
+    protected void updatePresentation() {
+      if (myCell.isErrorState()) {
+        setIcon(Icons.CELL_ERROR_ICON);
+      } else if (myCell instanceof EditorCell_Collection) {
+        setIcon(Icons.CELLS_ICON);
+      } else if (myCell instanceof EditorCell_Constant) {
+        setIcon(Icons.CELL_CONSTANT_ICON);
+      } else if (myCell instanceof EditorCell_Error) {
+        setIcon(Icons.CELL_ERROR_ICON);
+      } else if (myCell instanceof EditorCell_Component) {
+        setIcon(Icons.CELL_COMPONENT_ICON);
+      } else if (myCell instanceof EditorCell_Property) {
+        setIcon(Icons.CELL_PROPERTY_ICON);
+      } else {
+        setIcon(Icons.CELL_DEFAULT_ICON);
+      }
     }
 
     public boolean isInitialized() {
@@ -244,8 +264,8 @@ public class CellExplorerView extends DefaultTool {
         String name = node.getName();
         name = name != null ? name : "<no name>";
         add(new TextTreeNode("<html><b>Node</b> " + TreeTextUtil.toHtml(name) + " (" + TreeTextUtil.toHtml(node.getConceptShortName()) + ") [" + node.getId() + "]") {
-          public Icon getIcon(boolean expanded) {
-            return IconManager.getIconFor(node);
+          {
+            setIcon(IconManager.getIconFor(node));
           }
 
           public void doubleClick() {
@@ -275,17 +295,6 @@ public class CellExplorerView extends DefaultTool {
         }
         myInitialized = true;
       }
-    }
-
-
-    public Icon getIcon(boolean expanded) {
-      if (myCell.isErrorState()) return Icons.CELL_ERROR_ICON;
-      if (myCell instanceof EditorCell_Collection) return Icons.CELLS_ICON;
-      if (myCell instanceof EditorCell_Constant) return Icons.CELL_CONSTANT_ICON;
-      if (myCell instanceof EditorCell_Error) return Icons.CELL_ERROR_ICON;
-      if (myCell instanceof EditorCell_Component) return Icons.CELL_COMPONENT_ICON;
-      if (myCell instanceof EditorCell_Property) return Icons.CELL_PROPERTY_ICON;
-      return Icons.CELL_DEFAULT_ICON;
     }
 
 
@@ -351,23 +360,18 @@ public class CellExplorerView extends DefaultTool {
         }
         
         add(new TextTreeNode(text) {
-          public Icon getIcon(boolean expanded) {
-            return Icons.CELL_ACTION_KEY_ICON;
+          {
+            setIcon(Icons.CELL_ACTION_KEY_ICON);
           }
 
           public boolean isLeaf() {
             return true;
           }
         });
+
+        setIcon(Icons.CELL_KEY_MAP_ICON);
+        setNodeIdentifier("Keymap");
       }
-    }
-
-    public Icon getIcon(boolean expanded) {
-      return Icons.CELL_KEY_MAP_ICON;
-    }
-
-    public String getNodeIdentifier() {
-      return "Keymap";
     }
   }
 }

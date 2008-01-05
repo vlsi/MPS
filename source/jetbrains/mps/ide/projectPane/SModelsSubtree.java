@@ -67,10 +67,8 @@ public class SModelsSubtree {
 
     public ModelsGroupTreeNode(String text, IOperationContext context) {
       super(text, context);
-    }
 
-    public Icon getIcon(boolean expanded) {
-      return Icons.PROJECT_MODELS_ICON;
+      setIcon(Icons.PROJECT_MODELS_ICON);
     }
 
     public void addAll(List<SModelDescriptor> modelDescriptor) {

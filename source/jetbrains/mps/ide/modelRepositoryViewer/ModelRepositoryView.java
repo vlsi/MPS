@@ -68,8 +68,8 @@ public class ModelRepositoryView extends DefaultTool {
       CommandProcessor.instance().executeLightweightCommand(new Runnable() {
         public void run() {
           root[0] = new TextTreeNode("Loaded Models") {
-            public Icon getIcon(boolean expanded) {
-              return Icons.PROJECT_MODELS_ICON;
+            {
+              setIcon(Icons.PROJECT_MODELS_ICON);
             }
 
             public JPopupMenu getPopupMenu() {
@@ -124,30 +124,27 @@ public class ModelRepositoryView extends DefaultTool {
       public OwnerTreeNode(ModelOwner owner) {
         super(null);
         myOwner = owner;
+
+        updatePresentation();
       }
 
-      public Icon getIcon(boolean expanded) {
+      protected void updatePresentation() {
         if (myOwner instanceof Generator) {
-          return Icons.GENERATOR_ICON;
-        }
-        if (myOwner instanceof Language) {
-          return Icons.LANGUAGE_ICON;
-        }
-        if (myOwner instanceof MPSProject) {
-          return Icons.PROJECT_ICON;
-        }
-        if (myOwner instanceof Solution) {
-          return Icons.SOLUTION_ICON;
-        }
-        return Icons.DEFAULT_ICON;
+          setIcon(Icons.GENERATOR_ICON);
+        } else if (myOwner instanceof Language) {
+          setIcon(Icons.LANGUAGE_ICON);
+        } else if (myOwner instanceof MPSProject) {
+          setIcon(Icons.PROJECT_ICON);
+        } else if (myOwner instanceof Solution) {
+          setIcon(Icons.SOLUTION_ICON);
+        } else {
+          setIcon(Icons.DEFAULT_ICON);
+        }        
+        setNodeIdentifier(myOwner.toString());
       }
 
       public boolean isLeaf() {
         return true;
-      }
-
-      public String getNodeIdentifier() {
-        return myOwner.toString();
       }
     }
   }

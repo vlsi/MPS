@@ -18,6 +18,9 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
   public ReferencesTreeNode(IOperationContext operationContext, SNode node) {
     super(operationContext);
     myNode = node;
+
+    setIcon(Icons.REFERENCE_ICON);
+    setNodeIdentifier("references");
   }
 
 
@@ -31,15 +34,15 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
 
     for (final SReference ref : myNode.getReferences()) {
       add(new TextTreeNode(ref.getRole() + ": " +  ref.getTargetNode(), getOperationContext()) {
+        {
+          setIcon(Icons.DEFAULT_ICON);
+        }
+
         public void doubleClick() {
           SNode target = ref.getTargetNode();
           if (target == null) return;
           getOperationContext().getComponent(EditorsPane.class).
                   openEditor(target, getOperationContext()).selectNode(target);
-        }
-
-        public Icon getIcon(boolean expanded) {
-          return Icons.DEFAULT_ICON;
         }
 
         public boolean isLeaf() {
@@ -57,14 +60,5 @@ public class ReferencesTreeNode extends MPSTreeNodeEx {
     super.doUpdate();
     this.removeAllChildren();
     myInitialized = false;
-  }
-
-  public String getNodeIdentifier() {
-    return "references";
-  }
-
-
-  public Icon getIcon(boolean expanded) {
-    return Icons.REFERENCE_ICON;
   }
 }

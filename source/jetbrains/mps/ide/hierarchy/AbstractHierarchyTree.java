@@ -155,13 +155,9 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
 
     public RootTextTreeNode(String s) {
       super(s);
-    }
-
-    public Icon getIcon(boolean expanded) {
       if (myHierarchyView != null) {
-        return myHierarchyView.getIcon();
+        setIcon(myHierarchyView.getIcon());
       }
-      return super.getIcon(expanded);
     }
 
     public JPopupMenu getPopupMenu() {

@@ -29,7 +29,10 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
   public ProjectModulesPoolTreeNode(MPSProject project) {
     super("modules pool");
     myProject = project;
+
+    setIcon(Icons.PROJECT_ICON);
   }
+
 
   public boolean isInitialized() {
     return myInitialized;
@@ -38,10 +41,6 @@ class ProjectModulesPoolTreeNode extends TextTreeNode {
   protected void doInit() {
     populate();
     myInitialized = true;
-  }
-
-  public Icon getIcon(boolean expanded) {
-    return Icons.PROJECT_ICON; //tmp
   }
 
   private void populate() {

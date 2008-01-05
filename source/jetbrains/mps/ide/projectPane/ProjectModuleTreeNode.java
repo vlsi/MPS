@@ -39,17 +39,19 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
     super(operationContext);
   }
 
+  protected void updatePresentation() {
+    if (generationRequired()) {
+      setAdditionalText("generation required");
+    } else {
+      setAdditionalText(null);
+    }
+    setText(getModulePresentation());
+  }
+
   protected abstract String getModulePresentation();
 
   public String toString() {
     return getModulePresentation();
-  }
-
-  public String getAdditionalText() {
-    if (generationRequired()) {
-      return "generation required";
-    }
-    return null;
   }
 
   public boolean generationRequired() {

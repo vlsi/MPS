@@ -177,9 +177,8 @@ public class NodeExplorerView extends DefaultTool {
       for (String propertyName : node.getProperties().keySet()) {
         String value = node.getProperty(propertyName);
         add(new TextTreeNode(propertyName + " : " + value) {
-
-          public Icon getIcon(boolean expanded) {
-            return Icons.DEFAULT_ICON;
+          {
+            setIcon(Icons.DEFAULT_ICON);
           }
         });
       }

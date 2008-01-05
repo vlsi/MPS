@@ -57,6 +57,10 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     } else {
       setColor(Color.BLACK);
     }
+
+    if (myNode != null) {
+      setIcon(IconManager.getIconFor(myNode));
+    } 
   }
 
   public SModelTreeNode getSModelModelTreeNode() {
@@ -155,14 +159,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   public void doubleClick() {
     IDEProjectFrame projectFrame = (IDEProjectFrame) getOperationContext().getComponent(AbstractProjectFrame.class);
     projectFrame.openNode(myNode, getOperationContext());
-  }
-
-  public Icon getIcon(boolean expanded) {
-    if (myNode != null) {
-      return IconManager.getIconFor(myNode);
-    } else {
-      return super.getIcon(expanded);
-    }
   }
 
   public String toString() {

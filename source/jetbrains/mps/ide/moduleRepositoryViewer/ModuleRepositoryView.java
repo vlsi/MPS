@@ -62,6 +62,10 @@ public class ModuleRepositoryView extends DefaultTool {
       CommandProcessor.instance().executeCommand(new Runnable() {
         public void run() {
           root[0] = new TextTreeNode("Loaded Modules") {
+            {
+              setIcon(Icons.PROJECT_ICON);
+            }
+
             public JPopupMenu getPopupMenu() {
               JPopupMenu result = new JPopupMenu();
 
@@ -74,9 +78,6 @@ public class ModuleRepositoryView extends DefaultTool {
               return result;
             }
 
-            public Icon getIcon(boolean expanded) {
-              return Icons.PROJECT_ICON;
-            }
           };
           for (IModule module : SortUtil.sortModules(MPSModuleRepository.getInstance().getAllModules())) {
             root[0].add(new LanguageTreeNode(module));
@@ -96,10 +97,12 @@ public class ModuleRepositoryView extends DefaultTool {
         for (MPSModuleOwner owner : MPSModuleRepository.getInstance().getOwners(myModule)) {
           add(new OwnerTreeNode(owner));
         }
+
+        updatePresentation();
       }
 
-      public Icon getIcon(boolean expanded) {
-        return IconManager.getIconFor(myModule);
+      protected void updatePresentation() {
+        setIcon(IconManager.getIconFor(myModule));
       }
 
       public String getNodeIdentifier() {
@@ -113,18 +116,16 @@ public class ModuleRepositoryView extends DefaultTool {
       public OwnerTreeNode(MPSModuleOwner owner) {
         super(null);
         myOwner = owner;
+        updatePresentation();
+      }
+
+      protected void updatePresentation() {
+        IconManager.getIconFor(myOwner);
+        setNodeIdentifier(myOwner.toString());
       }
 
       public boolean isLeaf() {
         return true;
-      }
-
-      public String getNodeIdentifier() {
-        return myOwner.toString();
-      }
-
-      public Icon getIcon(boolean expanded) {
-        return IconManager.getIconFor(myOwner);
       }
     }
   }

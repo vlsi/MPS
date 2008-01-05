@@ -18,6 +18,9 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
   public PropertiesTreeNode(IOperationContext operationContext, SNode node) {
     super(operationContext);
     myNode = node;
+
+    setIcon(Icons.PROPERTY_ICON);
+    setNodeIdentifier("properties");
   }
 
   public boolean isInitialized() {
@@ -31,12 +34,12 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
 
     for (final String p : props) {
       add(new TextTreeNode(p + " = " + myNode.getProperty(p)) {
-        public String getNodeIdentifier() {
-          return p;
+        {
+          setIcon(Icons.DEFAULT_ICON);
         }
 
-        public Icon getIcon(boolean expanded) {
-          return Icons.DEFAULT_ICON;
+        public String getNodeIdentifier() {
+          return p;
         }
 
         public boolean isLeaf() {
@@ -53,14 +56,5 @@ public class PropertiesTreeNode extends MPSTreeNodeEx {
   protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;
-  }
-
-  public String getNodeIdentifier() {
-    return "properties";
-  }
-
-
-  public Icon getIcon(boolean expanded) {
-    return Icons.PROPERTY_ICON;
   }
 }

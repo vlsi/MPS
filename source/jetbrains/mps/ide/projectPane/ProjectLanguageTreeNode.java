@@ -39,10 +39,13 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     myLanguage = language;
     myProject = project;
     populate();
+    updatePresentation();
   }
 
-  public Icon getIcon(boolean expanded) {
-    return Icons.PROJECT_LANGUAGE_ICON;
+  protected void updatePresentation() {
+    super.updatePresentation();
+    setIcon(Icons.PROJECT_LANGUAGE_ICON);
+    setNodeIdentifier(myLanguage.getModuleUID());
   }
 
   public IModule getModule() {
@@ -55,10 +58,6 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
   public Object getUserObject() {
     return myLanguage;
-  }
-
-  public String getNodeIdentifier() {
-    return myLanguage.getModuleUID();
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
@@ -146,8 +145,8 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
     if (myLanguage.getAccessoryModels().size() > 0) {
       TextTreeNode accessories = new TextTreeNode("accessories") {
-        public Icon getIcon(boolean expanded) {
-          return Icons.LIB_ICON;
+        {
+          setIcon(Icons.LIB_ICON);
         }
       };
 

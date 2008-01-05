@@ -32,6 +32,11 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     populate();
   }
 
+  protected void updatePresentation() {
+    super.updatePresentation();
+    setIcon(Icons.DEVKIT_ICON);
+  }
+
   public IModule getModule() {
     return myDevKit;
   }
@@ -88,9 +93,5 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
     for (IModule l : myDevKit.getGenerationOnlyLanuages()) {
       generationOnly.add(ProjectModuleTreeNode.createFor(getOperationContext().getProject(), l));
     }
-  }
-
-  public Icon getIcon(boolean expanded) {
-    return Icons.DEVKIT_ICON;
   }
 }

@@ -21,14 +21,15 @@ class GeneratorTreeNode extends MPSTreeNode {
   public GeneratorTreeNode(Generator generator, MPSProject project) {
     super(new ModuleContext(generator, project));
     populate();
+    updatePresentation();
+  }
+
+  protected void updatePresentation() {
+    setIcon(Icons.GENERATOR_ICON);
   }
 
   public Generator getGenerator() {
     return (Generator) getOperationContext().getModule();
-  }
-
-  public Icon getIcon(boolean expanded) {
-    return Icons.GENERATOR_ICON;
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {

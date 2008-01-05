@@ -32,6 +32,18 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
     myShortNameOnly = shortNameOnly;
     mySolution = solution;
     populate();
+
+    updatePresentation();
+  }
+
+  protected void updatePresentation() {
+    super.updatePresentation();
+    setIcon(Icons.SOLUTION_ICON);
+
+    IFile descriptorFile = mySolution.getDescriptorFile();
+    assert descriptorFile != null;
+
+    setNodeIdentifier(descriptorFile.getAbsolutePath());
   }
 
   public IModule getModule() {
@@ -40,12 +52,6 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
 
   public Solution getSolution() {
     return mySolution;
-  }
-
-  public String getNodeIdentifier() {
-    IFile descriptorFile = mySolution.getDescriptorFile();
-    assert descriptorFile != null;
-    return descriptorFile.getAbsolutePath();
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
@@ -81,9 +87,5 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
  
   private void populate() {
     SModelsSubtree.create(this, getOperationContext());
-  }
-
-  public Icon getIcon(boolean expanded) {
-    return Icons.SOLUTION_ICON;
   }
 }

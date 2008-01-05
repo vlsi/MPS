@@ -41,6 +41,12 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
     myNodePointer = new SNodePointer(declaration);
     myHierarchyTree = tree;
     setUserObject(declaration);
+
+    updatePresentation();
+  }
+
+  protected void updatePresentation() {
+    setIcon(IconManager.getIconFor(myNodePointer.getNode()));  
   }
 
   protected void dispose() {
@@ -98,9 +104,4 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
       NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), getOperationContext().getProject());
     }
   }
-
-  public Icon getIcon(boolean expanded) {
-    return IconManager.getIconFor(myNodePointer.getNode());
-  }
-
 }

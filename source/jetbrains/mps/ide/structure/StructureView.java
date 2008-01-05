@@ -66,8 +66,8 @@ public class StructureView extends DefaultTool {
     }
 
     MPSTreeNode root = new TextTreeNode(myConcept.getName()) {
-      public Icon getIcon(boolean expanded) {
-        return IconManager.getIconFor(myConcept.getNode());
+      {
+        setIcon(IconManager.getIconFor(myConcept.getNode()));
       }
     };
 

@@ -101,6 +101,12 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         setColor(Color.BLACK);
       }
     }
+
+    if (getSModelDescriptor() != null) {
+      setIcon(IconManager.getIconFor(getSModelDescriptor()));
+    } else {
+      setIcon(Icons.MODEL_ICON);
+    }
   }
 
   protected SNodeGroupTreeNode getNodeGroupFor(SNode node) {
@@ -220,14 +226,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   public SModelDescriptor getSModelDescriptor() {
     return myModelDescriptor;
-  }
-
-  public Icon getIcon(boolean expanded) {
-    if (getSModelDescriptor() != null) {
-      return IconManager.getIconFor(getSModelDescriptor());
-    } else {
-      return Icons.MODEL_ICON;
-    }
   }
 
   public SNodeTreeNode createSNodeTreeNode(SNode node, IOperationContext operationContext) {
