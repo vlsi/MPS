@@ -38,42 +38,42 @@ public class RuleUtil {
     myOutputModel = myGenerator.getTargetModel();
   }
 
-  public void applyRootRule(CreateRootRule createRootRule) {
-    if (checkConditionForCreateRootRule(createRootRule)) {
-      INamedConcept templateNode = createRootRule.getTemplateNode();
-      if (templateNode == null) {
-        myGenerator.showErrorMessage(null, null, BaseAdapter.fromAdapter(createRootRule), "'create root' rule has no template");
-      } else {
-        boolean wasChanged = myGenerator.isChanged();
-        try {
-          createRootNodeFromTemplate(createRootRule.getName(), BaseAdapter.fromAdapter(templateNode), null);
-        } catch (DismissTopMappingRuleException e) {
-          // it's ok, just continue
-          myGenerator.setChanged(wasChanged);
-        }
-      }
-    }
-  }
+//  public void applyRootRule(CreateRootRule createRootRule) {
+//    if (checkConditionForCreateRootRule(createRootRule)) {
+//      INamedConcept templateNode = createRootRule.getTemplateNode();
+//      if (templateNode == null) {
+//        myGenerator.showErrorMessage(null, null, BaseAdapter.fromAdapter(createRootRule), "'create root' rule has no template");
+//      } else {
+//        boolean wasChanged = myGenerator.isChanged();
+//        try {
+//          createRootNodeFromTemplate(createRootRule.getName(), BaseAdapter.fromAdapter(templateNode), null);
+//        } catch (DismissTopMappingRuleException e) {
+//          // it's ok, just continue
+//          myGenerator.setChanged(wasChanged);
+//        }
+//      }
+//    }
+//  }
 
-  public boolean checkConditionForCreateRootRule(CreateRootRule createRootRule) {
-    CreateRootRule_Condition conditionFunction = createRootRule.getConditionFunction();
-    if (conditionFunction == null) {
-      return true;
-    }
-    String methodName = TemplateFunctionMethodName.createRootRule_Condition(conditionFunction.getNode());
-    Object[] args = new Object[]{
-            myGenerator.getSourceModel(),
-            myGenerator,
-            myGenerator.getScope(),
-            myGenerator.getGeneratorSessionContext()};
-    try {
-      return (Boolean) QueryMethodGenerated.invoke(methodName, args, createRootRule.getModel());
-    } catch (Exception e) {
-      myGenerator.showErrorMessage(null, null, BaseAdapter.fromAdapter(createRootRule), "couldn't evaluate rule condition");
-      LOG.error(e);
-      return false;
-    }
-  }
+//  public boolean checkConditionForCreateRootRule(CreateRootRule createRootRule) {
+//    CreateRootRule_Condition conditionFunction = createRootRule.getConditionFunction();
+//    if (conditionFunction == null) {
+//      return true;
+//    }
+//    String methodName = TemplateFunctionMethodName.createRootRule_Condition(conditionFunction.getNode());
+//    Object[] args = new Object[]{
+//            myGenerator.getSourceModel(),
+//            myGenerator,
+//            myGenerator.getScope(),
+//            myGenerator.getGeneratorSessionContext()};
+//    try {
+//      return (Boolean) QueryMethodGenerated.invoke(methodName, args, createRootRule.getModel());
+//    } catch (Exception e) {
+//      myGenerator.showErrorMessage(null, null, BaseAdapter.fromAdapter(createRootRule), "couldn't evaluate rule condition");
+//      LOG.error(e);
+//      return false;
+//    }
+//  }
 
   public void applyMappingRule(MappingRule mappingRule) {
     BaseConcept templateNode = mappingRule.getTemplateNode();
@@ -403,7 +403,7 @@ public class RuleUtil {
     }
   }
 
-  protected List<SNode> createOutputNodesForTemplateNode(String mappingName,
+  public List<SNode> createOutputNodesForTemplateNode(String mappingName,
                                                          SNode templateNode,
                                                          SNode inputNode,
                                                          int nodeMacrosToSkip,

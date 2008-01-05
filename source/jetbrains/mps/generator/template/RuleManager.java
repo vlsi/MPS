@@ -8,6 +8,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.transformation.TLBase.structure.*;
+import jetbrains.mps.generator.GeneratorUtil;
 
 import java.util.Iterator;
 import java.util.List;
@@ -25,11 +26,19 @@ public class RuleManager {
   protected TemplateGenerator myGenerator;
 
   private ReductionRuleManager myReductionRuleManager;
+  private RuleUtil myRuleUtil;
 
   public RuleManager(TemplateGenerator generator) {
     myGenerator = generator;
     myReductionRuleManager = new ReductionRuleManager(generator);
     initialize();
+  }
+
+  /**
+   * todo: tmp
+   */
+  public void setRuleUtil(RuleUtil ruleUtil) {
+    myRuleUtil = ruleUtil;
   }
 
   public TemplateGenerator getGenerator() {
@@ -120,6 +129,12 @@ public class RuleManager {
     return myCreateRootRules;
   }
 
+  public void applyCreateRootRules() {
+    for (CreateRootRule createRootRule : myCreateRootRules) {
+      GeneratorUtil.applyCreateRootRule(createRootRule, myGenerator);
+    }
+  }
+
   public List<MappingRule> getMappingRules() {
     return myMappingRules;
   }
@@ -144,5 +159,6 @@ public class RuleManager {
   public ReductionRuleManager getReductionRuleManager() {
     return myReductionRuleManager;
   }
+
 
 }

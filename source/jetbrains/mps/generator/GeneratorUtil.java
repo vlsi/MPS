@@ -10,14 +10,14 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.generator.template.Statistics;
+import jetbrains.mps.generator.template.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.core.structure.INamedConcept;
 
 import java.util.List;
 import java.util.LinkedList;
@@ -53,6 +53,44 @@ public class GeneratorUtil {
             n instanceof TemplateFragment ||
             n instanceof RootTemplateAnnotation;
   }
+
+  public static void applyCreateRootRule(CreateRootRule createRootRule, TemplateGenerator generator) {
+    if (checkCondition(createRootRule, generator)) {
+      INamedConcept templateNode = createRootRule.getTemplateNode();
+      if (templateNode == null) {
+        generator.showErrorMessage(null, null, createRootRule.getNode(), "'create root' rule has no template");
+      } else {
+        boolean wasChanged = generator.isChanged();
+        try {
+          createRootNodeFromTemplate(createRootRule.getName(), BaseAdapter.fromAdapter(templateNode), null, generator);
+        } catch (DismissTopMappingRuleException e) {
+          // it's ok, just continue
+          generator.setChanged(wasChanged);
+        }
+      }
+    }
+  }
+
+  private static boolean checkCondition(CreateRootRule createRootRule, ITemplateGenerator generator) {
+    CreateRootRule_Condition conditionFunction = createRootRule.getConditionFunction();
+    if (conditionFunction == null) {
+      return true;
+    }
+    String methodName = TemplateFunctionMethodName.createRootRule_Condition(conditionFunction.getNode());
+    Object[] args = new Object[]{
+            generator.getInputModel(),
+            generator,
+            generator.getScope(),
+            generator.getGeneratorSessionContext()};
+    try {
+      return (Boolean) QueryMethodGenerated.invoke(methodName, args, createRootRule.getModel());
+    } catch (Exception e) {
+      generator.showErrorMessage(null, null, BaseAdapter.fromAdapter(createRootRule), "couldn't evaluate rule condition");
+      LOG.error(e);
+      return false;
+    }
+  }
+
 
   public static boolean checkPremiseForBaseMappingRule(SNode sourceNode, ConceptDeclaration sourceNodeConcept, BaseMappingRule mappingRule, ITemplateGenerator generator) {
     AbstractConceptDeclaration applicableConcept = mappingRule.getApplicableConcept();
@@ -165,4 +203,15 @@ public class GeneratorUtil {
       Statistics.getStatistic(Statistics.TPL).add(query.getModel(), methodName, startTime);
     }
   }
+
+  private static void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, TemplateGenerator generator) throws DismissTopMappingRuleException {
+    RuleUtil ruleUtil = generator.getRuleUtil();
+    List<SNode> outputNodes = ruleUtil.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
+    if (outputNodes != null) {
+      for (SNode outputNode : outputNodes) {
+        generator.getOutputModel().addRoot(outputNode);
+      }
+    }
+  }
+
 }

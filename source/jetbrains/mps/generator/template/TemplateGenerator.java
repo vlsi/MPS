@@ -35,10 +35,17 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
   private boolean myChanged = false;
 
+  // todo: tmp
+  private RuleUtil myRuleUtil;
+
   public TemplateGenerator(GenerationSessionContext operationContext,
-                                    IAdaptiveProgressMonitor progressMonitor,
-                                    GeneratorLogger generatorLogger) {
+                           IAdaptiveProgressMonitor progressMonitor,
+                           GeneratorLogger generatorLogger) {
     super(operationContext, progressMonitor, generatorLogger);
+  }
+
+  public RuleUtil getRuleUtil() {
+    return myRuleUtil;
   }
 
   public GenerationSessionContext getGeneratorSessionContext() {
@@ -78,22 +85,24 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     int oldErrorCount = getErrorCount();
 
     RuleManager ruleManager = new RuleManager(this);
-    RuleUtil ruleUtil = new RuleUtil(ruleManager);
-    ruleManager.getReductionRuleManager().setRuleUtil(ruleUtil);
+    myRuleUtil = new RuleUtil(ruleManager);
+    ruleManager.setRuleUtil(myRuleUtil);
+    ruleManager.getReductionRuleManager().setRuleUtil(myRuleUtil);
 
     // create all roots
     if (isPrimary) {
-      for (CreateRootRule createRootRule : ruleManager.getCreateRootRules()) {
-        ruleUtil.applyRootRule(createRootRule);
-      }
+//      for (CreateRootRule createRootRule : ruleManager.getCreateRootRules()) {
+//        ruleUtil.applyRootRule(createRootRule);
+//      }
+      ruleManager.applyCreateRootRules();
     }
     for (MappingRule mappingRule : ruleManager.getMappingRules()) {
       checkMonitorCanceled();
-      ruleUtil.applyMappingRule(mappingRule);
+      myRuleUtil.applyMappingRule(mappingRule);
     }
     for (Root_MappingRule rootMappingRule : ruleManager.getRoot_MappingRules()) {
       checkMonitorCanceled();
-      ruleUtil.applyRoot_MappingRule(rootMappingRule);
+      myRuleUtil.applyRoot_MappingRule(rootMappingRule);
     }
 
     checkMonitorCanceled();
@@ -113,11 +122,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // weaving
     for (WeavingRule weavingRule : ruleManager.getWeavingRules()) {
       checkMonitorCanceled();
-      ruleUtil.applyWeavingRule(weavingRule);
+      myRuleUtil.applyWeavingRule(weavingRule);
     }
     for (Weaving_MappingRule weavingMappingRule : ruleManager.getWeaving_MappingRules()) {
       checkMonitorCanceled();
-      ruleUtil.applyWeavingMappingRule(weavingMappingRule);
+      myRuleUtil.applyWeavingMappingRule(weavingMappingRule);
     }
 
     checkMonitorCanceled();
@@ -472,4 +481,5 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       addProgressMessage(errorCount + " errors encountered. Look at messages for details.");
     }
   }
+
 }
