@@ -33,15 +33,13 @@ import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.event.*;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.ColorAndGraphicsUtil;
-import jetbrains.mps.util.NodesParetoFrontier;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import org.jetbrains.annotations.NotNull;
+import org.eclipse.jdt.internal.core.util.WeakHashSetOfCharArray.HashableWeakReference;
 
 import javax.swing.*;
 import javax.swing.event.PopupMenuListener;
@@ -53,6 +51,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.*;
 import java.util.List;
+import java.lang.ref.WeakReference;
 
 
 /**
@@ -76,13 +75,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   private Set<MPSAction> myMPSActionsWithShortcuts = new HashSet<MPSAction>();
   private WeakHashMap<EditorCell, Set<SNode>> myCellsToNodesToDependOnMap = new WeakHashMap<EditorCell, Set<SNode>>();
 
-  private WeakHashMap<SNode, EditorCell> myNodesToBigCellsMap = new WeakHashMap<SNode, EditorCell>();
-  private WeakHashMap<ReferencedNodeContext, EditorCell> myRefNodeContextsToBigCellsMap = new WeakHashMap<ReferencedNodeContext, EditorCell>();
+  private WeakHashMap<SNode, WeakReference<EditorCell>> myNodesToBigCellsMap = new WeakHashMap<SNode, WeakReference<EditorCell>>();
+  private WeakHashMap<ReferencedNodeContext, WeakReference<EditorCell>> myRefNodeContextsToBigCellsMap = new WeakHashMap<ReferencedNodeContext, WeakReference<EditorCell>>();
 
-  private HashMap<EditorCell, Set<SNodePointer>> myCellsToRefTargetsToDependOnMap = new HashMap<EditorCell, Set<SNodePointer>>();
-  private HashMap<Pair<SNodePointer, String>, Set<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, Set<EditorCell_Property>>();
-  private HashMap<Pair<SNodePointer, String>, Set<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, Set<EditorCell>>();
-  private HashMap<Pair<SNodePointer, String>, Set<EditorCell>> myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, Set<EditorCell>>();
+  private WeakHashMap<EditorCell, Set<SNodePointer>> myCellsToRefTargetsToDependOnMap = new WeakHashMap<EditorCell, Set<SNodePointer>>();
+  private HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell_Property>> myNodePropertiesAccessedCleanlyToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell_Property>>();
+  private HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>> myNodePropertiesAccessedDirtilyToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>>();
+  private HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>> myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap = new HashMap<Pair<SNodePointer, String>, WeakSet<EditorCell>>();
 
   private IGutterMessageOwner myMessageOwner = new IGutterMessageOwner() {
   };
@@ -977,7 +976,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return null;
     }
     if (!biggest) {
-      EditorCell foundCell = myRefNodeContextsToBigCellsMap.get(ReferencedNodeContext.createNodeContext(node));
+      WeakReference<EditorCell> weakReference = myRefNodeContextsToBigCellsMap.get(ReferencedNodeContext.createNodeContext(node));
+      EditorCell foundCell = null;
+      if (weakReference != null) {
+        foundCell = weakReference.get();
+      }
       if (foundCell != null) return foundCell;
     }
     EditorCell_Collection cellCollection = (EditorCell_Collection) myRootCell;
@@ -1783,18 +1786,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void addCellDependentOnNodeProperty(EditorCell_Property cell, Pair<SNodePointer, String> pair) {
-    Set<EditorCell_Property> dependentCells = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
+    WeakSet<EditorCell_Property> dependentCells = myNodePropertiesAccessedCleanlyToDependentCellsMap.get(pair);
     if (dependentCells == null) {
-      dependentCells = new HashSet<EditorCell_Property>();
+      dependentCells = new WeakSet<EditorCell_Property>();
       myNodePropertiesAccessedCleanlyToDependentCellsMap.put(pair, dependentCells);
     }
     dependentCells.add(cell);
   }
 
   public void addCellDependentOnNodePropertyWhichWasAccessedDirtily(EditorCell cell, Pair<SNodePointer, String> pair) {
-    Set<EditorCell> dependentCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
+    WeakSet<EditorCell> dependentCells = myNodePropertiesAccessedDirtilyToDependentCellsMap.get(pair);
     if (dependentCells == null) {
-      dependentCells = new HashSet<EditorCell>();
+      dependentCells = new WeakSet<EditorCell>();
       myNodePropertiesAccessedDirtilyToDependentCellsMap.put(pair, dependentCells);
     }
     dependentCells.add(cell);
@@ -1802,9 +1805,9 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
 
   public void addCellDependentOnNodePropertyWhichExistenceWasChecked(EditorCell cell, Pair<SNodePointer, String> pair) {
-    Set<EditorCell> dependentCells = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
+    WeakSet<EditorCell> dependentCells = myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.get(pair);
     if (dependentCells == null) {
-      dependentCells = new HashSet<EditorCell>();
+      dependentCells = new WeakSet<EditorCell>();
       myNodePropertiesWhichExistenceWasCheckedToDependentCellsMap.put(pair, dependentCells);
     }
     dependentCells.add(cell);
@@ -1844,17 +1847,21 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   void registerAsBigCell(EditorCell cell, ReferencedNodeContext refContext, EditorManager manager) {
     if (manager == EditorManager.getInstanceFromContext(myOperationContext)) {
-      myRefNodeContextsToBigCellsMap.put(refContext, cell);
-      myNodesToBigCellsMap.put(cell.getSNode(), cell);
+      myRefNodeContextsToBigCellsMap.put(refContext, new WeakReference<EditorCell>(cell));
+      myNodesToBigCellsMap.put(cell.getSNode(), new WeakReference<EditorCell>(cell));
     }
   }
 
   EditorCell getBigCellForRefContext(ReferencedNodeContext refContext) {
-    return myRefNodeContextsToBigCellsMap.get(refContext);
+    WeakReference<EditorCell> weakReference = myRefNodeContextsToBigCellsMap.get(refContext);
+    if (weakReference == null) return null;
+    return weakReference.get();
   }
 
   EditorCell getBigCellForNode(SNode node) {
-    return myNodesToBigCellsMap.get(node);
+    WeakReference<EditorCell> weakReference = myNodesToBigCellsMap.get(node);
+    if (weakReference == null) return null;
+    return weakReference.get();
   }
 
   public EditorCell getBigValidCellForNode(SNode node) {
