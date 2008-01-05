@@ -29,6 +29,15 @@ public class SNodeGroupTreeNode extends TextTreeNode {
     model.register(parentGroup, this);
 
     myAutoDelete = autoDelete;
+
+    updatePresentation();
+  }
+
+  protected void updatePresentation() {
+    if (hasErrors()) {
+      setColor(Color.RED);
+    }
+    setColor(Color.BLACK);
   }
 
   public JPopupMenu getQuickCreatePopupMenu() {
@@ -48,13 +57,6 @@ public class SNodeGroupTreeNode extends TextTreeNode {
     }
 
     return false;
-  }
-
-  public Color getColor() {
-    if (hasErrors()) {
-      return Color.RED;
-    }
-    return Color.BLACK;
   }
 
   public boolean isAutoDelete() {

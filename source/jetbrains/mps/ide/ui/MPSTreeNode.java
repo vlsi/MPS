@@ -166,6 +166,9 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return 2;
   }
 
+  protected void updatePresentation() {    
+  }
+
   public Icon getIcon(boolean expanded) {
     if (expanded) {
       return myExpandedIcon;
@@ -174,7 +177,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
   }
 
-  public void setIcon(Icon newIcon, boolean expanded) {
+  public final void setIcon(Icon newIcon, boolean expanded) {
     if (expanded) {
       myExpandedIcon = newIcon;
     } else {
@@ -182,19 +185,24 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
   }
 
-  public Color getColor() {
+  public final void setIcon(Icon newIcon) {
+    setIcon(newIcon, true);
+    setIcon(newIcon, false);
+  }
+
+  public final Color getColor() {
     return myColor;
   }
 
-  public void setColor(Color color) {
+  public final void setColor(Color color) {
     myColor = color;
   }
 
-  public int getFontStyle() {
+  public final int getFontStyle() {
     return myFontStyle;
   }
 
-  public void setFontStyle(int fontStyle) {
+  public final void setFontStyle(int fontStyle) {
     myFontStyle = fontStyle;
   }
 
@@ -210,11 +218,11 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     return myAdditionalText;
   }
 
-  public void setAdditionalText(String newAdditionalText) {
+  public final void setAdditionalText(String newAdditionalText) {
     myAdditionalText = newAdditionalText;
   }
 
-  public String getText() {
+  public final String getText() {
     if (myText == null) {
       return getNodeIdentifier();
     } else {
@@ -222,7 +230,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
   }
 
-  public void setText(String text) {
+  public final void setText(String text) {
     myText = text;
   }
 

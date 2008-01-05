@@ -219,33 +219,28 @@ public class ModelDifferenceView extends JPanel {
   private class MySNodeTreeNode extends SNodeTreeNode {
     public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
       super(node, role, operationContext);
+
     }
 
+    protected void updatePresentation() {
+      super.updatePresentation();
+      SNodeId id = getSNode().getSNodeId();
+      if (myAddedNodes.contains(id)) {
+        setColor(new Color(0, 120, 0));
+      } else if (myChangedNodes.contains(id)) {
+        setColor(new Color(0, 0, 120));
+      } else {
+        setColor(Color.BLACK);
+      }
+
+      setText(getText() + " " + getSNode().getId());
+    }
 
     public JPopupMenu getPopupMenu() {
       return null; 
     }
 
-
-    public String toString() {
-      return super.toString() + " " + getSNode().getId();
-    }
-
     public void doubleClick() {
-    }
-
-    public Color getColor() {
-      SNodeId id = getSNode().getSNodeId();
-
-      if (myAddedNodes.contains(id)) {
-        return new Color(0, 120, 0);
-      }
-
-      if (myChangedNodes.contains(id)) {
-        return new Color(0, 0, 120);
-      }
-
-      return super.getColor();
     }
   }
 

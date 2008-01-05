@@ -116,33 +116,27 @@ public class StructureView extends DefaultTool {
     public SNodeTreeNode(SNode node) {
       super(myContext);
       myNode = node;
+      updatePresentation();
     }
 
-    public void doubleClick() {      
+    protected void updatePresentation() {
+      if (!declaredInCurrentConcept()) {
+        setColor(new Color(110, 110, 110));
+      } else {
+        setColor(Color.BLACK);
+      }
+
+      setIcon(IconManager.getIconFor(myNode));
+      setNodeIdentifier(myNode.getId());
+      setText(myNode.getName());
+    }
+
+    public void doubleClick() {
       myProjectFrame.openNode(myNode, myContext);
-    }
-
-    public String toString() {
-      return myNode.getName();
-    }
-
-    public String getNodeIdentifier() {
-      return myNode.getId();
     }
 
     public boolean isLeaf() {
       return true;
-    }
-
-    public Icon getIcon(boolean expanded) {
-      return IconManager.getIconFor(myNode);
-    }
-
-    public Color getColor() {
-      if (!declaredInCurrentConcept()) {
-        return new Color(110, 110, 110);
-      }
-      return Color.BLACK;
     }
 
     private boolean declaredInCurrentConcept() {

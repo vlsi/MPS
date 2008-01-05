@@ -24,6 +24,11 @@ public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTre
 
   private boolean myInitialized = false;
 
+  public ChildHierarchyTreeNode(T declaration, IOperationContext operationContext, AbstractHierarchyTree<T> tree) {
+    super(declaration, operationContext, tree);
+    setColor(new Color(0x40, 0x00, 0x90));
+  }
+
   public boolean isInitialized() {
     return myInitialized;
   }
@@ -51,14 +56,6 @@ public class ChildHierarchyTreeNode<T extends INodeAdapter> extends HierarchyTre
   protected void doUpdate() {
     this.removeAllChildren();
     myInitialized = false;
-  }
-
-  public ChildHierarchyTreeNode(T declaration, IOperationContext operationContext, AbstractHierarchyTree<T> tree) {
-    super(declaration, operationContext, tree);
-  }
-
-  public Color getColor() {
-    return new Color(0x40, 0x00, 0x90);
   }
 
   public String toString() {

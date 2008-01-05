@@ -48,6 +48,15 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     myNode = node;
     myRole = role;
     myCondition = condition;
+    updatePresentation();
+  }
+
+  protected void updatePresentation() {
+    if (hasErrors()) {
+      setColor(Color.RED);
+    } else {
+      setColor(Color.BLACK);
+    }
   }
 
   public SModelTreeNode getSModelModelTreeNode() {
@@ -186,12 +195,5 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
         return r != null && r.hasErrorsInside(getSNode());
     }
     return false;
-  }
-
-  public Color getColor() {
-    if (hasErrors()) {
-      return Color.RED;
-    }
-    return Color.BLACK;
   }
 }

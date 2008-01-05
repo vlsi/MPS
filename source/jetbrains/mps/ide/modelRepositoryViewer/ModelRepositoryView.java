@@ -103,26 +103,18 @@ public class ModelRepositoryView extends DefaultTool {
         for (ModelOwner owner : SModelRepository.getInstance().getOwners(myModelDescriptor)) {
           add(new OwnerTreeNode(owner));
         }
+
+        updatePresentation();
       }
 
-      public Icon getIcon(boolean expanded) {
-        //return Icons.MODEL_ICON;
-        return IconManager.getIconFor(myModelDescriptor);
-      }
-
-      public String toString() {
-        return getNodeIdentifier() + (myModelDescriptor.isInitialized() ? " (initialized)" : " (not initialized)");
-      }
-
-      public Color getColor() {
+      protected void updatePresentation() {
+        setIcon(IconManager.getIconFor(myModelDescriptor));
         if (SModelRepository.getInstance().isChanged(myModelDescriptor)) {
-          return new Color(0x00, 0x00, 0x90);
+          setColor(new Color(0x00, 0x00, 0x90));
         }
-        return Color.BLACK;
-      }
-
-      public String getNodeIdentifier() {
-        return myModelDescriptor.getModelUID().toString();
+        setColor(Color.BLACK);
+        setNodeIdentifier(myModelDescriptor.getModelUID().toString());
+        setText(myModelDescriptor.getModelUID().toString() + (myModelDescriptor.isInitialized() ? " (initialized)" : " (not initialized)"));
       }
     }
 

@@ -85,6 +85,22 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     
     setUserObject(modelDescriptor);
     updateGenerationRequiredStatus();
+
+    updatePresentation();
+  }
+
+  protected void updatePresentation() {
+    ModelCheckResult r = getModelCheckResult();
+    if (r != null && r.hasErrors()) {
+      setColor(Color.RED);
+    } else {
+      SModelDescriptor sm = getSModelDescriptor();
+      if (sm != null && sm.isInitialized() && SModelRepository.getInstance().isChanged(sm)) {
+        setColor(new Color(0x00, 0x00, 0x90));
+      } else {
+        setColor(Color.BLACK);
+      }
+    }
   }
 
   protected SNodeGroupTreeNode getNodeGroupFor(SNode node) {
@@ -323,20 +339,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       return null;
     }
     return (ModelCheckResult) sm.getUserObject(ModelChecker.MODEL_CHECK_RESULT);
-  }
-
-  public Color getColor() {
-    ModelCheckResult r = getModelCheckResult();
-    if (r != null && r.hasErrors()) {
-      return Color.RED;
-    }
-
-    SModelDescriptor sm = getSModelDescriptor();
-    if (sm != null && sm.isInitialized() && SModelRepository.getInstance().isChanged(sm)) {
-      return new Color(0x00, 0x00, 0x90);
-    }
-
-    return Color.BLACK;
   }
 
   public boolean isInitialized() {
