@@ -53,22 +53,25 @@ public class FindersEditor {
       JCheckBox finderCheckBox = new JCheckBox(finder.getDescription(), isEnabled);
       finderCheckBox.addChangeListener(new ChangeListener() {
         public void stateChanged(ChangeEvent e) {
-          if (((JCheckBox) e.getSource()).isSelected()) {
-            myOptions.add(finder);
-            boolean add = true;
-            for (BaseFinder f : myDefaultOptions) {
-              if (f.getClass() == finder.getClass()) {
-                add = false;
+          //without this "synchronized" concurrent modifications are produced in the creation time
+          synchronized (FindersEditor.this) {
+            if (((JCheckBox) e.getSource()).isSelected()) {
+              myOptions.add(finder);
+              boolean add = true;
+              for (BaseFinder f : myDefaultOptions) {
+                if (f.getClass() == finder.getClass()) {
+                  add = false;
+                }
               }
-            }
-            if (add) {
-              myDefaultOptions.add(finder);
-            }
-          } else {
-            myOptions.remove(finder);
-            for (BaseFinder f : myDefaultOptions) {
-              if (f.getClass().getName().equals(finder.getClass().getName())) {
-                myDefaultOptions.remove(f);
+              if (add) {
+                myDefaultOptions.add(finder);
+              }
+            } else {
+              myOptions.remove(finder);
+              for (BaseFinder f : myDefaultOptions) {
+                if (f.getClass().getName().equals(finder.getClass().getName())) {
+                  myDefaultOptions.remove(f);
+                }
               }
             }
           }
