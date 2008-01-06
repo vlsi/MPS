@@ -37,6 +37,7 @@ import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.eclipse.jdt.internal.core.util.WeakHashSetOfCharArray.HashableWeakReference;
 
 import javax.swing.*;
@@ -393,6 +394,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void updateMPSActionsWithKeyStrokes() {
+    updateMPSActionsWithKeyStrokes(null);
+  }
+
+  private void updateMPSActionsWithKeyStrokes(@Nullable ActionContext actionContext) {
     myActionProxies.clear();
     for (MPSAction a : myMPSActionsWithShortcuts) {
       KeyStroke keyStroke = KeyStroke.getKeyStroke(a.getKeyStroke());
@@ -400,14 +405,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     myMPSActionsWithShortcuts.clear();
     ActionGroup group = ActionManager.instance().getGroup(EDITOR_POPUP_MENU_ACTIONS);
-    registerKeyStrokes(group);
+    registerKeyStrokes(group, actionContext);
   }
 
   public IGutterMessageOwner getGutterMessageOwner() {
     return myOwner;
   }
 
-  private void registerKeyStrokes(ActionGroup group) {
+  private void registerKeyStrokes(ActionGroup group, @Nullable ActionContext actionContext) {
     if (group != null) {
       for (ActionGroupElement e : group.getElements()) {
         if (e instanceof MPSAction) {
@@ -418,7 +423,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           }
         }
         if (e instanceof ActionGroup) {
-          registerKeyStrokes((ActionGroup) e);
+          if (actionContext != null) {
+            e.update(actionContext);
+          }
+          registerKeyStrokes((ActionGroup) e, actionContext);
         }
       }
     }
@@ -634,18 +642,20 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private ActionContext createActionContext() {
-    EditorCell cell_ = getSelectedCell();
-    final SNode selectedNode = cell_.getSNode();
     ActionContext context = null;
-    if (selectedNode != null) {
-      EditorContext editorContext_ = createEditorContextForActions();
-      List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
-      if (selectedNodes.size() == 0) {
-        selectedNodes.add(selectedNode);
+    EditorCell cell_ = getSelectedCell();
+    if (cell_ != null) {
+      final SNode selectedNode = cell_.getSNode();
+      if (selectedNode != null) {
+        EditorContext editorContext_ = createEditorContextForActions();
+        List<SNode> selectedNodes = myNodeRangeSelection.getNodes();
+        if (selectedNodes.size() == 0) {
+          selectedNodes.add(selectedNode);
+        }
+        context = new ActionContext(getOperationContext(), selectedNode, selectedNodes);
+        context.put(EditorContext.class, editorContext_);
+        context.put(EditorCell.class, cell_);
       }
-      context = new ActionContext(getOperationContext(), selectedNode, selectedNodes);
-      context.put(EditorContext.class, editorContext_);
-      context.put(EditorCell.class, cell_);
     }
     return context;
   }
@@ -1446,7 +1456,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       x0 = caretX - 2 * charWidth;
       width = 4 * charWidth;
     } else {
-      EditorCell bigCell = cell.getContainingBigCell();      
+      EditorCell bigCell = cell.getContainingBigCell();
       if (bigCell != null && bigCell.getWidth() < viewportWidth) {
         x0 = bigCell.getX();
         width = bigCell.getWidth();
@@ -1702,6 +1712,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       }
     }
 
+    updateMPSActionsWithKeyStrokes(createActionContext());
     // all other processing should be performed inside command
     CommandProcessor.instance().executeCommand(getEditorContext(), new Runnable() {
       public void run() {
