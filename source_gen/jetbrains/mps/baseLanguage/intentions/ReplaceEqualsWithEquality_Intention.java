@@ -6,6 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -26,7 +27,7 @@ public class ReplaceEqualsWithEquality_Intention extends BaseIntention implement
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == SLinkOperations.getTarget(new QuotationClass_1().createNode(), "baseMethodDeclaration", false);
+    return SPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "name").equals("equals") && SLinkOperations.getCount(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "parameter") == 1;
   }
 
   public void execute(SNode node, EditorContext editorContext) {
