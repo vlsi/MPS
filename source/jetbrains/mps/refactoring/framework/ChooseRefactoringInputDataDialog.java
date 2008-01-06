@@ -28,12 +28,12 @@ public class ChooseRefactoringInputDataDialog extends BaseDialog {
     myComponents = new ArrayList<IChooseComponent>(components);
     myPanel.add(new JLabel("Input data for refactoring"), BorderLayout.NORTH);
     myInnerPanel = new JPanel();
-    BoxLayout layout = new BoxLayout(myInnerPanel, BoxLayout.Y_AXIS);
+    GridLayout layout = new GridLayout(0,1/*myInnerPanel, BoxLayout.PAGE_AXIS*/);
     myInnerPanel.setLayout(layout);
     for (IChooseComponent component : myComponents) {
       myInnerPanel.add((Component)component);
     }
-    myPanel.add(myInnerPanel);
+    myPanel.add(myInnerPanel, BorderLayout.CENTER);
   }
 
   public DialogDimensions getDefaultDimensionSettings() {

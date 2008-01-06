@@ -30,18 +30,16 @@ public class HierarchicalChooseNodeComponent extends JPanel implements IChooseCo
   private ActionContext myActionContext;
   private String myPropertyName;
   private String myCaption;
-  private IDescendantsProvider myDescendantsProvider;
 
   public HierarchicalChooseNodeComponent(String caption, String propertyName, ActionContext actionContext, IDescendantsProvider descendantsProvider, SNode initialNode) {
     myActionContext = actionContext;
     myPropertyName = propertyName;
     myCaption = caption;
-    myDescendantsProvider = descendantsProvider;
-
     myHierarchyTree = new MyHierarchyTree(descendantsProvider);
 
+    setLayout(new BorderLayout());
     add(new JLabel(myCaption), BorderLayout.NORTH);
-    add(new JScrollPane(myHierarchyTree));
+    add(new JScrollPane(myHierarchyTree), BorderLayout.CENTER);
 
     showHierarchy(initialNode, myActionContext.getOperationContext());
   }
