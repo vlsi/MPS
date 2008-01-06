@@ -4067,9 +4067,9 @@
     <node role="isApplicableFunction" type="jetbrains.mps.bootstrap.intentionsLanguage.structure.IsApplicableBlock"
           id="1199627182110">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199627182111">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199628277431">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199628277432">
-            <property name="value" value="true"/>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199635002934">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199635002935">
+            <property name="value" value="false"/>
           </node>
         </node>
       </node>
@@ -4098,7 +4098,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199627245936">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199628280964">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199628280965">
-            <property name="value" value="true"/>
+            <property name="value" value="false"/>
           </node>
         </node>
       </node>

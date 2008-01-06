@@ -22,7 +22,7 @@ public class ExpandBoolean_Intention extends BaseIntention implements Intention 
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    return true;
+    return false;
   }
 
   public void execute(SNode node, EditorContext editorContext) {

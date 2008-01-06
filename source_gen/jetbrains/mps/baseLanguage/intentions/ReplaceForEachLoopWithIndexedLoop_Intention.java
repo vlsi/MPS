@@ -22,7 +22,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    return true;
+    return false;
   }
 
   public void execute(SNode node, EditorContext editorContext) {
