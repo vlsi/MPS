@@ -14,7 +14,11 @@
   <sourcePath />
   <dependencies>
     <dependency>jetbrains.mps.ypath</dependency>
+    <dependency>jetbrains.mps.closures</dependency>
     <dependency>ypath.main</dependency>
+    <dependency>ypath.sandbox</dependency>
+    <dependency>ypath.sandbox</dependency>
+    <dependency>ypath.sandbox</dependency>
   </dependencies>
 </solution>
 
