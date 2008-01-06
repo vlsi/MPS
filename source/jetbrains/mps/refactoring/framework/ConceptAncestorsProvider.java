@@ -2,7 +2,10 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference;
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Mapper;
 
 import java.util.Set;
 import java.util.HashSet;
@@ -23,11 +26,19 @@ public class ConceptAncestorsProvider implements IDescendantsProvider {
       if (parent != null) {
         result.add(parent);
       }
-      result.addAll(conceptDeclaration.getImplementses());
+      result.addAll(CollectionUtil.map(conceptDeclaration.getImplementses(), new Mapper<InterfaceConceptReference, INodeAdapter>() {
+        public INodeAdapter map(InterfaceConceptReference interfaceConceptReference) {
+          return interfaceConceptReference.getIntfc();
+        }
+      }));
     }
     if (nodeAdapter instanceof InterfaceConceptDeclaration) {
       InterfaceConceptDeclaration interfaceConceptDeclaration = (InterfaceConceptDeclaration) nodeAdapter;
-      result.addAll(interfaceConceptDeclaration.getExtendses());
+      result.addAll(CollectionUtil.map(interfaceConceptDeclaration.getExtendses(), new Mapper<InterfaceConceptReference, INodeAdapter>() {
+        public INodeAdapter map(InterfaceConceptReference interfaceConceptReference) {
+          return interfaceConceptReference.getIntfc();
+        }
+      }));
     }
     return result;
   }
