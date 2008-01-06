@@ -19,7 +19,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new PropertyReference_propertyDeclaration_ReferentConstraint());
     this.myConstraints.add(new GenericCall_declaration_ReferentConstraint());
     this.myConstraints.add(new GenericAttribute_attributeDeclaration_ReferentConstraint());
-    this.myConstraints.add(new GenericDeclaration_nameid_ReferentConstraint());
     this.myConstraints.add(new Reference_declaration_ReferentConstraint());
     this.myConstraints.add(new PathReference_path_ReferentConstraint());
     this.myConstraints.add(new StringLiteralReference_ref_ReferentConstraint());
