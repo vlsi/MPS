@@ -57,7 +57,7 @@ public abstract class BaseNode implements IResultProvider {
 
   public abstract SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor);
 
-  public SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
+  public SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {        
     assert !ThreadUtils.isEventDispatchThread();
 
     SearchResults results;

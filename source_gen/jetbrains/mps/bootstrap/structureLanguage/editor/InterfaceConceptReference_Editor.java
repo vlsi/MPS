@@ -7,7 +7,6 @@ import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
@@ -18,12 +17,7 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider
 public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
 
   private static void setupBasic_IntfcReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1169127655072");
-    editorCell.setDrawBorder(false);
-  }
-
-  private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
-    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1169127650439");
+    editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1199633082144");
     editorCell.setDrawBorder(false);
   }
 
@@ -32,17 +26,7 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
 
 
   public EditorCell createEditorCell(EditorContext context, SNode node) {
-    return this.createRowCell(context, node);
-  }
-
-  public EditorCell createRowCell(EditorContext context, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(context, node);
-    InterfaceConceptReference_Editor.setupBasic_RowCell(editorCell, node, context);
-    editorCell.setGridLayout(false);
-    editorCell.setUsesBraces(false);
-    editorCell.setCanBeFolded(false);
-    editorCell.addEditorCell(this.createIntfcReferenceCell(context, node));
-    return editorCell;
+    return this.createIntfcReferenceCell(context, node);
   }
 
   public EditorCell createIntfcReferenceCellinternal(EditorContext context, SNode node, CellProviderWithRole aProvider) {
@@ -81,7 +65,7 @@ public class InterfaceConceptReference_Editor extends DefaultNodeEditor {
     }
 
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
-      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1169127657482");
+      editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1199633082146");
       editorCell.setDrawBorder(false);
     }
 
