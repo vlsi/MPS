@@ -14,20 +14,20 @@ public class typeof_Node_ConceptMethodCall_InferenceRule implements InferenceRul
   public  typeof_Node_ConceptMethodCall_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    if(!((SLinkOperations.getTarget(argument, "conceptMethodDeclaration", false) != null))) {
-      TypeChecker.getInstance().reportTypeError(argument, "no method declaration", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410829052");
+  public void applyRule(final SNode conceptMethodCall) {
+    if(!((SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false) != null))) {
+      TypeChecker.getInstance().reportTypeError(conceptMethodCall, "no method declaration", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410829052");
     }
-    int actCount = SLinkOperations.getCount(argument, "actualArgument");
-    int expCount = SLinkOperations.getCount(SLinkOperations.getTarget(argument, "conceptMethodDeclaration", false), "parameter");
+    int actCount = SLinkOperations.getCount(conceptMethodCall, "actualArgument");
+    int expCount = SLinkOperations.getCount(SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false), "parameter");
     if(!(actCount == expCount)) {
-      TypeChecker.getInstance().reportTypeError(argument, "Wrong parameters number: expected " + expCount + ", actual " + actCount, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410886099");
+      TypeChecker.getInstance().reportTypeError(conceptMethodCall, "Wrong parameters number: expected " + expCount + ", actual " + actCount, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410886099");
     }
     {
       SNode arg;
       SNode parameter;
-      Iterator<SNode> arg_iterator = SLinkOperations.getTargets(argument, "actualArgument", true).iterator();
-      Iterator<SNode> parameter_iterator = SLinkOperations.getTargets(SLinkOperations.getTarget(argument, "conceptMethodDeclaration", false), "parameter", true).iterator();
+      Iterator<SNode> arg_iterator = SLinkOperations.getTargets(conceptMethodCall, "actualArgument", true).iterator();
+      Iterator<SNode> parameter_iterator = SLinkOperations.getTargets(SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false), "parameter", true).iterator();
       while(true) {
         if(!(arg_iterator.hasNext())) {
           break;
@@ -40,7 +40,7 @@ public class typeof_Node_ConceptMethodCall_InferenceRule implements InferenceRul
         TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(arg, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179411075565", true), TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179411084134", true), arg, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179411081637");
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410528345", true), SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "conceptMethodDeclaration", false), "returnType", true), argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410535708");
+    TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(conceptMethodCall, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410528345", true), SLinkOperations.getTarget(SLinkOperations.getTarget(conceptMethodCall, "conceptMethodDeclaration", false), "returnType", true), conceptMethodCall, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1179410535708");
   }
 
   public String getApplicableConceptFQName() {

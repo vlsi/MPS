@@ -58,7 +58,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1199557119925#1198076144993";
+    return "jetbrains.mps.core.scripts@1_0_1199627211950#1198076144993";
   }
 
   public String getKeyStroke() {
@@ -118,23 +118,22 @@ public class MoveNodes extends AbstractLoggableRefactoring {
     {
       List<SNode> nodes = (List<SNode>)actionContext.getNodes();
       SModel targetModel = null;
+      List<SNode> movedNodes = null;
       if(((Object)refactoringContext.getParameter("target")) instanceof SModel) {
-        refactoringContext.moveNodesToModel(nodes, (SModel)((Object)refactoringContext.getParameter("target")));
+        movedNodes = refactoringContext.moveNodesToModel(nodes, (SModel)((Object)refactoringContext.getParameter("target")));
         targetModel = (SModel)((Object)refactoringContext.getParameter("target"));
       }
       if(((Object)refactoringContext.getParameter("target")) instanceof SNode) {
-        refactoringContext.moveNodesToNode(nodes, ListOperations.getElement(nodes, 0).getRole_(), (SNode)((Object)refactoringContext.getParameter("target")));
+        movedNodes = refactoringContext.moveNodesToNode(nodes, ListOperations.getElement(nodes, 0).getRole_(), (SNode)((Object)refactoringContext.getParameter("target")));
         targetModel = ((SNode)((Object)refactoringContext.getParameter("target"))).getModel();
       }
-      /*
-        if(targetModel != null) {
-          IModule module = targetModel.getModelDescriptor().getModule();
-          IOperationContext operationContext = new ModuleContext(module, actionContext.getOperationContext().getProject());
-          if(operationContext != null) {
-            NavigationActionProcessor.navigateToNode(SequenceOperations.getFirst(nodes), operationContext, true);
-          }
+      if(targetModel != null) {
+        IModule module = targetModel.getModelDescriptor().getModule();
+        IOperationContext operationContext = new ModuleContext(module, actionContext.getOperationContext().getProject());
+        if(operationContext != null) {
+          NavigationActionProcessor.navigateToNode(SequenceOperations.getFirst(movedNodes), operationContext, true);
         }
-      */
+      }
     }
   }
 

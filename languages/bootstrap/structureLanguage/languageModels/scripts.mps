@@ -3,53 +3,54 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.scripts" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" version="-1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
   </language>
   <language namespace="jetbrains.mps.ide.scriptLanguage">
-    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.helgins" version="-1" />
     <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.ide.scriptLanguage.structure" version="-1" />
   </language>
   <language namespace="jetbrains.mps.logging.refactoring">
-    <languageAspect modelUID="jetbrains.mps.logging.refactoring.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.logging.refactoring.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.logging.refactoring.intentions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.logging.refactoring.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.logging.refactoring.editor" version="-1" />
     <languageAspect modelUID="jetbrains.mps.logging.refactoring.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.logging.refactoring.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.logging.refactoring.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.logging.refactoring.editor" version="-1" />
   </language>
   <language namespace="jetbrains.mps.bootstrap.constraintsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.helgins" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.scripts" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.intentions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="-1" />
   </language>
   <maxImportIndex value="14" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
@@ -820,14 +821,16 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1198523172001">
           <property name="value" value="refactoring itself" />
         </node>
-        <node role="statement" type="jetbrains.mps.logging.refactoring.structure.MoveNodesToModelOperation" id="1198173841922">
-          <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198173924290">
-            <link role="variableDeclaration" targetNodeId="1198173821008" resolveInfo="nodes" />
-          </node>
-          <node role="destination" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198680027937">
-            <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
-            <node role="instance" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198173929119">
-              <link role="argument" targetNodeId="1198173589717" resolveInfo="targetModel" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199622881357">
+          <node role="expression" type="jetbrains.mps.logging.refactoring.structure.MoveNodesToModelExpression" id="1199622881359">
+            <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198173924290">
+              <link role="variableDeclaration" targetNodeId="1198173821008" resolveInfo="nodes" />
+            </node>
+            <node role="destination" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198680027937">
+              <link role="baseMethodDeclaration" targetNodeId="5.~SModelDescriptor.getSModel():jetbrains.mps.smodel.SModel" resolveInfo="getSModel" />
+              <node role="instance" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198173929119">
+                <link role="argument" targetNodeId="1198173589717" resolveInfo="targetModel" />
+              </node>
             </node>
           </node>
         </node>
@@ -928,12 +931,14 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.logging.refactoring.structure.MoveNodesToModelOperation" id="1198523148227">
-              <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198523148228">
-                <link role="variableDeclaration" targetNodeId="1198523058147" resolveInfo="editors" />
-              </node>
-              <node role="destination" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198578312502">
-                <link role="variableDeclaration" targetNodeId="1198578312500" resolveInfo="editorModel" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199622895190">
+              <node role="expression" type="jetbrains.mps.logging.refactoring.structure.MoveNodesToModelExpression" id="1199622895192">
+                <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198523148228">
+                  <link role="variableDeclaration" targetNodeId="1198523058147" resolveInfo="editors" />
+                </node>
+                <node role="destination" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198578312502">
+                  <link role="variableDeclaration" targetNodeId="1198578312500" resolveInfo="editorModel" />
+                </node>
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.logging.refactoring.structure.UpdateModelProcedure" id="1198578300606">
@@ -1002,12 +1007,14 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.logging.refactoring.structure.MoveNodesToModelOperation" id="1198523135264">
-              <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198523135265">
-                <link role="variableDeclaration" targetNodeId="1198523085615" resolveInfo="behaviors" />
-              </node>
-              <node role="destination" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198578331107">
-                <link role="variableDeclaration" targetNodeId="1198578331105" resolveInfo="constraintsModel" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199622905680">
+              <node role="expression" type="jetbrains.mps.logging.refactoring.structure.MoveNodesToModelExpression" id="1199622905682">
+                <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198523135265">
+                  <link role="variableDeclaration" targetNodeId="1198523085615" resolveInfo="behaviors" />
+                </node>
+                <node role="destination" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198578331107">
+                  <link role="variableDeclaration" targetNodeId="1198578331105" resolveInfo="constraintsModel" />
+                </node>
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.logging.refactoring.structure.UpdateModelProcedure" id="1198578338817">
@@ -1759,20 +1766,22 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.logging.refactoring.structure.MoveNodeToNodeOperation" id="1198593765374">
-          <node role="roleInTarget" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198593918291">
-            <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getRole_():java.lang.String" resolveInfo="getRole_" />
-            <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1198593914641">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198593906217">
-                <link role="variableDeclaration" targetNodeId="1198593775159" resolveInfo="linkDeclaration" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199622963228">
+          <node role="expression" type="jetbrains.mps.logging.refactoring.structure.MoveNodeToNodeExpression" id="1199622963230">
+            <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198593924709">
+              <link role="variableDeclaration" targetNodeId="1198593775159" resolveInfo="linkDeclaration" />
+            </node>
+            <node role="destination" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198593922157">
+              <link role="argument" targetNodeId="1198592978857" resolveInfo="targetConcept" />
+            </node>
+            <node role="roleInTarget" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198593918291">
+              <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getRole_():java.lang.String" resolveInfo="getRole_" />
+              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1198593914641">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198593906217">
+                  <link role="variableDeclaration" targetNodeId="1198593775159" resolveInfo="linkDeclaration" />
+                </node>
               </node>
             </node>
-          </node>
-          <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198593924709">
-            <link role="variableDeclaration" targetNodeId="1198593775159" resolveInfo="linkDeclaration" />
-          </node>
-          <node role="destination" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198593922157">
-            <link role="argument" targetNodeId="1198592978857" resolveInfo="targetConcept" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.logging.refactoring.structure.ChangeFeatureNameOperation" id="1198593934851">
@@ -2567,20 +2576,22 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.logging.refactoring.structure.MoveNodeToNodeOperation" id="1198777116391">
-          <node role="roleInTarget" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198777116392">
-            <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getRole_():java.lang.String" resolveInfo="getRole_" />
-            <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1198777116393">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198777116394">
-                <link role="variableDeclaration" targetNodeId="1198777116385" resolveInfo="linkDeclaration" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199623095550">
+          <node role="expression" type="jetbrains.mps.logging.refactoring.structure.MoveNodeToNodeExpression" id="1199623095552">
+            <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198777116395">
+              <link role="variableDeclaration" targetNodeId="1198777116385" resolveInfo="linkDeclaration" />
+            </node>
+            <node role="destination" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198777124520">
+              <link role="argument" targetNodeId="1198776978561" resolveInfo="targetConcept" />
+            </node>
+            <node role="roleInTarget" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1198777116392">
+              <link role="baseMethodDeclaration" targetNodeId="5.~SNode.getRole_():java.lang.String" resolveInfo="getRole_" />
+              <node role="instance" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression" id="1198777116393">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198777116394">
+                  <link role="variableDeclaration" targetNodeId="1198777116385" resolveInfo="linkDeclaration" />
+                </node>
               </node>
             </node>
-          </node>
-          <node role="whatToMove" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1198777116395">
-            <link role="variableDeclaration" targetNodeId="1198777116385" resolveInfo="linkDeclaration" />
-          </node>
-          <node role="destination" type="jetbrains.mps.logging.refactoring.structure.RequiredAdditionalArgumentReference" id="1198777124520">
-            <link role="argument" targetNodeId="1198776978561" resolveInfo="targetConcept" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.logging.refactoring.structure.ChangeFeatureNameOperation" id="1198777116397">

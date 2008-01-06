@@ -13,17 +13,17 @@ public class typeof_SNodeCreator_InferenceRule implements InferenceRule_Runtime 
   public  typeof_SNodeCreator_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    SNode createdType = SLinkOperations.getTarget(argument, "createdType", true);
+  public void applyRule(final SNode creator) {
+    SNode createdType = SLinkOperations.getTarget(creator, "createdType", true);
     if(createdType != null) {
       if(SLinkOperations.getTarget(createdType, "concept", false) == null) {
         TypeChecker.getInstance().reportTypeError(createdType, "concrete node type is expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181944909006");
         return;
       }
-      if(SLinkOperations.getTarget(argument, "prototypeNode", true) != null) {
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "prototypeNode", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061742845", true), new QuotationClass_66().createNode(), SLinkOperations.getTarget(argument, "prototypeNode", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181945011354");
+      if(SLinkOperations.getTarget(creator, "prototypeNode", true) != null) {
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(creator, "prototypeNode", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061742845", true), new QuotationClass_66().createNode(), SLinkOperations.getTarget(creator, "prototypeNode", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181945011354");
       }
-      TypeChecker.getInstance().getRuntimeSupport().givetype(createdType, argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181945088726");
+      TypeChecker.getInstance().getRuntimeSupport().givetype(createdType, creator, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1181945088726");
     }
   }
 

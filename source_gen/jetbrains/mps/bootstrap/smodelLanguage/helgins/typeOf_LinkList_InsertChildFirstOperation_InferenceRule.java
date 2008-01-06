@@ -13,14 +13,14 @@ public class typeOf_LinkList_InsertChildFirstOperation_InferenceRule implements 
   public  typeOf_LinkList_InsertChildFirstOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    RulesUtil.checkAppliedTo_LinkListAccess_aggregation(argument);
-    if(RulesUtil.checkAppliedTo_LinkListAccess_aggregation(argument)) {
-      SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
+  public void applyRule(final SNode op) {
+    RulesUtil.checkAppliedTo_LinkListAccess_aggregation(op);
+    if(RulesUtil.checkAppliedTo_LinkListAccess_aggregation(op)) {
+      SNode parameter = SLinkOperations.getTarget(op, "parameter", true);
       if((parameter != null)) {
-        SNode expectedType = RulesUtil.get_inputNodeType(argument);
+        SNode expectedType = RulesUtil.get_inputNodeType(op);
         SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061879161", true);
-        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, expectedType, argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061883539");
+        TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, expectedType, op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061883539");
       }
     }
   }

@@ -12,10 +12,10 @@ public class typeof_Node_GetAncestorsOperation_InferenceRule implements Inferenc
   public  typeof_Node_GetAncestorsOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    RulesUtil.checkAppliedCorrectly_generic(argument);
-    RulesUtil.checkOpParameters_generic(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_SNodeListType_fromOpParameter(argument), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287490908");
+  public void applyRule(final SNode op) {
+    RulesUtil.checkAppliedCorrectly_generic(op);
+    RulesUtil.checkOpParameters_generic(op);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(RulesUtil.get_SNodeListType_fromOpParameter(op), op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287490908");
   }
 
   public String getApplicableConceptFQName() {

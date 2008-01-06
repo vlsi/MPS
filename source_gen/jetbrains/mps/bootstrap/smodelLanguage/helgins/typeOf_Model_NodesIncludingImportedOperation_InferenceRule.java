@@ -13,10 +13,10 @@ public class typeOf_Model_NodesIncludingImportedOperation_InferenceRule implemen
   public  typeOf_Model_NodesIncludingImportedOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    RulesUtil.checkAppliedCorrectly_generic(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_75().createNode(SLinkOperations.getTarget(argument, "concept", false)), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182512146602");
-    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "scope", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182512146613", true), new QuotationClass_76().createNode(), SLinkOperations.getTarget(argument, "scope", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182512146610");
+  public void applyRule(final SNode node) {
+    RulesUtil.checkAppliedCorrectly_generic(node);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_75().createNode(SLinkOperations.getTarget(node, "concept", false)), node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182512146602");
+    TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(node, "scope", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182512146613", true), new QuotationClass_76().createNode(), SLinkOperations.getTarget(node, "scope", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182512146610");
   }
 
   public String getApplicableConceptFQName() {

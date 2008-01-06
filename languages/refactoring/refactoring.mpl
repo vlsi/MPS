@@ -23,6 +23,9 @@
   <accessoryModels>
     <model modelUID="jetbrains.mps.logging.refactoring.samples" />
   </accessoryModels>
+  <intentions>
+    <model modelUID="jetbrains.mps.logging.refactoring.intentions" />
+  </intentions>
   <generators>
     <generator generatorUID="jetbrains.mps.logging.refactoring#1189697379687" targetLanguage="jetbrains.mps.baseLanguage">
       <models>

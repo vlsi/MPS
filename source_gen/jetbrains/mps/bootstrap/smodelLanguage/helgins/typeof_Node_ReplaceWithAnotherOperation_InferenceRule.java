@@ -13,9 +13,9 @@ public class typeof_Node_ReplaceWithAnotherOperation_InferenceRule implements In
   public  typeof_Node_ReplaceWithAnotherOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    RulesUtil.checkAppliedCorrectly_generic(argument);
-    SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
+  public void applyRule(final SNode op) {
+    RulesUtil.checkAppliedCorrectly_generic(op);
+    SNode parameter = SLinkOperations.getTarget(op, "parameter", true);
     if(!((parameter == null))) {
       TypeChecker.getInstance().getRuntimeSupport().createLessThanInequationStrong(TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057036825", true), new QuotationClass_18().createNode(), parameter, "incompatible type: snode expected", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186057036823");
     }

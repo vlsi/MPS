@@ -16,22 +16,22 @@ public class typeOf_LinkList_AddNewChildOperation_InferenceRule implements Infer
   public  typeOf_LinkList_AddNewChildOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
+  public void applyRule(final SNode node) {
     SNode resultConcept = null;
-    if(RulesUtil.checkAppliedTo_LinkListAccess_aggregation(argument)) {
-      SNode expectedConcept = RulesUtil.get_inputNodeConcept(argument);
-      SNode parameterConcept = SLinkOperations.getTarget(argument, "concept", false);
+    if(RulesUtil.checkAppliedTo_LinkListAccess_aggregation(node)) {
+      SNode expectedConcept = RulesUtil.get_inputNodeConcept(node);
+      SNode parameterConcept = SLinkOperations.getTarget(node, "concept", false);
       if(parameterConcept == null) {
         resultConcept = expectedConcept;
       } else
       {
         resultConcept = parameterConcept;
         if(!(SConceptOperations.isSubConceptOf(parameterConcept, NameUtil.nodeFQName(expectedConcept)))) {
-          TypeChecker.getInstance().reportTypeError(argument, SPropertyOperations.getString(parameterConcept, "name") + " is not sub-concept of " + SPropertyOperations.getString(expectedConcept, "name"), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1194374844329");
+          TypeChecker.getInstance().reportTypeError(node, SPropertyOperations.getString(parameterConcept, "name") + " is not sub-concept of " + SPropertyOperations.getString(expectedConcept, "name"), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1194374844329");
         }
       }
     }
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_47().createNode(resultConcept), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492000");
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_47().createNode(resultConcept), node, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287492000");
   }
 
   public String getApplicableConceptFQName() {

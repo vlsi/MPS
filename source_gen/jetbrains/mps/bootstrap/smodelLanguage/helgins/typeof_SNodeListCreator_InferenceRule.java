@@ -13,8 +13,8 @@ public class typeof_SNodeListCreator_InferenceRule implements InferenceRule_Runt
   public  typeof_SNodeListCreator_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(argument, "createdType", true), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287490534");
+  public void applyRule(final SNode creator) {
+    TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(creator, "createdType", true), creator, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1178287490534");
   }
 
   public String getApplicableConceptFQName() {

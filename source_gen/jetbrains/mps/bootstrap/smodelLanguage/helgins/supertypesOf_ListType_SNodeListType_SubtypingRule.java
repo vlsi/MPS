@@ -13,7 +13,7 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
   public  supertypesOf_ListType_SNodeListType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type) {
+  public SNode getSubOrSuperType(SNode subtype) {
     return new QuotationClass_80().createNode(this.myMatchingPattern.PatternVar);
   }
 

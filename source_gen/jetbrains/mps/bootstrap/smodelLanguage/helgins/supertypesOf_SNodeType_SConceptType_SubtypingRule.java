@@ -13,7 +13,7 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
   public  supertypesOf_SNodeType_SConceptType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type) {
+  public SNode getSubOrSuperType(SNode node) {
     return new QuotationClass_61().createNode();
   }
 

@@ -18,9 +18,9 @@ public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends S
   public  supertypesOf_ListType_ListType_elementSNode_SubtypingRule() {
   }
 
-  public List<SNode> getSubOrSuperTypes(SNode type) {
+  public List<SNode> getSubOrSuperTypes(SNode listType) {
     List<SNode> result = new ArrayList<SNode>();
-    SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(type, "elementType", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(listType, "elementType", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     if(SLinkOperations.getTarget(classifierType, "classifier", false) == SLinkOperations.getTarget(new QuotationClass_79().createNode(), "classifier", false)) {
       ListOperations.addElement(result, new QuotationClass_78().createNode());
     }

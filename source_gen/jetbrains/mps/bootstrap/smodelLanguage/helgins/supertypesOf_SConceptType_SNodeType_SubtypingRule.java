@@ -14,8 +14,8 @@ public class supertypesOf_SConceptType_SNodeType_SubtypingRule extends Subtyping
   public  supertypesOf_SConceptType_SNodeType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type) {
-    SNode concept = SLinkOperations.getTarget(type, "conceptDeclaraton", false);
+  public SNode getSubOrSuperType(SNode conceptType) {
+    SNode concept = SLinkOperations.getTarget(conceptType, "conceptDeclaraton", false);
     if(concept != null) {
       if(SNodeOperations.isInstanceOf(concept, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration")) {
         return new QuotationClass_34().createNode();

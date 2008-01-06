@@ -20,27 +20,27 @@ public class typeof_SPropertyAccess_InferenceRule implements InferenceRule_Runti
   public  typeof_SPropertyAccess_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    RulesUtil.checkAppliedCorrectly_generic(argument);
-    if((SLinkOperations.getTarget(argument, "property", false) != null)) {
+  public void applyRule(final SNode op) {
+    RulesUtil.checkAppliedCorrectly_generic(op);
+    if((SLinkOperations.getTarget(op, "property", false) != null)) {
       final SNode C_typevar_1186062582563 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062582563), RulesUtil.get_inputNodeConcept(argument), argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062585190");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062582563), RulesUtil.get_inputNodeConcept(op), op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062585190");
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062582563), new Runnable() {
 
         public void run() {
           SNode inputNodeConcept = TypeChecker.getInstance().getEquationManager().getRepresentator(C_typevar_1186062582563);
           List<PropertyDeclaration> declaredProperties = SModelSearchUtil_new.getPropertyDeclarationsExcludingOverridden(((AbstractConceptDeclaration)SNodeOperations.getAdapter(inputNodeConcept)));
-          SNode property = SLinkOperations.getTarget(argument, "property", false);
+          SNode property = SLinkOperations.getTarget(op, "property", false);
           if(!(declaredProperties.contains(((PropertyDeclaration)SNodeOperations.getAdapter(property))))) {
-            TypeChecker.getInstance().reportTypeError(argument, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062616321");
+            TypeChecker.getInstance().reportTypeError(op, "access to property '" + SPropertyOperations.getString(property, "name") + "' is not expected here", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062616321");
           }
         }
 
       }, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186062603529");
     }
-    SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(argument, "property", false), "dataType", false);
+    SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(op, "property", false), "dataType", false);
     if(dataType != null) {
-      TypeChecker.getInstance().getRuntimeSupport().givetype(DataTypeDeclaration_Behavior.call_toBaseLanguageType_1182472765133(dataType), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182474193368");
+      TypeChecker.getInstance().getRuntimeSupport().givetype(DataTypeDeclaration_Behavior.call_toBaseLanguageType_1182472765133(dataType), op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1182474193368");
     }
   }
 

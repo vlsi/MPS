@@ -14,24 +14,24 @@ public class typeof_SemanticDowncastExpression_InferenceRule implements Inferenc
   public  typeof_SemanticDowncastExpression_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    if((SLinkOperations.getTarget(argument, "leftExpression", true) != null)) {
+  public void applyRule(final SNode expr) {
+    if((SLinkOperations.getTarget(expr, "leftExpression", true) != null)) {
       final SNode LeftType_typevar_1186060911559 = TypeChecker.getInstance().getRuntimeSupport().createNewRuntimeTypesVariable(false);
-      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(argument, "leftExpression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060928458", true), SLinkOperations.getTarget(argument, "leftExpression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060923030");
+      TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(expr, "leftExpression", true), "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060928458", true), SLinkOperations.getTarget(expr, "leftExpression", true), null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060923030");
       TypeChecker.getInstance().getRuntimeSupport().whenConcrete(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), new Runnable() {
 
         public void run() {
           if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), "jetbrains.mps.bootstrap.smodelLanguage.structure.SModelType")) {
-            TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_22().createNode(), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061042651");
+            TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_22().createNode(), expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061042651");
           } else
           if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
-            TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_23().createNode(), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061042661");
+            TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_23().createNode(), expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061042661");
           } else
           if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), "jetbrains.mps.bootstrap.smodelLanguage.structure.SConceptType")) {
-            TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_24().createNode(), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061042671");
+            TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_24().createNode(), expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061042671");
           } else
           {
-            TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061042681");
+            TypeChecker.getInstance().getRuntimeSupport().givetype(TypeChecker.getInstance().getEquationManager().getRepresentator(LeftType_typevar_1186060911559), expr, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186061042681");
           }
         }
 

@@ -16,15 +16,15 @@ public class typeof_Property_HasValue_Simple_InferenceRule implements InferenceR
   public  typeof_Property_HasValue_Simple_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    RulesUtil.checkAppliedCorrectly_generic(argument);
-    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_7().createNode(), argument, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059232793");
-    SNode propertyAccessOp = SLinkOperations.getTarget(RulesUtil.leftExpression(argument), "nodeOperation", true);
+  public void applyRule(final SNode op) {
+    RulesUtil.checkAppliedCorrectly_generic(op);
+    TypeChecker.getInstance().getRuntimeSupport().givetype(new QuotationClass_7().createNode(), op, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059232793");
+    SNode propertyAccessOp = SLinkOperations.getTarget(RulesUtil.leftExpression(op), "nodeOperation", true);
     SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(propertyAccessOp, "property", false), "dataType", false);
     if(!((dataType != null))) {
-      TypeChecker.getInstance().reportTypeError(argument, "couldn't define accessed property datatype", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059218089");
+      TypeChecker.getInstance().reportTypeError(op, "couldn't define accessed property datatype", "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059218089");
     }
-    SNode value = SLinkOperations.getTarget(argument, "value", true);
+    SNode value = SLinkOperations.getTarget(op, "value", true);
     if((value != null)) {
       if(DataTypeUtil.isSimpleString(((DataTypeDeclaration)SNodeOperations.getAdapter(dataType)))) {
         TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059218110", true), new QuotationClass_8().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059218105");
@@ -36,7 +36,7 @@ public class typeof_Property_HasValue_Simple_InferenceRule implements InferenceR
         TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(TypeChecker.getInstance().getRuntimeSupport().typeOf(value, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059218136", true), new QuotationClass_10().createNode(), value, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059218131");
       } else
       {
-        TypeChecker.getInstance().reportTypeError(argument, "unknown property datatype: " + dataType, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059218144");
+        TypeChecker.getInstance().reportTypeError(op, "unknown property datatype: " + dataType, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186059218144");
       }
     }
   }

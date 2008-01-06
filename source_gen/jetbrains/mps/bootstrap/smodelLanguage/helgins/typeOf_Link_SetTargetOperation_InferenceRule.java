@@ -13,13 +13,13 @@ public class typeOf_Link_SetTargetOperation_InferenceRule implements InferenceRu
   public  typeOf_Link_SetTargetOperation_InferenceRule() {
   }
 
-  public void applyRule(final SNode argument) {
-    RulesUtil.checkAppliedCorrectly_generic(argument);
-    SNode parameter = SLinkOperations.getTarget(argument, "parameter", true);
+  public void applyRule(final SNode op) {
+    RulesUtil.checkAppliedCorrectly_generic(op);
+    SNode parameter = SLinkOperations.getTarget(op, "parameter", true);
     if((parameter != null)) {
-      SNode expectedType = RulesUtil.get_inputNodeType(argument);
+      SNode expectedType = RulesUtil.get_inputNodeType(op);
       SNode parmType = TypeChecker.getInstance().getRuntimeSupport().typeOf(parameter, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060393994", true);
-      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, expectedType, argument, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060404653");
+      TypeChecker.getInstance().getRuntimeSupport().createLessThanInequation(parmType, expectedType, op, null, "jetbrains.mps.bootstrap.smodelLanguage.helgins", "1186060404653");
     }
   }
 

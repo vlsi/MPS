@@ -11,16 +11,16 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
-import java.util.List;
-import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
+import java.util.ArrayList;
 import jetbrains.mps.refactoring.framework.IChooseComponentPart;
 import jetbrains.mps.refactoring.framework.HierarchicalChooseNodeComponent;
 import jetbrains.mps.refactoring.framework.ConceptAncestorsProvider;
@@ -90,11 +90,7 @@ public class MoveLinkUp extends AbstractLoggableRefactoring {
   public void doRefactor(ActionContext actionContext, RefactoringContext refactoringContext) {
     {
       SNode linkDeclaration = (SNode)actionContext.getNode();
-      {
-        List<SNode> _sourceNodes_ = new ArrayList<SNode>();
-        _sourceNodes_.add(linkDeclaration);
-        refactoringContext.moveNodesToNode(_sourceNodes_, linkDeclaration.getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
-      }
+      refactoringContext.moveNodeToNode(linkDeclaration, linkDeclaration.getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
       refactoringContext.changeFeatureName(linkDeclaration, SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))) + "." + SPropertyOperations.getString(((SNode)refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(linkDeclaration, "role"));
     }
   }

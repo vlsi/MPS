@@ -111,6 +111,13 @@ public class RefactoringContext {
     myCachesAreUpToDate = false;
   }
 
+  public SNode moveNodeToNode(SNode sourceNode, String role, SNode targetNode) {
+    List<SNode> nodes = new ArrayList<SNode>();
+    nodes.add(sourceNode);
+    List<SNode> result = moveNodesToNode(nodes, role, targetNode);
+    return result.get(0);
+  }
+
   public List<SNode> moveNodesToNode(List<SNode> sourceNodes, String role, SNode targetNode) {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     List<SNode> targetNodes = CopyUtil.copy(sourceNodes, targetNode.getModel(), mapping);
@@ -126,6 +133,13 @@ public class RefactoringContext {
     }
     myCachesAreUpToDate = false;
     return targetNodes;
+  }
+
+  public SNode moveNodeToModel(SNode sourceNode, SModel targetModel) {
+    List<SNode> nodes = new ArrayList<SNode>();
+    nodes.add(sourceNode);
+    List<SNode> result = moveNodesToModel(nodes, targetModel);
+    return result.get(0);
   }
 
   public List<SNode> moveNodesToModel(List<SNode> sourceNodes, SModel targetModel) {
