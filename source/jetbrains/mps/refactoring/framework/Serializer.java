@@ -6,6 +6,9 @@ import jetbrains.mps.refactoring.framework.RefactoringContext.FullNodeId;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jdom.Element;
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.JDomReader;
+import com.thoughtworks.xstream.io.xml.JDomWriter;
 
 /**
  * Created by IntelliJ IDEA.
@@ -25,10 +28,12 @@ public class Serializer {
   public static final String SMODEL = "smodel";
   public static final String SMODEL_DESCRIPTOR = "smodelDescriptor";
   public static final String ISERIALIZABLE = "iserializable";
+  public static final String DEFAULT = "default";
 
   public static final String STRING_VALUE = "stringValue";
   public static final String MODEL_UID = "modelUID";
   public static final String CLASS_NAME = "className";
+  public static final String XSTREAM_VALUE = "xstreamValue";
   public ModelOwner myOwner;
 
 
@@ -36,24 +41,37 @@ public class Serializer {
     if (value instanceof String) {
       element.setAttribute(OBJECT_TYPE, STRING);
       element.setAttribute(STRING_VALUE, (String) value);
+      return;
     }
     if (value instanceof SNode) {
       element.setAttribute(OBJECT_TYPE, SNODE);
       FullNodeId fullNodeId = new FullNodeId((SNode)value);
       fullNodeId.toElement(element);
+      return;
     }
     if (value instanceof SModel) {
       element.setAttribute(OBJECT_TYPE, SMODEL);
       element.setAttribute(MODEL_UID, ((SModel)value).toString());
+      return;
     }
     if (value instanceof SModelDescriptor) {
       element.setAttribute(OBJECT_TYPE, SMODEL_DESCRIPTOR);
       element.setAttribute(MODEL_UID, ((SModelDescriptor)value).toString());
+      return;
     }
     if (value instanceof ISerializable) {
       element.setAttribute(OBJECT_TYPE, ISERIALIZABLE);
       element.setAttribute(CLASS_NAME, value.getClass().getName());
       ((ISerializable)value).toElement(element);
+      return;
+    }
+    {
+      element.setAttribute(OBJECT_TYPE, DEFAULT);
+      Element child = new Element(XSTREAM_VALUE);
+      XStream xStream = new XStream();
+      JDomWriter writer = new JDomWriter(child);
+      xStream.marshal(value, writer);
+      element.setContent(child);
     }
   }
 
@@ -84,6 +102,12 @@ public class Serializer {
       } catch (Throwable t) {
         LOG.error(t);
       }
+    }
+    if (DEFAULT.equals(OBJECT_TYPE)) {
+      Element child = element.getChild(XSTREAM_VALUE);
+      XStream xStream = new XStream();
+      JDomReader reader = new JDomReader(child);
+      return xStream.unmarshal(reader);
     }
     return null;
   }
