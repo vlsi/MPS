@@ -12,7 +12,9 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = new ArrayList<IModelConstraints>();
 
   public  ConstraintsDescriptor() {
+    this.myConstraints.add(new StringLiteral_name_PropertyConstraint());
     this.myConstraints.add(new GenericCall_name_PropertyConstraint());
+    this.myConstraints.add(new GenericCall_pseudonymProperty_PropertyConstraint());
     this.myConstraints.add(new TargetReference_targetDeclaration_ReferentConstraint());
     this.myConstraints.add(new PropertyReference_propertyDeclaration_ReferentConstraint());
     this.myConstraints.add(new GenericCall_declaration_ReferentConstraint());
@@ -20,6 +22,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new GenericDeclaration_nameid_ReferentConstraint());
     this.myConstraints.add(new Reference_declaration_ReferentConstraint());
     this.myConstraints.add(new PathReference_path_ReferentConstraint());
+    this.myConstraints.add(new StringLiteralReference_ref_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

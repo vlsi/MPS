@@ -69,7 +69,7 @@ public class TaskImporterTestCase extends TestCase {
       SmartItemsInfoExtractor.getInstance().generateHierarchy(ANT_PATH, "platform/buildlanguage/tests/testNested.jar", testWalker);
       assertEquals("declarations {bigtask=false, datatype=true, inner1=false, inner2=false, inner3=false, task=true}\n" +
                    "interfaces {}\n" +
-                   "nesteds {bigtask=[inner3, inner1, inner2]}\n" +
+                   "nesteds {bigtask=[inner2, inner3, inner1]}\n" +
                    "parents {bigtask=task, inner1=datatype, inner2=datatype, inner3=datatype}\n" +
                    "attributes {}", testWalker.toString());
     } catch (IOException e) {
@@ -127,7 +127,7 @@ public class TaskImporterTestCase extends TestCase {
       myParents.put(declName, parentName);
     }
 
-    public void addNested(String declName, String nestedName) {
+    public void addNested(String declName, String nestedName, String pseudonym) {
       assertTrue(declName, myDecls.containsKey(declName));
       assertTrue(nestedName, myDecls.containsKey(nestedName));
       LinkedList<String> nesteds = myNesteds.get(declName);
