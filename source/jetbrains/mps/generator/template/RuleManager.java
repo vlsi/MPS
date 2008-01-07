@@ -139,8 +139,11 @@ public class RuleManager {
     }
   }
 
-  public List<Root_MappingRule> getRoot_MappingRules() {
-    return myRoot_MappingRules;
+  public void applyRoot_MappingRules() {
+    for (Root_MappingRule mappingRule : myRoot_MappingRules) {
+      myGenerator.checkMonitorCanceled();
+      GeneratorUtil.applyRoot_MappingRule(mappingRule, myGenerator);
+    }
   }
 
   public List<WeavingRule> getWeavingRules() {

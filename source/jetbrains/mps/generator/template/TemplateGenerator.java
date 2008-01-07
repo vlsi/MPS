@@ -5,9 +5,6 @@ import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GeneratorUtil;
-import jetbrains.mps.generator.template.AbstractTemplateGenerator;
-import jetbrains.mps.generator.template.INodeBuilder;
-import jetbrains.mps.generator.template.TemplateSwitchGraph;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.*;
@@ -94,11 +91,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       ruleManager.applyCreateRootRules();
     }
     ruleManager.applyMappingRules();
-
-    for (Root_MappingRule rootMappingRule : ruleManager.getRoot_MappingRules()) {
-      checkMonitorCanceled();
-      myRuleUtil.applyRoot_MappingRule(rootMappingRule);
-    }
+    ruleManager.applyRoot_MappingRules();
 
     checkMonitorCanceled();
     getGeneratorSessionContext().clearCopiedRootsSet();

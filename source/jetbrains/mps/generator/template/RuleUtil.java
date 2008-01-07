@@ -34,41 +34,41 @@ public class RuleUtil {
     myOutputModel = myGenerator.getTargetModel();
   }
 
-  public void applyRoot_MappingRule(Root_MappingRule rule) {
-    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
-    if (applicableConcept == null) {
-      myGenerator.showErrorMessage(null, null, BaseAdapter.fromAdapter(rule), "rule has no applicable concept defined");
-      return;
-    }
-    boolean includeInheritors = rule.getApplyToConceptInheritors();
-    List<SNode> inputNodes = myGenerator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
-    for (SNode inputNode : inputNodes) {
-      // do not apply root mapping if root node has been copied from input model on previous micro-step
-      // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
-      if (myGenerator.getGeneratorSessionContext().isCopiedRoot(inputNode)) {
-        continue;
-      }
-
-      if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), myGenerator)) {
-        boolean wasChanged = myGenerator.isChanged();
-        try {
-          myGenerator.setChanged(true);
-          SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
-          if (templateNode != null) {
-            createRootNodeFromTemplate(rule.getName(), templateNode, inputNode);
-          } else {
-            myGenerator.showErrorMessage(BaseAdapter.fromAdapter(rule), "No template is defined for the rule");
-          }
-          if (inputNode.isRoot() && rule.getKeepSourceRoot() == Options_DefaultTrue.default_) {
-            myGenerator.addRootNotToCopy(inputNode);
-          }
-        } catch (DismissTopMappingRuleException e) {
-          // it's ok, just continue
-          myGenerator.setChanged(wasChanged);
-        }
-      }
-    }
-  }
+//  public void applyRoot_MappingRule(Root_MappingRule rule) {
+//    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
+//    if (applicableConcept == null) {
+//      myGenerator.showErrorMessage(null, null, BaseAdapter.fromAdapter(rule), "rule has no applicable concept defined");
+//      return;
+//    }
+//    boolean includeInheritors = rule.getApplyToConceptInheritors();
+//    List<SNode> inputNodes = myGenerator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
+//    for (SNode inputNode : inputNodes) {
+//      // do not apply root mapping if root node has been copied from input model on previous micro-step
+//      // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
+//      if (myGenerator.getGeneratorSessionContext().isCopiedRoot(inputNode)) {
+//        continue;
+//      }
+//
+//      if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), myGenerator)) {
+//        boolean wasChanged = myGenerator.isChanged();
+//        try {
+//          myGenerator.setChanged(true);
+//          SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
+//          if (templateNode != null) {
+//            createRootNodeFromTemplate(rule.getName(), templateNode, inputNode);
+//          } else {
+//            myGenerator.showErrorMessage(BaseAdapter.fromAdapter(rule), "No template is defined for the rule");
+//          }
+//          if (inputNode.isRoot() && rule.getKeepSourceRoot() == Options_DefaultTrue.default_) {
+//            myGenerator.addRootNotToCopy(inputNode);
+//          }
+//        } catch (DismissTopMappingRuleException e) {
+//          // it's ok, just continue
+//          myGenerator.setChanged(wasChanged);
+//        }
+//      }
+//    }
+//  }
 
 
   /**

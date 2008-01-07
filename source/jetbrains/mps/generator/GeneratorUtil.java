@@ -8,6 +8,7 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.generator.template.*;
@@ -65,37 +66,8 @@ public class GeneratorUtil {
         if (sourceNodeConcept != applicableConcept) return false;
       }
     }
-//    return checkConditionForBaseMappingRule(inputNode, rule, generator);
     return checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), generator);
   }
-
-//  public static boolean checkConditionForBaseMappingRule(SNode sourceNode, BaseMappingRule mappingRule, ITemplateGenerator generator) {
-//    BaseMappingRule_Condition conditionFunction = mappingRule.getConditionFunction();
-//    if (conditionFunction == null) {
-//      return true;
-//    }
-//
-//    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(conditionFunction.getNode());
-//    Object[] args = new Object[]{
-//            sourceNode,
-//            generator.getInputModel(),
-//            generator,
-//            generator.getScope(),
-//            generator.getGeneratorSessionContext()};
-//    long startTime = System.currentTimeMillis();
-//    boolean res = false;
-//    try {
-//      res = (Boolean) QueryMethodGenerated.invoke(methodName, args, mappingRule.getModel());
-//      return res;
-//    } catch (Exception e) {
-//      generator.showErrorMessage(sourceNode, null, BaseAdapter.fromAdapter(mappingRule), "couldn't evaluate rule condition");
-//      LOG.error(e);
-//
-//      return false;
-//    } finally {
-//      Statistics.getStatistic(Statistics.TPL).add(mappingRule.getModel(), methodName, startTime, res);
-//    }
-//  }
 
   public static boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
     if (condition == null) {
@@ -237,6 +209,9 @@ public class GeneratorUtil {
     }
   }
 
+  /**
+   * old
+   */
   public static void applyMappingRule(MappingRule mappingRule, TemplateGenerator generator) {
     BaseConcept templateNode = mappingRule.getTemplateNode();
     if (templateNode == null) {
@@ -266,6 +241,43 @@ public class GeneratorUtil {
     List<SNode> inputNodes = (List<SNode>) QueryMethod.invoke(methodName, args, mappingRule.getModel());
     return inputNodes;
   }
+
+  public static void applyRoot_MappingRule(Root_MappingRule rule, TemplateGenerator generator) {
+    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
+    if (applicableConcept == null) {
+      generator.showErrorMessage(null, null, BaseAdapter.fromAdapter(rule), "rule has no applicable concept defined");
+      return;
+    }
+    boolean includeInheritors = rule.getApplyToConceptInheritors();
+    List<SNode> inputNodes = generator.getInputModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
+    for (SNode inputNode : inputNodes) {
+      // do not apply root mapping if root node has been copied from input model on previous micro-step
+      // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
+      if (generator.getGeneratorSessionContext().isCopiedRoot(inputNode)) {
+        continue;
+      }
+
+      if (checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), generator)) {
+        boolean wasChanged = generator.isChanged();
+        try {
+          generator.setChanged(true);
+          SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
+          if (templateNode != null) {
+            createRootNodeFromTemplate(rule.getName(), templateNode, inputNode, generator);
+          } else {
+            generator.showErrorMessage(BaseAdapter.fromAdapter(rule), "no template is defined for the rule");
+          }
+          if (inputNode.isRoot() && rule.getKeepSourceRoot() == Options_DefaultTrue.default_) {
+            generator.addRootNotToCopy(inputNode);
+          }
+        } catch (DismissTopMappingRuleException e) {
+          // it's ok, just continue
+          generator.setChanged(wasChanged);
+        }
+      }
+    }
+  }
+
 
 
   private static void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, TemplateGenerator generator) throws DismissTopMappingRuleException {
