@@ -50,7 +50,7 @@ public class RuleUtil {
         }
         return outputNodes;
       } else if (nodeMacro instanceof CopySrcNodeMacro || nodeMacro instanceof CopySrcListMacro) {
-        // $COPY-SRC$
+        // $COPY-SRC$ / $COPY-SRCL$
         List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           List<SNode> _outputNodes = copyNodeFromInputNode(mappingName_, templateNode, newInputNode);

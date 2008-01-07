@@ -660,8 +660,8 @@ public class GeneratorUtil {
       }
     } catch (DismissTopMappingRuleException e) {
       throw e;
-    } catch (Exception e) {
-      LOG.error(e, BaseAdapter.fromNode(fragmentNode));
+    } catch (Throwable t) {
+      LOG.error(t, BaseAdapter.fromNode(fragmentNode));
       generator.showErrorMessage(inputNode, fragmentNode, reductionRule.getNode(), "error processing reduction rule");
     }
     return outputNodes;
