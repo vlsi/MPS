@@ -72,7 +72,7 @@ public class RuleUtil {
           // alternative consequence
           RuleConsequence altConsequence = ((IfMacro) nodeMacro).getAlternativeConsequence();
           if (altConsequence != null) {
-            Pair<SNode, String> nodeAndMappingName = getTemplateNodeFromRuleConsequence(altConsequence, inputNode, nodeMacro.getNode(), myGenerator);
+            Pair<SNode, String> nodeAndMappingName = GeneratorUtil.getTemplateNodeFromRuleConsequence(altConsequence, inputNode, nodeMacro.getNode(), myGenerator);
             if (nodeAndMappingName == null) {
               myGenerator.showErrorMessage(inputNode, null, nodeMacro.getNode(), "error processing $IF$/alternative");
               return null;
@@ -132,7 +132,7 @@ public class RuleUtil {
           RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getConsequenceForSwitchCase(newInputNode, templateSwitch);
           SNode templateNodeForCase = null;
           if (consequenceForCase != null) {
-            Pair<SNode, String> nodeAndMappingName = getTemplateNodeFromRuleConsequence(consequenceForCase, newInputNode, nodeMacro.getNode(), myGenerator);
+            Pair<SNode, String> nodeAndMappingName = GeneratorUtil.getTemplateNodeFromRuleConsequence(consequenceForCase, newInputNode, nodeMacro.getNode(), myGenerator);
             if (nodeAndMappingName == null) {
               myGenerator.showErrorMessage(newInputNode, nodeMacro.getNode(), consequenceForCase.getNode(), "error processing $SWITCH$");
               return null;
@@ -383,62 +383,4 @@ public class RuleUtil {
     return outputNodes;
   }
 
-  @Nullable
-  /*package*/ static Pair<SNode, String> getTemplateNodeFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException {
-    if (ruleConsequence == null) {
-      generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
-      return null;
-    }
-
-    if (ruleConsequence instanceof DismissTopMappingRule) {
-      GeneratorMessage message = ((DismissTopMappingRule) ruleConsequence).getGeneratorMessage();
-      if (message != null) {
-        String text = message.getMessageText();
-        if (message.getMessageType() == GeneratorMessageType.error) {
-          generator.showErrorMessage(inputNode, null, ruleNode, text);
-        } else if (message.getMessageType() == GeneratorMessageType.warning) {
-          generator.showWarningMessage(inputNode, text);
-        } else {
-          generator.showInformationMessage(inputNode, text);
-        }
-      } else {
-        generator.showInformationMessage(inputNode, "Top rule dismissed with no message");
-      }
-      throw new DismissTopMappingRuleException();
-
-    } else if (ruleConsequence instanceof TemplateDeclarationReference) {
-      TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
-      TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(template, inputNode, ruleNode, generator);
-      if (fragment != null) {
-        return new Pair<SNode, String>(fragment.getParent().getNode(), fragment.getName());
-      }
-
-    } else if (ruleConsequence instanceof InlineTemplate_RuleConsequence) {
-      BaseConcept templateNode = ((InlineTemplate_RuleConsequence) ruleConsequence).getTemplateNode();
-      if (templateNode != null) {
-        return new Pair<SNode, String>(templateNode.getNode(), null);
-      } else {
-        generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "no template node");
-      }
-
-    } else if (ruleConsequence instanceof InlineSwitch_RuleConsequence) {
-      InlineSwitch_RuleConsequence inlineSwitch = (InlineSwitch_RuleConsequence) ruleConsequence;
-      for (InlineSwitch_Case switchCase : inlineSwitch.getCases()) {
-        if (GeneratorUtil.checkCondition(switchCase.getConditionFunction(), true, inputNode, switchCase.getNode(), generator)) {
-          return getTemplateNodeFromRuleConsequence(switchCase.getCaseConsequence(), inputNode, switchCase.getNode(), generator);
-        }
-      }
-      RuleConsequence defaultConsequence = inlineSwitch.getDefaultConsequence();
-      if (defaultConsequence == null) {
-        generator.showErrorMessage(inputNode, null, inlineSwitch.getNode(), "no default consequence in switch");
-      } else {
-        return getTemplateNodeFromRuleConsequence(defaultConsequence, inputNode, defaultConsequence.getNode(), generator);
-      }
-
-    } else {
-      generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "unsupported rule consequence");
-    }
-
-    return null;
-  }
 }

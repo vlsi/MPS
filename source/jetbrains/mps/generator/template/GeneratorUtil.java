@@ -20,11 +20,14 @@ import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
+import jetbrains.mps.util.Pair;
 
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ArrayList;
+
+import org.jetbrains.annotations.Nullable;
 
 public class GeneratorUtil {
   private static final Logger LOG = Logger.getLogger(GeneratorUtil.class);
@@ -513,6 +516,66 @@ public class GeneratorUtil {
   }
 
 
+  @Nullable
+  /*package*/ static Pair<SNode, String> getTemplateNodeFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException {
+    if (ruleConsequence == null) {
+      generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
+      return null;
+    }
+
+    if (ruleConsequence instanceof DismissTopMappingRule) {
+      GeneratorMessage message = ((DismissTopMappingRule) ruleConsequence).getGeneratorMessage();
+      if (message != null) {
+        String text = message.getMessageText();
+        if (message.getMessageType() == GeneratorMessageType.error) {
+          generator.showErrorMessage(inputNode, null, ruleNode, text);
+        } else if (message.getMessageType() == GeneratorMessageType.warning) {
+          generator.showWarningMessage(inputNode, text);
+        } else {
+          generator.showInformationMessage(inputNode, text);
+        }
+      } else {
+        generator.showInformationMessage(inputNode, "Top rule dismissed with no message");
+      }
+      throw new DismissTopMappingRuleException();
+
+    } else if (ruleConsequence instanceof TemplateDeclarationReference) {
+      TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
+      TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(template, inputNode, ruleNode, generator);
+      if (fragment != null) {
+        return new Pair<SNode, String>(fragment.getParent().getNode(), fragment.getName());
+      }
+
+    } else if (ruleConsequence instanceof InlineTemplate_RuleConsequence) {
+      BaseConcept templateNode = ((InlineTemplate_RuleConsequence) ruleConsequence).getTemplateNode();
+      if (templateNode != null) {
+        return new Pair<SNode, String>(templateNode.getNode(), null);
+      } else {
+        generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "no template node");
+      }
+
+    } else if (ruleConsequence instanceof InlineSwitch_RuleConsequence) {
+      InlineSwitch_RuleConsequence inlineSwitch = (InlineSwitch_RuleConsequence) ruleConsequence;
+      for (InlineSwitch_Case switchCase : inlineSwitch.getCases()) {
+        if (GeneratorUtil.checkCondition(switchCase.getConditionFunction(), true, inputNode, switchCase.getNode(), generator)) {
+          return getTemplateNodeFromRuleConsequence(switchCase.getCaseConsequence(), inputNode, switchCase.getNode(), generator);
+        }
+      }
+      RuleConsequence defaultConsequence = inlineSwitch.getDefaultConsequence();
+      if (defaultConsequence == null) {
+        generator.showErrorMessage(inputNode, null, inlineSwitch.getNode(), "no default consequence in switch");
+      } else {
+        return getTemplateNodeFromRuleConsequence(defaultConsequence, inputNode, defaultConsequence.getNode(), generator);
+      }
+
+    } else {
+      generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "unsupported rule consequence");
+    }
+
+    return null;
+  }
+
+
   private static void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, TemplateGenerator generator) throws DismissTopMappingRuleException {
     RuleUtil ruleUtil = generator.getRuleUtil();
     List<SNode> outputNodes = ruleUtil.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
@@ -522,5 +585,6 @@ public class GeneratorUtil {
       }
     }
   }
+
 
 }
