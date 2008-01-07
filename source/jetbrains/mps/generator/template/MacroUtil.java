@@ -3,7 +3,7 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
-import jetbrains.mps.generator.GeneratorUtil;
+import jetbrains.mps.generator.template.GeneratorUtil;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.logging.Logger;

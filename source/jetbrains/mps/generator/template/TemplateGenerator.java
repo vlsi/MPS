@@ -4,7 +4,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.GeneratorUtil;
+import jetbrains.mps.generator.template.GeneratorUtil;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.*;

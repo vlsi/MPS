@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule;
-import jetbrains.mps.generator.GeneratorUtil;
+import jetbrains.mps.generator.template.GeneratorUtil;
 
 import java.util.*;
 

@@ -1,21 +1,13 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.generator.GeneratorUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.QueryMethod;
-import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -34,279 +26,6 @@ public class RuleUtil {
     myOutputModel = myGenerator.getTargetModel();
   }
 
-//  public void applyRoot_MappingRule(Root_MappingRule rule) {
-//    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
-//    if (applicableConcept == null) {
-//      myGenerator.showErrorMessage(null, null, BaseAdapter.fromAdapter(rule), "rule has no applicable concept defined");
-//      return;
-//    }
-//    boolean includeInheritors = rule.getApplyToConceptInheritors();
-//    List<SNode> inputNodes = myGenerator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
-//    for (SNode inputNode : inputNodes) {
-//      // do not apply root mapping if root node has been copied from input model on previous micro-step
-//      // because some roots can be already mapped and copied as well (if some rule has 'keep root' = true)
-//      if (myGenerator.getGeneratorSessionContext().isCopiedRoot(inputNode)) {
-//        continue;
-//      }
-//
-//      if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), myGenerator)) {
-//        boolean wasChanged = myGenerator.isChanged();
-//        try {
-//          myGenerator.setChanged(true);
-//          SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
-//          if (templateNode != null) {
-//            createRootNodeFromTemplate(rule.getName(), templateNode, inputNode);
-//          } else {
-//            myGenerator.showErrorMessage(BaseAdapter.fromAdapter(rule), "No template is defined for the rule");
-//          }
-//          if (inputNode.isRoot() && rule.getKeepSourceRoot() == Options_DefaultTrue.default_) {
-//            myGenerator.addRootNotToCopy(inputNode);
-//          }
-//        } catch (DismissTopMappingRuleException e) {
-//          // it's ok, just continue
-//          myGenerator.setChanged(wasChanged);
-//        }
-//      }
-//    }
-//  }
-
-
-//  /**
-//   * old
-//   */
-//  public void applyWeavingRule(WeavingRule rule) {
-//    TemplateDeclaration templateDeclaration = rule.getTemplate();
-//    List<SNode> inputNodes = createInputNodeListForWeavingRule(rule);
-//    for (SNode inputNode : inputNodes) {
-//      SNode outputContextNode = getContextNodeForWeavingingRule(inputNode, rule.getNode(), rule.getContextProviderAspectId(), null);
-//      if (outputContextNode == null) {
-//        myGenerator.showErrorMessage(inputNode, rule.getNode(), "couldn't create context node");
-//        continue;
-//      }
-//      myGenerator.setChanged(true);
-//      weaveTemplateDeclaration(inputNode, templateDeclaration, outputContextNode, rule.getNode());
-//    }
-//  }
-//
-  private void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, SNode ruleNode) {
-    if (template == null) {
-      myGenerator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't evaluate weaving rule: no template");
-      return;
-    }
-
-    List<TemplateFragment> templateFragments = getTemplateFragments(template);
-    if (templateFragments.isEmpty()) {
-      myGenerator.showErrorMessage(inputNode, template.getNode(), ruleNode, "nothing to weave: no template fragments found in template");
-      return;
-    }
-
-    // check fragments: all fragments with <default context> should have the same parent
-    boolean allFragmentsWhichUseDefaultContextHaveSameParent = true;
-    SNode defaultContext = null;
-    for (TemplateFragment templateFragment : templateFragments) {
-      if (templateFragment.getContextProviderAspectId() == null && templateFragment.getContextNodeQuery() == null) { // uses <default context>
-        SNode fragmentContextNode = BaseAdapter.fromAdapter(templateFragment.getParent().getParent());
-        if (defaultContext == null) {
-          defaultContext = fragmentContextNode;
-        } else if (defaultContext != fragmentContextNode) {
-          allFragmentsWhichUseDefaultContextHaveSameParent = false;
-          break;
-        }
-      }
-    }
-    if (!allFragmentsWhichUseDefaultContextHaveSameParent) {
-      for (TemplateFragment templateFragment : templateFragments) {
-        if (templateFragment.getContextProviderAspectId() == null && templateFragment.getContextNodeQuery() == null) { // uses <default context>
-          myGenerator.showErrorMessage(null, templateFragment.getNode(), null, "template fragment uses <default context>: conflicts with other fragments which use <default context>");
-        }
-      }
-    }
-
-    String ruleMappingName = ruleNode.getName();
-    // for each template fragment create output nodes
-    for (TemplateFragment templateFragment : templateFragments) {
-      SNode templateFragmentNode = BaseAdapter.fromAdapter(templateFragment.getParent());
-      SNode contextParentNode = null;
-      try {
-        contextParentNode = getContextNodeForTemplateFragment(inputNode, templateFragmentNode, outputContextNode);
-      } catch (Exception e) {
-        LOG.error(e);
-      }
-      if (contextParentNode != null) {
-        String mappingName = templateFragment.getName() != null ? templateFragment.getName() : ruleMappingName;
-        try {
-          List<SNode> outputNodesToWeave = createOutputNodesForTemplateNode(mappingName, templateFragmentNode, inputNode, 0, true);
-          if (outputNodesToWeave != null) {
-            String childRole = templateFragmentNode.getRole_();
-            for (SNode outputNodeToWeave : outputNodesToWeave) {
-              contextParentNode.addChild(childRole, outputNodeToWeave);
-            }
-          }
-        } catch (DismissTopMappingRuleException e) {
-          myGenerator.showErrorMessage(inputNode, template.getNode(), ruleNode, "dismission of Weaving rule is not supported");
-        }
-      } else {
-        myGenerator.showErrorMessage(inputNode, templateFragment.getNode(), ruleNode, "couldn't define 'context' for template fragment");
-      }
-    }
-  }
-
-  private SNode getContextNodeForTemplateFragment(SNode inputNode, SNode templateFragmentNode, SNode mainContextNode) {
-    TemplateFragment fragment = TemplateFragment_AnnotationLink.getTemplateFragment((BaseConcept) templateFragmentNode.getAdapter());
-    // has custom context builder provider?
-
-    // old
-    String aspectId = fragment.getContextProviderAspectId();
-    if (aspectId != null) {
-      String methodName = "templateFragment_Context_" + aspectId;
-      Object[] args = new Object[]{templateFragmentNode, new SimpleNodeBuilder(myGenerator, mainContextNode), myGenerator};
-      INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, fragment.getModel());
-      if (nodeBuilder == null) return null;
-      return nodeBuilder.getTargetNode();
-    }
-
-    // new
-    TemplateFragment_ContextNodeQuery query = fragment.getContextNodeQuery();
-    if (query != null) {
-      String methodName = TemplateFunctionMethodName.templateFragment_ContextNodeQuery(query.getNode());
-      Object[] args = new Object[]{
-              inputNode,
-              mainContextNode,
-              myGenerator};
-      try {
-        return (SNode) QueryMethodGenerated.invoke(methodName, args, query.getModel());
-      } catch (Exception e) {
-        myGenerator.showErrorMessage(inputNode, null, templateFragmentNode, "couldn't evaluate template fragment context query");
-        LOG.error(e);
-        return null;
-      }
-    }
-
-    // ok, main context node by default
-    return mainContextNode;
-  }
-
-
-  public static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
-    List<TemplateFragment> templateFragments = new LinkedList<TemplateFragment>();
-    Iterator<? extends SNode> iterator = template.getNode().depthFirstChildren();
-    while (iterator.hasNext()) {
-      INodeAdapter templateFragment = BaseAdapter.fromNode(iterator.next());
-      if (templateFragment instanceof TemplateFragment) {
-        templateFragments.add((TemplateFragment) templateFragment);
-      }
-    }
-    return templateFragments;
-  }
-
-  private SNode getContextNodeForWeavingingRule(SNode inputNode, SNode ruleNode, String aspectId, Weaving_MappingRule_ContextNodeQuery query) {
-    // old
-    if (aspectId != null) {
-      try {
-        String methodName = "templateWeavingRule_Context_" + aspectId;
-        Object[] args = new Object[]{inputNode, myGenerator};
-        INodeBuilder nodeBuilder = (INodeBuilder) QueryMethod.invoke(methodName, args, ruleNode.getModel());
-        if (nodeBuilder == null) {
-          myGenerator.showErrorMessage(inputNode, null, ruleNode, "Query Method returned null");
-          return null;
-        }
-        return nodeBuilder.getTargetNode();
-      } catch (Throwable t) {
-        myGenerator.showErrorMessage(inputNode, null, ruleNode, t.getClass().getName());
-        throw new RuntimeException(t);
-      }
-    }
-
-    // new
-    if (query != null) {
-      String methodName = TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(query.getNode());
-      Object[] args = new Object[]{
-              inputNode,
-              myGenerator};
-      try {
-        return (SNode) QueryMethodGenerated.invoke(methodName, args, query.getModel());
-      } catch (Exception e) {
-        myGenerator.showErrorMessage(inputNode, null, ruleNode, "couldn't evaluate rule context query");
-        LOG.error(e);
-      }
-    }
-    return null;
-  }
-
-
-//  private List<SNode> createInputNodeListForWeavingRule(WeavingRule weavingRule) {
-//    String sourceQueryAspectId = weavingRule.getSourceQueryAspectId();
-//    String methodName = "templateWeavingRule_SourceQuery_" + sourceQueryAspectId;
-//    Object[] args = new Object[]{myGenerator};
-//    List<SNode> inputNodes = (List<SNode>) QueryMethod.invoke(methodName, args, weavingRule.getModel());
-//    return inputNodes;
-//  }
-
-//----------------------------------------------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------------------------------------------
-
-//  public void applyWeavingMappingRule(Weaving_MappingRule rule) {
-//    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
-//    if (applicableConcept == null) {
-//      myGenerator.showErrorMessage(null, rule.getNode(), "rule has no applicable concept defined");
-//      return;
-//    }
-//    boolean includeInheritors = rule.getApplyToConceptInheritors();
-//    List<SNode> nodes = myGenerator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
-//    for (SNode applicableNode : nodes) {
-//      if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode(), myGenerator)) {
-//        SNode outputContextNode = getContextNodeForWeavingingRule(applicableNode, rule.getNode(), rule.getContextProviderAspectId(), rule.getContextNodeQuery());
-//        if (outputContextNode == null) {
-//          myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
-//          continue;
-//        }
-//        myGenerator.setChanged(true);
-//
-//        // old
-//        TemplateDeclaration template = rule.getTemplate();
-//        if (template != null) {
-//          weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule.getNode());
-//        } else {
-//          // new
-//          RuleConsequence ruleConsequence = rule.getRuleConsequence();
-//          if (ruleConsequence instanceof TemplateDeclarationReference) {
-//            template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
-//            weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule.getNode());
-//
-//          } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
-//            WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
-//            SourceSubstituteMacro_SourceNodesQuery query = weaveEach.getSourceNodesQuery();
-//            if (query == null) {
-//              myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't create list of source nodes");
-//              break;
-//            }
-//            template = weaveEach.getTemplate();
-//            List<SNode> queryNodes = GeneratorUtil.evaluateSourceNodesQuery(applicableNode, query, myGenerator);
-//            for (SNode queryNode : queryNodes) {
-//              weaveTemplateDeclaration(queryNode, template, outputContextNode, rule.getNode());
-//            }
-//          } else {
-//            myGenerator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "unsapported rule consequence");
-//          }
-//
-//        } // RuleConsequence
-//      }
-//    }
-//  }
-
-//----------------------------------------------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------------------------------------------
-//----------------------------------------------------------------------------------------------------------------------
-
-  private void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode) throws DismissTopMappingRuleException {
-    List<SNode> outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
-    if (outputNodes != null) {
-      for (SNode outputNode : outputNodes) {
-        myGenerator.getTargetModel().addRoot(outputNode);
-      }
-    }
-  }
 
   public List<SNode> createOutputNodesForTemplateNode(String mappingName,
                                                       SNode templateNode,
@@ -424,7 +143,7 @@ public class RuleUtil {
             // for back compatibility
             TemplateDeclaration templateForSwitchCase = myGenerator.getTemplateForSwitchCase_deprecated(newInputNode, templateSwitch);
             if (templateForSwitchCase != null) {
-              TemplateFragment fragment = getFragmentFromTemplate(templateForSwitchCase, newInputNode, nodeMacro.getNode(), myGenerator);
+              TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(templateForSwitchCase, newInputNode, nodeMacro.getNode(), myGenerator);
               if (fragment != null) {
                 // todo: fragment can have name (mapping name)
                 templateNodeForCase = fragment.getParent().getNode();
@@ -464,7 +183,7 @@ public class RuleUtil {
             return null;
           }
           SNode templateForInclude;
-          TemplateFragment fragment = getFragmentFromTemplate(includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator);
+          TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator);
           if (fragment != null) {
             // todo: fragment can have name (mapping name)
             templateForInclude = fragment.getParent().getNode();
@@ -664,20 +383,6 @@ public class RuleUtil {
     return outputNodes;
   }
 
-  /*package*/
-  static TemplateFragment getFragmentFromTemplate(TemplateDeclaration template, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
-    List<TemplateFragment> templateFragments = getTemplateFragments(template);
-    if (templateFragments.isEmpty()) {
-      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: no template fragments found");
-      return null;
-    }
-    if (templateFragments.size() > 1) {
-      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: more than one (" + templateFragments.size() + ") fragments found");
-      return null;
-    }
-    return templateFragments.get(0);
-  }
-
   @Nullable
   /*package*/ static Pair<SNode, String> getTemplateNodeFromRuleConsequence(RuleConsequence ruleConsequence, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws DismissTopMappingRuleException {
     if (ruleConsequence == null) {
@@ -703,7 +408,7 @@ public class RuleUtil {
 
     } else if (ruleConsequence instanceof TemplateDeclarationReference) {
       TemplateDeclaration template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
-      TemplateFragment fragment = getFragmentFromTemplate(template, inputNode, ruleNode, generator);
+      TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(template, inputNode, ruleNode, generator);
       if (fragment != null) {
         return new Pair<SNode, String>(fragment.getParent().getNode(), fragment.getName());
       }

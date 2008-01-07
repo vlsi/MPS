@@ -4,14 +4,15 @@
  * Date: Jul 9, 2004
  * Time: 7:07:36 PM
  */
-package jetbrains.mps.generator;
+package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.core.structure.INamedConcept;
-import jetbrains.mps.generator.template.*;
+import jetbrains.mps.generator.GenerationFailedException;
+import jetbrains.mps.generator.GenerationFailueInfo;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
@@ -23,6 +24,7 @@ import jetbrains.mps.util.QueryMethodGenerated;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ArrayList;
 
 public class GeneratorUtil {
   private static final Logger LOG = Logger.getLogger(GeneratorUtil.class);
@@ -401,7 +403,7 @@ public class GeneratorUtil {
   }
 
   private static List<TemplateFragment> getTemplateFragments(TemplateDeclaration template) {
-    List<TemplateFragment> templateFragments = new LinkedList<TemplateFragment>();
+    List<TemplateFragment> templateFragments = new ArrayList<TemplateFragment>(1);
     Iterator<? extends SNode> iterator = template.getNode().depthFirstChildren();
     while (iterator.hasNext()) {
       INodeAdapter templateFragment = BaseAdapter.fromNode(iterator.next());
@@ -410,6 +412,20 @@ public class GeneratorUtil {
       }
     }
     return templateFragments;
+  }
+
+  /*package*/
+  static TemplateFragment getFragmentFromTemplate(TemplateDeclaration template, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) {
+    List<TemplateFragment> templateFragments = getTemplateFragments(template);
+    if (templateFragments.isEmpty()) {
+      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: no template fragments found");
+      return null;
+    }
+    if (templateFragments.size() > 1) {
+      generator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't process template: more than one (" + templateFragments.size() + ") fragments found");
+      return null;
+    }
+    return templateFragments.get(0);
   }
 
   private static SNode getContextNodeForTemplateFragment(SNode inputNode, SNode templateFragmentNode, SNode mainContextNode, TemplateGenerator generator) {

@@ -8,7 +8,7 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.transformation.TLBase.structure.*;
-import jetbrains.mps.generator.GeneratorUtil;
+import jetbrains.mps.generator.template.GeneratorUtil;
 
 import java.util.Iterator;
 import java.util.List;

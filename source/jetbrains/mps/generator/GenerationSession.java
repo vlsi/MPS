@@ -5,7 +5,7 @@ import jetbrains.mps.generator.plan.AbstractGenerationStepController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationStepController;
 import jetbrains.mps.generator.template.*;
-import jetbrains.mps.generator.GeneratorUtil;
+import jetbrains.mps.generator.template.GeneratorUtil;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
