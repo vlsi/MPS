@@ -39,6 +39,10 @@ public class QueriesGenerated {
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.closures.structure.ClosureLiteral", true, false) != null);
   }
 
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1199711420040(SNode parentNode, SNode childConcept, IScope scope, IOperationContext operationContext) {
+    return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.closures.structure.ClosureLiteral", false, false) != null);
+  }
+
   public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1199547343806(SNode sourceNode, IScope scope, IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(sourceNode), "jetbrains.mps.closures.structure.FunctionType");
   }
@@ -112,6 +116,16 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
+      result.addAll(defaultActions);
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1199711415359(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.closures.structure.InvokeExpression", operationContext.getScope());
       List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, parentNode, currentTargetNode, childSetter, operationContext.getScope());
       result.addAll(defaultActions);
     }

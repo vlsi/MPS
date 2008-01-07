@@ -9,34 +9,22 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.closures.constraints.FunctionType_Behavior;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.Collections;
 import java.util.Comparator;
 import java.text.Collator;
 import java.util.Iterator;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 
 public class QueriesGenerated {
 
   public static boolean createRootRule_Condition_1199624188477(SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return !(SequenceOperations.isEmpty(SModelOperations.getNodes(sourceModel, "jetbrains.mps.closures.structure.ClosureLiteral")));
-  }
-
-  public static boolean baseMappingRule_Condition_1199650394849(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.closures.structure.FunctionType") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "initializer", true), "jetbrains.mps.closures.structure.ClosureLiteral");
-  }
-
-  public static boolean baseMappingRule_Condition_1199650433722(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.closures.structure.FunctionType") && (SLinkOperations.getTarget(node, "initializer", true) == null);
-  }
-
-  public static boolean baseMappingRule_Condition_1199652422931(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return false;
   }
 
   public static Object propertyMacro_GetPropertyValue_1199652367054(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -48,34 +36,6 @@ public class QueriesGenerated {
     return FunctionType_Behavior.call_getSignature_1199633062014(node);
   }
 
-  public static Object propertyMacro_GetPropertyValue_1199647030748(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    String shortName = "_FunctionTypes." + FunctionType_Behavior.call_getSignature_1199633062014(SLinkOperations.getTarget(node, "type", true));
-    return JavaNameUtil.fqClassName(sourceModel, shortName);
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1199647030781(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    String shortName = "_FunctionTypes." + FunctionType_Behavior.call_getSignature_1199633062014(SLinkOperations.getTarget(node, "type", true));
-    return JavaNameUtil.fqClassName(sourceModel, shortName);
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1199647030801(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.getString(node, "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1199650324387(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    String shortName = "_FunctionTypes." + FunctionType_Behavior.call_getSignature_1199633062014(SLinkOperations.getTarget(node, "type", true));
-    return JavaNameUtil.fqClassName(sourceModel, shortName);
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1199650358458(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    String shortName = "_FunctionTypes." + FunctionType_Behavior.call_getSignature_1199633062014(SLinkOperations.getTarget(node, "type", true));
-    return JavaNameUtil.fqClassName(sourceModel, shortName);
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1199650324434(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.getString(node, "name");
-  }
-
   public static Object referenceMacro_GetReferent_1199624866931(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     final zClosureContext _zClosureContext = new zClosureContext();
     _zClosureContext.sig = FunctionType_Behavior.call_getSignature_1199633062014(TypeChecker.getInstance().getTypeOf(node));
@@ -84,6 +44,10 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1199644424783(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTargets(node, "parameter", true);
+  }
+
+  public static List sourceNodesQuery_1199712173374(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "parameter", true);
   }
 
@@ -129,6 +93,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "function", true);
   }
 
+  public static SNode sourceNodeQuery_1199712173382(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SNodeOperations.getAncestor(node, "jetbrains.mps.closures.structure.ClosureLiteral", false, false)), "resultType", true);
+  }
+
+  public static SNode sourceNodeQuery_1199712173395(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
+  }
+
   public static SNode sourceNodeQuery_1199638621010(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "resultType", true);
   }
@@ -139,10 +111,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1199625045481(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1199647030771(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "initializer", true);
   }
 
 }

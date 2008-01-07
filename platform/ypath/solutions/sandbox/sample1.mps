@@ -3,28 +3,28 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1" />
   </language>
   <language namespace="jetbrains.mps.closures">
-    <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
     <languageAspect modelUID="jetbrains.mps.closures.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.closures.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
     <languageAspect modelUID="jetbrains.mps.closures.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.closures.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.closures.editor" version="-1" />
   </language>
   <maxImportIndex value="5" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
@@ -179,28 +179,26 @@
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199652567573">
                       <link role="variableDeclaration" targetNodeId="1199652567565" resolveInfo="n" />
                     </node>
-                    <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1199652567574">
-                      <node role="rightExpression" type="jetbrains.mps.closures.structure.InvokeFunctionExpression" id="1199652567575">
-                        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1199652567576">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1199652567577">
+                    <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1199712344420">
+                      <node role="rightExpression" type="jetbrains.mps.closures.structure.InvokeExpression" id="1199712346246">
+                        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1199712351735">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1199712353203">
                             <property name="value" value="2" />
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199652567578">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199712351729">
                             <link role="variableDeclaration" targetNodeId="1199652567565" resolveInfo="n" />
                           </node>
                         </node>
-                        <node role="function" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1199652567579" />
                       </node>
-                      <node role="leftExpression" type="jetbrains.mps.closures.structure.InvokeFunctionExpression" id="1199652567580">
-                        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1199652567581">
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1199652567582">
+                      <node role="leftExpression" type="jetbrains.mps.closures.structure.InvokeExpression" id="1199712334372">
+                        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1199712341196">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1199712342537">
                             <property name="value" value="1" />
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199652567583">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199712341184">
                             <link role="variableDeclaration" targetNodeId="1199652567565" resolveInfo="n" />
                           </node>
                         </node>
-                        <node role="function" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1199652567584" />
                       </node>
                     </node>
                   </node>
@@ -262,28 +260,26 @@
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199654606694">
                           <link role="variableDeclaration" targetNodeId="1199654606686" resolveInfo="n" />
                         </node>
-                        <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1199654606695">
-                          <node role="rightExpression" type="jetbrains.mps.closures.structure.InvokeFunctionExpression" id="1199654606696">
-                            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1199654606697">
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1199654606698">
+                        <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1199712372748">
+                          <node role="rightExpression" type="jetbrains.mps.closures.structure.InvokeExpression" id="1199712372749">
+                            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1199712372750">
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1199712372751">
                                 <property name="value" value="2" />
                               </node>
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199654606699">
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199712377872">
                                 <link role="variableDeclaration" targetNodeId="1199654606686" resolveInfo="n" />
                               </node>
                             </node>
-                            <node role="function" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1199654606700" />
                           </node>
-                          <node role="leftExpression" type="jetbrains.mps.closures.structure.InvokeFunctionExpression" id="1199654606701">
-                            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1199654606702">
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1199654606703">
+                          <node role="leftExpression" type="jetbrains.mps.closures.structure.InvokeExpression" id="1199712372753">
+                            <node role="parameter" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="1199712372754">
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1199712372755">
                                 <property name="value" value="1" />
                               </node>
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199654606704">
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199712374859">
                                 <link role="variableDeclaration" targetNodeId="1199654606686" resolveInfo="n" />
                               </node>
                             </node>
-                            <node role="function" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1199654606705" />
                           </node>
                         </node>
                       </node>

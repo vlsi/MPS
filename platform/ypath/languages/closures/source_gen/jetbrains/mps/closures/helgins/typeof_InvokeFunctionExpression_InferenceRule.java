@@ -19,7 +19,7 @@ public class typeof_InvokeFunctionExpression_InferenceRule implements InferenceR
 
       public void run() {
         SNode ft = TypeChecker.getInstance().getRuntimeSupport().typeOf(SLinkOperations.getTarget(invoke, "function", true), "jetbrains.mps.closures.helgins", "1199567532549", true);
-        TypeChecker.getInstance().getRuntimeSupport().givetype(SLinkOperations.getTarget(ft, "resultType", true), invoke, "jetbrains.mps.closures.helgins", "1199567134945");
+        TypeChecker.getInstance().getRuntimeSupport().createEquation(TypeChecker.getInstance().getRuntimeSupport().typeOf(invoke, "jetbrains.mps.closures.helgins", "1199711684834", true), SLinkOperations.getTarget(ft, "resultType", true), invoke, null, "jetbrains.mps.closures.helgins", "1199711681931");
         int count = SequenceOperations.count(SLinkOperations.getTargets(invoke, "parameter", true));
         if(!(SequenceOperations.count(SLinkOperations.getTargets(ft, "parameterType", true)) == SequenceOperations.count(SLinkOperations.getTargets(invoke, "parameter", true)))) {
           TypeChecker.getInstance().reportTypeError(invoke, "Wrong parameters number", "jetbrains.mps.closures.helgins", "1199568419784");
