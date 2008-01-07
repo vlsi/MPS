@@ -18,16 +18,15 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
-import jetbrains.mps.util.Pair;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.ArrayList;
-
-import org.jetbrains.annotations.Nullable;
 
 public class GeneratorUtil {
   private static final Logger LOG = Logger.getLogger(GeneratorUtil.class);
@@ -281,6 +280,17 @@ public class GeneratorUtil {
       }
     }
   }
+
+  private static void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, TemplateGenerator generator) throws DismissTopMappingRuleException {
+    RuleUtil ruleUtil = generator.getRuleUtil();
+    List<SNode> outputNodes = ruleUtil.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
+    if (outputNodes != null) {
+      for (SNode outputNode : outputNodes) {
+        generator.getOutputModel().addRoot(outputNode);
+      }
+    }
+  }
+
 
   /**
    * old
@@ -576,15 +586,85 @@ public class GeneratorUtil {
   }
 
 
-  private static void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, TemplateGenerator generator) throws DismissTopMappingRuleException {
-    RuleUtil ruleUtil = generator.getRuleUtil();
-    List<SNode> outputNodes = ruleUtil.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
-    if (outputNodes != null) {
-      for (SNode outputNode : outputNodes) {
-        generator.getOutputModel().addRoot(outputNode);
+  public static List<SNode> applyReductionRule(SNode inputNode, INodeAdapter reductionRule, TemplateGenerator generator) throws DismissTopMappingRuleException {
+    if (reductionRule instanceof ReductionRule) {
+      // old
+      ReductionRule rule = (ReductionRule) reductionRule;
+      TemplateDeclaration template = rule.getTemplate();
+      if (template == null) {
+        generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no template");
+        return new ArrayList<SNode>();
       }
+
+      TemplateFragment fragment = getFragmentFromTemplate(template, inputNode, rule.getNode(), generator);
+      if (fragment != null) {
+        String mappingName = fragment.getName() != null ? fragment.getName() : reductionRule.getName();
+        return applyReductionRuleTemplateFragment(mappingName, fragment.getParent().getNode(), inputNode, rule, generator);
+      }
+
+      generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no template");
+      return new ArrayList<SNode>();
     }
+
+    // new
+    return applyReductionMappingRule(inputNode, (Reduction_MappingRule) reductionRule, generator);
   }
 
+  private static List<SNode> applyReductionMappingRule(SNode inputNode, Reduction_MappingRule rule, TemplateGenerator generator) throws DismissTopMappingRuleException {
+    SNode reductionTemplateNode = null;
+    String mappingName = null;
+    RuleConsequence ruleConsequence = rule.getRuleConsequence();
+    if (ruleConsequence != null) {
+      Pair<SNode, String> nodeAndMappingName = getTemplateNodeFromRuleConsequence(ruleConsequence, inputNode, rule.getNode(), generator);
+      if (nodeAndMappingName == null) {
+        generator.showErrorMessage(inputNode, null, ruleConsequence.getNode(), "error processing reduction rule consequence");
+        return null;
+      }
+      reductionTemplateNode = nodeAndMappingName.o1;
+      mappingName = nodeAndMappingName.o2;
+    } else {
+      // old
+      TemplateDeclaration template = rule.getTemplate();
+      if (template == null) {
+        generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no template");
+        return null;
+      }
+
+      TemplateFragment fragment = getFragmentFromTemplate(template, inputNode, rule.getNode(), generator);
+      if (fragment != null) {
+        reductionTemplateNode = fragment.getParent().getNode();
+        mappingName = fragment.getName();
+      }
+    }
+
+    if (reductionTemplateNode == null) {
+      generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule");
+      return new ArrayList<SNode>();
+    }
+
+    if (mappingName == null) {
+      mappingName = rule.getName();
+    }
+    return applyReductionRuleTemplateFragment(mappingName, reductionTemplateNode, inputNode, rule, generator);
+  }
+
+  private static List<SNode> applyReductionRuleTemplateFragment(String mappingName, SNode fragmentNode, SNode inputNode, INodeAdapter reductionRule, TemplateGenerator generator) throws DismissTopMappingRuleException {
+    List<SNode> outputNodes = new ArrayList<SNode>();
+    try {
+      RuleUtil ruleUtil = generator.getRuleUtil();
+      List<SNode> newOutputNodes = ruleUtil.createOutputNodesForTemplateNode(mappingName, fragmentNode, inputNode, 0, true);
+      if (newOutputNodes != null) {
+        outputNodes.addAll(newOutputNodes);
+      } else {
+        generator.showErrorMessage(inputNode, fragmentNode, reductionRule.getNode(), "error processing reduction rule");
+      }
+    } catch (DismissTopMappingRuleException e) {
+      throw e;
+    } catch (Exception e) {
+      LOG.error(e, BaseAdapter.fromNode(fragmentNode));
+      generator.showErrorMessage(inputNode, fragmentNode, reductionRule.getNode(), "error processing reduction rule");
+    }
+    return outputNodes;
+  }
 
 }

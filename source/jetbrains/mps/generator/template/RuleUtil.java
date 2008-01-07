@@ -1,11 +1,8 @@
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.core.structure.BaseConcept;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -370,9 +367,9 @@ public class RuleUtil {
     INodeAdapter reductionRule;
     boolean wasChanged = myGenerator.isChanged();
     try {
-      reductionRule = myRuleManager.getReductionRuleManager().findReductionRule(inputNode);
+      reductionRule = myRuleManager.findReductionRule(inputNode);
       if (reductionRule != null) {
-        return myRuleManager.getReductionRuleManager().applyReductionRule(inputNode, reductionRule);
+        return GeneratorUtil.applyReductionRule(inputNode, reductionRule, myGenerator);
       }
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue

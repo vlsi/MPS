@@ -9,10 +9,17 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.generator.template.GeneratorUtil;
+import jetbrains.mps.generator.GenerationFailedException;
+import jetbrains.mps.generator.GenerationFailueInfo;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.util.QueryMethod;
 
 import java.util.Iterator;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class RuleManager {
 
@@ -23,6 +30,11 @@ public class RuleManager {
   private List<WeavingRule> myWeavingRules;
   private List<Weaving_MappingRule> myWeaving_MappingRules;
   private List<ConceptDeclaration> myAbandonedRootConcepts;
+  private List<ReductionRule> myReductionRules;
+  private List<Reduction_MappingRule> myReduction_MappingRules;
+  private FastRuleFinder myRuleFinder;
+
+
   protected TemplateGenerator myGenerator;
 
   private ReductionRuleManager myReductionRuleManager;
@@ -45,6 +57,8 @@ public class RuleManager {
     myWeaving_MappingRules = new ArrayList<Weaving_MappingRule>();
     myOutputRootConcepts = new ArrayList<ConceptDeclaration>();
     myAbandonedRootConcepts = new ArrayList<ConceptDeclaration>();
+    myReductionRules = new ArrayList<ReductionRule>();
+    myReduction_MappingRules = new ArrayList<Reduction_MappingRule>();
     initRules();
   }
 
@@ -99,7 +113,16 @@ public class RuleManager {
         }
       }
 
-      myReductionRuleManager.addReductionRules(mappingConfig);
+      // reduction rules (old)
+      Iterator<ReductionRule> reductionRules = mappingConfig.reductionRules();
+      while (reductionRules.hasNext()) {
+        myReductionRules.add(reductionRules.next());
+      }
+      // reduction rules (new)
+      Iterator<Reduction_MappingRule> reduction_MappingRules = mappingConfig.reductionMappingRules();
+      while (reduction_MappingRules.hasNext()) {
+        myReduction_MappingRules.add(reduction_MappingRules.next());
+      }
     }
   }
 
@@ -153,4 +176,57 @@ public class RuleManager {
   }
 
 
+  public void applyReductionRules(SNode inputNode) {
+    INodeAdapter reductionRule;
+    boolean wasChanged = myGenerator.isChanged();
+    try {
+      reductionRule = findReductionRule(inputNode);
+      if (reductionRule != null) {
+        myGenerator.setChanged(true);
+        List<SNode> outputNodes = GeneratorUtil.applyReductionRule(inputNode, reductionRule, myGenerator);
+        SNode oldOutputNode = myGenerator.findOutputNodeById(inputNode.getSNodeId());
+        if (outputNodes.size() == 1) {
+          myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, inputNode, outputNodes.get(0));
+        }
+        oldOutputNode.getParent().replaceChild(oldOutputNode, outputNodes);
+        return;
+      }
+    } catch (DismissTopMappingRuleException ex) {
+      // it's ok, just continue
+      myGenerator.setChanged(wasChanged);
+    }
+    for (SNode childNode : inputNode.getChildren()) {
+      applyReductionRules(childNode);
+    }
+  }
+
+  INodeAdapter findReductionRule(SNode node) {
+    //old
+    INodeAdapter reductionRule = findReductionRule_Old(node);
+    if (reductionRule != null) {
+      return reductionRule;
+    }
+    //new
+    if (myRuleFinder == null) {
+      myRuleFinder = new FastRuleFinder(myReduction_MappingRules);
+    }
+    return BaseAdapter.fromNode(myRuleFinder.findReductionRule(node, myGenerator));
+  }
+
+  private INodeAdapter findReductionRule_Old(SNode sourceNode) {
+    for (ReductionRule reductionRule : myReductionRules) {
+      String conditionAspectId = reductionRule.getConditionAspectId();
+      String methodName = "reductionRuleCondition_" + conditionAspectId;
+      Object[] args = new Object[]{sourceNode, myGenerator};
+      try {
+        Boolean b = (Boolean) QueryMethod.invoke(methodName, args, reductionRule.getModel());
+        if (b) {
+          return reductionRule;
+        }
+      } catch (Exception e) {
+        throw new GenerationFailedException(new GenerationFailueInfo("Error while processing reduction conditions", sourceNode, null, reductionRule.getNode(), myGenerator.getGeneratorSessionContext()), e);
+      }
+    }
+    return null;
+  }
 }

@@ -103,7 +103,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // reductions in copied roots
     for (SNode outputRootNode : copiedOutputRoots) {
       checkMonitorCanceled();
-      ruleManager.getReductionRuleManager().applyReductionRules(findInputNodeById(outputRootNode.getSNodeId()));
+      ruleManager.applyReductionRules(findInputNodeById(outputRootNode.getSNodeId()));
     }
 
     // weaving
