@@ -447,6 +447,55 @@ public class GeneratorUtil {
     return mainContextNode;
   }
 
+  public static void applyWeaving_MappingRule(Weaving_MappingRule rule, TemplateGenerator generator) {
+    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
+    if (applicableConcept == null) {
+      generator.showErrorMessage(null, rule.getNode(), "rule has no applicable concept defined");
+      return;
+    }
+    boolean includeInheritors = rule.getApplyToConceptInheritors();
+    List<SNode> nodes = generator.getInputModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
+    for (SNode applicableNode : nodes) {
+      if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode(), generator)) {
+        SNode outputContextNode = getContextNodeForWeavingingRule(applicableNode, rule.getNode(), rule.getContextProviderAspectId(), rule.getContextNodeQuery(), generator);
+        if (outputContextNode == null) {
+          generator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
+          continue;
+        }
+        generator.setChanged(true);
+
+        // old
+        TemplateDeclaration template = rule.getTemplate();
+        if (template != null) {
+          weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule.getNode(), generator);
+        } else {
+          // new
+          RuleConsequence ruleConsequence = rule.getRuleConsequence();
+          if (ruleConsequence instanceof TemplateDeclarationReference) {
+            template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
+            weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule.getNode(), generator);
+
+          } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
+            WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
+            SourceSubstituteMacro_SourceNodesQuery query = weaveEach.getSourceNodesQuery();
+            if (query == null) {
+              generator.showErrorMessage(applicableNode, rule.getNode(), "couldn't create list of source nodes");
+              break;
+            }
+            template = weaveEach.getTemplate();
+            List<SNode> queryNodes = evaluateSourceNodesQuery(applicableNode, query, generator);
+            for (SNode queryNode : queryNodes) {
+              weaveTemplateDeclaration(queryNode, template, outputContextNode, rule.getNode(), generator);
+            }
+          } else {
+            generator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "unsapported rule consequence");
+          }
+
+        } // RuleConsequence
+      }
+    }
+  }
+
 
   private static void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, TemplateGenerator generator) throws DismissTopMappingRuleException {
     RuleUtil ruleUtil = generator.getRuleUtil();

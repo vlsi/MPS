@@ -109,12 +109,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     // weaving
     ruleManager.applyWeavingRules();
-    for (Weaving_MappingRule weavingMappingRule : ruleManager.getWeaving_MappingRules()) {
-      checkMonitorCanceled();
-      myRuleUtil.applyWeavingMappingRule(weavingMappingRule);
-    }
-
-    checkMonitorCanceled();
+    ruleManager.applyWeaving_MappingRules();
 
     // execute mapper in all $MAP_SRC$/$MAP_SRCL$
     myDelayedChanges.doAllChanges();

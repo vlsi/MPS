@@ -246,54 +246,54 @@ public class RuleUtil {
 //----------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------
 
-  public void applyWeavingMappingRule(Weaving_MappingRule rule) {
-    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
-    if (applicableConcept == null) {
-      myGenerator.showErrorMessage(null, rule.getNode(), "rule has no applicable concept defined");
-      return;
-    }
-    boolean includeInheritors = rule.getApplyToConceptInheritors();
-    List<SNode> nodes = myGenerator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
-    for (SNode applicableNode : nodes) {
-      if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode(), myGenerator)) {
-        SNode outputContextNode = getContextNodeForWeavingingRule(applicableNode, rule.getNode(), rule.getContextProviderAspectId(), rule.getContextNodeQuery());
-        if (outputContextNode == null) {
-          myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
-          continue;
-        }
-        myGenerator.setChanged(true);
-
-        // old
-        TemplateDeclaration template = rule.getTemplate();
-        if (template != null) {
-          weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule.getNode());
-        } else {
-          // new
-          RuleConsequence ruleConsequence = rule.getRuleConsequence();
-          if (ruleConsequence instanceof TemplateDeclarationReference) {
-            template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
-            weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule.getNode());
-
-          } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
-            WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
-            SourceSubstituteMacro_SourceNodesQuery query = weaveEach.getSourceNodesQuery();
-            if (query == null) {
-              myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't create list of source nodes");
-              break;
-            }
-            template = weaveEach.getTemplate();
-            List<SNode> queryNodes = GeneratorUtil.evaluateSourceNodesQuery(applicableNode, query, myGenerator);
-            for (SNode queryNode : queryNodes) {
-              weaveTemplateDeclaration(queryNode, template, outputContextNode, rule.getNode());
-            }
-          } else {
-            myGenerator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "unsapported rule consequence");
-          }
-
-        } // RuleConsequence
-      }
-    }
-  }
+//  public void applyWeavingMappingRule(Weaving_MappingRule rule) {
+//    AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
+//    if (applicableConcept == null) {
+//      myGenerator.showErrorMessage(null, rule.getNode(), "rule has no applicable concept defined");
+//      return;
+//    }
+//    boolean includeInheritors = rule.getApplyToConceptInheritors();
+//    List<SNode> nodes = myGenerator.getSourceModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
+//    for (SNode applicableNode : nodes) {
+//      if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode(), myGenerator)) {
+//        SNode outputContextNode = getContextNodeForWeavingingRule(applicableNode, rule.getNode(), rule.getContextProviderAspectId(), rule.getContextNodeQuery());
+//        if (outputContextNode == null) {
+//          myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
+//          continue;
+//        }
+//        myGenerator.setChanged(true);
+//
+//        // old
+//        TemplateDeclaration template = rule.getTemplate();
+//        if (template != null) {
+//          weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule.getNode());
+//        } else {
+//          // new
+//          RuleConsequence ruleConsequence = rule.getRuleConsequence();
+//          if (ruleConsequence instanceof TemplateDeclarationReference) {
+//            template = ((TemplateDeclarationReference) ruleConsequence).getTemplate();
+//            weaveTemplateDeclaration(applicableNode, template, outputContextNode, rule.getNode());
+//
+//          } else if (ruleConsequence instanceof WeaveEach_RuleConsequence) {
+//            WeaveEach_RuleConsequence weaveEach = (WeaveEach_RuleConsequence) ruleConsequence;
+//            SourceSubstituteMacro_SourceNodesQuery query = weaveEach.getSourceNodesQuery();
+//            if (query == null) {
+//              myGenerator.showErrorMessage(applicableNode, rule.getNode(), "couldn't create list of source nodes");
+//              break;
+//            }
+//            template = weaveEach.getTemplate();
+//            List<SNode> queryNodes = GeneratorUtil.evaluateSourceNodesQuery(applicableNode, query, myGenerator);
+//            for (SNode queryNode : queryNodes) {
+//              weaveTemplateDeclaration(queryNode, template, outputContextNode, rule.getNode());
+//            }
+//          } else {
+//            myGenerator.showErrorMessage(applicableNode, null, ruleConsequence.getNode(), "unsapported rule consequence");
+//          }
+//
+//        } // RuleConsequence
+//      }
+//    }
+//  }
 
 //----------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------

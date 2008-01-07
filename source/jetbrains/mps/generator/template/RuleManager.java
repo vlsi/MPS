@@ -153,8 +153,11 @@ public class RuleManager {
     }
   }
 
-  public List<Weaving_MappingRule> getWeaving_MappingRules() {
-    return myWeaving_MappingRules;
+  public void applyWeaving_MappingRules() {
+    for (Weaving_MappingRule rule : myWeaving_MappingRules) {
+      myGenerator.checkMonitorCanceled();
+      GeneratorUtil.applyWeaving_MappingRule(rule, myGenerator);
+    }
   }
 
   public List<ConceptDeclaration> getAbandonedRootConcepts() {
