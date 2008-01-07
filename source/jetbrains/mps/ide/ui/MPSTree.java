@@ -664,6 +664,8 @@ public abstract class MPSTree extends JTree {
         Font newFont = tree.getFont().deriveFont(treeNode.getFontStyle());
         myMainTextLabel.setFont(newFont);
         myAdditionalTextLabel.setFont(newFont);
+
+        myMainTextLabel.setForeground(treeNode.getColor());        
       } else {
         myMainTextLabel.setFont(tree.getFont());
         myAdditionalTextLabel.setFont(tree.getFont());
@@ -727,29 +729,6 @@ public abstract class MPSTree extends JTree {
       }
 
       super.paint(g);
-    }
-  }
-
-
-  //todo Misha's code uses it. Get rid of it.
-  protected static class MPSTreeCellRenderer extends DefaultTreeCellRenderer {
-    public Component getTreeCellRendererComponent(JTree tree, Object value, boolean sel, boolean expanded, boolean leaf, int row, boolean hasFocus) {
-      String text = value.toString();
-      if (value instanceof MPSTreeNode) {
-        text = value.toString();
-      }
-      super.getTreeCellRendererComponent(tree, text, sel, expanded, leaf, row, hasFocus);
-      if (value instanceof MPSTreeNode) {
-        MPSTreeNode node = (MPSTreeNode) value;
-        setIcon(node.getIcon(expanded));
-        setForeground(node.getColor());
-        setFont(getFont().deriveFont(node.getFontStyle()));
-      }
-      return this;
-    }
-
-    public boolean isSelected() {
-      return selected;
     }
   }
 }

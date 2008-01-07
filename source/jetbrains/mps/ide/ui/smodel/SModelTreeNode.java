@@ -241,15 +241,15 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return myModelDescriptor;
   }
 
-  public SNodeTreeNode createSNodeTreeNode(SNode node, IOperationContext operationContext) {
+  public final SNodeTreeNode createSNodeTreeNode(SNode node, IOperationContext operationContext) {
     return createSNodeTreeNode(node, null, operationContext);
   }
 
-  public SNodeTreeNode createSNodeTreeNode(SNode node, IOperationContext operationContext, Condition<SNode> condition) {
+  public final SNodeTreeNode createSNodeTreeNode(SNode node, IOperationContext operationContext, Condition<SNode> condition) {
     return createSNodeTreeNode(node, null, operationContext, condition);
   }
 
-  public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
+  public final SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
     return createSNodeTreeNode(node, role, operationContext, Condition.TRUE_CONDITION);
   }
 

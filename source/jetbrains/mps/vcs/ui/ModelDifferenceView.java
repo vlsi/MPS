@@ -7,6 +7,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Condition;
 import jetbrains.mps.vcs.*;
 
 import javax.swing.JPanel;
@@ -202,7 +203,7 @@ public class ModelDifferenceView extends JPanel {
       super.updatePresentation();
     }                                                            
 
-    public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
+    public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
       return new MySNodeTreeNode(node, role, operationContext);      
     }
 
@@ -226,10 +227,9 @@ public class ModelDifferenceView extends JPanel {
   private class MySNodeTreeNode extends SNodeTreeNode {
     public MySNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
       super(node, role, operationContext);
-
     }
 
-    protected void updatePresentation() {
+    public void updatePresentation() {
       super.updatePresentation();
       SNodeId id = getSNode().getSNodeId();
       if (myAddedNodes.contains(id)) {

@@ -11,6 +11,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.Condition;
 
 import javax.swing.JPanel;
 import javax.swing.JPopupMenu;
@@ -420,10 +421,9 @@ public class MergeResultView extends JPanel {
       super.updatePresentation();
     }
 
-    public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
+    public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
       return new MySNodeTreeNode(node, role, operationContext);
     }
-
 
     public SModel getSModel() {
       return myModel;
