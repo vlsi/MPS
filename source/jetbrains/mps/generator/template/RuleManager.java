@@ -37,11 +37,8 @@ public class RuleManager {
 
   protected TemplateGenerator myGenerator;
 
-  private ReductionRuleManager myReductionRuleManager;
-
   public RuleManager(TemplateGenerator generator) {
     myGenerator = generator;
-    myReductionRuleManager = new ReductionRuleManager(generator);
     initialize();
   }
 
@@ -169,12 +166,6 @@ public class RuleManager {
   public List<ConceptDeclaration> getAbandonedRootConcepts() {
     return myAbandonedRootConcepts;
   }
-
-
-  public ReductionRuleManager getReductionRuleManager() {
-    return myReductionRuleManager;
-  }
-
 
   public void applyReductionRules(SNode inputNode) {
     INodeAdapter reductionRule;
