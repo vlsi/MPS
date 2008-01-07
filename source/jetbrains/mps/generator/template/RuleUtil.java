@@ -12,14 +12,12 @@ import java.util.List;
  * Date: Jan 24, 2007
  */
 public class RuleUtil {
-  private RuleManager myRuleManager;
   private TemplateGenerator myGenerator;
   private SModel myOutputModel;
 
-  public RuleUtil(RuleManager ruleManager) {
-    myRuleManager = ruleManager;
-    myGenerator = ruleManager.getGenerator();
-    myOutputModel = myGenerator.getTargetModel();
+  public RuleUtil(TemplateGenerator generator) {
+    myGenerator = generator;
+    myOutputModel = myGenerator.getOutputModel();
   }
 
 
@@ -367,7 +365,7 @@ public class RuleUtil {
     INodeAdapter reductionRule;
     boolean wasChanged = myGenerator.isChanged();
     try {
-      reductionRule = myRuleManager.findReductionRule(inputNode);
+      reductionRule = myGenerator.getRuleManager().findReductionRule(inputNode);
       if (reductionRule != null) {
         return GeneratorUtil.applyReductionRule(inputNode, reductionRule, myGenerator);
       }

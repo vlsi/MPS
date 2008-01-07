@@ -34,6 +34,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   // todo: tmp
   private RuleUtil myRuleUtil;
+  private RuleManager myRuleManager;
 
   public TemplateGenerator(GenerationSessionContext operationContext,
                            IAdaptiveProgressMonitor progressMonitor,
@@ -47,6 +48,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public GenerationSessionContext getGeneratorSessionContext() {
     return (GenerationSessionContext) getOperationContext();
+  }
+
+  public RuleManager getRuleManager() {
+    return myRuleManager;
   }
 
   public boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailedException {
@@ -75,25 +80,26 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myChanged = false;
     myInputModel = inputModel;
     myOutputModel = outputModel;
+    myRuleManager = null;
   }
 
   private void doMapping(boolean isPrimary) {
     checkMonitorCanceled();
     int oldErrorCount = getErrorCount();
 
-    RuleManager ruleManager = new RuleManager(this);
-    myRuleUtil = new RuleUtil(ruleManager);
+    myRuleManager = new RuleManager(this);
+    myRuleUtil = new RuleUtil(this);
 
     // create all roots
     if (isPrimary) {
-      ruleManager.applyCreateRootRules();
+      myRuleManager.applyCreateRootRules();
     }
-    ruleManager.applyMappingRules();
-    ruleManager.applyRoot_MappingRules();
+    myRuleManager.applyMappingRules();
+    myRuleManager.applyRoot_MappingRules();
 
     checkMonitorCanceled();
     getGeneratorSessionContext().clearCopiedRootsSet();
-    List<SNode> copiedOutputRoots = copyRootsFromInputModel(ruleManager);
+    List<SNode> copiedOutputRoots = copyRootsFromInputModel(myRuleManager);
     for (SNode copiedOutputRoot : copiedOutputRoots) {
       getGeneratorSessionContext().registerCopiedRoot(copiedOutputRoot);
       myOutputModel.addRoot(copiedOutputRoot);
@@ -102,12 +108,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // reductions in copied roots
     for (SNode outputRootNode : copiedOutputRoots) {
       checkMonitorCanceled();
-      ruleManager.applyReductionRules(findInputNodeById(outputRootNode.getSNodeId()));
+      myRuleManager.applyReductionRules(findInputNodeById(outputRootNode.getSNodeId()));
     }
 
     // weaving
-    ruleManager.applyWeavingRules();
-    ruleManager.applyWeaving_MappingRules();
+    myRuleManager.applyWeavingRules();
+    myRuleManager.applyWeaving_MappingRules();
 
     // execute mapper in all $MAP_SRC$/$MAP_SRCL$
     myDelayedChanges.doAllChanges();
