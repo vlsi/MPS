@@ -114,7 +114,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       setAdditionalText(null);
     }
 
-    setNodeIdentifier(myModelDescriptor.toString());
+    if (myModelDescriptor != null) {
+      setNodeIdentifier(myModelDescriptor.toString());
+    } else {
+      setNodeIdentifier("");
+    }
     setText(calculateText());
   }
 
@@ -315,6 +319,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   private void updateGenerationRequiredStatus() {
+    //this is possible in model difference view
+    if (getSModelDescriptor() == null) {
+      return;
+    }
+
     //once generation required, it can't be changed back unless we revert or reload a model
     //if a model is rebuilt, the tree is rebuilt as well and we get the flag cleared
     if (myGenerationRequired) {

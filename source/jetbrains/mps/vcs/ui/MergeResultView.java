@@ -410,6 +410,14 @@ public class MergeResultView extends JPanel {
     public MySModelTreeNode(SModel model, String label, IOperationContext operationContext) {
       super(null, label, operationContext);
       myModel = model;
+      updatePresentation();
+    }
+
+    protected void updatePresentation() {
+      if (myModel == null) {
+        return;
+      }
+      super.updatePresentation();
     }
 
     public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext) {

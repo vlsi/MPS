@@ -192,7 +192,15 @@ public class ModelDifferenceView extends JPanel {
     public MySModelTreeNode(SModel model, String label, IOperationContext operationContext) {
       super(null, label, operationContext);
       myModel = model;
+      updatePresentation();
     }
+
+    protected void updatePresentation() {
+      if (myModel == null) {
+        return;
+      }
+      super.updatePresentation();
+    }                                                            
 
     public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext) {
       return new MySNodeTreeNode(node, role, operationContext);      
@@ -202,7 +210,6 @@ public class ModelDifferenceView extends JPanel {
     public SModel getSModel() {
       return myModel;
     }
-
 
     public void doubleClick() {      
     }
