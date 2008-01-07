@@ -108,10 +108,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     // weaving
-    for (WeavingRule weavingRule : ruleManager.getWeavingRules()) {
-      checkMonitorCanceled();
-      myRuleUtil.applyWeavingRule(weavingRule);
-    }
+    ruleManager.applyWeavingRules();
     for (Weaving_MappingRule weavingMappingRule : ruleManager.getWeaving_MappingRules()) {
       checkMonitorCanceled();
       myRuleUtil.applyWeavingMappingRule(weavingMappingRule);

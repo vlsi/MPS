@@ -71,23 +71,23 @@ public class RuleUtil {
 //  }
 
 
-  /**
-   * old
-   */
-  public void applyWeavingRule(WeavingRule rule) {
-    TemplateDeclaration templateDeclaration = rule.getTemplate();
-    List<SNode> inputNodes = createInputNodeListForWeavingRule(rule);
-    for (SNode inputNode : inputNodes) {
-      SNode outputContextNode = getContextNodeForWeavingingRule(inputNode, rule.getNode(), rule.getContextProviderAspectId(), null);
-      if (outputContextNode == null) {
-        myGenerator.showErrorMessage(inputNode, rule.getNode(), "couldn't create context node");
-        continue;
-      }
-      myGenerator.setChanged(true);
-      weaveTemplateDeclaration(inputNode, templateDeclaration, outputContextNode, rule.getNode());
-    }
-  }
-
+//  /**
+//   * old
+//   */
+//  public void applyWeavingRule(WeavingRule rule) {
+//    TemplateDeclaration templateDeclaration = rule.getTemplate();
+//    List<SNode> inputNodes = createInputNodeListForWeavingRule(rule);
+//    for (SNode inputNode : inputNodes) {
+//      SNode outputContextNode = getContextNodeForWeavingingRule(inputNode, rule.getNode(), rule.getContextProviderAspectId(), null);
+//      if (outputContextNode == null) {
+//        myGenerator.showErrorMessage(inputNode, rule.getNode(), "couldn't create context node");
+//        continue;
+//      }
+//      myGenerator.setChanged(true);
+//      weaveTemplateDeclaration(inputNode, templateDeclaration, outputContextNode, rule.getNode());
+//    }
+//  }
+//
   private void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, SNode ruleNode) {
     if (template == null) {
       myGenerator.showErrorMessage(inputNode, BaseAdapter.fromAdapter(template), ruleNode, "couldn't evaluate weaving rule: no template");
@@ -234,13 +234,13 @@ public class RuleUtil {
   }
 
 
-  private List<SNode> createInputNodeListForWeavingRule(WeavingRule weavingRule) {
-    String sourceQueryAspectId = weavingRule.getSourceQueryAspectId();
-    String methodName = "templateWeavingRule_SourceQuery_" + sourceQueryAspectId;
-    Object[] args = new Object[]{myGenerator};
-    List<SNode> inputNodes = (List<SNode>) QueryMethod.invoke(methodName, args, weavingRule.getModel());
-    return inputNodes;
-  }
+//  private List<SNode> createInputNodeListForWeavingRule(WeavingRule weavingRule) {
+//    String sourceQueryAspectId = weavingRule.getSourceQueryAspectId();
+//    String methodName = "templateWeavingRule_SourceQuery_" + sourceQueryAspectId;
+//    Object[] args = new Object[]{myGenerator};
+//    List<SNode> inputNodes = (List<SNode>) QueryMethod.invoke(methodName, args, weavingRule.getModel());
+//    return inputNodes;
+//  }
 
 //----------------------------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------------------------

@@ -126,28 +126,31 @@ public class RuleManager {
   }
 
   public void applyCreateRootRules() {
-    for (CreateRootRule createRootRule : myCreateRootRules) {
+    for (CreateRootRule rule : myCreateRootRules) {
       myGenerator.checkMonitorCanceled();
-      GeneratorUtil.applyCreateRootRule(createRootRule, myGenerator);
+      GeneratorUtil.applyCreateRootRule(rule, myGenerator);
     }
   }
 
   public void applyMappingRules() {
-    for (MappingRule mappingRule : myMappingRules) {
+    for (MappingRule rule : myMappingRules) {
       myGenerator.checkMonitorCanceled();
-      GeneratorUtil.applyMappingRule(mappingRule, myGenerator);
+      GeneratorUtil.applyMappingRule(rule, myGenerator);
     }
   }
 
   public void applyRoot_MappingRules() {
-    for (Root_MappingRule mappingRule : myRoot_MappingRules) {
+    for (Root_MappingRule rule : myRoot_MappingRules) {
       myGenerator.checkMonitorCanceled();
-      GeneratorUtil.applyRoot_MappingRule(mappingRule, myGenerator);
+      GeneratorUtil.applyRoot_MappingRule(rule, myGenerator);
     }
   }
 
-  public List<WeavingRule> getWeavingRules() {
-    return myWeavingRules;
+  public void applyWeavingRules() {
+    for (WeavingRule rule : myWeavingRules) {
+      myGenerator.checkMonitorCanceled();
+      GeneratorUtil.applyWeavingRule(rule, myGenerator);
+    }
   }
 
   public List<Weaving_MappingRule> getWeaving_MappingRules() {
