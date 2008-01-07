@@ -1,6 +1,8 @@
 package jetbrains.mps.ide.icons;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.BootstrapLanguages;
@@ -31,6 +33,13 @@ public class IconManager {
 
   public static Icon getIconFor(SNode node) {
     if (node == null) return Icons.DEFAULT_ICON;
+
+    if (!(node.getConceptDeclarationAdapter() instanceof ConceptDeclaration)) {
+      LOG.error("Instance of concept interface found", node);
+      return Icons.DEFAULT_ICON;
+    }
+      
+
     return getIconFor((ConceptDeclaration) node.getConceptDeclarationAdapter());
   }
 
