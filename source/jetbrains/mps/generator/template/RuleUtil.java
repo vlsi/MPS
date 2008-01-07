@@ -15,7 +15,6 @@ import java.util.List;
  * Date: Jan 24, 2007
  */
 public class RuleUtil {
-  private static final Logger LOG = Logger.getLogger(RuleUtil.class);
   private RuleManager myRuleManager;
   private TemplateGenerator myGenerator;
   private SModel myOutputModel;
@@ -293,22 +292,6 @@ public class RuleUtil {
     return outputNodes;
   }
 
-  private List<SNode> tryToReduce(SNode inputNode) {
-    INodeAdapter reductionRule;
-    boolean wasChanged = myGenerator.isChanged();
-    try {
-      reductionRule = myRuleManager.getReductionRuleManager().findReductionRule(inputNode);
-      if (reductionRule != null) {
-        return myRuleManager.getReductionRuleManager().applyReductionRule(inputNode, reductionRule);
-      }
-    } catch (DismissTopMappingRuleException ex) {
-      // it's ok, just continue
-      myGenerator.setChanged(wasChanged);
-    }
-    return null;
-  }
-
-
   private List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode) {
     List<SNode> outputNodes = tryToReduce(inputNode);
     if (outputNodes != null) {
@@ -381,6 +364,21 @@ public class RuleUtil {
     outputNodes = new ArrayList<SNode>(1);
     outputNodes.add(outputNode);
     return outputNodes;
+  }
+
+  private List<SNode> tryToReduce(SNode inputNode) {
+    INodeAdapter reductionRule;
+    boolean wasChanged = myGenerator.isChanged();
+    try {
+      reductionRule = myRuleManager.getReductionRuleManager().findReductionRule(inputNode);
+      if (reductionRule != null) {
+        return myRuleManager.getReductionRuleManager().applyReductionRule(inputNode, reductionRule);
+      }
+    } catch (DismissTopMappingRuleException ex) {
+      // it's ok, just continue
+      myGenerator.setChanged(wasChanged);
+    }
+    return null;
   }
 
 }

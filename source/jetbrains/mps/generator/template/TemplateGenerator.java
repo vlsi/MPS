@@ -83,7 +83,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     RuleManager ruleManager = new RuleManager(this);
     myRuleUtil = new RuleUtil(ruleManager);
-    ruleManager.setRuleUtil(myRuleUtil);
     ruleManager.getReductionRuleManager().setRuleUtil(myRuleUtil);
 
     // create all roots

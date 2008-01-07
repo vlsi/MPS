@@ -26,7 +26,6 @@ public class RuleManager {
   protected TemplateGenerator myGenerator;
 
   private ReductionRuleManager myReductionRuleManager;
-  private RuleUtil myRuleUtil;
 
   public RuleManager(TemplateGenerator generator) {
     myGenerator = generator;
@@ -34,25 +33,9 @@ public class RuleManager {
     initialize();
   }
 
-  /**
-   * todo: tmp
-   */
-  public void setRuleUtil(RuleUtil ruleUtil) {
-    myRuleUtil = ruleUtil;
-  }
-
   public TemplateGenerator getGenerator() {
     return myGenerator;
   }
-
-  public int getMappingRulesCount() {
-    return myMappingRules.size() + myRoot_MappingRules.size();
-  }
-
-  public int getWeavingRulesCount() {
-    return myWeavingRules.size() + myWeaving_MappingRules.size();
-  }
-
 
   protected void initialize() {
     myCreateRootRules = new ArrayList<CreateRootRule>();
