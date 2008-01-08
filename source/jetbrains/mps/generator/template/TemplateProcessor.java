@@ -79,7 +79,9 @@ public class TemplateProcessor {
               throw new TemplateProcessingFailureException();
             }
             SNode altTemplateNode = nodeAndMappingName.o1;
-            // todo: what about mapping name
+            if (nodeAndMappingName.o2 != null) {
+              mappingName_ = nodeAndMappingName.o2;
+            }
             _outputNodes = createOutputNodesForTemplateNode(mappingName_, altTemplateNode, inputNode, 0, false);
           }
         }
