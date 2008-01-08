@@ -2,8 +2,34 @@
 <model name="jetbrains.mps.baseLanguage.sandbox.genTest">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.baseLanguageInternal" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.baseLanguageInternal">
+    <languageAspect modelUID="jetbrains.mps.baseLanguageInternal.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguageInternal.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguageInternal.structure" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.regexp">
+    <languageAspect modelUID="jetbrains.mps.regexp.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.regexp.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.regexp.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.regexp.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.regexp.actions" version="-1" />
+  </language>
+  <language namespace="webr.css">
+    <languageAspect modelUID="webr.css.editor" version="-1" />
+    <languageAspect modelUID="webr.css.intentions" version="-1" />
+    <languageAspect modelUID="webr.css.structure" version="-1" />
+    <languageAspect modelUID="webr.css.constraints" version="-1" />
+    <languageAspect modelUID="webr.css.actions" version="-1" />
+  </language>
   <maxImportIndex value="6" />
   <import index="5" modelUID="jetbrains.mps.ide.command@java_stub" version="-1" />
   <import index="6" modelUID="java.lang@java_stub" version="-1" />
