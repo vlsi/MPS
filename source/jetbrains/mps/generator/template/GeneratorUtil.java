@@ -282,11 +282,13 @@ public class GeneratorUtil {
   }
 
   private static void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, TemplateGenerator generator) throws DismissTopMappingRuleException {
-    List<SNode> outputNodes = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, generator);
-    if (outputNodes != null) {
+    try {
+      List<SNode> outputNodes = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, generator);
       for (SNode outputNode : outputNodes) {
         generator.getOutputModel().addRoot(outputNode);
       }
+    } catch (TemplateProcessingFailureException e) {
+      generator.showErrorMessage(inputNode, templateNode, "couldn't create root node");
     }
   }
 
@@ -398,14 +400,15 @@ public class GeneratorUtil {
         String mappingName = templateFragment.getName() != null ? templateFragment.getName() : ruleMappingName;
         try {
           List<SNode> outputNodesToWeave = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateFragmentNode, inputNode, generator);
-          if (outputNodesToWeave != null) {
-            String childRole = templateFragmentNode.getRole_();
-            for (SNode outputNodeToWeave : outputNodesToWeave) {
-              contextParentNode.addChild(childRole, outputNodeToWeave);
-            }
+          String childRole = templateFragmentNode.getRole_();
+          for (SNode outputNodeToWeave : outputNodesToWeave) {
+            contextParentNode.addChild(childRole, outputNodeToWeave);
           }
         } catch (DismissTopMappingRuleException e) {
-          generator.showErrorMessage(inputNode, template.getNode(), ruleNode, "dismission of Weaving rule is not supported");
+          generator.showErrorMessage(inputNode, templateFragment.getNode(), ruleNode, "dismission of weaving rule is not supported");
+        } catch (TemplateProcessingFailureException e) {
+          generator.showErrorMessage(inputNode, templateFragment.getNode(), ruleNode, "error pocessing template fragment");
+          generator.showInformationMessage(contextParentNode, " -- was output context node:");
         }
       } else {
         generator.showErrorMessage(inputNode, templateFragment.getNode(), ruleNode, "couldn't define 'context' for template fragment");
@@ -650,13 +653,11 @@ public class GeneratorUtil {
     List<SNode> outputNodes = new ArrayList<SNode>();
     try {
       List<SNode> newOutputNodes = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, fragmentNode, inputNode, generator);
-      if (newOutputNodes != null) {
-        outputNodes.addAll(newOutputNodes);
-      } else {
-        generator.showErrorMessage(inputNode, fragmentNode, reductionRule.getNode(), "error processing reduction rule");
-      }
+      outputNodes.addAll(newOutputNodes);
     } catch (DismissTopMappingRuleException e) {
       throw e;
+    } catch (TemplateProcessingFailureException e) {
+      generator.showErrorMessage(inputNode, fragmentNode, reductionRule.getNode(), "error processing reduction rule");
     } catch (Throwable t) {
       LOG.error(t, BaseAdapter.fromNode(fragmentNode));
       generator.showErrorMessage(inputNode, fragmentNode, reductionRule.getNode(), "error processing reduction rule");
