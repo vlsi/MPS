@@ -282,8 +282,7 @@ public class GeneratorUtil {
   }
 
   private static void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, TemplateGenerator generator) throws DismissTopMappingRuleException {
-    RuleUtil ruleUtil = generator.getRuleUtil();
-    List<SNode> outputNodes = ruleUtil.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
+    List<SNode> outputNodes = RuleUtil.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, generator);
     if (outputNodes != null) {
       for (SNode outputNode : outputNodes) {
         generator.getOutputModel().addRoot(outputNode);
@@ -398,8 +397,7 @@ public class GeneratorUtil {
       if (contextParentNode != null) {
         String mappingName = templateFragment.getName() != null ? templateFragment.getName() : ruleMappingName;
         try {
-          RuleUtil ruleUtil = generator.getRuleUtil();
-          List<SNode> outputNodesToWeave = ruleUtil.createOutputNodesForTemplateNode(mappingName, templateFragmentNode, inputNode, 0, true);
+          List<SNode> outputNodesToWeave = RuleUtil.createOutputNodesForTemplateNode(mappingName, templateFragmentNode, inputNode, generator);
           if (outputNodesToWeave != null) {
             String childRole = templateFragmentNode.getRole_();
             for (SNode outputNodeToWeave : outputNodesToWeave) {
@@ -651,8 +649,7 @@ public class GeneratorUtil {
   private static List<SNode> applyReductionRuleTemplateFragment(String mappingName, SNode fragmentNode, SNode inputNode, INodeAdapter reductionRule, TemplateGenerator generator) throws DismissTopMappingRuleException {
     List<SNode> outputNodes = new ArrayList<SNode>();
     try {
-      RuleUtil ruleUtil = generator.getRuleUtil();
-      List<SNode> newOutputNodes = ruleUtil.createOutputNodesForTemplateNode(mappingName, fragmentNode, inputNode, 0, true);
+      List<SNode> newOutputNodes = RuleUtil.createOutputNodesForTemplateNode(mappingName, fragmentNode, inputNode, generator);
       if (newOutputNodes != null) {
         outputNodes.addAll(newOutputNodes);
       } else {

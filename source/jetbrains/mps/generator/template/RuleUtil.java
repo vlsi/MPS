@@ -21,11 +21,19 @@ public class RuleUtil {
   }
 
 
-  public List<SNode> createOutputNodesForTemplateNode(String mappingName,
+  public static List<SNode> createOutputNodesForTemplateNode(String mappingName,
                                                       SNode templateNode,
                                                       SNode inputNode,
-                                                      int nodeMacrosToSkip,
-                                                      boolean registerTopOutput) throws DismissTopMappingRuleException {
+                                                      TemplateGenerator generator) throws DismissTopMappingRuleException {
+    RuleUtil ruleUtil = new RuleUtil(generator);
+    return ruleUtil.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
+  }
+
+  private List<SNode> createOutputNodesForTemplateNode(String mappingName,
+                                                       SNode templateNode,
+                                                       SNode inputNode,
+                                                       int nodeMacrosToSkip,
+                                                       boolean registerTopOutput) throws DismissTopMappingRuleException {
     int macroCount = 0;
     List<SNode> outputNodes = new ArrayList<SNode>();
     // templateNode has unprocessed node-macros?
