@@ -54,6 +54,7 @@ public class TemplateProcessor {
           }
         }
         return outputNodes;
+
       } else if (nodeMacro instanceof CopySrcNodeMacro || nodeMacro instanceof CopySrcListMacro) {
         // $COPY-SRC$ / $COPY-SRCL$
         List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
@@ -62,6 +63,7 @@ public class TemplateProcessor {
           outputNodes.addAll(_outputNodes);
         }
         return outputNodes;
+
       } else if (nodeMacro instanceof IfMacro) {
         // $IF$
         List<SNode> _outputNodes = null;
@@ -88,6 +90,7 @@ public class TemplateProcessor {
           }
         }
         return outputNodes;
+
       } else if (nodeMacro instanceof MapSrcNodeMacro || nodeMacro instanceof MapSrcListMacro) {
         // $MAP-SRC$ or $MAP-SRCL$
         MapSrcMacro_MapperFunction macro_mapperFunction;
@@ -112,11 +115,12 @@ public class TemplateProcessor {
             List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
             outputNodes.addAll(_outputNodes);
             if (registerTopOutput && !inputChanged) {
-              myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
+              myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
             }
           }
         }
         return outputNodes;
+
       } else if (nodeMacro instanceof SwitchMacro) {
         // $SWITCH$
         TemplateSwitch templateSwitch = ((SwitchMacro) nodeMacro).getTemplateSwitch();
@@ -145,20 +149,19 @@ public class TemplateProcessor {
             }
           }
 
+          List<SNode> _outputNodes;
           if (templateNodeForCase != null) {
-            List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNodeForCase, newInputNode, 0, inputChanged);
-            outputNodes.addAll(_outputNodes);
+            _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNodeForCase, newInputNode, 0, inputChanged);
           } else {
             // no switch-case found for the inputNode - continue with templateNode under the $switch$
-            List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
-            outputNodes.addAll(_outputNodes);
+            _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
           }
 
+          outputNodes.addAll(_outputNodes);
           if (registerTopOutput && !inputChanged) {
-            myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
+            myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
           }
         } // for (SNode newInputNode : newInputNodes)
-
         return outputNodes;
 
       } else if (nodeMacro instanceof IncludeMacro) {
@@ -185,11 +188,11 @@ public class TemplateProcessor {
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateForInclude, newInputNode, 0, inputChanged);
           outputNodes.addAll(_outputNodes);
           if (registerTopOutput && !inputChanged) {
-            myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
+            myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
           }
         } // for (SNode newInputNode : newInputNodes)
-
         return outputNodes;
+
       } else {
         // $$
         List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
@@ -203,6 +206,7 @@ public class TemplateProcessor {
         }
         return outputNodes;
       }
+
     } // templateNode has unprocessed node-macros?
 
     // templateNode has no unprocessed node-macros - create output instance for the tempate node
