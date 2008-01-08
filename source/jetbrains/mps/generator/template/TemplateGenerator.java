@@ -32,18 +32,12 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
   private boolean myChanged = false;
 
-  // todo: tmp
-  private RuleUtil myRuleUtil;
   private RuleManager myRuleManager;
 
   public TemplateGenerator(GenerationSessionContext operationContext,
                            IAdaptiveProgressMonitor progressMonitor,
                            GeneratorLogger generatorLogger) {
     super(operationContext, progressMonitor, generatorLogger);
-  }
-
-  public RuleUtil getRuleUtil() {
-    return myRuleUtil;
   }
 
   public GenerationSessionContext getGeneratorSessionContext() {
@@ -88,7 +82,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     int oldErrorCount = getErrorCount();
 
     myRuleManager = new RuleManager(this);
-    myRuleUtil = new RuleUtil(this);
 
     // create all roots
     if (isPrimary) {
