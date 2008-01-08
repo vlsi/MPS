@@ -7,15 +7,11 @@ import jetbrains.mps.util.Pair;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by: Sergey Dmitriev
- * Date: Jan 24, 2007
- */
-public class RuleUtil {
+public class TemplateProcessor {
   private TemplateGenerator myGenerator;
   private SModel myOutputModel;
 
-  public RuleUtil(TemplateGenerator generator) {
+  public TemplateProcessor(TemplateGenerator generator) {
     myGenerator = generator;
     myOutputModel = myGenerator.getOutputModel();
   }
@@ -25,8 +21,8 @@ public class RuleUtil {
                                                       SNode templateNode,
                                                       SNode inputNode,
                                                       TemplateGenerator generator) throws DismissTopMappingRuleException {
-    RuleUtil ruleUtil = new RuleUtil(generator);
-    return ruleUtil.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
+    TemplateProcessor templateProcessor = new TemplateProcessor(generator);
+    return templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
   }
 
   private List<SNode> createOutputNodesForTemplateNode(String mappingName,

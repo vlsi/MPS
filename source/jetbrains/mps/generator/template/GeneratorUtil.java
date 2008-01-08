@@ -282,7 +282,7 @@ public class GeneratorUtil {
   }
 
   private static void createRootNodeFromTemplate(String mappingName, SNode templateNode, SNode inputNode, TemplateGenerator generator) throws DismissTopMappingRuleException {
-    List<SNode> outputNodes = RuleUtil.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, generator);
+    List<SNode> outputNodes = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, generator);
     if (outputNodes != null) {
       for (SNode outputNode : outputNodes) {
         generator.getOutputModel().addRoot(outputNode);
@@ -397,7 +397,7 @@ public class GeneratorUtil {
       if (contextParentNode != null) {
         String mappingName = templateFragment.getName() != null ? templateFragment.getName() : ruleMappingName;
         try {
-          List<SNode> outputNodesToWeave = RuleUtil.createOutputNodesForTemplateNode(mappingName, templateFragmentNode, inputNode, generator);
+          List<SNode> outputNodesToWeave = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateFragmentNode, inputNode, generator);
           if (outputNodesToWeave != null) {
             String childRole = templateFragmentNode.getRole_();
             for (SNode outputNodeToWeave : outputNodesToWeave) {
@@ -649,7 +649,7 @@ public class GeneratorUtil {
   private static List<SNode> applyReductionRuleTemplateFragment(String mappingName, SNode fragmentNode, SNode inputNode, INodeAdapter reductionRule, TemplateGenerator generator) throws DismissTopMappingRuleException {
     List<SNode> outputNodes = new ArrayList<SNode>();
     try {
-      List<SNode> newOutputNodes = RuleUtil.createOutputNodesForTemplateNode(mappingName, fragmentNode, inputNode, generator);
+      List<SNode> newOutputNodes = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, fragmentNode, inputNode, generator);
       if (newOutputNodes != null) {
         outputNodes.addAll(newOutputNodes);
       } else {
