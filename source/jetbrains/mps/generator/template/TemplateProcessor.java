@@ -177,16 +177,15 @@ public class TemplateProcessor {
             myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$ : no 'include template'");
             throw new TemplateProcessingFailureException();
           }
-          SNode templateForInclude;
           TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator);
-          if (fragment != null) {
-            // todo: fragment can have name (mapping name)
-            templateForInclude = fragment.getParent().getNode();
-          } else {
+          if (fragment == null) {
             myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$");
             throw new TemplateProcessingFailureException();
           }
-
+          SNode templateForInclude = fragment.getParent().getNode();
+          if (fragment.getName() != null) {
+            mappingName_ = fragment.getName();
+          }
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateForInclude, newInputNode, 0, inputChanged);
           outputNodes.addAll(_outputNodes);
           if (registerTopOutput && !inputChanged) {
