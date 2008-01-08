@@ -7,6 +7,8 @@ import jetbrains.mps.util.Pair;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 public class TemplateProcessor {
   private TemplateGenerator myGenerator;
   private SModel myOutputModel;
@@ -25,6 +27,7 @@ public class TemplateProcessor {
     return templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
   }
 
+  @NotNull
   private List<SNode> createOutputNodesForTemplateNode(String mappingName,
                                                        SNode templateNode,
                                                        SNode inputNode,
@@ -45,11 +48,9 @@ public class TemplateProcessor {
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
-          if (_outputNodes != null) {
-            outputNodes.addAll(_outputNodes);
-            if (registerTopOutput && !inputChanged) {
-              myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
-            }
+          outputNodes.addAll(_outputNodes);
+          if (registerTopOutput && !inputChanged) {
+            myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
           }
         }
         return outputNodes;
@@ -77,10 +78,7 @@ public class TemplateProcessor {
             }
             SNode altTemplateNode = nodeAndMappingName.o1;
             // todo: what about mapping name
-            List<SNode> outputChildNodes = createOutputNodesForTemplateNode(mappingName_, altTemplateNode, inputNode, 0, false);
-            if (outputChildNodes != null) {
-              outputNodes.addAll(outputChildNodes);
-            }
+            _outputNodes = createOutputNodesForTemplateNode(mappingName_, altTemplateNode, inputNode, 0, false);
           }
         }
         if (_outputNodes != null) {
@@ -111,12 +109,10 @@ public class TemplateProcessor {
             // execute the 'mapper' function later
             myGenerator.getDelayedChanges().addExecuteMapSrcNodeMacroChange(nodeMacro, childToReplaceLater, newInputNode, myGenerator);
           } else {
-            List<SNode> outputChildNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
-            if (outputChildNodes != null) {
-              outputNodes.addAll(outputChildNodes);
-              if (registerTopOutput && !inputChanged) {
-                myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
-              }
+            List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
+            outputNodes.addAll(_outputNodes);
+            if (registerTopOutput && !inputChanged) {
+              myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
             }
           }
         }
@@ -150,16 +146,12 @@ public class TemplateProcessor {
           }
 
           if (templateNodeForCase != null) {
-            List<SNode> outputChildNodes = createOutputNodesForTemplateNode(mappingName_, templateNodeForCase, newInputNode, 0, inputChanged);
-            if (outputChildNodes != null) {
-              outputNodes.addAll(outputChildNodes);
-            }
+            List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNodeForCase, newInputNode, 0, inputChanged);
+            outputNodes.addAll(_outputNodes);
           } else {
             // no switch-case found for the inputNode - continue with templateNode under the $switch$
-            List<SNode> outputChildNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
-            if (outputChildNodes != null) {
-              outputNodes.addAll(outputChildNodes);
-            }
+            List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
+            outputNodes.addAll(_outputNodes);
           }
 
           if (registerTopOutput && !inputChanged) {
@@ -190,11 +182,8 @@ public class TemplateProcessor {
             throw new TemplateProcessingFailureException();
           }
 
-          List<SNode> outputChildNodes = createOutputNodesForTemplateNode(mappingName_, templateForInclude, newInputNode, 0, inputChanged);
-          if (outputChildNodes != null) {
-            outputNodes.addAll(outputChildNodes);
-          }
-
+          List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateForInclude, newInputNode, 0, inputChanged);
+          outputNodes.addAll(_outputNodes);
           if (registerTopOutput && !inputChanged) {
             myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
           }
@@ -206,10 +195,8 @@ public class TemplateProcessor {
         List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
-          List<SNode> outputChildNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
-          if (outputChildNodes != null) {
-            outputNodes.addAll(outputChildNodes);
-          }
+          List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
+          outputNodes.addAll(_outputNodes);
           if (registerTopOutput && !inputChanged) {
             myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
           }
