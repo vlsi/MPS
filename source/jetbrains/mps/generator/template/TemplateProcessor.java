@@ -137,16 +137,20 @@ public class TemplateProcessor {
               myGenerator.showErrorMessage(newInputNode, nodeMacro.getNode(), consequenceForCase.getNode(), "error processing $SWITCH$");
               throw new TemplateProcessingFailureException();
             }
-            // todo: what about mapping name?
             templateNodeForCase = nodeAndMappingName.o1;
+            if (nodeAndMappingName.o2 != null) {
+              mappingName_ = nodeAndMappingName.o2;
+            }
           } else {
             // for back compatibility
             TemplateDeclaration templateForSwitchCase = myGenerator.getTemplateForSwitchCase_deprecated(newInputNode, templateSwitch);
             if (templateForSwitchCase != null) {
               TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(templateForSwitchCase, newInputNode, nodeMacro.getNode(), myGenerator);
               if (fragment != null) {
-                // todo: fragment can have name (mapping name)
                 templateNodeForCase = fragment.getParent().getNode();
+                if (fragment.getName() != null) {
+                  mappingName_ = fragment.getName();
+                }
               }
             }
           }
