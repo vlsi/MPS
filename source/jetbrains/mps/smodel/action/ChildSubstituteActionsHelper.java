@@ -462,15 +462,10 @@ public class ChildSubstituteActionsHelper {
       List<RemoveByConditionPart> removesByCondition = substituteActionsBuilder.getSubnodes(RemoveByConditionPart.class);
       for (RemoveByConditionPart part : removesByCondition) {
         String methodName = "removeActionsByCondition_" + part.getId();
-        Object[] args = {actions.iterator(), parentNode, currentChild, childConcept, context};
         try {
           QueryMethodGenerated.invoke(methodName, context, new RemoveSubstituteActionByCondition_ParameterObject(actions.iterator(), parentNode, currentChild, childConcept), substituteActionsBuilder.getModel());
-        } catch (Throwable tt) {
-          try {
-            QueryMethodGenerated.invoke(methodName, args, substituteActionsBuilder.getModel());
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
+        } catch (Throwable t) {
+          LOG.error(t);
         }
       }
 
@@ -508,11 +503,7 @@ public class ChildSubstituteActionsHelper {
               context};
       String methodName = ActionQueryMethodName.nodeFactory_SubstituteActionBuilder(builder);
       try {
-        try {
-          return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactory_ParameterObject(parentNode, currentChild, childConcept, childSetter), builder.getModel());
-        } catch (Throwable t) {
-          return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, args1, builder.getModel());
-        }
+        return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactory_ParameterObject(parentNode, currentChild, childConcept, childSetter), builder.getModel());
       } catch (Throwable t) {
         LOG.error(t);
         return Collections.emptyList();
