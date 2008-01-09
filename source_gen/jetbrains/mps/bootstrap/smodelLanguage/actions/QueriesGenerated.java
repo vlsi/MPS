@@ -35,6 +35,7 @@ import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptPropertyDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptLinkDeclaration;
+import jetbrains.mps.smodel.action.RTActionsBuilder_ParameterObject;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByCondition_ParameterObject;
@@ -544,31 +545,31 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_SNodeOperation_1138669164825(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_SNodeOperation_1138669164825(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return SNodeOperations.getParent(sourceNode, null, false, false);
+          return SNodeOperations.getParent(_parameterObject.getSourceNode(), null, false, false);
         }
 
       };
       SNode node = (SNode)calc.calculate();
-      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, transformationTag, operationContext));
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, _parameterObject.getTransformationTag(), operationContext));
     }
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_SNodeOperation_1144103719164(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_SNodeOperation_1144103719164(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SLinkOperations.addNewChild(sourceNode, "parameter", "jetbrains.mps.bootstrap.smodelLanguage.structure.AbstractOperationParameter");
-          return sourceNode;
+          SLinkOperations.addNewChild(_parameterObject.getSourceNode(), "parameter", "jetbrains.mps.bootstrap.smodelLanguage.structure.AbstractOperationParameter");
+          return _parameterObject.getSourceNode();
         }
 
         public String getMatchingText(String pattern) {
@@ -584,16 +585,16 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1179535189082(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1179535189082(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           // replace expression with snode-operation-expression
-          SNode expression = sourceNode;
-          SNode opExpression = SModelOperations.createNewNode(model, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression", null);
+          SNode expression = _parameterObject.getSourceNode();
+          SNode opExpression = SModelOperations.createNewNode(_parameterObject.getModel(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression", null);
           SNodeOperations.replaceWithAnother(expression, opExpression);
           SLinkOperations.setTarget(opExpression, "leftExpression", expression, true);
           return opExpression;
@@ -612,15 +613,15 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1179535189125(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1179535189125(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SNode newNode = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression");
-          SLinkOperations.setTarget(newNode, "leftExpression", sourceNode, true);
+          SNode newNode = SNodeOperations.replaceWithNewChild(_parameterObject.getSourceNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeTypeCastExpression");
+          SLinkOperations.setTarget(newNode, "leftExpression", _parameterObject.getSourceNode(), true);
           return newNode;
         }
 
@@ -637,15 +638,15 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1179535648214(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1179535648214(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SNode newNode = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression");
-          SLinkOperations.setTarget(newNode, "leftExpression", sourceNode, true);
+          SNode newNode = SNodeOperations.replaceWithNewChild(_parameterObject.getSourceNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SemanticDowncastExpression");
+          SLinkOperations.setTarget(newNode, "leftExpression", _parameterObject.getSourceNode(), true);
           return newNode;
         }
 

@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.action.RTActionsBuilder_ParameterObject;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
@@ -85,7 +86,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1175609466956(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1175609466956(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
@@ -93,7 +94,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           final zClosureContext _zClosureContext = new zClosureContext();
-          List<SNode> subconcepts = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement"), model, operationContext.getScope());
+          List<SNode> subconcepts = SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.bootstrap.helgins.structure.AbstractEquationStatement"), _parameterObject.getModel(), operationContext.getScope());
           _zClosureContext.scope = operationContext.getScope();
           return SequenceOperations.where(subconcepts, new zPredicate(null, _zClosureContext));
         }
@@ -102,17 +103,17 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
       for(SNode parameter : parameterObjects) {
-        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
+        result.add(new AbstractRTransformHintSubstituteAction(parameter, _parameterObject.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
             SNode result = SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode)this.getParameterObject())), null);
-            SNode statement = SNodeOperations.getAncestor(sourceNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+            SNode statement = SNodeOperations.getAncestor(_parameterObject.getSourceNode(), "jetbrains.mps.baseLanguage.structure.Statement", false, false);
             if(statement == null) {
               return null;
             }
             SNodeOperations.replaceWithAnother(statement, result);
             SNode left = SConceptOperations.createNewNode("jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause", null);
-            SLinkOperations.setTarget(left, "normalType", sourceNode, true);
+            SLinkOperations.setTarget(left, "normalType", _parameterObject.getSourceNode(), true);
             SLinkOperations.setTarget(result, "leftExpression", left, true);
             return SLinkOperations.getTarget(result, "rightExpression", true);
           }

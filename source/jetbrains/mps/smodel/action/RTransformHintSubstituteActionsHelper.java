@@ -181,17 +181,10 @@ import java.util.*;
       LOG.warning("You are using old query language here which is now obsolete. Please, rewrite your code.", substituteActionsBuilder);
       return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
     } else {
-      Object[] args = new Object[] {
-        sourceNode,
-        sourceNode.getModel(),
-        null,
-        context
-      };
-
       String methodName = ActionQueryMethodName.nodeFactory_RightTransformActionBuilder(substituteActionsBuilder);
       SModel model = substituteActionsBuilder.getModel();
       try {
-        return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, args, model);
+        return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new RTActionsBuilder_ParameterObject(sourceNode, sourceNode.getModel(), null), model);
       } catch (Exception e) {
         return new ArrayList<INodeSubstituteAction>();
       }

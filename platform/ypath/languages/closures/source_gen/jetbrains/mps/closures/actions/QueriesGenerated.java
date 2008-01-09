@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.smodel.action.RTActionsBuilder_ParameterObject;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.BaseAdapter;
 
@@ -132,15 +133,15 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1199547332187(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1199547332187(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SNode invoke = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.closures.structure.InvokeFunctionExpression");
-          SLinkOperations.setTarget(invoke, "function", sourceNode, true);
+          SNode invoke = SNodeOperations.replaceWithNewChild(_parameterObject.getSourceNode(), "jetbrains.mps.closures.structure.InvokeFunctionExpression");
+          SLinkOperations.setTarget(invoke, "function", _parameterObject.getSourceNode(), true);
           return invoke;
         }
 

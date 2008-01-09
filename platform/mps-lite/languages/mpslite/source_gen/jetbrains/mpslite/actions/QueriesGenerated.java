@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.smodel.action.RTActionsBuilder_ParameterObject;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -140,16 +141,16 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1196942335235(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1196942335235(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SNode expr = SModelOperations.createNewNode(model, "jetbrains.mpslite.structure.MPSLiteOperationExpression", null);
-          SNodeOperations.replaceWithAnother(sourceNode, expr);
-          SLinkOperations.setTarget(expr, "expression", sourceNode, true);
+          SNode expr = SModelOperations.createNewNode(_parameterObject.getModel(), "jetbrains.mpslite.structure.MPSLiteOperationExpression", null);
+          SNodeOperations.replaceWithAnother(_parameterObject.getSourceNode(), expr);
+          SLinkOperations.setTarget(expr, "expression", _parameterObject.getSourceNode(), true);
           return expr;
         }
 
@@ -162,18 +163,18 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_MPSLiteOperation_1196956053923(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_MPSLiteOperation_1196956053923(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return SNodeOperations.getParent(sourceNode, null, false, false);
+          return SNodeOperations.getParent(_parameterObject.getSourceNode(), null, false, false);
         }
 
       };
       SNode node = (SNode)calc.calculate();
-      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, transformationTag, operationContext));
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, _parameterObject.getTransformationTag(), operationContext));
     }
     return result;
   }

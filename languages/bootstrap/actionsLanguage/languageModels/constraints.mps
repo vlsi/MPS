@@ -251,6 +251,43 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1179449922915">
     <property name="package" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177498227294" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199892745867">
+      <property name="name" value="usesParameterObjectFor" />
+      <link role="overridenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199892745869">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199892756088">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199892756089">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199892764825">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199892766362">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199892757503">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1199892759056">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1199892763739">
+                <link role="conceptDeclaration" targetNodeId="1.1177327274449" resolveInfo="ConceptFunctionParameter_pattern" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199892756929">
+              <link role="variableDeclaration" targetNodeId="1199892749451" resolveInfo="parameter" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199892753914">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199892754985">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1199892749451">
+        <property name="name" value="parameter" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1199892749452">
+          <link role="concept" targetNodeId="10.1107135704075" resolveInfo="ConceptFunctionParameter" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1199892749453" />
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1179449936074">
       <property name="name" value="getExpectedReturnType" />
       <link role="overridenMethod" targetNodeId="9.1178571276073" />
@@ -909,6 +946,62 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182823417242">
     <property name="package" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177509289232" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199893077505">
+      <property name="name" value="usesParameterObjectFor" />
+      <link role="overridenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199893077507">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199893081446">
+          <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199893083722">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1199893085171">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1199893093853">
+                <link role="conceptDeclaration" targetNodeId="1.1177327274449" resolveInfo="ConceptFunctionParameter_pattern" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199893083254">
+              <link role="variableDeclaration" targetNodeId="1199893079483" resolveInfo="parameter" />
+            </node>
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199893081448">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199893094989">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199893096174">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199893099213">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199893099214">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199893107562">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199893108917">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199893100385">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1199893101865">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1199893106503">
+                <link role="conceptDeclaration" targetNodeId="1.1177337833147" resolveInfo="ConceptFunctionParameter_parameterObject" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199893100057">
+              <link role="variableDeclaration" targetNodeId="1199893079483" resolveInfo="parameter" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199893097140">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199893098184">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1199893079483">
+        <property name="name" value="parameter" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1199893079484">
+          <link role="concept" targetNodeId="10.1107135704075" resolveInfo="ConceptFunctionParameter" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1199893079485" />
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182823441479">
       <property name="name" value="getExpectedReturnType" />
       <link role="overridenMethod" targetNodeId="9.1178571276073" />
@@ -968,6 +1061,62 @@
   <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1182823834556">
     <property name="package" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177526592562" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199893131863">
+      <property name="name" value="usesParameterObjectFor" />
+      <link role="overridenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199893131865">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199893168630">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199893168631">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199893178923">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199893179951">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199893170112">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1199893171453">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1199893178004">
+                <link role="conceptDeclaration" targetNodeId="1.1177327274449" resolveInfo="ConceptFunctionParameter_pattern" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199893169614">
+              <link role="variableDeclaration" targetNodeId="1199893133686" resolveInfo="parameter" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199893180887">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199893180888">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199893189111">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199893190217">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199893182074">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1199893184083">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1199893188130">
+                <link role="conceptDeclaration" targetNodeId="1.1177526535706" resolveInfo="ConceptFunctionParameter_result" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199893181684">
+              <link role="variableDeclaration" targetNodeId="1199893133686" resolveInfo="parameter" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199893166386">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199893167352">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1199893133686">
+        <property name="name" value="parameter" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1199893133687">
+          <link role="concept" targetNodeId="10.1107135704075" resolveInfo="ConceptFunctionParameter" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1199893133688" />
+    </node>
     <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1182823836840">
       <property name="name" value="getExpectedReturnType" />
       <link role="overridenMethod" targetNodeId="9.1178571276073" />
@@ -1045,6 +1194,50 @@
     </node>
     <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1199890991151">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199890991152" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior" id="1199892793318">
+    <property name="package" value="queryFunctions" />
+    <link role="concept" targetNodeId="1.1177498071304" resolveInfo="QueryFunction_RightTransform_String" />
+    <node role="method" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptMethodDeclaration" id="1199892794995">
+      <property name="name" value="usesParameterObjectFor" />
+      <link role="overridenMethod" targetNodeId="9.1199888241493" resolveInfo="usesParameterObjectFor" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199892794997">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1199892801422">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199892801423">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199892812811">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199892814068">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199892802652">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_IsInstanceOfOperation" id="1199892804220">
+              <node role="conceptArgument" type="jetbrains.mps.bootstrap.smodelLanguage.structure.RefConcept_Reference" id="1199892811787">
+                <link role="conceptDeclaration" targetNodeId="1.1177327274449" resolveInfo="ConceptFunctionParameter_pattern" />
+              </node>
+            </node>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1199892802310">
+              <link role="variableDeclaration" targetNodeId="1199892797525" resolveInfo="parameter" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199892799465">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1199892800521">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1199892797525">
+        <property name="name" value="parameter" />
+        <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1199892797526">
+          <link role="concept" targetNodeId="10.1107135704075" resolveInfo="ConceptFunctionParameter" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1199892797527" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptConstructorDeclaration" id="1199892793319">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199892793320" />
     </node>
   </node>
 </model>

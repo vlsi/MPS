@@ -1042,6 +1042,9 @@
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
       <link role="target" targetNodeId="5.1161622665029" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1199893120444">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1199874763892" resolveInfo="usesParameterObject" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1177509289232">
     <property name="package" value="queryFunctions" />
@@ -1258,6 +1261,9 @@
     <node role="conceptLink" type="jetbrains.mps.bootstrap.structureLanguage.structure.ReferenceConceptLink" id="1178537491316">
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" />
       <link role="target" targetNodeId="5.1161622665029" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1199893206479">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1199874763892" resolveInfo="usesParameterObject" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1178539929008">

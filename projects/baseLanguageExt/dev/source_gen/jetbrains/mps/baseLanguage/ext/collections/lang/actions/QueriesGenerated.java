@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.action.RTActionsBuilder_ParameterObject;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByCondition_ParameterObject;
@@ -160,16 +161,16 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1151703707960(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1151703707960(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression", null);
-          SNodeOperations.replaceWithAnother(sourceNode, result);
-          SLinkOperations.setTarget(result, "leftExpression", sourceNode, true);
+          SNodeOperations.replaceWithAnother(_parameterObject.getSourceNode(), result);
+          SLinkOperations.setTarget(result, "leftExpression", _parameterObject.getSourceNode(), true);
           return result;
         }
 
@@ -186,31 +187,31 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_SequenceOperation_1153773758797(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_SequenceOperation_1153773758797(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return SNodeOperations.getParent(sourceNode, null, false, false);
+          return SNodeOperations.getParent(_parameterObject.getSourceNode(), null, false, false);
         }
 
       };
       SNode node = (SNode)calc.calculate();
-      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, transformationTag, operationContext));
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, _parameterObject.getTransformationTag(), operationContext));
     }
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1197932848431(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1197932848431(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SNode mapElement = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement");
-          SLinkOperations.setTarget(mapElement, "map", sourceNode, true);
+          SNode mapElement = SNodeOperations.replaceWithNewChild(_parameterObject.getSourceNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapElement");
+          SLinkOperations.setTarget(mapElement, "map", _parameterObject.getSourceNode(), true);
           return mapElement;
         }
 

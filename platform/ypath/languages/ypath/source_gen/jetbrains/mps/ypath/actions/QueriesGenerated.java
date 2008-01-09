@@ -35,6 +35,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.ypath.structure.FragmentTypeEnum;
+import jetbrains.mps.smodel.action.RTActionsBuilder_ParameterObject;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
 import jetbrains.mps.util.Pair;
@@ -501,25 +502,25 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1168893677147(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1168893677147(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          return TreePathAspectUtil.getTreePathAspects(sourceNode, operationContext.getScope());
+          return TreePathAspectUtil.getTreePathAspects(_parameterObject.getSourceNode(), operationContext.getScope());
         }
 
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
       for(SNode parameter : parameterObjects) {
-        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
+        result.add(new AbstractRTransformHintSubstituteAction(parameter, _parameterObject.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
-            SNode tpaExp = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
-            SLinkOperations.setTarget(tpaExp, "expression", sourceNode, true);
+            SNode tpaExp = SNodeOperations.replaceWithNewChild(_parameterObject.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
+            SLinkOperations.setTarget(tpaExp, "expression", _parameterObject.getSourceNode(), true);
             SLinkOperations.setTarget(tpaExp, "treepathAspect", ((SNode)this.getParameterObject()), false);
             return tpaExp;
           }
@@ -538,14 +539,14 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_TreeNodeKindOccurrence_1175164446140(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_TreeNodeKindOccurrence_1175164446140(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.MatchPropertyOperation", operationContext.getScope());
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          SNode tpoe = SNodeOperations.getAncestor(sourceNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
+          SNode tpoe = SNodeOperations.getAncestor(_parameterObject.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
           return SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), null, false), new zPredicate(null, null)));
         }
 
@@ -553,12 +554,12 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
       for(SNode parameter : parameterObjects) {
-        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
+        result.add(new AbstractRTransformHintSubstituteAction(parameter, _parameterObject.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
-            SNode tnko = sourceNode;
+            SNode tnko = _parameterObject.getSourceNode();
             SNode mko = SNodeOperations.getParent(tnko, null, false, false);
-            SNode mpo = SModelOperations.createNewNode(model, "jetbrains.mps.ypath.structure.MatchPropertyOperation", null);
+            SNode mpo = SModelOperations.createNewNode(_parameterObject.getModel(), "jetbrains.mps.ypath.structure.MatchPropertyOperation", null);
             SNodeOperations.replaceWithAnother(mko, mpo);
             SLinkOperations.setTarget(SLinkOperations.getTarget(mpo, "nodeKindOccurrence", true), "nodeKind", SLinkOperations.getTarget(tnko, "nodeKind", false), false);
             SLinkOperations.setTarget(mpo, "property", ((SNode)this.getParameterObject()), false);
@@ -579,15 +580,15 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1194616742213(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1194616742213(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SNode res = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.IsWithinRangeExpression");
-          SLinkOperations.setTarget(res, "range", sourceNode, true);
+          SNode res = SNodeOperations.replaceWithNewChild(_parameterObject.getSourceNode(), "jetbrains.mps.ypath.structure.IsWithinRangeExpression");
+          SLinkOperations.setTarget(res, "range", _parameterObject.getSourceNode(), true);
           return res;
         }
 
@@ -603,11 +604,11 @@ public class QueriesGenerated {
     }
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SNode res = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.IsAtInsertionPointExpression");
-          SLinkOperations.setTarget(res, "range", sourceNode, true);
+          SNode res = SNodeOperations.replaceWithNewChild(_parameterObject.getSourceNode(), "jetbrains.mps.ypath.structure.IsAtInsertionPointExpression");
+          SLinkOperations.setTarget(res, "range", _parameterObject.getSourceNode(), true);
           return res;
         }
 
@@ -623,11 +624,11 @@ public class QueriesGenerated {
     }
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SNode res = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.NextElementStatement");
-          SLinkOperations.setTarget(res, "range", sourceNode, true);
+          SNode res = SNodeOperations.replaceWithNewChild(_parameterObject.getSourceNode(), "jetbrains.mps.ypath.structure.NextElementStatement");
+          SLinkOperations.setTarget(res, "range", _parameterObject.getSourceNode(), true);
           return res;
         }
 
@@ -644,7 +645,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_IFeature_1197904809758(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_IFeature_1197904809758(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
@@ -653,7 +654,7 @@ public class QueriesGenerated {
         public Object calculate() {
           final zClosureContext1 _zClosureContext1 = new zClosureContext1();
           List<Pair> res = ListOperations.createList(new Pair[]{});
-          _zClosureContext1.srcNode = sourceNode;
+          _zClosureContext1.srcNode = _parameterObject.getSourceNode();
           _zClosureContext1.isGeneric = SNodeOperations.isInstanceOf(_zClosureContext1.srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
           {
             ICursor<SNode> _zCursor2 = CursorFactory.createCursor(SequenceOperations.where(SLinkOperations.getTargets(SNodeOperations.getParent(_zClosureContext1.srcNode, null, false, false), "features", true), new zPredicate2(null, _zClosureContext1)));
@@ -674,13 +675,13 @@ public class QueriesGenerated {
       Iterable<Pair> parameterObjects = (Iterable<Pair>)calculable.calculate();
       assert parameterObjects != null;
       for(Pair parameter : parameterObjects) {
-        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
+        result.add(new AbstractRTransformHintSubstituteAction(parameter, _parameterObject.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
             SNode fe = (SNode)((Pair)this.getParameterObject()).o1;
             Boolean mu = (Boolean)((Pair)this.getParameterObject()).o2;
-            IFeature_Behavior.call_setOpposite_1197913839765(sourceNode, fe, mu);
-            return sourceNode;
+            IFeature_Behavior.call_setOpposite_1197913839765(_parameterObject.getSourceNode(), fe, mu);
+            return _parameterObject.getSourceNode();
           }
 
           public String getMatchingText(String text) {
@@ -707,7 +708,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1198013650231(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1198013650231(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression", operationContext.getScope());
@@ -715,11 +716,11 @@ public class QueriesGenerated {
 
         public Object calculate() {
           List<Triplet> res = ListOperations.createList(new Triplet[]{});
-          SNode tpoe = SNodeOperations.getAncestor(sourceNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
+          SNode tpoe = SNodeOperations.getAncestor(_parameterObject.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
           if((tpoe == null)) {
             return res;
           }
-          SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(sourceNode), "nodeType", true);
+          SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode()), "nodeType", true);
           {
             ICursor<TraversalAxis> _zCursor3 = CursorFactory.createCursor(TraversalAxis.getConstants());
             try {
@@ -767,15 +768,15 @@ public class QueriesGenerated {
       Iterable<Triplet> parameterObjects = (Iterable<Triplet>)calculable.calculate();
       assert parameterObjects != null;
       for(Triplet parameter : parameterObjects) {
-        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
+        result.add(new AbstractRTransformHintSubstituteAction(parameter, _parameterObject.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
             TraversalAxis axis = (TraversalAxis)((Triplet)this.getParameterObject()).first();
             SNode feat = (SNode)((Triplet)this.getParameterObject()).second();
             SNode pw = (SNode)((Triplet)this.getParameterObject()).third();
-            SNode tpoExp = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-            SLinkOperations.setTarget(tpoExp, "expression", sourceNode, true);
-            SNode op = SModelOperations.createNewNode(model, "jetbrains.mps.ypath.structure.IterateOperation", null);
+            SNode tpoExp = SNodeOperations.replaceWithNewChild(_parameterObject.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+            SLinkOperations.setTarget(tpoExp, "expression", _parameterObject.getSourceNode(), true);
+            SNode op = SModelOperations.createNewNode(_parameterObject.getModel(), "jetbrains.mps.ypath.structure.IterateOperation", null);
             SPropertyOperations.set(SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.IterateOperation"), "axis", axis.getValue());
             if((feat != null)) {
               SLinkOperations.setTarget(SLinkOperations.getTarget(tpoExp, "operation", true), "usedFeature", feat, false);
@@ -840,11 +841,11 @@ public class QueriesGenerated {
     }
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SNode tpoExp = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-          SLinkOperations.setTarget(tpoExp, "expression", sourceNode, true);
+          SNode tpoExp = SNodeOperations.replaceWithNewChild(_parameterObject.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+          SLinkOperations.setTarget(tpoExp, "expression", _parameterObject.getSourceNode(), true);
           SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.WhereOperation");
           return tpoExp;
         }
@@ -864,7 +865,7 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          SNode tpoe = SNodeOperations.getAncestor(sourceNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
+          SNode tpoe = SNodeOperations.getAncestor(_parameterObject.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
           return SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), null, false), new zPredicate3(null, null)));
         }
 
@@ -872,11 +873,11 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
       for(SNode parameter : parameterObjects) {
-        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
+        result.add(new AbstractRTransformHintSubstituteAction(parameter, _parameterObject.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
-            SNode tpoExp = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-            SLinkOperations.setTarget(tpoExp, "expression", sourceNode, true);
+            SNode tpoExp = SNodeOperations.replaceWithNewChild(_parameterObject.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+            SLinkOperations.setTarget(tpoExp, "expression", _parameterObject.getSourceNode(), true);
             SNode mnko = SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.MatchKindOperation");
             SLinkOperations.setTarget(SLinkOperations.getTarget(mnko, "nodeKindOccurrence", true), "nodeKind", ((SNode)this.getParameterObject()), false);
             return tpoExp;
@@ -898,7 +899,7 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          SNode tpoe = SNodeOperations.getAncestor(sourceNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
+          SNode tpoe = SNodeOperations.getAncestor(_parameterObject.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
           return SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getDescendants(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), null, false), new zPredicate4(null, null)));
         }
 
@@ -906,11 +907,11 @@ public class QueriesGenerated {
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
       for(SNode parameter : parameterObjects) {
-        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
+        result.add(new AbstractRTransformHintSubstituteAction(parameter, _parameterObject.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
-            SNode tpoExp = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression");
-            SLinkOperations.setTarget(tpoExp, "expression", sourceNode, true);
+            SNode tpoExp = SNodeOperations.replaceWithNewChild(_parameterObject.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+            SLinkOperations.setTarget(tpoExp, "expression", _parameterObject.getSourceNode(), true);
             SNode mdpo = SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.MatchDefaultPropertyOperation");
             return tpoExp;
           }
@@ -929,55 +930,55 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1198013650823(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1198013650823(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return SNodeOperations.getParent(sourceNode, null, false, false);
+          return SNodeOperations.getParent(_parameterObject.getSourceNode(), null, false, false);
         }
 
       };
       SNode node = (SNode)calc.calculate();
-      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, transformationTag, operationContext));
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, _parameterObject.getTransformationTag(), operationContext));
     }
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_TreePathOperation_1198013650840(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_TreePathOperation_1198013650840(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return SNodeOperations.getParent(sourceNode, null, false, false);
+          return SNodeOperations.getParent(_parameterObject.getSourceNode(), null, false, false);
         }
 
       };
       SNode node = (SNode)calc.calculate();
-      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, transformationTag, operationContext));
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, _parameterObject.getTransformationTag(), operationContext));
     }
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_ParameterWrapper_1198013650848(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_ParameterWrapper_1198013650848(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return SNodeOperations.getParent(sourceNode, null, false, false);
+          return SNodeOperations.getParent(_parameterObject.getSourceNode(), null, false, false);
         }
 
       };
       SNode node = (SNode)calc.calculate();
-      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, transformationTag, operationContext));
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, _parameterObject.getTransformationTag(), operationContext));
     }
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1198013853576(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1198013853576(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
@@ -985,9 +986,9 @@ public class QueriesGenerated {
 
         public Object calculate() {
           List<Quadruplet> res = ListOperations.createList(new Quadruplet[]{});
-          SNode nodeType = (SNode)TypeChecker.getInstance().getTypeOf(sourceNode);
+          SNode nodeType = (SNode)TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode());
           {
-            ICursor<SNode> _zCursor6 = CursorFactory.createCursor(TreePathAspectUtil.getTreePathAspects(sourceNode, operationContext.getScope()));
+            ICursor<SNode> _zCursor6 = CursorFactory.createCursor(TreePathAspectUtil.getTreePathAspects(_parameterObject.getSourceNode(), operationContext.getScope()));
             try {
               while(_zCursor6.moveToNext()) {
                 SNode aspect = _zCursor6.getCurrent();
@@ -1043,16 +1044,16 @@ public class QueriesGenerated {
       Iterable<Quadruplet> parameterObjects = (Iterable<Quadruplet>)calculable.calculate();
       assert parameterObjects != null;
       for(Quadruplet parameter : parameterObjects) {
-        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
+        result.add(new AbstractRTransformHintSubstituteAction(parameter, _parameterObject.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
             SNode aspect = (SNode)((Quadruplet)this.getParameterObject()).first();
             TraversalAxis axis = (TraversalAxis)((Quadruplet)this.getParameterObject()).second();
             SNode feat = (SNode)((Quadruplet)this.getParameterObject()).third();
             SNode pw = (SNode)((Quadruplet)this.getParameterObject()).fourth();
-            SNode tpoExp = SNodeOperations.replaceWithNewChild(sourceNode, "jetbrains.mps.ypath.structure.TreePathOperationExpression");
+            SNode tpoExp = SNodeOperations.replaceWithNewChild(_parameterObject.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression");
             SLinkOperations.setNewChild(tpoExp, "expression", "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
-            SLinkOperations.setTarget(SLinkOperations.getTarget(tpoExp, "expression", true), "expression", sourceNode, true);
+            SLinkOperations.setTarget(SLinkOperations.getTarget(tpoExp, "expression", true), "expression", _parameterObject.getSourceNode(), true);
             SLinkOperations.setTarget(SLinkOperations.getTarget(tpoExp, "expression", true), "treepathAspect", aspect, false);
             SPropertyOperations.set(SLinkOperations.setNewChild(tpoExp, "operation", "jetbrains.mps.ypath.structure.IterateOperation"), "axis", axis.getValue());
             if((feat != null)) {

@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.smodel.action.RTActionsBuilder_ParameterObject;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -197,16 +198,16 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1197638405527(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1197638405527(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
           SNode dotConceptInstance = SConceptOperations.createNewNode("jetbrains.mps.nanoj.structure.DotExpression", null);
-          SNodeOperations.replaceWithAnother(sourceNode, dotConceptInstance);
-          SLinkOperations.setTarget(dotConceptInstance, "leftPart", sourceNode, true);
+          SNodeOperations.replaceWithAnother(_parameterObject.getSourceNode(), dotConceptInstance);
+          SLinkOperations.setTarget(dotConceptInstance, "leftPart", _parameterObject.getSourceNode(), true);
           return dotConceptInstance;
         }
 
@@ -219,40 +220,40 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_ExpressionDotOperation_1197638405553(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_ExpressionDotOperation_1197638405553(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return SNodeOperations.getParent(sourceNode, null, false, false);
+          return SNodeOperations.getParent(_parameterObject.getSourceNode(), null, false, false);
         }
 
       };
       SNode node = (SNode)calc.calculate();
-      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, transformationTag, operationContext));
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, _parameterObject.getTransformationTag(), operationContext));
     }
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1197638405577(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1197638405577(final IOperationContext operationContext, final RTActionsBuilder_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          return SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.nanoj.structure.BinaryExpression"), model, operationContext.getScope());
+          return SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.nanoj.structure.BinaryExpression"), _parameterObject.getModel(), operationContext.getScope());
         }
 
       };
       Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
       assert parameterObjects != null;
       for(SNode parameter : parameterObjects) {
-        result.add(new AbstractRTransformHintSubstituteAction(parameter, sourceNode) {
+        result.add(new AbstractRTransformHintSubstituteAction(parameter, _parameterObject.getSourceNode()) {
 
           public SNode doSubstitute(String pattern) {
-            SNode target = sourceNode;
+            SNode target = _parameterObject.getSourceNode();
             while(true) {
               if(SNodeOperations.isInstanceOf(SNodeOperations.getParent(target, null, false, false), "jetbrains.mps.nanoj.structure.BinaryExpression")) {
                 SNode concept = SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(target, null, false, false));
