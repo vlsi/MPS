@@ -118,12 +118,8 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     String methodName = ActionQueryMethodName.nodeFactory_NodeSetupFunction(factory);
     Object[] args = new Object[]{newNode, sampleNode, enclosingNode, model};
     try {
-      try {
-        //todo pass IOperationContext here somehow
-        QueryMethodGenerated.invoke(methodName, null, new NodeSetup_ParameterObject(newNode, sampleNode, enclosingNode, model), factory.getModel());
-      } catch (Throwable t) {
-        QueryMethodGenerated.invoke(methodName, args, factory.getModel());
-      }
+      //todo pass IOperationContext here somehow
+      QueryMethodGenerated.invoke(methodName, null, new NodeSetup_ParameterObject(newNode, sampleNode, enclosingNode, model), factory.getModel());
     } catch (Exception e) {
       LOG.error(e);
     }
