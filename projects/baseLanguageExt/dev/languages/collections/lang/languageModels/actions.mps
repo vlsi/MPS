@@ -2,12 +2,51 @@
 <model name="jetbrains.mps.baseLanguage.ext.collections.lang.actions">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.bootstrap.actionsLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.sharedConcepts" />
-  <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
+  <language namespace="jetbrains.mps.bootstrap.actionsLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.actionsLanguage.editor" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.bootstrap.sharedConcepts">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.bootstrap.helgins">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.helgins" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
+  </language>
   <maxImportIndex value="10" />
   <import index="1" modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
@@ -17,8 +56,67 @@
     <property name="name" value="BLC_rtansform" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" id="1151703707960">
       <property name="description" value="transform to sequence-operation-expression. only applicable to expression of 'sequence' type" />
-      <property name="actionsFactoryAspectId" value="Expression_to_SequenceOperationExpression" />
+      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="2.1068431790191" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.AddMenuPart" id="1199875324911">
+        <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.SimpleRightTransformMenuPart" id="1199875326896">
+          <node role="handler" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_Handler" id="1199875326897">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199875326898">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199875350741">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199875350742">
+                  <property name="name" value="result" />
+                  <node role="type" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1199875350743">
+                    <link role="concept" targetNodeId="1.1151701773464" resolveInfo="SequenceOperationExpression" />
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1199875359908">
+                    <node role="creator" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeCreator" id="1199875359909">
+                      <node role="createdType" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType" id="1199875359910">
+                        <link role="concept" targetNodeId="1.1151701773464" resolveInfo="SequenceOperationExpression" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199875361928">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199875364555">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_ReplaceWithAnotherOperation" id="1199875366152">
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199875370372">
+                      <link role="variableDeclaration" targetNodeId="1199875350742" resolveInfo="result" />
+                    </node>
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1199875364101" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199875371514">
+                <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199875375332">
+                  <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Link_SetTargetOperation" id="1199875376507">
+                    <node role="parameter" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1199875378009" />
+                  </node>
+                  <node role="leftExpression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199875372079">
+                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkAccess" id="1199875373535">
+                      <link role="link" targetNodeId="1.1151701835028" />
+                    </node>
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199875371515">
+                      <link role="variableDeclaration" targetNodeId="1199875350742" resolveInfo="result" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1199875379339">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1199875380684">
+                  <link role="variableDeclaration" targetNodeId="1199875350742" resolveInfo="result" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1199875331445">
+            <property name="text" value="." />
+          </node>
+          <node role="descriptionText" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RightTransform_SimpleString" id="1199875334680">
+            <property name="text" value="sequence operation" />
+          </node>
+        </node>
+      </node>
       <node role="precondition" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstitutePreconditionFunction" id="1161719130431">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1161719130432">
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1174260103019">
@@ -58,8 +156,20 @@
       </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" id="1153773758797">
-      <property name="actionsFactoryAspectId" value="DelegateToParentExpression" />
+      <property name="useNewActions" value="true" />
       <link role="applicableConcept" targetNodeId="1.1151701983961" />
+      <node role="part" type="jetbrains.mps.bootstrap.actionsLanguage.structure.IncludeRightTransformForNodePart" id="1199875273782">
+        <node role="nodeBlock" type="jetbrains.mps.bootstrap.actionsLanguage.structure.QueryFunction_RightTransform_NodeQuery" id="1199875273783">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199875273784">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199875277347">
+              <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1199875277693">
+                <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation" id="1199875279071" />
+                <node role="leftExpression" type="jetbrains.mps.bootstrap.actionsLanguage.structure.ConceptFunctionParameter_sourceNode" id="1199875277348" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder" id="1197932848431">
       <property name="useNewActions" value="true" />

@@ -81,6 +81,10 @@ public class QueryMethodGenerated {
     return method;
   }
 
+  public static Object invoke(String methodName, IOperationContext context, Object parameterObject, SModel sourceModel) throws ClassNotFoundException, NoSuchMethodException {
+    return invoke(methodName, new Object[] { context, parameterObject }, sourceModel);
+  }
+
   public static Object invoke(String methodName, Object[] arguments, SModel sourceModel) throws ClassNotFoundException, NoSuchMethodException {
     Method method = QueryMethodGenerated.getQueryMethod(sourceModel, methodName, false);
     try {

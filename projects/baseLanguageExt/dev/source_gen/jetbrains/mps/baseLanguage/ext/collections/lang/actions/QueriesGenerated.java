@@ -26,6 +26,7 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
+import jetbrains.mps.smodel.action.ModelActions;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
 
@@ -154,6 +155,48 @@ public class QueriesGenerated {
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SequenceOperation_1160663024951(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1151703707960(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), sourceNode) {
+
+        public SNode doSubstitute(String pattern) {
+          SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression", null);
+          SNodeOperations.replaceWithAnother(sourceNode, result);
+          SLinkOperations.setTarget(result, "leftExpression", sourceNode, true);
+          return result;
+        }
+
+        public String getMatchingText(String pattern) {
+          return ".";
+        }
+
+        public String getDescriptionText(String pattern) {
+          return "sequence operation";
+        }
+
+      });
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_SequenceOperation_1153773758797(final SNode sourceNode, final SModel model, String transformationTag, final IOperationContext operationContext) {
+    List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
+    {
+      Calculable calc = new Calculable() {
+
+        public Object calculate() {
+          return SNodeOperations.getParent(sourceNode, null, false, false);
+        }
+
+      };
+      SNode node = (SNode)calc.calculate();
+      result.addAll(ModelActions.createRightTransformHintSubstituteActions(node, transformationTag, operationContext));
+    }
     return result;
   }
 

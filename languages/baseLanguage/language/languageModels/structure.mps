@@ -3,12 +3,12 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.scripts" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.scripts" version="-1" />
   </language>
   <maxImportIndex value="38" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -1436,6 +1436,9 @@
     <property name="name" value="ConceptFunction" />
     <property name="package" value="conceptFunction" />
     <link role="extends" targetNodeId="4.1133920641626" />
+    <node role="conceptPropertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptPropertyDeclaration" id="1199874763892">
+      <property name="name" value="usesParameterObject" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1137022507850">
       <property name="targetCardinality" value="1" />
       <property name="sourceCardinality" value="1" />
