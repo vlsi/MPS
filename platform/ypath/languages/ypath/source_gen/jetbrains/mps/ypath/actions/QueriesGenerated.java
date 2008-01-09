@@ -48,6 +48,7 @@ import jetbrains.mps.util.Quadruplet;
 import jetbrains.mps.smodel.action.RemoveSubstituteActionByCondition_ParameterObject;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.smodel.action.RemoveRTActionByCondition_ParameterObject;
 
 public class QueriesGenerated {
 
@@ -1164,7 +1165,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static void removeRTActionsByCondition_1198013650232(final Iterator<INodeSubstituteAction> actions, final SNode sourceNode, final IOperationContext operationContext) {
+  public static void removeRTActionsByCondition_1198013650232(RemoveRTActionByCondition_ParameterObject _parameterObject, final IOperationContext operationContext) {
+    Iterator<INodeSubstituteAction> actions = _parameterObject.getActions();
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
       if(!(current.getParameterObject() instanceof SNode) || !(((SNode)current.getParameterObject()).isInstanceOfConcept("jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration"))) {

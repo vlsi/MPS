@@ -124,7 +124,7 @@ import java.util.*;
   private static void invokeRemoveByCondition(RemoveRTByConditionPart removeByCondition, Iterator<INodeSubstituteAction> actions, SNode sourceNode, IOperationContext context) {
     String methodName = "removeRTActionsByCondition_" + removeByCondition.getId();
     try {
-      QueryMethodGenerated.invoke(methodName, new Object[] { actions, sourceNode, context }, removeByCondition.getModel());
+      QueryMethodGenerated.invoke(methodName, context, new RemoveRTActionByCondition_ParameterObject(actions, sourceNode), removeByCondition.getModel());
     } catch (Throwable t) {
       LOG.error(t);
     }
