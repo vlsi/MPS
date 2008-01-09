@@ -396,20 +396,7 @@ public class ChildSubstituteActionsHelper {
       }
     }
 
-    // try old query method
-    String preconditionQueryMethodId = actionsBuilder.getPreconditionAspectId();
-    // precondition is optional
-    if (preconditionQueryMethodId == null) {
-      return true;
-    }
-
-    LOG.warning("You are using old actions language here which is now obsolete. Please, rewrite your code.", precondition);
-
-    Object[] args1 = new Object[]{parentNode, context};
-    Object[] args2 = new Object[]{parentNode, context.getScope()};
-    String methodName = "nodeSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
-    SModel model = actionsBuilder.getModel();
-    return (Boolean) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
+    return true;
   }
 
 
@@ -419,95 +406,49 @@ public class ChildSubstituteActionsHelper {
                                                                SNode currentChild,
                                                                SNode childConcept,
                                                                IOperationContext context) {
-    if (!substituteActionsBuilder.getUseNewActions()) {
-      String filterQueryMethodId = substituteActionsBuilder.getActionsFilterAspectId();
-      // filter is optional
-      if (filterQueryMethodId == null) {
-        return actions;
-      }
-
-      Object[] args1 = new Object[]{actions, context};
-      Object[] args2 = new Object[]{actions, context.getScope()};
-      String methodName = "nodeSubstituteActionsBuilder_ActionsFilter_" + filterQueryMethodId;
-
-      LOG.warning("You are using old actions language here which is now obsolete. Please, rewrite your code.", substituteActionsBuilder);
-
-      SModel model = substituteActionsBuilder.getModel();
-      return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
-    } else {
-
-      // remove banned concepts
-      Set<SNode> conceptsToRemove = new HashSet<SNode>();
-      for (RemovePart rp : substituteActionsBuilder.getSubnodes(RemovePart.class)) {
-        conceptsToRemove.add(rp.getConceptToRemove().getNode());
-      }
-      if (!conceptsToRemove.isEmpty()) {
-        Iterator<INodeSubstituteAction> it = actions.iterator();
-        while (it.hasNext()) {
-          INodeSubstituteAction action = it.next();
-          Object parameterObject = action.getParameterObject();
-          if (parameterObject instanceof SNode && ((SNode) parameterObject).getAdapter() instanceof AbstractConceptDeclaration) {
-            if (conceptsToRemove.contains(((SNode) parameterObject))) {
-              it.remove();
-            }
-          } else if (parameterObject instanceof AbstractConceptDeclaration) {
-            if (conceptsToRemove.contains(((AbstractConceptDeclaration) parameterObject).getNode())) {
-              it.remove();
-            }
+    // remove banned concepts
+    Set<SNode> conceptsToRemove = new HashSet<SNode>();
+    for (RemovePart rp : substituteActionsBuilder.getSubnodes(RemovePart.class)) {
+      conceptsToRemove.add(rp.getConceptToRemove().getNode());
+    }
+    if (!conceptsToRemove.isEmpty()) {
+      Iterator<INodeSubstituteAction> it = actions.iterator();
+      while (it.hasNext()) {
+        INodeSubstituteAction action = it.next();
+        Object parameterObject = action.getParameterObject();
+        if (parameterObject instanceof SNode && ((SNode) parameterObject).getAdapter() instanceof AbstractConceptDeclaration) {
+          if (conceptsToRemove.contains(((SNode) parameterObject))) {
+            it.remove();
+          }
+        } else if (parameterObject instanceof AbstractConceptDeclaration) {
+          if (conceptsToRemove.contains(((AbstractConceptDeclaration) parameterObject).getNode())) {
+            it.remove();
           }
         }
       }
-
-      // apply custom filters
-      List<RemoveByConditionPart> removesByCondition = substituteActionsBuilder.getSubnodes(RemoveByConditionPart.class);
-      for (RemoveByConditionPart part : removesByCondition) {
-        String methodName = "removeActionsByCondition_" + part.getId();
-        try {
-          QueryMethodGenerated.invoke(methodName, context, new RemoveSubstituteActionByCondition_ParameterObject(actions.iterator(), parentNode, currentChild, childConcept), substituteActionsBuilder.getModel());
-        } catch (Throwable t) {
-          LOG.error(t);
-        }
-      }
-
-      return actions;
     }
+
+    // apply custom filters
+    List<RemoveByConditionPart> removesByCondition = substituteActionsBuilder.getSubnodes(RemoveByConditionPart.class);
+    for (RemoveByConditionPart part : removesByCondition) {
+      String methodName = "removeActionsByCondition_" + part.getId();
+      try {
+        QueryMethodGenerated.invoke(methodName, context, new RemoveSubstituteActionByCondition_ParameterObject(actions.iterator(), parentNode, currentChild, childConcept), substituteActionsBuilder.getModel());
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+
+    return actions;
   }
 
   private static List<INodeSubstituteAction> invokeActionFactory(NodeSubstituteActionsBuilder builder, SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
-    if (!builder.getUseNewActions()) {
-      String factoryQueryMethodId = builder.getActionsFactoryAspectId();
-      // factory is optional
-      if (factoryQueryMethodId == null) {
-        return Collections.emptyList();
-      }
-
-      Object[] args1 = new Object[]{parentNode,
-              currentChild,
-              childConcept.getNode(),
-              childSetter,
-              context};
-      Object[] args2 = new Object[]{parentNode,
-              currentChild,
-              childConcept.getNode(),
-              childSetter,
-              context.getScope()};
-      String methodName = "nodeSubstituteActionsBuilder_ActionsFactory_" + factoryQueryMethodId;
-      SModel model = builder.getModel();
-      LOG.warning("You are using old actions language here which is now obsolete. Please, rewrite your code.", builder);      
-      return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
-    } else {
-      Object[] args1 = new Object[]{parentNode,
-              currentChild,
-              childConcept,
-              childSetter,
-              context};
-      String methodName = ActionQueryMethodName.nodeFactory_SubstituteActionBuilder(builder);
-      try {
-        return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactory_ParameterObject(parentNode, currentChild, childConcept.getNode(), childSetter), builder.getModel());
-      } catch (Throwable t) {
-        LOG.error(t);
-        return Collections.emptyList();
-      }
+    String methodName = ActionQueryMethodName.nodeFactory_SubstituteActionBuilder(builder);
+    try {
+      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactory_ParameterObject(parentNode, currentChild, childConcept.getNode(), childSetter), builder.getModel());
+    } catch (Throwable t) {
+      LOG.error(t);
+      return Collections.emptyList();
     }
   }
 

@@ -145,49 +145,16 @@ import java.util.*;
       }
     }
 
-    // try old query method
-    String preconditionQueryMethodId = actionsBuilder.getPreconditionAspectId();
-    // precondition is optional
-    if (preconditionQueryMethodId == null) {
-      return true;
-    }
-
-    Object[] args1 = new Object[]{sourceNode, context};
-    Object[] args2 = new Object[]{sourceNode, context.getScope()};
-    String methodName = "rightTransformHintSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
-    SModel model = actionsBuilder.getModel();
-    LOG.warning("You are using old query language here which is now obsolete. Please, rewrite your code.", precondition);
-    return (Boolean) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
+    return true;
   }
 
   private static List<INodeSubstituteAction> invokeActionFactory(RTransformHintSubstituteActionsBuilder substituteActionsBuilder, SNode sourceNode, IOperationContext context) {
-    if (!substituteActionsBuilder.getUseNewActions()) {
-      String factoryQueryMethodId = substituteActionsBuilder.getActionsFactoryAspectId();
-      // factory is optional
-      if (factoryQueryMethodId == null) {
-        return Collections.EMPTY_LIST;
-      }
-
-      Object[] args1 = new Object[]{
-              sourceNode,
-              null,                  // todo: tag from builder description
-              context};
-      Object[] args2 = new Object[]{
-              sourceNode,
-              null,                  // todo: tag from builder description
-              context.getScope()};
-      String methodName = "rightTransformHintSubstituteActionsBuilder_ActionsFactory_" + factoryQueryMethodId;
-      SModel model = substituteActionsBuilder.getModel();
-      LOG.warning("You are using old query language here which is now obsolete. Please, rewrite your code.", substituteActionsBuilder);
-      return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
-    } else {
-      String methodName = ActionQueryMethodName.nodeFactory_RightTransformActionBuilder(substituteActionsBuilder);
-      SModel model = substituteActionsBuilder.getModel();
-      try {
-        return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new RTActionsBuilder_ParameterObject(sourceNode, sourceNode.getModel(), null), model);
-      } catch (Exception e) {
-        return new ArrayList<INodeSubstituteAction>();
-      }
+    String methodName = ActionQueryMethodName.nodeFactory_RightTransformActionBuilder(substituteActionsBuilder);
+    SModel model = substituteActionsBuilder.getModel();
+    try {
+      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new RTActionsBuilder_ParameterObject(sourceNode, sourceNode.getModel(), null), model);
+    } catch (Exception e) {
+      return new ArrayList<INodeSubstituteAction>();
     }
   }
 }
