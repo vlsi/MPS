@@ -10,7 +10,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.smodel.action.RTransformPrecondition_ParameterObject;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.NodeSetup_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
@@ -27,6 +27,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
@@ -64,7 +65,7 @@ public class QueriesGenerated {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expression, "leftExpression", true)), new QuotationClass_().createNode());
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_SNodeOperation_1154637518825(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_SNodeOperation_1154637518825(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     boolean alreadyHasParms = SLinkOperations.getCount(_parameterObject.getSourceNode(), "parameter") > 0;
     if(alreadyHasParms) {
       return false;
@@ -72,28 +73,28 @@ public class QueriesGenerated {
     return SequenceOperations.getSize(SLinkOperations.getConceptLinkTargets(_parameterObject.getSourceNode(), "applicableParameter")) > 0;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189083(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189083(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     return ActionUtil_smodel.isExpression_appropriateFor_ourOperations(_parameterObject.getSourceNode());
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189126(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189126(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
     return nodeType != null;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535648215(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535648215(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     return ActionUtil_smodel.isExpression_appropriateFor_SemanticDowncast(_parameterObject.getSourceNode());
   }
 
-  public static void nodeFactory_NodeSetup_Node_GetAncestorOperation_1171415364778(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation")) {
-      List<SNode> parms = SLinkOperations.getTargets(sampleNode, "parameter", true);
+  public static void nodeFactory_NodeSetup_Node_GetAncestorOperation_1171415364778(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperation")) {
+      List<SNode> parms = SLinkOperations.getTargets(_parameterObject.getSampleNode(), "parameter", true);
       {
         ICursor<SNode> _zCursor = CursorFactory.createCursor(parms);
         try {
           while(_zCursor.moveToNext()) {
             SNode parm = _zCursor.getCurrent();
-            SLinkOperations.addChild(newNode, "parameter", parm);
+            SLinkOperations.addChild(_parameterObject.getNewNode(), "parameter", parm);
           }
         } finally {
           _zCursor.release();

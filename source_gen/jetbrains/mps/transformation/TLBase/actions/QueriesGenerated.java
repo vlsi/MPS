@@ -5,11 +5,11 @@ package jetbrains.mps.transformation.TLBase.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePrecondition_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.NodeSetup_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import java.util.ArrayList;
@@ -19,17 +19,17 @@ import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_RuleConsequence_1169582381136(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    return SNodeOperations.isInstanceOf(parameterObject.getParentNode(), "jetbrains.mps.transformation.TLBase.structure.Weaving_MappingRule");
+  public static boolean nodeSubstituteActionsBuilder_Precondition_RuleConsequence_1169582381136(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getParentNode(), "jetbrains.mps.transformation.TLBase.structure.Weaving_MappingRule");
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_RuleConsequence_1195244660444(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    return SNodeOperations.isInstanceOf(parameterObject.getParentNode(), "jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule");
+  public static boolean nodeSubstituteActionsBuilder_Precondition_RuleConsequence_1195244660444(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getParentNode(), "jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule");
   }
 
-  public static void nodeFactory_NodeSetup_SNodeOrStringType_1198265067453(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
-      SLinkOperations.setTarget(newNode, "equivalentType", sampleNode, true);
+  public static void nodeFactory_NodeSetup_SNodeOrStringType_1198265067453(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
+      SLinkOperations.setTarget(_parameterObject.getNewNode(), "equivalentType", _parameterObject.getSampleNode(), true);
     }
   }
 

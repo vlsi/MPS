@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.action.RTransformPrecondition_ParameterObject;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.NodeSetup_ParameterObject;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
@@ -20,6 +20,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -86,7 +87,7 @@ public class QueriesGenerated {
     return false;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1168893690367(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1168893690367(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     SNode nono = SNodeOperations.getAncestorWhereConceptInList(_parameterObject.getSourceNode(), new String[]{"jetbrains.mps.ypath.structure.ParentBlock","jetbrains.mps.ypath.structure.ChildrenBlock","jetbrains.mps.ypath.structure.WhereBlock","jetbrains.mps.ypath.structure.TreePathAdapterExpression","jetbrains.mps.ypath.structure.TreePathOperationExpression"}, true, false);
     if(nono != null) {
       return false;
@@ -95,23 +96,23 @@ public class QueriesGenerated {
     return SequenceOperations.getSize(aspects) > 0;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_TreeNodeKindOccurrence_1175170178382(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_TreeNodeKindOccurrence_1175170178382(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_parameterObject.getSourceNode(), null, false, false), "jetbrains.mps.ypath.structure.MatchKindOperation");
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1194616749686(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1194616749686(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode()), new QuotationClass_().createNode(), false, false);
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1198013650814(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1198013650814(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode()), "jetbrains.mps.ypath.structure.TreePathType");
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1198013650824(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1198013650824(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(_parameterObject.getSourceNode(), null, false, false), "jetbrains.mps.ypath.structure.TreePathAdapterExpression");
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1198013853577(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1198013853577(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     SNode nono = SNodeOperations.getAncestorWhereConceptInList(_parameterObject.getSourceNode(), new String[]{"jetbrains.mps.ypath.structure.ParentBlock","jetbrains.mps.ypath.structure.ChildrenBlock","jetbrains.mps.ypath.structure.WhereBlock","jetbrains.mps.ypath.structure.TreePathAdapterExpression","jetbrains.mps.ypath.structure.TreePathOperationExpression"}, true, false);
     if(nono != null) {
       return false;
@@ -120,26 +121,26 @@ public class QueriesGenerated {
     return SequenceOperations.getSize(aspects) > 0;
   }
 
-  public static void nodeFactory_NodeSetup_GenericParamFeature_1196870541068(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    SLinkOperations.setNewChild(newNode, "getter", "jetbrains.mps.ypath.structure.GFGetterParamFun");
-    SLinkOperations.setNewChild(newNode, "cardinal", "jetbrains.mps.ypath.structure.GFCardinalParamFun");
+  public static void nodeFactory_NodeSetup_GenericParamFeature_1196870541068(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    SLinkOperations.setNewChild(_parameterObject.getNewNode(), "getter", "jetbrains.mps.ypath.structure.GFGetterParamFun");
+    SLinkOperations.setNewChild(_parameterObject.getNewNode(), "cardinal", "jetbrains.mps.ypath.structure.GFCardinalParamFun");
   }
 
-  public static void nodeFactory_NodeSetup_GFReplaceFunWrapper_1197319789956(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if((SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-      SLinkOperations.setNewChild(newNode, "fun", "jetbrains.mps.ypath.structure.GFReplacerParamFun");
+  public static void nodeFactory_NodeSetup_GFReplaceFunWrapper_1197319789956(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if((SNodeOperations.getAncestor(_parameterObject.getEnclosingNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+      SLinkOperations.setNewChild(_parameterObject.getNewNode(), "fun", "jetbrains.mps.ypath.structure.GFReplacerParamFun");
     }
   }
 
-  public static void nodeFactory_NodeSetup_GFRemoveFunWrapper_1197319781736(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if((SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-      SLinkOperations.setNewChild(newNode, "fun", "jetbrains.mps.ypath.structure.GFRemoverParamFun");
+  public static void nodeFactory_NodeSetup_GFRemoveFunWrapper_1197319781736(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if((SNodeOperations.getAncestor(_parameterObject.getEnclosingNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+      SLinkOperations.setNewChild(_parameterObject.getNewNode(), "fun", "jetbrains.mps.ypath.structure.GFRemoverParamFun");
     }
   }
 
-  public static void nodeFactory_NodeSetup_GFInsertFunWrapper_1197319762200(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if((SNodeOperations.getAncestor(enclosingNode, "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
-      SLinkOperations.setNewChild(newNode, "fun", "jetbrains.mps.ypath.structure.GFInserterParamFun");
+  public static void nodeFactory_NodeSetup_GFInsertFunWrapper_1197319762200(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if((SNodeOperations.getAncestor(_parameterObject.getEnclosingNode(), "jetbrains.mps.ypath.structure.GenericParamFeature", false, false) != null)) {
+      SLinkOperations.setNewChild(_parameterObject.getNewNode(), "fun", "jetbrains.mps.ypath.structure.GFInserterParamFun");
     }
   }
 

@@ -9,7 +9,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.smodel.action.RTransformPrecondition_ParameterObject;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.NodeSetup_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
@@ -25,6 +25,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOp
 import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -42,23 +43,23 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(_parameterObject.getParentNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation");
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1161719130431(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1161719130431(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     SNode type = TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode());
     SNode sequenceType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), false);
     return (sequenceType != null);
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1197932868400(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1197932868400(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     SNode type = TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode());
     return (TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapType"), false) != null);
   }
 
-  public static void nodeFactory_NodeSetup_DefaultInputElement_1174261447073(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    SPropertyOperations.set(newNode, "name", "it");
+  public static void nodeFactory_NodeSetup_DefaultInputElement_1174261447073(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    SPropertyOperations.set(_parameterObject.getNewNode(), "name", "it");
   }
 
-  public static void nodeFactory_NodeSetup_SortOperation_1178286959323(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    SPropertyOperations.set(SLinkOperations.setNewChild(newNode, "order", "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection"), "value", "" + (true));
+  public static void nodeFactory_NodeSetup_SortOperation_1178286959323(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    SPropertyOperations.set(SLinkOperations.setNewChild(_parameterObject.getNewNode(), "order", "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection"), "value", "" + (true));
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1152144005896(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {

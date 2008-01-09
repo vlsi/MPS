@@ -15,7 +15,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.baseLanguage.constraints.VariableDeclaration_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.action.NodeSetup_ParameterObject;
 import jetbrains.mps.baseLanguage.constraints.ClassConcept_Behavior;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
@@ -28,6 +28,7 @@ import java.util.ArrayList;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
@@ -86,96 +87,96 @@ public class QueriesGenerated {
     return SNodeOperations.getAncestorWhereConceptInList(_parameterObject.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.structure.ConstructorDeclaration","jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"}, false, false) != null;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177499026996(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177499026996(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     SNode ct = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     return ct != null;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177503884613(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177503884613(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     TypeChecker typeChecker = operationContext.getComponent(TypeChecker.class);
     return BaseAdapter.fromNode(typeChecker.getTypeOf(_parameterObject.getSourceNode())) instanceof ArrayType;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177504604529(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1177504604529(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     TypeChecker typeChecker = operationContext.getComponent(TypeChecker.class);
     return BaseAdapter.fromNode(typeChecker.getTypeOf(_parameterObject.getSourceNode())) instanceof ArrayType;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1177505054800(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_VariableDeclaration_1177505054800(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     return SLinkOperations.getTarget(_parameterObject.getSourceNode(), "initializer", true) == null && VariableDeclaration_Behavior.call_isInitializable_1198838351591(_parameterObject.getSourceNode());
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_1177505734541(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_1177505734541(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     return SLinkOperations.getCount(_parameterObject.getSourceNode(), "parameter") == 0;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_GenericDeclaration_1177506104970(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_GenericDeclaration_1177506104970(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     return SLinkOperations.getCount(_parameterObject.getSourceNode(), "typeVariableDeclaration") == 0;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_NewExpression_1177506323526(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_NewExpression_1177506323526(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     return SLinkOperations.getCount(_parameterObject.getSourceNode(), "typeParameter") == 0;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_BreakStatement_1199466283835(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_BreakStatement_1199466283835(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     return SPropertyOperations.hasValue(_parameterObject.getSourceNode(), "label", null) && !(SequenceOperations.isEmpty(SequenceOperations.map(SNodeOperations.getAncestors(_parameterObject.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper1(null, null))));
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ContinueStatement_1199470413669(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_ContinueStatement_1199470413669(final IOperationContext operationContext, final RTransformPrecondition_ParameterObject _parameterObject) {
     return SPropertyOperations.hasValue(_parameterObject.getSourceNode(), "label", null) && !(SequenceOperations.isEmpty(SequenceOperations.map(SNodeOperations.getAncestors(_parameterObject.getSourceNode(), "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false), new zMapper3(null, null))));
   }
 
-  public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    SLinkOperations.setNewChild(newNode, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
-    SLinkOperations.setNewChild(newNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+  public static void nodeFactory_NodeSetup_InstanceMethodDeclaration_1158793299786(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    SLinkOperations.setNewChild(_parameterObject.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
+    SLinkOperations.setNewChild(_parameterObject.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
   }
 
-  public static void nodeFactory_NodeSetup_StaticFieldDeclaration_1178291730240(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    SLinkOperations.setNewChild(newNode, "visibility", "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
+  public static void nodeFactory_NodeSetup_StaticFieldDeclaration_1178291730240(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    SLinkOperations.setNewChild(_parameterObject.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
   }
 
-  public static void nodeFactory_NodeSetup_FieldDeclaration_1178291791625(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    SLinkOperations.setNewChild(newNode, "visibility", "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
+  public static void nodeFactory_NodeSetup_FieldDeclaration_1178291791625(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    SLinkOperations.setNewChild(_parameterObject.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PrivateVisibility");
   }
 
-  public static void nodeFactory_NodeSetup_StaticMethodDeclaration_1178291583640(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    SLinkOperations.setNewChild(newNode, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
-    SLinkOperations.setNewChild(newNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+  public static void nodeFactory_NodeSetup_StaticMethodDeclaration_1178291583640(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    SLinkOperations.setNewChild(_parameterObject.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
+    SLinkOperations.setNewChild(_parameterObject.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
   }
 
-  public static void nodeFactory_NodeSetup_ConstructorDeclaration_1178291598890(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    SLinkOperations.setNewChild(newNode, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
-    SLinkOperations.setNewChild(newNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
+  public static void nodeFactory_NodeSetup_ConstructorDeclaration_1178291598890(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    SLinkOperations.setNewChild(_parameterObject.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
+    SLinkOperations.setNewChild(_parameterObject.getNewNode(), "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
   }
 
-  public static void nodeFactory_NodeSetup_BinaryOperation_1158797366355(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-      SLinkOperations.setTarget(newNode, "leftExpression", SLinkOperations.getTarget(sampleNode, "leftExpression", true), true);
-      SLinkOperations.setTarget(newNode, "rightExpression", SLinkOperations.getTarget(sampleNode, "rightExpression", true), true);
+  public static void nodeFactory_NodeSetup_BinaryOperation_1158797366355(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
+      SLinkOperations.setTarget(_parameterObject.getNewNode(), "leftExpression", SLinkOperations.getTarget(_parameterObject.getSampleNode(), "leftExpression", true), true);
+      SLinkOperations.setTarget(_parameterObject.getNewNode(), "rightExpression", SLinkOperations.getTarget(_parameterObject.getSampleNode(), "rightExpression", true), true);
     }
   }
 
-  public static void nodeFactory_NodeSetup_ParenthesizedExpression_1158857529259(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-      SLinkOperations.setTarget(newNode, "expression", sampleNode, true);
+  public static void nodeFactory_NodeSetup_ParenthesizedExpression_1158857529259(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
+      SLinkOperations.setTarget(_parameterObject.getNewNode(), "expression", _parameterObject.getSampleNode(), true);
     }
   }
 
-  public static void nodeFactory_NodeSetup_CastExpression_1158871408598(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
+  public static void nodeFactory_NodeSetup_CastExpression_1158871408598(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
       // Looking for the original node is required because sampleNode is just a copy
-      SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(enclosingNode, sampleNode);
+      SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_parameterObject.getEnclosingNode(), _parameterObject.getSampleNode());
       if((originalExpression != null)) {
         SNode castType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
-        SLinkOperations.setTarget(newNode, "type", castType, true);
+        SLinkOperations.setTarget(_parameterObject.getNewNode(), "type", castType, true);
       }
-      SLinkOperations.setTarget(newNode, "expression", sampleNode, true);
+      SLinkOperations.setTarget(_parameterObject.getNewNode(), "expression", _parameterObject.getSampleNode(), true);
     }
   }
 
-  public static void nodeFactory_NodeSetup_NewExpression_1198098766258(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-      SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(enclosingNode, sampleNode);
+  public static void nodeFactory_NodeSetup_NewExpression_1198098766258(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
+      SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_parameterObject.getEnclosingNode(), _parameterObject.getSampleNode());
       if((originalExpression != null)) {
         SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
         if(SNodeOperations.isInstanceOf(expectedType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
@@ -185,13 +186,13 @@ public class QueriesGenerated {
             if(!(ClassConcept_Behavior.call_isAbstract_1178610171302(classConcept))) {
               SNode constructorDeclaration = SequenceOperations.getFirst(SLinkOperations.getTargets(classConcept, "constructor", true));
               if(constructorDeclaration != null) {
-                SLinkOperations.setTarget(newNode, "baseMethodDeclaration", constructorDeclaration, false);
+                SLinkOperations.setTarget(_parameterObject.getNewNode(), "baseMethodDeclaration", constructorDeclaration, false);
                 {
                   ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(classifierType, "parameter", true));
                   try {
                     while(_zCursor1.moveToNext()) {
                       SNode type = _zCursor1.getCurrent();
-                      SLinkOperations.addChild(newNode, "typeParameter", SNodeOperations.copyNode(type));
+                      SLinkOperations.addChild(_parameterObject.getNewNode(), "typeParameter", SNodeOperations.copyNode(type));
                     }
                   } finally {
                     _zCursor1.release();
@@ -205,68 +206,68 @@ public class QueriesGenerated {
     }
   }
 
-  public static void nodeFactory_NodeSetup_GenericNewExpression_1187945171250(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
+  public static void nodeFactory_NodeSetup_GenericNewExpression_1187945171250(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
       // Looking for the original node is required because sampleNode is just a copy
-      SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(enclosingNode, sampleNode);
+      SNode originalExpression = ExpectedType_FactoryUtil.getOriginalExpression(_parameterObject.getEnclosingNode(), _parameterObject.getSampleNode());
       if((originalExpression != null)) {
         SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(originalExpression);
         SNode abstractCreator = null;
         if((expectedType != null)) {
           abstractCreator = Type_Behavior.call_getAbstractCreator_1187945523562(expectedType);
           if((abstractCreator != null)) {
-            SLinkOperations.setTarget(newNode, "creator", abstractCreator, true);
+            SLinkOperations.setTarget(_parameterObject.getNewNode(), "creator", abstractCreator, true);
           }
         }
       }
     }
   }
 
-  public static void nodeFactory_NodeSetup_ReturnStatement_1158938591702(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-      SLinkOperations.setTarget(newNode, "expression", SLinkOperations.getTarget(sampleNode, "expression", true), true);
+  public static void nodeFactory_NodeSetup_ReturnStatement_1158938591702(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
+      SLinkOperations.setTarget(_parameterObject.getNewNode(), "expression", SLinkOperations.getTarget(_parameterObject.getSampleNode(), "expression", true), true);
     }
   }
 
-  public static void nodeFactory_NodeSetup_IfStatement_1178272045314(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
-      SLinkOperations.addChild(SLinkOperations.setNewChild(newNode, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", sampleNode);
+  public static void nodeFactory_NodeSetup_IfStatement_1178272045314(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
+      SLinkOperations.addChild(SLinkOperations.setNewChild(_parameterObject.getNewNode(), "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", _parameterObject.getSampleNode());
     }
   }
 
-  public static void nodeFactory_NodeSetup_ForStatement_1188991552885(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
-      SLinkOperations.addChild(SLinkOperations.setNewChild(newNode, "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", sampleNode);
+  public static void nodeFactory_NodeSetup_ForStatement_1188991552885(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
+      SLinkOperations.addChild(SLinkOperations.setNewChild(_parameterObject.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", _parameterObject.getSampleNode());
     }
   }
 
-  public static void nodeFactory_NodeSetup_ForeachStatement_1188991457471(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
-      SLinkOperations.addChild(SLinkOperations.setNewChild(newNode, "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", sampleNode);
+  public static void nodeFactory_NodeSetup_ForeachStatement_1188991457471(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
+      SLinkOperations.addChild(SLinkOperations.setNewChild(_parameterObject.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", _parameterObject.getSampleNode());
     }
   }
 
-  public static void nodeFactory_NodeSetup_TryCatchStatement_1183997671101(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
-      SLinkOperations.addChild(SLinkOperations.setNewChild(newNode, "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", sampleNode);
+  public static void nodeFactory_NodeSetup_TryCatchStatement_1183997671101(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
+      SLinkOperations.addChild(SLinkOperations.setNewChild(_parameterObject.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", _parameterObject.getSampleNode());
     }
   }
 
-  public static void nodeFactory_NodeSetup_TryStatement_1183997675652(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
-      SLinkOperations.addChild(SLinkOperations.setNewChild(newNode, "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", sampleNode);
+  public static void nodeFactory_NodeSetup_TryStatement_1183997675652(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
+      SLinkOperations.addChild(SLinkOperations.setNewChild(_parameterObject.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", _parameterObject.getSampleNode());
     }
   }
 
-  public static void nodeFactory_NodeSetup_NotExpression_1159218040861(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-      SLinkOperations.setTarget(newNode, "expression", sampleNode, true);
+  public static void nodeFactory_NodeSetup_NotExpression_1159218040861(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
+      SLinkOperations.setTarget(_parameterObject.getNewNode(), "expression", _parameterObject.getSampleNode(), true);
     }
   }
 
-  public static void nodeFactory_NodeSetup_AssignmentExpression_1193750640252(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
-    if(SNodeOperations.isInstanceOf(sampleNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-      SLinkOperations.setTarget(newNode, "rValue", sampleNode, true);
+  public static void nodeFactory_NodeSetup_AssignmentExpression_1193750640252(final IOperationContext operationContext, final NodeSetup_ParameterObject _parameterObject) {
+    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Expression")) {
+      SLinkOperations.setTarget(_parameterObject.getNewNode(), "rValue", _parameterObject.getSampleNode(), true);
     }
   }
 

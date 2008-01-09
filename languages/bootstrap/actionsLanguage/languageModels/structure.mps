@@ -347,6 +347,9 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1158701162220">
     <property name="name" value="NodeSetupFunction" />
     <link role="extends" targetNodeId="3.1137021947720" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1199884436358">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1199874763892" resolveInfo="usesParameterObject" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1158701232815">
       <property name="value" value="node setup function" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
