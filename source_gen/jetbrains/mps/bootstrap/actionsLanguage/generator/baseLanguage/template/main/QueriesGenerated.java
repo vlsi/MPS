@@ -387,6 +387,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "condition", true), "body", true);
   }
 
+  public static SNode sourceNodeQuery_1199903106468(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "query", true), "body", true);
+  }
+
   public static SNode weaving_MappingRule_ContextNodeQuery_1186794781128(SNode node, ITemplateGenerator generator) {
     return QueriesUtil.get_QueriesGenerated_class(generator);
   }

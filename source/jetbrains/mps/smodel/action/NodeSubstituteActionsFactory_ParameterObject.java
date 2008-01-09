@@ -6,10 +6,10 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 public class NodeSubstituteActionsFactory_ParameterObject {
   private SNode myParentNode;
   private SNode myCurrentTargetNode;
-  private AbstractConceptDeclaration myChildConcept;
+  private SNode myChildConcept;
   private IChildNodeSetter myChildSetter;
 
-  public NodeSubstituteActionsFactory_ParameterObject(SNode parentNode, SNode currentTargetNode, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter) {
+  public NodeSubstituteActionsFactory_ParameterObject(SNode parentNode, SNode currentTargetNode, SNode childConcept, IChildNodeSetter childSetter) {
     myParentNode = parentNode;
     myCurrentTargetNode = currentTargetNode;
     myChildConcept = childConcept;
@@ -24,7 +24,7 @@ public class NodeSubstituteActionsFactory_ParameterObject {
     return myCurrentTargetNode;
   }
 
-  public AbstractConceptDeclaration getChildConcept() {
+  public SNode getChildConcept() {
     return myChildConcept;
   }
 

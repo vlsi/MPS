@@ -503,7 +503,7 @@ public class ChildSubstituteActionsHelper {
               context};
       String methodName = ActionQueryMethodName.nodeFactory_SubstituteActionBuilder(builder);
       try {
-        return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactory_ParameterObject(parentNode, currentChild, childConcept, childSetter), builder.getModel());
+        return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactory_ParameterObject(parentNode, currentChild, childConcept.getNode(), childSetter), builder.getModel());
       } catch (Throwable t) {
         LOG.error(t);
         return Collections.emptyList();
