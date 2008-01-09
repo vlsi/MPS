@@ -681,7 +681,10 @@ public class Language extends AbstractModule implements Marshallable<Language> {
     Iterator<Editor> editors = getLanguageDescriptor().editors();
     while (editors.hasNext()) {
       Editor editor = editors.next();
-      result.add(getEditorModelDescriptor(editor.getStereotype()));
+      SModelDescriptor editorModelDescriptor = getEditorModelDescriptor(editor.getStereotype());
+      if (editorModelDescriptor != null) {
+        result.add(editorModelDescriptor);
+      }
     }
     return result;
   }
