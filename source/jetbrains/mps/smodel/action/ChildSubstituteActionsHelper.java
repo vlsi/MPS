@@ -5,6 +5,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclar
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.bootstrap.structureLanguage.constraints.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
@@ -34,13 +35,9 @@ public class ChildSubstituteActionsHelper {
       return true;
     }
   };
-
+  
   public static boolean isDefaultSubstitutableConcept(AbstractConceptDeclaration concept, AbstractConceptDeclaration expectedConcept, IScope scope) {
-    if (!concept.getNode().hasConceptProperty(ABSTRACT) &&
-            !concept.hasConceptProperty(DONT_SUBSTITUTE_BY_DEFAULT, scope)) {
-      return SModelUtil_new.isAssignableConcept(concept, expectedConcept);
-    }
-    return false;
+    return AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutableConcept_1199876309336(concept.getNode(), expectedConcept.getNode(), scope);
   }
 
   public static List<INodeSubstituteAction> createActions(final SNode parentNode,
