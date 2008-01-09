@@ -464,9 +464,13 @@ public class ChildSubstituteActionsHelper {
         String methodName = "removeActionsByCondition_" + part.getId();
         Object[] args = {actions.iterator(), parentNode, currentChild, childConcept, context};
         try {
-          QueryMethodGenerated.invoke(methodName, args, substituteActionsBuilder.getModel());
-        } catch (Throwable t) {
-          LOG.error(t);
+          QueryMethodGenerated.invoke(methodName, context, new RemoveSubstituteActionByCondition_ParameterObject(actions.iterator(), parentNode, currentChild, childConcept), substituteActionsBuilder.getModel());
+        } catch (Throwable tt) {
+          try {
+            QueryMethodGenerated.invoke(methodName, args, substituteActionsBuilder.getModel());
+          } catch (Throwable t) {
+            LOG.error(t);
+          }
         }
       }
 
@@ -504,7 +508,11 @@ public class ChildSubstituteActionsHelper {
               context};
       String methodName = ActionQueryMethodName.nodeFactory_SubstituteActionBuilder(builder);
       try {
-        return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, args1, builder.getModel());
+        try {
+          return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactory_ParameterObject(parentNode, currentChild, childConcept, childSetter), builder.getModel());
+        } catch (Throwable t) {
+          return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, args1, builder.getModel());
+        }
       } catch (Throwable t) {
         LOG.error(t);
         return Collections.emptyList();

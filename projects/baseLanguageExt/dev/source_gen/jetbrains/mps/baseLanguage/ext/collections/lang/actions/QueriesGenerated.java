@@ -14,8 +14,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.smodel.action.IChildNodeSetter;
+import jetbrains.mps.smodel.action.NodeSubstituteActionsFactory_ParameterObject;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -29,6 +28,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
+import jetbrains.mps.smodel.action.RemoveSubstituteActionByCondition_ParameterObject;
 import java.util.Iterator;
 import jetbrains.mps.util.Condition;
 
@@ -62,7 +62,7 @@ public class QueriesGenerated {
     SPropertyOperations.set(SLinkOperations.setNewChild(_parameterObject.getNewNode(), "order", "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection"), "value", "" + (true));
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1152144005896(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Statement_1152144005896(final IOperationContext operationContext, final NodeSubstituteActionsFactory_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", operationContext.getScope());
@@ -72,7 +72,7 @@ public class QueriesGenerated {
           boolean yieldAllowed = false;
           boolean stopAllowed = false;
           boolean skipAllowed = false;
-          SNode parentClosure = SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.Closure", false, false);
+          SNode parentClosure = SNodeOperations.getAncestor(_parameterObject.getParentNode(), "jetbrains.mps.baseLanguage.structure.Closure", false, false);
           if(SNodeOperations.isInstanceOf(parentClosure, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock")) {
             yieldAllowed = true;
             stopAllowed = true;
@@ -103,21 +103,21 @@ public class QueriesGenerated {
       Iterable queryResult = (Iterable)calc.calculate();
       assert queryResult != null;
       for(Object item : queryResult) {
-        List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), parentNode, currentTargetNode, childSetter, operationContext.getScope());
+        List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((ConceptDeclaration)BaseAdapter.fromNode((SNode)item), _parameterObject.getParentNode(), _parameterObject.getCurrentTargetNode(), _parameterObject.getChildSetter(), operationContext.getScope());
         result.addAll(defaultActions);
       }
     }
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1178286508713(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1178286508713(final IOperationContext operationContext, final NodeSubstituteActionsFactory_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", operationContext.getScope());
-      result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+      result.add(new DefaultSimpleSubstituteAction(concept, _parameterObject.getParentNode(), _parameterObject.getCurrentTargetNode(), _parameterObject.getChildSetter(), operationContext.getScope()) {
 
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode direction = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", currentTargetNode);
+          SNode direction = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", _parameterObject.getCurrentTargetNode());
           SPropertyOperations.set(direction, "value", "" + (true));
           return direction;
         }
@@ -134,10 +134,10 @@ public class QueriesGenerated {
     }
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", operationContext.getScope());
-      result.add(new DefaultSimpleSubstituteAction(concept, parentNode, currentTargetNode, childSetter, operationContext.getScope()) {
+      result.add(new DefaultSimpleSubstituteAction(concept, _parameterObject.getParentNode(), _parameterObject.getCurrentTargetNode(), _parameterObject.getChildSetter(), operationContext.getScope()) {
 
         public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-          SNode direction = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", currentTargetNode);
+          SNode direction = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortDirection", _parameterObject.getCurrentTargetNode());
           SPropertyOperations.set(direction, "value", "" + (false));
           return direction;
         }
@@ -155,7 +155,7 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SequenceOperation_1160663024951(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_SequenceOperation_1160663024951(final IOperationContext operationContext, final NodeSubstituteActionsFactory_ParameterObject _parameterObject) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     return result;
   }
@@ -223,7 +223,8 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static void removeActionsByCondition_1177414262137(Iterator<INodeSubstituteAction> actions, final SNode parentNode, final SNode currentChild, final SNode childConcept, final IOperationContext operationContext) {
+  public static void removeActionsByCondition_1177414262137(final IOperationContext operationContext, final RemoveSubstituteActionByCondition_ParameterObject _parameterObject) {
+    Iterator<INodeSubstituteAction> actions = _parameterObject.getActions();
     while(actions.hasNext()) {
       INodeSubstituteAction current = actions.next();
       if(!(current.getParameterObject() instanceof SNode)) {
@@ -235,8 +236,8 @@ public class QueriesGenerated {
         public boolean met(Object object) {
           boolean applicableToSequence = false;
           boolean applicableToList = false;
-          if(SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression")) {
-            SNode leftExpression = SLinkOperations.getTarget(parentNode, "leftExpression", true);
+          if(SNodeOperations.isInstanceOf(_parameterObject.getParentNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceOperationExpression")) {
+            SNode leftExpression = SLinkOperations.getTarget(_parameterObject.getParentNode(), "leftExpression", true);
             SNode leftType = TypeChecker.getInstance().getTypeOf(leftExpression);
             if(TypeChecker.getInstance().getRuntimeSupport().coerce(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), false) != null) {
               applicableToSequence = true;
