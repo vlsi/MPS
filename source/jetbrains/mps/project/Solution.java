@@ -106,10 +106,7 @@ public class Solution extends AbstractModule {
 
     createManifest();
 
-    // read languages and models
-    Set<IModule> before = new HashSet<IModule>(MPSModuleRepository.getInstance().getAllModules());
     readDependOnModules();
-    Set<IModule> after = new HashSet<IModule>(MPSModuleRepository.getInstance().getAllModules());
     rereadModels();
 
     updateRuntimeClassPath();
@@ -117,10 +114,6 @@ public class Solution extends AbstractModule {
     ReloadUtils.reloadAll(true, true, false);
 
     myEventTranslator.solutionChanged();
-
-    if (!before.equals(after) || mySolutionDescriptor.getClassPathEntrysCount() > 0) {
-      ReloadUtils.reloadAll(true);
-    } 
   }
 
   public void dispose() {
