@@ -123,7 +123,10 @@ public abstract class UsageView implements IExternalizableComponent {
     for (SearchResult res : results) {
       SNode node = res.getNodePointer().getNode();
       if (node != null) {
-        models.add(node.getModel().getModelDescriptor());
+        SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+        if (!models.contains(modelDescriptor)) {
+          models.add(modelDescriptor);
+        }
       }
     }
     return models;
