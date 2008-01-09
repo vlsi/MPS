@@ -11,7 +11,7 @@ import java.util.Stack;
 public class TemplateProcessor {
   private TemplateGenerator myGenerator;
   private SModel myOutputModel;
-  private Stack<Pair<SNode, String>> myInputHistory = new Stack<Pair<SNode, String>>();
+  private List<Pair<SNode, String>> myInputHistory = new ArrayList<Pair<SNode, String>>();
 
   public TemplateProcessor(TemplateGenerator generator) {
     myGenerator = generator;
@@ -52,12 +52,12 @@ public class TemplateProcessor {
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
           if (inputChanged) {
-            myInputHistory.push(new Pair<SNode, String>(inputNode, mappingName_));
+            pushInputHistory(inputNode, mappingName_);
           }
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
           if (inputChanged) {
-            myInputHistory.pop();
+            popInputHistory();
           } else if (registerTopOutput) {
             myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
           }
@@ -122,12 +122,12 @@ public class TemplateProcessor {
           } else {
             boolean inputChanged = (newInputNode != inputNode);
             if (inputChanged) {
-              myInputHistory.push(new Pair<SNode, String>(inputNode, mappingName_));
+              pushInputHistory(inputNode, mappingName_);
             }
             List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
             if (_outputNodes != null) outputNodes.addAll(_outputNodes);
             if (inputChanged) {
-              myInputHistory.pop();
+              popInputHistory();
             } else if (registerTopOutput) {
               myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
             }
@@ -168,7 +168,7 @@ public class TemplateProcessor {
 
           boolean inputChanged = (newInputNode != inputNode);
           if (inputChanged) {
-            myInputHistory.push(new Pair<SNode, String>(inputNode, mappingName_));
+            pushInputHistory(inputNode, mappingName_);
           }
           List<SNode> _outputNodes;
           if (templateNodeForCase != null) {
@@ -180,7 +180,7 @@ public class TemplateProcessor {
 
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
           if (inputChanged) {
-            myInputHistory.pop();
+            popInputHistory();
           } else if (registerTopOutput) {
             myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
           }
@@ -208,12 +208,12 @@ public class TemplateProcessor {
           }
           boolean inputChanged = (newInputNode != inputNode);
           if (inputChanged) {
-            myInputHistory.push(new Pair<SNode, String>(inputNode, mappingName_));
+            pushInputHistory(inputNode, mappingName_);
           }
           List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName_, templateForInclude, newInputNode, inputChanged);
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
           if (inputChanged) {
-            myInputHistory.pop();
+            popInputHistory();
           } else if (registerTopOutput) {
             myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
           }
@@ -226,12 +226,12 @@ public class TemplateProcessor {
         for (SNode newInputNode : newInputNodes) {
           boolean inputChanged = (newInputNode != inputNode);
           if (inputChanged) {
-            myInputHistory.push(new Pair<SNode, String>(inputNode, mappingName_));
+            pushInputHistory(inputNode, mappingName_);
           }
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
           if (inputChanged) {
-            myInputHistory.pop();
+            popInputHistory();
           } else if (registerTopOutput) {
             myGenerator.addTopOutputNodesByInputNode(inputNode, outputNodes);
           }
@@ -267,11 +267,12 @@ public class TemplateProcessor {
         myGenerator.showErrorMessage(null, templateNode, "'createOutputNodesForTemplateNode()' referent '" + reference.getRole() + "' is null in template model");
         continue;
       }
-      if (templateReferentNode.getModel().equals(templateModel)) { // internal reference
+      if (templateReferentNode.getModel() == templateModel) { // internal reference
         ReferenceInfo_TemplateNode refInfo = new ReferenceInfo_TemplateNode(
                 outputNode,
                 reference,
-                inputNode);
+                inputNode,
+                myInputHistory.isEmpty() ? null : new ArrayList<Pair<SNode, String>>(myInputHistory));
         PostponedReference postponedReference = new PostponedReference(
                 refInfo,
                 myGenerator
@@ -413,4 +414,11 @@ public class TemplateProcessor {
   }
 
 
+  private void pushInputHistory(SNode oldInputNode, String mappingName) {
+    myInputHistory.add(new Pair<SNode, String>(oldInputNode, mappingName));
+  }
+
+  private void popInputHistory() {
+    myInputHistory.remove(myInputHistory.size() - 1);
+  }
 }

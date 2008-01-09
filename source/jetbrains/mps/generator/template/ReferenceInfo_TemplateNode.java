@@ -3,8 +3,11 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.util.Pair;
 
 import java.util.List;
+
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by: Sergey Dmitriev
@@ -13,10 +16,12 @@ import java.util.List;
 public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   private SNode myTemplateSourceNode;
   private SNode myTemplateTargetNode;
+  private List<Pair<SNode, String>> myInputHistory;
 
 
-  public ReferenceInfo_TemplateNode(SNode outputSourceNode, SReference templateReference, SNode inputNode) {
+  public ReferenceInfo_TemplateNode(SNode outputSourceNode, SReference templateReference, SNode inputNode, @Nullable List<Pair<SNode, String>> inputHistory) {
     super(outputSourceNode, templateReference.getRole(), inputNode);
+    myInputHistory = inputHistory;
     myTemplateSourceNode = templateReference.getSourceNode();
     myTemplateTargetNode = templateReference.getTargetNode();
   }
