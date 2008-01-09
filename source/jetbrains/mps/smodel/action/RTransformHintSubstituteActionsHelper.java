@@ -136,10 +136,9 @@ import java.util.*;
     // precondition is optional
     if (precondition != null) {
       String methodName = ActionQueryMethodName.rTransformHintSubstituteActionsBuilder_Precondition(actionsBuilder);
-      Object[] args = new Object[]{sourceNode, context.getScope(), context};
       SModel model = actionsBuilder.getModel();
       try {
-        return (Boolean) QueryMethodGenerated.invoke(methodName, args, model);
+        return (Boolean) QueryMethodGenerated.invoke(methodName, context, new RTransformPrecondition_ParameterObject(sourceNode), model);
       } catch (Exception e) {
         LOG.error(e);
         return false;

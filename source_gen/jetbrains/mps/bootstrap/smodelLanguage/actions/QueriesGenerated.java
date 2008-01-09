@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.action.RTransformPrecondition_ParameterObject;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -42,47 +42,47 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPr
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1161715685433(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    SNode leftExpression = SLinkOperations.getTarget(parameterObject.getParentNode(), "leftExpression", true);
+  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1161715685433(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    SNode leftExpression = SLinkOperations.getTarget(_parameterObject.getParentNode(), "leftExpression", true);
     return ActionUtil_smodel.isExpression_appropriateFor_ourOperations(leftExpression);
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1179529852529(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    SNode leftExpression = SLinkOperations.getTarget(parameterObject.getParentNode(), "leftExpression", true);
+  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1179529852529(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    SNode leftExpression = SLinkOperations.getTarget(_parameterObject.getParentNode(), "leftExpression", true);
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
     return nodeType != null;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1179530205324(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    SNode leftExpression = SLinkOperations.getTarget(parameterObject.getParentNode(), "leftExpression", true);
+  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1179530205324(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    SNode leftExpression = SLinkOperations.getTarget(_parameterObject.getParentNode(), "leftExpression", true);
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(leftExpression), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
     return nodeType != null;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1196936366507(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    SNode expression = parameterObject.getParentNode();
+  public static boolean nodeSubstituteActionsBuilder_Precondition_SNodeOperation_1196936366507(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    SNode expression = _parameterObject.getParentNode();
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expression, "leftExpression", true)), new QuotationClass_().createNode());
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_SNodeOperation_1154637518825(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    boolean alreadyHasParms = SLinkOperations.getCount(sourceNode, "parameter") > 0;
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_SNodeOperation_1154637518825(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+    boolean alreadyHasParms = SLinkOperations.getCount(_parameterObject.getSourceNode(), "parameter") > 0;
     if(alreadyHasParms) {
       return false;
     }
-    return SequenceOperations.getSize(SLinkOperations.getConceptLinkTargets(sourceNode, "applicableParameter")) > 0;
+    return SequenceOperations.getSize(SLinkOperations.getConceptLinkTargets(_parameterObject.getSourceNode(), "applicableParameter")) > 0;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189083(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    return ActionUtil_smodel.isExpression_appropriateFor_ourOperations(sourceNode);
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189083(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+    return ActionUtil_smodel.isExpression_appropriateFor_ourOperations(_parameterObject.getSourceNode());
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189126(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(sourceNode), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535189126(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType"), false);
     return nodeType != null;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535648215(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    return ActionUtil_smodel.isExpression_appropriateFor_SemanticDowncast(sourceNode);
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1179535648215(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+    return ActionUtil_smodel.isExpression_appropriateFor_SemanticDowncast(_parameterObject.getSourceNode());
   }
 
   public static void nodeFactory_NodeSetup_Node_GetAncestorOperation_1171415364778(SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {

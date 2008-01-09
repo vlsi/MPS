@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePrecondition_ParameterObject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.action.RTransformPrecondition_ParameterObject;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.smodel.SModel;
@@ -33,23 +33,23 @@ import jetbrains.mps.util.Condition;
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1160672994889(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    SNode block = SNodeOperations.getAncestorWhereConceptInList(parameterObject.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortBlock"}, false, false);
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1160672994889(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    SNode block = SNodeOperations.getAncestorWhereConceptInList(_parameterObject.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.ext.collections.lang.structure.ValueSupplierBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapperBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachBlock","jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortBlock"}, false, false);
     return block != null;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1178286539824(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    return SNodeOperations.isInstanceOf(parameterObject.getParentNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation");
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1178286539824(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getParentNode(), "jetbrains.mps.baseLanguage.ext.collections.lang.structure.SortOperation");
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1161719130431(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    SNode type = TypeChecker.getInstance().getTypeOf(sourceNode);
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1161719130431(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+    SNode type = TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode());
     SNode sequenceType = TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), false);
     return (sequenceType != null);
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1197932868400(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    SNode type = TypeChecker.getInstance().getTypeOf(sourceNode);
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1197932868400(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+    SNode type = TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode());
     return (TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.MapType"), false) != null);
   }
 

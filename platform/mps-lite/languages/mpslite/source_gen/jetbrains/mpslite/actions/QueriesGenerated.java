@@ -5,11 +5,11 @@ package jetbrains.mpslite.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePrecondition_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.action.RTransformPrecondition_ParameterObject;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import java.util.ArrayList;
@@ -28,24 +28,24 @@ import jetbrains.mps.smodel.action.ModelActions;
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1197284175669(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    return SNodeOperations.getAncestor(parameterObject.getParentNode(), "jetbrains.mpslite.structure.ConceptDeclaration", true, false) != null;
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1197284175669(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    return SNodeOperations.getAncestor(_parameterObject.getParentNode(), "jetbrains.mpslite.structure.ConceptDeclaration", true, false) != null;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1197554046539(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    return SNodeOperations.getAncestor(parameterObject.getParentNode(), "jetbrains.mpslite.structure.DotConceptDeclaration", true, false) != null;
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1197554046539(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    return SNodeOperations.getAncestor(_parameterObject.getParentNode(), "jetbrains.mpslite.structure.DotConceptDeclaration", true, false) != null;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1197631213003(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    return SNodeOperations.getAncestor(parameterObject.getParentNode(), "jetbrains.mpslite.structure.BinaryOperationConceptDeclaration", true, false) != null;
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1197631213003(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    return SNodeOperations.getAncestor(_parameterObject.getParentNode(), "jetbrains.mpslite.structure.BinaryOperationConceptDeclaration", true, false) != null;
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1197293111675(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    return SNodeOperations.getAncestor(parameterObject.getParentNode(), "jetbrains.mpslite.structure.TypesBlock", true, false) != null;
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_1197293111675(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    return SNodeOperations.getAncestor(_parameterObject.getParentNode(), "jetbrains.mpslite.structure.TypesBlock", true, false) != null;
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1196942343253(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(sourceNode), new QuotationClass_().createNode());
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1196942343253(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode()), new QuotationClass_().createNode());
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LinePart_1182843946099(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {

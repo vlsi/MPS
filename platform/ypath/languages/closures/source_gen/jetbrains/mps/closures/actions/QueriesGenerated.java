@@ -6,11 +6,11 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePrecondition_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.action.RTransformPrecondition_ParameterObject;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.action.IChildNodeSetter;
 import java.util.ArrayList;
@@ -28,24 +28,24 @@ import jetbrains.mps.smodel.BaseAdapter;
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_ParameterReference_1199622452307(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    return (SNodeOperations.getAncestor(parameterObject.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false) != null);
+  public static boolean nodeSubstituteActionsBuilder_Precondition_ParameterReference_1199622452307(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    return (SNodeOperations.getAncestor(_parameterObject.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false) != null);
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_LocalVariableReference_1199641696225(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    return !(SequenceOperations.isEmpty(SequenceOperations.where(SNodeOperations.getAncestors(parameterObject.getParentNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", true), new zPredicate1(null, null))));
+  public static boolean nodeSubstituteActionsBuilder_Precondition_LocalVariableReference_1199641696225(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    return !(SequenceOperations.isEmpty(SequenceOperations.where(SNodeOperations.getAncestors(_parameterObject.getParentNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", true), new zPredicate1(null, null))));
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_ThisExpression_1199651311977(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    return (SNodeOperations.getAncestor(parameterObject.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", true, false) != null);
+  public static boolean nodeSubstituteActionsBuilder_Precondition_ThisExpression_1199651311977(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    return (SNodeOperations.getAncestor(_parameterObject.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", true, false) != null);
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1199711420040(IOperationContext operationContext, NodeSubstitutePrecondition_ParameterObject parameterObject) {
-    return (SNodeOperations.getAncestor(parameterObject.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false) != null);
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1199711420040(final IOperationContext operationContext, final NodeSubstitutePrecondition_ParameterObject _parameterObject) {
+    return (SNodeOperations.getAncestor(_parameterObject.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false) != null);
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1199547343806(SNode sourceNode, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(sourceNode), "jetbrains.mps.closures.structure.FunctionType");
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1199547343806(IOperationContext operationContext, RTransformPrecondition_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode()), "jetbrains.mps.closures.structure.FunctionType");
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ParameterReference_1199622421675(final SNode parentNode, final SNode currentTargetNode, final AbstractConceptDeclaration childConcept, final IChildNodeSetter childSetter, final IOperationContext operationContext) {
