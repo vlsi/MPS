@@ -4,6 +4,7 @@
     <output url="file://$MODULE_DIR$/classes" />
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/languages/baseLanguage/resolve/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/actionsLanguage/outputModels/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/constraintsLanguage/solutions/constraintLanguageSandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/findUsagesLanguage/languages/findUsagesLanguage/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/languages/bootstrap/helgins/solutions/jetbrains.mps.bootstrap.helgins.sandbox/source_gen" isTestSource="false" />

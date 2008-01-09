@@ -278,4 +278,9 @@ public class NameUtil {
     }
     return namespace;
   }
+
+  public static String getGetterName(String property) {
+    String prop = Character.toUpperCase(property.charAt(0)) + property.substring(1);
+    return "get" + prop;
+  }
 }

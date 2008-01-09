@@ -381,10 +381,15 @@ public class ChildSubstituteActionsHelper {
     // precondition is optional
     if (precondition != null) {
       String methodName = ActionQueryMethodName.nodeSubstituteActionsBuilder_Precondition(actionsBuilder);
-      Object[] args = new Object[]{parentNode, concept.getNode(), context.getScope(), context};
+
+
       SModel model = actionsBuilder.getModel();
       try {
-        return (Boolean) QueryMethodGenerated.invoke(methodName, args, model);
+        return (Boolean) QueryMethodGenerated.invoke(
+                methodName,
+                context,
+                new NodeSubstitutePrecondition_ParameterObject(parentNode, concept.getNode()),
+                model);
       } catch (Exception e) {
         LOG.error(e);
         return false;
