@@ -8,8 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-import org.jetbrains.annotations.NotNull;
-
 public class TemplateProcessor {
   private TemplateGenerator myGenerator;
   private SModel myOutputModel;
@@ -26,6 +24,7 @@ public class TemplateProcessor {
                                                              SNode inputNode,
                                                              TemplateGenerator generator) throws DismissTopMappingRuleException, TemplateProcessingFailureException {
     TemplateProcessor templateProcessor = new TemplateProcessor(generator);
+    // todo: generator push/pop template processor
     List<SNode> outputNodels = templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
     if (outputNodels == null) {
       throw new TemplateProcessingFailureException();
@@ -92,7 +91,7 @@ public class TemplateProcessor {
             if (nodeAndMappingName.o2 != null) {
               mappingName_ = nodeAndMappingName.o2;
             }
-            _outputNodes = createOutputNodesForTemplateNode(mappingName_, altTemplateNode, inputNode, 0, false);
+            _outputNodes = createOutputNodesForExternalTemplateNode(mappingName_, altTemplateNode, inputNode, false);
           }
         }
         if (_outputNodes != null) outputNodes.addAll(_outputNodes);
@@ -173,7 +172,7 @@ public class TemplateProcessor {
           }
           List<SNode> _outputNodes;
           if (templateNodeForCase != null) {
-            _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNodeForCase, newInputNode, 0, inputChanged);
+            _outputNodes = createOutputNodesForExternalTemplateNode(mappingName_, templateNodeForCase, newInputNode, inputChanged);
           } else {
             // no switch-case found for the inputNode - continue with templateNode under the $switch$
             _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
@@ -211,7 +210,7 @@ public class TemplateProcessor {
           if (inputChanged) {
             myInputHistory.push(new Pair<SNode, String>(inputNode, mappingName_));
           }
-          List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateForInclude, newInputNode, 0, inputChanged);
+          List<SNode> _outputNodes = createOutputNodesForExternalTemplateNode(mappingName_, templateForInclude, newInputNode, inputChanged);
           if (_outputNodes != null) outputNodes.addAll(_outputNodes);
           if (inputChanged) {
             myInputHistory.pop();
@@ -403,5 +402,15 @@ public class TemplateProcessor {
     }
     return null;
   }
+
+  private List<SNode> createOutputNodesForExternalTemplateNode(String mappingName,
+                                                               SNode templateNode,
+                                                               SNode inputNode,
+                                                               boolean registerTopOutput) throws DismissTopMappingRuleException {
+    TemplateProcessor templateProcessor = new TemplateProcessor(myGenerator);
+    // todo: generator push/pop template processor
+    return templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, registerTopOutput);
+  }
+
 
 }
