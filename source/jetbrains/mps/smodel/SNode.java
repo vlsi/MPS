@@ -1282,7 +1282,12 @@ public final class SNode {
   @NotNull
   public String toString() {
     fireNodeReadAccess();
-    String s = BaseConcept_Behavior.call_getPresentation_1180102203531(this);
+    String s = null;
+    try {
+      s = BaseConcept_Behavior.call_getPresentation_1180102203531(this);
+    } catch (Throwable t) {
+      LOG.error(t);
+    }
     if (s == null) {
       LOG.error("no presentation for node: " + this.getDebugText());
       return super.toString();
