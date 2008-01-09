@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bootstrap.intentionsLanguage">
+<language namespace="jetbrains.mps.bootstrap.intentionsLanguage" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.bootstrap.intentionsLanguage.structure" />
   </structure>
@@ -36,13 +36,10 @@
   </generators>
   <classPath />
   <runtimeClassPath />
+  <sourcePath />
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />
   </osgiOptions>
-  <dependencies>
-    <dependency>jetbrains.mpslite</dependency>
-    <dependency>webr.webl</dependency>
-  </dependencies>
 </language>
 
