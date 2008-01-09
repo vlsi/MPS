@@ -28,8 +28,8 @@ public class ReplaceConditionalWithIf_Intention extends BaseIntention implements
   }
 
   public boolean isApplicable(SNode node, EditorContext editorContext) {
-    SNode stmtNode = (SNode) SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
-    if (stmtNode == null) {
+    SNode stmtNode = (SNode)SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+    if(stmtNode == null) {
       return false;
     }
     return true;
@@ -37,16 +37,16 @@ public class ReplaceConditionalWithIf_Intention extends BaseIntention implements
 
   public void execute(SNode node, EditorContext editorContext) {
     // variable initialization case - split or you'll loose this var from scope
-    SNode stmtNode = (SNode) SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
-    if (SNodeOperations.isInstanceOf(stmtNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
-      SNode variableDeclaration = SLinkOperations.getTarget(((SNode) stmtNode), "localVariableDeclaration", true);
+    SNode stmtNode = (SNode)SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+    if(SNodeOperations.isInstanceOf(stmtNode, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement")) {
+      SNode variableDeclaration = SLinkOperations.getTarget(((SNode)stmtNode), "localVariableDeclaration", true);
       SNode eStatement = SModelOperations.createNewNode(SNodeOperations.getModel(variableDeclaration), "jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
       SNode assignment = SLinkOperations.setNewChild(eStatement, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
       SLinkOperations.setTarget(assignment, "rValue", SLinkOperations.getTarget(variableDeclaration, "initializer", true), true);
       SNode local = SLinkOperations.setNewChild(assignment, "lValue", "jetbrains.mps.baseLanguage.structure.LocalVariableReference");
       SLinkOperations.setTarget(local, "variableDeclaration", variableDeclaration, false);
       SNodeOperations.insertNextSiblingChild(stmtNode, eStatement);
-      stmtNode = (SNode) SNodeOperations.getNextSibling(stmtNode);
+      stmtNode = (SNode)SNodeOperations.getNextSibling(stmtNode);
     }
     // Get used nodes
     SNode nodeParent = SNodeOperations.getParent(node, null, false, false);
