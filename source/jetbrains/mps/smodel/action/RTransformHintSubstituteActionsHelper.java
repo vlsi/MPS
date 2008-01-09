@@ -157,6 +157,7 @@ import java.util.*;
     Object[] args2 = new Object[]{sourceNode, context.getScope()};
     String methodName = "rightTransformHintSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
     SModel model = actionsBuilder.getModel();
+    LOG.warning("You are using old query language here which is now obsolete. Please, rewrite your code.", precondition);
     return (Boolean) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
   }
 
@@ -178,6 +179,7 @@ import java.util.*;
               context.getScope()};
       String methodName = "rightTransformHintSubstituteActionsBuilder_ActionsFactory_" + factoryQueryMethodId;
       SModel model = substituteActionsBuilder.getModel();
+      LOG.warning("You are using old query language here which is now obsolete. Please, rewrite your code.", substituteActionsBuilder);
       return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
     } else {
       Object[] args = new Object[] {

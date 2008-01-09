@@ -48,7 +48,7 @@
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.constraintsLanguage.actions" version="-1" />
   </language>
-  <maxImportIndex value="8" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.bootstrap.editorLanguage.actions" version="-1" />
   <import index="3" modelUID="jetbrains.mps.smodel@java_stub" version="-1" />
@@ -57,6 +57,9 @@
   <import index="6" modelUID="jetbrains.mps.bootstrap.editorLanguage.structure@java_stub" version="-1" />
   <import index="7" modelUID="jetbrains.mps.util@java_stub" version="-1" />
   <import index="8" modelUID="jetbrains.mps.bootstrap.editorLanguage.constraints" version="-1" />
+  <import index="9" modelUID="jetbrains.mps.bootstrap.editorLanguage.actions@java_stub" version="-1" />
+  <import index="10" modelUID="jetbrains.mps.bootstrap.editorLanguage@java_stub" version="-1" />
+  <import index="11" modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   <node type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActions" id="1119639069735">
     <property name="name" value="EDTL_node_substitute" />
     <node role="actionsBuilder" type="jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder" id="1164921162329">

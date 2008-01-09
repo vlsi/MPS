@@ -398,6 +398,8 @@ public class ChildSubstituteActionsHelper {
       return true;
     }
 
+    LOG.warning("You are using old actions language here which is now obsolete. Please, rewrite your code.", precondition);
+
     Object[] args1 = new Object[]{parentNode, context};
     Object[] args2 = new Object[]{parentNode, context.getScope()};
     String methodName = "nodeSubstituteActionsBuilder_Precondition_" + preconditionQueryMethodId;
@@ -422,6 +424,9 @@ public class ChildSubstituteActionsHelper {
       Object[] args1 = new Object[]{actions, context};
       Object[] args2 = new Object[]{actions, context.getScope()};
       String methodName = "nodeSubstituteActionsBuilder_ActionsFilter_" + filterQueryMethodId;
+
+      LOG.warning("You are using old actions language here which is now obsolete. Please, rewrite your code.", substituteActionsBuilder);
+
       SModel model = substituteActionsBuilder.getModel();
       return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
     } else {
@@ -484,6 +489,7 @@ public class ChildSubstituteActionsHelper {
               context.getScope()};
       String methodName = "nodeSubstituteActionsBuilder_ActionsFactory_" + factoryQueryMethodId;
       SModel model = builder.getModel();
+      LOG.warning("You are using old actions language here which is now obsolete. Please, rewrite your code.", builder);      
       return (List<INodeSubstituteAction>) QueryMethod.invoke_alternativeArguments(methodName, args1, args2, model);
     } else {
       Object[] args1 = new Object[]{parentNode,
