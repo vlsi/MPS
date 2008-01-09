@@ -326,6 +326,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   }
 
   /*package*/ void addTopOutputNodesByInputNode(SNode inputNode, List<SNode> outputNodes) {
+    if (outputNodes == null || outputNodes.isEmpty()) return;
     List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
     if (list == null) {
       list = new ArrayList<SNode>();

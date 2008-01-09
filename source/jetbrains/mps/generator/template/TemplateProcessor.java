@@ -26,15 +26,18 @@ public class TemplateProcessor {
                                                              SNode inputNode,
                                                              TemplateGenerator generator) throws DismissTopMappingRuleException, TemplateProcessingFailureException {
     TemplateProcessor templateProcessor = new TemplateProcessor(generator);
-    return templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
+    List<SNode> outputNodels = templateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, 0, true);
+    if (outputNodels == null) {
+      throw new TemplateProcessingFailureException();
+    }
+    return outputNodels;
   }
 
-  @NotNull
   private List<SNode> createOutputNodesForTemplateNode(String mappingName,
                                                        SNode templateNode,
                                                        SNode inputNode,
                                                        int nodeMacrosToSkip,
-                                                       boolean registerTopOutput) throws DismissTopMappingRuleException, TemplateProcessingFailureException {
+                                                       boolean registerTopOutput) throws DismissTopMappingRuleException {
     int macroCount = 0;
     List<SNode> outputNodes = new ArrayList<SNode>();
     // templateNode has unprocessed node-macros?
@@ -53,7 +56,7 @@ public class TemplateProcessor {
             myInputHistory.push(new Pair<SNode, String>(inputNode, mappingName_));
           }
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
-          outputNodes.addAll(_outputNodes);
+          if (_outputNodes != null) outputNodes.addAll(_outputNodes);
           if (inputChanged) {
             myInputHistory.pop();
           } else if (registerTopOutput) {
@@ -67,7 +70,7 @@ public class TemplateProcessor {
         List<SNode> newInputNodes = MacroUtil.getNewInputNodes(inputNode, templateNode, nodeMacrosToSkip, myGenerator);
         for (SNode newInputNode : newInputNodes) {
           List<SNode> _outputNodes = copyNodeFromInputNode(mappingName_, templateNode, newInputNode);
-          outputNodes.addAll(_outputNodes);
+          if (_outputNodes != null) outputNodes.addAll(_outputNodes);
         }
         return outputNodes;
 
@@ -83,7 +86,7 @@ public class TemplateProcessor {
             Pair<SNode, String> nodeAndMappingName = GeneratorUtil.getTemplateNodeFromRuleConsequence(altConsequence, inputNode, nodeMacro.getNode(), myGenerator);
             if (nodeAndMappingName == null) {
               myGenerator.showErrorMessage(inputNode, null, nodeMacro.getNode(), "error processing $IF$/alternative");
-              throw new TemplateProcessingFailureException();
+              return null;
             }
             SNode altTemplateNode = nodeAndMappingName.o1;
             if (nodeAndMappingName.o2 != null) {
@@ -92,11 +95,9 @@ public class TemplateProcessor {
             _outputNodes = createOutputNodesForTemplateNode(mappingName_, altTemplateNode, inputNode, 0, false);
           }
         }
-        if (_outputNodes != null) {
-          outputNodes.addAll(_outputNodes);
-          if (registerTopOutput) {
-            myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
-          }
+        if (_outputNodes != null) outputNodes.addAll(_outputNodes);
+        if (registerTopOutput) {
+          myGenerator.addTopOutputNodesByInputNode(inputNode, _outputNodes);
         }
         return outputNodes;
 
@@ -125,7 +126,7 @@ public class TemplateProcessor {
               myInputHistory.push(new Pair<SNode, String>(inputNode, mappingName_));
             }
             List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
-            outputNodes.addAll(_outputNodes);
+            if (_outputNodes != null) outputNodes.addAll(_outputNodes);
             if (inputChanged) {
               myInputHistory.pop();
             } else if (registerTopOutput) {
@@ -146,7 +147,7 @@ public class TemplateProcessor {
             Pair<SNode, String> nodeAndMappingName = GeneratorUtil.getTemplateNodeFromRuleConsequence(consequenceForCase, newInputNode, nodeMacro.getNode(), myGenerator);
             if (nodeAndMappingName == null) {
               myGenerator.showErrorMessage(newInputNode, nodeMacro.getNode(), consequenceForCase.getNode(), "error processing $SWITCH$");
-              throw new TemplateProcessingFailureException();
+              return null;
             }
             templateNodeForCase = nodeAndMappingName.o1;
             if (nodeAndMappingName.o2 != null) {
@@ -178,7 +179,7 @@ public class TemplateProcessor {
             _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
           }
 
-          outputNodes.addAll(_outputNodes);
+          if (_outputNodes != null) outputNodes.addAll(_outputNodes);
           if (inputChanged) {
             myInputHistory.pop();
           } else if (registerTopOutput) {
@@ -195,12 +196,12 @@ public class TemplateProcessor {
           TemplateDeclaration includeTemplate = includeMacro.getIncludeTemplate();
           if (includeTemplate == null) {
             myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$ : no 'include template'");
-            throw new TemplateProcessingFailureException();
+            return null;
           }
           TemplateFragment fragment = GeneratorUtil.getFragmentFromTemplate(includeTemplate, newInputNode, nodeMacro.getNode(), myGenerator);
           if (fragment == null) {
             myGenerator.showErrorMessage(newInputNode, null, nodeMacro.getNode(), "error processing $INCLIDE$");
-            throw new TemplateProcessingFailureException();
+            return null;
           }
           SNode templateForInclude = fragment.getParent().getNode();
           if (fragment.getName() != null) {
@@ -211,7 +212,7 @@ public class TemplateProcessor {
             myInputHistory.push(new Pair<SNode, String>(inputNode, mappingName_));
           }
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateForInclude, newInputNode, 0, inputChanged);
-          outputNodes.addAll(_outputNodes);
+          if (_outputNodes != null) outputNodes.addAll(_outputNodes);
           if (inputChanged) {
             myInputHistory.pop();
           } else if (registerTopOutput) {
@@ -229,7 +230,7 @@ public class TemplateProcessor {
             myInputHistory.push(new Pair<SNode, String>(inputNode, mappingName_));
           }
           List<SNode> _outputNodes = createOutputNodesForTemplateNode(mappingName_, templateNode, newInputNode, nodeMacrosToSkip + 1, inputChanged);
-          outputNodes.addAll(_outputNodes);
+          if (_outputNodes != null) outputNodes.addAll(_outputNodes);
           if (inputChanged) {
             myInputHistory.pop();
           } else if (registerTopOutput) {
@@ -245,7 +246,7 @@ public class TemplateProcessor {
     SNode outputNode = SModelUtil_new.instantiateConceptDeclaration(templateNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
     if (outputNode == null) {
       myGenerator.showErrorMessage(null, templateNode, "'createOutputNodesForTemplateNode' cannot create output node");
-      throw new TemplateProcessingFailureException();
+      return null;
     }
     outputNodes.add(outputNode);
     if (registerTopOutput) {
@@ -314,7 +315,7 @@ public class TemplateProcessor {
     return outputNodes;
   }
 
-  private List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode) throws TemplateProcessingFailureException {
+  private List<SNode> copyNodeFromInputNode(String mappingName, SNode templateNode, SNode inputNode) {
     List<SNode> outputNodes = tryToReduce(inputNode);
     if (outputNodes != null) {
       if (outputNodes.size() == 1) {
@@ -335,7 +336,7 @@ public class TemplateProcessor {
     SNode outputNode = SModelUtil_new.instantiateConceptDeclaration(inputNode.getConceptFqName(), myOutputModel, myGenerator.getScope(), false);
     if (outputNode == null) {
       myGenerator.showErrorMessage(inputNode, templateNode, "'copyNodeFromInputNode()' cannot create output node");
-      throw new TemplateProcessingFailureException();
+      return null;
     }
 
     { // register copied node

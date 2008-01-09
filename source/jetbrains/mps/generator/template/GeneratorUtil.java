@@ -650,10 +650,8 @@ public class GeneratorUtil {
   }
 
   private static List<SNode> applyReductionRuleTemplateFragment(String mappingName, SNode fragmentNode, SNode inputNode, INodeAdapter reductionRule, TemplateGenerator generator) throws DismissTopMappingRuleException {
-    List<SNode> outputNodes = new ArrayList<SNode>();
     try {
-      List<SNode> newOutputNodes = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, fragmentNode, inputNode, generator);
-      outputNodes.addAll(newOutputNodes);
+      return TemplateProcessor.createOutputNodesForTemplateNode(mappingName, fragmentNode, inputNode, generator);
     } catch (DismissTopMappingRuleException e) {
       throw e;
     } catch (TemplateProcessingFailureException e) {
@@ -662,7 +660,7 @@ public class GeneratorUtil {
       LOG.error(t, BaseAdapter.fromNode(fragmentNode));
       generator.showErrorMessage(inputNode, fragmentNode, reductionRule.getNode(), "error processing reduction rule");
     }
-    return outputNodes;
+    return new ArrayList<SNode>();
   }
 
 }
