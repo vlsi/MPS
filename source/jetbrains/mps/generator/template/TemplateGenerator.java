@@ -290,6 +290,10 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return findOutputNodeByInputAndTemplateNode(inputNode, inputNode);
   }
 
+  /*package*/ void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
+    myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(inputNode, inputNode), outputNode);
+  }
+
   public SNode findOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode) {
     SNode outputNode = myTemplateNodeAndInputNodeToOutputNodeMap.get(new Pair(templateNode, inputNode));
     if (outputNode == null) {

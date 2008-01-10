@@ -326,12 +326,9 @@ public class TemplateProcessor {
       if (outputNodes.size() == 1) {
         SNode outputNode = outputNodes.get(0);
         { // register copied node
-          myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
           myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
           // output node should be accessible via 'findCopiedNode'
-          myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, inputNode, outputNode);
-// do we really need this?          myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
-// do we really need this?          myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);
+          myGenerator.addCopiedOutputNodeForInputNode(inputNode, outputNode);
         }
       }
       return outputNodes;
@@ -344,14 +341,10 @@ public class TemplateProcessor {
       return null;
     }
 
-    { // register copied node
-      myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
-      myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
-      // output node should be accessible via 'findCopiedNode'
-      myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, inputNode, outputNode);
-// do we really need this?      myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
-// do we really need this?      myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);
-    }
+    myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
+    myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
+    // output node should be accessible via 'findCopiedNode'
+    myGenerator.addCopiedOutputNodeForInputNode(inputNode, outputNode);
 
     outputNode.putProperties(inputNode);
 
