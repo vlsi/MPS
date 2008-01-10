@@ -465,12 +465,12 @@ public class GeneratorUtil {
     TemplateFragment_ContextNodeQuery query = fragment.getContextNodeQuery();
     if (query != null) {
       String methodName = TemplateFunctionMethodName.templateFragment_ContextNodeQuery(query.getNode());
-      Object[] args = new Object[]{
-              inputNode,
-              mainContextNode,
-              generator};
       try {
-        return (SNode) QueryMethodGenerated.invoke(methodName, args, query.getModel());
+         return (SNode) QueryMethodGenerated.invoke(
+                 methodName,
+                 generator.getGeneratorSessionContext(),
+                 new TemplateFragmentContext_ParameterObject(inputNode, mainContextNode, generator),
+                 query.getModel());
       } catch (Exception e) {
         generator.showErrorMessage(inputNode, null, templateFragmentNode, "couldn't evaluate template fragment context query");
         LOG.error(e);

@@ -24,9 +24,10 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperati
 import jetbrains.mps.generator.template.MapSrcMacro_ParameterObject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.TemplateFragmentContext_ParameterObject;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 
 public class QueriesGenerated {
 
@@ -685,8 +686,8 @@ public class QueriesGenerated {
     return targetInternalValueExpression;
   }
 
-  public static SNode templateFragment_ContextNodeQuery_1184375448947(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
-    List<SNode> methods = SLinkOperations.getTargets(mainContextNode, "method", true);
+  public static SNode templateFragment_ContextNodeQuery_1184375448947(final IOperationContext operationContext, final TemplateFragmentContext_ParameterObject _parameterObject) {
+    List<SNode> methods = SLinkOperations.getTargets(_parameterObject.getMainContextNode(), "method", true);
     {
       ICursor<SNode> _zCursor9 = CursorFactory.createCursor(methods);
       try {
@@ -703,8 +704,8 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static SNode templateFragment_ContextNodeQuery_1184375942612(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
-    List<SNode> methods = SLinkOperations.getTargets(mainContextNode, "method", true);
+  public static SNode templateFragment_ContextNodeQuery_1184375942612(final IOperationContext operationContext, final TemplateFragmentContext_ParameterObject _parameterObject) {
+    List<SNode> methods = SLinkOperations.getTargets(_parameterObject.getMainContextNode(), "method", true);
     {
       ICursor<SNode> _zCursor10 = CursorFactory.createCursor(methods);
       try {
@@ -721,8 +722,8 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static SNode templateFragment_ContextNodeQuery_1184375906184(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
-    List<SNode> methods = SLinkOperations.getTargets(mainContextNode, "method", true);
+  public static SNode templateFragment_ContextNodeQuery_1184375906184(final IOperationContext operationContext, final TemplateFragmentContext_ParameterObject _parameterObject) {
+    List<SNode> methods = SLinkOperations.getTargets(_parameterObject.getMainContextNode(), "method", true);
     {
       ICursor<SNode> _zCursor11 = CursorFactory.createCursor(methods);
       try {
