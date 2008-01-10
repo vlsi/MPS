@@ -31,6 +31,7 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
   }
 
   public SNode doResolve_Straightforward(TemplateGenerator generator) {
+    // try to find for the same inputNode
     SNode outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(getInputNode(), myTemplateTargetNode);
     if (outputTargetNode != null) {
       return outputTargetNode;
@@ -54,38 +55,43 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo {
       outputParentNode = outputParentNode.getParent();
     }
 
-    //test
-//    // try to resolve using custom referense resolver for source node concept
-//    IReferenceResolver referenceResolver = loadReferenceResolver(getOutputSourceNode());
-//    if (referenceResolver != null) {
-//      outputTargetNode = referenceResolver.resolve(getOutputSourceNode(), getReferenceRole(), myTemplateTargetNode);
-//      if (outputTargetNode != null) {
-//        return outputTargetNode;
-//      }
-//    }
-
-    return null;
-  }
-
-  public SNode doResolve_Tricky(TemplateGenerator generator) {
-    // find least common parent for the template reference and referent nodes
-    SNode leastCommonParent_template = myTemplateSourceNode.findLeastCommonParent(myTemplateTargetNode);
-    if (leastCommonParent_template != null) {
-      // find output node for the least common parent template node
-      SNode leastCommonParent_output = getOutputSourceNode();
-      while (leastCommonParent_output != null && generator.findTemplateNodeByOutputNode(leastCommonParent_output) != leastCommonParent_template) {
-        leastCommonParent_output = leastCommonParent_output.getParent();
-      }
-      if (leastCommonParent_output != null) {
-        SNode outputTargetNode = findOutputSubnodeByTemplateNode(generator, leastCommonParent_output, myTemplateTargetNode);
+    // try to find for indirect input nodes
+    if (myInputHistory != null) {
+      for (Pair<SNode, String> nodeAndMappingName : myInputHistory) {
+        outputTargetNode = generator.findOutputNodeByInputAndTemplateNode(nodeAndMappingName.o1, myTemplateTargetNode);
         if (outputTargetNode != null) {
           return outputTargetNode;
         }
       }
     }
 
+    return null;
+  }
+
+  public SNode doResolve_Tricky(TemplateGenerator generator) {
+//    // find least common parent for the template reference and referent nodes
+//    SNode leastCommonParent_template = myTemplateSourceNode.findLeastCommonParent(myTemplateTargetNode);
+//    if (leastCommonParent_template != null) {
+//      // find output node for the least common parent template node
+//      SNode leastCommonParent_output = getOutputSourceNode();
+//      while (leastCommonParent_output != null && generator.findTemplateNodeByOutputNode(leastCommonParent_output) != leastCommonParent_template) {
+//        leastCommonParent_output = leastCommonParent_output.getParent();
+//      }
+//      if (leastCommonParent_output != null) {
+//        SNode outputTargetNode = findOutputSubnodeByTemplateNode(generator, leastCommonParent_output, myTemplateTargetNode);
+//        if (outputTargetNode != null) {
+//          generator.showWarningMessage(myTemplateSourceNode, "!RESOLVED TRICKY!!");
+//          return outputTargetNode;
+//        }
+//      }
+//    }
+
     // resolve anyhow
     SNode outputTargetNode = generator.findOutputNodeByTemplateNode(myTemplateTargetNode, false);
+//    if (outputTargetNode != null) {
+//      generator.showWarningMessage(myTemplateSourceNode, "!RESOLVED SUPER TRICKY!!");
+//      generator.showWarningMessage(getOutputSourceNode(), "-- in output ---");
+//    }
     return outputTargetNode;
   }
 

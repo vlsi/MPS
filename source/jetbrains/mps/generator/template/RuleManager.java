@@ -177,6 +177,7 @@ public class RuleManager {
         List<SNode> outputNodes = GeneratorUtil.applyReductionRule(inputNode, reductionRule, myGenerator);
         SNode oldOutputNode = myGenerator.findOutputNodeById(inputNode.getSNodeId());
         if (outputNodes.size() == 1) {
+          // output node should be accessible via 'findCopiedNode'
           myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, inputNode, outputNodes.get(0));
         }
         oldOutputNode.getParent().replaceChild(oldOutputNode, outputNodes);

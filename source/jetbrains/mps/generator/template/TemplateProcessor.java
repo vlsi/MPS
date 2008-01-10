@@ -252,6 +252,11 @@ public class TemplateProcessor {
       myGenerator.addTopOutputNodeByInputNode(inputNode, outputNode);
     }
     myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
+    if (!myInputHistory.isEmpty()) {
+      for (Pair<SNode, String> nodeAndMappingName : myInputHistory) {
+        myGenerator.addOutputNodeByIndirectInputAndTemplateNode(nodeAndMappingName.o1, templateNode, outputNode);
+      }
+    }
     myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
     myGenerator.addTemplateNodeByOutputNode(outputNode, templateNode);
     myGenerator.addOutputNodeByTemplateNode(templateNode, outputNode);
@@ -323,7 +328,7 @@ public class TemplateProcessor {
         { // register copied node
           myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
           myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
-          // output N should be accessible via 'findCopiedNode'
+          // output node should be accessible via 'findCopiedNode'
           myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, inputNode, outputNode);
 // do we really need this?          myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
 // do we really need this?          myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);
@@ -342,7 +347,7 @@ public class TemplateProcessor {
     { // register copied node
       myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
       myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);
-      // output N should be accessible via 'findCopiedNode'
+      // output node should be accessible via 'findCopiedNode'
       myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, inputNode, outputNode);
 // do we really need this?      myGenerator.addTemplateNodeByOutputNode(outputNode, inputNode);
 // do we really need this?      myGenerator.addOutputNodeByTemplateNode(inputNode, outputNode);

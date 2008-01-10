@@ -308,6 +308,16 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(templateNode, inputNode), outputNode);
   }
 
+  /*package*/ void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, SNode templateNode, SNode outputNode) {
+    // todo: combination of (templateN, inputN) -> outputN
+    // todo: is not unique
+    // todo: generator should repotr error on attempt to obtain not unique output-node
+    Pair key = new Pair(templateNode, inditectInputNode);
+    if (!myTemplateNodeAndInputNodeToOutputNodeMap.containsKey(key)) {
+      myTemplateNodeAndInputNodeToOutputNodeMap.put(key, outputNode);
+    }
+  }
+
   public List<SNode> getTopOutputNodesForInputNode(SNode inputNode) {
     List<SNode> list = myInputeNodeToTopOutputNodesMap.get(inputNode);
     if (list != null) {
