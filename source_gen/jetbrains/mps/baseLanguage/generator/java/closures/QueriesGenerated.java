@@ -8,11 +8,12 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.structure.VariableDeclaration;
+import jetbrains.mps.generator.template.PropertyMacro_ParameterObject;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil;
 
 public class QueriesGenerated {
@@ -69,20 +70,20 @@ public class QueriesGenerated {
     return false;
   }
 
-  public static Object propertyMacro_GetPropertyValue_1170347597854(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return _QueriesUtil.getString_VariableDeclaration_nameInClosureContext(node, generator);
+  public static Object propertyMacro_GetPropertyValue_1170347597854(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return _QueriesUtil.getString_VariableDeclaration_nameInClosureContext(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1170707207731(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return generator.getGeneratorSessionContext().createUniqueName("zClosureContext");
+  public static Object propertyMacro_GetPropertyValue_1170707207731(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().getGeneratorSessionContext().createUniqueName("zClosureContext");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1170707554571(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return generator.getGeneratorSessionContext().createUniqueName("_zClosureContext");
+  public static Object propertyMacro_GetPropertyValue_1170707554571(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().getGeneratorSessionContext().createUniqueName("_zClosureContext");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1170874110540(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.getString(node, "name");
+  public static Object propertyMacro_GetPropertyValue_1170874110540(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return SPropertyOperations.getString(_parameterObject.getNode(), "name");
   }
 
   public static Object referenceMacro_GetReferent_1170294467354(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {

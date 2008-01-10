@@ -6,15 +6,16 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRule_ParameterObject;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.generator.template.PropertyMacro_ParameterObject;
+import jetbrains.mps.closures.constraints.FunctionType_Behavior;
+import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.closures.constraints.FunctionType_Behavior;
-import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.Collections;
 import java.util.Comparator;
@@ -28,13 +29,13 @@ public class QueriesGenerated {
     return !(SequenceOperations.isEmpty(SModelOperations.getNodes(_parameterObject.getSourceModel(), "jetbrains.mps.closures.structure.ClosureLiteral")));
   }
 
-  public static Object propertyMacro_GetPropertyValue_1199652367054(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    String shortName = "_FunctionTypes." + FunctionType_Behavior.call_getSignature_1199633062014(node);
-    return JavaNameUtil.fqClassName(sourceModel, shortName);
+  public static Object propertyMacro_GetPropertyValue_1199652367054(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    String shortName = "_FunctionTypes." + FunctionType_Behavior.call_getSignature_1199633062014(_parameterObject.getNode());
+    return JavaNameUtil.fqClassName(_parameterObject.getSourceModel(), shortName);
   }
 
-  public static Object propertyMacro_GetPropertyValue_1199624292228(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return FunctionType_Behavior.call_getSignature_1199633062014(node);
+  public static Object propertyMacro_GetPropertyValue_1199624292228(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return FunctionType_Behavior.call_getSignature_1199633062014(_parameterObject.getNode());
   }
 
   public static Object referenceMacro_GetReferent_1199624866931(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {

@@ -892,6 +892,9 @@
       <property name="value" value="property value" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1199960063743">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1199874763892" resolveInfo="usesParameterObject" />
+    </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1167756221419">
     <property name="name" value="TemplateFunctionParameter_templatePropertyValue" />

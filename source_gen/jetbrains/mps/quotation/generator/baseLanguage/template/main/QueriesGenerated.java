@@ -5,17 +5,18 @@ package jetbrains.mps.quotation.generator.baseLanguage.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.BaseMappingRule_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.generator.template.PropertyMacro_ParameterObject;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement;
+import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.quotation.structure.PropertyAntiquotation_AnnotationLink;
@@ -29,60 +30,60 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_parameterObject.getNode(), "modelToCreate", true) != null;
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196351886734(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return "quotedNode_" + node.getId();
+  public static Object propertyMacro_GetPropertyValue_1196351886734(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return "quotedNode_" + _parameterObject.getNode().getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196351886765(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return node.getConceptFqName();
+  public static Object propertyMacro_GetPropertyValue_1196351886765(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getNode().getConceptFqName();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196351886787(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return node.getProperty("propertyName");
+  public static Object propertyMacro_GetPropertyValue_1196351886787(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getNode().getProperty("propertyName");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196351886795(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return node.getProperty("propertyValue");
+  public static Object propertyMacro_GetPropertyValue_1196351886795(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getNode().getProperty("propertyValue");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196871487518(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(node.getRole_());
+  public static Object propertyMacro_GetPropertyValue_1196871487518(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(_parameterObject.getNode().getRole_());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196351886850(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return node.getProperty("role");
+  public static Object propertyMacro_GetPropertyValue_1196351886850(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getNode().getProperty("role");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196351886860(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return node.getProperty("targetModel");
+  public static Object propertyMacro_GetPropertyValue_1196351886860(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getNode().getProperty("targetModel");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196351886869(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return node.getProperty("targetNodeId");
+  public static Object propertyMacro_GetPropertyValue_1196351886869(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getNode().getProperty("targetNodeId");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196351886945(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(node.getRole_());
+  public static Object propertyMacro_GetPropertyValue_1196351886945(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(_parameterObject.getNode().getRole_());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196351887148(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return node.getRole_();
+  public static Object propertyMacro_GetPropertyValue_1196351887148(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getNode().getRole_();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196860193017(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return node.getRole_();
+  public static Object propertyMacro_GetPropertyValue_1196860193017(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getNode().getRole_();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196351887499(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return node.getRole_();
+  public static Object propertyMacro_GetPropertyValue_1196351887499(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getNode().getRole_();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196351887859(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return "parameter_" + node.getId();
+  public static Object propertyMacro_GetPropertyValue_1196351887859(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return "parameter_" + _parameterObject.getNode().getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_1196351887869(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return generator.getGeneratorSessionContext().createUniqueName("QuotationClass_");
+  public static Object propertyMacro_GetPropertyValue_1196351887869(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().getGeneratorSessionContext().createUniqueName("QuotationClass_");
   }
 
   public static Object referenceMacro_GetReferent_1196351886638(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {

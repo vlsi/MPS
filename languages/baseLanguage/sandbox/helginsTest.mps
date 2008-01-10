@@ -2,13 +2,61 @@
 <model name="jetbrains.mps.baseLanguage.sandbox.helginsTest">
   <persistence version="1" />
   <refactoringHistory />
-  <language namespace="jetbrains.mps.baseLanguage" />
-  <language namespace="jetbrains.mps.bootstrap.helgins" />
-  <language namespace="jetbrains.mps.core" />
-  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" />
-  <language namespace="jetbrains.mps.bootstrap.smodelLanguage" />
-  <language namespace="jetbrains.mps.transformation.TLBase" />
-  <language namespace="jetbrains.mps.quotation" />
+  <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.bootstrap.helgins">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.helgins.intentions" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.core">
+    <languageAspect modelUID="jetbrains.mps.core.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.core.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.core.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.core.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.core.structure" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.actions" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.transformation.TLBase">
+    <languageAspect modelUID="jetbrains.mps.transformation.TLBase.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.transformation.TLBase.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.transformation.TLBase.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.transformation.TLBase.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.transformation.TLBase.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.transformation.TLBase.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.transformation.TLBase.constraints" version="-1" />
+  </language>
+  <language namespace="jetbrains.mps.quotation">
+    <languageAspect modelUID="jetbrains.mps.quotation.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.quotation.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.quotation.editor" version="-1" />
+  </language>
   <maxImportIndex value="6" />
   <import index="1" modelUID="java.util@java_stub" version="-1" />
   <import index="2" modelUID="java.lang@java_stub" version="-1" />
@@ -566,49 +614,6 @@
       <link role="classifier" targetNodeId="1188945707402" resolveInfo="GenericParm_base" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1188945790604">
         <link role="classifier" targetNodeId="2.~String" resolveInfo="String" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.transformation.TLBase.structure.TemplateDeclaration" id="1190107724478">
-    <property name="name" value="Test" />
-    <link role="applicableConcept" targetNodeId="6.1068580123136" />
-    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1190107741339">
-      <node role="templateFragment$attribute" type="jetbrains.mps.transformation.TLBase.structure.TemplateFragment" id="1190107747840" />
-      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1190107797234">
-        <node role="expression" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCall" id="1190107804310">
-          <link role="baseMethodDeclaration" targetNodeId="3.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
-          <node role="instance" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1190107797235">
-            <link role="classifier" targetNodeId="2.~System" resolveInfo="System" />
-            <link role="variableDeclaration" targetNodeId="2.~System.out" resolveInfo="out" />
-          </node>
-          <node role="nodeMacro$attribute" type="jetbrains.mps.transformation.TLBase.structure.LoopMacro" id="1190108405218">
-            <node role="sourceNodesQuery" type="jetbrains.mps.transformation.TLBase.structure.SourceSubstituteMacro_SourceNodesQuery" id="1190108405219">
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1190108405220">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1190108492147">
-                  <node role="expression" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression" id="1190108495258">
-                    <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SLinkListAccess" id="1190108497902">
-                      <link role="link" targetNodeId="6.1068581517665" />
-                    </node>
-                    <node role="leftExpression" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1190108492148" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1190108418924">
-            <property name="value" value="sds" />
-            <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro" id="1190108428378">
-              <link role="property" targetNodeId="6.1070475926801" />
-              <node role="propertyValueFunction" type="jetbrains.mps.transformation.TLBase.structure.PropertyMacro_GetPropertyValue" id="1190108428379">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1190108428380">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1190108506137">
-                    <node role="expression" type="jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode" id="1190108506138" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </node>
