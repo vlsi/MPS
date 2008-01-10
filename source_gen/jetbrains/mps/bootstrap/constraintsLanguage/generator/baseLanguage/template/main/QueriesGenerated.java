@@ -17,10 +17,11 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.NodePropertyConstraint_Behavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDeclaration_Behavior;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.DataTypeDeclaration_Behavior;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
@@ -193,39 +194,39 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_parameterObject.getNode(), "name");
   }
 
-  public static Object referenceMacro_GetReferent_1194605886822(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "parameters");
+  public static Object referenceMacro_GetReferent_1194605886822(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "parameters");
   }
 
-  public static Object referenceMacro_GetReferent_1194605811159(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "parameters");
+  public static Object referenceMacro_GetReferent_1194605811159(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "parameters");
   }
 
-  public static Object referenceMacro_GetReferent_1194605928349(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "parameters");
+  public static Object referenceMacro_GetReferent_1194605928349(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "parameters");
   }
 
-  public static Object referenceMacro_GetReferent_1194605982656(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "parameters");
+  public static Object referenceMacro_GetReferent_1194605982656(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "parameters");
   }
 
-  public static Object referenceMacro_GetReferent_1194966901464(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode snode = generator.findOutputNodeByInputNodeAndMappingName(node, "class_for_concept");
+  public static Object referenceMacro_GetReferent_1194966901464(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode snode = _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "class_for_concept");
     return SequenceOperations.getFirst(SLinkOperations.getTargets(snode, "constructor", true));
   }
 
-  public static Object referenceMacro_GetReferent_1194967347554(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode snode = generator.findOutputNodeByInputNodeAndMappingName(node, "class_for_concept");
+  public static Object referenceMacro_GetReferent_1194967347554(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode snode = _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "class_for_concept");
     return SequenceOperations.getFirst(SLinkOperations.getTargets(snode, "constructor", true));
   }
 
-  public static Object referenceMacro_GetReferent_1194967351492(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode snode = generator.findOutputNodeByInputNodeAndMappingName(node, "class_for_concept");
+  public static Object referenceMacro_GetReferent_1194967351492(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode snode = _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "class_for_concept");
     return SequenceOperations.getFirst(SLinkOperations.getTargets(snode, "constructor", true));
   }
 
-  public static Object referenceMacro_GetReferent_1198586190309(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode propertyConstraint = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint", false, false);
+  public static Object referenceMacro_GetReferent_1198586190309(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode propertyConstraint = SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.bootstrap.constraintsLanguage.structure.NodePropertyConstraint", false, false);
     SNode property = SLinkOperations.getTarget(propertyConstraint, "applicableProperty", false);
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
     if(dataType == null) {

@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacro_ParameterObject;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
@@ -18,10 +19,10 @@ public class QueriesGenerated {
     return NameUtil.getGetterName(SConceptPropertyOperations.getString(_parameterObject.getNode(), "alias"));
   }
 
-  public static Object referenceMacro_GetReferent_1170351924342(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    String alias = SConceptPropertyOperations.getString(node, "alias");
+  public static Object referenceMacro_GetReferent_1170351924342(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    String alias = SConceptPropertyOperations.getString(_parameterObject.getNode(), "alias");
     if(alias == null) {
-      generator.showErrorMessage(node, templateNode, "concept function parm has no <alias> - can't map it to method parameter");
+      _parameterObject.getGenerator().showErrorMessage(_parameterObject.getNode(), _parameterObject.getTemplateNode(), "concept function parm has no <alias> - can't map it to method parameter");
     }
     return alias;
   }

@@ -9,14 +9,16 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.PropertyMacro_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference;
+import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
+import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.template.util.QueriesUtil;
+import jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachVariableReference;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 
 public class QueriesGenerated {
@@ -118,16 +120,16 @@ public class QueriesGenerated {
     return _parameterObject.getGenerator().getGeneratorSessionContext().createUniqueName("zComparator");
   }
 
-  public static Object referenceMacro_GetReferent_1170982686718(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return _QueriesUtil.resolve_ForEachVariableReference(((ForEachVariableReference)SNodeOperations.getAdapter(node)), templateNode, generator);
+  public static Object referenceMacro_GetReferent_1170982686718(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _QueriesUtil.resolve_ForEachVariableReference(((ForEachVariableReference)SNodeOperations.getAdapter(_parameterObject.getNode())), _parameterObject.getTemplateNode(), _parameterObject.getGenerator());
   }
 
-  public static Object referenceMacro_GetReferent_1172276865420(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return SLinkOperations.getTarget(node, "classifier", false);
+  public static Object referenceMacro_GetReferent_1172276865420(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "classifier", false);
   }
 
-  public static Object referenceMacro_GetReferent_1184984218976(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true));
+  public static Object referenceMacro_GetReferent_1184984218976(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "leftExpression", true));
     SNode elementType = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType"), true), "elementType", true);
     return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce(elementType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true), "classifier", false);
   }

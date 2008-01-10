@@ -20,9 +20,10 @@ import jetbrains.mps.bootstrap.smodelLanguage.SModelLanguageUtil;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDeclaration_Behavior;
 import jetbrains.mps.core.constraints.INamedConcept_Behavior;
+import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration;
 import jetbrains.mps.smodel.DataTypeUtil;
@@ -519,20 +520,20 @@ public class QueriesGenerated {
     return NameUtil.nodeFQName(parmConcept);
   }
 
-  public static Object referenceMacro_GetReferent_1170457360268(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return _QueriesUtil.get_SPropertyAccess_simple_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(node)), generator.getScope());
+  public static Object referenceMacro_GetReferent_1170457360268(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _QueriesUtil.get_SPropertyAccess_simple_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(_parameterObject.getNode())), _parameterObject.getGenerator().getScope());
   }
 
-  public static Object referenceMacro_GetReferent_1170461142999(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return _QueriesUtil.get_SPropertyAccess_enum_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(node)), generator.getScope());
+  public static Object referenceMacro_GetReferent_1170461142999(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _QueriesUtil.get_SPropertyAccess_enum_getterMethod(((SPropertyAccess)SNodeOperations.getAdapter(_parameterObject.getNode())), _parameterObject.getGenerator().getScope());
   }
 
-  public static Object referenceMacro_GetReferent_1168984233974(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return _QueriesUtil.get_SConceptPropertyAccess_GetMethod(((SConceptPropertyAccess)SNodeOperations.getAdapter(node)), generator.getScope());
+  public static Object referenceMacro_GetReferent_1168984233974(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _QueriesUtil.get_SConceptPropertyAccess_GetMethod(((SConceptPropertyAccess)SNodeOperations.getAdapter(_parameterObject.getNode())), _parameterObject.getGenerator().getScope());
   }
 
-  public static Object referenceMacro_GetReferent_1170386916206(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(node), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
+  public static Object referenceMacro_GetReferent_1170386916206(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(_parameterObject.getNode()), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     return SLinkOperations.getTarget(nodeType, "classifier", false);
   }
 

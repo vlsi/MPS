@@ -67,27 +67,16 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       return null;
     }
 
-    SNode templateValue = myTemplateReferenceNode.getReferent(role);
     String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function.getNode());
-    Object[] args_old = new Object[]{
-            getInputNode(),
-            templateValue,
-            myTemplateReferenceNode,
-            generator.getInputModel(),
-            generator,
-            generator.getScope(),
-            generator.getGeneratorSessionContext()};
-
-    Object[] args_new = new Object[]{
-            getInputNode(),
-            myTemplateReferenceNode,
-            getOutputSourceNode(),
-            generator.getInputModel(),
-            generator};
-
     SNode outputTargetNode = null;
     try {
-      Object result = QueryMethodGenerated.invoke_GetReferent(methodName, args_old, args_new, myReferenceMacro.getModel());
+      Object result;
+      result = QueryMethodGenerated.invoke(
+              methodName,
+              generator.getGeneratorSessionContext(),
+              new ReferenceMacro_ParameterObject(getInputNode(), myTemplateReferenceNode, getOutputSourceNode(), generator.getInputModel(), generator),
+              myReferenceMacro.getModel());
+
       if (result instanceof SNode) {
         outputTargetNode = (SNode) result;
       } else {

@@ -21,6 +21,7 @@ import jetbrains.mps.regexp.structure.Regexp;
 import jetbrains.mps.regexp.constraints.Regexp_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.regex.Pattern;
+import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 
@@ -135,20 +136,20 @@ public class QueriesGenerated {
     return _parameterObject.getGenerator().getGeneratorSessionContext().createUniqueName("REGEXP");
   }
 
-  public static Object referenceMacro_GetReferent_1194610323562(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "precompiledRegexp");
+  public static Object referenceMacro_GetReferent_1194610323562(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "precompiledRegexp");
   }
 
-  public static Object referenceMacro_GetReferent_1174655509856(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return GeneratorUtil.findOutputMatcher(generator, node);
+  public static Object referenceMacro_GetReferent_1174655509856(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return GeneratorUtil.findOutputMatcher(_parameterObject.getGenerator(), _parameterObject.getNode());
   }
 
-  public static Object referenceMacro_GetReferent_1175155997041(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return GeneratorUtil.findOutputMatcher(generator, node);
+  public static Object referenceMacro_GetReferent_1175155997041(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return GeneratorUtil.findOutputMatcher(_parameterObject.getGenerator(), _parameterObject.getNode());
   }
 
-  public static Object referenceMacro_GetReferent_1175170026388(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return GeneratorUtil.findOutputMatcher(generator, node);
+  public static Object referenceMacro_GetReferent_1175170026388(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return GeneratorUtil.findOutputMatcher(_parameterObject.getGenerator(), _parameterObject.getNode());
   }
 
   public static List sourceNodesQuery_1194610249636(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

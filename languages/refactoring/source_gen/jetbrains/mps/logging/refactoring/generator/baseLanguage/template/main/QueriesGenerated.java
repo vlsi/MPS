@@ -11,9 +11,10 @@ import jetbrains.mps.generator.template.PropertyMacro_ParameterObject;
 import jetbrains.mps.bootstrap.editorLanguage.constraints.CellKeyMapKeystroke_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import java.util.ArrayList;
@@ -119,10 +120,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1197995546008(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
     {
-      Pattern_ pattern_1199960776568 = new Pattern_();
-      SNode coercedNode_1199960776567 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true), pattern_1199960776568);
-      if(coercedNode_1199960776567 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1199960776568.PatternVar;
+      Pattern_ pattern_1199961653673 = new Pattern_();
+      SNode coercedNode_1199961653672 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true), pattern_1199961653673);
+      if(coercedNode_1199961653672 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_1199961653673.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }
@@ -157,27 +158,27 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_parameterObject.getNode(), "argument", false), "name");
   }
 
-  public static Object referenceMacro_GetReferent_1197996022708(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "componentCreator");
+  public static Object referenceMacro_GetReferent_1197996022708(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "componentCreator");
   }
 
-  public static Object referenceMacro_GetReferent_1198600564705(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "initialValue");
+  public static Object referenceMacro_GetReferent_1198600564705(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "initialValue");
   }
 
-  public static Object referenceMacro_GetReferent_1198674119034(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "conditionConstructor");
+  public static Object referenceMacro_GetReferent_1198674119034(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "conditionConstructor");
   }
 
-  public static Object referenceMacro_GetReferent_1189764427569(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode conceptFunction = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
-    SNode method = (SNode)generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
+  public static Object referenceMacro_GetReferent_1189764427569(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode conceptFunction = SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
+    SNode method = (SNode)_parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
     return ListOperations.getElement(SLinkOperations.getTargets(method, "parameter", true), 1);
   }
 
-  public static Object referenceMacro_GetReferent_1198175268220(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode conceptFunction = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
-    SNode method = (SNode)generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
+  public static Object referenceMacro_GetReferent_1198175268220(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode conceptFunction = SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false);
+    SNode method = (SNode)_parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(conceptFunction, "body", true), "methodBody").getParent().getParent().getParent();
     return ListOperations.getElement(SLinkOperations.getTargets(method, "parameter", true), 1);
   }
 

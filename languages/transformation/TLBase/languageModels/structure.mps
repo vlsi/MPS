@@ -938,6 +938,9 @@
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
       <link role="target" targetNodeId="1166749287094" resolveInfo="TemplateFunctionParameter_generator" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1199961311635">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1199874763892" resolveInfo="usesParameterObject" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1167770111140">
       <property name="value" value="get referent" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />

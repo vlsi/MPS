@@ -7,15 +7,16 @@ import jetbrains.mps.generator.template.BaseMappingRule_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacro_ParameterObject;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import java.util.ArrayList;
@@ -86,30 +87,30 @@ public class QueriesGenerated {
     return _parameterObject.getGenerator().getGeneratorSessionContext().createUniqueName("QuotationClass_");
   }
 
-  public static Object referenceMacro_GetReferent_1196351886638(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(node, "modelToCreate", true), "parametersFromExpressions");
+  public static Object referenceMacro_GetReferent_1196351886638(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(_parameterObject.getNode(), "modelToCreate", true), "parametersFromExpressions");
   }
 
-  public static Object referenceMacro_GetReferent_1197034040799(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode quotation = SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
-    SNode antiquotation = node;
+  public static Object referenceMacro_GetReferent_1197034040799(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode quotation = SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.quotation.structure.Quotation", false, false);
+    SNode antiquotation = _parameterObject.getNode();
     if(antiquotation == null) {
       return null;
     }
-    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
   }
 
-  public static Object referenceMacro_GetReferent_1196351886954(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode quotation = SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
-    SNode antiquotation = node;
+  public static Object referenceMacro_GetReferent_1196351886954(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode quotation = SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.quotation.structure.Quotation", false, false);
+    SNode antiquotation = _parameterObject.getNode();
     if(antiquotation == null) {
       return null;
     }
-    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
   }
 
-  public static Object referenceMacro_GetReferent_1196351887055(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode parentTargetNode = generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "quotationClass");
+  public static Object referenceMacro_GetReferent_1196351887055(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode parentTargetNode = _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "quotationClass");
     ClassConcept quotationClass = (ClassConcept)BaseAdapter.fromNode(parentTargetNode);
     InstanceMethodDeclaration methodDecl = quotationClass.getMethods().get(0);
     StatementList statementList = methodDecl.getBody();
@@ -117,17 +118,17 @@ public class QueriesGenerated {
     return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
   }
 
-  public static Object referenceMacro_GetReferent_1196351887115(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode parentTargetNode = generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "nodeCreatorForQuotedNode");
+  public static Object referenceMacro_GetReferent_1196351887115(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode parentTargetNode = _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "nodeCreatorForQuotedNode");
     StatementList statementList = (StatementList)BaseAdapter.fromNode(parentTargetNode);
     LocalVariableDeclarationStatement lvs = (LocalVariableDeclarationStatement)statementList.getStatements().get(0);
     return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
   }
 
-  public static Object referenceMacro_GetReferent_1196351887203(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode quotation = SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
+  public static Object referenceMacro_GetReferent_1196351887203(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode quotation = SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.quotation.structure.Quotation", false, false);
     SNode antiquotation = null;
-    for(SNode child : SNodeOperations.getChildren(node)) {
+    for(SNode child : SNodeOperations.getChildren(_parameterObject.getNode())) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.Antiquotation")) {
         antiquotation = child;
         break;
@@ -136,11 +137,11 @@ public class QueriesGenerated {
     if(antiquotation == null) {
       return null;
     }
-    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
   }
 
-  public static Object referenceMacro_GetReferent_1196860200838(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode parentTargetNode = generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "quotationClass");
+  public static Object referenceMacro_GetReferent_1196860200838(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode parentTargetNode = _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "quotationClass");
     ClassConcept quotationClass = (ClassConcept)BaseAdapter.fromNode(parentTargetNode);
     InstanceMethodDeclaration methodDecl = quotationClass.getMethods().get(0);
     StatementList statementList = methodDecl.getBody();
@@ -148,17 +149,17 @@ public class QueriesGenerated {
     return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
   }
 
-  public static Object referenceMacro_GetReferent_1196860192984(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode parentTargetNode = generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "nodeCreatorForQuotedNode");
+  public static Object referenceMacro_GetReferent_1196860192984(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode parentTargetNode = _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "nodeCreatorForQuotedNode");
     StatementList statementList = (StatementList)BaseAdapter.fromNode(parentTargetNode);
     LocalVariableDeclarationStatement lvs = (LocalVariableDeclarationStatement)statementList.getStatements().get(0);
     return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
   }
 
-  public static Object referenceMacro_GetReferent_1196351887411(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode quotation = SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
+  public static Object referenceMacro_GetReferent_1196351887411(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode quotation = SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.quotation.structure.Quotation", false, false);
     SNode antiquotation = null;
-    for(SNode child : SNodeOperations.getChildren(node)) {
+    for(SNode child : SNodeOperations.getChildren(_parameterObject.getNode())) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.ListAntiquotation")) {
         antiquotation = child;
         break;
@@ -167,11 +168,11 @@ public class QueriesGenerated {
     if(antiquotation == null) {
       return null;
     }
-    return generator.findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(antiquotation, "expression", true), "parametersFromExpressions");
   }
 
-  public static Object referenceMacro_GetReferent_1196351887466(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode parentTargetNode = generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "nodeCreatorForQuotedNode");
+  public static Object referenceMacro_GetReferent_1196351887466(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode parentTargetNode = _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "nodeCreatorForQuotedNode");
     StatementList statementList = (StatementList)BaseAdapter.fromNode(parentTargetNode);
     LocalVariableDeclarationStatement lvs = (LocalVariableDeclarationStatement)statementList.getStatements().get(0);
     return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());

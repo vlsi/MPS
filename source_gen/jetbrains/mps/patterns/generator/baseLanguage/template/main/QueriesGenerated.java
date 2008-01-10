@@ -5,8 +5,7 @@ package jetbrains.mps.patterns.generator.baseLanguage.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacro_ParameterObject;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.bootstrap.helgins.structure.Antiquotation_AnnotationLink;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -18,6 +17,8 @@ import jetbrains.mps.quotation.structure.AbstractAntiquotation;
 import jetbrains.mps.patterns.structure.AsPattern_AnnotationLink;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.patterns.structure.AsPattern;
 import jetbrains.mps.patterns.structure.Pattern;
@@ -98,92 +99,92 @@ public class QueriesGenerated {
     return "childVar_" + _parameterObject.getNode().getId();
   }
 
-  public static Object referenceMacro_GetReferent_1176737467861(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "antiquotations");
+  public static Object referenceMacro_GetReferent_1176737467861(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "antiquotations");
   }
 
-  public static Object referenceMacro_GetReferent_1176737471291(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "antiquotationParameters");
+  public static Object referenceMacro_GetReferent_1176737471291(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "antiquotationParameters");
   }
 
-  public static Object referenceMacro_GetReferent_1190931376965(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "matchMethodParameter");
+  public static Object referenceMacro_GetReferent_1190931376965(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "matchMethodParameter");
   }
 
-  public static Object referenceMacro_GetReferent_1190931376991(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "childVar");
+  public static Object referenceMacro_GetReferent_1190931376991(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "childVar");
   }
 
-  public static Object referenceMacro_GetReferent_1190931377016(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode antiquotation = node.getAttribute(Antiquotation_AnnotationLink.ANTIQUOTATION);
-    return generator.findOutputNodeByInputNodeAndMappingName(antiquotation, "antiquotations");
+  public static Object referenceMacro_GetReferent_1190931377016(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode antiquotation = _parameterObject.getNode().getAttribute(Antiquotation_AnnotationLink.ANTIQUOTATION);
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(antiquotation, "antiquotations");
   }
 
-  public static Object referenceMacro_GetReferent_1190931377055(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return SModelUtil_new.getAdapterClassConceptForConceptDeclaration((ConceptDeclaration)BaseAdapter.fromNode(SNodeOperations.getConceptDeclaration(node)), GlobalScope.getInstance()).getNode();
+  public static Object referenceMacro_GetReferent_1190931377055(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return SModelUtil_new.getAdapterClassConceptForConceptDeclaration((ConceptDeclaration)BaseAdapter.fromNode(SNodeOperations.getConceptDeclaration(_parameterObject.getNode())), GlobalScope.getInstance()).getNode();
   }
 
-  public static Object referenceMacro_GetReferent_1190931377156(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    String propertyName = node.getProperty("propertyName");
-    SNode mainNode = node.getReferent("mainNode");
+  public static Object referenceMacro_GetReferent_1190931377156(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    String propertyName = _parameterObject.getNode().getProperty("propertyName");
+    SNode mainNode = _parameterObject.getNode().getReferent("mainNode");
     SNode propertyPattern = mainNode.getPropertyAttribute(propertyName);
-    return generator.findOutputNodeByInputNodeAndMappingName(propertyPattern, "patternVarField");
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(propertyPattern, "patternVarField");
   }
 
-  public static Object referenceMacro_GetReferent_1190931377315(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    String refRole = node.getProperty("referentRole");
-    SNode mainNode = node.getReferent("mainNode");
+  public static Object referenceMacro_GetReferent_1190931377315(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    String refRole = _parameterObject.getNode().getProperty("referentRole");
+    SNode mainNode = _parameterObject.getNode().getReferent("mainNode");
     SNode refAntiq = mainNode.getLinkAttribute(ReferenceAntiquotation_AnnotationLink.REFERENCE_ANTIQUOTATION, refRole);
-    return generator.findOutputNodeByInputNodeAndMappingName(refAntiq.getChild(AbstractAntiquotation.EXPRESSION), "antiquotations");
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(refAntiq.getChild(AbstractAntiquotation.EXPRESSION), "antiquotations");
   }
 
-  public static Object referenceMacro_GetReferent_1190931377499(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    String referentRole = node.getProperty("referentRole");
-    SNode mainNode = node.getReferent("mainNode");
+  public static Object referenceMacro_GetReferent_1190931377499(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    String referentRole = _parameterObject.getNode().getProperty("referentRole");
+    SNode mainNode = _parameterObject.getNode().getReferent("mainNode");
     SNode linkPattern = mainNode.getLinkAttribute(referentRole);
-    return generator.findOutputNodeByInputNodeAndMappingName(linkPattern, "patternVarField");
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(linkPattern, "patternVarField");
   }
 
-  public static Object referenceMacro_GetReferent_1190931377635(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode attribute = node.getAttribute();
-    return generator.findOutputNodeByInputNodeAndMappingName(attribute, "patternVarField");
+  public static Object referenceMacro_GetReferent_1190931377635(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode attribute = _parameterObject.getNode().getAttribute();
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(attribute, "patternVarField");
   }
 
-  public static Object referenceMacro_GetReferent_1190931377654(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "nodeToMatch");
+  public static Object referenceMacro_GetReferent_1190931377654(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "nodeToMatch");
   }
 
-  public static Object referenceMacro_GetReferent_1190931377722(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode attribute = node.getAttribute();
-    return generator.findOutputNodeByInputNodeAndMappingName(attribute, "patternVarField");
+  public static Object referenceMacro_GetReferent_1190931377722(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode attribute = _parameterObject.getNode().getAttribute();
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(attribute, "patternVarField");
   }
 
-  public static Object referenceMacro_GetReferent_1190931377736(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "childVar");
+  public static Object referenceMacro_GetReferent_1190931377736(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "childVar");
   }
 
-  public static Object referenceMacro_GetReferent_1190931377817(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(node))));
-    return generator.findOutputNodeByInputNodeAndMappingName(attribute, "patternVarField");
+  public static Object referenceMacro_GetReferent_1190931377817(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(_parameterObject.getNode()))));
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(attribute, "patternVarField");
   }
 
-  public static Object referenceMacro_GetReferent_1190931377842(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode attribute = node.getAttribute();
-    return generator.findOutputNodeByInputNodeAndMappingName(attribute, "patternVarField");
+  public static Object referenceMacro_GetReferent_1190931377842(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode attribute = _parameterObject.getNode().getAttribute();
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(attribute, "patternVarField");
   }
 
-  public static Object referenceMacro_GetReferent_1190931377894(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode attribute = node.getAttribute();
-    return generator.findOutputNodeByInputNodeAndMappingName(attribute, "patternVarField");
+  public static Object referenceMacro_GetReferent_1190931377894(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode attribute = _parameterObject.getNode().getAttribute();
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(attribute, "patternVarField");
   }
 
-  public static Object referenceMacro_GetReferent_1190931377920(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(node))));
-    return generator.findOutputNodeByInputNodeAndMappingName(attribute, "patternVarField");
+  public static Object referenceMacro_GetReferent_1190931377920(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)((INodeAdapter)SNodeOperations.getAdapter(_parameterObject.getNode()))));
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(attribute, "patternVarField");
   }
 
-  public static Object referenceMacro_GetReferent_1190931377941(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(node, null, false, false), "nodeToMatch");
+  public static Object referenceMacro_GetReferent_1190931377941(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "nodeToMatch");
   }
 
   public static boolean ifMacro_Condition_1176815681743(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

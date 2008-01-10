@@ -9,12 +9,13 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOper
 import jetbrains.mps.generator.template.PropertyMacro_ParameterObject;
 import jetbrains.mps.closures.constraints.FunctionType_Behavior;
 import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.Collections;
@@ -38,10 +39,10 @@ public class QueriesGenerated {
     return FunctionType_Behavior.call_getSignature_1199633062014(_parameterObject.getNode());
   }
 
-  public static Object referenceMacro_GetReferent_1199624866931(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public static Object referenceMacro_GetReferent_1199624866931(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
     final zClosureContext _zClosureContext = new zClosureContext();
-    _zClosureContext.sig = FunctionType_Behavior.call_getSignature_1199633062014(TypeChecker.getInstance().getTypeOf(node));
-    SNode fts = generator.getOutputModel().getRootByName("_FunctionTypes");
+    _zClosureContext.sig = FunctionType_Behavior.call_getSignature_1199633062014(TypeChecker.getInstance().getTypeOf(_parameterObject.getNode()));
+    SNode fts = _parameterObject.getGenerator().getOutputModel().getRootByName("_FunctionTypes");
     return SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getChildren(fts), new zPredicate(null, _zClosureContext)));
   }
 
