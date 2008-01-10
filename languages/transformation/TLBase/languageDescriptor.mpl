@@ -19,7 +19,7 @@
     <model modelUID="jetbrains.mps.transformation.TLBase.editor" />
   </editor>
   <models>
-    <modelRoot path="${language_descriptor}\" namespacePrefix="jetbrains.mps.transformation.TLBase" />
+    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.transformation.TLBase" />
   </models>
   <module />
   <accessoryModels />
