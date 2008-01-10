@@ -198,13 +198,12 @@ public class GeneratorUtil {
       return true;
     }
     String methodName = TemplateFunctionMethodName.createRootRule_Condition(conditionFunction.getNode());
-    Object[] args = new Object[]{
-            generator.getInputModel(),
-            generator,
-            generator.getScope(),
-            generator.getGeneratorSessionContext()};
     try {
-      return (Boolean) QueryMethodGenerated.invoke(methodName, args, createRootRule.getModel());
+      return (Boolean) QueryMethodGenerated.invoke(
+              methodName,
+              generator.getGeneratorSessionContext(),
+              new CreateRootRule_ParameterObject(generator.getInputModel(), generator),
+              createRootRule.getModel());
     } catch (Exception e) {
       generator.showErrorMessage(null, null, BaseAdapter.fromAdapter(createRootRule), "couldn't evaluate rule condition");
       LOG.error(e);
