@@ -17,14 +17,15 @@ import jetbrains.mps.quotation.structure.AbstractAntiquotation;
 import jetbrains.mps.patterns.structure.AsPattern_AnnotationLink;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.INodeAdapter;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.generator.template.IfMacro_ParameterObject;
 import jetbrains.mps.patterns.structure.AsPattern;
 import jetbrains.mps.patterns.structure.Pattern;
 import jetbrains.mps.patterns.structure.PatternVariableDeclaration;
 import java.util.List;
 import jetbrains.mps.patterns.structure.ListPattern;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.smodel.IScope;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration;
@@ -187,95 +188,95 @@ public class QueriesGenerated {
     return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "nodeToMatch");
   }
 
-  public static boolean ifMacro_Condition_1176815681743(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1176815681743(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1174824018407(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1174824018407(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1190931376948(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1190931376948(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1190931376956(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1190931376956(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return false;
   }
 
-  public static boolean ifMacro_Condition_1190931376975(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false) == SNodeOperations.getAncestor(node, "jetbrains.mps.patterns.structure.PatternExpression", false, false);
+  public static boolean ifMacro_Condition_1190931376975(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.getParent(_parameterObject.getNode(), null, false, false) == SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.patterns.structure.PatternExpression", false, false);
   }
 
-  public static boolean ifMacro_Condition_1190931376999(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false) != SNodeOperations.getAncestor(node, "jetbrains.mps.patterns.structure.PatternExpression", false, false);
+  public static boolean ifMacro_Condition_1190931376999(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.getParent(_parameterObject.getNode(), null, false, false) != SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.patterns.structure.PatternExpression", false, false);
   }
 
-  public static boolean ifMacro_Condition_1190931377036(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return node.getAttribute(Antiquotation_AnnotationLink.ANTIQUOTATION) != null;
+  public static boolean ifMacro_Condition_1190931377036(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getNode().getAttribute(Antiquotation_AnnotationLink.ANTIQUOTATION) != null;
   }
 
-  public static boolean ifMacro_Condition_1190931671231(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    String refRole = node.getProperty("referentRole");
-    SNode mainNode = node.getReferent("mainNode");
+  public static boolean ifMacro_Condition_1190931671231(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    String refRole = _parameterObject.getNode().getProperty("referentRole");
+    SNode mainNode = _parameterObject.getNode().getReferent("mainNode");
     return mainNode.getLinkAttribute(ReferenceAntiquotation_AnnotationLink.REFERENCE_ANTIQUOTATION, refRole) == null;
   }
 
-  public static boolean ifMacro_Condition_1190931377347(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    String refRole = node.getProperty("referentRole");
-    SNode mainNode = node.getReferent("mainNode");
+  public static boolean ifMacro_Condition_1190931377347(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    String refRole = _parameterObject.getNode().getProperty("referentRole");
+    SNode mainNode = _parameterObject.getNode().getReferent("mainNode");
     return mainNode.getLinkAttribute(ReferenceAntiquotation_AnnotationLink.REFERENCE_ANTIQUOTATION, refRole) != null;
   }
 
-  public static boolean ifMacro_Condition_1197652523288(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode attribute = node.getAttribute();
+  public static boolean ifMacro_Condition_1197652523288(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode attribute = _parameterObject.getNode().getAttribute();
     return attribute != null;
   }
 
-  public static boolean ifMacro_Condition_1190931377679(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1190931377679(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1190931377695(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode attribute = node.getAttribute();
+  public static boolean ifMacro_Condition_1190931377695(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode attribute = _parameterObject.getNode().getAttribute();
     return attribute == null || attribute.getAdapter() instanceof AsPattern || !(attribute.getAdapter() instanceof Pattern);
   }
 
-  public static boolean ifMacro_Condition_1190931377744(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return BaseAdapter.isInstance(node.getAttribute(), PatternVariableDeclaration.class);
+  public static boolean ifMacro_Condition_1190931377744(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return BaseAdapter.isInstance(_parameterObject.getNode().getAttribute(), PatternVariableDeclaration.class);
   }
 
-  public static boolean ifMacro_Condition_1190931377771(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    String childRole_ = node.getProperty("childRole");
-    SNode mainNode = node.getReferent("mainNode");
+  public static boolean ifMacro_Condition_1190931377771(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    String childRole_ = _parameterObject.getNode().getProperty("childRole");
+    SNode mainNode = _parameterObject.getNode().getReferent("mainNode");
     List<SNode> children = mainNode.getChildren(childRole_);
     SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)children.get(0).getAdapter()));
     return !(BaseAdapter.isInstance(attribute, ListPattern.class));
   }
 
-  public static boolean ifMacro_Condition_1190931377858(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1190931377858(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1190931377867(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode attribute = node.getAttribute();
+  public static boolean ifMacro_Condition_1190931377867(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode attribute = _parameterObject.getNode().getAttribute();
     return attribute == null || attribute.getAdapter() instanceof AsPattern || !(attribute.getAdapter() instanceof Pattern);
   }
 
-  public static boolean ifMacro_Condition_1190931377908(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return BaseAdapter.isInstance(node.getAttribute(), PatternVariableDeclaration.class);
+  public static boolean ifMacro_Condition_1190931377908(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return BaseAdapter.isInstance(_parameterObject.getNode().getAttribute(), PatternVariableDeclaration.class);
   }
 
-  public static boolean ifMacro_Condition_1190931377983(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    String childRole_ = node.getProperty("childRole");
-    SNode mainNode = node.getReferent("mainNode");
+  public static boolean ifMacro_Condition_1190931377983(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    String childRole_ = _parameterObject.getNode().getProperty("childRole");
+    SNode mainNode = _parameterObject.getNode().getReferent("mainNode");
     List<SNode> children = mainNode.getChildren(childRole_);
     SNode attribute = BaseAdapter.fromAdapter(AsPattern_AnnotationLink.getAsPattern((BaseConcept)children.get(0).getAdapter()));
     return BaseAdapter.isInstance(attribute, ListPattern.class);
   }
 
-  public static boolean ifMacro_Condition_1190931378075(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return node.getAttribute(jetbrains.mps.quotation.structure.Antiquotation_AnnotationLink.ANTIQUOTATION) == null;
+  public static boolean ifMacro_Condition_1190931378075(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return _parameterObject.getNode().getAttribute(jetbrains.mps.quotation.structure.Antiquotation_AnnotationLink.ANTIQUOTATION) == null;
   }
 
   public static List sourceNodesQuery_1176737411271(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

@@ -1006,6 +1006,9 @@
       <link role="target" targetNodeId="8.1161622753914" />
       <link role="conceptLinkDeclaration" targetNodeId="6.1161119487665" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty" id="1199962389836">
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1199874763892" resolveInfo="usesParameterObject" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1167945743734">
       <property name="value" value="condition" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />

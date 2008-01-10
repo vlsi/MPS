@@ -18,11 +18,12 @@ import jetbrains.mps.ypath.constraints.TreeNodeKindProperty_Behavior;
 import jetbrains.mps.ypath.constraints.MatchDefaultPropertyOperation_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
+import jetbrains.mps.generator.template.IfMacro_ParameterObject;
+import jetbrains.mps.ypath.constraints.ChildrenBlock_Behavior;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.ypath.constraints.ChildrenBlock_Behavior;
-import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.ypath.constraints.TreePath_Behavior;
@@ -357,262 +358,262 @@ public class QueriesGenerated {
     return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "mn_foundCaseVariable");
   }
 
-  public static boolean ifMacro_Condition_1179324381907(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return ChildrenBlock_Behavior.call_returnsArray_1179319917738(SLinkOperations.getTarget(node, "childrenBlock", true));
+  public static boolean ifMacro_Condition_1179324381907(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return ChildrenBlock_Behavior.call_returnsArray_1179319917738(SLinkOperations.getTarget(_parameterObject.getNode(), "childrenBlock", true));
   }
 
-  public static boolean ifMacro_Condition_1179324381948(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return ChildrenBlock_Behavior.call_returnsSequence_1179319962780(SLinkOperations.getTarget(node, "childrenBlock", true));
+  public static boolean ifMacro_Condition_1179324381948(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return ChildrenBlock_Behavior.call_returnsSequence_1179319962780(SLinkOperations.getTarget(_parameterObject.getNode(), "childrenBlock", true));
   }
 
-  public static boolean ifMacro_Condition_1184166922106(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "usedFeature", false) != null);
+  public static boolean ifMacro_Condition_1184166922106(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "usedFeature", false) != null);
   }
 
-  public static boolean ifMacro_Condition_1198195864021(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "parentBlock", true) != null);
+  public static boolean ifMacro_Condition_1198195864021(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "parentBlock", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1198195897410(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "childrenBlock", true) != null);
+  public static boolean ifMacro_Condition_1198195897410(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "childrenBlock", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1184678704683(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IParamFeature");
+  public static boolean ifMacro_Condition_1184678704683(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IParamFeature");
   }
 
-  public static boolean ifMacro_Condition_1184678720212(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IParamFeature");
+  public static boolean ifMacro_Condition_1184678720212(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IParamFeature");
   }
 
-  public static boolean ifMacro_Condition_1184678734194(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IParamFeature");
+  public static boolean ifMacro_Condition_1184678734194(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IParamFeature");
   }
 
-  public static boolean ifMacro_Condition_1184678850069(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IParamFeature");
+  public static boolean ifMacro_Condition_1184678850069(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IParamFeature");
   }
 
-  public static boolean ifMacro_Condition_1198196013667(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "opposite", false) != null);
+  public static boolean ifMacro_Condition_1198196013667(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "opposite", false) != null);
   }
 
-  public static boolean ifMacro_Condition_1198195669032(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "parentBlock", true) != null);
+  public static boolean ifMacro_Condition_1198195669032(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "parentBlock", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1179320416907(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return ChildrenBlock_Behavior.call_returnsArray_1179319917738(SLinkOperations.getTarget(node, "childrenBlock", true));
+  public static boolean ifMacro_Condition_1179320416907(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return ChildrenBlock_Behavior.call_returnsArray_1179319917738(SLinkOperations.getTarget(_parameterObject.getNode(), "childrenBlock", true));
   }
 
-  public static boolean ifMacro_Condition_1179320446084(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return ChildrenBlock_Behavior.call_returnsSequence_1179319962780(SLinkOperations.getTarget(node, "childrenBlock", true));
+  public static boolean ifMacro_Condition_1179320446084(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return ChildrenBlock_Behavior.call_returnsSequence_1179319962780(SLinkOperations.getTarget(_parameterObject.getNode(), "childrenBlock", true));
   }
 
-  public static boolean ifMacro_Condition_1174921468091(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1174921468091(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return false;
   }
 
-  public static boolean ifMacro_Condition_1179318923021(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return ChildrenBlock_Behavior.call_returnsArray_1179319917738(node);
+  public static boolean ifMacro_Condition_1179318923021(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return ChildrenBlock_Behavior.call_returnsArray_1179319917738(_parameterObject.getNode());
   }
 
-  public static boolean ifMacro_Condition_1179319612012(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return ChildrenBlock_Behavior.call_returnsSequence_1179319962780(node);
+  public static boolean ifMacro_Condition_1179319612012(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return ChildrenBlock_Behavior.call_returnsSequence_1179319962780(_parameterObject.getNode());
   }
 
-  public static boolean ifMacro_Condition_1180089067786(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1180089067786(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return false;
   }
 
-  public static boolean ifMacro_Condition_1184674010592(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IParamFeature");
+  public static boolean ifMacro_Condition_1184674010592(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IParamFeature");
   }
 
-  public static boolean ifMacro_Condition_1184674063709(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IParamFeature");
+  public static boolean ifMacro_Condition_1184674063709(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IParamFeature");
   }
 
-  public static boolean ifMacro_Condition_1184673946539(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IParamFeature");
+  public static boolean ifMacro_Condition_1184673946539(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IParamFeature");
   }
 
-  public static boolean ifMacro_Condition_1183985609301(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.getBoolean(node, "writable");
+  public static boolean ifMacro_Condition_1183985609301(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SPropertyOperations.getBoolean(_parameterObject.getNode(), "writable");
   }
 
-  public static boolean ifMacro_Condition_1183985702623(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.getBoolean(node, "writable");
+  public static boolean ifMacro_Condition_1183985702623(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SPropertyOperations.getBoolean(_parameterObject.getNode(), "writable");
   }
 
-  public static boolean ifMacro_Condition_1183985717977(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.getBoolean(node, "writable");
+  public static boolean ifMacro_Condition_1183985717977(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SPropertyOperations.getBoolean(_parameterObject.getNode(), "writable");
   }
 
-  public static boolean ifMacro_Condition_1184674099559(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IParamFeature");
+  public static boolean ifMacro_Condition_1184674099559(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IParamFeature");
   }
 
-  public static boolean ifMacro_Condition_1184674123252(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IParamFeature");
+  public static boolean ifMacro_Condition_1184674123252(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IParamFeature");
   }
 
-  public static boolean ifMacro_Condition_1184674113457(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IParamFeature");
+  public static boolean ifMacro_Condition_1184674113457(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IParamFeature");
   }
 
-  public static boolean ifMacro_Condition_1184066732287(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.getBoolean(node, "writable");
+  public static boolean ifMacro_Condition_1184066732287(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SPropertyOperations.getBoolean(_parameterObject.getNode(), "writable");
   }
 
-  public static boolean ifMacro_Condition_1192793707454(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature");
+  public static boolean ifMacro_Condition_1192793707454(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature");
   }
 
-  public static boolean ifMacro_Condition_1196434617040(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(node, "writable");
+  public static boolean ifMacro_Condition_1196434617040(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(_parameterObject.getNode(), "writable");
   }
 
-  public static boolean ifMacro_Condition_1196442565655(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate10(null, null)));
+  public static boolean ifMacro_Condition_1196442565655(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate10(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate11(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196442565756(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate12(null, null)));
+  public static boolean ifMacro_Condition_1196442565756(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate12(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate13(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196442565872(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate14(null, null)));
+  public static boolean ifMacro_Condition_1196442565872(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate14(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate15(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196442565981(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate16(null, null)));
+  public static boolean ifMacro_Condition_1196442565981(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate16(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate17(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196435508014(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate18(null, null)));
+  public static boolean ifMacro_Condition_1196435508014(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate18(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate19(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196436037113(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate20(null, null)));
+  public static boolean ifMacro_Condition_1196436037113(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate20(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate21(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196441959084(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate22(null, null)));
+  public static boolean ifMacro_Condition_1196441959084(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate22(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate23(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196442175260(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate24(null, null)));
+  public static boolean ifMacro_Condition_1196442175260(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate24(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate25(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1195424433852(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(node, "writable");
+  public static boolean ifMacro_Condition_1195424433852(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(_parameterObject.getNode(), "writable");
   }
 
-  public static boolean ifMacro_Condition_1196462910322(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate26(null, null)));
+  public static boolean ifMacro_Condition_1196462910322(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate26(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate27(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196462910425(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate28(null, null)));
+  public static boolean ifMacro_Condition_1196462910425(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate28(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate29(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196462910543(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate30(null, null)));
+  public static boolean ifMacro_Condition_1196462910543(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate30(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate31(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196462910653(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate32(null, null)));
+  public static boolean ifMacro_Condition_1196462910653(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate32(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate33(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196462910753(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate34(null, null)));
+  public static boolean ifMacro_Condition_1196462910753(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate34(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate35(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196462910853(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate36(null, null)));
+  public static boolean ifMacro_Condition_1196462910853(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate36(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate37(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196462910969(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate38(null, null)));
+  public static boolean ifMacro_Condition_1196462910969(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate38(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate39(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196462911078(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate40(null, null)));
+  public static boolean ifMacro_Condition_1196462911078(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate40(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate41(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1195424511234(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(node, "writable");
+  public static boolean ifMacro_Condition_1195424511234(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature") && SPropertyOperations.getBoolean(_parameterObject.getNode(), "writable");
   }
 
-  public static boolean ifMacro_Condition_1196463629409(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate42(null, null)));
+  public static boolean ifMacro_Condition_1196463629409(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate42(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate43(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196463773120(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate44(null, null)));
+  public static boolean ifMacro_Condition_1196463773120(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate44(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate45(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196463934763(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate46(null, null)));
+  public static boolean ifMacro_Condition_1196463934763(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate46(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate47(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196463986584(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate48(null, null)));
+  public static boolean ifMacro_Condition_1196463986584(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate48(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate49(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196464033298(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate50(null, null)));
+  public static boolean ifMacro_Condition_1196464033298(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate50(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate51(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196464276234(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate52(null, null)));
+  public static boolean ifMacro_Condition_1196464276234(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate52(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate53(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196464276338(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate54(null, null)));
+  public static boolean ifMacro_Condition_1196464276338(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate54(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate55(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196464276451(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate56(null, null)));
+  public static boolean ifMacro_Condition_1196464276451(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate56(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate57(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196464276563(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate58(null, null)));
+  public static boolean ifMacro_Condition_1196464276563(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate58(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate59(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1196464276675(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate60(null, null)));
+  public static boolean ifMacro_Condition_1196464276675(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate60(null, null)));
     return (fh != null) && !(SequenceOperations.isEmpty(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate61(null, null))));
   }
 
-  public static boolean ifMacro_Condition_1193058147469(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.ypath.structure.IGenericFeature");
+  public static boolean ifMacro_Condition_1193058147469(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature");
   }
 
   public static List sourceNodesQuery_1184679753545(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

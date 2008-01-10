@@ -19,10 +19,11 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement;
+import jetbrains.mps.generator.template.IfMacro_ParameterObject;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
-import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.helgins.structure.InferenceRule;
 import jetbrains.mps.bootstrap.helgins.structure.NonTypesystemRule;
@@ -791,200 +792,200 @@ public class QueriesGenerated {
     return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(SLinkOperations.getTarget(_parameterObject.getNode(), "patternVarDecl", false), "patternVarField");
   }
 
-  public static boolean ifMacro_Condition_1174998351525(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  public static boolean ifMacro_Condition_1174998351525(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
 
-  public static boolean ifMacro_Condition_1174643945663(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
+  public static boolean ifMacro_Condition_1174643945663(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
   }
 
-  public static boolean ifMacro_Condition_1174643948635(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  public static boolean ifMacro_Condition_1174643948635(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
 
-  public static boolean ifMacro_Condition_1174648501543(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
+  public static boolean ifMacro_Condition_1174648501543(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
   }
 
-  public static boolean ifMacro_Condition_1174648541218(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  public static boolean ifMacro_Condition_1174648541218(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
 
-  public static boolean ifMacro_Condition_1175607840890(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule");
+  public static boolean ifMacro_Condition_1175607840890(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule");
   }
 
-  public static boolean ifMacro_Condition_1176545874689(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractCheckingRule");
+  public static boolean ifMacro_Condition_1176545874689(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractCheckingRule");
   }
 
-  public static boolean ifMacro_Condition_1175149440226(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule");
+  public static boolean ifMacro_Condition_1175149440226(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractSubtypingRule");
   }
 
-  public static boolean ifMacro_Condition_1180522111446(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "errorString", true) == null);
+  public static boolean ifMacro_Condition_1180522111446(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "errorString", true) == null);
   }
 
-  public static boolean ifMacro_Condition_1180522135989(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "errorString", true) != null);
+  public static boolean ifMacro_Condition_1180522135989(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "errorString", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1180520485182(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "errorString", true) == null);
+  public static boolean ifMacro_Condition_1180520485182(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "errorString", true) == null);
   }
 
-  public static boolean ifMacro_Condition_1180520475750(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "errorString", true) != null);
+  public static boolean ifMacro_Condition_1180520475750(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "errorString", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1180520415564(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "errorString", true) == null);
+  public static boolean ifMacro_Condition_1180520415564(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "errorString", true) == null);
   }
 
-  public static boolean ifMacro_Condition_1180520408069(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "errorString", true) != null);
+  public static boolean ifMacro_Condition_1180520408069(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "errorString", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1180520361023(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "errorString", true) == null);
+  public static boolean ifMacro_Condition_1180520361023(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "errorString", true) == null);
   }
 
-  public static boolean ifMacro_Condition_1180520349231(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "errorString", true) != null);
+  public static boolean ifMacro_Condition_1180520349231(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "errorString", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1176556372659(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1176556372659(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1176555418137(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1176555418137(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1177333456827(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1177333456827(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1176818088438(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1176818088438(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1177675756845(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1177675756845(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1177668739667(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
+  public static boolean ifMacro_Condition_1177668739667(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "condition", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
   }
 
-  public static boolean ifMacro_Condition_1196960125833(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1196960125833(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1177668739705(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  public static boolean ifMacro_Condition_1177668739705(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "condition", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
 
-  public static boolean ifMacro_Condition_1178292211244(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> statementList = SLinkOperations.getTargets(SLinkOperations.getTarget(node, "ifTrue", true), "statement", true);
+  public static boolean ifMacro_Condition_1178292211244(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    List<SNode> statementList = SLinkOperations.getTargets(SLinkOperations.getTarget(_parameterObject.getNode(), "ifTrue", true), "statement", true);
     if(statementList.isEmpty()) {
       return true;
     }
     return !(SNodeOperations.isInstanceOf(((SNode)statementList.get(statementList.size() - 1)), "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
   }
 
-  public static boolean ifMacro_Condition_1177667696869(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "ifFalseStatement", true) != null);
+  public static boolean ifMacro_Condition_1177667696869(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "ifFalseStatement", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1178874415141(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1178874415141(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1178874415169(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1178874415169(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1180520524738(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "errorString", true) == null);
+  public static boolean ifMacro_Condition_1180520524738(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "errorString", true) == null);
   }
 
-  public static boolean ifMacro_Condition_1180520518274(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "errorString", true) != null);
+  public static boolean ifMacro_Condition_1180520518274(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "errorString", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1180520240330(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "errorString", true) == null);
+  public static boolean ifMacro_Condition_1180520240330(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "errorString", true) == null);
   }
 
-  public static boolean ifMacro_Condition_1180520256162(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "errorString", true) != null);
+  public static boolean ifMacro_Condition_1180520256162(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "errorString", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1188831540316(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  public static boolean ifMacro_Condition_1188831540316(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
 
-  public static boolean ifMacro_Condition_1188831543950(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "anotherNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  public static boolean ifMacro_Condition_1188831543950(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "anotherNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
 
-  public static boolean ifMacro_Condition_1188902681044(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1188902681044(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1188831499551(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
+  public static boolean ifMacro_Condition_1188831499551(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
   }
 
-  public static boolean ifMacro_Condition_1188831499588(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  public static boolean ifMacro_Condition_1188831499588(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
 
-  public static boolean ifMacro_Condition_1188831717127(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "anotherNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
+  public static boolean ifMacro_Condition_1188831717127(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "anotherNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
   }
 
-  public static boolean ifMacro_Condition_1188831717164(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "anotherNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  public static boolean ifMacro_Condition_1188831717164(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "anotherNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
 
-  public static boolean ifMacro_Condition_1188831219964(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
+  public static boolean ifMacro_Condition_1188831219964(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
   }
 
-  public static boolean ifMacro_Condition_1188831220012(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  public static boolean ifMacro_Condition_1188831220012(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
 
-  public static boolean ifMacro_Condition_1188831339651(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "anotherNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
+  public static boolean ifMacro_Condition_1188831339651(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "anotherNode", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
   }
 
-  public static boolean ifMacro_Condition_1188831339699(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "anotherNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  public static boolean ifMacro_Condition_1188831339699(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "anotherNode", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
 
-  public static boolean ifMacro_Condition_1191271497127(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1191271497127(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return false;
   }
 
-  public static boolean ifMacro_Condition_1191271497135(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1191271497135(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return false;
   }
 
-  public static boolean ifMacro_Condition_1191271497525(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false) == SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.Quotation", false, false);
+  public static boolean ifMacro_Condition_1191271497525(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.getParent(_parameterObject.getNode(), null, false, false) == SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.bootstrap.helgins.structure.Quotation", false, false);
   }
 
-  public static boolean ifMacro_Condition_1191271497580(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false) != SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.Quotation", false, false);
+  public static boolean ifMacro_Condition_1191271497580(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.getParent(_parameterObject.getNode(), null, false, false) != SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.bootstrap.helgins.structure.Quotation", false, false);
   }
 
-  public static boolean ifMacro_Condition_1191271497592(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> children = SNodeOperations.getChildren(node);
+  public static boolean ifMacro_Condition_1191271497592(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    List<SNode> children = SNodeOperations.getChildren(_parameterObject.getNode());
     for(SNode child : children) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.Antiquotation") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.ListAntiquotation")) {
         return false;
@@ -993,16 +994,16 @@ public class QueriesGenerated {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1191271497730(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false) != SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.Quotation", false, false);
+  public static boolean ifMacro_Condition_1191271497730(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.getParent(_parameterObject.getNode(), null, false, false) != SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.bootstrap.helgins.structure.Quotation", false, false);
   }
 
-  public static boolean ifMacro_Condition_1191271497790(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false) == SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.Quotation", false, false);
+  public static boolean ifMacro_Condition_1191271497790(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.getParent(_parameterObject.getNode(), null, false, false) == SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.bootstrap.helgins.structure.Quotation", false, false);
   }
 
-  public static boolean ifMacro_Condition_1191271497802(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> children = SNodeOperations.getChildren(node);
+  public static boolean ifMacro_Condition_1191271497802(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    List<SNode> children = SNodeOperations.getChildren(_parameterObject.getNode());
     for(SNode child : children) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.Antiquotation")) {
         return true;
@@ -1011,12 +1012,12 @@ public class QueriesGenerated {
     return false;
   }
 
-  public static boolean ifMacro_Condition_1191271497942(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false) != SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.Quotation", false, false);
+  public static boolean ifMacro_Condition_1191271497942(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.getParent(_parameterObject.getNode(), null, false, false) != SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.bootstrap.helgins.structure.Quotation", false, false);
   }
 
-  public static boolean ifMacro_Condition_1191271497954(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> children = SNodeOperations.getChildren(node);
+  public static boolean ifMacro_Condition_1191271497954(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    List<SNode> children = SNodeOperations.getChildren(_parameterObject.getNode());
     for(SNode child : children) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.ListAntiquotation")) {
         return true;

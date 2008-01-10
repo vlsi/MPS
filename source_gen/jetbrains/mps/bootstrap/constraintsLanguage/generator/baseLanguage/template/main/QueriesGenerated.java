@@ -20,10 +20,11 @@ import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDecl
 import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.DataTypeDeclaration_Behavior;
+import jetbrains.mps.generator.template.IfMacro_ParameterObject;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
-import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
 import jetbrains.mps.bootstrap.constraintsLanguage.generator.baseLanguage.template.util.QueriesUtil;
@@ -242,48 +243,48 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(new QuotationClass_2().createNode(), "baseMethodDeclaration", false);
   }
 
-  public static boolean ifMacro_Condition_1184610641051(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "searchScopeCanCreate", true) != null;
+  public static boolean ifMacro_Condition_1184610641051(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "searchScopeCanCreate", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1184610697840(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "searchScopeCanCreate", true) == null;
+  public static boolean ifMacro_Condition_1184610697840(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "searchScopeCanCreate", true) == null;
   }
 
-  public static boolean ifMacro_Condition_1184610049652(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "searchScopeCanCreate", true) != null;
+  public static boolean ifMacro_Condition_1184610049652(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "searchScopeCanCreate", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1184610109644(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "searchScopeCanCreate", true) == null;
+  public static boolean ifMacro_Condition_1184610109644(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "searchScopeCanCreate", true) == null;
   }
 
-  public static boolean ifMacro_Condition_1177759890771(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return !(SPropertyOperations.getBoolean(node, "isAbstract"));
+  public static boolean ifMacro_Condition_1177759890771(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return !(SPropertyOperations.getBoolean(_parameterObject.getNode(), "isAbstract"));
   }
 
-  public static boolean ifMacro_Condition_1181726948109(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.getBoolean(node, "isVirtual");
+  public static boolean ifMacro_Condition_1181726948109(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SPropertyOperations.getBoolean(_parameterObject.getNode(), "isVirtual");
   }
 
-  public static boolean ifMacro_Condition_1182162768293(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"));
+  public static boolean ifMacro_Condition_1182162768293(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
 
-  public static boolean ifMacro_Condition_1182162773432(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType");
+  public static boolean ifMacro_Condition_1182162773432(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType");
   }
 
-  public static boolean ifMacro_Condition_1193402330798(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.getBoolean(node, "isVirtual");
+  public static boolean ifMacro_Condition_1193402330798(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SPropertyOperations.getBoolean(_parameterObject.getNode(), "isVirtual");
   }
 
-  public static boolean ifMacro_Condition_1193402330896(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"));
+  public static boolean ifMacro_Condition_1193402330896(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType"));
   }
 
-  public static boolean ifMacro_Condition_1193402330944(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType");
+  public static boolean ifMacro_Condition_1193402330944(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType");
   }
 
   public static List sourceNodesQuery_1194605209301(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

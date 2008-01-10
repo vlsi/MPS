@@ -22,14 +22,14 @@ import jetbrains.mps.bootstrap.constraintsLanguage.constraints.ConceptMethodDecl
 import jetbrains.mps.core.constraints.INamedConcept_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.generator.template.IfMacro_ParameterObject;
 import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationMemberDeclaration;
 import jetbrains.mps.smodel.DataTypeUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.EnumerationDataTypeDeclaration;
 import java.util.List;
-
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.structure.*;
 
 public class QueriesGenerated {
@@ -537,41 +537,41 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(nodeType, "classifier", false);
   }
 
-  public static boolean ifMacro_Condition_1195667822297(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "prototypeNode", true) != null;
+  public static boolean ifMacro_Condition_1195667822297(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "prototypeNode", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1175594466810(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "modelToCopy", true) != null;
+  public static boolean ifMacro_Condition_1175594466810(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "modelToCopy", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1195247677817(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1195247677817(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     // not NULL internal default value ?
-    SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(node, "property", false), "dataType", false);
+    SNode dataType = SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "property", false), "dataType", false);
     EnumerationMemberDeclaration defaultMember_ = DataTypeUtil.getDefaultMember(((EnumerationDataTypeDeclaration)SNodeOperations.getAdapter(dataType)));
     SNode defaultMember = (SNode)defaultMember_.getNode();
     return SPropertyOperations.getString(defaultMember, "internalValue") != null;
   }
 
-  public static boolean ifMacro_Condition_1195001009876(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "prototypeNode", true) != null;
+  public static boolean ifMacro_Condition_1195001009876(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "prototypeNode", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1195002168281(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "scope", true) != null;
+  public static boolean ifMacro_Condition_1195002168281(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "scope", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1194958602508(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "leftExpression", true);
+  public static boolean ifMacro_Condition_1194958602508(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "leftExpression", true);
     return SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.constraintsLanguage.structure.SuperNodeExpression");
   }
 
-  public static boolean ifMacro_Condition_1195001644032(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "creator", true), "prototypeNode", true) != null;
+  public static boolean ifMacro_Condition_1195001644032(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "creator", true), "prototypeNode", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1195002475723(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "prototypeNode", true) != null;
+  public static boolean ifMacro_Condition_1195002475723(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "prototypeNode", true) != null;
   }
 
   public static List sourceNodesQuery_1171415960010(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

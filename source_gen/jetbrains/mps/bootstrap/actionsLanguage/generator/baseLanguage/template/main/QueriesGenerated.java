@@ -15,10 +15,11 @@ import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.generator.template.IfMacro_ParameterObject;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
-import java.util.List;
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
 import jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.util.QueriesUtil;
 
@@ -140,60 +141,60 @@ public class QueriesGenerated {
     return "removeRTActionsByCondition_" + _parameterObject.getNode().getId();
   }
 
-  public static boolean ifMacro_Condition_1178782034640(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "commonInitializer", true) != null;
+  public static boolean ifMacro_Condition_1178782034640(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "commonInitializer", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1177335419476(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "canSubstitute", true) != null;
+  public static boolean ifMacro_Condition_1177335419476(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "canSubstitute", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1177335619232(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "canSubstitute", true) != null;
+  public static boolean ifMacro_Condition_1177335619232(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "canSubstitute", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1177336393312(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "descriptionText", true) != null;
+  public static boolean ifMacro_Condition_1177336393312(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "descriptionText", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1177336442294(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "matchingText", true) != null;
+  public static boolean ifMacro_Condition_1177336442294(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "matchingText", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1177399369238(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "matchingText", true) != null;
+  public static boolean ifMacro_Condition_1177399369238(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "matchingText", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1177399369261(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "descriptionText", true) != null;
+  public static boolean ifMacro_Condition_1177399369261(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "descriptionText", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1198600310110(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return !(SPropertyOperations.getBoolean(node, "returnSmallPart"));
+  public static boolean ifMacro_Condition_1198600310110(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return !(SPropertyOperations.getBoolean(_parameterObject.getNode(), "returnSmallPart"));
   }
 
-  public static boolean ifMacro_Condition_1198600330839(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.getBoolean(node, "returnSmallPart");
+  public static boolean ifMacro_Condition_1198600330839(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SPropertyOperations.getBoolean(_parameterObject.getNode(), "returnSmallPart");
   }
 
-  public static boolean ifMacro_Condition_1181738756958(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "commonInitializer", true) != null;
+  public static boolean ifMacro_Condition_1181738756958(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "commonInitializer", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1177499903622(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "matchingText", true) != null;
+  public static boolean ifMacro_Condition_1177499903622(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "matchingText", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1177499899976(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "descriptionText", true) != null;
+  public static boolean ifMacro_Condition_1177499899976(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "descriptionText", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1177514488331(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "matchingText", true), "body", true) != null;
+  public static boolean ifMacro_Condition_1177514488331(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "matchingText", true), "body", true) != null;
   }
 
-  public static boolean ifMacro_Condition_1177514494000(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "descriptionText", true), "body", true) != null;
+  public static boolean ifMacro_Condition_1177514494000(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "descriptionText", true), "body", true) != null;
   }
 
   public static List sourceNodesQuery_1178541065624(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

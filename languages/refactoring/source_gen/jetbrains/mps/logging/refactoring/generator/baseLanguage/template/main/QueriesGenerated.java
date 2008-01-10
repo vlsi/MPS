@@ -13,10 +13,11 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.generator.template.IfMacro_ParameterObject;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
-import java.util.List;
 import java.util.ArrayList;
 
 public class QueriesGenerated {
@@ -120,10 +121,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1197995546008(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
     {
-      Pattern_ pattern_1199961653673 = new Pattern_();
-      SNode coercedNode_1199961653672 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true), pattern_1199961653673);
-      if(coercedNode_1199961653672 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1199961653673.PatternVar;
+      Pattern_ pattern_1199962585189 = new Pattern_();
+      SNode coercedNode_1199962585188 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true), pattern_1199962585189);
+      if(coercedNode_1199962585188 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_1199962585189.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }
@@ -182,96 +183,96 @@ public class QueriesGenerated {
     return ListOperations.getElement(SLinkOperations.getTargets(method, "parameter", true), 1);
   }
 
-  public static boolean ifMacro_Condition_1199462382860(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "overrides", false) == null) && (SLinkOperations.getTarget(node, "keystroke", true) == null);
+  public static boolean ifMacro_Condition_1199462382860(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "overrides", false) == null) && (SLinkOperations.getTarget(_parameterObject.getNode(), "keystroke", true) == null);
   }
 
-  public static boolean ifMacro_Condition_1199462333157(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "overrides", false) == null) && (SLinkOperations.getTarget(node, "keystroke", true) != null);
+  public static boolean ifMacro_Condition_1199462333157(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "overrides", false) == null) && (SLinkOperations.getTarget(_parameterObject.getNode(), "keystroke", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1199462335285(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "overrides", false) != null);
+  public static boolean ifMacro_Condition_1199462335285(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "overrides", false) != null);
   }
 
-  public static boolean ifMacro_Condition_1199464602796(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "overrides", false) == null);
+  public static boolean ifMacro_Condition_1199464602796(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "overrides", false) == null);
   }
 
-  public static boolean ifMacro_Condition_1199464637201(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "overrides", false) != null);
+  public static boolean ifMacro_Condition_1199464637201(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "overrides", false) != null);
   }
 
-  public static boolean ifMacro_Condition_1198674172362(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1198674172362(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1199467946000(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "overrides", false) == null);
+  public static boolean ifMacro_Condition_1199467946000(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "overrides", false) == null);
   }
 
-  public static boolean ifMacro_Condition_1199468168888(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "overrides", false) != null);
+  public static boolean ifMacro_Condition_1199468168888(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "overrides", false) != null);
   }
 
-  public static boolean ifMacro_Condition_1190725064806(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "isApplicableClause", true) != null);
+  public static boolean ifMacro_Condition_1190725064806(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "isApplicableClause", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1190725026904(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "isApplicableClause", true) == null);
+  public static boolean ifMacro_Condition_1190725026904(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "isApplicableClause", true) == null);
   }
 
-  public static boolean ifMacro_Condition_1190724959339(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "doRefactorClause", true) != null);
+  public static boolean ifMacro_Condition_1190724959339(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "doRefactorClause", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1191592317472(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "getModelsToGenerateClause", true) != null);
+  public static boolean ifMacro_Condition_1191592317472(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "getModelsToGenerateClause", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1191592504958(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "getModelsToGenerateClause", true) == null);
+  public static boolean ifMacro_Condition_1191592504958(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "getModelsToGenerateClause", true) == null);
   }
 
-  public static boolean ifMacro_Condition_1190724916731(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "updateModelClause", true) != null);
+  public static boolean ifMacro_Condition_1190724916731(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "updateModelClause", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1197994957884(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "chooseComponentClause", true) != null);
+  public static boolean ifMacro_Condition_1197994957884(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "chooseComponentClause", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1197995119274(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(node, "argumentType", true), new QuotationClass_().createNode());
+  public static boolean ifMacro_Condition_1197995119274(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true), new QuotationClass_().createNode());
   }
 
-  public static boolean ifMacro_Condition_1197995457201(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(node, "argumentType", true), new QuotationClass_1().createNode());
+  public static boolean ifMacro_Condition_1197995457201(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true), new QuotationClass_1().createNode());
   }
 
-  public static boolean ifMacro_Condition_1197995925126(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(node, "argumentType", true), new QuotationClass_2().createNode());
+  public static boolean ifMacro_Condition_1197995925126(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true), new QuotationClass_2().createNode());
   }
 
-  public static boolean ifMacro_Condition_1198681835123(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(node, "argumentType", true), new QuotationClass_3().createNode());
+  public static boolean ifMacro_Condition_1198681835123(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "chooseComponentClause", true) == null) && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true), new QuotationClass_3().createNode());
   }
 
-  public static boolean ifMacro_Condition_1198600531754(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "initialValue", true) != null);
+  public static boolean ifMacro_Condition_1198600531754(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "initialValue", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1198674102459(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "filterClause", true) != null);
+  public static boolean ifMacro_Condition_1198674102459(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "filterClause", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1192803873886(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "filterClause", true) != null);
+  public static boolean ifMacro_Condition_1192803873886(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "filterClause", true) != null);
   }
 
-  public static boolean ifMacro_Condition_1192803930628(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return (SLinkOperations.getTarget(node, "filterClause", true) == null);
+  public static boolean ifMacro_Condition_1192803930628(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return (SLinkOperations.getTarget(_parameterObject.getNode(), "filterClause", true) == null);
   }
 
   public static List sourceNodesQuery_1198673830801(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

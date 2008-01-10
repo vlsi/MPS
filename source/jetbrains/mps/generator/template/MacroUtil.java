@@ -116,14 +116,12 @@ public class MacroUtil {
     Boolean res = false;
     if (function != null) {
       String methodName = TemplateFunctionMethodName.ifMacro_Condition(function.getNode());
-      Object[] args = new Object[]{
-              inputNode,
-              generator.getInputModel(),
-              generator,
-              generator.getScope(),
-              generator.getGeneratorSessionContext()};
       try {
-        res = (Boolean) QueryMethodGenerated.invoke(methodName, args, ifMacro.getModel());
+        res = (Boolean) QueryMethodGenerated.invoke(
+                methodName,
+                generator.getGeneratorSessionContext(),
+                new IfMacro_ParameterObject(inputNode, generator.getInputModel(), generator),
+                ifMacro.getModel());
         return res;
       } catch (Exception e) {
         generator.showErrorMessage(inputNode, null, BaseAdapter.fromAdapter(ifMacro), "couldn't evaluate if-macro condition");

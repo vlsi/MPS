@@ -15,10 +15,11 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement;
+import jetbrains.mps.generator.template.IfMacro_ParameterObject;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
-import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.quotation.structure.PropertyAntiquotation_AnnotationLink;
 import jetbrains.mps.core.structure.BaseConcept;
@@ -178,24 +179,24 @@ public class QueriesGenerated {
     return BaseAdapter.fromAdapter(lvs.getLocalVariableDeclaration());
   }
 
-  public static boolean ifMacro_Condition_1196351886745(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1196351886745(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return false;
   }
 
-  public static boolean ifMacro_Condition_1196351886753(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static boolean ifMacro_Condition_1196351886753(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return false;
   }
 
-  public static boolean ifMacro_Condition_1196351887100(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false) == SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
+  public static boolean ifMacro_Condition_1196351887100(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.getParent(_parameterObject.getNode(), null, false, false) == SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.quotation.structure.Quotation", false, false);
   }
 
-  public static boolean ifMacro_Condition_1196351887155(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false) != SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
+  public static boolean ifMacro_Condition_1196351887155(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.getParent(_parameterObject.getNode(), null, false, false) != SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.quotation.structure.Quotation", false, false);
   }
 
-  public static boolean ifMacro_Condition_1196351887167(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> children = SNodeOperations.getChildren(node);
+  public static boolean ifMacro_Condition_1196351887167(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    List<SNode> children = SNodeOperations.getChildren(_parameterObject.getNode());
     for(SNode child : children) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.Antiquotation") || SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.ListAntiquotation")) {
         return false;
@@ -204,16 +205,16 @@ public class QueriesGenerated {
     return true;
   }
 
-  public static boolean ifMacro_Condition_1196860200883(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false) == SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
+  public static boolean ifMacro_Condition_1196860200883(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.getParent(_parameterObject.getNode(), null, false, false) == SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.quotation.structure.Quotation", false, false);
   }
 
-  public static boolean ifMacro_Condition_1196860193035(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false) != SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
+  public static boolean ifMacro_Condition_1196860193035(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.getParent(_parameterObject.getNode(), null, false, false) != SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.quotation.structure.Quotation", false, false);
   }
 
-  public static boolean ifMacro_Condition_1196351887377(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> children = SNodeOperations.getChildren(node);
+  public static boolean ifMacro_Condition_1196351887377(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    List<SNode> children = SNodeOperations.getChildren(_parameterObject.getNode());
     for(SNode child : children) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.Antiquotation")) {
         return true;
@@ -222,12 +223,12 @@ public class QueriesGenerated {
     return false;
   }
 
-  public static boolean ifMacro_Condition_1196351887517(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false) != SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
+  public static boolean ifMacro_Condition_1196351887517(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SNodeOperations.getParent(_parameterObject.getNode(), null, false, false) != SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.quotation.structure.Quotation", false, false);
   }
 
-  public static boolean ifMacro_Condition_1196351887529(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> children = SNodeOperations.getChildren(node);
+  public static boolean ifMacro_Condition_1196351887529(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    List<SNode> children = SNodeOperations.getChildren(_parameterObject.getNode());
     for(SNode child : children) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.ListAntiquotation")) {
         return true;

@@ -16,10 +16,11 @@ import jetbrains.mps.bootstrap.structureLanguage.generator_new.util.QueriesUtil;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.EnumerationDataTypeDeclaration_Behavior;
+import jetbrains.mps.generator.template.IfMacro_ParameterObject;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
-import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
@@ -446,68 +447,68 @@ public class QueriesGenerated {
     return (SNode)outputEnumConstant;
   }
 
-  public static boolean ifMacro_Condition_1169758775014(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.AL_isSingular(node);
+  public static boolean ifMacro_Condition_1169758775014(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.AL_isSingular(_parameterObject.getNode());
   }
 
-  public static boolean ifMacro_Condition_1169758852353(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.AL_isPlural(node);
+  public static boolean ifMacro_Condition_1169758852353(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.AL_isPlural(_parameterObject.getNode());
   }
 
-  public static boolean ifMacro_Condition_1169755885217(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.hasValue(node, "stereotype", "node", "node");
+  public static boolean ifMacro_Condition_1169755885217(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SPropertyOperations.hasValue(_parameterObject.getNode(), "stereotype", "node", "node");
   }
 
-  public static boolean ifMacro_Condition_1169756756933(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.AL_isNodeStereotypeAndSingular(node);
+  public static boolean ifMacro_Condition_1169756756933(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.AL_isNodeStereotypeAndSingular(_parameterObject.getNode());
   }
 
-  public static boolean ifMacro_Condition_1169756892981(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.AL_isNodeStereotypeAndPlural(node);
+  public static boolean ifMacro_Condition_1169756892981(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.AL_isNodeStereotypeAndPlural(_parameterObject.getNode());
   }
 
-  public static boolean ifMacro_Condition_1169758908113(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.AL_isSingular(node);
+  public static boolean ifMacro_Condition_1169758908113(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.AL_isSingular(_parameterObject.getNode());
   }
 
-  public static boolean ifMacro_Condition_1169758921200(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.AL_isPlural(node);
+  public static boolean ifMacro_Condition_1169758921200(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.AL_isPlural(_parameterObject.getNode());
   }
 
-  public static boolean ifMacro_Condition_1169756449482(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.hasValue(node, "stereotype", "property", "node");
+  public static boolean ifMacro_Condition_1169756449482(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SPropertyOperations.hasValue(_parameterObject.getNode(), "stereotype", "property", "node");
   }
 
-  public static boolean ifMacro_Condition_1169757005015(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.AL_isPropertyStereotypeAndSingular(node);
+  public static boolean ifMacro_Condition_1169757005015(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.AL_isPropertyStereotypeAndSingular(_parameterObject.getNode());
   }
 
-  public static boolean ifMacro_Condition_1169757018379(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.AL_isPropertyStereotypeAndPlural(node);
+  public static boolean ifMacro_Condition_1169757018379(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.AL_isPropertyStereotypeAndPlural(_parameterObject.getNode());
   }
 
-  public static boolean ifMacro_Condition_1169758945100(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.AL_isSingular(node);
+  public static boolean ifMacro_Condition_1169758945100(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.AL_isSingular(_parameterObject.getNode());
   }
 
-  public static boolean ifMacro_Condition_1169758933189(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.AL_isPlural(node);
+  public static boolean ifMacro_Condition_1169758933189(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.AL_isPlural(_parameterObject.getNode());
   }
 
-  public static boolean ifMacro_Condition_1169756475519(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SPropertyOperations.hasValue(node, "stereotype", "link", "node");
+  public static boolean ifMacro_Condition_1169756475519(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SPropertyOperations.hasValue(_parameterObject.getNode(), "stereotype", "link", "node");
   }
 
-  public static boolean ifMacro_Condition_1169757197199(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.AL_isLinkStereotypeAndSingular(node);
+  public static boolean ifMacro_Condition_1169757197199(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.AL_isLinkStereotypeAndSingular(_parameterObject.getNode());
   }
 
-  public static boolean ifMacro_Condition_1169757149991(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.AL_isLinkStereotypeAndPlural(node);
+  public static boolean ifMacro_Condition_1169757149991(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.AL_isLinkStereotypeAndPlural(_parameterObject.getNode());
   }
 
-  public static boolean ifMacro_Condition_1173128500049(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getCount(node, "extends") == 0;
+  public static boolean ifMacro_Condition_1173128500049(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
+    return SLinkOperations.getCount(_parameterObject.getNode(), "extends") == 0;
   }
 
   public static List sourceNodesQuery_1198508062250(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
