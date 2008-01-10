@@ -24,6 +24,10 @@ public class QueriesGenerated {
     return alias;
   }
 
+  public static Object referenceMacro_GetReferent_1199971770629(final IOperationContext operationContext, final ReferenceMacro_ParameterObject _parameterObject) {
+    return "_parameterObject";
+  }
+
   public static boolean ifMacro_Condition_1199879109301(final IOperationContext operationContext, final IfMacro_ParameterObject _parameterObject) {
     return !(ConceptFunctionParameter_Behavior.call_getFromParameterObject_1199878619650(_parameterObject.getNode()));
   }
