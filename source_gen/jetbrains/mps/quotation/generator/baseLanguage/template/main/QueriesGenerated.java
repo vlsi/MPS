@@ -18,10 +18,9 @@ import jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement;
 import jetbrains.mps.generator.template.IfMacro_ParameterObject;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObject;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObject;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.quotation.structure.PropertyAntiquotation_AnnotationLink;
 import jetbrains.mps.core.structure.BaseConcept;
 import jetbrains.mps.smodel.SReference;
@@ -258,12 +257,12 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_parameterObject.getNode(), "quotedNode", true);
   }
 
-  public static List sourceNodesQuery_1196351886675(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1196351886675(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList();
-    if(SLinkOperations.getTarget(node, "modelToCreate", true) != null) {
-      result.add(SLinkOperations.getTarget(node, "modelToCreate", true));
+    if(SLinkOperations.getTarget(_parameterObject.getNode(), "modelToCreate", true) != null) {
+      result.add(SLinkOperations.getTarget(_parameterObject.getNode(), "modelToCreate", true));
     }
-    for(SNode child : SNodeOperations.getDescendants(node, null, false)) {
+    for(SNode child : SNodeOperations.getDescendants(_parameterObject.getNode(), null, false)) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation")) {
         SNode antiqExpression = SLinkOperations.getTarget(child, "expression", true);
         result.add(antiqExpression);
@@ -272,26 +271,26 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1196351886802(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SModel model = generator.getTargetModel();
+  public static List sourceNodesQuery_1196351886802(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    SModel model = _parameterObject.getGenerator().getTargetModel();
     List<SNode> result = new ArrayList<SNode>();
-    for(String property : node.getPropertyNames()) {
-      if(PropertyAntiquotation_AnnotationLink.getPropertyAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), property) != null) {
+    for(String property : _parameterObject.getNode().getPropertyNames()) {
+      if(PropertyAntiquotation_AnnotationLink.getPropertyAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(_parameterObject.getNode())), property) != null) {
         continue;
       }
       SNode propertyNode = BaseConcept.newInstance(model).getNode();
       propertyNode.setProperty("propertyName", property);
-      propertyNode.setProperty("propertyValue", node.getProperty(property));
+      propertyNode.setProperty("propertyValue", _parameterObject.getNode().getProperty(property));
       result.add(propertyNode);
     }
     return result;
   }
 
-  public static List sourceNodesQuery_1196871487533(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SModel model = generator.getTargetModel();
+  public static List sourceNodesQuery_1196871487533(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    SModel model = _parameterObject.getGenerator().getTargetModel();
     List<SNode> result = new ArrayList<SNode>();
-    for(String property : node.getPropertyNames()) {
-      BaseAdapter attribute = PropertyAntiquotation_AnnotationLink.getPropertyAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), property);
+    for(String property : _parameterObject.getNode().getPropertyNames()) {
+      BaseAdapter attribute = PropertyAntiquotation_AnnotationLink.getPropertyAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(_parameterObject.getNode())), property);
       if(attribute != null) {
         result.add(attribute.getNode());
       }
@@ -299,11 +298,11 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1196351886876(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SModel model = generator.getTargetModel();
+  public static List sourceNodesQuery_1196351886876(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    SModel model = _parameterObject.getGenerator().getTargetModel();
     List<SNode> result = new ArrayList<SNode>();
-    for(SReference reference : node.getReferences()) {
-      if(ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), reference.getRole()) != null) {
+    for(SReference reference : _parameterObject.getNode().getReferences()) {
+      if(ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(_parameterObject.getNode())), reference.getRole()) != null) {
         continue;
       }
       SNode referenceNode = BaseConcept.newInstance(model).getNode();
@@ -315,10 +314,10 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1196351886984(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1196351886984(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList<SNode>();
-    for(String refRole : node.getReferenceRoles()) {
-      BaseAdapter attribute = ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(node)), refRole);
+    for(String refRole : _parameterObject.getNode().getReferenceRoles()) {
+      BaseAdapter attribute = ReferenceAntiquotation_AnnotationLink.getReferenceAntiquotation((BaseConcept)((BaseConcept)SNodeOperations.getAdapter(_parameterObject.getNode())), refRole);
       if(attribute != null) {
         result.add(attribute.getNode());
       }
@@ -326,9 +325,9 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1196351887023(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1196351887023(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode child : SNodeOperations.getChildren(node)) {
+    for(SNode child : SNodeOperations.getChildren(_parameterObject.getNode())) {
       if(!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation"))) {
         result.add(child);
       }
@@ -336,12 +335,12 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1196351887816(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1196351887816(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList<SNode>();
-    if(SLinkOperations.getTarget(node, "modelToCreate", true) != null) {
-      result.add(SLinkOperations.getTarget(node, "modelToCreate", true));
+    if(SLinkOperations.getTarget(_parameterObject.getNode(), "modelToCreate", true) != null) {
+      result.add(SLinkOperations.getTarget(_parameterObject.getNode(), "modelToCreate", true));
     }
-    for(SNode child : SNodeOperations.getDescendants(node, null, false)) {
+    for(SNode child : SNodeOperations.getDescendants(_parameterObject.getNode(), null, false)) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.quotation.structure.AbstractAntiquotation")) {
         result.add(SLinkOperations.getTarget(child, "expression", true));
       }

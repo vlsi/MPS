@@ -14,8 +14,7 @@ import junit.framework.TestCase;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import java.util.List;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObject;
 
 public class QueriesGenerated {
 
@@ -86,16 +85,16 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_parameterObject.getNode(), "exceptionType", true);
   }
 
-  public static List sourceNodesQuery_1171986734537(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "staticField", true);
+  public static List sourceNodesQuery_1171986734537(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "staticField", true);
   }
 
-  public static List sourceNodesQuery_1171932074411(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(node, "testMethodList", true), "testMethod", true);
+  public static List sourceNodesQuery_1171932074411(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_parameterObject.getNode(), "testMethodList", true), "testMethod", true);
   }
 
-  public static List sourceNodesQuery_1171985035236(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "method", true);
+  public static List sourceNodesQuery_1171985035236(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "method", true);
   }
 
 }

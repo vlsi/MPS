@@ -25,9 +25,7 @@ import jetbrains.mps.ypath.constraints.TreePath_Behavior;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObject;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 
@@ -1308,25 +1306,25 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
   }
 
-  public static List sourceNodesQuery_1184679753545(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate117(null, null)));
+  public static List sourceNodesQuery_1184679753545(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "features", true), new zPredicate117(null, null)));
   }
 
-  public static List sourceNodesQuery_1184237003214(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate118(null, null)));
+  public static List sourceNodesQuery_1184237003214(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "features", true), new zPredicate118(null, null)));
   }
 
-  public static List sourceNodesQuery_1179331802560(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1179331802560(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> kindBlocks = new ArrayList<SNode>();
-    for(SNode nodeKind : SLinkOperations.getTargets(node, "nodeKinds", true)) {
+    for(SNode nodeKind : SLinkOperations.getTargets(_parameterObject.getNode(), "nodeKinds", true)) {
       ListOperations.addElement(kindBlocks, SLinkOperations.getTarget(nodeKind, "trigger", true));
     }
     return kindBlocks;
   }
 
-  public static List sourceNodesQuery_1179398279574(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1179398279574(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> properties = new ArrayList<SNode>();
-    for(SNode nodeKind : SLinkOperations.getTargets(node, "nodeKinds", true)) {
+    for(SNode nodeKind : SLinkOperations.getTargets(_parameterObject.getNode(), "nodeKinds", true)) {
       for(SNode property : SLinkOperations.getTargets(nodeKind, "properties", true)) {
         ListOperations.addElement(properties, property);
       }
@@ -1334,52 +1332,52 @@ public class QueriesGenerated {
     return properties;
   }
 
-  public static List sourceNodesQuery_1183984911888(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "features", true);
+  public static List sourceNodesQuery_1183984911888(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "features", true);
   }
 
-  public static List sourceNodesQuery_1184236931086(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "features", true);
+  public static List sourceNodesQuery_1184236931086(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "features", true);
   }
 
-  public static List sourceNodesQuery_1180087275580(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "nodeKindCase", true);
+  public static List sourceNodesQuery_1180087275580(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "nodeKindCase", true);
   }
 
-  public static List sourceNodesQuery_1180087671217(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statementList", true), "statement", true);
+  public static List sourceNodesQuery_1180087671217(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_parameterObject.getNode(), "statementList", true), "statement", true);
   }
 
-  public static List sourceNodesQuery_1180088156270(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(node, "statementList", true), "statement", true);
+  public static List sourceNodesQuery_1180088156270(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_parameterObject.getNode(), "statementList", true), "statement", true);
   }
 
-  public static List sourceNodesQuery_1180089971733(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(node, "visitParameterDeclarationList", true), "visitParameterDeclaration", true);
+  public static List sourceNodesQuery_1180089971733(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_parameterObject.getNode(), "visitParameterDeclarationList", true), "visitParameterDeclaration", true);
   }
 
-  public static List sourceNodesQuery_1180088758127(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(node, "visitParameterDeclarationList", true), "visitParameterDeclaration", true);
+  public static List sourceNodesQuery_1180088758127(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_parameterObject.getNode(), "visitParameterDeclarationList", true), "visitParameterDeclaration", true);
   }
 
-  public static List sourceNodesQuery_1180089846792(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(SLinkOperations.getTarget(node, "visitParameterDeclarationList", true), "visitParameterDeclaration", true);
+  public static List sourceNodesQuery_1180089846792(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_parameterObject.getNode(), "visitParameterDeclarationList", true), "visitParameterDeclaration", true);
   }
 
-  public static List sourceNodesQuery_1180090213117(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.select(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "visitBlock", true), "visitParameterDeclarationList", true), "visitParameterDeclaration", true), new zSelector(null, null)));
+  public static List sourceNodesQuery_1180090213117(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SequenceOperations.toList(SequenceOperations.select(SLinkOperations.getTargets(SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "visitBlock", true), "visitParameterDeclarationList", true), "visitParameterDeclaration", true), new zSelector(null, null)));
   }
 
-  public static List sourceNodesQuery_1180091921372(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "actualArgument", true);
+  public static List sourceNodesQuery_1180091921372(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "actualArgument", true);
   }
 
-  public static List sourceNodesQuery_1184762104927(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate119(null, null)));
+  public static List sourceNodesQuery_1184762104927(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "features", true), new zPredicate119(null, null)));
   }
 
-  public static List sourceNodesQuery_1196881595288(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate120(null, null)));
+  public static List sourceNodesQuery_1196881595288(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "features", true), new zPredicate120(null, null)));
   }
 
 }

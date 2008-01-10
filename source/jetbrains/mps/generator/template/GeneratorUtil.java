@@ -91,15 +91,11 @@ public class GeneratorUtil {
     long startTime = System.currentTimeMillis();
     boolean res = false;
     try {
-      try {
-        res = (Boolean) QueryMethodGenerated.invoke(
-                methodName,
-                generator.getGeneratorSessionContext(),
-                new BaseMappingRule_ParameterObject(inputNode, generator.getInputModel(), generator),
-                ruleNode.getModel());
-      } catch (Throwable t) {
-        res = (Boolean) QueryMethodGenerated.invoke(methodName, args, ruleNode.getModel());
-      }
+      res = (Boolean) QueryMethodGenerated.invoke(
+              methodName,
+              generator.getGeneratorSessionContext(),
+              new BaseMappingRule_ParameterObject(inputNode, generator.getInputModel(), generator),
+              ruleNode.getModel());
       return res;
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, null, ruleNode, "couldn't evaluate rule condition");
@@ -151,7 +147,11 @@ public class GeneratorUtil {
             generator.getGeneratorSessionContext()};
     long startTime = System.currentTimeMillis();
     try {
-      List<SNode> result = (List<SNode>) QueryMethodGenerated.invoke(methodName, args, query.getModel());
+      List<SNode> result = (List<SNode>) QueryMethodGenerated.invoke(
+              methodName,
+              generator.getGeneratorSessionContext(),
+              new SourceSubstituteMacro_Nodes_ParameterObject(inputNode, generator.getInputModel(), generator),
+              query.getModel());
       return result;
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");

@@ -23,8 +23,7 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyO
 import java.util.regex.Pattern;
 import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObject;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObject;
 
 public class QueriesGenerated {
 
@@ -221,8 +220,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_parameterObject.getNode(), "inputExpression", true);
   }
 
-  public static List sourceNodesQuery_1194610249636(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SModelOperations.getNodes(sourceModel, "jetbrains.mps.regexp.structure.InlineRegexpExpression");
+  public static List sourceNodesQuery_1194610249636(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SModelOperations.getNodes(_parameterObject.getSourceModel(), "jetbrains.mps.regexp.structure.InlineRegexpExpression");
   }
 
 }

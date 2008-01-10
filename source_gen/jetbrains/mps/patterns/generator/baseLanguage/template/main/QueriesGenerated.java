@@ -25,10 +25,9 @@ import java.util.List;
 import jetbrains.mps.patterns.structure.ListPattern;
 import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObject;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration;
 import jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
@@ -284,9 +283,9 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_parameterObject.getNode(), "patternNode", true);
   }
 
-  public static List sourceNodesQuery_1176737411271(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1176737411271(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode child : SNodeOperations.getDescendants(node, null, false)) {
+    for(SNode child : SNodeOperations.getDescendants(_parameterObject.getNode(), null, false)) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.AbstractAntiquotation")) {
         result.add(SLinkOperations.getTarget(child, "expression", true));
       }
@@ -297,9 +296,9 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1176737399740(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1176737399740(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode child : SNodeOperations.getDescendants(node, null, false)) {
+    for(SNode child : SNodeOperations.getDescendants(_parameterObject.getNode(), null, false)) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.AbstractAntiquotation")) {
         result.add(SLinkOperations.getTarget(child, "expression", true));
       }
@@ -310,18 +309,18 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1174811353234(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1174811353234(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList<SNode>();
-    result.addAll(SNodeOperations.getDescendants(node, "jetbrains.mps.patterns.structure.PatternVariableDeclaration", false));
-    result.addAll(SNodeOperations.getDescendants(node, "jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration", false));
-    result.addAll(SNodeOperations.getDescendants(node, "jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration", false));
-    result.addAll(SNodeOperations.getDescendants(node, "jetbrains.mps.patterns.structure.AsPattern", false));
+    result.addAll(SNodeOperations.getDescendants(_parameterObject.getNode(), "jetbrains.mps.patterns.structure.PatternVariableDeclaration", false));
+    result.addAll(SNodeOperations.getDescendants(_parameterObject.getNode(), "jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration", false));
+    result.addAll(SNodeOperations.getDescendants(_parameterObject.getNode(), "jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration", false));
+    result.addAll(SNodeOperations.getDescendants(_parameterObject.getNode(), "jetbrains.mps.patterns.structure.AsPattern", false));
     return result;
   }
 
-  public static List sourceNodesQuery_1176737298135(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1176737298135(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList<SNode>();
-    for(SNode child : SNodeOperations.getDescendants(node, null, false)) {
+    for(SNode child : SNodeOperations.getDescendants(_parameterObject.getNode(), null, false)) {
       if(SNodeOperations.isInstanceOf(child, "jetbrains.mps.bootstrap.helgins.structure.AbstractAntiquotation")) {
         result.add(SLinkOperations.getTarget(child, "expression", true));
       }
@@ -332,14 +331,14 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1190931377097(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1190931377097(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList();
-    SModel model = generator.getTargetModel();
-    for(String propertyName : node.getPropertyNames()) {
-      if(BaseAdapter.isInstance(node.getPropertyAttribute(propertyName), PropertyPatternVariableDeclaration.class)) {
+    SModel model = _parameterObject.getGenerator().getTargetModel();
+    for(String propertyName : _parameterObject.getNode().getPropertyNames()) {
+      if(BaseAdapter.isInstance(_parameterObject.getNode().getPropertyAttribute(propertyName), PropertyPatternVariableDeclaration.class)) {
         continue;
       }
-      String propertyValue = node.getProperty(propertyName);
+      String propertyValue = _parameterObject.getNode().getProperty(propertyName);
       SNode propertyNode = BaseConcept.newInstance(model).getNode();
       propertyNode.setProperty("propertyName", propertyName);
       propertyNode.setProperty("propertyValue", propertyValue);
@@ -348,75 +347,75 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1190931377192(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1190931377192(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList();
-    SModel model = generator.getTargetModel();
-    for(String propertyName : node.getPropertyNames()) {
-      if(BaseAdapter.isInstance(node.getPropertyAttribute(propertyName), PropertyPatternVariableDeclaration.class)) {
+    SModel model = _parameterObject.getGenerator().getTargetModel();
+    for(String propertyName : _parameterObject.getNode().getPropertyNames()) {
+      if(BaseAdapter.isInstance(_parameterObject.getNode().getPropertyAttribute(propertyName), PropertyPatternVariableDeclaration.class)) {
         SNode propertyNode = BaseConcept.newInstance(model).getNode();
         propertyNode.setProperty("propertyName", propertyName);
-        propertyNode.setReferent("mainNode", node);
+        propertyNode.setReferent("mainNode", _parameterObject.getNode());
         result.add(propertyNode);
       }
     }
     return result;
   }
 
-  public static List sourceNodesQuery_1190931377388(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1190931377388(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList();
-    SModel model = generator.getTargetModel();
-    for(String referentRole : node.getReferenceRoles()) {
-      if(BaseAdapter.isInstance(node.getLinkAttribute(referentRole), LinkPatternVariableDeclaration.class)) {
+    SModel model = _parameterObject.getGenerator().getTargetModel();
+    for(String referentRole : _parameterObject.getNode().getReferenceRoles()) {
+      if(BaseAdapter.isInstance(_parameterObject.getNode().getLinkAttribute(referentRole), LinkPatternVariableDeclaration.class)) {
         continue;
       }
       SNode referenceNode = BaseConcept.newInstance(model).getNode();
-      SNode referent = node.getReferent(referentRole);
+      SNode referent = _parameterObject.getNode().getReferent(referentRole);
       referenceNode.setProperty("referentRole", referentRole);
       referenceNode.setProperty("referentModel", referent.getModel().getUID().toString());
       referenceNode.setProperty("referentId", referent.getId());
-      referenceNode.setReferent("mainNode", node);
+      referenceNode.setReferent("mainNode", _parameterObject.getNode());
       result.add(referenceNode);
     }
     return result;
   }
 
-  public static List sourceNodesQuery_1190931377535(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1190931377535(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList();
-    SModel model = generator.getTargetModel();
-    for(String referentRole : node.getReferenceRoles()) {
-      if(BaseAdapter.isInstance(node.getLinkAttribute(referentRole), LinkPatternVariableDeclaration.class)) {
+    SModel model = _parameterObject.getGenerator().getTargetModel();
+    for(String referentRole : _parameterObject.getNode().getReferenceRoles()) {
+      if(BaseAdapter.isInstance(_parameterObject.getNode().getLinkAttribute(referentRole), LinkPatternVariableDeclaration.class)) {
         SNode linkNode = BaseConcept.newInstance(model).getNode();
         linkNode.setProperty("referentRole", referentRole);
-        linkNode.setReferent("mainNode", node);
+        linkNode.setReferent("mainNode", _parameterObject.getNode());
         result.add(linkNode);
       }
     }
     return result;
   }
 
-  public static List sourceNodesQuery_1190931377752(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode mainNode = node.getReferent("mainNode");
-    String role = node.getProperty("childRole");
+  public static List sourceNodesQuery_1190931377752(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    SNode mainNode = _parameterObject.getNode().getReferent("mainNode");
+    String role = _parameterObject.getNode().getProperty("childRole");
     return mainNode.getChildren(role);
   }
 
-  public static List sourceNodesQuery_1190931377952(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1190931377952(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList<SNode>();
-    SNode mainNode = node.getReferent("mainNode");
-    String role = node.getProperty("childRole");
+    SNode mainNode = _parameterObject.getNode().getReferent("mainNode");
+    String role = _parameterObject.getNode().getProperty("childRole");
     result.add(mainNode.getChildren(role).get(0));
     return result;
   }
 
-  public static List sourceNodesQuery_1190931378020(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1190931378020(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList<SNode>();
-    SModel model = generator.getTargetModel();
-    AbstractConceptDeclaration concept = node.getConceptDeclarationAdapter();
-    for(String childRole : node.getChildRoles()) {
+    SModel model = _parameterObject.getGenerator().getTargetModel();
+    AbstractConceptDeclaration concept = _parameterObject.getNode().getConceptDeclarationAdapter();
+    for(String childRole : _parameterObject.getNode().getChildRoles()) {
       SNode childRoleNode = BaseConcept.newInstance(model).getNode();
       childRoleNode.setProperty("childRole", childRole);
       childRoleNode.setReferent("childLinkDeclaration", SModelUtil_new.findLinkDeclaration(concept, childRole).getNode());
-      childRoleNode.setReferent("mainNode", node);
+      childRoleNode.setReferent("mainNode", _parameterObject.getNode());
       result.add(childRoleNode);
     }
     return result;

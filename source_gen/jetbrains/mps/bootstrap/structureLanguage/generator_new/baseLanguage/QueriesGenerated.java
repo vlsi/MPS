@@ -18,11 +18,11 @@ import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.bootstrap.structureLanguage.constraints.EnumerationDataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.IfMacro_ParameterObject;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObject;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
@@ -511,138 +511,138 @@ public class QueriesGenerated {
     return SLinkOperations.getCount(_parameterObject.getNode(), "extends") == 0;
   }
 
-  public static List sourceNodesQuery_1198508062250(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "implements", true);
+  public static List sourceNodesQuery_1198508062250(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "implements", true);
   }
 
-  public static List sourceNodesQuery_1167954157081(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "conceptPropertyDeclaration", true);
+  public static List sourceNodesQuery_1167954157081(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "conceptPropertyDeclaration", true);
   }
 
-  public static List sourceNodesQuery_1168019837671(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "conceptLinkDeclaration", true);
+  public static List sourceNodesQuery_1168019837671(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "conceptLinkDeclaration", true);
   }
 
-  public static List sourceNodesQuery_1174698255353(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "member", true);
+  public static List sourceNodesQuery_1174698255353(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "member", true);
   }
 
-  public static List sourceNodesQuery_1174700250815(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "member", true);
+  public static List sourceNodesQuery_1174700250815(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "member", true);
   }
 
-  public static List sourceNodesQuery_1174700303502(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "member", true);
+  public static List sourceNodesQuery_1174700303502(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "member", true);
   }
 
-  public static List sourceNodesQuery_1170173405399(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "conceptPropertyDeclaration", true);
+  public static List sourceNodesQuery_1170173405399(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "conceptPropertyDeclaration", true);
   }
 
-  public static List sourceNodesQuery_1170173405428(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "conceptLinkDeclaration", true);
+  public static List sourceNodesQuery_1170173405428(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "conceptLinkDeclaration", true);
   }
 
-  public static List sourceNodesQuery_1198509713444(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "extends", true);
+  public static List sourceNodesQuery_1198509713444(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "extends", true);
   }
 
-  public static List sourceNodesQuery_1169582607427(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1169582607427(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     final zClosureContext _zClosureContext = new zClosureContext();
-    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(node);
+    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_parameterObject.getNode());
     // all string-type-properties from implemented interfaces
     _zClosureContext.names = ListOperations.createList(new String[]{});
     return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper(null, _zClosureContext)));
   }
 
-  public static List sourceNodesQuery_1169582607484(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1169582607484(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     final zClosureContext1 _zClosureContext1 = new zClosureContext1();
-    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(node);
+    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_parameterObject.getNode());
     // all boolean-type-properties from implemented interfaces
     _zClosureContext1.names = ListOperations.createList(new String[]{});
     return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper1(null, _zClosureContext1)));
   }
 
-  public static List sourceNodesQuery_1169582607556(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1169582607556(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     final zClosureContext2 _zClosureContext2 = new zClosureContext2();
-    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(node);
+    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_parameterObject.getNode());
     // all integer-type-properties from implemented interfaces
     _zClosureContext2.names = ListOperations.createList(new String[]{});
     return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper2(null, _zClosureContext2)));
   }
 
-  public static List sourceNodesQuery_1169582607613(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1169582607613(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     final zClosureContext3 _zClosureContext3 = new zClosureContext3();
-    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(node);
+    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_parameterObject.getNode());
     // all enum-type-properties from implemented interfaces
     _zClosureContext3.names = ListOperations.createList(new String[]{});
     return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper3(null, _zClosureContext3)));
   }
 
-  public static List sourceNodesQuery_1169582939001(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(node);
+  public static List sourceNodesQuery_1169582939001(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_parameterObject.getNode());
     // all reference links with cardinality=1 and no specialization
     return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper4(null, null)));
   }
 
-  public static List sourceNodesQuery_1169583297000(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(node);
+  public static List sourceNodesQuery_1169583297000(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_parameterObject.getNode());
     // all reference links with cardinality=1 and specialization
     return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper5(null, null)));
   }
 
-  public static List sourceNodesQuery_1169591070416(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(node);
+  public static List sourceNodesQuery_1169591070416(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_parameterObject.getNode());
     // all aggregation links with cardinality:1 and no specialization
     return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper6(null, null)));
   }
 
-  public static List sourceNodesQuery_1169592290002(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(node);
+  public static List sourceNodesQuery_1169592290002(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_parameterObject.getNode());
     // all aggregation links with cardinality:1 and specialization
     return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper7(null, null)));
   }
 
-  public static List sourceNodesQuery_1169592375021(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(node);
+  public static List sourceNodesQuery_1169592375021(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    List<SNode> concepts = QueriesUtil.conceptAndItsInterfaces(_parameterObject.getNode());
     // all aggregation links with cardinality:n and no specialization
     return SequenceOperations.toList(SequenceOperations.map(concepts, new zMapper8(null, null)));
   }
 
-  public static List sourceNodesQuery_1169751054593(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "propertyDeclaration", true), new zPredicate(null, null)));
+  public static List sourceNodesQuery_1169751054593(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "propertyDeclaration", true), new zPredicate(null, null)));
   }
 
-  public static List sourceNodesQuery_1169751903568(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "propertyDeclaration", true), new zPredicate1(null, null)));
+  public static List sourceNodesQuery_1169751903568(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "propertyDeclaration", true), new zPredicate1(null, null)));
   }
 
-  public static List sourceNodesQuery_1169751987220(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "propertyDeclaration", true), new zPredicate2(null, null)));
+  public static List sourceNodesQuery_1169751987220(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "propertyDeclaration", true), new zPredicate2(null, null)));
   }
 
-  public static List sourceNodesQuery_1169752052157(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "propertyDeclaration", true), new zPredicate3(null, null)));
+  public static List sourceNodesQuery_1169752052157(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "propertyDeclaration", true), new zPredicate3(null, null)));
   }
 
-  public static List sourceNodesQuery_1169752120196(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "linkDeclaration", true), new zPredicate4(null, null)));
+  public static List sourceNodesQuery_1169752120196(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "linkDeclaration", true), new zPredicate4(null, null)));
   }
 
-  public static List sourceNodesQuery_1169753230932(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "linkDeclaration", true), new zPredicate5(null, null)));
+  public static List sourceNodesQuery_1169753230932(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "linkDeclaration", true), new zPredicate5(null, null)));
   }
 
-  public static List sourceNodesQuery_1169753275330(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "linkDeclaration", true), new zPredicate6(null, null)));
+  public static List sourceNodesQuery_1169753275330(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "linkDeclaration", true), new zPredicate6(null, null)));
   }
 
-  public static List sourceNodesQuery_1169753367103(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "linkDeclaration", true), new zPredicate7(null, null)));
+  public static List sourceNodesQuery_1169753367103(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "linkDeclaration", true), new zPredicate7(null, null)));
   }
 
-  public static List sourceNodesQuery_1169753422079(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "linkDeclaration", true), new zPredicate8(null, null)));
+  public static List sourceNodesQuery_1169753422079(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "linkDeclaration", true), new zPredicate8(null, null)));
   }
 
   public static SNode mapSrcMacro_mapper_1178978044712(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {

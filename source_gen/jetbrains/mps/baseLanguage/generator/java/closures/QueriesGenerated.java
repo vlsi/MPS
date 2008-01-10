@@ -14,9 +14,8 @@ import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObject;
 import jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObject;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
 
 public class QueriesGenerated {
 
@@ -148,32 +147,32 @@ public class QueriesGenerated {
     return QueriesUtil.create_enclosingClassObject(_parameterObject.getNode());
   }
 
-  public static List sourceNodesQuery_1170347787985(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(node, generator);
+  public static List sourceNodesQuery_1170347787985(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    List list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_parameterObject.getNode(), _parameterObject.getGenerator());
     return (List<SNode>)list;
   }
 
-  public static List sourceNodesQuery_1170347696338(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(node, generator);
+  public static List sourceNodesQuery_1170347696338(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    List list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_parameterObject.getNode(), _parameterObject.getGenerator());
     return (List<SNode>)list;
   }
 
-  public static List sourceNodesQuery_1170347169279(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List list = _QueriesUtil.getList_ContextOwner_VariablesUsedInClosure(node, generator);
+  public static List sourceNodesQuery_1170347169279(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    List list = _QueriesUtil.getList_ContextOwner_VariablesUsedInClosure(_parameterObject.getNode(), _parameterObject.getGenerator());
     return (List<SNode>)list;
   }
 
-  public static List sourceNodesQuery_1170295259476(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(node, generator);
+  public static List sourceNodesQuery_1170295259476(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_parameterObject.getNode(), _parameterObject.getGenerator());
     return (List<SNode>)list;
   }
 
-  public static List sourceNodesQuery_1170294170225(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "statement", true);
+  public static List sourceNodesQuery_1170294170225(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "statement", true);
   }
 
-  public static List sourceNodesQuery_1170874089896(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.getTypeVars_from_Closure_enclosingClass(node, operationContext.getScope());
+  public static List sourceNodesQuery_1170874089896(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return QueriesUtil.getTypeVars_from_Closure_enclosingClass(_parameterObject.getNode(), operationContext.getScope());
   }
 
   public static SNode mapSrcMacro_mapper_1170898169592(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {

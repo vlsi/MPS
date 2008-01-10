@@ -17,9 +17,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObje
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObject;
 import java.util.Collections;
 import java.util.Comparator;
 import java.text.Collator;
@@ -75,23 +73,23 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
   }
 
-  public static List sourceNodesQuery_1199644424783(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "parameter", true);
+  public static List sourceNodesQuery_1199644424783(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "parameter", true);
   }
 
-  public static List sourceNodesQuery_1199712173374(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "parameter", true);
+  public static List sourceNodesQuery_1199712173374(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "parameter", true);
   }
 
-  public static List sourceNodesQuery_1199638584204(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1199638584204(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     final zClosureContext1 _zClosureContext1 = new zClosureContext1();
     _zClosureContext1.idx = 1;
-    return SequenceOperations.toList(SequenceOperations.select(SLinkOperations.getTargets(node, "parameterType", true), new zSelector(null, _zClosureContext1)));
+    return SequenceOperations.toList(SequenceOperations.select(SLinkOperations.getTargets(_parameterObject.getNode(), "parameterType", true), new zSelector(null, _zClosureContext1)));
   }
 
-  public static List sourceNodesQuery_1199624603942(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    Iterable<SNode> clTypes = SequenceOperations.select(SModelOperations.getNodes(sourceModel, "jetbrains.mps.closures.structure.ClosureLiteral"), new zSelector1(null, null));
-    List<SNode> funTypes = SModelOperations.getNodes(sourceModel, "jetbrains.mps.closures.structure.FunctionType");
+  public static List sourceNodesQuery_1199624603942(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    Iterable<SNode> clTypes = SequenceOperations.select(SModelOperations.getNodes(_parameterObject.getSourceModel(), "jetbrains.mps.closures.structure.ClosureLiteral"), new zSelector1(null, null));
+    List<SNode> funTypes = SModelOperations.getNodes(_parameterObject.getSourceModel(), "jetbrains.mps.closures.structure.FunctionType");
     List<SNode> typesList = SequenceOperations.toList(SequenceOperations.union(clTypes, funTypes));
     Collections.sort(typesList, new Comparator() {
 
@@ -113,8 +111,8 @@ public class QueriesGenerated {
     return typesList;
   }
 
-  public static List sourceNodesQuery_1199624932349(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "parameter", true);
+  public static List sourceNodesQuery_1199624932349(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "parameter", true);
   }
 
 }

@@ -16,9 +16,7 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.generator.template.IfMacro_ParameterObject;
 import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObject;
 import java.util.List;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObject;
 import java.util.ArrayList;
 
 public class QueriesGenerated {
@@ -122,10 +120,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1197995546008(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
     {
-      Pattern_ pattern_1199968240341 = new Pattern_();
-      SNode coercedNode_1199968240340 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true), pattern_1199968240341);
-      if(coercedNode_1199968240340 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1199968240341.PatternVar;
+      Pattern_ pattern_1199970635854 = new Pattern_();
+      SNode coercedNode_1199970635853 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true), pattern_1199970635854);
+      if(coercedNode_1199970635853 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_1199970635854.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }
@@ -408,9 +406,9 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_parameterObject.getNode(), "destination", true);
   }
 
-  public static List sourceNodesQuery_1198673830801(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1198673830801(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList<SNode>();
-    List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(node, "arguments", true);
+    List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_parameterObject.getNode(), "arguments", true);
     for(SNode argument : requiredUserEnteredArguments) {
       if((SLinkOperations.getTarget(argument, "filterClause", true) != null)) {
         ListOperations.addElement(result, argument);
@@ -419,17 +417,17 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1189698183859(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "arguments", true);
+  public static List sourceNodesQuery_1189698183859(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "arguments", true);
   }
 
-  public static List sourceNodesQuery_1189698208144(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "internalArguments", true);
+  public static List sourceNodesQuery_1189698208144(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "internalArguments", true);
   }
 
-  public static List sourceNodesQuery_1197992301257(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1197992301257(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList<SNode>();
-    List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(node, "arguments", true);
+    List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_parameterObject.getNode(), "arguments", true);
     for(SNode argument : requiredUserEnteredArguments) {
       if((SLinkOperations.getTarget(argument, "chooseComponentClause", true) != null)) {
         ListOperations.addElement(result, argument);
@@ -438,9 +436,9 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1198600029014(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
+  public static List sourceNodesQuery_1198600029014(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
     List<SNode> result = new ArrayList<SNode>();
-    List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(node, "arguments", true);
+    List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(_parameterObject.getNode(), "arguments", true);
     for(SNode argument : requiredUserEnteredArguments) {
       if((SLinkOperations.getTarget(argument, "initialValue", true) != null)) {
         ListOperations.addElement(result, argument);
@@ -449,8 +447,8 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List sourceNodesQuery_1197986353964(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTargets(node, "arguments", true);
+  public static List sourceNodesQuery_1197986353964(final IOperationContext operationContext, final SourceSubstituteMacro_Nodes_ParameterObject _parameterObject) {
+    return SLinkOperations.getTargets(_parameterObject.getNode(), "arguments", true);
   }
 
 }
