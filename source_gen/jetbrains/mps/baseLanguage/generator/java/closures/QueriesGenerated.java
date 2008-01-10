@@ -11,11 +11,12 @@ import jetbrains.mps.baseLanguage.structure.VariableDeclaration;
 import jetbrains.mps.generator.template.PropertyMacro_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObject;
+import jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil;
 
 public class QueriesGenerated {
 
@@ -123,6 +124,30 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_parameterObject.getNode(), "closureParameter", false), "name");
   }
 
+  public static SNode sourceNodeQuery_1170347410888(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1170294125679(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SNodeOperations.getParent(_parameterObject.getNode(), null, false, false);
+  }
+
+  public static SNode sourceNodeQuery_1185917871131(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return QueriesUtil.createClassType_forClosure_enclosingClass(_parameterObject.getNode(), _parameterObject.getGenerator());
+  }
+
+  public static SNode sourceNodeQuery_1185918144604(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return QueriesUtil.createClassType_forClosure_enclosingClass(_parameterObject.getNode(), _parameterObject.getGenerator());
+  }
+
+  public static SNode sourceNodeQuery_1170348623270(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "localVariableDeclaration", true), "initializer", true);
+  }
+
+  public static SNode sourceNodeQuery_1196118817337(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return QueriesUtil.create_enclosingClassObject(_parameterObject.getNode());
+  }
+
   public static List sourceNodesQuery_1170347787985(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     List list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(node, generator);
     return (List<SNode>)list;
@@ -148,31 +173,7 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1170874089896(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.getTypeVars_from_Closure_enclosingClass(node, scope);
-  }
-
-  public static SNode sourceNodeQuery_1170347410888(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1170294125679(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getParent(node, null, false, false);
-  }
-
-  public static SNode sourceNodeQuery_1185917871131(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.createClassType_forClosure_enclosingClass(node, generator);
-  }
-
-  public static SNode sourceNodeQuery_1185918144604(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.createClassType_forClosure_enclosingClass(node, generator);
-  }
-
-  public static SNode sourceNodeQuery_1170348623270(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "localVariableDeclaration", true), "initializer", true);
-  }
-
-  public static SNode sourceNodeQuery_1196118817337(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.create_enclosingClassObject(node);
+    return QueriesUtil.getTypeVars_from_Closure_enclosingClass(node, operationContext.getScope());
   }
 
   public static SNode mapSrcMacro_mapper_1170898169592(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
