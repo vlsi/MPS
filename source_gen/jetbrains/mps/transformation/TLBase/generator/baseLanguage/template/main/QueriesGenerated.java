@@ -11,6 +11,11 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil;
+import java.util.List;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class QueriesGenerated {
 
@@ -74,16 +79,8 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(node, "body", true);
   }
 
-  public static SNode sourceNodeQuery_1185220272684(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.getInputNodeTypeForTemplateFunction(node);
-  }
-
   public static SNode sourceNodeQuery_1168025925887(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTarget(node, "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1185220055445(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return QueriesUtil.getInputNodeTypeForTemplateFunction(node);
   }
 
   public static SNode sourceNodeQuery_1168025947268(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -172,6 +169,16 @@ public class QueriesGenerated {
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1195503404236(SNode node, ITemplateGenerator generator) {
     return QueriesUtil.getQueriesGeneratedClass(generator);
+  }
+
+  public static void mappingScript_CodeBlock_1199965771120(SModel model, ITemplateGenerator generator) {
+    List<SNode> nodes = SModelOperations.getNodes(model, "jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode");
+    for(SNode node : nodes) {
+      SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", null);
+      SLinkOperations.setTarget(replacement, "typeHint", TypeChecker.getInstance().getTypeOf(node), true);
+      SNodeOperations.replaceWithAnother(node, replacement);
+      SLinkOperations.setTarget(replacement, "expression", node, true);
+    }
   }
 
 }
