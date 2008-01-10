@@ -38,14 +38,6 @@ public class MacroUtil {
       String templateValue = templateNode.getProperty(propertyName);
 
       String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function.getNode());
-      Object[] args = new Object[]{
-              inputNode,
-              templateValue,
-              templateNode,
-              generator.getInputModel(),
-              generator,
-              generator.getScope(),
-              generator.getGeneratorSessionContext()};
       try {
         Object macroValue = QueryMethodGenerated.invoke(
                 methodName,
