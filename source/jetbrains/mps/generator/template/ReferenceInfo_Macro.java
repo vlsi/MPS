@@ -74,7 +74,7 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       result = QueryMethodGenerated.invoke(
               methodName,
               generator.getGeneratorSessionContext(),
-              new ReferenceMacro_ParameterObject(getInputNode(), myTemplateReferenceNode, getOutputSourceNode(), generator.getInputModel(), generator),
+              new ReferenceMacroContext(getInputNode(), myTemplateReferenceNode, getOutputSourceNode(), generator.getInputModel(), generator),
               myReferenceMacro.getModel());
 
       if (result instanceof SNode) {

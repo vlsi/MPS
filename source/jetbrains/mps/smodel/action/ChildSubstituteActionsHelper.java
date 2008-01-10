@@ -388,7 +388,7 @@ public class ChildSubstituteActionsHelper {
         return (Boolean) QueryMethodGenerated.invoke(
                 methodName,
                 context,
-                new NodeSubstitutePrecondition_ParameterObject(parentNode, concept.getNode()),
+                new NodeSubstitutePreconditionContext(parentNode, concept.getNode()),
                 model);
       } catch (Exception e) {
         LOG.error(e);
@@ -433,7 +433,7 @@ public class ChildSubstituteActionsHelper {
     for (RemoveByConditionPart part : removesByCondition) {
       String methodName = "removeActionsByCondition_" + part.getId();
       try {
-        QueryMethodGenerated.invoke(methodName, context, new RemoveSubstituteActionByCondition_ParameterObject(actions.iterator(), parentNode, currentChild, childConcept), substituteActionsBuilder.getModel());
+        QueryMethodGenerated.invoke(methodName, context, new RemoveSubstituteActionByConditionContext(actions.iterator(), parentNode, currentChild, childConcept), substituteActionsBuilder.getModel());
       } catch (Throwable t) {
         LOG.error(t);
       }
@@ -445,7 +445,7 @@ public class ChildSubstituteActionsHelper {
   private static List<INodeSubstituteAction> invokeActionFactory(NodeSubstituteActionsBuilder builder, SNode parentNode, SNode currentChild, AbstractConceptDeclaration childConcept, IChildNodeSetter childSetter, IOperationContext context) {
     String methodName = ActionQueryMethodName.nodeFactory_SubstituteActionBuilder(builder);
     try {
-      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactory_ParameterObject(parentNode, currentChild, childConcept.getNode(), childSetter), builder.getModel());
+      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new NodeSubstituteActionsFactoryContext(parentNode, currentChild, childConcept.getNode(), childSetter), builder.getModel());
     } catch (Throwable t) {
       LOG.error(t);
       return Collections.emptyList();

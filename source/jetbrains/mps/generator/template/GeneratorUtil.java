@@ -94,7 +94,7 @@ public class GeneratorUtil {
       res = (Boolean) QueryMethodGenerated.invoke(
               methodName,
               generator.getGeneratorSessionContext(),
-              new BaseMappingRule_ParameterObject(inputNode, generator.getInputModel(), generator),
+              new BaseMappingRuleContext(inputNode, generator.getInputModel(), generator),
               ruleNode.getModel());
       return res;
     } catch (Exception e) {
@@ -119,7 +119,7 @@ public class GeneratorUtil {
       QueryMethodGenerated.invoke(
               methodName,
               generator.getGeneratorSessionContext(),
-              new MappingScript_ParameterObject(model, generator),
+              new MappingScriptContext(model, generator),
               mappingScript.getModel());
     } catch (GenerationFailedException gfe) {
       generator.showErrorMessage(codeBlock.getNode(), "error executing script '" + mappingScript.getName() + "'");
@@ -145,7 +145,7 @@ public class GeneratorUtil {
       List<SNode> result = (List<SNode>) QueryMethodGenerated.invoke(
               methodName,
               generator.getGeneratorSessionContext(),
-              new SourceSubstituteMacro_Nodes_ParameterObject(inputNode, generator.getInputModel(), generator),
+              new SourceSubstituteMacroNodesContext(inputNode, generator.getInputModel(), generator),
               query.getModel());
       return result;
     } catch (Exception e) {
@@ -164,7 +164,7 @@ public class GeneratorUtil {
       return (SNode) QueryMethodGenerated.invoke(
               methodName,
               generator.getGeneratorSessionContext(),
-              new SourceSubstituteMacro_Node_ParameterObject(inputNode, generator.getInputModel(), generator),
+              new SourceSubstituteMacroNodeContext(inputNode, generator.getInputModel(), generator),
               query.getModel());
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
@@ -203,7 +203,7 @@ public class GeneratorUtil {
       return (Boolean) QueryMethodGenerated.invoke(
               methodName,
               generator.getGeneratorSessionContext(),
-              new CreateRootRule_ParameterObject(generator.getInputModel(), generator),
+              new CreateRootRuleContext(generator.getInputModel(), generator),
               createRootRule.getModel());
     } catch (Exception e) {
       generator.showErrorMessage(null, null, BaseAdapter.fromAdapter(createRootRule), "couldn't evaluate rule condition");
@@ -343,7 +343,7 @@ public class GeneratorUtil {
         return (SNode) QueryMethodGenerated.invoke(
                 methodName,
                 generator.getGeneratorSessionContext(),
-                new WeavingMappingRuleContext_ParameterObject(inputNode, generator),
+                new WeavingMappingRuleContext(inputNode, generator),
                 query.getModel());                  
       } catch (Exception e) {
         generator.showErrorMessage(inputNode, null, ruleNode, "couldn't evaluate rule context query");
@@ -465,7 +465,7 @@ public class GeneratorUtil {
          return (SNode) QueryMethodGenerated.invoke(
                  methodName,
                  generator.getGeneratorSessionContext(),
-                 new TemplateFragmentContext_ParameterObject(inputNode, mainContextNode, generator),
+                 new TemplateFragmentContext(inputNode, mainContextNode, generator),
                  query.getModel());
       } catch (Exception e) {
         generator.showErrorMessage(inputNode, null, templateFragmentNode, "couldn't evaluate template fragment context query");

@@ -2,11 +2,9 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.bootstrap.actionsLanguage.structure.*;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
-import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.ide.command.CommandProcessor;
 
@@ -124,7 +122,7 @@ import java.util.*;
   private static void invokeRemoveByCondition(RemoveRTByConditionPart removeByCondition, Iterator<INodeSubstituteAction> actions, SNode sourceNode, IOperationContext context) {
     String methodName = "removeRTActionsByCondition_" + removeByCondition.getId();
     try {
-      QueryMethodGenerated.invoke(methodName, context, new RemoveRTActionByCondition_ParameterObject(actions, sourceNode), removeByCondition.getModel());
+      QueryMethodGenerated.invoke(methodName, context, new RemoveRTActionByConditionContext(actions, sourceNode), removeByCondition.getModel());
     } catch (Throwable t) {
       LOG.error(t);
     }
@@ -138,7 +136,7 @@ import java.util.*;
       String methodName = ActionQueryMethodName.rTransformHintSubstituteActionsBuilder_Precondition(actionsBuilder);
       SModel model = actionsBuilder.getModel();
       try {
-        return (Boolean) QueryMethodGenerated.invoke(methodName, context, new RTransformPrecondition_ParameterObject(sourceNode), model);
+        return (Boolean) QueryMethodGenerated.invoke(methodName, context, new RTransformPreconditionContext(sourceNode), model);
       } catch (Exception e) {
         LOG.error(e);
         return false;
@@ -152,7 +150,7 @@ import java.util.*;
     String methodName = ActionQueryMethodName.nodeFactory_RightTransformActionBuilder(substituteActionsBuilder);
     SModel model = substituteActionsBuilder.getModel();
     try {
-      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new RTActionsBuilder_ParameterObject(sourceNode, sourceNode.getModel(), null), model);
+      return (List<INodeSubstituteAction>) QueryMethodGenerated.invoke(methodName, context, new RTActionsBuilderContext(sourceNode, sourceNode.getModel(), null), model);
     } catch (Exception e) {
       return new ArrayList<INodeSubstituteAction>();
     }

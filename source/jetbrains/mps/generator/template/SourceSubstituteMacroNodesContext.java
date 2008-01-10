@@ -3,12 +3,12 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 
-public class IfMacro_ParameterObject {
+public class SourceSubstituteMacroNodesContext {
   private SNode myNode;
   private SModel mySourceModel;
   private ITemplateGenerator myGenerator;
 
-  public IfMacro_ParameterObject(SNode node, SModel sourceModel, ITemplateGenerator generator) {
+  public SourceSubstituteMacroNodesContext(SNode node, SModel sourceModel, ITemplateGenerator generator) {
     myNode = node;
     mySourceModel = sourceModel;
     myGenerator = generator;

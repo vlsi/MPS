@@ -3,13 +3,13 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 
-public class NodeSubstituteActionsFactory_ParameterObject {
+public class NodeSubstituteActionsFactoryContext {
   private SNode myParentNode;
   private SNode myCurrentTargetNode;
   private SNode myChildConcept;
   private IChildNodeSetter myChildSetter;
 
-  public NodeSubstituteActionsFactory_ParameterObject(SNode parentNode, SNode currentTargetNode, SNode childConcept, IChildNodeSetter childSetter) {
+  public NodeSubstituteActionsFactoryContext(SNode parentNode, SNode currentTargetNode, SNode childConcept, IChildNodeSetter childSetter) {
     myParentNode = parentNode;
     myCurrentTargetNode = currentTargetNode;
     myChildConcept = childConcept;

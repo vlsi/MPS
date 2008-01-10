@@ -2,11 +2,11 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SModel;
 
-public class CreateRootRule_ParameterObject {
+public class CreateRootRuleContext {
   private SModel mySourceModel;
   private ITemplateGenerator myGenerator;
 
-  public CreateRootRule_ParameterObject(SModel sourceModel, ITemplateGenerator generator) {
+  public CreateRootRuleContext(SModel sourceModel, ITemplateGenerator generator) {
     mySourceModel = sourceModel;
     myGenerator = generator;
   }

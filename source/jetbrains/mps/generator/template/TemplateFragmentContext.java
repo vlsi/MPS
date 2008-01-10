@@ -2,12 +2,12 @@ package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.SNode;
 
-public class TemplateFragmentContext_ParameterObject {
+public class TemplateFragmentContext {
   private SNode myNode;
   private SNode myMainContextNode;
   private ITemplateGenerator myGenerator;
 
-  public TemplateFragmentContext_ParameterObject(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
+  public TemplateFragmentContext(SNode node, SNode mainContextNode, ITemplateGenerator generator) {
     myNode = node;
     myMainContextNode = mainContextNode;
     myGenerator = generator;

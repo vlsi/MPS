@@ -1,15 +1,16 @@
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 
-public class MapSrcMacro_ParameterObject {
+public class SourceSubstituteMacroNodeContext {
   private SNode myNode;
-  private SNode myParentOutputNode;
+  private SModel mySourceModel;
   private ITemplateGenerator myGenerator;
 
-  public MapSrcMacro_ParameterObject(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
+  public SourceSubstituteMacroNodeContext(SNode node, SModel sourceModel, ITemplateGenerator generator) {
     myNode = node;
-    myParentOutputNode = parentOutputNode;
+    mySourceModel = sourceModel;
     myGenerator = generator;
   }
 
@@ -17,8 +18,8 @@ public class MapSrcMacro_ParameterObject {
     return myNode;
   }
 
-  public SNode getParentOutputNode() {
-    return myParentOutputNode;
+  public SModel getSourceModel() {
+    return mySourceModel;
   }
 
   public ITemplateGenerator getGenerator() {

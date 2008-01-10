@@ -42,7 +42,7 @@ public class MacroUtil {
         Object macroValue = QueryMethodGenerated.invoke(
                 methodName,
                 generator.getGeneratorSessionContext(),
-                new PropertyMacro_ParameterObject(inputNode, templateValue, templateNode, generator.getInputModel(), generator),
+                new PropertyMacroContext(inputNode, templateValue, templateNode, generator.getInputModel(), generator),
                 propertyMacro.getModel());
         propertyValue = macroValue == null ? null : String.valueOf(macroValue);
       } catch (Exception e) {
@@ -80,7 +80,7 @@ public class MacroUtil {
         return (SNode) QueryMethodGenerated.invoke(
                   methodName,
                   generator.getGeneratorSessionContext(),
-                  new MapSrcMacro_ParameterObject(inputNode, parentOutputNode, generator),
+                  new MapSrcMacroContext(inputNode, parentOutputNode, generator),
                   mapSrcNodeOrListMacro.getModel());
       } catch (Exception e) {
         generator.showErrorMessage(inputNode, null, mapSrcNodeOrListMacro, "couldn't evaluate macro query");
@@ -113,7 +113,7 @@ public class MacroUtil {
         res = (Boolean) QueryMethodGenerated.invoke(
                 methodName,
                 generator.getGeneratorSessionContext(),
-                new IfMacro_ParameterObject(inputNode, generator.getInputModel(), generator),
+                new IfMacroContext(inputNode, generator.getInputModel(), generator),
                 ifMacro.getModel());
         return res;
       } catch (Exception e) {

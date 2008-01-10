@@ -2,10 +2,10 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.SNode;
 
-public class RTransformPrecondition_ParameterObject {
+public class RTransformPreconditionContext {
   private SNode mySourceNode;
 
-  public RTransformPrecondition_ParameterObject(SNode sourceNode) {
+  public RTransformPreconditionContext(SNode sourceNode) {
     mySourceNode = sourceNode;
   }
 

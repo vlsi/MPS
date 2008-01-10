@@ -3,12 +3,12 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 
-public class BaseMappingRule_ParameterObject {
+public class BaseMappingRuleContext {
   private SNode myNode;
   private SModel mySourceModel;
   private ITemplateGenerator myGenerator;
 
-  public BaseMappingRule_ParameterObject(SNode node, SModel sourceModel, ITemplateGenerator generator) {
+  public BaseMappingRuleContext(SNode node, SModel sourceModel, ITemplateGenerator generator) {
     myNode = node;
     mySourceModel = sourceModel;
     myGenerator = generator;

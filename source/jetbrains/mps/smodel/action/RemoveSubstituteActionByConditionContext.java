@@ -4,13 +4,13 @@ import jetbrains.mps.smodel.SNode;
 
 import java.util.Iterator;
 
-public class RemoveSubstituteActionByCondition_ParameterObject {
+public class RemoveSubstituteActionByConditionContext {
   private Iterator<INodeSubstituteAction> myActions;
   private SNode myParentNode;
   private SNode myCurrentChild;
   private SNode myChildConcept;
 
-  public RemoveSubstituteActionByCondition_ParameterObject(Iterator<INodeSubstituteAction> actions, SNode parentNode, SNode currentChild, SNode childConcept) {
+  public RemoveSubstituteActionByConditionContext(Iterator<INodeSubstituteAction> actions, SNode parentNode, SNode currentChild, SNode childConcept) {
     myActions = actions;
     myParentNode = parentNode;
     myCurrentChild = currentChild;

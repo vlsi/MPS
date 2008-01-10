@@ -2,11 +2,11 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.SNode;
 
-public class NodeSubstitutePrecondition_ParameterObject {
+public class NodeSubstitutePreconditionContext {
   private SNode myParentNode;
   private SNode myChildConcept;
 
-  public NodeSubstitutePrecondition_ParameterObject(SNode parentNode, SNode childConcept) {
+  public NodeSubstitutePreconditionContext(SNode parentNode, SNode childConcept) {
     myParentNode = parentNode;
     myChildConcept = childConcept;
   }

@@ -119,7 +119,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     Object[] args = new Object[]{newNode, sampleNode, enclosingNode, model};
     try {
       //todo pass IOperationContext here somehow
-      QueryMethodGenerated.invoke(methodName, null, new NodeSetup_ParameterObject(newNode, sampleNode, enclosingNode, model), factory.getModel());
+      QueryMethodGenerated.invoke(methodName, null, new NodeSetupContext(newNode, sampleNode, enclosingNode, model), factory.getModel());
     } catch (Exception e) {
       LOG.error(e);
     }

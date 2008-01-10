@@ -3,14 +3,14 @@ package jetbrains.mps.generator.template;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 
-public class ReferenceMacro_ParameterObject {
+public class ReferenceMacroContext {
   private SNode myNode;
   private SNode myTemplateNode;
   private SNode myOutputNode;
   private SModel mySourceModel;
   private ITemplateGenerator myGenerator;
 
-  public ReferenceMacro_ParameterObject(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
+  public ReferenceMacroContext(SNode node, SNode templateNode, SNode outputNode, SModel sourceModel, ITemplateGenerator generator) {
     myNode = node;
     myTemplateNode = templateNode;
     myOutputNode = outputNode;
