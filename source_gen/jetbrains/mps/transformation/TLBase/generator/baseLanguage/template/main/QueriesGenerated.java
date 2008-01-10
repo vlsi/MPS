@@ -10,8 +10,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObje
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext_ParameterObject;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.MappingScript_ParameterObject;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -152,8 +151,8 @@ public class QueriesGenerated {
     return QueriesUtil.getQueriesGeneratedClass(_parameterObject.getGenerator());
   }
 
-  public static void mappingScript_CodeBlock_1199965771120(SModel model, ITemplateGenerator generator) {
-    List<SNode> nodes = SModelOperations.getNodes(model, "jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode");
+  public static void mappingScript_CodeBlock_1199965771120(final IOperationContext operationContext, final MappingScript_ParameterObject _parameterObject) {
+    List<SNode> nodes = SModelOperations.getNodes(_parameterObject.getModel(), "jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode");
     for(SNode node : nodes) {
       SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", null);
       SLinkOperations.setTarget(replacement, "typeHint", SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(node)), true);

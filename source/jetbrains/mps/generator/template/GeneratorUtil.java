@@ -114,12 +114,13 @@ public class GeneratorUtil {
     }
 
     String methodName = TemplateFunctionMethodName.mappingScript_CodeBlock(codeBlock.getNode());
-    Object[] args = new Object[]{
-            model,
-            generator};
     long startTime = System.currentTimeMillis();
     try {
-      QueryMethodGenerated.invoke(methodName, args, mappingScript.getModel());
+      QueryMethodGenerated.invoke(
+              methodName,
+              generator.getGeneratorSessionContext(),
+              new MappingScript_ParameterObject(model, generator),
+              mappingScript.getModel());
     } catch (GenerationFailedException gfe) {
       generator.showErrorMessage(codeBlock.getNode(), "error executing script '" + mappingScript.getName() + "'");
       throw gfe;
@@ -139,12 +140,6 @@ public class GeneratorUtil {
 
   public static List<SNode> evaluateSourceNodesQuery(SNode inputNode, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
-    Object[] args = new Object[]{
-            inputNode,
-            generator.getInputModel(),
-            generator,
-            generator.getScope(),
-            generator.getGeneratorSessionContext()};
     long startTime = System.currentTimeMillis();
     try {
       List<SNode> result = (List<SNode>) QueryMethodGenerated.invoke(
