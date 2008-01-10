@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model name="jetbrains.mps.baseLanguageInternal.structure">
   <persistence version="1" />
-  <language namespace="jetbrains.mps.bootstrap.structureLanguage" />
+  <refactoringHistory />
+  <language namespace="jetbrains.mps.bootstrap.structureLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+  </language>
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
   <import index="2" modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
@@ -184,6 +192,22 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1177590164816">
       <property name="value" value="_field reference" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1199964756070">
+    <property name="name" value="TypeHintExpression" />
+    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1199964762556">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="expression" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1199964767385">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="typeHint" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
     </node>
   </node>
 </model>
