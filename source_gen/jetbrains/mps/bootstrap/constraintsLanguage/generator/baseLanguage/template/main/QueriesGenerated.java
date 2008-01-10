@@ -4,11 +4,12 @@ package jetbrains.mps.bootstrap.constraintsLanguage.generator.baseLanguage.templ
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRule_ParameterObject;
+import jetbrains.mps.generator.template.BaseMappingRule_ParameterObject;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.constraintsLanguage.constraints.NodeDefaultSearchScope_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
@@ -31,20 +32,20 @@ public class QueriesGenerated {
     return _parameterObject.getSourceModel().getLongName().endsWith(".constraints");
   }
 
-  public static boolean baseMappingRule_Condition_1187043003325(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "propertyGetter", true) != null;
+  public static boolean baseMappingRule_Condition_1187043003325(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "propertyGetter", true) != null;
   }
 
-  public static boolean baseMappingRule_Condition_1187043119206(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "propertySetter", true) != null;
+  public static boolean baseMappingRule_Condition_1187043119206(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "propertySetter", true) != null;
   }
 
-  public static boolean baseMappingRule_Condition_1187043231002(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "referentSetHandler", true) != null;
+  public static boolean baseMappingRule_Condition_1187043231002(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "referentSetHandler", true) != null;
   }
 
-  public static boolean baseMappingRule_Condition_1187043358729(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "searchScopeFactory", true) != null;
+  public static boolean baseMappingRule_Condition_1187043358729(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "searchScopeFactory", true) != null;
   }
 
   public static Object propertyMacro_GetPropertyValue_1184610547646(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

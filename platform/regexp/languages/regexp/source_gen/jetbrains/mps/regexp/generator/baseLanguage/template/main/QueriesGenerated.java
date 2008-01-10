@@ -7,10 +7,11 @@ import jetbrains.mps.generator.template.CreateRootRule_ParameterObject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.generator.template.BaseMappingRule_ParameterObject;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.regexp.generator.baseLanguage.template.util.GeneratorUtil;
@@ -29,20 +30,20 @@ public class QueriesGenerated {
     return SequenceOperations.getSize(SModelOperations.getNodes(smodel, "jetbrains.mps.regexp.structure.InlineRegexpExpression")) > 0;
   }
 
-  public static boolean baseMappingRule_Condition_1174659423207(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(node, "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.MatchRegexpStatement");
+  public static boolean baseMappingRule_Condition_1174659423207(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.MatchRegexpStatement");
   }
 
-  public static boolean baseMappingRule_Condition_1174659531465(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(node, "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.ReplaceWithRegexpExpression");
+  public static boolean baseMappingRule_Condition_1174659531465(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.ReplaceWithRegexpExpression");
   }
 
-  public static boolean baseMappingRule_Condition_1175155943336(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(node, "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.ForEachMatchStatement");
+  public static boolean baseMappingRule_Condition_1175155943336(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.ForEachMatchStatement");
   }
 
-  public static boolean baseMappingRule_Condition_1175170005292(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(node, "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.FindMatchStatement");
+  public static boolean baseMappingRule_Condition_1175170005292(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.regexp.structure.RegexpUsingConstruction", false, false), "jetbrains.mps.regexp.structure.FindMatchStatement");
   }
 
   public static Object propertyMacro_GetPropertyValue_1174655313358(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

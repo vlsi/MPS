@@ -5,13 +5,14 @@ package jetbrains.mps.bootstrap.helgins.generator.baseLanguage.template.main;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.CreateRootRule_ParameterObject;
 import jetbrains.mps.bootstrap.helgins.structure.AbstractRule;
+import jetbrains.mps.generator.template.BaseMappingRule_ParameterObject;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
@@ -43,117 +44,117 @@ public class QueriesGenerated {
     return !(_parameterObject.getGenerator().getSourceModel().getRootsAdapters(AbstractRule.class).isEmpty());
   }
 
-  public static boolean baseMappingRule_Condition_1188901620278(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule"));
+  public static boolean baseMappingRule_Condition_1188901620278(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return !(SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule"));
   }
 
-  public static boolean baseMappingRule_Condition_1176817835230(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(node, "applicableNode", false), null, false, false);
+  public static boolean baseMappingRule_Condition_1176817835230(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", false), null, false, false);
     if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule")) {
-      return SLinkOperations.getTarget(parent, "applicableNode", true) == SLinkOperations.getTarget(node, "applicableNode", false);
+      return SLinkOperations.getTarget(parent, "applicableNode", true) == SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", false);
     }
     return false;
   }
 
-  public static boolean baseMappingRule_Condition_1188902811518(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(node, "applicableNode", false), null, false, false);
+  public static boolean baseMappingRule_Condition_1188902811518(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    SNode parent = SNodeOperations.getParent(SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", false), null, false, false);
     if(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.bootstrap.helgins.structure.ComparisonRule")) {
-      return SLinkOperations.getTarget(parent, "anotherNode", true) == SLinkOperations.getTarget(node, "applicableNode", false);
+      return SLinkOperations.getTarget(parent, "anotherNode", true) == SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", false);
     }
     return false;
   }
 
-  public static boolean baseMappingRule_Condition_1176817952409(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(node, "applicableNode", false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
+  public static boolean baseMappingRule_Condition_1176817952409(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
   }
 
-  public static boolean baseMappingRule_Condition_1177675447418(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(node, "applicableNode", false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem");
+  public static boolean baseMappingRule_Condition_1177675447418(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SLinkOperations.getTarget(_parameterObject.getNode(), "applicableNode", false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem");
   }
 
-  public static boolean baseMappingRule_Condition_1177333576000(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule");
+  public static boolean baseMappingRule_Condition_1177333576000(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_parameterObject.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule");
   }
 
-  public static boolean baseMappingRule_Condition_1177333630561(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
+  public static boolean baseMappingRule_Condition_1177333630561(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_parameterObject.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
   }
 
-  public static boolean baseMappingRule_Condition_1196962216594(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.MatchStatement");
+  public static boolean baseMappingRule_Condition_1196962216594(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_parameterObject.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.MatchStatement");
   }
 
-  public static boolean baseMappingRule_Condition_1196962185136(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule");
+  public static boolean baseMappingRule_Condition_1196962185136(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_parameterObject.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule");
   }
 
-  public static boolean baseMappingRule_Condition_1196962232050(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
+  public static boolean baseMappingRule_Condition_1196962232050(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_parameterObject.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
   }
 
-  public static boolean baseMappingRule_Condition_1196962234769(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem");
+  public static boolean baseMappingRule_Condition_1196962234769(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_parameterObject.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem");
   }
 
-  public static boolean baseMappingRule_Condition_1196962200014(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule");
+  public static boolean baseMappingRule_Condition_1196962200014(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_parameterObject.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule");
   }
 
-  public static boolean baseMappingRule_Condition_1196962272510(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
+  public static boolean baseMappingRule_Condition_1196962272510(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_parameterObject.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.CoerceStatement");
   }
 
-  public static boolean baseMappingRule_Condition_1196962275526(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem");
+  public static boolean baseMappingRule_Condition_1196962275526(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SNodeOperations.getParent(SNodeOperations.getAncestor(SLinkOperations.getTarget(_parameterObject.getNode(), "patternVarDecl", false), "jetbrains.mps.bootstrap.helgins.structure.ApplicableNodeCondition", false, false), null, false, false), "jetbrains.mps.bootstrap.helgins.structure.MatchStatementItem");
   }
 
-  public static boolean baseMappingRule_Condition_1176817655159(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  public static boolean baseMappingRule_Condition_1176817655159(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "pattern", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
 
-  public static boolean baseMappingRule_Condition_1178874713657(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
+  public static boolean baseMappingRule_Condition_1178874713657(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "pattern", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
   }
 
-  public static boolean baseMappingRule_Condition_1178876542372(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
+  public static boolean baseMappingRule_Condition_1178876542372(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "pattern", true), "jetbrains.mps.bootstrap.helgins.structure.ConceptReference");
   }
 
-  public static boolean baseMappingRule_Condition_1178876548951(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "pattern", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
+  public static boolean baseMappingRule_Condition_1178876548951(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_parameterObject.getNode(), "pattern", true), "jetbrains.mps.bootstrap.helgins.structure.PatternCondition");
   }
 
-  public static boolean baseMappingRule_Condition_1175150707078(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "body", true));
+  public static boolean baseMappingRule_Condition_1175150707078(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "body", true));
     return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_().createNode()));
   }
 
-  public static boolean baseMappingRule_Condition_1175150546879(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "body", true));
+  public static boolean baseMappingRule_Condition_1175150546879(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "body", true));
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(type, new QuotationClass_1().createNode());
   }
 
-  public static boolean baseMappingRule_Condition_1174662794354(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "nodeToCheck", true) != null;
+  public static boolean baseMappingRule_Condition_1174662794354(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "nodeToCheck", true) != null;
   }
 
-  public static boolean baseMappingRule_Condition_1174661049584(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode leftExpression = SLinkOperations.getTarget(node, "leftExpression", true);
+  public static boolean baseMappingRule_Condition_1174661049584(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    SNode leftExpression = SLinkOperations.getTarget(_parameterObject.getNode(), "leftExpression", true);
     return SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(leftExpression, "normalType", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
   }
 
-  public static boolean baseMappingRule_Condition_1174661198791(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode rightExpression = SLinkOperations.getTarget(node, "rightExpression", true);
+  public static boolean baseMappingRule_Condition_1174661198791(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    SNode rightExpression = SLinkOperations.getTarget(_parameterObject.getNode(), "rightExpression", true);
     return SNodeOperations.isInstanceOf(rightExpression, "jetbrains.mps.bootstrap.helgins.structure.NormalTypeClause") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rightExpression, "normalType", true), "jetbrains.mps.bootstrap.helgins.structure.TypeOfExpression");
   }
 
-  public static boolean baseMappingRule_Condition_1177059616673(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode rule = SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
+  public static boolean baseMappingRule_Condition_1177059616673(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    SNode rule = SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.bootstrap.helgins.structure.AbstractRule", false, false);
     return rule == null;
   }
 
-  public static boolean baseMappingRule_Condition_1175004525975(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "modelToCreate", true) != null;
+  public static boolean baseMappingRule_Condition_1175004525975(final IOperationContext operationContext, final BaseMappingRule_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "modelToCreate", true) != null;
   }
 
   public static Object propertyMacro_GetPropertyValue_1174586557380(SNode node, String templateValue, SNode templateNode, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {

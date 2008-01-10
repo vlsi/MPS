@@ -91,7 +91,15 @@ public class GeneratorUtil {
     long startTime = System.currentTimeMillis();
     boolean res = false;
     try {
-      res = (Boolean) QueryMethodGenerated.invoke(methodName, args, ruleNode.getModel());
+      try {
+        res = (Boolean) QueryMethodGenerated.invoke(
+                methodName,
+                generator.getGeneratorSessionContext(),
+                new BaseMappingRule_ParameterObject(inputNode, generator.getInputModel(), generator),
+                ruleNode.getModel());
+      } catch (Throwable t) {
+        res = (Boolean) QueryMethodGenerated.invoke(methodName, args, ruleNode.getModel());
+      }
       return res;
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, null, ruleNode, "couldn't evaluate rule condition");
