@@ -47,16 +47,11 @@ public class MacroUtil {
               generator.getScope(),
               generator.getGeneratorSessionContext()};
       try {
-        Object macroValue;
-        try {
-          macroValue = QueryMethodGenerated.invoke(
-                  methodName,
-                  generator.getGeneratorSessionContext(),
-                  new PropertyMacro_ParameterObject(inputNode, templateValue, templateNode, generator.getInputModel(), generator),
-                  propertyMacro.getModel());
-        } catch (Throwable t) {
-            macroValue = QueryMethodGenerated.invoke(methodName, args, propertyMacro.getModel());
-        }
+        Object macroValue = QueryMethodGenerated.invoke(
+                methodName,
+                generator.getGeneratorSessionContext(),
+                new PropertyMacro_ParameterObject(inputNode, templateValue, templateNode, generator.getInputModel(), generator),
+                propertyMacro.getModel());
         propertyValue = macroValue == null ? null : String.valueOf(macroValue);
       } catch (Exception e) {
         generator.showErrorMessage(inputNode, templateNode, BaseAdapter.fromAdapter(propertyMacro), "couldn't evaluate property macro");
