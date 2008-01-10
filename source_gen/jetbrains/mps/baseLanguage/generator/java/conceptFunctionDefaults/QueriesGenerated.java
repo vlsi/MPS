@@ -12,24 +12,24 @@ import jetbrains.mps.baseLanguage.constraints.ConceptFunctionParameter_Behavior;
 
 public class QueriesGenerated {
 
-  public static Object propertyMacro_GetPropertyValue_1199879576743(final IOperationContext operationContext, final PropertyMacroContext _parameterObject) {
-    return NameUtil.getGetterName(SConceptPropertyOperations.getString(_parameterObject.getNode(), "alias"));
+  public static Object propertyMacro_GetPropertyValue_1199879576743(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return NameUtil.getGetterName(SConceptPropertyOperations.getString(_context.getNode(), "alias"));
   }
 
-  public static Object referenceMacro_GetReferent_1170351924342(final IOperationContext operationContext, final ReferenceMacroContext _parameterObject) {
-    String alias = SConceptPropertyOperations.getString(_parameterObject.getNode(), "alias");
+  public static Object referenceMacro_GetReferent_1170351924342(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    String alias = SConceptPropertyOperations.getString(_context.getNode(), "alias");
     if(alias == null) {
-      _parameterObject.getGenerator().showErrorMessage(_parameterObject.getNode(), _parameterObject.getTemplateNode(), "concept function parm has no <alias> - can't map it to method parameter");
+      _context.getGenerator().showErrorMessage(_context.getNode(), _context.getTemplateNode(), "concept function parm has no <alias> - can't map it to method parameter");
     }
     return alias;
   }
 
-  public static Object referenceMacro_GetReferent_1199971770629(final IOperationContext operationContext, final ReferenceMacroContext _parameterObject) {
+  public static Object referenceMacro_GetReferent_1199971770629(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return "_context";
   }
 
-  public static boolean ifMacro_Condition_1199879109301(final IOperationContext operationContext, final IfMacroContext _parameterObject) {
-    return !(ConceptFunctionParameter_Behavior.call_getFromParameterObject_1199878619650(_parameterObject.getNode()));
+  public static boolean ifMacro_Condition_1199879109301(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(ConceptFunctionParameter_Behavior.call_getFromParameterObject_1199878619650(_context.getNode()));
   }
 
 }
