@@ -11,13 +11,13 @@ import java.util.List;
 
 public class Classifier extends GenericDeclaration implements Annotable, IMemberContainer {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.Classifier";
+  public static String SHORT_DESCRIPTION = "shortDescription";
+  public static String ALIAS = "alias";
+  public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String VISIBILITY = "visibility";
   public static String STATIC_FIELD = "staticField";
   public static String METHOD = "method";
   public static String ANNOTATION = "annotation";
-  public static String SHORT_DESCRIPTION = "shortDescription";
-  public static String ALIAS = "alias";
-  public static String VIRTUAL_PACKAGE = "virtualPackage";
 
   public  Classifier(SNode node) {
     super(node);
@@ -31,6 +31,30 @@ public class Classifier extends GenericDeclaration implements Annotable, IMember
     return Classifier.newInstance(sm, false);
   }
 
+
+  public String getShortDescription() {
+    return this.getProperty(Classifier.SHORT_DESCRIPTION);
+  }
+
+  public void setShortDescription(String value) {
+    this.setProperty(Classifier.SHORT_DESCRIPTION, value);
+  }
+
+  public String getAlias() {
+    return this.getProperty(Classifier.ALIAS);
+  }
+
+  public void setAlias(String value) {
+    this.setProperty(Classifier.ALIAS, value);
+  }
+
+  public String getVirtualPackage() {
+    return this.getProperty(Classifier.VIRTUAL_PACKAGE);
+  }
+
+  public void setVirtualPackage(String value) {
+    this.setProperty(Classifier.VIRTUAL_PACKAGE, value);
+  }
 
   public Visibility getVisibility() {
     return (Visibility)this.getChild(Classifier.VISIBILITY);
@@ -98,30 +122,6 @@ public class Classifier extends GenericDeclaration implements Annotable, IMember
 
   public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
     this.insertChild(prev, Classifier.ANNOTATION, node);
-  }
-
-  public String getShortDescription() {
-    return this.getProperty(Classifier.SHORT_DESCRIPTION);
-  }
-
-  public void setShortDescription(String value) {
-    this.setProperty(Classifier.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(Classifier.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(Classifier.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(Classifier.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(Classifier.VIRTUAL_PACKAGE, value);
   }
 
 }

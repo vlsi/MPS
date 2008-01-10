@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ConceptFunctionParameter extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter";
+  public static String CPR_DontUseParameterObject = "dontUseParameterObject";
   public static String CLNK_ConceptFunctionParameterType = "conceptFunctionParameterType";
 
   public  ConceptFunctionParameter(SNode node) {
