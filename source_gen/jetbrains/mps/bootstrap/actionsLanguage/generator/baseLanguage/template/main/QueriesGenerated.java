@@ -19,7 +19,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObje
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObject;
-import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.WeavingMappingRuleContext_ParameterObject;
 import jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.util.QueriesUtil;
 
 public class QueriesGenerated {
@@ -394,32 +394,32 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(_parameterObject.getNode(), "exclude", true);
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186794781128(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.get_QueriesGenerated_class(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186794781128(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.get_QueriesGenerated_class(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186795057567(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.get_QueriesGenerated_class(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186795057567(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.get_QueriesGenerated_class(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186795061791(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.get_QueriesGenerated_class(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186795061791(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.get_QueriesGenerated_class(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186795065171(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.get_QueriesGenerated_class(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186795065171(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.get_QueriesGenerated_class(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186795068567(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.get_QueriesGenerated_class(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186795068567(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.get_QueriesGenerated_class(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186795071822(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.get_QueriesGenerated_class(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186795071822(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.get_QueriesGenerated_class(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1197455643098(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.get_QueriesGenerated_class(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1197455643098(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.get_QueriesGenerated_class(_parameterObject.getGenerator());
   }
 
 }

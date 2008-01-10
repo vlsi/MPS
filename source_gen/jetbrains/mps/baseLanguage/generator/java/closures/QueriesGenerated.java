@@ -16,7 +16,7 @@ import jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObject;
 import jetbrains.mps.generator.template.MapSrcMacro_ParameterObject;
-import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.WeavingMappingRuleContext_ParameterObject;
 
 public class QueriesGenerated {
 
@@ -188,8 +188,8 @@ public class QueriesGenerated {
     return _QueriesUtil.create_closureContextObject(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186782271334(SNode node, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1186782271334(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), ClosuresMappingId.CLOSURE__ADAPTER_CLASS);
   }
 
 }

@@ -344,11 +344,12 @@ public class GeneratorUtil {
     // new
     if (query != null) {
       String methodName = TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(query.getNode());
-      Object[] args = new Object[]{
-              inputNode,
-              generator};
       try {
-        return (SNode) QueryMethodGenerated.invoke(methodName, args, query.getModel());
+        return (SNode) QueryMethodGenerated.invoke(
+                methodName,
+                generator.getGeneratorSessionContext(),
+                new WeavingMappingRuleContext_ParameterObject(inputNode, generator),
+                query.getModel());                  
       } catch (Exception e) {
         generator.showErrorMessage(inputNode, null, ruleNode, "couldn't evaluate rule context query");
         LOG.error(e);

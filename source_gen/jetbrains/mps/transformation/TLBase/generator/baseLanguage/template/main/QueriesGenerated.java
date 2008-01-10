@@ -8,9 +8,10 @@ import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.Templ
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.generator.template.WeavingMappingRuleContext_ParameterObject;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.util.QueriesUtil;
-import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
@@ -87,10 +88,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1185220175985(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
-    return QueriesUtil.getInputNodeTypeForTemplateFunction(_parameterObject.getNode());
-  }
-
   public static SNode sourceNodeQuery_1168025330833(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
     return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
   }
@@ -99,72 +96,60 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1185220115342(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
-    return QueriesUtil.getInputNodeTypeForTemplateFunction(_parameterObject.getNode());
-  }
-
   public static SNode sourceNodeQuery_1184374857693(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
     return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1185220221463(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
-    return QueriesUtil.getInputNodeTypeForTemplateFunction(_parameterObject.getNode());
   }
 
   public static SNode sourceNodeQuery_1184617630754(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
     return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1185220245753(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
-    return QueriesUtil.getInputNodeTypeForTemplateFunction(_parameterObject.getNode());
-  }
-
   public static SNode sourceNodeQuery_1195504684807(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
     return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1184619599466(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.getQueriesGeneratedClass(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619599466(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.getQueriesGeneratedClass(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1184619796790(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.getQueriesGeneratedClass(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619796790(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.getQueriesGeneratedClass(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1184619844945(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.getQueriesGeneratedClass(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619844945(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.getQueriesGeneratedClass(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1184619847603(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.getQueriesGeneratedClass(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619847603(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.getQueriesGeneratedClass(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1184619852561(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.getQueriesGeneratedClass(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619852561(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.getQueriesGeneratedClass(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1184619868267(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.getQueriesGeneratedClass(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619868267(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.getQueriesGeneratedClass(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1184619865210(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.getQueriesGeneratedClass(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619865210(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.getQueriesGeneratedClass(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1184619877062(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.getQueriesGeneratedClass(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619877062(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.getQueriesGeneratedClass(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1184619879860(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.getQueriesGeneratedClass(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619879860(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.getQueriesGeneratedClass(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1184619882833(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.getQueriesGeneratedClass(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1184619882833(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.getQueriesGeneratedClass(_parameterObject.getGenerator());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1195503404236(SNode node, ITemplateGenerator generator) {
-    return QueriesUtil.getQueriesGeneratedClass(generator);
+  public static SNode weaving_MappingRule_ContextNodeQuery_1195503404236(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return QueriesUtil.getQueriesGeneratedClass(_parameterObject.getGenerator());
   }
 
   public static void mappingScript_CodeBlock_1199965771120(SModel model, ITemplateGenerator generator) {

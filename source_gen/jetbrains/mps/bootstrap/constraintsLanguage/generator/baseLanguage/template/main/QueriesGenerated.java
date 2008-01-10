@@ -28,7 +28,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObj
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.generator.template.TemplateFragmentContext_ParameterObject;
 import jetbrains.mps.bootstrap.constraintsLanguage.generator.baseLanguage.template.util.QueriesUtil;
-import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.WeavingMappingRuleContext_ParameterObject;
 
 public class QueriesGenerated {
 
@@ -473,20 +473,20 @@ public class QueriesGenerated {
     return QueriesUtil.get_unRegisterSelf_body(_parameterObject.getMainContextNode());
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1187042952593(SNode node, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "class_for_concept");
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187042952593(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "class_for_concept");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1187043119199(SNode node, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "class_for_concept");
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187043119199(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "class_for_concept");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1187043273468(SNode node, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "class_for_concept");
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187043273468(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "class_for_concept");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1187043341571(SNode node, ITemplateGenerator generator) {
-    return generator.findOutputNodeByInputNodeAndMappingName(node, "class_for_concept");
+  public static SNode weaving_MappingRule_ContextNodeQuery_1187043341571(final IOperationContext opereationContext, final WeavingMappingRuleContext_ParameterObject _parameterObject) {
+    return _parameterObject.getGenerator().findOutputNodeByInputNodeAndMappingName(_parameterObject.getNode(), "class_for_concept");
   }
 
 }
