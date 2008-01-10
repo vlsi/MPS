@@ -101,29 +101,4 @@ public class QueryMethodGenerated {
       throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
     }
   }
-
-  /**
-   * tmp patch (remove after buid next after 415)
-   * old parameters
-   * (SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext)
-   * been replaced with
-   * (SNode node, SNode parentOutputNode, ITemplateGenerator generator)
-   */
-  public static Object invoke_MapperFunction(String methodName, Object[] arguments_old, Object[] arguments_new, SModel sourceModel) throws ClassNotFoundException, NoSuchMethodException {
-    Method method = QueryMethodGenerated.getQueryMethod(sourceModel, methodName, false);
-
-    try {
-      if (method.getParameterTypes().length == 5) {
-        return method.invoke(null, arguments_old); // old
-      }
-      return method.invoke(null, arguments_new); // new
-    } catch (IllegalArgumentException e) {
-      throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
-    } catch (IllegalAccessException e) {
-      throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
-    } catch (InvocationTargetException e) {
-      LOG.error(e.getCause());
-      throw new RuntimeException("error invocation method: \"" + methodName + "\" in " + method.getDeclaringClass().getName(), e);
-    }
-  }
 }

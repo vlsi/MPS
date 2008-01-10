@@ -15,6 +15,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObje
 import jetbrains.mps.baseLanguage.generator.java.closures.util.QueriesUtil;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObject;
+import jetbrains.mps.generator.template.MapSrcMacro_ParameterObject;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 
 public class QueriesGenerated {
@@ -175,16 +176,16 @@ public class QueriesGenerated {
     return QueriesUtil.getTypeVars_from_Closure_enclosingClass(_parameterObject.getNode(), operationContext.getScope());
   }
 
-  public static SNode mapSrcMacro_mapper_1170898169592(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return _QueriesUtil.create_closureContextObject(node, generator);
+  public static SNode mapSrcMacro_mapper_1170898169592(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return _QueriesUtil.create_closureContextObject(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170899386077(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return _QueriesUtil.create_closureContextObject(node, generator);
+  public static SNode mapSrcMacro_mapper_1170899386077(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return _QueriesUtil.create_closureContextObject(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1196117121002(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return _QueriesUtil.create_closureContextObject(node, generator);
+  public static SNode mapSrcMacro_mapper_1196117121002(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return _QueriesUtil.create_closureContextObject(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1186782271334(SNode node, ITemplateGenerator generator) {

@@ -21,9 +21,10 @@ import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObject;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.MapSrcMacro_ParameterObject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 
@@ -645,12 +646,12 @@ public class QueriesGenerated {
     return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "linkDeclaration", true), new zPredicate8(null, null)));
   }
 
-  public static SNode mapSrcMacro_mapper_1178978044712(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    SNode enumDataType = SNodeOperations.getParent(node, null, false, false);
-    String internalValue = SPropertyOperations.getString(node, "internalValue");
+  public static SNode mapSrcMacro_mapper_1178978044712(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    SNode enumDataType = SNodeOperations.getParent(_parameterObject.getNode(), null, false, false);
+    String internalValue = SPropertyOperations.getString(_parameterObject.getNode(), "internalValue");
     SNode memberDataType = SLinkOperations.getTarget(enumDataType, "memberDataType", false);
     SNode targetInternalValueExpression = null;
-    SModel targetModel = generator.getTargetModel();
+    SModel targetModel = _parameterObject.getGenerator().getTargetModel();
     if(SPropertyOperations.hasValue(memberDataType, "name", "string")) {
       if(internalValue == null) {
         targetInternalValueExpression = SModelOperations.createNewNode(targetModel, "jetbrains.mps.baseLanguage.structure.NullLiteral", null);
@@ -679,7 +680,7 @@ public class QueriesGenerated {
       }
     }
     if((targetInternalValueExpression == null)) {
-      generator.showErrorMessage(enumDataType, "Can't generate value for type " + SPropertyOperations.getString(memberDataType, "name"));
+      _parameterObject.getGenerator().showErrorMessage(enumDataType, "Can't generate value for type " + SPropertyOperations.getString(memberDataType, "name"));
     }
     return targetInternalValueExpression;
   }

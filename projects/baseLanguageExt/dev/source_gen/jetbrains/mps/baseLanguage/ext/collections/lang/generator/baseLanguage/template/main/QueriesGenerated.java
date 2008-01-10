@@ -18,7 +18,7 @@ import jetbrains.mps.baseLanguage.ext.collections.lang.generator.baseLanguage.te
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import java.util.List;
 import jetbrains.mps.generator.template.SourceSubstituteMacro_Nodes_ParameterObject;
-import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.MapSrcMacro_ParameterObject;
 
 public class QueriesGenerated {
 
@@ -466,94 +466,94 @@ public class QueriesGenerated {
     return SLinkOperations.getTargets(creator, "initValue", true);
   }
 
-  public static SNode mapSrcMacro_mapper_1170976176384(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170976176384(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170959249892(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_Closure_returnedType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170959249892(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_Closure_returnedType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170976265295(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170976265295(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170959169275(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_Closure_returnedType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170959169275(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_Closure_returnedType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170976692851(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170976692851(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170976677202(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170976677202(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170977090634(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170977090634(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170977083110(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170977083110(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170959580916(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_Closure_returnedType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170959580916(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_Closure_returnedType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170977291681(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170977291681(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170977281282(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170977281282(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170959570489(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_Closure_returnedType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170959570489(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_Closure_returnedType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170982071668(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    SNode inputSequence = SLinkOperations.getTarget(node, "inputSequence", true);
-    return QueriesUtil.create_sequenceElementType_fromExpression(inputSequence, generator);
+  public static SNode mapSrcMacro_mapper_1170982071668(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    SNode inputSequence = SLinkOperations.getTarget(_parameterObject.getNode(), "inputSequence", true);
+    return QueriesUtil.create_sequenceElementType_fromExpression(inputSequence, _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170982198863(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    SNode inputSequence = SLinkOperations.getTarget(node, "inputSequence", true);
-    return QueriesUtil.create_sequenceElementType_fromExpression(inputSequence, generator);
+  public static SNode mapSrcMacro_mapper_1170982198863(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    SNode inputSequence = SLinkOperations.getTarget(_parameterObject.getNode(), "inputSequence", true);
+    return QueriesUtil.create_sequenceElementType_fromExpression(inputSequence, _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170978063590(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170978063590(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170978105865(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170978105865(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170978114264(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170978114264(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170978123585(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170978123585(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170979514044(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170979514044(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170979519146(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170979519146(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170979528248(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170979528248(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
-  public static SNode mapSrcMacro_mapper_1170979494535(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {
-    return QueriesUtil.create_ClosureWithInput_inputElementType(node, generator);
+  public static SNode mapSrcMacro_mapper_1170979494535(final IOperationContext operationContext, final MapSrcMacro_ParameterObject _parameterObject) {
+    return QueriesUtil.create_ClosureWithInput_inputElementType(_parameterObject.getNode(), _parameterObject.getGenerator());
   }
 
 }
