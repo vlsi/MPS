@@ -164,15 +164,13 @@ public class GeneratorUtil {
 
   public static SNode evaluateSourceNodeQuery(SNode inputNode, SourceSubstituteMacro_SourceNodeQuery query, ITemplateGenerator generator) {
     String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query.getNode());
-    Object[] args = new Object[]{
-            inputNode,
-            generator.getInputModel(),
-            generator,
-            generator.getScope(),
-            generator.getGeneratorSessionContext()};
     long startTime = System.currentTimeMillis();
     try {
-      return (SNode) QueryMethodGenerated.invoke(methodName, args, query.getModel());
+      return (SNode) QueryMethodGenerated.invoke(
+              methodName,
+              generator.getGeneratorSessionContext(),
+              new SourceSubstituteMacro_Node_ParameterObject(inputNode, generator.getInputModel(), generator),
+              query.getModel());
     } catch (Exception e) {
       generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
       LOG.error(e);

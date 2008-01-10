@@ -12,15 +12,15 @@ import jetbrains.mps.smodel.action.ActionQueryMethodName;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.RTransformHintSubstituteActionsBuilder;
 import jetbrains.mps.bootstrap.actionsLanguage.structure.NodeFactory;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.IfMacro_ParameterObject;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObject;
+import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
 import jetbrains.mps.bootstrap.actionsLanguage.generator.baseLanguage.template.util.QueriesUtil;
 
 public class QueriesGenerated {
@@ -197,6 +197,176 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "descriptionText", true), "body", true) != null;
   }
 
+  public static SNode sourceNodeQuery_1172253302099(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1172253384416(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1172253185556(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1178541085974(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1179457640853(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "initializerBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1179457640870(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return Type_Behavior.call_getUnboxedType_1182580547590(SLinkOperations.getTarget(_parameterObject.getNode(), "type", true));
+  }
+
+  public static SNode sourceNodeQuery_1178782016772(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "commonInitializer", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177332016999(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "handler", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177331967800(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "canSubstitute", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177336383605(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "descriptionText", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177336437649(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "matchingText", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177353800103(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "query", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177357415115(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    if(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSubstituteMenuPart", false, false) != null) {
+      return SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSubstituteMenuPart", false, false), "type", true);
+    }
+    if(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart", false, false) != null) {
+      return SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart", false, false), "type", true);
+    }
+    return null;
+  }
+
+  public static SNode sourceNodeQuery_1177399369165(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "query", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177399369182(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1177399369193(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1177399369215(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "handler", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177399369227(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "matchingText", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177399369250(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "descriptionText", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177405091687(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "wrapperBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1181738947298(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1181738985209(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "initializerBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1181738985228(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return Type_Behavior.call_getUnboxedType_1182580547590(SLinkOperations.getTarget(_parameterObject.getNode(), "type", true));
+  }
+
+  public static SNode sourceNodeQuery_1181738763214(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "commonInitializer", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1181736318685(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "condition", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177499792023(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "handler", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177499861510(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "matchingText", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177499864799(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "descriptionText", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177510051563(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "query", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177510450110(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1177510459082(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1177510544571(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1177510684590(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "handler", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177514451569(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "matchingText", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177514456119(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "descriptionText", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177528022223(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "handler", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1178542510747(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "variableDeclaration", false), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1180114556480(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "nodeBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1182820930324(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "handler", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1197457249775(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "condition", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1199903106468(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "query", true), "body", true);
+  }
+
   public static List sourceNodesQuery_1178541065624(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "variable", true);
   }
@@ -223,176 +393,6 @@ public class QueriesGenerated {
 
   public static List sourceNodesQuery_1177530541055(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "exclude", true);
-  }
-
-  public static SNode sourceNodeQuery_1172253302099(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1172253384416(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1172253185556(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1178541085974(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1179457640853(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "initializerBlock", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1179457640870(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return Type_Behavior.call_getUnboxedType_1182580547590(SLinkOperations.getTarget(node, "type", true));
-  }
-
-  public static SNode sourceNodeQuery_1178782016772(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "commonInitializer", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177332016999(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "handler", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177331967800(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "canSubstitute", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177336383605(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "descriptionText", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177336437649(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "matchingText", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177353800103(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "query", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177357415115(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    if(SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSubstituteMenuPart", false, false) != null) {
-      return SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedSubstituteMenuPart", false, false), "type", true);
-    }
-    if(SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart", false, false) != null) {
-      return SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.bootstrap.actionsLanguage.structure.ParameterizedRightTransformMenuPart", false, false), "type", true);
-    }
-    return null;
-  }
-
-  public static SNode sourceNodeQuery_1177399369165(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "query", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177399369182(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1177399369193(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1177399369215(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "handler", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177399369227(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "matchingText", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177399369250(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "descriptionText", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177405091687(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "wrapperBlock", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1181738947298(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1181738985209(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "initializerBlock", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1181738985228(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return Type_Behavior.call_getUnboxedType_1182580547590(SLinkOperations.getTarget(node, "type", true));
-  }
-
-  public static SNode sourceNodeQuery_1181738763214(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "commonInitializer", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1181736318685(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "condition", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177499792023(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "handler", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177499861510(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "matchingText", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177499864799(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "descriptionText", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177510051563(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "query", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177510450110(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1177510459082(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1177510544571(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1177510684590(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "handler", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177514451569(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "matchingText", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177514456119(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "descriptionText", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177528022223(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "handler", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1178542510747(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "variableDeclaration", false), "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1180114556480(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "nodeBlock", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1182820930324(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "handler", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1197457249775(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "condition", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1199903106468(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "query", true), "body", true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1186794781128(SNode node, ITemplateGenerator generator) {

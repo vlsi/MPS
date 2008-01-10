@@ -66,6 +66,9 @@ public class FileGenerationUtil {
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
 
     if (generateText(context, status, outputNodeContents, messages)) {
+
+      System.out.println("model = " + sm.getModelUID());
+
       int yesNo = JOptionPane.showConfirmDialog(context.getMainFrame(), "Generated code isn't compilable." + "" +
               "Are you sure that you want generate file from it?", "Generated Code Isn't Compilable", JOptionPane.YES_NO_OPTION);
 

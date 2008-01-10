@@ -23,11 +23,12 @@ import jetbrains.mps.patterns.structure.Pattern;
 import jetbrains.mps.patterns.structure.PatternVariableDeclaration;
 import java.util.List;
 import jetbrains.mps.patterns.structure.ListPattern;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObject;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import java.util.ArrayList;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.patterns.structure.PropertyPatternVariableDeclaration;
 import jetbrains.mps.patterns.structure.LinkPatternVariableDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
@@ -279,6 +280,10 @@ public class QueriesGenerated {
     return _parameterObject.getNode().getAttribute(jetbrains.mps.quotation.structure.Antiquotation_AnnotationLink.ANTIQUOTATION) == null;
   }
 
+  public static SNode sourceNodeQuery_1174830361094(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "patternNode", true);
+  }
+
   public static List sourceNodesQuery_1176737411271(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     List<SNode> result = new ArrayList<SNode>();
     for(SNode child : SNodeOperations.getDescendants(node, null, false)) {
@@ -415,10 +420,6 @@ public class QueriesGenerated {
       result.add(childRoleNode);
     }
     return result;
-  }
-
-  public static SNode sourceNodeQuery_1174830361094(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "patternNode", true);
   }
 
 }

@@ -16,14 +16,15 @@ import jetbrains.mps.ypath.constraints.IGenericFeature_Behavior;
 import jetbrains.mps.ypath.generator.baseLanguage.template.helper.AggregatorUtil;
 import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.generator.template.IfMacro_ParameterObject;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObject;
+import jetbrains.mps.patterns.IMatchingPattern;
+import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.patterns.IMatchingPattern;
-import jetbrains.mps.bootstrap.helgins.runtime.HUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 
 public class QueriesGenerated {
@@ -335,6 +336,526 @@ public class QueriesGenerated {
     return !(SPropertyOperations.getBoolean(SLinkOperations.getTarget(_parameterObject.getNode(), "range", true), "includes_start"));
   }
 
+  public static SNode sourceNodeQuery_1196100177621(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1195737098123(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1194654504117(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194654807657(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1194654778371(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "anchor", true);
+  }
+
+  public static SNode sourceNodeQuery_1194655235957(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194655235966(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1194655237996(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194655238005(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1194655239447(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1194729639536(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194655241373(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1194655241383(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "anchor", true);
+  }
+
+  public static SNode sourceNodeQuery_1194727296294(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194727341086(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194727382535(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194728257034(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194728447046(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1194728504533(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1196092774624(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1196093464818(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1196901158555(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode expression = SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+    return SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(expression), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1196716148727(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode cand = SequenceOperations.getFirst(SequenceOperations.sort(SLinkOperations.getTargets(_parameterObject.getNode(), "candidates", true), new zComparator(null, null), false));
+    if(SPropertyOperations.getInteger(cand, "priority") > 0) {
+      return SLinkOperations.getTarget(cand, "statement", true);
+    }
+    return new QuotationClass_2().createNode();
+  }
+
+  public static SNode sourceNodeQuery_1197288625644(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197288625670(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "range", true), "notBefore", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288625683(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "paramObject", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288625705(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    {
+      IMatchingPattern pattern_1199968087428 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1199968087427 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true)), pattern_1199968087428);
+      if(coercedNode_1199968087427 != null) {
+        return SLinkOperations.getTarget(coercedNode_1199968087427, "elementType", true);
+      }
+    }
+    return null;
+  }
+
+  public static SNode sourceNodeQuery_1197288625725(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288625750(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "range", true), "notAfter", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288625763(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "paramObject", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288625785(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    {
+      IMatchingPattern pattern_1199968087515 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1199968087514 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true)), pattern_1199968087515);
+      if(coercedNode_1199968087514 != null) {
+        return SLinkOperations.getTarget(coercedNode_1199968087514, "elementType", true);
+      }
+    }
+    return null;
+  }
+
+  public static SNode sourceNodeQuery_1197288625805(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288625825(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288625834(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288625968(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197288625988(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288625997(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626041(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197288626067(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "range", true), "notBefore", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626080(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "paramObject", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626102(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    {
+      IMatchingPattern pattern_1199968087740 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1199968087739 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true)), pattern_1199968087740);
+      if(coercedNode_1199968087739 != null) {
+        return SLinkOperations.getTarget(coercedNode_1199968087739, "elementType", true);
+      }
+    }
+    return null;
+  }
+
+  public static SNode sourceNodeQuery_1197288626122(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626146(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "range", true), "notAfter", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626159(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "paramObject", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626181(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    {
+      IMatchingPattern pattern_1199968087827 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1199968087826 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true)), pattern_1199968087827);
+      if(coercedNode_1199968087826 != null) {
+        return SLinkOperations.getTarget(coercedNode_1199968087826, "elementType", true);
+      }
+    }
+    return null;
+  }
+
+  public static SNode sourceNodeQuery_1197288626201(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626221(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626231(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626364(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197288626384(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626393(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626429(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197288626449(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626458(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626494(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197288626514(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626523(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626566(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197288626592(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "range", true), "notBefore", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626605(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "paramObject", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626627(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    {
+      IMatchingPattern pattern_1199968088205 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1199968088204 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true)), pattern_1199968088205);
+      if(coercedNode_1199968088204 != null) {
+        return SLinkOperations.getTarget(coercedNode_1199968088204, "elementType", true);
+      }
+    }
+    return null;
+  }
+
+  public static SNode sourceNodeQuery_1197288626647(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626672(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "range", true), "notAfter", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626685(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "paramObject", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626707(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    {
+      IMatchingPattern pattern_1199968088292 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1199968088291 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true)), pattern_1199968088292);
+      if(coercedNode_1199968088291 != null) {
+        return SLinkOperations.getTarget(coercedNode_1199968088291, "elementType", true);
+      }
+    }
+    return null;
+  }
+
+  public static SNode sourceNodeQuery_1197288626727(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626747(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197288626756(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299882472(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_replaceDemux" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197299882495(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299882503(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299882600(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299882610(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "range", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299882664(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_replaceDemux" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197299882687(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299882695(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299882792(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299882802(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "range", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299882848(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_replaceDemux" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197299882871(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299882885(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299882896(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299914350(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_insertBefore" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197299914370(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299914379(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299914425(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_insertBefore" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197299914445(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299914454(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299914467(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "paramObject", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299914489(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    {
+      IMatchingPattern pattern_1199968088839 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1199968088838 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true)), pattern_1199968088839);
+      if(coercedNode_1199968088838 != null) {
+        return SLinkOperations.getTarget(coercedNode_1199968088838, "elementType", true);
+      }
+    }
+    return null;
+  }
+
+  public static SNode sourceNodeQuery_1197299914509(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299914556(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_insertBefore" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197299914576(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299914585(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299931069(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_removeSingle" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197299931091(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "range", true), "end", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299931113(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299931186(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_removeSingle" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197299931210(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "range", true), "start", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299931235(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "range", true), "start", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299931266(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "paramObject", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299931288(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    {
+      IMatchingPattern pattern_1199968089122 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1199968089121 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true)), pattern_1199968089122);
+      if(coercedNode_1199968089121 != null) {
+        return SLinkOperations.getTarget(coercedNode_1199968089121, "elementType", true);
+      }
+    }
+    return null;
+  }
+
+  public static SNode sourceNodeQuery_1197299931308(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197299931330(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
+  public static SNode sourceNodeQuery_1197304288533(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    _parameterObject.getGenerator().getGeneratorSessionContext().putTransientObject("aggregate_removeSingle" + ((SNode)_parameterObject.getNode()).getId(), Boolean.TRUE);
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1197304288613(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "paramObject", true);
+  }
+
+  public static SNode sourceNodeQuery_1197304288635(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    {
+      IMatchingPattern pattern_1199968089241 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
+      SNode coercedNode_1199968089240 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true)), pattern_1199968089241);
+      if(coercedNode_1199968089240 != null) {
+        return SLinkOperations.getTarget(coercedNode_1199968089240, "elementType", true);
+      }
+    }
+    return null;
+  }
+
+  public static SNode sourceNodeQuery_1197304288655(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1197304288677(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "writePath", true);
+  }
+
   public static List sourceNodesQuery_1196716118756(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     List<SNode> newCandidates = ListOperations.createList(new SNode[]{});
     {
@@ -354,526 +875,6 @@ public class QueriesGenerated {
       }
     }
     return newCandidates;
-  }
-
-  public static SNode sourceNodeQuery_1196100177621(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1195737098123(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1194654504117(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1194654807657(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1194654778371(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "anchor", true);
-  }
-
-  public static SNode sourceNodeQuery_1194655235957(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1194655235966(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1194655237996(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1194655238005(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1194655239447(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1194729639536(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1194655241373(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1194655241383(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "anchor", true);
-  }
-
-  public static SNode sourceNodeQuery_1194727296294(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1194727341086(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1194727382535(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1194728257034(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1194728447046(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1194728504533(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1196092774624(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1196093464818(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1196901158555(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode expression = SLinkOperations.getTarget(node, "expression", true);
-    return SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(expression), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1196716148727(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode cand = SequenceOperations.getFirst(SequenceOperations.sort(SLinkOperations.getTargets(node, "candidates", true), new zComparator(null, null), false));
-    if(SPropertyOperations.getInteger(cand, "priority") > 0) {
-      return SLinkOperations.getTarget(cand, "statement", true);
-    }
-    return new QuotationClass_2().createNode();
-  }
-
-  public static SNode sourceNodeQuery_1197288625644(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197288625670(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "range", true), "notBefore", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288625683(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "paramObject", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288625705(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    {
-      IMatchingPattern pattern_1199962600740 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1199962600739 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1199962600740);
-      if(coercedNode_1199962600739 != null) {
-        return SLinkOperations.getTarget(coercedNode_1199962600739, "elementType", true);
-      }
-    }
-    return null;
-  }
-
-  public static SNode sourceNodeQuery_1197288625725(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288625750(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "range", true), "notAfter", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288625763(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "paramObject", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288625785(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    {
-      IMatchingPattern pattern_1199962600831 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1199962600830 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1199962600831);
-      if(coercedNode_1199962600830 != null) {
-        return SLinkOperations.getTarget(coercedNode_1199962600830, "elementType", true);
-      }
-    }
-    return null;
-  }
-
-  public static SNode sourceNodeQuery_1197288625805(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288625825(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288625834(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288625968(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197288625988(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288625997(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626041(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197288626067(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "range", true), "notBefore", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626080(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "paramObject", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626102(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    {
-      IMatchingPattern pattern_1199962601050 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1199962601049 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1199962601050);
-      if(coercedNode_1199962601049 != null) {
-        return SLinkOperations.getTarget(coercedNode_1199962601049, "elementType", true);
-      }
-    }
-    return null;
-  }
-
-  public static SNode sourceNodeQuery_1197288626122(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626146(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "range", true), "notAfter", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626159(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "paramObject", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626181(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    {
-      IMatchingPattern pattern_1199962601141 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1199962601140 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1199962601141);
-      if(coercedNode_1199962601140 != null) {
-        return SLinkOperations.getTarget(coercedNode_1199962601140, "elementType", true);
-      }
-    }
-    return null;
-  }
-
-  public static SNode sourceNodeQuery_1197288626201(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626221(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626231(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626364(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197288626384(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626393(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626429(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197288626449(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626458(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626494(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197288626514(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626523(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626566(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_byIndex" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197288626592(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "range", true), "notBefore", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626605(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "paramObject", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626627(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    {
-      IMatchingPattern pattern_1199962601503 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1199962601502 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1199962601503);
-      if(coercedNode_1199962601502 != null) {
-        return SLinkOperations.getTarget(coercedNode_1199962601502, "elementType", true);
-      }
-    }
-    return null;
-  }
-
-  public static SNode sourceNodeQuery_1197288626647(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626672(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "range", true), "notAfter", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626685(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "paramObject", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626707(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    {
-      IMatchingPattern pattern_1199962601594 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1199962601593 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1199962601594);
-      if(coercedNode_1199962601593 != null) {
-        return SLinkOperations.getTarget(coercedNode_1199962601593, "elementType", true);
-      }
-    }
-    return null;
-  }
-
-  public static SNode sourceNodeQuery_1197288626727(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626747(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197288626756(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299882472(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_replaceDemux" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197299882495(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299882503(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299882600(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299882610(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "range", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299882664(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_replaceDemux" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197299882687(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299882695(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299882792(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299882802(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "range", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299882848(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_replaceDemux" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197299882871(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299882885(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299882896(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299914350(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_insertBefore" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197299914370(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299914379(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299914425(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_insertBefore" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197299914445(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299914454(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299914467(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "paramObject", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299914489(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    {
-      IMatchingPattern pattern_1199962602142 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1199962602141 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1199962602142);
-      if(coercedNode_1199962602141 != null) {
-        return SLinkOperations.getTarget(coercedNode_1199962602141, "elementType", true);
-      }
-    }
-    return null;
-  }
-
-  public static SNode sourceNodeQuery_1197299914509(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299914556(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_insertBefore" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197299914576(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299914585(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299931069(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_removeSingle" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197299931091(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "range", true), "end", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299931113(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299931186(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_removeSingle" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197299931210(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "range", true), "start", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299931235(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "range", true), "start", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299931266(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "paramObject", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299931288(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    {
-      IMatchingPattern pattern_1199962602413 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1199962602412 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1199962602413);
-      if(coercedNode_1199962602412 != null) {
-        return SLinkOperations.getTarget(coercedNode_1199962602412, "elementType", true);
-      }
-    }
-    return null;
-  }
-
-  public static SNode sourceNodeQuery_1197299931308(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197299931330(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
-  }
-
-  public static SNode sourceNodeQuery_1197304288533(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    generator.getGeneratorSessionContext().putTransientObject("aggregate_removeSingle" + ((SNode)node).getId(), Boolean.TRUE);
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1197304288613(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "paramObject", true);
-  }
-
-  public static SNode sourceNodeQuery_1197304288635(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    {
-      IMatchingPattern pattern_1199962602529 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.ext.collections.lang.structure.SequenceType");
-      SNode coercedNode_1199962602528 = TypeChecker.getInstance().getRuntimeSupport().coerce(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true)), pattern_1199962602529);
-      if(coercedNode_1199962602528 != null) {
-        return SLinkOperations.getTarget(coercedNode_1199962602528, "elementType", true);
-      }
-    }
-    return null;
-  }
-
-  public static SNode sourceNodeQuery_1197304288655(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "writePath", true), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1197304288677(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "writePath", true);
   }
 
   public static SNode mapSrcMacro_mapper_1196615333654(SNode node, SNode parentOutputNode, ITemplateGenerator generator) {

@@ -9,6 +9,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObject;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
@@ -61,36 +62,36 @@ public class QueriesGenerated {
     return ScriptNameUtil.getMigrationScriptClassName(_parameterObject.getNode());
   }
 
+  public static SNode sourceNodeQuery_1172287555052(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "statementList", true);
+  }
+
+  public static SNode sourceNodeQuery_1172333760299(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "nodeList", true);
+  }
+
+  public static SNode sourceNodeQuery_1177001853600(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "nodeExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1177466395402(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "affectedInstancePredicate", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1177466489905(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "affectedInstanceUpdater", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1179444592655(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "oldNode", true);
+  }
+
+  public static SNode sourceNodeQuery_1179444604084(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "newNode", true);
+  }
+
   public static List sourceNodesQuery_1177464931683(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "part", true);
-  }
-
-  public static SNode sourceNodeQuery_1172287555052(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "statementList", true);
-  }
-
-  public static SNode sourceNodeQuery_1172333760299(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "nodeList", true);
-  }
-
-  public static SNode sourceNodeQuery_1177001853600(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "nodeExpression", true);
-  }
-
-  public static SNode sourceNodeQuery_1177466395402(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "affectedInstancePredicate", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1177466489905(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "affectedInstanceUpdater", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1179444592655(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "oldNode", true);
-  }
-
-  public static SNode sourceNodeQuery_1179444604084(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "newNode", true);
   }
 
 }

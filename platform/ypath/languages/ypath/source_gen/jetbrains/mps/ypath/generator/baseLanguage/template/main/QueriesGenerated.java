@@ -20,15 +20,16 @@ import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.generator.template.IfMacro_ParameterObject;
 import jetbrains.mps.ypath.constraints.ChildrenBlock_Behavior;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObject;
+import jetbrains.mps.ypath.constraints.TreePath_Behavior;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.ypath.constraints.TreePath_Behavior;
-import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 
 public class QueriesGenerated {
 
@@ -616,12 +617,703 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.IGenericFeature");
   }
 
+  public static SNode sourceNodeQuery_1172656490871(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1179324459190(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parentBlock", true);
+  }
+
+  public static SNode sourceNodeQuery_1179324459199(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "childrenBlock", true);
+  }
+
+  public static SNode sourceNodeQuery_1179324381860(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1179324381867(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1179324381892(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1179324381900(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1179324381933(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1179324381941(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1172648172668(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1172656439990(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "operation", true);
+  }
+
+  public static SNode sourceNodeQuery_1172655121937(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "fromExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1172655307749(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1172655368334(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1174932215509(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1174933130150(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "whereBlock", true);
+  }
+
+  public static SNode sourceNodeQuery_1168970408151(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1184679966257(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184679920759(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1198195857792(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parentBlock", true);
+  }
+
+  public static SNode sourceNodeQuery_1198195892742(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "childrenBlock", true);
+  }
+
+  public static SNode sourceNodeQuery_1184678704675(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184678720204(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184236913523(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184236913563(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184237393261(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1198142581216(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1179315588342(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1179315519284(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1172647340018(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1172647352619(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1179320582842(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1179320575763(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1172646749760(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1172243407751(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1184849691168(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode tpoe = SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
+    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate62(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1172650748986(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode tpoe = SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
+    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate63(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1172245483666(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode parent = SNodeOperations.getParent(_parameterObject.getNode(), null, false, false);
+    return SLinkOperations.getTarget(parent, "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1175172300640(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode parent = SNodeOperations.getParent(_parameterObject.getNode(), null, false, false);
+    return SLinkOperations.getTarget(parent, "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1179398698394(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "matchExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1179337232899(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(SLinkOperations.getTarget(_parameterObject.getNode(), "property", false), "jetbrains.mps.ypath.structure.TreePathAspect", false, false));
+  }
+
+  public static SNode sourceNodeQuery_1175879812600(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode parent = SNodeOperations.getParent(_parameterObject.getNode(), null, false, false);
+    return SLinkOperations.getTarget(parent, "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1179398930383(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "matchExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_1179334580327(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode tpoe = SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
+    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate64(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1179315905821(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1179315993881(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1179315959958(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1179317609528(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1179317609539(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1179319539329(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1179317609565(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1179319495735(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1179319559391(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1179738498829(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1179332192981(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1179332192991(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1179332118574(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1179399590420(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "getter", true);
+  }
+
+  public static SNode sourceNodeQuery_1179395493888(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
+  }
+
+  public static SNode sourceNodeQuery_1179397308450(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
+  }
+
+  public static SNode sourceNodeQuery_1179397308456(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
+  }
+
+  public static SNode sourceNodeQuery_1179397532467(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
+  }
+
+  public static SNode sourceNodeQuery_1179397532473(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
+  }
+
+  public static SNode sourceNodeQuery_1179397960216(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false));
+  }
+
+  public static SNode sourceNodeQuery_1179399796352(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1179399762477(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1179741239472(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(_parameterObject.getNode());
+  }
+
+  public static SNode sourceNodeQuery_1180087663597(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "nodeExpression", true), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1180087869934(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "nodeExpression", true), "expression", true));
+  }
+
+  public static SNode sourceNodeQuery_1180089519694(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1180089683858(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true));
+  }
+
+  public static SNode sourceNodeQuery_1180088768491(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1180091626437(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1180089867871(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_parameterObject.getNode(), "parameter", true));
+  }
+
+  public static SNode sourceNodeQuery_1180089846785(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1180089806776(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1180090818686(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "visitBlock", true);
+  }
+
+  public static SNode sourceNodeQuery_1180090185278(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "visitBlock", true), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1180090844902(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "variableDeclaration", false), "type", true);
+  }
+
+  public static SNode sourceNodeQuery_1184059461022(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184674029953(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184059452117(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184673941910(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1183985773053(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1183989439611(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "getFunction", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1183989515812(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "sizeFunction", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1183985842403(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184069203904(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1183989707749(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "setFunction", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1183985816049(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1183989897067(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "insertFunction", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1183985826168(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1183985851763(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184068925594(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1183990156036(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "deleteFunction", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1183989673472(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184066732135(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184674099551(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184066732158(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184674113449(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184067294347(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "sequenceFunction", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1184067278622(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184066845276(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184066732214(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "sizeFunction", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1184066732260(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "addFunction", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1184066732275(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184066732404(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184764392657(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184762368321(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "parameterQueryFunction", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1184769796063(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184762461203(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "targetTypeFunction", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1184769801555(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1184762418271(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "toStringFunction", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1192793676557(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "getter", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1192793648146(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1196434617028(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1196442565609(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate65(null, null)));
+    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate66(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196442565702(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate67(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate68(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196442565807(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate69(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate70(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196442565927(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate71(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate72(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196435366125(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate73(null, null)));
+    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate74(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196436349439(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate75(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate76(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196442030564(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate77(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate78(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196442175205(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate79(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate80(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1195424413398(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462910275(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate81(null, null)));
+    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate82(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462910370(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate83(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate84(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462910477(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate85(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate86(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462910598(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate87(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate88(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462910707(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate89(null, null)));
+    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate90(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462910799(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate91(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate92(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462910904(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate93(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate94(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196462911024(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate95(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate96(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1195424497113(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1196463629363(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate97(null, null)));
+    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate98(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196463773066(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate99(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate100(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196463934709(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate101(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate102(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196463986530(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate103(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate104(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196464033244(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate105(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate106(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196464276188(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate107(null, null)));
+    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate108(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196464276284(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate109(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate110(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196464276396(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate111(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate112(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196464276509(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate113(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate114(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1196464276621(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(_parameterObject.getNode(), "funHolders", true), new zPredicate115(null, null)));
+    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate116(null, null)));
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1193058124500(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "cardinal", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1193058105157(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1196881785386(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "getter", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1185026992996(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SNodeOperations.getParent(_parameterObject.getNode(), null, false, false), "expression", true);
+  }
+
+  public static SNode sourceNodeQuery_1185030514117(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    if((SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "paramObject", true), "paramRef", false) != null)) {
+      return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "paramObject", true), "paramRef", false);
+    }
+    Object param = SPropertyOperations.getString(SLinkOperations.getTarget(_parameterObject.getNode(), "paramObject", true), "paramValue");
+    String name = SPropertyOperations.getString(SLinkOperations.getTarget(_parameterObject.getNode(), "paramObject", true), "name");
+    if(param == null) {
+      param = name;
+    }
+    SNode stringLiteral = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+    SPropertyOperations.set(stringLiteral, "value", "" + (param));
+    return stringLiteral;
+  }
+
+  public static SNode sourceNodeQuery_1192793393648(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1194864092496(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1192887473913(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1198141795370(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1198141795390(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
+  public static SNode sourceNodeQuery_1198141795408(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "parameterType", true);
+  }
+
   public static List sourceNodesQuery_1184679753545(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate62(null, null)));
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate117(null, null)));
   }
 
   public static List sourceNodesQuery_1184237003214(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate63(null, null)));
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate118(null, null)));
   }
 
   public static List sourceNodesQuery_1179331802560(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
@@ -683,702 +1375,11 @@ public class QueriesGenerated {
   }
 
   public static List sourceNodesQuery_1184762104927(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate64(null, null)));
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate119(null, null)));
   }
 
   public static List sourceNodesQuery_1196881595288(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate65(null, null)));
-  }
-
-  public static SNode sourceNodeQuery_1172656490871(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1179324459190(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parentBlock", true);
-  }
-
-  public static SNode sourceNodeQuery_1179324459199(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "childrenBlock", true);
-  }
-
-  public static SNode sourceNodeQuery_1179324381860(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(node);
-  }
-
-  public static SNode sourceNodeQuery_1179324381867(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(node);
-  }
-
-  public static SNode sourceNodeQuery_1179324381892(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(node);
-  }
-
-  public static SNode sourceNodeQuery_1179324381900(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(node);
-  }
-
-  public static SNode sourceNodeQuery_1179324381933(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(node);
-  }
-
-  public static SNode sourceNodeQuery_1179324381941(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(node);
-  }
-
-  public static SNode sourceNodeQuery_1172648172668(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(node);
-  }
-
-  public static SNode sourceNodeQuery_1172656439990(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "operation", true);
-  }
-
-  public static SNode sourceNodeQuery_1172655121937(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "fromExpression", true);
-  }
-
-  public static SNode sourceNodeQuery_1172655307749(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1172655368334(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1174932215509(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1174933130150(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "whereBlock", true);
-  }
-
-  public static SNode sourceNodeQuery_1168970408151(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1184679966257(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184679920759(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1198195857792(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parentBlock", true);
-  }
-
-  public static SNode sourceNodeQuery_1198195892742(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "childrenBlock", true);
-  }
-
-  public static SNode sourceNodeQuery_1184678704675(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184678720204(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184236913523(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184236913563(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184237393261(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1198142581216(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1179315588342(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(node);
-  }
-
-  public static SNode sourceNodeQuery_1179315519284(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(node);
-  }
-
-  public static SNode sourceNodeQuery_1172647340018(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(node);
-  }
-
-  public static SNode sourceNodeQuery_1172647352619(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(node);
-  }
-
-  public static SNode sourceNodeQuery_1179320582842(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(node);
-  }
-
-  public static SNode sourceNodeQuery_1179320575763(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(node);
-  }
-
-  public static SNode sourceNodeQuery_1172646749760(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(node);
-  }
-
-  public static SNode sourceNodeQuery_1172243407751(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1184849691168(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate66(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1172650748986(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate67(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1172245483666(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode parent = SNodeOperations.getParent(node, null, false, false);
-    return SLinkOperations.getTarget(parent, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1175172300640(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode parent = SNodeOperations.getParent(node, null, false, false);
-    return SLinkOperations.getTarget(parent, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1179398698394(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "matchExpression", true);
-  }
-
-  public static SNode sourceNodeQuery_1179337232899(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(SLinkOperations.getTarget(node, "property", false), "jetbrains.mps.ypath.structure.TreePathAspect", false, false));
-  }
-
-  public static SNode sourceNodeQuery_1175879812600(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode parent = SNodeOperations.getParent(node, null, false, false);
-    return SLinkOperations.getTarget(parent, "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1179398930383(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "matchExpression", true);
-  }
-
-  public static SNode sourceNodeQuery_1179334580327(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-    SNode tpae = SequenceOperations.getFirst(SequenceOperations.where(SNodeOperations.getDescendants(tpoe, null, false), new zPredicate68(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(tpae, "treepathAspect", false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1179315905821(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "parameter", true));
-  }
-
-  public static SNode sourceNodeQuery_1179315993881(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1179315959958(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "parameter", true));
-  }
-
-  public static SNode sourceNodeQuery_1179317609528(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "parameter", true));
-  }
-
-  public static SNode sourceNodeQuery_1179317609539(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "parameter", true));
-  }
-
-  public static SNode sourceNodeQuery_1179319539329(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1179317609565(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "parameter", true));
-  }
-
-  public static SNode sourceNodeQuery_1179319495735(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "parameter", true));
-  }
-
-  public static SNode sourceNodeQuery_1179319559391(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1179738498829(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "parameter", true));
-  }
-
-  public static SNode sourceNodeQuery_1179332192981(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1179332192991(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "parameter", true));
-  }
-
-  public static SNode sourceNodeQuery_1179332118574(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "parameter", true));
-  }
-
-  public static SNode sourceNodeQuery_1179399590420(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "getter", true);
-  }
-
-  public static SNode sourceNodeQuery_1179395493888(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false));
-  }
-
-  public static SNode sourceNodeQuery_1179397308450(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false));
-  }
-
-  public static SNode sourceNodeQuery_1179397308456(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false));
-  }
-
-  public static SNode sourceNodeQuery_1179397532467(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false));
-  }
-
-  public static SNode sourceNodeQuery_1179397532473(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false));
-  }
-
-  public static SNode sourceNodeQuery_1179397960216(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TreePath_Behavior.call_getNodeType_1179306333014(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false));
-  }
-
-  public static SNode sourceNodeQuery_1179399796352(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1179399762477(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "parameter", true));
-  }
-
-  public static SNode sourceNodeQuery_1179741239472(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(node);
-  }
-
-  public static SNode sourceNodeQuery_1180087663597(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "nodeExpression", true), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1180087869934(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "nodeExpression", true), "expression", true));
-  }
-
-  public static SNode sourceNodeQuery_1180089519694(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "parameter", true));
-  }
-
-  public static SNode sourceNodeQuery_1180089683858(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true));
-  }
-
-  public static SNode sourceNodeQuery_1180088768491(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1180091626437(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "parameter", true));
-  }
-
-  public static SNode sourceNodeQuery_1180089867871(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "parameter", true));
-  }
-
-  public static SNode sourceNodeQuery_1180089846785(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1180089806776(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1180090818686(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "visitBlock", true);
-  }
-
-  public static SNode sourceNodeQuery_1180090185278(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "visitBlock", true), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1180090844902(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "variableDeclaration", false), "type", true);
-  }
-
-  public static SNode sourceNodeQuery_1184059461022(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184674029953(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184059452117(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184673941910(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1183985773053(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1183989439611(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "getFunction", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1183989515812(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "sizeFunction", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1183985842403(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184069203904(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1183989707749(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "setFunction", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1183985816049(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1183989897067(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "insertFunction", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1183985826168(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1183985851763(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184068925594(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1183990156036(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "deleteFunction", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1183989673472(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184066732135(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184674099551(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184066732158(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184674113449(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184067294347(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "sequenceFunction", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1184067278622(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184066845276(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184066732214(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "sizeFunction", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1184066732260(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "addFunction", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1184066732275(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184066732404(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePath", false, false), "treePathType", true), "nodeType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184764392657(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184762368321(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "parameterQueryFunction", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1184769796063(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184762461203(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "targetTypeFunction", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1184769801555(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1184762418271(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "toStringFunction", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1192793676557(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "getter", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1192793648146(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1196434617028(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1196442565609(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate69(null, null)));
-    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate70(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196442565702(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate71(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate72(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196442565807(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate73(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate74(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196442565927(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate75(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate76(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196435366125(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate77(null, null)));
-    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate78(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196436349439(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate79(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate80(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196442030564(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate81(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate82(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196442175205(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate83(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate84(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1195424413398(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1196462910275(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate85(null, null)));
-    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate86(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196462910370(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate87(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate88(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196462910477(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate89(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate90(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196462910598(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate91(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate92(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196462910707(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate93(null, null)));
-    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate94(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196462910799(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate95(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate96(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196462910904(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate97(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate98(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196462911024(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate99(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate100(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1195424497113(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1196463629363(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate101(null, null)));
-    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate102(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196463773066(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate103(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate104(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196463934709(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate105(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate106(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196463986530(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate107(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate108(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196464033244(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate109(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate110(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196464276188(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate111(null, null)));
-    SNode fw = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate112(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fw, "fun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196464276284(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate113(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate114(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196464276396(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate115(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate116(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196464276509(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate117(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate118(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1196464276621(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    SNode fh = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(node, "funHolders", true), new zPredicate119(null, null)));
-    SNode fun = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(fh, "functions", true), new zPredicate120(null, null)));
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(fun, "fragmentFun", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1193058124500(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "cardinal", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1193058105157(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1196881785386(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "getter", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1185026992996(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SNodeOperations.getParent(node, null, false, false), "expression", true);
-  }
-
-  public static SNode sourceNodeQuery_1185030514117(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    if((SLinkOperations.getTarget(SLinkOperations.getTarget(node, "paramObject", true), "paramRef", false) != null)) {
-      return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "paramObject", true), "paramRef", false);
-    }
-    Object param = SPropertyOperations.getString(SLinkOperations.getTarget(node, "paramObject", true), "paramValue");
-    String name = SPropertyOperations.getString(SLinkOperations.getTarget(node, "paramObject", true), "name");
-    if(param == null) {
-      param = name;
-    }
-    SNode stringLiteral = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
-    SPropertyOperations.set(stringLiteral, "value", "" + (param));
-    return stringLiteral;
-  }
-
-  public static SNode sourceNodeQuery_1192793393648(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1194864092496(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1192887473913(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1198141795370(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1198141795390(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
-  }
-
-  public static SNode sourceNodeQuery_1198141795408(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "parameterType", true);
+    return SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(node, "features", true), new zPredicate120(null, null)));
   }
 
 }

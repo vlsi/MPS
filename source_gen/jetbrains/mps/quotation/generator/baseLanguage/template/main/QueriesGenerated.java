@@ -17,6 +17,7 @@ import jetbrains.mps.baseLanguage.structure.StatementList;
 import jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement;
 import jetbrains.mps.generator.template.IfMacro_ParameterObject;
 import java.util.List;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.IScope;
@@ -237,6 +238,26 @@ public class QueriesGenerated {
     return false;
   }
 
+  public static SNode sourceNodeQuery_1196351886722(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return _parameterObject.getNode();
+  }
+
+  public static SNode sourceNodeQuery_1196351886773(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.quotation.structure.Quotation", false, false);
+  }
+
+  public static SNode sourceNodeQuery_1196860193027(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.quotation.structure.Quotation", false, false);
+  }
+
+  public static SNode sourceNodeQuery_1196351887509(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SNodeOperations.getAncestor(_parameterObject.getNode(), "jetbrains.mps.quotation.structure.Quotation", false, false);
+  }
+
+  public static SNode sourceNodeQuery_1196351887805(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "quotedNode", true);
+  }
+
   public static List sourceNodesQuery_1196351886675(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     List<SNode> result = new ArrayList();
     if(SLinkOperations.getTarget(node, "modelToCreate", true) != null) {
@@ -326,26 +347,6 @@ public class QueriesGenerated {
       }
     }
     return result;
-  }
-
-  public static SNode sourceNodeQuery_1196351886722(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return node;
-  }
-
-  public static SNode sourceNodeQuery_1196351886773(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
-  }
-
-  public static SNode sourceNodeQuery_1196860193027(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
-  }
-
-  public static SNode sourceNodeQuery_1196351887509(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SNodeOperations.getAncestor(node, "jetbrains.mps.quotation.structure.Quotation", false, false);
-  }
-
-  public static SNode sourceNodeQuery_1196351887805(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "quotedNode", true);
   }
 
 }

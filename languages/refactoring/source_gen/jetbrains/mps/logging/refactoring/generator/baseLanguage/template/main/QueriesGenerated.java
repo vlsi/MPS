@@ -14,6 +14,7 @@ import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.generator.template.ReferenceMacro_ParameterObject;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.generator.template.IfMacro_ParameterObject;
+import jetbrains.mps.generator.template.SourceSubstituteMacro_Node_ParameterObject;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.generator.template.ITemplateGenerator;
@@ -121,10 +122,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1197995546008(final IOperationContext operationContext, final PropertyMacro_ParameterObject _parameterObject) {
     {
-      Pattern_ pattern_1199962585189 = new Pattern_();
-      SNode coercedNode_1199962585188 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true), pattern_1199962585189);
-      if(coercedNode_1199962585188 != null) {
-        SNode abstractConceptDeclaration = (SNode)pattern_1199962585189.PatternVar;
+      Pattern_ pattern_1199968240341 = new Pattern_();
+      SNode coercedNode_1199968240340 = TypeChecker.getInstance().getRuntimeSupport().coerce(SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true), pattern_1199968240341);
+      if(coercedNode_1199968240340 != null) {
+        SNode abstractConceptDeclaration = (SNode)pattern_1199968240341.PatternVar;
         return SNodeOperations.getModel(abstractConceptDeclaration).toString() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       }
     }
@@ -275,6 +276,138 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_parameterObject.getNode(), "filterClause", true) == null);
   }
 
+  public static SNode sourceNodeQuery_1198673965458(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true);
+  }
+
+  public static SNode sourceNodeQuery_1198674072178(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true);
+  }
+
+  public static SNode sourceNodeQuery_1198674859451(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "filterClause", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1198674956266(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true);
+  }
+
+  public static SNode sourceNodeQuery_1190725081382(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "isApplicableClause", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1190724963405(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "doRefactorClause", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1191592317463(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "getModelsToGenerateClause", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1190724923720(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "updateModelClause", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1197993779521(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true);
+  }
+
+  public static SNode sourceNodeQuery_1197992605929(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "chooseComponentClause", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1198600035299(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true);
+  }
+
+  public static SNode sourceNodeQuery_1198600088963(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "initialValue", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1197991695093(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true);
+  }
+
+  public static SNode sourceNodeQuery_1197994329816(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true);
+  }
+
+  public static SNode sourceNodeQuery_1197373531048(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "rValue", true);
+  }
+
+  public static SNode sourceNodeQuery_1198175268252(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "argument", false), "argumentType", true);
+  }
+
+  public static SNode sourceNodeQuery_1192804088431(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true);
+  }
+
+  public static SNode sourceNodeQuery_1192804118336(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "argumentType", true);
+  }
+
+  public static SNode sourceNodeQuery_1192803833747(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_parameterObject.getNode(), "filterClause", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1197387263078(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "feature", true);
+  }
+
+  public static SNode sourceNodeQuery_1197387243573(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "newConceptFQName", true);
+  }
+
+  public static SNode sourceNodeQuery_1197387243581(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "newFeatureName", true);
+  }
+
+  public static SNode sourceNodeQuery_1198577826555(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "argument", true);
+  }
+
+  public static SNode sourceNodeQuery_1199623494551(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "whatToMove", true);
+  }
+
+  public static SNode sourceNodeQuery_1199623490797(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "destination", true);
+  }
+
+  public static SNode sourceNodeQuery_1199623613817(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "whatToMove", true);
+  }
+
+  public static SNode sourceNodeQuery_1199623611204(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "roleInTarget", true);
+  }
+
+  public static SNode sourceNodeQuery_1199623608450(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "destination", true);
+  }
+
+  public static SNode sourceNodeQuery_1199623733861(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "whatToMove", true);
+  }
+
+  public static SNode sourceNodeQuery_1199623737069(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "destination", true);
+  }
+
+  public static SNode sourceNodeQuery_1199623873330(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "whatToMove", true);
+  }
+
+  public static SNode sourceNodeQuery_1199625039959(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "roleInTarget", true);
+  }
+
+  public static SNode sourceNodeQuery_1199623869841(final IOperationContext operationContext, final SourceSubstituteMacro_Node_ParameterObject _parameterObject) {
+    return SLinkOperations.getTarget(_parameterObject.getNode(), "destination", true);
+  }
+
   public static List sourceNodesQuery_1198673830801(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     List<SNode> result = new ArrayList<SNode>();
     List<SNode> requiredUserEnteredArguments = SLinkOperations.getTargets(node, "arguments", true);
@@ -318,138 +451,6 @@ public class QueriesGenerated {
 
   public static List sourceNodesQuery_1197986353964(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
     return SLinkOperations.getTargets(node, "arguments", true);
-  }
-
-  public static SNode sourceNodeQuery_1198673965458(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "argumentType", true);
-  }
-
-  public static SNode sourceNodeQuery_1198674072178(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "argumentType", true);
-  }
-
-  public static SNode sourceNodeQuery_1198674859451(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "filterClause", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1198674956266(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "argumentType", true);
-  }
-
-  public static SNode sourceNodeQuery_1190725081382(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "isApplicableClause", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1190724963405(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "doRefactorClause", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1191592317463(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "getModelsToGenerateClause", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1190724923720(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "updateModelClause", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1197993779521(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "argumentType", true);
-  }
-
-  public static SNode sourceNodeQuery_1197992605929(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "chooseComponentClause", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1198600035299(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "argumentType", true);
-  }
-
-  public static SNode sourceNodeQuery_1198600088963(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "initialValue", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1197991695093(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "argumentType", true);
-  }
-
-  public static SNode sourceNodeQuery_1197994329816(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "argumentType", true);
-  }
-
-  public static SNode sourceNodeQuery_1197373531048(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "rValue", true);
-  }
-
-  public static SNode sourceNodeQuery_1198175268252(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "argument", false), "argumentType", true);
-  }
-
-  public static SNode sourceNodeQuery_1192804088431(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "argumentType", true);
-  }
-
-  public static SNode sourceNodeQuery_1192804118336(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "argumentType", true);
-  }
-
-  public static SNode sourceNodeQuery_1192803833747(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(node, "filterClause", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1197387263078(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "feature", true);
-  }
-
-  public static SNode sourceNodeQuery_1197387243573(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "newConceptFQName", true);
-  }
-
-  public static SNode sourceNodeQuery_1197387243581(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "newFeatureName", true);
-  }
-
-  public static SNode sourceNodeQuery_1198577826555(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "argument", true);
-  }
-
-  public static SNode sourceNodeQuery_1199623494551(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "whatToMove", true);
-  }
-
-  public static SNode sourceNodeQuery_1199623490797(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "destination", true);
-  }
-
-  public static SNode sourceNodeQuery_1199623613817(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "whatToMove", true);
-  }
-
-  public static SNode sourceNodeQuery_1199623611204(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "roleInTarget", true);
-  }
-
-  public static SNode sourceNodeQuery_1199623608450(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "destination", true);
-  }
-
-  public static SNode sourceNodeQuery_1199623733861(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "whatToMove", true);
-  }
-
-  public static SNode sourceNodeQuery_1199623737069(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "destination", true);
-  }
-
-  public static SNode sourceNodeQuery_1199623873330(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "whatToMove", true);
-  }
-
-  public static SNode sourceNodeQuery_1199625039959(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "roleInTarget", true);
-  }
-
-  public static SNode sourceNodeQuery_1199623869841(SNode node, SModel sourceModel, ITemplateGenerator generator, IScope scope, IOperationContext operationContext) {
-    return SLinkOperations.getTarget(node, "destination", true);
   }
 
 }
