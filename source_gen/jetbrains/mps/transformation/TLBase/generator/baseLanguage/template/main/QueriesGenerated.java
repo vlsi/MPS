@@ -14,8 +14,8 @@ import jetbrains.mps.smodel.SModel;
 import java.util.List;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
 
 public class QueriesGenerated {
 
@@ -171,7 +171,7 @@ public class QueriesGenerated {
     List<SNode> nodes = SModelOperations.getNodes(model, "jetbrains.mps.transformation.TLBase.structure.TemplateFunctionParameter_sourceNode");
     for(SNode node : nodes) {
       SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", null);
-      SLinkOperations.setTarget(replacement, "typeHint", TypeChecker.getInstance().getTypeOf(node), true);
+      SLinkOperations.setTarget(replacement, "typeHint", SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(node)), true);
       SNodeOperations.replaceWithAnother(node, replacement);
       SLinkOperations.setTarget(replacement, "expression", node, true);
     }

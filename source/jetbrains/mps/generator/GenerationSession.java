@@ -299,6 +299,7 @@ public class GenerationSession implements IGenerationSession {
           SModel currentInputModel_clone = createTransientModel(modelsLongName, module);
           addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getUID() + "' --> '" + currentInputModel_clone.getUID() + "'");
           CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, generator.getScope());
+          
           // probably we can forget about former input model here
           recycleWasteModel(currentInputModel);
           currentInputModel = currentInputModel_clone;
