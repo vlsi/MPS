@@ -31,7 +31,7 @@ public class GenericRefactoringAction extends CurrentProjectMPSAction {
     myRefactoring.execute(context);
   }
 
-  public void update(@NotNull ActionContext context) {
+  public void doUpdate(@NotNull ActionContext context) {
     boolean enabled = false;
     SNode node = context.getNode();
     if (node != null) {

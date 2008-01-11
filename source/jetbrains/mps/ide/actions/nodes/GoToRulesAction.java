@@ -48,7 +48,7 @@ public class GoToRulesAction extends MPSAction {
   }
 
 
-  public void update(@NotNull ActionContext context) {
+  public void doUpdate(@NotNull ActionContext context) {
     boolean enabled = BaseAdapter.fromNode(context.getNode()) instanceof AbstractConceptDeclaration;
     setEnabled(enabled);
     setVisible(enabled);

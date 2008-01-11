@@ -24,7 +24,7 @@ public class ScriptsActionGroup extends ActionGroup {
     super("Scripts");
   }
 
-  public void update(ActionContext context) {
+  public void doUpdate(ActionContext context) {
     clear();
     setVisible(true);
     if (context.get(MPSProject.class) == null) {

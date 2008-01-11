@@ -434,7 +434,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         if (e instanceof ActionGroup) {
           try {
             if (actionContext != null) {
-                e.update(actionContext);
+              e.update(actionContext);
             }
             registerKeyStrokes((ActionGroup) e, actionContext);
           } catch (Throwable t) {

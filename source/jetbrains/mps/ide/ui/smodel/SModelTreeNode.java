@@ -24,7 +24,6 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
 
-import javax.swing.Icon;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
@@ -682,7 +681,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       ActionContext context = getActionContext();
 
       CreateRootNodeGroup cg = new CreateRootNodeGroup(getPackage());
-      cg.update(context);
+      cg.doUpdate(context);
       cg.add(menu, context);
 
       menu.addSeparator();

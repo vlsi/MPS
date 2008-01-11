@@ -42,7 +42,7 @@ public class CreateRootNodeGroup extends ActionGroup {
     myPackage = pack;
   }
 
-  public void update(ActionContext context) {
+  public void doUpdate(ActionContext context) {
     clear();
     SModelDescriptor modelDescriptor = context.get(SModelDescriptor.class);
     IDEProjectFrame ide = context.get(IDEProjectFrame.class);

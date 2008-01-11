@@ -11,7 +11,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
 
-import javax.swing.Icon;
 import javax.swing.JPopupMenu;
 import java.util.*;
 

@@ -120,12 +120,16 @@ public final class SNode {
 
   @NotNull
   public SModel getModel() {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     return myModel;
   }
 
   @NotNull
   public String getRoleOf(@NotNull SNode node) {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     if (_children().contains(node)) {
@@ -144,6 +148,8 @@ public final class SNode {
 
   @NotNull
   public Set<String> getChildRoles(boolean includeAttributeRoles) {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     Set<String> result = new HashSet<String>();
@@ -159,6 +165,8 @@ public final class SNode {
 
   @NotNull
   public Set<String> addChildRoles(@NotNull final Set<String> augend, boolean includeAttributeRoles) {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     for (SNode child : _children()) {
@@ -183,6 +191,8 @@ public final class SNode {
 
   @NotNull
   public Set<String> getReferenceRoles() {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     Set<String> result = new HashSet<String>();
     if (myReferences != null) {
@@ -195,6 +205,8 @@ public final class SNode {
   }
 
   public boolean isAncestorOf(@NotNull SNode child) {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     if (child == this) return true;
     SNode parentOfChild = child.getParent();
@@ -211,6 +223,8 @@ public final class SNode {
   }
 
   public SNode getContainingRoot() {
+    ModelAccess.assertLegalRead(this);
+    
     fireNodeReadAccess();
     if (myParent == null) {
       if (getModel().getRoots().contains(this)) {
@@ -247,6 +261,8 @@ public final class SNode {
 
   @Nullable
   public Object getUserObject(@NotNull Object key) {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     if (myUserObjects == null) return null;
     return myUserObjects.get(key);
@@ -513,7 +529,9 @@ public final class SNode {
   //
 
   @NotNull
-  public Map<String, String> getProperties() {
+  public Map<String, String> getProperties() {    
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     if (myProperties == null) return Collections.emptyMap();
     return Collections.unmodifiableMap(myProperties);
@@ -530,6 +548,8 @@ public final class SNode {
 
   @NotNull
   public Set<String> getPropertyNames() {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     Set<String> result = getPropertyNamesFromAttributes();
     if (myProperties != null) {
@@ -714,6 +734,8 @@ public final class SNode {
 
   @Nullable
   public SNode getChild(@NotNull String role) {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     int count = 0;
     SNode foundChild = null;
@@ -795,6 +817,8 @@ public final class SNode {
 
   @NotNull
   public List<SNode> getChildren() {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     return Collections.unmodifiableList(_children());
@@ -811,6 +835,8 @@ public final class SNode {
   }
 
   public int getChildCount() {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     return _children().size();
@@ -818,6 +844,8 @@ public final class SNode {
 
   @NotNull
   public List<SNode> getChildren(@NotNull String role) {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     List<SNode> children = _children();
@@ -976,6 +1004,8 @@ public final class SNode {
 
   @NotNull
   public List<SReference> getReferences() {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     if (myReferences == null) return new ArrayList<SReference>(0);
@@ -1046,6 +1076,8 @@ public final class SNode {
   }
 
   public SReference getReference(@NotNull String role) {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     SReference result = null;
     int count = 0; // paranoid check
@@ -1095,6 +1127,8 @@ public final class SNode {
 
   @NotNull
   public List<SNode> getReferents() {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     List<SNode> result = new ArrayList<SNode>();
@@ -1197,6 +1231,8 @@ public final class SNode {
 
   @NotNull
   public Iterator<SNode> depthFirstChildren(boolean addThis) {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     List<SNode> allChildren = new ArrayList<SNode>();
@@ -1253,6 +1289,8 @@ public final class SNode {
   }
 
   public SNodeId getSNodeId() {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     if (myId == null) {
       myId = generateUniqueId();
@@ -1284,6 +1322,8 @@ public final class SNode {
 
   @NotNull
   public String toString() {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     String s = null;
     try {
@@ -1376,17 +1416,23 @@ public final class SNode {
 
 
   public String getConceptFqName() {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     return myConceptFqName;
   }
 
   @NotNull
   public String getConceptShortName() {
+    ModelAccess.assertLegalRead(this);
+
     fireNodeReadAccess();
     return NameUtil.shortNameFromLongName(myConceptFqName);
   }
 
   public String getLanguageNamespace() {
+    ModelAccess.assertLegalRead(this);
+    
     fireNodeReadAccess();
     return NameUtil.namespaceFromConceptFQName(myConceptFqName);
   }
