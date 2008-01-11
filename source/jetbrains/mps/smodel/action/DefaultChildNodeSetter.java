@@ -30,7 +30,7 @@ public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
 
   public SNode doExecute(SNode parenNode, SNode oldChild, SNode newChild, IScope scope) {
     if (newChild != null &&
-            !SModelUtil_new.isAcceptableReferent(myLinkDeclaration, newChild)) {
+            !SModelUtil_new.isAcceptableTarget(myLinkDeclaration, newChild)) {
       LOG.error("couldn't set instance of " + newChild.getConceptFqName() +
               " as child '" + myLinkDeclaration.getRole() + "' to " + parenNode.getDebugText());
       return newChild;

@@ -31,21 +31,22 @@ import java.util.List;
 public class GeneratorUtil {
   private static final Logger LOG = Logger.getLogger(GeneratorUtil.class);
 
-  private static boolean checkResolvedReference(SNode sourceNode, SNode targetNode, SNode templateNode, String role, SNode targetReferentNode, ITemplateGenerator generator) {
-    if (!targetNode.isAcceptableReferent(role, targetReferentNode)) {
-      generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent: " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
+  private static boolean checkResolvedReference(SNode inputNode, SNode outputNode, SNode templateNode, String role, SNode outputReferentNode, ITemplateGenerator generator) {
+    if (!SModelUtil_new.isAcceptableTarget(outputNode, role, outputReferentNode)) {
+      generator.showErrorMessage(inputNode, templateNode, "unacceptable referent: " + outputReferentNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
+      generator.showInformationMessage(outputNode, " -- output node was: " + outputReferentNode.getDebugText());
       return false;
     }
-    SModel referentNodeModel = targetReferentNode.getModel();
-    if (referentNodeModel != targetNode.getModel()) {
+    SModel referentNodeModel = outputReferentNode.getModel();
+    if (referentNodeModel != outputNode.getModel()) {
       if (TemplateLanguageUtil.isTemplatesModel(referentNodeModel)) {
         // references on template nodes are not acceptable
-        generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent on template node: " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
+        generator.showErrorMessage(inputNode, templateNode, "unacceptable referent on template node: " + outputReferentNode.getDebugText() + " for role \"" + role + "\" in " + outputNode.getDebugText());
         return false;
       }
       if (referentNodeModel.getModelDescriptor().isTransient()) {
         // references on transient nodes are not acceptable
-        generator.showErrorMessage(sourceNode, templateNode, "unacceptable referent on transient node: " + targetReferentNode.getDebugText() + " for role \"" + role + "\" in " + targetNode.getDebugText());
+        generator.showErrorMessage(inputNode, templateNode, "unacceptable referent on transient node: " + outputReferentNode.getDebugText() + " for role \"" + role + "\" in " + outputNode.getDebugText());
         return false;
       }
     }

@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.constraints.INodePropertyGetter;
 import jetbrains.mps.smodel.constraints.INodePropertySetter;
 import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil_new;
 import jetbrains.mps.util.*;
 import jetbrains.mps.util.annotation.UseCarefully;
@@ -1590,13 +1589,6 @@ public final class SNode {
       return true;
     }
     return false;
-  }
-
-  public boolean isAcceptableReferent(String role, SNode referentNode) {
-    AbstractConceptDeclaration conceptDeclaration = getConceptDeclarationAdapter();
-    LinkDeclaration linkDeclaration = SModelUtil_new.findSpecializingLink((ConceptDeclaration) conceptDeclaration, role);
-    LOG.assertLog(linkDeclaration != null, "couldn't find link declaration for role \"" + role + "\" in hierarchy of concept " + conceptDeclaration.getDebugText());
-    return SModelUtil_new.isAcceptableReferent(linkDeclaration, referentNode);
   }
 
   public Language getLanguage(IScope scope) {
