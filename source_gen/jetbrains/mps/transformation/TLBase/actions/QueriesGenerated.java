@@ -5,44 +5,47 @@ package jetbrains.mps.transformation.TLBase.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.smodel.action.*;
+import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_RuleConsequence_1169582381136(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _parameterObject) {
-    return SNodeOperations.isInstanceOf(_parameterObject.getParentNode(), "jetbrains.mps.transformation.TLBase.structure.Weaving_MappingRule");
+  public static boolean nodeSubstituteActionsBuilder_Precondition_RuleConsequence_1169582381136(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.transformation.TLBase.structure.Weaving_MappingRule");
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_RuleConsequence_1195244660444(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _parameterObject) {
-    return SNodeOperations.isInstanceOf(_parameterObject.getParentNode(), "jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule");
+  public static boolean nodeSubstituteActionsBuilder_Precondition_RuleConsequence_1195244660444(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.transformation.TLBase.structure.Reduction_MappingRule");
   }
 
-  public static void nodeFactory_NodeSetup_SNodeOrStringType_1198265067453(final IOperationContext operationContext, final NodeSetupContext _parameterObject) {
-    if(SNodeOperations.isInstanceOf(_parameterObject.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
-      SLinkOperations.setTarget(_parameterObject.getNewNode(), "equivalentType", _parameterObject.getSampleNode(), true);
+  public static void nodeFactory_NodeSetup_SNodeOrStringType_1198265067453(final IOperationContext operationContext, final NodeSetupContext _context) {
+    if(SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeType")) {
+      SLinkOperations.setTarget(_context.getNewNode(), "equivalentType", _context.getSampleNode(), true);
     }
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_RuleConsequence_1169570930693(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _parameterObject) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_RuleConsequence_1169570930693(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.transformation.TLBase.structure.WeaveEach_RuleConsequence", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _parameterObject.getParentNode(), _parameterObject.getCurrentTargetNode(), _parameterObject.getChildSetter(), operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope());
       result.addAll(defaultActions);
     }
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_RuleConsequence_1195244607537(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _parameterObject) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_RuleConsequence_1195244607537(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.transformation.TLBase.structure.InlineSwitch_RuleConsequence", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _parameterObject.getParentNode(), _parameterObject.getCurrentTargetNode(), _parameterObject.getChildSetter(), operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope());
       result.addAll(defaultActions);
     }
     return result;
