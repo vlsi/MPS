@@ -60,12 +60,6 @@ public class GeneratorUtil {
     }
 
     String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition.getNode());
-    Object[] args = new Object[]{
-            inputNode,
-            generator.getInputModel(),
-            generator,
-            generator.getScope(),
-            generator.getGeneratorSessionContext()};
     long startTime = System.currentTimeMillis();
     boolean res = false;
     try {
