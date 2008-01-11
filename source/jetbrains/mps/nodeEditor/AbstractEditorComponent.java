@@ -501,12 +501,16 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     editNode(node);
   }
 
-  protected void editNode(SNode node) {
-    IOperationContext operationContext = getOperationContext();
-    myNodePointer = new SNodePointer(node);
-    SModel model = node == null ? null : node.getModel();
-    setEditorContext(new EditorContext(this, model, operationContext));
-    rebuildEditorContent();
+  protected void editNode(final SNode node) {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        IOperationContext operationContext = getOperationContext();
+        myNodePointer = new SNodePointer(node);
+        SModel model = node == null ? null : node.getModel();
+        setEditorContext(new EditorContext(AbstractEditorComponent.this, model, operationContext));
+        rebuildEditorContent();
+      }
+    });
   }
 
 
