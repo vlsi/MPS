@@ -198,17 +198,22 @@ public class IntelligentInputUtil {
       if (newNodeCell == null) {
         newNodeCell = nodeEditorComponent.findNodeCell(myNode, true);
       }
-      EditorCell_Label nextCell_ = EditorUtil.findRTHintCell(newNodeCell);
+      EditorCell_Label nextCell = EditorUtil.findRTHintCell(newNodeCell);
 
-      myFoundCell = nextCell_;
-      if (nextCell_ == null) {
-        LOG.error("no rt hint cell found!");
-        return;
+      if (nextCell == null) {
+        EditorCell selectedCell = nodeEditorComponent.getSelectedCell();
+        if (selectedCell != null && selectedCell instanceof EditorCell_Label && selectedCell.isErrorState()) {
+          nextCell = (EditorCell_Label) selectedCell;
+        } else {
+          return;
+        }
       }
-      nextCell_.changeText(myFoundCellText);
-      nextCell_.getRenderedTextLine().setCaretPositionToLast();
+      myFoundCell = nextCell;
+      
+      nextCell.changeText(myFoundCellText);
+      nextCell.getRenderedTextLine().setCaretPositionToLast();
       if (myCallSelect) {
-        nodeEditorComponent.changeSelection(nextCell_);
+        nodeEditorComponent.changeSelection(nextCell);
       }
       nodeEditorComponent.relayout();
     }
