@@ -28,7 +28,7 @@ public class IdeMain {
     final IDEProjectFrame[] projectWindow = new IDEProjectFrame[1];
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        System.setProperty("alloy.licenseCode", "2008/01/17#Konstantin.Solomatov@gmail.com#b4yfnq#18f3q7");
+        System.setProperty("alloy.licenseCode", "4#JetBrains_s.r.o.#nvxvi9#2i0t28");
         System.setProperty("swing.aatext", "true");
 
         long start = System.currentTimeMillis();
