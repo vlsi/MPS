@@ -1311,9 +1311,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       if (getSelectedCell() != null) {
         SNode selectedNode = getSelectedCell().getSNode();
         while (selectedNode != null) {
-          final IStatus status = (IStatus) selectedNode.getUserObject(SNode.ERROR_STATUS);
           final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
-          if (status != null || herror != null) {
+          if (herror != null) {
             final SNode selectedNode1 = selectedNode;
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
@@ -1321,9 +1320,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
                 String s = "";
                 if (herror != null) {
                   s += "TYPE ERROR: " + herror.reportError() + "\n";
-                }
-                if (status != null) {
-                  s += status.getMessage();
                 }
                 JOptionPane.showMessageDialog(getExternalComponent(), s, nodeClasName + " status", JOptionPane.ERROR_MESSAGE);
               }

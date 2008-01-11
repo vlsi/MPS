@@ -34,7 +34,6 @@ public final class SNode {
 
   public static final Object STATUS = new Object();
   public static final Object LAST_UPDATE = new Object();
-  public static final Object ERROR_STATUS = new Object();
 
   public static final String RIGHT_TRANSFORM_HINT = "right_transfrom_hint";
 
