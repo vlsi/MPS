@@ -36,11 +36,20 @@ public class SNodePointer {
   }
 
   public SNode getNode() {
+    if (myNodeId == null) return null;
     SModelDescriptor model = getModel();
-    if (model == null) {
-      return null;
+    if (model != null) {
+      SNode node = model.getSModel().getNodeById(myNodeId);
+      if (node != null) {
+        return node;
+      }
     }
-    return model.getSModel().getNodeById(myNodeId);
+
+    UnregisteredNodes unregisteredNodes = UnregisteredNodes.instance();
+    if (unregisteredNodes != null) {
+      return unregisteredNodes.get(myModelUID, myNodeId.toString());
+    }
+    return null;
   }
 
   public SNode getNodeMaybeUnregistered() {
