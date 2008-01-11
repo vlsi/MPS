@@ -6,6 +6,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.ChooseItemComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ToStringComparator;
@@ -13,15 +14,19 @@ import jetbrains.mps.util.ToStringComparator;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.ListCellRenderer;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
 import java.awt.BorderLayout;
 import java.util.*;
 
+import org.jetbrains.annotations.Nullable;
+
 public class ChooseNodeOrModelComponent extends JPanel implements IChooseComponent<Object> {
   private String myCaption;
   private String myPropertyName;
   private MyTree myTree = new MyTree();
+  private MyChooseItemComponent myChooseItemComponent = new MyChooseItemComponent();
   private String myConceptFQName;
   private IOperationContext myOperationContext;
   private ActionContext myActionContext;
@@ -43,12 +48,17 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
 
     myConceptFQName = conceptFQName;
 
+    JPanel panel = new JPanel(new BorderLayout());
+    panel.add(myChooseItemComponent, BorderLayout.NORTH);
+    panel.add(new JScrollPane(myTree), BorderLayout.CENTER);
+
     add(new JLabel(myCaption), BorderLayout.NORTH);
-    add(new JScrollPane(myTree), BorderLayout.CENTER);
+    add(panel, BorderLayout.CENTER);
 
     myTree.setRootVisible(false);
     updateModels(myCondition);
     myTree.rebuildNow();
+    myChooseItemComponent.rebuild();
     myTree.expandPath(new TreePath(myTree.getRootNode()));
   }
 
@@ -66,6 +76,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     }
     updateModels(modelCondition);
     myTree.rebuildNow();
+    myChooseItemComponent.rebuild();
   }
 
   private void updateModels(Condition modelCondition) {
@@ -152,6 +163,28 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
     TreeNode treeNode = myTree.findNodeWith(initialValue);
     if (treeNode != null) {
       myTree.selectNode(treeNode);
+    }
+  }
+
+  class MyChooseItemComponent extends ChooseItemComponent<SModelDescriptor> {
+    public MyChooseItemComponent() {
+      super("choose model", false, null);
+    }
+
+    public void dispose() {
+    }
+
+    public void doChoose(SModelDescriptor sModelDescriptor) {
+      myTree.selectNode(myTree.findNodeWith(sModelDescriptor));
+    }
+
+    public void rebuild() {
+      getNames().clear();
+      getItemsMap().clear();
+      for (SModelDescriptor modelDescriptor : myModels) {
+        putItem(modelDescriptor.toString(), modelDescriptor);
+      }
+      makeNamesConsistent();
     }
   }
 }
