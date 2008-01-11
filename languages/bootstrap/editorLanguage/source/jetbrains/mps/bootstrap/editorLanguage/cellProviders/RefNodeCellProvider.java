@@ -1,0 +1,49 @@
+package jetbrains.mps.bootstrap.editorLanguage.cellProviders;
+
+import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
+import jetbrains.mps.core.structure.BaseConcept;
+import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelUtil_new;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: Cyril.Konopko
+ * Date: 13.02.2006
+ * Time: 20:20:27
+ * To change this template use File | Settings | File Templates.
+ */
+public class RefNodeCellProvider extends AbstractReferentCellProvider {
+
+
+  public RefNodeCellProvider(SNode node, EditorContext context) {
+    super(node, context);
+  }
+
+  protected EditorCell createRefCell(EditorContext context, SNode referencedNode, SNode node) {
+    EditorCell editorCell;
+    if (myIsAggregation) {
+      editorCell = context.createNodeCell(referencedNode);
+    } else {
+      editorCell = context.createReferentCell(getSNode(), referencedNode, myGenuineRole);
+    }
+    if (myIsCardinality1) {
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
+    }
+    if (myIsAggregation) {
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteNode(referencedNode));
+    } else {
+      editorCell.setAction(EditorCellAction.DELETE, new CellAction_DeleteReference(node, myGenuineRole));
+    }
+    return editorCell;
+  }
+
+
+  public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
+    if (relationDeclaration instanceof LinkDeclaration) {
+      LinkDeclaration linkDeclaration = (LinkDeclaration) relationDeclaration;
+      return linkDeclaration.getRole();
+    }
+    return null;
+  }
+}
