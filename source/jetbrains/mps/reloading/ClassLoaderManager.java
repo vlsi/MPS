@@ -355,6 +355,18 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return null;
   }
 
+  public IClassPathItem getEditorPath() {
+    String editorClasses = PathManager.getHomePath() + File.separator + "languages"
+            + File.separator + "bootstrap"
+            + File.separator + "editorLanguage"
+            + File.separator + "classes";
+    if (new File(editorClasses).exists()) {
+      return new FileClassPathItem(editorClasses);
+    }
+
+    return null;
+  }
+
   private JarFileClassPathItem findBootstrapJarByName(String name) {
     for (URL url : Launcher.getBootstrapClassPath().getURLs()) {
       try {
