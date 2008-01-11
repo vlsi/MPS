@@ -69,6 +69,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
 
     setText(caclulateNodeTextPresentation());
+    setAutoExpandable(myNode.isRoot());
   }
 
   public SModelTreeNode getSModelModelTreeNode() {
@@ -89,10 +90,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
 
     return null;
-  }
-
-  public boolean isAutoExpandable() {
-    return !myNode.isRoot();
   }
 
   public JPopupMenu getPopupMenu() {

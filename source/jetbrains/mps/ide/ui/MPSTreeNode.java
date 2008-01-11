@@ -31,6 +31,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   private String myAdditionalText = null;
   private Color myColor = Color.BLACK;
   private int myFontStyle = Font.PLAIN;
+  private boolean myAutoExpandable = true;
 
   public MPSTreeNode(IOperationContext operationContext) {
     myOperationContext = operationContext;
@@ -43,10 +44,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   public IOperationContext getOperationContext() {
     return myOperationContext;
-  }
-
-  public boolean isAutoExpandable() {
-    return true;
   }
 
   public Iterator<MPSTreeNode> iterator() {
@@ -236,6 +233,15 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   public String toString() {
     return getText();
+  }
+
+
+  public final boolean isAutoExpandable() {
+    return myAutoExpandable;
+  }
+
+  public final void setAutoExpandable(boolean autoExpandable) {
+    myAutoExpandable = autoExpandable;
   }
 
   public void updateNodePresentationInTree() {

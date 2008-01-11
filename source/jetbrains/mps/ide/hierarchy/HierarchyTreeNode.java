@@ -48,6 +48,7 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
   protected void updatePresentation() {
     setIcon(IconManager.getIconFor(myNodePointer.getNode()));
     setNodeIdentifier(calculateNodeIdentifier());
+    setAutoExpandable(false);
   }
 
   protected void dispose() {
@@ -58,10 +59,6 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
       sModel.removeRoot(node.getTopmostAncestor());
       sModel.setLoading(false);
     }
-  }
-
-  public boolean isAutoExpandable() {
-    return false;
   }
 
   public int getToggleClickCount() {
