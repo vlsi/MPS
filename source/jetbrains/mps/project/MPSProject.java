@@ -841,7 +841,11 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
 
   //todo find a better place for this method
   public TestResult testProject() {
-    getPluginManager().reloadPlugins();
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        getPluginManager().reloadPlugins();
+      }
+    });
 
     final List<String> errors = new ArrayList<String>();
     final List<String> warnings = new ArrayList<String>();
