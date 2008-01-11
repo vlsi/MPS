@@ -27,7 +27,9 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}\languages\bootstrap\sharedConcepts\classes" />
+  </classPath>
   <runtimeClassPath>
     <entry path="${mps_home}\languages\bootstrap\sharedConcepts\classes" />
   </runtimeClassPath>

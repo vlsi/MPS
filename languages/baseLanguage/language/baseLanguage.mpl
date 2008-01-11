@@ -39,7 +39,9 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}\languages\baseLanguage\classes" />
+  </classPath>
   <runtimeClassPath>
     <entry path="${mps_home}\languages\baseLanguage\classes" />
   </runtimeClassPath>
