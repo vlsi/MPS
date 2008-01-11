@@ -598,46 +598,50 @@ public class MPSProject implements ModelOwner, MPSModuleOwner, IContainer, IComp
   public void save() {
     if (IdeMain.isTestMode()) return;
 
-    DescriptorsPersistence.saveProjectDescriptor(myProjectFile, myProjectDescriptor);
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        DescriptorsPersistence.saveProjectDescriptor(myProjectFile, myProjectDescriptor);
 
-    if (myWorkspaceFile != null) {
-      try {
-        if (!myWorkspaceFile.exists()) {
-          myWorkspaceFile.createNewFile();
-        }
-        Element root = new Element(COMPONENTS);
-        for (Class cls : myContext.getComponentInterfaces()) {
-          Object component = myContext.get(cls);
-          if (component instanceof IExternalizableComponent) {
-            Element componentElement = new Element(COMPONENT);
-            componentElement.setAttribute(CLASS, cls.getName());
-
-            if (component.getClass().getClassLoader() instanceof DefaultClassLoader) {
-              DefaultClassLoader bcl = (DefaultClassLoader) component.getClass().getClassLoader();
-
-              //todo this is definitely a hack but I found no other way to
-              //todo find a name of a bundle by its class loader
-              String repr = bcl.getDelegate().toString();
-              int indexOfUnderscore = repr.lastIndexOf('_');
-              assert indexOfUnderscore != -1;
-              String name = repr.substring(0, indexOfUnderscore);
-              componentElement.setAttribute(BUNDLE, name);
+        if (myWorkspaceFile != null) {
+          try {
+            if (!myWorkspaceFile.exists()) {
+              myWorkspaceFile.createNewFile();
             }
+            Element root = new Element(COMPONENTS);
+            for (Class cls : myContext.getComponentInterfaces()) {
+              Object component = myContext.get(cls);
+              if (component instanceof IExternalizableComponent) {
+                Element componentElement = new Element(COMPONENT);
+                componentElement.setAttribute(CLASS, cls.getName());
 
-            try {
-              ((IExternalizableComponent) component).write(componentElement, this);
-            } catch (Exception e) {
-              LOG.error(e);
+                if (component.getClass().getClassLoader() instanceof DefaultClassLoader) {
+                  DefaultClassLoader bcl = (DefaultClassLoader) component.getClass().getClassLoader();
+
+                  //todo this is definitely a hack but I found no other way to
+                  //todo find a name of a bundle by its class loader
+                  String repr = bcl.getDelegate().toString();
+                  int indexOfUnderscore = repr.lastIndexOf('_');
+                  assert indexOfUnderscore != -1;
+                  String name = repr.substring(0, indexOfUnderscore);
+                  componentElement.setAttribute(BUNDLE, name);
+                }
+
+                try {
+                  ((IExternalizableComponent) component).write(componentElement, MPSProject.this);
+                } catch (Exception e) {
+                  LOG.error(e);
+                }
+                root.addContent(componentElement);
+              }
             }
-            root.addContent(componentElement);
+            Document document = new Document(root);
+            JDOMUtil.writeDocument(document, myWorkspaceFile);
+          } catch (Exception e) {
+            LOG.error(e);
           }
         }
-        Document document = new Document(root);
-        JDOMUtil.writeDocument(document, myWorkspaceFile);
-      } catch (Exception e) {
-        LOG.error(e);
       }
-    }
+    });
   }
 
   public void dispose() {
