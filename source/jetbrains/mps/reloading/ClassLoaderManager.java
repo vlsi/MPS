@@ -367,6 +367,30 @@ public class ClassLoaderManager implements IComponentLifecycle {
     return null;
   }
 
+  public IClassPathItem getConstraintsPath() {
+    String editorClasses = PathManager.getHomePath() + File.separator + "languages"
+            + File.separator + "bootstrap"
+            + File.separator + "constraintsLanguage"
+            + File.separator + "classes";
+    if (new File(editorClasses).exists()) {
+      return new FileClassPathItem(editorClasses);
+    }
+
+    return null;
+  }
+
+  public IClassPathItem getSharedConceptsPath() {
+    String editorClasses = PathManager.getHomePath() + File.separator + "languages"
+            + File.separator + "bootstrap"
+            + File.separator + "sharedConcepts"
+            + File.separator + "classes";
+    if (new File(editorClasses).exists()) {
+      return new FileClassPathItem(editorClasses);
+    }
+
+    return null;
+  }
+
   public IClassPathItem getSModelPath() {
     String editorClasses = PathManager.getHomePath() + File.separator + "languages"
             + File.separator + "bootstrap"
