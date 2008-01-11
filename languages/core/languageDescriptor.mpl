@@ -16,7 +16,7 @@
     <model modelUID="jetbrains.mps.core.editor" />
   </editor>
   <models>
-    <modelRoot path="${language_descriptor}\" namespacePrefix="jetbrains.mps.core" />
+    <modelRoot path="${language_descriptor}\languageModels" namespacePrefix="jetbrains.mps.core" />
   </models>
   <module />
   <accessoryModels />
