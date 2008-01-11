@@ -505,7 +505,17 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
       add(myRight, BorderLayout.EAST);
     }
 
-    public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
+    public Component getListCellRendererComponent(final JList list, final Object value, int index, final boolean isSelected, boolean cellHasFocus) {
+      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+        public void run() {
+          setupThis(list, value, isSelected);
+        }
+      });
+
+      return this;
+    }
+
+    private void setupThis(JList list, Object value, boolean isSelected) {
       INodeSubstituteAction action = (INodeSubstituteAction) value;
 
       if (action.getParameterObject() instanceof SNode) {
@@ -542,16 +552,6 @@ public class NodeSubstituteChooser implements IKeyboardHandler {
         setForeground(list.getForeground());
         myRight.setForeground(Color.GRAY);
       }
-
-//      if (isSelected) {
-//        setBackground(list.getSelectionBackground());
-//        setForeground(list.getSelectionForeground());
-//      } else {
-//        setBackground(list.getBackground());
-//
-//      }
-
-      return this;
     }
   }
 }

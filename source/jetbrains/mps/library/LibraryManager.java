@@ -5,6 +5,7 @@ import jetbrains.mps.components.DefaultExternalizableComponent;
 import jetbrains.mps.components.Externalizable;
 import jetbrains.mps.ide.preferences.IComponentWithPreferences;
 import jetbrains.mps.ide.preferences.IPreferencesPage;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -32,8 +33,12 @@ public class LibraryManager extends DefaultExternalizableComponent implements IC
   }
 
   public void initComponent() {
-    updatePredefinedLibraries();
-    update();
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        updatePredefinedLibraries();
+        update();
+      }
+    });
   }
 
   public Library newLibrary(String name) {

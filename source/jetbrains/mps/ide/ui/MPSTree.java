@@ -47,7 +47,7 @@ public abstract class MPSTree extends JTree {
         Object node = path.getLastPathComponent();
         MPSTreeNode treeNode = (MPSTreeNode) node;
         if (!treeNode.isInitialized()) {
-          treeNode.init();
+          doInit(treeNode);
         }
       }
 
@@ -235,6 +235,14 @@ public abstract class MPSTree extends JTree {
         showPopup(r.x, r.y);
       }
     }, KeyStroke.getKeyStroke("CONTEXT_MENU"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+  }
+
+  protected void doInit(final MPSTreeNode node) {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        node.init();
+      }
+    });
   }
 
   void myMouseReleased(MouseEvent e) {

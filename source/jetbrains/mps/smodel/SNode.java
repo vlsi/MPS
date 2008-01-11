@@ -581,12 +581,16 @@ public final class SNode {
   }
 
   public final boolean hasProperty(@NotNull String propertyName) {
+    ModelAccess.assertLegalRead(this);
+
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName, true);
     String property_internal = getProperty_internal(propertyName);
     return !SModelUtil_new.isEmptyPropertyValue(property_internal);
   }
 
   public final String getProperty(@NotNull String propertyName) {
+    ModelAccess.assertLegalRead(this);
+    
     NodeReadAccessCaster.firePropertyReadAccessed(this, propertyName, false);
     String propertyValue = getProperty_internal(propertyName);
     NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);

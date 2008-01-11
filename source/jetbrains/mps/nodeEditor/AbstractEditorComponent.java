@@ -378,19 +378,29 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private Set<Intention> getAvailableIntentions() {
-    SNode node = getSelectedNode();
-    if (node != null) {
-      return IntentionsManager.getInstance().getAvailableIntentions(node, getEditorContext());
-    }
-    return new HashSet<Intention>();
+    final Set<Intention> result = new LinkedHashSet<Intention>();
+    CommandProcessor.instance().executeCommand(new Runnable() {
+      public void run() {
+        SNode node = getSelectedNode();
+        if (node != null) {
+          result.addAll(IntentionsManager.getInstance().getAvailableIntentions(node, getEditorContext()));
+        }
+      }
+    });
+    return result;
   }
 
   private Set<Intention> getEnabledIntentions() {
-    SNode node = getSelectedNode();
-    if (node != null) {
-      return IntentionsManager.getInstance().getEnabledAvailableIntentions(node, getEditorContext());
-    }
-    return new HashSet<Intention>();
+    final Set<Intention> result = new LinkedHashSet<Intention>();
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        SNode node = getSelectedNode();
+        if (node != null) {
+          result.addAll(IntentionsManager.getInstance().getEnabledAvailableIntentions(node, getEditorContext()));
+        }
+      }
+    });
+    return result;
   }
 
   private void updateMPSActionsWithKeyStrokes() {
@@ -423,10 +433,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           }
         }
         if (e instanceof ActionGroup) {
-          if (actionContext != null) {
-            e.update(actionContext);
+          try {
+            if (actionContext != null) {
+                e.update(actionContext);
+            }
+            registerKeyStrokes((ActionGroup) e, actionContext);
+          } catch (Throwable t) {
+            LOG.error(t);
           }
-          registerKeyStrokes((ActionGroup) e, actionContext);
         }
       }
     }
@@ -1184,12 +1198,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void rebuildEditorContent() {
-    long start = System.currentTimeMillis();
     clearCaches();
     updateModelCheckerMessages();
     updateMPSActionsWithKeyStrokes();
     rebuildEditorContent(null);
-    LOG.debug("Rebuild of " + getEditedNode() + "'s editor took " + (System.currentTimeMillis() - start) + " ms");
   }
 
   void updateModelCheckerMessages() {
@@ -1232,25 +1244,29 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void rebuildEditorContent(final List<SModelEvent> events) {
-    if (isDisplayable() && !ThreadUtils.isEventDispatchThread()) {
-      throw new RuntimeException("Editor rebuild can only happen in UI Thread");
-    }
-
-    removeAll();
-
-    runSwapCellsActions(new Runnable() {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        setRootCell(createRootCell(events));
+        if (isDisplayable() && !ThreadUtils.isEventDispatchThread()) {
+          throw new RuntimeException("Editor rebuild can only happen in UI Thread");
+        }
+
+        removeAll();
+
+        runSwapCellsActions(new Runnable() {
+          public void run() {
+            setRootCell(createRootCell(events));
+          }
+        });
+
+        for (JComponent component : myRootCell.getSwingComponents()) {
+          AbstractEditorComponent.this.add(component);
+        }
+
+        for (RebuildListener listener : myRebuildListeners) {
+          listener.editorRebuilt(AbstractEditorComponent.this);
+        }
       }
     });
-
-    for (JComponent component : myRootCell.getSwingComponents()) {
-      this.add(component);
-    }
-
-    for (RebuildListener listener : myRebuildListeners) {
-      listener.editorRebuilt(this);
-    }
   }
 
 
