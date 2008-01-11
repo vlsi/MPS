@@ -8,7 +8,6 @@ class ModelAccess {
   static void assertLegalRead(SNode node) {
     if (!CommandProcessor.instance().isInsideCommand()) {
       if (Thread.currentThread() instanceof CursorWithContinuation) {
-        //todo
         return;
       }
 
