@@ -16,8 +16,10 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
+import jetbrains.mps.bootstrap.editorLanguage.structure.ConceptEditorDeclaration;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.bootstrap.constraintsLanguage.structure.ConceptBehavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -103,8 +105,9 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       if(editorModelDescriptor != null) {
         for(SNode node : nodes) {
           if(SNodeOperations.isInstanceOf(node, "jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration")) {
-            SNode editor = (SNode)SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), ((ConceptDeclaration)SNodeOperations.getAdapter(node))).getNode();
-            if((editor != null)) {
+            ConceptEditorDeclaration conceptEditorDeclaration = SModelUtil_new.findEditorDeclaration(editorModelDescriptor.getSModel(), ((ConceptDeclaration)SNodeOperations.getAdapter(node)));
+            if(conceptEditorDeclaration != null) {
+              SNode editor = (SNode)conceptEditorDeclaration.getNode();
               ListOperations.addElement(editors, editor);
             }
           }
@@ -114,8 +117,9 @@ public class MoveConcepts extends AbstractLoggableRefactoring {
       SModelDescriptor constraintsModelDescriptor = sourceLanguage.getConstraintsModelDescriptor();
       if(constraintsModelDescriptor != null) {
         for(SNode node : nodes) {
-          SNode behavior = (SNode)SModelUtil_new.findBehaviorDeclaration(constraintsModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node))).getNode();
-          if((behavior != null)) {
+          ConceptBehavior conceptBehavior = SModelUtil_new.findBehaviorDeclaration(constraintsModelDescriptor.getSModel(), ((AbstractConceptDeclaration)SNodeOperations.getAdapter(node)));
+          if(conceptBehavior != null) {
+            SNode behavior = (SNode)conceptBehavior.getNode();
             ListOperations.addElement(behaviors, behavior);
           }
         }
