@@ -1150,6 +1150,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
           myToStart = true;
           return false;
         }
+        if (myToStart && editorCell.isSelectable() && condition.met(editorCell)) {
+          setFoundCell(editorCell);
+          setToStop(true);
+        }
         return true;
       }
 
@@ -1196,7 +1200,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         boolean goodCell = editorCellCondition.met(editorCell);
         if (editorCell == cell) {
           setToStop(true);
-        } else if (goodCell && editorCell.isSelectable() && editorCell.getParent() == cell.getParent()) {
+        } else if (goodCell && editorCell.isSelectable() /*&& editorCell.getParent() == cell.getParent()*/) {
           setFoundCell(editorCell);
         }
         return true;
