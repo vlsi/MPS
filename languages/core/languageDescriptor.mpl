@@ -22,7 +22,9 @@
   <accessoryModels />
   <generators />
   <classPath />
-  <runtimeClassPath />
+  <runtimeClassPath>
+    <entry path="${mps_home}\languages\core\classes" />
+  </runtimeClassPath>
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />
