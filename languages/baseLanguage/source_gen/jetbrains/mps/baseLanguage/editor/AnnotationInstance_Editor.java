@@ -4,14 +4,14 @@ package jetbrains.mps.baseLanguage.editor;
 
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
+import jetbrains.mps.nodeEditor.EditorCell;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.EditorCell_Label;
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.nodeEditor.EditorCell;
-import jetbrains.mps.nodeEditor.EditorCell_Label;
-import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Horizontal;
@@ -32,10 +32,6 @@ import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 public class AnnotationInstance_Editor extends DefaultNodeEditor {
 
   /* package */AbstractCellListHandler myValueListHandler_valueList_;
-
-  public static boolean _QueryFunction_NodeCondition_1188995326442(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "annotation", false) != null) && SequenceOperations.isEmpty(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "annotation", false), "method", true));
-  }
 
   private static void setupBasic_ConstantCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1188208064966");
@@ -81,6 +77,10 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
   }
 
   private static void setupLabel_ConstantCell3(EditorCell_Label editorCell, SNode node, EditorContext context) {
+  }
+
+  public static boolean _QueryFunction_NodeCondition_1188995326442(SNode node, EditorContext editorContext, IScope scope) {
+    return (SLinkOperations.getTarget(node, "annotation", false) != null) && SequenceOperations.isEmpty(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "annotation", false), "method", true));
   }
 
 
