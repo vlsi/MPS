@@ -864,6 +864,7 @@
       <module fileurl="file://$PROJECT_DIR$/projects/mf/gothic/gothic.iml" filepath="$PROJECT_DIR$/projects/mf/gothic/gothic.iml" group="Projects/mf" />
       <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/jetbrains.mps.baseLanguage.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/jetbrains.mps.baseLanguage.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/actionsLanguage/jetbrains.mps.bootstrap.actionsLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/actionsLanguage/jetbrains.mps.bootstrap.actionsLanguage.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/structureLanguage/jetbrains.mps.bootstrap.structureLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/structureLanguage/jetbrains.mps.bootstrap.structureLanguage.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/core/jetbrains.mps.core.iml" filepath="$PROJECT_DIR$/languages/core/jetbrains.mps.core.iml" />
       <module fileurl="file://$PROJECT_DIR$/projects/mf/lair1/lair1.iml" filepath="$PROJECT_DIR$/projects/mf/lair1/lair1.iml" group="Projects/mf" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" group="platform/dnq/runtime" />

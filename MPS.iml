@@ -116,6 +116,7 @@
     <orderEntry type="module" module-name="jetbrains.mps.baseLanguage" exported="" />
     <orderEntry type="module" module-name="jetbrains.mps.core" exported="" />
     <orderEntry type="module" module-name="jetbrains.mps.bootstrap.actionsLanguage" exported="" />
+    <orderEntry type="module" module-name="jetbrains.mps.bootstrap.structureLanguage" exported="" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
