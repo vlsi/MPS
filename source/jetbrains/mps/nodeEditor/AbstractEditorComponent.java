@@ -280,9 +280,13 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     myShowIntentionsAction = new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        if (!getEditedNode().getModel().isNotEditable()) {
-          showIntentionsMenu();
-        }
+        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+          public void run() {
+            if (!getEditedNode().getModel().isNotEditable()) {
+              showIntentionsMenu();
+            }
+          }
+        });
       }
     };
     registerKeyboardAction(myShowIntentionsAction, KeyStroke.getKeyStroke("alt ENTER"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
