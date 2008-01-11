@@ -9,6 +9,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.bootstrap.structureLanguage.structure.Cardinality;
 import jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration;
 import jetbrains.mps.ide.actions.nodes.DeleteNodesHelper;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
@@ -230,32 +231,35 @@ public class NodeRangeSelection implements IKeyboardHandler {
     }
   }
 
-  public void paint(Graphics g) {
+  public void paint(final Graphics g) {
     myEditorComponent.turnOnAliasingIfPossible((Graphics2D) g);
 
-    // g.setColor(new Color(255, 0, 255, 30));
-    for (SNode sNode : getNodes()) {
-      EditorCell cell = myEditorComponent.findNodeCell(sNode);
-      if (cell != null) {
-        boolean wasSelected = cell.isSelected();
-        cell.setSelected(true);
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        for (SNode sNode : getNodes()) {
+          EditorCell cell = myEditorComponent.findNodeCell(sNode);
+          if (cell != null) {
+            boolean wasSelected = cell.isSelected();
+            cell.setSelected(true);
 
-        boolean wasCaretEnabled = false;
-        if (cell instanceof EditorCell_Label && !wasSelected) {
-          EditorCell_Label label = (EditorCell_Label) cell;
-          wasCaretEnabled = label.getTextLine().isCaretEnabled();
-          label.getTextLine().setCaretEnabled(false);
+            boolean wasCaretEnabled = false;
+            if (cell instanceof EditorCell_Label && !wasSelected) {
+              EditorCell_Label label = (EditorCell_Label) cell;
+              wasCaretEnabled = label.getTextLine().isCaretEnabled();
+              label.getTextLine().setCaretEnabled(false);
+            }
+
+            cell.paint(g);
+            if (cell instanceof EditorCell_Label && !wasSelected) {
+              EditorCell_Label label = (EditorCell_Label) cell;
+              label.getTextLine().setCaretEnabled(wasCaretEnabled);
+            }
+
+            cell.setSelected(wasSelected);
+          }
         }
-
-        cell.paint(g);
-        if (cell instanceof EditorCell_Label && !wasSelected) {
-          EditorCell_Label label = (EditorCell_Label) cell;
-          label.getTextLine().setCaretEnabled(wasCaretEnabled);
-        }
-
-        cell.setSelected(wasSelected);
       }
-    }
+    });
   }
 
   public List<EditorCell> getCells() {
