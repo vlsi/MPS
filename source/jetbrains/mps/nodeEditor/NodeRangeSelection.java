@@ -126,7 +126,6 @@ public class NodeRangeSelection implements IKeyboardHandler {
   }
 
   public boolean processKeyPressed(EditorContext editorContext, KeyEvent keyEvent) {
-
     if (getNodes().size() != 0) {
       AbstractEditorComponent editor = editorContext.getNodeEditorComponent();
       SNode node = getNodes().get(0);

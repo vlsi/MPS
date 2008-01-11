@@ -597,10 +597,14 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
 
-  private void processPopupMenu(MouseEvent e) {
+  private void processPopupMenu(final MouseEvent e) {
     EditorCell selectedCell = getSelectedCell();
     if (selectedCell != null) {
-      showPopupMenu(e);
+      CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+        public void run() {
+          showPopupMenu(e);    
+        }
+      });
     }
   }
 
