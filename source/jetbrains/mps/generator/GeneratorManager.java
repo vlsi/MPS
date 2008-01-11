@@ -529,6 +529,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
               if (result != JOptionPane.YES_OPTION) {
                 generateText = false;
               }
+
+              if (result == JOptionPane.CANCEL_OPTION) {
+                return false;
+              }
             }
 
             if (generateText) {
