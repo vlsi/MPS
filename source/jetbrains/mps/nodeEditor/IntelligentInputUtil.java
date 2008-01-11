@@ -94,7 +94,7 @@ public class IntelligentInputUtil {
     EditorCell newCellForNewNode = editorContext.createNodeCellInAir(newNode, ourServiceEditorManager);
 
     cellFounder.run(newCellForNewNode);
-    EditorCell foundCell = cellFounder.getFoundCell(); // found cell shoul be a rt hint cell
+    EditorCell foundCell = cellFounder.getFoundCell(); // found cell should be a rt hint cell
 
     if (foundCell != null) {
       INodeSubstituteInfo rtSubstituteInfo = foundCell.getSubstituteInfo();
