@@ -122,6 +122,7 @@
     <orderEntry type="module" module-name="smodeLanguage" exported="" />
     <orderEntry type="module" module-name="sharedConcepts" exported="" />
     <orderEntry type="module" module-name="helgins" exported="" />
+    <orderEntry type="module" module-name="cfaLanguage" exported="" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
