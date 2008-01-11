@@ -2194,14 +2194,18 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     intentionsMenu.show(this, getRootCell().getX(), bigCell.getY() + myLightBulb.getHeight());
   }
 
-  private void setLightBulbVisibility(boolean value) {
-    if (value) {
-      if ((!getEnabledIntentions().isEmpty()) && (!getEditedNode().getModel().isNotEditable())) {
-        showLightBulb();
+  private void setLightBulbVisibility(final boolean value) {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        if (value) {
+          if ((!getEnabledIntentions().isEmpty()) && (!getEditedNode().getModel().isNotEditable())) {
+            showLightBulb();
+          }
+        } else {
+          hideLightBulb();
+        }
       }
-    } else {
-      hideLightBulb();
-    }
+    });
   }
 
   public static interface RebuildListener {

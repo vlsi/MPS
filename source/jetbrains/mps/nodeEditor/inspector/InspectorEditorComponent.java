@@ -8,6 +8,7 @@ package jetbrains.mps.nodeEditor.inspector;
 
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.navigation.EditorInfo;
 import jetbrains.mps.ide.navigation.HistoryItem;
 import jetbrains.mps.ide.navigation.IHistoryItem;
@@ -61,20 +62,24 @@ final public class InspectorEditorComponent extends AbstractEditorComponent impl
     inspectNode(semanticNode, operationContext);
   }
 
-  public void inspectNode(SNode node, IOperationContext context) {
+  public void inspectNode(final SNode node, final IOperationContext context) {
     if (node != null && getEditedNode() == node) {
       return;
     }
-    if (node == null) {
-      setOperationContext(null);
-      myNodePointer = null;
-    } else {
-      setOperationContext(context);
-      myNodePointer = new SNodePointer(node);
-    }
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        if (node == null) {
+          setOperationContext(null);
+          myNodePointer = null;
+        } else {
+          setOperationContext(context);
+          myNodePointer = new SNodePointer(node);
+        }
 
-    reinitEditor();
-    repaint();
+        reinitEditor();
+        repaint();
+      }
+    });
   }
 
   public IEditor getEditor() {
