@@ -14,7 +14,7 @@ public abstract class ShowSiteAction extends MPSAction {
 
   protected abstract String getSiteURL();
 
-  public void execute(@NotNull ActionContext context) {
+  public void doExecute(@NotNull ActionContext context) {
     BrowserUtil.launchBrowser(getSiteURL());
   }
 }

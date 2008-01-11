@@ -27,7 +27,7 @@ public class GenericRefactoringAction extends CurrentProjectMPSAction {
     return myRefactoring.getKeyStroke();
   }
 
-  public void execute(@NotNull ActionContext context) {
+  public void doExecute(@NotNull ActionContext context) {
     myRefactoring.execute(context);
   }
 

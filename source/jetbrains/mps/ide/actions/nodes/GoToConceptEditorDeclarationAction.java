@@ -57,7 +57,7 @@ public class GoToConceptEditorDeclarationAction extends MPSAction {
     return false;
   }
 
-  public void execute(@NotNull ActionContext context) {
+  public void doExecute(@NotNull ActionContext context) {
     final SNode node = context.get(SNode.class);
     if (!(BaseAdapter.fromNode(node) instanceof ConceptDeclaration)) return;
 

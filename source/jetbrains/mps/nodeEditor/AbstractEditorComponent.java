@@ -38,7 +38,6 @@ import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.bootstrap.structureLanguage.structure.AbstractConceptDeclaration;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.eclipse.jdt.internal.core.util.WeakHashSetOfCharArray.HashableWeakReference;
 
 import javax.swing.*;
 import javax.swing.event.PopupMenuListener;
@@ -642,7 +641,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             return action.getKeyStroke();
           }
 
-          public void execute(@NotNull ActionContext context) {
+          public void doExecute(@NotNull ActionContext context) {
             myAction.execute(null, editorContext);
           }
         };
@@ -2233,16 +2232,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
             continue;
           }
 
-          if (action.executeInsideCommand()) {
-            CommandProcessor.instance().executeCommand(new Runnable() {
-              public void run() {
-                action.execute(context);
-              }
-            });
-          } else {
-            action.execute(context);
-          }
-
+          action.execute(context);
           return;
         }
       }

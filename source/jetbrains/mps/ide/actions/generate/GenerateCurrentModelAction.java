@@ -21,7 +21,7 @@ public abstract class GenerateCurrentModelAction extends MPSAction {
     setEnabled(context.getModel() != null);
   }
 
-  public void execute(@NotNull ActionContext context) {
+  public void doExecute(@NotNull ActionContext context) {
     context.get(GeneratorManager.class).generateModelsWithProgressWindow(
       CollectionUtil.asList(context.getModel().getSModel()),
       BootstrapLanguages.getInstance().getBaseLanguage(),

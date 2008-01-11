@@ -34,7 +34,7 @@ private MigrationScript myScript;
   }
 
 
-  public void execute(@NotNull ActionContext actionContext) {
+  public void doExecute(@NotNull ActionContext actionContext) {
     String fqClassName = ScriptNameUtil.getMigrationScriptFqClassName(myScript.getNode());
     Class<BaseMigrationScript> aClass;
     try {
@@ -56,7 +56,7 @@ private MigrationScript myScript;
       throw new RuntimeException(e);
     }
 
-    super.execute(actionContext);
+    super.doExecute(actionContext);
   }
   
   protected IRefactoring createRefactoring(ActionContext context) {

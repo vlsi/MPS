@@ -24,7 +24,7 @@ public class InternalRefactoringAction extends MPSAction {
     super("... refactor static members ...");
   }
 
-  public void execute(@NotNull ActionContext context) {
+  public void doExecute(@NotNull ActionContext context) {
     System.out.println(" -- load models -- ");
     List<SModel> models = loadAllModels();
 

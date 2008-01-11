@@ -117,15 +117,7 @@ public abstract class MPSTree extends JTree {
         final MPSAction action = myKeyStrokesToActionsMap.get(pair);
         if (action != null) {
           final ActionContext context = getActionContext(selNode, nodes);
-          if (action.executeInsideCommand()) {
-            CommandProcessor.instance().executeCommand(new Runnable() {
-              public void run() {
-                action.execute(context);
-              }
-            });
-          } else {
-            action.execute(context);
-          }
+          action.execute(context);
         } else {
           if (MPSTree.this.getInputMap().get(KeyStroke.getKeyStrokeForEvent(e)) != null) {
             // This is a fix for a performance problem. DO NOT REMOVE IT
