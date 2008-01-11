@@ -17,7 +17,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.transformation.TLBase.structure.*;
-import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.QueryMethod;
 import jetbrains.mps.util.QueryMethodGenerated;
@@ -30,28 +29,6 @@ import java.util.List;
 
 public class GeneratorUtil {
   private static final Logger LOG = Logger.getLogger(GeneratorUtil.class);
-
-  private static boolean checkResolvedReference(SNode inputNode, SNode outputNode, SNode templateNode, String role, SNode outputReferentNode, ITemplateGenerator generator) {
-    if (!SModelUtil_new.isAcceptableTarget(outputNode, role, outputReferentNode)) {
-      generator.showErrorMessage(inputNode, templateNode, "unacceptable referent: " + outputReferentNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
-      generator.showInformationMessage(outputNode, " -- output node was: " + outputReferentNode.getDebugText());
-      return false;
-    }
-    SModel referentNodeModel = outputReferentNode.getModel();
-    if (referentNodeModel != outputNode.getModel()) {
-      if (TemplateLanguageUtil.isTemplatesModel(referentNodeModel)) {
-        // references on template nodes are not acceptable
-        generator.showErrorMessage(inputNode, templateNode, "unacceptable referent on template node: " + outputReferentNode.getDebugText() + " for role \"" + role + "\" in " + outputNode.getDebugText());
-        return false;
-      }
-      if (referentNodeModel.getModelDescriptor().isTransient()) {
-        // references on transient nodes are not acceptable
-        generator.showErrorMessage(inputNode, templateNode, "unacceptable referent on transient node: " + outputReferentNode.getDebugText() + " for role \"" + role + "\" in " + outputNode.getDebugText());
-        return false;
-      }
-    }
-    return true;
-  }
 
   public static boolean isTemplateLanguageElement(INodeAdapter n) {
     return n instanceof NodeMacro ||

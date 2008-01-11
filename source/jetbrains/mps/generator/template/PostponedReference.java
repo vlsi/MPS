@@ -1,6 +1,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.transformation.TemplateLanguageUtil;
 import org.jetbrains.annotations.NotNull;
 
 /**
@@ -56,9 +57,9 @@ public class PostponedReference extends SReference {
     SNode outputSourceNode = myReferenceInfo.getOutputSourceNode();
     SModelUID targetModelUID = myGenerator.getOutputModel().getUID();
 
-    SNode targetNode = myReferenceInfo.doResolve_Straightforward(myGenerator);
-    if (targetNode != null) {
-      myReplacementReference = new StaticReference(role, outputSourceNode, targetNode);
+    SNode outputTargetNode = myReferenceInfo.doResolve_Straightforward(myGenerator);
+    if (outputTargetNode != null) {
+      myReplacementReference = new StaticReference(role, outputSourceNode, outputTargetNode);
     } else if (SReferenceUtil.isDynamicResolve(role, outputSourceNode)) {
 //      myGenerator.showInformationMessage(outputSourceNode, "!!!create dynamic!!!");
       myReplacementReference = new DynamicReference(
@@ -67,12 +68,20 @@ public class PostponedReference extends SReference {
               targetModelUID,
               myReferenceInfo.getResolveInfoForDynamicResolve());
     } else {
-      targetNode = myReferenceInfo.doResolve_WithCustomReferenceResolver();
-      if (targetNode == null) {
-        targetNode = myReferenceInfo.doResolve_Tricky(myGenerator);
+      outputTargetNode = myReferenceInfo.doResolve_WithCustomReferenceResolver();
+      if (outputTargetNode == null) {
+        outputTargetNode = myReferenceInfo.doResolve_Tricky(myGenerator);
       }
-      if (targetNode != null) {
-        myReplacementReference = new StaticReference(role, outputSourceNode, targetNode);
+      if (outputTargetNode != null) {
+        // test
+        if (!checkResolvedTarget(outputSourceNode, role, outputTargetNode)) {
+          myReferenceInfo.showErrorMessage(myGenerator);
+          myReplacementReference = new StaticReference(role, outputSourceNode, targetModelUID, null, myReferenceInfo.getResolveInfoForNothing());
+          // test
+        } else {
+          // ok
+          myReplacementReference = new StaticReference(role, outputSourceNode, outputTargetNode);
+        }
       } else if (myReferenceInfo.isRequired()) {
         myReferenceInfo.showErrorMessage(myGenerator);
         myReplacementReference = new StaticReference(role, outputSourceNode, targetModelUID, null, myReferenceInfo.getResolveInfoForNothing());
@@ -97,5 +106,26 @@ public class PostponedReference extends SReference {
     if (replacement != null) {
       getSourceNode().addReference(replacement);
     }
+  }
+
+  private boolean checkResolvedTarget(SNode outputNode, String role, SNode outpurTargetNode) {
+    if (!SModelUtil_new.isAcceptableTarget(outputNode, role, outpurTargetNode)) {
+      myGenerator.showErrorMessage(outputNode, "unacceptable referent [wrong type]: " + outpurTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
+      return false;
+    }
+    SModel referentNodeModel = outpurTargetNode.getModel();
+    if (referentNodeModel != outputNode.getModel()) {
+      if (TemplateLanguageUtil.isTemplatesModel(referentNodeModel)) {
+        // references on template nodes are not acceptable
+        myGenerator.showErrorMessage(outputNode, "unacceptable referent [template node]: " + outpurTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
+        return false;
+      }
+      if (referentNodeModel.getModelDescriptor().isTransient()) {
+        // references on transient nodes are not acceptable
+        myGenerator.showErrorMessage(outputNode, "unacceptable referent [transient node]: " + outpurTargetNode.getDebugText() + " for role '" + role + "' in " + outputNode.getDebugText());
+        return false;
+      }
+    }
+    return true;
   }
 }
