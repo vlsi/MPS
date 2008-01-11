@@ -5,6 +5,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.ide.ChooseItemWindow;
+import jetbrains.mps.ide.ChooseItemComponent;
 
 import java.util.regex.Pattern;
 
@@ -91,7 +92,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     // first char must be the same
     if (matchingText.charAt(0) != pattern.charAt(0)) return false;
 
-    if (matchingText.matches(ChooseItemWindow.getExactItemPatternBuilder(pattern).toString() + ".*")) {
+    if (matchingText.matches(ChooseItemComponent.getExactItemPatternBuilder(pattern).toString() + ".*")) {
       return true;      
     }
 
