@@ -19,7 +19,9 @@
   </accessoryModels>
   <generators />
   <classPath />
-  <runtimeClassPath />
+  <runtimeClassPath>
+    <entry path="${mps_home}\languages\baseLanguage\classes" />
+  </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
     <requiredBundles />
