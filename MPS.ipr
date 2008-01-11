@@ -877,6 +877,7 @@
       <module fileurl="file://$PROJECT_DIR$/workbench/ideLanguages/scriptLanguageInternal/scriptLanguageInternal.iml" filepath="$PROJECT_DIR$/workbench/ideLanguages/scriptLanguageInternal/scriptLanguageInternal.iml" group="workbench/ideLanguages/scriptLanguage" />
       <module fileurl="file://$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/runtime/scriptLanguage_runtime.iml" filepath="$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/runtime/scriptLanguage_runtime.iml" group="workbench/ideLanguages/scriptLanguage" />
       <module fileurl="file://$PROJECT_DIR$/app/search-watch/search-watch.iml" filepath="$PROJECT_DIR$/app/search-watch/search-watch.iml" group="app" />
+      <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/sharedConcepts/sharedConcepts.iml" filepath="$PROJECT_DIR$/languages/bootstrap/sharedConcepts/sharedConcepts.iml" group="languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/smodelLanguage/smodeLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/smodelLanguage/smodeLanguage.iml" group="languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/projects/springframework/springframework.iml" filepath="$PROJECT_DIR$/projects/springframework/springframework.iml" group="Projects/springframework" />
       <module fileurl="file://$PROJECT_DIR$/projects/springframework/runtime/springframework-runtime.iml" filepath="$PROJECT_DIR$/projects/springframework/runtime/springframework-runtime.iml" group="Projects/springframework" />

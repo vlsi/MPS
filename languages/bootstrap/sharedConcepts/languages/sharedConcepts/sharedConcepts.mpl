@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.bootstrap.sharedConcepts" generatorOutputPath="${mps_home}\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.bootstrap.sharedConcepts" generatorOutputPath="${mps_home}\languages\bootstrap\sharedConcepts\source_gen" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.bootstrap.sharedConcepts.structure" />
   </structure>
@@ -28,7 +28,9 @@
     </generator>
   </generators>
   <classPath />
-  <runtimeClassPath />
+  <runtimeClassPath>
+    <entry path="${mps_home}\languages\bootstrap\sharedConcepts\classes" />
+  </runtimeClassPath>
   <sourcePath />
   <osgiOptions>
     <requiredBundles />
