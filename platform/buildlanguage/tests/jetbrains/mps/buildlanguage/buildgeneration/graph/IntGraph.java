@@ -1,0 +1,72 @@
+package jetbrains.mps.buildlanguage.buildgeneration.graph;
+
+import java.util.*;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: Julia.Beliaeva
+ * Date: 12.01.2008
+ * Time: 18:06:21
+ * To change this template use File | Settings | File Templates.
+ */
+public class IntGraph {
+
+  private final Graph myGraph = new Graph();
+  private final IntVertex [] myVertexes;
+
+  public IntGraph(int n) {
+    myVertexes = new IntVertex[n];
+    for (int i = 0; i < n; i++){
+      myVertexes[i] = new IntVertex(i);
+      myGraph.add(myVertexes[i]);
+    }
+  }
+
+  public void addEdges(int from, int ... to) {
+    for (int i = 0; i < to.length; i++){
+      myVertexes[from].myNext.add(myVertexes[to[i]]);
+    }
+  }
+
+  public static class IntVertex implements IVertex, Comparable<IntVertex>{
+
+    private final Set<IntVertex> myNext = new TreeSet<IntVertex>();
+    private final Integer myID;
+
+    public Integer getID() {
+      return myID;
+    }
+
+    public IntVertex(Integer id) {
+      myID = id;
+    }
+
+    public Set<IntVertex> getNexts() {
+      return Collections.unmodifiableSet(myNext);
+    }
+
+    public int compareTo(IntVertex o) {
+      return myID.compareTo(o.myID);
+    }
+
+    public boolean equals(Object obj) {
+      if (obj instanceof IntVertex){
+        return ((IntVertex)obj).myID.equals(myID);
+      }
+      return super.equals(obj);    //To change body of overridden methods use File | Settings | File Templates.
+    }
+
+    public int hashCode() {
+      return myID.hashCode();    //To change body of overridden methods use File | Settings | File Templates.
+    }
+
+    @Override
+    public String toString() {
+      return ""+myID;    //To change body of overridden methods use File | Settings | File Templates.
+    }
+  }
+
+  public Graph getGraph() {
+    return myGraph;
+  }
+}
