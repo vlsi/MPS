@@ -106,7 +106,7 @@ public class NodeWrapper implements IWrapper {
     //processing additional variables
     if (myVariables != null) {
       for (SNodePointer var : new HashSet<SNodePointer>(myVariables)) {
-        SNode node = var.getNodeMaybeUnregistered();
+        SNode node = var.getNode();
         if (node == null) {
           myVariables.remove(var);
           continue;

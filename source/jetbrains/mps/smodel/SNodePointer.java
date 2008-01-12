@@ -52,14 +52,6 @@ public class SNodePointer {
     return null;
   }
 
-  public SNode getNodeMaybeUnregistered() {
-    SNode node = getNode();
-    if (node != null) {
-      return node;
-    }
-    return UnregisteredNodes.instance().get(myModelUID, myNodeId.toString());
-  }
-
   public SModelDescriptor getModel() {
     SModelUID modelUID = getCurrentModelUID(myModelUID, myTimestamp);
     if (modelUID == null) return null;
