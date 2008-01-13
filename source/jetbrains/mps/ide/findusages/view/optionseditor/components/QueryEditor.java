@@ -1,7 +1,7 @@
-package jetbrains.mps.ide.findusages.optionseditor.components;
+package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.findusages.optionseditor.options.QueryOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.AbstractModule.ModuleScope;
 import jetbrains.mps.project.MPSProject.ProjectScope;

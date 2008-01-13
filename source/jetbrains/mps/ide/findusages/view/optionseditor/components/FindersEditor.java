@@ -1,7 +1,7 @@
-package jetbrains.mps.ide.findusages.optionseditor.components;
+package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
-import jetbrains.mps.ide.findusages.optionseditor.options.FindersOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;

@@ -1,21 +1,17 @@
-package jetbrains.mps.ide.findusages.optionseditor;
+package jetbrains.mps.ide.findusages.view.optionseditor;
 
-import jetbrains.mps.bootstrap.structureLanguage.findUsages.ConceptInstances_Finder;
-import jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder;
 import jetbrains.mps.ide.BaseDialog;
 import jetbrains.mps.ide.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.action.ActionContext;
-import jetbrains.mps.ide.findusages.optionseditor.components.FindersEditor;
-import jetbrains.mps.ide.findusages.optionseditor.components.QueryEditor;
-import jetbrains.mps.ide.findusages.optionseditor.components.ViewOptionsEditor;
-import jetbrains.mps.ide.findusages.optionseditor.options.FindersOptions;
-import jetbrains.mps.ide.findusages.optionseditor.options.QueryOptions;
-import jetbrains.mps.ide.findusages.optionseditor.options.ViewOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.components.FindersEditor;
+import jetbrains.mps.ide.findusages.view.optionseditor.components.QueryEditor;
+import jetbrains.mps.ide.findusages.view.optionseditor.components.ViewOptionsEditor;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
 import jetbrains.mps.ide.findusages.subsystem.FindUsagesManager;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import org.jdom.Element;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
