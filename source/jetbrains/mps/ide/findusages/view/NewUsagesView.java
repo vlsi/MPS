@@ -35,7 +35,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class NewUsagesView extends DefaultTool implements IExternalizableComponent {
-  private static final String VERSION_NUMBER = "0.954";
+  private static final String VERSION_NUMBER = "0.955";
   private static final String VERSION = "version";
   private static final String ID = "id";
 
@@ -65,13 +65,13 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
   }
 
   private void setDefaultOptions() {
-    FindersOptions findersOptions = new FindersOptions(new NodeUsages_Finder(), new ConceptInstances_Finder());
+    FindersOptions findersOptions = new FindersOptions(NodeUsages_Finder.class.getName(), ConceptInstances_Finder.class.getName());
     myDefaultOptions.setOption(findersOptions);
 
     ViewOptions viewOptions = new ViewOptions(false, false);
     myDefaultOptions.setOption(viewOptions);
 
-    QueryOptions queryOptions = new QueryOptions(GlobalScope.getInstance(), new SNodePointer((SNode) null));
+    QueryOptions queryOptions = new QueryOptions(QueryOptions.PROJECT_SCOPE);
     myDefaultOptions.setOption(queryOptions);
   }
 
@@ -146,14 +146,17 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     findUsagesDialog.showDialog();
     if (!findUsagesDialog.isCancelled()) {
       FindUsagesOptions options = findUsagesDialog.getResult();
-      findUsages(options, true);
+      myDefaultOptions = options;
+
+      IResultProvider provider = options.getOption(FindersOptions.class).getResult(operationNode, context);
+      SearchQuery query = options.getOption(QueryOptions.class).getResult(operationNode, context);
+      ViewOptions viewOptions = options.getOption(ViewOptions.class);
+
+      findUsages(provider, query, true, viewOptions.myShowOneResult, viewOptions.myNewTab);
     }
   }
 
-  public void findUsages(FindUsagesOptions options, boolean isRerunnable) {
-    IResultProvider provider = options.getOption(FindersOptions.class).getResultProvider();
-    SearchQuery query = options.getOption(QueryOptions.class).getSearchQuery();
-    boolean showOne = options.getOption(ViewOptions.class).myShowOneResult;
+  public void findUsages(IResultProvider provider, SearchQuery query, boolean isRerunnable, boolean showOne, boolean newTab) {
     final SearchResults searchResults = provider.getResults(query, myProjectFrame.createAdaptiveProgressMonitor());
 
     int resCount = searchResults.getSearchResults().size();
@@ -175,14 +178,13 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
         }
       });
     } else {
-      if (!options.getOption(ViewOptions.class).myNewTab) {
+      if (!newTab) {
         if (currentTabIndex() != -1) {
           closeTab(currentTabIndex());
         }
       }
       UsageViewData usageViewData = new UsageViewData();
       usageViewData.createUsageView();
-      usageViewData.myOptions = options;
       myUsageViewsData.add(usageViewData);
 
       myTabbedPane.addTab("", usageViewData.myUsageView.getComponent());
@@ -286,7 +288,8 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     private static final String USAGE_VIEW_OPTIONS = "usage_view_options";
 
     public UsageView myUsageView;
-    public FindUsagesOptions myOptions;
+    // now it's not in use, but will be used to implement constructable finders
+    private FindUsagesOptions myOptions = new FindUsagesOptions();
 
     public void createUsageView() {
       myUsageView = new UsageView(myProjectFrame) {

@@ -3,31 +3,34 @@ package jetbrains.mps.plugin;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.Classifier;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.ide.*;
-import jetbrains.mps.ide.findusages.UseNewUsagesViewFlag;
+import jetbrains.mps.ide.EditorsPane;
+import jetbrains.mps.ide.IDEProjectFrame;
+import jetbrains.mps.ide.IEditor;
+import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.AspectMethodsFinder;
+import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.TreeBuilder;
+import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
-import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesOptions;
-import jetbrains.mps.ide.findusages.findalgorithm.finders.AspectMethodsFinder;
-import jetbrains.mps.ide.navigation.NavigationActionProcessor;
+import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
-import jetbrains.mps.ide.oldUsageView.UsagesModel_AspectMethods;
+import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FrameUtil;
 import jetbrains.mps.util.IDisposable;
 
-import javax.swing.SwingUtilities;
 import java.awt.Frame;
-import java.rmi.RemoteException;
 import java.rmi.NoSuchObjectException;
+import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDEHandler, IDisposable {
   private static final Logger LOG = Logger.getLogger(MPSProjectIDEHandler.class);
@@ -73,44 +76,20 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
   }
 
   public void showAspectMethodUsages(String namespace, final String name) throws RemoteException {
-    if (UseNewUsagesViewFlag.get()) {
-      List<SModelDescriptor> modelDescriptors = myProject.getScope().getModelDescriptors(namespace);
-      final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
-      for (final SModelDescriptor descriptor : modelDescriptors) {
-        if (!descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
-          applicableModelDescriptors.add(descriptor.getSModel());
-        }
-      }
-      new Thread() {
-        public void run() {
-          FindUsagesOptions options = new FindUsagesOptions();
-          options.setOption(new FindersOptions(new AspectMethodsFinder(applicableModelDescriptors, name)));
-          options.setOption(new QueryOptions(myProject.getScope(), new SNodePointer((SNode) null)));
-          options.setOption(new ViewOptions(true, true));
-
-          getProjectWindow().getUsagesView().findUsages(options, true);
-        }
-      }.start();
-    } else {
-      List<SModelDescriptor> modelDescriptors = myProject.getScope().getModelDescriptors(namespace);
-      final List<SModelDescriptor> applicableModelDescriptors = new ArrayList<SModelDescriptor>();
-      for (final SModelDescriptor descriptor : modelDescriptors) {
-        if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            try {
-              UsagesModel_AspectMethods usagesModel = new UsagesModel_AspectMethods(descriptor.getSModel(), name);
-              if (getProjectWindow() == null) return;
-              getProjectWindow().showUsagesView(usagesModel);
-              FrameUtil.activateFrame(getMainFrame());
-              if (usagesModel.getSNodes().size() > 0) return;
-            } catch (Throwable t) {
-              LOG.error(t);
-            }
-          }
-        });
+    List<SModelDescriptor> modelDescriptors = myProject.getScope().getModelDescriptors(namespace);
+    final List<SModel> applicableModelDescriptors = new ArrayList<SModel>();
+    for (final SModelDescriptor descriptor : modelDescriptors) {
+      if (!descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+        applicableModelDescriptors.add(descriptor.getSModel());
       }
     }
+    new Thread() {
+      public void run() {
+        SearchQuery searchQuery = new SearchQuery(new SNodePointer((SNode) null), myProject.getScope());
+        IResultProvider resultProvider = TreeBuilder.forFinder(new AspectMethodsFinder(applicableModelDescriptors, name));
+        getProjectWindow().getUsagesView().findUsages(resultProvider, searchQuery, false, true, true);
+      }
+    }.start();
   }
 
   public void showConceptNode(String fqName) throws RemoteException {

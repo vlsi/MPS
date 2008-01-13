@@ -2,45 +2,29 @@ package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.QueryOptions;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.AbstractModule.ModuleScope;
-import jetbrains.mps.project.MPSProject.ProjectScope;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicComboBoxRenderer;
 import java.awt.BorderLayout;
 import java.awt.Component;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class QueryEditor {
-  private ActionContext myContext;
-  private SNode myNode;
-  private QueryOptions myOptions;
-  private QueryOptions myDefaultOptions;
-
+public class QueryEditor extends BaseEditor<QueryOptions> {
   private List<ListItem> myItems = new ArrayList<ListItem>();
   private JComboBox myComboBox = new JComboBox();
-  private JPanel myPanel;
 
   public QueryEditor(QueryOptions defaultOptions, SNode node, ActionContext context) {
-    myOptions = defaultOptions;
-
-    myDefaultOptions = new QueryOptions();
-    myDefaultOptions.copyOf(myOptions);
-
-    myContext = context;
-    myNode = node;
+    super(defaultOptions, node, context);
 
     initItems();
 
     myPanel = new JPanel();
     myPanel.setLayout(new BorderLayout());
-
-    myPanel.add(new JLabel("Scope:"), BorderLayout.WEST);
 
     myComboBox.setModel(new DefaultComboBoxModel() {
       public int getSize() {
@@ -60,58 +44,39 @@ public class QueryEditor {
 
     myComboBox.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        myOptions.copyOf(new QueryOptions(myItems.get(myComboBox.getSelectedIndex()).myScope, new SNodePointer(myNode)));
+        myOptions.setScopeType(((ListItem) (myComboBox.getSelectedItem())).myScopeType);
       }
     });
 
+    myPanel.add(new JLabel("Scope:"), BorderLayout.WEST);
     myPanel.add(myComboBox, BorderLayout.CENTER);
 
-    myComboBox.setSelectedIndex(getIndex(myOptions.myScope));
+    myComboBox.setSelectedIndex(getIndex(myOptions.getScopeType()));
   }
 
-  private int getIndex(IScope scope) {
-    if (scope instanceof GlobalScope) {
-      return 0;
-    } else if (scope instanceof ProjectScope) {
-      return 1;
-    } else if (scope instanceof ModuleScope) {
-      return 2;
-    } else if (scope instanceof ModelScope) {
-      return 3;
+  private int getIndex(@NotNull String scopeType) {
+    for (ListItem item : myItems) {
+      if (item.myScopeType.equals(scopeType)) {
+        return myItems.indexOf(item);
+      }
     }
     throw new IllegalArgumentException();
   }
 
-  public void restoreDefaults() {
-    myOptions.copyOf(myDefaultOptions);
-  }
-
-  public QueryOptions getQueryOptions() {
-    return myOptions;
-  }
-
-  public JComponent getComponent() {
-    return myPanel;
-  }
-
-  private IOperationContext getOperationContext() {
-    return myContext.getOperationContext();
-  }
-
   private void initItems() {
-    myItems.add(new ListItem("Global scope", GlobalScope.getInstance()));
-    myItems.add(new ListItem("Project scope", getOperationContext().getProject().getScope()));
-    myItems.add(new ListItem("Module scope", getOperationContext().getModule().getScope()));
-    myItems.add(new ListItem("Model scope", new ModelScope(getOperationContext().getModule().getScope(), myContext.getModel())));
+    myItems.add(new ListItem("Global scope", QueryOptions.GLOBAL_SCOPE));
+    myItems.add(new ListItem("Project scope", QueryOptions.PROJECT_SCOPE));
+    myItems.add(new ListItem("Module scope", QueryOptions.MODULE_SCOPE));
+    myItems.add(new ListItem("Model scope", QueryOptions.MODEL_SCOPE));
   }
 
   private class ListItem {
     public String myCaption;
-    public IScope myScope;
+    public String myScopeType;
 
-    private ListItem(String caption, IScope scope) {
+    private ListItem(String caption, String scopeType) {
       myCaption = caption;
-      myScope = scope;
+      myScopeType = scopeType;
     }
   }
 }

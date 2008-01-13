@@ -2,25 +2,20 @@ package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
+import jetbrains.mps.ide.findusages.subsystem.FindUsagesManager;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.util.*;
 
-public class FindersEditor {
-  private JPanel myPanel;
+public class FindersEditor extends BaseEditor<FindersOptions> {
+  public FindersEditor(FindersOptions defaultOptions, SNode node, ActionContext context) {
+    super(defaultOptions, node, context);
 
-  private FindersOptions myOptions = new FindersOptions();
-  private FindersOptions myDefaultOptions;
-
-  /**
-   * @param defaultOptions   - finders that are enabled by default (can contain finders that are not in availableFinders)
-   * @param availableFinders - finders to display as checkboxes
-   */
-  public FindersEditor(FindersOptions defaultOptions, Set<BaseFinder> availableFinders) {
-    myDefaultOptions = defaultOptions;
-
+    Set<BaseFinder> availableFinders = FindUsagesManager.getInstance().getAvailableFinders(node);
     myPanel = new JPanel();
     myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
 
@@ -37,59 +32,39 @@ public class FindersEditor {
       }
     });
 
+    List<String> correctEnabledFinders = new ArrayList<String>();
+
     for (final BaseFinder finder : sortedFinders) {
       boolean isEnabled = false;
 
-      for (BaseFinder enabledFinder : myDefaultOptions) {
-        if (enabledFinder.getClass().getName().equals(finder.getClass().getName())) {
+      for (String enabledFinderName : myOptions.getFindersClassNames()) {
+        if (enabledFinderName.equals(finder.getClass().getName())) {
           isEnabled = true;
         }
       }
 
       if (isEnabled) {
-        myOptions.add(finder);
+        correctEnabledFinders.add(finder.getClass().getName());
       }
 
       JCheckBox finderCheckBox = new JCheckBox(finder.getDescription(), isEnabled);
       finderCheckBox.addChangeListener(new ChangeListener() {
         public void stateChanged(ChangeEvent e) {
+          String finderClassName = finder.getClass().getName();
           if (((JCheckBox) e.getSource()).isSelected()) {
-            myOptions.add(finder);
-            boolean add = true;
-            for (BaseFinder f : myDefaultOptions) {
-              if (f.getClass() == finder.getClass()) {
-                add = false;
-              }
-            }
-            if (add) {
-              myDefaultOptions.add(finder);
+            if (!myOptions.getFindersClassNames().contains(finderClassName)) {
+              myOptions.getFindersClassNames().add(finderClassName);
             }
           } else {
-            myOptions.remove(finder);
-            FindersOptions deletedOptions = new FindersOptions();
-            for (BaseFinder f : myDefaultOptions) {
-              if (f.getClass().getName().equals(finder.getClass().getName())) {
-                deletedOptions.add(f);
-              }
-            }
-            myDefaultOptions.removeAll(deletedOptions);
+            myOptions.getFindersClassNames().remove(finderClassName);
           }
         }
       });
 
       myPanel.add(finderCheckBox);
     }
+
+    myOptions.setFindersClassNames(correctEnabledFinders);
   }
 
-  public FindersOptions getFindersOptions() {
-    return myOptions;
-  }
-
-  public JComponent getComponent() {
-    return myPanel;
-  }
-
-  public void restoreDefaults() {
-    myOptions.copyOf(myDefaultOptions);
-  }
 }

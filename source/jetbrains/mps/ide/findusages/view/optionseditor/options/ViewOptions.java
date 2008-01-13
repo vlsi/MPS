@@ -2,9 +2,11 @@ package jetbrains.mps.ide.findusages.view.optionseditor.options;
 
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.action.ActionContext;
 import org.jdom.Element;
 
-public class ViewOptions implements IExternalizableComponent, Cloneable {
+public class ViewOptions extends BaseOptions<ViewOptions> {
   private static final String FLAGS = "flags";
   private static final String SHOW_ONE_RESULT = "show_one_result";
   private static final String NEW_TAB = "new_tab";
@@ -16,14 +18,21 @@ public class ViewOptions implements IExternalizableComponent, Cloneable {
 
   }
 
+  public ViewOptions(Element element, MPSProject project) {
+    read(element, project);
+  }
+
   public ViewOptions(boolean showOneResult, boolean newTab) {
     myShowOneResult = showOneResult;
     myNewTab = newTab;
   }
 
-  public void copyOf(ViewOptions options) {
-    myShowOneResult = options.myShowOneResult;
-    myNewTab = options.myNewTab;
+  public ViewOptions clone() {
+    return new ViewOptions(myShowOneResult, myNewTab);
+  }
+
+  public ViewOptions getResult(SNode node, ActionContext context) {
+    return this;
   }
 
   public void read(Element element, MPSProject project) {

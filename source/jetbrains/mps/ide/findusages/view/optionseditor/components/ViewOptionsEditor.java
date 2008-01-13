@@ -1,24 +1,19 @@
 package jetbrains.mps.ide.findusages.view.optionseditor.components;
 
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ViewOptions;
+import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-public class ViewOptionsEditor {
-  private ViewOptions myOptions;
-  private ViewOptions myDefaultOptions;
-
-  private JPanel myPanel;
+public class ViewOptionsEditor extends BaseEditor<ViewOptions> {
   private JCheckBox myShowOneResult;
   private JCheckBox myNewTab;
 
-  public ViewOptionsEditor(ViewOptions defaultOptions) {
-    myOptions = defaultOptions;
-
-    myDefaultOptions = new ViewOptions();
-    myDefaultOptions.copyOf(myOptions);
+  public ViewOptionsEditor(ViewOptions defaultOptions, SNode node, ActionContext context) {
+    super(defaultOptions, node, context);
 
     myPanel = new JPanel();
     myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
@@ -43,17 +38,5 @@ public class ViewOptionsEditor {
       }
     });
     myPanel.add(myNewTab);
-  }
-
-  public void restoreDefaults() {
-    myOptions.copyOf(myDefaultOptions);
-  }
-
-  public JComponent getComponent() {
-    return myPanel;
-  }
-
-  public ViewOptions getViewOptions() {
-    return myOptions;
   }
 }

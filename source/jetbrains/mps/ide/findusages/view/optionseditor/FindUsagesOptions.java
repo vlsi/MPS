@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.findusages.view.optionseditor;
 
 import jetbrains.mps.components.IExternalizableComponent;
+import jetbrains.mps.ide.findusages.view.optionseditor.options.BaseOptions;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
@@ -8,31 +9,36 @@ import org.jdom.Element;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.ArrayList;
 
-public class FindUsagesOptions implements IExternalizableComponent {
+public class FindUsagesOptions implements IExternalizableComponent, Cloneable {
+  private static Logger LOG = Logger.getLogger(FindUsagesOptions.class);
+
   private static final String OPTION = "option";
   private static final String CLASS_NAME = "class_name";
 
-  private static Logger LOG = Logger.getLogger(FindUsagesOptions.class);
-
-  Map<Class, Object> myOptions = new HashMap<Class, Object>();
-
-  public FindUsagesOptions() {
-
-  }
+  private Map<Class, BaseOptions> myOptions = new HashMap<Class, BaseOptions>();
 
   public FindUsagesOptions(Element element, MPSProject project) {
     read(element, project);
   }
 
-  public FindUsagesOptions(Object... objs) {
-    for (Object o : objs) {
+  public FindUsagesOptions(BaseOptions... options) {
+    for (BaseOptions o : options) {
       myOptions.put(o.getClass(), o);
     }
   }
 
-  public <T> void setOption(T optionObject) {
-    myOptions.put(optionObject.getClass(), optionObject);
+  public FindUsagesOptions clone() {
+    List<BaseOptions> optionsCopy = new ArrayList<BaseOptions>(myOptions.size());
+    for (BaseOptions option : myOptions.values()) {
+      optionsCopy.add(option.clone());
+    }
+    return new FindUsagesOptions((BaseOptions[]) optionsCopy.toArray());
+  }
+
+  public void setOption(BaseOptions options) {
+    myOptions.put(options.getClass(), options);
   }
 
   public <T> T getOption(Class<T> optionClass) {
@@ -45,18 +51,22 @@ public class FindUsagesOptions implements IExternalizableComponent {
       try {
         Object o = Class.forName(className).newInstance();
         ((IExternalizableComponent) o).read(optionXML, project);
-        myOptions.put(o.getClass(), o);
-      } catch (Exception e) {
+        myOptions.put(o.getClass(), (BaseOptions) o);
+      } catch (ClassNotFoundException e) {
         LOG.error("Couldn't instantiate option with class name " + className);
+      } catch (IllegalAccessException e) {
+        e.printStackTrace();
+      } catch (InstantiationException e) {
+        e.printStackTrace();
       }
     }
   }
 
   public void write(Element element, MPSProject project) {
-    for (Object option : myOptions.values()) {
+    for (BaseOptions option : myOptions.values()) {
       Element optionXML = new Element(OPTION);
       optionXML.setAttribute(CLASS_NAME, option.getClass().getName());
-      ((IExternalizableComponent) option).write(optionXML, project);
+      option.write(optionXML, project);
       element.addContent(optionXML);
     }
   }

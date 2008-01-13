@@ -29,15 +29,9 @@ public class FindUsagesDialog extends BaseDialog {
   public FindUsagesDialog(FindUsagesOptions defaultOptions, SNode node, ActionContext context) {
     super(context.getOperationContext().getMainFrame(), "Find usages");
 
-    QueryOptions queryOptions = defaultOptions.getOption(QueryOptions.class);
-    if (queryOptions.myScope == null) {
-      queryOptions.myNodePointer = new SNodePointer(node);
-      queryOptions.myScope = context.getOperationContext().getProject().getScope();
-    }
-
-    myQueryEditor = new QueryEditor(queryOptions, node, context);
-    myFindersEditor = new FindersEditor(defaultOptions.getOption(FindersOptions.class), FindUsagesManager.getInstance().getAvailableFinders(node));
-    myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class));
+    myQueryEditor = new QueryEditor(defaultOptions.getOption(QueryOptions.class), node, context);
+    myFindersEditor = new FindersEditor(defaultOptions.getOption(FindersOptions.class), node, context);
+    myViewOptionsEditor = new ViewOptionsEditor(defaultOptions.getOption(ViewOptions.class), node, context);
 
     myQueryEditor.getComponent().setBorder(new EmptyBorder(7, 3, 3, 3));
 
@@ -52,14 +46,8 @@ public class FindUsagesDialog extends BaseDialog {
     //setResizable(false);
   }
 
-  private void restoreDefaults() {
-    myQueryEditor.restoreDefaults();
-    myFindersEditor.restoreDefaults();
-    myViewOptionsEditor.restoreDefaults();
-  }
-
   public FindUsagesOptions getResult() {
-    FindUsagesOptions options = new FindUsagesOptions(myFindersEditor.getFindersOptions(), myQueryEditor.getQueryOptions(), myViewOptionsEditor.getViewOptions());
+    FindUsagesOptions options = new FindUsagesOptions(myFindersEditor.getOptions(), myQueryEditor.getOptions(), myViewOptionsEditor.getOptions());
     return options;
   }
 
@@ -75,7 +63,6 @@ public class FindUsagesDialog extends BaseDialog {
 
   @Button(position = 1, name = "Cancel")
   public void onCancel() {
-    restoreDefaults();
     dispose();
   }
 
