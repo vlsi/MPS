@@ -606,7 +606,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     if (selectedCell != null) {
       CommandProcessor.instance().executeLightweightCommand(new Runnable() {
         public void run() {
-          showPopupMenu(e);    
+          showPopupMenu(e);
         }
       });
     }
@@ -1584,7 +1584,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
   }
 
-  private void showLightBulb() {
+  private void showLightBulb(boolean showError) {
     EditorCell selectedCell = getSelectedCell();
     selectedCell = getBigCellForNode(selectedCell.getSNode());
     assert selectedCell != null : "selected cell mustn't be null";
@@ -1594,6 +1594,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     x = x < 0 ? 2 : x;
     y = y < 0 ? 2 : y;
 
+    myLightBulb.setError(showError);
     add(myLightBulb);
     myLightBulb.setLocation(x, y);
   }
@@ -1786,8 +1787,6 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         //        return;
       }
     }
-
-
 
     // all other processing should be performed inside command
     CommandProcessor.instance().executeCommand(getEditorContext(), new Runnable() {
@@ -2265,8 +2264,15 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         if (value) {
-          if ((!getEnabledIntentions().isEmpty()) && (!getEditedNode().getModel().isNotEditable())) {
-            showLightBulb();
+          Set<Intention> enabledIntentions = getEnabledIntentions();
+          if ((!enabledIntentions.isEmpty()) && (!getEditedNode().getModel().isNotEditable())) {
+            boolean showError = false;
+            for (Intention intention : enabledIntentions) {
+              if (intention.isErrorIntention()) {
+                showError = true;
+              }
+            }
+            showLightBulb(showError);
           }
         } else {
           hideLightBulb();

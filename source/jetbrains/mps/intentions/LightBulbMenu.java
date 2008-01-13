@@ -26,6 +26,10 @@ public abstract class LightBulbMenu extends JLabel {
     });
   }
 
+  public void setError(boolean isError) {
+    setIcon(isError ? Icons.ERROR_INTENTION_ICON : Icons.INTENTION_ICON);
+  }
+
   public int getWidth() {
     return Icons.INTENTION_ICON.getIconWidth() + 6;
   }
