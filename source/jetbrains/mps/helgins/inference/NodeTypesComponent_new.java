@@ -523,7 +523,14 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
 
   private SNode expandType(SNode node, SModel typesModel) {
     if (node == null) return null;
-    IWrapper representator = myEquationManager.getRepresentatorWrapper(NodeWrapper.createNodeWrapper(node));
+    NodeWrapper wrapper = NodeWrapper.createNodeWrapper(node);
+    IWrapper representator;
+    try {
+      representator = myEquationManager.getRepresentatorWrapper(wrapper);
+    } catch (OutOfMemoryError e) {
+      System.err.println("oy vey!");
+      throw new OutOfMemoryError();
+    }
     return expandWrapper(representator, typesModel).getNode();
   }
 
