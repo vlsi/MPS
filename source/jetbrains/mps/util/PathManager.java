@@ -132,7 +132,6 @@ public class PathManager {
     ourConfigPath = newConfigPath;
   }
 
-
   public static String getHelpPath() {
     if (ourHelpPath != null) {
       return ourHelpPath;
@@ -145,7 +144,7 @@ public class PathManager {
     if (ourTutorialPath != null) {
       return ourTutorialPath;
     }
-    ourTutorialPath = getHomePath() + File.separator + "help" + File.separator + "regexps.html";
+    ourTutorialPath = getHomePath() + File.separator + "docs" +  File.separator + "help" + File.separator + "regexps.html";
     return ourTutorialPath;
   }
 
@@ -153,12 +152,12 @@ public class PathManager {
     if (ourHelpIndexPath != null) {
       return ourHelpIndexPath;
     }
-    ourHelpIndexPath = getHomePath() + File.separator + "help" + File.separator + "index.html";
+    ourHelpIndexPath = getHomePath() + File.separator + "docs" + File.separator + "help" + File.separator + "index.html";
     return ourHelpIndexPath;
   }
 
   public static String getAcknowledgementsPath() {
-    return getHomePath() + File.separator + "help" + File.separator + "acknowledgements.html";
+    return getHomePath() + File.separator + File.separator + "docs" + File.separator + "help" + File.separator + "acknowledgements.html";
   }
 
   public static String getLanguagesPath() {
