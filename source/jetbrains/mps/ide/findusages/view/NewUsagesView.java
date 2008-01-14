@@ -68,7 +68,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
     FindersOptions findersOptions = new FindersOptions(NodeUsages_Finder.class.getName(), ConceptInstances_Finder.class.getName());
     myDefaultOptions.setOption(findersOptions);
 
-    ViewOptions viewOptions = new ViewOptions(false, false);
+    ViewOptions viewOptions = new ViewOptions(true, false);
     myDefaultOptions.setOption(viewOptions);
 
     QueryOptions queryOptions = new QueryOptions(QueryOptions.PROJECT_SCOPE);
