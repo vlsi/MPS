@@ -886,7 +886,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/stateMachine/stateMachine.iml" filepath="$PROJECT_DIR$/platform/stateMachine/stateMachine.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/structureLanguage/structureLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/structureLanguage/structureLanguage.iml" group="languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/stwiki/stwiki-webapp.iml" filepath="$PROJECT_DIR$/app/stwiki/stwiki-webapp.iml" group="app" />
-      <module fileurl="file://$PROJECT_DIR$/projects/testRefactoring/testRefactoring.iml" filepath="$PROJECT_DIR$/projects/testRefactoring/testRefactoring.iml" />
+      <module fileurl="file://$PROJECT_DIR$/languages/refactoring/testRefactoring/testRefactoring.iml" filepath="$PROJECT_DIR$/languages/refactoring/testRefactoring/testRefactoring.iml" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/textIndex/textIndex.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" filepath="$PROJECT_DIR$/platform/textLanguage/textLanguage.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/transientDbEntityStore/transientDbEntityStore.iml" group="platform/dnq/runtime" />
