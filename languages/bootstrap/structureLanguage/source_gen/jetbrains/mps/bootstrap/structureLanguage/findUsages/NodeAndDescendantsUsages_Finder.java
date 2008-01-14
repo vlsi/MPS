@@ -43,7 +43,7 @@ public class NodeAndDescendantsUsages_Finder extends BaseFinder {
       Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, searchQuery.getScope(), null);
       for (SReference reference : resRefs) {
         if (!(nodes.contains(reference.getSourceNode()))) {
-          results.getSearchResults().add(new SearchResult(new SNodePointer(reference.getSourceNode()), "Node Usages"));
+          results.getSearchResults().add(new SearchResult(new SNodePointer(reference.getSourceNode()), "Node Descendants Usages"));
         }
       }
     }
