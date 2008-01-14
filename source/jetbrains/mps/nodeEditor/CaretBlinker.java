@@ -84,8 +84,8 @@ public class CaretBlinker extends DefaultExternalizableComponent {
           synchronized(this) {
             wait(getCaretBlinkingRateTimeMillis());
           }
-        } catch (InterruptedException e) {
-          LOG.error(e);
+        } catch (Throwable t) {
+          LOG.error(t);
         }
       }
     }
