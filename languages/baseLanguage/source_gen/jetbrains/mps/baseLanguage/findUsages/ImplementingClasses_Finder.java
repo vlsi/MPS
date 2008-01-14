@@ -6,6 +6,20 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
+import jetbrains.mps.smodel.SNodePointer;
+
+import java.util.List;
+import java.util.ArrayList;
+
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+
+import java.util.Set;
+
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
 
 public class ImplementingClasses_Finder extends BaseFinder {
 
@@ -23,6 +37,37 @@ public class ImplementingClasses_Finder extends BaseFinder {
 
   public SearchResults find(SearchQuery searchQuery) {
     SearchResults results = new SearchResults();
+    {
+      // TODO: Quadratish , no gut
+      SNode searchedNode = searchQuery.getNodePointer().getNode();
+      results.getSearchedNodePointers().add(new SNodePointer(searchedNode));
+      // null
+      List<SNode> derived = new ArrayList<SNode>();
+      ListOperations.addElement(derived, (SNode) searchedNode);
+      // null
+      while (!(SequenceOperations.isEmpty(derived))) {
+        Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(SequenceOperations.getFirst(derived), searchQuery.getScope());
+        // search for derived
+        for (SReference reference : resRefs) {
+          SNode node = reference.getSourceNode();
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface")) {
+            if (SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
+              ListOperations.addElement(derived, SNodeOperations.getParent(node, null, false, false));
+            }
+          }
+        }
+        // search for interface implementors
+        for (SReference reference : resRefs) {
+          SNode node = reference.getSourceNode();
+          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+            if (SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) {
+              results.getSearchResults().add(new SearchResult(new SNodePointer(node), "Implementing Classes"));
+            }
+          }
+        }
+        ListOperations.removeElement(derived, SequenceOperations.getFirst(derived));
+      }
+    }
     return results;
   }
 
