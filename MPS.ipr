@@ -865,11 +865,11 @@
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/editorLanguage/editorLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/editorLanguage/editorLanguage.iml" group="languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/entityBrowser/entityBrowser.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/entityBrowser/entityBrowser.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" filepath="$PROJECT_DIR$/app/fixedLengthReader/fixedLengthReader.iml" group="app" />
-      <module fileurl="file://$PROJECT_DIR$/projects/mf/gothic/gothic.iml" filepath="$PROJECT_DIR$/projects/mf/gothic/gothic.iml" group="Projects/mf" />
+      <module fileurl="file://$PROJECT_DIR$/app/mf/gothic/gothic.iml" filepath="$PROJECT_DIR$/app/mf/gothic/gothic.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/helgins/helgins.iml" filepath="$PROJECT_DIR$/languages/bootstrap/helgins/helgins.iml" group="languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/languages/baseLanguage/jetbrains.mps.baseLanguage.iml" filepath="$PROJECT_DIR$/languages/baseLanguage/jetbrains.mps.baseLanguage.iml" />
       <module fileurl="file://$PROJECT_DIR$/languages/core/jetbrains.mps.core.iml" filepath="$PROJECT_DIR$/languages/core/jetbrains.mps.core.iml" />
-      <module fileurl="file://$PROJECT_DIR$/projects/mf/lair1/lair1.iml" filepath="$PROJECT_DIR$/projects/mf/lair1/lair1.iml" group="Projects/mf" />
+      <module fileurl="file://$PROJECT_DIR$/app/mf/lair1/lair1.iml" filepath="$PROJECT_DIR$/app/mf/lair1/lair1.iml" group="app/mf" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/openAPI/openAPI.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/language/parserGenerator_language.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/language/parserGenerator_language.iml" group="app/ParserGenerator" />
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" group="app/ParserGenerator" />
