@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" generatorOutputPath="${mps_home}\projects\baseLanguageExt\dev\source_gen" compileInMPS="false">
+<language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" generatorOutputPath="${mps_home}\baseLanguage\ext\dev\source_gen" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
   </structure>
