@@ -15,6 +15,9 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.icons.IconManager;
+
 /**
  * Created by IntelliJ IDEA.
 * User: Cyril.Konopko
@@ -31,33 +34,37 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
   private String myHeader;
   private JComponent myHeaderLabel;
   private JPanel myMainPanel;
+  private @Nullable JFrame myContainingFrame;
 
-  public ChooseItemComponent(String header, boolean showAllOnEmptyText, @Nullable ListCellRenderer cellRenderer) {
-    setLayout(new BorderLayout());
+  public ChooseItemComponent(String header) {
+    this(header, false);
+  }
+
+  public ChooseItemComponent(String header, boolean showAllOnEmptyText) {
 
     myHeader = header;
+    myShowAllOnEmptyText = showAllOnEmptyText;
+
+    setLayout(new BorderLayout());
     myHeaderLabel = new JPanel(new BorderLayout(10, 0));
     myHeaderLabel.add(new JLabel(myHeader), BorderLayout.WEST);
-    myShowAllOnEmptyText = showAllOnEmptyText;
     myMainPanel = new JPanel(new GridLayout(2, 1));
     myMainPanel.add(myHeaderLabel);
     myMainPanel.add(myTextField = new JTextField(""));
     add(myMainPanel, BorderLayout.NORTH);
     myList.setFocusable(false);
     myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+    setListCellRenderer(new ChooseItemWindowCellRenderer<Item>(this));
     myList.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
           Item selectedItem = (Item) myList.getSelectedValue();
           if (selectedItem == null) return;
           doChoose(selectedItem);
-          dispose();
+          askForDispose();
         }
       }
     });
-    if (cellRenderer != null) {
-      myList.setCellRenderer(cellRenderer);
-    }
     add(new JScrollPane(myList), BorderLayout.CENTER);
 
 
@@ -66,7 +73,7 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
         Item selectedItem = (Item) myList.getSelectedValue();
         if (selectedItem == null) return;
         doChoose(selectedItem);
-        dispose();
+        askForDispose();
       }
     }, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
     myMainPanel.registerKeyboardAction(new AbstractAction() {
@@ -111,9 +118,39 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
     });
   }
 
-  public abstract void dispose();
+  public void askForDispose() {
+    if (myContainingFrame != null) {
+      myContainingFrame.dispose();
+    }
+  }
 
   public abstract void doChoose(Item item);
+
+  public void setListCellRenderer(ListCellRenderer cellRenderer) {
+     if (cellRenderer != null) {
+      myList.setCellRenderer(cellRenderer);
+    }
+  }
+
+  protected String getItemPresentation(Item item) {
+    return item.toString();
+  }
+
+  protected String getItemDescription(Item item) {
+    return null;
+  }
+
+  protected Icon getItemIcon(Item item) {
+    if (item instanceof SNode) {
+      SNode node = (SNode) item;
+      return IconManager.getIconFor(node);
+    }
+    return null;
+  }
+
+  protected Color getItemColor(Item item) {
+    return Color.BLACK;
+  }
 
   public JPanel getMainPanel() {
     return myMainPanel;
@@ -139,6 +176,10 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
     return myItemsMap;
   }
 
+  public void setContainingFrame(@Nullable ChooseItemWindow<Item> containingFrame) {
+    myContainingFrame = containingFrame;
+  }
+
   public void putItem(String name, Item item) {
     if (!myItemsMap.containsKey(name)) {
       myItemsMap.put(name, new HashSet<Item>());
@@ -152,11 +193,12 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
   }
 
   public Pattern getItemPattern() {
-    StringBuilder b = ChooseItemWindow.getExactItemPatternBuilder(myTextField.getText());
+    StringBuilder b = getExactItemPatternBuilder(myTextField.getText());
     b.append(".*");
     Pattern p = Pattern.compile(b.toString());
     return p;
   }
+
 
   protected void updateState() {
     DefaultListModel model = (DefaultListModel) myList.getModel();
@@ -202,5 +244,85 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
     myList.setSelectedValue(oldSelection, true);
   }
 
+  public static StringBuilder getExactItemPatternBuilder(String text) {
+    StringBuilder b = new StringBuilder();
+    int state = 0;
+    for (int i = 0; i < text.length(); i++) {
+      char c = text.charAt(i);
 
+      switch (state) {
+        case 0: // no quoting
+          if (c == '*') {
+            b.append(".*");
+          } else if (c == '?') {
+            b.append(".");
+          } else if (c == '.') {
+            b.append("[^\\.]*\\.");
+          } else if (c == '@') {
+            b.append("[^\\@\\.]*\\@");
+          } else if (Character.isLetterOrDigit(c) || c == '_') {
+            b.append(c);
+            state = 2;
+          } else {
+            b.append("\\Q");
+            b.append(c);
+            state = 1;
+          }
+          break;
+        case 1: // quoting
+          if (c == '*') {
+            b.append("\\E");
+            b.append(".*");
+            state = 0;
+          } else if (c == '?') {
+            b.append("\\E");
+            b.append(".");
+            state = 0;
+          } else if (c == '.') {
+            b.append("\\E");
+            b.append("[^\\.]*\\.");
+            state = 0;
+          } else if (c == '@') {
+            b.append("\\E");
+            b.append("[^\\@\\.]*\\@");
+            state = 0;
+          } else if (Character.isLetterOrDigit(c) || c == '_') {
+            b.append("\\E");
+            b.append(c);
+            state = 2;
+          } else {
+            b.append(c);
+          }
+          break;
+        case 2: // Sequence of letters, digits and underscores
+          if (c == '*') {
+            b.append(".*");
+            state = 0;
+          } else if (c == '?') {
+            b.append(".");
+            state = 0;
+          } else if (c == '.') {
+            b.append("[^\\.]*\\.");
+            state = 0;
+          } else if (c == '@') {
+            b.append("[^\\@\\.]*\\@");
+            state = 0;
+          } else if (Character.isUpperCase(c)) {
+            b.append("[a-z0-9_]*");
+            b.append(c);
+          } else if (Character.isLetterOrDigit(c) || c == '_') {
+            b.append(c);
+          } else {
+            b.append("\\Q");
+            b.append(c);
+            state = 1;
+          }
+          break;
+      }
+    }
+    if (state == 1) {
+      b.append("\\E");
+    }
+    return b;
+  }
 }

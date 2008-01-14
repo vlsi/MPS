@@ -1,9 +1,8 @@
 package jetbrains.mps.ide.hierarchy;
 
 import jetbrains.mps.ide.toolsPane.DefaultTool;
-import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
-import jetbrains.mps.ide.GoToNodeWindow;
+import jetbrains.mps.ide.*;
+import jetbrains.mps.ide.GoToNodeWindow.GoToNodeComponent;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.project.MPSProject;
@@ -98,15 +97,15 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Defa
           }
         }
 
-        new GoToNodeWindow(myIde, nodes.toArray(new SNode[0])) {
-          protected void doChoose(final SNode node) {
+        new ChooseItemWindow(myIde.getMainFrame(), nodes.toArray(new SNode[0]), new GoToNodeComponent(myIde) {
+          public void doChoose(final SNode node) {
             MPSProject project = myIde.getProject();
             if (project != null) {
               final IOperationContext operationContext = project.createOperationContext();
               showConceptInHierarchy((T) node.getAdapter(), operationContext);
             }
           }
-        };
+        });
       }
     }).setBorder(null);
     return result;

@@ -168,10 +168,10 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
 
   class MyChooseItemComponent extends ChooseItemComponent<SModelDescriptor> {
     public MyChooseItemComponent() {
-      super("choose model", false, null);
+      super("choose model");
     }
 
-    public void dispose() {
+    public void askForDispose() {
     }
 
     public void doChoose(SModelDescriptor sModelDescriptor) {
