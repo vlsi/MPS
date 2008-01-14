@@ -6,6 +6,7 @@ import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
@@ -15,10 +16,7 @@ import jetbrains.mps.ide.findusages.view.util.AnonymButton;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelUID;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.*;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -268,4 +266,18 @@ public abstract class UsageView implements IExternalizableComponent {
       return new EmptyBorder(2, 1, 2, 1);
     }
   }
+
+  /*
+  private class GoToNodeListener{
+    private gotoNode(){
+       IDEProjectFrame ideProjectFrame = context.get(IDEProjectFrame.class);
+    ProjectPane projectPane = ideProjectFrame.getProjectPane();
+    SNode node = context.get(SNode.class);
+    IOperationContext operationContext = context.get(IOperationContext.class);
+    ideProjectFrame.showMainProjectPane();
+    projectPane.selectNode(node, operationContext);
+    projectPane.getTree().requestFocus();
+    }
+  }
+  */
 }
