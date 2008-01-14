@@ -76,7 +76,7 @@
       <excludeFolder url="file://$MODULE_DIR$/languages/transformation/test/inputModels/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/transformation/test/outputLang/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/languages/xml/META-INF" />
-      <excludeFolder url="file://$MODULE_DIR$/projects/fibonacci/META-INF" />
+      <excludeFolder url="file://$MODULE_DIR$/app/fibonacci/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/projects/hello/languages/hello1/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/projects/hello/solutions/sandbox/META-INF" />
       <excludeFolder url="file://$MODULE_DIR$/projects/lambda/META-INF" />
