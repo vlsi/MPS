@@ -881,8 +881,8 @@
       <module fileurl="file://$PROJECT_DIR$/app/search-watch/search-watch.iml" filepath="$PROJECT_DIR$/app/search-watch/search-watch.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/sharedConcepts/sharedConcepts.iml" filepath="$PROJECT_DIR$/languages/bootstrap/sharedConcepts/sharedConcepts.iml" group="languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/smodelLanguage/smodeLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/smodelLanguage/smodeLanguage.iml" group="languageDesign" />
-      <module fileurl="file://$PROJECT_DIR$/projects/springframework/springframework.iml" filepath="$PROJECT_DIR$/projects/springframework/springframework.iml" group="Projects/springframework" />
-      <module fileurl="file://$PROJECT_DIR$/projects/springframework/runtime/springframework-runtime.iml" filepath="$PROJECT_DIR$/projects/springframework/runtime/springframework-runtime.iml" group="Projects/springframework" />
+      <module fileurl="file://$PROJECT_DIR$/platform/springframework/springframework.iml" filepath="$PROJECT_DIR$/platform/springframework/springframework.iml" group="platform/spring-framework" />
+      <module fileurl="file://$PROJECT_DIR$/platform/springframework/runtime/springframework-runtime.iml" filepath="$PROJECT_DIR$/platform/springframework/runtime/springframework-runtime.iml" group="platform/spring-framework" />
       <module fileurl="file://$PROJECT_DIR$/platform/stateMachine/stateMachine.iml" filepath="$PROJECT_DIR$/platform/stateMachine/stateMachine.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/structureLanguage/structureLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/structureLanguage/structureLanguage.iml" group="languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/stwiki/stwiki-webapp.iml" filepath="$PROJECT_DIR$/app/stwiki/stwiki-webapp.iml" group="app" />
