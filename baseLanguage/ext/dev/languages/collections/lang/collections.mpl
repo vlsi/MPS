@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" generatorOutputPath="${mps_home}\projects\baseLanguageExt\dev\source_gen">
+<language namespace="jetbrains.mps.baseLanguage.ext.collections.lang" generatorOutputPath="${mps_home}\projects\baseLanguageExt\dev\source_gen" compileInMPS="false">
   <structure>
     <model modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" />
   </structure>
@@ -52,12 +52,13 @@
     </generator>
   </generators>
   <classPath>
-    <entry path="${mps_home}\projects\baseLanguageExt\dev\classes" />
-    <entry path="${mps_home}\projects\baseLanguageExt\collections-runtime\classes" />
+    <entry path="${mps_home}\baseLanguage\ext\dev\classes" />
+    <entry path="${mps_home}\baseLanguage\ext\collections-runtime\classes" />
   </classPath>
   <runtimeClassPath>
-    <entry path="${mps_home}\projects\baseLanguageExt\dev\classes" />
+    <entry path="${mps_home}\baseLanguage\ext\dev\classes" />
   </runtimeClassPath>
+  <sourcePath />
   <osgiOptions>
     <requiredBundles />
     <exportedPackage />
