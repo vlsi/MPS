@@ -15,6 +15,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="regexp_runtime" />
+    <orderEntry type="module" module-name="collections-runtime" />
     <orderEntryProperties />
   </component>
 </module>

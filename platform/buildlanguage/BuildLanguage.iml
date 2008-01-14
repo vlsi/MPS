@@ -23,6 +23,7 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="ant-1.7.0" level="project" />
+    <orderEntry type="module" module-name="collections-runtime" />
     <orderEntryProperties />
   </component>
 </module>

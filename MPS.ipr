@@ -840,7 +840,7 @@
       <module fileurl="file://$PROJECT_DIR$/app/accounting/accounting.iml" filepath="$PROJECT_DIR$/app/accounting/accounting.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/actionsLanguage/actionsLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/actionsLanguage/actionsLanguage.iml" group="languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/app/agreement/agreement.iml" filepath="$PROJECT_DIR$/app/agreement/agreement.iml" group="app" />
-      <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/dev/baseLanguageExt.iml" group="Projects/BaseLanguageExt" />
+      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/dev/baseLanguageExt.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/dev/baseLanguageExt.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/languages/baseLanguageInternal/baseLanguageInternal.iml" filepath="$PROJECT_DIR$/baseLanguage/languages/baseLanguageInternal/baseLanguageInternal.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/strings/baseLanguage_strings.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/strings/baseLanguage_strings.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/unitTest/baseLanguage_unitTest.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/unitTest/baseLanguage_unitTest.iml" group="baseLanguageExt" />
@@ -853,11 +853,11 @@
       <module fileurl="file://$PROJECT_DIR$/app/charisma/charisma-app/charisma-app.iml" filepath="$PROJECT_DIR$/app/charisma/charisma-app/charisma-app.iml" group="charisma" />
       <module fileurl="file://$PROJECT_DIR$/app/charisma/charisma-jira-client/charisma-jira-client.iml" filepath="$PROJECT_DIR$/app/charisma/charisma-jira-client/charisma-jira-client.iml" group="charisma" />
       <module fileurl="file://$PROJECT_DIR$/app/charisma/charisma-jira-plugin/charisma-jira-plugin.iml" filepath="$PROJECT_DIR$/app/charisma/charisma-jira-plugin/charisma-jira-plugin.iml" group="charisma" />
-      <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/collections-runtime/collections-runtime.iml" group="Projects/BaseLanguageExt" />
+      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/collections-runtime/collections-runtime.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/collections-runtime/collections-runtime.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/constraintsLanguage/constraintsLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/constraintsLanguage/constraintsLanguage.iml" group="languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/core/core.iml" group="platform/dnq/runtime" />
       <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/csharp/csharp.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/csharp/csharp.iml" group="baseLanguageExt" />
-      <module fileurl="file://$PROJECT_DIR$/projects/baseLanguageExt/dates-runtime/dates-runtime.iml" filepath="$PROJECT_DIR$/projects/baseLanguageExt/dates-runtime/dates-runtime.iml" group="Projects/BaseLanguageExt" />
+      <module fileurl="file://$PROJECT_DIR$/baseLanguage/ext/dates-runtime/dates-runtime.iml" filepath="$PROJECT_DIR$/baseLanguage/ext/dates-runtime/dates-runtime.iml" group="baseLanguageExt" />
       <module fileurl="file://$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" filepath="$PROJECT_DIR$/platform/webr/extensions/discussion/discussion.iml" group="platform/webr/extensions" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/dnq.iml" filepath="$PROJECT_DIR$/platform/dnq/dnq.iml" group="platform/dnq/language" />
       <module fileurl="file://$PROJECT_DIR$/platform/dnq/runtime/dnq-runtime.iml" filepath="$PROJECT_DIR$/platform/dnq/runtime/dnq-runtime.iml" group="platform/dnq/runtime" />
