@@ -875,9 +875,9 @@
       <module fileurl="file://$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" filepath="$PROJECT_DIR$/app/ParserGenerator/runtime/parserGenerator_runtime.iml" group="app/ParserGenerator" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/regexp.iml" filepath="$PROJECT_DIR$/platform/regexp/regexp.iml" group="platform/regexp" />
       <module fileurl="file://$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" filepath="$PROJECT_DIR$/platform/regexp/runtime/regexp_runtime.iml" group="platform/regexp" />
-      <module fileurl="file://$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/scriptLanguage.iml" filepath="$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/scriptLanguage.iml" group="workbench/ideLanguages/scriptLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/workbench/ideLanguages/scriptLanguageInternal/scriptLanguageInternal.iml" filepath="$PROJECT_DIR$/workbench/ideLanguages/scriptLanguageInternal/scriptLanguageInternal.iml" group="workbench/ideLanguages/scriptLanguage" />
-      <module fileurl="file://$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/runtime/scriptLanguage_runtime.iml" filepath="$PROJECT_DIR$/workbench/ideLanguages/scriptLanguage/runtime/scriptLanguage_runtime.iml" group="workbench/ideLanguages/scriptLanguage" />
+      <module fileurl="file://$PROJECT_DIR$/languages/scriptLanguage/scriptLanguage.iml" filepath="$PROJECT_DIR$/languages/scriptLanguage/scriptLanguage.iml" group="languageDesign/scriptLanguage" />
+      <module fileurl="file://$PROJECT_DIR$/languages/scriptLanguageInternal/scriptLanguageInternal.iml" filepath="$PROJECT_DIR$/languages/scriptLanguageInternal/scriptLanguageInternal.iml" group="languageDesign/scriptLanguage" />
+      <module fileurl="file://$PROJECT_DIR$/languages/scriptLanguage/runtime/scriptLanguage_runtime.iml" filepath="$PROJECT_DIR$/languages/scriptLanguage/runtime/scriptLanguage_runtime.iml" group="languageDesign/scriptLanguage" />
       <module fileurl="file://$PROJECT_DIR$/app/search-watch/search-watch.iml" filepath="$PROJECT_DIR$/app/search-watch/search-watch.iml" group="app" />
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/sharedConcepts/sharedConcepts.iml" filepath="$PROJECT_DIR$/languages/bootstrap/sharedConcepts/sharedConcepts.iml" group="languageDesign" />
       <module fileurl="file://$PROJECT_DIR$/languages/bootstrap/smodelLanguage/smodeLanguage.iml" filepath="$PROJECT_DIR$/languages/bootstrap/smodelLanguage/smodeLanguage.iml" group="languageDesign" />

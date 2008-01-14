@@ -93,9 +93,6 @@
     <orderEntry type="library" exported="" name="Annotations" level="project" />
     <orderEntry type="module" module-name="baseLanguageExt" exported="" />
     <orderEntry type="library" name="asm" level="project" />
-    <orderEntry type="module" module-name="scriptLanguage" />
-    <orderEntry type="module" module-name="scriptLanguage_runtime" exported="" />
-    <orderEntry type="module" module-name="scriptLanguageInternal" />
     <orderEntry type="library" name="commons-logging" level="project" />
     <orderEntry type="library" name="jetty" level="project" />
     <orderEntry type="library" name="stax" level="project" />
@@ -120,6 +117,7 @@
     <orderEntry type="module" module-name="sharedConcepts" exported="" />
     <orderEntry type="module" module-name="helgins" exported="" />
     <orderEntry type="module" module-name="cfaLanguage" exported="" />
+    <orderEntry type="module" module-name="scriptLanguage_runtime" exported="" />
     <orderEntryProperties />
   </component>
   <component name="copyright">
