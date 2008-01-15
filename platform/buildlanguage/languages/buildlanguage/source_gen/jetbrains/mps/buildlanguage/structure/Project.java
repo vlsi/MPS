@@ -19,10 +19,11 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   public static String VIRTUAL_PACKAGE = "virtualPackage";
   public static String DEFAULT = "default";
   public static String BASEDIR = "basedir";
-  public static String TARGETLIST = "targetlist";
+  public static String TARGET = "target";
   public static String IMPORTS = "imports";
   public static String PATHS = "paths";
-  public static String PROPERTY_LIST = "propertyList";
+  public static String IMPORT_PROPERTIES = "importProperties";
+  public static String PROPERTY = "property";
 
   public  Project(SNode node) {
     super(node);
@@ -85,24 +86,24 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
     super.setChild(Project.BASEDIR, node);
   }
 
-  public int getTargetlistsCount() {
-    return this.getChildCount(Project.TARGETLIST);
+  public int getTargetsCount() {
+    return this.getChildCount(Project.TARGET);
   }
 
-  public Iterator<TargetDeclaration> targetlists() {
-    return this.children(Project.TARGETLIST);
+  public Iterator<TargetDeclaration> targets() {
+    return this.children(Project.TARGET);
   }
 
-  public List<TargetDeclaration> getTargetlists() {
-    return this.getChildren(Project.TARGETLIST);
+  public List<TargetDeclaration> getTargets() {
+    return this.getChildren(Project.TARGET);
   }
 
-  public void addTargetlist(TargetDeclaration node) {
-    this.addChild(Project.TARGETLIST, node);
+  public void addTarget(TargetDeclaration node) {
+    this.addChild(Project.TARGET, node);
   }
 
-  public void insertTargetlist(TargetDeclaration prev, TargetDeclaration node) {
-    this.insertChild(prev, Project.TARGETLIST, node);
+  public void insertTarget(TargetDeclaration prev, TargetDeclaration node) {
+    this.insertChild(prev, Project.TARGET, node);
   }
 
   public int getImportsesCount() {
@@ -145,24 +146,44 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
     this.insertChild(prev, Project.PATHS, node);
   }
 
-  public int getPropertyListsCount() {
-    return this.getChildCount(Project.PROPERTY_LIST);
+  public int getImportPropertiesesCount() {
+    return this.getChildCount(Project.IMPORT_PROPERTIES);
   }
 
-  public Iterator<PropertyDeclaration> propertyLists() {
-    return this.children(Project.PROPERTY_LIST);
+  public Iterator<ImportProperties> importPropertieses() {
+    return this.children(Project.IMPORT_PROPERTIES);
   }
 
-  public List<PropertyDeclaration> getPropertyLists() {
-    return this.getChildren(Project.PROPERTY_LIST);
+  public List<ImportProperties> getImportPropertieses() {
+    return this.getChildren(Project.IMPORT_PROPERTIES);
   }
 
-  public void addPropertyList(PropertyDeclaration node) {
-    this.addChild(Project.PROPERTY_LIST, node);
+  public void addImportProperties(ImportProperties node) {
+    this.addChild(Project.IMPORT_PROPERTIES, node);
   }
 
-  public void insertPropertyList(PropertyDeclaration prev, PropertyDeclaration node) {
-    this.insertChild(prev, Project.PROPERTY_LIST, node);
+  public void insertImportProperties(ImportProperties prev, ImportProperties node) {
+    this.insertChild(prev, Project.IMPORT_PROPERTIES, node);
+  }
+
+  public int getPropertysCount() {
+    return this.getChildCount(Project.PROPERTY);
+  }
+
+  public Iterator<PropertyDeclaration> propertys() {
+    return this.children(Project.PROPERTY);
+  }
+
+  public List<PropertyDeclaration> getPropertys() {
+    return this.getChildren(Project.PROPERTY);
+  }
+
+  public void addProperty(PropertyDeclaration node) {
+    this.addChild(Project.PROPERTY, node);
+  }
+
+  public void insertProperty(PropertyDeclaration prev, PropertyDeclaration node) {
+    this.insertChild(prev, Project.PROPERTY, node);
   }
 
 }

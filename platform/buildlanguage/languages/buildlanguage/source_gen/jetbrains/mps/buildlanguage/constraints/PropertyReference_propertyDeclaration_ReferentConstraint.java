@@ -15,7 +15,6 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
 
 public class PropertyReference_propertyDeclaration_ReferentConstraint implements IModelConstraints, INodeReferentSearchScopeProvider {
@@ -38,14 +37,14 @@ public class PropertyReference_propertyDeclaration_ReferentConstraint implements
   public ISearchScope createNodeReferentSearchScope(final SModel model, final SNode enclosingNode, final SNode referenceNode, final IScope scope) {
     List<SNode> result = new ArrayList<SNode>();
     {
-      ICursor<SNode> _zCursor9 = CursorFactory.createCursor(SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.buildlanguage.structure.IPropertyHolder", true));
+      ICursor<SNode> _zCursor10 = CursorFactory.createCursor(SNodeOperations.getAncestors(enclosingNode, "jetbrains.mps.buildlanguage.structure.IPropertyHolder", true));
       try {
-        while(_zCursor9.moveToNext()) {
-          SNode holder = _zCursor9.getCurrent();
-          ListOperations.addAllElements(result, SLinkOperations.getTargets(holder, "propertyList", true));
+        while(_zCursor10.moveToNext()) {
+          SNode holder = _zCursor10.getCurrent();
+          ListOperations.addAllElements(result, IPropertyHolder_Behavior.call_getProperties_1200425502495(holder));
         }
       } finally {
-        _zCursor9.release();
+        _zCursor10.release();
       }
     }
     return new SimpleSearchScope(result);

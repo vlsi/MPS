@@ -16,8 +16,8 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String TASK_CALLS_LIST = "taskCallsList";
-  public static String DEPENDS_LIST = "dependsList";
+  public static String TASK_CALL = "taskCall";
+  public static String DEPENDS = "depends";
   public static String PROPERTY_LIST = "propertyList";
 
   public  TargetDeclaration(SNode node) {
@@ -65,44 +65,44 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
     this.setProperty(TargetDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-  public int getTaskCallsListsCount() {
-    return this.getChildCount(TargetDeclaration.TASK_CALLS_LIST);
+  public int getTaskCallsCount() {
+    return this.getChildCount(TargetDeclaration.TASK_CALL);
   }
 
-  public Iterator<Call> taskCallsLists() {
-    return this.children(TargetDeclaration.TASK_CALLS_LIST);
+  public Iterator<Call> taskCalls() {
+    return this.children(TargetDeclaration.TASK_CALL);
   }
 
-  public List<Call> getTaskCallsLists() {
-    return this.getChildren(TargetDeclaration.TASK_CALLS_LIST);
+  public List<Call> getTaskCalls() {
+    return this.getChildren(TargetDeclaration.TASK_CALL);
   }
 
-  public void addTaskCallsList(Call node) {
-    this.addChild(TargetDeclaration.TASK_CALLS_LIST, node);
+  public void addTaskCall(Call node) {
+    this.addChild(TargetDeclaration.TASK_CALL, node);
   }
 
-  public void insertTaskCallsList(Call prev, Call node) {
-    this.insertChild(prev, TargetDeclaration.TASK_CALLS_LIST, node);
+  public void insertTaskCall(Call prev, Call node) {
+    this.insertChild(prev, TargetDeclaration.TASK_CALL, node);
   }
 
-  public int getDependsListsCount() {
-    return this.getChildCount(TargetDeclaration.DEPENDS_LIST);
+  public int getDependsesCount() {
+    return this.getChildCount(TargetDeclaration.DEPENDS);
   }
 
-  public Iterator<TargetReference> dependsLists() {
-    return this.children(TargetDeclaration.DEPENDS_LIST);
+  public Iterator<TargetReference> dependses() {
+    return this.children(TargetDeclaration.DEPENDS);
   }
 
-  public List<TargetReference> getDependsLists() {
-    return this.getChildren(TargetDeclaration.DEPENDS_LIST);
+  public List<TargetReference> getDependses() {
+    return this.getChildren(TargetDeclaration.DEPENDS);
   }
 
-  public void addDependsList(TargetReference node) {
-    this.addChild(TargetDeclaration.DEPENDS_LIST, node);
+  public void addDepends(TargetReference node) {
+    this.addChild(TargetDeclaration.DEPENDS, node);
   }
 
-  public void insertDependsList(TargetReference prev, TargetReference node) {
-    this.insertChild(prev, TargetDeclaration.DEPENDS_LIST, node);
+  public void insertDepends(TargetReference prev, TargetReference node) {
+    this.insertChild(prev, TargetDeclaration.DEPENDS, node);
   }
 
   public int getPropertyListsCount() {
