@@ -3,49 +3,49 @@
   <persistence version="1"/>
   <refactoringHistory/>
   <language namespace="jetbrains.mps.bootstrap.findUsagesLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.helgins" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.constraints" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.editor" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.actions" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.constraints" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.helgins" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="-1"/>
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1"/>
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.helgins" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.intentions" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.scripts" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.actions" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.scripts" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.helgins" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.actions" version="-1"/>
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.findUsages" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1"/>
   </language>
   <language namespace="jetbrains.mps.quotation">
+    <languageAspect modelUID="jetbrains.mps.quotation.structure" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.quotation.helgins" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.quotation.editor" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.quotation.structure" version="-1"/>
   </language>
   <language namespace="jetbrains.mps.core">
-    <languageAspect modelUID="jetbrains.mps.core.constraints" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.core.editor" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.core.actions" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.core.scripts" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.core.actions" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.core.constraints" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.core.structure" version="-1"/>
   </language>
   <maxImportIndex value="10"/>
@@ -156,6 +156,15 @@
           </node>
           <node role="results" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200413136436">
             <link role="variableDeclaration" targetNodeId="1200413094922" resolveInfo="results"/>
+          </node>
+          <node role="queryNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression"
+                id="1200418349412">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation"
+                  id="1200418351244"/>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                  id="1200418348380">
+              <link role="variableDeclaration" targetNodeId="1200398497778" resolveInfo="searchedNode"/>
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1200413052067"/>
@@ -658,6 +667,15 @@
           <node role="results" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200413545191">
             <link role="variableDeclaration" targetNodeId="1200413545184" resolveInfo="results"/>
           </node>
+          <node role="queryNode" type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression"
+                id="1200418334173">
+            <node role="nodeOperation" type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation"
+                  id="1200418339207"/>
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                  id="1200418332047">
+              <link role="variableDeclaration" targetNodeId="1200397244990" resolveInfo="searchedNode"/>
+            </node>
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1200413545192"/>
         <node role="statement" type="jetbrains.mps.baseLanguage.ext.collections.lang.structure.ForEachStatement"
@@ -1150,6 +1168,9 @@
           </node>
           <node role="results" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200411769350">
             <link role="variableDeclaration" targetNodeId="1200411695013" resolveInfo="results"/>
+          </node>
+          <node role="queryNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200418366292">
+            <link role="variableDeclaration" targetNodeId="1200316282203" resolveInfo="searchedNode"/>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.RemarkStatement" id="1200411797741"/>
@@ -2557,16 +2578,6 @@
                 <link role="classifier" targetNodeId="6.~SearchResult" resolveInfo="SearchResult"/>
               </node>
             </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ExecuteFinderStatement"
-              id="1200407883058">
-          <link role="finder" targetNodeId="1200310422801" resolveInfo="ClassFieldsUsages"/>
-          <node role="nodes" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200408011302">
-            <link role="variableDeclaration" targetNodeId="1200407922016" resolveInfo="nodes"/>
-          </node>
-          <node role="results" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1200408014600">
-            <link role="variableDeclaration" targetNodeId="1200407961325" resolveInfo="results"/>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1200408022336">

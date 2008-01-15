@@ -33,6 +33,10 @@ public class SearchQuery implements IExternalizableComponent {
     myScope = scope;
   }
 
+  public SearchQuery(SNode node, IScope scope) {
+    this(new SNodePointer(node), scope);
+  }
+
   public SearchQuery(Element element, MPSProject project) {
     read(element, project);
   }
