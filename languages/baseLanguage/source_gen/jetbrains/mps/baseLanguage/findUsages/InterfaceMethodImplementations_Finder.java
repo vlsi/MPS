@@ -39,7 +39,7 @@ public class InterfaceMethodImplementations_Finder extends BaseFinder {
   }
 
   public boolean isVisible() {
-    return false;
+    return true;
   }
 
   public SearchResults find(SearchQuery searchQuery) {

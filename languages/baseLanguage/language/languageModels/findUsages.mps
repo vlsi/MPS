@@ -3346,7 +3346,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration" id="1200425321273">
-    <property name="isVisible" value="false"/>
+    <property name="isVisible" value="true"/>
     <property name="package" value="checked"/>
     <property name="name" value="InterfaceMethodImplementations"/>
     <property name="description" value="Interface Method Implementations"/>
