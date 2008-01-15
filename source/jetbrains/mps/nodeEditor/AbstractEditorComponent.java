@@ -2078,7 +2078,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
         }
       } else {// "dramatical" change
         rebuildEditorContent(events);
-        if (!hasFocus()) return;
+
+
+        if (!hasFocus()) {
+          return;
+        }
 
         updateSelection(events);
       }
@@ -2094,7 +2098,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       for (SModelEvent e : events) {
         if (e instanceof SModelChildEvent) {
           SModelChildEvent ce = (SModelChildEvent) e;
-          if (ce.getParent().getContainingRoot() == getEditedNode()) {
+          if (ce.getParent().getAncestors(true).contains(getEditedNode())) {
             if (ce.isAdded()) {
               lastAdd = ce;
               childAddedEventNodes.add(ce.getChild());

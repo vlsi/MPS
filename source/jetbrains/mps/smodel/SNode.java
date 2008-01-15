@@ -235,6 +235,17 @@ public final class SNode {
     return myParent.getContainingRoot();
   }
 
+  public List<SNode> getAncestors(boolean includeThis) {
+    List<SNode> result = new ArrayList<SNode>();
+    if (includeThis) {
+      result.add(this);
+    }
+    if (myParent != null) {
+      result.addAll(myParent.getAncestors(true));
+    }
+    return result;
+  }
+
   public void replaceChild(@NotNull SNode oldChild,
                            @NotNull SNode newChild) {
     assert _children().contains(oldChild);
