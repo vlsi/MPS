@@ -1557,18 +1557,6 @@
         <root url="jar://$PROJECT_DIR$/lib/eclipse-compiler/ecjsrc.zip!/" />
       </SOURCES>
     </library>
-    <library name="WordNetLibrary">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/jwnl/commons-logging.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jwnl/jwnl.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jwnl/tests.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/jwnl/utilities.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/jwnl/jwnl13rc3_src.zip!/" />
-      </SOURCES>
-    </library>
     <library name="freemarker">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/freemarker/freemarker-2.3.10.jar!/" />
