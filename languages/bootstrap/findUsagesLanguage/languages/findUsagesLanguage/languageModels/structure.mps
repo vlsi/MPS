@@ -3,21 +3,22 @@
   <persistence version="1"/>
   <refactoringHistory/>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.scripts" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.scripts" version="-1"/>
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.findUsages" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1"/>
   </language>
   <maxImportIndex value="9"/>
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1"/>
@@ -174,6 +175,40 @@
           id="1200309306561">
       <property name="value" value="add node"/>
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias"/>
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200396324422">
+    <property name="name" value="ExecuteFinderStatement"/>
+    <property name="package" value="Undone"/>
+    <link role="extends" targetNodeId="2.1068580123157" resolveInfo="Statement"/>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1200396629897">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="nodes"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="2.1068498886296" resolveInfo="VariableReference"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1200396682929">
+      <property name="metaClass" value="aggregation"/>
+      <property name="role" value="results"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="2.1068498886296" resolveInfo="VariableReference"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.BooleanConceptProperty"
+          id="1200396324424">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault"/>
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty"
+          id="1200396324425">
+      <property name="value" value="execute"/>
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias"/>
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration"
+          id="1200396451599">
+      <property name="role" value="finder"/>
+      <property name="sourceCardinality" value="1"/>
+      <link role="target" targetNodeId="1197044488845" resolveInfo="FinderDeclaration"/>
     </node>
   </node>
 </model>
