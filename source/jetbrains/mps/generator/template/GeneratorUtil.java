@@ -502,26 +502,6 @@ public class GeneratorUtil {
 
 
   public static List<SNode> applyReductionRule(SNode inputNode, INodeAdapter reductionRule, TemplateGenerator generator) throws DismissTopMappingRuleException {
-    if (reductionRule instanceof ReductionRule) {
-      // old
-      ReductionRule rule = (ReductionRule) reductionRule;
-      TemplateDeclaration template = rule.getTemplate();
-      if (template == null) {
-        generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no template");
-        return new ArrayList<SNode>();
-      }
-
-      TemplateFragment fragment = getFragmentFromTemplate(template, inputNode, rule.getNode(), generator);
-      if (fragment != null) {
-        String mappingName = fragment.getName() != null ? fragment.getName() : reductionRule.getName();
-        return applyReductionRuleTemplateFragment(mappingName, fragment.getParent().getNode(), inputNode, rule, generator);
-      }
-
-      generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no template");
-      return new ArrayList<SNode>();
-    }
-
-    // new
     return applyReductionMappingRule(inputNode, (Reduction_MappingRule) reductionRule, generator);
   }
 

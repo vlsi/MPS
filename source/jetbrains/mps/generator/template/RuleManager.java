@@ -25,7 +25,6 @@ public class RuleManager {
   private List<Root_MappingRule> myRoot_MappingRules;
   private List<Weaving_MappingRule> myWeaving_MappingRules;
   private List<ConceptDeclaration> myAbandonedRootConcepts;
-  private List<ReductionRule> myReductionRules;
   private List<Reduction_MappingRule> myReduction_MappingRules;
   private FastRuleFinder myRuleFinder;
 
@@ -46,7 +45,6 @@ public class RuleManager {
     myRoot_MappingRules = new ArrayList<Root_MappingRule>();
     myWeaving_MappingRules = new ArrayList<Weaving_MappingRule>();
     myAbandonedRootConcepts = new ArrayList<ConceptDeclaration>();
-    myReductionRules = new ArrayList<ReductionRule>();
     myReduction_MappingRules = new ArrayList<Reduction_MappingRule>();
     initRules();
   }
@@ -82,12 +80,7 @@ public class RuleManager {
         }
       }
 
-      // reduction rules (old)
-      Iterator<ReductionRule> reductionRules = mappingConfig.reductionRules();
-      while (reductionRules.hasNext()) {
-        myReductionRules.add(reductionRules.next());
-      }
-      // reduction rules (new)
+      // reduction rules
       Iterator<Reduction_MappingRule> reduction_MappingRules = mappingConfig.reductionMappingRules();
       while (reduction_MappingRules.hasNext()) {
         myReduction_MappingRules.add(reduction_MappingRules.next());
@@ -147,32 +140,10 @@ public class RuleManager {
   }
 
   INodeAdapter findReductionRule(SNode node) {
-    //old
-    INodeAdapter reductionRule = findReductionRule_Old(node);
-    if (reductionRule != null) {
-      return reductionRule;
-    }
-    //new
     if (myRuleFinder == null) {
       myRuleFinder = new FastRuleFinder(myReduction_MappingRules);
     }
     return BaseAdapter.fromNode(myRuleFinder.findReductionRule(node, myGenerator));
   }
 
-  private INodeAdapter findReductionRule_Old(SNode sourceNode) {
-    for (ReductionRule reductionRule : myReductionRules) {
-      String conditionAspectId = reductionRule.getConditionAspectId();
-      String methodName = "reductionRuleCondition_" + conditionAspectId;
-      Object[] args = new Object[]{sourceNode, myGenerator};
-      try {
-        Boolean b = (Boolean) QueryMethod.invoke(methodName, args, reductionRule.getModel());
-        if (b) {
-          return reductionRule;
-        }
-      } catch (Exception e) {
-        throw new GenerationFailedException(new GenerationFailueInfo("Error while processing reduction conditions", sourceNode, null, reductionRule.getNode(), myGenerator.getGeneratorSessionContext()), e);
-      }
-    }
-    return null;
-  }
 }
