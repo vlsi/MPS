@@ -27,7 +27,6 @@ public class RuleManager {
   private List<CreateRootRule> myCreateRootRules;
   private List<MappingRule> myMappingRules;
   private List<Root_MappingRule> myRoot_MappingRules;
-  private List<WeavingRule> myWeavingRules;
   private List<Weaving_MappingRule> myWeaving_MappingRules;
   private List<ConceptDeclaration> myAbandonedRootConcepts;
   private List<ReductionRule> myReductionRules;
@@ -50,7 +49,6 @@ public class RuleManager {
     myCreateRootRules = new ArrayList<CreateRootRule>();
     myMappingRules = new ArrayList<MappingRule>();
     myRoot_MappingRules = new ArrayList<Root_MappingRule>();
-    myWeavingRules = new ArrayList<WeavingRule>();
     myWeaving_MappingRules = new ArrayList<Weaving_MappingRule>();
     myOutputRootConcepts = new ArrayList<ConceptDeclaration>();
     myAbandonedRootConcepts = new ArrayList<ConceptDeclaration>();
@@ -91,12 +89,7 @@ public class RuleManager {
       while (root_MappingRules.hasNext()) {
         myRoot_MappingRules.add(root_MappingRules.next());
       }
-      // weaving rules (old)
-      Iterator<WeavingRule> weavingRules = mappingConfig.weavingRules();
-      while (weavingRules.hasNext()) {
-        myWeavingRules.add(weavingRules.next());
-      }
-      // weaving rules (new)
+      // weaving rules
       Iterator<Weaving_MappingRule> weaving_MappingRules = mappingConfig.weavingMappingRules();
       while (weaving_MappingRules.hasNext()) {
         myWeaving_MappingRules.add(weaving_MappingRules.next());
@@ -146,13 +139,6 @@ public class RuleManager {
     for (Root_MappingRule rule : myRoot_MappingRules) {
       myGenerator.checkMonitorCanceled();
       GeneratorUtil.applyRoot_MappingRule(rule, myGenerator);
-    }
-  }
-
-  public void applyWeavingRules() {
-    for (WeavingRule rule : myWeavingRules) {
-      myGenerator.checkMonitorCanceled();
-      GeneratorUtil.applyWeavingRule(rule, myGenerator);
     }
   }
 

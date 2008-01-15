@@ -264,32 +264,6 @@ public class GeneratorUtil {
     }
   }
 
-
-  /**
-   * old
-   */
-  public static void applyWeavingRule(WeavingRule rule, TemplateGenerator generator) {
-    TemplateDeclaration templateDeclaration = rule.getTemplate();
-    List<SNode> inputNodes = createInputNodeListForWeavingRule(rule, generator);
-    for (SNode inputNode : inputNodes) {
-      SNode outputContextNode = getContextNodeForWeavingingRule(inputNode, rule.getNode(), rule.getContextProviderAspectId(), null, generator);
-      if (outputContextNode == null) {
-        generator.showErrorMessage(inputNode, rule.getNode(), "couldn't create context node");
-        continue;
-      }
-      generator.setChanged(true);
-      weaveTemplateDeclaration(inputNode, templateDeclaration, outputContextNode, rule.getNode(), generator);
-    }
-  }
-
-  private static List<SNode> createInputNodeListForWeavingRule(WeavingRule weavingRule, ITemplateGenerator generator) {
-    String sourceQueryAspectId = weavingRule.getSourceQueryAspectId();
-    String methodName = "templateWeavingRule_SourceQuery_" + sourceQueryAspectId;
-    Object[] args = new Object[]{generator};
-    List<SNode> inputNodes = (List<SNode>) QueryMethod.invoke(methodName, args, weavingRule.getModel());
-    return inputNodes;
-  }
-
   private static SNode getContextNodeForWeavingingRule(SNode inputNode, SNode ruleNode, String aspectId, Weaving_MappingRule_ContextNodeQuery query, ITemplateGenerator generator) {
     // old
     if (aspectId != null) {

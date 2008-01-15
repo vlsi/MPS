@@ -167,13 +167,6 @@
       <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="1167514355419" resolveInfo="Root_MappingRule" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1095416692160">
-      <property name="targetCardinality" value="1" />
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="weavingRule" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1095416624611" resolveInfo="WeavingRule" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1167172143858">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="weavingMappingRule" />
@@ -245,31 +238,6 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1167514646855">
       <property name="value" value="replaced with Root_MappingRule" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1095416624611">
-    <property name="name" value="WeavingRule" />
-    <property name="package" value="Rule" />
-    <link role="extends" targetNodeId="2.1133920641626" />
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1175152879452">
-      <link role="intfc" targetNodeId="2.1169194658468" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1095418755477">
-      <property name="name" value="sourceQueryAspectId" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1095418755478">
-      <property name="name" value="contextProviderAspectId" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1095418098242">
-      <property name="role" value="template" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1092059087312" resolveInfo="TemplateDeclaration" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1167272087006">
-      <property name="value" value="replaced with Weaving_MappingRule" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
     </node>
   </node>

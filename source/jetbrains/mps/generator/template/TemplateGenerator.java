@@ -105,7 +105,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     // weaving
-    myRuleManager.applyWeavingRules();
     myRuleManager.applyWeaving_MappingRules();
 
     // execute mapper in all $MAP_SRC$/$MAP_SRCL$
