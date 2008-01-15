@@ -313,6 +313,11 @@ public class TemplateProcessor {
       if (outputChildNodes != null) {
         String role = templateChildNode.getRole_();
         for (SNode outputChildNode : outputChildNodes) {
+//          // check child
+//          if (!SModelUtil_new.isAcceptableTarget(outputNode, role, outputChildNode)) {
+//            myGenerator.showErrorMessage(outputChildNode, "unacceptable child node " + outputChildNode.getDebugText() + " for role '" + role + "'");
+//            myGenerator.showErrorMessage(templateChildNode.getNode(), " -- template node " + templateChildNode.getDebugText());
+//          }
           outputNode.addChild(role, outputChildNode);
         }
       }
@@ -377,6 +382,11 @@ public class TemplateProcessor {
       List<SNode> outputChildNodes = copyNodeFromInputNode(null, inputChildNode, inputChildNode);
       if (outputChildNodes != null) {
         for (SNode outputChildNode : outputChildNodes) {
+//          // check child
+//          if (!SModelUtil_new.isAcceptableTarget(outputNode, childRole, outputChildNode)) {
+//            myGenerator.showErrorMessage(outputChildNode, "unacceptable child node " + outputChildNode.getDebugText() + " for role '" + childRole + "'");
+//            myGenerator.showErrorMessage(inputChildNode, " -- input node " + inputChildNode.getDebugText());
+//          }
           outputNode.addChild(childRole, outputChildNode);
         }
       }
