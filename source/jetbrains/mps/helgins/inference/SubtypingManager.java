@@ -74,6 +74,9 @@ public class SubtypingManager {
     //reflexivity:
     if (subRepresentator == superRepresentator) return true;
     if (subRepresentator == null || superRepresentator == null) return false;
+
+    //todo expand
+
     if (superRepresentator.matchesWith(subRepresentator, equationManager, errorInfo)) {
       return true;
     }

@@ -5,6 +5,9 @@ import jetbrains.mps.util.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeErrorType;
+import jetbrains.mps.bootstrap.helgins.structure.MeetType;
+import jetbrains.mps.bootstrap.helgins.structure.JoinType;
+import jetbrains.mps.core.structure.BaseConcept;
 
 import java.util.*;
 
@@ -119,7 +122,7 @@ public class EquationManager {
 
 
     // if big problems with helgins replace this with the code like below:
-     RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
+    RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
     //boolean subtypeContainsVars = subtypeRepresentator != null && subtypeRepresentator.containsVariables(this);
     // new! but works bad. for MPS-490
 
@@ -745,6 +748,121 @@ public class EquationManager {
       myTypesWithEffects.put(type, set);
     }
     set.add(effect);
+  }
+
+  /*package*/ SNode expandType(SNode term, SNode type, SModel typesModel) {
+    return expandType(term, type, typesModel, false, null);
+  }
+
+  /*package*/ SNode expandType(SNode term, SNode type, SModel typesModel,
+                               boolean finalExpansion, NodeTypesComponent_new nodeTypesComponent)  {
+    if (type == null) return null;
+    NodeWrapper wrapper = NodeWrapper.createNodeWrapper(type);
+    IWrapper representator;
+    representator = this.getRepresentatorWrapper(wrapper);
+    return expandWrapper(term, representator, typesModel, finalExpansion, nodeTypesComponent).getNode();
+  }
+
+  private IWrapper expandWrapper(SNode term, IWrapper representator, SModel typesModel,
+                                 boolean finalExpansion, NodeTypesComponent_new nodeTypesComponent) {
+    if (representator instanceof MeetWrapper) {
+      MeetWrapper meetWrapper = (MeetWrapper) representator;
+      MeetType meetType = MeetType.newInstance(typesModel);
+      for (IWrapper wrapper : meetWrapper.getArguments()) {
+        meetType.addArgument((BaseConcept) expandWrapper(term, wrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter());
+      }
+      return NodeWrapper.createNodeWrapper(meetType.getNode());
+    }
+    if (representator instanceof JoinWrapper) {
+      JoinWrapper joinWrapper = (JoinWrapper) representator;
+      JoinType joinType = JoinType.newInstance(typesModel);
+      for (IWrapper wrapper : joinWrapper.getArguments()) {
+        joinType.addArgument((BaseConcept) expandWrapper(term, wrapper, typesModel, finalExpansion, nodeTypesComponent).getNode().getAdapter());
+      }
+      return NodeWrapper.createNodeWrapper(joinType.getNode());
+    }
+    return expandNode(term, representator, representator, 0, new HashSet<IWrapper>(), typesModel, finalExpansion, nodeTypesComponent);
+  }
+
+  private NodeWrapper expandNode(SNode term, IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel,
+                                 boolean finalExpansion, NodeTypesComponent_new nodeTypesComponent) {
+    if (wrapper == null) return null;
+
+    if (wrapper.isVariable()) {
+      IWrapper type = this.getRepresentatorWrapper(wrapper);
+      NodeWrapper wrapper1 = (NodeWrapper) wrapper;
+      if (type != representator || depth > 0) {
+
+        if (variablesMet.contains(wrapper)) {
+          //recursion!!
+          RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
+          error.setErrorText("recursion types not allowed");
+          return NodeWrapper.createNodeWrapper(error.getNode());
+        }
+        variablesMet.add(wrapper);
+        wrapper1 = expandNode(term, type, type, 0, variablesMet, typesModel, finalExpansion, nodeTypesComponent);
+        variablesMet.remove(wrapper);
+      }
+      return wrapper1;
+    }
+    if (finalExpansion) {
+      WhenConcreteEntity whenConcreteEntity = this.getWhenConcreteEntity(wrapper);
+      if (whenConcreteEntity != null) {
+        RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
+        error.setErrorText("argument of WHEN CONCRETE block is never concrete");
+        error.setNodeModel(whenConcreteEntity.getNodeModel());
+        error.setNodeId(whenConcreteEntity.getNodeId());
+        nodeTypesComponent.reportTypeError(term, error.getErrorText(), error.getNodeModel(), error.getNodeId());
+      }
+    }
+    Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
+    List<SNode> children = new ArrayList<SNode>(wrapper.getNode().getChildren());
+    for (SNode child : children) {
+      SNode newChild = expandNode(term, NodeWrapper.createNodeWrapper(child),
+              representator, depth + 1, variablesMet, typesModel, finalExpansion, nodeTypesComponent).getNode();
+      if (newChild != child) {
+        childrenReplacement.put(child, newChild);
+      }
+    }
+    for (SNode child : new ArrayList<SNode>(children)) {
+      if (!childrenReplacement.keySet().contains(child)) continue;
+      if (child.getParent() == null) {
+        RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
+        error.setErrorText("recursion types not allowed");
+        return NodeWrapper.createNodeWrapper(error.getNode());
+      }
+      SNode parent = child.getParent();
+      assert parent != null;
+      String roleInParent = child.getRole_();
+      assert roleInParent != null;
+      parent.removeChild(child);
+      SNode childReplacement = childrenReplacement.get(child);
+      childReplacement = CopyUtil.copy(childReplacement, parent.getModel());
+      parent.addChild(roleInParent, childReplacement);
+    }
+    Map<SReference, SNode> referenceReplacement = new HashMap<SReference, SNode>();
+    List<SReference> references = new ArrayList<SReference>(wrapper.getNode().getReferences());
+    for (SReference reference : references) {
+      SNode oldNode = reference.getTargetNode();
+      if (BaseAdapter.isInstance(oldNode, RuntimeTypeVariable.class)) {
+        SNode newNode = expandNode(term, NodeWrapper.createNodeWrapper(oldNode), representator,
+                depth, variablesMet, typesModel, finalExpansion, nodeTypesComponent).getNode();
+        referenceReplacement.put(reference, newNode);
+      }
+    }
+    for (SReference reference : new ArrayList<SReference>(references)) {
+      if (!referenceReplacement.keySet().contains(reference)) continue;
+
+
+      String role = reference.getRole();
+      assert role != null;
+      SNode replacement = referenceReplacement.get(reference);
+      SNode sourceNode = reference.getSourceNode();
+      sourceNode.removeReference(reference);
+      sourceNode.setReferent(role, replacement);
+    }
+
+    return (NodeWrapper) wrapper;
   }
 
 
