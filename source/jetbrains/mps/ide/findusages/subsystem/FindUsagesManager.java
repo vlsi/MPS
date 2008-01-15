@@ -33,8 +33,10 @@ public class FindUsagesManager implements IExternalizableComponent {
       if (node.isInstanceOfConcept(conceptFQName)) {
         for (BaseFinder finder : Collections.unmodifiableSet(myFinders.get(conceptFQName))) {
           try {
-            if (finder.isApplicable(node)) {
-              result.add(finder);
+            if (finder.isVisible()) {
+              if (finder.isApplicable(node)) {
+                result.add(finder);
+              }
             }
           } catch (Throwable t) {
             LOG.error("Finder's isApplicable method failed " + t.getMessage(), t);

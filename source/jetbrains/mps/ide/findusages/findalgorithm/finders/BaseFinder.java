@@ -28,6 +28,10 @@ public abstract class BaseFinder implements IExternalizableComponent {
     return true;
   }
 
+  public boolean isVisible() {
+    return true;
+  }
+
   public abstract String getDescription();
 
   public abstract SearchResults find(SearchQuery query);

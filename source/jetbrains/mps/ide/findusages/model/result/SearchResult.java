@@ -24,8 +24,16 @@ public class SearchResult implements IExternalizableComponent {
     myCategory = category;
   }
 
+  public SearchResult(SNode node, String category) {
+    this(new SNodePointer(node), category);
+  }
+
   public SNodePointer getNodePointer() {
     return myNodePointer;
+  }
+
+  public SNode getNode() {
+    return myNodePointer.getNode();
   }
 
   public String getCategory() {

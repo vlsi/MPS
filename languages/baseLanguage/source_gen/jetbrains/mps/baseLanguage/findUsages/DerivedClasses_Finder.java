@@ -37,6 +37,10 @@ public class DerivedClasses_Finder extends BaseFinder {
     return true;
   }
 
+  public boolean isVisible() {
+    return true;
+  }
+
   public SearchResults find(SearchQuery searchQuery) {
     SearchResults global_results = new SearchResults();
     {
