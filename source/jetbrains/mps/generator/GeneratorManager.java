@@ -507,7 +507,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             progress.addText("Checking model \"" + sourceModelDescriptor.getModelUID() + "\"... ");
             ModelCheckResult result = new ModelChecker(invocationContext).checkModel(sourceModelDescriptor);
             if (result.hasErrors()) {
-              if (JOptionPane.showConfirmDialog(invocationContext.getMainFrame(), "Model " + sourceModelDescriptor.getModelUID() + " has errors. Are you sure that you want to generate it?") != JOptionPane.YES_OPTION) {
+              if (JOptionPane.showConfirmDialog(
+                      invocationContext.getMainFrame(),
+                      "Model's " + sourceModelDescriptor.getModelUID() + " generation finished with errors. Do you want to save generated files?",
+                      "Generation finished with errors",
+                      JOptionPane.YES_NO_OPTION) != JOptionPane.YES_OPTION) {
                 continue;
               }
             }
