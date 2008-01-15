@@ -1739,16 +1739,6 @@
       <JAVADOC />
       <SOURCES />
     </library>
-    <library name="Guice">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/guice/aopalliance.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/guice/guice-1.0.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/guice/guice-src.zip!/" />
-      </SOURCES>
-    </library>
     <library name="BerkeleyDB JE">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/platform/dnq/runtime/lib/je-3.2.44.jar!/" />
