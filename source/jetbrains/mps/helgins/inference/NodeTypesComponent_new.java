@@ -9,9 +9,7 @@ import jetbrains.mps.util.Mapper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.helgins.integration.HelginsPreferencesComponent;
-import jetbrains.mps.helgins.integration.Highlighter;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.bootstrap.helgins.runtime.InferenceRule_Runtime;
 import jetbrains.mps.bootstrap.helgins.runtime.NonTypesystemRule_Runtime;
@@ -28,7 +26,6 @@ import jetbrains.mps.ide.InspectorPane;
 import jetbrains.mps.ide.InspectorTool;
 import jetbrains.mps.nodeEditor.IGutterMessageOwner;
 import jetbrains.mps.nodeEditor.AbstractEditorComponent;
-import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.core.structure.BaseConcept;
 
 import java.util.*;
@@ -301,7 +298,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     for (Entry<SNode, SNode> contextEntry : new HashSet<Entry<SNode, SNode>>(myNodesToTypesMap.entrySet())) {
       SNode term = contextEntry.getKey();
       if (term == null) continue;
-      SNode type = expandType(contextEntry.getValue(), myTypeChecker.getRuntimeTypesModel());
+      SNode type = expandType(term, contextEntry.getValue(), myTypeChecker.getRuntimeTypesModel());
       if (BaseAdapter.isInstance(type, RuntimeErrorType.class)) {
         RuntimeErrorType errorType = (RuntimeErrorType) BaseAdapter.fromNode(type);
         reportTypeError(term, errorType.getErrorText(), errorType.getNodeModel(), errorType.getNodeId());
@@ -521,9 +518,9 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     return iErrorReporter;
   }
 
-  private SNode expandType(SNode node, SModel typesModel) {
-    if (node == null) return null;
-    NodeWrapper wrapper = NodeWrapper.createNodeWrapper(node);
+  private SNode expandType(SNode term, SNode type, SModel typesModel) {
+    if (type == null) return null;
+    NodeWrapper wrapper = NodeWrapper.createNodeWrapper(type);
     IWrapper representator;
     try {
       representator = myEquationManager.getRepresentatorWrapper(wrapper);
@@ -531,15 +528,15 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
       System.err.println("oy vey!");
       throw new OutOfMemoryError();
     }
-    return expandWrapper(representator, typesModel).getNode();
+    return expandWrapper(term, representator, typesModel).getNode();
   }
 
-  private IWrapper expandWrapper(IWrapper representator, SModel typesModel) {
+  private IWrapper expandWrapper(SNode term, IWrapper representator, SModel typesModel) {
     if (representator instanceof MeetWrapper) {
       MeetWrapper meetWrapper = (MeetWrapper) representator;
       MeetType meetType = MeetType.newInstance(typesModel);
       for (IWrapper wrapper : meetWrapper.getArguments()) {
-        meetType.addArgument((BaseConcept) expandWrapper(wrapper, typesModel).getNode().getAdapter());
+        meetType.addArgument((BaseConcept) expandWrapper(term, wrapper, typesModel).getNode().getAdapter());
       }
       return NodeWrapper.createNodeWrapper(meetType.getNode());
     }
@@ -547,14 +544,14 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
       JoinWrapper joinWrapper = (JoinWrapper) representator;
       JoinType joinType = JoinType.newInstance(typesModel);
       for (IWrapper wrapper : joinWrapper.getArguments()) {
-        joinType.addArgument((BaseConcept) expandWrapper(wrapper, typesModel).getNode().getAdapter());
+        joinType.addArgument((BaseConcept) expandWrapper(term, wrapper, typesModel).getNode().getAdapter());
       }
       return NodeWrapper.createNodeWrapper(joinType.getNode());
     }
-    return expandNode(representator, representator, 0, new HashSet<IWrapper>(), typesModel);
+    return expandNode(term, representator, representator, 0, new HashSet<IWrapper>(), typesModel);
   }
 
-  private NodeWrapper expandNode(IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel) {
+  private NodeWrapper expandNode(SNode term, IWrapper wrapper, IWrapper representator, int depth, Set<IWrapper> variablesMet, SModel typesModel) {
     if (wrapper == null) return null;
 
     if (wrapper.isVariable()) {
@@ -569,23 +566,23 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
           return NodeWrapper.createNodeWrapper(error.getNode());
         }
         variablesMet.add(wrapper);
-        wrapper1 = expandNode(type, type, 0, variablesMet, typesModel);
+        wrapper1 = expandNode(term, type, type, 0, variablesMet, typesModel);
         variablesMet.remove(wrapper);
       }
       return wrapper1;
     }
-    if (wrapper.isCondition()) {
+    WhenConcreteEntity whenConcreteEntity = myEquationManager.getWhenConcreteEntity(wrapper);
+    if (whenConcreteEntity != null) {
       RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
       error.setErrorText("argument of WHEN CONCRETE block is never concrete");
-      ConditionWrapper conditionWrapper = (ConditionWrapper) wrapper;
-      error.setNodeModel(conditionWrapper.getNodeModel());
-      error.setNodeId(conditionWrapper.getNodeId());
-      return NodeWrapper.createNodeWrapper(error.getNode());
+      error.setNodeModel(whenConcreteEntity.getNodeModel());
+      error.setNodeId(whenConcreteEntity.getNodeId());
+      reportTypeError(term, error.getErrorText(), error.getNodeModel(), error.getNodeId());
     }
     Map<SNode, SNode> childrenReplacement = new HashMap<SNode, SNode>();
     List<SNode> children = new ArrayList<SNode>(wrapper.getNode().getChildren());
     for (SNode child : children) {
-      SNode newChild = expandNode(NodeWrapper.createNodeWrapper(child), representator, depth + 1, variablesMet, typesModel).getNode();
+      SNode newChild = expandNode(term, NodeWrapper.createNodeWrapper(child), representator, depth + 1, variablesMet, typesModel).getNode();
       if (newChild != child) {
         childrenReplacement.put(child, newChild);
       }
@@ -611,7 +608,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     for (SReference reference : references) {
       SNode oldNode = reference.getTargetNode();
       if (BaseAdapter.isInstance(oldNode, RuntimeTypeVariable.class)) {
-        SNode newNode = expandNode(NodeWrapper.createNodeWrapper(oldNode), representator, depth, variablesMet, typesModel).getNode();
+        SNode newNode = expandNode(term, NodeWrapper.createNodeWrapper(oldNode), representator, depth, variablesMet, typesModel).getNode();
         referenceReplacement.put(reference, newNode);
       }
     }

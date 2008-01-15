@@ -1,6 +1,5 @@
 package jetbrains.mps.helgins.inference;
 
-import jetbrains.mps.baseLanguage.ext.collections.lang.structure.ListType;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
 import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
 import jetbrains.mps.logging.Logger;
@@ -28,10 +27,6 @@ public class NodeWrapper implements IWrapper {
 
   private SNode myNode;
 
-  private Set<SNodePointer> myVariables;
-  private boolean myMayHaveVariables = true;
-
-
   public static NodeWrapper createNodeWrapper(SNode node) {
     if (USE_NEW_WRAPPERS) {
       return new NodeWrapper_new(node);
@@ -55,10 +50,6 @@ public class NodeWrapper implements IWrapper {
     return "jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable".equals(myNode.getConceptFqName());
   }
 
-  public boolean isCondition() {
-    return false;
-  }
-
   public boolean isConcrete() {
     return !isVariable();
   }
@@ -78,54 +69,12 @@ public class NodeWrapper implements IWrapper {
       }, false);
       if (b) {
         if (equationManager != null) {
-          equationManager.addChildEquations(childEQs, errorInfo);
+          equationManager.addChildEquations(this, wrapper, childEQs, errorInfo);
         }
       }
       return b;
     }
     return wrapper.matchesWith(this, equationManager, errorInfo);
-  }
-
-  public boolean containsVariables(EquationManager equationManager) {
-    if (!myMayHaveVariables) {
-      return false;
-    }
-
-    if (isVariable()) {
-      return true;
-    }
-
-    //first check
-    for (RuntimeTypeVariable var : this.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
-      if (myVariables == null) {
-        myVariables = new HashSet<SNodePointer>(1);
-      }
-      myVariables.add(new SNodePointer(var.getNode()));
-    }
-
-    //processing additional variables
-    if (myVariables != null) {
-      for (SNodePointer var : new HashSet<SNodePointer>(myVariables)) {
-        SNode node = var.getNode();
-        if (node == null) {
-          myVariables.remove(var);
-          continue;
-        }
-        if (equationManager.getRepresentatorWrapper(NodeWrapper.createNodeWrapper(node)).isConcrete()) {
-          myVariables.remove(var);
-          for (RuntimeTypeVariable varChild : this.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
-            myVariables.add(new SNodePointer(varChild.getNode()));
-          }
-        }
-      }
-    }
-
-    if (myVariables != null && !(myVariables.isEmpty())) {
-      return true;
-    } else {
-      myMayHaveVariables = false;
-      return false;
-    }
   }
 
   public RuntimeTypeVariable getVariable() {

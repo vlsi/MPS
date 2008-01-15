@@ -30,6 +30,7 @@ public class EquationManager {
   private Map<IWrapper, Map<IWrapper, ErrorInfo>> myComparableTypesMapStrong = new HashMap<IWrapper, Map<IWrapper, ErrorInfo>>();
 
   private Map<IWrapper, IWrapper> myEquations = new HashMap<IWrapper, IWrapper>();
+  private Map<IWrapper, WhenConcreteEntity> myWhenConcreteEntities = new HashMap<IWrapper, WhenConcreteEntity>();
 
   private Map<IWrapper, Set> myTypesWithEffects = new HashMap<IWrapper, Set>();
 
@@ -133,16 +134,6 @@ public class EquationManager {
       return;
     }
 
-    if (supertypeRepresentator != null && supertypeRepresentator.isCondition() ||
-            subtypeRepresentator != null && subtypeRepresentator.isCondition()) {
-      if (isWeak) {
-        addSubtyping(subtypeRepresentator, supertypeRepresentator, errorInfo);
-      } else {
-        addStrongSubtyping(subtypeRepresentator, supertypeRepresentator, errorInfo);
-      }
-      return;
-    }
-
     // if subtyping
     if (myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, errorInfo, isWeak)) {
       return;
@@ -230,6 +221,46 @@ public class EquationManager {
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
   }
 
+  public WhenConcreteEntity getWhenConcreteEntity(IWrapper wrapper) {
+    return myWhenConcreteEntities.get(wrapper);
+  }
+
+  public void clearWhenConcreteEntity(IWrapper wrapper) {
+    myWhenConcreteEntities.remove(wrapper);
+  }
+
+  public void addWhenConcreteEntity(IWrapper wrapper, final WhenConcreteEntity entity) {
+    IWrapper representator = getRepresentatorWrapper(wrapper);
+    final WhenConcreteEntity oldEntity = myWhenConcreteEntities.remove(representator);
+    WhenConcreteEntity entityToPut = entity;
+    if (oldEntity != null) {
+      entityToPut = new WhenConcreteEntity(
+              new Runnable() {
+                public void run() {
+                  oldEntity.run();
+                  entity.run();
+                }
+              },
+              oldEntity.getNodeModel(),
+              oldEntity.getNodeId());
+    }
+
+    myWhenConcreteEntities.put(representator, entityToPut);
+    checkConcrete(representator);
+  }
+
+  private void checkConcrete(IWrapper wrapper) {
+    if (wrapper == null) return;
+    // NB: we assume that wrapper is a representator
+    WhenConcreteEntity whenConcreteEntity = getWhenConcreteEntity(wrapper);
+    if (whenConcreteEntity != null) {
+      if (whenConcreteEntity.isConcrete(wrapper, this)) {
+        clearWhenConcreteEntity(wrapper);
+        whenConcreteEntity.run();
+      }
+    }
+  }
+
   public void addEquation(SNode lhs, SNode rhs, SNode nodeToCheck) {
     addEquation(NodeWrapper.fromNode(lhs), NodeWrapper.fromNode(rhs), new ErrorInfo(nodeToCheck, null));
   }
@@ -263,24 +294,6 @@ public class EquationManager {
       }
     }
 
-    if (rhsRepresentator.isCondition() && lhsRepresentator.isCondition()) {
-      ConditionWrapper leftConditionWrapper = (ConditionWrapper) lhsRepresentator;
-      ConditionWrapper rightConditionWrapper = (ConditionWrapper) rhsRepresentator;
-      ConditionWrapper andWrapper = new ConditionWrapper(
-              new AndCondition<SNode>(leftConditionWrapper.getCondition(), rightConditionWrapper.getCondition(), true),
-              leftConditionWrapper.getNodeModel(),
-              leftConditionWrapper.getNodeId());
-      processEquation(rightConditionWrapper, leftConditionWrapper, errorInfo);
-      processEquation(leftConditionWrapper, andWrapper, errorInfo);
-      return;
-    }
-
-    if (rhsRepresentator.isCondition()) {
-      processEquation(rhsRepresentator, lhsRepresentator, errorInfo);
-    } else if (lhsRepresentator.isCondition()) {
-      processEquation(lhsRepresentator, rhsRepresentator, errorInfo);
-    }
-
     // solve equation
     if (!compareWrappers(rhsRepresentator, lhsRepresentator, errorInfo)) {
       IErrorReporter errorReporter;
@@ -299,10 +312,13 @@ public class EquationManager {
     }
   }
 
-  void addChildEquations(Set<Pair<SNode, SNode>> childEqs, ErrorInfo errorInfo) {
+  void addChildEquations(IWrapper parent1, IWrapper parent2, Set<Pair<SNode, SNode>> childEqs, ErrorInfo errorInfo) {
     for (Pair<SNode, SNode> eq : childEqs) {
       addEquation(NodeWrapper.fromNode(eq.o2), NodeWrapper.fromNode(eq.o1), errorInfo);
     }
+    //parent1 & parent2 are both shallow-concrete, and after child equations they may become fully concrete
+    checkConcrete(parent1);
+    checkConcrete(parent2);
   }
 
   private void processEquation(IWrapper var, IWrapper type, ErrorInfo errorInfo) {
@@ -404,6 +420,12 @@ public class EquationManager {
         addInequationComparable(subtype, type, comparables.get(subtype), false);
       }
     }
+
+    WhenConcreteEntity varConditionWrapper = getWhenConcreteEntity(var);
+    clearWhenConcreteEntity(var);
+    if (varConditionWrapper != null) {
+      addWhenConcreteEntity(type, varConditionWrapper);
+    }
   }
 
   private void processErrorEquation(IWrapper type, IWrapper error, IErrorReporter errorReporter, SNode nodeToCheck) {
@@ -433,9 +455,7 @@ public class EquationManager {
     if (wrapper1 == null || wrapper2 == null) {
       return new HashSet<Pair<SNode, SNode>>();
     }
-    if (wrapper1.isCondition() || wrapper2.isCondition()) {
-      return new HashSet<Pair<SNode, SNode>>();
-    }
+
     final SNode node1 = wrapper1.getNode();
     final SNode node2 = wrapper2.getNode();
     final Set<Pair<SNode, SNode>> result = new HashSet<Pair<SNode, SNode>>();
@@ -569,27 +589,8 @@ public class EquationManager {
   public void solveInequations() {
     Set<IWrapper> types = subtypingGraphVertices();
     boolean hasConcreteTypes = true;
-    boolean hasConditionTypes = true;
 
     // we assume that there are no equations such as T1 :< T2 where T1 and T2 are both concrete
-    Set<IWrapper> visitedConditionTypes = new HashSet<IWrapper>();
-    while (hasConditionTypes) {
-      hasConditionTypes = false;
-      for (IWrapper type : types) {
-        if (type == null) continue;
-        if (visitedConditionTypes.contains(type)) continue;
-        if (type.isCondition()) {
-          typeLessThanVar(type, true);
-          typeLessThanVar(type, false);
-          varLessThanType(type, true);
-          varLessThanType(type, false);
-          hasConditionTypes = true;
-          visitedConditionTypes.add(type);
-        }
-      }
-      types = subtypingGraphVertices();
-    }
-
     while (hasConcreteTypes) {
       hasConcreteTypes = false;
       for (IWrapper type : types) {

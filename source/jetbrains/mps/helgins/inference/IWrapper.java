@@ -16,6 +16,4 @@ public interface IWrapper extends IMatcher {
   public boolean isVariable();
   public boolean isConcrete();
   public RuntimeTypeVariable getVariable();
-  public boolean isCondition();
-  public boolean containsVariables(EquationManager equationManager);
 }

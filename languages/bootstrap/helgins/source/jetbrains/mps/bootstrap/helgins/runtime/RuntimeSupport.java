@@ -5,7 +5,6 @@ import jetbrains.mps.helgins.inference.EquationManager.ErrorInfo;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.patterns.IMatchingPattern;
 import jetbrains.mps.bootstrap.helgins.structure.RuntimeTypeVariable;
-import jetbrains.mps.util.Condition;
 
 import java.util.Map;
 import java.util.Set;
@@ -229,13 +228,8 @@ public class RuntimeSupport {
 
   public void whenConcrete(SNode argument, final Runnable r, String nodeModel, String nodeId) {
     if (argument == null) return;
-    myTypeChecker.getEquationManager().addEquation(NodeWrapper.createNodeWrapper(argument),
-            new ConditionWrapper(new Condition<SNode>() {
-              public boolean met(SNode object) {
-                r.run();
-                return true;
-              }
-            }, nodeModel, nodeId), null);
+    myTypeChecker.getEquationManager().addWhenConcreteEntity(NodeWrapper.createNodeWrapper(argument),
+            new WhenConcreteEntity(r, nodeModel, nodeId));
   }
 
   public Set getEffects(SNode type) {

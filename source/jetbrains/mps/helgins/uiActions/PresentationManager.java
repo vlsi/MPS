@@ -1,7 +1,6 @@
 package jetbrains.mps.helgins.uiActions;
 
 import jetbrains.mps.helgins.inference.NodeWrapper;
-import jetbrains.mps.helgins.inference.ConditionWrapper;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
@@ -20,9 +19,6 @@ public class PresentationManager {
   public static String toString(Object type) {
     if (type == null) return null;
     INodeAdapter typeAdapter = null;
-    if (type instanceof ConditionWrapper) {
-      return "<CONDITION>";
-    }
     if (type instanceof NodeWrapper) {
       typeAdapter = BaseAdapter.fromNode(((NodeWrapper)type).getNode());
     }
