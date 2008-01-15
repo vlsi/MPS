@@ -1711,15 +1711,6 @@
         <root url="jar://$PROJECT_DIR$/lib/commons-fileupload/commons-fileupload-1.2-sources.jar!/" />
       </SOURCES>
     </library>
-    <library name="GWT">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/gwt/gwt-user.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/gwt/gwt-user.jar!/" />
-      </SOURCES>
-    </library>
     <library name="jetty">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/jetty/jetty-6.1.5.jar!/" />
