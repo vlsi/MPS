@@ -10,6 +10,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.util.Calculable;
 
 import javax.swing.JPopupMenu;
 import javax.swing.Icon;
@@ -71,6 +72,9 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
 
   public String calculateNodeIdentifier() {
     if (getNode() == null) return "null";
+    if (myHierarchyTree.overridesNodeIdentifierCalculation()) {
+      return myHierarchyTree.calculateNodeIdentifier(this);
+    }
     String namespace = getNode().getModel().toString();
     return getNode().getName() + "  (" + namespace + ")";
   }

@@ -57,6 +57,14 @@ public class SupertypesTree extends AbstractHierarchyTree<INodeAdapter> {
     return true;
   }
 
+  public boolean overridesNodeIdentifierCalculation() {
+    return true;
+  }
+
+  public String calculateNodeIdentifier(HierarchyTreeNode<INodeAdapter> treeNode) {
+    return PresentationManager.toString(treeNode.getNode());
+  }
+
   private class MyBaseNodeDialog extends BaseNodeDialog {
     private final HierarchyTreeNode<INodeAdapter> myHierarchyTreeNode;
 

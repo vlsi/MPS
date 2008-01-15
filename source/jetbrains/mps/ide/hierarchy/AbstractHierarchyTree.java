@@ -43,6 +43,14 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
     return myHierarchyView;
   }
 
+  public boolean overridesNodeIdentifierCalculation() {
+    return false;
+  }
+
+  public String calculateNodeIdentifier(HierarchyTreeNode<T> node) {
+    throw new UnsupportedOperationException();
+  }
+
   public boolean isParentHierarchy() {
     return myIsParentHierarchy;
   }
@@ -140,7 +148,7 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
     if (myHierarchyView != null) {
       myHierarchyView.myTreeNode = hierarchyTreeNode;
       assert myHierarchyView.myTreeNode != null;
-      text = "<html>Hierarchy for <font color=\"#400090\"><b>" + TreeTextUtil.toHtml(((T) myHierarchyView.myTreeNode.getUserObject()).getName()) + "</b></font>";
+      text = "<html>Hierarchy for <font color=\"#400090\"><b>" + TreeTextUtil.toHtml(myHierarchyView.myTreeNode.calculateNodeIdentifier()) + "</b></font>";
     }
     TextTreeNode textRootNode = new RootTextTreeNode(text);
     textRootNode.add(rootNode);
