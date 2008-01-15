@@ -396,26 +396,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     // for each template switch test conditions and choose template node
     for (TemplateSwitch aSwitch : switches) {
-      // old rules
-      Iterator<ConditionalTemplate> iterator = aSwitch.templates();
-      while (iterator.hasNext()) {
-        ConditionalTemplate conditionalTemplate = iterator.next();
-
-        // ... test condition
-        String conditionAspectId = conditionalTemplate.getConditionAspectId();
-        String methodName = "semanticNodeCondition_" + conditionAspectId;
-        Object[] args = new Object[]{sourceNode};
-        try {
-          Boolean condition = (Boolean) QueryMethod.invokeWithOptionalArg(methodName, args, conditionalTemplate.getModel(), getOperationContext());
-          if (condition) {
-            return conditionalTemplate.getTemplate();
-          }
-        } catch (Throwable t) {
-          throw new GenerationFailedException(new GenerationFailueInfo("Error while processing template switch", sourceNode, null, conditionalTemplate.getNode(), getGeneratorSessionContext()), t);
-        }
-      }
-
-      // new rules
       List<Reduction_MappingRule> rules = aSwitch.getReductionMappingRules();
       for (Reduction_MappingRule rule : rules) {
         if (GeneratorUtil.checkPremiseForBaseMappingRule(sourceNode, nodeConcept, rule, this)) {
