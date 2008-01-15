@@ -3,38 +3,38 @@
   <persistence version="1"/>
   <refactoringHistory/>
   <language namespace="jetbrains.mps.bootstrap.findUsagesLanguage">
+    <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.editor" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.actions" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.constraints" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.helgins" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.structure" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.actions" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.findUsagesLanguage.editor" version="-1"/>
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1"/>
   </language>
   <language namespace="jetbrains.mps.bootstrap.smodelLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.helgins" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.intentions" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.scripts" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.constraints" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.actions" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.editor" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.bootstrap.smodelLanguage.structure" version="-1"/>
   </language>
   <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.findUsages" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.findUsages" version="-1"/>
   </language>
   <language namespace="jetbrains.mps.quotation">
     <languageAspect modelUID="jetbrains.mps.quotation.helgins" version="-1"/>
@@ -42,11 +42,11 @@
     <languageAspect modelUID="jetbrains.mps.quotation.structure" version="-1"/>
   </language>
   <language namespace="jetbrains.mps.core">
-    <languageAspect modelUID="jetbrains.mps.core.structure" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.core.constraints" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.core.editor" version="-1"/>
-    <languageAspect modelUID="jetbrains.mps.core.scripts" version="-1"/>
     <languageAspect modelUID="jetbrains.mps.core.actions" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.core.scripts" version="-1"/>
+    <languageAspect modelUID="jetbrains.mps.core.structure" version="-1"/>
   </language>
   <maxImportIndex value="10"/>
   <import index="1" modelUID="jetbrains.mps.baseLanguage.structure" version="-1"/>
@@ -874,9 +874,16 @@
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1200411794366">
                     <node role="statement" type="jetbrains.mps.bootstrap.findUsagesLanguage.structure.ResultStatement"
                           id="1200425027085">
-                      <node role="foundNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
-                            id="1200425027086">
-                        <link role="variableDeclaration" targetNodeId="1200412892399" resolveInfo="node"/>
+                      <node role="foundNode"
+                            type="jetbrains.mps.bootstrap.smodelLanguage.structure.SNodeOperationExpression"
+                            id="1200429055906">
+                        <node role="nodeOperation"
+                              type="jetbrains.mps.bootstrap.smodelLanguage.structure.Node_GetParentOperation"
+                              id="1200429059080"/>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference"
+                              id="1200425027086">
+                          <link role="variableDeclaration" targetNodeId="1200412892399" resolveInfo="node"/>
+                        </node>
                       </node>
                       <node role="category" type="jetbrains.mps.baseLanguage.structure.StringLiteral"
                             id="1200425027087">

@@ -95,7 +95,7 @@ public class ImplementingClasses_Finder extends BaseFinder {
         SNode node = interfaceResult.getNodePointer().getNode();
         if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
           if (SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) {
-            global_results.getSearchResults().add(new SearchResult(new SNodePointer(node), "Implementing Classes"));
+            global_results.getSearchResults().add(new SearchResult(new SNodePointer(SNodeOperations.getParent(node, null, false, false)), "Implementing Classes"));
             // null
             List<SearchResult> classesResult = new ArrayList<SearchResult>();
             try {
