@@ -58,6 +58,8 @@ public class OverridingMethods_Finder extends BaseFinder {
       try {
         BaseFinder finder_ = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
         boolean rightConcept = finder_.getConcept().equals(SNodeOperations.getParent(searchedNode, null, false, false).getConceptFqName());
+        // TODO
+        rightConcept = true;
         if (!(rightConcept)) {
           OverridingMethods_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
         } else {

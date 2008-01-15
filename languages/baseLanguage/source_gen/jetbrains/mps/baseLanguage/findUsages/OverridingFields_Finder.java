@@ -50,20 +50,22 @@ public class OverridingFields_Finder extends BaseFinder {
       List<SNode> nodes = new ArrayList<SNode>();
       List<SearchResult> results = new ArrayList<SearchResult>();
       try {
-        BaseFinder finder_8 = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
-        boolean rightConcept = finder_8.getConcept().equals(SNodeOperations.getParent(searchedNode, null, false, false).getConceptFqName());
+        BaseFinder finder_9 = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
+        boolean rightConcept = finder_9.getConcept().equals(SNodeOperations.getParent(searchedNode, null, false, false).getConceptFqName());
+        // TODO
+        rightConcept = true;
         if (!(rightConcept)) {
-          OverridingFields_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_8.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
+          OverridingFields_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_9.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
         } else {
-          boolean isApplicable = finder_8.isApplicable(SNodeOperations.getParent(searchedNode, null, false, false));
+          boolean isApplicable = finder_9.isApplicable(SNodeOperations.getParent(searchedNode, null, false, false));
           if (!(isApplicable)) {
-            OverridingFields_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_8.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
+            OverridingFields_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_9.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
           } else {
-            SearchResults results_8 = finder_8.find(new SearchQuery(SNodeOperations.getParent(searchedNode, null, false, false), searchQuery.getScope()));
-            for (SNodePointer nodePointer : results_8.getSearchedNodePointers()) {
+            SearchResults results_9 = finder_9.find(new SearchQuery(SNodeOperations.getParent(searchedNode, null, false, false), searchQuery.getScope()));
+            for (SNodePointer nodePointer : results_9.getSearchedNodePointers()) {
               ListOperations.addElement(nodes, nodePointer.getNode());
             }
-            for (SearchResult result : results_8.getSearchResults()) {
+            for (SearchResult result : results_9.getSearchResults()) {
               results.add(result);
             }
           }
