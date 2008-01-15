@@ -3,12 +3,12 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
   </language>
   <maxImportIndex value="38" />
   <import index="4" modelUID="jetbrains.mps.core.structure" version="-1" />
@@ -2388,6 +2388,26 @@
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDeclaration" id="1199653749349">
     <property name="name" value="IStatementListContainer" />
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1200397529627">
+    <property name="name" value="CharConstant" />
+    <link role="extends" targetNodeId="1068431790191" resolveInfo="Expression" />
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1200397611079">
+      <property name="value" value="'" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1200398625594">
+      <property name="value" value="char constant" />
+      <link role="conceptPropertyDeclaration" targetNodeId="4.1137473914776" resolveInfo="short_description" />
+    </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1200397540847">
+      <property name="name" value="charConstant" />
+      <link role="dataType" targetNodeId="1200397549879" resolveInfo="_CharConstant_String" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConstrainedDataTypeDeclaration" id="1200397549879">
+    <property name="name" value="_CharConstant_String" />
+    <property name="constraint" value="." />
   </node>
 </model>
 
