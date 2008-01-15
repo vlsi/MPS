@@ -20,11 +20,15 @@ public abstract class BaseFinder implements IExternalizableComponent {
 
   }
 
-  public abstract String getDescription();
+  public String getConcept() {
+    return "jetbrains.mps.core.structure.BaseConcept";
+  }
 
   public boolean isApplicable(SNode node) {
     return true;
   }
+
+  public abstract String getDescription();
 
   public abstract SearchResults find(SearchQuery query);
 }

@@ -63,7 +63,7 @@ public class FindUsagesManager implements IExternalizableComponent {
       if (findUsagesModelDescriptor != null) {
         SModel smodel = findUsagesModelDescriptor.getSModel();
         for (FinderDeclaration finderDeclaration : smodel.getRootsAdapters(FinderDeclaration.class)) {
-          String className = smodel.getUID().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedName_1197390200701(finderDeclaration.getNode());
+          String className = smodel.getUID().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1197390200701(finderDeclaration.getNode());
           String conceptName = FinderDeclaration_Behavior.call_getConceptName_1197390200711(finderDeclaration.getNode());
           try {
             Class<?> cls = l.getClass(className);
