@@ -184,39 +184,6 @@ public class GeneratorUtil {
     }
   }
 
-  /**
-   * old
-   */
-  public static void applyMappingRule(MappingRule mappingRule, TemplateGenerator generator) {
-    BaseConcept templateNode = mappingRule.getTemplateNode();
-    if (templateNode == null) {
-      generator.showErrorMessage(null, null, mappingRule.getNode(), "mapping rule has no template");
-      return;
-    }
-    List<SNode> inputNodes = createInputNodeListForMappingRule(mappingRule, generator);
-    boolean wasChanged = generator.isChanged();
-    try {
-      if (inputNodes.size() > 0) generator.setChanged(true);
-      for (SNode inputNode : inputNodes) {
-        createRootNodeFromTemplate(mappingRule.getName(), BaseAdapter.fromAdapter(templateNode), inputNode, generator);
-        if (inputNode.isRoot()) {
-          generator.addRootNotToCopy(inputNode);
-        }
-      }
-    } catch (DismissTopMappingRuleException e) {
-      // it's ok, just continue
-      generator.setChanged(wasChanged);
-    }
-  }
-
-  private static List<SNode> createInputNodeListForMappingRule(MappingRule mappingRule, ITemplateGenerator generator) {
-    String sourceQueryAspectId = mappingRule.getSourceQueryAspectId();
-    String methodName = "templateMappingRule_SourceQuery_" + sourceQueryAspectId;
-    Object[] args = new Object[]{generator};
-    List<SNode> inputNodes = (List<SNode>) QueryMethod.invoke(methodName, args, mappingRule.getModel());
-    return inputNodes;
-  }
-
   public static void applyRoot_MappingRule(Root_MappingRule rule, TemplateGenerator generator) {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {

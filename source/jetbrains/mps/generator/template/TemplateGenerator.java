@@ -87,7 +87,6 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (isPrimary) {
       myRuleManager.applyCreateRootRules();
     }
-    myRuleManager.applyMappingRules();
     myRuleManager.applyRoot_MappingRules();
 
     checkMonitorCanceled();

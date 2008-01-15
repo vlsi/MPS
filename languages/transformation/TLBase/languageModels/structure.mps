@@ -147,13 +147,6 @@
     <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1175152822399">
       <link role="intfc" targetNodeId="2.1169194658468" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1095416692159">
-      <property name="targetCardinality" value="1" />
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="mappingRule" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1095416572297" resolveInfo="MappingRule" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1167514678247">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="rootMappingRule" />
@@ -206,28 +199,6 @@
     <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1163452921864">
       <property name="value" value="mapping configuration" />
       <link role="conceptPropertyDeclaration" targetNodeId="2.1137473891462" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1095416572297">
-    <property name="name" value="MappingRule" />
-    <property name="package" value="Rule" />
-    <link role="extends" targetNodeId="2.1133920641626" />
-    <node role="implements" type="jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptReference" id="1175152829041">
-      <link role="intfc" targetNodeId="2.1169194658468" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1095440741546">
-      <property name="name" value="sourceQueryAspectId" />
-      <link role="dataType" targetNodeId="2.1082983041843" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1095417265990">
-      <property name="targetCardinality" value="0..n" />
-      <property name="role" value="templateNode" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1078489098625" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.bootstrap.structureLanguage.structure.StringConceptProperty" id="1167514646855">
-      <property name="value" value="replaced with Root_MappingRule" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1162838948922" />
     </node>
   </node>
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1095672379244">

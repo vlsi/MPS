@@ -7,24 +7,21 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
-import jetbrains.mps.transformation.TLBase.structure.*;
-import jetbrains.mps.generator.template.GeneratorUtil;
 import jetbrains.mps.generator.GenerationFailedException;
 import jetbrains.mps.generator.GenerationFailueInfo;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.transformation.TLBase.structure.*;
 import jetbrains.mps.util.QueryMethod;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.LinkedList;
 
 public class RuleManager {
 
   private List<CreateRootRule> myCreateRootRules;
-  private List<MappingRule> myMappingRules;
   private List<Root_MappingRule> myRoot_MappingRules;
   private List<Weaving_MappingRule> myWeaving_MappingRules;
   private List<ConceptDeclaration> myAbandonedRootConcepts;
@@ -46,7 +43,6 @@ public class RuleManager {
 
   protected void initialize() {
     myCreateRootRules = new ArrayList<CreateRootRule>();
-    myMappingRules = new ArrayList<MappingRule>();
     myRoot_MappingRules = new ArrayList<Root_MappingRule>();
     myWeaving_MappingRules = new ArrayList<Weaving_MappingRule>();
     myAbandonedRootConcepts = new ArrayList<ConceptDeclaration>();
@@ -67,12 +63,7 @@ public class RuleManager {
         myCreateRootRules.add(createRootRules.next());
       }
 
-      // mapping rules (old)
-      Iterator<MappingRule> mappingRules = mappingConfig.mappingRules();
-      while (mappingRules.hasNext()) {
-        myMappingRules.add(mappingRules.next());
-      }
-      // mapping rules (new)
+      // mapping rules
       Iterator<Root_MappingRule> root_MappingRules = mappingConfig.rootMappingRules();
       while (root_MappingRules.hasNext()) {
         myRoot_MappingRules.add(root_MappingRules.next());
@@ -109,13 +100,6 @@ public class RuleManager {
     for (CreateRootRule rule : myCreateRootRules) {
       myGenerator.checkMonitorCanceled();
       GeneratorUtil.applyCreateRootRule(rule, myGenerator);
-    }
-  }
-
-  public void applyMappingRules() {
-    for (MappingRule rule : myMappingRules) {
-      myGenerator.checkMonitorCanceled();
-      GeneratorUtil.applyMappingRule(rule, myGenerator);
     }
   }
 
