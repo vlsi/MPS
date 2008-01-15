@@ -65,9 +65,10 @@ public class WhenConcreteEntity {
           myVariables.remove(var);
           continue;
         }
-        if (equationManager.getRepresentatorWrapper(NodeWrapper.createNodeWrapper(var.getNode())).isConcrete()) {
+        IWrapper varRepresentatorWrapper = equationManager.getRepresentatorWrapper(NodeWrapper.createNodeWrapper(var.getNode()));
+        if (varRepresentatorWrapper.isConcrete()) {
           myVariables.remove(var);
-          for (RuntimeTypeVariable varChild : type.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
+          for (RuntimeTypeVariable varChild : varRepresentatorWrapper.getNode().allChildrenByAdaptor(RuntimeTypeVariable.class)) {
             myVariables.add(new SNodePointer(varChild.getNode()));
           }
         }

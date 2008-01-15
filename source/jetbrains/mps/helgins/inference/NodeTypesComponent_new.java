@@ -575,6 +575,7 @@ public class NodeTypesComponent_new implements IGutterMessageOwner, Cloneable {
     if (whenConcreteEntity != null) {
       RuntimeErrorType error = RuntimeErrorType.newInstance(typesModel);
       error.setErrorText("argument of WHEN CONCRETE block is never concrete");
+      whenConcreteEntity.isConcrete(wrapper, myEquationManager);
       error.setNodeModel(whenConcreteEntity.getNodeModel());
       error.setNodeId(whenConcreteEntity.getNodeId());
       reportTypeError(term, error.getErrorText(), error.getNodeModel(), error.getNodeId());
