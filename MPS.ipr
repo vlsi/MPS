@@ -1794,21 +1794,6 @@
         <root url="jar://$PROJECT_DIR$/lib/cxf/cxf-src.zip!/" />
       </SOURCES>
     </library>
-    <library name="Restlets">
-      <CLASSES>
-        <root url="jar://$PROJECT_DIR$/lib/restlets/com.noelios.restlet.ext.jetty_6.1.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/restlets/com.noelios.restlet.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/restlets/org.mortbay.jetty.ajp.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/restlets/org.mortbay.jetty.https.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/restlets/org.mortbay.jetty.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/restlets/org.mortbay.jetty.util.jar!/" />
-        <root url="jar://$PROJECT_DIR$/lib/restlets/org.restlet.jar!/" />
-      </CLASSES>
-      <JAVADOC />
-      <SOURCES>
-        <root url="jar://$PROJECT_DIR$/lib/restlets/restlet-api-src.zip!/" />
-      </SOURCES>
-    </library>
     <library name="Guice">
       <CLASSES>
         <root url="jar://$PROJECT_DIR$/lib/guice/aopalliance.jar!/" />
