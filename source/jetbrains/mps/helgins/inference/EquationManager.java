@@ -120,7 +120,7 @@ public class EquationManager {
 
     // if one of them is a var
 
-
+    //todo care about shallow-concrete types
     // if big problems with helgins replace this with the code like below:
     RuntimeTypeVariable varSubtype = subtypeRepresentator == null ? null : subtypeRepresentator.getVariable();
     //boolean subtypeContainsVars = subtypeRepresentator != null && subtypeRepresentator.containsVariables(this);
@@ -151,6 +151,9 @@ public class EquationManager {
             new EquationErrorReporter(this, "type ", subtypeRepresentator,
                     " is not" + strongString + " a subtype of ", supertypeRepresentator, "", errorInfo.myRuleModel, errorInfo.myRuleId);
     myTypeChecker.reportTypeError(errorInfo.getNodeWithError(), errorReporter);
+
+    //4debug
+    // myTypeChecker.getSubtypingManager().isSubtype(subtypeRepresentator, supertypeRepresentator, this, errorInfo, isWeak);
   }
 
   public void addInequationComparable(SNode type1, SNode type2, SNode nodeToCheck) {
@@ -750,8 +753,8 @@ public class EquationManager {
     set.add(effect);
   }
 
-  /*package*/ SNode expandType(SNode term, SNode type, SModel typesModel) {
-    return expandType(term, type, typesModel, false, null);
+  /*package*/ IWrapper expandWrapper(SNode term, IWrapper type, SModel typesModel) {
+    return expandWrapper(term, type, typesModel, false, null);
   }
 
   /*package*/ SNode expandType(SNode term, SNode type, SModel typesModel,
@@ -763,7 +766,7 @@ public class EquationManager {
     return expandWrapper(term, representator, typesModel, finalExpansion, nodeTypesComponent).getNode();
   }
 
-  private IWrapper expandWrapper(SNode term, IWrapper representator, SModel typesModel,
+  /*package*/ IWrapper expandWrapper(SNode term, IWrapper representator, SModel typesModel,
                                  boolean finalExpansion, NodeTypesComponent_new nodeTypesComponent) {
     if (representator instanceof MeetWrapper) {
       MeetWrapper meetWrapper = (MeetWrapper) representator;

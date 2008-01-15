@@ -75,7 +75,13 @@ public class SubtypingManager {
     if (subRepresentator == superRepresentator) return true;
     if (subRepresentator == null || superRepresentator == null) return false;
 
-    //todo expand
+    //expand, if contains some vars.
+    if (equationManager != null && subRepresentator instanceof NodeWrapper) {
+      NodeWrapper subtypeNodeWrapper = (NodeWrapper) subRepresentator;
+      SModel typesModel = getRuntimeTypesModel();
+      NodeWrapper representatorCopy = new NodeWrapper(CopyUtil.copy(subtypeNodeWrapper.getNode(), typesModel));
+      subRepresentator = equationManager.expandWrapper(null, representatorCopy, typesModel);
+    }
 
     if (superRepresentator.matchesWith(subRepresentator, equationManager, errorInfo)) {
       return true;
