@@ -23,7 +23,6 @@ import java.util.LinkedList;
 
 public class RuleManager {
 
-  private List<ConceptDeclaration> myOutputRootConcepts;
   private List<CreateRootRule> myCreateRootRules;
   private List<MappingRule> myMappingRules;
   private List<Root_MappingRule> myRoot_MappingRules;
@@ -50,7 +49,6 @@ public class RuleManager {
     myMappingRules = new ArrayList<MappingRule>();
     myRoot_MappingRules = new ArrayList<Root_MappingRule>();
     myWeaving_MappingRules = new ArrayList<Weaving_MappingRule>();
-    myOutputRootConcepts = new ArrayList<ConceptDeclaration>();
     myAbandonedRootConcepts = new ArrayList<ConceptDeclaration>();
     myReductionRules = new ArrayList<ReductionRule>();
     myReduction_MappingRules = new ArrayList<Reduction_MappingRule>();
@@ -63,16 +61,6 @@ public class RuleManager {
     mappingConfigs.addAll(getGenerator().getGeneratorSessionContext().getMappingConfigurations());
 
     for (MappingConfiguration mappingConfig : mappingConfigs) {
-      // output root concepts
-      Iterator<ConceptDeclarationReference> outputRootConcepts = mappingConfig.outputRootConcepts();
-      while (outputRootConcepts.hasNext()) {
-        ConceptDeclarationReference reference = outputRootConcepts.next();
-        ConceptDeclaration concept = reference.getConceptDeclaration();
-        if (!myOutputRootConcepts.contains(concept)) {
-          myOutputRootConcepts.add(concept);
-        }
-      }
-
       // conditional root rules
       Iterator<CreateRootRule> createRootRules = mappingConfig.createRootRules();
       while (createRootRules.hasNext()) {
@@ -116,10 +104,6 @@ public class RuleManager {
     }
   }
 
-
-  public List<ConceptDeclaration> getOutputRootConcepts() {
-    return myOutputRootConcepts;
-  }
 
   public void applyCreateRootRules() {
     for (CreateRootRule rule : myCreateRootRules) {
