@@ -413,13 +413,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         }
       }
 
-      // old: if switch has 'default'
-      TemplateDeclaration defaultTemplate = aSwitch.getDefaultTemplate();
-      if (defaultTemplate != null) {
-        return defaultTemplate;
-      }
-
-      // new default
+      // default
       RuleConsequence ruleConsequence = aSwitch.getDefaultConsequence();
       if (ruleConsequence != null) {
         return ruleConsequence;
