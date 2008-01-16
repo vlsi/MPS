@@ -17,6 +17,7 @@ import java.awt.event.ActionEvent;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.command.CommandProcessor;
 
 /**
  * Created by IntelliJ IDEA.
@@ -58,9 +59,13 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
     myList.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
         if (e.getClickCount() == 2) {
-          Item selectedItem = (Item) myList.getSelectedValue();
+          final Item selectedItem = (Item) myList.getSelectedValue();
           if (selectedItem == null) return;
-          doChoose(selectedItem);
+          CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+            public void run() {
+              doChoose(selectedItem);
+            }
+          });
           askForDispose();
         }
       }
@@ -70,9 +75,13 @@ public abstract class ChooseItemComponent<Item> extends JPanel {
 
     myMainPanel.registerKeyboardAction(new AbstractAction() {
       public void actionPerformed(ActionEvent e) {
-        Item selectedItem = (Item) myList.getSelectedValue();
+        final Item selectedItem = (Item) myList.getSelectedValue();
         if (selectedItem == null) return;
-        doChoose(selectedItem);
+        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+          public void run() {
+            doChoose(selectedItem);
+          }
+        });
         askForDispose();
       }
     }, KeyStroke.getKeyStroke("ENTER"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
