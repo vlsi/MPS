@@ -100,7 +100,7 @@ public class CreateRootNodeGroup extends ActionGroup {
       }
 
       public void doExecute(@NotNull final ActionContext context) {
-        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+        CommandProcessor.instance().executeCommand(new Runnable() {
           public void run() {
             final SNode[] node = new SNode[1];
 
