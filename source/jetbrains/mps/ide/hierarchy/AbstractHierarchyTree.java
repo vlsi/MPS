@@ -5,10 +5,12 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.TreeTextUtil;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
@@ -80,7 +82,11 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
 
   protected MPSTreeNode rebuild() {
     if (myHierarchyNode == null) return new RootTextTreeNode(noNodeString());
-    return rebuildParentHierarchy();
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable<MPSTreeNode>() {
+      public MPSTreeNode calculate() {
+        return rebuildParentHierarchy();
+      }
+    });
   }
 
   protected abstract String noNodeString();
@@ -135,10 +141,10 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
     HierarchyTreeNode parentTreeNode = null;
     HierarchyTreeNode hierarchyTreeNode = null;
     HierarchyTreeNode rootNode = null;
-    for (int i = parentHierarchy.size()-1 ; i >= 0; i--) {
-      hierarchyTreeNode = i>0?( new HierarchyTreeNode<T>(parentHierarchy.get(i), myOperationContext, this))
-              : new ChildHierarchyTreeNode<T>(parentHierarchy.get(i), myOperationContext, this);
-      if (i == parentHierarchy.size()-1) rootNode = hierarchyTreeNode;
+    for (int i = parentHierarchy.size() - 1; i >= 0; i--) {
+      hierarchyTreeNode = i > 0 ? (new HierarchyTreeNode<T>(parentHierarchy.get(i), myOperationContext, this))
+        : new ChildHierarchyTreeNode<T>(parentHierarchy.get(i), myOperationContext, this);
+      if (i == parentHierarchy.size() - 1) rootNode = hierarchyTreeNode;
       if (parentTreeNode != null) {
         parentTreeNode.add(hierarchyTreeNode);
       }
