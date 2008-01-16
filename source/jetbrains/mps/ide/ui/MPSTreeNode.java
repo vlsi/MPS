@@ -2,7 +2,9 @@ package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.SystemInfo;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.Calculable;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
@@ -88,7 +90,11 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     if (keyEvent.isAltDown() && (
             (!SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_INSERT) ||
             (SystemInfo.isMac && keyEvent.getKeyCode() == KeyEvent.VK_HELP))) {
-      JPopupMenu popupMenu = getQuickCreatePopupMenu();
+      JPopupMenu popupMenu = CommandProcessor.instance().executeLightweightCommand(new Calculable<JPopupMenu>() {
+        public JPopupMenu calculate() {
+          return getQuickCreatePopupMenu();
+        }
+      });
       if (popupMenu != null) {
         MPSTree mpsTree = getTree();
         if (mpsTree == null) return;

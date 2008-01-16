@@ -6,6 +6,7 @@ import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.tooltip.TreeToolTipHandler;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.util.Calculable;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -128,8 +129,12 @@ public abstract class MPSTree extends JTree {
           stroke.toString();
 
           for (TreePath p : paths) {
-            MPSTreeNode lastNode = (MPSTreeNode) p.getLastPathComponent();
-            JPopupMenu menu = lastNode.getPopupMenu();
+            final MPSTreeNode lastNode = (MPSTreeNode) p.getLastPathComponent();
+            JPopupMenu menu = CommandProcessor.instance().executeLightweightCommand(new Calculable<JPopupMenu>() {
+              public JPopupMenu calculate() {
+                return lastNode.getPopupMenu();
+              }
+            });
 
             if (menu == null) return;
 
@@ -317,8 +322,12 @@ public abstract class MPSTree extends JTree {
   private void showPopup(int x, int y) {
     TreePath path = getPathForLocation(x, y);
     if (path != null && path.getLastPathComponent() instanceof MPSTreeNode) {
-      MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-      JPopupMenu menu = node.getPopupMenu();
+      final MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+      JPopupMenu menu = CommandProcessor.instance().executeLightweightCommand(new Calculable<JPopupMenu>() {
+        public JPopupMenu calculate() {
+          return node.getPopupMenu();
+        }
+      });
       if (menu == null) return;
       if (!getSelectedPaths().contains(pathToString(path))) {
         setSelectionPath(path);
