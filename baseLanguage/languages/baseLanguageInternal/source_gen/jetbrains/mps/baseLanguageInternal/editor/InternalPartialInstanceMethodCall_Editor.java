@@ -171,7 +171,7 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
 
   public EditorCell createActualArgumentList(EditorContext context, SNode node) {
     if(this.myActualArgumentListHandler_actualArgumentList_ == null) {
-      this.myActualArgumentListHandler_actualArgumentList_ = new InternalPartialInstanceMethodCall_Editor._RefNodeListHandler(node, "actualArgument", context);
+      this.myActualArgumentListHandler_actualArgumentList_ = new InternalPartialInstanceMethodCall_Editor._RefNodeListHandler1(node, "actualArgument", context);
     }
     EditorCell_Collection editorCell = this.myActualArgumentListHandler_actualArgumentList_.createCells(context, new CellLayout_Horizontal(), false);
     InternalPartialInstanceMethodCall_Editor.setupBasic_ActualArgumentList(editorCell, node, context);
@@ -269,9 +269,9 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
     return cellWithRole;
   }
 
-  public static class _RefNodeListHandler extends RefNodeListHandler {
+  public static class _RefNodeListHandler1 extends RefNodeListHandler {
 
-    public  _RefNodeListHandler(SNode ownerNode, String childRole, EditorContext context) {
+    public  _RefNodeListHandler1(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
 
@@ -326,8 +326,8 @@ public class InternalPartialInstanceMethodCall_Editor extends DefaultNodeEditor 
 
     public EditorCell createConstantCell4(EditorContext context, SNode node, String text) {
       EditorCell_Constant editorCell = new EditorCell_Constant(context, node, text);
-      InternalPartialInstanceMethodCall_Editor._RefNodeListHandler.setupBasic_ConstantCell4(editorCell, node, context);
-      InternalPartialInstanceMethodCall_Editor._RefNodeListHandler.setupLabel_ConstantCell4(editorCell, node, context);
+      InternalPartialInstanceMethodCall_Editor._RefNodeListHandler1.setupBasic_ConstantCell4(editorCell, node, context);
+      InternalPartialInstanceMethodCall_Editor._RefNodeListHandler1.setupLabel_ConstantCell4(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
     }

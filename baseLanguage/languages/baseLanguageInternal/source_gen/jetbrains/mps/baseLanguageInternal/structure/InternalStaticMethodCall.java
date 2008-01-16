@@ -8,10 +8,13 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.baseLanguage.structure.Type;
+import java.util.Iterator;
+import java.util.List;
 
 public class InternalStaticMethodCall extends BaseMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall";
   public static String RETURN_TYPE = "returnType";
+  public static String TYPE_PARAMETER = "typeParameter";
   public static String FQ_CLASS_NAME = "fqClassName";
   public static String METHOD_NAME = "methodName";
 
@@ -34,6 +37,26 @@ public class InternalStaticMethodCall extends BaseMethodCall {
 
   public void setReturnType(Type node) {
     super.setChild(InternalStaticMethodCall.RETURN_TYPE, node);
+  }
+
+  public int getTypeParametersCount() {
+    return this.getChildCount(InternalStaticMethodCall.TYPE_PARAMETER);
+  }
+
+  public Iterator<Type> typeParameters() {
+    return this.children(InternalStaticMethodCall.TYPE_PARAMETER);
+  }
+
+  public List<Type> getTypeParameters() {
+    return this.getChildren(InternalStaticMethodCall.TYPE_PARAMETER);
+  }
+
+  public void addTypeParameter(Type node) {
+    this.addChild(InternalStaticMethodCall.TYPE_PARAMETER, node);
+  }
+
+  public void insertTypeParameter(Type prev, Type node) {
+    this.insertChild(prev, InternalStaticMethodCall.TYPE_PARAMETER, node);
   }
 
   public String getFqClassName() {
