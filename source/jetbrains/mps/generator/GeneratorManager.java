@@ -577,7 +577,9 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         TypeChecker.getInstance().setIncrementalMode(true);
         TypeChecker.getInstance().setGenerationMode(false);
 
-        SModelRepository.getInstance().tryToReloadModelsFromDisk((JFrame) invocationContext.getMainFrame());
+        if (invocationContext.getMainFrame() != null) {
+          SModelRepository.getInstance().tryToReloadModelsFromDisk((JFrame) invocationContext.getMainFrame());
+        }
       }
 
       //update generated sources timestamp
