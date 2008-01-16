@@ -9,13 +9,9 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.smodel.SNodePointer;
-
 import java.util.List;
-
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
-
 import java.util.ArrayList;
-
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -45,24 +41,26 @@ public class InterfaceMethodImplementations_Finder extends BaseFinder {
   public SearchResults find(SearchQuery searchQuery) {
     SearchResults global_results = new SearchResults();
     {
-      SNode searchedNode = (SNode) searchQuery.getNodePointer().getNode();
+      SNode searchedNode = (SNode)searchQuery.getNodePointer().getNode();
       global_results.getSearchedNodePointers().add(new SNodePointer(searchedNode));
       // TODO: searched nodes
       List<SearchResult> implementors = new ArrayList<SearchResult>();
       try {
-        BaseFinder finder_10 = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder").newInstance();
+        BaseFinder finder_10 = (BaseFinder)Class.forName("jetbrains.mps.baseLanguage.findUsages.ImplementingClasses_Finder").newInstance();
         boolean rightConcept = finder_10.getConcept().equals(SNodeOperations.getParent(searchedNode, null, false, false).getConceptFqName());
         // TODO
         rightConcept = true;
-        if (!(rightConcept)) {
+        if(!(rightConcept)) {
           InterfaceMethodImplementations_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_10.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-        } else {
+        } else
+        {
           boolean isApplicable = finder_10.isApplicable(SNodeOperations.getParent(searchedNode, null, false, false));
-          if (!(isApplicable)) {
+          if(!(isApplicable)) {
             InterfaceMethodImplementations_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_10.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-          } else {
+          } else
+          {
             SearchResults results_10 = finder_10.find(new SearchQuery(SNodeOperations.getParent(searchedNode, null, false, false), searchQuery.getScope()));
-            for (SearchResult result : results_10.getSearchResults()) {
+            for(SearchResult result : results_10.getSearchResults()) {
               implementors.add(result);
             }
           }
@@ -74,25 +72,25 @@ public class InterfaceMethodImplementations_Finder extends BaseFinder {
       {
         ICursor<SearchResult> _zCursor4 = CursorFactory.createCursor(implementors);
         try {
-          while (_zCursor4.moveToNext()) {
+          while(_zCursor4.moveToNext()) {
             SearchResult result = _zCursor4.getCurrent();
             {
-              SNode classNode = (SNode) result.getNodePointer().getNode();
+              SNode classNode = (SNode)result.getNodePointer().getNode();
               {
                 ICursor<SNode> _zCursor5 = CursorFactory.createCursor(SLinkOperations.getTargets(classNode, "method", true));
                 try {
-                  while (_zCursor5.moveToNext()) {
+                  while(_zCursor5.moveToNext()) {
                     SNode sMethod = _zCursor5.getCurrent();
-                    if (SPropertyOperations.getString(sMethod, "name").equals(SPropertyOperations.getString(searchedNode, "name")) && SLinkOperations.getCount(sMethod, "parameter") == SLinkOperations.getCount(searchedNode, "parameter")) {
+                    if(SPropertyOperations.getString(sMethod, "name").equals(SPropertyOperations.getString(searchedNode, "name")) && SLinkOperations.getCount(sMethod, "parameter") == SLinkOperations.getCount(searchedNode, "parameter")) {
                       boolean same = true;
-                      for (int i = 0; i < SLinkOperations.getCount(sMethod, "parameter"); i = i + 1) {
+                      for(int i = 0 ; i < SLinkOperations.getCount(sMethod, "parameter") ; i = i + 1) {
                         String searchedParamType = Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(ListOperations.getElement(SLinkOperations.getTargets(searchedNode, "parameter", true), i), "type", true));
                         String foundParamType = Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(ListOperations.getElement(SLinkOperations.getTargets(sMethod, "parameter", true), i), "type", true));
-                        if (!(foundParamType.equals(searchedParamType))) {
+                        if(!(foundParamType.equals(searchedParamType))) {
                           same = false;
                         }
                       }
-                      if (same) {
+                      if(same) {
                         global_results.getSearchResults().add(new SearchResult(new SNodePointer(sMethod), "Method Implementation"));
                       }
                     }

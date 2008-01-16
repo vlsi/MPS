@@ -35,6 +35,7 @@ import jetbrains.mps.util.CollectionUtil;
 import org.jdom.Element;
 
 import javax.swing.JOptionPane;
+import javax.swing.JFrame;
 import java.io.File;
 import java.util.*;
 import java.util.concurrent.*;
@@ -569,6 +570,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
         Logger.removeLoggingHandler(generationSession.getLoggingHandler());
         TypeChecker.getInstance().setIncrementalMode(true);
         TypeChecker.getInstance().setGenerationMode(false);
+
+        SModelRepository.getInstance().tryToReloadModelsFromDisk((JFrame) invocationContext.getMainFrame());
       }
 
       //update generated sources timestamp

@@ -8,15 +8,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.smodel.SNodePointer;
-
 import java.util.List;
 import java.util.ArrayList;
-
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-
 import java.util.Set;
-
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
@@ -49,19 +45,19 @@ public class DerivedInterfaces_Finder extends BaseFinder {
       global_results.getSearchedNodePointers().add(new SNodePointer(searchedNode));
       // null
       List<SNode> derived = new ArrayList<SNode>();
-      ListOperations.addElement(derived, (SNode) searchedNode);
+      ListOperations.addElement(derived, (SNode)searchedNode);
       // null
-      while (!(SequenceOperations.isEmpty(derived))) {
+      while(!(SequenceOperations.isEmpty(derived))) {
         Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(SequenceOperations.getFirst(derived), searchQuery.getScope());
-        for (SReference reference : resRefs) {
+        for(SReference reference : resRefs) {
           SNode node = reference.getSourceNode();
-          if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface")) {
-            if (SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
+          if(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.Interface")) {
+            if(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.Interface", "extendedInterface")) {
               ListOperations.addElement(derived, SNodeOperations.getParent(node, null, false, false));
             }
           }
         }
-        if (SequenceOperations.getFirst(derived) != searchedNode) {
+        if(SequenceOperations.getFirst(derived) != searchedNode) {
           global_results.getSearchResults().add(new SearchResult(new SNodePointer(SequenceOperations.getFirst(derived)), "Derived Interfaces"));
         }
         ListOperations.removeElement(derived, SequenceOperations.getFirst(derived));
