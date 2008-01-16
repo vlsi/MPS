@@ -17,11 +17,11 @@ public class SnodeDemo {
     SequenceOperations.map(SequenceOperations.map((SLinkOperations.getTargets(_zClosureContext3.foo, "implements", true)), new zMapper(null, _zClosureContext3)), new zMapper1(null, _zClosureContext3));
     // The following ypath construct should result in the same expression as above
     SequenceOperations.map(SequenceOperations.map(new SequenceWithSupplier<SNode>(new zValueSupplier1(null, _zClosureContext3)), new zMapper2(null, _zClosureContext3)), new zMapper3(null, _zClosureContext3));
-    // Aanother pair of tests
-    SequenceOperations.map(ListOperations.createList(new SNode[]{SLinkOperations.getTarget(_zClosureContext3.foo, "extends", false)}), new zMapper4(null, _zClosureContext3));
-    SequenceOperations.map(ListOperations.createList(new SNode[]{SLinkOperations.getTarget(_zClosureContext3.foo, "extends", false)}), new zMapper5(null, _zClosureContext3));
+    // Another pair of tests
+    SequenceOperations.map(ListOperations.createList(SLinkOperations.getTarget(_zClosureContext3.foo, "extends", false)), new zMapper4(null, _zClosureContext3));
+    SequenceOperations.map(ListOperations.createList(SLinkOperations.getTarget(_zClosureContext3.foo, "extends", false)), new zMapper5(null, _zClosureContext3));
     // And another one
-    SequenceOperations.map(ListOperations.createList(new SNode[]{_zClosureContext3.foo}), new zMapper6(null, _zClosureContext3));
+    SequenceOperations.map(ListOperations.createList(_zClosureContext3.foo), new zMapper6(null, _zClosureContext3));
     new SequenceWithSupplier<SNode>(new zValueSupplier2(null, _zClosureContext3));
     // Following is just a test
     SequenceOperations.map(new SequenceWithSupplier<SNode>(new zValueSupplier3(null, _zClosureContext3)), new zMapper7(null, _zClosureContext3));
