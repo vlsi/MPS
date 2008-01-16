@@ -548,7 +548,11 @@ public class SModelRepository extends SModelAdapter {
       }
     };
 
-    CommandProcessor.instance().invokeNowOrLater(command);
+    if (CommandProcessor.instance().isInsideCommand()) {
+      command.run();
+    } else {
+      CommandProcessor.instance().executeLightweightCommand(command);
+    }
   }
 
   private void fireRepositoryChanged() {
