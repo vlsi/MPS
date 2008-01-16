@@ -17,10 +17,12 @@ import jetbrains.mps.ide.command.CommandKind;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import javax.swing.*;
+import javax.swing.Timer;
 import java.io.File;
 import java.util.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 /**
  * Author: Sergey Dmitriev
@@ -552,7 +554,8 @@ public class SModelRepository extends SModelAdapter {
       //ignore it during generation
       return;
     } else {
-      CommandProcessor.instance().executeLightweightCommand(command);
+      //todo it's not very good
+      CommandProcessor.instance().tryToExecuteLightweightCommand(command);
     }
   }
 

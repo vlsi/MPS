@@ -1,5 +1,7 @@
 package jetbrains.mps.ide;
 
+import jetbrains.mps.ide.command.CommandProcessor;
+
 import javax.swing.*;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -30,23 +32,26 @@ public class ChooseItemWindowCellRenderer<Item> extends JPanel implements ListCe
     add(myDescriptionLabel, BorderLayout.EAST);
   }
 
-  public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-    Item item = (Item) value;
-    setIcon(myChooseItemComponent.getItemIcon(item));
-    if (isSelected) {
-      setBackground(list.getSelectionBackground());
-      setForeground(list.getSelectionForeground());
-      myDescriptionLabel.setForeground(null);
-    } else {
-      setBackground(Color.WHITE);
-      setForeground(myChooseItemComponent.getItemColor(item));
-      myDescriptionLabel.setForeground(Color.GRAY);
-    }
-    setText(myChooseItemComponent.getItemPresentation(item));
-    setDescription(myChooseItemComponent.getItemDescription(item));
-    setEnabled(list.isEnabled());
-    setFont(list.getFont());
-
+  public Component getListCellRendererComponent(final JList list, final Object value, int index, final boolean isSelected, boolean cellHasFocus) {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        Item item = (Item) value;
+        setIcon(myChooseItemComponent.getItemIcon(item));
+        if (isSelected) {
+          setBackground(list.getSelectionBackground());
+          setForeground(list.getSelectionForeground());
+          myDescriptionLabel.setForeground(null);
+        } else {
+          setBackground(Color.WHITE);
+          setForeground(myChooseItemComponent.getItemColor(item));
+          myDescriptionLabel.setForeground(Color.GRAY);
+        }
+        setText(myChooseItemComponent.getItemPresentation(item));
+        setDescription(myChooseItemComponent.getItemDescription(item));
+        setEnabled(list.isEnabled());
+        setFont(list.getFont());
+      }
+    });
     return this;
   }
 
