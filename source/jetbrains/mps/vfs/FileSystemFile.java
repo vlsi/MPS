@@ -6,10 +6,12 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.jetbrains.annotations.NotNull;
+
 public class FileSystemFile implements IFile {
   private File myFile;
 
-  public FileSystemFile(File file) {
+  public FileSystemFile(@NotNull File file) {
     myFile = file;
   }
 
@@ -144,5 +146,9 @@ public class FileSystemFile implements IFile {
 
     FileSystemFile fsf = (FileSystemFile) obj;
     return fsf.myFile.equals(myFile);
+  }
+
+  public String toString() {
+    return myFile.toString();
   }
 }

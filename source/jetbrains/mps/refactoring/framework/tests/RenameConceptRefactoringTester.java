@@ -30,6 +30,13 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
     GenericRefactoring refactoring_renameConcept = new GenericRefactoring(new RenameConcept());
 
     refactoring_renameConcept.execute(actionContext, refactoringContext);
+
+    try {
+      sandbox1.getSModel();
+    } catch (Throwable t) {
+      t.printStackTrace();
+      return false;
+    }
     return true;
   }
 }
