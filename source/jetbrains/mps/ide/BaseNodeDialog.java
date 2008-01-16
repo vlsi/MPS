@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.JSplitPaneWithoutBorders;
+import jetbrains.mps.util.Calculable;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -92,21 +93,25 @@ public abstract class BaseNodeDialog extends BaseDialog {
   }
 
   private boolean validateNode() {
-    String errorString = getErrorString();
-    if (errorString != null) {
-      setErrorText(errorString);
-      String optionsText = errorString + "\n\n" +
-              "Apply changes anyway?";
-      int option = JOptionPane.showConfirmDialog(
-              BaseNodeDialog.this,
-              optionsText,
-              "Errors in " + BaseNodeDialog.this.getTitle(),
-              JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
-      if (option != JOptionPane.OK_OPTION) {
-        return false;
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable<Boolean>() {
+      public Boolean calculate() {
+        String errorString = getErrorString();
+        if (errorString != null) {
+          setErrorText(errorString);
+          String optionsText = errorString + "\n\n" +
+            "Apply changes anyway?";
+          int option = JOptionPane.showConfirmDialog(
+            BaseNodeDialog.this,
+            optionsText,
+            "Errors in " + BaseNodeDialog.this.getTitle(),
+            JOptionPane.OK_CANCEL_OPTION, JOptionPane.WARNING_MESSAGE);
+          if (option != JOptionPane.OK_OPTION) {
+            return false;
+          }
+        }
+        return true;
       }
-    }
-    return true;
+    });
   }
 
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
