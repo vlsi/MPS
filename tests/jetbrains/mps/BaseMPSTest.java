@@ -60,4 +60,26 @@ public class BaseMPSTest extends TestCase {
       throw new RuntimeException(t);
     }
   }
+
+  protected boolean testRefactoringTestEnvironment(File projectDirectory) {
+    try {
+      Bundle mpsBundle = MPSLauncher.getMPSBundle();
+      Class testMain = mpsBundle.loadClass("jetbrains.mps.ide.TestMain");
+      Method testMethod = testMain.getMethod("testRefactoringTestEnvironment", File.class);
+      return (Boolean) testMethod.invoke(null, projectDirectory);
+    } catch (Throwable t) {
+      throw new RuntimeException(t);
+    }
+  }
+
+  protected boolean testRefactoringOnProject(File projectDirectory) {
+    try {
+      Bundle mpsBundle = MPSLauncher.getMPSBundle();
+      Class testMain = mpsBundle.loadClass("jetbrains.mps.ide.TestMain");
+      Method testMethod = testMain.getMethod("testRefactoringOnProject", File.class);
+      return (Boolean) testMethod.invoke(null, projectDirectory);
+    } catch (Throwable t) {
+      throw new RuntimeException(t);
+    }
+  }
 }

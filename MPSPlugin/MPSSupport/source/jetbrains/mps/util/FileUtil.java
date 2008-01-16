@@ -128,6 +128,7 @@ public class FileUtil {
   }
 
   public static void copyDir(File what, File to) {
+    assert what.isDirectory();
     if (!to.exists()) {
       to.mkdir();
     }
@@ -205,6 +206,7 @@ public class FileUtil {
         result = delete(child) && result;
       }
     }
+    // !result means one of children was not deleted, hence you may not delete this directory
     return result && root.delete();
   }
 
