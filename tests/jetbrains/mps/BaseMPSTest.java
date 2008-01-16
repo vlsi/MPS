@@ -6,6 +6,8 @@ import org.osgi.framework.Bundle;
 import java.io.File;
 import java.lang.reflect.Method;
 
+import jetbrains.mps.refactoring.framework.tests.IRefactoringTester;
+
 public class BaseMPSTest extends TestCase {
   protected void setUp() throws Exception {
     super.setUp();
@@ -72,12 +74,15 @@ public class BaseMPSTest extends TestCase {
     }
   }
 
-  protected boolean testRefactoringOnProject(File projectDirectory) {
+  protected boolean testRefactoringOnProject(File projectDirectory, String refactoringTesterClassName) {
     try {
       Bundle mpsBundle = MPSLauncher.getMPSBundle();
       Class testMain = mpsBundle.loadClass("jetbrains.mps.ide.TestMain");
-      Method testMethod = testMain.getMethod("testRefactoringOnProject", File.class);
-      return (Boolean) testMethod.invoke(null, projectDirectory);
+      Class refactoringTesterClass = mpsBundle.loadClass(refactoringTesterClassName);
+      Class iRefactoringTesterClass = mpsBundle.loadClass("jetbrains.mps.refactoring.framework.tests.IRefactoringTester");
+      Method testMethod = testMain.getMethod("testRefactoringOnProject", File.class, iRefactoringTesterClass);
+      assert iRefactoringTesterClass.isAssignableFrom(refactoringTesterClass);
+      return (Boolean) testMethod.invoke(null, projectDirectory, refactoringTesterClass.getConstructor().newInstance());
     } catch (Throwable t) {
       throw new RuntimeException(t);
     }

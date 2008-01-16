@@ -3,6 +3,7 @@ package jetbrains.mps.refactoring.framework;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.BaseMPSTest;
+import jetbrains.mps.refactoring.framework.tests.RenameConceptRefactoringTester;
 
 import java.io.File;
 
@@ -18,7 +19,7 @@ public class RefactoringTest extends BaseMPSTest {
     assertTrue(testRefactoringTestEnvironment(new File("languages/refactoring/testRefactoring")));
   }
 
-  public void testRefactoring() {
-    assertTrue(testRefactoringOnProject(new File("languages/refactoring/testRefactoring")));
+  public void testRenameConceptRefactoring() {
+    assertTrue(testRefactoringOnProject(new File("languages/refactoring/testRefactoring"), "jetbrains.mps.refactoring.framework.tests.RenameConceptRefactoringTester"));
   }
 }
