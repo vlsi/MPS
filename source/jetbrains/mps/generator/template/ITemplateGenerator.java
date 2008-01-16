@@ -80,8 +80,4 @@ public interface ITemplateGenerator {
   int getErrorCount();
 
   int getWarningCount();
-
-//  void clearErrorsAndWarnings();
-//
-//  void reset();
 }
