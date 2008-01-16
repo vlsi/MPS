@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.util.Calculable;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -48,7 +49,7 @@ public class CreateRootNodeGroup extends ActionGroup {
     IDEProjectFrame ide = context.get(IDEProjectFrame.class);
     IOperationContext operationContext = context.get(IOperationContext.class);
 
-    List<Language> modelLanguages = modelDescriptor == null ? new ArrayList<Language>(): modelDescriptor.getSModel().getLanguages(operationContext.getScope());
+    List<Language> modelLanguages = modelDescriptor == null ? new ArrayList<Language>() : modelDescriptor.getSModel().getLanguages(operationContext.getScope());
     if (modelLanguages.size() == 0) {
       add(new MPSAction("<NO LANGUAGES>") {
         public void doExecute(@NotNull ActionContext c) {
@@ -87,7 +88,11 @@ public class CreateRootNodeGroup extends ActionGroup {
   private MPSAction newRootNodeAction(final SNodePointer nodeConcept, final SModelDescriptor modelDescriptor, final IDEProjectFrame ide) {
     return new MPSAction(NodePresentationUtil.matchingText(nodeConcept.getNode())) {
       public Icon getIcon() {
-        return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept.getNode()));
+        return CommandProcessor.instance().executeLightweightCommand(new Calculable<Icon>() {
+          public Icon calculate() {
+            return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept.getNode()));
+          }
+        });
       }
 
       public boolean executeInsideCommand() {
@@ -95,18 +100,22 @@ public class CreateRootNodeGroup extends ActionGroup {
       }
 
       public void doExecute(@NotNull final ActionContext context) {
-        final SNode[] node = new SNode[1];
-
-        CommandProcessor.instance().executeCommand(new Runnable() {
+        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
           public void run() {
-            node[0] = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), context.getScope());
-            node[0].setProperty(SModelTreeNode.PACK, myPackage);
-            modelDescriptor.getSModel().addRoot(node[0]);
+            final SNode[] node = new SNode[1];
+
+            CommandProcessor.instance().executeCommand(new Runnable() {
+              public void run() {
+                node[0] = NodeFactoryManager.createNode((ConceptDeclaration) nodeConcept.getNode().getAdapter(), null, null, modelDescriptor.getSModel(), context.getScope());
+                node[0].setProperty(SModelTreeNode.PACK, myPackage);
+                modelDescriptor.getSModel().addRoot(node[0]);
+              }
+            });
+
+            ide.getProjectPane().selectNode(node[0], context.get(IOperationContext.class));
+            ide.getProjectPane().openEditor();
           }
         });
-
-        ide.getProjectPane().selectNode(node[0], context.get(IOperationContext.class));
-        ide.getProjectPane().openEditor();
       }
     };
   }
