@@ -36,7 +36,7 @@ public class ClassAncestors_Finder extends BaseFinder {
       global_results.getSearchedNodePointers().add(new SNodePointer(searchQuery.getNode()));
       SNode current = (SNode) searchQuery.getNode();
       while (current != null) {
-        current = SLinkOperations.getTarget(current, "superclass", true);
+        current = SLinkOperations.getTarget(SLinkOperations.getTarget(current, "superclass", true), "classifier", false);
         if (current != null) {
           global_results.getSearchResults().add(new SearchResult(new SNodePointer(current), "Ancestor"));
         }
