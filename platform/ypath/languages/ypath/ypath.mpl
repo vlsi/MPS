@@ -42,6 +42,8 @@
       <dependencies>
         <dependency>jetbrains.mps.baseLanguage</dependency>
         <dependency>jetbrains.mps.baseLanguageInternal</dependency>
+        <dependency>jetbrains.mps.closures</dependency>
+        <dependency>ypath#1168438160182</dependency>
       </dependencies>
       <mapping-priorities>
         <mapping-priority-rule kind="strictly_before">

@@ -11,6 +11,8 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.ypath.runtime.TraversalAxis;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -18,9 +20,9 @@ import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.ypath.constraints.TreePath_Behavior;
 import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
+import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.ypath.constraints.IParamFeature_Behavior;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 
 public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponent {
 
@@ -35,6 +37,7 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       List<Pair> res = ListOperations.createList(new Pair[]{});
       ListOperations.addElement(res, new Pair(null, null));
+      TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(node, "axis", "DESCENDANTS"));
       SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
       if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
         SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "nodeType", true);
@@ -42,22 +45,24 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
           ICursor<SNode> _zCursor = CursorFactory.createCursor(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType));
           try {
             while(_zCursor.moveToNext()) {
-              SNode fe = _zCursor.getCurrent();
-              if(SNodeOperations.isInstanceOf(fe, "jetbrains.mps.ypath.structure.IParamFeature")) {
-                {
-                  ICursor<SNode> _zCursor1 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(fe, nodeType));
-                  try {
-                    while(_zCursor1.moveToNext()) {
-                      SNode pw = _zCursor1.getCurrent();
-                      ListOperations.addElement(res, new Pair(fe, pw));
+              SNode feat = _zCursor.getCurrent();
+              if(TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
+                if(SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
+                  {
+                    ICursor<SNode> _zCursor1 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType));
+                    try {
+                      while(_zCursor1.moveToNext()) {
+                        SNode pw = _zCursor1.getCurrent();
+                        ListOperations.addElement(res, new Pair(feat, pw));
+                      }
+                    } finally {
+                      _zCursor1.release();
                     }
-                  } finally {
-                    _zCursor1.release();
                   }
+                } else
+                {
+                  ListOperations.addElement(res, new Pair(feat, null));
                 }
-              } else
-              {
-                ListOperations.addElement(res, new Pair(fe, null));
               }
             }
           } finally {

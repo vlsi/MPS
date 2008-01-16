@@ -32,7 +32,7 @@ public class IterateOperation_DELETE {
       if(SNodeOperations.isInstanceOf(expr, "jetbrains.mps.ypath.structure.TreePathOperationExpression")) {
         SNode newExpr = SLinkOperations.getTarget(expr, "expression", true);
         SNodeOperations.replaceWithAnother(expr, newExpr);
-        if(SNodeOperations.isInstanceOf(newExpr, "jetbrains.mps.ypath.structure.TreePathAdapterExpression")) {
+        if(SNodeOperations.isInstanceOf(newExpr, "jetbrains.mps.ypath.structure.TreePathAdapterExpression") && (SNodeOperations.getAncestor(newExpr, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false) == null)) {
           SNodeOperations.replaceWithAnother(newExpr, SLinkOperations.getTarget(newExpr, "expression", true));
         }
       }

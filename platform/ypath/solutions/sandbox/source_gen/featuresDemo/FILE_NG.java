@@ -97,7 +97,7 @@ public class FILE_NG extends TreePath<File> {
     }
 
     public String getOpposite() {
-      return "parent";
+      return null;
     }
 
     public String getName() {
@@ -105,7 +105,7 @@ public class FILE_NG extends TreePath<File> {
     }
 
     public boolean isDefault() {
-      return true;
+      return false;
     }
 
     public boolean isAscending() {

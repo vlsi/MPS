@@ -9,18 +9,20 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.Triplet;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.helgins.inference.TypeChecker;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.ypath.runtime.TraversalAxis;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ypath.constraints.TreePath_Behavior;
+import jetbrains.mps.ypath.constraints.ITreePathExpression_Behavior;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ypath.constraints.IParamFeature_Behavior;
+import jetbrains.mps.smodel.SModel;
 
 public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuComponent {
 
@@ -33,35 +35,67 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      SNode treePath = ITreePathExpression_Behavior.call_getTreePath_1194366873089(SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false));
-      SNode defaultFeat = SequenceOperations.getFirst(SequenceOperations.where(SLinkOperations.getTargets(treePath, "features", true), new zPredicate(null, null)));
-      List<Pair> res = ListOperations.createList(new Pair[]{});
-      {
-        ICursor<TraversalAxis> _zCursor2 = CursorFactory.createCursor(TraversalAxis.getConstants());
-        try {
-          while(_zCursor2.moveToNext()) {
-            TraversalAxis axis = _zCursor2.getCurrent();
-            ListOperations.addElement(res, new Pair(axis, null));
-            if((defaultFeat != null)) {
-              ListOperations.addElement(res, new Pair(axis, defaultFeat));
+      SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
+      List<Triplet> res = ListOperations.createList(new Triplet[]{});
+      if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
+        SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "nodeType", true);
+        {
+          ICursor<TraversalAxis> _zCursor2 = CursorFactory.createCursor(TraversalAxis.getConstants());
+          try {
+            while(_zCursor2.moveToNext()) {
+              TraversalAxis axis = _zCursor2.getCurrent();
+              ListOperations.addElement(res, new Triplet(axis, null, null));
+              {
+                ICursor<SNode> _zCursor3 = CursorFactory.createCursor(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType));
+                try {
+                  while(_zCursor3.moveToNext()) {
+                    SNode feat = _zCursor3.getCurrent();
+                    if(TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
+                      if(SPropertyOperations.getBoolean(feat, "default")) {
+                        ListOperations.addElement(res, new Triplet(axis, feat, null));
+                      } else
+                      if(SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
+                        {
+                          ICursor<SNode> _zCursor4 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType));
+                          try {
+                            while(_zCursor4.moveToNext()) {
+                              SNode pw = _zCursor4.getCurrent();
+                              ListOperations.addElement(res, new Triplet(axis, feat, pw));
+                            }
+                          } finally {
+                            _zCursor4.release();
+                          }
+                        }
+                      } else
+                      {
+                        ListOperations.addElement(res, new Triplet(axis, feat, null));
+                      }
+                    }
+                  }
+                } finally {
+                  _zCursor3.release();
+                }
+              }
             }
+          } finally {
+            _zCursor2.release();
           }
-        } finally {
-          _zCursor2.release();
         }
       }
       return res;
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((Pair)parameterObject, node, model, scope, operationContext);
+      this.handleAction_impl((Triplet)parameterObject, node, model, scope, operationContext);
     }
 
-    public void handleAction_impl(Pair parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      TraversalAxis axis = (TraversalAxis)parameterObject.o1;
-      SNode defFeature = (SNode)parameterObject.o2;
+    public void handleAction_impl(Triplet parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      TraversalAxis axis = (TraversalAxis)parameterObject.first();
+      SNode feat = (SNode)parameterObject.second();
+      SNode pw = (SNode)parameterObject.third();
       SPropertyOperations.set(node, "axis", axis.getValue());
-      SLinkOperations.setTarget(node, "usedFeature", defFeature, false);
+      SLinkOperations.setTarget(node, "usedFeature", feat, false);
+      SLinkOperations.setTarget(node, "paramObject", pw, true);
     }
 
     public boolean isReferentPresentation() {
@@ -69,29 +103,55 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
     }
 
     public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((Pair)parameterObject);
+      return this.getMatchingText_internal((Triplet)parameterObject);
     }
 
-    public String getMatchingText_internal(Pair parameterObject) {
-      TraversalAxis axis = (TraversalAxis)parameterObject.o1;
-      SNode defFeature = (SNode)parameterObject.o2;
-      return TraversalAxisUtil.getOperationSign(axis) + (((defFeature != null) ?
-        "" :
-        " *"
-      ));
+    public String getMatchingText_internal(Triplet parameterObject) {
+      TraversalAxis axis = (TraversalAxis)parameterObject.first();
+      SNode feat = (SNode)parameterObject.second();
+      SNode pw = (SNode)parameterObject.third();
+      String suffix = "";
+      if((feat == null)) {
+        suffix = " *";
+      } else
+      {
+        if(SPropertyOperations.getBoolean(feat, "default")) {
+          suffix = "";
+        } else
+        if((pw != null)) {
+          suffix = SPropertyOperations.getString(pw, "name");
+        } else
+        {
+          suffix = SPropertyOperations.getString(feat, "name");
+        }
+      }
+      return TraversalAxisUtil.getOperationSign(axis) + suffix;
     }
 
     public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((Pair)parameterObject);
+      return this.getDescriptionText_internal((Triplet)parameterObject);
     }
 
-    public String getDescriptionText_internal(Pair parameterObject) {
-      TraversalAxis axis = (TraversalAxis)parameterObject.o1;
-      SNode defFeature = (SNode)parameterObject.o2;
-      return "iterate " + axis.getName() + (((defFeature != null) ?
-        " (default feature)" :
-        " (all features)"
-      ));
+    public String getDescriptionText_internal(Triplet parameterObject) {
+      TraversalAxis axis = (TraversalAxis)parameterObject.first();
+      SNode feat = (SNode)parameterObject.second();
+      SNode pw = (SNode)parameterObject.third();
+      String suffix = "";
+      if((feat == null)) {
+        suffix = "all";
+      } else
+      {
+        if(SPropertyOperations.getBoolean(feat, "default")) {
+          suffix = "default";
+        } else
+        if((pw != null)) {
+          suffix = SPropertyOperations.getString(pw, "name") + " " + SPropertyOperations.getString(feat, "name");
+        } else
+        {
+          suffix = SPropertyOperations.getString(feat, "name");
+        }
+      }
+      return "iterate " + axis.getName() + " @" + suffix;
     }
 
 }

@@ -20,9 +20,9 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
   public static String ASCENDING = "ascending";
+  public static String OPPOSITE = "opposite";
   public static String GETTER = "getter";
   public static String FUN_HOLDERS = "funHolders";
-  public static String OPPOSITE = "opposite";
 
   public  GenericFeature(SNode node) {
     super(node);
@@ -93,6 +93,14 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
     this.setBooleanProperty(GenericFeature.ASCENDING, value);
   }
 
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(GenericFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(GenericFeature.OPPOSITE, node);
+  }
+
   public GFGetterFun getGetter() {
     return (GFGetterFun)this.getChild(GenericFeature.GETTER);
   }
@@ -119,14 +127,6 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
 
   public void insertFunHolders(GenericFeatureFunHolder prev, GenericFeatureFunHolder node) {
     this.insertChild(prev, GenericFeature.FUN_HOLDERS, node);
-  }
-
-  public IFeature getOpposite() {
-    return (IFeature)this.getReferent(GenericFeature.OPPOSITE);
-  }
-
-  public void setOpposite(IFeature node) {
-    super.setReferent(GenericFeature.OPPOSITE, node);
   }
 
 }

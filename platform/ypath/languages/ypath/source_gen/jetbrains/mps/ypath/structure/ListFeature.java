@@ -18,12 +18,12 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
   public static String WRITABLE = "writable";
   public static String DEFAULT = "default";
   public static String ASCENDING = "ascending";
+  public static String OPPOSITE = "opposite";
   public static String GET_FUNCTION = "getFunction";
   public static String SIZE_FUNCTION = "sizeFunction";
   public static String SET_FUNCTION = "setFunction";
   public static String INSERT_FUNCTION = "insertFunction";
   public static String DELETE_FUNCTION = "deleteFunction";
-  public static String OPPOSITE = "opposite";
 
   public  ListFeature(SNode node) {
     super(node);
@@ -94,6 +94,14 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
     this.setBooleanProperty(ListFeature.ASCENDING, value);
   }
 
+  public IFeature getOpposite() {
+    return (IFeature)this.getReferent(ListFeature.OPPOSITE);
+  }
+
+  public void setOpposite(IFeature node) {
+    super.setReferent(ListFeature.OPPOSITE, node);
+  }
+
   public FeatureGetFun getGetFunction() {
     return (FeatureGetFun)this.getChild(ListFeature.GET_FUNCTION);
   }
@@ -132,14 +140,6 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
 
   public void setDeleteFunction(FeatureDeleteFun node) {
     super.setChild(ListFeature.DELETE_FUNCTION, node);
-  }
-
-  public IFeature getOpposite() {
-    return (IFeature)this.getReferent(ListFeature.OPPOSITE);
-  }
-
-  public void setOpposite(IFeature node) {
-    super.setReferent(ListFeature.OPPOSITE, node);
   }
 
 }

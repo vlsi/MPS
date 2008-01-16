@@ -3,28 +3,28 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.baseLanguage">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.editor" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.helgins" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.structure" version="-1" />
   </language>
   <language namespace="jetbrains.mps.baseLanguage.ext.collections.lang">
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.intentions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.structure" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.baseLanguage.ext.collections.lang.constraints" version="-1" />
   </language>
   <language namespace="jetbrains.mps.closures">
-    <languageAspect modelUID="jetbrains.mps.closures.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.closures.editor" version="-1" />
     <languageAspect modelUID="jetbrains.mps.closures.structure" version="0" />
     <languageAspect modelUID="jetbrains.mps.closures.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.closures.actions" version="-1" />
     <languageAspect modelUID="jetbrains.mps.closures.helgins" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.closures.editor" version="-1" />
   </language>
   <maxImportIndex value="5" />
   <import index="4" modelUID="java.lang@java_stub" version="-1" />
@@ -152,10 +152,18 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1199640036835" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1199640036836" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199640036837">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199720175126">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199720175127">
+            <property name="name" value="closure" />
+            <node role="type" type="jetbrains.mps.closures.structure.FunctionType" id="1199720175128">
+              <node role="resultType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1199720178649" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1199640036838">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1199640036839">
             <property name="name" value="fib" />
-            <property name="isFinal" value="true" />
+            <property name="isFinal" value="false" />
             <node role="type" type="jetbrains.mps.closures.structure.FunctionType" id="1199640036840">
               <node role="parameterType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1199640036841" />
               <node role="resultType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1199640036842" />
