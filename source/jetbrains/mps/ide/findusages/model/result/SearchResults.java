@@ -3,6 +3,7 @@ package jetbrains.mps.ide.findusages.model.result;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.components.ComponentsUtil;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
 
@@ -19,6 +20,15 @@ public class SearchResults implements IExternalizableComponent {
 
   private Set<SNodePointer> mySearchedNodePointers = new HashSet<SNodePointer>();
   private List<SearchResult> mySearchResults = new ArrayList<SearchResult>();
+
+  public SearchResults() {
+
+  }
+
+  public SearchResults(Set<SNodePointer> searchedNodePointers, List<SearchResult> searchResults) {
+    mySearchedNodePointers = searchedNodePointers;
+    mySearchResults = searchResults;
+  }
 
   public Set<SNodePointer> getSearchedNodePointers() {
     return mySearchedNodePointers;
@@ -46,6 +56,10 @@ public class SearchResults implements IExternalizableComponent {
       }
     }
     return alive;
+  }
+
+  public void removeDuplicates() {
+    mySearchResults = new ArrayList(new HashSet(mySearchResults));
   }
 
   public void write(Element element, MPSProject project) {

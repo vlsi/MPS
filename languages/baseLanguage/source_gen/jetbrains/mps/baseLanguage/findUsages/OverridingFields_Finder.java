@@ -9,14 +9,15 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.smodel.SNodePointer;
+
 import java.util.List;
 import java.util.ArrayList;
+
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.constraints.Type_Behavior;
 
@@ -32,40 +33,44 @@ public class OverridingFields_Finder extends BaseFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
+    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null) {
+      return false;
+    }
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))) {
+      return false;
+    }
+    return true;
   }
 
   public boolean isVisible() {
-    return false;
+    return true;
   }
 
   public SearchResults find(SearchQuery searchQuery) {
     SearchResults global_results = new SearchResults();
     {
-      SNode searchedNode = (SNode)searchQuery.getNodePointer().getNode();
+      SNode searchedNode = (SNode) searchQuery.getNode();
       global_results.getSearchedNodePointers().add(new SNodePointer(searchedNode));
       // null
       List<SNode> nodes = new ArrayList<SNode>();
       List<SearchResult> results = new ArrayList<SearchResult>();
       try {
-        BaseFinder finder_9 = (BaseFinder)Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
+        BaseFinder finder_9 = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
         boolean rightConcept = finder_9.getConcept().equals(SNodeOperations.getParent(searchedNode, null, false, false).getConceptFqName());
         // TODO
         rightConcept = true;
-        if(!(rightConcept)) {
+        if (!(rightConcept)) {
           OverridingFields_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_9.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-        } else
-        {
+        } else {
           boolean isApplicable = finder_9.isApplicable(SNodeOperations.getParent(searchedNode, null, false, false));
-          if(!(isApplicable)) {
+          if (!(isApplicable)) {
             OverridingFields_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_9.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-          } else
-          {
+          } else {
             SearchResults results_9 = finder_9.find(new SearchQuery(SNodeOperations.getParent(searchedNode, null, false, false), searchQuery.getScope()));
-            for(SNodePointer nodePointer : results_9.getSearchedNodePointers()) {
+            for (SNodePointer nodePointer : results_9.getSearchedNodePointers()) {
               ListOperations.addElement(nodes, nodePointer.getNode());
             }
-            for(SearchResult result : results_9.getSearchResults()) {
+            for (SearchResult result : results_9.getSearchResults()) {
               results.add(result);
             }
           }
@@ -75,41 +80,35 @@ public class OverridingFields_Finder extends BaseFinder {
       }
       // null
       {
-        ICursor<SearchResult> _zCursor2 = CursorFactory.createCursor(results);
+        ICursor<SearchResult> _zCursor4 = CursorFactory.createCursor(results);
         try {
-          while(_zCursor2.moveToNext()) {
-            SearchResult result = _zCursor2.getCurrent();
+          while (_zCursor4.moveToNext()) {
+            SearchResult result = _zCursor4.getCurrent();
             {
-              SNode classNode = (SNode)result.getNodePointer().getNode();
-              Iterable<SNode> fields = SLinkOperations.getTargets(classNode, "field", true);
-              fields = SequenceOperations.union(fields, SLinkOperations.getTargets(classNode, "staticField", true));
+              SNode classNode = (SNode) result.getNode();
+              Iterable<SNode> fieldsOfSameKind;
+              if (SNodeOperations.isInstanceOf(searchedNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
+                fieldsOfSameKind = SLinkOperations.getTargets(classNode, "field", true);
+              } else {
+                fieldsOfSameKind = SLinkOperations.getTargets(classNode, "staticField", true);
+              }
               {
-                ICursor<SNode> _zCursor3 = CursorFactory.createCursor(SequenceOperations.union(SLinkOperations.getTargets(classNode, "field", true), SLinkOperations.getTargets(classNode, "staticField", true)));
+                ICursor<SNode> _zCursor5 = CursorFactory.createCursor(fieldsOfSameKind);
                 try {
-                  while(_zCursor3.moveToNext()) {
-                    SNode sField = _zCursor3.getCurrent();
-                    if(SPropertyOperations.getString(sField, "name").equals(SPropertyOperations.getString(searchedNode, "name")) && SLinkOperations.getTarget(sField, "type", true) == SLinkOperations.getTarget(searchedNode, "type", true)) {
-                      boolean same = true;
-                      for(int i = 0 ; i < SLinkOperations.getCount(sField, "parameter") ; i = i + 1) {
-                        String searchedParamType = Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(ListOperations.getElement(SLinkOperations.getTargets(searchedNode, "parameter", true), i), "type", true));
-                        String foundParamType = Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(ListOperations.getElement(SLinkOperations.getTargets(sField, "parameter", true), i), "type", true));
-                        if(!(foundParamType.equals(searchedParamType))) {
-                          same = false;
-                        }
-                      }
-                      if(same) {
-                        global_results.getSearchResults().add(new SearchResult(new SNodePointer(sField), "Overriding Methods"));
-                      }
+                  while (_zCursor5.moveToNext()) {
+                    SNode field = _zCursor5.getCurrent();
+                    if (SPropertyOperations.getString(field, "name").equals(SPropertyOperations.getString(searchedNode, "name")) && Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(field, "type", true)).equals(Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(searchedNode, "type", true)))) {
+                      global_results.getSearchResults().add(new SearchResult(new SNodePointer(field), "Overriding Fields"));
                     }
                   }
                 } finally {
-                  _zCursor3.release();
+                  _zCursor5.release();
                 }
               }
             }
           }
         } finally {
-          _zCursor2.release();
+          _zCursor4.release();
         }
       }
     }

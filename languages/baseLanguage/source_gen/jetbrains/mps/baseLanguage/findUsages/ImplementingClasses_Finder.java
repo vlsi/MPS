@@ -7,10 +7,14 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
-import jetbrains.mps.smodel.SNodePointer;
+
 import java.util.List;
+
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
+
 import java.util.ArrayList;
+
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 
 public class ImplementingClasses_Finder extends BaseFinder {
@@ -35,27 +39,24 @@ public class ImplementingClasses_Finder extends BaseFinder {
   public SearchResults find(SearchQuery searchQuery) {
     SearchResults global_results = new SearchResults();
     {
-      SNode searchedNode = searchQuery.getNodePointer().getNode();
-      global_results.getSearchedNodePointers().add(new SNodePointer(searchedNode));
+      SNode searchedNode = searchQuery.getNode();
       // null
       List<SearchResult> derivedInterfaces = new ArrayList<SearchResult>();
       derivedInterfaces.add(new SearchResult(searchQuery.getNodePointer(), ""));
       try {
-        BaseFinder finder_1 = (BaseFinder)Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder").newInstance();
+        BaseFinder finder_1 = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder").newInstance();
         boolean rightConcept = finder_1.getConcept().equals(searchedNode.getConceptFqName());
         // TODO
         rightConcept = true;
-        if(!(rightConcept)) {
+        if (!(rightConcept)) {
           ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_1.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-        } else
-        {
+        } else {
           boolean isApplicable = finder_1.isApplicable(searchedNode);
-          if(!(isApplicable)) {
+          if (!(isApplicable)) {
             ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_1.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-          } else
-          {
+          } else {
             SearchResults results_1 = finder_1.find(new SearchQuery(searchedNode, searchQuery.getScope()));
-            for(SearchResult result : results_1.getSearchResults()) {
+            for (SearchResult result : results_1.getSearchResults()) {
               derivedInterfaces.add(result);
             }
           }
@@ -65,23 +66,22 @@ public class ImplementingClasses_Finder extends BaseFinder {
       }
       // null
       List<SearchResult> derivedInterfacesUsages = new ArrayList<SearchResult>();
-      for(SearchResult derivedInterface : derivedInterfaces) {
+      for (SearchResult derivedInterface : derivedInterfaces) {
+        global_results.getSearchedNodePointers().add(new SNodePointer(derivedInterface.getNode()));
         try {
-          BaseFinder finder_2 = (BaseFinder)Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
+          BaseFinder finder_2 = (BaseFinder) Class.forName("jetbrains.mps.bootstrap.structureLanguage.findUsages.NodeUsages_Finder").newInstance();
           boolean rightConcept = finder_2.getConcept().equals(derivedInterface.getNode().getConceptFqName());
           // TODO
           rightConcept = true;
-          if(!(rightConcept)) {
+          if (!(rightConcept)) {
             ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_2.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-          } else
-          {
+          } else {
             boolean isApplicable = finder_2.isApplicable(derivedInterface.getNode());
-            if(!(isApplicable)) {
+            if (!(isApplicable)) {
               ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_2.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-            } else
-            {
+            } else {
               SearchResults results_2 = finder_2.find(new SearchQuery(derivedInterface.getNode(), searchQuery.getScope()));
-              for(SearchResult result : results_2.getSearchResults()) {
+              for (SearchResult result : results_2.getSearchResults()) {
                 derivedInterfacesUsages.add(result);
               }
             }
@@ -91,29 +91,27 @@ public class ImplementingClasses_Finder extends BaseFinder {
         }
       }
       // null
-      for(SearchResult interfaceResult : derivedInterfacesUsages) {
-        SNode node = interfaceResult.getNodePointer().getNode();
-        if(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-          if(SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) {
+      for (SearchResult interfaceResult : derivedInterfacesUsages) {
+        SNode node = interfaceResult.getNode();
+        if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node, null, false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+          if (SNodeOperations.hasRole(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", "implementedInterface")) {
             global_results.getSearchResults().add(new SearchResult(new SNodePointer(SNodeOperations.getParent(node, null, false, false)), "Implementing Classes"));
             // null
             List<SearchResult> classesResult = new ArrayList<SearchResult>();
             try {
-              BaseFinder finder_3 = (BaseFinder)Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
+              BaseFinder finder_3 = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
               boolean rightConcept = finder_3.getConcept().equals(SNodeOperations.getParent(node, null, false, false).getConceptFqName());
               // TODO
               rightConcept = true;
-              if(!(rightConcept)) {
+              if (!(rightConcept)) {
                 ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_3.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-              } else
-              {
+              } else {
                 boolean isApplicable = finder_3.isApplicable(SNodeOperations.getParent(node, null, false, false));
-                if(!(isApplicable)) {
+                if (!(isApplicable)) {
                   ImplementingClasses_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_3.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-                } else
-                {
+                } else {
                   SearchResults results_3 = finder_3.find(new SearchQuery(SNodeOperations.getParent(node, null, false, false), searchQuery.getScope()));
-                  for(SearchResult result : results_3.getSearchResults()) {
+                  for (SearchResult result : results_3.getSearchResults()) {
                     classesResult.add(result);
                   }
                 }
@@ -122,8 +120,8 @@ public class ImplementingClasses_Finder extends BaseFinder {
               ImplementingClasses_Finder.LOG.error("Error instantiating finder \"" + "jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder" + "\"  Message:" + t.getMessage());
             }
             // null
-            for(SearchResult classResult : classesResult) {
-              global_results.getSearchResults().add(new SearchResult(new SNodePointer(classResult.getNodePointer().getNode()), "Implementing Classes"));
+            for (SearchResult classResult : classesResult) {
+              global_results.getSearchResults().add(new SearchResult(new SNodePointer(classResult.getNode()), "Implementing Classes"));
             }
           }
         }

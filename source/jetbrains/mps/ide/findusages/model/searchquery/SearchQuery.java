@@ -45,6 +45,10 @@ public class SearchQuery implements IExternalizableComponent {
     return myNodePointer;
   }
 
+  public SNode getNode() {
+    return myNodePointer.getNode();
+  }
+
   public IScope getScope() {
     return myScope;
   }

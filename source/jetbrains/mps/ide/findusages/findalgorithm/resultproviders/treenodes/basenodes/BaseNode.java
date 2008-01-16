@@ -1,10 +1,11 @@
 package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.basenodes;
 
+import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.model.result.SearchResult;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IScope;
@@ -18,6 +19,8 @@ import java.util.List;
  * NOTE: all nodes except UnionNode MUST have <2 children
  */
 public abstract class BaseNode implements IResultProvider {
+  private static final Logger LOG = Logger.getLogger(BaseNode.class);
+
   private static final String CHILDREN = "children";
 
   protected BaseNode myParent;
@@ -57,16 +60,40 @@ public abstract class BaseNode implements IResultProvider {
 
   public abstract SearchResults doGetResults(SearchQuery query, IAdaptiveProgressMonitor monitor);
 
-  public SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {        
+  public SearchResults getResults(SearchQuery query, IAdaptiveProgressMonitor monitor) {
     assert !ThreadUtils.isEventDispatchThread();
 
     SearchResults results;
     if (isRoot()) {
       monitor.start("find usages", getEstimatedTime(query.getScope()));
-      results = doGetResults(query, monitor);
+    }
+
+    results = doGetResults(query, monitor);
+
+    //no null pointer exception will occure!!
+    if (results.getSearchedNodePointers().contains(null)) {
+      LOG.error("GetResults returned nodes containing null, which means that some of your filters and finders is incorrect");
+      results.getSearchedNodePointers().remove(null);
+    }
+    boolean error = false;
+    for (SearchResult result : results.getSearchResults()) {
+      if (result.getNode() == null) {
+        LOG.error("GetResults returned results containing null, which means that some of your filters and finders is incorrect");
+        error = true;
+      }
+    }
+    if (error) {
+      List<SearchResult> newResults = new ArrayList<SearchResult>();
+      for (SearchResult result : results.getSearchResults()) {
+        if (result.getNode() != null) {
+          newResults.add(result);
+        }
+      }
+      results = new SearchResults(results.getSearchedNodePointers(), newResults);
+    }
+
+    if (isRoot()) {
       monitor.finish();
-    } else {
-      results = doGetResults(query, monitor);
     }
     return results;
   }

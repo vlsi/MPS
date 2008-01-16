@@ -40,6 +40,17 @@ public class SearchResult implements IExternalizableComponent {
     return myCategory;
   }
 
+  public int hashCode() {
+    return myCategory.hashCode() * 37 + getNode().hashCode() * 17;
+  }
+
+  public boolean equals(Object o) {
+    if (!(o instanceof SearchResult)) return false;
+    if (!getNode().equals(((SearchResult) o).getNode())) return false;
+    if (!myCategory.equals(((SearchResult) o).myCategory)) return false;
+    return true;
+  }
+
   public void write(Element element, MPSProject project) {
     Element attributesXML = new Element(ATTRIBUTES);
     attributesXML.setAttribute(CATEGORY, myCategory);

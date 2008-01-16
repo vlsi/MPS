@@ -9,9 +9,13 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOpera
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
 import jetbrains.mps.ide.findusages.model.searchquery.SearchQuery;
 import jetbrains.mps.smodel.SNodePointer;
+
 import java.util.List;
+
 import jetbrains.mps.ide.findusages.model.result.SearchResult;
+
 import java.util.ArrayList;
+
 import jetbrains.mps.baseLanguage.ext.collections.internal.ICursor;
 import jetbrains.mps.baseLanguage.ext.collections.internal.CursorFactory;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
@@ -31,10 +35,10 @@ public class OverridingMethods_Finder extends BaseFinder {
   }
 
   public boolean isApplicable(SNode node) {
-    if(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null) {
+    if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null) {
       return false;
     }
-    if(!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
       return false;
     }
     return true;
@@ -47,26 +51,24 @@ public class OverridingMethods_Finder extends BaseFinder {
   public SearchResults find(SearchQuery searchQuery) {
     SearchResults global_results = new SearchResults();
     {
-      SNode searchedNode = (SNode)searchQuery.getNodePointer().getNode();
+      SNode searchedNode = (SNode) searchQuery.getNode();
       global_results.getSearchedNodePointers().add(new SNodePointer(searchedNode));
       // null
       List<SearchResult> results = new ArrayList<SearchResult>();
       try {
-        BaseFinder finder_ = (BaseFinder)Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
+        BaseFinder finder_ = (BaseFinder) Class.forName("jetbrains.mps.baseLanguage.findUsages.DerivedClasses_Finder").newInstance();
         boolean rightConcept = finder_.getConcept().equals(SNodeOperations.getParent(searchedNode, null, false, false).getConceptFqName());
         // TODO
         rightConcept = true;
-        if(!(rightConcept)) {
+        if (!(rightConcept)) {
           OverridingMethods_Finder.LOG.error("Trying to use finder that is not applicable to the concept. Returning empty results." + "[finder: \"" + finder_.getDescription() + "\" ; concept: " + searchQuery.getNodePointer().getNode().getConceptFqName());
-        } else
-        {
+        } else {
           boolean isApplicable = finder_.isApplicable(SNodeOperations.getParent(searchedNode, null, false, false));
-          if(!(isApplicable)) {
+          if (!(isApplicable)) {
             OverridingMethods_Finder.LOG.error("Trying to use finder that is not applicable to the node. Returning empty results." + "[finder: \"" + finder_.getDescription() + "\" ; node: " + searchQuery.getNodePointer().getNode().toString());
-          } else
-          {
+          } else {
             SearchResults results_ = finder_.find(new SearchQuery(SNodeOperations.getParent(searchedNode, null, false, false), searchQuery.getScope()));
-            for(SearchResult result : results_.getSearchResults()) {
+            for (SearchResult result : results_.getSearchResults()) {
               results.add(result);
             }
           }
@@ -78,32 +80,31 @@ public class OverridingMethods_Finder extends BaseFinder {
       {
         ICursor<SearchResult> _zCursor = CursorFactory.createCursor(results);
         try {
-          while(_zCursor.moveToNext()) {
+          while (_zCursor.moveToNext()) {
             SearchResult result = _zCursor.getCurrent();
             {
-              SNode classNode = (SNode)result.getNodePointer().getNode();
+              SNode classNode = (SNode) result.getNodePointer().getNode();
               Iterable<SNode> methodsOfSameKind;
-              if(SNodeOperations.isInstanceOf(searchedNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
+              if (SNodeOperations.isInstanceOf(searchedNode, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
                 methodsOfSameKind = SLinkOperations.getTargets(classNode, "method", true);
-              } else
-              {
+              } else {
                 methodsOfSameKind = SLinkOperations.getTargets(classNode, "staticMethod", true);
               }
               {
                 ICursor<SNode> _zCursor1 = CursorFactory.createCursor(methodsOfSameKind);
                 try {
-                  while(_zCursor1.moveToNext()) {
+                  while (_zCursor1.moveToNext()) {
                     SNode sMethod = _zCursor1.getCurrent();
-                    if(SPropertyOperations.getString(sMethod, "name").equals(SPropertyOperations.getString(searchedNode, "name")) && SLinkOperations.getCount(sMethod, "parameter") == SLinkOperations.getCount(searchedNode, "parameter")) {
+                    if (SPropertyOperations.getString(sMethod, "name").equals(SPropertyOperations.getString(searchedNode, "name")) && SLinkOperations.getCount(sMethod, "parameter") == SLinkOperations.getCount(searchedNode, "parameter")) {
                       boolean same = true;
-                      for(int i = 0 ; i < SLinkOperations.getCount(sMethod, "parameter") ; i = i + 1) {
+                      for (int i = 0; i < SLinkOperations.getCount(sMethod, "parameter"); i = i + 1) {
                         String searchedParamType = Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(ListOperations.getElement(SLinkOperations.getTargets(searchedNode, "parameter", true), i), "type", true));
                         String foundParamType = Type_Behavior.call_getErasureSignature_1199318924019(SLinkOperations.getTarget(ListOperations.getElement(SLinkOperations.getTargets(sMethod, "parameter", true), i), "type", true));
-                        if(!(foundParamType.equals(searchedParamType))) {
+                        if (!(foundParamType.equals(searchedParamType))) {
                           same = false;
                         }
                       }
-                      if(same) {
+                      if (same) {
                         global_results.getSearchResults().add(new SearchResult(new SNodePointer(sMethod), "Overriding Methods"));
                       }
                     }
