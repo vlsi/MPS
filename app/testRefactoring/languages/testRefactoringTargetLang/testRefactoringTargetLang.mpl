@@ -15,7 +15,7 @@
   <generators />
   <classPath />
   <runtimeClassPath>
-    <entry path="${mps_home}\languages\refactoring\testRefactoring\classes" />
+    <entry path="${mps_home}\app\testRefactoring\classes" />
   </runtimeClassPath>
   <sourcePath />
 </language>

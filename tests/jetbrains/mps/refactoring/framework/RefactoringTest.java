@@ -15,11 +15,13 @@ import java.io.File;
  * To change this template use File | Settings | File Templates.
  */
 public class RefactoringTest extends BaseMPSTest {
-   public void testRefactoringEnvironment() {
-    assertTrue(testRefactoringTestEnvironment(new File("languages/refactoring/testRefactoring")));
+  private static final String TEST_REFACTORING_PATH = "app/testRefactoring";
+
+  public void testRefactoringEnvironment() {
+    assertTrue(testRefactoringTestEnvironment(new File(TEST_REFACTORING_PATH)));
   }
 
   public void testRenameConceptRefactoring() {
-    assertTrue(testRefactoringOnProject(new File("languages/refactoring/testRefactoring"), "jetbrains.mps.refactoring.framework.tests.RenameConceptRefactoringTester"));
+    assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.framework.tests.RenameConceptRefactoringTester"));
   }
 }
