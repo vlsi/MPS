@@ -11,6 +11,7 @@ import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.BaseAdapter;
+import jetbrains.mps.project.GlobalScope;
 
 import javax.swing.Icon;
 import java.util.Set;
@@ -93,7 +94,7 @@ public class BaseLanguageHierarchyView extends AbstractHierarchyView<Classifier>
     }
 
     protected Set<Classifier> getDescendants(Classifier node) {
-      Set<SReference> usages = myUsagesManager.findUsages(node.getNode(), myOperationContext.getScope(), IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
+      Set<SReference> usages = myUsagesManager.findUsages(node.getNode(), GlobalScope.getInstance(), IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
       Set<Classifier> result = new HashSet<Classifier>();
       for (SReference usage : usages) {
         if (ClassifierType.CLASSIFIER.equals(usage.getRole())) {

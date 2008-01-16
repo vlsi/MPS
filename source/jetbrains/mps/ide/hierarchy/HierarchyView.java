@@ -14,6 +14,7 @@ import jetbrains.mps.ide.ui.TreeTextUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
@@ -84,7 +85,7 @@ public class HierarchyView extends AbstractHierarchyView<AbstractConceptDeclarat
     }
 
     protected Set<AbstractConceptDeclaration> getDescendants(AbstractConceptDeclaration conceptDeclaration) {
-      return myUsagesManager.findDescendants(conceptDeclaration, myOperationContext.getScope());
+      return myUsagesManager.findDescendants(conceptDeclaration, GlobalScope.getInstance());
     }
 
     protected String noNodeString() {
