@@ -2,14 +2,14 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
-import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.generationTypes.FileGenerationUtil;
+import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
 import jetbrains.mps.generator.template.Statistics;
 import jetbrains.mps.helgins.inference.NodeTypesComponentsRepository;
 import jetbrains.mps.helgins.inference.TypeChecker;
-import jetbrains.mps.ide.IDEProjectFrame;
-import jetbrains.mps.ide.BootstrapLanguages;
 import jetbrains.mps.ide.AbstractProjectFrame;
+import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.ide.modelchecker.ModelCheckResult;
@@ -34,10 +34,13 @@ import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.util.CollectionUtil;
 import org.jdom.Element;
 
-import javax.swing.JOptionPane;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import java.io.File;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
 import java.util.concurrent.*;
 
 
@@ -190,7 +193,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
    */
   public IFileGenerator chooseFileGenerator(SNode outputRootNode, SNode originalInputNode) {
     for (IFileGenerator fileGenerator : myFileGenerators) {
-      try{
+      try {
         if (fileGenerator.overridesDefault(outputRootNode, originalInputNode)) {
           return fileGenerator;
         }
@@ -279,16 +282,19 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             final boolean last = i == models.size() - 1;
 
             Future<Boolean> f = generatorManager.generateModelsWithProgressWindow(
-                    CollectionUtil.asList(model),
-                    BootstrapLanguages.getInstance().getBaseLanguage(),
-                    models.size() == 1 ? operationContext : ModuleContext.create(model, operationContext.getComponent(AbstractProjectFrame.class), false),
-                    new GenerationTypeWrapper(generationType) {
-                      public boolean requiresCompilationInIDEAfterGeneration() {
-                        return super.requiresCompilationInIDEAfterGeneration() && last;
-                      }
-                    },
-                    IGenerationScript.DEFAULT,
-                    false);
+              CollectionUtil.asList(model),
+              BootstrapLanguages.getInstance().getBaseLanguage(),
+              //TODO: add assertion or leave this variant
+              //Modified by Mihail Muhin - when one model and project.createOperationContext() are passed, it produces NPE
+              //models.size() == 1 ? operationContext : ModuleContext.create(model, operationContext.getComponent(AbstractProjectFrame.class), false),
+              ModuleContext.create(model, operationContext.getComponent(AbstractProjectFrame.class), false),
+              new GenerationTypeWrapper(generationType) {
+                public boolean requiresCompilationInIDEAfterGeneration() {
+                  return super.requiresCompilationInIDEAfterGeneration() && last;
+                }
+              },
+              IGenerationScript.DEFAULT,
+              false);
 
             Boolean result = f.get();
             if (!result) {
@@ -311,13 +317,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
     return result;
   }
-   
+
   public Future<Boolean> generateModelsWithProgressWindow(final List<SModel> sourceModels,
-                                               final Language targetLanguage,
-                                               final IOperationContext invocationContext,
-                                               final IGenerationType generationType,
-                                               final IGenerationScript script,
-                                               boolean closeOnExit) {
+                                                          final Language targetLanguage,
+                                                          final IOperationContext invocationContext,
+                                                          final IGenerationType generationType,
+                                                          final IGenerationScript script,
+                                                          boolean closeOnExit) {
 
     final AdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), closeOnExit);
 
@@ -327,16 +333,16 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     final boolean saveTransientModels;
     if (isSaveTransientModels()) {
       Object[] options = {"Yes",
-              "Not this time",
-              "No, and cancel saving"};
+        "Not this time",
+        "No, and cancel saving"};
       int option = JOptionPane.showOptionDialog(invocationContext.getMainFrame(),
-              "Would you like to save transient models?",
-              "",
-              JOptionPane.YES_NO_CANCEL_OPTION,
-              JOptionPane.QUESTION_MESSAGE,
-              null,
-              options,
-              options[0]);
+        "Would you like to save transient models?",
+        "",
+        JOptionPane.YES_NO_CANCEL_OPTION,
+        JOptionPane.QUESTION_MESSAGE,
+        null,
+        options,
+        options[0]);
 
       if (option == JOptionPane.YES_OPTION) {
         saveTransientModels = true;
@@ -363,13 +369,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
    * @return false if canceled
    */
   public boolean generateModels(final List<SModel> inputModels,
-                             final Language targetLanguage,
-                             final IOperationContext invocationContext,
-                             final IGenerationType generationType,
-                             final IGenerationScript script,
-                             final IAdaptiveProgressMonitor progress,
-                             final IMessageHandler messages,
-                             final boolean saveTransientModels) {
+                                final Language targetLanguage,
+                                final IOperationContext invocationContext,
+                                final IGenerationType generationType,
+                                final IGenerationScript script,
+                                final IAdaptiveProgressMonitor progress,
+                                final IMessageHandler messages,
+                                final boolean saveTransientModels) {
     final boolean[] result = new boolean[1];
     CommandProcessor.instance().executeGenerationCommand(new Runnable() {
       public void run() {
@@ -383,13 +389,13 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
    * @return false if canceled
    */
   private boolean generateModels_internal(List<SModel> _sourceModels,
-                                       Language targetLanguage,
-                                       IOperationContext invocationContext,
-                                       IGenerationType generationType,
-                                       IGenerationScript script,
-                                       IAdaptiveProgressMonitor progress,
-                                       IMessageHandler messages,
-                                       boolean saveTransientModels) {
+                                          Language targetLanguage,
+                                          IOperationContext invocationContext,
+                                          IGenerationType generationType,
+                                          IGenerationScript script,
+                                          IAdaptiveProgressMonitor progress,
+                                          IMessageHandler messages,
+                                          boolean saveTransientModels) {
 
     List<SModelDescriptor> sourceModels = new ArrayList<SModelDescriptor>();
     for (SModel model : _sourceModels) {
@@ -397,8 +403,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     }
 
     boolean compile = (
-            (myCompileOnGeneration && generationType.requiresCompilationInIDEAfterGeneration())
-                    || (myCompileBeforeGeneration && generationType.requiresCompilationInIDEABeforeGeneration()));
+      (myCompileOnGeneration && generationType.requiresCompilationInIDEAfterGeneration())
+        || (myCompileBeforeGeneration && generationType.requiresCompilationInIDEABeforeGeneration()));
 
     long totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, !invocationContext.getModule().isCompileInMPS(), sourceModels);
     progress.startTaskAnyway("generating", null, totalJob);
@@ -509,10 +515,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
             ModelCheckResult result = new ModelChecker(invocationContext).checkModel(sourceModelDescriptor);
             if (result.hasErrors()) {
               if (JOptionPane.showConfirmDialog(
-                      invocationContext.getMainFrame(),
-                      "Model's " + sourceModelDescriptor.getModelUID() + " generation finished with errors. Do you want to save generated files?",
-                      "Generation finished with errors",
-                      JOptionPane.YES_NO_OPTION) != JOptionPane.YES_OPTION) {
+                invocationContext.getMainFrame(),
+                "Model's " + sourceModelDescriptor.getModelUID() + " generation finished with errors. Do you want to save generated files?",
+                "Generation finished with errors",
+                JOptionPane.YES_NO_OPTION) != JOptionPane.YES_OPTION) {
                 continue;
               }
             }
@@ -578,11 +584,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       updateLanguagesGenerationRequiredStatus(invocationContext);
 
       checkMonitorCanceled(progress);
-      progress.addText("");     
+      progress.addText("");
       if (status == null || status.isOk()) {
         IModule module = invocationContext.getModule();
         if (!myCompileOnGeneration || !(ideaPresent || module.isCompileInMPS())
-                || !generationType.requiresCompilationInIDEAfterGeneration()) {
+          || !generationType.requiresCompilationInIDEAfterGeneration()) {
           progress.addText("compilation in IntelliJ IDEA after generation is turned off or not needed");
         } else {
           // -- compile after generation
@@ -639,7 +645,7 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
 
       if (generationType instanceof GenerateFilesGenerationType && ideaPresent &&
-              !generationType.requiresCompilationInIDEAfterGeneration()) {
+        !generationType.requiresCompilationInIDEAfterGeneration()) {
         projectHandler.refreshFS();
       }
 
