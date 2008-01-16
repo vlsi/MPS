@@ -6,6 +6,7 @@ import jetbrains.mps.bootstrap.structureLanguage.structure.InterfaceConceptDecla
 import jetbrains.mps.ide.action.MPSAction;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.BootstrapLanguages;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
@@ -15,6 +16,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Calculable;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -31,16 +33,20 @@ public class IconManager {
 
   private static Map<String, Icon> ourPathsToIcons = new HashMap<String, Icon>();
 
-  public static Icon getIconFor(SNode node) {
-    if (node == null) return Icons.DEFAULT_ICON;
+  public static Icon getIconFor(final SNode node) {
+    return CommandProcessor.instance().executeLightweightCommand(new Calculable<Icon>() {
+      public Icon calculate() {
+        if (node == null) return Icons.DEFAULT_ICON;
 
-    if (!(node.getConceptDeclarationAdapter() instanceof ConceptDeclaration)) {
-      LOG.error("Instance of concept interface found", node);
-      return Icons.DEFAULT_ICON;
-    }
-      
+        if (!(node.getConceptDeclarationAdapter() instanceof ConceptDeclaration)) {
+          LOG.error("Instance of concept interface found", node);
+          return Icons.DEFAULT_ICON;
+        }
 
-    return getIconFor((ConceptDeclaration) node.getConceptDeclarationAdapter());
+
+        return getIconFor((ConceptDeclaration) node.getConceptDeclarationAdapter());
+      }
+    });
   }
 
   public static Icon getIconFor(ConceptDeclaration conceptDeclaration) {
@@ -112,7 +118,7 @@ public class IconManager {
         return Icons.FIND_USAGES_MODEL_ICON;
       }
     } else if (modelDescriptor.getStereotype() != null &&
-            modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
+      modelDescriptor.getStereotype().equals(SModelStereotype.TEMPLATES)) {
       return Icons.TEMPLATES_MODEL_ICON;
     } else if (Language.isAccessoryModel(modelDescriptor)) {
       return Icons.ACCESSORY_MODEL_ICON;

@@ -4,6 +4,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.FindersOptions;
 import jetbrains.mps.ide.findusages.subsystem.FindUsagesManager;
 import jetbrains.mps.ide.action.ActionContext;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.smodel.SNode;
 
 import javax.swing.*;
@@ -12,18 +13,18 @@ import javax.swing.event.ChangeListener;
 import java.util.*;
 
 public class FindersEditor extends BaseEditor<FindersOptions> {
-  public FindersEditor(FindersOptions defaultOptions, SNode node, ActionContext context) {
+  public FindersEditor(FindersOptions defaultOptions, final SNode node, ActionContext context) {
     super(defaultOptions, node, context);
 
-    Set<BaseFinder> availableFinders = FindUsagesManager.getInstance().getAvailableFinders(node);
     myPanel = new JPanel();
     myPanel.setLayout(new BoxLayout(myPanel, BoxLayout.Y_AXIS));
 
     myPanel.setBorder(
-            BorderFactory.createCompoundBorder(
-                    BorderFactory.createTitledBorder("Finders"),
-                    BorderFactory.createEmptyBorder(5, 5, 5, 5)));
+      BorderFactory.createCompoundBorder(
+        BorderFactory.createTitledBorder("Finders"),
+        BorderFactory.createEmptyBorder(5, 5, 5, 5)));
 
+    Set<BaseFinder> availableFinders = FindUsagesManager.getInstance().getAvailableFinders(node);
 
     List<BaseFinder> sortedFinders = new ArrayList<BaseFinder>(availableFinders);
     Collections.sort(sortedFinders, new Comparator<BaseFinder>() {
@@ -66,5 +67,4 @@ public class FindersEditor extends BaseEditor<FindersOptions> {
 
     myOptions.setFindersClassNames(correctEnabledFinders);
   }
-
 }

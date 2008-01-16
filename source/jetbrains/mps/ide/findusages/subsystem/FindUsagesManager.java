@@ -4,11 +4,13 @@ import jetbrains.mps.bootstrap.findUsagesLanguage.constraints.FinderDeclaration_
 import jetbrains.mps.bootstrap.findUsagesLanguage.structure.FinderDeclaration;
 import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.BaseFinder;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.ApplicationComponents;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Calculable;
 import org.jdom.Element;
 
 import java.util.*;
@@ -26,25 +28,30 @@ public class FindUsagesManager implements IExternalizableComponent {
 
   }
 
-  public Set<BaseFinder> getAvailableFinders(SNode node) {
-    Set<BaseFinder> result = new HashSet<BaseFinder>();
+  public Set<BaseFinder> getAvailableFinders(final SNode node) {
+    return
+      (Set<BaseFinder>) CommandProcessor.instance().executeLightweightCommand(new Calculable<Object>() {
+        public Object calculate() {
+          Set<BaseFinder> result = new HashSet<BaseFinder>();
 
-    for (String conceptFQName : myFinders.keySet()) {
-      if (node.isInstanceOfConcept(conceptFQName)) {
-        for (BaseFinder finder : Collections.unmodifiableSet(myFinders.get(conceptFQName))) {
-          try {
-            if (finder.isVisible()) {
-              if (finder.isApplicable(node)) {
-                result.add(finder);
+          for (String conceptFQName : myFinders.keySet()) {
+            if (node.isInstanceOfConcept(conceptFQName)) {
+              for (BaseFinder finder : Collections.unmodifiableSet(myFinders.get(conceptFQName))) {
+                try {
+                  if (finder.isVisible()) {
+                    if (finder.isApplicable(node)) {
+                      result.add(finder);
+                    }
+                  }
+                } catch (Throwable t) {
+                  LOG.error("Finder's isApplicable method failed " + t.getMessage(), t);
+                }
               }
             }
-          } catch (Throwable t) {
-            LOG.error("Finder's isApplicable method failed " + t.getMessage(), t);
           }
+          return Collections.unmodifiableSet(result);
         }
-      }
-    }
-    return Collections.unmodifiableSet(result);
+      });
   }
 
   public BaseFinder getFinderByClassName(String className) {

@@ -6,6 +6,7 @@ import jetbrains.mps.components.IExternalizableComponent;
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.result.SearchResults;
@@ -93,7 +94,7 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
 
   public void showTool() {
     if (myUsageViewsData.size() > 0) {
-      ThreadUtils.runInUIThreadAndWait(new Runnable() {
+      ThreadUtils.runInUIThreadNoWait(new Runnable() {
         public void run() {
           myProjectFrame.showNewUsagesView();
         }
@@ -139,64 +140,73 @@ public class NewUsagesView extends DefaultTool implements IExternalizableCompone
   }
 
   public void findUsages(final ActionContext context) {
-    SNode semanticNode = context.getNode();
-    SNode operationNode = EditorUtil.getOperationNodeWRTReference(context, semanticNode);
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        SNode semanticNode = context.getNode();
+        SNode operationNode = EditorUtil.getOperationNodeWRTReference(context, semanticNode);
 
-    FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultOptions, operationNode, context);
-    findUsagesDialog.showDialog();
-    if (!findUsagesDialog.isCancelled()) {
-      FindUsagesOptions options = findUsagesDialog.getResult();
-      myDefaultOptions = options;
+        FindUsagesDialog findUsagesDialog = new FindUsagesDialog(myDefaultOptions, operationNode, context);
+        findUsagesDialog.showDialog();
+        if (!findUsagesDialog.isCancelled()) {
+          FindUsagesOptions options = findUsagesDialog.getResult();
+          myDefaultOptions = options;
 
-      IResultProvider provider = options.getOption(FindersOptions.class).getResult(operationNode, context);
-      SearchQuery query = options.getOption(QueryOptions.class).getResult(operationNode, context);
-      ViewOptions viewOptions = options.getOption(ViewOptions.class);
+          IResultProvider provider = options.getOption(FindersOptions.class).getResult(operationNode, context);
+          SearchQuery query = options.getOption(QueryOptions.class).getResult(operationNode, context);
+          ViewOptions viewOptions = options.getOption(ViewOptions.class);
 
-      findUsages(provider, query, true, viewOptions.myShowOneResult, viewOptions.myNewTab);
-    }
-  }
-
-  public void findUsages(IResultProvider provider, SearchQuery query, boolean isRerunnable, boolean showOne, boolean newTab) {
-    final SearchResults searchResults = provider.getResults(query, myProjectFrame.createAdaptiveProgressMonitor());
-
-    int resCount = searchResults.getSearchResults().size();
-    if (resCount == 0) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          new HintDialog(myProjectFrame.getMainFrame(), "Not found", "No usages for that node").showDialog();
-        }
-      });
-    } else if (resCount == 1 && !showOne) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          SNode node = searchResults.getSearchResults().get(0).getNodePointer().getNode();
-          if (node != null) {
-            NavigationActionProcessor.executeNavigationAction(
-                    new EditorNavigationCommand(node, myProjectFrame.getEditorsPane().getCurrentEditor(), myProjectFrame.getEditorsPane()),
-                    myProjectFrame.getProject(), true);
-          }
-        }
-      });
-    } else {
-      if (!newTab) {
-        if (currentTabIndex() != -1) {
-          closeTab(currentTabIndex());
+          findUsages(provider, query, true, viewOptions.myShowOneResult, viewOptions.myNewTab);
         }
       }
-      UsageViewData usageViewData = new UsageViewData();
-      usageViewData.createUsageView();
-      myUsageViewsData.add(usageViewData);
+    });
+  }
 
-      myTabbedPane.addTab("", usageViewData.myUsageView.getComponent());
-      myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
+  public void findUsages(final IResultProvider provider, final SearchQuery query, final boolean isRerunnable, final boolean showOne, final boolean newTab) {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        final SearchResults searchResults = provider.getResults(query, myProjectFrame.createAdaptiveProgressMonitor());
 
-      usageViewData.myUsageView.setRunOptions(provider, query, isRerunnable, searchResults);
+        int resCount = searchResults.getSearchResults().size();
+        if (resCount == 0) {
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              new HintDialog(myProjectFrame.getMainFrame(), "Not found", "No usages for that node").showDialog();
+            }
+          });
+        } else if (resCount == 1 && !showOne) {
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              SNode node = searchResults.getSearchResults().get(0).getNodePointer().getNode();
+              if (node != null) {
+                NavigationActionProcessor.executeNavigationAction(
+                  new EditorNavigationCommand(node, myProjectFrame.getEditorsPane().getCurrentEditor(), myProjectFrame.getEditorsPane()),
+                  myProjectFrame.getProject(), true);
+              }
+            }
+          });
+        } else {
+          if (!newTab) {
+            if (currentTabIndex() != -1) {
+              closeTab(currentTabIndex());
+            }
+          }
+          UsageViewData usageViewData = new UsageViewData();
+          usageViewData.createUsageView();
+          myUsageViewsData.add(usageViewData);
 
-      myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsageView.getCaption());
-      myTabbedPane.setIconAt(currentTabIndex(), usageViewData.myUsageView.getIcon());
+          myTabbedPane.addTab("", usageViewData.myUsageView.getComponent());
+          myTabbedPane.setSelectedIndex(myTabbedPane.getTabCount() - 1);
 
-      showTool();
-    }
+          usageViewData.myUsageView.setRunOptions(provider, query, isRerunnable, searchResults);
+
+          myTabbedPane.setTitleAt(currentTabIndex(), usageViewData.myUsageView.getCaption());
+          myTabbedPane.setIconAt(currentTabIndex(), usageViewData.myUsageView.getIcon());
+
+          showTool();
+        }
+
+      }
+    });
   }
 
   public void read(Element element, MPSProject project) {
