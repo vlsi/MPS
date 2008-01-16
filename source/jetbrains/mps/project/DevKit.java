@@ -100,11 +100,6 @@ public class DevKit extends AbstractModule {
   }
 
 
-  protected void readDependOnModules() {
-    super.readDependOnModules();
-    MPSModuleRepository.getInstance().readModuleDescriptors(getModuleDescriptor().generationOnlyModules(), myGenerationOnlyModelsModelOwner);
-  }
-
   public void dispose() {
     SModelRepository.getInstance().unRegisterModelDescriptors(this);
     MPSModuleRepository.getInstance().unRegisterModules(this);
@@ -141,18 +136,6 @@ public class DevKit extends AbstractModule {
     return modelDescriptors;
   }
 
-  public List<IModule> getGenerationOnlyLanuages() {
-    List<IModule> languages = MPSModuleRepository.getInstance().getModules(myGenerationOnlyModelsModelOwner);
-
-    for (ModuleReference ref : myDescriptor.getGenerationOnlyDependencys()) {
-      IModule m = MPSModuleRepository.getInstance().getModuleByUID(ref.getName());
-      languages.add(m);
-    }
-
-    Collections.sort(languages, new ToStringComparator());
-    return languages;
-  }
-
   public List<String> getLanguageNamespaces() {
     return CollectionUtil.map(getExportedLanguages(), new Mapper<Language, String>() {
       public String map(Language language) {
@@ -169,8 +152,6 @@ public class DevKit extends AbstractModule {
 
   public void convert() {
     ConversionUtil.convert(this, myDescriptor.getModuleRoots());
-    ConversionUtil.convert(this, myDescriptor.getGenerationOnlyModules());
-
 
     boolean changed = false;
     for (jetbrains.mps.projectLanguage.structure.Language l : myDescriptor.getExportedLanguages()) {

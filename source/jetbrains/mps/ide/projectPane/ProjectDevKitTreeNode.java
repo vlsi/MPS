@@ -89,12 +89,5 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
       exportedModels.add(new SModelTreeNode(sm, null, getOperationContext()));
     }
     add(exportedModels);
-
-    TextTreeNode generationOnly = new TextTreeNode("Generation only languages");
-    add(generationOnly);
-
-    for (IModule l : myDevKit.getGenerationOnlyLanuages()) {
-      generationOnly.add(ProjectModuleTreeNode.createFor(getOperationContext().getProject(), l));
-    }
   }
 }

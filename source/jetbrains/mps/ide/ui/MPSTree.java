@@ -113,7 +113,7 @@ public abstract class MPSTree extends JTree {
           nodes.add(node);
           node.keyPressed(e);
         }
-        KeyStroke eventKeyStroke = KeyStroke.getKeyStrokeForEvent(e);
+        final KeyStroke eventKeyStroke = KeyStroke.getKeyStrokeForEvent(e);
         Pair pair = new Pair(eventKeyStroke, selNode.getClass());
         final MPSAction action = myKeyStrokesToActionsMap.get(pair);
         if (action != null) {
@@ -130,7 +130,7 @@ public abstract class MPSTree extends JTree {
 
           for (TreePath p : paths) {
             final MPSTreeNode lastNode = (MPSTreeNode) p.getLastPathComponent();
-            JPopupMenu menu = CommandProcessor.instance().executeLightweightCommand(new Calculable<JPopupMenu>() {
+            final JPopupMenu menu = CommandProcessor.instance().executeLightweightCommand(new Calculable<JPopupMenu>() {
               public JPopupMenu calculate() {
                 return lastNode.getPopupMenu();
               }
@@ -138,7 +138,11 @@ public abstract class MPSTree extends JTree {
 
             if (menu == null) return;
 
-            JMenuItem item = findMenuItem(eventKeyStroke, menu);
+            JMenuItem item = CommandProcessor.instance().executeLightweightCommand(new Calculable<JMenuItem>() {
+              public JMenuItem calculate() {
+               return findMenuItem(eventKeyStroke, menu);
+              }
+            });
             if (item != null) {
               item.getAction().actionPerformed(new ActionEvent(this, 0, ""));
               e.consume();
