@@ -2,6 +2,7 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.IDEProjectFrame;
 import jetbrains.mps.ide.MPSToolBar;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.ide.action.IActionDataProvider;
 import jetbrains.mps.ide.actions.model.DeleteModelsAction;
@@ -205,39 +206,43 @@ public class ProjectPane extends AbstractProjectTreeView implements IActionDataP
   }
 
   public void selectNode(final SNode node, final IOperationContext context) {
-    getTree().runWithoutExpansion(new Runnable() {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
-        IModule module = context.getModule();
-        if (module == null) {
-          selectNode(node);
-          return;
-        }
+        getTree().runWithoutExpansion(new Runnable() {
+          public void run() {
+            IModule module = context.getModule();
+            if (module == null) {
+              selectNode(node);
+              return;
+            }
 
-        MPSTreeNode moduleTreeNode = findModuleTreeNode(module);
-        if (moduleTreeNode == null) {
-          LOG.error("Couldn't find tree node for module: " + module);
-          selectNode(node);
-          return;
-        }
+            MPSTreeNode moduleTreeNode = findModuleTreeNode(module);
+            if (moduleTreeNode == null) {
+              LOG.error("Couldn't find tree node for module: " + module);
+              selectNode(node);
+              return;
+            }
 
-        // search in module sub-tree
-        SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
-        SModelTreeNode modelTreeNode = findSModelTreeNode(moduleTreeNode, modelDescriptor);
-        if (modelTreeNode == null) {
-          // no such model in the module sub-tree
-          selectNode(node);
-          return;
-        }
+            // search in module sub-tree
+            SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+            SModelTreeNode modelTreeNode = findSModelTreeNode(moduleTreeNode, modelDescriptor);
+            if (modelTreeNode == null) {
+              // no such model in the module sub-tree
+              selectNode(node);
+              return;
+            }
 
-        // search in SModel sub-tree
-        MPSTreeNodeEx treeNodeToSelect = findTreeNode(modelTreeNode, node);
-        if (treeNodeToSelect != null) {
-          TreePath treePath = new TreePath(treeNodeToSelect.getPath());
-          myTree.setSelectionPath(treePath);
-          myTree.scrollPathToVisible(treePath);
-        } else {
-          LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node not found.");
-        }
+            // search in SModel sub-tree
+            MPSTreeNodeEx treeNodeToSelect = findTreeNode(modelTreeNode, node);
+            if (treeNodeToSelect != null) {
+              TreePath treePath = new TreePath(treeNodeToSelect.getPath());
+              myTree.setSelectionPath(treePath);
+              myTree.scrollPathToVisible(treePath);
+            } else {
+              LOG.warning("Couldn't select node " + node.getDebugText() + " : tree node not found.");
+            }
+          }
+        });
       }
     });
   }
