@@ -20,16 +20,16 @@
           <value modelUID="testRefactoringTargetLang.structure" nodeId="1198682124373" />
         </entry>
         <entry>
-          <key modelUID="testRefactoring.editor" nodeId="1198157620012" />
-          <value modelUID="testRefactoringTargetLang.editor" nodeId="1198682124392" />
-        </entry>
-        <entry>
           <key modelUID="testRefactoring.structure" nodeId="1198176325134" />
           <value modelUID="testRefactoringTargetLang.structure" nodeId="1198682124374" />
         </entry>
         <entry>
           <key modelUID="testRefactoring.editor" nodeId="1198157613232" />
           <value modelUID="testRefactoringTargetLang.editor" nodeId="1198682124391" />
+        </entry>
+        <entry>
+          <key modelUID="testRefactoring.editor" nodeId="1198157620012" />
+          <value modelUID="testRefactoringTargetLang.editor" nodeId="1198682124392" />
         </entry>
       </moveMap>
       <conceptFeatureMap>
@@ -133,20 +133,20 @@
       <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.MoveConcepts" />
       <moveMap>
         <entry>
-          <key modelUID="testRefactoring.structure" nodeId="1198595220761" />
-          <value modelUID="testRefactoringTargetLang.structure" nodeId="1199636171012" />
+          <key modelUID="testRefactoring.structure" nodeId="1198777413970" />
+          <value modelUID="testRefactoringTargetLang.structure" nodeId="1199636171013" />
         </entry>
         <entry>
           <key modelUID="testRefactoring.structure" nodeId="1198594618818" />
           <value modelUID="testRefactoringTargetLang.structure" nodeId="1199636171010" />
         </entry>
         <entry>
-          <key modelUID="testRefactoring.structure" nodeId="1198759577145" />
-          <value modelUID="testRefactoringTargetLang.structure" nodeId="1199636171011" />
+          <key modelUID="testRefactoring.structure" nodeId="1198595220761" />
+          <value modelUID="testRefactoringTargetLang.structure" nodeId="1199636171012" />
         </entry>
         <entry>
-          <key modelUID="testRefactoring.structure" nodeId="1198777413970" />
-          <value modelUID="testRefactoringTargetLang.structure" nodeId="1199636171013" />
+          <key modelUID="testRefactoring.structure" nodeId="1198759577145" />
+          <value modelUID="testRefactoringTargetLang.structure" nodeId="1199636171011" />
         </entry>
       </moveMap>
       <conceptFeatureMap>
@@ -166,20 +166,30 @@
         </entry>
       </conceptFeatureMap>
     </refactoringContext>
+    <refactoringContext modelVersion="12">
+      <refactoring refactoringClass="jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept" />
+      <moveMap />
+      <conceptFeatureMap>
+        <entry>
+          <key featureName="MyVeryGoodConcept1" conceptFQName="testRefactoring.structure.MyVeryGoodConcept1" featureKind="CONCEPT" />
+          <value featureName="MyVeryGoodConcept2" conceptFQName="testRefactoring.structure.MyVeryGoodConcept2" featureKind="CONCEPT" />
+        </entry>
+      </conceptFeatureMap>
+    </refactoringContext>
   </refactoringHistory>
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.scripts" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
   </language>
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="2" modelUID="testRefactoringTargetLang.structure" version="-1" />
+  <import index="2" modelUID="testRefactoringTargetLang.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198157505315">
-    <property name="name" value="MyVeryGoodConcept1" />
+    <property name="name" value="MyVeryGoodConcept2" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="2.1199636171010" resolveInfo="AbstractGoodConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration" id="1198591068787">
@@ -194,6 +204,10 @@
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198176302417">
     <property name="name" value="YetAnotherGoodConcept" />
     <link role="extends" targetNodeId="2.1198682124373" resolveInfo="AnotherGoodConcept" />
+    <node role="propertyDeclaration" type="jetbrains.mps.bootstrap.structureLanguage.structure.PropertyDeclaration" id="1200588769474">
+      <property name="name" value="niceProperty" />
+      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    </node>
   </node>
 </model>
 

@@ -13,7 +13,7 @@ import java.util.List;
 public class AbstractGoodConcept extends BaseConcept {
   public static final String concept = "testRefactoringTargetLang.structure.AbstractGoodConcept";
   public static String VERY_NICE_PROPERTY = "veryNiceProperty";
-  public static String ANOTHER_GOOD_CONCEPT = "anotherGoodConcept";
+  public static String GOOD_CONCEPT = "goodConcept";
 
   public  AbstractGoodConcept(SNode node) {
     super(node);
@@ -36,24 +36,24 @@ public class AbstractGoodConcept extends BaseConcept {
     this.setProperty(AbstractGoodConcept.VERY_NICE_PROPERTY, value);
   }
 
-  public int getAnotherGoodConceptsCount() {
-    return this.getChildCount(AbstractGoodConcept.ANOTHER_GOOD_CONCEPT);
+  public int getGoodConceptsCount() {
+    return this.getChildCount(AbstractGoodConcept.GOOD_CONCEPT);
   }
 
-  public Iterator<AnsotherGoodConcept> anotherGoodConcepts() {
-    return this.children(AbstractGoodConcept.ANOTHER_GOOD_CONCEPT);
+  public Iterator<AnsotherGoodConcept> goodConcepts() {
+    return this.children(AbstractGoodConcept.GOOD_CONCEPT);
   }
 
-  public List<AnsotherGoodConcept> getAnotherGoodConcepts() {
-    return this.getChildren(AbstractGoodConcept.ANOTHER_GOOD_CONCEPT);
+  public List<AnsotherGoodConcept> getGoodConcepts() {
+    return this.getChildren(AbstractGoodConcept.GOOD_CONCEPT);
   }
 
-  public void addAnotherGoodConcept(AnsotherGoodConcept node) {
-    this.addChild(AbstractGoodConcept.ANOTHER_GOOD_CONCEPT, node);
+  public void addGoodConcept(AnsotherGoodConcept node) {
+    this.addChild(AbstractGoodConcept.GOOD_CONCEPT, node);
   }
 
-  public void insertAnotherGoodConcept(AnsotherGoodConcept prev, AnsotherGoodConcept node) {
-    this.insertChild(prev, AbstractGoodConcept.ANOTHER_GOOD_CONCEPT, node);
+  public void insertGoodConcept(AnsotherGoodConcept prev, AnsotherGoodConcept node) {
+    this.insertChild(prev, AbstractGoodConcept.GOOD_CONCEPT, node);
   }
 
 }

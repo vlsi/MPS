@@ -10,6 +10,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class YetAnotherGoodConcept extends AnsotherGoodConcept {
   public static final String concept = "testRefactoring.structure.YetAnotherGoodConcept";
+  public static String NICE_PROPERTY = "niceProperty";
 
   public  YetAnotherGoodConcept(SNode node) {
     super(node);
@@ -21,6 +22,15 @@ public class YetAnotherGoodConcept extends AnsotherGoodConcept {
 
   public static YetAnotherGoodConcept newInstance(SModel sm) {
     return YetAnotherGoodConcept.newInstance(sm, false);
+  }
+
+
+  public String getNiceProperty() {
+    return this.getProperty(YetAnotherGoodConcept.NICE_PROPERTY);
+  }
+
+  public void setNiceProperty(String value) {
+    this.setProperty(YetAnotherGoodConcept.NICE_PROPERTY, value);
   }
 
 }

@@ -36,4 +36,10 @@ public class RefactoringTest extends BaseMPSTest {
   public void testMoveConceptRefactoring() {
     assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.framework.tests.MoveConceptRefactoringTester"));
   }
+
+  public void testRenamePropertyRefactoring_Simple() {
+    assertTrue(testRefactoringOnProject(new File(TEST_REFACTORING_PATH), "jetbrains.mps.refactoring.framework.tests.RenamePropertyRefactoringTester_Simple"));
+  }
+
+
 }
