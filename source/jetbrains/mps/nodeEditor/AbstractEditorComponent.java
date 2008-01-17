@@ -976,7 +976,10 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   public void selectNode(final SNode node) {
-    changeSelection(findNodeCell(node));
+    EditorCell nodeCell = findNodeCell(node);
+    if (nodeCell != null) {
+      changeSelection(nodeCell);
+    }
   }
 
 
