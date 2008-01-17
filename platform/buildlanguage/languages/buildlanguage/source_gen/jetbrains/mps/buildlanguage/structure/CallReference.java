@@ -9,6 +9,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class CallReference extends PropertyValueExpression {
   public static final String concept = "jetbrains.mps.buildlanguage.structure.CallReference";
+  public static String CPR_CallName = "callName";
   public static String CALL = "call";
 
   public  CallReference(SNode node) {
