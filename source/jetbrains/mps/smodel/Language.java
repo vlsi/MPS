@@ -457,7 +457,7 @@ public class Language extends AbstractModule implements Marshallable<Language> {
   }
 
   @NotNull
-  public String getNamespace() {
+  public String getNamespace() {    
     String result = getLanguageDescriptor().getNamespace();
     assert result != null;
     return result;
