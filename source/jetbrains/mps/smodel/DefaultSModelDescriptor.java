@@ -213,6 +213,7 @@ public class DefaultSModelDescriptor implements SModelDescriptor {
       mySModel = new SModel(getModelUID());
       mySModel = loadModel();
       doPostLoadStuff();
+      addListenersToNewModel();
     }
     return mySModel;
   }

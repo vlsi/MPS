@@ -489,6 +489,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
           updateNodesWithChangedPackages(nodesWithChangedPackages);
 
           updateGenerationRequiredStatus();
+
+
           updateAncestorsPresentationInTree();
         }
       }, false);
