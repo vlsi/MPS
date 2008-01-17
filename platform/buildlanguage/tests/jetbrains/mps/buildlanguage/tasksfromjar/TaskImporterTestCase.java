@@ -114,7 +114,7 @@ public class TaskImporterTestCase extends TestCase {
       return sb.toString();
     }
 
-    public void createDeclaration(String declName, boolean isAbstract, boolean canHaveInternalText) {
+    public void createDeclaration(String declName, boolean isAbstract, boolean canHaveInternalText, boolean isDeprecated) {
       myDecls.put(declName, isAbstract);
     }
 
@@ -139,7 +139,7 @@ public class TaskImporterTestCase extends TestCase {
       nesteds.add(nestedName);
     }
 
-    public void addAttribute(String declName, String attrName, Class<?> type) {
+    public void addAttribute(String declName, String attrName, Class<?> type, boolean isDeprecated) {
       assertTrue(declName, myDecls.containsKey(declName));
       myAttributes.put(attrName, type);
     }
