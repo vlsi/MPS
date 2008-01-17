@@ -23,7 +23,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     this.myConstraints.add(new PathReference_path_ReferentConstraint());
     this.myConstraints.add(new StringLiteralReference_ref_ReferentConstraint());
     this.myConstraints.add(new CallReference_call_ReferentConstraint());
-    this.myConstraints.add(new CallReference_call_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {
