@@ -383,7 +383,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
   private Set<Intention> getAvailableIntentions() {
     final Set<Intention> result = new LinkedHashSet<Intention>();
-    CommandProcessor.instance().executeCommand(new Runnable() {
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
       public void run() {
         SNode node = getSelectedNode();
         if (node != null) {
