@@ -23,7 +23,7 @@ public interface IOperationContext {
 
   @NotNull IScope getScope();
 
-  @NotNull Frame getMainFrame();
+  Frame getMainFrame();
 
   boolean isTestMode();
 

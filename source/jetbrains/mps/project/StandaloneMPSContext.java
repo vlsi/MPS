@@ -20,9 +20,12 @@ import org.jetbrains.annotations.Nullable;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class StandaloneMPSContext implements IOperationContext {
-  @NotNull
   public Frame getMainFrame() {
-    return getComponent(AbstractProjectFrame.class).getMainFrame();
+    AbstractProjectFrame projectFrame = getComponent(AbstractProjectFrame.class);
+    if (projectFrame == null) {
+      return null;
+    }
+    return projectFrame.getMainFrame();
   }
 
   @Nullable
