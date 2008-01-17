@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
 import jetbrains.mps.transformation.TLBase.structure.MappingScript;
 import jetbrains.mps.transformation.TLBase.structure.MappingScriptReference;
+import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import jetbrains.mps.transformation.TemplateLanguageUtil;
 import jetbrains.mps.util.CollectionUtil;
 import org.jetbrains.annotations.NotNull;
@@ -284,6 +285,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
     return set.contains(inputNode);
   }
 
+  public GenerationTracer getGenerationTracer() {
+    return getProject().getComponentSafe(GenerationTracer.class);
+  }
+
   private boolean keepTransientForMessageNavigation() {
     return !myInvocationContext.isTestMode();
   }
@@ -383,7 +388,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
       }
     }
 
-    public void createManifest() {      
+    public void createManifest() {
     }
 
     public Class getClass(String fqName) {

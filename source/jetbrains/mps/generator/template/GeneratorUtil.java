@@ -150,6 +150,7 @@ public class GeneratorUtil {
 
   public static void applyCreateRootRule(CreateRootRule createRootRule, TemplateGenerator generator) {
     if (checkCondition(createRootRule, generator)) {
+      generator.getGeneratorSessionContext().getGenerationTracer().pushRule(createRootRule.getNode());
       INamedConcept templateNode = createRootRule.getTemplateNode();
       if (templateNode == null) {
         generator.showErrorMessage(null, null, createRootRule.getNode(), "'create root' rule has no template");
@@ -447,6 +448,7 @@ public class GeneratorUtil {
       generator.showErrorMessage(inputNode, null, ruleNode, "no rule consequence");
       return null;
     }
+    generator.getGeneratorSessionContext().getGenerationTracer().pushRuleConsequence(ruleConsequence.getNode());
 
     if (ruleConsequence instanceof DismissTopMappingRule) {
       GeneratorMessage message = ((DismissTopMappingRule) ruleConsequence).getGeneratorMessage();
@@ -519,6 +521,7 @@ public class GeneratorUtil {
       mappingName = nodeAndMappingName.o2;
     } else {
       // old
+      generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
       TemplateDeclaration template = rule.getTemplate();
       if (template == null) {
         generator.showErrorMessage(inputNode, null, rule.getNode(), "error processing reduction rule: no template");

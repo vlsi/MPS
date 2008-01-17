@@ -31,6 +31,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.reloading.ReloadUtils;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.transformation.TLBase.structure.MappingConfiguration;
+import jetbrains.mps.transformation.TLBase.plugin.debug.GenerationTracer;
 import jetbrains.mps.util.CollectionUtil;
 import org.jdom.Element;
 
@@ -326,7 +327,6 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
                                                           boolean closeOnExit) {
 
     final AdaptiveProgressMonitor progress = new AdaptiveProgressMonitor(invocationContext.getComponent(IDEProjectFrame.class), closeOnExit);
-
     final DefaultMessageHandler messages = new DefaultMessageHandler(invocationContext.getProject());
 
     // confirm saving transient models
@@ -354,6 +354,10 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       }
     } else {
       saveTransientModels = false;
+    }
+
+    if (saveTransientModels) {
+      invocationContext.getProject().getComponentSafe(GenerationTracer.class).reset();
     }
 
     return myExecutorService.submit(new Callable<Boolean>() {

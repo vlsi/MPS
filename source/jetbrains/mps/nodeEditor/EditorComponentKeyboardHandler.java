@@ -9,14 +9,10 @@ package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.helgins.integration.Highlighter;
-import jetbrains.mps.project.MPSProject;
 
 import java.awt.event.KeyEvent;
 import java.util.List;
-import java.lang.Thread.State;
 
 public class EditorComponentKeyboardHandler implements IKeyboardHandler {
   private static final Logger LOG = Logger.getLogger(EditorComponentKeyboardHandler.class);

@@ -203,11 +203,11 @@ public class GenerationSession implements IGenerationSession {
                                                   Language targetLanguage,
                                                   Set<MappingConfiguration> mappings,
                                                   AbstractGenerationStepController generationStepController)
-          throws ClassNotFoundException,
-          NoSuchMethodException,
-          IllegalAccessException,
-          InvocationTargetException,
-          InstantiationException {
+    throws ClassNotFoundException,
+    NoSuchMethodException,
+    IllegalAccessException,
+    InvocationTargetException,
+    InstantiationException {
 
     myInvocationCount++;
     myTransientModelsCount = 0;
@@ -299,7 +299,7 @@ public class GenerationSession implements IGenerationSession {
           SModel currentInputModel_clone = createTransientModel(modelsLongName, module);
           addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getUID() + "' --> '" + currentInputModel_clone.getUID() + "'");
           CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, generator.getScope());
-          
+
           // probably we can forget about former input model here
           recycleWasteModel(currentInputModel);
           currentInputModel = currentInputModel_clone;
@@ -317,6 +317,7 @@ public class GenerationSession implements IGenerationSession {
     }
 
     SModel currentOutputModel = createTransientModel(modelsLongName, module);
+    generationContext.getGenerationTracer().startTracing(currentOutputModel);
 
     // -----------------------
     // primary mapping
@@ -340,6 +341,7 @@ public class GenerationSession implements IGenerationSession {
       addMessage(MessageKind.INFORMATION, "generating model '" + currentOutputModel.getUID() + "'");
       generationContext.replaceInputModel(currentOutputModel);
       SModel transientModel = createTransientModel(modelsLongName, module);
+      generationContext.getGenerationTracer().startTracing(transientModel);
       // probably we can forget about former input model here
       recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
@@ -528,8 +530,8 @@ public class GenerationSession implements IGenerationSession {
       }
 
       int option = JOptionPane.showConfirmDialog(null,
-              "Conflicting mapping priority rules encountered.\nContinue generation?",
-              "", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
+        "Conflicting mapping priority rules encountered.\nContinue generation?",
+        "", JOptionPane.YES_NO_OPTION, JOptionPane.ERROR_MESSAGE);
       return option == JOptionPane.YES_OPTION;
     }
     return true;
