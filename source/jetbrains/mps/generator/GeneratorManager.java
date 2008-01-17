@@ -356,13 +356,14 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       saveTransientModels = false;
     }
 
-    if (saveTransientModels) {
-      invocationContext.getProject().getComponentSafe(GenerationTracer.class).reset();
-    }
-
     return myExecutorService.submit(new Callable<Boolean>() {
       public Boolean call() throws Exception {
+
+        if (saveTransientModels) {
+          invocationContext.getProject().getComponentSafe(GenerationTracer.class).startTracing();
+        }
         boolean result = generateModels(sourceModels, targetLanguage, invocationContext, generationType, script, progress, messages, saveTransientModels);
+        invocationContext.getProject().getComponentSafe(GenerationTracer.class).finishTracing();
         progress.finishAnyway();
         return result;
       }

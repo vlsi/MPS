@@ -150,11 +150,11 @@ public class GeneratorUtil {
 
   public static void applyCreateRootRule(CreateRootRule createRootRule, TemplateGenerator generator) {
     if (checkCondition(createRootRule, generator)) {
-      generator.getGeneratorSessionContext().getGenerationTracer().pushRule(createRootRule.getNode());
       INamedConcept templateNode = createRootRule.getTemplateNode();
       if (templateNode == null) {
         generator.showErrorMessage(null, null, createRootRule.getNode(), "'create root' rule has no template");
       } else {
+        generator.getGeneratorSessionContext().getGenerationTracer().pushRule(createRootRule.getNode());
         boolean wasChanged = generator.isChanged();
         try {
           createRootNodeFromTemplate(createRootRule.getName(), BaseAdapter.fromAdapter(templateNode), null, generator);
@@ -206,6 +206,8 @@ public class GeneratorUtil {
           generator.setChanged(true);
           SNode templateNode = BaseAdapter.fromAdapter(rule.getTemplate());
           if (templateNode != null) {
+            generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
+            generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
             createRootNodeFromTemplate(rule.getName(), templateNode, inputNode, generator);
           } else {
             generator.showErrorMessage(BaseAdapter.fromAdapter(rule), "no template is defined for the rule");
@@ -409,6 +411,8 @@ public class GeneratorUtil {
         }
         generator.setChanged(true);
 
+        generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(applicableNode);
+
         // old
         TemplateDeclaration template = rule.getTemplate();
         if (template != null) {
@@ -430,6 +434,7 @@ public class GeneratorUtil {
             template = weaveEach.getTemplate();
             List<SNode> queryNodes = evaluateSourceNodesQuery(applicableNode, query, generator);
             for (SNode queryNode : queryNodes) {
+              generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(queryNode);
               weaveTemplateDeclaration(queryNode, template, outputContextNode, rule.getNode(), generator);
             }
           } else {

@@ -135,6 +135,7 @@ public class RuleManager {
       myGenerator.setChanged(wasChanged);
     }
     for (SNode childNode : inputNode.getChildren()) {
+      myGenerator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(childNode);
       applyReductionRules(childNode);
     }
   }
