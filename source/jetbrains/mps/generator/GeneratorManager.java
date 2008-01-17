@@ -410,7 +410,11 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       (myCompileOnGeneration && generationType.requiresCompilationInIDEAfterGeneration())
         || (myCompileBeforeGeneration && generationType.requiresCompilationInIDEABeforeGeneration()));
 
-    long totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, !invocationContext.getModule().isCompileInMPS(), sourceModels);
+    IModule currentModule = invocationContext.getModule();
+    long totalJob = 1000; //todo we need it for build file generation
+    if (currentModule != null) {
+      totalJob = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, currentModule != null && !currentModule.isCompileInMPS(), sourceModels);
+    }
     progress.startTaskAnyway("generating", null, totalJob);
 
     MPSModuleRepository.getInstance().removeTransientModules();
@@ -423,8 +427,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
     clearMessageVew(project);
     messages.handle(new Message(MessageKind.INFORMATION, generationType.getStartText()));
 
-    String outputFolder = invocationContext.getModule().getGeneratorOutputPath();
-    if (!new File(outputFolder).exists()) {
+    String outputFolder = currentModule != null ? currentModule.getGeneratorOutputPath() : null;
+    if (outputFolder != null && !new File(outputFolder).exists()) {
       new File(outputFolder).mkdirs();
 
       try {
@@ -456,8 +460,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
 
         progress.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_ON_GENERATION);
         CompilationResult compilationResult;
-        IModule module = invocationContext.getModule();
-        if (module.isCompileInMPS()) {
+        IModule module = currentModule;
+        if (module != null && module.isCompileInMPS()) {
           progress.addText("compiling output module in JetBrains MPS...");
           compilationResult = new ModuleMaker().make(CollectionUtil.asSet(module), new NullAdaptiveProgressMonitor());
         } else {
@@ -592,8 +596,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
       checkMonitorCanceled(progress);
       progress.addText("");
       if (status == null || status.isOk()) {
-        IModule module = invocationContext.getModule();
-        if (!myCompileOnGeneration || !(ideaPresent || module.isCompileInMPS())
+        IModule module = currentModule;
+        if (module != null && (!myCompileOnGeneration || !(ideaPresent || module.isCompileInMPS()))
           || !generationType.requiresCompilationInIDEAfterGeneration()) {
           progress.addText("compilation in IntelliJ IDEA after generation is turned off or not needed");
         } else {
@@ -629,8 +633,8 @@ public class GeneratorManager implements IExternalizableComponent, IComponentWit
           }
         }
 
-        if (generationType.forceReload()) {
-          ReloadUtils.reloadAll(true, true, true, new HashSet<SModelDescriptor>(), invocationContext.getModule(), new Runnable() {
+        if (generationType.forceReload() && currentModule != null) {
+          ReloadUtils.reloadAll(true, true, true, new HashSet<SModelDescriptor>(), currentModule, new Runnable() {
             public void run() {
             }
           });
