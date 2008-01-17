@@ -13,12 +13,12 @@ import java.util.List;
 
 public class TreeNodeKind extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.ypath.structure.TreeNodeKind";
+  public static String TRIGGER = "trigger";
+  public static String PROPERTIES = "properties";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
   public static String VIRTUAL_PACKAGE = "virtualPackage";
-  public static String TRIGGER = "trigger";
-  public static String PROPERTIES = "properties";
 
   public  TreeNodeKind(SNode node) {
     super(node);
@@ -32,6 +32,34 @@ public class TreeNodeKind extends BaseConcept implements INamedConcept {
     return TreeNodeKind.newInstance(sm, false);
   }
 
+
+  public KindBlock getTrigger() {
+    return (KindBlock)this.getChild(TreeNodeKind.TRIGGER);
+  }
+
+  public void setTrigger(KindBlock node) {
+    super.setChild(TreeNodeKind.TRIGGER, node);
+  }
+
+  public int getPropertiesesCount() {
+    return this.getChildCount(TreeNodeKind.PROPERTIES);
+  }
+
+  public Iterator<TreeNodeKindProperty> propertieses() {
+    return this.children(TreeNodeKind.PROPERTIES);
+  }
+
+  public List<TreeNodeKindProperty> getPropertieses() {
+    return this.getChildren(TreeNodeKind.PROPERTIES);
+  }
+
+  public void addProperties(TreeNodeKindProperty node) {
+    this.addChild(TreeNodeKind.PROPERTIES, node);
+  }
+
+  public void insertProperties(TreeNodeKindProperty prev, TreeNodeKindProperty node) {
+    this.insertChild(prev, TreeNodeKind.PROPERTIES, node);
+  }
 
   public String getName() {
     return this.getProperty(TreeNodeKind.NAME);
@@ -63,34 +91,6 @@ public class TreeNodeKind extends BaseConcept implements INamedConcept {
 
   public void setVirtualPackage(String value) {
     this.setProperty(TreeNodeKind.VIRTUAL_PACKAGE, value);
-  }
-
-  public KindBlock getTrigger() {
-    return (KindBlock)this.getChild(TreeNodeKind.TRIGGER);
-  }
-
-  public void setTrigger(KindBlock node) {
-    super.setChild(TreeNodeKind.TRIGGER, node);
-  }
-
-  public int getPropertiesesCount() {
-    return this.getChildCount(TreeNodeKind.PROPERTIES);
-  }
-
-  public Iterator<TreeNodeKindProperty> propertieses() {
-    return this.children(TreeNodeKind.PROPERTIES);
-  }
-
-  public List<TreeNodeKindProperty> getPropertieses() {
-    return this.getChildren(TreeNodeKind.PROPERTIES);
-  }
-
-  public void addProperties(TreeNodeKindProperty node) {
-    this.addChild(TreeNodeKind.PROPERTIES, node);
-  }
-
-  public void insertProperties(TreeNodeKindProperty prev, TreeNodeKindProperty node) {
-    this.insertChild(prev, TreeNodeKind.PROPERTIES, node);
   }
 
 }

@@ -36,34 +36,34 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
       SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
-      List<Triplet> res = ListOperations.createList(new Triplet[]{});
+      List<Triplet> res = ListOperations.<Triplet>createList();
       if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
         SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "nodeType", true);
         {
-          ICursor<TraversalAxis> _zCursor2 = CursorFactory.createCursor(TraversalAxis.getConstants());
+          ICursor<TraversalAxis> _zCursor8 = CursorFactory.createCursor(TraversalAxis.getConstants());
           try {
-            while(_zCursor2.moveToNext()) {
-              TraversalAxis axis = _zCursor2.getCurrent();
+            while(_zCursor8.moveToNext()) {
+              TraversalAxis axis = _zCursor8.getCurrent();
               ListOperations.addElement(res, new Triplet(axis, null, null));
               {
-                ICursor<SNode> _zCursor3 = CursorFactory.createCursor(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType));
+                ICursor<SNode> _zCursor9 = CursorFactory.createCursor(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType));
                 try {
-                  while(_zCursor3.moveToNext()) {
-                    SNode feat = _zCursor3.getCurrent();
+                  while(_zCursor9.moveToNext()) {
+                    SNode feat = _zCursor9.getCurrent();
                     if(TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
                       if(SPropertyOperations.getBoolean(feat, "default")) {
                         ListOperations.addElement(res, new Triplet(axis, feat, null));
                       } else
                       if(SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
                         {
-                          ICursor<SNode> _zCursor4 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType));
+                          ICursor<SNode> _zCursor10 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType));
                           try {
-                            while(_zCursor4.moveToNext()) {
-                              SNode pw = _zCursor4.getCurrent();
+                            while(_zCursor10.moveToNext()) {
+                              SNode pw = _zCursor10.getCurrent();
                               ListOperations.addElement(res, new Triplet(axis, feat, pw));
                             }
                           } finally {
-                            _zCursor4.release();
+                            _zCursor10.release();
                           }
                         }
                       } else
@@ -73,12 +73,12 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
                     }
                   }
                 } finally {
-                  _zCursor3.release();
+                  _zCursor9.release();
                 }
               }
             }
           } finally {
-            _zCursor2.release();
+            _zCursor8.release();
           }
         }
       }

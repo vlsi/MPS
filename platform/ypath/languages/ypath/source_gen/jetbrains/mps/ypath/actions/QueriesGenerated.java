@@ -323,7 +323,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          List<SNode> res = ListOperations.createList(new SNode[]{SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFReplaceFunWrapper"),SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFRemoveFunWrapper"),SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFInsertFunWrapper")});
+          List<SNode> res = ListOperations.<SNode>createList(SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFReplaceFunWrapper"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFRemoveFunWrapper"), SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.GFInsertFunWrapper"));
           if(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder")) {
             {
               ICursor<SNode> _zCursor = CursorFactory.createCursor(SLinkOperations.getTargets(_context.getParentNode(), "functions", true));
@@ -361,7 +361,7 @@ public class QueriesGenerated {
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          List<FragmentTypeEnum> types = ListOperations.createList(new FragmentTypeEnum[]{FragmentTypeEnum.replace_single,FragmentTypeEnum.replace_selection,FragmentTypeEnum.replace_all,FragmentTypeEnum.remove_single,FragmentTypeEnum.remove_selection,FragmentTypeEnum.remove_all,FragmentTypeEnum.insert_at_start,FragmentTypeEnum.insert_at_end,FragmentTypeEnum.insert_before,FragmentTypeEnum.insert_after});
+          List<FragmentTypeEnum> types = ListOperations.<FragmentTypeEnum>createList(FragmentTypeEnum.replace_single, FragmentTypeEnum.replace_selection, FragmentTypeEnum.replace_all, FragmentTypeEnum.remove_single, FragmentTypeEnum.remove_selection, FragmentTypeEnum.remove_all, FragmentTypeEnum.insert_at_start, FragmentTypeEnum.insert_at_end, FragmentTypeEnum.insert_before, FragmentTypeEnum.insert_after);
           if(SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.ypath.structure.GenericFeatureFunHolder")) {
             {
               ICursor<SNode> _zCursor1 = CursorFactory.createCursor(SLinkOperations.getTargets(_context.getParentNode(), "functions", true));
@@ -654,7 +654,7 @@ public class QueriesGenerated {
 
         public Object calculate() {
           final zClosureContext1 _zClosureContext1 = new zClosureContext1();
-          List<Pair> res = ListOperations.createList(new Pair[]{});
+          List<Pair> res = ListOperations.<Pair>createList();
           _zClosureContext1.srcNode = _context.getSourceNode();
           _zClosureContext1.isGeneric = SNodeOperations.isInstanceOf(_zClosureContext1.srcNode, "jetbrains.mps.ypath.structure.IGenericFeature");
           {
@@ -716,7 +716,7 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          List<Triplet> res = ListOperations.createList(new Triplet[]{});
+          List<Triplet> res = ListOperations.<Triplet>createList();
           SNode tpoe = SNodeOperations.getAncestor(_context.getSourceNode(), "jetbrains.mps.ypath.structure.TreePathOperationExpression", true, false);
           if((tpoe == null)) {
             return res;
@@ -988,7 +988,7 @@ public class QueriesGenerated {
       Calculable calculable = new Calculable() {
 
         public Object calculate() {
-          List<Quadruplet> res = ListOperations.createList(new Quadruplet[]{});
+          List<Quadruplet> res = ListOperations.<Quadruplet>createList();
           SNode nodeType = (SNode)TypeChecker.getInstance().getTypeOf(_context.getSourceNode());
           {
             ICursor<SNode> _zCursor6 = CursorFactory.createCursor(TreePathAspectUtil.getTreePathAspects(_context.getSourceNode(), operationContext.getScope()));

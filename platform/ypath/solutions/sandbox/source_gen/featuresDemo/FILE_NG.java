@@ -75,7 +75,7 @@ public class FILE_NG extends TreePath<File> {
     }
 
     public Iterable<File> sequence() {
-      return ListOperations.createList(new File[]{this.thisNode.getParentFile()});
+      return ListOperations.<File>createList(this.thisNode.getParentFile());
     }
 
     public Iterator<File> iterator() {

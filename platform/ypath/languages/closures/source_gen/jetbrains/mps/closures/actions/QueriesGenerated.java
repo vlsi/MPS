@@ -6,50 +6,56 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.SequenceOperations;
+import jetbrains.mps.smodel.action.RTransformPreconditionContext;
 import jetbrains.mps.helgins.inference.TypeChecker;
 import java.util.List;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
 import java.util.ArrayList;
 import jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.action.*;
+import jetbrains.mps.smodel.action.ChildSubstituteActionsHelper;
+import jetbrains.mps.smodel.action.RTActionsBuilderContext;
+import jetbrains.mps.smodel.action.AbstractRTransformHintSubstituteAction;
 import jetbrains.mps.smodel.BaseAdapter;
 
 public class QueriesGenerated {
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_ParameterReference_1199622452307(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _parameterObject) {
-    return (SNodeOperations.getAncestor(_parameterObject.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false) != null);
+  public static boolean nodeSubstituteActionsBuilder_Precondition_ParameterReference_1199622452307(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false) != null);
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_LocalVariableReference_1199641696225(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _parameterObject) {
-    return !(SequenceOperations.isEmpty(SequenceOperations.where(SNodeOperations.getAncestors(_parameterObject.getParentNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", true), new zPredicate1(null, null))));
+  public static boolean nodeSubstituteActionsBuilder_Precondition_LocalVariableReference_1199641696225(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return !(SequenceOperations.isEmpty(SequenceOperations.where(SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", true), new zPredicate1(null, null))));
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_ThisExpression_1199651311977(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _parameterObject) {
-    return (SNodeOperations.getAncestor(_parameterObject.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", true, false) != null);
+  public static boolean nodeSubstituteActionsBuilder_Precondition_ThisExpression_1199651311977(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", true, false) != null);
   }
 
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1199711420040(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _parameterObject) {
-    return (SNodeOperations.getAncestor(_parameterObject.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false) != null);
+  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1199711420040(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
+    return (SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false) != null);
   }
 
-  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1199547343806(final IOperationContext operationContext, final RTransformPreconditionContext _parameterObject) {
-    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_parameterObject.getSourceNode()), "jetbrains.mps.closures.structure.FunctionType");
+  public static boolean rightTransformHintSubstituteActionsBuilder_Precondition_Expression_1199547343806(final IOperationContext operationContext, final RTransformPreconditionContext _context) {
+    return SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), "jetbrains.mps.closures.structure.FunctionType");
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ParameterReference_1199622421675(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _parameterObject) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ParameterReference_1199622421675(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          SNode cl = SNodeOperations.getAncestor(_parameterObject.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false);
+          SNode cl = SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.closures.structure.ClosureLiteral", false, false);
           return SLinkOperations.getTargets(cl, "parameter", true);
         }
 
@@ -57,7 +63,7 @@ public class QueriesGenerated {
       Iterable<SNode> queryResult = (Iterable)calc.calculate();
       assert queryResult != null;
       for(SNode item : queryResult) {
-        result.add(new DefaultChildNodeSubstituteAction(item, _parameterObject.getParentNode(), _parameterObject.getCurrentTargetNode(), _parameterObject.getChildSetter(), operationContext.getScope()) {
+        result.add(new DefaultChildNodeSubstituteAction(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode pr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
@@ -75,21 +81,21 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LocalVariableReference_1199641481621(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _parameterObject) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_LocalVariableReference_1199641481621(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
       Calculable calc = new Calculable() {
 
         public Object calculate() {
-          return SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getAncestors(_parameterObject.getParentNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", true), new zPredicate(null, null)));
+          return SequenceOperations.toList(SequenceOperations.where(SNodeOperations.getAncestors(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", true), new zPredicate(null, null)));
         }
 
       };
       Iterable<SNode> queryResult = (Iterable)calc.calculate();
       assert queryResult != null;
       for(SNode item : queryResult) {
-        result.add(new DefaultChildNodeSubstituteAction(item, _parameterObject.getParentNode(), _parameterObject.getCurrentTargetNode(), _parameterObject.getChildSetter(), operationContext.getScope()) {
+        result.add(new DefaultChildNodeSubstituteAction(item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
 
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
             SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
@@ -107,35 +113,35 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ThisExpression_1199651306154(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _parameterObject) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_ThisExpression_1199651306154(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _parameterObject.getParentNode(), _parameterObject.getCurrentTargetNode(), _parameterObject.getChildSetter(), operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope());
       result.addAll(defaultActions);
     }
     return result;
   }
 
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1199711415359(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _parameterObject) {
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1199711415359(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration conceptToAdd = SModelUtil_new.findConceptDeclaration("jetbrains.mps.closures.structure.InvokeExpression", operationContext.getScope());
-      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _parameterObject.getParentNode(), _parameterObject.getCurrentTargetNode(), _parameterObject.getChildSetter(), operationContext.getScope());
+      List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions(conceptToAdd, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope());
       result.addAll(defaultActions);
     }
     return result;
   }
 
-  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1199547332187(final IOperationContext operationContext, final RTActionsBuilderContext _parameterObject) {
+  public static List<INodeSubstituteAction> rightTransform_ActionsFactory_Expression_1199547332187(final IOperationContext operationContext, final RTActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
     {
       ConceptDeclaration concept = SModelUtil_new.findConceptDeclaration("null", operationContext.getScope());
-      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _parameterObject.getSourceNode()) {
+      result.add(new AbstractRTransformHintSubstituteAction(BaseAdapter.fromAdapter(concept), _context.getSourceNode()) {
 
         public SNode doSubstitute(String pattern) {
-          SNode invoke = SNodeOperations.replaceWithNewChild(_parameterObject.getSourceNode(), "jetbrains.mps.closures.structure.InvokeFunctionExpression");
-          SLinkOperations.setTarget(invoke, "function", _parameterObject.getSourceNode(), true);
+          SNode invoke = SNodeOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.closures.structure.InvokeFunctionExpression");
+          SLinkOperations.setTarget(invoke, "function", _context.getSourceNode(), true);
           return invoke;
         }
 

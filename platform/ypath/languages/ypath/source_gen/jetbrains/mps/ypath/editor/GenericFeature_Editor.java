@@ -33,17 +33,17 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
+import jetbrains.mps.smodel.action.NodeFactoryManager;
+import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
+import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
+import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_Generic_Group;
 import java.util.List;
 import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
-import jetbrains.mps.smodel.action.NodeFactoryManager;
-import jetbrains.mps.nodeEditor.CellAction_DeleteNode;
-import jetbrains.mps.nodeEditor.DefaultReferenceSubstituteInfo;
-import jetbrains.mps.nodeEditor.DefaultChildSubstituteInfo;
 
 public class GenericFeature_Editor extends DefaultNodeEditor {
 
@@ -769,15 +769,15 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
         StringBuilder sb = new StringBuilder("[ ");
         String sep = "";
         {
-          ICursor<SNode> _zCursor11 = CursorFactory.createCursor(IFeature_Behavior.call_getPartialOpposites_1197921554165(node));
+          ICursor<SNode> _zCursor5 = CursorFactory.createCursor(IFeature_Behavior.call_getPartialOpposites_1197921554165(node));
           try {
-            while(_zCursor11.moveToNext()) {
-              SNode foo = _zCursor11.getCurrent();
+            while(_zCursor5.moveToNext()) {
+              SNode foo = _zCursor5.getCurrent();
               sb.append(sep).append(SPropertyOperations.getString(foo, "name"));
               sep = ", ";
             }
           } finally {
-            _zCursor11.release();
+            _zCursor5.release();
           }
         }
         return sb.append(" ]").toString();
@@ -922,89 +922,6 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class GenericFeature_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
-
-    public  GenericFeature_generic_cellMenu() {
-    }
-
-    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListOperations.createList(new Boolean[]{true,false});
-    }
-
-    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((Boolean)parameterObject, node, model, scope, operationContext);
-    }
-
-    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SPropertyOperations.set(node, "default", "" + (parameterObject));
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
-
-    public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((Boolean)parameterObject);
-    }
-
-    public String getMatchingText_internal(Boolean parameterObject) {
-      return (parameterObject ?
-        "default" :
-        "regular"
-      );
-    }
-
-    public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((Boolean)parameterObject);
-    }
-
-    public String getDescriptionText_internal(Boolean parameterObject) {
-      return (parameterObject ?
-        "allows to omit the feature when iterating" :
-        "feature must be always specified"
-      );
-    }
-
-}
-  public static class GenericFeature_component_cellMenu implements ISubstituteInfoPart {
-
-    /* package */menu_FeatureSetOpposite myComponent;
-
-    public  GenericFeature_component_cellMenu() {
-      this.myComponent = new menu_FeatureSetOpposite();
-    }
-
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
-  public static class GenericFeature_component_cellMenu1 implements ISubstituteInfoPart {
-
-    /* package */menu_FeatureSetOpposite myComponent;
-
-    public  GenericFeature_component_cellMenu1() {
-      this.myComponent = new menu_FeatureSetOpposite();
-    }
-
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
-  public static class GenericFeature_component_cellMenu2 implements ISubstituteInfoPart {
-
-    /* package */menu_FeatureSetOpposite myComponent;
-
-    public  GenericFeature_component_cellMenu2() {
-      this.myComponent = new menu_FeatureSetOpposite();
-    }
-
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
   public static class _Inline15 extends AbstractCellProvider {
 
     public  _Inline15() {
@@ -1118,6 +1035,89 @@ public class GenericFeature_Editor extends DefaultNodeEditor {
       GenericFeature_Editor._RefNodeListHandler9.setupLabel_ConstantCell13(editorCell, node, context);
       editorCell.setDefaultText("");
       return editorCell;
+    }
+
+}
+  public static class GenericFeature_generic_cellMenu extends AbstractCellMenuPart_Generic_Group {
+
+    public  GenericFeature_generic_cellMenu() {
+    }
+
+    public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
+      return ListOperations.<Boolean>createList(true, false);
+    }
+
+    public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      this.handleAction_impl((Boolean)parameterObject, node, model, scope, operationContext);
+    }
+
+    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SPropertyOperations.set(node, "default", "" + (parameterObject));
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+    public String getMatchingText(Object parameterObject) {
+      return this.getMatchingText_internal((Boolean)parameterObject);
+    }
+
+    public String getMatchingText_internal(Boolean parameterObject) {
+      return (parameterObject ?
+        "default" :
+        "regular"
+      );
+    }
+
+    public String getDescriptionText(Object parameterObject) {
+      return this.getDescriptionText_internal((Boolean)parameterObject);
+    }
+
+    public String getDescriptionText_internal(Boolean parameterObject) {
+      return (parameterObject ?
+        "allows to omit the feature when iterating" :
+        "feature must be always specified"
+      );
+    }
+
+}
+  public static class GenericFeature_component_cellMenu implements ISubstituteInfoPart {
+
+    /* package */menu_FeatureSetOpposite myComponent;
+
+    public  GenericFeature_component_cellMenu() {
+      this.myComponent = new menu_FeatureSetOpposite();
+    }
+
+    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+
+}
+  public static class GenericFeature_component_cellMenu1 implements ISubstituteInfoPart {
+
+    /* package */menu_FeatureSetOpposite myComponent;
+
+    public  GenericFeature_component_cellMenu1() {
+      this.myComponent = new menu_FeatureSetOpposite();
+    }
+
+    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+
+}
+  public static class GenericFeature_component_cellMenu2 implements ISubstituteInfoPart {
+
+    /* package */menu_FeatureSetOpposite myComponent;
+
+    public  GenericFeature_component_cellMenu2() {
+      this.myComponent = new menu_FeatureSetOpposite();
+    }
+
+    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
     }
 
 }

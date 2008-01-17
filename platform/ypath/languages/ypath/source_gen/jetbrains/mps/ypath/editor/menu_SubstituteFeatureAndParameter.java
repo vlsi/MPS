@@ -35,28 +35,28 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      List<Pair> res = ListOperations.createList(new Pair[]{});
+      List<Pair> res = ListOperations.<Pair>createList();
       ListOperations.addElement(res, new Pair(null, null));
       TraversalAxis axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(node, "axis", "DESCENDANTS"));
       SNode tpoe = SNodeOperations.getAncestor(node, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
       if(SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "jetbrains.mps.ypath.structure.TreePathType")) {
         SNode nodeType = SLinkOperations.getTarget(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true)), "nodeType", true);
         {
-          ICursor<SNode> _zCursor = CursorFactory.createCursor(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType));
+          ICursor<SNode> _zCursor6 = CursorFactory.createCursor(TreePath_Behavior.call_getFeature_1184591220431(ITreePathExpression_Behavior.call_getTreePath_1194366873089(tpoe), nodeType));
           try {
-            while(_zCursor.moveToNext()) {
-              SNode feat = _zCursor.getCurrent();
+            while(_zCursor6.moveToNext()) {
+              SNode feat = _zCursor6.getCurrent();
               if(TraversalAxisUtil.isAcceptableFeatureForAxis(feat, axis)) {
                 if(SNodeOperations.isInstanceOf(feat, "jetbrains.mps.ypath.structure.IParamFeature")) {
                   {
-                    ICursor<SNode> _zCursor1 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType));
+                    ICursor<SNode> _zCursor7 = CursorFactory.createCursor(IParamFeature_Behavior.call_getParameterObjects_1197461148674(feat, nodeType));
                     try {
-                      while(_zCursor1.moveToNext()) {
-                        SNode pw = _zCursor1.getCurrent();
+                      while(_zCursor7.moveToNext()) {
+                        SNode pw = _zCursor7.getCurrent();
                         ListOperations.addElement(res, new Pair(feat, pw));
                       }
                     } finally {
-                      _zCursor1.release();
+                      _zCursor7.release();
                     }
                   }
                 } else
@@ -66,7 +66,7 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
               }
             }
           } finally {
-            _zCursor.release();
+            _zCursor6.release();
           }
         }
       }

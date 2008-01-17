@@ -11,6 +11,11 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ListFeature extends BaseConcept implements INamedConcept, IFeature {
   public static final String concept = "jetbrains.mps.ypath.structure.ListFeature";
+  public static String GET_FUNCTION = "getFunction";
+  public static String SIZE_FUNCTION = "sizeFunction";
+  public static String SET_FUNCTION = "setFunction";
+  public static String INSERT_FUNCTION = "insertFunction";
+  public static String DELETE_FUNCTION = "deleteFunction";
   public static String NAME = "name";
   public static String SHORT_DESCRIPTION = "shortDescription";
   public static String ALIAS = "alias";
@@ -19,11 +24,6 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
   public static String DEFAULT = "default";
   public static String ASCENDING = "ascending";
   public static String OPPOSITE = "opposite";
-  public static String GET_FUNCTION = "getFunction";
-  public static String SIZE_FUNCTION = "sizeFunction";
-  public static String SET_FUNCTION = "setFunction";
-  public static String INSERT_FUNCTION = "insertFunction";
-  public static String DELETE_FUNCTION = "deleteFunction";
 
   public  ListFeature(SNode node) {
     super(node);
@@ -37,6 +37,46 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
     return ListFeature.newInstance(sm, false);
   }
 
+
+  public FeatureGetFun getGetFunction() {
+    return (FeatureGetFun)this.getChild(ListFeature.GET_FUNCTION);
+  }
+
+  public void setGetFunction(FeatureGetFun node) {
+    super.setChild(ListFeature.GET_FUNCTION, node);
+  }
+
+  public FeatureSizeFun getSizeFunction() {
+    return (FeatureSizeFun)this.getChild(ListFeature.SIZE_FUNCTION);
+  }
+
+  public void setSizeFunction(FeatureSizeFun node) {
+    super.setChild(ListFeature.SIZE_FUNCTION, node);
+  }
+
+  public FeatureSetFun getSetFunction() {
+    return (FeatureSetFun)this.getChild(ListFeature.SET_FUNCTION);
+  }
+
+  public void setSetFunction(FeatureSetFun node) {
+    super.setChild(ListFeature.SET_FUNCTION, node);
+  }
+
+  public FeatureInsertFun getInsertFunction() {
+    return (FeatureInsertFun)this.getChild(ListFeature.INSERT_FUNCTION);
+  }
+
+  public void setInsertFunction(FeatureInsertFun node) {
+    super.setChild(ListFeature.INSERT_FUNCTION, node);
+  }
+
+  public FeatureDeleteFun getDeleteFunction() {
+    return (FeatureDeleteFun)this.getChild(ListFeature.DELETE_FUNCTION);
+  }
+
+  public void setDeleteFunction(FeatureDeleteFun node) {
+    super.setChild(ListFeature.DELETE_FUNCTION, node);
+  }
 
   public String getName() {
     return this.getProperty(ListFeature.NAME);
@@ -100,46 +140,6 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
 
   public void setOpposite(IFeature node) {
     super.setReferent(ListFeature.OPPOSITE, node);
-  }
-
-  public FeatureGetFun getGetFunction() {
-    return (FeatureGetFun)this.getChild(ListFeature.GET_FUNCTION);
-  }
-
-  public void setGetFunction(FeatureGetFun node) {
-    super.setChild(ListFeature.GET_FUNCTION, node);
-  }
-
-  public FeatureSizeFun getSizeFunction() {
-    return (FeatureSizeFun)this.getChild(ListFeature.SIZE_FUNCTION);
-  }
-
-  public void setSizeFunction(FeatureSizeFun node) {
-    super.setChild(ListFeature.SIZE_FUNCTION, node);
-  }
-
-  public FeatureSetFun getSetFunction() {
-    return (FeatureSetFun)this.getChild(ListFeature.SET_FUNCTION);
-  }
-
-  public void setSetFunction(FeatureSetFun node) {
-    super.setChild(ListFeature.SET_FUNCTION, node);
-  }
-
-  public FeatureInsertFun getInsertFunction() {
-    return (FeatureInsertFun)this.getChild(ListFeature.INSERT_FUNCTION);
-  }
-
-  public void setInsertFunction(FeatureInsertFun node) {
-    super.setChild(ListFeature.INSERT_FUNCTION, node);
-  }
-
-  public FeatureDeleteFun getDeleteFunction() {
-    return (FeatureDeleteFun)this.getChild(ListFeature.DELETE_FUNCTION);
-  }
-
-  public void setDeleteFunction(FeatureDeleteFun node) {
-    super.setChild(ListFeature.DELETE_FUNCTION, node);
   }
 
 }

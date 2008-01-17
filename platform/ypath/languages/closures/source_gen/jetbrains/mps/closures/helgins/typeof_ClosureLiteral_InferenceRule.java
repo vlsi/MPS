@@ -20,7 +20,7 @@ public class typeof_ClosureLiteral_InferenceRule implements InferenceRule_Runtim
   }
 
   public void applyRule(final SNode closure) {
-    List<SNode> paramTypes = ListOperations.createList(new SNode[]{});
+    List<SNode> paramTypes = ListOperations.<SNode>createList();
     for(SNode param : SLinkOperations.getTargets(closure, "parameter", true)) {
       ListOperations.addElement(paramTypes, SLinkOperations.getTarget(param, "type", true));
     }

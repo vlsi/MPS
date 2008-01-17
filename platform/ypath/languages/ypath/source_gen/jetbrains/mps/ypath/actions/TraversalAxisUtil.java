@@ -12,217 +12,151 @@ public class TraversalAxisUtil {
 
   public static String getOperationSign(TraversalAxis axis) {
     switch (axis) {
-
       case ANCESTORS:
         return "^^";
-
       case CHILDREN:
         return "\\";
-
       case DESCENDANTS:
         return "\\\\";
-
       case SELF_DESCENDANTS:
         return "\\\\.";
-
       case PRECEDING_SIBLINGS:
         return "<<";
-
       case PRECEDING_SIBLINGS_SELF:
         return "<<.";
-
       case FOLLOWING_SIBLINGS:
         return ">>";
-
       case SELF_FOLLOWING_SIBLINGS:
         return ">>.";
-
       case SELF_ANCESTORS:
         return "^^.";
-
       default:
         return "???";
-
     }
   }
 
   public static boolean isAcceptableFeatureForAxis(SNode feature, TraversalAxis axis) {
     switch (axis) {
-
       case CHILDREN:
         return !(SPropertyOperations.getBoolean(feature, "ascending"));
-
       case DESCENDANTS:
         // fall through
-
       case SELF_DESCENDANTS:
         return !(SNodeOperations.isInstanceOf(feature, "jetbrains.mps.ypath.structure.IParamFeature")) && !(SPropertyOperations.getBoolean(feature, "ascending"));
-
       case ANCESTORS:
         // fall through
-
       case SELF_ANCESTORS:
         return !(SNodeOperations.isInstanceOf(feature, "jetbrains.mps.ypath.structure.IParamFeature")) && !(SPropertyOperations.getBoolean(feature, "ascending")) && (SLinkOperations.getTarget(feature, "opposite", false) != null);
-
       case PRECEDING_SIBLINGS:
         // fall through
-
       case PRECEDING_SIBLINGS_SELF:
         // fall through
-
       case FOLLOWING_SIBLINGS:
         // fall through
-
       case SELF_FOLLOWING_SIBLINGS:
         return !(SNodeOperations.isInstanceOf(feature, "jetbrains.mps.ypath.structure.IParamFeature")) && !(SPropertyOperations.getBoolean(feature, "ascending")) && (SLinkOperations.getTarget(feature, "opposite", false) != null);
-
       default:
         return false;
-
     }
   }
 
   public static boolean isUsingOpposite(TraversalAxis axis) {
     switch (axis) {
-
       case CHILDREN:
         // fall through
-
       case DESCENDANTS:
         // fall through
-
       case SELF_DESCENDANTS:
         return false;
-
       case ANCESTORS:
         // fall through
-
       case SELF_ANCESTORS:
         return true;
-
       case PRECEDING_SIBLINGS:
         // fall through
-
       case FOLLOWING_SIBLINGS:
         // fall through
-
       case PRECEDING_SIBLINGS_SELF:
         // fall through
-
       case SELF_FOLLOWING_SIBLINGS:
         return false;
-
       default:
         return false;
-
     }
   }
 
   public static TraversalAxis getOpposite(TraversalAxis axis) {
     switch (axis) {
-
       case CHILDREN:
         return TraversalAxis.ANCESTORS;
-
       case DESCENDANTS:
         return TraversalAxis.ANCESTORS;
-
       case SELF_DESCENDANTS:
         return TraversalAxis.SELF_ANCESTORS;
-
       case ANCESTORS:
         return TraversalAxis.DESCENDANTS;
-
       case SELF_ANCESTORS:
         return TraversalAxis.SELF_DESCENDANTS;
-
       case PRECEDING_SIBLINGS:
         // fall through
-
       case FOLLOWING_SIBLINGS:
         // fall through
-
       case PRECEDING_SIBLINGS_SELF:
         // fall through
-
       case SELF_FOLLOWING_SIBLINGS:
         // fall through
-
       default:
         return null;
-
     }
   }
 
   public static boolean isIncludingSelf(TraversalAxis axis) {
     switch (axis) {
-
       case CHILDREN:
         // fall through
-
       case DESCENDANTS:
         // fall through
-
       case ANCESTORS:
         // fall through
-
       case PRECEDING_SIBLINGS:
         // fall through
-
       case FOLLOWING_SIBLINGS:
         return false;
-
       case SELF_DESCENDANTS:
         // fall through
-
       case SELF_ANCESTORS:
         // fall through
-
       case PRECEDING_SIBLINGS_SELF:
         // fall through
-
       case SELF_FOLLOWING_SIBLINGS:
         return true;
-
       default:
         return false;
-
     }
   }
 
   public static boolean isSelfFirst(TraversalAxis axis) {
     switch (axis) {
-
       case CHILDREN:
         // fall through
-
       case DESCENDANTS:
         // fall through
-
       case ANCESTORS:
         // fall through
-
       case FOLLOWING_SIBLINGS:
         // fall through
-
       case SELF_DESCENDANTS:
         // fall through
-
       case SELF_ANCESTORS:
         // fall through
-
       case SELF_FOLLOWING_SIBLINGS:
         return true;
-
       case PRECEDING_SIBLINGS:
         // fall through
-
       case PRECEDING_SIBLINGS_SELF:
         return false;
-
       default:
         return false;
-
     }
   }
 

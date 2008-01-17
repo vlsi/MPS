@@ -18,7 +18,7 @@ public class OperationsUtil {
   public static List<SNode> substituteApplicableOperations(SNode wildCardOp) {
     final zClosureContext _zClosureContext = new zClosureContext();
     if(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(wildCardOp, "usedFeature", false), "jetbrains.mps.ypath.structure.IParamFeature") && (SLinkOperations.getTarget(wildCardOp, "paramObject", true) != null)) {
-      return ListOperations.createList(new SNode[]{wildCardOp});
+      return ListOperations.<SNode>createList(wildCardOp);
     }
     SNode tpoe = SNodeOperations.getAncestor(wildCardOp, "jetbrains.mps.ypath.structure.TreePathOperationExpression", false, false);
     _zClosureContext.nodeType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(tpoe, "expression", true));
@@ -26,7 +26,7 @@ public class OperationsUtil {
     _zClosureContext.axis = TraversalAxis.parseValue(SPropertyOperations.getString_def(wildCardOp, "axis", "DESCENDANTS"));
     List<SNode> features = ((SLinkOperations.getTarget(wildCardOp, "usedFeature", false) == null) ?
       SequenceOperations.toList(SequenceOperations.where(SLinkOperations.getTargets(tp, "features", true), new zPredicate(null, _zClosureContext))) :
-      ListOperations.createList(new SNode[]{SLinkOperations.getTarget(wildCardOp, "usedFeature", false)})
+      ListOperations.<SNode>createList(SLinkOperations.getTarget(wildCardOp, "usedFeature", false))
     );
     return SequenceOperations.toList(SequenceOperations.map(features, new zMapper(null, _zClosureContext)));
   }

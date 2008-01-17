@@ -183,8 +183,8 @@ public class DOM_NG extends TreePath<Node> {
     public Iterable<Node> sequence() {
       Node parentNode = this.thisNode.getParentNode();
       return (parentNode != null ?
-        ListOperations.createList(new Node[]{parentNode}) :
-        ListOperations.createList(new Node[]{})
+        ListOperations.<Node>createList(parentNode) :
+        ListOperations.<Node>createList()
       );
     }
 

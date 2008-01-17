@@ -26,11 +26,11 @@ import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.nodeEditor.cellMenu.ICellContext;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 
 public class IterateOperation_Editor extends DefaultNodeEditor {
 
@@ -385,58 +385,6 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
-  public static class IterateOperation_component_cellMenu implements ISubstituteInfoPart {
-
-    /* package */menu_SubstituteIterateOperationAxis myComponent;
-
-    public  IterateOperation_component_cellMenu() {
-      this.myComponent = new menu_SubstituteIterateOperationAxis();
-    }
-
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
-  public static class IterateOperation_component_cellMenu1 implements ISubstituteInfoPart {
-
-    /* package */menu_SubstituteFeatureAndParameter myComponent;
-
-    public  IterateOperation_component_cellMenu1() {
-      this.myComponent = new menu_SubstituteFeatureAndParameter();
-    }
-
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
-  public static class IterateOperation_component_cellMenu2 implements ISubstituteInfoPart {
-
-    /* package */menu_SubstituteFeatureAndParameter myComponent;
-
-    public  IterateOperation_component_cellMenu2() {
-      this.myComponent = new menu_SubstituteFeatureAndParameter();
-    }
-
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
-  public static class IterateOperation_component_cellMenu3 implements ISubstituteInfoPart {
-
-    /* package */menu_SubstituteFeatureAndParameter myComponent;
-
-    public  IterateOperation_component_cellMenu3() {
-      this.myComponent = new menu_SubstituteFeatureAndParameter();
-    }
-
-    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-
-}
   public static class _Inline extends AbstractCellProvider {
 
     public  _Inline() {
@@ -539,6 +487,58 @@ public class IterateOperation_Editor extends DefaultNodeEditor {
         return manager.createRoleAttributeCell(context, attributeConcept, attributeKind, cellWithRole);
       } else
       return cellWithRole;
+    }
+
+}
+  public static class IterateOperation_component_cellMenu implements ISubstituteInfoPart {
+
+    /* package */menu_SubstituteIterateOperationAxis myComponent;
+
+    public  IterateOperation_component_cellMenu() {
+      this.myComponent = new menu_SubstituteIterateOperationAxis();
+    }
+
+    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+
+}
+  public static class IterateOperation_component_cellMenu1 implements ISubstituteInfoPart {
+
+    /* package */menu_SubstituteFeatureAndParameter myComponent;
+
+    public  IterateOperation_component_cellMenu1() {
+      this.myComponent = new menu_SubstituteFeatureAndParameter();
+    }
+
+    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+
+}
+  public static class IterateOperation_component_cellMenu2 implements ISubstituteInfoPart {
+
+    /* package */menu_SubstituteFeatureAndParameter myComponent;
+
+    public  IterateOperation_component_cellMenu2() {
+      this.myComponent = new menu_SubstituteFeatureAndParameter();
+    }
+
+    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+
+}
+  public static class IterateOperation_component_cellMenu3 implements ISubstituteInfoPart {
+
+    /* package */menu_SubstituteFeatureAndParameter myComponent;
+
+    public  IterateOperation_component_cellMenu3() {
+      this.myComponent = new menu_SubstituteFeatureAndParameter();
+    }
+
+    public List<INodeSubstituteAction> createActions(ICellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
     }
 
 }

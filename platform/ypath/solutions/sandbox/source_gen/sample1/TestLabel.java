@@ -10,7 +10,7 @@ public class TestLabel {
 
   public static void main(String[] args) {
     {
-      ICursor<Integer> _zCursor = CursorFactory.createCursor(ListOperations.createList(new Integer[]{1,2,3}));
+      ICursor<Integer> _zCursor = CursorFactory.createCursor(ListOperations.<Integer>createList(1, 2, 3));
       try {
 outer:
         while(_zCursor.moveToNext()) {

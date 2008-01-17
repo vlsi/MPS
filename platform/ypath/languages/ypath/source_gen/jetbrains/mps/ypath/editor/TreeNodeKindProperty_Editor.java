@@ -210,7 +210,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     }
 
     public List createParameterObjects(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListOperations.createList(new Boolean[]{true,false});
+      return ListOperations.<Boolean>createList(true, false);
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
