@@ -1,10 +1,7 @@
 package jetbrains.mps.refactoring.framework.tests;
 
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.GenericRefactoring;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.action.ActionContext;
 import jetbrains.mps.bootstrap.structureLanguage.scripts.RenameConcept;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
@@ -22,21 +19,32 @@ public class RenameConceptRefactoringTester implements IRefactoringTester {
                                  SModelDescriptor sandbox2,
                                  Language testRefactoringLanguage,
                                  Language testRefactoringTargetLanguage) {
+    System.err.println("preparing arguments for refactoring");
     ActionContext actionContext = new ActionContext(project.createOperationContext());
-    actionContext.put(SNode.class, testRefactoringLanguage.getStructureModelDescriptor().getSModel().
-      getRootByName("MyVeryGoodConcept1"));
+    SModelDescriptor structureModelDescriptor = testRefactoringLanguage.getStructureModelDescriptor();
+    SNode concept = structureModelDescriptor.getSModel().
+      getRootByName("MyVeryGoodConcept1");
+    actionContext.put(SNode.class, concept);
+    actionContext.put(SModelDescriptor.class, structureModelDescriptor);
     RefactoringContext refactoringContext = new RefactoringContext();
-    refactoringContext.setParameter("newName", "MyVeryGoodConcept2");
+    String newConceptName = "MyVeryGoodConcept2";
+    refactoringContext.setParameter("newName", newConceptName);
     GenericRefactoring refactoring_renameConcept = new GenericRefactoring(new RenameConcept());
 
+    System.err.println("executing a refactoring");
     refactoring_renameConcept.execute(actionContext, refactoringContext);
 
     try {
-      sandbox1.getSModel();
+      System.err.println("checking a model");
+      if (sandbox1.isInitialized()) {
+        System.err.println("test environment is invalid: model sandbox1 is already initialized, should be not");
+        return false;
+      }
+      SModel sModel = sandbox1.getSModel();
+      return sModel.getRoots().get(0).getConceptFqName().equals(structureModelDescriptor + "." + newConceptName);
     } catch (Throwable t) {
       t.printStackTrace();
       return false;
     }
-    return true;
   }
 }
