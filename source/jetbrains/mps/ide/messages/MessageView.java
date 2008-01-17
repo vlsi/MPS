@@ -2,6 +2,7 @@ package jetbrains.mps.ide.messages;
 
 import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.toolsPane.DefaultTool;
 import jetbrains.mps.ide.toolsPane.ToolsPane;
@@ -70,7 +71,7 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
   private ToolsPane myToolsPane;
 
   public MessageView(ToolsPane toolsPane) {
-    myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);    
+    myList.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
     myToolsPane = toolsPane;
     myComponent.setLayout(new BorderLayout());
 
@@ -204,12 +205,15 @@ public class MessageView extends DefaultTool implements IExternalizableComponent
   }
 
   private void openCurrentMessageNodeIfPossible() {
-    Message selectedMessage = (Message) myList.getSelectedValue();
+    final Message selectedMessage = (Message) myList.getSelectedValue();
     if (selectedMessage == null || selectedMessage.getHintObject() == null) return;
 
-    ApplicationComponents.getInstance().getComponentSafe(NavigationManager.class)
-            .navigateTo(myToolsPane.getFrame(), selectedMessage.getHintObject());
-
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        ApplicationComponents.getInstance().getComponentSafe(NavigationManager.class)
+          .navigateTo(myToolsPane.getFrame(), selectedMessage.getHintObject());
+      }
+    });
   }
 
   private boolean isVisible(Message m) {
