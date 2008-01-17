@@ -22,66 +22,62 @@ abstract class IntelligentNodeMover {
 
   void move() {
     final SNode current = myNode;
-    CommandProcessor.instance().executeCommand(new Runnable() {
-      public void run() {
-        if (current == null) return;
-        if (current.getParent() == null) return;
+    if (current == null) return;
+    if (current.getParent() == null) return;
 
-        final SNode parent = current.getParent();
-        final String role = current.getRole_();
-        assert parent != null && role != null;
+    final SNode parent = current.getParent();
+    final String role = current.getRole_();
+    assert parent != null && role != null;
 
-        final AbstractConceptDeclaration acd = parent.getConceptDeclarationAdapter();
-        final LinkDeclaration link = SModelUtil_new.findLinkDeclaration(acd, role);
+    final AbstractConceptDeclaration acd = parent.getConceptDeclarationAdapter();
+    final LinkDeclaration link = SModelUtil_new.findLinkDeclaration(acd, role);
 
-        if (link.getSourceCardinality() != Cardinality._0__n && link.getSourceCardinality() != Cardinality._1__n) {
+    if (link.getSourceCardinality() != Cardinality._0__n && link.getSourceCardinality() != Cardinality._1__n) {
+      return;
+    }
+
+    final AbstractConceptDeclaration targetType = (AbstractConceptDeclaration) link.getParent();
+
+    if (isBoundary(current)) {
+      SNode currentAnchor = parent;
+      SNode currentTarget = parent.getParent();
+
+      while (currentTarget != null) {
+        if (currentTarget.isInstanceOfConcept(targetType)) {
+          parent.removeChild(current);
+          addWithAnchor(currentTarget, currentAnchor, role, current);
           return;
         }
 
-        final AbstractConceptDeclaration targetType = (AbstractConceptDeclaration) link.getParent();
-
-        if (isBoundary(current)) {
-          SNode currentAnchor = parent;
-          SNode currentTarget = parent.getParent();
-
-          while (currentTarget != null) {
-            if (currentTarget.isInstanceOfConcept(targetType)) {
-              parent.removeChild(current);
-              addWithAnchor(currentTarget, currentAnchor, role, current);
-              return;
-            }
-
-            SNode levelCurrent = sibling(currentAnchor);
-            while (levelCurrent != null) {
-              SNode result = findNodeAtBoundary(targetType, levelCurrent, true);
-              if (result != null) {
-                parent.removeChild(current);
-                addAtBoundary(result, role, current);
-                return;
-              }
-
-              levelCurrent = sibling(levelCurrent);
-            }
-
-            currentTarget = currentTarget.getParent();
-            currentAnchor = currentAnchor.getParent();
+        SNode levelCurrent = sibling(currentAnchor);
+        while (levelCurrent != null) {
+          SNode result = findNodeAtBoundary(targetType, levelCurrent, true);
+          if (result != null) {
+            parent.removeChild(current);
+            addAtBoundary(result, role, current);
+            return;
           }
 
-          return;
+          levelCurrent = sibling(levelCurrent);
         }
 
-        final SNode prevChild = siblingWithTheSameRole(current);
-
-        SNode innermostContainer = findNodeAtBoundary(targetType, prevChild, true);
-        if (innermostContainer != null) {
-          parent.removeChild(current);
-          addAtBoundary(innermostContainer, role, current);
-        } else {
-          parent.removeChild(current);
-          addWithAnchor(parent, prevChild, role, current);
-        }
+        currentTarget = currentTarget.getParent();
+        currentAnchor = currentAnchor.getParent();
       }
-    });
+
+      return;
+    }
+
+    final SNode prevChild = siblingWithTheSameRole(current);
+
+    SNode innermostContainer = findNodeAtBoundary(targetType, prevChild, true);
+    if (innermostContainer != null) {
+      parent.removeChild(current);
+      addAtBoundary(innermostContainer, role, current);
+    } else {
+      parent.removeChild(current);
+      addWithAnchor(parent, prevChild, role, current);
+    }
   }
 
   private SNode findNodeAtBoundary(AbstractConceptDeclaration acd, SNode current, boolean includeThis) {

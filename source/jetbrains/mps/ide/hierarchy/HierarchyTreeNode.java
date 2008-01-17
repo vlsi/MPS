@@ -6,6 +6,7 @@ import jetbrains.mps.ide.AbstractActionWithEmptyIcon;
 import jetbrains.mps.ide.EditorsPane;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.AbstractProjectFrame;
+import jetbrains.mps.ide.command.CommandProcessor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.navigation.NavigationActionProcessor;
 import jetbrains.mps.ide.navigation.EditorNavigationCommand;
@@ -93,17 +94,21 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
   }
 
   public void doubleClick() {
-    if (myHierarchyTree.doubleClick(this)) {
-      return;
-    }
+    CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+      public void run() {
+        if (myHierarchyTree.doubleClick(HierarchyTreeNode.this)) {
+          return;
+        }
 
-    final SNode node = myNodePointer.getNode();
+        final SNode node = myNodePointer.getNode();
 
-    AbstractHierarchyView<T> hierarchyView = myHierarchyTree.getHierarchyView();
-    if (hierarchyView != null) {
-      final EditorsPane editorsPane = hierarchyView.myIde.getEditorsPane();
-      final IEditor currentEditor = editorsPane.getCurrentEditor();
-      NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), getOperationContext().getProject());
-    }
+        AbstractHierarchyView<T> hierarchyView = myHierarchyTree.getHierarchyView();
+        if (hierarchyView != null) {
+          final EditorsPane editorsPane = hierarchyView.myIde.getEditorsPane();
+          final IEditor currentEditor = editorsPane.getCurrentEditor();
+          NavigationActionProcessor.executeNavigationAction(new EditorNavigationCommand(node, currentEditor, editorsPane), getOperationContext().getProject());
+        }
+      }
+    });
   }
 }

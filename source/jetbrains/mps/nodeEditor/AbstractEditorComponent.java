@@ -451,24 +451,32 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   }
 
   private void moveCurrentUp() {
-    final SNode current = getSelectedCell().getSNode();
-    new IntelligentNodeMover(current) {
-      boolean forward() {
-        return false;
+    CommandProcessor.instance().executeCommand(getEditorContext(), new Runnable() {
+      public void run() {
+        final SNode current = getSelectedCell().getSNode();
+        new IntelligentNodeMover(current) {
+          boolean forward() {
+            return false;
+          }
+        }.move();
+        selectNode(current);
       }
-    }.move();
-    selectNode(current);
+    });
   }
 
 
   private void moveCurrentDown() {
-    final SNode current = getSelectedCell().getSNode();
-    new IntelligentNodeMover(current) {
-      boolean forward() {
-        return true;
+    CommandProcessor.instance().executeCommand(getEditorContext(), new Runnable() {
+      public void run() {
+        final SNode current = getSelectedCell().getSNode();
+        new IntelligentNodeMover(current) {
+          boolean forward() {
+            return true;
+          }
+        }.move();
+        selectNode(current);
       }
-    }.move();
-    selectNode(current);
+    });
   }
 
   private SNode findLeftNode(AbstractConceptDeclaration acd, SNode current, boolean includeThis) {
