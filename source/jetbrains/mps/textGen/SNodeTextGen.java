@@ -66,7 +66,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
   }
 
   protected void appendNewLine() {
-    append("\n");
+    append(System.getProperty("line.separator"));
   }
 
   protected void appendWithIndent(String s) {
