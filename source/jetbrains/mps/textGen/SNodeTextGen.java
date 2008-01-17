@@ -4,6 +4,8 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 
+import java.io.File;
+
 /**
  * Author: Sergey Dmitriev
  * Created Nov 13, 2003
