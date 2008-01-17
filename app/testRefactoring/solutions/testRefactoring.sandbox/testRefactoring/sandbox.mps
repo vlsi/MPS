@@ -9,9 +9,9 @@
     </refactoringContext>
   </refactoringHistory>
   <language namespace="testRefactoring">
-    <languageAspect modelUID="testRefactoring.structure" version="11" />
-    <languageAspect modelUID="testRefactoring.actions" version="-1" />
+    <languageAspect modelUID="testRefactoring.structure" version="-1" />
     <languageAspect modelUID="testRefactoring.editor" version="-1" />
+    <languageAspect modelUID="testRefactoring.actions" version="-1" />
   </language>
   <maxImportIndex value="1" />
   <import index="1" modelUID="testRefactoring.sandbox2" version="-1" />
