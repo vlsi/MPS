@@ -9,10 +9,7 @@ import jetbrains.mps.refactoring.framework.RefactoringHistory;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Igor Alshannikov
@@ -40,7 +37,13 @@ public class ModelWriter1 implements IModelWriter {
       Language l = GlobalScope.getInstance().getLanguage(languageNamespace);
       if (l != null) {
         sourceModel.addAspectModelVersions(languageNamespace, l);
-        for (SModelDescriptor sModelDescriptor : l.getAspectModelDescriptors()) {
+        List<SModelDescriptor> aspectModelDescriptors = new ArrayList<SModelDescriptor>(l.getAspectModelDescriptors());
+        Collections.sort(aspectModelDescriptors, new Comparator<SModelDescriptor>() {
+          public int compare(SModelDescriptor o1, SModelDescriptor o2) {
+            return o1.toString().compareTo(o2.toString());
+          }
+        });
+        for (SModelDescriptor sModelDescriptor : aspectModelDescriptors) {
           Element aspectModelElement = new Element(ModelPersistence.LANGUAGE_ASPECT);
           SModelUID uid = sModelDescriptor.getModelUID();
           aspectModelElement.setAttribute(ModelPersistence.MODEL_UID, uid.toString());
