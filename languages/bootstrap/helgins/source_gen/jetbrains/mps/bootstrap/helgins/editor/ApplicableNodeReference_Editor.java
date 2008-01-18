@@ -21,8 +21,6 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
   private static void setupBasic_ApplicableNodeReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174650488858");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupLabel_ApplicableNodeReferenceCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -72,8 +70,6 @@ public class ApplicableNodeReference_Editor extends DefaultNodeEditor {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174650491174");
       editorCell.setDrawBorder(false);
       editorCell.setFontType(MPSFonts.ITALIC);
-      if(true) {
-      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {

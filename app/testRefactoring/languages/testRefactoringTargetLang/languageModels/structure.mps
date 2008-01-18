@@ -3,16 +3,16 @@
   <persistence version="1" />
   <refactoringHistory />
   <language namespace="jetbrains.mps.bootstrap.structureLanguage">
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.findUsages" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.constraints" version="-1" />
-    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
     <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.scripts" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.actions" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.editor" version="-1" />
+    <languageAspect modelUID="jetbrains.mps.bootstrap.structureLanguage.structure" version="-1" />
   </language>
   <maxImportIndex value="2" />
   <import index="1" modelUID="jetbrains.mps.core.structure" version="-1" />
-  <import index="2" modelUID="testRefactoringTargetLang.structure" version="-1" />
+  <import index="2" modelUID="testRefactoringTargetLang.structure" version="0" />
   <node type="jetbrains.mps.bootstrap.structureLanguage.structure.ConceptDeclaration" id="1198682124373">
     <property name="name" value="AnsotherGoodConcept" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />

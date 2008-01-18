@@ -9,20 +9,20 @@ import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOpera
 
 public class QueriesGenerated {
 
-  public static SNode sourceNodeQuery_1196356047870(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _parameterObject) {
-    return SLinkOperations.getTarget(_parameterObject.getNode(), "quotedNode", true);
+  public static SNode sourceNodeQuery_1196356047870(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "quotedNode", true);
   }
 
-  public static SNode sourceNodeQuery_1196356130049(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _parameterObject) {
-    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  public static SNode sourceNodeQuery_1196356130049(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 
-  public static SNode sourceNodeQuery_1196356200447(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _parameterObject) {
-    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  public static SNode sourceNodeQuery_1196356200447(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 
-  public static SNode sourceNodeQuery_1196356235526(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _parameterObject) {
-    return SLinkOperations.getTarget(_parameterObject.getNode(), "expression", true);
+  public static SNode sourceNodeQuery_1196356235526(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 
 }

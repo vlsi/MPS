@@ -34,44 +34,32 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174646659904");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1198243382874");
-    if(true) {
-    }
   }
 
   private static void setupBasic_ConceptReferenceCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174643056495");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_ConstantCell2(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174647110880");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174647124944");
     editorCell.setDrawBorder(false);
     editorCell.setFontType(MPSFonts.ITALIC);
-    if(true) {
-    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174643053649");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -201,8 +189,6 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
     private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
       editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174643059857");
       editorCell.setDrawBorder(false);
-      if(true) {
-      }
     }
 
     private static void setupLabel_NameCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
@@ -259,7 +245,7 @@ public class ConceptReference_Editor extends DefaultNodeEditor {
         result = NameUtil.splitByCamels(name);
       } else
       {
-        result = ListOperations.createList(new String[]{});
+        result = ListOperations.<String>createList();
       }
       return result;
     }

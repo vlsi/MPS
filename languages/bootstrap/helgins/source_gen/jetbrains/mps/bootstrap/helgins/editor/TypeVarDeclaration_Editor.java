@@ -21,29 +21,21 @@ public class TypeVarDeclaration_Editor extends DefaultNodeEditor {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174665614457");
     BaseLanguageStyle_StyleSheet.KEY_WORD.apply(editorCell);
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_NameCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174665627186");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_ConstantCell1(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174665653489");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupBasic_RowCell(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.putUserObject(EditorCell.CELL_ID, node.getId() + "_1174665612097");
     editorCell.setDrawBorder(false);
-    if(true) {
-    }
   }
 
   private static void setupLabel_ConstantCell(EditorCell_Label editorCell, SNode node, EditorContext context) {
