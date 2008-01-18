@@ -12,10 +12,18 @@ import jetbrains.mps.nodeEditor.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
+import jetbrains.mps.nodeEditor.cellMenu.ISubstituteInfoPart;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefCellCellProvider;
+import jetbrains.mps.bootstrap.editorLanguage.generator.internal.AbstractCellMenuPart_PropertyPostfixHints;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.baseLanguage.ext.collections.internal.query.ListOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.bootstrap.smodelLanguage.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.bootstrap.editorLanguage.cellProviders.RefNodeListHandler;
@@ -296,6 +304,7 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
       CellKeyMapDeclaration_Editor.setupLabel_NameCell((EditorCell_Label)editorCell, node, context);
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(context, provider.getCellContext(), new ISubstituteInfoPart[]{new CellKeyMapDeclaration_Editor.CellKeyMapDeclaration_name_postfixCellMenu()}));
     return editorCell;
   }
 
@@ -374,6 +383,21 @@ public class CellKeyMapDeclaration_Editor extends DefaultNodeEditor {
     return cellWithRole;
   }
 
+  public static class CellKeyMapDeclaration_name_postfixCellMenu extends AbstractCellMenuPart_PropertyPostfixHints {
+
+    public  CellKeyMapDeclaration_name_postfixCellMenu() {
+    }
+
+    public List<String> getPostfixes(SNode node, IScope scope, IOperationContext operationContext) {
+      List<String> prefixes = ListOperations.<String>createList();
+      ListOperations.addElement(prefixes, "_KeyMap");
+      if(SLinkOperations.getTarget(node, "applicableConcept", false) != null) {
+        ListOperations.addElement(prefixes, SPropertyOperations.getString(SLinkOperations.getTarget(node, "applicableConcept", false), "name") + "_KeyMap");
+      }
+      return prefixes;
+    }
+
+}
   public static class _Inline23 extends AbstractCellProvider {
 
     public  _Inline23() {

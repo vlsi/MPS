@@ -185,7 +185,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      return ListOperations.createList(new String[]{EditorCellKeyMap.KEY_MODIFIERS_NONE,EditorCellKeyMap.KEY_MODIFIERS_CTRL,EditorCellKeyMap.KEY_MODIFIERS_ALT,EditorCellKeyMap.KEY_MODIFIERS_SHIFT,EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT,EditorCellKeyMap.KEY_MODIFIERS_CTRL_SHIFT,EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT_SHIFT,EditorCellKeyMap.KEY_MODIFIERS_ALT_SHIFT});
+      return ListOperations.<String>createList(EditorCellKeyMap.KEY_MODIFIERS_NONE, EditorCellKeyMap.KEY_MODIFIERS_CTRL, EditorCellKeyMap.KEY_MODIFIERS_ALT, EditorCellKeyMap.KEY_MODIFIERS_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_CTRL_ALT_SHIFT, EditorCellKeyMap.KEY_MODIFIERS_ALT_SHIFT);
     }
 
 }
@@ -195,7 +195,7 @@ public class CellKeyMapKeystroke_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> keycodes = ListOperations.createList(new String[]{EditorCellKeyMap.KEY_CODE_DIGIT,EditorCellKeyMap.KEY_CODE_LETTER,EditorCellKeyMap.KEY_CODE_LETTER_OR_DIGIT,EditorCellKeyMap.KEY_CODE_SPACE,EditorCellKeyMap.KEY_CODE_CHAR});
+      List<String> keycodes = ListOperations.<String>createList(EditorCellKeyMap.KEY_CODE_DIGIT, EditorCellKeyMap.KEY_CODE_LETTER, EditorCellKeyMap.KEY_CODE_LETTER_OR_DIGIT, EditorCellKeyMap.KEY_CODE_SPACE, EditorCellKeyMap.KEY_CODE_CHAR);
       ListOperations.addAllElements(keycodes, EditorCellKeyMap.getVirtualKeycodes());
       return keycodes;
     }

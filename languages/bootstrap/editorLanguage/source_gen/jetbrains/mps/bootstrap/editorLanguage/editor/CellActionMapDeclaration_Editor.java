@@ -299,7 +299,7 @@ public class CellActionMapDeclaration_Editor extends DefaultNodeEditor {
     }
 
     public List<String> getPropertyValues(SNode node, IScope scope, IOperationContext operationContext) {
-      List<String> names = ListOperations.createList(new String[]{});
+      List<String> names = ListOperations.<String>createList();
       if((SLinkOperations.getTarget(node, "applicableConcept", false) != null)) {
         ListOperations.addElement(names, SPropertyOperations.getString(SLinkOperations.getTarget(node, "applicableConcept", false), "name") + "_Actions");
       }
