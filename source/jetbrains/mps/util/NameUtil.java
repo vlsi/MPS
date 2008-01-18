@@ -283,4 +283,9 @@ public class NameUtil {
     String prop = Character.toUpperCase(property.charAt(0)) + property.substring(1);
     return "get" + prop;
   }
+
+  public static String getSetterName(String property) {
+    String prop = Character.toUpperCase(property.charAt(0)) + property.substring(1);
+    return "set" + prop;
+  }
 }
