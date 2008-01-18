@@ -21,9 +21,6 @@ import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import java.util.HashMap;
-import jetbrains.mps.refactoring.framework.IChooseComponent;
-import java.util.ArrayList;
-import jetbrains.mps.refactoring.framework.ChooseRefactoringInputDataDialog;
 
 public class SafeDelete extends AbstractLoggableRefactoring {
 
@@ -50,7 +47,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1200667642215#1200665013408";
+    return "jetbrains.mps.core.scripts@1_0_1200669113602#1200665013408";
   }
 
   public String getKeyStroke() {
@@ -101,12 +98,7 @@ public class SafeDelete extends AbstractLoggableRefactoring {
   }
 
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
-    boolean result = false;
-    List<IChooseComponent> components = new ArrayList<IChooseComponent>();
-    ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
-    dialog.showDialog();
-    result = dialog.getResult();
-    return result;
+    return this.isApplicable(actionContext, refactoringContext);
   }
 
 }

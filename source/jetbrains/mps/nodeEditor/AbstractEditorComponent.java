@@ -65,7 +65,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
   static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
       g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
-              RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
+        RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
       g.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
       g.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
     }
@@ -350,7 +350,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       public void focusLost(FocusEvent e) {
         repaint();
         if (myNodeSubstituteChooser.getWindow() != null &&
-                (myNodeSubstituteChooser.getWindow().isAncestorOf(e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
+          (myNodeSubstituteChooser.getWindow().isAncestorOf(e.getOppositeComponent()) || myNodeSubstituteChooser.getWindow() == e.getOppositeComponent()))
           return;
         myNodeSubstituteChooser.setVisible(false);
       }
@@ -883,7 +883,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
 
     if ((keyEvent.getKeyCode() == KeyEvent.VK_DELETE || keyEvent.getKeyCode() == KeyEvent.VK_BACK_SPACE)
-            && keyEvent.getModifiers() == 0) {
+      && keyEvent.getModifiers() == 0) {
       // editable label and no text
       EditorCell selectedCell = editorContext.getNodeEditorComponent().getSelectedCell();
       if (selectedCell instanceof EditorCell_Label) {
@@ -1352,25 +1352,30 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     if (mouseEvent.isControlDown()) {
       if (getSelectedCell() != null) {
-        SNode selectedNode = getSelectedCell().getSNode();
-        while (selectedNode != null) {
-          final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
-          if (herror != null) {
-            final SNode selectedNode1 = selectedNode;
-            SwingUtilities.invokeLater(new Runnable() {
-              public void run() {
-                String nodeClasName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
-                String s = "";
-                if (herror != null) {
-                  s += "TYPE ERROR: " + herror.reportError() + "\n";
-                }
-                JOptionPane.showMessageDialog(getExternalComponent(), s, nodeClasName + " status", JOptionPane.ERROR_MESSAGE);
+        CommandProcessor.instance().executeLightweightCommand(new Runnable() {
+          public void run() {
+            SNode selectedNode = getSelectedCell().getSNode();
+            while (selectedNode != null) {
+              final IErrorReporter herror = TypeChecker.getInstance().getTypeErrorDontCheck(selectedNode);
+              if (herror != null) {
+                final SNode selectedNode1 = selectedNode;
+                SwingUtilities.invokeLater(new Runnable() {
+                  public void run() {
+                    String nodeClasName = JavaNameUtil.shortName(selectedNode1.getClass().getName());
+                    String s = "";
+                    if (herror != null) {
+                      s += "TYPE ERROR: " + herror.reportError() + "\n";
+                    }
+                    JOptionPane.showMessageDialog(getExternalComponent(), s, nodeClasName + " status", JOptionPane.ERROR_MESSAGE);
+                  }
+                });
+                return;
               }
-            });
-            return;
+              selectedNode = selectedNode.getParent();
+            }
           }
-          selectedNode = selectedNode.getParent();
-        }
+        });
+
       }
     }
   }
@@ -1522,11 +1527,11 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
 
     int x1 = Math.max(0, x0 + width - viewportWidth);
     scrollRectToVisible(
-            expandRectangleOneLine(
-                    new Rectangle(
-                            x1, largestVerticalBigCell.getY(),
-                            x0 - x1 + width, largestVerticalBigCell.getHeight()
-                    )));
+      expandRectangleOneLine(
+        new Rectangle(
+          x1, largestVerticalBigCell.getY(),
+          x0 - x1 + width, largestVerticalBigCell.getHeight()
+        )));
   }
 
   private EditorCell findLargestBigCellFittingOnTheScreenVertically(EditorCell cell) {
@@ -1626,7 +1631,7 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
       return new Dimension(viewRect.width, viewRect.height);
     }
     return new Dimension(Math.max(viewRect.width, myRootCell.getWidth() + myShiftX + 10),
-            Math.max(viewRect.height, myRootCell.getHeight() + myShiftY + 10));
+      Math.max(viewRect.height, myRootCell.getHeight() + myShiftY + 10));
   }
 
   public Dimension getPreferredScrollableViewportSize() {
@@ -1838,8 +1843,8 @@ public abstract class AbstractEditorComponent extends JComponent implements Scro
     }
     String pattern = patternEditor.getPattern();
     boolean trySubstituteNow =
-            !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
-                    pattern.equals(patternEditor.getText()); // caret at the end
+      !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
+        pattern.equals(patternEditor.getText()); // caret at the end
 
     // 1st - try to do substitution with current pattern (id cursor at the end of text)
     if (trySubstituteNow) {

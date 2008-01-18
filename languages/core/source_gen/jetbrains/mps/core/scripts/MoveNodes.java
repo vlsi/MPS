@@ -58,7 +58,7 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1200667642215#1198076144993";
+    return "jetbrains.mps.core.scripts@1_0_1200669113602#1198076144993";
   }
 
   public String getKeyStroke() {
@@ -150,17 +150,19 @@ public class MoveNodes extends AbstractLoggableRefactoring {
   }
 
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
-    boolean result = false;
-    List<IChooseComponent> components = new ArrayList<IChooseComponent>();
     {
-      IChooseComponent<Object> chooseComponent;
-      chooseComponent = new ChooseComponentWithName<Object>("target", this.target_componentCreator(actionContext));
-      components.add(chooseComponent);
+      boolean result = false;
+      List<IChooseComponent> components = new ArrayList<IChooseComponent>();
+      {
+        IChooseComponent<Object> chooseComponent;
+        chooseComponent = new ChooseComponentWithName<Object>("target", this.target_componentCreator(actionContext));
+        components.add(chooseComponent);
+      }
+      ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
+      dialog.showDialog();
+      result = dialog.getResult();
+      return result;
     }
-    ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
-    dialog.showDialog();
-    result = dialog.getResult();
-    return result;
   }
 
 }

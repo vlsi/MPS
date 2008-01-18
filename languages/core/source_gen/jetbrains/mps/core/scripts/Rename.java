@@ -45,7 +45,7 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public String getSourceId() {
-    return "jetbrains.mps.core.scripts@1_0_1200667642215#1199457919461";
+    return "jetbrains.mps.core.scripts@1_0_1200669113602#1199457919461";
   }
 
   public String getKeyStroke() {
@@ -87,18 +87,20 @@ public class Rename extends AbstractLoggableRefactoring {
   }
 
   public boolean askForInfo(ActionContext actionContext, RefactoringContext refactoringContext) {
-    boolean result = false;
-    List<IChooseComponent> components = new ArrayList<IChooseComponent>();
     {
-      IChooseComponent<String> chooseComponent;
-      chooseComponent = new ChooseStringComponent("new name:", "newName");
-      chooseComponent.setInitialValue(this.newName_initialValue(actionContext));
-      components.add(chooseComponent);
+      boolean result = false;
+      List<IChooseComponent> components = new ArrayList<IChooseComponent>();
+      {
+        IChooseComponent<String> chooseComponent;
+        chooseComponent = new ChooseStringComponent("new name:", "newName");
+        chooseComponent.setInitialValue(this.newName_initialValue(actionContext));
+        components.add(chooseComponent);
+      }
+      ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
+      dialog.showDialog();
+      result = dialog.getResult();
+      return result;
     }
-    ChooseRefactoringInputDataDialog dialog = new ChooseRefactoringInputDataDialog(this, actionContext, refactoringContext, components);
-    dialog.showDialog();
-    result = dialog.getResult();
-    return result;
   }
 
 }
