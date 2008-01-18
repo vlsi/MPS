@@ -206,12 +206,6 @@ public class MPSModuleRepository {
   }
 
   private void putModuleWithUID(String moduleUID, IModule module) {
-    //debug
-    {
-      if (moduleUID.equals("testRefactoring")) {
-        System.err.println("oyvey!");
-      }
-    }
 
     List<IModule> modulesWithUID = myUIDToModulesMap.get(moduleUID);
     if (modulesWithUID == null) {
